@@ -1,0 +1,274 @@
+/* Add this to your existing CSS file */
+.accordion-open {
+	display: block;
+}
+
+/* Other existing styles */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f3f4f6;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	padding-left: 40px;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+
+h3 {
+	padding-bottom: 20px;
+	padding-left: 40px;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	padding: 10px 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+	display: flex;
+	align-items: center;
+}
+
+.navbar .logo img {
+	height: 40px;
+	margin-right: 10px;
+}
+
+.navbar .logo h1 {
+	font-size: 24px;
+	margin: 0;
+}
+
+.navbar-center {
+	display: flex;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+.navbar-icons {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+
+.navbar-icons div {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-icons div.active {
+	background-color: #ddd;
+}
+
+.navbar-icons div.active img {
+	filter: invert(50%);
+}
+
+.navbar-icons div img {
+	height: 48px;
+	width: 48px;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 20px;
+}
+
+.card {
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+
+.card:active {
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+	transform: translateY(2px);
+}
+
+.card-link {
+	text-decoration: none;
+	color: inherit;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+.card-item-link {
+	color: black;
+	text-decoration: none;
+	z-index: 2;
+	position: relative;
+}
+
+.card-item-link:hover {
+	text-decoration: underline;
+}
+
+.card img {
+	height: 50px;
+	width: 50px;
+}
+
+.card-content {
+	margin: 10px 0;
+	z-index: 2;
+	position: relative;
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	z-index: 2;
+	position: relative;
+}
+
+.card-icon {
+	height: 30px;
+	width: 30px;
+}
+
+.card-arrow {
+	height: 20px;
+	width: 20px;
+}
+
+.green-card {
+	background-color: #519e8a;
+}
+
+.pink-card {
+	background-color: #f25c54;
+}
+
+.blue-card {
+	background-color: #3f7cac;
+}
+
+.yellow-card {
+	background-color: #ffd97d;
+}
+
+.accordion {
+	margin: 20px;
+}
+
+.accordion li {
+	list-style-type: none;
+}
+
+.accordion-item {
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.accordion-button {
+	background-color: #f3f4f6;
+	border: none;
+	width: 100%;
+	text-align: left;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 18px;
+	outline: none;
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+}
+
+.accordion-button:hover,
+.accordion-button.active {
+	background-color: #e0e0e0;
+}
+
+.accordion-content {
+	padding: 5px 5px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+.accordion-open {
+	display: block;
+}
+
+.accordion-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 0 20px; /* Indent the sublists by one tab space */
+}
+
+.accordion-content li {
+	padding: 10px 20px;
+	border-top: 1px solid #ddd;
+}
+
+.accordion-content li a {
+	color: #0066cc;
+	text-decoration: none;
+}
+
+.accordion-content li a:hover {
+	text-decoration: underline;
+}
+
+.accordion-content-left {
+	padding-left: 20px;
+}
+
+.iframe {
+	padding-left: 20px;
+}
+
+.format-latex {
+	padding-left: 5px;
+}
+
+.list-indent {
+	padding-left: 10px;
+}
+
+#exam-info a {
+	color: #c1121f;
+	font-weight: bold;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+	/* Adjust styles for tablets */
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	/* Adjust styles for phones */
+	.container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

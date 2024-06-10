@@ -1,0 +1,56 @@
+ol.outer-list {
+	counter-reset: equation;
+	list-style: none;
+	padding-left: 0;
+	list-style-position: outside;
+	font-size: larger;
+}
+ol.outer-list > li {
+	counter-increment: equation;
+	counter-increment: item;
+	margin-left: 2em; /* Indent list items */
+	margin-bottom: 20px;
+}
+ol.outer-list > li:before {
+	content: counter(item) '.';
+	width: 30px;
+	font-weight: bold;
+	font-size: large;
+	margin-right: 0.5em;
+}
+ol.inner-list {
+	list-style: none; /* Remove default list styling */
+	margin-left: 2em; /* Indent inner list items */
+	padding-left: 0; /* Remove default padding */
+}
+ol.inner-list > li {
+	counter-increment: subitem;
+	margin-bottom: 10px; /* Optional: Add some space between list items */
+}
+ol.inner-list > li:before {
+	content: '(' counter(subitem, lower-roman) ')';
+	font-style: italic;
+	font-size: large;
+	margin-right: 0.5em;
+}
+.equation {
+	display: inline-block;
+}
+.indented {
+	margin-left: 3em; /* Adjust the value as needed for more or less indentation */
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+	/* Adjust styles for tablets */
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	/* Adjust styles for phones */
+	.container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
