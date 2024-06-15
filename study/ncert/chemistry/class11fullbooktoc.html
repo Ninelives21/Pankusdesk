@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panku's Desk</title>
+		<link rel="stylesheet" href="/styles/styles.css" />
+		<link rel="stylesheet" href="/styles/style_math.css" />
+		<script src="/scripts/accordion.js" defer></script>
+		<script src="/scripts/navbar.js" defer></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		></script>
+		<script
+			type="text/javascript"
+			async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+		></script>
+	</head>
+	<body>
+		<nav></nav>
+		<div class="content">
+			<h2>CLASS 11 CHEMISTRY TOC</h2>
+			<div class="accordion">
+				<!-- start unit 1 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="A">
+						<b
+							><a
+								href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#Unit 1"
+								>Unit 1 : Some Basic Concepts of Chemistry</a
+							></b
+						>
+					</button>
+					<div class="accordion-content accordion-open">
+						<ul>
+							<li id="A1">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.1"
+									>1.1 Importance of Chemistry</a
+								>
+							</li>
+							<li id="A2">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.2"
+									>1.2 Nature of Matter</a
+								>
+							</li>
+							<li id="A3">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.3"
+									>1.3 Properties of Matter and their Measurement</a
+								>
+							</li>
+							<li id="A4">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.4"
+									>1.4 Uncertainty in Measurement</a
+								>
+							</li>
+							<li id="A5">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.5"
+									>1.5 Laws of Chemical Combinations</a
+								>
+							</li>
+							<li id="A6">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.6"
+									>1.6 Dalton’s Atomic Theory</a
+								>
+							</li>
+							<li id="A7">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.7"
+									>1.7 Atomic and Molecular Masses</a
+								>
+							</li>
+							<li id="A8">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.8"
+									>1.8 Mole Concept and Molar Masses</a
+								>
+							</li>
+							<li id="A9">
+								<a
+									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.9"
+									>1.9 Percentage Composition</a
+								>
+							</li>
+							<li id="A10">
+								<a href="#" onclick="openPdf('1.10')"
+									>1.10 Stoichiometry and Stoichiometric Calculations</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="accordion">
+						<div class="accordion-item"></div>
+					</div>
+				</div>
+				<!-- end unit 1 -->
+			</div>
+		</div>
+		<script>
+			function openPdf(section) {
+				const pdfUrl = `/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#${section}`;
+				window.open(pdfUrl, '_blank');
+			}
+		</script>
+	</body>
+</html>
