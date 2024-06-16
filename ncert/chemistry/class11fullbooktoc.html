@@ -17,8 +17,7 @@
 				<div class="accordion-item">
 					<button class="accordion-button" id="A">
 						<b
-							><a
-								href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#Unit 1"
+							><a href="#" onclick="openPdf('Unit 1')"
 								>Unit 1 : Some Basic Concepts of Chemistry</a
 							></b
 						>
@@ -26,56 +25,45 @@
 					<div class="accordion-content accordion-open">
 						<ul>
 							<li id="A1">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.1"
+								<a href="#" onclick="openPdf('1.1')"
 									>1.1 Importance of Chemistry</a
 								>
 							</li>
 							<li id="A2">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.2"
-									>1.2 Nature of Matter</a
-								>
+								<a href="#" onclick="openPdf('1.2')">1.2 Nature of Matter</a>
 							</li>
 							<li id="A3">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.3"
+								<a href="#" onclick="openPdf('1.3')"
 									>1.3 Properties of Matter and their Measurement</a
 								>
 							</li>
 							<li id="A4">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.4"
+								<a href="#" onclick="openPdf('1.4')"
 									>1.4 Uncertainty in Measurement</a
 								>
 							</li>
 							<li id="A5">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.5"
+								<a href="#" onclick="openPdf('1.5')"
 									>1.5 Laws of Chemical Combinations</a
 								>
 							</li>
 							<li id="A6">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.6"
+								<a href="#" onclick="openPdf('1.6')"
 									>1.6 Dalton’s Atomic Theory</a
 								>
 							</li>
 							<li id="A7">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.7"
+								<a href="#" onclick="openPdf('1.7')"
 									>1.7 Atomic and Molecular Masses</a
 								>
 							</li>
 							<li id="A8">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.8"
+								<a href="#" onclick="openPdf('1.8')"
 									>1.8 Mole Concept and Molar Masses</a
 								>
 							</li>
 							<li id="A9">
-								<a
-									href="/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#1.9"
+								<a href="#" onclick="openPdf('1.9')"
 									>1.9 Percentage Composition</a
 								>
 							</li>
@@ -95,8 +83,8 @@
 		</div>
 		<script>
 			function openPdf(section) {
-				const pdfUrl = `/files/ncert/chemistry/class 11/chemistry_class11_part1of2.pdf#${section}`;
-				window.open(pdfUrl, '_blank');
+				const pdfUrl = `/ncert/chemistry/class11/chemistry_class11_part1of2.pdf#${section}`;
+				window.open(pdfUrl);
 			}
 		</script>
 	</body>
