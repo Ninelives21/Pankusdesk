@@ -228,8 +228,8 @@ h3 {
 	display: block;
 }
 
-.accordion-content ul {
-	list-style: none;
+.accordion-content ol {
+	list-style: decimal;
 	padding: 0;
 	margin: 0 0 0 20px; /* Indent the sublists by one tab space */
 }
@@ -267,6 +267,23 @@ h3 {
 #exam-info a {
 	color: #c1121f;
 	font-weight: bold;
+}
+
+.new_container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.new_container ol {
+	list-style: decimal;
+	padding-left: 20px;
+}
+.new_container p {
+	line-height: 1.6;
+	margin-bottom: 10px;
 }
 
 /* Media Queries */
