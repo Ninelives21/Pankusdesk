@@ -14,11 +14,17 @@ body {
 h2 {
 	padding-left: 40px;
 	padding-top: 20px;
-	padding-bottom: 5px;
+	padding-bottom: 20px;
 }
 
 h3 {
-	padding-bottom: 20px;
+	padding-bottom: 10px;
+	padding-left: 40px;
+}
+
+h4 {
+	padding-bottom: 10px;
+	padding-top: 10px;
 	padding-left: 40px;
 }
 
@@ -234,6 +240,11 @@ h3 {
 	margin: 0 0 0 20px; /* Indent the sublists by one tab space */
 }
 
+.accordion a {
+	color: #0066cc;
+	text-decoration: none;
+}
+
 .accordion-content li {
 	padding: 10px 20px;
 	border-top: 1px solid #ddd;
@@ -286,10 +297,15 @@ h3 {
 	margin-bottom: 10px;
 }
 
-.simple_toc li {
+.ans-align {
 	padding-left: 10px;
 	margin-left: 20px;
 	margin-bottom: 3px;
+}
+
+.visited-color a {
+	text-decoration: none;
+	decoration: none;
 }
 
 /* Media Queries */
