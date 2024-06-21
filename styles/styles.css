@@ -1,9 +1,3 @@
-/* Add this to your existing CSS file */
-.accordion-open {
-	display: block;
-}
-
-/* Other existing styles */
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f3f4f6;
@@ -35,6 +29,7 @@ h4 {
 	background-color: #fff;
 	padding: 10px 20px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	height: 60px; /* Increase height to fit icon and text */
 }
 
 .navbar .logo {
@@ -42,14 +37,16 @@ h4 {
 	align-items: center;
 }
 
-.navbar .logo img {
-	height: 40px;
-	margin-right: 10px;
-}
-
 .navbar .logo h1 {
 	font-size: 24px;
 	margin: 0;
+}
+
+.navbar-link {
+	font-size: 16px; /* Adjust font size of the text */
+	margin-top: 5px; /* Adjust margin between icon and text */
+	font-weight: bold; /* Make the text bold */
+	color: #336666;
 }
 
 .navbar-center {
@@ -64,28 +61,31 @@ h4 {
 	gap: 30px;
 }
 
-.navbar-icons div {
+.navbar-icons .nav-icon {
 	width: 40px;
-	height: 40px;
+	height: 60px; /* Increase height to fit icon and text */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 20px;
+	flex-direction: column; /* Ensure the text is below the icon */
+	border-radius: 10px;
 	background-color: #fff;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-icons div.active {
-	background-color: #ddd;
+.navbar-icons .nav-icon img {
+	height: 24px; /* Adjust height of the icon */
+	width: 24px; /* Adjust width of the icon */
 }
 
-.navbar-icons div.active img {
-	filter: invert(50%);
+.navbar-icons .nav-icon span {
+	font-size: 12px; /* Adjust font size of the text */
+	margin-top: 5px; /* Adjust margin between icon and text */
+	font-weight: bold; /* Make the text bold */
 }
 
-.navbar-icons div img {
-	height: 48px;
-	width: 48px;
+.navbar-icons a {
+	text-decoration: none; /* Remove text decoration */
+	color: inherit; /* Ensure link color doesn't change */
 }
 
 .container {
