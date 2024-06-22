@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panku's Desk</title>
+		<link rel="stylesheet" href="../../../../../styles/styles.css" />
+		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
+		<script src="../../../../../scripts/accordion.js" defer></script>
+		<script src="../../../../../scripts/navbar.js" defer></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		></script>
+	</head>
+	<body>
+		<nav></nav>
+		<div class="content">
+			<h2>FIITJEE MATH TRIGONOMETRIC RATIOS AND IDENTITIES : DAY 4</h2>
+			<h4>OBJECTIVE</h4>
+			<!-- Start Subjective -->
+			<div class="accordion">
+				<!-- Start Question 1(i) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q01i">
+						<a href="#Q01i">
+							<b>1 (i).</b> If \(\sin \alpha = \dfrac{45}{53}\) and \(\sin \beta
+							= \dfrac{33}{65}\), find the values of \(\sin (\alpha - \beta)\)
+							and \(\sin (\alpha + \beta)\) if \(\alpha, \beta\) are acute.
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							To solve for the values of \(\sin (\alpha - \beta)\) and \(\sin
+							(\alpha + \beta)\), given that \(\alpha\) and \(\beta\) are acute
+							angles, we proceed as follows:
+						</p>
+						<p>
+							1. Given: \(\sin \alpha = \dfrac{45}{53}\) and \(\sin \beta =
+							\dfrac{33}{65}\)
+						</p>
+						<p>
+							2. Calculate \(\cos \alpha\) and \(\cos \beta\) using the
+							Pythagorean identity:
+						</p>
+						<p>
+							\(\cos \alpha = \sqrt{1 - \sin^2 \alpha} = \sqrt{1 -
+							\left(\dfrac{45}{53}\right)^2} = \sqrt{1 - \dfrac{2025}{2809}} =
+							\sqrt{\dfrac{784}{2809}} = \dfrac{28}{53}\)
+						</p>
+						<p>
+							\(\cos \beta = \sqrt{1 - \sin^2 \beta} = \sqrt{1 -
+							\left(\dfrac{33}{65}\right)^2} = \sqrt{1 - \dfrac{1089}{4225}} =
+							\sqrt{\dfrac{3136}{4225}} = \dfrac{56}{65}\)
+						</p>
+						<p>
+							3. Use the angle sum and difference identities to find \(\sin
+							(\alpha - \beta)\) and \(\sin (\alpha + \beta)\):
+						</p>
+						<p>
+							\(\sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha
+							\sin \beta\)
+						</p>
+						<p>
+							\(\sin (\alpha - \beta) = \left(\dfrac{45}{53}\right)
+							\left(\dfrac{56}{65}\right) - \left(\dfrac{28}{53}\right)
+							\left(\dfrac{33}{65}\right)\)
+						</p>
+						<p>
+							\(\sin (\alpha - \beta) = \dfrac{45 \times 56}{53 \times 65} -
+							\dfrac{28 \times 33}{53 \times 65} = \dfrac{2520}{3445} -
+							\dfrac{924}{3445} = \dfrac{1596}{3445}\)
+						</p>
+						<p>4. Calculate \(\sin (\alpha + \beta)\):</p>
+						<p>
+							\(\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha
+							\sin \beta\)
+						</p>
+						<p>
+							\(\sin (\alpha + \beta) = \left(\dfrac{45}{53}\right)
+							\left(\dfrac{56}{65}\right) + \left(\dfrac{28}{53}\right)
+							\left(\dfrac{33}{65}\right)\)
+						</p>
+						<p>
+							\(\sin (\alpha + \beta) = \dfrac{45 \times 56}{53 \times 65} +
+							\dfrac{28 \times 33}{53 \times 65} = \dfrac{2520}{3445} +
+							\dfrac{924}{3445} = \dfrac{3444}{3445}\)
+						</p>
+						<p>Therefore, the values are:</p>
+						<p>\(\sin (\alpha - \beta) = \dfrac{1596}{3445}\)</p>
+						<p>\(\sin (\alpha + \beta) = \dfrac{3444}{3445}\)</p>
+					</div>
+				</div>
+				<!-- End Question 1(i) -->
+				<!-- Start Question 1(ii) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q01ii">
+						<a href="#0Q1ii">
+							<b>1 (ii).</b> Prove that: \(\cos(45^\circ - A) \cos(45^\circ - B)
+							- \sin(45^\circ - A) \sin(45^\circ - B) = \sin(A + B)\)
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Start with the left-hand side (LHS) of the equation:</p>
+						<p>
+							\(\cos(45^\circ - A) \cos(45^\circ - B) - \sin(45^\circ - A)
+							\sin(45^\circ - B)\)
+						</p>
+						<p>2. Use the product-to-sum identities for cosine and sine:</p>
+						<p>\(\cos x \cos y - \sin x \sin y = \cos(x + y)\)</p>
+						<p>
+							In this case, let \(x = 45^\circ - A\) and \(y = 45^\circ - B\):
+						</p>
+						<p>
+							\(\cos(45^\circ - A) \cos(45^\circ - B) - \sin(45^\circ - A)
+							\sin(45^\circ - B) = \cos\left((45^\circ - A) + (45^\circ -
+							B)\right)\)
+						</p>
+						<p>3. Simplify the argument of the cosine function:</p>
+						<p>
+							\(\cos\left((45^\circ - A) + (45^\circ - B)\right) = \cos(90^\circ
+							- (A + B))\)
+						</p>
+						<p>4. Use the co-function identity for cosine:</p>
+						<p>\(\cos(90^\circ - \theta) = \sin \theta\)</p>
+						<p>In this case:</p>
+						<p>\(\cos(90^\circ - (A + B)) = \sin(A + B)\)</p>
+						<p>Therefore, we have:</p>
+						<p>
+							\(\cos(45^\circ - A) \cos(45^\circ - B) - \sin(45^\circ - A)
+							\sin(45^\circ - B) = \sin(A + B)\)
+						</p>
+						<p>Thus, the given identity is proved.</p>
+					</div>
+				</div>
+				<!-- End Question 1(ii) -->
+				<!-- Start Question 1(iii) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q01iii">
+						<a href="#Q01iii">
+							<b>1 (iii).</b> If \(\tan 20^\circ = \lambda\), then show that
+							\(\dfrac{\tan 160^\circ - \tan 110^\circ}{1 + \tan 160^\circ \tan
+							110^\circ} = \dfrac{1 - \lambda^2}{2 \lambda}\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							To show that \(\dfrac{\tan 160^\circ - \tan 110^\circ}{1 + \tan
+							160^\circ \tan 110^\circ} = \dfrac{1 - \lambda^2}{2 \lambda}\),
+							given that \(\tan 20^\circ = \lambda\), we proceed as follows:
+						</p>
+						<p>
+							1. Express \(\tan 160^\circ\) and \(\tan 110^\circ\) in terms of
+							\(\tan 20^\circ\):
+						</p>
+						<p>
+							\(\tan 160^\circ = \tan (180^\circ - 20^\circ) = -\tan 20^\circ =
+							-\lambda\)
+						</p>
+						<p>
+							\(\tan 110^\circ = \tan (90^\circ + 20^\circ) = -\cot 20^\circ\)
+						</p>
+						<p>2. Use the identity \(\cot x = \dfrac{1}{\tan x}\):</p>
+						<p>
+							\(\tan 110^\circ = -\cot 20^\circ = -\dfrac{1}{\tan 20^\circ} =
+							-\dfrac{1}{\lambda}\)
+						</p>
+						<p>
+							3. Substitute \(\tan 160^\circ\) and \(\tan 110^\circ\) into the
+							left-hand side of the equation:
+						</p>
+						<p>
+							\[\dfrac{\tan 160^\circ - \tan 110^\circ}{1 + \tan 160^\circ \tan
+							110^\circ} = \dfrac{-\lambda - \left(-\dfrac{1}{\lambda}\right)}{1
+							+ (-\lambda) \left(-\dfrac{1}{\lambda}\right)}\]
+						</p>
+						<p>4. Simplify the numerator and denominator:</p>
+						<p>
+							\[\dfrac{-\lambda + \dfrac{1}{\lambda}}{1 + \lambda \cdot
+							\dfrac{1}{\lambda}}\]
+						</p>
+						<p>\[\dfrac{-\lambda + \dfrac{1}{\lambda}}{1 + 1}\]</p>
+						<p>\[\dfrac{-\lambda + \dfrac{1}{\lambda}}{2}\]</p>
+						<p>5. Combine the terms in the numerator:</p>
+						<p>\[\dfrac{-\lambda^2 + 1}{2\lambda}\]</p>
+						<p>6. Therefore, we have shown that:</p>
+						<p>
+							\[\dfrac{\tan 160^\circ - \tan 110^\circ}{1 + \tan 160^\circ \tan
+							110^\circ} = \dfrac{1 - \lambda^2}{2 \lambda}\]
+						</p>
+					</div>
+				</div>
+				<!-- End Question 1(iii) -->
+				<!-- Start Question 2(i) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q02i">
+						<a href="#Q02i">
+							<b>2 (i).</b> Prove that \(\sin(45^\circ + A) \cos(45^\circ - B) +
+							\cos(45^\circ + A) \sin(45^\circ - B) = \cos(A - B)\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Start with the left-hand side (LHS) of the equation:</p>
+						<p>
+							\(\sin(45^\circ + A) \cos(45^\circ - B) + \cos(45^\circ + A)
+							\sin(45^\circ - B)\)
+						</p>
+						<p>2. Use the angle sum identity:</p>
+						<p>
+							\(\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin
+							\beta\)
+						</p>
+						<p>Therefore:</p>
+						<p>\(\text{LHS} = \sin(45^\circ + A + 45^\circ - B)\)</p>
+						<p>3. Simplify the angle:</p>
+						<p>\(\sin(90^\circ + (A - B))\)</p>
+						<p>4. Use the co-function identity:</p>
+						<p>\(\sin(90^\circ + \theta) = \cos \theta\)</p>
+						<p>Therefore:</p>
+						<p>\(\text{LHS} = \cos(A - B)\)</p>
+						<p>Thus:</p>
+						<p>\(\text{LHS} = \text{RHS}\)</p>
+					</div>
+				</div>
+				<!-- End Question 2(i) -->
+				<!-- Start Question 2(ii) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q02ii">
+						<a href="#Q02ii">
+							<b>2 (ii).</b> Prove that \(\dfrac{\sin(A - B)}{\cos A \cos B} +
+							\dfrac{\sin(B - C)}{\cos B \cos C} + \dfrac{\sin(C - A)}{\cos C
+							\cos A} = 0\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Use the identity for \(\sin(x - y)\):</p>
+						<p>\(\sin(x - y) = \sin x \cos y - \cos x \sin y\)</p>
+						<p>2. Substitute the identity into each term:</p>
+						<p>
+							\(\dfrac{\sin(A - B)}{\cos A \cos B} = \dfrac{\sin A \cos B - \cos
+							A \sin B}{\cos A \cos B} = \dfrac{\sin A \cos B}{\cos A \cos B} -
+							\dfrac{\cos A \sin B}{\cos A \cos B} = \tan A - \tan B\)
+						</p>
+						<p>
+							\(\dfrac{\sin(B - C)}{\cos B \cos C} = \dfrac{\sin B \cos C - \cos
+							B \sin C}{\cos B \cos C} = \dfrac{\sin B \cos C}{\cos B \cos C} -
+							\dfrac{\cos B \sin C}{\cos B \cos C} = \tan B - \tan C\)
+						</p>
+						<p>
+							\(\dfrac{\sin(C - A)}{\cos C \cos A} = \dfrac{\sin C \cos A - \cos
+							C \sin A}{\cos C \cos A} = \dfrac{\sin C \cos A}{\cos C \cos A} -
+							\dfrac{\cos C \sin A}{\cos C \cos A} = \tan C - \tan A\)
+						</p>
+						<p>3. Combine the terms:</p>
+						<p>\((\tan A - \tan B) + (\tan B - \tan C) + (\tan C - \tan A)\)</p>
+						<p>4. Simplify the expression:</p>
+						<p>\(\tan A - \tan B + \tan B - \tan C + \tan C - \tan A = 0\)</p>
+						<p>Thus, we have proved that:</p>
+						<p>
+							\(\dfrac{\sin(A - B)}{\cos A \cos B} + \dfrac{\sin(B - C)}{\cos B
+							\cos C} + \dfrac{\sin(C - A)}{\cos C \cos A} = 0\)
+						</p>
+					</div>
+				</div>
+				<!-- End Question 2(ii) -->
+				<!-- Start Question 2(iii) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q02iii">
+						<a href="#Q02iii">
+							<b>2 (iii).</b> Prove that \(\sin 75^\circ - \sin 15^\circ = \cos
+							105^\circ + \cos 15^\circ\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Use the known trigonometric identities:</p>
+						<p>\(\sin 75^\circ = \cos 15^\circ\)</p>
+						<p>\(\cos 105^\circ = -\sin 15^\circ\)</p>
+						<p>2. Substitute these into the equation:</p>
+						<p>
+							\(\sin 75^\circ - \sin 15^\circ = \cos 15^\circ - \sin 15^\circ\)
+						</p>
+						<p>
+							\(\cos 105^\circ + \cos 15^\circ = -\sin 15^\circ + \cos
+							15^\circ\)
+						</p>
+						<p>3. Combine like terms:</p>
+						<p>
+							\(\cos 15^\circ - \sin 15^\circ = \cos 15^\circ - \sin 15^\circ\)
+						</p>
+						<p>Thus, we have proved that:</p>
+						<p>
+							\(\sin 75^\circ - \sin 15^\circ = \cos 105^\circ + \cos 15^\circ\)
+						</p>
+					</div>
+				</div>
+				<!-- End Question 2(iii) -->
+				<!-- Start Question 2(iv) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q02iv">
+						<a href="#Q02iv">
+							<b>2 (iv).</b> Prove that \(\cos(a + \beta) \cos \gamma -
+							\cos(\beta + \gamma) \cos a = \sin \beta \sin(\gamma - a)\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>Starting with the left-hand side (LHS):</p>
+						<p>\(\cos(a + \beta) \cos \gamma - \cos(\beta + \gamma) \cos a\)</p>
+						<p>Expanding the left-hand side (LHS):</p>
+						<p>
+							\(\cos \gamma (\cos a \cos \beta - \sin a \sin \beta) - \cos a
+							(\cos \beta \cos \gamma - \sin \beta \sin \gamma)\)
+						</p>
+						<p>Using distributive property:</p>
+						<p>
+							\(\cos a \cos \beta \cos \gamma - \sin a \sin \beta \cos \gamma -
+							\cos a \cos \beta \cos \gamma + \cos a \sin \beta \sin \gamma\)
+						</p>
+						<p>Combine like terms:</p>
+						<p>
+							= \(-\sin a \sin \beta \cos \gamma + \cos a \sin \beta \sin
+							\gamma\)
+						</p>
+						<p>Factor out \(\sin \beta\):</p>
+						<p>= \(\sin \beta (\cos a \sin \gamma - \sin a \cos \gamma)\)</p>
+						<p>
+							Using the identity \(\sin(x - y) = \sin x \cos y - \cos x \sin
+							y\):
+						</p>
+						<p>= \(\sin \beta \sin (\gamma - a)\)</p>
+						<p>Thus, we have proved that:</p>
+						<p>
+							\(\cos(a + \beta) \cos \gamma - \cos(\beta + \gamma) \cos a = \sin
+							\beta \sin(\gamma - a)\)
+						</p>
+					</div>
+				</div>
+				<!-- End Question 2(iv) -->
+				<!-- Start Question 2(v) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q02v">
+						<a href="#Q02v">
+							<b>2 (v).</b> Prove that \(\sin(n+1)A \sin(n+2)A + \cos(n+1)A
+							\cos(n+2)A = \cos A\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Let \( x = (n+1)A \) and \( y = (n+2)A \).</p>
+						<p>2. The left-hand side (LHS) is:</p>
+						<p>\(\sin x \sin y + \cos x \cos y\)</p>
+						<p>3. Use the trigonometric identity:</p>
+						<p>\(\sin x \sin y + \cos x \cos y = \cos(x - y)\)</p>
+						<p>4. Substitute \( x \) and \( y \) back:</p>
+						<p>\(\cos[(n+1)A - (n+2)A]\)</p>
+						<p>5. Simplify the expression:</p>
+						<p>
+							\(\cos[(n+1)A - (n+2)A] = \cos[nA + A - (nA + 2A)] = \cos[-A] =
+							\cos A\)
+						</p>
+						<p>Thus, we have proved that:</p>
+						<p>\(\sin(n+1)A \sin(n+2)A + \cos(n+1)A \cos(n+2)A = \cos A\)</p>
+					</div>
+				</div>
+				<!-- End Question 2(v) -->
+				<!-- Start Question 3 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q03">
+						<a href="#Q03">
+							<b>3.</b> If \(\tan A = \dfrac{\sqrt{3}}{4 - \sqrt{3}}\) and
+							\(\tan B = \dfrac{\sqrt{3}}{4 + \sqrt{3}}\), prove that \(\tan(A -
+							B) = 0.375\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Use the tangent subtraction formula:</p>
+						<p>\(\tan(A - B) = \dfrac{\tan A - \tan B}{1 + \tan A \tan B}\)</p>
+						<p>2. Substitute \(\tan A\) and \(\tan B\):</p>
+						<p>
+							\(\tan(A - B) = \dfrac{\dfrac{\sqrt{3}}{4 - \sqrt{3}} -
+							\dfrac{\sqrt{3}}{4 + \sqrt{3}}}{1 + \dfrac{\sqrt{3}}{4 - \sqrt{3}}
+							\cdot \dfrac{\sqrt{3}}{4 + \sqrt{3}}}\)
+						</p>
+						<p>3. Simplify the numerator:</p>
+						<p>
+							\(\dfrac{\sqrt{3}}{4 - \sqrt{3}} - \dfrac{\sqrt{3}}{4 +
+							\sqrt{3}}\)
+						</p>
+						<p>
+							= \(\dfrac{\sqrt{3}(4 + \sqrt{3}) - \sqrt{3}(4 - \sqrt{3})}{(4 -
+							\sqrt{3})(4 + \sqrt{3})}\)
+						</p>
+						<p>= \(\dfrac{\sqrt{3}(4 + \sqrt{3} - 4 + \sqrt{3})}{16 - 3}\)</p>
+						<p>= \(\dfrac{\sqrt{3}(2\sqrt{3})}{13}\)</p>
+						<p>= \(\dfrac{2 \cdot 3}{13}\)</p>
+						<p>= \(\dfrac{6}{13}\)</p>
+						<p>4. Simplify the denominator:</p>
+						<p>
+							= \(1 + \dfrac{\sqrt{3}}{4 - \sqrt{3}} \cdot \dfrac{\sqrt{3}}{4 +
+							\sqrt{3}}\)
+						</p>
+						<p>= \(1 + \dfrac{3}{(4 - \sqrt{3})(4 + \sqrt{3})}\)</p>
+						<p>= \(1 + \dfrac{3}{13}\)</p>
+						<p>= \(1 + \dfrac{3}{13}\)</p>
+						<p>= \(\dfrac{16}{13}\)</p>
+						<p>5. Combine the simplified numerator and denominator:</p>
+						<p>= \(\dfrac{\dfrac{6}{13}}{\dfrac{16}{13}}\)</p>
+						<p>= \(\dfrac{6}{16}\)</p>
+						<p>= \(\dfrac{3}{8}\)</p>
+						<p>= \(0.375\)</p>
+						<p>Thus, we have proved that:</p>
+						<p>\(\tan(A - B) = 0.375\)</p>
+					</div>
+				</div>
+				<!-- End Question 3 -->
+				<!-- Start Question 4(i) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q04i">
+						<a href="#Q04i">
+							<b>4 (i).</b> If \(\tan A = \dfrac{n}{n+1}\) and \(\tan B =
+							\dfrac{1}{2n+1}\), find \(\tan(A + B)\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To find the given identity, we proceed as follows:</p>
+						<p>1. Use the tangent addition formula:</p>
+						<p>\(\tan(A + B) = \dfrac{\tan A + \tan B}{1 - \tan A \tan B}\)</p>
+						<p>2. Substitute \(\tan A\) and \(\tan B\):</p>
+						<p>
+							\(\tan(A + B) = \dfrac{\dfrac{n}{n+1} + \dfrac{1}{2n+1}}{1 -
+							\dfrac{n}{n+1} \cdot \dfrac{1}{2n+1}}\)
+						</p>
+						<p>3. Simplify the numerator:</p>
+						<p>\(\dfrac{n}{n+1} + \dfrac{1}{2n+1}\)</p>
+						<p>= \(\dfrac{n(2n+1) + (n+1)}{(n+1)(2n+1)}\)</p>
+						<p>= \(\dfrac{2n^2 + n + n + 1}{(n+1)(2n+1)}\)</p>
+						<p>= \(\dfrac{2n^2 + 2n + 1}{(n+1)(2n+1)}\)</p>
+						<p>4. Simplify the denominator:</p>
+						<p>= \(1 - \dfrac{n}{(n+1)(2n+1)}\)</p>
+						<p>= \(\dfrac{(n+1)(2n+1) - n}{(n+1)(2n+1)}\)</p>
+						<p>= \(\dfrac{2n^2 + n + 2n + 1 - n}{(n+1)(2n+1)}\)</p>
+						<p>= \(\dfrac{2n^2 + 2n + 1}{(n+1)(2n+1)}\)</p>
+						<p>5. Combine the simplified numerator and denominator:</p>
+						<p>
+							= \(\dfrac{\dfrac{2n^2 + 2n + 1}{(n+1)(2n+1)}}{\dfrac{2n^2 + 2n +
+							1}{(n+1)(2n+1)}}\)
+						</p>
+						<p>= \(1\)</p>
+						<p>Thus, we have found that:</p>
+						<p>\(\tan(A + B) = 1\)</p>
+					</div>
+				</div>
+				<!-- End Question 4(i) -->
+				<!-- Start Question 4(ii) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q04ii">
+						<a href="#Q04ii">
+							<b>4 (ii).</b> If \(\tan \alpha = \dfrac{5}{6}\) and \(\tan \beta
+							= \dfrac{1}{11}\), prove that \(\alpha + \beta = \dfrac{\pi}{4}\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Use the tangent addition formula:</p>
+						<p>
+							\(\tan(\alpha + \beta) = \dfrac{\tan \alpha + \tan \beta}{1 - \tan
+							\alpha \tan \beta}\)
+						</p>
+						<p>2. Substitute \(\tan \alpha\) and \(\tan \beta\):</p>
+						<p>
+							\(\tan(\alpha + \beta) = \dfrac{\dfrac{5}{6} + \dfrac{1}{11}}{1 -
+							\dfrac{5}{6} \cdot \dfrac{1}{11}}\)
+						</p>
+						<p>3. Simplify the numerator:</p>
+						<p>\(\dfrac{5}{6} + \dfrac{1}{11}\)</p>
+						<p>= \(\dfrac{5 \cdot 11 + 1 \cdot 6}{6 \cdot 11}\)</p>
+						<p>= \(\dfrac{55 + 6}{66}\)</p>
+						<p>= \(\dfrac{61}{66}\)</p>
+						<p>4. Simplify the denominator:</p>
+						<p>= \(1 - \dfrac{5}{6} \cdot \dfrac{1}{11}\)</p>
+						<p>= \(\dfrac{66}{66} - \dfrac{5}{66}\)</p>
+						<p>= \(\dfrac{61}{66}\)</p>
+						<p>5. Combine the simplified numerator and denominator:</p>
+						<p>= \(\dfrac{\dfrac{61}{66}}{\dfrac{61}{66}}\)</p>
+						<p>= \(1\)</p>
+						<p>We know that:</p>
+						<p>\(\tan \dfrac{\pi}{4} = 1\)</p>
+						<p>Therefore:</p>
+						<p>\(\alpha + \beta = \dfrac{\pi}{4}\)</p>
+						<p>Thus, we have proved that:</p>
+						<p>\(\alpha + \beta = \dfrac{\pi}{4}\)</p>
+					</div>
+				</div>
+				<!-- End Question 4(ii) -->
+			</div>
+			<!-- End Subjective -->
+			<h4>OBJECTIVE</h4>
+			<!-- Start Objective -->
+			<div class="accordion">
+				<!-- Start Question 1 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q1">
+						<a href="#">
+							<b>1.</b> If 3sinθ + 5cosθ = 5 then the value of 5sinθ - 3cosθ is
+							equal to
+							<p>
+								(A) 5&nbsp;&nbsp; (B) 3&nbsp;&nbsp; (C) 4&nbsp;&nbsp; (D) none
+								of these
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							To solve for the value of \(5 \sin \theta - 3 \cos \theta\), given
+							that \(3 \sin \theta + 5 \cos \theta = 5\), we can use
+							trigonometric identities and algebraic manipulations:
+						</p>
+						<p>1. Given: \(3 \sin \theta + 5 \cos \theta = 5\)</p>
+						<p>
+							2. Let \(A = 3 \sin \theta + 5 \cos \theta\) and \(B = 5 \sin
+							\theta - 3 \cos \theta\).
+						</p>
+						<p>
+							3. We need to find the value of \(B\). Let's consider the
+							expression for \(B\):
+							<br />
+							\(B = 5 \sin \theta - 3 \cos \theta\)
+						</p>
+						<p>
+							4. Square both \(A\) and \(B\) to utilize their sum of squares:
+							<br />
+							\(A^2 + B^2 = (3 \sin \theta + 5 \cos \theta)^2 + (5 \sin \theta -
+							3 \cos \theta)^2\)
+						</p>
+						<p>
+							5. Expanding the squared terms, we get:
+							<br />
+							\(A^2 + B^2 = (3 \sin \theta + 5 \cos \theta)^2 + (5 \sin \theta -
+							3 \cos \theta)^2\)
+							<br />
+							\(A^2 + B^2 = (9 \sin^2 \theta + 30 \sin \theta \cos \theta + 25
+							\cos^2 \theta) + (25 \sin^2 \theta - 30 \sin \theta \cos \theta +
+							9 \cos^2 \theta)\)
+						</p>
+						<p>
+							6. Simplifying, we have:
+							<br />
+							\(A^2 + B^2 = 9 \sin^2 \theta + 25 \cos^2 \theta + 25 \sin^2
+							\theta + 9 \cos^2 \theta\)
+							<br />
+							\(A^2 + B^2 = (9 + 25) \sin^2 \theta + (25 + 9) \cos^2 \theta\)
+							<br />
+							\(A^2 + B^2 = 34 (\sin^2 \theta + \cos^2 \theta)\)
+						</p>
+						<p>
+							7. Using the Pythagorean identity \(\sin^2 \theta + \cos^2 \theta
+							= 1\):
+							<br />
+							\(A^2 + B^2 = 34\)
+						</p>
+						<p>
+							8. Given \(A = 5\), we find \(A^2\):
+							<br />
+							\(5^2 = 25\)
+							<br />
+							Therefore, \(A^2 = 25\).
+						</p>
+						<p>
+							9. Substitute \(A^2 = 25\) into the equation \(A^2 + B^2 = 34\):
+							<br />
+							\(25 + B^2 = 34\)
+							<br />
+							\(B^2 = 34 - 25\)
+							<br />
+							\(B^2 = 9\)
+							<br />
+							\(B = \pm 3\)
+						</p>
+						<p>
+							Therefore, the value of \(5 \sin \theta - 3 \cos \theta\) is
+							\(3\).
+						</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 1 -->
+			</div>
+			<!-- End Objective -->
+		</div>
+	</body>
+</html>
