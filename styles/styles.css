@@ -59,6 +59,7 @@ h4 {
 	display: flex;
 	align-items: center;
 	gap: 30px;
+	position: relative; /* Add relative positioning to navbar-icons */
 }
 
 .navbar-icons .nav-icon {
@@ -70,6 +71,22 @@ h4 {
 	flex-direction: column; /* Ensure the text is below the icon */
 	border-radius: 10px;
 	background-color: #fff;
+	position: relative; /* Add relative positioning to nav-icon */
+}
+
+.navbar-icons .nav-icon::after {
+	content: '';
+	position: absolute;
+	top: 50%; /* Position the line vertically centered */
+	right: -15px; /* Adjust position to place the line between items */
+	width: 1px;
+	height: 40px;
+	background-color: black;
+	transform: translateY(-50%); /* Center the line vertically */
+}
+
+.navbar-icons .nav-icon:last-child::after {
+	display: none; /* Remove the line after the last item */
 }
 
 .navbar-icons .nav-icon img {
