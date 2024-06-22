@@ -598,100 +598,380 @@
 					</div>
 				</div>
 				<!-- End Question 5(ii) -->
-			</div>
-			<!-- End Subjective -->
-			<h4>OBJECTIVE</h4>
-			<!-- Start Objective -->
-			<div class="accordion">
-				<!-- Start Question 1 -->
+				<!-- Start Question 5(iii) -->
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q1">
-						<a href="#">
-							<b>1.</b> If 3sinθ + 5cosθ = 5 then the value of 5sinθ - 3cosθ is
-							equal to
-							<p>
-								(A) 5&nbsp;&nbsp; (B) 3&nbsp;&nbsp; (C) 4&nbsp;&nbsp; (D) none
-								of these
-							</p>
+					<button class="accordion-button" id="Q05iii">
+						<a href="#Q05iii">
+							<b>5 (iii).</b> Prove that \(1 + \tan A \tan \dfrac{A}{2} = \tan A
+							\cot \dfrac{A}{2} - 1 = \sec A\).
 						</a>
 					</button>
 					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Given expression to prove:</p>
 						<p>
-							To solve for the value of \(5 \sin \theta - 3 \cos \theta\), given
-							that \(3 \sin \theta + 5 \cos \theta = 5\), we can use
-							trigonometric identities and algebraic manipulations:
+							\(1 + \tan A \tan \dfrac{A}{2} = \tan A \cot \dfrac{A}{2} - 1\)
 						</p>
-						<p>1. Given: \(3 \sin \theta + 5 \cos \theta = 5\)</p>
+						<p>2. We know the identity for tangent subtraction:</p>
 						<p>
-							2. Let \(A = 3 \sin \theta + 5 \cos \theta\) and \(B = 5 \sin
-							\theta - 3 \cos \theta\).
-						</p>
-						<p>
-							3. We need to find the value of \(B\). Let's consider the
-							expression for \(B\):
-							<br />
-							\(B = 5 \sin \theta - 3 \cos \theta\)
+							\(\tan \left(A - \dfrac{A}{2}\right) = \dfrac{\tan A - \tan
+							\dfrac{A}{2}}{1 + \tan A \tan \dfrac{A}{2}}\)
 						</p>
 						<p>
-							4. Square both \(A\) and \(B\) to utilize their sum of squares:
-							<br />
-							\(A^2 + B^2 = (3 \sin \theta + 5 \cos \theta)^2 + (5 \sin \theta -
-							3 \cos \theta)^2\)
+							3. Setting \(\theta = \dfrac{A}{2}\), rewrite the given
+							expression:
 						</p>
 						<p>
-							5. Expanding the squared terms, we get:
-							<br />
-							\(A^2 + B^2 = (3 \sin \theta + 5 \cos \theta)^2 + (5 \sin \theta -
-							3 \cos \theta)^2\)
-							<br />
-							\(A^2 + B^2 = (9 \sin^2 \theta + 30 \sin \theta \cos \theta + 25
-							\cos^2 \theta) + (25 \sin^2 \theta - 30 \sin \theta \cos \theta +
-							9 \cos^2 \theta)\)
+							\(1 + \tan A \tan \theta = \dfrac{\tan A - \tan \theta}{\tan (A -
+							\theta)}\)
 						</p>
+						<p>4. Substitute \(\theta = \dfrac{A}{2}\):</p>
 						<p>
-							6. Simplifying, we have:
-							<br />
-							\(A^2 + B^2 = 9 \sin^2 \theta + 25 \cos^2 \theta + 25 \sin^2
-							\theta + 9 \cos^2 \theta\)
-							<br />
-							\(A^2 + B^2 = (9 + 25) \sin^2 \theta + (25 + 9) \cos^2 \theta\)
-							<br />
-							\(A^2 + B^2 = 34 (\sin^2 \theta + \cos^2 \theta)\)
+							\(1 + \tan A \tan \dfrac{A}{2} = \dfrac{\tan A - \tan
+							\dfrac{A}{2}}{\tan \dfrac{A}{2}}\)
 						</p>
+						<p>5. Simplify:</p>
 						<p>
-							7. Using the Pythagorean identity \(\sin^2 \theta + \cos^2 \theta
-							= 1\):
-							<br />
-							\(A^2 + B^2 = 34\)
+							\(1 + \tan A \tan \dfrac{A}{2} = \tan A \cot \dfrac{A}{2} - 1\)
 						</p>
+						<p>Hence proved first equality.</p>
+						<p>6. Using the double-angle formula for tangent:</p>
+						<p>\(\tan 2A = \dfrac{2 \tan A}{1 - \tan^2 A}\)</p>
+						<p>7. Rewrite the given expression:</p>
 						<p>
-							8. Given \(A = 5\), we find \(A^2\):
-							<br />
-							\(5^2 = 25\)
-							<br />
-							Therefore, \(A^2 = 25\).
+							\(1 + \tan A \tan \left(\dfrac{A}{2}\right) = 1 + \left(\dfrac{2
+							\tan \left(\dfrac{A}{2}\right)}{1 - \tan^2
+							\left(\dfrac{A}{2}\right)}\right) \cdot \tan
+							\left(\dfrac{A}{2}\right)\)
 						</p>
+						<p>8. Simplify:</p>
 						<p>
-							9. Substitute \(A^2 = 25\) into the equation \(A^2 + B^2 = 34\):
-							<br />
-							\(25 + B^2 = 34\)
-							<br />
-							\(B^2 = 34 - 25\)
-							<br />
-							\(B^2 = 9\)
-							<br />
-							\(B = \pm 3\)
+							\(\dfrac{1 - \tan^2 \left(\dfrac{A}{2}\right) + 2 \tan^2
+							\left(\dfrac{A}{2}\right)}{1 - \tan^2 \left(\dfrac{A}{2}\right)} =
+							\dfrac{1 + \tan^2 \left(\dfrac{A}{2}\right)}{1 - \tan^2
+							\left(\dfrac{A}{2}\right)}\)
 						</p>
+						<p>9. Use the Pythagorean identity for secant and tangent:</p>
 						<p>
-							Therefore, the value of \(5 \sin \theta - 3 \cos \theta\) is
-							\(3\).
+							\(\sec^2 \left(\dfrac{A}{2}\right) = 1 + \tan^2
+							\left(\dfrac{A}{2}\right)\)
 						</p>
-						<p>Ans = B</p>
+						<p>10. Rewrite the expression:</p>
+						<p>
+							\(\dfrac{\sec^2 \left(\dfrac{A}{2}\right)}{\cos^2
+							\left(\dfrac{A}{2}\right) - \sin^2 \left(\dfrac{A}{2}\right)} =
+							\sec A\)
+						</p>
+						<p>11. Simplify the right-hand side:</p>
+						<p>
+							\(\dfrac{\sec^2 \left(\dfrac{A}{2}\right)}{\sec^2
+							\left(\dfrac{A}{2}\right) \cos A} = \sec A\)
+						</p>
+						<p>12. Therefore:</p>
+						<p>\(\sec A = \sec A\)</p>
+						<p>Hence proved the given identity.</p>
 					</div>
 				</div>
-				<!-- End Question 1 -->
+				<!-- End Question 5(iii) -->
+				<!-- Start Question 6 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q06">
+						<a href="#Q06">
+							<b>6.</b> If \(0 < A, B < 90^\circ\), \(\cos A = \dfrac{5}{13}\)
+							and \(\sin B = \dfrac{4}{5}\), find \(\sin (A+B)\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To find the given identity, we proceed as follows:</p>
+						<p>1. Use the angle addition formula for sine:</p>
+						<p>\(\sin (A + B) = \sin A \cos B + \cos A \sin B\)</p>
+						<p>2. Calculate \(\sin A\) from \(\cos A\):</p>
+						<p>
+							\(\cos A = \dfrac{5}{13} \implies \sin A = \sqrt{1 - \cos^2 A} =
+							\sqrt{1 - \left(\dfrac{5}{13}\right)^2} = \sqrt{1 -
+							\dfrac{25}{169}} = \sqrt{\dfrac{144}{169}} = \dfrac{12}{13}\)
+						</p>
+						<p>3. Calculate \(\cos B\) from \(\sin B\):</p>
+						<p>
+							\(\sin B = \dfrac{4}{5} \implies \cos B = \sqrt{1 - \sin^2 B} =
+							\sqrt{1 - \left(\dfrac{4}{5}\right)^2} = \sqrt{1 - \dfrac{16}{25}}
+							= \sqrt{\dfrac{9}{25}} = \dfrac{3}{5}\)
+						</p>
+						<p>
+							4. Substitute the values of \(\sin A\), \(\cos B\), \(\cos A\),
+							and \(\sin B\) into the formula:
+						</p>
+						<p>
+							\(\sin (A + B) = \dfrac{12}{13} \cdot \dfrac{3}{5} + \dfrac{5}{13}
+							\cdot \dfrac{4}{5}\)
+						</p>
+						<p>5. Simplify:</p>
+						<p>
+							\(\sin (A + B) = \dfrac{12 \cdot 3}{13 \cdot 5} + \dfrac{5 \cdot
+							4}{13 \cdot 5} = \dfrac{36}{65} + \dfrac{20}{65} =
+							\dfrac{56}{65}\)
+						</p>
+						<p>Thus, we have found that:</p>
+						<p>\(\sin (A + B) = \dfrac{56}{65}\)</p>
+					</div>
+				</div>
+				<!-- End Question 6 -->
+				<!-- Start Question 7 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q07">
+						<a href="#Q07">
+							<b>7.</b> Find the value of \(\sin^2 \left(67
+							\dfrac{1}{2}^\circ\right) - \sin^2 \left(22
+							\dfrac{1}{2}^\circ\right)\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To find the given identity, we proceed as follows:</p>
+						<p>1. Start with the given expression:</p>
+						<p>
+							\(\sin^2 \left(67 \dfrac{1}{2}^\circ\right) - \sin^2 \left(22
+							\dfrac{1}{2}^\circ\right)\)
+						</p>
+						<p>2. Use the identity \(\sin (90^\circ - x) = \cos x\):</p>
+						<p>
+							\(\sin \left(67 \dfrac{1}{2}^\circ\right) = \cos \left(22
+							\dfrac{1}{2}^\circ\right)\)
+						</p>
+						<p>3. Substitute:</p>
+						<p>
+							\(\left[\sin \left(90^\circ - 22
+							\dfrac{1}{2}^\circ\right)\right]^2 - \sin^2 \left(22
+							\dfrac{1}{2}^\circ\right) = \cos^2 \left(22
+							\dfrac{1}{2}^\circ\right) - \sin^2 \left(22
+							\dfrac{1}{2}^\circ\right)\)
+						</p>
+						<p>4. Use the Pythagorean identity:</p>
+						<p>\(\cos^2 x - \sin^2 x = \cos 2x\)</p>
+						<p>5. Therefore:</p>
+						<p>
+							\(\cos^2 \left(22 \dfrac{1}{2}^\circ\right) - \sin^2 \left(22
+							\dfrac{1}{2}^\circ\right) = \cos \left(45^\circ\right)\)
+						</p>
+						<p>6. Simplify:</p>
+						<p>\(\cos 45^\circ = \dfrac{1}{\sqrt{2}}\)</p>
+						<p>Thus, we have found that:</p>
+						<p>
+							\(\sin^2 \left(67 \dfrac{1}{2}^\circ\right) - \sin^2 \left(22
+							\dfrac{1}{2}^\circ\right) = \dfrac{1}{\sqrt{2}}\)
+						</p>
+					</div>
+				</div>
+				<!-- End Question 7 -->
+				<!-- Start Question 8(i) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q08i">
+						<a href="#Q08i">
+							<b>8 (i).</b> Prove that \(\dfrac{\cos 9^\circ + \sin
+							9^\circ}{\cos 9^\circ - \sin 9^\circ} = \cot 36^\circ\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Start with the given expression:</p>
+						<p>
+							\(\dfrac{\cos 9^\circ + \sin 9^\circ}{\cos 9^\circ - \sin
+							9^\circ}\)
+						</p>
+						<p>2. Divide numerator and denominator by \(\cos 9^\circ\):</p>
+						<p>
+							\(\dfrac{\dfrac{\cos 9^\circ + \sin 9^\circ}{\cos
+							9^\circ}}{\dfrac{\cos 9^\circ - \sin 9^\circ}{\cos 9^\circ}} =
+							\dfrac{1 + \tan 9^\circ}{1 - \tan 9^\circ}\)
+						</p>
+						<p>3. Use the tangent addition formula:</p>
+						<p>
+							\(\dfrac{1 + \tan 9^\circ}{1 - \tan 9^\circ} = \tan (45^\circ +
+							9^\circ)\)
+						</p>
+						<p>4. Simplify:</p>
+						<p>\(\tan (45^\circ + 9^\circ) = \tan 54^\circ\)</p>
+						<p>5. Use the cotangent identity:</p>
+						<p>
+							\(\tan 54^\circ = \cot (90^\circ - 54^\circ) = \cot 36^\circ\)
+						</p>
+						<p>Thus, we have proved that:</p>
+						<p>
+							\(\dfrac{\cos 9^\circ + \sin 9^\circ}{\cos 9^\circ - \sin 9^\circ}
+							= \cot 36^\circ\)
+						</p>
+					</div>
+				</div>
+				<!-- End Question 8(i) -->
+				<!-- Start Question 8(ii) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q08ii">
+						<a href="#Q08ii">
+							<b>8 (ii).</b> If \(\tan (\alpha - \beta) = \dfrac{7}{24}\) and
+							\(\tan \alpha = \dfrac{4}{3}\) where \(\alpha\) and \(\beta\) are
+							in the first quadrant, prove that \(\alpha + \beta =
+							\dfrac{\pi}{2}\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Use the identity for tangent subtraction:</p>
+						<p>
+							\(\tan (\alpha - \beta) = \dfrac{\sin (\alpha - \beta)}{\cos
+							(\alpha - \beta)} = \dfrac{7}{24}\)
+						</p>
+						<p>2. From \(\tan (\alpha - \beta) = \dfrac{7}{24}\), we get:</p>
+						<p>
+							\(\sin (\alpha - \beta) = \dfrac{7}{25} \quad \text{and} \quad
+							\cos (\alpha - \beta) = \dfrac{24}{25}\)
+						</p>
+						<p>3. Given \(\tan \alpha = \dfrac{4}{3}\), we get:</p>
+						<p>
+							\(\sin \alpha = \dfrac{4}{5} \quad \text{and} \quad \cos \alpha =
+							\dfrac{3}{5}\)
+						</p>
+						<p>
+							4. Express \(\sin (\alpha - \beta)\) and \(\cos (\alpha -
+							\beta)\):
+						</p>
+						<p>
+							\(\sin (\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha
+							\sin \beta = \dfrac{7}{25}\)
+						</p>
+						<p>
+							\(\cos (\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha
+							\sin \beta = \dfrac{24}{25}\)
+						</p>
+						<p>5. From the equations:</p>
+						<p>
+							\(\sin \alpha \cos \beta - \cos \alpha \sin \beta =
+							\dfrac{7}{25}\)
+						</p>
+						<p>
+							\(\dfrac{4}{5} \cos \beta - \dfrac{3}{5} \sin \beta =
+							\dfrac{7}{25} \quad \text{(1)}\)
+						</p>
+						<p>6. Similarly, for \(\cos (\alpha - \beta)\):</p>
+						<p>
+							\(\cos \alpha \cos \beta + \sin \alpha \sin \beta =
+							\dfrac{24}{25}\)
+						</p>
+						<p>
+							\(\dfrac{3}{5} \cos \beta + \dfrac{4}{5} \sin \beta =
+							\dfrac{24}{25} \quad \text{(2)}\)
+						</p>
+						<p>7. Multiply equation (1) by 3 and equation (2) by 4:</p>
+						<p>
+							\(\dfrac{12}{5} \cos \beta - \dfrac{9}{5} \sin \beta =
+							\dfrac{21}{25}\)
+						</p>
+						<p>
+							\(\dfrac{12}{5} \cos \beta + \dfrac{16}{5} \sin \beta =
+							\dfrac{96}{25}\)
+						</p>
+						<p>8. Subtract the first equation from the second equation:</p>
+						<p>
+							\(\left( \dfrac{12}{5} \cos \beta + \dfrac{16}{5} \sin \beta
+							\right) - \left( \dfrac{12}{5} \cos \beta - \dfrac{9}{5} \sin
+							\beta \right) = \dfrac{96}{25} - \dfrac{21}{25}\)
+						</p>
+						<p>\(\dfrac{25}{5} \sin \beta = \dfrac{75}{25}\)</p>
+						<p>\(5 \sin \beta = 3 \implies \sin \beta = \dfrac{3}{5}\)</p>
+						<p>\(\cos \beta = \dfrac{4}{5}\)</p>
+						<p>9. Therefore:</p>
+						<p>
+							\(\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha
+							\sin \beta = \dfrac{4}{5} \cdot \dfrac{4}{5} + \dfrac{3}{5} \cdot
+							\dfrac{3}{5} = 1\)
+						</p>
+						<p>\(\alpha + \beta = \dfrac{\pi}{2}\)</p>
+					</div>
+				</div>
+				<!-- End Question 8(ii) -->
+				<!-- Start Question 8(iii) -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q08iii">
+						<a href="#Q08iii">
+							<b>8 (iii).</b> Prove that \(\dfrac{\tan 69^\circ + \tan
+							66^\circ}{1 - \tan 69^\circ \tan 66^\circ} = -1\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Given expression to prove:</p>
+						<p>
+							\(\dfrac{\tan 69^\circ + \tan 66^\circ}{1 - \tan 69^\circ \tan
+							66^\circ} = -1\)
+						</p>
+						<p>2. We know the identity for tangent addition:</p>
+						<p>\(\tan(A + B) = \dfrac{\tan A + \tan B}{1 - \tan A \tan B}\)</p>
+						<p>3. Substitute \(A = 69^\circ\) and \(B = 66^\circ\):</p>
+						<p>
+							\(\dfrac{\tan 69^\circ + \tan 66^\circ}{1 - \tan 69^\circ \tan
+							66^\circ} = \tan (69^\circ + 66^\circ)\)
+						</p>
+						<p>4. Simplify:</p>
+						<p>\(\tan (69^\circ + 66^\circ) = \tan 135^\circ\)</p>
+						<p>\(\tan 135^\circ = \tan (90^\circ + 45^\circ)\)</p>
+						<p>
+							\(\tan (90^\circ + \theta) = -\cot \theta\), so \(\tan 135^\circ =
+							-\cot 45^\circ\)
+						</p>
+						<p>\(\cot 45^\circ = 1\), so \(\tan 135^\circ = -1\)</p>
+						<p>
+							Therefore, \(\dfrac{\tan 69^\circ + \tan 66^\circ}{1 - \tan
+							69^\circ \tan 66^\circ} = -1\).
+						</p>
+						<p>Hence proved.</p>
+					</div>
+				</div>
+				<!-- End Question 8(iii) -->
+				<!-- Start Question 9 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q09">
+						<a href="#Q09">
+							<b>9.</b> Prove that \(\tan 70^\circ - \tan 20^\circ = 2 \tan
+							50^\circ\).
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To prove the given identity, we proceed as follows:</p>
+						<p>1. Given expression to prove:</p>
+						<p>\(\tan 70^\circ - \tan 20^\circ = 2 \tan 50^\circ\)</p>
+						<p>2. Start with the right-hand side (RHS):</p>
+						<p>RHS = \(2 \tan 50^\circ\)</p>
+						<p>3. Use the tangent subtraction formula:</p>
+						<p>
+							\(\tan (70^\circ - 20^\circ) = \dfrac{\tan 70^\circ - \tan
+							20^\circ}{1 + \tan 70^\circ \tan 20^\circ}\)
+						</p>
+						<p>
+							4. Substitute the identity for \(\tan (70^\circ - 20^\circ)\):
+						</p>
+						<p>
+							RHS = \(2 \tan 50^\circ = 2 \dfrac{\tan 70^\circ - \tan
+							20^\circ}{1 + \tan 70^\circ \tan 20^\circ}\)
+						</p>
+						<p>
+							5. Since \(\tan (90^\circ - \theta) = \cot \theta\), substitute
+							and simplify:
+						</p>
+						<p>
+							RHS = \(2 \dfrac{\tan 70^\circ - \tan 20^\circ}{1 + \cot 20^\circ
+							\tan 20^\circ}\)
+						</p>
+						<p>6. Simplify further:</p>
+						<p>RHS = \(2 \dfrac{\tan 70^\circ - \tan 20^\circ}{1 + 1}\)</p>
+						<p>RHS = \(2 \dfrac{\tan 70^\circ - \tan 20^\circ}{2}\)</p>
+						<p>RHS = \(\tan 70^\circ - \tan 20^\circ\)</p>
+						<p>
+							Therefore, \(\tan 70^\circ - \tan 20^\circ = 2 \tan 50^\circ\).
+						</p>
+						<p>Hence proved.</p>
+					</div>
+				</div>
+				<!-- End Question 9 -->
 			</div>
-			<!-- End Objective -->
+			<!-- End Subjective -->
 		</div>
 	</body>
 </html>
