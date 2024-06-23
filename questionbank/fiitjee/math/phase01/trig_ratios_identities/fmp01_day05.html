@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panku's Desk</title>
+		<link rel="stylesheet" href="../../../../../styles/styles.css" />
+		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
+		<script src="../../../../../scripts/accordion.js" defer></script>
+		<script src="../../../../../scripts/navbar.js" defer></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		></script>
+	</head>
+	<body>
+		<nav></nav>
+		<div class="content">
+			<h2>FIITJEE MATH TRIGONOMETRIC RATIOS AND IDENTITIES : DAY 5</h2>
+			<h4>OBJECTIVE</h4>
+			<!-- Start Subjective -->
+			<div class="accordion">
+				<!-- Start Question 1 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q01">
+						<a href="#Q01">
+							<b>1.</b> If \(\tan A - \tan B = x\) and \(\cot B - \cot A = y\),
+							then \(\cot (A - B)\) is equal to
+							<p>
+								(A) \(\dfrac{1}{x} - \dfrac{1}{y}\)&nbsp;&nbsp; (B)
+								\(\dfrac{1}{x} + \dfrac{1}{y}\)&nbsp;&nbsp; (C) \(\dfrac{1}{y} -
+								\dfrac{1}{x}\)&nbsp;&nbsp; (D) none of these
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(\tan A - \tan B = x\) and \(\cot B - \cot A = y\)</p>
+						<p>
+							2. Rewrite \(\cot B - \cot A = y\) as \(\dfrac{1}{\tan B} -
+							\dfrac{1}{\tan A} = y\)
+						</p>
+						<p>
+							3. This simplifies to \(\dfrac{\tan A - \tan B}{\tan A \tan B} =
+							y\)
+						</p>
+						<p>
+							4. From \(\tan A - \tan B = x\), we have \(-x = y \tan A \tan B\)
+						</p>
+						<p>5. Therefore, \(\tan A \tan B = \dfrac{x}{y}\)</p>
+						<p>
+							6. Now, \(\tan(A - B) = \dfrac{\tan A - \tan B}{1 + \tan A \tan
+							B}\)
+						</p>
+						<p>
+							7. Substituting the values, we get \(\tan(A - B) = \dfrac{x}{1 +
+							\dfrac{x}{y}}\)
+						</p>
+						<p>8. This simplifies to \(\tan(A - B) = \dfrac{xy}{x + y}\)</p>
+						<p>9. Therefore, \(\cot(A - B) = \dfrac{x + y}{xy}\)</p>
+						<p>10. Finally, \(\cot(A - B) = \dfrac{1}{x} + \dfrac{1}{y}\)</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 1 -->
+				<!-- Start Question 2 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q02">
+						<a href="#Q02">
+							<b>2.</b> If \(\cot \alpha \cot \beta = 2\), then
+							\(\dfrac{\cos(\alpha + \beta)}{\cos(\alpha - \beta)}\) is equal to
+							<p>
+								(A) \(\dfrac{1}{3}\)&nbsp;&nbsp; (B)
+								\(\dfrac{1}{3}\)&nbsp;&nbsp; (C) \(\dfrac{1}{2}\)&nbsp;&nbsp;
+								(D) \(\dfrac{1}{2}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(\cot \alpha \cot \beta = 2\)</p>
+						<p>
+							2. We need to find \(\dfrac{\cos(\alpha + \beta)}{\cos(\alpha -
+							\beta)}\)
+						</p>
+						<p>
+							3. Using the cosine addition and subtraction formulas:
+							\[\dfrac{\cos(\alpha + \beta)}{\cos(\alpha - \beta)} = \dfrac{\cos
+							\alpha \cos \beta - \sin \alpha \sin \beta}{\cos \alpha \cos \beta
+							+ \sin \alpha \sin \beta}\]
+						</p>
+						<p>
+							4. Substitute \(\cot \alpha \cot \beta = 2\): \[\dfrac{\cot \alpha
+							\cot \beta - 1}{\cot \alpha \cot \beta + 1} = \dfrac{2 - 1}{2 +
+							1}\]
+						</p>
+						<p>5. Simplifying: \[\dfrac{1}{3}\]</p>
+						<p>Therefore, the value is \(\dfrac{1}{3}\).</p>
+						<p>Ans = A</p>
+					</div>
+				</div>
+				<!-- End Question 2 -->
+				<!-- Start Question 3 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q03">
+						<a href="#Q03">
+							<b>3.</b> \(\tan \dfrac{5\pi}{12} - \tan \dfrac{\pi}{12} -
+							\sqrt{3} \tan \dfrac{5\pi}{12} \tan \dfrac{\pi}{12}\) is equal to
+							<p>
+								(A) \(-\sqrt{3}\)&nbsp;&nbsp; (B)
+								\(\dfrac{1}{\sqrt{3}}\)&nbsp;&nbsp; (C) 1&nbsp;&nbsp; (D)
+								\(\sqrt{3}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\tan \dfrac{5\pi}{12} - \tan \dfrac{\pi}{12} -
+							\sqrt{3} \tan \dfrac{5\pi}{12} \tan \dfrac{\pi}{12}\)
+						</p>
+						<p>
+							2. Use the tangent subtraction formula: \(\tan(a - b) =
+							\dfrac{\tan a - \tan b}{1 + \tan a \tan b}\)
+						</p>
+						<p>
+							3. Let \(a = \dfrac{5\pi}{12}\) and \(b = \dfrac{\pi}{12}\):
+							\[\tan(a - b) = \tan\left(\dfrac{5\pi}{12} -
+							\dfrac{\pi}{12}\right) = \tan\left(\dfrac{4\pi}{12}\right) =
+							\tan\left(\dfrac{\pi}{3}\right) = \sqrt{3}\]
+						</p>
+						<p>
+							4. Therefore: \[\tan \dfrac{5\pi}{12} - \tan \dfrac{\pi}{12} -
+							\sqrt{3} \tan \dfrac{5\pi}{12} \tan \dfrac{\pi}{12} = \sqrt{3}\]
+						</p>
+						<p>Ans = D</p>
+					</div>
+				</div>
+				<!-- End Question 3 -->
+				<!-- Start Question 4 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q04">
+						<a href="#Q04">
+							<b>4.</b> If \(\sin A = \sin B\) and \(\cos A = \cos B\), then
+							<p>
+								(A) \(\sin \dfrac{A - B}{2} = 0\)&nbsp;&nbsp; (B) \(\sin
+								\dfrac{A + B}{2} = 0\)&nbsp;&nbsp; (C) \(\cos \dfrac{A - B}{2} =
+								0\)&nbsp;&nbsp; (D) \(\cos(A + B) = 0\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(\sin A = \sin B\) and \(\cos A = \cos B\)</p>
+						<p>2. If \(\sin A = \sin B\), then \(A = B\) or \(A = \pi - B\)</p>
+						<p>3. If \(\cos A = \cos B\), then \(A = B\) or \(A = 2\pi - B\)</p>
+						<p>4. The only common possibility is \(A = B\)</p>
+						<p>5. Therefore, \(\sin \dfrac{A - B}{2} = 0\) is true</p>
+						<p>
+							6. Checking other options: <br />(A) \(\sin \dfrac{A - B}{2} = 0\)
+							is true <br />(B) \(\sin \dfrac{A + B}{2} = \sin A \neq 0\); False
+							<br />(C) \(\cos \dfrac{A - B}{2} = \cos 0 \neq 0\); False
+							<br />(D) \(\cos(A + B) = \cos 2A \neq 0\); False
+						</p>
+						<p>Ans = A</p>
+					</div>
+				</div>
+				<!-- End Question 4 -->
+				<!-- Start Question 5 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q05">
+						<a href="#Q05">
+							<b>5.</b> \(\cos^2 48^\circ - \sin^2 12^\circ =\)
+							<p>
+								(A) \(\dfrac{\sqrt{5} - 1}{4}\)&nbsp;&nbsp; (B)
+								\(\dfrac{\sqrt{5} + 1}{8}\)&nbsp;&nbsp; (C) \(\dfrac{\sqrt{3} -
+								1}{4}\)&nbsp;&nbsp; (D) \(\dfrac{\sqrt{3} + 1}{2\sqrt{2}}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(\cos^2 48^\circ - \sin^2 12^\circ\)</p>
+						<p>
+							2. Using the identity: \(\cos^2 x - \sin^2 y = \cos(x + y) \cos(x
+							- y)\)
+						</p>
+						<p>
+							3. Therefore: \[\cos^2 48^\circ - \sin^2 12^\circ = \cos(48^\circ
+							+ 12^\circ) \cos(48^\circ - 12^\circ)\]
+						</p>
+						<p>
+							4. Simplifying: \[\cos^2 48^\circ - \sin^2 12^\circ = \cos
+							60^\circ \cos 36^\circ\]
+						</p>
+						<p>
+							5. Given: \[\cos 60^\circ = \dfrac{1}{2}, \quad \cos 36^\circ =
+							\dfrac{\sqrt{5} + 1}{4}\]
+						</p>
+						<p>
+							6. Therefore: \[\cos^2 48^\circ - \sin^2 12^\circ = \dfrac{1}{2}
+							\times \dfrac{\sqrt{5} + 1}{4} = \dfrac{\sqrt{5} + 1}{8}\]
+						</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 5 -->
+				<!-- Start Question 6 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q06">
+						<a href="#Q06">
+							<b>6.</b> \(\sin 75^\circ =\)
+							<p>
+								(A) \(\dfrac{2 - \sqrt{3}}{2}\)&nbsp;&nbsp; (B)
+								\(\dfrac{\sqrt{3} + 1}{2\sqrt{2}}\)&nbsp;&nbsp; (C)
+								\(\dfrac{\sqrt{3} - 1}{-2\sqrt{2}}\)&nbsp;&nbsp; (D)
+								\(\dfrac{\sqrt{3} - 1}{2\sqrt{2}}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(\sin 75^\circ\)</p>
+						<p>
+							2. Using the sine addition formula: \(\sin(a + b) = \sin a \cos b
+							+ \cos a \sin b\)
+						</p>
+						<p>
+							3. Let \(a = 45^\circ\) and \(b = 30^\circ\): \[\sin 75^\circ =
+							\sin(45^\circ + 30^\circ)\]
+						</p>
+						<p>
+							4. Therefore: \[\sin 75^\circ = \sin 45^\circ \cos 30^\circ + \cos
+							45^\circ \sin 30^\circ\]
+						</p>
+						<p>
+							5. Substituting the values: \[\sin 75^\circ = \dfrac{1}{\sqrt{2}}
+							\cdot \dfrac{\sqrt{3}}{2} + \dfrac{1}{\sqrt{2}} \cdot
+							\dfrac{1}{2}\]
+						</p>
+						<p>
+							6. Simplifying: \[\sin 75^\circ = \dfrac{\sqrt{3}}{2\sqrt{2}} +
+							\dfrac{1}{2\sqrt{2}} = \dfrac{\sqrt{3} + 1}{2\sqrt{2}}\]
+						</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 6 -->
+				<!-- Start Question 7 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q07">
+						<a href="#Q07">
+							<b>7.</b> \(\tan 20^\circ + \tan 40^\circ + \sqrt{3} \tan 20^\circ
+							\tan 40^\circ =\)
+							<p>
+								(A) \(\dfrac{1}{\sqrt{3}}\)&nbsp;&nbsp; (B)
+								\(\sqrt{3}\)&nbsp;&nbsp; (C)
+								\(\dfrac{-1}{\sqrt{3}}\)&nbsp;&nbsp; (D) \(-\sqrt{3}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\tan 20^\circ + \tan 40^\circ + \sqrt{3} \tan 20^\circ
+							\tan 40^\circ\)
+						</p>
+						<p>
+							2. Use the tangent addition formula: \(\tan(a + b) = \dfrac{\tan a
+							+ \tan b}{1 - \tan a \tan b}\)
+						</p>
+						<p>
+							3. Therefore: \[\tan(20^\circ + 40^\circ) = \tan 60^\circ =
+							\dfrac{\tan 20^\circ + \tan 40^\circ}{1 - \tan 20^\circ \tan
+							40^\circ}\]
+						</p>
+						<p>
+							4. Simplifying: \[\dfrac{\tan 20^\circ + \tan 40^\circ}{1 - \tan
+							20^\circ \tan 40^\circ} = \sqrt{3}\]
+						</p>
+						<p>
+							5. Therefore: \[\tan 20^\circ + \tan 40^\circ = \sqrt{3}(1 - \tan
+							20^\circ \tan 40^\circ)\]
+						</p>
+						<p>
+							6. Therefore: \[\tan 20^\circ + \tan 40^\circ + \sqrt{3} \tan
+							20^\circ \tan 40^\circ = \sqrt{3}\]
+						</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 7 -->
+				<!-- Start Question 8 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q08">
+						<a href="#Q08">
+							<b>8.</b> If \(\cos(A + B) = \alpha \cos A \cos B + \beta \sin A
+							\sin B\), then \((\alpha, \beta)\) is equal to
+							<p>
+								(A) \((-1, -1)\)&nbsp;&nbsp; (B) \((-1, 1)\)&nbsp;&nbsp; (C)
+								\((1, -1)\)&nbsp;&nbsp; (D) \((1, 1)\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\cos(A + B) = \alpha \cos A \cos B + \beta \sin A \sin
+							B\)
+						</p>
+						<p>
+							2. Use the identity for \(\cos(A + B)\): \(\cos(A + B) = \cos A
+							\cos B - \sin A \sin B\)
+						</p>
+						<p>
+							3. Therefore: \[\alpha \cos A \cos B + \beta \sin A \sin B = \cos
+							A \cos B - \sin A \sin B\]
+						</p>
+						<p>
+							4. By comparing coefficients, we get: \[\alpha = 1 \quad
+							\text{and} \quad \beta = -1\]
+						</p>
+						<p>5. Therefore, \((\alpha, \beta) = (1, -1)\)</p>
+						<p>Ans = C</p>
+					</div>
+				</div>
+				<!-- End Question 8 -->
+				<!-- Start Question 9 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q09">
+						<a href="#Q09">
+							<b>9.</b> If \(\cos(\alpha + \beta) = \dfrac{4}{5}\),
+							\(\sin(\alpha - \beta) = \dfrac{5}{13}\) and \(\alpha, \beta\) lie
+							between 0 and \(\dfrac{\pi}{4}\), then \(\tan 2\alpha =\)
+							<p>
+								(A) \(\dfrac{16}{63}\)&nbsp;&nbsp; (B)
+								\(\dfrac{56}{33}\)&nbsp;&nbsp; (C)
+								\(\dfrac{28}{33}\)&nbsp;&nbsp; (D) None of these
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\cos(\alpha + \beta) = \dfrac{4}{5}\), \(\sin(\alpha -
+							\beta) = \dfrac{5}{13}\)
+						</p>
+						<p>
+							2. We know \(\sin(\alpha + \beta) = \dfrac{3}{5}\) and
+							\(\cos(\alpha - \beta) = \dfrac{12}{13}\)
+						</p>
+						<p>
+							3. Using the double angle identities: \[\sin 2\alpha = \sin(\alpha
+							+ \beta + \alpha - \beta)\] \[\sin 2\alpha = \sin(\alpha + \beta)
+							\cos(\alpha - \beta) + \cos(\alpha + \beta) \sin(\alpha - \beta)\]
+						</p>
+						<p>
+							4. Substituting the values: \[\sin 2\alpha = \dfrac{3}{5} \cdot
+							\dfrac{12}{13} + \dfrac{4}{5} \cdot \dfrac{5}{13}\] \[\sin 2\alpha
+							= \dfrac{56}{65}\]
+						</p>
+						<p>
+							5. Similarly, for \(\cos 2\alpha\): \[\cos 2\alpha = \cos(\alpha +
+							\beta + \alpha - \beta)\] \[\cos 2\alpha = \cos(\alpha + \beta)
+							\cos(\alpha - \beta) - \sin(\alpha + \beta) \sin(\alpha - \beta)\]
+						</p>
+						<p>
+							6. Substituting the values: \[\cos 2\alpha = \dfrac{4}{5} \cdot
+							\dfrac{12}{13} - \dfrac{3}{5} \cdot \dfrac{5}{13}\] \[\cos 2\alpha
+							= \dfrac{33}{65}\]
+						</p>
+						<p>
+							7. Therefore: \[\tan 2\alpha = \dfrac{\sin 2\alpha}{\cos
+							2\alpha}\] \[\tan 2\alpha =
+							\dfrac{\dfrac{56}{65}}{\dfrac{33}{65}}\] \[\tan 2\alpha =
+							\dfrac{56}{33}\]
+						</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 9 -->
+				<!-- Start Question 10 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q10">
+						<a href="#Q10">
+							<b>10.</b> \(\tan 75^\circ - \cot 75^\circ =\)
+							<p>
+								(A) \(2\sqrt{3}\)&nbsp;&nbsp; (B) \(2 + \sqrt{3}\)&nbsp;&nbsp;
+								(C) \(2 - \sqrt{3}\)&nbsp;&nbsp; (D) None of these
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(\tan 75^\circ - \cot 75^\circ\)</p>
+						<p>
+							2. Using the tangent addition formula: \(\tan(a + b) = \dfrac{\tan
+							a + \tan b}{1 - \tan a \tan b}\)
+						</p>
+						<p>
+							3. Therefore: \[\tan 75^\circ = \tan(45^\circ + 30^\circ) =
+							\dfrac{\tan 45^\circ + \tan 30^\circ}{1 - \tan 45^\circ \tan
+							30^\circ}\]
+						</p>
+						<p>
+							4. Substituting the values: \[\tan 75^\circ = \dfrac{1 +
+							\dfrac{1}{\sqrt{3}}}{1 - \dfrac{1}{\sqrt{3}}} = \dfrac{\sqrt{3} +
+							1}{\sqrt{3} - 1}\]
+						</p>
+						<p>
+							5. Similarly, for \(\cot 75^\circ\): \[\cot 75^\circ =
+							\dfrac{1}{\tan 75^\circ} = \dfrac{\sqrt{3} - 1}{\sqrt{3} + 1}\]
+						</p>
+						<p>
+							6. Therefore: \[\tan 75^\circ - \cot 75^\circ = \dfrac{\sqrt{3} +
+							1}{\sqrt{3} - 1} - \dfrac{\sqrt{3} - 1}{\sqrt{3} + 1}\]
+						</p>
+						<p>
+							7. Simplifying: \[\tan 75^\circ - \cot 75^\circ = \dfrac{(\sqrt{3}
+							+ 1)^2 - (\sqrt{3} - 1)^2}{(\sqrt{3} - 1)(\sqrt{3} + 1)}\] \[=
+							\dfrac{(3 + 2\sqrt{3} + 1) - (3 - 2\sqrt{3} + 1)}{3 - 1}\] \[=
+							\dfrac{4\sqrt{3}}{2}\] \[= 2\sqrt{3}\]
+						</p>
+						<p>Ans = A</p>
+					</div>
+				</div>
+				<!-- End Question 10 -->
+				<!-- Start Question 11 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q11">
+						<a href="#Q11">
+							<b>11.</b> If \(\tan A = -\dfrac{1}{2}\) and \(\tan B =
+							-\dfrac{1}{3}\), then \(A + B =\)
+							<p>
+								(A) \(\dfrac{\pi}{4}\)&nbsp;&nbsp; (B)
+								\(\dfrac{3\pi}{4}\)&nbsp;&nbsp; (C)
+								\(\dfrac{5\pi}{4}\)&nbsp;&nbsp; (D) None of these
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\tan A = -\dfrac{1}{2}\) and \(\tan B =
+							-\dfrac{1}{3}\)
+						</p>
+						<p>
+							2. Using the tangent addition formula: \(\tan(A + B) = \dfrac{\tan
+							A + \tan B}{1 - \tan A \tan B}\)
+						</p>
+						<p>
+							3. Therefore: \[\tan(A + B) = \dfrac{-\dfrac{1}{2} -
+							\dfrac{1}{3}}{1 -
+							\left(-\dfrac{1}{2}\right)\left(-\dfrac{1}{3}\right)}\]
+						</p>
+						<p>
+							4. Simplifying: \[\tan(A + B) = \dfrac{-\dfrac{3 + 2}{6}}{1 -
+							\dfrac{1}{6}} = \dfrac{-\dfrac{5}{6}}{\dfrac{5}{6}} = -1\]
+						</p>
+						<p>5. Therefore: \(A + B = \dfrac{3\pi}{4}\)</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 11 -->
+				<!-- Start Question 12 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q12">
+						<a href="#Q12">
+							<b>12.</b> If \(A + B = 225^\circ\), then \(\dfrac{\cot A \cdot
+							\cot B}{(1 + \cot A)(1 + \cot B)} =\)
+							<p>
+								(A) 1&nbsp;&nbsp; (B) -1&nbsp;&nbsp; (C) 0&nbsp;&nbsp; (D)
+								\(\dfrac{1}{2}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(A + B = 225^\circ\)</p>
+						<p>2. \(\tan(A + B) = \tan 225^\circ = 1\)</p>
+						<p>
+							3. Therefore: \[1 = \dfrac{\tan A + \tan B}{1 - \tan A \tan B}\]
+						</p>
+						<p>4. Rearranging: \[\tan A + \tan B = 1 - \tan A \tan B\]</p>
+						<p>5. Therefore: \[\tan A + \tan B + \tan A \tan B = 1\]</p>
+						<p>
+							6. We need to find: \(\dfrac{\cot A \cdot \cot B}{(1 + \cot A)(1 +
+							\cot B)}\)
+						</p>
+						<p>
+							7. Substituting: \[\dfrac{\dfrac{1}{\tan A} \cdot \dfrac{1}{\tan
+							B}}{\left(1 + \dfrac{1}{\tan A}\right)\left(1 + \dfrac{1}{\tan
+							B}\right)}\]
+						</p>
+						<p>
+							8. Simplifying: \[\dfrac{\dfrac{1}{\tan A \tan B}}{\left(\dfrac{1
+							+ \tan A}{\tan A}\right)\left(\dfrac{1 + \tan B}{\tan B}\right)} =
+							\dfrac{1}{1 + \tan A + \tan B + \tan A \tan B} = \dfrac{1}{2}\]
+						</p>
+						<p>Ans = D</p>
+					</div>
+				</div>
+				<!-- End Question 12 -->
+				<!-- Start Question 13 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q13">
+						<a href="#Q13">
+							<b>13.</b> If \(\sin A = \dfrac{4}{5}\) and \(\cos B =
+							-\dfrac{12}{13}\), where \(A\) and \(B\) lie in first and third
+							quadrants respectively, then \(\cos(A + B) =\)
+							<p>
+								(A) \(\dfrac{56}{65}\)&nbsp;&nbsp; (B)
+								\(-\dfrac{56}{65}\)&nbsp;&nbsp; (C)
+								\(\dfrac{16}{65}\)&nbsp;&nbsp; (D) \(-\dfrac{16}{65}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\sin A = \dfrac{4}{5}\) and \(\cos B =
+							-\dfrac{12}{13}\)
+						</p>
+						<p>
+							2. Therefore: \(\cos A = \dfrac{3}{5}\) and \(\sin B =
+							-\dfrac{5}{13}\)
+						</p>
+						<p>
+							3. Using the cosine addition formula: \(\cos(A + B) = \cos A \cos
+							B - \sin A \sin B\)
+						</p>
+						<p>
+							4. Substituting the values: \[\cos(A + B) = \dfrac{3}{5} \cdot
+							-\dfrac{12}{13} - \dfrac{4}{5} \cdot -\dfrac{5}{13}\]
+						</p>
+						<p>
+							5. Simplifying: \[\cos(A + B) = -\dfrac{36}{65} + \dfrac{20}{65} =
+							-\dfrac{16}{65}\]
+						</p>
+						<p>Ans = D</p>
+					</div>
+				</div>
+				<!-- End Question 13 -->
+				<!-- Start Question 14 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q14">
+						<a href="#Q14">
+							<b>14.</b> If \(A + B = \dfrac{\pi}{4}\), then \((1 + \tan A)(1 +
+							\tan B) =\)
+							<p>
+								(A) 1&nbsp;&nbsp; (B) 2&nbsp;&nbsp; (C) \(\infty\)&nbsp;&nbsp;
+								(D) -2
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>1. Given: \(A + B = \dfrac{\pi}{4}\)</p>
+						<p>2. \(\tan(A + B) = \tan \dfrac{\pi}{4} = 1\)</p>
+						<p>
+							3. Therefore: \[1 = \dfrac{\tan A + \tan B}{1 - \tan A \tan B}\]
+						</p>
+						<p>4. Rearranging: \[\tan A + \tan B = 1 - \tan A \tan B\]</p>
+						<p>5. Therefore: \[\tan A + \tan B + \tan A \tan B = 1\]</p>
+						<p>
+							6. Adding 1 to both sides: \[1 + \tan A + \tan B + \tan A \tan B =
+							2\]
+						</p>
+						<p>7. Therefore: \[(1 + \tan A)(1 + \tan B) = 2\]</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 14 -->
+				<!-- Start Question 15 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q15">
+						<a href="#Q15">
+							<b>15.</b> The expression \(\cos^2 (A - B) + \cos^2 B - 2 \cos (A
+							- B) \cos A \cos B\) is
+							<p>
+								(A) Dependent on \(B\)&nbsp;&nbsp; (B) Dependent on \(A\) and
+								\(B\)&nbsp;&nbsp; (C) Dependent on \(A\)&nbsp;&nbsp; (D)
+								Independent of \(A\) and \(B\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\cos^2 (A - B) + \cos^2 B - 2 \cos (A - B) \cos A \cos
+							B\)
+						</p>
+						<p>
+							2. The given expression can be rewritten as: \[\cos (A - B) [ \cos
+							(A - B) - 2 \cos A \cos B ] + \cos^2 B\]
+						</p>
+						<p>
+							3. Expanding: \[\cos (A - B) (\cos A \cos B + \sin A \sin B - 2
+							\cos A \cos B) + \cos^2 B\]
+						</p>
+						<p>
+							4. Simplifying: \[\cos (A - B) (\sin A \sin B - \cos A \cos B) +
+							\cos^2 B\]
+						</p>
+						<p>
+							5. Further simplification: \[-\cos (A - B) \cos (A + B) + \cos^2
+							B\]
+						</p>
+						<p>6. Using identities: \[-(\cos^2 A - \sin^2 B) + \cos^2 B\]</p>
+						<p>
+							7. Final result: \[-\cos^2 A + \sin^2 B + \cos^2 B = -\cos^2 A + 1
+							= \sin^2 A\]
+						</p>
+						<p>8. Therefore, the expression is dependent on \(A\)</p>
+						<p>Ans = C</p>
+					</div>
+				</div>
+				<!-- End Question 15 -->
+				<!-- Start Question 16 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q16">
+						<a href="#Q16">
+							<b>16.</b> If \(\tan \alpha, \tan \beta\) are the roots of the
+							equation \(x^2 + px + q = 0\) (\(p \neq 0\)), then
+							<p>
+								(A) \(\cos(\alpha - \beta) = p - q\)&nbsp;&nbsp; (B)
+								\(\tan(\alpha + \beta) = \dfrac{p}{q - 1}\)&nbsp;&nbsp; (C)
+								\(\cos(\alpha + \beta) = 1 - q\)&nbsp;&nbsp; (D) \(\sin(\alpha +
+								\beta) = -p\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\tan \alpha, \tan \beta\) are the roots of the
+							equation \(x^2 + px + q = 0\)
+						</p>
+						<p>
+							2. Using Vieta's formulas: \[\tan \alpha + \tan \beta =
+							-\dfrac{b}{a} = -p\] \[\tan \alpha \tan \beta = \dfrac{c}{a} = q\]
+						</p>
+						<p>
+							3. Using the tangent addition formula: \[\tan(\alpha + \beta) =
+							\dfrac{\tan \alpha + \tan \beta}{1 - \tan \alpha \tan \beta}\]
+						</p>
+						<p>
+							4. Substituting the values: \[\tan(\alpha + \beta) = \dfrac{-p}{1
+							- q}\] \[\tan(\alpha + \beta) = \dfrac{p}{q - 1}\]
+						</p>
+						<p>Ans = B</p>
+					</div>
+				</div>
+				<!-- End Question 16 -->
+				<!-- Start Question 17 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q17">
+						<a href="#Q17">
+							<b>17.</b> If \(\sin A + \sin 2A = x\) and \(\cos A + \cos 2A =
+							y\), then \((x^2 + y^2)(x^2 + y^2 - 3) =\)
+							<p>
+								(A) \(2y\)&nbsp;&nbsp; (B) \(y\)&nbsp;&nbsp; (C)
+								\(3y\)&nbsp;&nbsp; (D) None of these
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\sin A + \sin 2A = x\) and \(\cos A + \cos 2A = y\)
+						</p>
+						<p>
+							2. Therefore: \(x^2 = (\sin A + \sin 2A)^2\) and \(y^2 = (\cos A +
+							\cos 2A)^2\)
+						</p>
+						<p>
+							3. Simplifying: \[x^2 = \sin^2 A + \sin^2 2A + 2 \sin A \sin 2A\]
+							\[y^2 = \cos^2 A + \cos^2 2A + 2 \cos A \cos 2A\]
+						</p>
+						<p>
+							4. Using trigonometric identities: \[x^2 + y^2 = 1 + 1 + 2(\cos A
+							\cos 2A + \sin A \sin 2A)\] \[= 2 + 2 \cos A\] \[= 2(1 + \cos A)\]
+						</p>
+						<p>
+							5. Further simplifying: \[x^2 + y^2 - 3 = 2(1 + \cos A) - 3\] \[=
+							2 \cos A - 1\]
+						</p>
+						<p>
+							6. Therefore: \[(x^2 + y^2)(x^2 + y^2 - 3) = 2(1 + \cos A)(2 \cos
+							A - 1)\] \[= 2 (2 \cos^2 A - 1 + \cos A)\] \[= 2 ( \cos 2A + \cos
+							A )\] \[= 2y\]
+						</p>
+						<p>Ans = A</p>
+					</div>
+				</div>
+				<!-- End Question 17 -->
+				<!-- Start Question 18 -->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q18">
+						<a href="#Q18">
+							<b>18.</b> \(\cos^2 76^\circ + \cos^2 16^\circ - \cos 76^\circ
+							\cos 16^\circ =\)
+							<p>
+								(A) \(-\dfrac{1}{4}\)&nbsp;&nbsp; (B)
+								\(\dfrac{1}{2}\)&nbsp;&nbsp; (C) 0&nbsp;&nbsp; (D)
+								\(\dfrac{3}{4}\)
+							</p>
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							1. Given: \(\cos^2 76^\circ + \cos^2 16^\circ - \cos 76^\circ \cos
+							16^\circ\)
+						</p>
+						<p>
+							2. Using trigonometric identities: \[\cos 76^\circ = \cos
+							(60^\circ + 16^\circ)\] \[\cos 16^\circ = \cos (60^\circ -
+							44^\circ)\]
+						</p>
+						<p>
+							3. Simplifying: \[\cos (60^\circ + 16^\circ) = \dfrac{\cos
+							60^\circ \cos 16^\circ - \sin 60^\circ \sin 16^\circ}{2}\]
+							\[\cos^2 (76^\circ) = \left(\dfrac{\cos 16^\circ}{2} -
+							\dfrac{\sqrt{3} \sin 16^\circ}{2}\right)^2 + \cos^2 16^\circ\] \[-
+							\cos 76^\circ \cos 16^\circ\]
+						</p>
+						<p>
+							4. Further simplifying: \[\dfrac{1}{4} \cos^2 16^\circ +
+							\dfrac{3}{4} \sin^2 16^\circ - \dfrac{\sqrt{3}}{2} \cos 16^\circ
+							\sin 16^\circ + \cos^2 16^\circ\] \[- \left(\dfrac{\cos
+							16^\circ}{2} - \dfrac{\sqrt{3} \sin 16^\circ}{2}\right) \cos
+							16^\circ\]
+						</p>
+						<p>
+							5. Final result: \[\dfrac{3}{4} \sin^2 76^\circ + \cos^2 76^\circ
+							\left(\dfrac{1}{4} + 1 - \dfrac{1}{2}\right)\] \[= \dfrac{3}{4}
+							\sin^2 76^\circ + \dfrac{3}{4} \cos^2 76^\circ\] \[= \dfrac{3}{4}
+							(\sin^2 76^\circ + \cos^2 76^\circ)\] \[= \dfrac{3}{4}\]
+						</p>
+						<p>Ans = D</p>
+					</div>
+				</div>
+				<!-- End Question 18 -->
+			</div>
+			<!-- End Subjective -->
+		</div>
+	</body>
+</html>
