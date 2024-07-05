@@ -305,10 +305,12 @@ h4 {
 	border-radius: 8px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .new_container ol {
 	list-style: decimal;
 	padding-left: 20px;
 }
+
 .new_container p {
 	line-height: 1.6;
 	margin-bottom: 10px;
@@ -318,7 +320,7 @@ h4 {
 	padding-left: 10px;
 	margin-left: 20px;
 	margin-bottom: 3px;
-	align: left;
+	text-align: left;
 }
 
 .visited-color a {
@@ -341,6 +343,34 @@ h4 {
 .equation {
 	text-align: left;
 	display: block;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 220px;
+	background-color: #6c757d;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%; /* Position above the text */
+	left: 50%;
+	margin-left: -110px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
 }
 
 /* Media Queries */
