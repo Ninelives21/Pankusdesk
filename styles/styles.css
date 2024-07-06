@@ -288,6 +288,19 @@ h4 {
 	padding-left: 5px;
 }
 
+ol.postulates-inner-list {
+	list-style-type: decimal;
+}
+
+ol.postulates-inner-inner-list {
+	list-style-type: decimal;
+}
+
+.postulates-inner-list li,
+.postulates-inner-inner-list li {
+	margin-left: 20px;
+}
+
 .list-indent {
 	padding-left: 10px;
 }
@@ -345,6 +358,11 @@ h4 {
 	display: block;
 }
 
+.equation-bold {
+	color: #c1121f;
+	font-weight: bold;
+}
+
 .tooltip {
 	position: relative;
 	display: inline-block;
@@ -376,7 +394,7 @@ h4 {
 .youtube-link a {
 	color: #336666;
 	text-decoration: none;
-	font-size: h5;
+	font-size: smaller;
 }
 
 .youtube-link a:visited {
