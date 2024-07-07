@@ -288,17 +288,24 @@ h4 {
 	padding-left: 5px;
 }
 
-ol.postulates-inner-list {
+.postulates-inner-list {
 	list-style-type: decimal;
+	padding-left: 20px; /* Adjust this value to control the indentation */
 }
 
-ol.postulates-inner-inner-list {
-	list-style-type: decimal;
+.postulates-inner-list > li {
+	text-indent: -20px; /* This will align the text with the numbers */
+	padding-left: 20px; /* Adjust this value to control the distance between the number and the text */
 }
 
-.postulates-inner-list li,
-.postulates-inner-inner-list li {
-	margin-left: 20px;
+.postulates-inner-inner-list {
+	list-style-type: none; /*No list style for inner list */
+	padding-left: 40px; /* Adjust this value to control the indentation of the inner list */
+	line-height: 1.6; /* Add space between lines */
+}
+
+.equation-bold {
+	font-weight: bold;
 }
 
 .list-indent {
@@ -380,13 +387,20 @@ ol.postulates-inner-inner-list {
 	position: absolute;
 	z-index: 1;
 	bottom: 125%; /* Position above the text */
-	left: 50%;
+	left: 100%;
+	right: 100%;
+	top: 100%;
 	margin-left: -110px;
 	opacity: 0;
 	transition: opacity 0.3s;
 }
 
 .tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+.tooltip .tooltiptext.visible {
 	visibility: visible;
 	opacity: 1;
 }
