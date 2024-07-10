@@ -21,7 +21,184 @@
 			<h2>FIITJEE MATH STRAIGHT LINES : DAY 1</h2>
 			<!-- Start Objective-->
 			<h4>OBJECTIVE</h4>
-			<div class="accordion"></div>
+			<div class="accordion">
+				<!-- Start Question 10-->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q10">
+						<a href="#Q10"
+							><b>4.</b> The area of the triangle with vertices \( (a,b) \), \(
+							(ar,bs) \), \( (ar^2,bs^2) \) is
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) \( |ab(r-1)(s-1)|
+							\) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) \(
+							|ab(r-1)(s-1)(s-r)| \) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							(C) \( \dfrac{1}{2} |ab(r+1)(s+1)(s-r)| \)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (D) \( \dfrac{1}{2}
+							|ab(r-1)(s-1)(s-r)| \)
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							To find the area of the triangle with vertices \( (a,b) \), \(
+							(ar,bs) \), \( (ar^2,bs^2) \), we will use the determinant formula
+							for the area of a triangle with given vertices.
+						</p>
+						<p>
+							The formula for the area of a triangle with vertices \( (x_1, y_1)
+							\), \( (x_2, y_2) \), and \( (x_3, y_3) \) is:
+						</p>
+						<p>
+							\[\text{Area} = \dfrac{1}{2} \left| x_1(y_2 - y_3) + x_2(y_3 -
+							y_1) + x_3(y_1 - y_2) \right|\]
+						</p>
+						<p>Substitute the given vertices into the formula:</p>
+						<p>
+							\[\text{Area} = \dfrac{1}{2} \left| a(bs - bs^2) + ar(bs^2 - b) +
+							ar^2(b - bs) \right|\]
+						</p>
+						<p>Simplify each term inside the absolute value:</p>
+						<p>
+							\[\dfrac{1}{2} \left| ab(s - s^2) + abr(s^2 - 1) + abr^2(1 - s)
+							\right|\]
+						</p>
+						<p>Grouping and factoring terms:</p>
+						<p>
+							\[\dfrac{1}{2} \left| ab(s - s^2) + abr(s^2 - r) + abr^2(r^2 -
+							s^2) \right|\]
+						</p>
+						<p>
+							\[\dfrac{1}{2} \left| ab(s - s^2 + rs^2 - r + r^2 - sr^2)
+							\right|\]
+						</p>
+						<p>
+							\[\dfrac{1}{2} \left| ab(s(s - 1) + r(s^2 - 1) + r^2(1 - s))
+							\right|\]
+						</p>
+						<p>
+							\[\dfrac{1}{2} \left| ab[s - s^2 + rs^2 - r + r^2 - sr^2]
+							\right|\]
+						</p>
+						<p>
+							\[\dfrac{1}{2} \left| ab[s^2(r-1) - r^2(s-1) + (s-r)] \right|\]
+						</p>
+						<p>\[\dfrac{1}{2} \left| ab(s^2 - r^2)(s - r) \right|\]</p>
+						<p>\[\dfrac{1}{2} \left| ab(s - 1)(r - 1)(s - r) \right|\]</p>
+						<p>Thus, the correct answer is (D).</p>
+						<p>Ans = D</p>
+					</div>
+				</div>
+				<!-- End Question 10-->
+				<!-- Start Question 13-->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q13">
+						<a href="#Q13"
+							><b>13.</b> If \( t_1, t_2 \), and \( t_3 \) are distinct, the
+							points \( (t_1, 2at_1 + at_1^3) \), \( (t_2, 2at_2 + at_2^3) \)
+							and \( (t_3, 2at_3 + at_3^3) \) are collinear if
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) \( t_1 t_2 t_3 = 1
+							\) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) \( t_1 + t_2 +
+							t_3 = t_1 t_2 t_3 \) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							(C) \( t_1 + t_2 + t_3 = 0 \)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (D) \( t_1 + t_2 + t_3
+							= t_1 t_2 + t_2 t_3 + t_3 t_1 \)
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							To determine the condition for collinearity of the given points \(
+							(t_1, 2at_1 + at_1^3) \), \( (t_2, 2at_2 + at_2^3) \), and \(
+							(t_3, 2at_3 + at_3^3) \), we use the fact that the points are
+							collinear if the area of the triangle formed by these points is
+							zero.
+						</p>
+						<p>
+							The formula for the area of a triangle with vertices \( (x_1, y_1)
+							\), \( (x_2, y_2) \), and \( (x_3, y_3) \) is:
+						</p>
+						<p>
+							\[\text{Area} = \dfrac{1}{2} \left| x_1(y_2 - y_3) + x_2(y_3 -
+							y_1) + x_3(y_1 - y_2) \right|\]
+						</p>
+						<p>Substituting the given points into the formula:</p>
+						<p>
+							\[\text{Area} = \dfrac{1}{2} \left| t_1(2at_2 + at_2^3 - 2at_3 -
+							at_3^3) + t_2(2at_3 + at_3^3 - 2at_1 - at_1^3) + t_3(2at_1 +
+							at_1^3 - 2at_2 - at_2^3) \right|\]
+						</p>
+						<p>Simplifying the expression inside the absolute value:</p>
+						<p>
+							\[\text{Area} = \dfrac{1}{2} \left| at_1(2t_2 + t_2^3 - 2t_3 -
+							t_3^3) + at_2(2t_3 + t_3^3 - 2t_1 - t_1^3) + at_3(2t_1 + t_1^3 -
+							2t_2 - t_2^3) \right|\]
+						</p>
+						<p>Factor out \(a\) from the terms:</p>
+						<p>
+							\[\text{Area} = \dfrac{a}{2} \left| t_1(2t_2 + t_2^3 - 2t_3 -
+							t_3^3) + t_2(2t_3 + t_3^3 - 2t_1 - t_1^3) + t_3(2t_1 + t_1^3 -
+							2t_2 - t_2^3) \right|\]
+						</p>
+						<p>Since the points are collinear, the area is zero:</p>
+						<p>
+							\[0 = t_1(2t_2 + t_2^3 - 2t_3 - t_3^3) + t_2(2t_3 + t_3^3 - 2t_1 -
+							t_1^3) + t_3(2t_1 + t_1^3 - 2t_2 - t_2^3)\]
+						</p>
+						<p>By examining the equation, we can infer that:</p>
+						<p>\[t_1 + t_2 + t_3 = t_1 t_2 + t_2 t_3 + t_3 t_1\]</p>
+						<p>Thus, the correct answer is (D).</p>
+						<p>Ans = D</p>
+					</div>
+				</div>
+				<!-- End Question 13-->
+				<!-- Start Question 14-->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q14">
+						<a href="#Q14">
+							<b>14.</b> The area of the triangle formed by the line \(x \sin
+							\alpha + y \cos \alpha = \sin 2\alpha\) and the coordinates axes
+							is <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) \(\sin 2\alpha\)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) \(\cos 2\alpha\)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (C) \(2 \sin 2\alpha\)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (D) \(2 \cos 2\alpha\)
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>
+							Given the line equation: \[ x \sin \alpha + y \cos \alpha = \sin
+							2\alpha \]
+						</p>
+						<p>
+							Rewrite it in the standard form \(ax + by + c = 0\): \[ x \sin
+							\alpha + y \cos \alpha - \sin 2\alpha = 0 \] Here, \(a = \sin
+							\alpha\), \(b = \cos \alpha\), and \(c = -\sin 2\alpha\).
+						</p>
+						<p>
+							The area \(A\) of the triangle formed by the line with the
+							coordinate axes is given by: \[ A = \dfrac{1}{2} \left|
+							\dfrac{c^2}{ab} \right| \]
+						</p>
+						<p>
+							Substitute the values of \(a\), \(b\), and \(c\): \[ A =
+							\dfrac{1}{2} \left| \dfrac{(-\sin 2\alpha)^2}{(\sin \alpha)(\cos
+							\alpha)} \right| \]
+						</p>
+						<p>
+							Simplify the expression inside the absolute value: \[ A =
+							\dfrac{1}{2} \left| \dfrac{(2 \sin \alpha \cos \alpha)^2}{(\sin
+							\alpha)(\cos \alpha)} \right| \]
+						</p>
+						<p>
+							Continue simplifying: \[ A = \dfrac{1}{2} \left| \dfrac{4 \sin^2
+							\alpha \cos^2 \alpha}{\sin \alpha \cos \alpha} \right| \] \[ A =
+							\dfrac{1}{2} \left| \dfrac{4 \sin \alpha \cos \alpha \sin \alpha
+							\cos \alpha}{\sin \alpha \cos \alpha} \right| \] \[ A =
+							\dfrac{1}{2} \left| 4 \sin \alpha \cos \alpha \right| \] \[ A = 2
+							\sin \alpha \cos \alpha \] \[ A = \sin 2\alpha \]
+						</p>
+						<p>Therefore, the correct answer is choice (A).</p>
+						<p>Ans = A</p>
+					</div>
+				</div>
+				<!-- End Question 14-->
+			</div>
 			<!-- End Objective-->
 		</div>
 	</body>
