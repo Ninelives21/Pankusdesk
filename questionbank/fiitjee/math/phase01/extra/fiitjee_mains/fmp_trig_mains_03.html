@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panku's Desk</title>
+		<link rel="stylesheet" href="../../../../../../styles/styles.css" />
+		<link rel="stylesheet" href="../../../../../../styles/style_math.css" />
+		<script src="../../../../../../scripts/accordion.js" defer></script>
+		<script src="../../../../../../scripts/navbar.js" defer></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		></script>
+	</head>
+	<body>
+		<nav></nav>
+		<div class="content">
+			<h2>FIITJEE MAINS PAPER 02 : TRIGONOMETRIC RATIOS AND IDENTITIES</h2>
+			<!-- Start Objective-->
+			<h4>OBJECTIVE</h4>
+			<div class="accordion">
+				<!-- Start Question 1-->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q01">
+						<a href="#Q01">
+							<span class="ques_number">1.</span> If \( p = \cos 55^\circ \), \(
+							q = \cos 65^\circ \), and \( r = \cos 175^\circ \), then the value
+							of \(\dfrac{1}{p} + \dfrac{1}{q} + \dfrac{r}{pq}\) is equal to:
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) 0
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) -1
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (C) 1
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (D) 2
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To solve the problem, follow these steps:</p>
+						<p>
+							1. Given values: \[ p = \cos 55^\circ \] \[ q = \cos 65^\circ \]
+							\[ r = \cos 175^\circ = \cos (180^\circ - 5^\circ) = -\cos 5^\circ
+							\]
+						</p>
+						<p>
+							2. The expression to evaluate is: \[ \dfrac{1}{p} + \dfrac{1}{q} +
+							\dfrac{r}{pq} = \dfrac{p + q + r}{pq} \]
+						</p>
+						<p>
+							3. Substitute the values: \[ \dfrac{\cos 55^\circ + \cos 65^\circ
+							- \cos 5^\circ}{\cos 55^\circ \cos 65^\circ} \]
+						</p>
+						<p>
+							4. Using the sum-to-product identities: \[ \cos 55^\circ + \cos
+							65^\circ = 2 \cos 60^\circ \cos 5^\circ = 2 \cdot \dfrac{1}{2}
+							\cos 5^\circ = \cos 5^\circ \]
+						</p>
+						<p>
+							5. Simplify the expression: \[ \dfrac{\cos 5^\circ - \cos
+							5^\circ}{\cos 55^\circ \cos 65^\circ} = \dfrac{0}{\cos 55^\circ
+							\cos 65^\circ} = 0 \]
+						</p>
+						<p>Therefore, the value is 0.</p>
+						<p>Ans = A</p>
+					</div>
+				</div>
+				<!-- End Question 1-->
+				<!-- Start Question 2-->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q02">
+						<a href="#Q02">
+							<span class="ques_number">2.</span> The sum of solutions in \( (0,
+							2\pi) \) of the equation \(\cos x \cos \left(\dfrac{\pi}{3} -
+							x\right) \cos \left(\dfrac{\pi}{3} + x\right) = \dfrac{1}{4}\) is:
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) \( 4\pi \)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) \( \pi \)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (C) \( 2\pi \)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (D) \( 3\pi \)
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To solve the problem, follow these steps:</p>
+						<p>
+							1. Given equation: \[ \cos x \cos \left(\dfrac{\pi}{3} - x\right)
+							\cos \left(\dfrac{\pi}{3} + x\right) = \dfrac{1}{4} \]
+						</p>
+						<p>
+							2. Using trigonometric identities: \[ 2 \cos A \cos B = \cos (A +
+							B) + \cos (A - B) \]
+						</p>
+						<p>
+							3. Simplifying the equation: \[ \cos x \left[2 \cos
+							\left(\dfrac{\pi}{3} - x\right) \cos \left(\dfrac{\pi}{3} +
+							x\right)\right] = \dfrac{1}{4} \] \[ \cos x \left[\cos
+							\left(\dfrac{\pi}{3} - x + \dfrac{\pi}{3} + x\right) + \cos
+							\left(\dfrac{\pi}{3} - x - \dfrac{\pi}{3} + x\right)\right] =
+							\dfrac{1}{2} \]
+						</p>
+						<p>
+							4. Further simplification: \[ \cos x \left[\cos
+							\left(\dfrac{2\pi}{3}\right) + \cos (-2x)\right] = \dfrac{1}{2} \]
+							\[ \cos x \left[-\cos 60^\circ + \cos 2x\right] = \dfrac{1}{2} \]
+							\[ \cos x \left[\cos 2x - \dfrac{1}{2}\right] = \dfrac{1}{2} \]
+						</p>
+						<p>
+							5. Solving the equation: \[ 2 \cos x \cos 2x - \cos x = 1 \] \[
+							\cos x + \cos 3x - \cos x = 1 \] \[ \cos 3x = 1 \] \[ 3x = 0,
+							2\pi, 4\pi, 6\pi, \ldots \] \[ x = 0, \dfrac{2\pi}{3}, 4\pi,
+							\dfrac{\pi}{2}, 2\pi \]
+						</p>
+						<p>
+							6. Finding the sum of solutions: \[ \text{Sum} = 0 +
+							\dfrac{2\pi}{3} + \dfrac{\pi}{2} + 2\pi = 4\pi \]
+						</p>
+						<p>Therefore, the value is \( 4\pi \).</p>
+						<p>Ans = A</p>
+					</div>
+				</div>
+				<!-- End Question 2-->
+				<!-- Start Question 3-->
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q03">
+						<a href="#Q03">
+							<span class="ques_number">3.</span> Let \( f(x) = \sin \left(
+							\dfrac{\pi}{6} \sin \left( \dfrac{\pi}{2} \sin x \right) \right)
+							\) for all \( x \in \mathbb{R} \). Then the range of \( f(x) \)
+							is: <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A) \((-0.25,
+							0.5)\) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (B) \((-1, 1)\)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (C) \([-0.5, 0.5]\)
+							<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (D) \((-0.25, 0)\)
+						</a>
+					</button>
+					<div class="accordion-content ans-align">
+						<p>To solve the problem, follow these steps:</p>
+						<p>
+							1. Understanding the innermost function: \[ \sin x \text{ ranges
+							from } -1 \text{ to } 1 \text{ for all real } x. \]
+						</p>
+						<p>
+							2. Applying the next trigonometric function: \[ \dfrac{\pi}{2}
+							\sin x \text{ ranges from } -\dfrac{\pi}{2} \text{ to }
+							\dfrac{\pi}{2}. \] Therefore, \(\sin \left( \dfrac{\pi}{2} \sin x
+							\right) \text{ ranges from } \sin(-\dfrac{\pi}{2}) \text{ to }
+							\sin(\dfrac{\pi}{2}).\) \[ \sin \left( \dfrac{\pi}{2} \sin x
+							\right) \text{ ranges from } -1 \text{ to } 1. \]
+						</p>
+						<p>
+							3. Applying the next trigonometric function: \[ \dfrac{\pi}{6}
+							\sin \left( \dfrac{\pi}{2} \sin x \right) \text{ ranges from }
+							\dfrac{\pi}{6}(-1) \text{ to } \dfrac{\pi}{6}(1). \] \[
+							\dfrac{\pi}{6} \sin \left( \dfrac{\pi}{2} \sin x \right) \text{
+							ranges from } -\dfrac{\pi}{6} \text{ to } \dfrac{\pi}{6}. \]
+						</p>
+						<p>
+							4. Applying the outermost sine function: \[ \sin \left(
+							\dfrac{\pi}{6} \sin \left( \dfrac{\pi}{2} \sin x \right) \right)
+							\text{ ranges from } \sin(-\dfrac{\pi}{6}) \text{ to }
+							\sin(\dfrac{\pi}{6}). \] \[ \sin(-\dfrac{\pi}{6}) = -\dfrac{1}{2}
+							\text{ and } \sin(\dfrac{\pi}{6}) = \dfrac{1}{2}. \]
+						</p>
+						<p>Therefore, the range of \( f(x) \) is: \[ [-0.5, 0.5] \]</p>
+						<p>Ans = C</p>
+					</div>
+				</div>
+				<!-- End Question 3-->
+			</div>
+			<!-- End Objective-->
+			<h4>SUBJECTIVE (NUMERICAL TYPE)</h4>
+			<!-- Start Subjective-->
+			<div class="accordion"></div>
+			<!-- End Subjective-->
+		</div>
+	</body>
+</html>
