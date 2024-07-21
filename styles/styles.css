@@ -447,6 +447,17 @@ li.flex-item img {
 	font-weight: bold;
 }
 
+.image-container {
+	display: flex;
+	justify-content: last baseline;
+	align-items: center;
+}
+.image-container img {
+	width: 25%;
+	height: auto;
+	margin: 0 5px; /* Adjust the margin value to reduce the gap */
+}
+
 /* Media Queries */
 @media only screen and (max-width: 768px) {
 	/* Adjust styles for tablets */
