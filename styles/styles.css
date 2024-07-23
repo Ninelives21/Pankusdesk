@@ -458,6 +458,27 @@ li.flex-item img {
 	margin: 0 5px; /* Adjust the margin value to reduce the gap */
 }
 
+.list_title {
+	font-weight: bold;
+	font-size: large;
+	color: #519e8a;
+	padding: 15px;
+
+	width: 1px;
+	height: 40px;
+}
+
+navbar-icons .nav-icon::after {
+	content: '';
+	position: absolute;
+	top: 50%; /* Position the line vertically centered */
+	right: -15px; /* Adjust position to place the line between items */
+	width: 1px;
+	height: 40px;
+	background-color: black;
+	transform: translateY(-50%); /* Center the line vertically */
+}
+
 /* Media Queries */
 @media only screen and (max-width: 768px) {
 	/* Adjust styles for tablets */
