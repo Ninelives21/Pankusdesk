@@ -469,6 +469,25 @@ li.flex-item img {
 	height: 40px;
 }
 
+.link_no_style {
+	text-decoration: none;
+	color: inherit;
+}
+
+.link_no_style:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.link_no_style:hover {
+	text-decoration: underline; /* Optional: Add an underline on hover */
+}
+
+.link_no_style:active {
+	color: inherit;
+	text-decoration: none;
+}
+
 navbar-icons .nav-icon::after {
 	content: '';
 	position: absolute;
