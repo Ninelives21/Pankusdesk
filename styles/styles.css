@@ -471,20 +471,22 @@ li.flex-item img {
 
 .link_no_style {
 	text-decoration: none;
-	color: inherit;
+	color: #009999; /* Default color set to #009999 */
+	font-weight: 500; /* Slightly bolder */
 }
 
 .link_no_style:visited {
-	color: inherit;
+	color: #009999; /* Keep the color #009999 after being visited */
 	text-decoration: none;
 }
 
 .link_no_style:hover {
-	text-decoration: underline; /* Optional: Add an underline on hover */
+	text-decoration: none; /* No underline on hover */
+	color: #009999; /* Keep the color #009999 on hover */
 }
 
 .link_no_style:active {
-	color: inherit;
+	color: #009999; /* Keep the color #009999 when clicked */
 	text-decoration: none;
 }
 
