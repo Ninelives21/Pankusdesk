@@ -490,6 +490,27 @@ li.flex-item img {
 	text-decoration: none;
 }
 
+.link_no_style_2 {
+	text-decoration: none;
+	color: #064374; /* Default color set to #064374 */
+	font-weight: 700; /* Slightly bolder */
+}
+
+.link_no_style_2:visited {
+	color: #064374; /* Keep the color #064374 after being visited */
+	text-decoration: none;
+}
+
+.link_no_style_2:hover {
+	text-decoration: none; /* No underline on hover */
+	color: #064374; /* Keep the color #064374 on hover */
+}
+
+.link_no_style_2:active {
+	color: #064374; /* Keep the color #064374 when clicked */
+	text-decoration: none;
+}
+
 navbar-icons .nav-icon::after {
 	content: '';
 	position: absolute;
