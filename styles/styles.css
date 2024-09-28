@@ -532,6 +532,33 @@ navbar-icons .nav-icon::after {
 	border: 1px solid black;
 }
 
+.hybridization-table {
+	width: 75%; /* Set table width to 75% of the device width */
+	border-collapse: collapse;
+	margin-left: 0; /* Align table to the left */
+}
+
+.hybridization-table th,
+.hybridization-table td {
+	border: 1px solid black;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Making column 2 and 4 larger */
+.hybridization-table td:nth-child(2),
+.hybridization-table th:nth-child(2),
+.hybridization-table td:nth-child(4),
+.hybridization-table th:nth-child(4) {
+	width: 200px;
+	height: 150px;
+}
+
+.hybridization-table img {
+	max-width: 100%;
+	height: auto;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 768px) {
 	/* Adjust styles for tablets */
