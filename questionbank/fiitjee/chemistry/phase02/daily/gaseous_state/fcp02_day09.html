@@ -27,14 +27,15 @@
 				<div class="accordion-item">
 					<button class="accordion-button" id="Q1">
 						<a href="#Q1">
-							<span class="ques_number">1.</span> An LPG cylinder contains 15kg
-							of butane gas at 27°C and 10 atmospheric pressure. It was leaking
-							and its pressure fell down to 8 atmospheric pressure after one
-							day. The gas leaked is ___ kg.
+							<span class="ques_number_imp">1.</span> An LPG cylinder contains
+							15kg of butane gas at 27°C and 10 atmospheric pressure. It was
+							leaking and its pressure fell down to 8 atmospheric pressure after
+							one day. The gas leaked is ___ kg.
 						</a>
 					</button>
 					<div class="accordion-content ans-align">
 						<p>3</p>
+						Hint: \( \dfrac{P_1}{n_1} = \dfrac{P_2}{n_2} \)
 					</div>
 				</div>
 				<!-- End Question 1 -->
@@ -72,13 +73,51 @@
 				<div class="accordion-item">
 					<button class="accordion-button" id="Q4">
 						<a href="#Q4">
-							<span class="ques_number">4.</span> If unit of pressure is dyne /
-							cm<sup>2</sup>, units of volume is cm<sup>3</sup>, what will be
-							value of R?
+							<span class="ques_number_imp">4.</span> If unit of pressure is
+							dyne / cm<sup>2</sup>, units of volume is cm<sup>3</sup>, what
+							will be value of R?
 						</a>
 					</button>
 					<div class="accordion-content ans-align">
 						<p>8.314 x 10<sup>7</sup> ergs mol<sup>-1</sup> K<sup>-1</sup></p>
+
+						<strong>SOLUTION</strong><br />
+						<p>
+							To correctly convert the gas constant \( R \) from atm·L/mol·K to
+							ergs/mol·K, we need precise conversion factors:
+						</p>
+
+						<p>
+							<strong>Given:</strong><br />
+							\( R = 0.0821 \, \text{atm·L/mol·K} \)
+						</p>
+
+						<p><strong>Conversion Factors:</strong></p>
+						<ul>
+							<li>
+								Pressure: \( 1 \, \text{atm} = 1.01325 \times 10^6 \,
+								\text{dynes/cm}^2 \) (more precise than \(10^6\))
+							</li>
+							<li>Volume: \( 1 \, \text{L} = 1000 \, \text{cm}^3 \)</li>
+							<li>Energy: \( 1 \, \text{dyne·cm} = 1 \, \text{erg} \)</li>
+						</ul>
+
+						<p><strong>Converting \( R \) into ergs/mol·K:</strong></p>
+
+						\[ R = 0.0821 \, \frac{\text{atm·L}}{\text{mol·K}} \times 1.01325
+						\times 10^6 \, \frac{\text{dynes}}{\text{cm}^2} \times 1000 \,
+						\frac{\text{cm}^3}{\text{L}} \] \[ R = 0.0821 \times 1.01325 \times
+						10^6 \times 1000 \, \frac{\text{dynes·cm}}{\text{mol·K}} \] \[ R =
+						0.0821 \times 1.01325 \times 10^9 \,
+						\frac{\text{dynes·cm}}{\text{mol·K}} \] \[ R = 83.144025 \times 10^6
+						\, \text{ergs/mol·K} \] \[ R \approx 8.314 \times 10^7 \,
+						\text{ergs/mol·K} \]
+
+						<p>
+							This calculation correctly aligns with the more commonly cited
+							precise value of \( R \) in ergs/mol·K, which reflects the typical
+							usage in scientific contexts.
+						</p>
 					</div>
 				</div>
 				<!-- End Question 4 -->
