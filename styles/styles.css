@@ -531,10 +531,23 @@ navbar-icons .nav-icon::after {
 	border-collapse: separate;
 	table-layout: fixed;
 	width: 100%;
+
 	/* border-spacing: 0 10px; Adds spacing between the rows */
 }
 .notes_table th,
 .notes_table td {
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.notes_table_small {
+	border-collapse: separate;
+	table-layout: fixed;
+	width: 80%;
+	/* border-spacing: 0 10px; Adds spacing between the rows */
+}
+.notes_table_small th,
+.notes_table_small td {
 	padding: 10px;
 	border: 1px solid black;
 }
