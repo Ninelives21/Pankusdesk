@@ -623,16 +623,100 @@ navbar-icons .nav-icon::after {
 .jee-map {
 	border-collapse: collapse;
 	width: 100%;
+	table-layout: fixed; /* ensures widths are respected */
 }
+
 .jee-map th,
 .jee-map td {
 	border: 1px solid #000;
 	padding: 6px;
 	vertical-align: top;
 	text-align: left;
+	word-wrap: break-word; /* wraps long text nicely */
 }
+
+/* column widths for large/desktop */
+.jee-map th:nth-child(1),
+.jee-map td:nth-child(1) {
+	width: 5%; /* QNo */
+}
+
+.jee-map th:nth-child(2),
+.jee-map td:nth-child(2) {
+	width: 20%; /* Question Text */
+}
+
+.jee-map th:nth-child(3),
+.jee-map td:nth-child(3) {
+	width: 15%; /* Chapter */
+}
+
+.jee-map th:nth-child(4),
+.jee-map td:nth-child(4) {
+	width: 15%; /* Section */
+}
+
+.jee-map th:nth-child(5),
+.jee-map td:nth-child(5) {
+	width: 15%; /* Sub-section */
+}
+
+.jee-map th:nth-child(6),
+.jee-map td:nth-child(6) {
+	width: 30%; /* Explanation gets the most room */
+}
+
 .jee-map thead th {
 	background: #f5f5f5;
+}
+
+/* ✅ Responsive behavior */
+@media (max-width: 768px) {
+	.jee-map,
+	.jee-map thead,
+	.jee-map tbody,
+	.jee-map th,
+	.jee-map td,
+	.jee-map tr {
+		display: block;
+		width: 100%;
+	}
+
+	.jee-map thead {
+		display: none; /* hide header on small screens */
+	}
+
+	.jee-map tr {
+		margin-bottom: 12px;
+		border: 1px solid #ccc;
+		padding: 6px;
+	}
+
+	.jee-map td {
+		border: none;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	.jee-map td::before {
+		content: attr(data-label); /* use header as label */
+		position: absolute;
+		left: 6px;
+		top: 6px;
+		font-weight: bold;
+		white-space: nowrap;
+	}
+
+	/* Make Explanation take full width */
+	.jee-map td:nth-child(6) {
+		padding-left: 6px;
+	}
+	.jee-map td:nth-child(6)::before {
+		content: 'Explanation';
+		position: static;
+		display: block;
+		margin-bottom: 4px;
+	}
 }
 
 /* Media Queries */
