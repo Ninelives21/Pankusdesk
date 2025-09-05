@@ -623,7 +623,7 @@ navbar-icons .nav-icon::after {
 .jee-map {
 	border-collapse: collapse;
 	width: 100%;
-	table-layout: fixed; /* ensures widths are respected */
+	table-layout: fixed; /* ensure fixed column widths */
 }
 
 .jee-map th,
@@ -632,39 +632,51 @@ navbar-icons .nav-icon::after {
 	padding: 6px;
 	vertical-align: top;
 	text-align: left;
-	word-wrap: break-word; /* wraps long text nicely */
+	overflow-wrap: anywhere; /* modern */
+	word-break: break-word; /* fallback */
+	min-width: 0; /* allow shrinking with table-layout:fixed */
 }
 
-/* column widths for large/desktop */
+.jee-map a {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+/* column widths for large/desktop (7 columns total = 100%) */
 .jee-map th:nth-child(1),
 .jee-map td:nth-child(1) {
-	width: 5%; /* QNo */
-}
+	width: 5%;
+} /* QNo */
 
 .jee-map th:nth-child(2),
 .jee-map td:nth-child(2) {
-	width: 20%; /* Question Text */
-}
+	width: 20%;
+} /* Question Text */
 
 .jee-map th:nth-child(3),
 .jee-map td:nth-child(3) {
-	width: 15%; /* Chapter */
-}
+	width: 14%;
+} /* Chapter */
 
 .jee-map th:nth-child(4),
 .jee-map td:nth-child(4) {
-	width: 15%; /* Section */
-}
+	width: 14%;
+} /* Section */
 
 .jee-map th:nth-child(5),
 .jee-map td:nth-child(5) {
-	width: 15%; /* Sub-section */
-}
+	width: 14%;
+} /* Sub-section */
 
 .jee-map th:nth-child(6),
 .jee-map td:nth-child(6) {
-	width: 30%; /* Explanation gets the most room */
-}
+	width: 16%;
+} /* JEE Main Topic */
+
+.jee-map th:nth-child(7),
+.jee-map td:nth-child(7) {
+	width: 17%;
+} /* Explanation */
 
 .jee-map thead th {
 	background: #f5f5f5;
@@ -683,8 +695,8 @@ navbar-icons .nav-icon::after {
 	}
 
 	.jee-map thead {
-		display: none; /* hide header on small screens */
-	}
+		display: none;
+	} /* hide header on small screens */
 
 	.jee-map tr {
 		margin-bottom: 12px;
@@ -698,8 +710,9 @@ navbar-icons .nav-icon::after {
 		padding-left: 50%;
 	}
 
+	/* if you add data-labels in markup, they'll show here */
 	.jee-map td::before {
-		content: attr(data-label); /* use header as label */
+		content: attr(data-label);
 		position: absolute;
 		left: 6px;
 		top: 6px;
@@ -707,11 +720,11 @@ navbar-icons .nav-icon::after {
 		white-space: nowrap;
 	}
 
-	/* Make Explanation take full width */
-	.jee-map td:nth-child(6) {
+	/* Make only the Explanation cell take full width on mobile */
+	.jee-map td:nth-child(7) {
 		padding-left: 6px;
 	}
-	.jee-map td:nth-child(6)::before {
+	.jee-map td:nth-child(7)::before {
 		content: 'Explanation';
 		position: static;
 		display: block;
