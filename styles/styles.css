@@ -619,11 +619,11 @@ navbar-icons .nav-icon::after {
 	list-style-type: decimal;
 }
 
-/* If you prefer an external CSS file, paste this there instead */
+/* Complete replacement for .jee-map (fixed column bleed between Sub-section & JEE Topic) */
 .jee-map {
 	border-collapse: collapse;
 	width: 100%;
-	table-layout: fixed; /* ensure fixed column widths */
+	table-layout: fixed; /* fixed widths respected */
 }
 
 .jee-map th,
@@ -632,9 +632,11 @@ navbar-icons .nav-icon::after {
 	padding: 6px;
 	vertical-align: top;
 	text-align: left;
-	overflow-wrap: anywhere; /* modern */
+	overflow-wrap: anywhere; /* modern wrap */
 	word-break: break-word; /* fallback */
-	min-width: 0; /* allow shrinking with table-layout:fixed */
+	min-width: 0; /* allow shrinking with fixed layout */
+	box-sizing: border-box; /* include padding/border in width calc */
+	line-height: 1.25;
 }
 
 .jee-map a {
@@ -642,7 +644,7 @@ navbar-icons .nav-icon::after {
 	word-break: break-word;
 }
 
-/* column widths for large/desktop (7 columns total = 100%) */
+/* column widths (7 columns = 100%) */
 .jee-map th:nth-child(1),
 .jee-map td:nth-child(1) {
 	width: 5%;
@@ -665,71 +667,44 @@ navbar-icons .nav-icon::after {
 
 .jee-map th:nth-child(5),
 .jee-map td:nth-child(5) {
+	/* Sub-section */
 	width: 14%;
-} /* Sub-section */
+	max-width: 14%;
+	white-space: normal;
+	overflow: hidden; /* prevent visual spill beyond cell */
+}
 
 .jee-map th:nth-child(6),
 .jee-map td:nth-child(6) {
+	/* JEE Main Topic */
 	width: 16%;
-} /* JEE Main Topic */
+	max-width: 16%;
+	white-space: normal;
+	overflow: hidden;
+}
 
 .jee-map th:nth-child(7),
 .jee-map td:nth-child(7) {
 	width: 17%;
 } /* Explanation */
 
-.jee-map thead th {
-	background: #f5f5f5;
+/* tighten lists inside cols 5 & 6 and ensure descendants wrap */
+.jee-map td:nth-child(5) *,
+.jee-map td:nth-child(6) * {
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
-/* ✅ Responsive behavior */
-@media (max-width: 768px) {
-	.jee-map,
-	.jee-map thead,
-	.jee-map tbody,
-	.jee-map th,
-	.jee-map td,
-	.jee-map tr {
-		display: block;
-		width: 100%;
-	}
+.jee-map td:nth-child(5) ol,
+.jee-map td:nth-child(5) ul,
+.jee-map td:nth-child(6) ol,
+.jee-map td:nth-child(6) ul {
+	margin: 0.2em 0 0.2em 1.1em;
+	padding-left: 1.1em;
+}
 
-	.jee-map thead {
-		display: none;
-	} /* hide header on small screens */
-
-	.jee-map tr {
-		margin-bottom: 12px;
-		border: 1px solid #ccc;
-		padding: 6px;
-	}
-
-	.jee-map td {
-		border: none;
-		position: relative;
-		padding-left: 50%;
-	}
-
-	/* if you add data-labels in markup, they'll show here */
-	.jee-map td::before {
-		content: attr(data-label);
-		position: absolute;
-		left: 6px;
-		top: 6px;
-		font-weight: bold;
-		white-space: nowrap;
-	}
-
-	/* Make only the Explanation cell take full width on mobile */
-	.jee-map td:nth-child(7) {
-		padding-left: 6px;
-	}
-	.jee-map td:nth-child(7)::before {
-		content: 'Explanation';
-		position: static;
-		display: block;
-		margin-bottom: 4px;
-	}
+.jee-map thead th {
+	background: #f5f5f5;
 }
 
 .subject-section {
