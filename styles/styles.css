@@ -748,34 +748,6 @@ navbar-icons .nav-icon::after {
 	margin: 0.3rem 0;
 }
 
-/* Wrap your notes list with id="stoich-notes"
-   e.g. <ol id="stoich-notes" class="inner-list"> ... </ol> */
-
-#stoich-notes,
-#stoich-notes ol,
-#stoich-notes ul,
-#stoich-notes li,
-#stoich-notes a,
-#stoich-notes .accordion-button,
-#stoich-notes .accordion-content {
-	font-weight: 400 !important; /* normal */
-	font-style: normal;
-	font-size: 16px;
-}
-
-/* If any global rule targets <a> or list items specifically */
-#stoich-notes a {
-	font-weight: inherit !important;
-}
-
-/* In case bold tags slipped into the content */
-#stoich-notes b,
-#stoich-notes strong {
-	font-weight: 400 !important;
-}
-
-/* END STOICH NOTES */
-
 /* Media Queries */
 @media only screen and (max-width: 768px) {
 	/* Adjust styles for tablets */
