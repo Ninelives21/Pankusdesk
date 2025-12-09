@@ -30,7 +30,7 @@ h4 {
 	background-color: #fff;
 	padding: 10px 20px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	height: 60px; /* Increase height to fit icon and text */
+	height: 60px;
 }
 
 .navbar .logo {
@@ -44,9 +44,9 @@ h4 {
 }
 
 .navbar-link {
-	font-size: 16px; /* Adjust font size of the text */
-	margin-top: 5px; /* Adjust margin between icon and text */
-	font-weight: bold; /* Make the text bold */
+	font-size: 16px;
+	margin-top: 5px;
+	font-weight: bold;
 	color: #336666;
 }
 
@@ -60,50 +60,50 @@ h4 {
 	display: flex;
 	align-items: center;
 	gap: 30px;
-	position: relative; /* Add relative positioning to navbar-icons */
+	position: relative;
 }
 
 .navbar-icons .nav-icon {
 	width: 40px;
-	height: 60px; /* Increase height to fit icon and text */
+	height: 60px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column; /* Ensure the text is below the icon */
+	flex-direction: column;
 	border-radius: 10px;
 	background-color: #fff;
-	position: relative; /* Add relative positioning to nav-icon */
+	position: relative;
 }
 
 .navbar-icons .nav-icon::after {
 	content: '';
 	position: absolute;
-	top: 50%; /* Position the line vertically centered */
-	right: -15px; /* Adjust position to place the line between items */
+	top: 50%;
+	right: -15px;
 	width: 1px;
 	height: 40px;
 	background-color: black;
-	transform: translateY(-50%); /* Center the line vertically */
+	transform: translateY(-50%);
 }
 
 .navbar-icons .nav-icon:last-child::after {
-	display: none; /* Remove the line after the last item */
+	display: none;
 }
 
 .navbar-icons .nav-icon img {
-	height: 24px; /* Adjust height of the icon */
-	width: 24px; /* Adjust width of the icon */
+	height: 24px;
+	width: 24px;
 }
 
 .navbar-icons .nav-icon span {
-	font-size: 12px; /* Adjust font size of the text */
-	margin-top: 5px; /* Adjust margin between icon and text */
-	font-weight: bold; /* Make the text bold */
+	font-size: 12px;
+	margin-top: 5px;
+	font-weight: bold;
 }
 
 .navbar-icons a {
-	text-decoration: none; /* Remove text decoration */
-	color: inherit; /* Ensure link color doesn't change */
+	text-decoration: none;
+	color: inherit;
 }
 
 .container {
@@ -255,7 +255,7 @@ h4 {
 .accordion-content ol {
 	list-style: decimal;
 	padding: 0;
-	margin: 0 0 0 20px; /* Indent the sublists by one tab space */
+	margin: 0 0 0 20px;
 }
 
 .accordion a {
@@ -266,7 +266,7 @@ h4 {
 .accordion-content li {
 	padding: 10px 20px;
 	border-top: 1px solid #ddd;
-	margin-bottom: 10px; /* Add space between list items */
+	margin-bottom: 10px;
 }
 
 .accordion-content li a {
@@ -292,24 +292,24 @@ h4 {
 
 .postulates-inner-list {
 	list-style-type: decimal;
-	padding-left: 20px; /* Adjust this value to control the indentation */
+	padding-left: 20px;
 }
 
 .postulates-inner-list > li {
-	text-indent: 10px; /* This will align the text with the numbers */
-	padding-left: 10px; /* Adjust this value to control the distance between the number and the text */
-	margin-bottom: 10px; /* Add space between list items */
+	text-indent: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
 }
 
 .postulates-inner-inner-list {
-	list-style-type: none; /*No list style for inner list */
-	padding-left: 40px; /* Adjust this value to control the indentation of the inner list */
-	line-height: 1.6; /* Add space between lines */
+	list-style-type: none;
+	padding-left: 40px;
+	line-height: 1.6;
 }
 
 .postulates-inner-inner-list li {
 	list-style: square;
-	margin-bottom: 10px; /* Add space between list items */
+	margin-bottom: 10px;
 }
 
 .equation-bold {
@@ -394,7 +394,7 @@ h4 {
 	padding: 5px;
 	position: absolute;
 	z-index: 1;
-	bottom: 125%; /* Position above the text */
+	bottom: 125%;
 	left: 100%;
 	right: 100%;
 	top: 100%;
@@ -458,10 +458,11 @@ li.flex-item img {
 	justify-content: last baseline;
 	align-items: center;
 }
+
 .image-container img {
 	width: 25%;
 	height: auto;
-	margin: 0 5px; /* Adjust the margin value to reduce the gap */
+	margin: 0 5px;
 }
 
 .list_title {
@@ -469,104 +470,81 @@ li.flex-item img {
 	font-size: large;
 	color: #519e8a;
 	padding: 15px;
-
 	width: 1px;
 	height: 40px;
 }
 
 .link_no_style {
 	text-decoration: none;
-	color: #009999; /* Default color set to #009999 */
-	font-weight: 500; /* Slightly bolder */
+	color: #009999;
+	font-weight: 500;
 }
 
 .link_no_style:visited {
-	color: #009999; /* Keep the color #009999 after being visited */
-	text-decoration: none;
+	color: #009999;
 }
 
 .link_no_style:hover {
-	text-decoration: none; /* No underline on hover */
-	color: #009999; /* Keep the color #009999 on hover */
+	color: #009999;
 }
 
 .link_no_style:active {
-	color: #009999; /* Keep the color #009999 when clicked */
-	text-decoration: none;
+	color: #009999;
 }
 
 .link_no_style_2 {
 	text-decoration: none;
-	color: #064374; /* Default color set to #064374 */
-	font-weight: 700; /* Slightly bolder */
+	color: #064374;
+	font-weight: 700;
 }
 
 .link_no_style_2:visited {
-	color: #064374; /* Keep the color #064374 after being visited */
-	text-decoration: none;
+	color: #064374;
 }
 
 .link_no_style_2:hover {
-	text-decoration: none; /* No underline on hover */
-	color: #064374; /* Keep the color #064374 on hover */
+	color: #064374;
 }
 
 .link_no_style_2:active {
-	color: #064374; /* Keep the color #064374 when clicked */
-	text-decoration: none;
+	color: #064374;
 }
 
 .link_no_style_3 {
 	text-decoration: none;
-	color: #c70039; /* Default color set to #064374 */
-	font-weight: 700; /* Slightly bolder */
-}
-
-.link_no_style_3.accordion-content {
-	color: #c70039; /* Keep the color #064374 after being visited */
-	text-decoration: none;
+	color: #c70039;
+	font-weight: 700;
 }
 
 .link_no_style_3:hover {
-	text-decoration: none; /* No underline on hover */
-	color: #c70039; /* Keep the color #064374 on hover */
+	color: #c70039;
 }
 
 .link_no_style_3:active {
-	color: #c70039; /* Keep the color #064374 when clicked */
-	text-decoration: none;
-}
-
-navbar-icons .nav-icon::after {
-	content: '';
-	position: absolute;
-	top: 50%; /* Position the line vertically centered */
-	right: -15px; /* Adjust position to place the line between items */
-	width: 1px;
-	height: 40px;
-	background-color: black;
-	transform: translateY(-50%); /* Center the line vertically */
+	color: #c70039;
 }
 
 .notes_table {
 	border-collapse: separate;
 	table-layout: fixed;
 	width: 100%;
-
-	/* border-spacing: 0 10px; Adds spacing between the rows */
+	margin: 20px 40px;
 }
+
 .notes_table th,
 .notes_table td {
-	padding: 10px;
+	padding: 12px;
 	border: 1px solid black;
+	font-size: 15px;
+	line-height: 1.5;
 }
 
 .notes_table_small {
 	border-collapse: separate;
 	table-layout: fixed;
 	width: 80%;
-	/* border-spacing: 0 10px; Adds spacing between the rows */
 }
+
 .notes_table_small th,
 .notes_table_small td {
 	padding: 10px;
@@ -588,9 +566,9 @@ navbar-icons .nav-icon::after {
 }
 
 .hybridization-table {
-	width: 85%; /* Set table width to 75% of the device width */
+	width: 85%;
 	border-collapse: collapse;
-	margin-left: 0; /* Align table to the left */
+	margin-left: 0;
 }
 
 .hybridization-table th,
@@ -600,7 +578,6 @@ navbar-icons .nav-icon::after {
 	text-align: center;
 }
 
-/* Making column 2 and 4 larger */
 .hybridization-table td:nth-child(2),
 .hybridization-table th:nth-child(2),
 .hybridization-table td:nth-child(4),
@@ -619,11 +596,11 @@ navbar-icons .nav-icon::after {
 	list-style-type: decimal;
 }
 
-/* Complete replacement for .jee-map (fixed column bleed between Sub-section & JEE Topic) */
+/* column layout fixes */
 .jee-map {
 	border-collapse: collapse;
 	width: 100%;
-	table-layout: fixed; /* fixed widths respected */
+	table-layout: fixed;
 }
 
 .jee-map th,
@@ -632,51 +609,43 @@ navbar-icons .nav-icon::after {
 	padding: 6px;
 	vertical-align: top;
 	text-align: left;
-	overflow-wrap: anywhere; /* modern wrap */
-	word-break: break-word; /* fallback */
-	min-width: 0; /* allow shrinking with fixed layout */
-	box-sizing: border-box; /* include padding/border in width calc */
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	min-width: 0;
+	box-sizing: border-box;
 	line-height: 1.25;
 }
 
-.jee-map a {
-	overflow-wrap: anywhere;
-	word-break: break-word;
-}
-
-/* column widths (7 columns = 100%) */
 .jee-map th:nth-child(1),
 .jee-map td:nth-child(1) {
 	width: 5%;
-} /* QNo */
+}
 
 .jee-map th:nth-child(2),
 .jee-map td:nth-child(2) {
 	width: 20%;
-} /* Question Text */
+}
 
 .jee-map th:nth-child(3),
 .jee-map td:nth-child(3) {
 	width: 14%;
-} /* Chapter */
+}
 
 .jee-map th:nth-child(4),
 .jee-map td:nth-child(4) {
 	width: 14%;
-} /* Section */
+}
 
 .jee-map th:nth-child(5),
 .jee-map td:nth-child(5) {
-	/* Sub-section */
 	width: 14%;
 	max-width: 14%;
 	white-space: normal;
-	overflow: hidden; /* prevent visual spill beyond cell */
+	overflow: hidden;
 }
 
 .jee-map th:nth-child(6),
 .jee-map td:nth-child(6) {
-	/* JEE Main Topic */
 	width: 16%;
 	max-width: 16%;
 	white-space: normal;
@@ -686,9 +655,8 @@ navbar-icons .nav-icon::after {
 .jee-map th:nth-child(7),
 .jee-map td:nth-child(7) {
 	width: 17%;
-} /* Explanation */
+}
 
-/* tighten lists inside cols 5 & 6 and ensure descendants wrap */
 .jee-map td:nth-child(5) *,
 .jee-map td:nth-child(6) * {
 	overflow-wrap: anywhere;
@@ -748,17 +716,97 @@ navbar-icons .nav-icon::after {
 	margin: 0.3rem 0;
 }
 
-/* Media Queries */
+/* responsive layout */
 @media only screen and (max-width: 768px) {
-	/* Adjust styles for tablets */
 	.container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media only screen and (max-width: 480px) {
-	/* Adjust styles for phones */
 	.container {
 		grid-template-columns: repeat(1, 1fr);
 	}
+}
+
+/* ====================================================================== */
+/*                >>> NEW LECTURE UX IMPROVEMENTS <<<                     */
+/* ====================================================================== */
+
+/* cleaner section spacing */
+.section-block {
+	margin-top: 35px;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+/* bold numbered section titles */
+.section-title {
+	font-weight: 800;
+	font-size: 20px;
+	color: #064374;
+	margin-bottom: 15px;
+	display: block;
+}
+
+/* subsections spaced out */
+.subsection-block {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* cleaner list readability */
+.inner-list {
+	padding-left: 60px;
+	line-height: 1.7;
+}
+
+.inner-list li {
+	margin-bottom: 12px;
+	font-size: 16px;
+}
+
+/* grey note box (like your screenshot) */
+.note-box {
+	background-color: #f7f7f7;
+	border-left: 5px solid #519e8a;
+	padding: 15px 20px;
+	border-radius: 6px;
+	margin: 18px 40px;
+	line-height: 1.65;
+	font-size: 15.5px;
+}
+
+/* spacing around accordions */
+.accordion-item {
+	margin: 20px 40px;
+}
+
+/* spacing around section anchors */
+div[id^='ch'] {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+div[id^='ch'] h3 {
+	font-size: 22px;
+	font-weight: 800;
+	padding-left: 0 !important;
+	margin-left: 40px;
+}
+
+div[id^='ch'] h3 a {
+	font-weight: 800 !important;
+}
+
+/* improve notes table spacing */
+.notes_table {
+	margin: 20px 40px;
+	border-spacing: 0;
+}
+
+/* spacing between main <li> sections */
+.new_container > ol > li {
+	margin-bottom: 40px;
 }
