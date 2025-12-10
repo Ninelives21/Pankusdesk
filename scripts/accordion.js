@@ -1,32 +1,63 @@
-const coll = document.getElementsByClassName('accordion-button');
-let i;
+// ---------------------------------------------
+//  ACCORDION SYSTEM (Supports Nested Accordions)
+//  Smooth Animation + Scoped Toggle
+// ---------------------------------------------
 
-for (i = 0; i < coll.length; i++) {
-	coll[i].addEventListener('click', function () {
-		this.classList.toggle('active');
-		var content = this.nextElementSibling;
-		if (content.style.display === 'block') {
-			content.style.display = 'none';
-		} else {
-			content.style.display = 'block';
-		}
+document.addEventListener('DOMContentLoaded', function () {
+	const allAccordions = document.querySelectorAll('.accordion');
+
+	allAccordions.forEach(accordion => {
+		const buttons = accordion.querySelectorAll('.accordion-button');
+
+		buttons.forEach(btn => {
+			let content = btn.nextElementSibling;
+
+			// Prepare content for smooth animation
+			content.style.maxHeight = '0px';
+			content.style.overflow = 'hidden';
+			content.style.transition = 'max-height 0.35s ease';
+
+			btn.addEventListener('click', function () {
+				this.classList.toggle('active');
+
+				if (content.style.maxHeight === '0px') {
+					// OPEN
+					content.style.display = 'block';
+					content.style.maxHeight = content.scrollHeight + 'px';
+					content.classList.add('accordion-open');
+				} else {
+					// CLOSE
+					content.style.maxHeight = '0px';
+					setTimeout(() => {
+						content.style.display = 'none';
+					}, 350);
+					content.classList.remove('accordion-open');
+				}
+			});
+		});
+	});
+});
+
+// -------------------------------------------------
+// OPEN ALL ACCORDIONS ON SPECIFIC PAGES
+// -------------------------------------------------
+
+function openAllAccordions() {
+	const allButtons = document.querySelectorAll('.accordion-button');
+
+	allButtons.forEach(btn => {
+		let content = btn.nextElementSibling;
+
+		btn.classList.add('active');
+		content.style.display = 'block';
+		content.style.maxHeight = content.scrollHeight + 'px';
+		content.classList.add('accordion-open');
 	});
 }
 
-// Function to make all accordion sections open on certain pages
-function openAllAccordions() {
-	for (i = 0; i < coll.length; i++) {
-		coll[i].classList.add('active');
-		var content = coll[i].nextElementSibling;
-		content.style.display = 'block';
-		content.classList.add('accordion-open');
-	}
-}
-
-// Call this function on pages where all accordion sections should be open
-// document.addEventListener('DOMContentLoaded', function () {
-// 	if (window.location.pathname.endsWith('specific-page.html')) {
-// 		// Adjust this condition to match your page
-// 		openAllAccordions();
-// 	}
+// Example usage:
+// document.addEventListener("DOMContentLoaded", function () {
+//     if (window.location.pathname.includes("resonance_page.html")) {
+//         openAllAccordions();
+//     }
 // });
