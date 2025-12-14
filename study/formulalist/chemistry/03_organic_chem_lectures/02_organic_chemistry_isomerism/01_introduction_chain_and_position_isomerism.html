@@ -9,10 +9,22 @@
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+				},
+				svg: {
+					fontCache: 'global',
+				},
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://www.youtube.com/playlist?list=PLF_7kfnwLFCFXbEZgV5ymIMOeBRoABXqw"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -861,13 +873,174 @@
 					<!-- END ch06 -->
 
 					<!-- START ch07 -->
+
 					<li>
-						<div id="ch07">PYQ JEE</div>
+						<div id="ch07">Pyq Jee</div>
 						<ol class="inner-list">
-							<li>2024 APR 04 – SHIFT 1, Q66</li>
+							<li>
+								<div class="accordion-item">
+									<button class="accordion-button">
+										<img
+											src="images_isomerism/jee/jee_01_01_Q.png"
+											alt=""
+											style="width: 30%; height: auto; margin-right: 10px"
+										/>
+									</button>
+									<div class="accordion-content ans-align">
+										<img
+											src="images_isomerism/jee/jee_01_01_A.png"
+											alt=""
+											style="width: 30%; height: auto; margin-right: 10px"
+										/>
+									</div>
+								</div>
+							</li>
 						</ol>
 					</li>
+
 					<!-- END ch07 -->
+
+					<!-- START ch08 -->
+					<li>
+						<div id="ch08">Jee Synopsis / Quick Recall</div>
+						<ol class="inner-list">
+							<li>
+								<b>Isomerism</b> refers to compounds having the
+								<b>same molecular formula</b> but
+								<b>different physical and/or chemical properties</b>.
+							</li>
+
+							<li>
+								Broad classification of isomerism:
+								<ul>
+									<li><b>Structural isomerism</b></li>
+									<li><b>Stereo-isomerism</b></li>
+								</ul>
+							</li>
+
+							<li>
+								Types of <b>structural isomerism</b>:
+								<ul>
+									<li>Chain isomerism</li>
+									<li>Position isomerism</li>
+									<li>Functional isomerism</li>
+									<li>Tautomerism</li>
+									<li>Metamerism</li>
+									<li>Ring–chain isomerism</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Priority order</b> for deciding the type of structural
+								isomerism (important for classification questions):
+								<b>RTFMCP</b> → Ring–chain &gt; Tautomerism &gt; Functional &gt;
+								Metamerism &gt; Chain &gt; Position.
+							</li>
+
+							<li>
+								<b>Chain isomerism:</b><br />
+								Compounds having the same molecular formula but a
+								<b>different number of carbon atoms in the main chain</b>.
+							</li>
+
+							<li>
+								<span class="ques_number_imp">
+									Chain isomerism starts from butane \(\left(C_4H_{10}\right)\).
+								</span>
+								Methane \(\left(CH_4\right)\), ethane \(\left(C_2H_6\right)\),
+								and propane \(\left(C_3H_8\right)\) do not show chain isomerism.
+							</li>
+
+							<li>
+								<b>Number of chain isomers of alkanes (standard JEE data):</b>
+								<ul>
+									<li>\(C_4H_{10}\) → 2</li>
+									<li>\(C_5H_{12}\) → 3</li>
+									<li>\(C_6H_{14}\) → 5</li>
+									<li>\(C_7H_{16}\) → 9</li>
+									<li>\(C_8H_{18}\) → 18</li>
+									<li>\(C_9H_{20}\) → 35</li>
+									<li>\(C_{10}H_{22}\) → 75</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Position isomerism:</b><br />
+								Same carbon skeleton but different positions of a functional
+								group, substituent, or multiple bond.
+							</li>
+
+							<li>
+								<span class="ques_number_imp">
+									Example of position isomerism:
+								</span>
+								but-1-ene and but-2-ene (same carbon chain, different
+								double-bond position).
+							</li>
+
+							<li>
+								<b>Alkyl group isomerism:</b><br />
+								Alkyl radicals show isomerism depending on the number of chain
+								isomers of the parent alkane.
+							</li>
+
+							<li>
+								<span class="ques_number_imp">
+									Methyl \(\left(CH_3\right)\) and ethyl \(\left(C_2H_5\right)\)
+									groups do not show structural isomerism.
+								</span>
+							</li>
+
+							<li>
+								<b>Propyl group \(\left(C_3H_7\right)\):</b>
+								two isomers → n-propyl and iso-propyl.
+							</li>
+
+							<li>
+								<b>Butyl group \(\left(C_4H_9\right)\):</b>
+								four isomers → n-butyl, sec-butyl, iso-butyl, tert-butyl.
+							</li>
+
+							<li>
+								<span class="ques_number_very_imp">
+									Number of structural isomers of \(C_5H_{11}Cl = 8\).
+								</span>
+								This is a very frequently asked JEE question.
+							</li>
+
+							<li>
+								<b>High-yield JEE strategy for isomer counting:</b><br />
+								<span class="ques_number_imp">
+									Always start by identifying the parent alkane and listing all
+									of its chain isomers first.
+								</span>
+								<br /><br />
+								Only after all possible carbon skeletons are written:
+								<ul>
+									<li>
+										place the functional group or substituent on
+										<b>non-equivalent positions</b>,
+									</li>
+									<li>avoid counting symmetrical positions twice,</li>
+									<li>then check for position or functional isomerism.</li>
+								</ul>
+								This stepwise approach prevents missing isomers and avoids
+								double counting.
+							</li>
+
+							<li>
+								<b>Common exam traps:</b>
+								<ul>
+									<li>
+										Skipping a chain isomer and directly placing substituents.
+									</li>
+									<li>Counting equivalent positions as different isomers.</li>
+									<li>Ignoring symmetry in straight-chain alkanes.</li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+					<!-- END ch08 -->
 				</ol>
 			</div>
 		</div>
