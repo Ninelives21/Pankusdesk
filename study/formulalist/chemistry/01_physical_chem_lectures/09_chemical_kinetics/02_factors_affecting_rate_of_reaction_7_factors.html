@@ -9,10 +9,23 @@
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+				},
+				chtml: {
+					scale: 1.1, // adjust 1.05–1.2 if needed
+				},
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
 		></script>
 	</head>
 	<body>
