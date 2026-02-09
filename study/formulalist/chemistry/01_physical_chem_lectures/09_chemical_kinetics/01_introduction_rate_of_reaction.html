@@ -14,6 +14,11 @@
 					inlineMath: [['\\(', '\\)']],
 					displayMath: [['\\[', '\\]']],
 					processEscapes: true,
+
+					// ONE FIX: make all \frac render like \dfrac (bigger) even inline
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
 				},
 				svg: {
 					fontCache: 'global',
@@ -161,38 +166,50 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
-				<li><a href="#ch01">Chemical Kinetics: Scope and Roadmap</a></li>
+			<ol id="topic-index">
+				<li><a href="#ch01">Chemical Kinetics: scope + chapter roadmap</a></li>
 				<li>
-					<a href="#ch02">Rate of Reaction: Meaning and Basic Definition</a>
+					<a href="#ch02">Rate of reaction: meaning and measurable reactions</a>
 				</li>
 				<li>
-					<a href="#ch03">Which Reactions Have a Useful Measurable Rate?</a>
+					<a href="#ch03"
+						>Very fast vs very slow vs moderate reactions (why only moderate)</a
+					>
 				</li>
 				<li>
-					<a href="#ch04">Average Rate of Reaction: Stoichiometric Form</a>
+					<a href="#ch04">Average rate of reaction: stoichiometric form</a>
 				</li>
 				<li>
-					<a href="#ch05">Rate of Appearance and Rate of Disappearance</a>
+					<a href="#ch05"
+						>Rate of appearance vs rate of disappearance (units)</a
+					>
 				</li>
-				<li><a href="#ch06">Units of Rate of Reaction</a></li>
-				<li><a href="#ch07">Instantaneous Rate and Graph Interpretation</a></li>
-				<li><a href="#ch08">Practice Problems Covered</a></li>
+				<li>
+					<a href="#ch06"
+						>Practice questions (rate expressions + simple conversions)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Instantaneous rate: differential form + slope interpretation</a
+					>
+				</li>
+				<li><a href="#ch08">Graph-based questions (slope/angle → rate)</a></li>
 			</ol>
 
 			<br />
 
-			<div style="margin-left: 20px">
+			<div class="lecture-notes">
 				<ol>
-					<!-- START ch01 -->
+					<!-- START ch01 | Kinetics scope roadmap -->
 					<li>
 						<div id="ch01">
 							<a
-								href="https://youtu.be/Ez2EaGNt-u8?t=100"
+								href="https://youtu.be/Ez2EaGNt-u8?t=14s"
 								target="_blank"
 								rel="noopener"
 							>
-								Chemical Kinetics: Scope and Roadmap (01:40)
+								Chemical Kinetics: scope + roadmap (00:14)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -200,37 +217,30 @@
 							</span>
 						</div>
 
-						<ol class="inner-list">
+						<ul>
 							<li>
-								Chemical kinetics is a branch of physical chemistry that deals
-								with:
+								Chemical Kinetics (Physical Chemistry) studies three connected
+								areas:
+							</li>
+							<li>
 								<ul>
-									<li>Rate of reaction</li>
-									<li>Factors affecting rate of reaction</li>
-									<li>Mechanism of reaction</li>
+									<li>Rate of reaction (how fast a reaction proceeds)</li>
+									<li>
+										Factors affecting rate (e.g., temperature, concentration,
+										pressure)
+									</li>
+									<li>Reaction mechanism (stepwise pathway)</li>
 								</ul>
 							</li>
-
 							<li>
-								Major topics covered in this chapter include:
-								<ul>
-									<li>Rate of reaction (ROR)</li>
-									<li>
-										Factors affecting ROR (temperature, concentration, pressure)
-									</li>
-									<li>Arrhenius equation (from temperature effect)</li>
-									<li>
-										Order of reaction (from concentration effect) => 1st, 2nd,
-										3rd, nth, zeroth
-									</li>
-									<li>Rate law, molecularity, and reaction mechanism</li>
-								</ul>
+								Chapter flow (high-level): Rate of reaction → factors (e.g.,
+								Arrhenius, order) → rate law → molecularity → mechanism.
 							</li>
-						</ol>
+						</ul>
 					</li>
-					<!-- END ch01 -->
+					<!-- END ch01 | Kinetics scope roadmap -->
 
-					<!-- START ch02 -->
+					<!-- START ch02 | Rate definition measurable -->
 					<li>
 						<div id="ch02">
 							<a
@@ -238,7 +248,7 @@
 								target="_blank"
 								rel="noopener"
 							>
-								Rate of Reaction: Meaning and Definition (05:47)
+								Rate of reaction: meaning + how measured (05:47)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -246,20 +256,26 @@
 							</span>
 						</div>
 
-						<ol class="inner-list">
+						<ul>
 							<li>
-								Rate of reaction refers to the speed at which a chemical
-								reaction occurs.
+								Rate of reaction = change in concentration of reactant or
+								product with respect to time.
 							</li>
 							<li>
-								It is measured as the change in concentration of reactants or
-								products with respect to time.
+								Practical idea:
+								<br />
+								If reactant concentration decreases faster OR product
+								concentration increases faster → reaction is faster.
 							</li>
-						</ol>
+							<li>
+								Rate is meaningful mainly for reactions where concentration
+								change can be measured over a reasonable time scale.
+							</li>
+						</ul>
 					</li>
-					<!-- END ch02 -->
+					<!-- END ch02 | Rate definition measurable -->
 
-					<!-- START ch03 -->
+					<!-- START ch03 | Fast slow moderate -->
 					<li>
 						<div id="ch03">
 							<a
@@ -267,7 +283,7 @@
 								target="_blank"
 								rel="noopener"
 							>
-								Which Reactions Have a Useful Measurable Rate? (06:56)
+								Very fast vs very slow vs moderate reactions (06:56)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -275,59 +291,44 @@
 							</span>
 						</div>
 
-						<ol class="inner-list">
+						<ul>
 							<li>
 								Very fast reactions:
-								<ul>
-									<li>Example: Ionic reactions in aqueous solution</li>
-									<li>
-										Example reaction:<br />
-										\( \mathrm{NaCl} + \mathrm{AgNO_3} \rightarrow \mathrm{AgCl}
-										+ \mathrm{NaNO_3} \)
-									</li>
-									<li>
-										Occur in microseconds, so rate cannot be practically
-										measured
-									</li>
-								</ul>
+								<br />
+								So rapid that rate is practically not measurable (e.g., many
+								ionic precipitation-type processes).
 							</li>
-
 							<li>
 								Very slow reactions:
-								<ul>
-									<li>Example: Rusting of iron</li>
-									<li>
-										Rate is extremely small and not useful for practical
-										applications
-									</li>
-								</ul>
+								<br />
+								May be measurable but not very useful for kinetics applications
+								(take months/years; e.g., rusting).
 							</li>
-
 							<li>
-								Moderate-speed reactions:
-								<ul>
-									<li>Rate is measurable and useful</li>
-									<li>
-										Example molecular reaction:<br />
-										\( \mathrm{N_2} + 3\mathrm{H_2} \rightarrow 2\mathrm{NH_3}
-										\)
-									</li>
-									<li>Involves bond breaking and bond formation</li>
-								</ul>
+								Moderate reactions:
+								<br />
+								Rate can be measured and is useful (often molecular reactions
+								where bonds break/form).
 							</li>
-						</ol>
+							<li>
+								Key reason moderate molecular reactions take finite time:
+								<br />
+								bond breaking + bond formation requires time; unlike ionic
+								solutions where ions can combine quickly.
+							</li>
+						</ul>
 					</li>
-					<!-- END ch03 -->
+					<!-- END ch03 | Fast slow moderate -->
 
-					<!-- START ch04 -->
+					<!-- START ch04 | Average rate formula -->
 					<li>
 						<div id="ch04">
 							<a
-								href="https://youtu.be/Ez2EaGNt-u8?t=767s"
+								href="https://youtu.be/Ez2EaGNt-u8?t=768s"
 								target="_blank"
 								rel="noopener"
 							>
-								Average Rate of Reaction (12:47)
+								Average rate of reaction: stoichiometric form (12:48)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -335,33 +336,35 @@
 							</span>
 						</div>
 
-						<ol class="inner-list">
+						<ul>
 							<li>
-								For a reaction:<br />
-								\( 2\mathrm{A} + 3\mathrm{B} \rightarrow 4\mathrm{C} \)
-							</li>
-							<li>
-								Average rate of reaction is defined as:<br />
-								\( \text{ROR} = -\frac{1}{2}\frac{\Delta[\mathrm{A}]}{\Delta t}
-								= -\frac{1}{3}\frac{\Delta[\mathrm{B}]}{\Delta t} =
-								\frac{1}{4}\frac{\Delta[\mathrm{C}]}{\Delta t} \)
+								For a general reaction:
 								<br />
-								Note: placing -ve sign in front of reactants ensures that ROR is
-								positive.
+								\( aA + bB \rightarrow cC + dD \)
 							</li>
 							<li>
-								Negative sign is used for reactants because their concentration
-								decreases with time.
+								Average rate (over a finite time interval):
+								<br />
+								\( \text{Rate} = -\frac{1}{a}\frac{\Delta [A]}{\Delta t} =
+								-\frac{1}{b}\frac{\Delta [B]}{\Delta t} =
+								\frac{1}{c}\frac{\Delta [C]}{\Delta t} = \frac{1}{d}\frac{\Delta
+								[D]}{\Delta t} \)
 							</li>
 							<li>
-								Each term is divided by the stoichiometric coefficient to obtain
-								a single reaction rate.
+								Sign convention:
+								<br />
+								reactants decrease → negative \(\Delta\), so a minus sign makes
+								overall rate positive.
 							</li>
-						</ol>
+							<li>
+								Always divide by stoichiometric coefficient when writing
+								rate-of-reaction in terms of any species.
+							</li>
+						</ul>
 					</li>
-					<!-- END ch04 -->
+					<!-- END ch04 | Average rate formula -->
 
-					<!-- START ch05 -->
+					<!-- START ch05 | Appearance disappearance units -->
 					<li>
 						<div id="ch05">
 							<a
@@ -369,7 +372,7 @@
 								target="_blank"
 								rel="noopener"
 							>
-								Rate of Appearance and Rate of Disappearance (16:43)
+								Rate of appearance / disappearance + units (16:43)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -377,81 +380,196 @@
 							</span>
 						</div>
 
-						<ol class="inner-list">
+						<ul>
 							<li>
-								Rate of appearance (for products) is defined as the rate at
-								which product concentration increases:
-								<ul>
-									<li>
-										Example for product \( \mathrm{Z} \):<br />
-										\( \text{ROA of } \mathrm{Z} =
-										\dfrac{\Delta[\mathrm{Z}]}{\Delta t} \)
-									</li>
-									<li>
-										Reported value should be positive because product
-										concentration increases.
-									</li>
-								</ul>
+								Rate of appearance (product):
+								<br />
+								\( \text{ROA of product} = \frac{\Delta[\text{product}]}{\Delta
+								t} \) (positive by meaning)
 							</li>
-
 							<li>
-								Rate of disappearance (for reactants) is defined as the rate at
-								which reactant concentration decreases:
-								<ul>
-									<li>
-										Example for reactant \( \mathrm{O_2} \):<br />
-										\( \text{ROD of } \mathrm{O_2} =
-										\left|\dfrac{\Delta[\mathrm{O_2}]}{\Delta t}\right| \)
-									</li>
-									<li>Reported value should be positive (use magnitude).</li>
-								</ul>
+								Rate of disappearance (reactant):
+								<br />
+								\( \text{ROD of reactant} =
+								\left|\frac{\Delta[\text{reactant}]}{\Delta t}\right| \) (use
+								magnitude for a positive rate)
 							</li>
-
 							<li>
-								Stoichiometric coefficient division is NOT applied to ROA/ROD
-								(direct concentration change per time).
+								Important distinction:
+								<br />
+								ROA/ROD are for a specific species and do not require dividing
+								by stoichiometric coefficient by definition, but when converting
+								between ROA/ROD and “rate of reaction”, coefficients matter.
 							</li>
-						</ol>
-					</li>
-					<!-- END ch05 -->
-
-					<!-- START ch06 -->
-					<li>
-						<div id="ch06">
-							<a
-								href="https://youtu.be/Ez2EaGNt-u8?t=1162s"
-								target="_blank"
-								rel="noopener"
-							>
-								Units of Rate of Reaction (19:22)
-							</a>
-							<br />
-							<span class="back-to-index">
-								<a href="#topic-index">(Back to topic index)</a>
-							</span>
-						</div>
-
-						<ul class="inner-list">
 							<li>
-								Rate of reaction has the unit “concentration per time”.
-								<ul>
-									<li>
-										If concentration is in \( \mathrm{mol\,L^{-1}} \) and time
-										is in \( \mathrm{s} \), then:<br />
-										\( \text{Unit of rate} = \mathrm{mol\,L^{-1}\,s^{-1}} \)
-									</li>
-									<li>
-										For gases, concentration may be expressed in terms of
-										partial pressure, so the unit can be “pressure per time”.<br />
-										<span class="unclear">(unclear)</span> (20:14)
-									</li>
-								</ul>
+								Units of rate (common):
+								<br />
+								concentration/time = \( \text{mol L}^{-1}\text{s}^{-1} \)
+							</li>
+							<li>
+								For gases sometimes concentration is expressed via partial
+								pressure:
+								<br />
+								unit becomes pressure/time (depending on how the problem defines
+								“concentration”).
 							</li>
 						</ul>
 					</li>
-					<!-- END ch06 -->
+					<!-- END ch05 | Appearance disappearance units -->
 
-					<!-- START ch07 -->
+					<!-- START ch06 | Practice questions -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/Ez2EaGNt-u8?t=1281s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice questions (21:21)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ol>
+							<li>
+								<strong>Question 1</strong>
+								<br /><br />
+								A reaction has stoichiometric coefficients 4, 5, 4, 6 for four
+								species (two reactants → two products). Write the average rate
+								of reaction expression in terms of each species’ concentration
+								change.
+
+								<br /><br />
+
+								Answer
+
+								<br /><br />
+
+								<ul>
+									<li>
+										For reactants (decreasing concentrations):
+										<br />
+										\( \text{Rate} = -\frac{1}{4}\frac{\Delta[\text{Reactant
+										1}]}{\Delta t} = -\frac{1}{5}\frac{\Delta[\text{Reactant
+										2}]}{\Delta t} \)
+									</li>
+									<li>
+										For products (increasing concentrations):
+										<br />
+										\( \text{Rate} = \frac{1}{4}\frac{\Delta[\text{Product
+										1}]}{\Delta t} = \frac{1}{6}\frac{\Delta[\text{Product
+										2}]}{\Delta t} \)
+									</li>
+									<li>
+										Rule used: divide by stoichiometric coefficient; reactants
+										carry a minus sign so the rate stays positive.
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Question 2</strong>
+								<br /><br />
+								During formation of ammonia:
+								<br />
+								\( N_2 + 3H_2 \rightarrow 2NH_3 \)
+								<br />
+								In a 1 L vessel, 2 moles of \(N_2\) disappear in 1 minute. Find:
+								<br />
+								(i) rate of reaction, (ii) rate of disappearance of \(H_2\),
+								(iii) rate of appearance of \(NH_3\).
+
+								<br /><br />
+
+								Answer
+
+								<br /><br />
+
+								<ul>
+									<li>
+										Convert to concentration change:
+										<br />
+										\( \Delta[N_2] = -2~\text{mol L}^{-1} \) in \(60~\text{s}\)
+										<br />
+										\( \frac{\Delta[N_2]}{\Delta t} = -\frac{2}{60} =
+										-\frac{1}{30}~\text{mol L}^{-1}\text{s}^{-1} \)
+									</li>
+									<li>
+										Rate of reaction:
+										<br />
+										\( \text{Rate} = -\frac{1}{1}\frac{\Delta[N_2]}{\Delta t} =
+										\frac{1}{30}~\text{mol L}^{-1}\text{s}^{-1} \)
+									</li>
+									<li>
+										Rate of disappearance of \(H_2\):
+										<br />
+										From \( \text{Rate} = -\frac{1}{3}\frac{\Delta[H_2]}{\Delta
+										t} \Rightarrow \left|\frac{\Delta[H_2]}{\Delta t}\right| =
+										3\times \text{Rate} \)
+										<br />
+										\( \text{ROD}(H_2) = 3 \times \frac{1}{30} =
+										\frac{1}{10}~\text{mol L}^{-1}\text{s}^{-1} \)
+									</li>
+									<li>
+										Rate of appearance of \(NH_3\):
+										<br />
+										From \( \text{Rate} = \frac{1}{2}\frac{\Delta[NH_3]}{\Delta
+										t} \Rightarrow \frac{\Delta[NH_3]}{\Delta t} = 2\times
+										\text{Rate} \)
+										<br />
+										\( \text{ROA}(NH_3) = 2 \times \frac{1}{30} =
+										\frac{1}{15}~\text{mol L}^{-1}\text{s}^{-1} \)
+									</li>
+								</ul>
+							</li>
+							<br />
+							<li>
+								<strong>Question 3</strong>
+								<br /><br />
+								For:
+								<br />
+								\( 2N_2O_5 \rightarrow 4NO_2 + O_2 \)
+								<br />
+								If rate of appearance of \(NO_2\) is \(2~\text{mol
+								L}^{-1}\text{s}^{-1}\), find:
+								<br />
+								(i) rate of reaction, (ii) rate of disappearance of \(N_2O_5\).
+
+								<br /><br />
+
+								Answer
+
+								<br /><br />
+
+								<ul>
+									<li>
+										Rate of reaction in terms of \(NO_2\):
+										<br />
+										\( \text{Rate} = \frac{1}{4}\frac{\Delta[NO_2]}{\Delta t} =
+										\frac{1}{4}\times 2 = \frac{1}{2}~\text{mol
+										L}^{-1}\text{s}^{-1} \)
+									</li>
+									<li>
+										For \(N_2O_5\):
+										<br />
+										\( \text{Rate} = -\frac{1}{2}\frac{\Delta[N_2O_5]}{\Delta t}
+										\Rightarrow
+										\text{ROD}(N_2O_5)=\left|\frac{\Delta[N_2O_5]}{\Delta
+										t}\right| = 2\times \text{Rate} \)
+										<br />
+										\( \text{ROD}(N_2O_5)= 2 \times \frac{1}{2} = 1~\text{mol
+										L}^{-1}\text{s}^{-1} \)
+									</li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+					<!-- END ch06 | Practice questions -->
+
+					<!-- START ch07 | Instantaneous rate slope -->
 					<li>
 						<div id="ch07">
 							<a
@@ -459,7 +577,7 @@
 								target="_blank"
 								rel="noopener"
 							>
-								Instantaneous Rate and Graph Interpretation (33:58)
+								Instantaneous rate: differential form + slope (33:58)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -467,70 +585,40 @@
 							</span>
 						</div>
 
-						<ol class="inner-list">
+						<ul>
 							<li>
-								Instantaneous rate is defined for a very small time interval (\(
-								\Delta t \to 0 \)).
+								Instantaneous rate refers to rate at a particular instant (very
+								small \(\Delta t\); conceptually \(\Delta t \to 0\)).
 							</li>
-
 							<li>
-								For a reaction:<br />
-								\( 2\mathrm{A} + 3\mathrm{B} \rightarrow 4\mathrm{C} \)
-								<ul>
-									<li>
-										Instantaneous rate form:<br />
-										\( \text{ROR} = -\dfrac{1}{2}\dfrac{d[\mathrm{A}]}{dt} =
-										-\dfrac{1}{3}\dfrac{d[\mathrm{B}]}{dt} =
-										\dfrac{1}{4}\dfrac{d[\mathrm{C}]}{dt} \)
-									</li>
-									<li>
-										\( \dfrac{d[\ ]}{dt} \) represents a very small change of
-										concentration with time.
-									</li>
-								</ul>
+								Replace \(\Delta\) with differential \(d\):
+								<br />
+								\( \text{Rate} = -\frac{1}{a}\frac{d[A]}{dt} =
+								-\frac{1}{b}\frac{d[B]}{dt} = \frac{1}{c}\frac{d[C]}{dt} \)
 							</li>
-
 							<li>
 								Graph meaning:
-								<ul>
-									<li>
-										Reactant concentration decreases with time; product
-										concentration increases with time.
-									</li>
-									<li>
-										\( \dfrac{d[\mathrm{A}]}{dt}, \dfrac{d[\mathrm{B}]}{dt},
-										\dfrac{d[\mathrm{C}]}{dt} \) correspond to slopes of their
-										concentration–time graphs.
-									</li>
-									<li>
-										Slope is taken as the angle made by the tangent with the
-										positive direction of the \(x\)-axis.
-									</li>
-								</ul>
+								<br />
+								\( \frac{d[\text{species}]}{dt} \) equals the slope of
+								concentration vs time curve at that point (tangent slope).
 							</li>
-						</ol>
-
-						<!-- IMAGE 01 SHOULD GO HERE
-         Description: Concentration–time graphs showing reactant decreasing and product increasing, both approaching constant values.
-         Lecture reference: (35:53)
-    -->
-
-						<!-- IMAGE 02 SHOULD GO HERE
-         Description: Tangent drawn on a concentration–time curve to show slope as \(d[\ ]/dt\) at an instant.
-         Lecture reference: (37:03)
-    -->
+							<li>
+								Reactant curve typically slopes downward; product curve slopes
+								upward; slopes approach 0 near equilibrium.
+							</li>
+						</ul>
 					</li>
-					<!-- END ch07 -->
+					<!-- END ch07 | Instantaneous rate slope -->
 
-					<!-- START ch08 -->
+					<!-- START ch08 | Graph angle questions -->
 					<li>
 						<div id="ch08">
 							<a
-								href="https://youtu.be/Ez2EaGNt-u8?t=1282s"
+								href="https://youtu.be/Ez2EaGNt-u8?t=2388s"
 								target="_blank"
 								rel="noopener"
 							>
-								Practice Problems Covered (21:22)
+								Graph-based questions (angle/slope → rate) (39:48)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -538,391 +626,27 @@
 							</span>
 						</div>
 
-						<ol class="inner-list">
+						<ul>
 							<li>
-								<div class="accordion">
-									<div class="accordion-item">
-										<button class="accordion-button" id="ch08_q01">
-											<a
-												href="https://youtu.be/Ez2EaGNt-u8?t=1288s"
-												target="_blank"
-												rel="noopener"
-											>
-												Q1. Write the average rate of reaction expression for
-												the given reaction (definition-based).
-											</a>
-										</button>
-										<div class="accordion-content">
-											<a
-												class="answer_video"
-												href="https://youtu.be/Ez2EaGNt-u8?t=1288s"
-												target="_blank"
-												rel="noopener"
-												>Answer Video</a
-											>
-											<ul>
-												<li>
-													For a general reaction:<br />
-													\( a\mathrm{A} + b\mathrm{B} \rightarrow c\mathrm{C} +
-													d\mathrm{D} \)
-												</li>
-												<li>
-													Average rate of reaction (single consistent rate):<br />
-													\( \text{ROR} =
-													-\dfrac{1}{a}\dfrac{\Delta[\mathrm{A}]}{\Delta t} =
-													-\dfrac{1}{b}\dfrac{\Delta[\mathrm{B}]}{\Delta t} =
-													+\dfrac{1}{c}\dfrac{\Delta[\mathrm{C}]}{\Delta t} =
-													+\dfrac{1}{d}\dfrac{\Delta[\mathrm{D}]}{\Delta t} \)
-												</li>
-												<li>
-													Reactant concentration decreases, so
-													\(\Delta[\text{reactant}]<0\); minus sign keeps ROR
-													positive.
-												</li>
-												<li>
-													Product concentration increases, so product term is
-													positive.
-												</li>
-												<li>
-													Division by stoichiometric coefficient is mandatory
-													for ROR (not for ROA/ROD).
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
+								From a graph, slope can be computed as \(
+								\frac{y_2-y_1}{x_2-x_1} \) (units = concentration/time).
 							</li>
-
 							<li>
-								<div class="accordion">
-									<div class="accordion-item">
-										<button class="accordion-button" id="ch08_q02">
-											<a
-												href="https://youtu.be/Ez2EaGNt-u8?t=1413s"
-												target="_blank"
-												rel="noopener"
-											>
-												Q2. For \( \mathrm{N_2} + 3\mathrm{H_2} \rightarrow
-												2\mathrm{NH_3} \): if \(2\) moles of \( \mathrm{N_2} \)
-												disappear in \(1\) minute (vessel volume
-												\(=1\,\mathrm{L}\)), find ROR, ROD of \( \mathrm{H_2}
-												\), and ROA of \( \mathrm{NH_3} \).
-											</a>
-										</button>
-										<div class="accordion-content">
-											<a
-												class="answer_video"
-												href="https://youtu.be/Ez2EaGNt-u8?t=1413s"
-												target="_blank"
-												rel="noopener"
-												>Answer Video</a
-											>
-											<ul>
-												<li>
-													Convert moles to concentration and minutes to
-													seconds:<br />
-													\( \Delta[\mathrm{N_2}] =
-													\dfrac{2\,\mathrm{mol}}{1\,\mathrm{L}} =
-													2\,\mathrm{mol\,L^{-1}} \), \( \Delta t =
-													60\,\mathrm{s} \)
-												</li>
-												<li>
-													\( \dfrac{\Delta[\mathrm{N_2}]}{\Delta t} =
-													-\dfrac{2}{60} =
-													-\dfrac{1}{30}\,\mathrm{mol\,L^{-1}\,s^{-1}} \)
-												</li>
-												<li>
-													ROR using \( \text{ROR} =
-													-\dfrac{1}{1}\dfrac{\Delta[\mathrm{N_2}]}{\Delta t}
-													\):<br />
-													\( \text{ROR} =
-													\dfrac{1}{30}\,\mathrm{mol\,L^{-1}\,s^{-1}} \)
-												</li>
-												<li>
-													From \( \text{ROR} =
-													-\dfrac{1}{3}\dfrac{\Delta[\mathrm{H_2}]}{\Delta t}
-													\):<br />
-													\( \left|\dfrac{\Delta[\mathrm{H_2}]}{\Delta t}\right|
-													= 3\,\text{ROR} =
-													\dfrac{1}{10}\,\mathrm{mol\,L^{-1}\,s^{-1}} \)
-												</li>
-												<li>
-													From \( \text{ROR} =
-													+\dfrac{1}{2}\dfrac{\Delta[\mathrm{NH_3}]}{\Delta t}
-													\):<br />
-													\( \dfrac{\Delta[\mathrm{NH_3}]}{\Delta t} =
-													2\,\text{ROR} =
-													\dfrac{1}{15}\,\mathrm{mol\,L^{-1}\,s^{-1}} \)
-												</li>
-												<li>
-													ROD/ROA values are reported positive as magnitudes;
-													sign is carried in \(\Delta[\ ]\) when writing ROR.
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
+								If an angle \(\theta\) is given for the tangent, slope = \(
+								\tan\theta \) (angle measured from positive x-axis direction).
 							</li>
-
 							<li>
-								<div class="accordion">
-									<div class="accordion-item">
-										<button class="accordion-button" id="ch08_q03">
-											<a
-												href="https://youtu.be/Ez2EaGNt-u8?t=1809s"
-												target="_blank"
-												rel="noopener"
-											>
-												Q3. For \( 2\mathrm{N_2O_5} \rightarrow 4\mathrm{NO_2} +
-												\mathrm{O_2} \): if ROA of \( \mathrm{NO_2} \) is
-												\(2\,\mathrm{mol\,L^{-1}\,s^{-1}}\), find ROR and ROD of
-												\( \mathrm{N_2O_5} \).
-											</a>
-										</button>
-										<div class="accordion-content">
-											<a
-												class="answer_video"
-												href="https://youtu.be/Ez2EaGNt-u8?t=1809s"
-												target="_blank"
-												rel="noopener"
-												>Answer Video</a
-											>
-											<ul>
-												<li>
-													Given \( \dfrac{d[\mathrm{NO_2}]}{dt} =
-													2\,\mathrm{mol\,L^{-1}\,s^{-1}} \) (appearance of
-													product).
-												</li>
-												<li>
-													ROR from product term (divide by coefficient
-													\(4\)):<br />
-													\( \text{ROR} =
-													\dfrac{1}{4}\dfrac{d[\mathrm{NO_2}]}{dt} =
-													\dfrac{1}{2}\,\mathrm{mol\,L^{-1}\,s^{-1}} \)
-												</li>
-												<li>
-													ROD of \( \mathrm{N_2O_5} \) using reactant term
-													(coefficient \(2\)):<br />
-													\( \text{ROR} =
-													-\dfrac{1}{2}\dfrac{d[\mathrm{N_2O_5}]}{dt}
-													\Rightarrow
-													\left|\dfrac{d[\mathrm{N_2O_5}]}{dt}\right| =
-													2\,\text{ROR} = 1\,\mathrm{mol\,L^{-1}\,s^{-1}} \)
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<div class="accordion">
-									<div class="accordion-item">
-										<button class="accordion-button" id="ch08_q04">
-											<a
-												href="https://youtu.be/Ez2EaGNt-u8?t=2408s"
-												target="_blank"
-												rel="noopener"
-											>
-												Q4. Graph-based: use two points to find slope and then
-												find ROR, rate of disappearance of \( \mathrm{N_2} \),
-												and rate of appearance of \( \mathrm{NH_3} \).
-											</a>
-										</button>
-										<div class="accordion-content">
-											<a
-												class="answer_video"
-												href="https://youtu.be/Ez2EaGNt-u8?t=2408s"
-												target="_blank"
-												rel="noopener"
-												>Answer Video</a
-											>
-											<ul>
-												<li>
-													From a concentration–time graph, estimate the rate
-													using slope between two points:<br />
-													\( \dfrac{d[\mathrm{H_2}]}{dt} \approx
-													\dfrac{[\mathrm{H_2}]_2 - [\mathrm{H_2}]_1}{t_2 - t_1}
-													\)
-												</li>
-												<li>
-													For \( \mathrm{N_2} + 3\mathrm{H_2} \rightarrow
-													2\mathrm{NH_3} \):<br />
-													\( \text{ROR} =
-													-\dfrac{1}{3}\dfrac{d[\mathrm{H_2}]}{dt} \)
-												</li>
-												<li>
-													Rate of disappearance of \( \mathrm{N_2} \):<br />
-													\( \text{ROD}(\mathrm{N_2}) =
-													\left|\dfrac{d[\mathrm{N_2}]}{dt}\right| = \text{ROR}
-													\)
-												</li>
-												<li>
-													Rate of appearance of \( \mathrm{NH_3} \):<br />
-													\( \text{ROA}(\mathrm{NH_3}) =
-													\left|\dfrac{d[\mathrm{NH_3}]}{dt}\right| =
-													2\,\text{ROR} \)
-												</li>
-												<li>
-													Units are taken from axes (typically \(
-													\mathrm{mol\,L^{-1}\,s^{-1}} \)).
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<div class="accordion">
-									<div class="accordion-item">
-										<button class="accordion-button" id="ch08_q05">
-											<a
-												href="https://youtu.be/Ez2EaGNt-u8?t=2647s"
-												target="_blank"
-												rel="noopener"
-											>
-												Q5. Angle-based graph: using \( \theta \), find ROR and
-												rate of appearance/disappearance for the given reaction.
-											</a>
-										</button>
-										<div class="accordion-content">
-											<a
-												class="answer_video"
-												href="https://youtu.be/Ez2EaGNt-u8?t=2647s"
-												target="_blank"
-												rel="noopener"
-												>Answer Video</a
-											>
-											<ul>
-												<li>
-													If a tangent makes angle \( \theta \) with the
-													positive \(x\)-axis, then slope is:<br />
-													\( \dfrac{d[\mathrm{Q}]}{dt} = \tan\theta \) (units:
-													concentration per time)
-												</li>
-												<li>
-													Example used: \( \theta = 135^\circ \Rightarrow
-													\tan(135^\circ) = -1 \), so concentration is
-													decreasing.
-												</li>
-												<li>
-													Convert slope to ROR using the stoichiometric form
-													shown in the question statement:<br />
-													\( \text{ROR} =
-													-\dfrac{1}{\nu}\dfrac{d[\text{reactant}]}{dt} \)
-													(divide by the coefficient \(\nu\)).
-												</li>
-												<li>
-													After ROR is found, convert to ROA/ROD by multiplying
-													with stoichiometric coefficients (as required).
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<div class="accordion">
-									<div class="accordion-item">
-										<button class="accordion-button" id="ch08_q06">
-											<a
-												href="https://youtu.be/Ez2EaGNt-u8?t=2895s"
-												target="_blank"
-												rel="noopener"
-											>
-												Q6. Instantaneous rate at a specific time: use tangent
-												angle to find ROR and ROD of \( \mathrm{A} \) (and ROA
-												if asked).
-											</a>
-										</button>
-										<div class="accordion-content">
-											<a
-												class="answer_video"
-												href="https://youtu.be/Ez2EaGNt-u8?t=2895s"
-												target="_blank"
-												rel="noopener"
-												>Answer Video</a
-											>
-											<ul>
-												<li>
-													Instantaneous rate uses derivative at a point:<br />
-													\( \text{ROR} =
-													-\dfrac{1}{\nu}\dfrac{d[\text{reactant}]}{dt} =
-													+\dfrac{1}{\nu}\dfrac{d[\text{product}]}{dt} \)
-												</li>
-												<li>
-													Tangent slope from angle \( \theta \):<br />
-													\( \dfrac{d[\mathrm{B}]}{dt} = \tan\theta \)
-												</li>
-												<li>
-													Example used: \( \theta = 150^\circ \Rightarrow
-													\tan(150^\circ) = -\tan(30^\circ) =
-													-\dfrac{1}{\sqrt{3}} \)
-												</li>
-												<li>
-													If the coefficient of \( \mathrm{B} \) is \(1\),
-													then:<br />
-													\( \text{ROR} = -\dfrac{d[\mathrm{B}]}{dt} \Rightarrow
-													\text{ROR} = \dfrac{1}{\sqrt{3}} \) (with proper
-													units)
-												</li>
-												<li>
-													ROD/ROA conversion uses stoichiometric coefficients:
-													<ul>
-														<li>
-															\( \text{ROD}(\mathrm{A}) = \nu_{\mathrm{A}}
-															\times \text{ROR} \)
-														</li>
-														<li>
-															\( \text{ROA}(\mathrm{C}) = \nu_{\mathrm{C}}
-															\times \text{ROR} \)
-														</li>
-													</ul>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
-						</ol>
-
-						<ul class="inner-list">
-							<li>
-								JEE Quick Traps / Quick Recall:
-								<ul>
-									<li>
-										ROR definition: divide by stoichiometric coefficient;
-										reactants negative, products positive.
-									</li>
-									<li>
-										ROA/ROD are directly \( \left|\dfrac{\Delta[\ ]}{\Delta
-										t}\right| \) or \( \left|\dfrac{d[\ ]}{dt}\right| \)
-										(reported positive).
-									</li>
-									<li>
-										Average rate uses \( \dfrac{\Delta[\ ]}{\Delta t} \);
-										instantaneous rate uses \( \dfrac{d[\ ]}{dt} \).
-									</li>
-									<li>
-										Graph slope gives \( \dfrac{d[\ ]}{dt} \); use units from
-										axes.
-									</li>
-									<li>
-										Angle-based slope: angle must be measured from positive
-										\(x\)-axis (avoid using the wrong angle).
-									</li>
-								</ul>
+								Once \( \frac{d[\text{species}]}{dt} \) is obtained, convert to
+								rate of reaction using:
+								<br />
+								\( \text{Rate} =
+								-\frac{1}{\nu_\text{reactant}}\frac{d[\text{reactant}]}{dt} \)
+								or \( \text{Rate} =
+								\frac{1}{\nu_\text{product}}\frac{d[\text{product}]}{dt} \)
 							</li>
 						</ul>
-
-						<!-- IMAGE 03 SHOULD GO HERE
-       Description: Concentration–time graph with a tangent at a specific time and a marked angle to compute slope.
-       Lecture reference: (48:17)
-  -->
 					</li>
-					<!-- END ch08 -->
+					<!-- END ch08 | Graph angle questions -->
 				</ol>
 			</div>
 		</div>
