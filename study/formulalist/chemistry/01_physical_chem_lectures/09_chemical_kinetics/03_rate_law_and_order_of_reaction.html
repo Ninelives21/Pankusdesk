@@ -9,10 +9,28 @@
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+
+					// ONE FIX: make all \frac render like \dfrac (bigger) even inline
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: {
+					fontCache: 'global',
+				},
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -148,13 +166,665 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Rate law: meaning & why experimental (00:01)</a>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Example: determine powers from doubling tests (05:12)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>General rate law: orders x, y and overall order n (11:00)</a
+					>
+				</li>
+				<li><a href="#ch04">Rate constant k: meaning & aliases (15:18)</a></li>
+				<li>
+					<a href="#ch05">Units of k and how unit reveals order (18:27)</a>
+				</li>
+				<li>
+					<a href="#ch06">Solved-type questions on rate change (27:00)</a>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Finding x, y from “A doubled” and “A,B doubled” data (38:20)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>3-species question: volume change + A/B/C changes (44:33)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Key facts: stoichiometry ≠ order; products/catalyst/zero-order
+						terms (53:22)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Law of mass action validity: elementary step & RDS idea (58:45)</a
+					>
 				</li>
 			</ol>
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Rate law overview -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=1s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rate law: meaning & why experimental (00:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								<strong>Rate law</strong> explains how the
+								<strong>rate of reaction</strong> depends on the
+								<strong>concentrations</strong> of species involved in the
+								reaction.
+								<br />
+								(Species can include reactants, products, and even catalysts in
+								some cases.)
+							</li>
+							<li>
+								This dependence can be complex and can vary as concentrations
+								change, so the practical approach is:
+								<ul>
+									<li>
+										<strong>Determine the rate law experimentally</strong>
+										(there is no reliable “look at the equation and write
+										powers” shortcut for general reactions).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Rate law overview -->
+
+					<!-- START ch02 | Doubling test example -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=312s"
+								target="_blank"
+								rel="noopener"
+							>
+								Example: determine powers from doubling tests (05:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>Consider: \(2A + B \rightarrow \text{products}\)</li>
+							<li>
+								Experimental observations:
+								<ul>
+									<li>
+										If \([A]\) is doubled (keeping \([B]\) constant) and rate
+										doubles, then \( \text{rate} \propto [A]^1\).
+									</li>
+									<li>
+										If \([B]\) is doubled (keeping \([A]\) constant) and rate
+										becomes 4 times, then \( \text{rate} \propto [B]^2\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								So the rate law becomes:
+								<br />
+								\(\text{rate} = k[A]^1[B]^2\)
+							</li>
+							<li>
+								\(k\) is the proportionality constant (called
+								<strong>rate constant</strong>), and the full expression is the
+								<strong>rate law expression</strong>.
+							</li>
+							<li>
+								Powers in a rate law can be:
+								<ul>
+									<li>Positive integers (1, 2, 3, ...)</li>
+									<li>Zero</li>
+									<li>Negative</li>
+									<li>Fractional (e.g., \(1/2\))</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Doubling test example -->
+
+					<!-- START ch03 | Orders x y n -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=660s"
+								target="_blank"
+								rel="noopener"
+							>
+								General rate law: orders x, y and overall order n (11:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								General experimentally-determined form:
+								<br />
+								\(\text{rate} = k[A]^x[B]^y\)
+							</li>
+							<li>
+								Meanings:
+								<ul>
+									<li>
+										\([A]\), \([B]\): concentrations (typically in mol
+										L\(^{-1}\))
+									</li>
+									<li>\(x\): <strong>order w.r.t. A</strong></li>
+									<li>\(y\): <strong>order w.r.t. B</strong></li>
+									<li>
+										\(n = x + y\): <strong>overall (total) order</strong> of the
+										reaction
+									</li>
+								</ul>
+							</li>
+							<li>
+								Important: \(x\), \(y\), and \(n\) can each be
+								<strong>negative, zero, positive, or fractional</strong>, so
+								they generally cannot be guessed from stoichiometric
+								coefficients.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Orders x y n -->
+
+					<!-- START ch04 | Meaning of k -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=918s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rate constant k: meaning & aliases (15:18)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								\(k\) is called:
+								<ul>
+									<li><strong>rate constant</strong></li>
+									<li><strong>velocity constant</strong> (in some books)</li>
+									<li><strong>specific reaction rate</strong></li>
+								</ul>
+							</li>
+							<li>
+								Interpretation (specific reaction rate idea):
+								<ul>
+									<li>
+										If all concentration terms in the rate law are unity (i.e.,
+										each equals 1), then the rate becomes:
+										<br />
+										\(k = \text{rate}\) (because \(1^x = 1\)).
+									</li>
+								</ul>
+							</li>
+							<li>
+								\(k\) depends on conditions like
+								<strong>temperature</strong> (details studied later).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Meaning of k -->
+
+					<!-- START ch05 | Units of k -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=1107s"
+								target="_blank"
+								rel="noopener"
+							>
+								Units of k and how unit reveals order (18:27)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Common unit of rate:
+								<br />
+								\(\text{rate unit} = \text{mol L}^{-1}\text{ s}^{-1}\)
+							</li>
+							<li>
+								From \(\text{rate} = k[A]^x[B]^y\) and \(n = x+y\):
+								<br />
+								\([A]^x[B]^y\) has unit \((\text{mol L}^{-1})^n\)
+							</li>
+							<li>
+								Therefore unit of \(k\) becomes:
+								<br />
+								\(k\ \text{unit} = (\text{mol L}^{-1})^{(1-n)} \text{ s}^{-1}\)
+							</li>
+							<li>
+								Special cases (useful recognition):
+								<ul>
+									<li>
+										Zero order (\(n=0\)):
+										<br />
+										\(k\) unit \(= \text{mol L}^{-1}\text{ s}^{-1}\)
+									</li>
+									<li>
+										First order (\(n=1\)):
+										<br />
+										\(k\) unit \(= \text{s}^{-1}\)
+									</li>
+									<li>
+										Second order (\(n=2\)):
+										<br />
+										\(k\) unit \(= \text{L mol}^{-1}\text{ s}^{-1}\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Example: if \(k\) unit is \(\text{L}^2\text{ mol}^{-2}\text{
+								s}^{-1}\), then
+								<br />
+								\((\text{mol L}^{-1})^{(1-n)} = \text{L}^2\text{ mol}^{-2}\
+								\Rightarrow\ 1-n = -2\ \Rightarrow\ n=3\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Units of k -->
+
+					<!-- START ch06 | Practice set 1 -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=1620s"
+								target="_blank"
+								rel="noopener"
+							>
+								Solved-type questions on rate change (27:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Given: \(2a + 3b \rightarrow \text{products}\), and
+								experimentally:
+								<br />
+								Order w.r.t. \(a = 2\), order w.r.t. \(b = -1\)
+							</li>
+							<li>
+								Rate law:
+								<br />
+								\(\text{rate} = k[a]^2[b]^{-1}\)
+							</li>
+							<li>
+								Overall order:
+								<br />
+								\(n = 2 + (-1) = 1\)
+							</li>
+							<li>
+								Unit of \(k\) (since \(n=1\)):
+								<br />
+								\(k\) unit \(= \text{s}^{-1}\)
+							</li>
+						</ul>
+
+						<ol>
+							<li>
+								<strong>Question 1</strong>
+								<br /><br />
+								What happens to the rate when \([a]\) is doubled alone?
+
+								<br /><br />
+
+								Rate increases 4 times.
+
+								<br /><br />
+
+								<ul>
+									<li>\(\text{rate} \propto [a]^2\)</li>
+									<li>Doubling \([a]\): factor \(= 2^2 = 4\)</li>
+								</ul>
+							</li>
+							<br />
+							<li>
+								<strong>Question 2</strong>
+								<br /><br />
+								What happens to the rate when \([b]\) is halved alone?
+
+								<br /><br />
+
+								Rate increases 2 times.
+
+								<br /><br />
+
+								<ul>
+									<li>\(\text{rate} \propto [b]^{-1}\)</li>
+									<li>Halving \([b]\): factor \(= (1/2)^{-1} = 2\)</li>
+								</ul>
+							</li>
+							<br />
+							<li>
+								<strong>Question 3</strong>
+								<br /><br />
+								What happens to the rate when both \([a]\) and \([b]\) are
+								doubled?
+
+								<br /><br />
+
+								Rate increases 2 times.
+
+								<br /><br />
+
+								<ul>
+									<li>Net factor \(= 2^2 \times 2^{-1}\)</li>
+									<li>\(= 4 \times 1/2 = 2\)</li>
+								</ul>
+							</li>
+							<br />
+							<li>
+								<strong>Question 4</strong>
+								<br /><br />
+								If container volume becomes 3 times (moles unchanged), what
+								happens to the rate?
+
+								<br /><br />
+
+								Rate decreases 3 times.
+
+								<br /><br />
+
+								<ul>
+									<li>
+										Concentration \(\propto 1/V\), so each concentration becomes
+										\(1/3\) of original
+									</li>
+									<li>Net factor \(= (1/3)^2 \times (1/3)^{-1} = 1/3\)</li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+					<!-- END ch06 | Practice set 1 -->
+
+					<!-- START ch07 | Find x and y -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=2300s"
+								target="_blank"
+								rel="noopener"
+							>
+								Finding x, y from “A doubled” and “A,B doubled” data (38:20)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								For \(2A + B \rightarrow \text{products}\), assume:
+								<br />
+								\(\text{rate} = k[A]^x[B]^y\)
+							</li>
+							<li>
+								Given experimentally:
+								<ul>
+									<li>
+										If \([A]\) doubled alone → rate becomes 2 times:
+										<br />
+										\(2 = 2^x \Rightarrow x = 1\)
+									</li>
+									<li>
+										If \([A]\) and \([B]\) both doubled → rate becomes 8 times:
+										<br />
+										\(8 = 2^{x+y} = 2^3 \Rightarrow x+y=3\)
+									</li>
+									<li>With \(x=1\), \(y=2\)</li>
+								</ul>
+							</li>
+							<li>
+								Final:
+								<br />
+								\(\text{rate} = k[A]^1[B]^2\), overall order \(n = 3\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Find x and y -->
+
+					<!-- START ch08 | Three species system -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=2673s"
+								target="_blank"
+								rel="noopener"
+							>
+								3-species question: volume change + A/B/C changes (44:33)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								For a reaction involving \(A, B, C\), assume:
+								<br />
+								\(\text{rate} = k[A]^x[B]^y[C]^z\)
+							</li>
+							<li>
+								If volume is doubled (moles constant), each concentration
+								becomes half:
+								<br />
+								\(\text{rate changes by factor} = (1/2)^{x+y+z}\)
+							</li>
+							<li>
+								If \(C\) is increased 4 times alone and rate increases 64 times:
+								<br />
+								\(64 = 4^z \Rightarrow z = 3\)
+							</li>
+							<li>
+								If \(A\) doubled and \(B\) halved (with \(C\) unchanged) and
+								rate becomes 4 times:
+								<br />
+								\(4 = 2^x \times (1/2)^y = 2^{x-y} \Rightarrow x-y=2\)
+							</li>
+							<li>
+								With the volume-doubling relation giving \(x+y+z = 3\) and
+								\(z=3\):
+								<br />
+								\(x+y = 0\)
+							</li>
+							<li>
+								Solve:
+								<ul>
+									<li>\(x+y=0\)</li>
+									<li>\(x-y=2\)</li>
+									<li>\(\Rightarrow x=1,\ y=-1\)</li>
+								</ul>
+							</li>
+							<li>
+								Final rate law:
+								<br />
+								\(\text{rate} = k[A]^1[B]^{-1}[C]^3\)
+							</li>
+							<li>
+								Overall order:
+								<br />
+								\(n = x+y+z = 1 + (-1) + 3 = 3\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Three species system -->
+
+					<!-- START ch09 | Important facts -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=3202s"
+								target="_blank"
+								rel="noopener"
+							>
+								Key facts: stoichiometry ≠ order; products/catalyst/zero-order
+								terms (53:22)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								<strong
+									>Stoichiometric coefficients have no direct relation with
+									order</strong
+								>
+								(in general reactions).
+								<br />
+								Order is determined experimentally, not by balancing numbers.
+							</li>
+							<li>
+								In a rate law, concentration terms of
+								<strong>products</strong> can appear (sometimes with negative
+								powers).
+								<br />
+								Example form: \(\text{rate} = k[O_3]^2[O_2]^{-1}\)
+							</li>
+							<li>
+								Some reactants can be <strong>absent</strong> from the written
+								rate law because their order is zero.
+								<br />
+								Example: \(\text{rate} = k[NO_2]^2[CO]^0 \Rightarrow \text{rate}
+								= k[NO_2]^2\)
+							</li>
+							<li>
+								A <strong>catalyst</strong> concentration term can also appear
+								if the rate depends on it.
+								<br />
+								Example (contact process idea): \(2SO_2 + O_2 \rightarrow
+								2SO_3\), catalyst \(NO\)
+								<br />
+								Possible experimental form: \(\text{rate} = k[O_2]^2[NO]^1\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Important facts -->
+
+					<!-- START ch10 | Law of mass action -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/4YLbhZtia1Q?t=3525s"
+								target="_blank"
+								rel="noopener"
+							>
+								Law of mass action validity: elementary step & RDS idea (58:45)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								The “law of mass action” idea (using stoichiometric coefficients
+								as powers) is <strong>not generally valid</strong>.
+							</li>
+							<li>
+								It is valid for
+								<strong>elementary (single-step) reactions</strong>, where the
+								written step itself is the rate-determining step.
+							</li>
+							<li>
+								For <strong>complex (multi-step) reactions</strong>:
+								<ul>
+									<li>
+										One step is the slowest step (rate-determining step, RDS).
+									</li>
+									<li>
+										Rate law can often be related to the stoichiometric
+										coefficients of the <strong>RDS</strong> (once the mechanism
+										is known).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Mechanism illustration (conceptual):
+								<ul>
+									<li>Overall: \(3A + 2B \rightarrow C\)</li>
+									<li>
+										Possible steps:
+										<ul>
+											<li>\(2A + B \rightarrow P\)</li>
+											<li>\(P + A \rightarrow Q\)</li>
+											<li>\(Q + B \rightarrow C\)</li>
+										</ul>
+									</li>
+									<li>
+										If the slowest step is \(2A + B \rightarrow P\), then rate
+										may follow:
+										<br />
+										\(\text{rate} = k[A]^2[B]^1\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Examples mentioned:
+								<ul>
+									<li>
+										Elementary: \(H_2 + I_2 \rightarrow 2HI\) → possible
+										\(\text{rate} = k[H_2]^1[I_2]^1\)
+									</li>
+									<li>
+										Not necessarily elementary (experimental surprise possible):
+										\(H_2 + Cl_2 \rightarrow 2HCl\) may show orders like 0 and 0
+										experimentally, indicating a complex mechanism.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Law of mass action -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
