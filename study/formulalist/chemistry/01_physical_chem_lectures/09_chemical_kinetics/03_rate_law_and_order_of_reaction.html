@@ -9,21 +9,18 @@
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script>
 			window.MathJax = {
 				tex: {
 					inlineMath: [['\\(', '\\)']],
 					displayMath: [['\\[', '\\]']],
 					processEscapes: true,
-
-					// ONE FIX: make all \frac render like \dfrac (bigger) even inline
 					macros: {
 						frac: ['\\dfrac{#1}{#2}', 2],
 					},
 				},
-				svg: {
-					fontCache: 'global',
-				},
+				svg: { fontCache: 'global' },
 			};
 		</script>
 
