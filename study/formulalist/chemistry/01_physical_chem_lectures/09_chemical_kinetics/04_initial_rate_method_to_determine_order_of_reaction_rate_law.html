@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -149,13 +163,525 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<ol id="topic-index">
+				<li><a href="#ch01">Initial Rate Method: goal & setup</a></li>
+				<li><a href="#ch02">Rate law basics: \( r = k[A]^x[B]^y \)</a></li>
+				<li><a href="#ch03">Method 1 (Board): form equations & divide</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch04">Shortcut (JEE): isolate one variable at a time</a>
 				</li>
+				<li><a href="#ch05">Example 1: negative order case</a></li>
+				<li>
+					<a href="#ch06"
+						>Example 2: larger powers (including \(-4\), \(+2\))</a
+					>
+				</li>
+				<li><a href="#ch07">IIT 2004-style: zero power in one reactant</a></li>
+				<li>
+					<a href="#ch08"
+						>IIT 2014 Mains: rate of formation vs rate of reaction</a
+					>
+				</li>
+				<li>
+					<a href="#ch09">IIT 2014 Advanced: factor method to find order</a>
+				</li>
+				<li><a href="#ch10">Key takeaways + what’s next (zero-order)</a></li>
 			</ol>
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Initial rate method -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=1s"
+								target="_blank"
+								rel="noopener"
+							>
+								Initial Rate Method: objective & idea (00:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Use experimental initial-rate data to:
+								<br />
+								(i) write the correct rate law, (ii) find order of reaction,
+								(iii) find rate constant \(k\).
+							</li>
+							<li>
+								Key principle:
+								<br />
+								Keep one concentration constant, change the other, and observe
+								how the rate changes.
+							</li>
+							<li>
+								Initial-rate method is purely experimental:
+								<br />
+								powers in the rate law are NOT taken from stoichiometric
+								coefficients.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Initial rate method -->
+
+					<!-- START ch02 | Rate law recap -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=111s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rate law recap: meaning of \(x,y,k,n\) (01:51)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								For a reaction like \(2A + B \to\) products, write rate law as:
+								<br />
+								\( r = k[A]^x[B]^y \)
+							</li>
+							<li>
+								Definitions:
+								<ul>
+									<li>\(k\): rate constant.</li>
+									<li>\(x\): order w.r.t. \(A\); \(y\): order w.r.t. \(B\).</li>
+									<li>\(n = x+y\): overall order of reaction.</li>
+								</ul>
+							</li>
+							<li>
+								Orders \(x,y\) can be:
+								<br />
+								zero, fractional, negative, or positive (not restricted to
+								integers).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Rate law recap -->
+
+					<!-- START ch03 | Board method equations -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=245s"
+								target="_blank"
+								rel="noopener"
+							>
+								Method 1 (Board): make equations & divide (04:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Assume a general rate law:
+								<br />
+								\( r = k[A]^x[B]^y \)
+							</li>
+							<li>
+								Substitute each experiment’s initial rate and initial
+								concentrations to create equations.
+							</li>
+							<li>
+								Divide suitable pairs of equations so that \(k\) cancels and one
+								variable (\(x\) or \(y\)) can be isolated.
+							</li>
+							<li>
+								After finding \(x\) and \(y\), substitute back into any one
+								equation to get \(k\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Board method equations -->
+
+					<!-- START ch04 | Shortcut dependency test -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=764s"
+								target="_blank"
+								rel="noopener"
+							>
+								Shortcut (JEE): isolate dependency by comparison (12:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Compare two experiments where \([A]\) is constant:
+								<br />
+								Any rate change is due only to \([B]\).
+							</li>
+							<li>
+								Compare two experiments where \([B]\) is constant:
+								<br />
+								Any rate change is due only to \([A]\).
+							</li>
+							<li>
+								Pattern rules:
+								<ul>
+									<li>
+										If doubling \([X]\) makes rate \(\times 2\), then order in
+										\(X\) is \(1\).
+									</li>
+									<li>
+										If doubling \([X]\) makes rate \(\times 4\), then order in
+										\(X\) is \(2\).
+									</li>
+									<li>
+										If doubling \([X]\) makes rate unchanged, then order in
+										\(X\) is \(0\).
+									</li>
+									<li>
+										If doubling \([X]\) makes rate \(\times \frac{1}{2}\), then
+										order in \(X\) is \(-1\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								After identifying powers, compute \(k\) by substituting any one
+								experiment into:
+								<br />
+								\( r = k[A]^x[B]^y \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Shortcut dependency test -->
+
+					<!-- START ch05 | Example 1 negative order -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=248s"
+								target="_blank"
+								rel="noopener"
+							>
+								Example 1: \(y=-1\), \(x=1\), overall order \(0\) (04:08)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Given (initial data):
+								<ul>
+									<li>\([A]=0.1,\ [B]=0.1 \Rightarrow r = 2\times 10^{-3}\)</li>
+									<li>\([A]=0.1,\ [B]=0.2 \Rightarrow r = 1\times 10^{-3}\)</li>
+									<li>\([A]=0.2,\ [B]=0.1 \Rightarrow r = 4\times 10^{-3}\)</li>
+								</ul>
+							</li>
+							<li>
+								With \([A]\) constant (first vs second):
+								<br />
+								\([B]\) doubles but rate halves \(\Rightarrow r \propto
+								[B]^{-1}\) so \(y=-1\).
+							</li>
+							<li>
+								With \([B]\) constant (first vs third):
+								<br />
+								\([A]\) doubles and rate doubles \(\Rightarrow r \propto [A]^1\)
+								so \(x=1\).
+							</li>
+							<li>
+								Final rate law:
+								<br />
+								\( r = k[A]^1[B]^{-1} \)
+							</li>
+							<li>
+								Overall order:
+								<br />
+								\( n=x+y=1+(-1)=0 \) (zero-order overall, possible in
+								experimental kinetics).
+							</li>
+							<li>
+								Rate constant from any row (e.g., first):
+								<br />
+								\( 2\times 10^{-3} = k(0.1)^1(0.1)^{-1} = k \Rightarrow k =
+								2\times 10^{-3} \)
+							</li>
+							<li>
+								Unit of \(k\) using \( [k]=(\text{mol L}^{-1})^{1-n}\
+								\text{s}^{-1} \):
+								<br />
+								since \(n=0\), \( [k] = (\text{mol L}^{-1})^{1}\text{s}^{-1} =
+								\text{mol L}^{-1}\text{s}^{-1} \).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Example 1 negative order -->
+
+					<!-- START ch06 | Example 2 powers -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=1005s"
+								target="_blank"
+								rel="noopener"
+							>
+								Example 2: \(x=-4\), \(y=2\) from data (16:45)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Given (initial data):
+								<ul>
+									<li>\([A]=0.2,\ [B]=0.1 \Rightarrow r = 1\times 10^{-3}\)</li>
+									<li>\([A]=0.2,\ [B]=0.2 \Rightarrow r = 4\times 10^{-3}\)</li>
+									<li>
+										\([A]=0.4,\ [B]=0.2 \Rightarrow r = 0.25\times 10^{-3}\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								With \([A]\) constant (1st vs 2nd):
+								<br />
+								\([B]\) doubles, rate becomes \(\times 4 \Rightarrow y=2\).
+							</li>
+							<li>
+								With \([B]\) constant (2nd vs 3rd):
+								<br />
+								\([A]\) doubles, rate becomes \(\times \frac{1}{16} \Rightarrow
+								x=-4\) (inverse fourth power).
+							</li>
+							<li>
+								Final rate law:
+								<br />
+								\( r = k[A]^{-4}[B]^2 \)
+							</li>
+							<li>
+								Overall order:
+								<br />
+								\( n = -4 + 2 = -2 \) (negative overall order can occur from
+								complex mechanisms).
+							</li>
+							<li>
+								Rate constant (using row 2):
+								<br />
+								\( 4\times 10^{-3} = k(0.2)^{-4}(0.2)^2 = k(0.2)^{-2}
+								\Rightarrow k = 4\times 10^{-3}(0.2)^2 = 16\times 10^{-5} \)
+							</li>
+							<li>
+								Unit of \(k\):
+								<br />
+								\( [k]=(\text{mol L}^{-1})^{1-n}\ \text{s}^{-1} = (\text{mol
+								L}^{-1})^{1-(-2)}\text{s}^{-1} = (\text{mol
+								L}^{-1})^{3}\text{s}^{-1} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Example 2 powers -->
+
+					<!-- START ch07 | IIT 2004 style -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=1747s"
+								target="_blank"
+								rel="noopener"
+							>
+								IIT 2004-type: order zero in \(B\) (29:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Identify cases where one reactant doubles but rate is unchanged:
+								<br />
+								that reactant has power \(0\) in the rate law.
+							</li>
+							<li>
+								From the discussed pattern:
+								<ul>
+									<li>
+										\([A]\) doubles with \([B]\) constant \(\Rightarrow\) rate
+										doubles \(\Rightarrow\) power of \(A\) is \(1\).
+									</li>
+									<li>
+										\([B]\) doubles with \([A]\) constant \(\Rightarrow\) rate
+										unchanged \(\Rightarrow\) power of \(B\) is \(0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Rate law form:
+								<br />
+								\( r = k[A]^1[B]^0 = k[A] \)
+							</li>
+							<li>
+								If overall order \(n=1\), then unit of \(k\) is:
+								<br />
+								\( [k]=(\text{mol L}^{-1})^{1-1}\text{s}^{-1} = \text{s}^{-1} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | IIT 2004 style -->
+
+					<!-- START ch08 | IIT 2014 mains -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=2100s"
+								target="_blank"
+								rel="noopener"
+							>
+								IIT 2014 Mains: \( \frac{d[C]}{dt} \) vs ROR (35:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Reaction given:
+								<br />
+								\( 2A + B \rightarrow C + D \)
+							</li>
+							<li>
+								Rate-of-reaction relation:
+								<br />
+								\( \text{ROR} = -\frac{1}{2}\frac{d[A]}{dt} =
+								-\frac{1}{1}\frac{d[B]}{dt} = +\frac{1}{1}\frac{d[C]}{dt} =
+								+\frac{1}{1}\frac{d[D]}{dt} \)
+							</li>
+							<li>
+								For this stoichiometry, \( \text{ROR} = \frac{d[C]}{dt} \)
+								(since coefficient of \(C\) is \(1\)).
+							</li>
+							<li>
+								Using initial-rate comparisons:
+								<ul>
+									<li>
+										Holding \(A\) constant, doubling \(B\) gives no change in
+										rate \(\Rightarrow\) order in \(B\) is \(0\).
+									</li>
+									<li>
+										Holding \(B\) constant, doubling \(A\) doubles rate
+										\(\Rightarrow\) order in \(A\) is \(1\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Therefore:
+								<br />
+								\( \frac{d[C]}{dt} = k[A]^1[B]^0 = k[A] \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | IIT 2014 mains -->
+
+					<!-- START ch09 | IIT 2014 advanced -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=2506s"
+								target="_blank"
+								rel="noopener"
+							>
+								IIT 2014 Advanced: factor-of-8 on doubling (41:46)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Statement:
+								<br />
+								Rate of disappearance of \(M\) increases by a factor of \(8\)
+								when \([M]\) is doubled.
+							</li>
+							<li>
+								Let rate \(\propto [M]^n\). On doubling \([M]\):
+								<br />
+								rate multiplies by \(2^n\).
+							</li>
+							<li>
+								Given factor \(8\):
+								<br />
+								\( 2^n = 8 = 2^3 \Rightarrow n = 3 \)
+							</li>
+							<li>Order with respect to \(M\) is \(3\).</li>
+						</ul>
+					</li>
+					<!-- END ch09 | IIT 2014 advanced -->
+
+					<!-- START ch10 | Summary and next -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/5XgyuftggTo?t=2763s"
+								target="_blank"
+								rel="noopener"
+							>
+								Wrap-up: summary + next lecture preview (46:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul>
+							<li>
+								Initial-rate method workflow:
+								<ol>
+									<li>Compare experiments to get powers (orders) \(x,y\).</li>
+									<br />
+									<li>
+										Write \( r = k[A]^x[B]^y \) and compute \(k\) from any row.
+									</li>
+									<br />
+									<li>
+										Overall order \(n=x+y\); unit of \(k\) from \( (\text{mol
+										L}^{-1})^{1-n}\text{s}^{-1} \).
+									</li>
+								</ol>
+							</li>
+							<li>
+								Next topic announced:
+								<br />
+								Zero-order reaction kinetics (equations, half-life, graphs, and
+								questions).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Summary and next -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
