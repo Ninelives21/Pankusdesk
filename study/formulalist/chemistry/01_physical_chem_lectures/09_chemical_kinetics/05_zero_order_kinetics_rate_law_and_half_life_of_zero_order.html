@@ -8,11 +8,24 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -149,13 +162,852 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<ol id="topic-index">
+				<li><a href="#ch01">Zero-order reaction: definition & key idea</a></li>
+				<li><a href="#ch02">Integrated rate law: \( A = A_0 - kt \)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch03"
+						>Graph: \([A]\) vs \(t\) (straight line), slope & intercept</a
+					>
+				</li>
+				<li><a href="#ch04">Half-life and life time in zero order</a></li>
+				<li>
+					<a href="#ch05"
+						>Equal concentration drops take equal time (unitary idea)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06">Practice: time for 75% completion given 50% time</a>
+				</li>
+				<li>
+					<a href="#ch07">Practice: time for 33.33% completion (two methods)</a>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Order identification by hit-and-trial using \(k\) consistency</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>All key graphs for zero order (rate, concentration, half-life)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Product formation: \([B]\) vs \(t\) for \(A \to B\)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Examples where zero order appears (photochemical, enzyme,
+						surface)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12"
+						>Special case: \(3A \to\) products (stoichiometric factor)</a
+					>
+				</li>
+				<li>
+					<a href="#ch13"
+						>Special case: \(\frac{5}{2}A \to\) products (quick results)</a
+					>
+				</li>
+				<li>
+					<a href="#ch14">Two-reactant case: \(A + 2B \to\) products (setup)</a>
 				</li>
 			</ol>
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Definition and features -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=5s"
+								target="_blank"
+								rel="noopener"
+							>
+								Zero-order reaction: meaning (00:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								General idea: reactant \(A\) converts to products.
+								<br />
+								Rate law for zero order:
+								<br />
+								\( r = k[A]^0 = k \)
+							</li>
+							<li>Rate is independent of reactant concentration \([A]\).</li>
+							<li>
+								\([A]\) decreases with time, but rate remains constant (for
+								fixed temperature/conditions).
+							</li>
+							<li>
+								Common misconception: “\([A]\) constant” is false; only the rate
+								stays constant.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Definition and features -->
+
+					<!-- START ch02 | Integrated rate law -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=310s"
+								target="_blank"
+								rel="noopener"
+							>
+								Integrated rate law derivation (05:10)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For \(A \rightarrow\) products and zero order:
+								<br />
+								\( r = k[A]^0 = k \)
+							</li>
+							<li>
+								Rate in terms of reactant consumption (stoichiometric
+								coefficient \(=1\)):
+								<br />
+								\( r = -\dfrac{d[A]}{dt} \)
+							</li>
+							<li>
+								Equate:
+								<br />
+								\(-\dfrac{d[A]}{dt} = k\)
+							</li>
+							<li>
+								Rearrange and integrate with limits: at \(t=0,\ [A]=[A]_0\); at
+								\(t=t,\ [A]=[A]_t\).
+								<br />
+								\(\int_{[A]_0}^{[A]_t} d[A] = -k \int_{0}^{t} dt\)
+							</li>
+							<li>
+								Result (integrated rate law):
+								<br />
+								\([A]_t - [A]_0 = -kt\)
+								<br />
+								\([A]_t = [A]_0 - kt\)
+							</li>
+							<li>
+								Meaning of symbols:
+								<ul>
+									<li>\([A]_0\): initial concentration</li>
+									<li>\([A]_t\): concentration remaining at time \(t\)</li>
+									<li>\(k\): rate constant (zero order)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Integrated rate law -->
+
+					<!-- START ch03 | Graph of A vs t -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=787s"
+								target="_blank"
+								rel="noopener"
+							>
+								Graph: \([A]\) vs time, slope = \(-k\) (13:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								From \([A]_t = [A]_0 - kt\), compare with \(y = mx + c\):
+								<ul>
+									<li>\(y \equiv [A]_t\)</li>
+									<li>\(x \equiv t\)</li>
+									<li>Slope \(m = -k\)</li>
+									<li>Intercept \(c = [A]_0\)</li>
+								</ul>
+							</li>
+							<img
+								src="../../../chemistry/01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/05/01_zero_order.png"
+								alt=""
+								style="width: 25%; height: auto; margin-right: 10px"
+							/>
+							<li>
+								Interpretation:
+								<ul>
+									<li>\([A]\) decreases linearly with time.</li>
+									<li>
+										At the time when the line hits \([A]=0\), reaction is
+										complete (for this simple case).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Exam cue: if \([A]\) vs \(t\) is a straight line with negative
+								slope \(\Rightarrow\) zero-order reaction.
+							</li>
+							<!-- IMAGE 01 SHOULD GO HERE
+             Description: Graph of \([A]\) (y-axis) vs \(t\) (x-axis) showing straight line, intercept \([A]_0\), slope \(-k\).
+             Lecture reference: 13:07
+        -->
+							<li>
+								Using angle form (if graph gives an angle \(\theta\)):
+								<br />
+								\(\tan\theta = \text{slope} = -k\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Graph of A vs t -->
+
+					<!-- START ch04 | Half-life and lifetime -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=1087s"
+								target="_blank"
+								rel="noopener"
+							>
+								Half-life and life time (18:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Half-life \(t_{1/2}\): time for 50% completion.
+								<br />
+								At \(t=t_{1/2}\), remaining concentration:
+								<br />
+								\([A] = \dfrac{[A]_0}{2}\)
+							</li>
+							<li>
+								Use \([A]_t = [A]_0 - kt\):
+								<br />
+								\(\dfrac{[A]_0}{2} = [A]_0 - k t_{1/2}\)
+								<br />
+								\(k t_{1/2} = \dfrac{[A]_0}{2}\)
+								<br />
+								\(t_{1/2} = \dfrac{[A]_0}{2k}\)
+							</li>
+							<li>
+								Life time \(t_{\text{lf}}\): time for 100% completion (in this
+								simple \(A \to\) products case).
+								<br />
+								At completion, \([A]=0\):
+								<br />
+								\(0 = [A]_0 - k t_{\text{lf}}\)
+								<br />
+								\(t_{\text{lf}} = \dfrac{[A]_0}{k}\)
+							</li>
+							<li>
+								Key dependence (zero order):
+								<ul>
+									<li>
+										\(t_{1/2}\) depends on initial concentration \([A]_0\).
+									</li>
+									<li>
+										This is unlike first order, where half-life is independent
+										of \([A]_0\).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Half-life and lifetime -->
+
+					<!-- START ch05 | Equal drops equal time -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=1382s"
+								target="_blank"
+								rel="noopener"
+							>
+								Equal concentration intervals take equal time (23:02)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For zero order, \([A]\) decreases linearly with time.
+								<br />
+								So equal decreases in \([A]\) take equal time.
+							</li>
+							<li>
+								Example pattern (conceptual):
+								<ul>
+									<li>
+										If \([A]\) goes \(100 \to 90\) in time \(t\), then \(90 \to
+										80\) also takes time \(t\), and so on.
+									</li>
+									<li>
+										If 10% completion takes time \(t\), then 80% completion
+										takes \(8t\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Quick rule: completion percentage converts to remaining \([A]\),
+								then use linearity or \([A]_t = [A]_0 - kt\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Equal drops equal time -->
+
+					<!-- START ch06 | Practice 75 percent -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=1760s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice: 50% in 2 min, find 75% time (29:20)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given: zero-order \(A \to\) products, time for 50% completion
+								\(=2\) min.
+							</li>
+							<li>
+								Set \([A]_0 = 100\) (any convenient value).
+								<ul>
+									<li>At 50% completion: \([A]=50\), \(t=2\) min.</li>
+									<li>
+										Use \(t = \dfrac{[A]_0 - [A]}{k}\): \(2 = \dfrac{100-50}{k}
+										= \dfrac{50}{k}\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								For 75% completion: remaining \([A]=25\).
+								<ul>
+									<li>\(t = \dfrac{100-25}{k} = \dfrac{75}{k}\).</li>
+									<li>
+										Divide: \(\dfrac{t}{2} = \dfrac{75/k}{50/k} = \dfrac{75}{50}
+										= \dfrac{3}{2}\).
+									</li>
+									<li>\(t = 3\) min.</li>
+								</ul>
+							</li>
+							<li>
+								Unitary shortcut (concept): 50 drop (100 to 50) takes 2 min, so
+								25 drop (50 to 25) takes 1 min; total \(=3\) min.
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/A0QsbNj9x24?t=1760s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										<br />
+										For a zero-order reaction \(A \to\) products, time for 50%
+										completion is 2 min. Find time for 75% completion.
+										<br />
+										<strong>Answer:</strong> 3 min.
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Practice 75 percent -->
+
+					<!-- START ch07 | Practice 33.33 percent -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=2100s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice: 33.33% completion (35:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given: time for 50% completion \(=2\) min.
+								<br />
+								Find time for 33.33% completion.
+							</li>
+							<li>
+								Use \([A]_0=100\):
+								<ul>
+									<li>
+										50% completion \(\Rightarrow [A]=50\): \(2 =
+										\dfrac{100-50}{k}=\dfrac{50}{k}\).
+									</li>
+									<li>
+										33.33% completion \(\Rightarrow [A]=66.66\): \(t =
+										\dfrac{100-66.66}{k}=\dfrac{33.33}{k}\).
+									</li>
+									<li>
+										Divide: \(\dfrac{t}{2}=\dfrac{33.33}{50}\Rightarrow t
+										\approx 1.333\) min.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Unitary idea (approx): 50 drop takes 2 min, so 10 drop takes
+								\(2/50 \times 10 = 0.4\) min; then scale linearly for required
+								drop.
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/A0QsbNj9x24?t=2100s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										<br />
+										For a zero-order reaction, time for 50% completion is 2 min.
+										Find time for 33.33% completion.
+										<br />
+										<strong>Answer:</strong> \(\approx 1.333\) min.
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Practice 33.33 percent -->
+
+					<!-- START ch08 | Hit and trial order -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=2556s"
+								target="_blank"
+								rel="noopener"
+							>
+								Order from multiple time data (42:36)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Some problems give times for two different % completions and ask
+								order.
+							</li>
+							<li>
+								Practical “hit-and-trial” method:
+								<ul>
+									<li>
+										Assume an order (often start with first order in many
+										exams), compute \(k\) from each data point.
+									</li>
+									<li>
+										If \(k\) values are same (or nearly same within experimental
+										error), the assumed order is consistent.
+									</li>
+									<li>
+										If not, try another order (zero order, then second order,
+										etc.).
+									</li>
+								</ul>
+							</li>
+							<li>
+								In zero order, proportional time pattern may appear: if 20%
+								takes 40 min and 40% takes 80 min, it strongly suggests zero
+								order.
+							</li>
+							<li>
+								Using zero-order equation for each data point:
+								<br />
+								\(k = \dfrac{[A]_0 - [A]_t}{t}\)
+							</li>
+							<li>
+								Unit of \(k\) for zero order:
+								<br />
+								\( [k] = \text{concentration} \times \text{time}^{-1} \)
+								<br />
+								Example forms: \(\mathrm{mol\,L^{-1}\,s^{-1}}\) or
+								\(\mathrm{mol\,L^{-1}\,min^{-1}}\) depending on time unit used.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Hit and trial order -->
+
+					<!-- START ch09 | Zero order graphs -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=2970s"
+								target="_blank"
+								rel="noopener"
+							>
+								Summary of important graphs (49:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Core graphs for zero order (for \(A \to\) products type):
+								<ul>
+									<li>
+										Rate vs \([A]\): horizontal line (rate constant, independent
+										of \([A]\)).
+									</li>
+									<li>
+										Rate vs \(t\): horizontal line (rate constant with time,
+										under fixed conditions).
+									</li>
+									<li>
+										\([A]\) vs \(t\): straight line with slope \(-k\), intercept
+										\([A]_0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Half-life dependence:
+								<br />
+								\(t_{1/2} = \dfrac{[A]_0}{2k}\)
+								<br />
+								So plot \(t_{1/2}\) vs \([A]_0\) is a straight line through
+								origin with slope \(\dfrac{1}{2k}\).
+							</li>
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: Set of zero-order graphs: rate vs \([A]\), rate vs \(t\), \([A]\) vs \(t\), and \(t_{1/2}\) vs \([A]_0\).
+             Lecture reference: 49:30
+        -->
+							<li>
+								If graph gives an angle \(\theta\) for \(t_{1/2}\) vs \([A]_0\):
+								<br />
+								\(\tan\theta = \dfrac{1}{2k}\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Zero order graphs -->
+
+					<!-- START ch10 | Product concentration -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=3174s"
+								target="_blank"
+								rel="noopener"
+							>
+								Product formation in \(A \to B\) (52:54)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Consider \(A \rightarrow B\) (product \(B\)).
+								<br />
+								Initial: \([A]_0\), \([B]_0 = 0\).
+							</li>
+							<li>
+								Let after time \(t\), \([A] = [A]_0 - x\), then \([B] = x\)
+								(stoichiometric 1:1).
+							</li>
+							<li>
+								Use zero-order integrated law for \(A\):
+								<br />
+								\([A] = [A]_0 - kt\)
+							</li>
+							<li>
+								Substitute \([A] = [A]_0 - x\):
+								<br />
+								\([A]_0 - x = [A]_0 - kt \Rightarrow x = kt\)
+							</li>
+							<li>
+								Therefore, product concentration:
+								<br />
+								\([B] = kt\)
+							</li>
+							<li>
+								Graph: \([B]\) vs \(t\) is a straight line through origin with
+								slope \(k\).
+							</li>
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: Graph of \([B]\) vs \(t\) showing straight line through origin; slope labeled \(k\).
+             Lecture reference: 52:54
+        -->
+						</ul>
+					</li>
+					<!-- END ch10 | Product concentration -->
+
+					<!-- START ch11 | Examples of zero order -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=3363s"
+								target="_blank"
+								rel="noopener"
+							>
+								Examples of zero-order reactions (56:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Photochemical example (experimentally shows zero order in
+								reactants):
+								<br />
+								\( \mathrm{H_2 + Cl_2 \xrightarrow{h\nu} 2HCl} \)
+							</li>
+							<li>
+								Observed form discussed: \( r \propto
+								[\mathrm{H_2}]^0[\mathrm{Cl_2}]^0 \) (under the described
+								photochemical conditions).
+							</li>
+							<li>
+								Rate can depend on light intensity (photon flux) rather than
+								reactant concentrations in such cases.
+							</li>
+							<li>
+								Other contexts mentioned:
+								<ul>
+									<li>
+										Enzyme-catalyzed reactions (often show saturation-type
+										behavior leading to zero-order region).
+									</li>
+									<li>
+										Gas dissociation on solid surfaces at high pressure (surface
+										saturation).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Example cited for surface process:
+								<br />
+								\( \mathrm{2NH_3 \rightarrow N_2 + 3H_2} \)
+								<br />
+								<span class="unclear"
+									>(conditions/details unclear in transcript)</span
+								>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Examples of zero order -->
+
+					<!-- START ch12 | Special case 3A -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=3533s"
+								target="_blank"
+								rel="noopener"
+							>
+								Special case: \(3A \to\) products (58:53)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Special case: reaction is \(3A \rightarrow\) products, but rate
+								law is still zero order:
+								<br />
+								\( r = k[A]^0 = k \)
+							</li>
+							<li>
+								Rate in terms of \(A\) with stoichiometric coefficient 3:
+								<br />
+								\( r = -\dfrac{1}{3}\dfrac{d[A]}{dt} \)
+							</li>
+							<li>
+								Equate:
+								<br />
+								\(-\dfrac{1}{3}\dfrac{d[A]}{dt} = k \Rightarrow \dfrac{d[A]}{dt}
+								= -3k\)
+							</li>
+							<li>
+								Integrate with \([A]=[A]_0\) at \(t=0\):
+								<br />
+								\([A]_t = [A]_0 - 3kt\)
+							</li>
+							<li>
+								Shortcut idea:
+								<ul>
+									<li>
+										For reactant \(A\), effective constant becomes \(k_A = 3k\)
+										(multiply by stoichiometric coefficient of \(A\)).
+									</li>
+									<li>
+										Then use the same zero-order forms with \(k \to k_A\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Half-life for \(3A \to\) products:
+								<br />
+								\(t_{1/2} = \dfrac{[A]_0}{2(3k)} = \dfrac{[A]_0}{6k}\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | Special case 3A -->
+
+					<!-- START ch13 | Special case 5 over 2 -->
+					<li>
+						<div id="ch13">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=3970s"
+								target="_blank"
+								rel="noopener"
+							>
+								Special case: \(\frac{5}{2}A \to\) products (01:06:10)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Reaction: \(\dfrac{5}{2}A \rightarrow\) products, with
+								zero-order rate:
+								<br />
+								\(r = k[A]^0 = k\)
+							</li>
+							<li>
+								Rate relation:
+								<br />
+								\(r = -\dfrac{1}{(5/2)}\dfrac{d[A]}{dt} =
+								-\dfrac{2}{5}\dfrac{d[A]}{dt}\)
+								<br />
+								\(-\dfrac{2}{5}\dfrac{d[A]}{dt} = k \Rightarrow \dfrac{d[A]}{dt}
+								= -\dfrac{5}{2}k\)
+							</li>
+							<li>
+								Integrated form:
+								<br />
+								\([A]_t = [A]_0 - \dfrac{5}{2}kt\)
+							</li>
+							<li>
+								Half-life:
+								<br />
+								\(t_{1/2} = \dfrac{[A]_0}{2\left(\frac{5}{2}k\right)} =
+								\dfrac{[A]_0}{5k}\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch13 | Special case 5 over 2 -->
+
+					<!-- START ch14 | Two reactants A plus 2B -->
+					<li>
+						<div id="ch14">
+							<a
+								href="https://youtu.be/A0QsbNj9x24?t=4096s"
+								target="_blank"
+								rel="noopener"
+							>
+								Setup: \(A + 2B \to\) products (01:08:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Reaction: \(A + 2B \rightarrow\) products with zero-order rate:
+								<br />
+								\(r = k[A]^0[B]^0 = k\)
+							</li>
+							<li>
+								Reactant-specific consumption relations:
+								<ul>
+									<li>
+										\(r = -\dfrac{1}{1}\dfrac{d[A]}{dt} =
+										-\dfrac{d[A]}{dt}\Rightarrow \dfrac{d[A]}{dt} = -k\)
+									</li>
+									<li>
+										\(r = -\dfrac{1}{2}\dfrac{d[B]}{dt}\Rightarrow
+										\dfrac{d[B]}{dt} = -2k\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Integrated (with \([A]=[A]_0,\ [B]=[B]_0\) at \(t=0\)):
+								<ul>
+									<li>\([A]_t = [A]_0 - kt\)</li>
+									<li>\([B]_t = [B]_0 - 2kt\)</li>
+								</ul>
+							</li>
+							<li>
+								Corresponding half-lives (based on each reactant halving):
+								<ul>
+									<li>For \(A\): \(t_{1/2}(A) = \dfrac{[A]_0}{2k}\)</li>
+									<li>
+										For \(B\): \(t_{1/2}(B) = \dfrac{[B]_0}{2(2k)} =
+										\dfrac{[B]_0}{4k}\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Note: these are “reactant half-lives” defined by each reactant
+								reaching half of its own initial concentration.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch14 | Two reactants A plus 2B -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
