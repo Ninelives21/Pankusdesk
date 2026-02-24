@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -149,13 +163,684 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<ol id="topic-index">
+				<li><a href="#ch01">First-order basics (00:07)</a></li>
+				<li><a href="#ch02">Differential to integrated rate law (04:30)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch03"
+						>Most-used numerical form for \(k\) and \(t\) (15:39)</a
+					>
 				</li>
+				<li>
+					<a href="#ch04"
+						>Exponential form and concentration–time behavior (18:15)</a
+					>
+				</li>
+				<li><a href="#ch05">Key plots and what they prove (11:53)</a></li>
+				<li><a href="#ch06">Half-life and lifetime (23:33)</a></li>
+				<li><a href="#ch07">Product formation vs time (42:02)</a></li>
+				<li><a href="#ch08">Practice questions (45:44)</a></li>
+				<li>
+					<a href="#ch09"
+						>Time for any fraction; 75%, 99.9% relations (01:01:15)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Common examples of first-order reactions (01:05:37)</a
+					>
+				</li>
+				<li><a href="#ch11">Two quick identifying facts (01:12:37)</a></li>
 			</ol>
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | First-order basics -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=7s"
+								target="_blank"
+								rel="noopener"
+							>
+								First-order basics (00:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Consider a simple reaction: \(A \rightarrow \text{products}\).
+								<br />
+								For a first-order reaction:
+								<br />
+								\(r = k[A]\)
+							</li>
+							<li>
+								Rate depends directly on \([A]\). As time increases, \([A]\)
+								decreases, so \(r\) also decreases with time.
+							</li>
+							<li>
+								Contrast (for quick identification):
+								<ul>
+									<li>Zero order: \(r = k\) (independent of \([A]\)).</li>
+									<li>
+										First order: \(r = k[A]\) (directly proportional to
+										\([A]\)).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | First-order basics -->
+
+					<!-- START ch02 | Integrated rate law -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=270s"
+								target="_blank"
+								rel="noopener"
+							>
+								Differential to integrated rate law (04:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For \(A \rightarrow \text{products}\), rate can be written as:
+								<br />
+								\(r = -\dfrac{d[A]}{dt} = k[A]\)
+							</li>
+							<li>
+								Separate variables and integrate:
+								<br />
+								\(\dfrac{d[A]}{[A]} = -k\,dt\)
+							</li>
+							<li>
+								Define concentrations:
+								<ul>
+									<li>At \(t=0\): \([A]=[A]_0\) (initial concentration)</li>
+									<li>At time \(t\): \([A]=[A]\) (remaining concentration)</li>
+								</ul>
+							</li>
+							<li>
+								Integrated (base-10 log) form:
+								<br />
+								\(\log_{10}[A] = \log_{10}[A]_0 - \dfrac{k t}{2.303}\)
+							</li>
+							<li>
+								Equivalent rearranged form:
+								<br />
+								\(\log_{10}\!\left(\dfrac{[A]_0}{[A]}\right) = \dfrac{k
+								t}{2.303}\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Integrated rate law -->
+
+					<!-- START ch03 | Numerical solving form -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=939s"
+								target="_blank"
+								rel="noopener"
+							>
+								Most-used numerical form for \(k\) and \(t\) (15:39)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For numericals, use:
+								<br />
+								\(t =
+								\dfrac{2.303}{k}\,\log_{10}\!\left(\dfrac{[A]_0}{[A]}\right)\)
+							</li>
+							<li>
+								Solve for rate constant:
+								<br />
+								\(k =
+								\dfrac{2.303}{t}\,\log_{10}\!\left(\dfrac{[A]_0}{[A]}\right)\)
+							</li>
+							<li>
+								Meaning of symbols:
+								<ul>
+									<li>\([A]_0\): initial concentration</li>
+									<li>\([A]\): remaining concentration at time \(t\)</li>
+									<li>\(k\): rate constant</li>
+								</ul>
+							</li>
+							<li>
+								Units of \(k\) for first order:
+								<br />
+								\([k] = \text{time}^{-1}\) (e.g., \(\text{s}^{-1}\),
+								\(\text{min}^{-1}\))
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Numerical solving form -->
+
+					<!-- START ch04 | Exponential form -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=1095s"
+								target="_blank"
+								rel="noopener"
+							>
+								Exponential form and concentration–time behavior (18:15)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Exponential (natural base) form:
+								<br />
+								\([A] = [A]_0\,e^{-kt}\)
+							</li>
+							<li>
+								Physical meaning:
+								<ul>
+									<li>At \(t=0\): \([A]=[A]_0\)</li>
+									<li>
+										As \(t \rightarrow \infty\): \([A] \rightarrow 0\)
+										(approaches zero asymptotically)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Rate vs time:
+								<br />
+								\(r = k[A] = k[A]_0 e^{-kt}\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Exponential form -->
+
+					<!-- START ch05 | Graphs and plots -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=713s"
+								target="_blank"
+								rel="noopener"
+							>
+								Key plots and what they prove (11:53)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<img
+									src="../../../chemistry/01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/06/01_first_order.png"
+									alt=""
+									style="width: 20%; height: auto; margin-right: 10px"
+								/><br />
+								Key diagnostic graphs for first-order kinetics (for \(A
+								\rightarrow \text{products}\)):
+							</li>
+							<li>
+								Rate vs concentration:
+								<br />
+								\(r = k[A]\)
+								<br />
+								Straight line through origin; slope \(=k\).
+							</li>
+							<li>
+								\(\log_{10}[A]\) vs time:
+								<br />
+								\(\log_{10}[A] = \log_{10}[A]_0 - \dfrac{k}{2.303}t\)
+								<br />
+								Straight line with slope \(= -\dfrac{k}{2.303}\) and intercept
+								\(=\log_{10}[A]_0\).
+							</li>
+							<li>
+								\(\ln[A]\) vs time:
+								<br />
+								\(\ln[A] = \ln[A]_0 - kt\)
+								<br />
+								Straight line with slope \(=-k\) and intercept \(=\ln[A]_0\).
+							</li>
+							<li>
+								Concentration vs time:
+								<br />
+								\([A] = [A]_0 e^{-kt}\)
+								<br />
+								Exponential decay (not a straight line); meets the time-axis
+								only as \(t \rightarrow \infty\).
+							</li>
+							<li>
+								Rate vs time:
+								<br />
+								\(r = k[A]_0 e^{-kt}\)
+								<br />
+								Exponential decrease from initial \(r_0 = k[A]_0\).
+							</li>
+							<li>
+								<span class="ques_number_imp">
+									Identification rule (high-frequency in exams):</span
+								>
+								<ul>
+									<li>
+										If \([A]\) vs \(t\) is a straight line \(\Rightarrow\) zero
+										order.
+									</li>
+									<li>
+										If \(\log[A]\) vs \(t\) is a straight line \(\Rightarrow\)
+										first order.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Using slope to find \(k\):
+								<ul>
+									<li>
+										From \(\log_{10}[A]\) vs \(t\): \(k = -2.303 \times
+										(\text{slope})\).
+									</li>
+									<li>From \(\ln[A]\) vs \(t\): \(k = -(\text{slope})\).</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Graphs and plots -->
+
+					<!-- START ch06 | Half-life and lifetime -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=1422"
+								target="_blank"
+								rel="noopener"
+							>
+								Half-life and lifetime (23:42)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Definition of half-life \(t_{1/2}\):
+								<br />
+								Time in which \([A]\) becomes half of \([A]_0\), i.e.,
+								\([A]=\dfrac{[A]_0}{2}\).
+							</li>
+							<li>
+								For first order:
+								<br />
+								\(t_{1/2} = \dfrac{2.303}{k}\log_{10}2 = \dfrac{0.693}{k} =
+								\dfrac{\ln 2}{k}\)
+							</li>
+							<li>
+								<span class="ques_number_imp">Key contrast:</span>
+								<ul>
+									<li>First order: \(t_{1/2}\) is independent of \([A]_0\).</li>
+									<li>Zero order: \(t_{1/2}\) depends on \([A]_0\).</li>
+									<br />
+									<img
+										src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/06/02_half_life_zero_first.png"
+										alt=""
+										style="width: 30%; height: auto; margin-right: 10px"
+									/>
+								</ul>
+							</li>
+							<li>
+								Lifetime (time for 100% completion):
+								<ul>
+									<li>
+										In the ideal first-order model, \([A]=0\) occurs only at \(t
+										\rightarrow \infty\).
+									</li>
+									<li>
+										So, theoretical lifetime is not defined (infinite);
+										reactions approach completion asymptotically.
+									</li>
+								</ul>
+							</li>
+							<li>
+								<!-- IMAGE 02 SHOULD GO HERE
+               Description: Horizontal line for \(t_{1/2}\) vs \([A]_0\) in first order (contrast with linear in zero order).
+               Lecture reference: 40:47
+          -->
+								Plot idea:
+								<ul>
+									<li>
+										First order: \(t_{1/2}\) vs \([A]_0\) is a horizontal line
+										(constant \(0.693/k\)).
+									</li>
+									<li>
+										Zero order: \(t_{1/2}\) vs \([A]_0\) increases linearly.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Half-life and lifetime -->
+
+					<!-- START ch07 | Product formation -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=2522s"
+								target="_blank"
+								rel="noopener"
+							>
+								Product formation vs time (42:02)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Assume a 1:1 conversion:
+								<br />
+								\(A \rightarrow B\)
+							</li>
+							<li>
+								Let initial \([A]_0\), and at time \(t\), remaining \([A]=[A]_0
+								- x\), so product formed \([B]=x\).
+							</li>
+							<li>
+								Using \([A] = [A]_0 e^{-kt}\):
+								<br />
+								\([A]_0 - x = [A]_0 e^{-kt}\)
+								<br />
+								\([B]=x = [A]_0(1 - e^{-kt})\)
+							</li>
+							<li>
+								Graph features:
+								<ul>
+									<li>At \(t=0\): \([B]=0\)</li>
+									<li>
+										As \(t \rightarrow \infty\): \([B] \rightarrow [A]_0\)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Product formation -->
+
+					<!-- START ch08 | Practice questions -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=2744s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice questions (45:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Use (core numerical formula):
+								<br />
+								\(k =
+								\dfrac{2.303}{t}\log_{10}\!\left(\dfrac{[A]_0}{[A]}\right)\)
+							</li>
+							<li>
+								Practice set:
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/djvupjkQJ1U?t=2744s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										<br />
+										In a first-order reaction, concentration decreases from
+										\(800\) to \(50\) (same units) in \(2\times
+										10^{4}\,\text{s}\). Find \(k\). Unit of \(k\) for first
+										order is \(\text{s}^{-1}\).
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/djvupjkQJ1U?t=3013s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										<br />
+										A first-order reaction is 20% complete in 5 minutes. Find
+										the time for 60% completion.
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/djvupjkQJ1U?t=3359s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 3
+											</a>
+										</strong>
+										<br />
+										\([A]\) changes from \(0.10\,\text{M}\) to
+										\(0.025\,\text{M}\) in 40 minutes. Find the rate when
+										\([A]=0.010\,\text{M}\).
+										<br />
+										Hint: first find \(k\) using the given change, then use
+										\(r=k[A]\).
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Practice questions -->
+
+					<!-- START ch09 | Time for any fraction -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=3675s"
+								target="_blank"
+								rel="noopener"
+							>
+								Time for any fraction; 75%, 99.9% relations (01:01:15)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								If fraction \(f\) is completed, remaining reactant is:
+								<br />
+								\([A] = (1-f)[A]_0\)
+							</li>
+							<li>
+								Time for fraction \(f\) completion:
+								<br />
+								\(t_f =
+								\dfrac{2.303}{k}\log_{10}\!\left(\dfrac{[A]_0}{(1-f)[A]_0}\right)
+								= \dfrac{2.303}{k}\log_{10}\!\left(\dfrac{1}{1-f}\right)\)
+							</li>
+							<li>
+								Common special cases:
+								<ul>
+									<li>\(t_{1/2} = \dfrac{0.693}{k}\)</li>
+									<li>
+										\(t_{1/3} =
+										\dfrac{2.303}{k}\log_{10}\!\left(\dfrac{3}{2}\right)\)
+									</li>
+									<li>\(t_{2/3} = \dfrac{2.303}{k}\log_{10}(3)\)</li>
+									<li>\(t_{3/4} = \dfrac{2.303}{k}\log_{10}(4)\)</li>
+								</ul>
+							</li>
+							<li>
+								High-frequency results:
+								<ul>
+									<li>\(t_{75\%} = 2\,t_{50\%}\)</li>
+									<li>\(t_{99.9\%} \approx 10\,t_{50\%}\)</li>
+									<li>
+										\(t_{25\%} \approx 0.415\,t_{1/2}\)
+										<span class="unclear"
+											>(value stated; derivation not fully shown in
+											transcript)</span
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Time for any fraction -->
+
+					<!-- START ch10 | Common first-order examples -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=3937s"
+								target="_blank"
+								rel="noopener"
+							>
+								Common examples of first-order reactions (01:05:37)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Standard examples (often asked as direct facts):
+								<ol>
+									<li>
+										Radioactive decay (nuclear chemistry/modern physics):
+										<br />
+										Follows first-order kinetics.
+									</li>
+									<br />
+									<li>
+										Growth and decay of bacteria (modeled as first order in many
+										problems).
+									</li>
+									<br />
+									<li>
+										Inversion (acid-catalyzed hydrolysis) of cane sugar
+										(sucrose) in acidic medium:
+										<br />
+										\( \mathrm{C_{12}H_{22}O_{11}} + \mathrm{H_2O}
+										\xrightarrow{\mathrm{H^+}}
+										\mathrm{C_{6}H_{12}O_{6}}(\text{glucose}) +
+										\mathrm{C_{6}H_{12}O_{6}}(\text{fructose}) \)
+									</li>
+									<br />
+									<li>
+										Acidic hydrolysis of ester (example: ethyl acetate):
+										<br />
+										\( \mathrm{CH_3COOC_2H_5} + \mathrm{H_2O}
+										\xrightarrow{\mathrm{H^+}} \mathrm{CH_3COOH} +
+										\mathrm{C_2H_5OH} \)
+									</li>
+									<br />
+									<li>
+										Dissociation (decomposition) of hydrogen peroxide:
+										<br />
+										\( 2\,\mathrm{H_2O_2} \rightarrow 2\,\mathrm{H_2O} +
+										\mathrm{O_2} \)
+									</li>
+									<br />
+									<li>
+										Dissociation (decomposition) of \( \mathrm{N_2O_5} \)
+										(commonly used as a first-order example):
+										<br />
+										\( 2\,\mathrm{N_2O_5} \rightarrow 4\,\mathrm{NO_2} +
+										\mathrm{O_2} \)
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Common first-order examples -->
+
+					<!-- START ch11 | Two identifying facts -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/djvupjkQJ1U?t=4357s"
+								target="_blank"
+								rel="noopener"
+							>
+								Two quick identifying facts (01:12:37)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								If a problem states:
+								<ul>
+									<li>
+										Time for 75% completion is double the time for 50%
+										completion \(\Rightarrow\) first-order behavior.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Useful numerical mental-log values (approx):
+								<ul>
+									<li>\(\log_{10}2 \approx 0.30\)</li>
+									<li>\(\log_{10}3 \approx 0.48\)</li>
+									<li>\(\log_{10}5 \approx 0.70\)</li>
+									<li>
+										\(\log_{10}8 = \log_{10}(2^3) = 3\log_{10}2 \approx 0.90\)
+										<span class="unclear">(approximation may vary)</span>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Two identifying facts -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
