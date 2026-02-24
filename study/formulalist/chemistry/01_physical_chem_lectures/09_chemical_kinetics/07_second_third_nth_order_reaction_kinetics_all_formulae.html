@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -149,13 +163,561 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<ol id="topic-index">
+				<li><a href="#ch01">Scope & exam relevance (00:14)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch02"
+						>Second-order: definition, integrated rate law (03:23)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Second-order: linear plot & slope/intercept (09:14)</a
+					>
+				</li>
+				<li><a href="#ch04">Second-order: half-life (12:16)</a></li>
+				<li><a href="#ch05">Third-order: integrated rate law (15:03)</a></li>
+				<li>
+					<a href="#ch06">Third-order: linear plot & slope/intercept (20:44)</a>
+				</li>
+				<li>
+					<a href="#ch07"
+						>General \(n\)-th order: linear plot & integrated form (30:30)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>General \(n\)-th order: half-life formula & proportionality
+						(32:27)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09">Half-life scaling check for \(n=0,1,2,3\) (36:36)</a>
 				</li>
 			</ol>
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Scope and priority -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=14s"
+								target="_blank"
+								rel="noopener"
+							>
+								Scope & exam relevance (00:14)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Focus: kinetics of second, third, fourth, fifth, and general
+								\(n\)-th order reactions:
+								<ul>
+									<li>Integrated rate law: concentration–time relation.</li>
+									<li>Half-life expressions.</li>
+									<li>Which linear graph to plot for order identification.</li>
+								</ul>
+							</li>
+							<li>
+								Exam priority note: questions are overwhelmingly from zero and
+								first order; higher orders are treated as extension for
+								preparedness.
+							</li>
+							<li>
+								Caution: formulas derived here are for orders \(\ge 2\); do not
+								apply these to zero/first order unless explicitly stated.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Scope and priority -->
+
+					<!-- START ch02 | Second order basics -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=203s"
+								target="_blank"
+								rel="noopener"
+							>
+								Second-order: definition, integrated rate law (03:23)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Consider a single-reactant reaction:
+								<br />
+								\(A \rightarrow\) products
+							</li>
+							<li>
+								Second order (in \(A\)):
+								<br />
+								\(\text{Rate} = k[A]^2\)
+							</li>
+							<li>
+								Rate in differential form (stoichiometric coefficient of \(A\)
+								is 1):
+								<br />
+								\(\text{Rate} = -\dfrac{d[A]}{dt}\)
+							</li>
+							<li>
+								Equate and separate variables:
+								<br />
+								\(-\dfrac{d[A]}{dt} = k[A]^2 \Rightarrow \dfrac{d[A]}{[A]^2} =
+								-k\,dt\)
+							</li>
+							<li>
+								Integrate using limits: at \(t=0\), \([A]=[A]_0\); at time
+								\(t\), \([A]=[A]_t\):
+								<br />
+								\(\displaystyle \int_{[A]_0}^{[A]_t}\dfrac{d[A]}{[A]^2} =
+								-k\int_{0}^{t}dt\)
+							</li>
+							<li>
+								Result (integrated rate law, second order):
+								<br />
+								\(\dfrac{1}{[A]_t} - \dfrac{1}{[A]_0} = kt\)
+							</li>
+							<li>
+								Time form (useful for numerical questions):
+								<br />
+								\(t = \dfrac{1}{k}\left(\dfrac{1}{[A]_t} -
+								\dfrac{1}{[A]_0}\right)\)
+							</li>
+							<li>
+								Rate vs concentration shape (qualitative):
+								<br />
+								\(\text{Rate} \propto [A]^2\) (curved, like \(y=x^2\)).
+							</li>
+
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/07/01_second_order.png"
+								alt="Qualitative curve for \(\text{Rate} = k[A]^2\) and axes labeling.
+             Lecture reference: 04:06"
+								style="width: 25%; height: auto; margin-right: 10px"
+							/>
+						</ul>
+					</li>
+					<!-- END ch02 | Second order basics -->
+
+					<!-- START ch03 | Second order plot -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=554s"
+								target="_blank"
+								rel="noopener"
+							>
+								Second-order: linear plot & slope/intercept (09:14)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Rearranged linear form:
+								<br />
+								\(\dfrac{1}{[A]_t} = kt + \dfrac{1}{[A]_0}\)
+							</li>
+							<li>
+								Linear plot for second order:
+								<ul>
+									<li>\(y\)-axis: \(\dfrac{1}{[A]_t}\)</li>
+									<li>\(x\)-axis: \(t\)</li>
+								</ul>
+							</li>
+							<li>
+								From \(y=mx+c\):
+								<ul>
+									<li>Slope \(m = k\) (positive slope).</li>
+									<li>\(y\)-intercept \(c = \dfrac{1}{[A]_0}\).</li>
+								</ul>
+							</li>
+							<li>
+								Contrast with common linear plots:
+								<ul>
+									<li>
+										Zero order: \([A]\) vs \(t\) is a straight line with
+										negative slope.
+									</li>
+									<li>
+										First order: \(\log [A]\) vs \(t\) is a straight line with
+										negative slope.
+									</li>
+									<li>
+										Second order: \(\dfrac{1}{[A]}\) vs \(t\) is a straight line
+										with positive slope.
+									</li>
+								</ul>
+							</li>
+
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/07/02_second_order_plot.png"
+								alt="Straight-line plot of \(1/[A]\) vs \(t\) showing positive slope \(k\) and intercept \(1/[A]_0\).
+             Lecture reference: 11:12"
+								style="width: 20%; height: auto; margin-right: 10px"
+							/>
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: 
+        -->
+						</ul>
+					</li>
+					<!-- END ch03 | Second order plot -->
+
+					<!-- START ch04 | Second order half life -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=736s"
+								target="_blank"
+								rel="noopener"
+							>
+								Second-order: half-life (12:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Half-life definition: at \(t=t_{1/2}\), \([A]_t =
+								\dfrac{[A]_0}{2}\).
+							</li>
+							<li>
+								Substitute into second-order time form:
+								<br />
+								\(t_{1/2} = \dfrac{1}{k}\left(\dfrac{1}{[A]_0/2} -
+								\dfrac{1}{[A]_0}\right)\)
+							</li>
+							<li>
+								Simplify:
+								<br />
+								\(t_{1/2} = \dfrac{1}{k[A]_0}\)
+							</li>
+							<li>
+								Key dependence:
+								<br />
+								\(t_{1/2} \propto \dfrac{1}{[A]_0}\) for second order.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Second order half life -->
+
+					<!-- START ch05 | Third order integrated -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=903s"
+								target="_blank"
+								rel="noopener"
+							>
+								Third-order: integrated rate law (15:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a single-reactant third-order case:
+								<br />
+								\(A \rightarrow\) products, \(\text{Rate} = k[A]^3\)
+							</li>
+							<li>
+								Differential form:
+								<br />
+								\(-\dfrac{d[A]}{dt} = k[A]^3 \Rightarrow \dfrac{d[A]}{[A]^3} =
+								-k\,dt\)
+							</li>
+							<li>
+								Integrate with limits \([A]_0 \to [A]_t\), \(0 \to t\):
+								<br />
+								\(\displaystyle \int_{[A]_0}^{[A]_t}[A]^{-3}\,d[A] = -k\int_0^t
+								dt\)
+							</li>
+							<li>
+								Using \(\int x^{-3}\,dx = -\dfrac{1}{2x^2}\), the result
+								becomes:
+								<br />
+								\(\dfrac{1}{2}\left(\dfrac{1}{[A]_t^2} -
+								\dfrac{1}{[A]_0^2}\right) = kt\)
+							</li>
+							<li>
+								Equivalent time form:
+								<br />
+								\(t = \dfrac{1}{2k}\left(\dfrac{1}{[A]_t^2} -
+								\dfrac{1}{[A]_0^2}\right)\)
+							</li>
+
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/07/03_third_order.png"
+								alt="Qualitative curve for \(\text{Rate} = k[A]^3\) (like \(y=x^3\)) with axes.
+             Lecture reference: 16:12"
+								style="width: 20%; height: auto; margin-right: 10px"
+							/>
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: 
+        -->
+						</ul>
+					</li>
+					<!-- END ch05 | Third order integrated -->
+
+					<!-- START ch06 | Third order plot -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=1244s"
+								target="_blank"
+								rel="noopener"
+							>
+								Third-order: linear plot & slope/intercept (20:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Rearranged linear form:
+								<br />
+								\(\dfrac{1}{[A]_t^2} = 2kt + \dfrac{1}{[A]_0^2}\)
+							</li>
+							<li>
+								Linear plot for third order:
+								<ul>
+									<li>\(y\)-axis: \(\dfrac{1}{[A]_t^2}\)</li>
+									<li>\(x\)-axis: \(t\)</li>
+								</ul>
+							</li>
+							<li>
+								From \(y=mx+c\):
+								<ul>
+									<li>Slope \(m = 2k\) (positive slope).</li>
+									<li>\(y\)-intercept \(c = \dfrac{1}{[A]_0^2}\).</li>
+								</ul>
+							</li>
+							<li>
+								Pattern emerging for orders \(\ge 2\): linear plots involve
+								reciprocal powers of concentration.
+							</li>
+
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/07/04_third_order_plot.png"
+								alt="Straight-line plot of \(1/[A]^2\) vs \(t\) showing slope \(2k\) and intercept \(1/[A]_0^2\).
+             Lecture reference: 22:24"
+								style="width: 25%; height: auto; margin-right: 10px"
+							/>
+
+							<!-- IMAGE 04 SHOULD GO HERE
+             Description: 
+        -->
+						</ul>
+					</li>
+					<!-- END ch06 | Third order plot -->
+
+					<!-- START ch07 | General nth order -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=1830s"
+								target="_blank"
+								rel="noopener"
+							>
+								General \(n\)-th order: linear plot & integrated form (30:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a single-reactant \(n\)-th order reaction (\(n \ge 2\)):
+								<br />
+								\(\text{Rate} = k[A]^n\), and \(-\dfrac{d[A]}{dt} = k[A]^n\)
+							</li>
+							<li>
+								Separation and integration gives the standard integrated form:
+								<br />
+								\(t = \dfrac{1}{(n-1)k}\left(\dfrac{1}{[A]_t^{\,n-1}} -
+								\dfrac{1}{[A]_0^{\,n-1}}\right)\)
+							</li>
+							<li>
+								Linear plot form:
+								<br />
+								\(\dfrac{1}{[A]_t^{\,n-1}} = (n-1)kt +
+								\dfrac{1}{[A]_0^{\,n-1}}\)
+							</li>
+							<li>
+								Graph for \(n\)-th order (\(n \ge 2\)):
+								<ul>
+									<li>\(y\)-axis: \(\dfrac{1}{[A]_t^{\,n-1}}\)</li>
+									<li>\(x\)-axis: \(t\)</li>
+									<li>Slope \(= (n-1)k\)</li>
+									<li>Intercept \(= \dfrac{1}{[A]_0^{\,n-1}}\)</li>
+								</ul>
+							</li>
+							<li>
+								Examples of the pattern:
+								<ul>
+									<li>
+										Second order: plot \(\dfrac{1}{[A]}\) vs \(t\), slope \(k\).
+									</li>
+									<li>
+										Third order: plot \(\dfrac{1}{[A]^2}\) vs \(t\), slope
+										\(2k\).
+									</li>
+									<li>
+										Fourth order: plot \(\dfrac{1}{[A]^3}\) vs \(t\), slope
+										\(3k\).
+									</li>
+								</ul>
+							</li>
+
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/07/05_generic_st_line_plot.png"
+								alt="Generic straight-line plot of \(1/[A]^{n-1}\) vs \(t\) with slope \((n-1)k\) and intercept \(1/[A]_0^{n-1}\).
+             Lecture reference: 31:00"
+								style="width: 30%; height: auto; margin-right: 10px"
+							/>
+
+							<!-- IMAGE 05 SHOULD GO HERE
+             Description: 
+        -->
+						</ul>
+					</li>
+					<!-- END ch07 | General nth order -->
+
+					<!-- START ch08 | Nth order half life -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=1947s"
+								target="_blank"
+								rel="noopener"
+							>
+								General \(n\)-th order: half-life formula & proportionality
+								(32:27)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Half-life condition: \([A]_t = \dfrac{[A]_0}{2}\).</li>
+							<li>
+								Substituting into the \(n\)-th order integrated form (\(n \ge
+								2\)) yields:
+								<br />
+								\(t_{1/2} = \dfrac{2^{\,n-1}-1}{(n-1)k[A]_0^{\,n-1}}\)
+							</li>
+							<li>
+								Key proportionality for any order \(n\) (including \(n=0\) and
+								\(n=1\)):
+								<br />
+								\(t_{1/2} \propto [A]_0^{\,1-n}\)
+							</li>
+							<li>
+								Practical use: when two half-lives are given at two different
+								initial concentrations, use proportionality instead of
+								memorizing full formulas.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Nth order half life -->
+
+					<!-- START ch09 | Proportionality checks -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/rqSvq-3mnC8?t=2196s"
+								target="_blank"
+								rel="noopener"
+							>
+								Half-life scaling check for \(n=0,1,2,3\) (36:36)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Recall standard half-lives:
+								<ul>
+									<li>
+										Zero order:
+										<br />
+										\(t_{1/2} = \dfrac{[A]_0}{2k}\)
+									</li>
+									<li>
+										First order:
+										<br />
+										\(t_{1/2} = \dfrac{0.693}{k}\)
+									</li>
+									<li>
+										Second order:
+										<br />
+										\(t_{1/2} = \dfrac{1}{k[A]_0}\)
+									</li>
+									<li>
+										Third order (single reactant):
+										<br />
+										\(t_{1/2} = \dfrac{3}{2k[A]_0^2}\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Verify proportionality \(t_{1/2} \propto [A]_0^{\,1-n}\):
+								<ul>
+									<li>
+										\(n=0\): \(t_{1/2} \propto [A]_0^{1}\) (depends directly on
+										\([A]_0\)).
+									</li>
+									<li>
+										\(n=1\): \(t_{1/2} \propto [A]_0^{0}\) (independent of
+										\([A]_0\)).
+									</li>
+									<li>
+										\(n=2\): \(t_{1/2} \propto [A]_0^{-1}\) (inverse
+										dependence).
+									</li>
+									<li>
+										\(n=3\): \(t_{1/2} \propto [A]_0^{-2}\) (inverse square
+										dependence).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Proportionality checks -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
