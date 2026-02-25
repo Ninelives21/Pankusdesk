@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -149,13 +163,405 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<ol id="topic-index">
+				<li><a href="#ch01">Molecularity: definition & collision view</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch02"
+						>Elementary vs complex reactions: where molecularity is defined</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Elementary reactions: molecularity, order, and naming</a
+					>
+				</li>
+				<li><a href="#ch04">Pseudo-order: solvent/excess reactant cases</a></li>
+				<li>
+					<a href="#ch05"
+						>Complex reactions: order may be fractional; molecularity not
+						defined</a
+					>
+				</li>
+				<li>
+					<a href="#ch06">Why molecularity \(\le 3\): probability argument</a>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Order vs molecularity: key differences (board-type)</a
+					>
 				</li>
 			</ol>
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Molecularity meaning -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/GmFnROiHYE4?t=78s"
+								target="_blank"
+								rel="noopener"
+							>
+								Molecularity: definition & collision view (01:18)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Molecularity = number of reactant molecules/atoms that
+								participate in an
+								<strong>elementary (single-step)</strong> reaction.
+							</li>
+							<li>
+								Collision-theory interpretation: number of reactant species that
+								must collide <strong>simultaneously</strong> and
+								<strong>effectively</strong> (proper orientation + sufficient
+								energy) to form products.
+							</li>
+							<li>
+								If simultaneously 2 collide \(\Rightarrow\) molecularity \(=2\);
+								if 3 collide \(\Rightarrow\) molecularity \(=3\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Molecularity meaning -->
+
+					<!-- START ch02 | Defined only for elementary -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/GmFnROiHYE4?t=400s"
+								target="_blank"
+								rel="noopener"
+							>
+								Elementary vs complex: where molecularity is defined (06:40)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Molecularity is defined only for
+								<strong>elementary (single-step)</strong> reactions.
+							</li>
+							<li>
+								For <strong>complex (multi-step)</strong> reactions, overall
+								molecularity is <strong>not defined</strong>.
+							</li>
+							<li>
+								For a multi-step mechanism, molecularity can be defined for
+								<strong>individual elementary steps</strong>, not for the
+								overall reaction.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Defined only for elementary -->
+
+					<!-- START ch03 | Elementary examples -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/GmFnROiHYE4?t=512s"
+								target="_blank"
+								rel="noopener"
+							>
+								Elementary reactions: molecularity, order, naming (08:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For an elementary reaction, the experimentally obtained rate law
+								matches stoichiometric coefficients as powers.
+								<br />
+								Example: if \(A + B \to C\) is elementary, then rate \(\propto
+								[A]^1[B]^1\).
+							</li>
+							<li>
+								Molecularity of an elementary reaction = number of reactant
+								molecules in the balanced elementary equation.
+							</li>
+							<li>
+								In many elementary reactions, <strong>order</strong> (sum of
+								powers in rate law) equals <strong>molecularity</strong>.
+							</li>
+							<li>
+								NCERT example (given elementary):
+								<br />
+								\( \mathrm{NH_4NO_2 \to N_2 + 2H_2O} \)
+								<br />
+								Molecularity \(=1\) (unimolecular); order \(=1\) if rate
+								\(\propto [\mathrm{NH_4NO_2}]^1\).
+							</li>
+							<li>
+								Example (given elementary):
+								<br />
+								\( 2\,\mathrm{HI \to H_2 + I_2} \)
+								<br />
+								Rate \(\propto [\mathrm{HI}]^2\); molecularity \(=2\)
+								(bimolecular); order \(=2\).
+							</li>
+							<li>
+								Example (given elementary):
+								<br />
+								\( 2\,\mathrm{NO} + \mathrm{O_2 \to 2\,NO_2} \)
+								<br />
+								Rate \(\propto [\mathrm{NO}]^2[\mathrm{O_2}]^1\); molecularity
+								\(=3\) (termolecular); order \(=3\).
+							</li>
+							<li>
+								Naming by molecularity:
+								<ul>
+									<li>1 \(\Rightarrow\) unimolecular</li>
+									<li>2 \(\Rightarrow\) bimolecular</li>
+									<li>3 \(\Rightarrow\) termolecular</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Elementary examples -->
+
+					<!-- START ch04 | Pseudo order idea -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/GmFnROiHYE4?t=1123s"
+								target="_blank"
+								rel="noopener"
+							>
+								Pseudo-order: solvent/excess reactant cases (18:43)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								If one reactant is present in
+								<strong>large excess</strong> (often solvent), its concentration
+								remains approximately constant during the reaction.
+							</li>
+							<li>
+								Example: hydrolysis of an ester (conceptual form):
+								<br />
+								\(\mathrm{CH_3COOC_2H_5 + H_2O \to products}\)
+								<br />
+								If \(\mathrm{H_2O}\) is solvent (in excess), then
+								\([\mathrm{H_2O}]\approx \text{constant}\).
+								<br />
+								Rate \(\propto [\mathrm{CH_3COOC_2H_5}]^1[\mathrm{H_2O}]^1
+								\approx k'[\mathrm{CH_3COOC_2H_5}]^1\).
+							</li>
+							<li>
+								Hence the reaction behaves as
+								<strong>pseudo-first order</strong>:
+								<ul>
+									<li>
+										Molecularity (collision requirement) \(\approx 2\) (both
+										species needed)
+									</li>
+									<li>
+										Observed order \(=1\) (because one concentration is
+										constant)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Another common pseudo-first order example:
+								<br />
+								Inversion of cane sugar:
+								<br />
+								\(\mathrm{C_{12}H_{22}O_{11} + H_2O \to C_6H_{12}O_6 (glucose) +
+								C_6H_{12}O_6 (fructose)}\)
+								<br />
+								With water as solvent, rate \(\approx
+								k'[\mathrm{C_{12}H_{22}O_{11}}]^1\) \(\Rightarrow\) pseudo-first
+								order.
+							</li>
+							<li>
+								General pseudo-order pattern (when one reactant is in excess):
+								<ul>
+									<li>
+										Expected order from elementary stoichiometry: \(a+b+\cdots\)
+									</li>
+									<li>
+										Observed order decreases by 1 for each reactant held
+										effectively constant.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Example statement (B in excess):
+								<br />
+								If \(2A + B \to C\) is treated with \([B]\) constant, then rate
+								\(\approx k'[A]^2\).
+								<br />
+								Observed order \(=2\), while molecularity (for an elementary
+								collision picture) would be \(3\) \(\Rightarrow\) pseudo-second
+								order.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Pseudo order idea -->
+
+					<!-- START ch05 | Complex reactions -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/GmFnROiHYE4?t=2013s"
+								target="_blank"
+								rel="noopener"
+							>
+								Complex reactions: order fractional; molecularity not defined
+								(33:33)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a complex reaction (multi-step), the overall rate law does
+								not need to match the overall balanced equation.
+							</li>
+							<li>
+								Example (given complex):
+								<br />
+								\(\mathrm{NO_2 + CO \to NO + CO_2}\)
+								<br />
+								If experimentally rate \(\propto [\mathrm{NO_2}]^2\), then order
+								\(=2\) even though the balanced equation shows 1
+								\(\mathrm{NO_2}\).
+							</li>
+							<li>
+								Example mention: if experimentally rate \(\propto
+								[\mathrm{CH_3CHO}]^{3/2}\), then order \(=3/2\) (fractional).
+							</li>
+							<li>
+								Molecularity of the overall complex reaction is
+								<strong>not defined</strong>; only elementary steps of its
+								mechanism can have molecularity.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Complex reactions -->
+
+					<!-- START ch06 | Why molecularity <=3 -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/GmFnROiHYE4?t=2224s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why molecularity \(\le 3\): probability argument (37:04)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Molecularity involves <strong>simultaneous</strong> and
+								<strong>effective</strong> collisions.
+							</li>
+							<li>
+								Probability of a simultaneous and properly oriented collision of
+								three molecules is already very low; for four or more it becomes
+								extremely unlikely.
+							</li>
+							<li>
+								Hence in standard treatment: molecularity is taken as \(\le 3\);
+								higher molecularity reactions are rarely observed.
+							</li>
+							<li>
+								Even if an overall equation like \(\mathrm{N_2 + 3H_2 \to
+								2NH_3}\) is written, molecularity is
+								<strong>not taken as 4</strong> (overall molecularity is not
+								assigned this way).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Why molecularity <=3 -->
+
+					<!-- START ch07 | Order vs molecularity -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/GmFnROiHYE4?t=2401s"
+								target="_blank"
+								rel="noopener"
+							>
+								Order vs molecularity: key differences (40:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Order</strong> is an experimentally determined quantity
+								(from rate law measurements).
+							</li>
+							<li>
+								<strong>Molecularity</strong> is a theoretical/mechanistic count
+								for an elementary step (count molecules participating in that
+								step).
+							</li>
+							<li>
+								Order is defined for
+								<strong>elementary and complex</strong> reactions; molecularity
+								is defined only for <strong>elementary</strong> reactions.
+							</li>
+							<li>
+								Order can be zero, positive, negative, or fractional;
+								molecularity cannot be zero/negative/fractional.
+								<ul>
+									<li>
+										Molecularity is a positive integer (commonly 1, 2, or 3).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Order can be greater than 3; molecularity is taken as not
+								greater than 3.
+							</li>
+							<li>
+								Fractional stoichiometric coefficients do not imply fractional
+								molecularity.
+								<br />
+								Example: if written \(A + \dfrac{B}{2} \to C\), multiply by 2:
+								<br />
+								\(2A + B \to 2C\)
+								<br />
+								Molecularity (for an elementary collision picture) would be 3,
+								not \(3/2\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Order vs molecularity -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
