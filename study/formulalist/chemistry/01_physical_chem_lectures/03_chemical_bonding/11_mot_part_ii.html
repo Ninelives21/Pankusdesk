@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -116,18 +130,9 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<!--Start MOT part II -> Ch 11 MOT part II-->
-			<li>
-				<ol class="inner-list">
-					<li>b</li>
-					<li>l</li>
-					<li>a</li>
-					<li>h</li>
-				</ol>
-			</li>
-			<!--End MOT part II-->
+			<!--TOC-->
 
-			<!--END CHEMICAL BONDING  -->
+			<br />
 		</div>
 	</body>
 </html>

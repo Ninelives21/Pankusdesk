@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -116,257 +130,7 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<!--Start MOT part I -> Ch 10 MOT part I-->
-			<li>
-				<ol class="inner-list">
-					<!--Start Introduction to Molecular Orbital Theory -> Ch 10 MOT part I-->
-					<li>
-						<a href="https://youtu.be/TQEhLXkNdmo?t=39"
-							>Introduction to Molecular Orbital Theory</a
-						>
-						<ul>
-							<li>
-								When two atoms form a covalent bond, their orbitals are not
-								overlapping (like VBT says); instead they are forming two new
-								orbitals.
-							</li>
-							<li>
-								So,
-								<strong
-									>"atomic orbitals" are overlapping/combining to form
-									"molecular orbitals"</strong
-								>.
-							</li>
-							<li>
-								Knowing the electronic configuration of atoms helps us
-								understand/predict it's properties. Similarly, if we can get the
-								electronic configuration of molecules from the MOT, we can get
-								information about the properties of the molecule,
-								<strong>after</strong> the molecule has been formed.
-							</li>
-							<li>
-								VBT vs MOT
-								<ol>
-									<li>Could not give the "molecular orbital".</li>
-									<li>
-										Could not predict the magnetic nature of molecules.
-										<Form:get></Form:get>or example VBT predicted that
-										\(\text{O}_2\) is diamagnetic (gets slightly repelled by
-										magnets). Instead, from MOT, it was found that
-										\(\text{O}_2\) in fact is paramegnetic (gets slightly
-										attracted by magnets).
-									</li>
-									<li>
-										VBT did not talk about stability of molecules. For example
-										VBT could not tell which was the most stable amonst
-										\(\text{H}_2\), \(\text{H}{_2}^{+}\), \(\text{H}{_2}^{-}\).
-										MOT can tells us which of these is more stable.
-									</li>
-									<li>
-										VBT can tell whether bonds between two atoms are single,
-										double or triple. MOT on the other hand can tell that there
-										are fractional (ex: 1.5, 2.5) number of bonds in molecules.
-									</li>
-									<li>
-										MOT supports wave mechanics. It can not only tell us how
-										atoms overlap, but also how two waves overlap (which is
-										useful as orbitals are waves too).
-									</li>
-								</ol>
-							</li>
-						</ul>
-					</li>
-					<!--End Introduction to Molecular Orbital Theory -> Ch 10 MOT part I-->
-					<!--Main points of MOT -> Ch 10 MOT part I-->
-					<br />
-					<li>
-						<a href="https://youtu.be/TQEhLXkNdmo?t=421">Main points of MOT</a>
-
-						<ol>
-							<li>
-								Atomic orbitals (AO) are in atoms; Molecular orbitals (MO) are
-								in molecules (!). There are no AO in molecules.
-							</li>
-							<li>
-								AO are : 1s, 2s, 2p etc whereas MO have names like \(\sigma\),
-								\(\pi\), \(\delta\), and so on. The \(\sigma\) and \(\pi\) are
-								roughly equivalent to those that we learnt in VBT.
-							</li>
-							<li>Number of MO formed are equal to number of AO combined.</li>
-							<li>
-								Combining AO must have same or nearly same energy (example 1s of
-								C and 1s of O) and same shape (example s-s or p-p, never s-p)
-							</li>
-							<li>
-								As per Schrodinger, AO can be considered as waves (\(\psi_1\),
-								\(\psi_2\) etc). We get different types of MO when AO waves are
-								added vs subtracted.
-							</li>
-
-							<br />
-							<li>
-								<table class="notes_table">
-									<thead>
-										<tr>
-											<th>Constructive</th>
-											<th>Destructive</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												When two waves \(\psi_1\) and \(\psi_2\) add, it is a
-												"constructive" interference. Example, two similar sine
-												waves at same phase add to give a sine wave of double
-												amplitude: \(\psi_1\) + \(\psi_2\).
-											</td>
-											<td>
-												When two waves \(\psi_1\) and \(\psi_2\) get subtracted,
-												it is a "destructive" interference. Example, two similar
-												sine waves at same phase get subtracted to give a flat
-												line: \(\psi_1\) - \(\psi_2\).
-											</td>
-										</tr>
-										<tr>
-											<td>
-												Constructive interference gives "Bonding Molecular
-												Orbital" \(\rightarrow\) BOD
-											</td>
-											<td>
-												Destructive interference gives "Anti Bonding Molecular
-												Orbital" \(\rightarrow\) ABOD
-											</td>
-										</tr>
-										<tr>
-											<td>BMO is stable (less energy)</td>
-											<td>ABMO is less stable (more energy)</td>
-										</tr>
-										<tr>
-											<td>
-												BMO is placed below in the combined MO represenation
-											</td>
-											<td>
-												ABMO is placed above in the combined MO represenation,
-												and denoted with an asterisk
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</li>
-						</ol>
-					</li>
-					<!--End points of MOT -> Ch 10 MOT part I-->
-					<br />
-
-					<!-- Start Types Of MO (σ / π MO) -->
-					<li>
-						Types Of MO : 1) \(\sigma \) MO = Axial AO Interference
-						<div id="ch03">
-							<br />
-							<ol>
-								<li>
-									<a
-										href="https://www.youtube.com/watch?v=TQEhLXkNdmo&t=963s"
-										class="link_no_style"
-										target="_blank"
-										rel="noopener"
-										>s-s \(\sigma \) MO</a
-									>
-									<ul>
-										<li>\(1s + 1s \rightarrow \sigma 1s\) BMO</li>
-										<li>
-											\(1s - 1s \rightarrow\) there will be a 'nodal plane'
-											where the probability of finding an electron is zero
-											\(\sigma^{*} 1s\)
-										</li>
-									</ul>
-									<a
-										href="https://www.youtube.com/watch?v=TQEhLXkNdmo&t=1120s"
-										class="link_no_style"
-										target="_blank"
-										rel="noopener"
-										>Representation</a
-									>
-								</li>
-								<br />
-								<li>
-									<a
-										href="https://www.youtube.com/watch?v=TQEhLXkNdmo&t=1148s"
-										class="link_no_style"
-										target="_blank"
-										rel="noopener"
-									>
-										\(p_z\)–\(p_z\) \(\sigma \) MO</a
-									>
-									<ul>
-										<li>N≡N Has One \(p_z\)–\(p_z\) Axial Overlapping</li>
-										<li>
-											\(p_z - p_z\) form \(\sigma\) bonds ( \(p_z\) chosen as
-											per convention )
-										</li>
-										<li>
-											\(p_x - p_x\) &amp; \(p_y - p_y\) form \(\pi\) bonds
-										</li>
-										<li>
-											In \(2p_z - 2p_z\) orbitals :-<br />
-											<ol>
-												<li>
-													\(2p_z + 2p_z = \sigma 2p_z\)<br />
-													has 2 nodal planes when added (CI)
-												</li>
-												<li>
-													\(-2p_z - 2p_z = \sigma^{*} 2p_z\)<br />
-													has 3 nodal planes when subtracted (DI)
-												</li>
-											</ol>
-										</li>
-									</ul>
-								</li>
-							</ol>
-							<br />
-						</div>
-					</li>
-					<!-- End Types Of MO (σ / π MO) -->
-
-					<br />
-
-					<!-- Start π Molecular Orbitals - When There Is Sideways Overlapping / Interference Of AO -->
-					<li>
-						Types Of MO : 2) \(\pi\) Molecular Orbitals - When There Is Sideways
-						Overlapping / Interference Of AO
-						<br />
-						<ol>
-							<li>
-								<div id="ch05">
-									<a
-										href="https://www.youtube.com/watch?v=TQEhLXkNdmo&t=1348s"
-										class="link_no_style"
-										target="_blank"
-										rel="noopener"
-										>Example \(p_x - p_x\) or \(p_y - p_y\) lateral
-										overlapping</a
-									>
-
-									<br />
-									<ul>
-										<li>
-											CI results in 1 nodal plane and is called \(\pi 2p_x\)
-										</li>
-										<li>
-											DI results in 2 nodal planes and is called \(\pi^{*}
-											2p_x\)
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ol>
-					</li>
-					<!-- End π Molecular Orbitals - When There Is Sideways Overlapping / Interference Of AO -->
-				</ol>
-			</li>
-			<!--End MOT part I-->
-
-			<!--END CHEMICAL BONDING  -->
+			<!--TOC-->
 		</div>
 	</body>
 </html>

@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -116,229 +130,9 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<!--Start More on VBT (Pi bonds) -> Ch 07 More on VBT (Pi bonds)-->
-			<li>
-				<ol class="inner-list">
-					<li>
-						<a
-							href="https://youtu.be/IrX7AcU07To&t=47s"
-							class="link_no_style"
-							target="_blank"
-							rel="noopener"
-							>Intro To P-Pi, O-Pi | P-Pi P-Pi Bonds</a
-						>
-						<br />
-						<ul>
-							<li>Summary of previous theory on VBT</li>
-							<li>\(\sigma\) bond is made with axial overlapping</li>
-							<li>s–s, s–p, p–p (first pp bond)</li>
-							<li>\(\pi\) bond is made with lateral overlapping</li>
-							<li>p–p, p–d, d–d</li>
-							<li>
-								If there is a single bond between two atoms it is a \(\sigma\)
-								bond
-							</li>
-							<li>
-								If double bond, the first is \(\sigma\), second is \(\pi\)
-							</li>
-							<li>If triple bond, first is \(\sigma\), rest two are \(\pi\)</li>
-							<li>
-								There is more overlapping in \(\sigma\), so it is a stronger
-								bond
-							</li>
-						</ul>
-					</li>
-					<br />
+			<!--TOC-->
 
-					<li>
-						<a
-							href="https://youtu.be/IrX7AcU07To&t=174s"
-							class="link_no_style"
-							target="_blank"
-							rel="noopener"
-							>Types Of \(\pi\) Bonds: \(p_\pi\)–\(p_\pi\), \(p_\pi\)–\(d_\pi\),
-							\(d_\pi\)–\(d_\pi\)</a
-						>
-						<br />
-						<ol>
-							<li>
-								\(p_\pi\)–\(d_\pi\)<br />
-								+ve of p bond dumbell will overlap with one of the dumbell's of
-								the d bond , provided electrons have opposite spin ; and
-								similarly with -ve.
-							</li>
-							<li>
-								\(d_\pi\)–\(d_\pi\)<br />
-								+ve of one of the dumbells of d will overlap with +ve of one of
-								the dumbells of the d-orbital of the second atom having opposite
-								spin ; and similarly with –ve signs.
-							</li>
-							<li>
-								\(p_\pi\)–\(p_\pi\)<br />
-								+ve of p-orbital of one atom overlaps with +ve of p-orbital of
-								the second atom with opposite spin ; and same with –ve.
-							</li>
-						</ol>
-						<ul>
-							<li>
-								\(p_\pi\)–\(p_\pi\) is strongest of the three as there is
-								maximum overlapping.
-							</li>
-						</ul>
-					</li>
-					<br />
-
-					<li>
-						<a
-							href="https://youtu.be/IrX7AcU07To&t=332s"
-							class="link_no_style"
-							target="_blank"
-							rel="noopener"
-							>Question 1 : How Many \(p_\pi\)–\(p_\pi\) And \(p_\pi\)–\(d_\pi\)
-							Bonds Are In \(\mathrm{SO_2}\) ?</a
-						>
-						<br />
-						S : 16 -> \(1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^4\)
-						<br />
-						Valence shell orbitals: (diagram)
-						<br />
-						<ul>
-							<li>
-								S has only two vacant orbitals (half-filled orbitals) but it is
-								forming four bonds
-							</li>
-							<li>So use the first excited state of sulphur</li>
-							<li>
-								Use the vacant d-orbitals (in the ground state these are vacant)
-							</li>
-						</ul>
-						O : 8 -> \(1s^2\ 2s^2\ 2p^4\)
-						<br />
-						Valence shell orbital : \(2s^2\ 2p^4\)
-						<br />
-						<ul>
-							<li>
-								Each Oxygen can form one p–p and one p–d bond with the excited
-								S-atom.
-							</li>
-						</ul>
-					</li>
-					<br />
-
-					<li>
-						<a
-							href="https://youtu.be/IrX7AcU07To&t=730s"
-							class="link_no_style"
-							target="_blank"
-							rel="noopener"
-							>Question 2 : How Many \(p_\pi\)–\(p_\pi\) And \(p_\pi\)–\(d_\pi\)
-							Bonds Are In Are In \(\mathrm{SO_3}\)</a
-						>
-						<br />
-						Ground state S : (diagram) -> \(3s^2\ 3p^4\)
-						<br />
-						1st excited state : (diagram) -> \(3s^1\ 3p^3\ 3d^1\)
-						<br />
-						2nd excited state : (diagram) -> \(3s^1\ 3p^3\ 3d^2\)
-						<br />
-						<ul>
-							<li>
-								S needs to form 6 bonds, so it needs to go into second excited
-								state
-							</li>
-							<li>3s and 3p electrons jump to 2 vacant orbitals of 3d</li>
-							<li>Now we have 6 half-filled orbitals</li>
-						</ul>
-						1st O : \(2p\) of O with \(3s\) of S \(\Rightarrow\) \(2p\)–\(3s\)
-						\(\sigma\) ; \(2p\) of O with \(3p\) of S \(\Rightarrow\)
-						\(2p\)–\(3p\) \(\pi\)
-						<br />
-						2nd O : \(2p\) of O with \(3p\) of S \(\Rightarrow\) \(2p\)–\(3p\)
-						\(\sigma\) ; \(2p\) of O with \(3d\) of S \(\Rightarrow\)
-						\(2p\)–\(3d\) \(\pi\)
-						<br />
-						3rd O : \(2p\) of O with \(3p\) of S \(\Rightarrow\) \(2p\)–\(3p\)
-						\(\sigma\) ; \(2p\) of O with \(3d\) of S \(\Rightarrow\)
-						\(2p\)–\(3d\) \(\pi\)
-						<br />
-						<ul>
-							<li>
-								First \(\sigma\) of all three O atoms will be formed using up 1s
-								and 2p of S
-							</li>
-							<li>
-								Next \(\pi\) of all three O atoms will be formed using up 3p and
-								3d of S
-							</li>
-						</ul>
-						Answer \(p_\pi\)–\(p_\pi = 3\) , \(p_\pi\)–\(d_\pi = 2\)
-					</li>
-					<br />
-
-					<li>
-						<a
-							href="https://youtu.be/IrX7AcU07To&t=962s"
-							class="link_no_style"
-							target="_blank"
-							rel="noopener"
-							>Question 3 - How Many \(p_\pi\)–\(p_\pi\) And \(p_\pi\)–\(d_\pi\)
-							In \(\mathrm{H_3PO_4}\)</a
-						>
-						<br />
-						P : 15 = \(1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^3\)
-						<br />
-						last shell : (diagram)
-						<br />
-						In first excited state : \(1s^2\ 2s^2\ 2p^6\ 3s^1\ 3p^3\ 3d^1\)
-						<br />
-						(diagram)
-						<br />
-						1st O -> \(\sigma\) (2p–2s)
-						<br />
-						2nd O -> \(\sigma\) (2p–2p)
-						<br />
-						3rd O -> \(\sigma\) (2p–2p)
-						<br />
-						4th O -> \(\sigma\) (2p–2p) \(\pi\) (2p–3d)
-						<br />
-						Ans 1 \(p_\pi\)–\(d_\pi\) bond 0 \(p_\pi\)–\(p_\pi\) bonds
-					</li>
-					<br />
-
-					<li>
-						<a
-							href="https://youtu.be/IrX7AcU07To&t=1173s"
-							class="link_no_style"
-							target="_blank"
-							rel="noopener"
-							>Question 4 : Find Number Of \(p_\pi\)–\(p_\pi\) And
-							\(p_\pi\)–\(d_\pi\) Bonds In \(\mathrm{H_2SO_4}\)</a
-						>
-						<br />
-						<ul>
-							<li>S in ground state : \(1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^4\)</li>
-							<li>
-								Since it is forming 6 bonds, it needs 6 half filled orbitals
-							</li>
-							<li>it needs to get into second excited state</li>
-							<li>\(1s^2\ 2s^2\ 2p^6\ 3s^1\ 3p^3\ 3d^2\)</li>
-						</ul>
-						<ol>
-							<li>O\(_1\) s–p \(\sigma\)-bond</li>
-							<li>O\(_2\) p–p \(\sigma\)-bond</li>
-							<li>O\(_3\) p–p \(\sigma\)-bond</li>
-							<li>O\(_4\) p–p \(\sigma\)-bond</li>
-							<li>O\(_2\) (or any) p–d \(\pi\)-bond</li>
-							<li>O\(_4\) (or any) p–d \(\pi\) bond</li>
-						</ol>
-						Ans (PW got it wrong!) \(p_\pi\)–\(p_\pi = 0\) , \(p_\pi\)–\(d_\pi =
-						2\)
-					</li>
-				</ol>
-			</li>
-			<!--End More on VBT (Pi bonds)-->
-
-			<!--END CHEMICAL BONDING  -->
+			<br />
 		</div>
 	</body>
 </html>

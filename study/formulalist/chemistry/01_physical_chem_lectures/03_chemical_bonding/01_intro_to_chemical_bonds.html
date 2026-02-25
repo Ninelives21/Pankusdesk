@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -120,169 +134,8 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<!--Start Intro to chemical bonds -> Ch 01 Intro to chemical bonds-->
-			<ol class="inner-list">
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=108s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Introduction</a
-					>
-					<br />
-					- Meaning of chemical bond
-				</li>
-				<br />
-
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=154s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Types of Chemical Bonds</a
-					>
-					<br /><br />
-
-					<ol>
-						<li>
-							Interatomic Bonds<br />
-							- Bond between two atoms<br />
-							- These are strong bonds ~ 200–400 kJ/mol<br /><br />
-							- Types are:<br />
-							(a) Ionic bonds – metal donates, non-metal accepts<br />
-							(b) Covalent – sharing of electrons<br />
-							(c) Coordinate – actually a type of covalent bond where both
-							electrons are donated by the same atom<br />
-							(d) Metallic – bond between atoms of a metallic substance<br />
-						</li>
-						<br />
-						<li>
-							Intermolecular Bonds<br />
-							- Bonds between two molecules<br />
-							- Typically weaker than interatomic ~ 2–40 kJ/mol<br /><br />
-							- Types are:<br />
-							(a) Van der Waal’s forces (5 types)<br />
-							(b) Hydrogen bond<br />
-							&nbsp;&nbsp;2 types – (i) Inter (ii) Intra molecular
-						</li>
-					</ol>
-
-					<br />
-				</li>
-				<br />
-
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=493s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Cause of Chemical Bonds (has been discussed
-						<a
-							href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=920s"
-							class="link_no_style"
-							target="_blank"
-							rel="noopener"
-							>later</a
-						></a
-					>)
-					<br />
-				</li>
-				<br />
-
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=506s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Topics to be Studied in Ionic Bonds</a
-					>
-					<br />
-					- Formation<br />
-					- Lattice energy<br />
-					- Properties of ionic bonds<br />
-					- % of covalent character (Fajan’s rule)
-				</li>
-				<br />
-
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=572s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Topics to be Studied in Covalent Bonds</a
-					>
-					<br />
-					- Covalent bonds have direction so we need to learn how to draw their
-					structure<br />
-					- Dipole moment (% ionic character)<br />
-					- Properties of covalent bond<br />
-					- Co-ordinate bonds / metallic bonds
-				</li>
-				<br />
-
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=666s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Theories of Covalent Bonds</a
-					>
-					<br />
-					<ol>
-						<li>
-							VBT = Valence Bond Theory<br />
-							&nbsp;&nbsp;- Tells how the sharing of e⁻ happens<br />
-							&nbsp;&nbsp;- σ, π bonds<br />
-						</li>
-						<li>
-							VSEPR = Valence Shell Electron Pair Repulsion<br />
-							&nbsp;&nbsp;- Tells about shapes<br />
-						</li>
-						<li>
-							MOT = Molecular Orbital Theory<br />
-							&nbsp;&nbsp;- Orbitals present in molecules<br />
-							&nbsp;&nbsp;- Will tell if a substance is magnetic or not<br />
-							&nbsp;&nbsp;- Bond strength<br />
-						</li>
-						<li>Hybridization = mixing of orbitals</li>
-					</ol>
-				</li>
-				<br />
-
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=daPAcFFSFdY&t=920s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Cause of Chemical Bonding (Combination)</a
-					>
-					<br />
-					(a) Old theory → to achieve octet or noble gas configuration for
-					stability<br />
-					(b) New theory – to lower P.E. of the system<br />
-					(c) Let’s take example of two atoms A, B<br />
-					○ Let Nₐ, Nᵦ be their nuclei; eₐ, eᵦ be their electrons<br />
-					- There are two types of forces at play here:<br />
-					(1) Repulsion between Nₐ and Nᵦ and between eₐ and eᵦ<br />
-					(2) Attraction between Nₐ and eᵦ and between Nᵦ and eₐ<br />
-					- Initially attraction > repulsion, so the two atoms come close till
-					repulsion is strong<br />
-					- The distance between the two nuclei at this point is called bond
-					length<br />
-					- Shows that when P.E. is minimum, attraction is less than or equal to
-					repulsion
-				</li>
-			</ol>
-
-			<!--End Intro to chemical bonds-->
-			<!--END CHEMICAL BONDING  -->
+			<!--toc---->
+			<br />
 		</div>
 	</body>
 </html>
