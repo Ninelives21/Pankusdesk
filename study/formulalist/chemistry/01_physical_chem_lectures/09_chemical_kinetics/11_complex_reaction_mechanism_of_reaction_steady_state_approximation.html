@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -151,13 +165,754 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Mechanism overview: elementary vs complex (00:20)</a>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Elementary reactions: transition state, Ea, and rate law signature
+						(02:51)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Molecularity, order, and when a reaction is NOT elementary
+						(06:12)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Complex reactions: key features and rate-determining step idea
+						(19:01)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Energy profile of multistep reactions: intermediates, TS peaks, and
+						slow step (25:13)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Solved mechanism: 2A + 3B \(\to\) A2B3 with slow step given
+						(33:04)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>When intermediate appears in RDS: pre-equilibrium elimination
+						method (36:37)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Example: 2O3 \(\to\) 3O2 with intermediate in slow step (45:17)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Steady-state approximation when RDS is not given (50:48)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Steady-state example: ozone decomposition gives rate \(=k_1[O_3]\)
+						(56:01)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Mechanism overview -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=20s"
+								target="_blank"
+								rel="noopener"
+							>
+								Mechanism overview: elementary vs complex (00:20)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>On the basis of mechanism, reactions are classified as:</li>
+							<li>
+								<ol>
+									<li>Simple / elementary (single-step)</li>
+									<li>Complex (multi-step)</li>
+								</ol>
+							</li>
+							<li>
+								Goal: write rate laws for simple vs complex reactions, and learn
+								how mechanisms help derive observable rate laws.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Mechanism overview -->
+
+					<!-- START ch02 | Elementary reactions -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=171s"
+								target="_blank"
+								rel="noopener"
+							>
+								Elementary reactions: transition state, Ea, and rate law
+								signature (02:51)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Elementary (single-step) reaction: reactants \(\to\) products in
+								one step; no intermediate is formed.
+							</li>
+							<li>
+								Transition state (TS): highest-energy arrangement during bond
+								breaking/forming; TS is not an intermediate.
+							</li>
+							<li>
+								Activation energy:
+								<br />
+								\(E_a=\) energy needed for reactants to reach the transition
+								state (energy barrier crossing).
+							</li>
+							<li>
+								Energy profile picture is essential for understanding:
+								<!-- IMAGE 01 SHOULD GO HERE
+               Description: Energy vs reaction coordinate for a single-step reaction showing Ea and TS.
+               Lecture reference: 03:55
+          -->
+							</li>
+							<li>
+								Example idea (bond changes at TS):
+								<br />
+								\(A_2+B_2 \rightarrow 2AB\) proceeds via a TS where \(A\!-\!A\)
+								and \(B\!-\!B\) bonds weaken while \(A\!-\!B\) bonds form.
+							</li>
+							<li>
+								Rate law signature of an elementary step (law of mass action for
+								elementary steps):
+								<br />
+								For \(A \rightarrow\) products, rate \(=k[A]^1\).
+							</li>
+							<li>
+								For \(A+B \rightarrow\) products (elementary), rate
+								\(=k[A]^1[B]^1\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Elementary reactions -->
+
+					<!-- START ch03 | Molecularity and order -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=372s"
+								target="_blank"
+								rel="noopener"
+							>
+								Molecularity, order, and when a reaction is NOT elementary
+								(06:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Molecularity (for an elementary step): number of reactant
+								molecules colliding simultaneously in the rate-determining step
+								(RDS).
+								<br />
+								In a single-step reaction, that only step is the RDS.
+							</li>
+							<li>
+								Common cases (elementary steps):
+								<ol>
+									<li>
+										Unimolecular: \(A \rightarrow\) products; molecularity
+										\(=1\); rate \(=k[A]\)
+									</li>
+									<li>
+										Bimolecular: \(A+B \rightarrow\) products; molecularity
+										\(=2\); rate \(=k[A][B]\)
+									</li>
+									<li>
+										Termolecular (rare): \(A+2B \rightarrow\) products;
+										molecularity \(=3\); rate \(=k[A][B]^2\)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Reason termolecular steps are rare: simultaneous collision +
+								proper orientation + sufficient energy is low-probability.
+							</li>
+							<li>
+								How to identify an elementary reaction:
+								<ol>
+									<li>Do NOT decide from the written equation alone.</li>
+									<li>
+										Experimentally determine rate law; if powers match
+										stoichiometric coefficients of the step, the step is
+										consistent with being elementary.
+									</li>
+								</ol>
+							</li>
+							<li>
+								Order of reaction: sum of exponents in the experimentally
+								observed rate law.
+								<br />
+								Example: if rate \(=k[A]^1[B]^2\), order \(=1+2=3\).
+							</li>
+							<li>
+								In elementary reactions (excluding pseudo-order cases), order
+								equals molecularity.
+							</li>
+							<li>
+								Important caution:
+								<ol>
+									<li>
+										If total stoichiometric coefficients \(>3\) in an overall
+										equation (e.g., \(N_2+3H_2 \rightarrow 2NH_3\)), the
+										reaction is almost surely complex (multi-step).
+									</li>
+									<li>
+										But if coefficients \(\le 3\), it still may be complex if
+										the observed rate law does not match coefficients.
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Molecularity and order -->
+
+					<!-- START ch04 | Complex reactions basics -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=1141s"
+								target="_blank"
+								rel="noopener"
+							>
+								Complex reactions: key features and rate-determining step idea
+								(19:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Complex (multi-step) reaction: occurs in several elementary
+								steps.
+							</li>
+							<li>
+								Molecularity of an overall complex reaction is not defined.
+								<br />
+								Molecularity can be defined only for each elementary step (each
+								\(\le 3\)).
+							</li>
+							<li>
+								Overall rate is determined by the slowest step (rate-determining
+								step, RDS).
+							</li>
+							<li>Complex reactions have intermediates (one or more).</li>
+							<li>
+								Critical rule:
+								<br />
+								Intermediates must not appear in the final overall rate law.
+							</li>
+							<li>
+								Rate law may involve reactants, products, and catalysts, but not
+								intermediates.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Complex reactions basics -->
+
+					<!-- START ch05 | Energy profile and RDS -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=1513s"
+								target="_blank"
+								rel="noopener"
+							>
+								Energy profile of multistep reactions: intermediates, TS peaks,
+								and slow step (25:13)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Multistep energy diagram shows multiple TS peaks and valleys
+								(intermediates):
+								<!-- IMAGE 02 SHOULD GO HERE
+               Description: Multi-peak energy vs reaction coordinate diagram with intermediates A, B and TS1, TS2, TS3.
+               Lecture reference: 25:13
+          -->
+							</li>
+							<li>
+								Valley (local minimum) corresponds to a relatively stable
+								intermediate.
+							</li>
+							<li>
+								Each peak corresponds to a transition state for that step.
+							</li>
+							<li>
+								For each step, activation energy is measured from that step’s
+								reactant level (valley) to the next TS peak.
+							</li>
+							<li>
+								Slowest step identification from diagram:
+								<br />
+								Step with the largest activation energy barrier is the RDS.
+							</li>
+							<li>
+								Example mapping from diagram:
+								<ol>
+									<li>\(R \rightarrow A\)</li>
+									<li>\(A \rightarrow B\)</li>
+									<li>\(B \rightarrow P\)</li>
+								</ol>
+							</li>
+							<li>
+								If RDS is \(R \rightarrow A\) (elementary), overall rate law is
+								taken from that step:
+								<br />
+								rate \(=k_1[R]\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Energy profile and RDS -->
+
+					<!-- START ch06 | Solved mechanism -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=1984s"
+								target="_blank"
+								rel="noopener"
+							>
+								Solved mechanism: 2A + 3B \(\to\) A2B3 with slow step given
+								(33:04)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Overall reaction:
+								<br />
+								\(2A+3B \rightarrow A_2B_3\)
+							</li>
+							<li>
+								Given mechanism (3 elementary steps):
+								<ol>
+									<li>\(A+B \rightarrow AB\) (slow)</li>
+									<li>\(AB+B \rightarrow AB_2\) (fast)</li>
+									<li>\(AB_2+A+B \rightarrow A_2B_3\) (fast)</li>
+								</ol>
+							</li>
+							<li>
+								Rate law (from slow elementary step):
+								<br />
+								rate \(=k_1[A][B]\)
+							</li>
+							<li>
+								Order:
+								<br />
+								\(1+1=2\)
+							</li>
+							<li>
+								Molecularity of each step:
+								<ol>
+									<li>Step 1: \(2\)</li>
+									<li>Step 2: \(2\)</li>
+									<li>Step 3: \(3\)</li>
+								</ol>
+							</li>
+							<li>
+								Intermediates like \(AB\), \(AB_2\) must not appear in the
+								overall rate law; here the slow step uses only reactants, so no
+								issue.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Solved mechanism -->
+
+					<!-- START ch07 | Intermediate in RDS -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=2197s"
+								target="_blank"
+								rel="noopener"
+							>
+								When intermediate appears in RDS: pre-equilibrium elimination
+								method (36:37)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Problem: if the slow step contains an intermediate, a direct
+								rate law contains that intermediate, which is not allowed in the
+								final rate law.
+							</li>
+							<li>
+								Strategy used here (pre-equilibrium approach):
+								<ol>
+									<li>
+										Find a step that relates the intermediate directly to
+										reactants/products.
+									</li>
+									<li>
+										Assume that step is reversible (often explicitly given in
+										problems).
+									</li>
+									<li>
+										Write equilibrium constant and express intermediate
+										concentration in terms of measurable species.
+									</li>
+									<li>Substitute into the slow-step rate expression.</li>
+								</ol>
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/Tko6iBir6GM?t=2197s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									Given overall: \(2A+3B \rightarrow A_2B_3\). Mechanism:
+									<br />
+									Step 1: \(A+B \rightleftharpoons AB\) (forward \(k_1\),
+									backward \(k_4\)) (fast, assumed equilibrium)
+									<br />
+									Step 2: \(AB+B \rightarrow AB_2\) (slow, \(k_2\))
+									<br />
+									Step 3: \(AB_2+A+B \rightarrow A_2B_3\) (fast)
+									<br />
+									Derive rate law and order.
+									<br />
+									<ul class="inner-list">
+										<li>
+											Slow step rate:
+											<br />
+											rate \(=k_2[AB][B]\)
+										</li>
+										<li>
+											From step 1 equilibrium:
+											<br />
+											\(K=\frac{[AB]}{[A][B]}=\frac{k_1}{k_4}\)
+										</li>
+										<li>
+											So:
+											<br />
+											\([AB]=\frac{k_1}{k_4}[A][B]\)
+										</li>
+										<li>
+											Substitute:
+											<br />
+											rate
+											\(=k_2\left(\frac{k_1}{k_4}[A][B]\right)[B]=\left(\frac{k_1k_2}{k_4}\right)[A][B]^2\)
+										</li>
+										<li>
+											Effective rate constant:
+											<br />
+											\(k_{\text{eff}}=\frac{k_1k_2}{k_4}\)
+										</li>
+										<li>
+											Order:
+											<br />
+											\(1+2=3\)
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch07 | Intermediate in RDS -->
+
+					<!-- START ch08 | Ozone example -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=2717s"
+								target="_blank"
+								rel="noopener"
+							>
+								Example: 2O3 \(\to\) 3O2 with intermediate in slow step (45:17)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Overall reaction:
+								<br />
+								\(2O_3 \rightarrow 3O_2\)
+							</li>
+							<li>
+								Given mechanism:
+								<ol>
+									<li>\(O_3 \rightarrow O_2+O\) (fast)</li>
+									<li>\(O+O_3 \rightarrow 2O_2\) (slow)</li>
+								</ol>
+							</li>
+							<li>
+								Direct slow-step rate (contains intermediate \(O\)):
+								<br />
+								rate \(=k_2[O][O_3]\)
+							</li>
+							<li>
+								Eliminate \(O\) using reversible first step (pre-equilibrium):
+								<br />
+								Step 1 assumed reversible:
+								<br />
+								\(O_3 \rightleftharpoons O_2+O\) (forward \(k_1\), backward
+								\(k_2\) in lecture notation; use as given in the problem
+								statement)
+							</li>
+							<li>
+								Equilibrium relation:
+								<br />
+								\(K=\frac{[O_2][O]}{[O_3]}=\frac{k_1}{k_{-1}}\)
+							</li>
+							<li>
+								Hence:
+								<br />
+								\([O]=\left(\frac{k_1}{k_{-1}}\right)\frac{[O_3]}{[O_2]}\)
+							</li>
+							<li>
+								Substitute into slow-step rate:
+								<br />
+								rate
+								\(=k_{\text{slow}}[O_3]\left(\frac{k_1}{k_{-1}}\right)\frac{[O_3]}{[O_2]}=\left(\frac{k_{\text{slow}}k_1}{k_{-1}}\right)\frac{[O_3]^2}{[O_2]}\)
+							</li>
+							<li>
+								Key idea: product \([O_2]\) may appear in rate law; intermediate
+								\([O]\) must not.
+							</li>
+							<li>
+								Note:
+								<br />
+								<span class="unclear"
+									>(Backward rate constant symbol for step 1 is inconsistent in
+									transcript; use the one provided in the actual
+									question.)</span
+								>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Ozone example -->
+
+					<!-- START ch09 | Steady-state approximation -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=3048s"
+								target="_blank"
+								rel="noopener"
+							>
+								Steady-state approximation when RDS is not given (50:48)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Case: mechanism is given but the slowest step (RDS) is not
+								specified.
+							</li>
+							<li>
+								Use steady-state approximation for intermediates:
+								<br />
+								Intermediate concentration remains nearly constant during most
+								of the reaction.
+							</li>
+							<li>
+								Mathematical statement for an intermediate \(I\):
+								<br />
+								\(\frac{d[I]}{dt}\approx 0\)
+							</li>
+							<li>
+								Graph intuition:
+								<!-- IMAGE 03 SHOULD GO HERE
+               Description: Intermediate concentration vs time showing quick formation and quick consumption, nearly steady region.
+               Lecture reference: 52:06
+          -->
+							</li>
+							<li>
+								Procedure outline:
+								<ol>
+									<li>
+										Write rate expressions for elementary steps (\(R_1,
+										R_2,\dots\)).
+									</li>
+									<li>
+										Write \(\frac{d[\text{intermediate}]}{dt}\) as (rate of
+										formation) \(-\) (rate of consumption).
+									</li>
+									<li>
+										Set \(\frac{d[\text{intermediate}]}{dt}=0\) and solve for
+										intermediate concentration.
+									</li>
+									<li>
+										Use stoichiometric rate definition for overall reaction
+										(e.g., \(-\frac{1}{\nu}\frac{d[\text{reactant}]}{dt}\)) and
+										substitute intermediate value.
+									</li>
+								</ol>
+							</li>
+							<li>
+								Syllabus note:
+								<br />
+								<span class="unclear"
+									>(Transcript notes steady-state is not part of board syllabus;
+									treat as advanced method used in many reference
+									problems.)</span
+								>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Steady-state approximation -->
+
+					<!-- START ch10 | Steady-state example -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/Tko6iBir6GM?t=3361s"
+								target="_blank"
+								rel="noopener"
+							>
+								Steady-state example: ozone decomposition gives rate
+								\(=k_1[O_3]\) (56:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Overall reaction:
+								<br />
+								\(2O_3 \rightarrow 3O_2\)
+							</li>
+							<li>
+								Mechanism (elementary steps):
+								<ol>
+									<li>\(O_3 \rightarrow O_2+O\) with rate \(R_1=k_1[O_3]\)</li>
+									<li>
+										\(O+O_3 \rightarrow 2O_2\) with rate \(R_2=k_2[O][O_3]\)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Define overall rate by stoichiometry:
+								<br />
+								rate
+								\(=-\frac{1}{2}\frac{d[O_3]}{dt}=+\frac{1}{3}\frac{d[O_2]}{dt}\)
+							</li>
+							<li>
+								Steady-state for intermediate \(O\):
+								<br />
+								\(\frac{d[O]}{dt}=(\text{formation})-(\text{consumption})=R_1-R_2\approx
+								0\)
+							</li>
+							<li>
+								Hence:
+								<br />
+								\(R_1\approx R_2 \Rightarrow k_1[O_3]\approx k_2[O][O_3]\)
+							</li>
+							<li>
+								Solve for intermediate:
+								<br />
+								\([O]\approx \frac{k_1}{k_2}\)
+							</li>
+							<li>
+								Compute \(-\frac{d[O_3]}{dt}\):
+								<br />
+								For the overall consumption of \(O_3\), both steps consume
+								\(O_3\) once each per their occurrences in the mechanism, so:
+								<br />
+								\(-\frac{d[O_3]}{dt}\approx R_1+R_2\approx
+								k_1[O_3]+k_1[O_3]=2k_1[O_3]\)
+							</li>
+							<li>
+								Therefore:
+								<br />
+								rate \(=-\frac{1}{2}\frac{d[O_3]}{dt}\approx
+								-\frac{1}{2}(-2k_1[O_3])=k_1[O_3]\)
+							</li>
+							<li>
+								Final results:
+								<ol>
+									<li>Rate law: rate \(=k_1[O_3]\)</li>
+									<li>Order: \(1\)</li>
+									<li>Rate constant (effective): \(k_1\)</li>
+								</ol>
+							</li>
+							<li>
+								Cross-check via product formation:
+								<br />
+								\(\frac{d[O_2]}{dt}\approx R_1+2R_2\approx
+								k_1[O_3]+2k_1[O_3]=3k_1[O_3]\)
+								<br />
+								So rate \(=\frac{1}{3}\frac{d[O_2]}{dt}\approx k_1[O_3]\)
+								(consistent).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Steady-state example -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
