@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -151,13 +165,411 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
-				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
-				</li>
+			<ol id="topic-index">
+				<li><a href="#ch01">Lecture roadmap: methods list</a></li>
+				<li><a href="#ch02">Half-life method</a></li>
+				<li><a href="#ch03">Graphical method (linear plots)</a></li>
+				<li><a href="#ch04">Integrated rate law (hit-and-trial)</a></li>
 			</ol>
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Order determination overview -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/rGZfrCEC6NM?t=7s"
+								target="_blank"
+								rel="noopener"
+							>
+								Methods to determine order of reaction (00:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Goal: determine order \(n\) of a reaction from given
+								experimental data.
+							</li>
+							<li>
+								Methods discussed (data-dependent choice):
+								<ol>
+									<li>\(t_{1/2}\) (half-life) method</li>
+									<li>Graphical (linear plot) method</li>
+									<li>Integrated rate law method (hit-and-trial)</li>
+									<li>Initial rate method (covered separately)</li>
+								</ol>
+							</li>
+							<li>
+								Typical exam trend:
+								<ul>
+									<li>
+										Most questions are 0th and 1st order; higher orders appear
+										less frequently.
+									</li>
+									<li>Use the method that matches the given data format.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Order determination overview -->
+
+					<!-- START ch02 | Half-life method -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/rGZfrCEC6NM?t=204s"
+								target="_blank"
+								rel="noopener"
+							>
+								Half-life method: key relation and usage (03:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Standard half-life formulas (for reference):
+								<ul>
+									<li>
+										0th order:
+										<br />
+										\(t_{1/2}=\dfrac{[A]_0}{2k}\)
+									</li>
+									<li>
+										1st order:
+										<br />
+										\(t_{1/2}=\dfrac{0.693}{k}\) (independent of \([A]_0\))
+									</li>
+									<li>
+										2nd order:
+										<br />
+										\(t_{1/2}=\dfrac{1}{k[A]_0}\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								General dependence (valid for any order \(n\)):
+								<br />
+								\(t_{1/2}\propto [A]_0^{\,1-n}\)
+								<ul>
+									<li>\(n=0 \Rightarrow t_{1/2}\propto [A]_0\)</li>
+									<li>
+										\(n=1 \Rightarrow t_{1/2}\propto [A]_0^{0}\) (constant)
+									</li>
+									<li>\(n=2 \Rightarrow t_{1/2}\propto \dfrac{1}{[A]_0}\)</li>
+								</ul>
+							</li>
+							<li>
+								When two half-lives are given for two initial concentrations (or
+								pressures for gases):
+								<br />
+								\(\dfrac{t_1}{t_2}=\left(\dfrac{[A]_1}{[A]_2}\right)^{1-n}\)
+								<ul>
+									<li>
+										For gaseous reactions, use initial pressure \(P_0\) in place
+										of concentration:
+										<br />
+										\([A]_0 \propto P_0\) (at fixed \(T\))
+									</li>
+									<li>
+										If confusion occurs between \((1-n)\) and \((n-1)\), verify
+										using known cases: 0th order depends on \([A]_0\), 1st order
+										does not.
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								Practice (half-life method):
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/rGZfrCEC6NM?t=523s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Given: \(t_{1/2}=20\ \text{min}\) at initial
+												concentration \([A]_0=x\).
+											</li>
+											<li>
+												When \([A]_0\) is doubled (\(2x\)), \(t_{1/2}\) becomes
+												\(10\ \text{min}\).
+											</li>
+											<li>Find order \(n\).</li>
+											<li>
+												Answer: \(n=2\) (since doubling \([A]_0\) halves
+												\(t_{1/2}\Rightarrow t_{1/2}\propto 1/[A]_0\)).
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/rGZfrCEC6NM?t=736s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Gaseous reaction: initial pressure vs half-life data
+												given (use \(P_0\) in place of \([A]_0\)).
+											</li>
+											<li>
+												Sample pair used: \(P_1=66.66\ \text{kPa},\ t_1=235\
+												\text{min}\); \(P_2=33.33\ \text{kPa},\ t_2=950\
+												\text{min}\).
+											</li>
+											<li>
+												Using
+												\(\dfrac{t_1}{t_2}=\left(\dfrac{P_1}{P_2}\right)^{1-n}\),
+												estimate \(n\) (experimental data may need
+												approximation).
+											</li>
+											<li>
+												Answer: \(n=3\) (ratio \(\dfrac{235}{950}\approx
+												\dfrac{1}{4}=2^{-2}\) and \(\dfrac{66.66}{33.33}\approx
+												2\Rightarrow 2^{-2}=2^{1-n}\Rightarrow n=3\)).
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/rGZfrCEC6NM?t=1023s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 3
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Gaseous reaction: initial pressure changes (700, 430,
+												104 kPa) but half-life stays \(\approx 84\ \text{min}\).
+											</li>
+											<li>Find order \(n\) without full calculation.</li>
+											<li>
+												Answer: \(n=1\) (constant half-life \(\Rightarrow\)
+												first order).
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Half-life method -->
+
+					<!-- START ch03 | Graphical linear plots -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/rGZfrCEC6NM?t=1200s"
+								target="_blank"
+								rel="noopener"
+							>
+								Graphical method: identify order from linear plots (20:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Idea: if an appropriate function of reactant concentration gives
+								a straight-line plot vs time, the order is identified directly.
+							</li>
+							<li>
+								<img
+									src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/08/01_linear_plots.png"
+									alt="Linear plots for 0th, 1st, 2nd and higher order"
+									style="width: 40%; height: auto; margin-right: 10px"
+								/>
+								<!-- IMAGE 01 SHOULD GO HERE
+               Description: Linear plots for 0th and 1st order (negative slopes).
+               Lecture reference: 20:00
+          -->
+								<br />
+								0th order:
+								<ul>
+									<li>
+										\([A]\) vs \(t\) is a straight line with negative slope.
+									</li>
+								</ul>
+							</li>
+							<li>
+								<!-- IMAGE 02 SHOULD GO HERE
+               Description: Linear plots for 2nd and higher orders (positive slopes).
+               Lecture reference: 20:00
+          -->
+								1st order:
+								<ul>
+									<li>
+										\(\log_{10}[A]\) vs \(t\) is a straight line with negative
+										slope.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Higher orders (positive-slope straight lines):
+								<ol>
+									<li>2nd order: \(\dfrac{1}{[A]}\) vs \(t\) is linear.</li>
+									<li>3rd order: \(\dfrac{1}{[A]^2}\) vs \(t\) is linear.</li>
+									<li>
+										General:
+										<br />
+										If \(\dfrac{1}{[A]^m}\) vs \(t\) is linear, then order
+										\(n=m+1\).
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Graphical linear plots -->
+
+					<!-- START ch04 | Integrated rate law -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/rGZfrCEC6NM?t=1493"
+								target="_blank"
+								rel="noopener"
+							>
+								Integrated rate law method (hit-and-trial) (24:53)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Data pattern: a table of concentration \([A]\) at different
+								times \(t\) (half-life is not provided).
+							</li>
+							<li>
+								Strategy (hit-and-trial):
+								<ol>
+									<li>
+										Assume an order (start with 1st order, since it is most
+										common).
+									</li>
+									<li>Compute \(k\) using two different data pairs.</li>
+									<li>
+										If \(k\) is (approximately) constant for different pairs,
+										that assumed order is correct.
+									</li>
+									<li>
+										If not, repeat for 0th order, then 2nd, then 3rd, etc.
+									</li>
+								</ol>
+							</li>
+							<li>
+								Integrated forms used to calculate \(k\):
+								<ol>
+									<li>
+										1st order:
+										<br />
+										\(k=\dfrac{2.303}{t}\log_{10}\!\left(\dfrac{[A]_0}{[A]}\right)\)
+									</li>
+									<li>
+										0th order:
+										<br />
+										\(k=\dfrac{[A]_0-[A]}{t}\)
+									</li>
+									<li>
+										2nd order:
+										<br />
+										\(k=\dfrac{1}{t}\left(\dfrac{1}{[A]}-\dfrac{1}{[A]_0}\right)\)
+									</li>
+									<li>
+										3rd order:
+										<br />
+										\(k=\dfrac{1}{2t}\left(\dfrac{1}{[A]^2}-\dfrac{1}{[A]_0^2}\right)\)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Practice (integrated rate law / hit-and-trial):
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/rGZfrCEC6NM?t=1886s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 4
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Given concentration-time data (units as provided):
+												<ul>
+													<li>\([A]=50\) at \(t=0\ \text{min}\)</li>
+													<li>\([A]=30\) at \(t=10\ \text{min}\)</li>
+													<li>\([A]=18\) at \(t=20\ \text{min}\)</li>
+												</ul>
+											</li>
+											<li>
+												Check 1st order by computing \(k\) using different
+												pairs:
+												<ul>
+													<li>
+														Pair 1: \([A]_0=50,\ [A]=30,\ t=10\)
+														<br />
+														\(k_1=\dfrac{2.303}{10}\log_{10}\!\left(\dfrac{50}{30}\right)\)
+													</li>
+													<li>
+														Pair 2: \([A]_0=50,\ [A]=18,\ t=20\)
+														<br />
+														\(k_2=\dfrac{2.303}{20}\log_{10}\!\left(\dfrac{50}{18}\right)\)
+													</li>
+												</ul>
+											</li>
+											<li>
+												Decision rule:
+												<ul>
+													<li>If \(k_1\approx k_2\), reaction is 1st order.</li>
+													<li>
+														If not, test 0th order using
+														\(k=\dfrac{[A]_0-[A]}{t}\), then 2nd order, etc.
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Integrated rate law -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
