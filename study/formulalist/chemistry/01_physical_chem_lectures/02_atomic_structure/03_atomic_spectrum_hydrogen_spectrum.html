@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -110,176 +124,9 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
-				<li>
-					<a href="#ch01" class="link_no_style_2"> Bohr's Emmision Spectrum </a>
-				</li>
-				<li>
-					<a href="#ch02" class="link_no_style_2"
-						>Calculations and Numericals</a
-					>
-				</li>
-				<li>
-					<a href="#ch03" class="link_no_style_2">TTT3</a>
-				</li>
-				<li>
-					<a href="#ch04" class="link_no_style_2">TTT4</a>
-				</li>
-			</ol>
+			<ol></ol>
 
-			<br /><br />
-
-			<ol>
-				<!--  Start Bohr's Emmision Spectrum -->
-				<li>
-					<div id="ch01">
-						<h3>
-							<a
-								href="https://www.youtube.com/embed/nRmfrVR4uC8?start=27&end=458"
-								class="link_no_style"
-								target="_blank"
-							>
-								Bohr's Emmision Spectrum</a
-							>
-						</h3>
-					</div>
-					<ol class="inner-list">
-						<li>
-							Bohr's Experiment : heated a gas in a glass tube and observed that
-							rays of only some wavelengths were emitted.
-						</li>
-						<li>He called this discrete/line spectrum.</li>
-						<li>
-							Upon getting heated, the electrons of the gas absorb the energy
-							and jump to a higher energy level.
-						</li>
-						<li>
-							The energy of the different energy levels of Hydrogen gas is:
-							<ol>
-								<li>n = 1, \(-\) 13.6 eV</li>
-								<li>n = 2, \(-\) 3.4 eV</li>
-								<li>n = 3, \(-\) 1.51 eV</li>
-								<li>n = 4, \(-\) 0.85 eV</li>
-							</ol>
-						</li>
-						<li>Electron always tries to remain in the lowest energy level.</li>
-						<li>
-							\(\therefore\) electron returns back to its lowest energy form,
-							emitting energy in the form of radiation.
-						</li>
-						<li>This is called the <b>Emission spectrum</b></li>
-					</ol>
-				</li>
-				<!-- End Bohr's Emmision Spectrum  -->
-				<br /><br />
-
-				<!--  Start Calculations and Numericals -->
-				<li>
-					<div id="ch02">
-						<h3>
-							<a
-								href="https://www.youtube.com/embed/nRmfrVR4uC8?start=459&e=nnnn"
-								class="link_no_style"
-								target="_blank"
-							>
-								Calculations and Numericals</a
-							>
-						</h3>
-					</div>
-					<ol class="inner-list">
-						<li>
-							Question on Emmision spectrum : <br />
-
-							<!-- Start Q1-->
-
-							<div class="accordion-item">
-								<button class="accordion-button">
-									<span class="ques_number"
-										>An electron in H-atom jumps from n=2 to n=1. Find the
-										energy and wavelength of the emitted radiation.
-									</span>
-								</button>
-								<div class="accordion-content ans-align">
-									<ul>
-										<li>\(\Delta E = E_2 - E_1\)</li>
-										<li>\(E = -13.6 \times \dfrac{Z^2}{n^2} \text{ eV} \)</li>
-										<li>\(E_2 = -13.6 \times \dfrac{1}{2^2} \text{ eV} \)</li>
-										<li>\(E_1 = -13.6 \times \dfrac{1}{1^2} \text{ eV} \)</li>
-										<li>\(\Delta E = 13.6 - 3.4\) = 10.2 eV</li>
-										<li>
-											Energy of electromagnetic wave, \( E = \dfrac{h
-											c}{\lambda} \)
-										</li>
-										<li>
-											\( E = \left(\dfrac{12375}{\lambda}\right) \text{ eV},
-											\quad \lambda \text{ in } \text{Å} \)
-										</li>
-										<li>\(\lambda = \dfrac{12375}{10.2} \text{Å} \)</li>
-										<li>\(\lambda = 1213.2 \text{Å} \)</li>
-									</ul>
-								</div>
-							</div>
-
-							<!-- End Q1-->
-							<br />
-						</li>
-						<li>
-							Shortcut for< wavelength of emitted radiation when an electron in
-							any atom jumps from one energy level \(n_2\) to another, \(n_1\) =
-							\( \dfrac{1}{\lambda} = R Z^2 \left( \dfrac{1}{n_1^2} -
-							\dfrac{1}{n_2^2} \right) \), where
-							<ul>
-								<li>Z = atomic number of the element.</li>
-								<li>R = "Rydberg constant" = \(\dfrac{13.6}{hc}\).</li>
-								<li>h = Planck's constant</li>
-								<li>c = speed of <light class=""></light></li>
-							</ul>
-						</li>
-					</ol>
-				</li>
-				<!-- End Calculations and Numericals  -->
-				<br /><br />
-
-				<!--  Start 3BBB -->
-				<li>
-					<div id="ch03">
-						<h3>
-							<a
-								href="https://www.youtube.com/embed/nRmfrVR4uC8?start=mmmm&e=nnnn"
-								class="link_no_style"
-								target="_blank"
-							>
-								BBB</a
-							>
-						</h3>
-					</div>
-					<ol class="inner-list">
-						<li></li>
-					</ol>
-				</li>
-				<!-- End 3BBB  -->
-				<br /><br />
-
-				<!--  Start 4BBB -->
-				<li>
-					<div id="ch04">
-						<h3>
-							<a
-								href="https://www.youtube.com/embed/nRmfrVR4uC8?start=mmmm&e=nnnn"
-								class="link_no_style"
-								target="_blank"
-							>
-								BBB</a
-							>
-						</h3>
-					</div>
-					<ol class="inner-list">
-						<li></li>
-					</ol>
-				</li>
-				<!-- End 4BBB  -->
-				<br /><br />
-			</ol>
+			<br />
 		</div>
 	</body>
 </html>
