@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -101,123 +115,9 @@
 				</li>
 			</ol>
 
-			<br /><br />
+			<br />
 
 			<!--Start history before mendeleev-->
-
-			<span class="list_title">HISTORY (BEFORE MENDELEEV)</span>
-			<ol class="inner-list">
-				<li>
-					The German chemist, Johann Dobereiner in 1829 he noted a similarity
-					among the physical and chemical properties of several groups of three
-					elements (Triads). In each case, he noticed that the middle element of
-					each of the Triads had an atomic weight about half way between the
-					atomic weights of the other two.<br />
-					<img
-						src="../../image/screenshots/periodic_classification/dobereiners_triads.png"
-						style="width: 35%; height: auto; margin-right: 10px"
-					/>
-				</li>
-				<li>
-					Also the properties of the middle element were in between those of the
-					other two members.
-				</li>
-				<li>
-					The model failed as all the known elements could not be fixed in
-					Triads. Also, in the same group too, law was not always obeyed.
-				</li>
-				<li>
-					John Alexander Newlands in 1865 profounded the Law of Octaves. He
-					arranged the elements in increasing order of their atomic weights and
-					noted that every eighth element had properties similar to the first
-					element. <br />
-					<img
-						src="../../image/screenshots/periodic_classification/newlands_octaves.png"
-						style="width: 35%; height: auto; margin-right: 10px"
-					/>
-				</li>
-				<li>
-					Newlands’s Law of Octaves seemed to be true only for elements up to
-					calcium. Also, with discovery of noble gases, "octave" was no longer
-					valid. Also, it began to fail with the discovery of heavier elements.
-				</li>
-			</ol>
-
-			<!--End history before mendeleev-->
-			<!--Start Mendeleev-->
-
-			<span class="list_title">MENDELEEV'S LAWS</span><br />
-			<ol class="inner-list">
-				<li>
-					The Periodic Law, as we know it today owes its development to the
-					Russian chemist, Dmitri Mendeleev (1834-1907) and the German chemist,
-					Lothar Meyer (1830-1895).
-				</li>
-				<li>
-					Lothar Meyer used a graph, while Mendeleev used a periodic table.
-				</li>
-				<li>
-					Lothar Meyer plotted atomic volume (y-axis) vs atomic weight (x-axis).
-					Elements at the similar position (example at peaks) on the curve had
-					similar physical and chemical properties.<br />
-					<img
-						src="../../image/screenshots/periodic_classification/lothar_meyer.png"
-						style="width: 35%; height: auto; margin-right: 10px"
-					/>
-				</li>
-				<li>
-					Mendeleev is also known as the "father of the periodic table of the
-					chemical elements"
-				</li>
-				<li>
-					Mendeleev's Periodic law: The properties of the elements are a
-					periodic function of their atomic weights
-				</li>
-				<li>Mendeleev's famous Periodic Table was published in 1905</li>
-				<li>He wrote a book called "Principles of Chemistry"</li>
-				<li>The 101st elements is named after him -> "Mendelevium"</li>
-				<li>
-					At the time. he proposed periodic table of elements, the structure of
-					atom was unknown. Even noble gases were not known.
-				</li>
-				<li>
-					Merits of Mendeleev's periodic table:<br />
-					<ul>
-						<li>All 63 elements were arranged</li>
-						<li>
-							He proposed that "Periodic property is proportional to Atomic
-							Weight"
-						</li>
-						<li>He left gaps for undiscovered elements.</li>
-						<li>He even predicted properties of undiscovered elements.</li>
-						<li>
-							He left the gap under aluminium and a gap under silicon, and
-							called these elements "Eka-Aluminium" and "Eka-Silicon". Mendeleev
-							predicted not only the existence of gallium and germanium, but
-							also described some of their general physical properties. These
-							elements were discovered later.
-						</li>
-					</ul>
-				</li>
-				<li>
-					Demerits of Mendeleev's periodic table:<br />
-					<ul>
-						<li>
-							He began grouping dissimilar elements -> Na,K,Rb were placed with
-							Ca and Ag
-						</li>
-						<li>Separated similar elements like Pt and Au</li>
-						<li>
-							He clubbed Isotopes whereas according to his rule, they have
-							increasing atomic weights, and so should have been separate.
-						</li>
-					</ul>
-				</li>
-			</ol>
-
-			<!--End Mendeleev-->
-
-			<!-- END PERIODIC TABLE-->
 		</div>
 	</body>
 </html>

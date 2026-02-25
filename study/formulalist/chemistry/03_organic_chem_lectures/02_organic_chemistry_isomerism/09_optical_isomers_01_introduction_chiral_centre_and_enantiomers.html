@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use \( \) for inline and \[ \] for display. Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://www.youtube.com/playlist?list=PLF_7kfnwLFCFXbEZgV5ymIMOeBRoABXqw"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -157,299 +171,9 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol class="inner-list">
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=70s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Introduction</a
-					>
-					<br />
-					• PPL (plane-polarized light)<br />
-					• Optically active substance<br />
-					• Enantiomers<br />
-					• Chiral center<br />
-					• Chirality
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=136s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Optical Isomers</a
-					>
-					<br />
-					• Same molecular & structural formula; similar physical/chemical
-					properties<br />
-					• Differ in behavior toward plane-polarized light<br />
-					• Differ in optically active chemical reactions
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=334s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Nature Of Light</a
-					>
-					<br />
-					• Light = EMR (E & M field vibrations)<br />
-					• Vibrates in all directions<br />
-					• E-field planes ⟂ to propagation<br />
-					• Polarizer (Nicol prism) selects one plane → plane-polarized light
-					(PPL)
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=705s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Optically Active Substance</a
-					>
-					<br />
-					• Rotates PPL<br />
-					• Polarimeter measures optical activity<br />
-					• Results: unaffected → inactive; clockwise → dextrorotatory (+);
-					anticlockwise → levorotatory (−)<br />
-					• Specific rotation α = θ/(l×c); l in dm, c in g/mL; units ≈
-					deg·mL·dm⁻¹·g⁻¹
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=1410s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>How To Know — Optically Active?</a
-					>
-					<br />
-					• Look for dissymmetry<br />
-					• Dissymmetrical compounds are optically active<br />
-					• Chirality ⇒ non-superimposable mirror image
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=1794s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Chirality → Dissymmetric Compound</a
-					>
-					<br />
-					• Symmetrical compounds do not favor OA<br />
-					• Dissymmetrical compounds favor OA<br />
-					• Chirality = dissymmetry + non-superimposability
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=2022s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Example of an optically active compound — Lactic Acid</a
-					>
-					<br />
-					• 2-hydroxy propan-1-oic acid<br />
-					• Mirror image non-superimposable (even after 180°)<br />
-					• Each member and its mirror image are optically active<br />
-					• d (+) rotates right; l (−) rotates left<br />
-					• Pair called enantiomers; chiral compounds
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=2386s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Enantiomers</a
-					>
-					<br />
-					• Non-superimposable mirror images<br />
-					• Same magnitude, opposite direction of PPL rotation<br />
-					• Differ only in light-involving reactions
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=2636s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Chiral Centre</a
-					>
-					<br />
-					• sp³ center with four different substituents (or N: 3 bonds + lone
-					pair)<br />
-					• One chiral center ⇒ definitely optically active<br />
-					• >1 chiral center ⇒ optical activity may or may not occur
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=2970s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Are These Compounds Optically Active?</a
-					>
-					<br />
-					• sec-butyl chloride: Yes<br />
-					• tert-pentyl chloride: No<br />
-					• iso-butyl chloride: No
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3278s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Is This Compound Optically Active? (Cyclopropane)</a
-					>
-					<br />
-					• Symmetric; no chiral center → not optically active
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3347s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Is This Compound Optically Active? (Methyl
-						Cyclopropane)</a
-					>
-					<br />
-					• Not optically active; no chiral center
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3403s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Is This Compound Optically Active? (CH₃ & OH On
-						Cyclopropane)</a
-					>
-					<br />
-					• Two chiral centers (overall OA evaluated below)
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3479s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — How Many Chiral Centers?
-						(2-methylcyclopropane-1,3-diol)</a
-					>
-					<br />
-					• two chiral centers<br />
-					• overall OA uncertain
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3572s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Chiral Center In Methyl Cyclohexane?</a
-					>
-					<br />
-					• No chiral center
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3595s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Chiral Center In 1,2-Dimethylcyclohexane?</a
-					>
-					<br />
-					• Two chiral centers
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3647s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Chiral Center In 1-Bromo-1-Chloro Cyclobutane?</a
-					>
-					<br />
-					• No chiral centers
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3689s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Chiral Center In 1-Bromo-3-Chloro Cyclobutane?</a
-					>
-					<br />
-					• No chiral center
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3736s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Chiral Center In Methyl Hydrogen Sulphate (CH₃HSO₄)?</a
-					>
-					<br />
-					• Has a chiral center (at S)
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3776s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Question — Chiral Center In A Tertiary Amine?</a
-					>
-					<br />
-					• N-ethyl-N-methyl-propanamine: no chiral center<br />
-					• Tertiary Nitrogen has no chiral centers
-				</li>
-				<br />
-				<li>
-					<a
-						href="https://www.youtube.com/watch?v=ZiPzgGVJDvY&t=3873s"
-						class="link_no_style"
-						target="_blank"
-						rel="noopener"
-						>Summary Rule</a
-					>
-					<br />
-					• One chiral center → chirality → dissymmetric<br />
-					• optically active → Enantiomers: d’ (+) and l’ (−)
-				</li>
-			</ol>
-			```
+			<!--TOC-->
 
-			<br /><br />
+			<br />
 		</div>
 	</body>
 </html>
