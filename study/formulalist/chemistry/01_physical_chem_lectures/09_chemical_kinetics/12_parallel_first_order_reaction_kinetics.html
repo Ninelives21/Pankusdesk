@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -148,13 +162,361 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Parallel reactions setup and exam focus (00:05)</a>
 				</li>
+				<li>
+					<a href="#ch02"
+						>Effective rate law and effective rate constant (05:12)</a
+					>
+				</li>
+				<li><a href="#ch03">Effective half-life relations (09:05)</a></li>
+				<li>
+					<a href="#ch04"
+						>Effective activation energy using Arrhenius (12:24)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Concentration of A vs time for parallel first-order (17:33)</a
+					>
+				</li>
+				<li><a href="#ch06">Concentration of B and C vs time (22:44)</a></li>
+				<li><a href="#ch07">Product ratio and percentage yield (28:01)</a></li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Setup and scope -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/DrE6ApKqgwU?t=5s"
+								target="_blank"
+								rel="noopener"
+							>
+								Parallel reactions setup and exam focus (00:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Parallel (side) reaction model:
+								<br />
+								\( A \xrightarrow{k_1} B \) and \( A \xrightarrow{k_2} C \)
+							</li>
+							<li>
+								Typical exam problems use first-order parallel reactions:
+								<br />
+								\( r_1 = k_1[A] \), \( r_2 = k_2[A] \)
+							</li>
+							<li>
+								Targets to derive/use:
+								<ul>
+									<li>
+										Effective order (overall remains first order in \(A\))
+									</li>
+									<li>Effective rate constant \(k_{\text{eff}}\)</li>
+									<li>Effective half-life \(t_{1/2,\text{eff}}\)</li>
+									<li>Effective activation energy \(E_{a,\text{eff}}\)</li>
+									<li>\([A](t), [B](t), [C](t)\)</li>
+									<li>
+										Product ratio and % composition (major/minor product idea)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Setup and scope -->
+
+					<!-- START ch02 | Effective rate constant -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/DrE6ApKqgwU?t=312s"
+								target="_blank"
+								rel="noopener"
+							>
+								Effective rate law and effective rate constant (05:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For parallel consumption of \(A\), total disappearance rate
+								adds:
+								<br />
+								\( -\frac{d[A]}{dt} = r_1 + r_2 \)
+							</li>
+							<li>
+								With first-order branches:
+								<br />
+								\( -\frac{d[A]}{dt} = k_1[A] + k_2[A] = (k_1+k_2)[A] \)
+							</li>
+							<li>
+								Therefore effective rate constant:
+								<br />
+								\( k_{\text{eff}} = k_1 + k_2 \)
+							</li>
+							<li>
+								Effective order with respect to \(A\) remains 1 (same form as
+								first-order decay).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Effective rate constant -->
+
+					<!-- START ch03 | Effective half-life -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/DrE6ApKqgwU?t=545s"
+								target="_blank"
+								rel="noopener"
+							>
+								Effective half-life relations (09:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For any first-order process:
+								<br />
+								\( t_{1/2} = \frac{0.693}{k} \)
+							</li>
+							<li>
+								For parallel first-order branches:
+								<br />
+								\( t_{1/2,\text{eff}} = \frac{0.693}{k_1+k_2} \)
+							</li>
+							<li>
+								If individual half-lives are given (\(t_{1/2,1}\) for \(k_1\),
+								\(t_{1/2,2}\) for \(k_2\)):
+								<br />
+								\( k_1=\frac{0.693}{t_{1/2,1}} \), \(
+								k_2=\frac{0.693}{t_{1/2,2}} \)
+							</li>
+							<li>
+								Substitute into \(k_{\text{eff}}=k_1+k_2\) to get:
+								<br />
+								\( \frac{1}{t_{1/2,\text{eff}}} = \frac{1}{t_{1/2,1}} +
+								\frac{1}{t_{1/2,2}} \)
+							</li>
+							<li>
+								Extension to \(n\) parallel branches:
+								<br />
+								\( k_{\text{eff}}=\sum_{i=1}^{n} k_i \) and \(
+								\frac{1}{t_{1/2,\text{eff}}}=\sum_{i=1}^{n}\frac{1}{t_{1/2,i}}
+								\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Effective half-life -->
+
+					<!-- START ch04 | Effective activation energy -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/DrE6ApKqgwU?t=744s"
+								target="_blank"
+								rel="noopener"
+							>
+								Effective activation energy using Arrhenius (12:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Arrhenius form for each branch:
+								<br />
+								\( k_1 = A_1 e^{-E_{a1}/RT} \), \( k_2 = A_2 e^{-E_{a2}/RT} \)
+							</li>
+							<li>
+								Effective rate constant:
+								<br />
+								\( k_{\text{eff}} = k_1 + k_2 \)
+							</li>
+							<li>
+								Define effective Arrhenius parameters:
+								<br />
+								\( k_{\text{eff}} = A_{\text{eff}} e^{-E_{a,\text{eff}}/RT} \)
+							</li>
+							<li>
+								Result for effective activation energy (weighted by rate
+								constants):
+								<br />
+								\( E_{a,\text{eff}} = \frac{k_1E_{a1} + k_2E_{a2}}{k_1+k_2} \)
+							</li>
+							<li>
+								Exam-use tip: typically \(k_1, k_2, E_{a1}, E_{a2}\) are
+								provided directly; plug into the formula.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Effective activation energy -->
+
+					<!-- START ch05 | Concentration of A -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/DrE6ApKqgwU?t=1053s"
+								target="_blank"
+								rel="noopener"
+							>
+								Concentration of A vs time for parallel first-order (17:33)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Differential equation for \(A\):
+								<br />
+								\( -\frac{d[A]}{dt} = (k_1+k_2)[A] \)
+							</li>
+							<li>
+								Integrate using \([A]=[A]_0\) at \(t=0\):
+								<br />
+								\( \ln\!\left(\frac{[A]}{[A]_0}\right) = -(k_1+k_2)t \)
+							</li>
+							<li>
+								Exponential form (reactant concentration vs time):
+								<br />
+								\( [A](t) = [A]_0 e^{-(k_1+k_2)t} \)
+							</li>
+							<li>
+								Graph idea: \([A]\) decreases exponentially with time (standard
+								first-order decay shape).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Concentration of A -->
+
+					<!-- START ch06 | Concentration of B and C -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/DrE6ApKqgwU?t=1364s"
+								target="_blank"
+								rel="noopener"
+							>
+								Concentration of B and C vs time (22:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Formation rate of \(B\):
+								<br />
+								\( \frac{d[B]}{dt} = k_1[A] \)
+							</li>
+							<li>
+								Substitute \(=0\):
+								<br />
+								\( [B](t) =
+								\frac{k_1[A]_0}{k_1+k_2}\left(1-e^{-(k_1+k_2)t}\right) \)
+							</li>
+							<li>
+								Similarly for \(C\), with \(=0\):
+								<br />
+								\( [C](t) =
+								\frac{k_2[A]_0}{k_1+k_2}\left(1-e^{-(k_1+k_2)t}\right) \)
+							</li>
+							<li>
+								Long-time limit (\(t \to \infty\)):
+								<ul>
+									<li>\( [A]\to 0 \) (approaches 0 asymptotically)</li>
+									<li>\( [B]_{\infty}=\frac{k_1}{k_1+k_2}[A]_0 \)</li>
+									<li>\( [C]_{\infty}=\frac{k_2}{k_1+k_2}[A]_0 \)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Concentration of B and C -->
+
+					<!-- START ch07 | Ratio and percent yield -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/DrE6ApKqgwU?t=1681s"
+								target="_blank"
+								rel="noopener"
+							>
+								Product ratio and percentage yield (28:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Ratio of product concentrations is time-independent (for this
+								model):
+								<br />
+								\( \frac{[B](t)}{[C](t)} = \frac{k_1}{k_2} \)
+							</li>
+							<li>
+								Interpretation: larger rate constant branch gives larger product
+								amount (major vs minor product idea).
+							</li>
+							<li>
+								If more than two parallel products exist:
+								<br />
+								\( [B]:[C]:[D] = k_1:k_2:k_3 \)
+							</li>
+							<li>
+								Percentage of \(B\) in total products:
+								<br />
+								\( \%B = \frac{[B]}{[B]+[C]}\times 100 =
+								\frac{k_1}{k_1+k_2}\times 100 \)
+							</li>
+							<li>
+								Percentage of \(C\) in total products:
+								<br />
+								\( \%C = \frac{k_2}{k_1+k_2}\times 100 \)
+							</li>
+							<li>
+								Quick exam usage: if \(k_1=2~s^{-1}\), \(k_2=5~s^{-1}\):
+								<ul>
+									<li>\( \%B = \frac{2}{7}\times 100 \)</li>
+									<li>\( \%C = \frac{5}{7}\times 100 \)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Ratio and percent yield -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
