@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -149,13 +163,588 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01"
+						>Temperature effect on rate constant: overview (00:10)</a
+					>
+				</li>
+				<li>
+					<a href="#ch02">Approximate rule: temperature coefficient (05:00)</a>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Arrhenius equation: exponential form and terms (12:24)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Collision theory link: effective collisions and activation energy
+						(17:10)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Boltzmann fraction and origin of \(e^{-E_a/RT}\) (27:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Log form and Arrhenius plot: \(\ln k\) vs \(1/T\) (33:06)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07">Base-10 log form: slope and intercept (38:05)</a>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Graph-based \(E_a\) and frequency factor from angle/intercept
+						(41:48)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Numerical practice: find \(k\) at given \(T\) (43:39)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Mixed concepts: half-life \(\to k\) \(\to T\) (47:11)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Two-temperature relation: \(k_2/k_1\) formula (54:00)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12">Activation energy from \(k_1,k_2,T_1,T_2\) (58:55)</a>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Temperature-rate overview -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=10s"
+								target="_blank"
+								rel="noopener"
+							>
+								Temperature effect on rate constant: overview (00:10)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Most reactions show higher rate when temperature increases;
+								focus is on how the rate constant \(k\) changes with \(T\).<br />
+								\( \text{Rate} \propto k \)
+							</li>
+							<li>
+								If \(k\) increases with \(T\), then rate also increases (for
+								fixed concentrations/conditions).<br />
+								\( k \uparrow \Rightarrow \text{Rate} \uparrow \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Temperature-rate overview -->
+
+					<!-- START ch02 | Temperature coefficient rule -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=300s"
+								target="_blank"
+								rel="noopener"
+							>
+								Approximate rule: temperature coefficient (05:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Approximate dependence used for quick estimates: for many
+								reactions, increasing temperature by \(10^\circ\text{C}\)
+								roughly multiplies rate (and \(k\)) by a constant factor (often
+								about 2).<br />
+								\( \dfrac{k_{t+10^\circ C}}{k_{t^\circ C}} \approx \gamma \)
+							</li>
+							<li>
+								Temperature coefficient \(\gamma\) is defined as the ratio of
+								rate constants at temperatures differing by
+								\(10^\circ\text{C}\).<br />
+								\( \gamma = \dfrac{k_{t+10^\circ C}}{k_{t^\circ C}} \)
+							</li>
+							<li>
+								If \(\gamma = 3\), then \(k\) (and rate) triples every
+								\(10^\circ\text{C}\): \(K, 3K, 9K, 27K,\dots\).<br />
+								\( k(T+10n) = k(T)\,\gamma^{n} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Temperature coefficient rule -->
+
+					<!-- START ch03 | Temperature coefficient question -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=549s"
+								target="_blank"
+								rel="noopener"
+							>
+								Temperature coefficient example: rate at 80°C (09:09)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given \(\gamma = 2\) and rate at \(20^\circ\text{C}\) is \(x\);
+								find rate at \(80^\circ\text{C}\).<br />
+								\( \Delta T = 60^\circ\text{C} \Rightarrow n = 6 \)
+							</li>
+							<li>
+								Rate multiplies by \(2\) for each \(10^\circ\text{C}\) step, so
+								total factor \(2^6\).<br />
+								\( \text{Rate at }80^\circ\text{C} = x \cdot 2^{6} = 64x \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Temperature coefficient question -->
+
+					<!-- START ch04 | Arrhenius exponential form -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=744s"
+								target="_blank"
+								rel="noopener"
+							>
+								Arrhenius equation: exponential form and terms (12:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Exact temperature dependence of rate constant is given by
+								Arrhenius equation.<br />
+								\( k = A\,e^{-E_a/(RT)} \)
+							</li>
+							<li>
+								Meaning of symbols (typical units):<br />
+								<ul>
+									<li>\(k\): rate constant</li>
+									<li>
+										\(A\): frequency factor / pre-exponential (Arrhenius factor)
+									</li>
+									<li>\(E_a\): activation energy (J mol\(^{-1}\))</li>
+									<li>\(R\): gas constant</li>
+									<li>\(T\): absolute temperature (K)</li>
+								</ul>
+							</li>
+							<li>
+								Qualitative graph: \(k\) increases with \(T\) but not linearly;
+								the rise is exponential-like.<br />
+								\( k(T) \text{ increases rapidly as } T \text{ increases} \)
+							</li>
+
+							<br />
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/10/01_k_vs_T.png"
+								alt="Description: Sketch of k vs T showing
+								upward-curving increase (nonlinear). Lecture reference: 15:22"
+								style="width: 20%; height: auto; margin-right: 10px"
+							/>
+						</ul>
+					</li>
+					<!-- END ch04 | Arrhenius exponential form -->
+
+					<!-- START ch05 | Collision theory conditions -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=1030s"
+								target="_blank"
+								rel="noopener"
+							>
+								Collision theory link: effective collisions and activation
+								energy (17:10)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Collision theory: reaction occurs via collisions, but not every
+								collision gives products (not all are effective).<br />
+								\( \text{Collisions} \not\Rightarrow \text{Products (always)} \)
+							</li>
+							<li>
+								<span class="ques_number_imp">
+									Two key requirements for an effective collision:</span
+								>
+								<ol>
+									<li>
+										Proper orientation (steric/orientation factor): molecules
+										must collide in a favorable geometry for bond
+										breaking/forming.<br />
+										\( \text{Correct orientation} \Rightarrow \text{chance of
+										reaction increases} \)
+									</li>
+									<br />
+									<li>
+										Sufficient energy to cross the energy barrier (activation
+										energy requirement).<br />
+										\( E_{\text{collision}} \ge E_a \)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Activation energy \(E_a\): minimum extra energy needed (beyond
+								reactants’ existing energy) for molecules to reach the
+								transition state and react.<br />
+								\( E_a = E_{\text{threshold}} - E_{\text{reactants}} \)
+							</li>
+							<li>
+								Energy profile view: reactants must reach a peak (transition
+								state) before forming products; products may be higher
+								(endothermic) or lower (exothermic) than reactants, but barrier
+								exists in both.<br />
+								\( \text{Barrier exists regardless of } \Delta H \text{ sign} \)
+							</li>
+							<br />
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/10/02_PE_vs_reactioncoordinate.png"
+								alt="Potential energy vs reaction coordinate curve showing reactants, transition state peak, products, and Ea.
+               Lecture reference: 22:58"
+								style="width: 20%; height: auto; margin-right: 10px"
+							/>
+						</ul>
+					</li>
+					<!-- END ch05 | Collision theory conditions -->
+
+					<!-- START ch06 | Boltzmann fraction origin -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=1652s"
+								target="_blank"
+								rel="noopener"
+							>
+								Boltzmann fraction and origin of \(e^{-E_a/RT}\) (27:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								At a given temperature, molecules have a distribution of kinetic
+								energies; only a fraction have energy \(\ge E_a\) and can
+								potentially react (if orientation is also favorable).<br />
+								\( \text{Fraction} = \text{molecules with } E \ge E_a \)
+							</li>
+							<li>
+								Boltzmann result (fraction crossing energy barrier):<br />
+								\( \text{Fraction} \propto e^{-E_a/(RT)} \)
+							</li>
+							<li>
+								Increasing \(T\) increases the fraction of molecules with \(E
+								\ge E_a\), so effective collisions become more frequent,
+								increasing \(k\) and rate.<br />
+								\( T \uparrow \Rightarrow e^{-E_a/(RT)} \uparrow \Rightarrow k
+								\uparrow \)
+							</li>
+							<li>
+								Arrhenius equation can be seen as proportionality turned into
+								equality by introducing \(A\):<br />
+								\( k = A\,e^{-E_a/(RT)} \)
+							</li>
+							<br />
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/10/03_energy_distribution_curve.png"
+								alt="Energy distribution curve showing area beyond Ea; compare lower T vs higher T with larger tail beyond Ea.
+               Lecture reference: 27:32"
+								style="width: 40%; height: auto; margin-right: 10px"
+							/>
+						</ul>
+					</li>
+					<!-- END ch06 | Boltzmann fraction origin -->
+
+					<!-- START ch07 | Logarithmic Arrhenius form -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=1986s"
+								target="_blank"
+								rel="noopener"
+							>
+								Log form and Arrhenius plot: \(\ln k\) vs \(1/T\) (33:06)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Taking natural log on Arrhenius equation gives a linear form in
+								\(1/T\).<br />
+								\( \ln k = \ln A - \dfrac{E_a}{RT} \)
+							</li>
+							<li>
+								Compare with straight-line form \(y = mx + c\) using \(y = \ln
+								k\) and \(x = 1/T\).<br />
+								\( \ln k = \left(-\dfrac{E_a}{R}\right)\left(\dfrac{1}{T}\right)
+								+ \ln A \)
+							</li>
+							<li>
+								From \(\ln k\) vs \(1/T\) plot:<br />
+								slope \(m = -E_a/R\), intercept \(c = \ln A\)
+							</li>
+							<br />
+							<img
+								src="../../01_physical_chem_lectures/09_chemical_kinetics/images_chemical_kinetics/10/04_straightline.png"
+								alt="traight-line plot of ln k (y) vs 1/T (x) with negative slope; mark slope and intercept.
+               Lecture reference: 34:24"
+								style="width: 20%; height: auto; margin-right: 10px"
+							/>
+						</ul>
+					</li>
+					<!-- END ch07 | Logarithmic Arrhenius form -->
+
+					<!-- START ch08 | Base-10 log plot -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=2285s"
+								target="_blank"
+								rel="noopener"
+							>
+								Base-10 log form: slope and intercept (38:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Converting to common logarithm (base 10) form:<br />
+								\( \log k = \log A - \dfrac{E_a}{2.303\,RT} \)
+							</li>
+							<li>
+								For plot of \(\log k\) vs \(1/T\):<br />
+								\( \log k =
+								\left(-\dfrac{E_a}{2.303\,R}\right)\left(\dfrac{1}{T}\right) +
+								\log A \)
+							</li>
+							<li>
+								From \(\log k\) vs \(1/T\) plot:<br />
+								slope \(m = -E_a/(2.303\,R)\), intercept \(c = \log A\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Base-10 log plot -->
+
+					<!-- START ch09 | Angle-based Ea example -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=2508s"
+								target="_blank"
+								rel="noopener"
+							>
+								Graph-based \(E_a\) and frequency factor from angle/intercept
+								(41:48)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								In a \(\log k\) vs \(1/T\) straight-line graph, slope must be
+								taken using angle with positive \(x\)-axis; for a descending
+								line, the relevant angle may be \(>90^\circ\).<br />
+								\( m = \tan\theta \)
+							</li>
+							<li>
+								If the angle with positive \(x\)-axis is \(120^\circ\):<br />
+								\( m = \tan 120^\circ = -\sqrt{3} \)
+							</li>
+							<li>
+								Equate slope to Arrhenius slope (base 10):<br />
+								\( -\sqrt{3} = -\dfrac{E_a}{2.303\,R} \)
+							</li>
+							<li>
+								Hence activation energy:<br />
+								\( E_a = \sqrt{3}\,(2.303)\,R \)
+							</li>
+							<li>
+								Frequency factor from intercept: if \(y\)-intercept is \(\log
+								A\), then<br />
+								\( A = 10^{(\log A)} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Angle-based Ea example -->
+
+					<!-- START ch10 | Find k at given T -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=2619s"
+								target="_blank"
+								rel="noopener"
+							>
+								Numerical practice: find \(k\) at given \(T\) (43:39)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Use log form (base 10) with \(A\) and \(E_a\) treated as
+								temperature-independent unless stated otherwise.<br />
+								\( \log k = \log A - \dfrac{E_a}{2.303\,RT} \)
+							</li>
+							<li>
+								Convert temperature to Kelvin before substitution.<br />
+								\( T(\text{K}) = T(^\circ\text{C}) + 273 \)
+							</li>
+							<li>
+								Example setup (values from question statement):<br />
+								\( \log k = \log(100) - \dfrac{19137}{2.303\times 8.314 \times
+								1000} \)
+							</li>
+							<li>
+								If needed, final step is anti-log to get \(k\).<br />
+								\( k = 10^{(\log k)} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Find k at given T -->
+
+					<!-- START ch11 | Half-life to temperature -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=2831s"
+								target="_blank"
+								rel="noopener"
+							>
+								Mixed concepts: half-life \(\to k\) \(\to T\) (47:11)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For first-order reaction, connect half-life and rate
+								constant.<br />
+								\( t_{1/2} = \dfrac{0.693}{k} \)
+							</li>
+							<li>
+								If \(t_{1/2}\) is given, first compute \(k\), then substitute
+								into given \(\log k\) vs \(T\) expression to solve for \(T\).<br />
+								\( k = \dfrac{0.693}{t_{1/2}} \)
+							</li>
+							<li>
+								Example idea: if \(t_{1/2}=70\) min, then \(k\) is of order
+								\(10^{-2}\) min\(^{-1}\) (approx), so \(\log k\) becomes a known
+								value for solving \(T\).<br />
+								\( \log(10^{-2}) = -2 \)
+							</li>
+							<li>
+								Identify \(\log A\) from constant term in the given equation;
+								then infer \(A\).<br />
+								\( A = 10^{(\log A)} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Half-life to temperature -->
+
+					<!-- START ch12 | Two-temperature relation -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/uexnw54Cluk?t=3240s"
+								target="_blank"
+								rel="noopener"
+							>
+								Two-temperature relation: \(k_2/k_1\) formula (54:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Write Arrhenius log form at two temperatures \(T_1, T_2\) with
+								rate constants \(k_1, k_2\) (in Kelvin).<br />
+								\( \log k_1 = \log A - \dfrac{E_a}{2.303\,R\,T_1} \)
+							</li>
+							<li>\( \log k_2 = \log A - \dfrac{E_a}{2.303\,R\,T_2} \)</li>
+							<li>
+								Subtract to eliminate \(\log A\) and obtain ratio form.<br />
+								\( \log\left(\dfrac{k_2}{k_1}\right) =
+								\dfrac{E_a}{2.303\,R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)
+								\)
+							</li>
+							<li>
+								Equivalent rearrangement (often used):<br />
+								\( \log\left(\dfrac{k_2}{k_1}\right) =
+								\dfrac{E_a}{2.303\,R}\left(\dfrac{T_2-T_1}{T_1T_2}\right) \)
+							</li>
+							<li>
+								Use consistent ordering: if \(T_2>T_1\), then typically
+								\(k_2>k_1\), giving a positive \(\log(k_2/k_1)\).<br />
+								\( T_2>T_1 \Rightarrow k_2>k_1 \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | Two-temperature relation -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
