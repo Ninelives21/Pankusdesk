@@ -124,9 +124,465 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol></ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
+				<li><a href="#ch01">Atomic spectrum and discrete lines (00:00)</a></li>
+				<li>
+					<a href="#ch02">Bohr explanation: absorption and emission (02:24)</a>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Energy of emitted radiation and \(E=\frac{hc}{\lambda}\) (09:03)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04">Rydberg formula derivation and final form (14:24)</a>
+				</li>
+				<li>
+					<a href="#ch05">Lyman series: first line, limit, trends (21:31)</a>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Balmer series: shortest and longest wavelength (31:41)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07">Spectral regions and named series summary (36:23)</a>
+				</li>
+				<li>
+					<a href="#ch08">Number of spectral lines for transitions (43:46)</a>
+				</li>
+			</ol>
+			<!-- END topic-index -->
 
 			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Atomic spectrum basics -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=0s"
+								target="_blank"
+								rel="noopener"
+							>
+								Atomic spectrum and discrete lines (00:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Spectrum: white light splits into different colours; similarly,
+								atoms show characteristic spectra.
+							</li>
+							<li>
+								When a gas in a discharge/heat tube is excited, emitted
+								radiations correspond to only certain wavelengths; many
+								wavelengths are absent.
+							</li>
+							<li>
+								Two types:
+								<ol>
+									<li>Continuous spectrum: all wavelengths/colours present.</li>
+									<li>
+										Discrete (line) spectrum: only specific lines appear;
+										intensity differs line to line.
+									</li>
+								</ol>
+							</li>
+							<li>
+								Atomic spectrum is a line (discrete) spectrum, not continuous.
+							</li>
+							<!-- IMAGE 01 SHOULD GO HERE
+             Description: Schematic of a tube experiment and observed line spectrum vs continuous spectrum.
+             Lecture reference: 00:41
+        -->
+						</ul>
+					</li>
+					<!-- END ch01 | Atomic spectrum basics -->
+
+					<!-- START ch02 | Bohr emission idea -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=144s"
+								target="_blank"
+								rel="noopener"
+							>
+								Bohr explanation: absorption and emission (02:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								In an atom, electrons occupy discrete energy levels (Bohr
+								orbits).
+							</li>
+							<li>
+								Heating/excitation supplies energy; an electron absorbs energy
+								and jumps from a lower level to a higher level.
+							</li>
+							<li>
+								Electron tends to return to a lower (more stable) energy level;
+								during return it emits energy as electromagnetic radiation.
+								<br />
+								\( \Delta E = E_{\text{higher}} - E_{\text{lower}} \)
+							</li>
+							<li>
+								Discreteness arises because only specific energy levels exist;
+								hence only specific \(\Delta E\) values are possible, giving
+								only certain emitted wavelengths.
+							</li>
+							<li>
+								Emission spectrum: obtained when excited atoms return to lower
+								energy levels and emit radiation.
+							</li>
+							<li>
+								Absorption spectrum (mentioned for later): related to absorption
+								of specific wavelengths, but focus here is emission.
+							</li>
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: Energy level diagram showing excitation and de-excitation with emitted photon.
+             Lecture reference: 02:31
+        -->
+						</ul>
+					</li>
+					<!-- END ch02 | Bohr emission idea -->
+
+					<!-- START ch03 | Energy and wavelength -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=543s"
+								target="_blank"
+								rel="noopener"
+							>
+								Energy of emitted radiation and \(E=\frac{hc}{\lambda}\) (09:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a hydrogen atom transition from \(n=2\) to \(n=1\), emitted
+								energy equals the energy difference:
+								<br />
+								\( \Delta E = E_2 - E_1 \)
+							</li>
+							<li>
+								Energy of an electron in a hydrogen-like species:
+								<br />
+								\( E_n = -13.6\,\frac{Z^2}{n^2}\,\text{eV} \)
+							</li>
+							<li>
+								Example result (H atom, \(Z=1\)):
+								<br />
+								\( \Delta E = -13.6\left(\frac{1}{2^2}\right) -
+								\left[-13.6\left(\frac{1}{1^2}\right)\right] = 10.2\,\text{eV}
+								\)
+							</li>
+							<li>
+								Photon energy-wavelength relation:
+								<br />
+								\( E = \frac{hc}{\lambda} \)
+							</li>
+							<li>
+								Shortcut relation used in problems (with \(E\) in eV and
+								\(\lambda\) in \(\text{\AA}\)):
+								<br />
+								\( E = \frac{12375}{\lambda} \)
+								<br />
+								<span class="unclear"
+									>(units and constant form assumed from lecture; use as
+									given)</span
+								>
+							</li>
+							<li>
+								Key trend:
+								<br />
+								\( \Delta E \propto \frac{1}{\lambda} \Rightarrow \) larger
+								\(\Delta E\) gives smaller \(\lambda\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Energy and wavelength -->
+
+					<!-- START ch04 | Rydberg formula -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=864s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rydberg formula derivation and final form (14:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a hydrogen-like atom, transition from \(n_2\) to \(n_1\)
+								(\(n_2&gt;n_1\)):
+								<br />
+								\( \Delta E = E_{n_2} - E_{n_1} = -13.6\frac{Z^2}{n_2^2} -
+								\left(-13.6\frac{Z^2}{n_1^2}\right) \)
+							</li>
+							<li>
+								Simplify:
+								<br />
+								\( \Delta E =
+								13.6Z^2\left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right)\,\text{eV}
+								\)
+							</li>
+							<li>
+								Since emitted photon energy \(E=\frac{hc}{\lambda}\), equate and
+								rearrange to get:
+								<br />
+								\( \frac{1}{\lambda} =
+								\frac{13.6}{hc}\,Z^2\left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right)
+								\)
+							</li>
+							<li>
+								Define Rydberg constant \(R=\frac{13.6}{hc}\) (as used in the
+								lecture):
+								<br />
+								\( \frac{1}{\lambda} =
+								RZ^2\left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right) \)
+							</li>
+							<li>
+								Given value (do not memorize per lecture):
+								<br />
+								\( R \approx 1.09\times10^{-7}\,\text{m}^{-1} \)
+							</li>
+							<li>
+								Useful shortcut stated:
+								<br />
+								\( \frac{1}{R} \approx 911\,\text{\AA} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Rydberg formula -->
+
+					<!-- START ch05 | Lyman series -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=1291s"
+								target="_blank"
+								rel="noopener"
+							>
+								Lyman series: first line, limit, trends (21:31)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Lyman series: all transitions ending at \(n_1=1\) (from
+								\(n_2=2,3,4,\dots,\infty\) to 1).
+								<br />
+								\( \frac{1}{\lambda} = RZ^2\left(1-\frac{1}{n_2^2}\right) \) for
+								H (\(Z=1\))
+							</li>
+							<li>
+								First line (smallest transition \(2\to1\)):
+								<br />
+								\(
+								\frac{1}{\lambda}=R\left(1-\frac{1}{2^2}\right)=R\left(\frac{3}{4}\right)
+								\Rightarrow \lambda=\frac{4}{3}\frac{1}{R}\approx
+								\frac{4}{3}\times 911 \approx 1216\,\text{\AA} \)
+							</li>
+							<li>
+								As \(n_2\) increases (\(3\to1,4\to1,\dots\)), \(\lambda\)
+								decreases (energy gap increases).
+							</li>
+							<li>
+								Series limit (largest transition \(\infty\to1\)):
+								<br />
+								\( \frac{1}{\lambda}=R\left(1-\frac{1}{\infty}\right)=R
+								\Rightarrow \lambda=\frac{1}{R}\approx 911\,\text{\AA} \)
+							</li>
+							<li>
+								Range (lecture): \(1216\,\text{\AA}\) to \(911\,\text{\AA}\);
+								these lie in the ultraviolet region.
+							</li>
+							<li>
+								Largest wavelength in a series corresponds to smallest energy
+								gap (closest upper level): here \(2\to1\).
+							</li>
+							<li>
+								Shortest wavelength in a series corresponds to largest energy
+								gap (from \(\infty\)): here \(\infty\to1\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Lyman series -->
+
+					<!-- START ch06 | Balmer series -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=1901s"
+								target="_blank"
+								rel="noopener"
+							>
+								Balmer series: shortest and longest wavelength (31:41)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Balmer series: all transitions ending at \(n_1=2\) (from
+								\(n_2=3,4,5,\dots,\infty\) to 2).
+								<br />
+								\( \frac{1}{\lambda} =
+								RZ^2\left(\frac{1}{2^2}-\frac{1}{n_2^2}\right) \) for H
+								(\(Z=1\))
+							</li>
+							<li>
+								Shortest wavelength (largest transition \(\infty\to2\)):
+								<br />
+								\(
+								\frac{1}{\lambda}=R\left(\frac{1}{4}-0\right)=\frac{R}{4}\Rightarrow
+								\lambda=\frac{4}{R}=4\frac{1}{R}\approx 4\times
+								911=3644\,\text{\AA} \)
+							</li>
+							<li>
+								Longest wavelength (smallest transition \(3\to2\)):
+								<br />
+								\(
+								\frac{1}{\lambda}=R\left(\frac{1}{4}-\frac{1}{9}\right)=R\left(\frac{5}{36}\right)\Rightarrow
+								\lambda=\frac{36}{5}\frac{1}{R}\approx \frac{36}{5}\times 911
+								\approx 6552\,\text{\AA} \)
+							</li>
+							<li>
+								Balmer wavelengths fall largely in the visible region (lecture
+								uses \(\sim 4000\) to \(\sim 8000\,\text{\AA}\) as visible range
+								estimate), so Balmer lines are visible.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Balmer series -->
+
+					<!-- START ch07 | Series and regions -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=2183s"
+								target="_blank"
+								rel="noopener"
+							>
+								Spectral regions and named series summary (36:23)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Named hydrogen spectral series (by final level \(n_1\)):
+								<ol>
+									<li>Lyman: \(n_1=1\) (ultraviolet).</li>
+									<li>Balmer: \(n_1=2\) (visible).</li>
+									<li>Paschen: \(n_1=3\) (infrared).</li>
+									<li>Brackett: \(n_1=4\) (short infrared).</li>
+									<li>Pfund: \(n_1=5\) (long infrared).</li>
+									<li>Humphreys: \(n_1=6\) (long infrared).</li>
+								</ol>
+							</li>
+							<li>
+								Visual range estimate used in lecture: \(\sim 4000\,\text{\AA}\)
+								to \(\sim 8000\,\text{\AA}\); below is UV, above is IR.
+							</li>
+							<li>
+								Ordering of wavelengths (typical trend): Lyman &lt; Balmer &lt;
+								Paschen &lt; Brackett &lt; Pfund &lt; Humphreys.
+							</li>
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: Energy level ladder with arrows showing series to \(n_1=1,2,3,4,5,6\) and labeled UV/visible/IR bands.
+             Lecture reference: 35:45
+        -->
+						</ul>
+					</li>
+					<!-- END ch07 | Series and regions -->
+
+					<!-- START ch08 | Number of lines -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/nRmfrVR4uC8?t=2626s"
+								target="_blank"
+								rel="noopener"
+							>
+								Number of spectral lines for transitions (43:46)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								When an electron de-excites from a higher level to a lower
+								level, multiple paths (stepwise or direct) can occur, producing
+								different wavelengths.
+							</li>
+							<li>
+								Example: electron starting at \(n=4\) and ending at \(n=1\).
+								<ol>
+									<li>
+										Possible distinct transitions include: \(4\to1\), \(4\to2\),
+										\(4\to3\), \(3\to2\), \(3\to1\), \(2\to1\).
+									</li>
+									<li>
+										Total distinct spectral lines for \(4\to1\) case: \(6\).
+									</li>
+								</ol>
+							</li>
+							<li>
+								Shortcut for number of distinct spectral lines when transitions
+								are possible between levels from \(n_2\) down to \(n_1\):
+								<br />
+								\( N = \frac{(n_2-n_1)\left((n_2-n_1)+1\right)}{2} \)
+							</li>
+							<li>
+								Check:
+								<ol>
+									<li>For \(n_2=4\), \(n_1=1\): \(N=\frac{(3)(4)}{2}=6\).</li>
+									<li>For \(n_2=5\), \(n_1=1\): \(N=\frac{(4)(5)}{2}=10\).</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Number of lines -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
