@@ -124,13 +124,699 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"> AAAA </a>
+					<a href="#ch01"
+						>Why quantum numbers (wave mechanical model) (00:41)</a
+					>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Schrödinger wave equation & probability meaning (02:19)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03">Orbit vs orbital (3D probability region) (09:58)</a>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Principal quantum number \(n\): size & energy (12:30)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Azimuthal quantum number \(l\): shape; subshells (15:04)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Rules for \(l\): \(0 \le l \le n-1\) and subshell count (20:05)</a
+					>
+				</li>
+				<li><a href="#ch07">Orbital angular momentum formula (23:07)</a></li>
+				<li>
+					<a href="#ch08"
+						>Magnetic quantum number \(m\): orientation & orbitals (25:45)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Constructing \(n,l,m\) sets; examples up to \(n=4\) (31:04)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10">Counting orbitals in a shell: \(n^2\) (35:02)</a>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Spin quantum number \(s\) and Pauli exclusion (39:13)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12"
+						>Electron counting formulas: \(2n^2\), \(2(2l+1)\) (46:38)</a
+					>
+				</li>
+				<li>
+					<a href="#ch13"
+						>Practice: counting electrons with given quantum conditions
+						(51:43)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
 			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Need for quantum numbers -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=41s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why quantum numbers (wave mechanical model) (00:41)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Bohr/Rutherford-type models treated the electron as a particle
+								moving around the nucleus in (approximately) fixed circular
+								orbits.
+							</li>
+							<li>
+								De Broglie + Heisenberg viewpoint: electron shows wave nature,
+								so a fixed “revolving orbit” picture becomes inadequate for
+								microscopic particles.
+							</li>
+							<li>
+								Wave mechanical (quantum mechanical) model: electron is
+								described as a wave; measurable statements are probabilistic.
+							</li>
+							<!-- IMAGE 01 SHOULD GO HERE
+             Description: Orbit (circular path) vs orbital (3D region) contrast sketch.
+             Lecture reference: 00:41
+        -->
+						</ul>
+					</li>
+					<!-- END ch01 | Need for quantum numbers -->
+
+					<!-- START ch02 | Schrödinger equation core -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=139s"
+								target="_blank"
+								rel="noopener"
+							>
+								Schrödinger wave equation & probability meaning (02:19)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Electron matter wave is described by a wave equation
+								(Schrödinger wave equation). In the transcript, the wavefunction
+								symbol is spoken as “z” (commonly written as \(\psi\)).
+							</li>
+							<li>
+								Probability interpretation:
+								<ul>
+									<li>Wavefunction: \(\psi\) (transcript uses \(z\)).</li>
+									<li>
+										Probability density \(\propto \psi^2\) (more standard:
+										\(|\psi|^2\)).
+									</li>
+									<li>
+										\(\psi^2\) represents the probability of finding the
+										electron at a point/region in space.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Schrödinger wave equation (as stated in the lecture;
+								transcription is imperfect):
+								<br />
+								\( \dfrac{d^2 z}{dx^2} + \dfrac{d^2 z}{dy^2} + \dfrac{d^2
+								z}{dz^2} + \dfrac{8\pi^2 m}{h^2}(E - V)\,z = 0 \)
+								<br />
+								<span class="unclear"
+									>(exact symbols/denominators in the spoken equation are
+									unclear in transcript; form captured as
+									lecture-intended)</span
+								>
+							</li>
+							<li>
+								Meaning of symbols in the lecture context:
+								<ul>
+									<li>\(m\): mass of the electron</li>
+									<li>\(h\): Planck’s constant</li>
+									<li>\(E\): total energy</li>
+									<li>\(V\): potential energy</li>
+									<li>\(z\) / \(\psi\): wavefunction</li>
+								</ul>
+							</li>
+							<li>
+								Key takeaway: solving the wave equation yields a mathematical
+								solution with variables tied to electron “position” in 3D space;
+								these variables lead to quantum numbers.
+							</li>
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: Probability cloud idea (high vs low probability) linked to \(\psi^2\).
+             Lecture reference: 03:38
+        -->
+						</ul>
+					</li>
+					<!-- END ch02 | Schrödinger equation core -->
+
+					<!-- START ch03 | Orbit vs orbital -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=598s"
+								target="_blank"
+								rel="noopener"
+							>
+								Orbit vs orbital (3D probability region) (09:58)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Orbit:</strong> fixed circular path used in Bohr-type
+								models.
+							</li>
+							<li>
+								<strong>Orbital:</strong> three-dimensional region where
+								probability of finding electron is maximum.
+								<br />
+								\( \text{Orbital} = \text{3D space region with max probability}
+								\)
+							</li>
+							<li>
+								Orbitals differ in: size, shape, and orientation (which is why
+								multiple quantum numbers are required).
+							</li>
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: Orbit (circle) vs orbital (3D region) diagram.
+             Lecture reference: 10:30
+        -->
+						</ul>
+					</li>
+					<!-- END ch03 | Orbit vs orbital -->
+
+					<!-- START ch04 | Principal quantum number -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=750s"
+								target="_blank"
+								rel="noopener"
+							>
+								Principal quantum number \(n\): size & energy (12:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Four quantum numbers: \(n, l, m, s\) collectively specify the
+								electron’s state (probability-based “address”).
+							</li>
+							<li>
+								<strong>Principal quantum number \(n\):</strong>
+								<ul>
+									<li>
+										Allowed values: \(n = 1, 2, 3, \ldots\) (positive integers
+										only); \(n \ne 0\).
+									</li>
+									<li>
+										Shell names: \(K, L, M, N, \ldots\) correspond to \(n =
+										1,2,3,4,\ldots\)
+									</li>
+									<li>
+										Gives orbital <strong>size</strong> (general trend: size
+										increases as \(n\) increases).
+									</li>
+									<li>
+										Gives orbital/electron <strong>energy</strong> (general
+										trend: energy increases as \(n\) increases).
+									</li>
+								</ul>
+							</li>
+							<li>
+								For hydrogen-like (one-electron) species:
+								<br />
+								\( E_n = -13.6 \dfrac{Z^2}{n^2}\ \text{eV} \)
+								<br />
+								where \(Z\) is atomic number (nuclear charge) and \(n\) is
+								principal quantum number.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Principal quantum number -->
+
+					<!-- START ch05 | Azimuthal quantum number -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=904s"
+								target="_blank"
+								rel="noopener"
+							>
+								Azimuthal quantum number \(l\): shape; subshells (15:04)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong
+									>Azimuthal / angular momentum quantum number \(l\):</strong
+								>
+								determines <strong>shape</strong> of the orbital.
+							</li>
+							<li>
+								Subshell mapping:
+								<ul>
+									<li>\(l=0 \Rightarrow s\)</li>
+									<li>\(l=1 \Rightarrow p\)</li>
+									<li>\(l=2 \Rightarrow d\)</li>
+									<li>\(l=3 \Rightarrow f\)</li>
+								</ul>
+							</li>
+							<li>
+								Shape summary (lecture-level):
+								<ul>
+									<li>\(s\): spherical</li>
+									<li>\(p\): dumbbell</li>
+									<li>\(d\): “double dumbbell” type (multiple orientations)</li>
+									<li>\(f\): complex multi-lobed shapes</li>
+								</ul>
+							</li>
+							<!-- IMAGE 04 SHOULD GO HERE
+             Description: Standard shapes: s, p, a representative d and f sketch.
+             Lecture reference: 17:23
+        -->
+						</ul>
+					</li>
+					<!-- END ch05 | Azimuthal quantum number -->
+
+					<!-- START ch06 | Rules for l -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=1205s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rules for \(l\): \(0 \le l \le n-1\) and subshell count (20:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Range of \(l\) for a given shell \(n\):
+								<br />
+								\( l = 0,1,2,\ldots,(n-1) \)
+							</li>
+							<li>
+								Subshells present (examples):
+								<ul>
+									<li>\(n=1\): \(1s\)</li>
+									<li>\(n=2\): \(2s, 2p\)</li>
+									<li>\(n=3\): \(3s, 3p, 3d\)</li>
+									<li>\(n=4\): \(4s, 4p, 4d, 4f\)</li>
+								</ul>
+							</li>
+							<li>
+								Number of subshells in shell \(n\):
+								<br />
+								\(\text{No. of subshells} = n\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Rules for l -->
+
+					<!-- START ch07 | Angular momentum formula -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=1387s"
+								target="_blank"
+								rel="noopener"
+							>
+								Orbital angular momentum formula (23:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Orbital angular momentum magnitude:
+								<br />
+								\( L = \dfrac{h}{2\pi}\sqrt{l(l+1)} \)
+							</li>
+							<li>
+								Examples:
+								<ul>
+									<li>\(s\) subshell: \(l=0 \Rightarrow L=0\)</li>
+									<li>
+										\(3p\) subshell: \(l=1 \Rightarrow
+										L=\dfrac{h}{2\pi}\sqrt{2}\)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Angular momentum formula -->
+
+					<!-- START ch08 | Magnetic quantum number -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=1545s"
+								target="_blank"
+								rel="noopener"
+							>
+								Magnetic quantum number \(m\): orientation & orbitals (25:45)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Magnetic quantum number \(m\):</strong> determines
+								orbital <strong>orientation</strong> in space; also helps count
+								orbitals.
+							</li>
+							<li>
+								Range:
+								<br />
+								\( m = -l, -(l-1), \ldots, 0, \ldots, (l-1), l \)
+							</li>
+							<li>
+								Orbitals per subshell:
+								<br />
+								\(\text{No. of orbitals in a subshell} = 2l+1\)
+							</li>
+							<li>
+								Mapping:
+								<ul>
+									<li>\(l=0\) (\(s\)) \(\Rightarrow\) \(m=0\) (1 orbital)</li>
+									<li>
+										\(l=1\) (\(p\)) \(\Rightarrow\) \(m=-1,0,1\) (3 orbitals)
+									</li>
+									<li>\(l=2\) (\(d\)) \(\Rightarrow\) 5 orbitals</li>
+									<li>\(l=3\) (\(f\)) \(\Rightarrow\) 7 orbitals</li>
+								</ul>
+							</li>
+							<!-- IMAGE 05 SHOULD GO HERE
+             Description: Box diagram labeling m values for s and p; mention 2l+1.
+             Lecture reference: 27:31
+        -->
+						</ul>
+					</li>
+					<!-- END ch08 | Magnetic quantum number -->
+
+					<!-- START ch09 | n l m construction -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=1864s"
+								target="_blank"
+								rel="noopener"
+							>
+								Constructing \(n,l,m\) sets; examples up to \(n=4\) (31:04)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Shell \(n=1\):
+								<ul>
+									<li>\(l=0\) only</li>
+									<li>\(m=0\) only</li>
+									<li>Orbital: \(1s\)</li>
+								</ul>
+							</li>
+							<li>
+								Shell \(n=2\):
+								<ul>
+									<li>\(l=0,1\) \(\Rightarrow 2s,2p\)</li>
+									<li>\(2s\): \(m=0\) (1 orbital)</li>
+									<li>\(2p\): \(m=-1,0,1\) (3 orbitals)</li>
+								</ul>
+							</li>
+							<li>
+								Shell \(n=3\):
+								<ul>
+									<li>\(l=0,1,2\) \(\Rightarrow 3s,3p,3d\)</li>
+									<li>
+										\(3s\): 1 orbital; \(3p\): 3 orbitals; \(3d\): 5 orbitals
+									</li>
+								</ul>
+							</li>
+							<li>
+								Shell \(n=4\):
+								<ul>
+									<li>\(l=0,1,2,3\) \(\Rightarrow 4s,4p,4d,4f\)</li>
+									<li>\(4s\): 1; \(4p\): 3; \(4d\): 5; \(4f\): 7 orbitals</li>
+								</ul>
+							</li>
+							<li>
+								Orientation naming for \(p\) orbitals:
+								<br />
+								\(p_x, p_y, p_z\) (commonly linked to x-, y-, z-axis
+								orientation).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | n l m construction -->
+
+					<!-- START ch10 | Orbitals per shell -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=2102s"
+								target="_blank"
+								rel="noopener"
+							>
+								Counting orbitals in a shell: \(n^2\) (35:02)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Number of orbitals in shell \(n\):
+								<br />
+								\(\text{No. of orbitals in shell } n = n^2\)
+							</li>
+							<li>
+								Example: For \(n=3\), orbitals \(= 1 (s) + 3 (p) + 5 (d) = 9 =
+								3^2\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Orbitals per shell -->
+
+					<!-- START ch11 | Spin and Pauli -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=2353s"
+								target="_blank"
+								rel="noopener"
+							>
+								Spin quantum number \(s\) and Pauli exclusion (39:13)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Spin quantum number \(s\):</strong> describes electron
+								spin about its own axis (two possible spin states).
+							</li>
+							<li>
+								Values:
+								<br />
+								\( s = +\dfrac{1}{2} \) or \( s = -\dfrac{1}{2} \)
+							</li>
+							<li>
+								<strong>Pauli exclusion principle:</strong>
+								<br />
+								No two electrons in the same atom can have identical
+								\((n,l,m,s)\).
+							</li>
+							<li>
+								Consequence:
+								<br />
+								\(\text{Max electrons in one orbital} = 2\), and they must have
+								opposite spins.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Spin and Pauli -->
+
+					<!-- START ch12 | Counting formulas summary -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=2798s"
+								target="_blank"
+								rel="noopener"
+							>
+								Electron counting formulas: \(2n^2\), \(2(2l+1)\) (46:38)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Max electrons in shell \(n\):
+								<br />
+								\( \text{No. of electrons} = 2n^2 \)
+							</li>
+							<li>
+								Max electrons in subshell \(l\):
+								<br />
+								\( \text{No. of electrons} = 2(2l+1) \)
+							</li>
+							<li>
+								Linked results (from lecture):
+								<ul>
+									<li>\(\text{No. of subshells in shell } n = n\)</li>
+									<li>\(\text{No. of orbitals in a subshell } l = 2l+1\)</li>
+									<li>\(\text{No. of orbitals in shell } n = n^2\)</li>
+									<li>\(\text{No. of electrons in one orbital } = 2\)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | Counting formulas summary -->
+
+					<!-- START ch13 | Practice questions -->
+					<li>
+						<div id="ch13">
+							<a
+								href="https://youtu.be/fOTAD7DmbzY?t=3103s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice: counting electrons with given quantum conditions
+								(51:43)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Practice set</strong>
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/fOTAD7DmbzY?t=3103s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										Find number of electrons for which \(n=2\), \(m=0\),
+										\(s=+\dfrac{1}{2}\).
+										<br />
+										Answer: \(2\)
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/fOTAD7DmbzY?t=3193s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										Find number of electrons for which \(n=3\),
+										\(s=-\dfrac{1}{2}\).
+										<br />
+										Answer: \(9\)
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/fOTAD7DmbzY?t=3300s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 3
+											</a>
+										</strong>
+										Find number of electrons for which \(n=3\) and \(|m|=1\).
+										<br />
+										Answer: \(8\)
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch13 | Practice questions -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
