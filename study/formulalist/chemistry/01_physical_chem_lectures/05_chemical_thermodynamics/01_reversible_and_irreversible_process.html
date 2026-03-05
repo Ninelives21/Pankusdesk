@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,15 +154,643 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Reversible and Irreversible Process</a
+					<a href="#ch01">Thermodynamics: scope and study plan (00:12)</a>
+				</li>
+				<li>
+					<a href="#ch02">System, surroundings, universe, boundary (03:59)</a>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Boundary types: real/imaginary, diathermic/adiabatic (07:17)</a
 					>
 				</li>
+				<li>
+					<a href="#ch04">Types of systems: open, closed, isolated (11:30)</a>
+				</li>
+				<li><a href="#ch05">Extensive vs intensive properties (19:04)</a></li>
+				<li>
+					<a href="#ch06"
+						>Quick tests for extensive/intensive + examples (27:16)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>State functions vs path functions; cyclic process idea (35:48)</a
+					>
+				</li>
+				<li><a href="#ch08">Types of thermodynamic processes (46:30)</a></li>
+				<li>
+					<a href="#ch09">Reversible vs irreversible processes (55:43)</a>
+				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Thermodynamics overview -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=12s"
+								target="_blank"
+								rel="noopener"
+							>
+								Thermodynamics: scope and study plan (00:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Thermodynamics (chemistry) is a concept-heavy chapter; similar
+								ideas appear in physics and chemistry.
+							</li>
+							<li>
+								To avoid confusion, keep a gap between studying thermodynamics
+								in physics vs chemistry (order can be chosen, but do not mix
+								them closely).
+							</li>
+							<li>
+								Main targets in this chapter:
+								<ul>
+									<li>Define heat, work, and energy terms.</li>
+									<li>
+										Decide feasibility of a process; analyze heat changes during
+										processes.
+									</li>
+									<li>
+										Use variables such as \(P\), \(V\), \(T\), \(H\), \(S\),
+										\(U\), \(G\) to describe processes.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Thermodynamics overview -->
+
+					<!-- START ch02 | System and universe -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=239s"
+								target="_blank"
+								rel="noopener"
+							>
+								System, surroundings, universe, boundary (03:59)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Definitions (chemistry convention):
+								<ul>
+									<li>
+										<strong>System</strong>: the part of the universe under
+										investigation (focus of calculation/observation).
+									</li>
+									<li>
+										<strong>Surroundings</strong>: everything other than the
+										system.
+									</li>
+									<li><strong>Universe</strong>: system + surroundings.</li>
+								</ul>
+							</li>
+							<li>
+								Relation:
+								<br />
+								Surroundings = Universe - System
+							</li>
+							<li>
+								Boundary: the separator between system and surroundings (needed
+								to define a system).
+							</li>
+							<!-- IMAGE 01 SHOULD GO HERE
+             Description: Schematic showing System + Surroundings = Universe with a boundary line.
+             Lecture reference: 03:59
+        -->
+						</ul>
+					</li>
+					<!-- END ch02 | System and universe -->
+
+					<!-- START ch03 | Boundary types -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=437s"
+								target="_blank"
+								rel="noopener"
+							>
+								Boundary types: real/imaginary, diathermic/adiabatic (07:17)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Boundary can be:
+								<ul>
+									<li>
+										Real or imaginary (conceptual selection of what is treated
+										as “system”).
+									</li>
+									<li>Rigid or flexible (movable boundary possible).</li>
+								</ul>
+							</li>
+							<li>
+								Heat-transfer classification:
+								<ul>
+									<li>
+										<strong>Diathermic boundary</strong>: heat can flow easily
+										across the boundary (conducting).
+									</li>
+									<li>
+										<strong>Adiabatic boundary</strong>: heat cannot flow across
+										the boundary (insulating).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Adiabatic condition (for heat exchange):
+								<br />
+								\( \Delta Q = 0 \)
+							</li>
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: Two vessels separated by (i) conducting wall and (ii) insulating wall, indicating heat flow vs no heat flow.
+             Lecture reference: 08:25
+        -->
+						</ul>
+					</li>
+					<!-- END ch03 | Boundary types -->
+
+					<!-- START ch04 | System types -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=690s"
+								target="_blank"
+								rel="noopener"
+							>
+								Types of systems: open, closed, isolated (11:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Thermodynamic exchange types:
+								<ul>
+									<li>Mass exchange</li>
+									<li>Energy exchange as heat and/or work</li>
+								</ul>
+							</li>
+							<li>
+								<strong>Open system</strong>: exchanges both mass and energy
+								with surroundings.
+								<ul>
+									<li>
+										Example: open vessel where evaporation can occur (mass
+										loss), and heat can transfer through a conducting boundary.
+									</li>
+								</ul>
+							</li>
+							<li>
+								<strong>Closed system</strong>: no mass exchange; energy
+								exchange possible.
+								<ul>
+									<li>
+										Energy can exchange as heat (if boundary is diathermic)
+										and/or as work (e.g., piston movement).
+									</li>
+								</ul>
+							</li>
+							<li>
+								<strong>Isolated system</strong>: neither mass exchange nor
+								energy exchange (no heat, no work).
+								<ul>
+									<li>
+										Conceptual model: sealed system with adiabatic (insulating)
+										boundary and no movable piston arrangement.
+									</li>
+								</ul>
+							</li>
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: Sketches of (i) open vessel, (ii) closed vessel, (iii) insulated sealed vessel; plus piston-cylinder showing work exchange.
+             Lecture reference: 15:35
+        -->
+						</ul>
+					</li>
+					<!-- END ch04 | System types -->
+
+					<!-- START ch05 | Intensive extensive -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=1144s"
+								target="_blank"
+								rel="noopener"
+							>
+								Extensive vs intensive properties (19:04)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Two broad classes of properties:
+								<ul>
+									<li>
+										<strong>Extensive</strong>: depends on amount of matter /
+										sample size.
+									</li>
+									<li>
+										<strong>Intensive</strong>: independent of sample size.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Typical examples:
+								<ul>
+									<li>
+										Extensive: mass, volume, number of moles, heat capacity.
+									</li>
+									<li>
+										Intensive: density, refractive index, specific heat
+										capacity, viscosity, temperature, pressure, concentration
+										terms (molarity, molality etc).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Key contrast: heat capacity is extensive, but specific heat
+								capacity is intensive.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Intensive extensive -->
+
+					<!-- START ch06 | Quick classification -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=1636s"
+								target="_blank"
+								rel="noopener"
+							>
+								Quick tests for extensive/intensive + examples (27:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Fast test:
+								<ul>
+									<li>
+										If \( \dfrac{\text{extensive}}{\text{extensive}} \) is
+										formed, the result is intensive.
+									</li>
+									<li>
+										Examples: molarity, molality, mole fraction, normality.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Energy-related thermodynamic terms are extensive in general:
+								enthalpy \(H\), entropy \(S\), Gibbs free energy \(G\), internal
+								energy \(U\).
+							</li>
+							<li>
+								“Molar” versions become intensive (per mole):
+								<ul>
+									<li>
+										Molar enthalpy, molar entropy, molar internal energy are
+										intensive.
+									</li>
+								</ul>
+							</li>
+							<li>
+								pH is intensive because it is based on concentration:
+								<br />
+								\( \mathrm{pH} = -\log_{10}[H^+] \)
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/q5CZUnsWkYQ?t=1565s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									<br />
+									Molarity is intensive or extensive? Give the quickest reason.
+									<ul>
+										<li>
+											Answer: Intensive; it is a ratio of extensive quantities
+											\( \dfrac{n}{V} \), so it stays the same for any portion
+											of the same solution.
+										</li>
+									</ul>
+								</li>
+								<br />
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/q5CZUnsWkYQ?t=1947s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 2
+										</a>
+									</strong>
+									<br />
+									Among the following, identify which are extensive: specific
+									heat capacity, Gibbs free energy, EMF, dielectric constant.
+									<ul>
+										<li>
+											Answer: Gibbs free energy is extensive; the others listed
+											are intensive in this context.
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch06 | Quick classification -->
+
+					<!-- START ch07 | State vs path -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=2148s"
+								target="_blank"
+								rel="noopener"
+							>
+								State functions vs path functions; cyclic process idea (35:48)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								State of a system can be specified by state variables such as:
+								<ul>
+									<li>\(P,\,T,\,V,\,n\)</li>
+									<li>\(H,\,S,\,U,\,G\)</li>
+								</ul>
+							</li>
+							<li>
+								<strong>State function</strong>: change depends only on initial
+								and final states:
+								<br />
+								\( \Delta X = X_f - X_i \)
+							</li>
+							<li>
+								<strong>Path function</strong>: value depends on the path taken
+								between states:
+								<ul>
+									<li>Heat \(Q\) and work \(W\) are path functions.</li>
+								</ul>
+							</li>
+							<!-- IMAGE 04 SHOULD GO HERE
+             Description: Two different \(P\)-\(V\) paths between the same initial and final states, highlighting same \(\Delta P\) but different paths.
+             Lecture reference: 40:35
+        -->
+							<li>
+								Cyclic process: system returns to the initial state.
+								<ul>
+									<li>
+										For any state function \(X\), in a cycle: \( \Delta X = 0
+										\).
+									</li>
+									<li>
+										For path functions, \(Q\) and \(W\) over a cycle are
+										generally non-zero.
+									</li>
+								</ul>
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/q5CZUnsWkYQ?t=2435s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									<br />
+									Two different paths connect the same initial and final states
+									on a \(P\) vs \(V\) plot. Is \(\Delta P\) the same or
+									different for the two paths?
+									<ul>
+										<li>
+											Answer: Same; pressure is a state variable, so \(\Delta P
+											= P_f - P_i\) is path-independent.
+										</li>
+									</ul>
+								</li>
+								<br />
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/q5CZUnsWkYQ?t=2670s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 2
+										</a>
+									</strong>
+									<br />
+									In a cyclic process, which of the following have zero net
+									change: \(P\), \(V\), \(T\), \(U\), \(Q\), \(W\)?
+									<ul>
+										<li>
+											Answer: \(P\), \(V\), \(T\), \(U\) (state
+											variables/functions) have zero net change; \(Q\) and \(W\)
+											are generally non-zero over the cycle.
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch07 | State vs path -->
+
+					<!-- START ch08 | Process types -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=2790s"
+								target="_blank"
+								rel="noopener"
+							>
+								Types of thermodynamic processes (46:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Process: any change where thermodynamic variables change (e.g.,
+								\(P\), \(V\), \(T\), energy exchange).
+							</li>
+							<li>
+								Major named processes:
+								<ul>
+									<li>
+										<strong>Isothermal</strong>: temperature constant, \( \Delta
+										T = 0 \).
+									</li>
+									<li>
+										<strong>Isobaric</strong>: pressure constant, \( \Delta P =
+										0 \).
+									</li>
+									<li>
+										<strong>Isochoric</strong>: volume constant, \( \Delta V = 0
+										\).
+									</li>
+									<li>
+										<strong>Adiabatic</strong>: no heat exchange, \( \Delta Q =
+										0 \).
+									</li>
+								</ul>
+							</li>
+							<li>
+								For an ideal gas in an isothermal process:
+								<ul>
+									<li>
+										\( \Delta T = 0 \Rightarrow \Delta U = 0 \) (since \(U\)
+										depends only on \(T\) for an ideal gas).
+									</li>
+									<li>
+										Boyle’s law applies: \( P \propto \dfrac{1}{V} \) at
+										constant \(T\).
+									</li>
+								</ul>
+							</li>
+							<!-- IMAGE 05 SHOULD GO HERE
+             Description: \(P\)-\(V\) curves showing isothermal (rectangular hyperbola) and a steeper adiabatic curve.
+             Lecture reference: 50:12
+        -->
+							<li>
+								Visual cue (on \(P\)-\(V\) plot): adiabatic curve is steeper
+								than isothermal for the same starting point.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Process types -->
+
+					<!-- START ch09 | Reversible idea -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/q5CZUnsWkYQ?t=3343s"
+								target="_blank"
+								rel="noopener"
+							>
+								Reversible vs irreversible processes (55:43)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Reversible process (ideal concept):
+								<ul>
+									<li>
+										Occurs via infinitely small steps; would require infinite
+										time.
+									</li>
+									<li>
+										System remains in equilibrium at every intermediate step.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Irreversible process (practical):
+								<ul>
+									<li>Occurs in finite time with a finite driving force.</li>
+									<li>
+										Equilibrium is not maintained throughout; typically only
+										initial and final states are equilibrium states.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Piston-with-weights model:
+								<ul>
+									<li>
+										Reversible-like: remove very small weight \( \Rightarrow \)
+										tiny pressure difference \( \Rightarrow \) system
+										re-equilibrates stepwise.
+									</li>
+									<li>
+										Irreversible-like: remove many weights suddenly \(
+										\Rightarrow \) large pressure difference \( \Rightarrow \)
+										rapid expansion to a new equilibrium.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Driving force vs opposing force:
+								<ul>
+									<li>
+										Reversible: driving force is only slightly greater than
+										opposing force.
+									</li>
+									<li>
+										Irreversible: driving force is much greater than opposing
+										force.
+									</li>
+								</ul>
+							</li>
+							<!-- IMAGE 06 SHOULD GO HERE
+             Description: Piston-cylinder with small weights removed stepwise vs removed suddenly, highlighting equilibrium at each step vs only at ends.
+             Lecture reference: 01:00:27
+        -->
+						</ul>
+					</li>
+					<!-- END ch09 | Reversible idea -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
