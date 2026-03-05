@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,15 +154,474 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
+				<li><a href="#ch01">Energy exchange: heat vs work (00:25)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Concept of Cp and Cv of a Gas</a
+					<a href="#ch02">Heat as energy transfer + Zeroth law link (02:28)</a>
+				</li>
+				<li>
+					<a href="#ch03">Sign convention for heat in chemistry (04:51)</a>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Specific heat capacity: definition + water example (07:08)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Gas: why “C” depends on process; zero to infinity (08:51)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Two key molar heat capacities: \(C_p\) and \(C_v\) (11:19)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Molar vs per-mass: capital vs small \(C_p, C_v\) + molar mass link
+						(15:27)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08">Mayer relation + exam trap with nitrogen (20:56)</a>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Degrees of freedom \(f\): formulas, \(\gamma\), and summary table
+						(25:02)</a
 					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Heat vs work -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=25s"
+								target="_blank"
+								rel="noopener"
+							>
+								Energy exchange: heat vs work (00:25)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Energy exchange between a system and surroundings occurs by two
+								modes:
+								<ol>
+									<li>
+										Heat: energy transfer driven by temperature difference.
+									</li>
+									<br />
+									<li>
+										Work: energy transfer via mechanical/electrical/etc. “doing
+										work” on surroundings or by surroundings on the system.
+									</li>
+								</ol>
+							</li>
+							<li>
+								“System needs energy” can be met by:
+								<ol>
+									<li>Supplying heat to the system.</li>
+									<br />
+									<li>
+										Doing work on the system (or the system doing work and
+										losing energy).
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Heat vs work -->
+
+					<!-- START ch02 | Heat definition -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=148s"
+								target="_blank"
+								rel="noopener"
+							>
+								Heat as energy transfer + Zeroth law link (02:28)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Heat is a mode of energy transfer between system and
+								surroundings that operates only when there is a temperature
+								difference.
+							</li>
+							<li>
+								If two bodies are at the same temperature, heat transfer cannot
+								be the mode of energy exchange between them.
+							</li>
+							<li>
+								Connection to thermal equilibrium (Zeroth law idea): if no heat
+								transfer occurs between two bodies in contact, they are in
+								thermal equilibrium.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Heat definition -->
+
+					<!-- START ch03 | Heat sign convention -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=291s"
+								target="_blank"
+								rel="noopener"
+							>
+								Sign convention for heat in chemistry (04:51)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Chemistry sign convention for heat \(q\):
+								<ol>
+									<li>
+										Heat given to the system: \(q &gt; 0\) (system gains
+										energy).
+									</li>
+									<br />
+									<li>
+										Heat given by the system (system releases heat): \(q &lt;
+										0\) (system loses energy).
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Heat sign convention -->
+
+					<!-- START ch04 | Specific heat -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=428s"
+								target="_blank"
+								rel="noopener"
+							>
+								Specific heat capacity: definition + water example (07:08)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Specific heat capacity (per unit mass):
+								<br />
+								\( c = \dfrac{q}{m\,\Delta T} \)
+							</li>
+							<li>
+								Meaning: heat required to raise the temperature of unit mass by
+								one degree.
+							</li>
+							<li>
+								Example interpretation: if water has \(c \approx 4.2\ \text{J
+								g}^{-1}\,^\circ\text{C}^{-1}\), then 1 g water needs about 4.2 J
+								heat to raise temperature by \(1^\circ\text{C}\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Specific heat -->
+
+					<!-- START ch05 | Gas C depends -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=531s"
+								target="_blank"
+								rel="noopener"
+							>
+								Gas: why “C” depends on process; zero to infinity (08:51)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For gases, “heat capacity” depends on the process path (how the
+								process is carried out), so it is not a single fixed value like
+								many solids/liquids.
+							</li>
+							<li>
+								Extremes using \( c = \dfrac{q}{m\,\Delta T} \):
+								<ol>
+									<li>
+										Isothermal process: \(\Delta T = 0\) \(\Rightarrow\) \(c \to
+										\infty\) (mathematically).
+									</li>
+									<br />
+									<li>
+										Adiabatic process: \(q = 0\) \(\Rightarrow\) \(c = 0\) (for
+										that process definition).
+									</li>
+								</ol>
+							</li>
+							<li>
+								Conclusion: for gases, the effective heat capacity can vary from
+								0 to \(\infty\) depending on the process.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Gas C depends -->
+
+					<!-- START ch06 | Cp and Cv -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=679s"
+								target="_blank"
+								rel="noopener"
+							>
+								Two key molar heat capacities: \(C_p\) and \(C_v\) (11:19)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Two practically important heat capacities for a gas are defined
+								for standard constraint processes:
+								<ol>
+									<li>At constant volume: \(C_v\)</li>
+									<br />
+									<li>At constant pressure: \(C_p\)</li>
+								</ol>
+							</li>
+							<li>
+								Molar definitions:
+								<ol>
+									<li>\( C_v = \dfrac{q}{n\,\Delta T} \) (constant volume)</li>
+									<br />
+									<li>
+										\( C_p = \dfrac{q}{n\,\Delta T} \) (constant pressure)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Corresponding heat expressions (molar form):
+								<ol>
+									<li>At constant volume: \( q_v = n\,C_v\,\Delta T \)</li>
+									<br />
+									<li>At constant pressure: \( q_p = n\,C_p\,\Delta T \)</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Cp and Cv -->
+
+					<!-- START ch07 | Molar vs mass -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=927s"
+								target="_blank"
+								rel="noopener"
+							>
+								Molar vs per-mass: capital vs small \(C_p, C_v\) + molar mass
+								link (15:27)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Distinguish per-mass vs per-mole heat capacities:
+								<ol>
+									<li>
+										Per unit mass: \(c_p, c_v\) (units like \(\text{J
+										g}^{-1}\,^\circ\text{C}^{-1}\))
+									</li>
+									<br />
+									<li>
+										Per mole: \(C_p, C_v\) (units like \(\text{J
+										mol}^{-1}\,^\circ\text{C}^{-1}\))
+									</li>
+								</ol>
+							</li>
+							<li>
+								Link between molar and specific (per-mass) values using molar
+								mass \(M\):
+								<ol>
+									<li>\( C_v = M\,c_v \)</li>
+									<br />
+									<li>\( C_p = M\,c_p \)</li>
+								</ol>
+							</li>
+							<li>
+								Example idea: if oxygen has molar mass \(M=32\ \text{g
+								mol}^{-1}\), then \(C_v = 32\,c_v\) for \(\text{O}_2\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Molar vs mass -->
+
+					<!-- START ch08 | Mayer relation -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=1256s"
+								target="_blank"
+								rel="noopener"
+							>
+								Mayer relation + exam trap with nitrogen (20:56)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Mayer’s relation for an ideal gas:
+								<br />
+								\( C_p - C_v = R \)
+							</li>
+							<li>
+								Typical exam trap: options may be multiples/fractions of \(R\)
+								because the question may be using per-mass values \(c_p, c_v\).
+							</li>
+							<li>
+								Using \(C_p = M c_p\) and \(C_v = M c_v\):
+								<br />
+								\( M(c_p - c_v) = R \Rightarrow (c_p - c_v) = \dfrac{R}{M} \)
+							</li>
+							<li>
+								For nitrogen gas \(\text{N}_2\), \(M = 28\ \text{g mol}^{-1}\),
+								so:
+								<br />
+								\( c_p - c_v = \dfrac{R}{28} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Mayer relation -->
+
+					<!-- START ch09 | f and gamma -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/V3CNvFSd4r8?t=1502s"
+								target="_blank"
+								rel="noopener"
+							>
+								Degrees of freedom \(f\): formulas, \(\gamma\), and summary
+								table (25:02)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Molar heat capacity at constant volume (ideal-gas result used
+								here):
+								<br />
+								\( C_v = \dfrac{f}{2}R \)
+							</li>
+							<li>
+								From Mayer’s relation:
+								<br />
+								\( C_p = C_v + R = \left(\dfrac{f}{2} + 1\right)R \)
+							</li>
+							<li>
+								Degree of freedom \(f\) (as used in this lecture, standard
+								exam-level values):
+								<ol>
+									<li>Monatomic gases: \(f=3\)</li>
+									<br />
+									<li>Diatomic gases: \(f=5\)</li>
+									<br />
+									<li>Polyatomic gases: \(f=6\)</li>
+								</ol>
+							</li>
+							<li>
+								Heat capacity ratio:
+								<br />
+								\( \gamma = \dfrac{C_p}{C_v} \)
+							</li>
+							<li>
+								Useful derived relation:
+								<br />
+								\( \gamma = 1 + \dfrac{2}{f} \)
+							</li>
+							<li>
+								Summary (ideal-gas, exam-friendly):
+								<ol>
+									<li>
+										Monatomic: \(f=3,\ C_v=\dfrac{3}{2}R,\ C_p=\dfrac{5}{2}R,\
+										\gamma=\dfrac{5}{3}\approx 1.66\)
+									</li>
+									<br />
+									<li>
+										Diatomic: \(f=5,\ C_v=\dfrac{5}{2}R,\ C_p=\dfrac{7}{2}R,\
+										\gamma=\dfrac{7}{5}=1.4\)
+									</li>
+									<br />
+									<li>
+										Polyatomic: \(f=6,\ C_v=3R,\ C_p=4R,\
+										\gamma=\dfrac{4}{3}\approx 1.33\)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Trend: as atomicity increases, \(\gamma\) decreases (monatomic
+								highest, polyatomic lowest).
+							</li>
+							<li>
+								Quick-use heat formulas (molar form):
+								<ol>
+									<li>At constant pressure: \( q_p = n\,C_p\,\Delta T \)</li>
+									<br />
+									<li>At constant volume: \( q_v = n\,C_v\,\Delta T \)</li>
+								</ol>
+							</li>
+							<li>
+								Sign reminder: \(q &gt; 0\) when heat is absorbed by the system;
+								\(q &lt; 0\) when heat is released by the system.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | f and gamma -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>

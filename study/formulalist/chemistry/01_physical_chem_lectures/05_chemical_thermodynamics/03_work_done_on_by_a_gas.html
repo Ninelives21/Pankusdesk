@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,13 +154,696 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
+				<li><a href="#ch01">Energy exchange: heat vs work (00:58)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">Work done on/by a Gas</a>
+					<a href="#ch02">Gas work formula and sign convention (03:16)</a>
+				</li>
+				<li>
+					<a href="#ch03">Piston model: expansion vs compression (05:00)</a>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Derivation: \(W = -P_{\text{ext}}\Delta V\) (09:38)</a
+					>
+				</li>
+				<li><a href="#ch05">Unit conversion: atm·L to joule (14:24)</a></li>
+				<li>
+					<a href="#ch06"
+						>Variable pressure: \(W = -\int P\,dV\) and area under \(P\)-\(V\)
+						curve (18:56)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Graph example A→B: trapezium area method + sign (24:04)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Cyclic process ABCA: work in segments; work is a path function
+						(27:44)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Shortcut: cyclic work = enclosed area; clockwise vs anticlockwise
+						sign (33:16)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Practice graph ABCDA: segment work + cycle work (35:39)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>What’s next: work in standard thermodynamic processes (39:35)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Heat vs work -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=58s"
+								target="_blank"
+								rel="noopener"
+							>
+								Energy exchange: heat vs work (00:58)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								A thermodynamic system can exchange energy with surroundings in
+								two ways:
+								<br />
+								\( \text{Heat (}q\text{)} \) and \( \text{Work (}w\text{)} \).
+							</li>
+							<li>
+								Heat transfer occurs only when there is a temperature difference
+								between system and surroundings.
+							</li>
+							<li>
+								Work is a mechanical mode of energy transfer (involves
+								force/pressure causing displacement/volume change).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Heat vs work -->
+
+					<!-- START ch02 | Gas work formula -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=196s"
+								target="_blank"
+								rel="noopener"
+							>
+								Gas work formula and sign convention (03:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a gaseous system (mechanical work against external
+								pressure):
+								<br />
+								\( w = -P_{\text{ext}}\Delta V \)
+							</li>
+							<li>
+								Meaning of symbols:
+								<ul>
+									<li>
+										\(P_{\text{ext}}\): external pressure opposing
+										expansion/compression
+									</li>
+									<li>\(\Delta V = V_2 - V_1\): change in volume</li>
+								</ul>
+							</li>
+							<li>
+								Sign summary:
+								<ul>
+									<li>Expansion: \( \Delta V &gt; 0 \Rightarrow w &lt; 0 \)</li>
+									<li>
+										Compression: \( \Delta V &lt; 0 \Rightarrow w &gt; 0 \)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Gas work formula -->
+
+					<!-- START ch03 | Piston model signs -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=300s"
+								target="_blank"
+								rel="noopener"
+							>
+								Piston model: expansion vs compression (05:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<!-- IMAGE 01 SHOULD GO HERE
+             Description: Piston-cylinder sketch showing external pressure \(P_{\text{ext}}\), and expansion/compression cases.
+             Lecture reference: 05:00
+        -->
+							<li>
+								Consider gas in a cylinder fitted with a frictionless piston;
+								external pressure \(P_{\text{ext}}\) acts on piston.
+							</li>
+							<li>
+								If \(P_{\text{gas}} &gt; P_{\text{ext}}\): gas expands and
+								pushes piston outward.
+								<ul>
+									<li>\(\Delta V &gt; 0\)</li>
+									<li>Work is done by the gas on surroundings</li>
+									<li>
+										Energy leaves the gas via work \(\Rightarrow w &lt; 0\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								If \(P_{\text{ext}} &gt; P_{\text{gas}}\): gas is compressed.
+								<ul>
+									<li>\(\Delta V &lt; 0\)</li>
+									<li>Work is done on the gas by surroundings</li>
+									<li>
+										Energy enters the gas via work \(\Rightarrow w &gt; 0\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Interpretation rule (gas viewpoint):
+								<ul>
+									<li>\(w &lt; 0\): system (gas) does work on surroundings</li>
+									<li>\(w &gt; 0\): surroundings do work on system</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Piston model signs -->
+
+					<!-- START ch04 | Derivation idea -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=578s"
+								target="_blank"
+								rel="noopener"
+							>
+								Derivation: \(W = -P_{\text{ext}}\Delta V\) (09:38)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: Derivation diagram: piston area \(A\), displacement \(\Delta x\), volume change \(\Delta V = A\Delta x\).
+             Lecture reference: 09:38
+        -->
+							<li>
+								Start from mechanical work:
+								<br />
+								\( w = \vec{F}\cdot\vec{s} = Fs\cos\theta \)
+							</li>
+							<li>
+								For a piston of cross-sectional area \(A\):
+								<ul>
+									<li>
+										Pressure definition: \( P = \frac{F}{A} \Rightarrow F = PA
+										\)
+									</li>
+									<li>Small piston displacement: \( s = \Delta x \)</li>
+									<li>Volume change: \( \Delta V = A\Delta x \)</li>
+								</ul>
+							</li>
+							<li>
+								In expansion, force due to \(P_{\text{ext}}\) acts opposite to
+								displacement (\(\theta = 180^\circ\)):
+								<br />
+								\( w = (P_{\text{ext}}A)(\Delta x)\cos 180^\circ =
+								-P_{\text{ext}}(A\Delta x) = -P_{\text{ext}}\Delta V \)
+							</li>
+							<li>
+								Memorize the usable result:
+								<br />
+								\( w = -P_{\text{ext}}\Delta V \) (for constant external
+								pressure)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Derivation idea -->
+
+					<!-- START ch05 | atm L to joule -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=864s"
+								target="_blank"
+								rel="noopener"
+							>
+								Unit conversion: atm·L to joule (14:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Work in gas problems often appears as \( \text{atm·L} \) from
+								\(P\) in atm and \(V\) in liters.
+							</li>
+							<li>
+								Conversion to SI unit:
+								<br />
+								\( 1\ \text{atm·L} = 101.3\ \text{J} \)
+							</li>
+							<li>
+								Example idea: gas expands by \(0.5\ \text{L}\) against \(1\
+								\text{atm}\).
+								<ul>
+									<li>\(\Delta V = +0.5\ \text{L}\)</li>
+									<li>
+										\( w = -P_{\text{ext}}\Delta V = -(1)(0.5) = -0.5\
+										\text{atm·L}\)
+									</li>
+									<li>
+										\( w = -0.5 \times 101.3\ \text{J} \) (final numeric value
+										in joule)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | atm L to joule -->
+
+					<!-- START ch06 | Variable pressure work -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=1136s"
+								target="_blank"
+								rel="noopener"
+							>
+								Variable pressure: \(W = -\int P\,dV\) and area under
+								\(P\)-\(V\) curve (18:56)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: \(P\)-\(V\) graph with a thin strip of width \(dV\) and height \(P\), showing area \(P\,dV\).
+             Lecture reference: 18:56
+        -->
+							<li>
+								The formula \( w = -P_{\text{ext}}\Delta V \) is valid only when
+								external pressure is constant.
+							</li>
+							<li>
+								If pressure varies during the process, take a small volume
+								change \(dV\) where pressure is approximately constant:
+								<br />
+								\( dw = -P\,dV \)
+							</li>
+							<li>
+								Total work from \(V_1\) to \(V_2\):
+								<br />
+								\( w = -\int_{V_1}^{V_2} P\,dV \)
+							</li>
+							<li>
+								Graph meaning:
+								<ul>
+									<li>
+										Magnitude of work equals the area under the \(P\)-\(V\)
+										curve between \(V_1\) and \(V_2\).
+									</li>
+									<li>
+										Sign is decided by expansion/compression (use \(\Delta V\)
+										sign or physical meaning).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Special case: if \(P\) is constant, integration reduces to:
+								<br />
+								\( w = -P(V_2 - V_1) = -P\Delta V \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Variable pressure work -->
+
+					<!-- START ch07 | Trapezium work -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=1444s"
+								target="_blank"
+								rel="noopener"
+							>
+								Graph example A→B: trapezium area method + sign (24:04)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<!-- IMAGE 04 SHOULD GO HERE
+             Description: \(P\)-\(V\) graph from A(1 L, 2 atm) to B(3 L, 4 atm) showing trapezium under the straight-line path.
+             Lecture reference: 24:04
+        -->
+							<li>
+								When the path is a straight line on a \(P\)-\(V\) graph, work
+								magnitude is the area under the line (a trapezium).
+							</li>
+							<li>
+								For A(1 L, 2 atm) → B(3 L, 4 atm):
+								<ul>
+									<li>\(\Delta V = 3 - 1 = 2\ \text{L}\)</li>
+									<li>
+										Area (trapezium) \(= \frac{1}{2}(P_1 + P_2)\Delta V =
+										\frac{1}{2}(2 + 4)\times 2 = 6\ \text{atm·L}\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Sign:
+								<ul>
+									<li>Volume increases (expansion) \(\Rightarrow w &lt; 0\)</li>
+									<li>
+										So \( w = -6\ \text{atm·L} \) and in joule \( w = -6 \times
+										101.3\ \text{J}\)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Trapezium work -->
+
+					<!-- START ch08 | ABCA path function -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=1664s"
+								target="_blank"
+								rel="noopener"
+							>
+								Cyclic process ABCA: work in segments; work is a path function
+								(27:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<!-- IMAGE 05 SHOULD GO HERE
+             Description: Triangular cycle ABCA on a \(P\)-\(V\) graph, indicating segments AB (vertical), BC (horizontal), CA (slanted).
+             Lecture reference: 27:44
+        -->
+							<li>
+								For a process on a \(P\)-\(V\) graph, work in each segment
+								equals signed area under that segment.
+							</li>
+							<li>
+								Segment AB (constant volume): \(\Delta V = 0 \Rightarrow w_{AB}
+								= 0\)
+							</li>
+							<li>
+								Segment BC (constant pressure line at \(6\ \text{atm}\) from
+								\(1\) L to \(3\) L):
+								<ul>
+									<li>Area \(= 6 \times 2 = 12\ \text{atm·L}\)</li>
+									<li>Expansion \(\Rightarrow w_{BC} = -12\ \text{atm·L}\)</li>
+								</ul>
+							</li>
+							<li>
+								Segment CA (slanted back from \(3\) L to \(1\) L):
+								<ul>
+									<li>
+										Area under CA is a trapezium with parallel sides \(2\) and
+										\(6\) (atm) and width \(2\) (L)
+									</li>
+									<li>
+										Magnitude \(= \frac{1}{2}(2 + 6)\times 2 = 8\ \text{atm·L}\)
+									</li>
+									<li>Compression \(\Rightarrow w_{CA} = +8\ \text{atm·L}\)</li>
+								</ul>
+							</li>
+							<li>
+								Net work in the cycle:
+								<br />
+								\( w_{\text{ABCA}} = w_{AB} + w_{BC} + w_{CA} = 0 - 12 + 8 = -4\
+								\text{atm·L} \)
+							</li>
+							<li>
+								Key conclusion:
+								<ul>
+									<li>
+										In a cyclic process, state variables return to initial
+										values (e.g., \(P\), \(V\)), so their net change is \(0\).
+									</li>
+									<li>
+										Work does not necessarily become \(0\) in a cycle
+										\(\Rightarrow\) work is not a state function; it is a path
+										function.
+									</li>
+								</ul>
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/lBu-SJHNveA?t=2014s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									Find \(w_{AB}\), \(w_{BC}\), \(w_{CA}\) and net work
+									\(w_{\text{ABCA}}\) for the triangular cycle shown on the
+									\(P\)-\(V\) graph.
+								</li>
+								<br />
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/lBu-SJHNveA?t=2036s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 2
+										</a>
+									</strong>
+									Using the same cycle, explain why work is a path function and
+									not a state function.
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch08 | ABCA path function -->
+
+					<!-- START ch09 | Cycle area shortcut -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=1996s"
+								target="_blank"
+								rel="noopener"
+							>
+								Shortcut: cyclic work = enclosed area; clockwise vs
+								anticlockwise sign (33:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Shortcut for a complete cyclic process on a \(P\)-\(V\) diagram:
+								<br />
+								\( |w_{\text{cycle}}| = \text{Area enclosed by the cycle} \)
+							</li>
+							<li>
+								Sign convention (as taught here):
+								<ul>
+									<li>
+										Clockwise cycle \(\Rightarrow w_{\text{cycle}} &lt; 0\)
+									</li>
+									<li>
+										Anticlockwise cycle \(\Rightarrow w_{\text{cycle}} &gt; 0\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								For a triangular cycle:
+								<ul>
+									<li>
+										\(\text{Area} = \frac{1}{2}\times \text{base}\times
+										\text{height}\)
+									</li>
+									<li>Apply sign based on direction of traversal.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Cycle area shortcut -->
+
+					<!-- START ch10 | Practice rectangle -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=2139s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice graph ABCDA: segment work + cycle work (35:39)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<!-- IMAGE 06 SHOULD GO HERE
+             Description: Rectangular cycle ABCDA on a \(P\)-\(V\) graph with vertical and horizontal segments.
+             Lecture reference: 35:39
+        -->
+							<li>
+								Useful zero-work rule:
+								<ul>
+									<li>
+										On a vertical line (constant volume), \(\Delta V = 0
+										\Rightarrow w = 0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								For the shown rectangle-like cycle:
+								<ul>
+									<li>\(w_{AB} = 0\) (constant volume)</li>
+									<li>
+										\(w_{BC}\): area under BC (a rectangle); expansion
+										\(\Rightarrow\) negative
+									</li>
+									<li>\(w_{CD} = 0\) (constant volume)</li>
+									<li>
+										\(w_{DA}\): area under DA; compression \(\Rightarrow\)
+										positive
+									</li>
+								</ul>
+							</li>
+							<li>
+								Net work in cycle:
+								<ul>
+									<li>
+										Add segment works, or directly use enclosed area magnitude.
+									</li>
+									<li>
+										For a rectangle: \( |w_{\text{cycle}}| = \text{length}\times
+										\text{breadth} \) (in atm·L if axes are atm and L)
+									</li>
+									<li>
+										Apply sign based on clockwise/anticlockwise direction.
+									</li>
+								</ul>
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/lBu-SJHNveA?t=2164s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									For the ABCDA cycle on the \(P\)-\(V\) graph, compute
+									\(w_{AB}\), \(w_{BC}\), \(w_{CD}\), \(w_{DA}\), and net
+									\(w_{\text{ABCDA}}\) in atm·L, then convert to joule using
+									\(1\ \text{atm·L} = 101.3\ \text{J}\).
+								</li>
+								<br />
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/lBu-SJHNveA?t=2328s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 2
+										</a>
+									</strong>
+									Without segment calculation, find the net cyclic work using
+									enclosed area and decide the sign from the direction of the
+									cycle.
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch10 | Practice rectangle -->
+
+					<!-- START ch11 | Next processes -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/lBu-SJHNveA?t=2375s"
+								target="_blank"
+								rel="noopener"
+							>
+								What’s next: work in standard thermodynamic processes (39:35)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								This lecture established the basic tools for work in gaseous
+								systems:
+								<ul>
+									<li>\( w = -P_{\text{ext}}\Delta V \) (constant pressure)</li>
+									<li>\( w = -\int P\,dV \) (variable pressure)</li>
+									<li>
+										\(|w| = \text{area under }P\text{-}V\text{ curve}\) and
+										cyclic work = enclosed area (with sign by direction)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Next focus: calculating work for standard thermodynamic
+								processes (constant pressure, constant volume, isothermal,
+								adiabatic).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Next processes -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,15 +154,852 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
+				<li><a href="#ch01">First law idea + sign convention (00:08)</a></li>
+				<li><a href="#ch02">Internal energy: what it includes (07:47)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>First Law Of Thermodynamics</a
+					<a href="#ch03"
+						>Internal energy: key properties of \(\Delta U\) (17:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Ideal gas: \(\Delta U = nC_v\Delta T\), \(C_v=\frac{f}{2}R\)
+						(22:04)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05">Heat formulas + \(C_p, C_v\) relations (33:26)</a>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Work for gases: \(-P_{\text{ext}}\Delta V\) + PV-area idea
+						(38:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Practice set 1: direct first-law numericals (41:16)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Practice set 2: \(\Delta Q/\Delta W\) in isobaric process
+						(56:28)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Practice set 3: isothermal process with work given (01:01:16)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>PV-graph numericals: area + sign + first law (01:04:30)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>PV-path comparison: which heat is larger (01:08:07)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12"
+						>Cyclic process on PV: \(\Delta U=0\) and area trick (01:11:40)</a
+					>
+				</li>
+				<li>
+					<a href="#ch13"
+						>PV-rectangle analysis: signs of \(Q, W, \Delta U\) on each leg
+						(01:15:42)</a
 					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | First law overview -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=8s"
+								target="_blank"
+								rel="noopener"
+							>
+								First law idea + sign convention (00:08)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								First law = conservation of energy for thermodynamic processes.
+							</li>
+							<li>
+								Exam-use equation (this lecture’s sign convention):<br />
+								\( \Delta U = \Delta q + \Delta W \)
+							</li>
+							<li>
+								Meaning of symbols (as used here):<br />
+								\( \Delta U \): change in internal energy of the system<br />
+								\( \Delta q \): heat given to the system<br />
+								\( \Delta W \): work done on the system
+							</li>
+							<li>
+								Energy of a system increases by:
+								<ol>
+									<li>Supplying heat to the system (\( \Delta q &gt; 0 \)).</li>
+									<br />
+									<li>Doing work on the system (\( \Delta W &gt; 0 \)).</li>
+								</ol>
+							</li>
+							<li>
+								Differential form (small changes):<br />
+								\( dU = dq + dW \)
+							</li>
+							<li>
+								Note: many books use \(\Delta E\) instead of \(\Delta U\) for
+								internal energy change.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | First law overview -->
+
+					<!-- START ch02 | What is internal energy -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=467s"
+								target="_blank"
+								rel="noopener"
+							>
+								Internal energy: what it includes (07:47)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								A system’s total energy can be viewed as:
+								<ol>
+									<li>
+										Macroscopic kinetic energy (due to motion of the whole
+										system).
+									</li>
+									<br />
+									<li>
+										Macroscopic potential energy (due to external fields such as
+										gravitational/electrostatic).
+									</li>
+									<br />
+									<li>
+										Internal energy \(U\) (microscopic energy stored within the
+										system).
+									</li>
+								</ol>
+							</li>
+							<li>
+								If the whole system is at rest and external fields are absent,
+								total energy is identified with internal energy \(U\).
+							</li>
+							<li>
+								Internal energy arises from molecular-level energies, not from
+								motion of the system as a whole.
+							</li>
+							<li>
+								Molecular contributions to \(U\) include:
+								<ol>
+									<li>Translational kinetic energy of molecules.</li>
+									<br />
+									<li>Vibrational kinetic energy of molecules.</li>
+									<br />
+									<li>Rotational kinetic energy of molecules.</li>
+									<br />
+									<li>
+										Potential energy due to interactions:
+										<ul>
+											<li>Intermolecular attraction (molecule–molecule).</li>
+											<li>
+												Electrostatic attraction within atoms/molecules
+												(electron–nucleus, bonding).
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+							<li>
+								Practical note: the absolute value of \(U\) for a system cannot
+								be directly determined by summing all microscopic contributions;
+								focus is on \(\Delta U\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | What is internal energy -->
+
+					<!-- START ch03 | Properties of delta U -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=1052s"
+								target="_blank"
+								rel="noopener"
+							>
+								Internal energy: key properties of \(\Delta U\) (17:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Only change in internal energy is needed in calculations:<br />
+								\( \Delta U = U_f - U_i \)
+							</li>
+							<li>
+								Internal energy \(U\) is an extensive property: it depends on
+								amount of matter (more moles \(\Rightarrow\) larger \(U\)).
+							</li>
+							<li>
+								\(U\) is a state function:
+								<ul>
+									<li>
+										\(\Delta U\) depends only on initial and final states, not
+										on the path taken.
+									</li>
+									<li>
+										For two different paths between the same states \(A \to B\):
+										\(\Delta U_1 = \Delta U_2\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Cyclic process: returning to the initial state implies:<br />
+								\( \Delta U_{\text{cycle}} = 0 \)
+							</li>
+							<li>
+								Contrast:
+								<ul>
+									<li>
+										Heat \(q\) and work \(W\) are path-dependent (path
+										functions).
+									</li>
+									<li>
+										In a cycle, total heat exchange and total work done need not
+										be zero, but \(\Delta U\) is zero.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Properties of delta U -->
+
+					<!-- START ch04 | Ideal gas delta U -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=1324s"
+								target="_blank"
+								rel="noopener"
+							>
+								Ideal gas: \(\Delta U = nC_v\Delta T\), \(C_v=\frac{f}{2}R\)
+								(22:04)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								General method (always usable with given data):<br />
+								\( \Delta U = \Delta q + \Delta W \)
+							</li>
+							<li>
+								For an ideal gas, internal energy change has a direct
+								temperature relation (works for any process):<br />
+								\( \Delta U = nC_v\Delta T \)
+							</li>
+							<li>
+								Small change form:<br />
+								\( dU = nC_v dT \)
+							</li>
+							<li>
+								Meanings:
+								<ul>
+									<li>\(n\): moles of gas</li>
+									<li>\(C_v\): molar heat capacity at constant volume</li>
+									<li>\(\Delta T\): temperature change</li>
+								</ul>
+							</li>
+							<li>
+								Usual (constant) \(C_v\) model used in most problems:<br />
+								\( C_v = \frac{f}{2}R \)
+							</li>
+							<li>
+								Degrees of freedom \(f\) (as used here):
+								<ol>
+									<li>Monatomic gas: \(f=3\)</li>
+									<br />
+									<li>Diatomic gas: \(f=5\)</li>
+									<br />
+									<li>Polyatomic gas: \(f=6\)</li>
+								</ol>
+							</li>
+							<li>
+								Gas constant values to use in energy units:
+								<ul>
+									<li>\( R = 8.314\ \text{J mol}^{-1}\text{K}^{-1} \)</li>
+									<li>\( R \approx 2\ \text{cal mol}^{-1}\text{K}^{-1} \)</li>
+								</ul>
+							</li>
+							<li>
+								Ideal-gas special note: \(U\) depends only on temperature.
+								<ul>
+									<li>
+										If \(\Delta T=0\) for an ideal gas, then \(\Delta U=0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								If a problem gives temperature-dependent \(C_v\) (rare): use
+								integration using the differential relation<br />
+								\( dU = nC_v(T)\,dT \) and integrate from \(T_i\) to \(T_f\).
+							</li>
+							<li>
+								Why ideal gas internal energy is treated as kinetic-only:
+								<ul>
+									<li>
+										Ideal gas assumes no intermolecular attraction
+										\(\Rightarrow\) no intermolecular potential energy
+										contribution.
+									</li>
+									<li>
+										Hence internal energy is attributed to molecular kinetic
+										energies.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Ideal gas delta U -->
+
+					<!-- START ch05 | Heat formulas basics -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=2006s"
+								target="_blank"
+								rel="noopener"
+							>
+								Heat formulas + \(C_p, C_v\) relations (33:26)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Heat is a mode of energy transfer between system and
+								surroundings.
+							</li>
+							<li>
+								Sign convention used here:
+								<ul>
+									<li>Heat given to the system: \( \Delta q &gt; 0 \)</li>
+									<li>Heat released by the system: \( \Delta q &lt; 0 \)</li>
+								</ul>
+							</li>
+							<li>
+								General heat formula (any substance):<br />
+								\( q = m c \Delta T \)
+							</li>
+							<li>
+								For gases (molar form):<br />
+								\( q = n C \Delta T \)
+							</li>
+							<li>
+								Choice of \(C\) depends on the process:
+								<ul>
+									<li>Constant pressure heating/cooling: use \(C_p\)</li>
+									<li>Constant volume heating/cooling: use \(C_v\)</li>
+								</ul>
+							</li>
+							<li>
+								Relation between heat capacities (ideal gas):<br />
+								\( C_p = C_v + R \)
+							</li>
+							<li>
+								With \( C_v = \frac{f}{2}R \), obtain \(C_p\) by adding \(R\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Heat formulas basics -->
+
+					<!-- START ch06 | Work in gas systems -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=2312s"
+								target="_blank"
+								rel="noopener"
+							>
+								Work for gases: \(-P_{\text{ext}}\Delta V\) + PV-area idea
+								(38:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Sign convention used here:
+								<ul>
+									<li>Work done on the system: \( \Delta W &gt; 0 \)</li>
+									<li>Work done by the system: \( \Delta W &lt; 0 \)</li>
+								</ul>
+							</li>
+							<li>
+								For gas expansion/compression against external pressure:<br />
+								\( W = -P_{\text{ext}}\Delta V \)
+							</li>
+							<li>
+								Volume change definition:<br />
+								\( \Delta V = V_f - V_i \)
+							</li>
+							<li>
+								If pressure varies with volume, work is obtained from area under
+								the \(P\)-\(V\) curve.
+							</li>
+							<li>
+								PV-graph interpretation:
+								<ul>
+									<li>
+										Expansion (\(\Delta V&gt;0\)) typically gives \(W&lt;0\)
+										(work done by gas).
+									</li>
+									<li>
+										Compression (\(\Delta V&lt;0\)) gives \(W&gt;0\) (work done
+										on gas).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Work in gas systems -->
+
+					<!-- START ch07 | Numericals basic signs -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=2476s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice set 1: direct first-law numericals (41:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Practice idea: apply \( \Delta U = \Delta q + \Delta W \) with
+								correct signs.
+							</li>
+							<li>
+								Worked example pattern:
+								<ol>
+									<li>If system is given heat \(q\), take \(q\) positive.</li>
+									<br />
+									<li>
+										If system does work on surroundings, take \(W\) negative.
+									</li>
+									<br />
+									<li>Compute \(\Delta U\) by direct substitution.</li>
+								</ol>
+							</li>
+							<li>
+								Example 1 (calorie units, as stated):<br />
+								Given: \( \Delta q = +500\ \text{cal} \), system does work
+								\(350\ \text{cal}\Rightarrow \Delta W = -350\ \text{cal} \)<br />
+								Then: \( \Delta U = +150\ \text{cal} \)
+							</li>
+							<li>
+								Interpretation: supplied energy splits into work output and
+								internal energy increase.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Numericals basic signs -->
+
+					<!-- START ch08 | Ratio in isobaric -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=3388s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice set 2: \(\Delta Q/\Delta W\) in isobaric process
+								(56:28)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Isobaric (constant pressure) ideal-gas relations used:
+								<ul>
+									<li>\( \Delta q = nC_p\Delta T \)</li>
+									<li>\( \Delta U = nC_v\Delta T \)</li>
+									<li>
+										First law: \( \Delta U = \Delta q + \Delta W \Rightarrow
+										\Delta W = \Delta U - \Delta q \)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Ratio setup:
+								<ul>
+									<li>
+										\( \frac{\Delta q}{\Delta W} = \frac{nC_p\Delta
+										T}{nC_v\Delta T - nC_p\Delta T} = \frac{C_p}{C_v - C_p} \)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Using \(\gamma = \frac{C_p}{C_v}\):
+								<ul>
+									<li>
+										Divide numerator and denominator by \(C_v\):<br />
+										\( \frac{\Delta q}{\Delta W} = \frac{\gamma}{1-\gamma} \)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Ratio in isobaric -->
+
+					<!-- START ch09 | Isothermal ideal gas -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=3676s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice set 3: isothermal process with work given (01:01:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Isothermal process: temperature constant (\(\Delta T=0\)).
+							</li>
+							<li>
+								For an ideal gas, \(U\) depends only on temperature
+								\(\Rightarrow\) isothermal implies:<br />
+								\( \Delta U = 0 \)
+							</li>
+							<li>
+								If work is done on the gas (given): \( \Delta W &gt; 0 \).
+							</li>
+							<li>
+								Use first law with \(\Delta U=0\):<br />
+								\( 0 = \Delta q + \Delta W \Rightarrow \Delta q = -\Delta W \)
+							</li>
+							<li>
+								Interpretation: energy supplied as work leaves as heat so that
+								internal energy does not change.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Isothermal ideal gas -->
+
+					<!-- START ch10 | PV graph area -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=3870s"
+								target="_blank"
+								rel="noopener"
+							>
+								PV-graph numericals: area + sign + first law (01:04:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								PV-graph method:
+								<ul>
+									<li>
+										Compute work from area under the curve (or geometric area if
+										straight lines).
+									</li>
+									<li>
+										Convert units if needed: \(1\ \text{atm·L} = 101.3\
+										\text{J}\).
+									</li>
+									<li>Decide sign using \( W = -P_{\text{ext}}\Delta V \).</li>
+								</ul>
+							</li>
+							<li>
+								<!-- IMAGE 01 SHOULD GO HERE
+               Description: PV graph with points A and B; trapezium area under AB.
+               Lecture reference: 01:04:30
+          -->
+							</li>
+							<li>
+								Expansion example logic:
+								<ul>
+									<li>
+										If \(V\) increases, \(\Delta V&gt;0\Rightarrow W&lt;0\)
+										(work done by gas).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Once \(W\) is obtained, find heat using first law:<br />
+								\( \Delta q = \Delta U - \Delta W \) (rearranged from \( \Delta
+								U=\Delta q+\Delta W \)).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | PV graph area -->
+
+					<!-- START ch11 | Path comparison heat -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=4087s"
+								target="_blank"
+								rel="noopener"
+							>
+								PV-path comparison: which heat is larger (01:08:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Two different paths from the same initial state to the same
+								final state:
+								<ul>
+									<li>
+										\(\Delta U\) is the same for both paths (state function).
+									</li>
+									<li>Heat differs because work differs (path dependence).</li>
+								</ul>
+							</li>
+							<li>
+								Use: \( \Delta U = \Delta q + \Delta W \Rightarrow \Delta q =
+								\Delta U - \Delta W \).
+							</li>
+							<li>
+								For expansion paths on a PV diagram:
+								<ul>
+									<li>Work magnitude relates to PV-area.</li>
+									<li>
+										A path with larger PV-area has \(|W|\) larger (more negative
+										\(W\) for expansion).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Conclusion for the shown case (larger area for path 1): \(\Delta
+								q_1 &gt; \Delta q_2\).
+							</li>
+							<li>
+								<!-- IMAGE 02 SHOULD GO HERE
+               Description: Two PV paths from A to B with different enclosed areas under the curves.
+               Lecture reference: 01:08:07
+          -->
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Path comparison heat -->
+
+					<!-- START ch12 | Cyclic process area -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=4300s"
+								target="_blank"
+								rel="noopener"
+							>
+								Cyclic process on PV: \(\Delta U=0\) and area trick (01:11:40)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a complete cycle (return to start):<br />
+								\( \Delta U_{\text{cycle}} = 0 \)
+							</li>
+							<li>
+								First law over the cycle gives:<br />
+								\( 0 = \Delta q_{\text{cycle}} + \Delta W_{\text{cycle}}
+								\Rightarrow \Delta W_{\text{cycle}} = -\Delta q_{\text{cycle}}
+								\)
+							</li>
+							<li>
+								PV-diagram shortcut for cycle work:
+								<ul>
+									<li>Magnitude of work = area enclosed by the cycle.</li>
+									<li>
+										Sign depends on direction (as stated in lecture): clockwise
+										\(\Rightarrow W&lt;0\), anticlockwise \(\Rightarrow
+										W&gt;0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								<!-- IMAGE 03 SHOULD GO HERE
+               Description: Closed PV loop ABCA showing enclosed area and direction.
+               Lecture reference: 01:11:40
+          -->
+							</li>
+							<li>
+								Use conversion when pressure is in atm and volume in liters:<br />
+								\(1\ \text{atm·L} = 101.3\ \text{J}\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | Cyclic process area -->
+
+					<!-- START ch13 | PV legs sign analysis -->
+					<li>
+						<div id="ch13">
+							<a
+								href="https://youtu.be/K1pNjKHmH8E?t=4542s"
+								target="_blank"
+								rel="noopener"
+							>
+								PV-rectangle analysis: signs of \(Q, W, \Delta U\) on each leg
+								(01:15:42)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Goal: determine signs (\(&gt;0\), \(&lt;0\), or \(=0\)) of
+								\(W\), \(\Delta U\), and \(Q\) on each segment using only:
+								<ul>
+									<li>\( W = -P_{\text{ext}}\Delta V \)</li>
+									<li>
+										Ideal-gas relation \( PV = nRT \) (to infer temperature
+										trend)
+									</li>
+									<li>Ideal-gas property: \(U\) depends only on \(T\)</li>
+									<li>First law: \( \Delta U = \Delta q + \Delta W \)</li>
+								</ul>
+							</li>
+							<li>
+								Segment with constant volume (\(\Delta V=0\)):
+								<ul>
+									<li>\(W=0\)</li>
+									<li>
+										If pressure drops at constant \(V\), then \(T\) drops
+										\(\Rightarrow \Delta U&lt;0\Rightarrow \Delta q&lt;0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Segment with constant pressure and increasing volume:
+								<ul>
+									<li>\(\Delta V&gt;0 \Rightarrow W&lt;0\)</li>
+									<li>
+										With \(P\) constant and \(V\) rising, \(T\) rises
+										\(\Rightarrow \Delta U&gt;0\)
+									</li>
+									<li>
+										Then \(\Delta q\) must be \(&gt;0\) to satisfy \(\Delta
+										U=\Delta q+\Delta W\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Segment with constant pressure and decreasing volume:
+								<ul>
+									<li>\(\Delta V&lt;0 \Rightarrow W&gt;0\)</li>
+									<li>
+										With \(P\) constant and \(V\) falling, \(T\) falls
+										\(\Rightarrow \Delta U&lt;0\)
+									</li>
+									<li>Then \(\Delta q&lt;0\).</li>
+								</ul>
+							</li>
+							<li>
+								<!-- IMAGE 04 SHOULD GO HERE
+               Description: PV rectangle (ABCD) with arrows showing each leg and whether V increases/decreases.
+               Lecture reference: 01:15:42
+          -->
+							</li>
+							<li>
+								Typical conceptual prompts built from this:
+								<ol>
+									<li>
+										Identify on which segment the gas heats/cools (use \(T\)
+										trend).
+									</li>
+									<br />
+									<li>
+										Identify where work is done by vs on the gas (use \(\Delta
+										V\) sign).
+									</li>
+									<br />
+									<li>
+										Identify where heat is absorbed/released (use first law with
+										known signs).
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch13 | PV legs sign analysis -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -143,15 +157,887 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Heat of Reaction, Enthalpy Of Formation, Enthalpy Of Combustion</a
+					<a href="#ch01">Heat of reaction and sign convention (03:08)</a>
+				</li>
+				<li>
+					<a href="#ch02">Energy profile graphs and bond-energy view (05:54)</a>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Writing thermochemical equations: +heat vs \(\Delta H\) sign
+						(10:05)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>\(\Delta H\) depends on state, allotropy, solvent, \(T\), \(P\);
+						standard heat \(\Delta H^\circ\) (14:40)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Standard enthalpy of elements: \(\Delta H^\circ=0\) in natural
+						standard state (22:09)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Enthalpy of formation \(\Delta H_f^\circ\): definition + examples
+						(25:46)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Using \(\Delta H_f^\circ\) to compute reaction enthalpy +
+						numericals (37:41)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Enthalpy of combustion \(\Delta H_c^\circ\) and “1 mol” rule
+						(46:49)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Calorific value: energy per gram \(=\Delta H_c/M\) (51:42)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Enthalpy of phase change: fusion, vaporization, condensation
+						(01:03:47)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Enthalpy of sublimation and link to Hess’s law (01:08:33)</a
 					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Heat of reaction -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=188s"
+								target="_blank"
+								rel="noopener"
+							>
+								Heat of reaction and sign convention (03:08)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Thermochemistry uses enthalpy change (heat of reaction) for
+								chemical equations.
+								<br />
+								\( \Delta H = H_p - H_r \)
+							</li>
+							<li>
+								If \( \Delta H < 0 \): heat released (exothermic); typically \(
+								H_r > H_p \).
+							</li>
+							<li>
+								If \( \Delta H > 0 \): heat absorbed (endothermic); typically \(
+								H_p > H_r \).
+							</li>
+							<li>
+								Sign convention is from the system’s viewpoint:
+								<ul>
+									<li>
+										Heat given to system \(\Rightarrow\) energy increases
+										\(\Rightarrow\) positive sign.
+									</li>
+									<li>
+										Heat lost by system \(\Rightarrow\) energy decreases
+										\(\Rightarrow\) negative sign.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Heat of reaction -->
+
+					<!-- START ch02 | Energy profile graphs -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=354s"
+								target="_blank"
+								rel="noopener"
+							>
+								Energy profile graphs and bond-energy view (05:54)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<!-- IMAGE 01 SHOULD GO HERE
+               Description: Energy profile diagrams for exothermic vs endothermic reactions (energy vs reaction progress).
+               Lecture reference: 05:54
+          -->
+							</li>
+							<li>
+								Exothermic profile: reactants at higher energy, products lower;
+								excess energy leaves as heat.
+							</li>
+							<li>
+								Endothermic profile: products at higher energy; energy must be
+								supplied to the system.
+							</li>
+							<li>
+								Why heat is released/absorbed in reactions (bond explanation):
+								<ul>
+									<li>Breaking bonds in reactants requires energy input.</li>
+									<li>Making new bonds in products releases energy.</li>
+									<li>
+										If energy released in bond formation \(>\) energy required
+										for bond breaking \(\Rightarrow\) exothermic.
+									</li>
+									<li>
+										If energy required for bond breaking \(>\) energy released
+										in bond formation \(\Rightarrow\) endothermic.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Energy profile graphs -->
+
+					<!-- START ch03 | Thermochemical equations -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=605s"
+								target="_blank"
+								rel="noopener"
+							>
+								Writing thermochemical equations: +heat vs \(\Delta H\) sign
+								(10:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Example (neutralization releases heat):
+								<br />
+								\( \mathrm{NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)} \)
+							</li>
+							<li>
+								If heat is written on product side as “\(+\) heat”, it means
+								heat is released (exothermic).
+								<ul>
+									<li>
+										So, for the same reaction, \( \Delta H \) is written
+										negative.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Example of common sign confusion:
+								<br />
+								\( \mathrm{C(s) + H_2O(g) \rightarrow CO(g) + H_2(g)} \)
+								<br />
+								If the equation shows “\(-\) heat” on the product side,
+								interpret it as heat being absorbed (endothermic).
+							</li>
+							<li>
+								Quick rule:
+								<ul>
+									<li>
+										\(+\) heat on product side \(\Rightarrow\) exothermic
+										\(\Rightarrow\) \( \Delta H < 0 \).
+									</li>
+									<li>
+										\(-\) heat on product side \(\Rightarrow\) move it to
+										reactant side as \(+\) heat \(\Rightarrow\) endothermic
+										\(\Rightarrow\) \( \Delta H > 0 \).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Enthalpy values are often reported “per mole” of a specified
+								species; scaling depends on stoichiometric coefficients
+								(enthalpy is extensive).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Thermochemical equations -->
+
+					<!-- START ch04 | Factors and standard -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=880s"
+								target="_blank"
+								rel="noopener"
+							>
+								\(\Delta H\) depends on state, allotropy, solvent, \(T\), \(P\);
+								standard heat \(\Delta H^\circ\) (14:40)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Heat of reaction depends on the physical state of
+								reactants/products.
+								<ul>
+									<li>
+										Example idea:
+										<br />
+										\( \mathrm{H_2(g) + \tfrac{1}{2}O_2(g) \rightarrow H_2O(g)}
+										\) vs \( \mathrm{H_2(g) + \tfrac{1}{2}O_2(g) \rightarrow
+										H_2O(l)} \)
+									</li>
+									<li>
+										Formation of liquid water includes condensation step,
+										releasing additional heat, so it is typically more negative.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Heat of reaction depends on allotropic form (structure) of
+								elements.
+								<ul>
+									<li>
+										Example:
+										<br />
+										\( \mathrm{C(diamond) + O_2(g) \rightarrow CO_2(g)} \) and
+										\( \mathrm{C(graphite/amorphous) + O_2(g) \rightarrow
+										CO_2(g)} \)
+										<br />
+										\( \Delta H \) differs because the starting forms have
+										different enthalpies.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Solvent/medium effect: reactions in different solvents (or dry
+								vs moist conditions) can have different \(\Delta H\).
+							</li>
+							<li>Temperature and pressure also affect \(\Delta H\).</li>
+							<li>
+								Standard heat of reaction (standard enthalpy change):
+								<ul>
+									<li>
+										Common reference conditions: \(T = 298\,\mathrm{K}\), \(P =
+										1\,\mathrm{atm}\).
+									</li>
+									<li>
+										For aqueous solutions: concentration \(= 1\,\mathrm{M}\)
+										(i.e., \(1\,\mathrm{mol\,L^{-1}}\)).
+									</li>
+									<li>
+										The value under standard conditions is denoted \( \Delta
+										H^\circ \) (spoken as “delta H naught”).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Note: Some reactions require special temperatures; pressure
+								reference is typically kept at \(1\,\mathrm{atm}\) while
+								temperature may be specified as needed.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Factors and standard -->
+
+					<!-- START ch05 | Standard enthalpy zero -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=1329s"
+								target="_blank"
+								rel="noopener"
+							>
+								Standard enthalpy of elements: \(\Delta H^\circ=0\) in natural
+								standard state (22:09)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Convention: standard enthalpy of formation of an element in its
+								most stable natural form (standard state) is taken as zero at
+								\(298\,\mathrm{K}\) and \(1\,\mathrm{atm}\).
+							</li>
+							<li>
+								Examples (standard state \(\Rightarrow\) \( \Delta H_f^\circ = 0
+								\)):
+								<ul>
+									<li>
+										\( \mathrm{Cl_2(g)} \), \( \mathrm{O_2(g)} \), \(
+										\mathrm{H_2(g)} \), \( \mathrm{N_2(g)} \)
+									</li>
+									<li>
+										\( \mathrm{Br_2(l)} \) (bromine’s standard state is liquid)
+									</li>
+									<li>
+										\( \mathrm{C(graphite)} \) is zero, but \(
+										\mathrm{C(diamond)} \) is not zero.
+									</li>
+								</ul>
+							</li>
+							<li>
+								For elements with allotropes, only the chosen standard allotrope
+								is assigned zero.
+								<ul>
+									<li>
+										\( \mathrm{S_8} \) (orthorhombic sulfur) taken as standard
+										state \(\Rightarrow\) zero.
+									</li>
+									<li>
+										\( \mathrm{P_4} \) (white phosphorus) taken as standard
+										state \(\Rightarrow\) zero.
+									</li>
+								</ul>
+							</li>
+							<li>
+								This is a reference convention (baseline) so other enthalpies
+								can be compared consistently.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Standard enthalpy zero -->
+
+					<!-- START ch06 | Enthalpy of formation -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=1546s"
+								target="_blank"
+								rel="noopener"
+							>
+								Enthalpy of formation \(\Delta H_f^\circ\): definition +
+								examples (25:46)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Definition (standard enthalpy of formation):
+								<ul>
+									<li>
+										Heat absorbed or released when \(1\) mole of a compound is
+										formed from its constituent elements in their natural
+										standard states.
+									</li>
+									<li>
+										Reported under standard conditions \(\Rightarrow\) \( \Delta
+										H_f^\circ \).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Formation of water vapor as “1 mole product” example:
+								<br />
+								\( \mathrm{H_2(g) + \tfrac{1}{2}O_2(g) \rightarrow H_2O(g)} \)
+								<ul>
+									<li>
+										Using \(\tfrac{1}{2}O_2\) ensures exactly \(1\) mole of \(
+										\mathrm{H_2O} \) is formed.
+									</li>
+									<li>
+										The enthalpy change of this reaction equals \( \Delta
+										H_f^\circ(\mathrm{H_2O(g)}) \).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Key idea under standard-state convention:
+								<ul>
+									<li>
+										For a compound, “enthalpy of the compound” is treated as its
+										formation enthalpy because elements in standard state have
+										zero formation enthalpy.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Example (carbon dioxide):
+								<br />
+								\( \mathrm{C(graphite) + O_2(g) \rightarrow CO_2(g)} \)
+								<br />
+								Reaction enthalpy under standard conditions equals \( \Delta
+								H_f^\circ(\mathrm{CO_2(g)}) \).
+							</li>
+							<li>
+								Extensive property reminder:
+								<ul>
+									<li>
+										If the equation forms \(2\) moles of product, the given
+										\(\Delta H\) corresponds to \(2\) moles; divide by \(2\) to
+										get per mole formation enthalpy.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Example (hydrogen chloride):
+								<br />
+								\( \mathrm{H_2(g) + Cl_2(g) \rightarrow 2HCl(g)} \)
+								<ul>
+									<li>
+										If \(\Delta H\) is given for \(2\) moles \( \mathrm{HCl} \),
+										then \( \Delta H_f^\circ(\mathrm{HCl}) = \tfrac{1}{2}\Delta
+										H \).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Stability link:
+								<ul>
+									<li>
+										More negative \( \Delta H_f^\circ \Rightarrow\) more heat
+										released on formation \(\Rightarrow\) product at lower
+										energy \(\Rightarrow\) greater stability (relative
+										statement).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Enthalpy of formation -->
+
+					<!-- START ch07 | Reaction enthalpy via Hf -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=2261s"
+								target="_blank"
+								rel="noopener"
+							>
+								Using \(\Delta H_f^\circ\) to compute reaction enthalpy +
+								numericals (37:41)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Core calculation rule:
+								<br />
+								\( \Delta H_{\text{rxn}} = \sum \nu\,\Delta
+								H_f^\circ(\text{products}) - \sum \nu\,\Delta
+								H_f^\circ(\text{reactants}) \)
+							</li>
+							<li>
+								Use stoichiometric coefficients \(\nu\) because enthalpy is
+								extensive (scales with moles).
+							</li>
+							<li>
+								Example numerical (combustion of methane; values rounded in
+								lecture):
+								<br />
+								\( \mathrm{CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(l)} \)
+								<ul>
+									<li>
+										Given: \( \Delta H_f^\circ(\mathrm{CH_4}) \approx
+										-80\,\mathrm{kJ\,mol^{-1}} \), \( \Delta
+										H_f^\circ(\mathrm{CO_2}) \approx -400\,\mathrm{kJ\,mol^{-1}}
+										\), \( \Delta H_f^\circ(\mathrm{H_2O(l)}) \approx
+										-300\,\mathrm{kJ\,mol^{-1}} \), \( \Delta
+										H_f^\circ(\mathrm{O_2}) = 0 \).
+									</li>
+									<li>
+										Then \( \Delta H_{\text{rxn}} \approx -400 + 2(-300) -
+										[(-80) + 2(0)] \approx -920\,\mathrm{kJ} \).
+									</li>
+								</ul>
+							</li>
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/OxGEY-ydojk?t=2521s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									<br />
+									Given \( \Delta H_f^\circ(\mathrm{NH_4NO_3(s)})\approx
+									-400\,\mathrm{kJ\,mol^{-1}} \), \( \Delta
+									H_f^\circ(\mathrm{N_2O(g)})\approx +80\,\mathrm{kJ\,mol^{-1}}
+									\), \( \Delta H_f^\circ(\mathrm{H_2O(l)})\approx
+									-300\,\mathrm{kJ\,mol^{-1}} \) for the reaction
+									<br />
+									\( \mathrm{NH_4NO_3(s) \rightarrow N_2O(g) + 2H_2O(l)} \),
+									<br />
+									calculate \( \Delta H \) and \( \Delta U \) at
+									\(25^\circ\mathrm{C}\), \(1\,\mathrm{atm}\).
+									<ul>
+										<li>
+											Method:
+											<br />
+											\( \Delta H = H_p - H_r = [\Delta H_f^\circ(\mathrm{N_2O})
+											+ 2\Delta H_f^\circ(\mathrm{H_2O})] - \Delta
+											H_f^\circ(\mathrm{NH_4NO_3}) \)
+										</li>
+										<li>
+											Use relation (at constant \(T,P\)) to connect enthalpy and
+											internal energy:
+											<br />
+											\( \Delta H = \Delta U + \Delta n_g RT \)
+										</li>
+										<li>
+											Here \( \Delta n_g = n_g(\text{products}) -
+											n_g(\text{reactants}) \) counting only gaseous moles.
+										</li>
+									</ul>
+								</li>
+								<br />
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/OxGEY-ydojk?t=3598s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 2
+										</a>
+									</strong>
+									<br />
+									Under normal conditions, estimate the heat released when
+									\(1\,\mathrm{m^3}\) of methane combusts, using formation
+									enthalpies and the combustion equation
+									<br />
+									\( \mathrm{CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(l)}
+									\).
+									<ul>
+										<li>
+											Method:
+											<ul>
+												<li>
+													First compute \( \Delta H \) per mole of methane using
+													formation enthalpies.
+												</li>
+												<li>
+													Convert \(1\,\mathrm{m^3}\) to moles using molar
+													volume at NTP/STP as stated in lecture:
+													\(22.4\,\mathrm{L}\) per mole.
+												</li>
+												<li>
+													Use unit conversion: \(1\,\mathrm{L} =
+													10^{-3}\,\mathrm{m^3}\).
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch07 | Reaction enthalpy via Hf -->
+
+					<!-- START ch08 | Enthalpy of combustion -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=2809s"
+								target="_blank"
+								rel="noopener"
+							>
+								Enthalpy of combustion \(\Delta H_c^\circ\) and “1 mol” rule
+								(46:49)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Definition:
+								<ul>
+									<li>
+										Heat released when \(1\) mole of a compound undergoes
+										complete combustion in excess oxygen (air).
+									</li>
+									<li>
+										Symbol: \( \Delta H_c \) (often \( \Delta H_c^\circ \) under
+										standard conditions).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Key property: combustion is exothermic, so \( \Delta H_c \) is
+								always negative.
+							</li>
+							<li>
+								Example:
+								<br />
+								\( \mathrm{CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(l)} \)
+								<ul>
+									<li>
+										If the equation shows \(1\) mole \( \mathrm{CH_4} \), then
+										the reaction \(\Delta H\) equals \( \Delta
+										H_c(\mathrm{CH_4}) \).
+									</li>
+								</ul>
+							</li>
+							<li>
+								If the combustion equation is written for \(2\) moles of fuel,
+								divide the \(\Delta H\) by \(2\) to get \(\Delta H_c\) per mole.
+							</li>
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/OxGEY-ydojk?t=2981s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									<br />
+									For the reaction
+									<br />
+									\( \mathrm{2C_2H_6(g) + 7O_2(g) \rightarrow 4CO_2(g) +
+									6H_2O(l)} \),
+									<br />
+									if \(\Delta H\) is given, find \( \Delta H_c(\mathrm{C_2H_6})
+									\) (per mole of ethane).
+									<ul>
+										<li>
+											Method: first write the “1 mole fuel” combustion equation:
+											<br />
+											\( \mathrm{C_2H_6(g) + \tfrac{7}{2}O_2(g) \rightarrow
+											2CO_2(g) + 3H_2O(l)} \)
+										</li>
+										<li>
+											Then \( \Delta H_c(\mathrm{C_2H_6}) = \tfrac{1}{2}(\Delta
+											H \text{ of the 2-mole equation}) \).
+										</li>
+									</ul>
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch08 | Enthalpy of combustion -->
+
+					<!-- START ch09 | Calorific value -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=3102s"
+								target="_blank"
+								rel="noopener"
+							>
+								Calorific value: energy per gram \(=\Delta H_c/M\) (51:42)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Calorific value compares fuels by energy released per gram
+								(mass-based comparison).
+							</li>
+							<li>
+								Reason: fuels are purchased/used by mass or volume, not by
+								moles; heavier molecules can show larger \(\Delta H_c\) per mole
+								but not necessarily per gram.
+							</li>
+							<li>
+								Definition:
+								<ul>
+									<li>
+										Calorific value = energy released by \(1\) gram of fuel on
+										complete combustion.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Calculation rule:
+								<br />
+								\( \text{Calorific value} = \dfrac{\Delta H_c}{M} \)
+								<ul>
+									<li>\(M\) = molar mass of the fuel (g/mol).</li>
+									<li>
+										\(\Delta H_c\) is per mole; dividing by \(M\) converts to
+										per gram.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Interpretation:
+								<ul>
+									<li>
+										Higher calorific value \(\Rightarrow\) better fuel in energy
+										sense (ignoring environmental effects).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Calorific value -->
+
+					<!-- START ch10 | Phase change enthalpy -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=3827s"
+								target="_blank"
+								rel="noopener"
+							>
+								Enthalpy of phase change: fusion, vaporization, condensation
+								(01:03:47)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Enthalpy of phase change: heat absorbed/released when \(1\) mole
+								of a substance changes state.
+							</li>
+							<li>
+								Fusion/freezing (liquid \(\leftrightarrow\) solid):
+								<ul>
+									<li>
+										Freezing (liquid \(\rightarrow\) solid) releases heat
+										(exothermic).
+										<br />
+										\( \mathrm{H_2O(l) \rightarrow H_2O(s)} \), \( \Delta H < 0
+										\) (value in lecture approx).
+									</li>
+									<li>
+										Melting (solid \(\rightarrow\) liquid) absorbs heat
+										(endothermic).
+										<br />
+										\( \mathrm{H_2O(s) \rightarrow H_2O(l)} \), \( \Delta H > 0
+										\) and magnitude equals freezing enthalpy but opposite sign.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Vaporization/condensation (liquid \(\leftrightarrow\) gas):
+								<ul>
+									<li>
+										Vaporization/boiling (liquid \(\rightarrow\) gas) absorbs
+										heat.
+										<br />
+										\( \mathrm{H_2O(l) \rightarrow H_2O(g)} \), \( \Delta H > 0
+										\) (value in lecture approx).
+									</li>
+									<li>
+										Condensation (gas \(\rightarrow\) liquid) releases heat.
+										<br />
+										\( \mathrm{H_2O(g) \rightarrow H_2O(l)} \), \( \Delta H < 0
+										\), same magnitude as vaporization but opposite sign.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Sign reversal rule:
+								<ul>
+									<li>
+										If a process is reversed, the enthalpy change changes sign.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Phase change enthalpy -->
+
+					<!-- START ch11 | Sublimation and Hess -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/OxGEY-ydojk?t=4113s"
+								target="_blank"
+								rel="noopener"
+							>
+								Enthalpy of sublimation and link to Hess’s law (01:08:33)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Sublimation: solid \(\rightarrow\) gas directly; requires heat,
+								so \( \Delta H_{\text{sub}} > 0 \) (for \(1\) mole).
+							</li>
+							<li>
+								Pathway idea:
+								<ul>
+									<li>
+										Solid \(\rightarrow\) liquid (melting / fusion enthalpy,
+										positive)
+									</li>
+									<li>
+										Liquid \(\rightarrow\) gas (vaporization enthalpy, positive)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Relation stated:
+								<br />
+								\( \Delta H_{\text{sub}} = \Delta H_{\text{fus}} + \Delta
+								H_{\text{vap}} \)
+							</li>
+							<li>
+								Link to Hess’s law:
+								<ul>
+									<li>
+										If a reaction/process occurs in steps, the overall enthalpy
+										change equals the sum of enthalpy changes of the steps.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Sublimation and Hess -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>

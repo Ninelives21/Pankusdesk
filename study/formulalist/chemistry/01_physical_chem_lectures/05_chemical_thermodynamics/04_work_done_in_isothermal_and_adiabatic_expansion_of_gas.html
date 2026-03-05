@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -141,15 +155,602 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Work done in Isothermal and Adiabatic Expansion of Gas</a
+					<a href="#ch01"
+						>Roadmap: work in different thermodynamic processes (00:10)</a
+					>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Sign convention for gas expansion vs compression (01:46)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Isochoric and isobaric work: quick results + general integral
+						(03:25)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Isothermal process basics: Boyle’s law + \(P\)-\(V\) curve
+						(07:03)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Reversible isothermal expansion: key formula + meaning (08:22)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Reversible isothermal derivation using \(W=-\int
+						P_{\text{ext}}\,dV\) (15:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Useful isothermal variants: pressure form and replacing \(nRT\)
+						(20:26)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Irreversible isothermal expansion: free expansion vs constant
+						\(P_{\text{ext}}\) (25:06)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Adiabatic process basics: \(Q=0\), Poisson relation, \(\gamma\)
+						values (28:52)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Adiabatic \(P\)-\(V\) curve: steeper than isothermal (32:57)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Reversible adiabatic work: final results and derivation outline
+						(34:40)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12"
+						>Irreversible adiabatic shortcut: use \(-P_{\text{ext}}\Delta V\)
+						(42:22)</a
 					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Work formula roadmap -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=10s"
+								target="_blank"
+								rel="noopener"
+							>
+								Roadmap: work in different thermodynamic processes (00:10)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Goal: derive/remember work expressions for common thermodynamic
+								processes in gaseous systems (useful for time-limited exams).
+							</li>
+							<li>
+								Processes covered: isochoric, isobaric, isothermal
+								(reversible/irreversible), adiabatic (reversible/irreversible).
+							</li>
+							<li>
+								Core idea: work depends on how pressure varies with volume
+								during the process.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Work formula roadmap -->
+
+					<!-- START ch02 | Expansion vs compression signs -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=106s"
+								target="_blank"
+								rel="noopener"
+							>
+								Sign convention for gas expansion vs compression (01:46)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For PV work in the sign convention used here:
+								\(W=-P_{\text{ext}}\Delta V\) (valid when \(P_{\text{ext}}\) is
+								constant).
+							</li>
+							<li>
+								Expansion: \(\Delta V&gt;0 \Rightarrow W&lt;0\) (work done by
+								the gas; system loses energy via work).
+							</li>
+							<li>
+								Compression: \(\Delta V&lt;0 \Rightarrow W&gt;0\) (work done on
+								the gas; system gains energy via work).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Expansion vs compression signs -->
+
+					<!-- START ch03 | Isochoric & isobaric work -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=205s"
+								target="_blank"
+								rel="noopener"
+							>
+								Isochoric and isobaric work: quick results + general integral
+								(03:25)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Isochoric (constant volume)</strong>: \(\Delta V=0
+								\Rightarrow W=0\).
+							</li>
+							<li>
+								<strong>Isobaric (constant external pressure)</strong>:
+								\(W=-P_{\text{ext}}\Delta V\) is directly applicable only when
+								pressure is constant.
+							</li>
+							<li>
+								<strong>General work formula (always valid)</strong>:
+								<br />
+								\(W=-\int_{V_1}^{V_2} P_{\text{ext}}\, dV\)
+							</li>
+							<li>
+								This integral form applies to isothermal, adiabatic, isochoric,
+								isobaric, and polytropic processes (choose the correct
+								\(P_{\text{ext}}(V)\) relation).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Isochoric & isobaric work -->
+
+					<!-- START ch04 | Isothermal basics & graph -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=423s"
+								target="_blank"
+								rel="noopener"
+							>
+								Isothermal process basics: Boyle’s law + \(P\)-\(V\) curve
+								(07:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Isothermal process: temperature remains constant (\(T=\)
+								constant).
+							</li>
+							<li>
+								For an ideal gas at constant \(T\): \(P\propto \frac{1}{V}\) and
+								\(P_1V_1=P_2V_2\) (Boyle’s law).
+							</li>
+							<li>
+								<!-- IMAGE 01 SHOULD GO HERE
+               Description: \(P\)–\(V\) curve for isothermal process (rectangular hyperbola).
+               Lecture reference: 07:49
+          -->
+								On a \(P\) vs \(V\) graph, the isothermal curve is a rectangular
+								hyperbola (pressure decreases as volume increases).
+							</li>
+							<li>
+								Two cases to study: reversible isothermal and irreversible
+								isothermal expansion.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Isothermal basics & graph -->
+
+					<!-- START ch05 | Reversible isothermal formula -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=502s"
+								target="_blank"
+								rel="noopener"
+							>
+								Reversible isothermal expansion: key formula + meaning (08:22)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Reversible isothermal work (ideal gas)</strong>:
+								<br />
+								\(W=-nRT\ln\!\left(\frac{V_2}{V_1}\right)\)
+							</li>
+							<li>
+								Base conversion:
+								<br />
+								\(W=-2.303\,nRT\log_{10}\!\left(\frac{V_2}{V_1}\right)\)
+							</li>
+							<li>
+								Symbols: \(n\) = moles, \(R\) = gas constant, \(T\) in kelvin,
+								\(V_1\to V_2\) = volume change.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Reversible isothermal formula -->
+
+					<!-- START ch06 | Reversible isothermal derivation -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=932s"
+								target="_blank"
+								rel="noopener"
+							>
+								Reversible isothermal derivation using \(W=-\int
+								P_{\text{ext}}\,dV\) (15:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Reversible setup idea: quasi-static change using infinitesimal
+								load changes on a frictionless piston so the system remains near
+								equilibrium (\(P\approx P_{\text{ext}}\) at each step).
+							</li>
+							<li>
+								For isothermal requirement: boundaries are taken as good
+								conductors so heat can flow from surroundings to keep \(T\)
+								constant during expansion.
+							</li>
+							<li>
+								Because pressure is not constant, use the general formula:
+								<br />
+								\(W=-\int_{V_1}^{V_2} P_{\text{ext}}\, dV\)
+							</li>
+							<li>
+								In reversible (quasi-equilibrium) steps: \(P_{\text{ext}}\approx
+								P\) (gas pressure), and for ideal gas \(P=\frac{nRT}{V}\).
+							</li>
+							<li>
+								Substitute and integrate:
+								<br />
+								\(W=-\int_{V_1}^{V_2}\frac{nRT}{V}\,dV=-nRT\ln\!\left(\frac{V_2}{V_1}\right)\)
+							</li>
+							<li>
+								Log property used: \(\ln A-\ln
+								B=\ln\!\left(\frac{A}{B}\right)\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Reversible isothermal derivation -->
+
+					<!-- START ch07 | Isothermal formula variants -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=1226s"
+								target="_blank"
+								rel="noopener"
+							>
+								Useful isothermal variants: pressure form and replacing \(nRT\)
+								(20:26)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Using Boyle’s law \(P_1V_1=P_2V_2\), the ratio:
+								<br />
+								\(\frac{V_2}{V_1}=\frac{P_1}{P_2}\)
+							</li>
+							<li>
+								Equivalent reversible isothermal forms:
+								<br />
+								\(W=-nRT\ln\!\left(\frac{P_1}{P_2}\right)\)
+								<br />
+								\(W=-2.303\,nRT\log_{10}\!\left(\frac{P_1}{P_2}\right)\)
+							</li>
+							<li>
+								If \(nRT\) is not directly given, use \(PV=nRT\) at the same
+								(constant) temperature:
+								<br />
+								Replace \(nRT\) by \(P_1V_1\) or \(P_2V_2\) (both are equal for
+								isothermal ideal-gas case).
+							</li>
+							<li>
+								Example substitution structure:
+								<br />
+								\(W=-P_1V_1\ln\!\left(\frac{V_2}{V_1}\right)\) or
+								\(W=-P_2V_2\ln\!\left(\frac{V_2}{V_1}\right)\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Isothermal formula variants -->
+
+					<!-- START ch08 | Irreversible isothermal cases -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=1506s"
+								target="_blank"
+								rel="noopener"
+							>
+								Irreversible isothermal expansion: free expansion vs constant
+								\(P_{\text{ext}}\) (25:06)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Irreversible process: not quasi-static; system is not in
+								equilibrium throughout; pressure does not vary “smoothly” during
+								the change.
+							</li>
+							<li>
+								<strong>Case 1: free expansion into vacuum</strong>:
+								<br />
+								\(P_{\text{ext}}=0 \Rightarrow W=-\int P_{\text{ext}}\,dV=0\)
+							</li>
+							<li>
+								<strong
+									>Case 2: expansion against a constant external
+									pressure</strong
+								>
+								(external pressure much smaller than gas pressure, not
+								infinitesimally close):
+								<br />
+								\(W=-P_{\text{ext}}(V_2-V_1)=-P_{\text{ext}}\Delta V\)
+							</li>
+							<li>
+								Shortcut rule used here: if the process is explicitly
+								irreversible, use \(W=-P_{\text{ext}}\Delta V\) (and set
+								\(P_{\text{ext}}=0\) for vacuum).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Irreversible isothermal cases -->
+
+					<!-- START ch09 | Adiabatic basics & gamma -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=1732s"
+								target="_blank"
+								rel="noopener"
+							>
+								Adiabatic process basics: \(Q=0\), Poisson relation, \(\gamma\)
+								values (28:52)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Adiabatic process: no heat exchange with surroundings, \(Q=0\).
+							</li>
+							<li>
+								Practical model: walls are perfectly insulating (no heat enters
+								or leaves the system).
+							</li>
+							<li>
+								<strong>Poisson relation (adiabatic, ideal gas)</strong>:
+								<br />
+								\(P_1V_1^{\gamma}=P_2V_2^{\gamma}\)
+							</li>
+							<li>\(\gamma=\frac{C_P}{C_V}\) (depends on gas type).</li>
+							<li>
+								Typical \(\gamma\) values (as stated):
+								<ul>
+									<li>Monatomic: \(\gamma\approx 1.66\)</li>
+									<li>Diatomic: \(\gamma\approx 1.4\)</li>
+									<li>Triatomic: \(\gamma\approx 1.33\)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Adiabatic basics & gamma -->
+
+					<!-- START ch10 | Adiabatic vs isothermal PV -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=1977s"
+								target="_blank"
+								rel="noopener"
+							>
+								Adiabatic \(P\)-\(V\) curve: steeper than isothermal (32:57)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<!-- IMAGE 02 SHOULD GO HERE
+               Description: Comparison of isothermal and adiabatic \(P\)–\(V\) curves (adiabatic steeper).
+               Lecture reference: 32:57
+          -->
+								On a \(P\) vs \(V\) plot, adiabatic curve is steeper than the
+								isothermal curve (pressure falls faster with volume in adiabatic
+								expansion).
+							</li>
+							<li>
+								Because \(P\) changes continuously with \(V\), the
+								constant-pressure shortcut \(W=-P_{\text{ext}}\Delta V\) is not
+								usable for reversible adiabatic paths.
+							</li>
+							<li>
+								Use the general work integral:
+								<br />
+								\(W=-\int_{V_1}^{V_2} P_{\text{ext}}\, dV\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Adiabatic vs isothermal PV -->
+
+					<!-- START ch11 | Reversible adiabatic work -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=2080s"
+								target="_blank"
+								rel="noopener"
+							>
+								Reversible adiabatic work: final results and derivation outline
+								(34:40)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<strong>Final result (reversible adiabatic, ideal gas)</strong>:
+								<br />
+								\(W=\frac{nR}{\gamma-1}(T_2-T_1)\)
+							</li>
+							<li>
+								Equivalent pressure–volume form:
+								<br />
+								\(W=\frac{P_2V_2-P_1V_1}{\gamma-1}\)
+							</li>
+							<li>
+								Derivation skeleton (from the integral):
+								<ul>
+									<li>
+										Start with \(W=-\int_{V_1}^{V_2} P\, dV\) (reversible
+										\(\Rightarrow P_{\text{ext}}\approx P\)).
+									</li>
+									<li>
+										From Poisson relation: \(PV^{\gamma}=K\) (constant for the
+										adiabatic path).
+									</li>
+									<li>
+										So \(P=\frac{K}{V^{\gamma}}\), giving
+										\(W=-\int_{V_1}^{V_2}\frac{K}{V^{\gamma}}\,dV\).
+									</li>
+									<li>
+										Integrate power form to reach:
+										<br />
+										\(W=\frac{K}{\gamma-1}\left(V_2^{1-\gamma}-V_1^{1-\gamma}\right)\)
+									</li>
+									<li>
+										Rewrite using \(K=P_1V_1^{\gamma}=P_2V_2^{\gamma}\) to
+										simplify to:
+										<br />
+										\(W=\frac{P_2V_2-P_1V_1}{\gamma-1}\)
+									</li>
+									<li>
+										Finally use \(PV=nRT\) to convert:
+										<br />
+										\(P_2V_2-P_1V_1=nR(T_2-T_1)\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Interpretation note: in adiabatic processes temperature changes,
+								so \(T_1\neq T_2\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Reversible adiabatic work -->
+
+					<!-- START ch12 | Irreversible adiabatic shortcut -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/bXNxBFBfwjs?t=2542s"
+								target="_blank"
+								rel="noopener"
+							>
+								Irreversible adiabatic shortcut: use \(-P_{\text{ext}}\Delta V\)
+								(42:22)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Shortcut rule stated: if the process is explicitly irreversible,
+								use:
+								<br />
+								\(W=-P_{\text{ext}}\Delta V\)
+							</li>
+							<li>
+								For vacuum expansion (any irreversible free expansion):
+								\(P_{\text{ext}}=0\Rightarrow W=0\).
+							</li>
+							<li>
+								Process classification reminder: reversible vs irreversible
+								definitions are addressed in earlier introductory material
+								(conceptual prerequisite).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | Irreversible adiabatic shortcut -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>

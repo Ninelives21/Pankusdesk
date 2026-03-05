@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -141,15 +155,889 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Relation between Enthalpy and Internal Energy</a
+					<a href="#ch01"
+						>Enthalpy: definition and meaning of \(H=U+PV\) (00:01)</a
+					>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Why \(\Delta H\) matters; general formula and special cases
+						(08:50)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03">Practice: variable \(P,V\) case (JEE 2002) (13:10)</a>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Practice: ideal gas isothermal expansion gives \(\Delta H=0\)
+						(16:48)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Properties of enthalpy: state function, cyclic process, extensive
+						property (21:27)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>First law link: at constant pressure \(\Delta H=\Delta Q_p\)
+						(25:26)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Heat capacity link: \(\Delta H=nC_p\Delta T\) and
+						\(C_p=(\frac{f}{2}+1)R\) (30:40)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Reaction relation: \(\Delta H=\Delta U+\Delta n_gRT\) and how to
+						compute \(\Delta n_g\) (37:14)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Compare \(\Delta H\) vs \(\Delta U\) using \(\Delta n_g\) examples
+						(42:05)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Practice: benzene combustion to find \(\Delta H-\Delta E\)
+						(45:54)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Heat at constant \(P\) vs constant \(V\): \(\Delta Q_p-\Delta
+						Q_v=\Delta n_gRT\) (49:03)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12"
+						>Practice: propane combustion; \(\Delta Q_p-\Delta Q_v\) in \(RT\)
+						terms (53:02)</a
 					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Enthalpy meaning -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=1s"
+								target="_blank"
+								rel="noopener"
+							>
+								Enthalpy: definition and meaning of \(H=U+PV\) (00:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Enthalpy is a thermodynamic variable denoted by \(H\), defined
+								by:
+								<br />
+								\(H = U + PV\)
+							</li>
+							<li>
+								Meaning of symbols:
+								<ul>
+									<li>
+										\(U\): internal energy (also written as \(E\) in some books)
+									</li>
+									<li>\(P\): external pressure</li>
+									<li>\(V\): volume of the system</li>
+								</ul>
+							</li>
+							<li>
+								Intuition (why \(PV\) is included):
+								<ul>
+									<li>
+										\(U\) accounts for microscopic energies (molecular/atomic
+										kinetic + potential interaction energies).
+									</li>
+									<li>
+										\(PV\) represents the “pressure–volume energy” associated
+										with establishing volume against external pressure.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Units:
+								<ul>
+									<li>
+										Energy unit: joule (often reported as
+										\(\mathrm{kJ\,mol^{-1}}\) in thermochemistry).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Absolute \(H\) cannot be measured directly; thermochemistry
+								focuses on changes:
+								<br />
+								\(\Delta H\) (not the absolute value of \(H\)).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Enthalpy meaning -->
+
+					<!-- START ch02 | Delta H formulas -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=530s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why \(\Delta H\) matters; general formula and special cases
+								(08:50)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								From \(H=U+PV\), the enthalpy change is:
+								<br />
+								\(\Delta H = \Delta U + \Delta(PV)\)
+							</li>
+							<li>
+								Most general two-state form (always valid for any process):
+								<br />
+								\(\Delta H = \Delta U + (P_2V_2 - P_1V_1)\)
+							</li>
+							<li>
+								Special case 1: constant volume (\(V\) constant)
+								<br />
+								\(\Delta H = \Delta U + V\,\Delta P\)
+							</li>
+							<li>
+								Special case 2: constant pressure (\(P\) constant) — common in
+								chemistry
+								<br />
+								\(\Delta H = \Delta U + P\,\Delta V\)
+							</li>
+							<li>
+								Choosing the correct form:
+								<ul>
+									<li>
+										If both \(P\) and \(V\) change → use \(P_2V_2 - P_1V_1\).
+									</li>
+									<li>If one is constant → factor it out as above.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Delta H formulas -->
+
+					<!-- START ch03 | JEE numeric PV -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=790s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice: variable \(P,V\) case (JEE 2002) (13:10)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given states of a gas (both \(P\) and \(V\) change) and \(\Delta
+								U\) (or \(\Delta E\)):
+								<ul>
+									<li>
+										State 1: \(P_1=2\,\mathrm{atm}\), \(V_1=3\,\mathrm{L}\)
+									</li>
+									<li>
+										State 2: \(P_2=4\,\mathrm{atm}\), \(V_2=5\,\mathrm{L}\)
+									</li>
+									<li>\(\Delta U = 30\,\mathrm{atm\cdot L}\)</li>
+								</ul>
+							</li>
+							<li>
+								Use the general relation:
+								<br />
+								\(\Delta H = \Delta U + (P_2V_2 - P_1V_1)\)
+							</li>
+							<li>
+								Compute the \(PV\) term:
+								<ul>
+									<li>\(P_2V_2 = 4\times 5 = 20\,\mathrm{atm\cdot L}\)</li>
+									<li>\(P_1V_1 = 2\times 3 = 6\,\mathrm{atm\cdot L}\)</li>
+									<li>\(P_2V_2-P_1V_1 = 14\,\mathrm{atm\cdot L}\)</li>
+								</ul>
+							</li>
+							<li>
+								Final:
+								<br />
+								\(\Delta H = 30 + 14 = 44\,\mathrm{atm\cdot L}\)
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/UuT1LNp5SJY?t=851s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 1
+										</a>
+									</strong>
+									<br />
+									A gas goes from
+									\((P_1,V_1,T_1)=(2\,\mathrm{atm},3\,\mathrm{L},95\,\mathrm{K})\)
+									to
+									\((P_2,V_2,T_2)=(4\,\mathrm{atm},5\,\mathrm{L},245\,\mathrm{K})\).
+									If \(\Delta U=30\,\mathrm{atm\cdot L}\), find \(\Delta H\).
+									Options: 41, 42, 43, 44 \(\mathrm{atm\cdot L}\).
+								</li>
+								<br />
+								<li>Answer: \(44\,\mathrm{atm\cdot L}\).</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch03 | JEE numeric PV -->
+
+					<!-- START ch04 | Isothermal ideal -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=1008s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice: ideal gas isothermal expansion gives \(\Delta H=0\)
+								(16:48)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For an ideal gas:
+								<ul>
+									<li>Internal energy depends only on temperature.</li>
+									<li>
+										If the process is isothermal (\(\Delta T=0\)), then \(\Delta
+										U=0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Also for an ideal gas in an isothermal process:
+								<br />
+								\(P_1V_1 = P_2V_2\) (Boyle’s law at constant \(T\))
+								<br />
+								Hence \(P_2V_2 - P_1V_1 = 0\).
+							</li>
+							<li>
+								Therefore:
+								<br />
+								\(\Delta H = \Delta U + (P_2V_2 - P_1V_1) = 0 + 0 = 0\)
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/UuT1LNp5SJY?t=1011s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 2
+										</a>
+									</strong>
+									<br />
+									An ideal gas expands isothermally at \(25^\circ\mathrm{C}\)
+									from \(1\,\mathrm{L}\) to \(10\,\mathrm{L}\). Find \(\Delta
+									H\). Options: \(-7\,\mathrm{kJ}\), \(+7\,\mathrm{kJ}\),
+									\(-\frac{44}{3}\,\mathrm{kJ}\), \(0\).
+								</li>
+								<br />
+								<li>Answer: \(0\).</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch04 | Isothermal ideal -->
+
+					<!-- START ch05 | H properties -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=1287s"
+								target="_blank"
+								rel="noopener"
+							>
+								Properties of enthalpy: state function, cyclic process,
+								extensive property (21:27)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Enthalpy is a state function:
+								<ul>
+									<li>
+										\(\Delta H\) depends only on initial and final states.
+									</li>
+									<li>Path does not affect \(\Delta H\).</li>
+									<li>\(\Delta H = H_{\text{final}} - H_{\text{initial}}\)</li>
+								</ul>
+							</li>
+							<li>
+								Cyclic process:
+								<ul>
+									<li>
+										If the system returns to the initial state, then \(\Delta
+										H=0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Enthalpy is an extensive property (depends on amount of
+								substance):
+								<ul>
+									<li>
+										Larger amount of matter → larger \(U\) and typically larger
+										\(PV\) → larger \(H\).
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | H properties -->
+
+					<!-- START ch06 | DeltaH equals Qp -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=1526s"
+								target="_blank"
+								rel="noopener"
+							>
+								First law link: at constant pressure \(\Delta H=\Delta Q_p\)
+								(25:26)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Start with constant-pressure enthalpy change:
+								<br />
+								\(\Delta H = \Delta U + P\,\Delta V\) (for constant \(P\))
+							</li>
+							<li>
+								First law (chemistry sign convention used here):
+								<br />
+								\(\Delta U = \Delta Q + \Delta W\)
+							</li>
+							<li>
+								For \(PV\) work at constant external pressure:
+								<br />
+								\(\Delta W = -P_{\text{ext}}\,\Delta V\)
+							</li>
+							<li>
+								At constant pressure, heat supplied is written as \(\Delta
+								Q_p\). Using the first law:
+								<br />
+								\(\Delta U = \Delta Q_p - P\,\Delta V\)
+							</li>
+							<li>
+								Substitute into \(\Delta H=\Delta U+P\,\Delta V\):
+								<br />
+								\(\Delta H = (\Delta Q_p - P\,\Delta V) + P\,\Delta V = \Delta
+								Q_p\)
+							</li>
+							<li>
+								Key conclusion:
+								<ul>
+									<li>
+										\(\Delta H\) equals heat only for constant-pressure
+										processes.
+									</li>
+									<li>
+										In general, \(\Delta H \neq \Delta Q\) unless pressure is
+										constant.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | DeltaH equals Qp -->
+
+					<!-- START ch07 | Cp and dH -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=1840s"
+								target="_blank"
+								rel="noopener"
+							>
+								Heat capacity link: \(\Delta H=nC_p\Delta T\) and
+								\(C_p=(\frac{f}{2}+1)R\) (30:40)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For heating a gaseous system:
+								<br />
+								\(\Delta Q = nC\,\Delta T\)
+							</li>
+							<li>
+								At constant pressure:
+								<br />
+								\(\Delta Q_p = nC_p\,\Delta T\)
+							</li>
+							<li>
+								Using \(\Delta H=\Delta Q_p\) (constant \(P\)):
+								<br />
+								\(\Delta H = nC_p\,\Delta T\)
+							</li>
+							<li>
+								Differential form:
+								<br />
+								\(dH = nC_p\,dT\)
+							</li>
+							<li>
+								For an ideal gas (using degrees of freedom \(f\)):
+								<br />
+								\(C_p = \left(\frac{f}{2}+1\right)R\)
+							</li>
+							<li>
+								Typical \(f\) values (as used in basic thermodynamics problems):
+								<ul>
+									<li>Monatomic gas: \(f=3\)</li>
+									<li>Diatomic gas: \(f=5\)</li>
+									<li>Polyatomic gas: \(f=6\)</li>
+								</ul>
+							</li>
+							<li>
+								Example setup (helium heated at constant pressure):
+								<ul>
+									<li>
+										Given: \(n=2\) moles, \(0^\circ\mathrm{C}\to
+										50^\circ\mathrm{C}\) so \(\Delta T=50\) (same in K)
+									</li>
+									<li>
+										For helium (monatomic): \(f=3\), so
+										\(C_p=\left(\frac{3}{2}+1\right)R=\frac{5}{2}R\)
+									</li>
+									<li>
+										Then: \(\Delta H = nC_p\Delta T = 2\times \frac{5}{2}R
+										\times 50\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Choice of \(R\) depends on required energy unit:
+								<ul>
+									<li>In joule: \(R=8.314\,\mathrm{J\,mol^{-1}\,K^{-1}}\)</li>
+									<li>
+										In calorie (approx): \(R\approx
+										2\,\mathrm{cal\,mol^{-1}\,K^{-1}}\)
+									</li>
+								</ul>
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/UuT1LNp5SJY?t=2053s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 3
+										</a>
+									</strong>
+									<br />
+									\(2\) moles of helium are heated at constant pressure from
+									\(0^\circ\mathrm{C}\) to \(50^\circ\mathrm{C}\). Find \(\Delta
+									H\).
+								</li>
+								<br />
+								<li>
+									Answer (setup): \(\Delta H = 2\times \frac{5}{2}R \times 50\)
+									(use \(R\) in required units).
+								</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch07 | Cp and dH -->
+
+					<!-- START ch08 | Reaction relation -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=2234s"
+								target="_blank"
+								rel="noopener"
+							>
+								Reaction relation: \(\Delta H=\Delta U+\Delta n_gRT\) and how to
+								compute \(\Delta n_g\) (37:14)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For chemical reactions involving gases (reactants/products may
+								include gases), start from:
+								<br />
+								\(\Delta H = \Delta U + \Delta(PV)\)
+							</li>
+							<li>
+								For gas terms, use the ideal gas relation \(PV=nRT\) (for
+								gaseous moles in the reaction context):
+								<br />
+								\(\Delta H = \Delta U + \Delta(nRT)\)
+							</li>
+							<li>
+								In most reaction conditions, pressure and temperature are
+								treated as constant. Then:
+								<br />
+								\(\Delta H = \Delta U + \Delta n_g RT\)
+							</li>
+							<li>
+								Definition of \(\Delta n_g\):
+								<br />
+								\(\Delta n_g = (\text{moles of gaseous products}) - (\text{moles
+								of gaseous reactants})\)
+							</li>
+							<li>
+								Only gaseous species are counted in \(\Delta n_g\); solids and
+								liquids are excluded.
+							</li>
+							<li>
+								Practical use:
+								<ul>
+									<li>
+										This relation is widely used for numericals on \(\Delta H\)
+										and \(\Delta U\).
+									</li>
+									<li>
+										Also remember: \(\Delta E\) may be used instead of \(\Delta
+										U\) in some texts.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Reaction relation -->
+
+					<!-- START ch09 | DeltaH vs DeltaU -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=2525s"
+								target="_blank"
+								rel="noopener"
+							>
+								Compare \(\Delta H\) vs \(\Delta U\) using \(\Delta n_g\)
+								examples (42:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Core comparison rule (at constant \(T,P\)):
+								<br />
+								\(\Delta H - \Delta U = \Delta n_g RT\)
+							</li>
+							<li>If \(\Delta n_g&lt;0\), then \(\Delta H&lt;\Delta U\).</li>
+							<li>If \(\Delta n_g=0\), then \(\Delta H=\Delta U\).</li>
+							<li>If \(\Delta n_g&gt;0\), then \(\Delta H&gt;\Delta U\).</li>
+							<li>
+								Examples (count only gaseous moles):
+								<ul>
+									<li>
+										\( \mathrm{N_2(g) + 3H_2(g) \rightarrow 2NH_3(g)} \)
+										<ul>
+											<li>\(\Delta n_g = 2-(1+3) = -2\)</li>
+											<li>
+												\(\Delta H = \Delta U - 2RT\Rightarrow \Delta
+												U&gt;\Delta H\)
+											</li>
+										</ul>
+									</li>
+									<li>
+										\( \mathrm{H_2(g) + Br_2(g) \rightarrow 2HBr(g)} \)
+										<ul>
+											<li>\(\Delta n_g = 2-(1+1)=0\)</li>
+											<li>\(\Delta H=\Delta U\)</li>
+										</ul>
+									</li>
+									<li>
+										\( \mathrm{MgCO_3(s) \rightarrow MgO(s) + CO_2(g)} \)
+										<ul>
+											<li>\(\Delta n_g = 1-0=1\)</li>
+											<li>
+												\(\Delta H = \Delta U + RT\Rightarrow \Delta H&gt;\Delta
+												U\)
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | DeltaH vs DeltaU -->
+
+					<!-- START ch10 | Benzene combustion -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=2754s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice: benzene combustion to find \(\Delta H-\Delta E\)
+								(45:54)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Use:
+								<br />
+								\(\Delta H - \Delta E = \Delta n_g RT\)
+							</li>
+							<li>
+								Balanced reaction (as written in the lecture):
+								<br />
+								\(\mathrm{2C_6H_6(l) + 15O_2(g) \rightarrow 12CO_2(g) +
+								6H_2O(l)}\)
+							</li>
+							<li>
+								Compute \(\Delta n_g\) (gases only):
+								<ul>
+									<li>Gaseous products: \(12\) (from \(CO_2\))</li>
+									<li>Gaseous reactants: \(15\) (from \(O_2\))</li>
+									<li>\(\Delta n_g = 12-15 = -3\)</li>
+								</ul>
+							</li>
+							<li>
+								At \(25^\circ\mathrm{C}\), take \(T=298\,\mathrm{K}\). Then:
+								<br />
+								\(\Delta H - \Delta E = -3RT\)
+							</li>
+							<li>
+								Approximate in kJ (lecture-style estimation):
+								<ul>
+									<li>
+										\(-3\times 8.314\times 298 \approx -7.2\times
+										10^3\,\mathrm{J}\approx -7.2\,\mathrm{kJ}\)
+									</li>
+									<li>Closest option: \(-7.4\,\mathrm{kJ}\)</li>
+								</ul>
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/UuT1LNp5SJY?t=2754s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 4
+										</a>
+									</strong>
+									<br />
+									For \(\mathrm{2C_6H_6(l) + 15O_2(g) \rightarrow 12CO_2(g) +
+									6H_2O(l)}\) at \(25^\circ\mathrm{C}\), find \(\Delta H-\Delta
+									E\) (in kJ). Options: \(-7.4\), \(-3.2\), \(+7.4\), \(+3.2\).
+								</li>
+								<br />
+								<li>Answer (approx): \(-7.4\,\mathrm{kJ}\).</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch10 | Benzene combustion -->
+
+					<!-- START ch11 | Qp vs Qv -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=2943s"
+								target="_blank"
+								rel="noopener"
+							>
+								Heat at constant \(P\) vs constant \(V\): \(\Delta Q_p-\Delta
+								Q_v=\Delta n_gRT\) (49:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Interpretation:
+								<ul>
+									<li>
+										\(\Delta H\) is heat at constant pressure: \(\Delta H =
+										\Delta Q_p\)
+									</li>
+									<li>
+										\(\Delta U\) is heat at constant volume: \(\Delta U = \Delta
+										Q_v\)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Proof idea for constant volume:
+								<ul>
+									<li>First law: \(\Delta U=\Delta Q+\Delta W\)</li>
+									<li>\(\Delta W=-P\Delta V\)</li>
+									<li>
+										At constant volume, \(\Delta V=0\Rightarrow \Delta W=0\)
+									</li>
+									<li>So \(\Delta U=\Delta Q_v\)</li>
+								</ul>
+							</li>
+							<li>
+								Combine with reaction relation:
+								<br />
+								\(\Delta H = \Delta U + \Delta n_g RT\)
+							</li>
+							<li>
+								Replace \(\Delta H\) and \(\Delta U\) by
+								constant-pressure/constant-volume heat:
+								<br />
+								\(\Delta Q_p = \Delta Q_v + \Delta n_g RT\)
+							</li>
+							<li>
+								Therefore:
+								<br />
+								\(\Delta Q_p - \Delta Q_v = \Delta n_g RT\)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Qp vs Qv -->
+
+					<!-- START ch12 | Propane example -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/UuT1LNp5SJY?t=3182s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice: propane combustion; \(\Delta Q_p-\Delta Q_v\) in
+								\(RT\) terms (53:02)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Required quantity:
+								<br />
+								\(\Delta Q_p - \Delta Q_v = \Delta n_g RT\)
+							</li>
+							<li>
+								Balanced reaction written in the lecture (water as liquid):
+								<br />
+								\(\mathrm{C_3H_8(g) + 5O_2(g) \rightarrow 3CO_2(g) + 4H_2O(l)}\)
+							</li>
+							<li>
+								Compute \(\Delta n_g\) (gases only):
+								<ul>
+									<li>Gaseous products: \(3\) (from \(CO_2\))</li>
+									<li>
+										Gaseous reactants: \(1+5=6\) (from \(C_3H_8\) and \(O_2\))
+									</li>
+									<li>\(\Delta n_g = 3-6 = -3\)</li>
+								</ul>
+							</li>
+							<li>
+								Therefore:
+								<br />
+								\(\Delta Q_p - \Delta Q_v = -3RT\)
+							</li>
+
+							<ol>
+								<li>
+									<strong>
+										<a
+											href="https://youtu.be/UuT1LNp5SJY?t=3184s"
+											target="_blank"
+											rel="noopener"
+										>
+											Question 5
+										</a>
+									</strong>
+									<br />
+									For propane combustion, find \(\Delta Q_p-\Delta Q_v\) in
+									terms of \(RT\) at temperature \(T\). Options: \(-3RT\),
+									\(-2RT\), \(+2RT\), \(+3RT\).
+								</li>
+								<br />
+								<li>Answer: \(-3RT\).</li>
+							</ol>
+						</ul>
+					</li>
+					<!-- END ch12 | Propane example -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
