@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,26 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). -->
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,13 +155,537 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
+				<li><a href="#ch01">Why Gibbs Free Energy Is Needed (00:12)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">Gibb's Free Energy</a>
+					<a href="#ch02"
+						>Definition and Properties of Gibbs Free Energy (11:16)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Meaning of \( \Delta G \) and Criterion of Spontaneity (17:59)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Favourable and Unfavourable Sign Combinations (23:00)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05">Temperature Dependence When Signs Oppose (29:06)</a>
+				</li>
+				<li>
+					<a href="#ch06">Numerical on Temperature for Spontaneity (36:19)</a>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Exothermic Reactions and Temperature Favourability (39:06)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Coupling Reactions and Metallurgical Reduction (43:07)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Need for Gibbs Energy -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=12s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why Gibbs Free Energy Is Needed (00:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Gibbs free energy is introduced as the most reliable criterion
+								for deciding whether a process is spontaneous.
+							</li>
+							<li>
+								Earlier single-factor criteria were incomplete:
+								<ul>
+									<li>
+										Enthalpy criterion: exothermic processes with \( \Delta H
+										&lt; 0 \) are often spontaneous because energy release
+										increases stability.
+									</li>
+									<li>
+										Entropy criterion: processes with \( \Delta S &gt; 0 \) are
+										often spontaneous because disorder increases.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Each factor alone gives exceptions:
+								<ul>
+									<li>
+										Endothermic but spontaneous examples: melting of ice,
+										evaporation of water.
+									</li>
+									<li>
+										Entropy-decreasing yet spontaneous examples: liquefaction of
+										gases under suitable conditions.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Therefore, spontaneity must be judged by a combined
+								thermodynamic quantity rather than by \( \Delta H \) or \(
+								\Delta S \) alone.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Need for Gibbs Energy -->
+
+					<!-- START ch02 | Definition and Properties -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=676s"
+								target="_blank"
+								rel="noopener"
+							>
+								Definition and Properties of Gibbs Free Energy (11:16)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Gibbs free energy is defined as:<br />\( G = H - TS \)</li>
+							<li>
+								Here:
+								<ul>
+									<li>\( G \): Gibbs free energy</li>
+									<li>\( H \): enthalpy</li>
+									<li>\( T \): absolute temperature in kelvin</li>
+									<li>\( S \): entropy</li>
+								</ul>
+							</li>
+							<li>
+								Since \( H \), \( T \), and \( S \) are state functions, \( G \)
+								is also a state function.
+							</li>
+							<li>
+								Change in Gibbs free energy depends only on initial and final
+								states:<br />\( \Delta G = G_{\text{final}} - G_{\text{initial}}
+								\)
+							</li>
+							<li>
+								\( G \) is an extensive property because it depends on the
+								amount of matter.
+							</li>
+							<li>
+								For any cyclic process, change in a state function is zero;
+								therefore, \( \Delta G = 0 \) for a complete cycle.
+							</li>
+							<li>
+								In applications, absolute \( G \) is usually less useful than
+								the change \( \Delta G \).
+							</li>
+							<li>
+								At constant temperature and constant pressure:<br />\( \Delta G
+								= \Delta H - T\Delta S \)
+							</li>
+							<li>
+								This expression is the main working relation for chemical
+								reactions under ordinary laboratory conditions.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Definition and Properties -->
+
+					<!-- START ch03 | Meaning of Delta G -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=1079s"
+								target="_blank"
+								rel="noopener"
+							>
+								Meaning of \( \Delta G \) and Criterion of Spontaneity (17:59)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								\( \Delta G \) represents the negative of the useful work
+								obtainable from the system:<br />\( \Delta G = -(\text{useful
+								work by system}) \)
+							</li>
+							<li>
+								If \( \Delta G = -100 \,\text{kJ} \), the system can perform \(
+								100 \,\text{kJ} \) of useful non-expansion work.
+							</li>
+							<li>
+								If \( \Delta G = +50 \,\text{kJ} \), the process requires \( 50
+								\,\text{kJ} \) of useful work to occur.
+							</li>
+							<li>
+								The work referred to here is not \( P\Delta V \) expansion work;
+								it is useful non-expansion work.
+							</li>
+							<li>
+								Criterion of spontaneity:
+								<ul>
+									<li>Spontaneous process: \( \Delta G &lt; 0 \)</li>
+									<li>Non-spontaneous process: \( \Delta G &gt; 0 \)</li>
+								</ul>
+							</li>
+							<li>
+								A negative \( \Delta G \) indicates that the system can proceed
+								on its own while still having capacity to do useful work.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Meaning of Delta G -->
+
+					<!-- START ch04 | Sign Combinations Overview -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=1380s"
+								target="_blank"
+								rel="noopener"
+							>
+								Favourable and Unfavourable Sign Combinations (23:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For spontaneity analysis, favourable tendencies are:
+								<ul>
+									<li>\( \Delta H &lt; 0 \): exothermic change</li>
+									<li>\( \Delta S &gt; 0 \): increase in entropy</li>
+								</ul>
+							</li>
+							<li>
+								Case 1: both favourable
+								<ul>
+									<li>\( \Delta H &lt; 0 \) and \( \Delta S &gt; 0 \)</li>
+									<li>
+										Then \( \Delta G = \Delta H - T\Delta S \) is always
+										negative.
+									</li>
+									<li>The process is spontaneous at all temperatures.</li>
+								</ul>
+							</li>
+							<li>
+								Case 2: both unfavourable
+								<ul>
+									<li>\( \Delta H &gt; 0 \) and \( \Delta S &lt; 0 \)</li>
+									<li>Then \( \Delta G \) is always positive.</li>
+									<li>The process is non-spontaneous at all temperatures.</li>
+								</ul>
+							</li>
+							<li>
+								These two extreme cases are straightforward because both
+								contributing factors push in the same direction.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Sign Combinations Overview -->
+
+					<!-- START ch05 | Opposing Sign Cases -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=1746s"
+								target="_blank"
+								rel="noopener"
+							>
+								Temperature Dependence When Signs Oppose (29:06)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								When one factor is favourable and the other is unfavourable,
+								spontaneity depends on temperature.
+							</li>
+							<li>
+								Case 1: \( \Delta H &lt; 0 \), \( \Delta S &lt; 0 \)
+								<ul>
+									<li>\( \Delta G = \Delta H - T\Delta S \)</li>
+									<li>
+										Since \( -T\Delta S \) becomes positive, \( \Delta G \) may
+										be negative or positive.
+									</li>
+									<li>
+										For spontaneity:<br />\( \Delta H - T\Delta S &lt; 0 \)
+									</li>
+									<li>
+										This gives:<br />\( T &lt; \dfrac{\Delta H}{\Delta S} \)
+									</li>
+									<li>
+										Because both \( \Delta H \) and \( \Delta S \) are negative,
+										the ratio is positive.
+									</li>
+									<li>Hence, the process is spontaneous at low temperature.</li>
+								</ul>
+							</li>
+							<li>
+								Case 2: \( \Delta H &gt; 0 \), \( \Delta S &gt; 0 \)
+								<ul>
+									<li>
+										Now the entropy term can overcome the positive enthalpy term
+										only at higher temperature.
+									</li>
+									<li>
+										For spontaneity:<br />\( T &gt; \dfrac{\Delta H}{\Delta S}
+										\)
+									</li>
+									<li>
+										Hence, the process is spontaneous at high temperature.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Equilibrium condition:
+								<ul>
+									<li>\( \Delta G = 0 \)</li>
+									<li>\( T = \dfrac{\Delta H}{\Delta S} \)</li>
+									<li>At this temperature, the reaction is at equilibrium.</li>
+								</ul>
+							</li>
+							<li>
+								Summary:
+								<ul>
+									<li>Spontaneous: \( \Delta G &lt; 0 \)</li>
+									<li>Non-spontaneous: \( \Delta G &gt; 0 \)</li>
+									<li>Equilibrium: \( \Delta G = 0 \)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Opposing Sign Cases -->
+
+					<!-- START ch06 | Temperature Numerical -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=2179s"
+								target="_blank"
+								rel="noopener"
+							>
+								Numerical on Temperature for Spontaneity (36:19)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Given reaction:<br />\( A \rightarrow 2B + C \)</li>
+							<li>
+								Given data:
+								<ul>
+									<li>\( \Delta H = 30 \,\text{kJ mol}^{-1} \)</li>
+									<li>\( \Delta S = 60 \,\text{J mol}^{-1}\text{K}^{-1} \)</li>
+								</ul>
+							</li>
+							<li>
+								For spontaneity:<br />\( \Delta G = \Delta H - T\Delta S &lt; 0
+								\)
+							</li>
+							<li>
+								Substituting values in consistent units:<br />\( 30 \times 10^3
+								- T(60) &lt; 0 \)
+							</li>
+							<li>\( 60T &gt; 30 \times 10^3 \)</li>
+							<li>\( T &gt; \dfrac{30 \times 10^3}{60} = 500 \,\text{K} \)</li>
+							<li>
+								Therefore:
+								<ul>
+									<li>Spontaneous for \( T &gt; 500 \,\text{K} \)</li>
+									<li>Non-spontaneous for \( T &lt; 500 \,\text{K} \)</li>
+									<li>At equilibrium for \( T = 500 \,\text{K} \)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Temperature Numerical -->
+
+					<!-- START ch07 | Exothermic Temperature Rule -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=2346s"
+								target="_blank"
+								rel="noopener"
+							>
+								Exothermic Reactions and Temperature Favourability (39:06)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>For an exothermic reaction, \( \Delta H &lt; 0 \).</li>
+							<li>
+								General practical rule:
+								<ul>
+									<li>Exothermic reactions are favoured at low temperature.</li>
+									<li>
+										Endothermic reactions are favoured at high temperature.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Reason using Gibbs relation:<br />\( \Delta G = \Delta H -
+								T\Delta S \)
+							</li>
+							<li>
+								For an exothermic reaction:
+								<ul>
+									<li>
+										If \( \Delta S &gt; 0 \), the process is strongly favoured.
+									</li>
+									<li>
+										If \( \Delta S &lt; 0 \), the positive term \( -T\Delta S \)
+										opposes spontaneity.
+									</li>
+									<li>
+										Lower temperature reduces the opposing magnitude of \(
+										-T\Delta S \).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Hence, low temperature is the safer favourable condition for the
+								forward direction of an exothermic reaction.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Exothermic Temperature Rule -->
+
+					<!-- START ch08 | Coupling and Reduction -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/pvLmWz3tWz8?t=2587s"
+								target="_blank"
+								rel="noopener"
+							>
+								Coupling Reactions and Metallurgical Reduction (43:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Coupling reaction concept:
+								<ul>
+									<li>
+										If one reaction has \( \Delta G &lt; 0 \), it is
+										spontaneous.
+									</li>
+									<li>
+										If another reaction has \( \Delta G &gt; 0 \), it is
+										non-spontaneous.
+									</li>
+									<li>
+										When both are combined, the overall process becomes
+										spontaneous if total \( \Delta G \) is negative.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Illustrative scheme:
+								<ul>
+									<li>
+										\( A \rightarrow B \), \( \Delta G = -100 \,\text{kJ
+										mol}^{-1} \)
+									</li>
+									<li>
+										\( C \rightarrow D \), \( \Delta G = +80 \,\text{kJ
+										mol}^{-1} \)
+									</li>
+									<li>Combined reaction:<br />\( A + C \rightarrow B + D \)</li>
+									<li>
+										Overall:<br />\( \Delta G = -20 \,\text{kJ mol}^{-1} \)
+									</li>
+								</ul>
+							</li>
+							<li>
+								Thus, a non-spontaneous reaction can be driven by coupling it
+								with a sufficiently spontaneous reaction.
+							</li>
+							<li>
+								Application in metallurgy:
+								<ul>
+									<li>
+										Reduction of a metal oxide may be written generically as:<br />\(
+										M_xO_y \rightarrow xM + \dfrac{y}{2}O_2 \)
+									</li>
+									<li>
+										If this step has positive \( \Delta G \), it does not occur
+										on its own.
+									</li>
+									<li>
+										Carbon oxidation is written as:<br />\( C + O_2 \rightarrow
+										CO_2 \)
+									</li>
+									<li>
+										By multiplying equations suitably and adding them so that \(
+										O_2 \) cancels, the overall reduction equation is obtained.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Because \( \Delta G \) is extensive, multiplying a reaction by a
+								factor multiplies its \( \Delta G \) by the same factor.
+							</li>
+							<li>
+								The metal oxide can be reduced by carbon only if the summed \(
+								\Delta G \) of the coupled overall reaction is negative.
+							</li>
+							<li>
+								If the overall \( \Delta G \) remains positive, carbon cannot
+								reduce that oxide under the given conditions.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Coupling and Reduction -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
