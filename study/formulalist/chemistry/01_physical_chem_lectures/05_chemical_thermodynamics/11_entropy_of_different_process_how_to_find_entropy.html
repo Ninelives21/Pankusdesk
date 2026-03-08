@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,19 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					processEscapes: true,
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
 		<script
-			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -141,15 +149,260 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Entropy of different processes, How to find Entropy</a
+					<a href="#ch01"
+						>Entropy Change for a Gas Between Two States (00:25)</a
 					>
 				</li>
+				<li><a href="#ch02">Using First Law to Express \( dQ \) (04:25)</a></li>
+				<li>
+					<a href="#ch03">General Entropy Formula for an Ideal Gas (10:00)</a>
+				</li>
+				<li>
+					<a href="#ch04">Entropy Change in Isothermal Process (18:26)</a>
+				</li>
+				<li><a href="#ch05">Entropy Change in Isochoric Process (20:40)</a></li>
+				<li><a href="#ch06">Entropy Change in Adiabatic Process (21:29)</a></li>
+				<li><a href="#ch07">Entropy Change in Isobaric Process (21:50)</a></li>
+				<li>
+					<a href="#ch08">Numerical: Heating Gas in Closed Container (24:27)</a>
+				</li>
+				<li><a href="#ch09">Numerical: Entropy from PV Graph (31:00)</a></li>
+				<li>
+					<a href="#ch10">Entropy Change During Phase Transition (36:53)</a>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Numerical: Melting Point from Entropy of Fusion (41:23)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12">Numerical: Entropy Change When Ice Melts (45:22)</a>
+				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<li id="ch01">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=25" target="_blank"
+								>Entropy Change for a Gas Between Two States (00:25)</a
+							></b
+						>
+						<ul>
+							<li>
+								Consider a gas moving from state 1 to state 2 in a \(P\)-\(V\)
+								diagram.
+							</li>
+							<li>Initial state: \( (P_1, V_1, T_1) \)</li>
+							<li>Final state: \( (P_2, V_2, T_2) \)</li>
+							<li>
+								Since the thermodynamic state changes, molecular randomness
+								changes.
+							</li>
+							<li>Therefore entropy changes.</li>
+							<li>
+								Entropy is a <b>state function</b>, meaning it depends only on
+								the initial and final states.
+							</li>
+						</ul>
+					</li>
+
+					<li id="ch02">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=265" target="_blank"
+								>Using First Law to Express \( dQ \) (04:25)</a
+							></b
+						>
+						<ul>
+							<li>Basic entropy relation:</li>
+							<li>\( dS = \frac{dQ}{T} \)</li>
+							<li>Integrating:</li>
+							<li>\( \Delta S = \int \frac{dQ}{T} \)</li>
+							<li>But \( dQ \) may not be known.</li>
+							<li>Use first law of thermodynamics:</li>
+							<li>\( dU = dQ + dW \)</li>
+							<li>Therefore:</li>
+							<li>\( dQ = dU - dW \)</li>
+						</ul>
+					</li>
+
+					<li id="ch03">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=600" target="_blank"
+								>General Entropy Formula for an Ideal Gas (10:00)</a
+							></b
+						>
+						<ul>
+							<li>Internal energy change for ideal gas:</li>
+							<li>\( dU = nC_v dT \)</li>
+							<li>Work done:</li>
+							<li>\( dW = -P dV \)</li>
+							<li>Substitute into entropy equation:</li>
+							<li>\( dS = \frac{nC_v dT}{T} + \frac{P dV}{T} \)</li>
+							<li>Using ideal gas equation:</li>
+							<li>\( PV = nRT \)</li>
+							<li>\( P = \frac{nRT}{V} \)</li>
+							<li>After integration:</li>
+							<li>
+								\( \Delta S = nC_v \ln\left(\frac{T_2}{T_1}\right) + nR
+								\ln\left(\frac{V_2}{V_1}\right) \)
+							</li>
+						</ul>
+					</li>
+
+					<li id="ch04">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=1106" target="_blank"
+								>Entropy Change in Isothermal Process (18:26)</a
+							></b
+						>
+						<ul>
+							<li>Isothermal process: \( T = \text{constant} \)</li>
+							<li>Therefore \( dT = 0 \)</li>
+							<li>Entropy change reduces to:</li>
+							<li>\( \Delta S = nR \ln \left(\frac{V_2}{V_1}\right) \)</li>
+							<li>Using Boyle’s law:</li>
+							<li>\( P_1V_1 = P_2V_2 \)</li>
+							<li>So:</li>
+							<li>\( \Delta S = nR \ln\left(\frac{P_1}{P_2}\right) \)</li>
+						</ul>
+					</li>
+
+					<li id="ch05">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=1240" target="_blank"
+								>Entropy Change in Isochoric Process (20:40)</a
+							></b
+						>
+						<ul>
+							<li>Isochoric process: volume constant.</li>
+							<li>\( dV = 0 \)</li>
+							<li>Entropy change becomes:</li>
+							<li>\( \Delta S = nC_v \ln \left(\frac{T_2}{T_1}\right) \)</li>
+						</ul>
+					</li>
+
+					<li id="ch06">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=1289" target="_blank"
+								>Entropy Change in Adiabatic Process (21:29)</a
+							></b
+						>
+						<ul>
+							<li>Adiabatic process: \( dQ = 0 \)</li>
+							<li>Entropy relation:</li>
+							<li>\( \Delta S = \int \frac{dQ}{T} = 0 \)</li>
+							<li>Thus entropy remains constant.</li>
+						</ul>
+					</li>
+
+					<li id="ch07">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=1310" target="_blank"
+								>Entropy Change in Isobaric Process (21:50)</a
+							></b
+						>
+						<ul>
+							<li>Isobaric process: constant pressure.</li>
+							<li>Heat supplied:</li>
+							<li>\( dQ = nC_p dT \)</li>
+							<li>Entropy change:</li>
+							<li>\( \Delta S = nC_p \ln\left(\frac{T_2}{T_1}\right) \)</li>
+						</ul>
+					</li>
+
+					<li id="ch08">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=1467" target="_blank"
+								>Numerical: Heating Gas in Closed Container (24:27)</a
+							></b
+						>
+						<ul>
+							<li>Given: gas heated from \(0^\circ C\) to \(273^\circ C\).</li>
+							<li>Convert to Kelvin:</li>
+							<li>\( T_1 = 273K \)</li>
+							<li>\( T_2 = 546K \)</li>
+							<li>Closed container → constant volume.</li>
+							<li>Formula used:</li>
+							<li>\( \Delta S = nC_v \ln\left(\frac{T_2}{T_1}\right) \)</li>
+							<li>Final entropy change ≈ \(25\ J/mol\ K\).</li>
+						</ul>
+					</li>
+
+					<li id="ch09">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=1860" target="_blank"
+								>Numerical: Entropy from PV Graph (31:00)</a
+							></b
+						>
+						<ul>
+							<li>Graph represents an isothermal process.</li>
+							<li>Because:</li>
+							<li>\( P_1V_1 = P_2V_2 \)</li>
+							<li>Entropy formula:</li>
+							<li>\( \Delta S = nR \ln\left(\frac{V_2}{V_1}\right) \)</li>
+							<li>Substitute given values to estimate entropy change.</li>
+						</ul>
+					</li>
+
+					<li id="ch10">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=2213" target="_blank"
+								>Entropy Change During Phase Transition (36:53)</a
+							></b
+						>
+						<ul>
+							<li>During phase change temperature remains constant.</li>
+							<li>Therefore entropy formula simplifies:</li>
+							<li>\( \Delta S = \frac{\Delta Q}{T} \)</li>
+							<li>For melting:</li>
+							<li>\( \Delta S_{fusion} = \frac{\Delta H_{fusion}}{T_m} \)</li>
+							<li>For vaporization:</li>
+							<li>\( \Delta S_{vap} = \frac{\Delta H_{vap}}{T_b} \)</li>
+						</ul>
+					</li>
+
+					<li id="ch11">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=2483" target="_blank"
+								>Numerical: Melting Point from Entropy of Fusion (41:23)</a
+							></b
+						>
+						<ul>
+							<li>Given:</li>
+							<li>\( \Delta H_f = 1.435\ kcal/mol \)</li>
+							<li>\( \Delta S = 5.26\ cal/mol\ K \)</li>
+							<li>Formula:</li>
+							<li>\( \Delta S = \frac{\Delta H_f}{T_m} \)</li>
+							<li>Rearranging:</li>
+							<li>\( T_m = \frac{\Delta H_f}{\Delta S} \)</li>
+							<li>Result ≈ \(273K\) → \(0^\circ C\).</li>
+						</ul>
+					</li>
+
+					<li id="ch12">
+						<b
+							><a href="https://youtu.be/_zYbZY-gZYw?t=2722" target="_blank"
+								>Numerical: Entropy Change When Ice Melts (45:22)</a
+							></b
+						>
+						<ul>
+							<li>Entropy formula:</li>
+							<li>\( \Delta S = \frac{\Delta H_f}{T} \)</li>
+							<li>Given melting enthalpy of ice.</li>
+							<li>Calculate entropy per mole.</li>
+							<li>Convert to entropy per gram.</li>
+							<li>Final result ≈ \(1.33\ J/g\ K\).</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
