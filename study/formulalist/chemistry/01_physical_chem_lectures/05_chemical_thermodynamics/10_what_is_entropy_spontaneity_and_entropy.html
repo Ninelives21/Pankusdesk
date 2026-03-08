@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,13 +154,712 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">Spontaneity and Entropy</a>
+					<a href="#ch01">Entropy, Spontaneity, and Randomness (00:08)</a>
+				</li>
+				<li><a href="#ch02">Entropy as a Measure of Randomness (04:43)</a></li>
+				<li>
+					<a href="#ch03"
+						>Sign of \( \Delta S \) for Spontaneous, Non-spontaneous, and
+						Reversible Processes (08:09)</a
+					>
+				</li>
+				<li><a href="#ch04">Entropy is a State Function (15:06)</a></li>
+				<li>
+					<a href="#ch05">State-function Questions on Entropy Change (19:23)</a>
+				</li>
+				<li>
+					<a href="#ch06">Mathematical Definition of Entropy Change (23:18)</a>
+				</li>
+				<li>
+					<a href="#ch07">Units and Extensive Nature of Entropy (26:02)</a>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Entropy Change in Isolated and Non-isolated Systems (27:31)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Freezing of Water and Total Entropy Criterion (35:03)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Data Interpretation at \( -1^\circ C \), \( 0^\circ C \), and \(
+						+1^\circ C \) (38:12)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Reversible Vaporization at \( 373 \; K \) and \( 1 \; atm \)
+						(42:07)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12"
+						>Entropy Change in Reversible and Irreversible Processes (45:03)</a
+					>
+				</li>
+				<li>
+					<a href="#ch13">Entropy of the Universe and Future Scope (52:22)</a>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Entropy And Spontaneity -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=8s"
+								target="_blank"
+								rel="noopener"
+							>
+								Entropy, Spontaneity, and Randomness (00:08)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Entropy is introduced through the idea of spontaneous and
+								non-spontaneous processes.
+							</li>
+							<li>
+								A spontaneous process is one that occurs by itself or after a
+								small initiation.
+							</li>
+							<li>
+								Natural spontaneous processes generally proceed toward greater
+								randomness or disorder.
+							</li>
+							<li>
+								Examples illustrating increase of randomness:
+								<ol>
+									<li>
+										random patterns are more probable than one fixed ordered
+										pattern,
+									</li>
+									<br />
+									<li>
+										two gases kept separately mix spontaneously when allowed to
+										communicate.
+									</li>
+								</ol>
+							</li>
+							<li>
+								The origin of entropy lies in this tendency of systems to move
+								toward more probable, disordered states.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Entropy And Spontaneity -->
+
+					<!-- START ch02 | Entropy As Measure -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=283s"
+								target="_blank"
+								rel="noopener"
+							>
+								Entropy as a Measure of Randomness (04:43)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Entropy, denoted by \( S \), is the measure of randomness or
+								disorder.
+							</li>
+							<li>
+								If a process proceeds with increasing randomness, entropy
+								increases.
+							</li>
+							<li>
+								For a process \( A \rightarrow B \), if entropy increases while
+								moving from \( A \) to \( B \), the process is taken as
+								spontaneous on this basis.
+							</li>
+							<li>
+								Absolute entropy is not directly measurable in simple intuitive
+								terms, but change in entropy is useful and measurable in
+								thermodynamics.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Entropy As Measure -->
+
+					<!-- START ch03 | Sign Of DeltaS -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=489s"
+								target="_blank"
+								rel="noopener"
+							>
+								Sign of \( \Delta S \) for Spontaneous, Non-spontaneous, and
+								Reversible Processes (08:09)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Entropy change is defined as:
+								<br />
+								\( \Delta S = S_{\text{final}} - S_{\text{initial}} \)
+							</li>
+							<li>
+								For a spontaneous process:
+								<br />
+								randomness increases, so \( \Delta S &gt; 0 \)
+							</li>
+							<li>
+								For a non-spontaneous process:
+								<br />
+								randomness decreases, so \( \Delta S &lt; 0 \)
+							</li>
+							<li>
+								For a reversible process:
+								<br />
+								both directions are equally favored, so \( \Delta S = 0 \)
+							</li>
+							<li>
+								This sign convention gives a quick criterion when entropy alone
+								is being considered.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Sign Of DeltaS -->
+
+					<!-- START ch04 | State Function Concept -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=906s"
+								target="_blank"
+								rel="noopener"
+							>
+								Entropy is a State Function (15:06)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Entropy is a state function.</li>
+							<li>
+								Therefore, entropy change depends only on the initial and final
+								states, not on the path followed.
+							</li>
+							<li>
+								For any process:
+								<br />
+								\( \Delta S = S_{\text{final}} - S_{\text{initial}} \)
+							</li>
+							<li>
+								For a chemical reaction, this becomes:
+								<br />
+								entropy of products minus entropy of reactants.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | State Function Concept -->
+
+					<!-- START ch05 | Entropy Question Practice -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=1163s"
+								target="_blank"
+								rel="noopener"
+							>
+								State-function Questions on Entropy Change (19:23)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Because entropy is a state function, entropy changes along
+								successive steps can be added algebraically.
+							</li>
+							<li>
+								If a system goes from state \( X \) to \( Z \) through \( Y \),
+								then:
+								<br />
+								\( \Delta S_{X \rightarrow Z} = \Delta S_{X \rightarrow Y} +
+								\Delta S_{Y \rightarrow Z} \)
+							</li>
+							<li>
+								This follows directly from dependence on initial and final
+								states only.
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/NfB2chtSy-I?t=1196s"
+												target="_blank"
+												rel="noopener"
+												>Question 1</a
+											></strong
+										>: Given \( \Delta S_{A \rightarrow C} = +50 \; EU \), \(
+										\Delta S_{C \rightarrow D} = +30 \; EU \), and \( \Delta
+										S_{B \rightarrow D} = +20 \; EU \), find \( \Delta S_{A
+										\rightarrow B} \).
+										<br />
+										Use \( \Delta S_{D \rightarrow B} = -20 \; EU \), then add:
+										<br />
+										\( \Delta S_{A \rightarrow B} = \Delta S_{A \rightarrow C} +
+										\Delta S_{C \rightarrow D} + \Delta S_{D \rightarrow B} \)
+										<br />
+										\( = 50 + 30 - 20 = +60 \; EU \).
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Entropy Question Practice -->
+
+					<!-- START ch06 | Mathematical Definition -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=1398s"
+								target="_blank"
+								rel="noopener"
+							>
+								Mathematical Definition of Entropy Change (23:18)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For constant temperature:
+								<br />
+								\( \Delta S = \frac{\Delta Q}{T} \)
+							</li>
+							<li>
+								For variable temperature:
+								<br />
+								\( \Delta S = \int \frac{dQ}{T} \)
+							</li>
+							<li>
+								If the system absorbs heat, \( \Delta Q \) is positive and
+								entropy change is positive.
+							</li>
+							<li>
+								If the system releases heat, \( \Delta Q \) is negative and
+								entropy change is negative.
+							</li>
+							<li>Temperature must be taken on the absolute scale.</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Mathematical Definition -->
+
+					<!-- START ch07 | Units And Nature -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=1562s"
+								target="_blank"
+								rel="noopener"
+							>
+								Units and Extensive Nature of Entropy (26:02)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								From \( \Delta S = \frac{\Delta Q}{T} \), entropy units are heat
+								unit per kelvin.
+							</li>
+							<li>
+								Common molar units:
+								<br />
+								\( J \; mol^{-1} \; K^{-1} \)
+							</li>
+							<li>Entropy is an extensive property.</li>
+							<li>
+								Hence, entropy depends on the amount of substance present.
+							</li>
+							<li>More moles generally imply greater total entropy.</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Units And Nature -->
+
+					<!-- START ch08 | Isolated And Nonisolated -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=1651s"
+								target="_blank"
+								rel="noopener"
+							>
+								Entropy Change in Isolated and Non-isolated Systems (27:31)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								An isolated system exchanges neither heat nor matter with
+								surroundings.
+							</li>
+							<li>
+								Example: two gases enclosed in a thermally insulated, closed
+								arrangement mix after the valve is opened.
+							</li>
+							<li>
+								Even though \( \Delta Q = 0 \), the mixing increases randomness.
+							</li>
+							<li>
+								Therefore, for an isolated system, spontaneity is judged by
+								randomness increase, not merely by direct use of heat exchange.
+							</li>
+							<li>
+								If a spontaneous process occurs in an isolated system:
+								<br />
+								\( \Delta S_{\text{system}} &gt; 0 \)
+							</li>
+							<li>
+								For a non-isolated system, both system and surroundings matter.
+							</li>
+							<li>
+								The total entropy criterion is:
+								<br />
+								\( \Delta S_{\text{total}} = \Delta S_{\text{system}} + \Delta
+								S_{\text{surroundings}} \)
+							</li>
+							<li>
+								For spontaneity in a non-isolated system:
+								<br />
+								\( \Delta S_{\text{total}} &gt; 0 \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Isolated And Nonisolated -->
+
+					<!-- START ch09 | Freezing Water Criterion -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=2103s"
+								target="_blank"
+								rel="noopener"
+							>
+								Freezing of Water and Total Entropy Criterion (35:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Consider:
+								<br />
+								\( H_2O(l) \rightarrow H_2O(s) \)
+							</li>
+							<li>For water to freeze, the system must release heat.</li>
+							<li>
+								Hence, for the system:
+								<br />
+								\( \Delta Q_{\text{system}} &lt; 0 \Rightarrow \Delta
+								S_{\text{system}} &lt; 0 \)
+							</li>
+							<li>
+								Yet freezing can still be spontaneous under suitable conditions
+								because the surroundings gain that heat and their entropy
+								increases.
+							</li>
+							<li>
+								Spontaneity is therefore decided by \( \Delta S_{\text{total}}
+								\), not only by \( \Delta S_{\text{system}} \).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Freezing Water Criterion -->
+
+					<!-- START ch10 | Temperaturewise Entropy Data -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=2292s"
+								target="_blank"
+								rel="noopener"
+							>
+								Data Interpretation at \( -1^\circ C \), \( 0^\circ C \), and \(
+								+1^\circ C \) (38:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For the process \( H_2O(l) \rightarrow H_2O(s) \):
+								<ol>
+									<li>
+										at \( -1^\circ C \), freezing is spontaneous, so \( \Delta
+										S_{\text{total}} &gt; 0 \),
+									</li>
+									<br />
+									<li>
+										at \( +1^\circ C \), freezing is non-spontaneous, so \(
+										\Delta S_{\text{total}} &lt; 0 \),
+									</li>
+									<br />
+									<li>
+										at \( 0^\circ C \) and \( 1 \; atm \), the process is
+										reversible, so \( \Delta S_{\text{total}} = 0 \).
+									</li>
+								</ol>
+							</li>
+							<li>
+								At the reversible condition, entropy decrease of the system is
+								exactly balanced by entropy increase of the surroundings.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Temperaturewise Entropy Data -->
+
+					<!-- START ch11 | Reversible Vaporization Case -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=2527s"
+								target="_blank"
+								rel="noopener"
+							>
+								Reversible Vaporization at \( 373 \; K \) and \( 1 \; atm \)
+								(42:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Consider:
+								<br />
+								\( H_2O(l) \rightarrow H_2O(g) \) at \( 373 \; K \) and \( 1 \;
+								atm \)
+							</li>
+							<li>
+								At this condition, liquid water and vapor coexist reversibly.
+							</li>
+							<li>
+								The system absorbs heat during vaporization, so:
+								<br />
+								\( \Delta S_{\text{system}} &gt; 0 \)
+							</li>
+							<li>
+								Because the process is reversible, total entropy change must be
+								zero:
+								<br />
+								\( \Delta S_{\text{total}} = 0 \)
+							</li>
+							<li>
+								Hence, surroundings must have:
+								<br />
+								\( \Delta S_{\text{surroundings}} &lt; 0 \)
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/NfB2chtSy-I?t=2572s"
+												target="_blank"
+												rel="noopener"
+												>Question 1</a
+											></strong
+										>: For \( H_2O(l) \rightarrow H_2O(g) \) at \( 373 \; K \)
+										and \( 1 \; atm \), determine the signs of \( \Delta
+										S_{\text{system}} \) and \( \Delta S_{\text{surroundings}}
+										\).
+										<br />
+										Answer: \( \Delta S_{\text{system}} &gt; 0 \) and \( \Delta
+										S_{\text{surroundings}} &lt; 0 \).
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Reversible Vaporization Case -->
+
+					<!-- START ch12 | Reversible Irreversible Entropy -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=2703s"
+								target="_blank"
+								rel="noopener"
+							>
+								Entropy Change in Reversible and Irreversible Processes (45:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For any reversible process:
+								<br />
+								\( \Delta S_{\text{total}} = 0 \)
+							</li>
+							<li>
+								In an isothermal reversible process, system and surroundings
+								exchange equal heat reversibly, so their entropy changes are
+								equal in magnitude and opposite in sign.
+							</li>
+							<li>
+								In an adiabatic reversible process, no heat is exchanged, so:
+								<br />
+								\( \Delta S_{\text{system}} = 0 \),
+								<br />
+								\( \Delta S_{\text{surroundings}} = 0 \),
+								<br />
+								\( \Delta S_{\text{total}} = 0 \)
+							</li>
+							<li>
+								For an irreversible spontaneous process:
+								<br />
+								\( \Delta S_{\text{total}} &gt; 0 \)
+							</li>
+							<li>
+								Example: heat flow from a hotter system at \( T_1 \) to cooler
+								surroundings at \( T_2 \), with \( T_1 &gt; T_2 \).
+							</li>
+							<li>
+								Then:
+								<br />
+								\( \Delta S_{\text{system}} = -\frac{dQ}{T_1} \)
+								<br />
+								\( \Delta S_{\text{surroundings}} = +\frac{dQ}{T_2} \)
+							</li>
+							<li>
+								So:
+								<br />
+								\( \Delta S_{\text{total}} = -\frac{dQ}{T_1} + \frac{dQ}{T_2} =
+								dQ \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \)
+							</li>
+							<li>
+								Since \( T_1 &gt; T_2 \), this expression is positive, proving
+								entropy of the universe increases for irreversible spontaneous
+								heat flow.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | Reversible Irreversible Entropy -->
+
+					<!-- START ch13 | Universe Entropy Scope -->
+					<li>
+						<div id="ch13">
+							<a
+								href="https://youtu.be/NfB2chtSy-I?t=3142s"
+								target="_blank"
+								rel="noopener"
+							>
+								Entropy of the Universe and Future Scope (52:22)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The general result is:
+								<br />
+								\( \Delta S_{\text{universe}} \geq 0 \)
+							</li>
+							<li>
+								For reversible processes:
+								<br />
+								\( \Delta S_{\text{universe}} = 0 \)
+							</li>
+							<li>
+								For irreversible spontaneous processes:
+								<br />
+								\( \Delta S_{\text{universe}} &gt; 0 \)
+							</li>
+							<li>
+								Entropy of the universe therefore tends to increase in natural
+								processes.
+							</li>
+							<li>
+								In problems involving gases and thermodynamic variables, entropy
+								change may need to be evaluated using pressure, volume, and
+								temperature changes rather than direct heat data.
+							</li>
+							<li>
+								This leads to further study of entropy change in:
+								<ol>
+									<li>isothermal processes,</li>
+									<br />
+									<li>adiabatic processes,</li>
+									<br />
+									<li>isochoric processes,</li>
+									<br />
+									<li>isobaric processes,</li>
+									<br />
+									<li>phase changes.</li>
+								</ol>
+							</li>
+							<li>
+								Final spontaneity of processes is later unified more completely
+								through Gibbs free energy.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch13 | Universe Entropy Scope -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
