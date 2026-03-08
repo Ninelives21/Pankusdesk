@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -141,15 +155,490 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Standard Gibb's Free Energy and Equilibrium Constant</a
+					<a href="#ch01"
+						>Gibbs Free Energy and Standard Gibbs Free Energy (01:41)</a
+					>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Two Ways to Calculate \( \Delta G^\circ \) of a Reaction (07:18)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Standard Gibbs Free Energy of Formation of Elements (10:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Reaction Quotient \( Q \) and Equilibrium Constant \( K \)
+						(24:21)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Relation Between \( \Delta G \), \( \Delta G^\circ \), \( Q \), and
+						\( K \) (29:15)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>JEE 2007: Finding \( \log K \) from \( \Delta H^\circ \) and \(
+						\Delta S^\circ \) (32:39)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>JEE 2015: Finding \( \Delta G^\circ_f \) of \( NO_2 \) (37:47)</a
 					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Gibbs and Standard Gibbs -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/nkO0x0uWiNs?t=101s"
+								target="_blank"
+								rel="noopener"
+							>
+								Gibbs Free Energy and Standard Gibbs Free Energy (01:41)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Gibbs free energy is defined as:<br />\( G = H - TS \)</li>
+							<li>
+								For a reaction, the useful quantity is the change in Gibbs free
+								energy:<br />\( \Delta G = \Delta H - T\Delta S \)
+							</li>
+							<li>
+								Meaning of \( \Delta G \):
+								<ul>
+									<li>\( \Delta G &lt; 0 \): spontaneous process</li>
+									<li>\( \Delta G &gt; 0 \): non-spontaneous process</li>
+									<li>\( \Delta G = 0 \): equilibrium</li>
+								</ul>
+							</li>
+							<li>
+								Standard Gibbs free energy change, \( \Delta G^\circ \), is
+								measured under standard conditions:
+								<ul>
+									<li>Temperature \( = 298\,\text{K} \)</li>
+									<li>Pressure \( = 1\,\text{atm} \)</li>
+								</ul>
+							</li>
+							<li>
+								Standardisation removes ambiguity caused by different
+								experimental conditions.
+							</li>
+							<li>
+								At standard conditions:<br />\( \Delta G^\circ = \Delta H^\circ
+								- T\Delta S^\circ \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Gibbs and Standard Gibbs -->
+
+					<!-- START ch02 | Two Calculation Methods -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/nkO0x0uWiNs?t=438s"
+								target="_blank"
+								rel="noopener"
+							>
+								Two Ways to Calculate \( \Delta G^\circ \) of a Reaction (07:18)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Method 1 uses standard enthalpy and entropy change of the
+								reaction:<br />\( \Delta G^\circ_{\text{rxn}} = \Delta
+								H^\circ_{\text{rxn}} - T\Delta S^\circ_{\text{rxn}} \)
+							</li>
+							<li>
+								Method 2 uses standard Gibbs free energies of formation:<br />\(
+								\Delta G^\circ_{\text{rxn}} = \sum \nu \Delta
+								G^\circ_f(\text{products}) - \sum \nu \Delta
+								G^\circ_f(\text{reactants}) \)
+							</li>
+							<li>
+								In both methods, stoichiometric coefficients must be included.
+							</li>
+							<li>
+								The second method is directly analogous to the standard
+								enthalpy-of-formation method used earlier in thermodynamics.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Two Calculation Methods -->
+
+					<!-- START ch03 | Elements in Standard State -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/nkO0x0uWiNs?t=632s"
+								target="_blank"
+								rel="noopener"
+							>
+								Standard Gibbs Free Energy of Formation of Elements (10:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For an element in its standard state:<br />\( \Delta G^\circ_f =
+								0 \)
+							</li>
+							<li>
+								Examples:
+								<ul>
+									<li>\( \Delta G^\circ_f(O_2(g)) = 0 \)</li>
+									<li>\( \Delta G^\circ_f(N_2(g)) = 0 \)</li>
+									<li>\( \Delta G^\circ_f(H_2(g)) = 0 \)</li>
+									<li>\( \Delta G^\circ_f(Cl_2(g)) = 0 \)</li>
+								</ul>
+							</li>
+							<li>
+								State is important because the standard state must match the
+								naturally stable form under standard conditions.
+							</li>
+							<li>
+								Examples of state sensitivity:
+								<ul>
+									<li>
+										\( \Delta G^\circ_f(Br_2(l)) = 0 \), but \( \Delta
+										G^\circ_f(Br_2(g)) \neq 0 \)
+									</li>
+									<li>
+										\( \Delta G^\circ_f(I_2(s)) = 0 \), but \( \Delta
+										G^\circ_f(I_2(g)) \neq 0 \)
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<ol>
+							<li>
+								<strong>
+									<a
+										href="https://youtu.be/nkO0x0uWiNs?t=632s"
+										target="_blank"
+										rel="noopener"
+									>
+										Question 1
+									</a>
+								</strong>
+								For the reaction \( I_2(s) + H_2S(g) \rightarrow 2HI(g) + S(s)
+								\), given \( \Delta G^\circ_f(HI) = 1.8\,\text{kJ mol}^{-1} \)
+								and \( \Delta G^\circ_f(H_2S) = 30\,\text{kJ mol}^{-1} \), find
+								\( \Delta G^\circ_{\text{rxn}} \).
+							</li>
+							<br />
+							<li>
+								Apply product minus reactant:
+								<br />\( \Delta G^\circ_{\text{rxn}} = \left[ 2\Delta
+								G^\circ_f(HI) + \Delta G^\circ_f(S) \right] - \left[ \Delta
+								G^\circ_f(I_2) + \Delta G^\circ_f(H_2S) \right] \)
+							</li>
+							<br />
+							<li>
+								Since \( I_2(s) \) and \( S(s) \) are elements in standard
+								state, their \( \Delta G^\circ_f \) values are zero.
+							</li>
+							<br />
+							<li>
+								Therefore:
+								<br />\( \Delta G^\circ_{\text{rxn}} = 2(1.8) - 30 =
+								-26.4\,\text{kJ mol}^{-1} \)
+							</li>
+							<br />
+							<li>
+								The reaction is spontaneous because \( \Delta
+								G^\circ_{\text{rxn}} &lt; 0 \).
+							</li>
+						</ol>
+					</li>
+					<!-- END ch03 | Elements in Standard State -->
+
+					<!-- START ch04 | Reaction Quotient and K -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/nkO0x0uWiNs?t=1461s"
+								target="_blank"
+								rel="noopener"
+							>
+								Reaction Quotient \( Q \) and Equilibrium Constant \( K \)
+								(24:21)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a general reaction:<br />\( A + 2B \rightarrow 3C + D \)
+							</li>
+							<li>
+								The reaction quotient is: <br />\( Q =
+								\dfrac{[C]^3[D]}{[A][B]^2} \)
+							</li>
+							<li>\( Q \) can be defined at any stage of the reaction.</li>
+							<li>
+								If the same expression is evaluated when the system has reached
+								equilibrium, then: <br />\( Q = K \)
+							</li>
+							<li>
+								Thus, \( K \) is simply the value of \( Q \) at equilibrium
+								concentration values.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Reaction Quotient and K -->
+
+					<!-- START ch05 | Delta G Q K Relation -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/nkO0x0uWiNs?t=1755s"
+								target="_blank"
+								rel="noopener"
+							>
+								Relation Between \( \Delta G \), \( \Delta G^\circ \), \( Q \),
+								and \( K \) (29:15)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The fundamental relation is: <br />\( \Delta G = \Delta G^\circ
+								+ RT\ln Q \)
+							</li>
+							<li>
+								At equilibrium:
+								<ul>
+									<li>\( \Delta G = 0 \)</li>
+									<li>\( Q = K \)</li>
+								</ul>
+							</li>
+							<li>Hence: <br />\( 0 = \Delta G^\circ + RT\ln K \)</li>
+							<li>Therefore: <br />\( \Delta G^\circ = -RT\ln K \)</li>
+							<li>
+								Using common logarithm: <br />\( \Delta G^\circ = -2.303RT\log K
+								\)
+							</li>
+							<li>
+								This is the standard relation between standard Gibbs free energy
+								change and equilibrium constant.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Delta G Q K Relation -->
+
+					<!-- START ch06 | JEE 2007 Problem -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/nkO0x0uWiNs?t=1959s"
+								target="_blank"
+								rel="noopener"
+							>
+								JEE 2007: Finding \( \log K \) from \( \Delta H^\circ \) and \(
+								\Delta S^\circ \) (32:39)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given for \( A \rightleftharpoons B \):
+								<ul>
+									<li>\( \Delta H^\circ = -54.07\,\text{kJ mol}^{-1} \)</li>
+									<li>
+										\( \Delta S^\circ = 10\,\text{J mol}^{-1}\text{K}^{-1} \)
+									</li>
+									<li>\( T = 298\,\text{K} \)</li>
+								</ul>
+							</li>
+							<li>
+								First calculate standard Gibbs free energy change: <br />\(
+								\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ \)
+							</li>
+							<li>
+								Convert enthalpy into joule: <br />\( \Delta G^\circ = -54070 -
+								2980 = -57050\,\text{J mol}^{-1} \)
+							</li>
+							<li>Now use: <br />\( \Delta G^\circ = -2.303RT\log K \)</li>
+							<li>
+								Given \( 2.303 \times 8.314 \times 298 = 5705 \), so: <br />\(
+								-57050 = -5705\log K \)
+							</li>
+							<li>Hence: <br />\( \log K = 10 \)</li>
+						</ul>
+
+						<ol>
+							<li>
+								<strong>
+									<a
+										href="https://youtu.be/nkO0x0uWiNs?t=1959s"
+										target="_blank"
+										rel="noopener"
+									>
+										Question 2
+									</a>
+								</strong>
+								If \( \Delta H^\circ = -54.07\,\text{kJ mol}^{-1} \) and \(
+								\Delta S^\circ = 10\,\text{J mol}^{-1}\text{K}^{-1} \) at \(
+								298\,\text{K} \), find \( \log K \).
+							</li>
+							<br />
+							<li>
+								First find:
+								<br />\( \Delta G^\circ = \Delta H^\circ - T\Delta S^\circ \)
+							</li>
+							<br />
+							<li>
+								Then apply:
+								<br />\( \Delta G^\circ = -2.303RT\log K \)
+							</li>
+							<br />
+							<li>
+								Final answer:
+								<br />\( \log K = 10 \)
+							</li>
+						</ol>
+					</li>
+					<!-- END ch06 | JEE 2007 Problem -->
+
+					<!-- START ch07 | JEE 2015 Problem -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/nkO0x0uWiNs?t=2267s"
+								target="_blank"
+								rel="noopener"
+							>
+								JEE 2015: Finding \( \Delta G^\circ_f \) of \( NO_2 \) (37:47)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Reaction: <br />\( 2NO(g) + O_2(g) \rightarrow 2NO_2(g) \)
+							</li>
+							<li>
+								Given:
+								<ul>
+									<li>\( \Delta G^\circ_f(NO) = 86.6\,\text{kJ mol}^{-1} \)</li>
+									<li>\( K = 1.6 \times 10^{12} \)</li>
+									<li>\( T = 298\,\text{K} \)</li>
+								</ul>
+							</li>
+							<li>
+								First calculate standard Gibbs free energy change of the
+								reaction: <br />\( \Delta G^\circ_{\text{rxn}} = -RT\ln K \)
+							</li>
+							<li>
+								So: <br />\( \Delta G^\circ_{\text{rxn}} = -R(298)\ln(1.6 \times
+								10^{12}) \)
+							</li>
+							<li>
+								Now write reaction Gibbs free energy in terms of formation
+								values: <br />\( \Delta G^\circ_{\text{rxn}} = 2\Delta
+								G^\circ_f(NO_2) - \left[ 2\Delta G^\circ_f(NO) + \Delta
+								G^\circ_f(O_2) \right] \)
+							</li>
+							<li>
+								Since \( O_2(g) \) is an element in standard state: <br />\(
+								\Delta G^\circ_f(O_2) = 0 \)
+							</li>
+							<li>
+								Thus: <br />\( 2\Delta G^\circ_f(NO_2) - 2\Delta G^\circ_f(NO) =
+								-R(298)\ln(1.6 \times 10^{12}) \)
+							</li>
+							<li>
+								Rearranging: <br />\( 2\Delta G^\circ_f(NO_2) = 2\Delta
+								G^\circ_f(NO) - R(298)\ln(1.6 \times 10^{12}) \)
+							</li>
+							<li>
+								Therefore: <br />\( \Delta G^\circ_f(NO_2) = \dfrac{2(86600) -
+								R(298)\ln(1.6 \times 10^{12})}{2} \)
+							</li>
+						</ul>
+
+						<ol>
+							<li>
+								<strong>
+									<a
+										href="https://youtu.be/nkO0x0uWiNs?t=2267s"
+										target="_blank"
+										rel="noopener"
+									>
+										Question 3
+									</a>
+								</strong>
+								For \( 2NO(g) + O_2(g) \rightarrow 2NO_2(g) \), given \( \Delta
+								G^\circ_f(NO) = 86.6\,\text{kJ mol}^{-1} \) and \( K = 1.6
+								\times 10^{12} \), find \( \Delta G^\circ_f(NO_2) \).
+							</li>
+							<br />
+							<li>
+								First use:
+								<br />\( \Delta G^\circ_{\text{rxn}} = -RT\ln K \)
+							</li>
+							<br />
+							<li>
+								Then use:
+								<br />\( \Delta G^\circ_{\text{rxn}} = 2\Delta G^\circ_f(NO_2) -
+								2\Delta G^\circ_f(NO) \)
+							</li>
+							<br />
+							<li>
+								Final result:
+								<br />\( \Delta G^\circ_f(NO_2) = \dfrac{2(86600) -
+								R(298)\ln(1.6 \times 10^{12})}{2} \)
+							</li>
+						</ol>
+					</li>
+					<!-- END ch07 | JEE 2015 Problem -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
