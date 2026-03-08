@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,13 +154,446 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">Hess's Law</a>
+					<a href="#ch01"
+						>Hess's Law: Statement and Path Independence (00:01)</a
+					>
+				</li>
+				<li><a href="#ch02">Basic Addition of Enthalpy Changes (03:53)</a></li>
+				<li>
+					<a href="#ch03"
+						>Manipulating Equations to Obtain Required Reaction (06:26)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Enthalpy of Formation and Combustion of Ethane (11:50)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Shortcut Formulas Using Formation or Combustion Data (22:25)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Formation Enthalpy of Acetylene from Combustion Data (27:53)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Formation Enthalpy of Ethanol from Mixed Data (40:33)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Hess Law Statement -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/wvnS_xmfRZc?t=1s"
+								target="_blank"
+								rel="noopener"
+							>
+								Hess's Law: Statement and Path Independence (00:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Hess's law states that the total enthalpy change of a reaction
+								is independent of the path followed.
+							</li>
+							<li>
+								If a reaction occurs in one step or in several steps, the
+								overall enthalpy change remains the same.
+							</li>
+							<li>
+								For a reaction \( A \rightarrow B \) with enthalpy change \(
+								\Delta H \), if it proceeds through an intermediate \( C \),
+								then:
+								<br />
+								\( A \rightarrow C \; (\Delta H_1) \)
+								<br />
+								\( C \rightarrow B \; (\Delta H_2) \)
+								<br />
+								Overall, \( \Delta H = \Delta H_1 + \Delta H_2 \).
+							</li>
+							<li>
+								This principle is especially useful when the enthalpy change of
+								the required reaction cannot be measured directly.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Hess Law Statement -->
+
+					<!-- START ch02 | Basic Enthalpy Addition -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/wvnS_xmfRZc?t=233s"
+								target="_blank"
+								rel="noopener"
+							>
+								Basic Addition of Enthalpy Changes (03:53)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								When two given reactions add up directly to the required
+								reaction, their enthalpy changes also add directly.
+							</li>
+							<li>
+								Given:
+								<br />
+								\( C(s) + \frac{1}{2}O_2(g) \rightarrow CO(g), \; \Delta H = -x
+								\)
+								<br />
+								\( CO(g) + \frac{1}{2}O_2(g) \rightarrow CO_2(g), \; \Delta H =
+								-y \)
+							</li>
+							<li>
+								Adding both reactions gives:
+								<br />
+								\( C(s) + O_2(g) \rightarrow CO_2(g) \)
+							</li>
+							<li>
+								Therefore, the enthalpy of the required reaction is:
+								<br />
+								\( \Delta H = -x - y \).
+							</li>
+							<li>
+								This is the simplest application of Hess's law: add equations
+								and add their enthalpy changes in the same manner.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Basic Enthalpy Addition -->
+
+					<!-- START ch03 | Equation Manipulation Method -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/wvnS_xmfRZc?t=386s"
+								target="_blank"
+								rel="noopener"
+							>
+								Manipulating Equations to Obtain Required Reaction (06:26)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given:
+								<br />
+								\( Fe_2O_3 + 3CO \rightarrow 2Fe + 3CO_2, \; \Delta H_1 = -26 \;
+								\text{kJ} \)
+								<br />
+								\( FeO + CO \rightarrow Fe + CO_2, \; \Delta H_2 = -16 \;
+								\text{kJ} \)
+							</li>
+							<li>
+								Required:
+								<br />
+								\( Fe_2O_3 + CO \rightarrow 2FeO + CO_2 \)
+							</li>
+							<li>
+								Multiply the second equation by 2:
+								<br />
+								\( 2FeO + 2CO \rightarrow 2Fe + 2CO_2, \; 2\Delta H_2 \)
+							</li>
+							<li>
+								Subtract \( 2 \times \) second equation from the first equation:
+								<br />
+								\( (i) - 2(ii) \Rightarrow Fe_2O_3 + CO \rightarrow 2FeO + CO_2
+								\)
+							</li>
+							<li>
+								Hence,
+								<br />
+								\( \Delta H = \Delta H_1 - 2\Delta H_2 \)
+								<br />
+								\( \Delta H = -26 - 2(-16) = -26 + 32 = +6 \; \text{kJ} \)
+							</li>
+							<li>
+								Rule: whatever algebraic operation is applied to chemical
+								equations must be applied identically to enthalpy change.
+							</li>
+							<li>
+								Enthalpy is an extensive property, so multiplying a reaction by
+								a factor multiplies \( \Delta H \) by the same factor.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Equation Manipulation Method -->
+
+					<!-- START ch04 | Formation And Ethane -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/wvnS_xmfRZc?t=710s"
+								target="_blank"
+								rel="noopener"
+							>
+								Enthalpy of Formation and Combustion of Ethane (11:50)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Required reaction:
+								<br />
+								\( C_2H_6 + \frac{7}{2}O_2 \rightarrow 2CO_2 + 3H_2O \)
+							</li>
+							<li>
+								Given standard enthalpies of formation:
+								<br />
+								\( \Delta H_f(C_2H_6) = -20 \; \text{kcal} \)
+								<br />
+								\( \Delta H_f(CO_2) = -90 \; \text{kcal} \)
+								<br />
+								\( \Delta H_f(H_2O) = -70 \; \text{kcal} \)
+							</li>
+							<li>
+								Meaning of enthalpy of formation: enthalpy change when 1 mole of
+								a compound is formed from its constituent elements in their free
+								natural states.
+							</li>
+							<li>
+								Examples of formation equations:
+								<br />
+								\( 2C(s,\text{graphite}) + 3H_2(g) \rightarrow C_2H_6(g) \)
+								<br />
+								\( C(s,\text{graphite}) + O_2(g) \rightarrow CO_2(g) \)
+								<br />
+								\( H_2(g) + \frac{1}{2}O_2(g) \rightarrow H_2O(l) \)
+							</li>
+							<li>
+								To build the required combustion reaction:
+								<br />
+								required equation \( = -1 \times \) formation of \( C_2H_6 \)
+								<br />
+								\( + 2 \times \) formation of \( CO_2 \)
+								<br />
+								\( + 3 \times \) formation of \( H_2O \)
+							</li>
+							<li>
+								Therefore,
+								<br />
+								\( \Delta H = -\Delta H_f(C_2H_6) + 2\Delta H_f(CO_2) + 3\Delta
+								H_f(H_2O) \)
+								<br />
+								\( \Delta H = -(-20) + 2(-90) + 3(-70) \)
+								<br />
+								\( \Delta H = 20 - 180 - 210 = -370 \; \text{kcal} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Formation And Ethane -->
+
+					<!-- START ch05 | Shortcut Formula Rules -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/wvnS_xmfRZc?t=1345s"
+								target="_blank"
+								rel="noopener"
+							>
+								Shortcut Formulas Using Formation or Combustion Data (22:25)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								When standard enthalpies of formation of all reactants and
+								products are known:
+								<br />
+								\( \Delta H_{\text{reaction}} = \sum \Delta H_f(\text{products})
+								- \sum \Delta H_f(\text{reactants}) \)
+							</li>
+							<li>Stoichiometric coefficients must always be included.</li>
+							<li>
+								Elements in their free natural states have zero enthalpy of
+								formation.
+								<br />
+								Examples: \( O_2, H_2, N_2, Cl_2, Br_2, C(s,\text{graphite}) \).
+							</li>
+							<li>
+								Using the previous ethane combustion example:
+								<br />
+								\( \Delta H = [2(-90) + 3(-70)] - [1(-20) + \frac{7}{2}(0)] =
+								-370 \; \text{kcal} \)
+							</li>
+							<li>
+								When standard enthalpies of combustion of all species are known:
+								<br />
+								\( \Delta H_{\text{reaction}} = \sum \Delta
+								H_c(\text{reactants}) - \sum \Delta H_c(\text{products}) \)
+							</li>
+							<li>
+								Memory aid:
+								<br />
+								Formation data \( \Rightarrow \) products minus reactants
+								<br />
+								Combustion data \( \Rightarrow \) reactants minus products
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Shortcut Formula Rules -->
+
+					<!-- START ch06 | Acetylene From Combustion -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/wvnS_xmfRZc?t=1673s"
+								target="_blank"
+								rel="noopener"
+							>
+								Formation Enthalpy of Acetylene from Combustion Data (27:53)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Required formation reaction of acetylene:
+								<br />
+								\( 2C(s,\text{graphite}) + H_2(g) \rightarrow C_2H_2(g) \)
+							</li>
+							<li>
+								Given combustion enthalpies:
+								<br />
+								\( C(s) + O_2(g) \rightarrow CO_2(g), \; \Delta H_1 = -400 \;
+								\text{kJ} \)
+								<br />
+								\( H_2(g) + \frac{1}{2}O_2(g) \rightarrow H_2O(l), \; \Delta H_2
+								= -300 \; \text{kJ} \)
+								<br />
+								\( C_2H_2(g) + \frac{5}{2}O_2(g) \rightarrow 2CO_2(g) + H_2O(l),
+								\; \Delta H_3 = -1300 \; \text{kJ} \)
+							</li>
+							<li>
+								To obtain the required equation:
+								<br />
+								required equation \( = 2(i) + (ii) - (iii) \)
+							</li>
+							<li>
+								Hence,
+								<br />
+								\( \Delta H = 2\Delta H_1 + \Delta H_2 - \Delta H_3 \)
+								<br />
+								\( \Delta H = 2(-400) + (-300) - (-1300) \)
+								<br />
+								\( \Delta H = -800 - 300 + 1300 = +200 \; \text{kJ} \)
+							</li>
+							<li>
+								Shortcut with combustion data gives the same result:
+								<br />
+								\( \Delta H = [2(-400) + 1(-300)] - [1(-1300)] = +200 \;
+								\text{kJ} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Acetylene From Combustion -->
+
+					<!-- START ch07 | Ethanol Mixed Data -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/wvnS_xmfRZc?t=2433s"
+								target="_blank"
+								rel="noopener"
+							>
+								Formation Enthalpy of Ethanol from Mixed Data (40:33)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Required formation reaction of ethanol:
+								<br />
+								\( 2C(s,\text{graphite}) + 3H_2(g) + \frac{1}{2}O_2(g)
+								\rightarrow C_2H_5OH(l) \)
+							</li>
+							<li>
+								Given:
+								<br />
+								\( H_2(g) + \frac{1}{2}O_2(g) \rightarrow H_2O(l), \; \Delta H_1
+								= -250 \; \text{kJ} \)
+								<br />
+								\( C(s,\text{graphite}) + O_2(g) \rightarrow CO_2(g), \; \Delta
+								H_2 = -400 \; \text{kJ} \)
+								<br />
+								\( C_2H_5OH(l) + 3O_2(g) \rightarrow 2CO_2(g) + 3H_2O(l), \;
+								\Delta H_3 = -100 \; \text{kJ} \)
+							</li>
+							<li>
+								To obtain the required formation equation:
+								<br />
+								required equation \( = 3(i) + 2(ii) - (iii) \)
+							</li>
+							<li>
+								Therefore,
+								<br />
+								\( \Delta H = 3\Delta H_1 + 2\Delta H_2 - \Delta H_3 \)
+								<br />
+								\( \Delta H = 3(-250) + 2(-400) - (-100) \)
+								<br />
+								\( \Delta H = -750 - 800 + 100 = -1450 \; \text{kJ} \)
+							</li>
+							<li>
+								This type of question cannot be solved directly by a single
+								shortcut unless the data set is complete in one consistent form.
+							</li>
+							<li>
+								Core approach:
+								<br />
+								write the equations represented by the given enthalpy data,
+								<br />
+								manipulate them to obtain the required reaction,
+								<br />
+								then apply the same algebra to \( \Delta H \).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Ethanol Mixed Data -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
