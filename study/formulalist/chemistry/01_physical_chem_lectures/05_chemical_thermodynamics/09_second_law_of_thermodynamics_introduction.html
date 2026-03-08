@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -140,15 +154,774 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2"
-						>Second Law Of Thermodynamics Introduction</a
+					<a href="#ch01">Need for the Second Law of Thermodynamics (00:24)</a>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Limitations of the First Law and Direction of Processes (01:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03">Spontaneous and Non-spontaneous Processes (16:47)</a>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Examples of Spontaneous Processes Under Given Conditions (19:17)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05">Processes Requiring Proper Initiation (22:06)</a>
+				</li>
+				<li>
+					<a href="#ch06">Meaning of Non-spontaneous Processes (23:44)</a>
+				</li>
+				<li><a href="#ch07">Need for a Criterion of Spontaneity (29:12)</a></li>
+				<li>
+					<a href="#ch08">Criterion 1: Tendency to Lower Enthalpy (31:27)</a>
+				</li>
+				<li><a href="#ch09">Why Negative Enthalpy Alone Fails (34:50)</a></li>
+				<li>
+					<a href="#ch10"
+						>Criterion 2: Tendency to Increase Randomness (38:22)</a
+					>
+				</li>
+				<li><a href="#ch11">Gas Mixing and Increase in Entropy (42:32)</a></li>
+				<li>
+					<a href="#ch12"
+						>Competition Between Enthalpy and Entropy Factors (44:26)</a
+					>
+				</li>
+				<li>
+					<a href="#ch13"
+						>When Entropy Decreases but Process Can Still Occur (47:47)</a
+					>
+				</li>
+				<li>
+					<a href="#ch14"
+						>Interplay of \( \Delta H \), \( \Delta S \), and \( \Delta G \)
+						(49:21)</a
 					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Need For Second Law -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=24s"
+								target="_blank"
+								rel="noopener"
+							>
+								Need for the Second Law of Thermodynamics (00:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The second law of thermodynamics is introduced to address
+								questions that are not answered by the first law.
+							</li>
+							<li>
+								The first law expresses conservation of energy: total energy of
+								the universe remains constant.
+							</li>
+							<li>
+								The second law is required to decide whether a process is
+								feasible in nature and in which direction it can occur.
+							</li>
+							<li>
+								This topic is developed through three connected ideas:
+								<ol>
+									<li>limitation of the first law,</li>
+									<li>spontaneous and non-spontaneous processes,</li>
+									<li>criteria used to judge spontaneity.</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Need For Second Law -->
+
+					<!-- START ch02 | First Law Limitations -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=92s"
+								target="_blank"
+								rel="noopener"
+							>
+								Limitations of the First Law and Direction of Processes (01:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The first law only ensures conservation of energy. It does not
+								state which process will actually occur.
+							</li>
+							<li>It does not specify the direction of heat flow.</li>
+							<li>
+								Example:
+								<br />
+								heat flows naturally from a hot body to a cold body,
+								<br />
+								but it does not flow spontaneously from a cold body to a hot
+								body.
+							</li>
+							<li>
+								The first law does not comment on feasibility or spontaneity of
+								a process.
+							</li>
+							<li>
+								Natural spontaneous processes are irreversible in character:
+								they occur in one preferred direction and do not reverse on
+								their own.
+							</li>
+							<li>
+								Representative examples of irreversibility:
+								<ol>
+									<li>
+										water falls downward, but does not rise upward on its own,
+									</li>
+									<li>
+										salt or sugar dissolves in water, but does not separate
+										spontaneously,
+									</li>
+									<li>
+										work can be converted completely into heat, but heat cannot
+										be converted completely into work,
+									</li>
+									<li>
+										gas diffuses into available space, but does not
+										spontaneously re-collect into a smaller region,
+									</li>
+									<li>
+										evaporation of water occurs naturally, but the same vapor
+										does not return to the lake by itself.
+									</li>
+								</ol>
+							</li>
+							<li>
+								A 100% efficient engine is not possible, even though simple
+								energy balance alone does not forbid it.
+							</li>
+							<li>
+								Key conclusion:
+								<br />
+								the first law tells what happens to energy if a process occurs,
+								<br />
+								but does not tell whether the process itself can occur
+								naturally.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | First Law Limitations -->
+
+					<!-- START ch03 | Spontaneous Process Meaning -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=1007s"
+								target="_blank"
+								rel="noopener"
+							>
+								Spontaneous and Non-spontaneous Processes (16:47)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								A spontaneous process is one that has a tendency to occur:
+								<ol>
+									<li>by itself,</li>
+									<br />
+									<li>or after proper initiation,</li>
+									<br />
+									<li>under given conditions.</li>
+								</ol>
+							</li>
+							<li>Spontaneous does not mean instantaneous.</li>
+							<li>
+								The definition always depends on the specified conditions such
+								as temperature, pressure, and surrounding constraints.
+							</li>
+							<li>
+								A process may be spontaneous under one set of conditions and
+								non-spontaneous under another.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Spontaneous Process Meaning -->
+
+					<!-- START ch04 | Spontaneous Process Examples -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=1157s"
+								target="_blank"
+								rel="noopener"
+							>
+								Examples of Spontaneous Processes Under Given Conditions (19:17)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Common spontaneous processes include:
+								<ol>
+									<li>sugar dissolving in water,</li>
+									<br />
+									<li>salt dissolving in water,</li>
+									<br />
+									<li>evaporation of water from a lake,</li>
+									<br />
+									<li>
+										flow of heat from higher temperature to lower temperature,
+									</li>
+									<br />
+									<li>
+										diffusion of gas from higher pressure to lower pressure,
+									</li>
+									<br />
+									<li>melting of ice only under suitable conditions.</li>
+								</ol>
+							</li>
+							<li>Condition dependence is essential.</li>
+							<li>
+								Example:
+								<br />
+								melting of ice is spontaneous above its melting condition,
+								<br />
+								but not spontaneous at very low temperature.
+							</li>
+							<li>
+								Thus, spontaneity must always be judged under the given set of
+								conditions.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Spontaneous Process Examples -->
+
+					<!-- START ch05 | Proper Initiation Cases -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=1326s"
+								target="_blank"
+								rel="noopener"
+							>
+								Processes Requiring Proper Initiation (22:06)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Some processes are spontaneous only after a small initial
+								trigger.
+							</li>
+							<li>
+								Example:
+								<br />
+								\( 2H_2 + O_2 \rightarrow 2H_2O \)
+							</li>
+							<li>
+								This reaction may require an electric spark for initiation, but
+								once started, it proceeds on its own.
+							</li>
+							<li>
+								Combustion of coal also needs ignition only at the beginning.
+							</li>
+							<li>
+								The process continues spontaneously after the required
+								initiation is supplied.
+							</li>
+							<li>
+								A spontaneous process therefore may be:
+								<ol>
+									<li>self-starting,</li>
+									<br />
+									<li>or start after a small push,</li>
+									<br />
+									<li>
+										but it does not need continuous external driving throughout
+										the process.
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Proper Initiation Cases -->
+
+					<!-- START ch06 | Non Spontaneous Meaning -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=1424s"
+								target="_blank"
+								rel="noopener"
+							>
+								Meaning of Non-spontaneous Processes (23:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								A non-spontaneous process has no tendency to occur on its own.
+							</li>
+							<li>
+								It does not proceed by itself and does not continue merely after
+								a small initiation.
+							</li>
+							<li>
+								Such a process can occur only if continuous external energy is
+								supplied.
+							</li>
+							<li>
+								Example 1:
+								<br />
+								heat transfer from a colder body to a hotter body is
+								non-spontaneous.
+							</li>
+							<li>
+								Example 2:
+								<br />
+								in a refrigerator, heat is continuously removed from the colder
+								interior and transferred to the warmer surroundings,
+								<br />
+								which requires external electrical energy.
+							</li>
+							<li>
+								Example 3:
+								<br />
+								water does not rise from lower height to higher height on its
+								own,
+								<br />
+								but can be pumped upward by continuous energy input.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Non Spontaneous Meaning -->
+
+					<!-- START ch07 | Criterion Need -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=1752s"
+								target="_blank"
+								rel="noopener"
+							>
+								Need for a Criterion of Spontaneity (29:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								A scientific criterion is required to predict whether a process
+								is spontaneous or non-spontaneous.
+							</li>
+							<li>
+								The second law develops this criterion instead of relying only
+								on observation.
+							</li>
+							<li>
+								Three important thermodynamic variables are introduced for this
+								purpose:
+								<ol>
+									<li>enthalpy change, \( \Delta H \),</li>
+									<br />
+									<li>entropy change, \( \Delta S \),</li>
+									<br />
+									<li>Gibbs free energy change, \( \Delta G \).</li>
+								</ol>
+							</li>
+							<li>
+								The initial discussion begins with enthalpy change, then entropy
+								change, and finally combines them through Gibbs free energy.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Criterion Need -->
+
+					<!-- START ch08 | Enthalpy Criterion -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=1887s"
+								target="_blank"
+								rel="noopener"
+							>
+								Criterion 1: Tendency to Lower Enthalpy (31:27)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								One proposed criterion for spontaneity is the tendency of a
+								system to lower its energy.
+							</li>
+							<li>
+								A system with lower energy is generally more stable than one
+								with higher energy.
+							</li>
+							<li>
+								If a process releases energy, it is exothermic and has:
+								<br />
+								\( \Delta H &lt; 0 \)
+							</li>
+							<li>
+								This suggests that reactions with negative enthalpy change may
+								be spontaneous.
+							</li>
+							<li>
+								Examples supporting this idea:
+								<ol>
+									<li>
+										\( 2H_2 + O_2 \rightarrow 2H_2O \), with \( \Delta H &lt; 0
+										\),
+									</li>
+									<br />
+									<li>
+										\( C(s) + O_2(g) \rightarrow CO_2(g) \), with \( \Delta H
+										&lt; 0 \).
+									</li>
+								</ol>
+							</li>
+							<li>
+								At first, negative \( \Delta H \) appears to be a useful
+								indicator of spontaneity.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Enthalpy Criterion -->
+
+					<!-- START ch09 | Enthalpy Criterion Failure -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=2090s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why Negative Enthalpy Alone Fails (34:50)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Negative \( \Delta H \) is not the only condition for
+								spontaneity.
+							</li>
+							<li>
+								Many endothermic processes are also spontaneous, even though:
+								<br />
+								\( \Delta H &gt; 0 \)
+							</li>
+							<li>
+								Examples:
+								<ol>
+									<li>melting of ice to water under suitable conditions,</li>
+									<br />
+									<li>evaporation of water to water vapor,</li>
+									<br />
+									<li>
+										decomposition of mercuric oxide on heating:
+										<br />
+										\( 2HgO \rightarrow 2Hg + O_2 \)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Some spontaneous processes may even have approximately zero
+								enthalpy change.
+							</li>
+							<li>
+								Example:
+								<br />
+								\( CH_3COOH + C_2H_5OH \rightarrow CH_3COOC_2H_5 + H_2O \)
+							</li>
+							<li>
+								Therefore, spontaneity cannot be judged only from the sign of \(
+								\Delta H \).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Enthalpy Criterion Failure -->
+
+					<!-- START ch10 | Randomness Criterion -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=2302s"
+								target="_blank"
+								rel="noopener"
+							>
+								Criterion 2: Tendency to Increase Randomness (38:22)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								A second major tendency is the tendency of a system to acquire
+								maximum randomness or disorder.
+							</li>
+							<li>
+								A disordered arrangement is usually more probable than a highly
+								ordered arrangement.
+							</li>
+							<li>
+								Any system tends to move from low probability states to high
+								probability states.
+							</li>
+							<li>
+								This tendency is described through entropy change:
+								<br />
+								if \( \Delta S &gt; 0 \), randomness increases.
+							</li>
+							<li>Increase in entropy can therefore favor spontaneity.</li>
+							<li>
+								Ordered states are less probable because they can be realized in
+								fewer ways, whereas disordered states can be realized in many
+								ways.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Randomness Criterion -->
+
+					<!-- START ch11 | Gas Mixing Entropy -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=2552s"
+								target="_blank"
+								rel="noopener"
+							>
+								Gas Mixing and Increase in Entropy (42:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Consider two gases separated by a partition.</li>
+							<li>On removing the partition, the gases mix spontaneously.</li>
+							<li>
+								The reverse process, spontaneous separation of the mixed gases,
+								does not occur naturally.
+							</li>
+							<li>
+								Reason:
+								<br />
+								the mixed state is more random and therefore more probable than
+								the separated ordered state.
+							</li>
+							<li>
+								Hence, mixing of gases is a spontaneous process because entropy
+								increases:
+								<br />
+								\( \Delta S &gt; 0 \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Gas Mixing Entropy -->
+
+					<!-- START ch12 | H And S Competition -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=2666s"
+								target="_blank"
+								rel="noopener"
+							>
+								Competition Between Enthalpy and Entropy Factors (44:26)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Some processes are governed by competing tendencies of enthalpy
+								and entropy.
+							</li>
+							<li>
+								Example:
+								<br />
+								ice melting to water.
+							</li>
+							<li>
+								For melting:
+								<br />
+								\( \Delta H &gt; 0 \), because heat is absorbed,
+								<br />
+								but \( \Delta S &gt; 0 \), because molecular randomness
+								increases.
+							</li>
+							<li>
+								The entropy factor favors spontaneity even though the enthalpy
+								factor does not.
+							</li>
+							<li>
+								If heat exchange is prevented by insulation, then the decision
+								depends only on randomness considerations.
+							</li>
+							<li>
+								Thus, spontaneity can result from a balance between the tendency
+								to lower energy and the tendency to increase disorder.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | H And S Competition -->
+
+					<!-- START ch13 | Entropy Decrease Case -->
+					<li>
+						<div id="ch13">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=2867s"
+								target="_blank"
+								rel="noopener"
+							>
+								When Entropy Decreases but Process Can Still Occur (47:47)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Entropy increase is also not the only condition for spontaneity.
+							</li>
+							<li>
+								Example:
+								<br />
+								liquefaction of a gas.
+							</li>
+							<li>
+								In going from gas to liquid, randomness decreases, so:
+								<br />
+								\( \Delta S &lt; 0 \)
+							</li>
+							<li>
+								However, the process may still occur because the gas loses heat
+								and:
+								<br />
+								\( \Delta H &lt; 0 \)
+							</li>
+							<li>
+								Thus, a decrease in entropy does not always make a process
+								non-spontaneous.
+							</li>
+							<li>
+								Again, the final decision depends on the combined effect of both
+								factors.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch13 | Entropy Decrease Case -->
+
+					<!-- START ch14 | Combined Spontaneity Factors -->
+					<li>
+						<div id="ch14">
+							<a
+								href="https://youtu.be/a7CxGA6qQPE?t=2961s"
+								target="_blank"
+								rel="noopener"
+							>
+								Interplay of \( \Delta H \), \( \Delta S \), and \( \Delta G \)
+								(49:21)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Two major tendencies govern spontaneity:
+								<ol>
+									<li>tendency to attain lower energy,</li>
+									<br />
+									<li>tendency to attain greater randomness.</li>
+								</ol>
+							</li>
+							<li>
+								Neither \( \Delta H \) nor \( \Delta S \) alone is universally
+								sufficient.
+							</li>
+							<li>
+								The final thermodynamic criterion is obtained by combining both
+								through Gibbs free energy change, \( \Delta G \).
+							</li>
+							<li>
+								When only one factor is given in a question, that factor alone
+								is used to judge the process.
+							</li>
+							<li>
+								When both factors are relevant, their combined effect must be
+								considered.
+							</li>
+							<li>
+								This motivates the later formal criterion of spontaneity based
+								on Gibbs free energy.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch14 | Combined Spontaneity Factors -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
