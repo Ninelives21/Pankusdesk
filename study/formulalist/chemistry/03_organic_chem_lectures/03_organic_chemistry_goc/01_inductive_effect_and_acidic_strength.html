@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://www.youtube.com/playlist?list=PLF_7kfnwLFCFXbEZgV5ymIMOeBRoABXqw"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -131,19 +145,754 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Introduction to GOC and Its Importance (00:00)</a>
+				</li>
+				<li><a href="#ch02">What Is Studied in GOC (04:28)</a></li>
+				<li>
+					<a href="#ch03"
+						>Inductive Effect: Definition and Basic Idea (07:43)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Plus I, Minus I, and Transmission Through Sigma Bonds (10:18)</a
+					>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Stability of Charged Species by Minus I Effect (14:23)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Acidic Strength and Conjugate-Base Stability (22:55)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07">Plus I Effect and Acidity of Alcohols (25:00)</a>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Net Effect of Substituents in Carboxylic Acids (38:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Ka, pKa, and the Reliable Measure of Acidity (43:30)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10"
+						>Memorized Acidity Order of Common Organic Species (48:01)</a
+					>
+				</li>
+				<li>
+					<a href="#ch11"
+						>Mixed Comparisons: Carboxylic Acids and Phenols (53:09)</a
+					>
+				</li>
+				<li>
+					<a href="#ch12"
+						>When Atom Type Matters More Than Inductive Effect (62:30)</a
+					>
+				</li>
+				<li>
+					<a href="#ch13"
+						>Hybridization, Terminal Alkynes, and Benzene (67:30)</a
+					>
+				</li>
+				<li>
+					<a href="#ch14">Period-2 Hydrides and Final Homework (75:52)</a>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<img
-				src="../../image/screenshots/goc_isomerism/PW/goc/01_inductive_order.png"
-				alt=""
-				style="width: 20%; height: auto; margin-right: 10px"
-			/>
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | GOC Introduction -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=0s"
+								target="_blank"
+								rel="noopener"
+							>
+								Introduction to GOC and Its Importance (00:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								<strong>General Organic Chemistry (GOC)</strong> is the
+								foundation of organic chemistry.
+							</li>
+							<li>
+								It is used to explain:
+								<ol>
+									<li>reactivity,</li>
+									<li>stability of intermediates,</li>
+									<li>acidity/basicity,</li>
+									<li>comparative stability of compounds.</li>
+								</ol>
+							</li>
+							<li>Many later chapters depend on GOC concepts.</li>
+							<li>
+								Basic IUPAC nomenclature should be known before starting GOC.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | GOC Introduction -->
 
-			<img <br /><br />
+					<!-- START ch02 | GOC Scope -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=268s"
+								target="_blank"
+								rel="noopener"
+							>
+								What Is Studied in GOC (04:28)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								<strong>Main areas of GOC:</strong>
+								<ol>
+									<li>Electronic effects</li>
+									<li>Reaction intermediates</li>
+									<li>Reaction mechanisms</li>
+								</ol>
+							</li>
+							<li>
+								<strong>Electronic effects discussed in GOC:</strong>
+								<ol>
+									<li>Inductive effect</li>
+									<li>Electromeric effect</li>
+									<li>Hyperconjugation</li>
+									<li>Resonance / mesomeric effect</li>
+								</ol>
+							</li>
+							<li>
+								Among these, <strong>electromeric effect is temporary</strong>;
+								the others are treated as permanent.
+							</li>
+							<li>
+								This lecture starts with the <strong>inductive effect</strong>.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | GOC Scope -->
+
+					<!-- START ch03 | Inductive Definition -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=463s"
+								target="_blank"
+								rel="noopener"
+							>
+								Inductive Effect: Definition and Basic Idea (07:43)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								<strong>Definition:</strong> Inductive effect is the partial
+								displacement of <strong>\( \sigma \)</strong>-bond electrons due
+								to electronegativity difference.
+							</li>
+							<li>
+								It operates through <strong>\( \sigma \)</strong> bonds only.
+							</li>
+							<li>
+								For \( \mathrm{C-X} \), if \( X \) is more electronegative than
+								carbon: <br />\( \mathrm{C^{\delta +}-X^{\delta -}} \)
+							</li>
+							<li>
+								If the attached atom/group is less electronegative than carbon,
+								electron density shifts toward carbon.
+							</li>
+							<li>
+								It is a <strong>partial effect</strong>, not complete bond
+								breaking.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Inductive Definition -->
+
+					<!-- START ch04 | Plus Minus I -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=618s"
+								target="_blank"
+								rel="noopener"
+							>
+								Plus I, Minus I, and Transmission Through Sigma Bonds (10:18)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								<strong>\(-I\) effect:</strong> electron-withdrawing effect
+								through \( \sigma \) bonds.
+							</li>
+							<li>
+								<strong>\(+I\) effect:</strong> electron-donating effect through
+								\( \sigma \) bonds.
+							</li>
+							<li>
+								Reference point is <strong>carbon</strong>:
+								<ol>
+									<li>
+										group more electronegative than carbon \( \rightarrow -I \)
+									</li>
+									<li>
+										group less electronegative than carbon \( \rightarrow +I \)
+									</li>
+								</ol>
+							</li>
+							<li>
+								Inductive effect is transmitted through \( \sigma \) bonds.
+							</li>
+							<li>Its strength <strong>decreases with distance</strong>.</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Plus Minus I -->
+
+					<!-- START ch05 | Stability Minus I -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=863s"
+								target="_blank"
+								rel="noopener"
+							>
+								Stability of Charged Species by Minus I Effect (14:23)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								Charged species are generally less stable than neutral species.
+							</li>
+							<li>
+								<strong
+									>Greater charge dispersal \( \rightarrow \) greater
+									stability.</strong
+								>
+							</li>
+							<li>
+								\(-I\) groups stabilize a nearby
+								<strong>negative charge</strong> by withdrawing electron
+								density.
+							</li>
+							<li>
+								For halogens: <br />\( \mathrm{F > Cl > Br > I} \) in \(-I\)
+								effect
+							</li>
+							<li>
+								Hence, stronger \(-I\) effect gives greater stabilization of a
+								nearby anion.
+							</li>
+							<li>
+								<strong>Common \(-I\) order:</strong>
+								<br />
+								<img
+									src="../03_organic_chemistry_goc/images/01/01_inductive_order_-I.png"
+									alt="-I order"
+									style="width: 40%; height: auto; margin-right: 10px"
+								/>
+							</li>
+							<li>
+								<strong>Hydrogen</strong> is taken as the reference point.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Stability Minus I -->
+
+					<!-- START ch06 | Acidity Conjugate Base -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=1375s"
+								target="_blank"
+								rel="noopener"
+							>
+								Acidic Strength and Conjugate-Base Stability (22:55)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								For an acid: <br />\( \mathrm{HA \rightleftharpoons H^+ + A^-}
+								\)
+							</li>
+							<li>
+								<strong
+									>Acid strength depends on conjugate-base stability.</strong
+								>
+							</li>
+							<li>
+								More stable \( \mathrm{A^-} \) \( \rightarrow \) stronger acid.
+							</li>
+							<li>
+								\(-I\) effect generally <strong>increases acidity</strong> by
+								stabilizing the conjugate base.
+							</li>
+							<li>
+								Thus, stronger \(-I\) substituent at the same position usually
+								gives stronger acid.
+								<br />
+								<img
+									src="../03_organic_chemistry_goc/images/01/02_acidic_order_example02.png"
+									alt=""
+									style="width: 20%; height: auto; margin-right: 10px"
+								/>
+							</li>
+							<li>
+								<strong>Application:</strong>
+								<ol>
+									<li>
+										\( \mathrm{NO_2CH_2COO^- > FCH_2COO^- > CH_2{=}CHCOO^-} \)
+									</li>
+									<li>
+										Corresponding acidity follows the same stabilizing trend of
+										the conjugate base.
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Acidity Conjugate Base -->
+
+					<!-- START ch07 | Plus I Acidity -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=1500s"
+								target="_blank"
+								rel="noopener"
+							>
+								Plus I Effect and Acidity of Alcohols (25:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								\(+I\) effect is shown mainly by <strong>alkyl groups</strong>.
+								<br />
+								<img
+									src="../03_organic_chemistry_goc/images/01/04_inductive_order_+I.png"
+									alt="+I effect"
+									style="width: 40%; height: auto; margin-right: 10px"
+								/>
+							</li>
+							<li>
+								<strong>Order of \(+I\) effect among alkyl groups:</strong>
+								<br />\( \mathrm{3^\circ\ alkyl > 2^\circ\ alkyl > 1^\circ\
+								alkyl > CH_3} \)
+							</li>
+							<li>
+								For alcohols, acidity depends on stability of the alkoxide ion.
+							</li>
+							<li>
+								\(+I\) groups push electron density toward oxygen and
+								<strong>destabilize \( \mathrm{O^-} \)</strong>.
+							</li>
+							<li>
+								Therefore: <br />more \(+I\) effect \( \rightarrow \) less
+								acidic alcohol
+							</li>
+							<li>
+								<strong>Acidity order:</strong> <br />methyl alcohol \( > \)
+								primary alcohol \( > \) secondary alcohol \( > \) tertiary
+								alcohol
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Plus I Acidity -->
+
+					<!-- START ch08 | Net Substituent Effect -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=2312s"
+								target="_blank"
+								rel="noopener"
+							>
+								Net Effect of Substituents in Carboxylic Acids (38:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								Always consider the
+								<strong>net inductive effect of the whole substituent</strong>.
+							</li>
+							<li>\( \mathrm{ClCH_2{-}} \): overall \(-I\) effect.</li>
+							<li>
+								\( \mathrm{HOCH_2{-}} \): in this lecture, treated overall as
+								weak \(+I\) in the given comparison.
+							</li>
+							<li>
+								<strong>Representative acidity trend:</strong>
+								<ol>
+									<li>\( \mathrm{ClCH_2COOH} \): most acidic</li>
+									<li>\( \mathrm{HOCH_2COOH} \): intermediate</li>
+									<li>\( \mathrm{CH_3COOH} \): least acidic</li>
+								</ol>
+							</li>
+							<li>
+								Reason: net \(-I\) effect increases acidity; net \(+I\) effect
+								decreases acidity.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Net Substituent Effect -->
+
+					<!-- START ch09 | Ka pKa Acidity -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=2610s"
+								target="_blank"
+								rel="noopener"
+							>
+								Ka, pKa, and the Reliable Measure of Acidity (43:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								For <br />\( \mathrm{HA \rightleftharpoons H^+ + A^-} \),
+								<br />\( \mathrm{K_a = \dfrac{[H^+][A^-]}{[HA]}} \)
+							</li>
+							<li>
+								<strong
+									>Larger \( \mathrm{K_a} \) \( \rightarrow \) stronger
+									acid.</strong
+								>
+							</li>
+							<li>\( \mathrm{p}K_a = -\log K_a \)</li>
+							<li>
+								<strong
+									>Smaller \( \mathrm{p}K_a \) \( \rightarrow \) stronger
+									acid.</strong
+								>
+							</li>
+							<li>
+								For broad comparisons across different classes, \( \mathrm{K_a}
+								\) / \( \mathrm{p}K_a \) is more reliable than a single
+								inductive-effect argument.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Ka pKa Acidity -->
+
+					<!-- START ch10 | Common Acidity Order -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=2881s"
+								target="_blank"
+								rel="noopener"
+							>
+								Memorized Acidity Order of Common Organic Species (48:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								<strong>Useful memorized acidity order:</strong>
+								<ol>
+									<li>\( \mathrm{ArSO_3H} \)</li>
+									<li>\( \mathrm{HCOOH} \)</li>
+									<li>Benzoic acid</li>
+									<li>\( \mathrm{RCOOH} \)</li>
+									<li>\( \mathrm{H_2CO_3} \)</li>
+									<li>Phenol</li>
+									<li>\( \mathrm{H_2O} \)</li>
+									<li>\( \mathrm{ROH} \)</li>
+									<li>\( \mathrm{HC{\equiv}CH} \)</li>
+									<li>\( \mathrm{H_2C{=}CH_2} \)</li>
+									<li>\( \mathrm{CH_3CH_3} \)</li>
+								</ol>
+							</li>
+							<li>
+								<img
+									src="../03_organic_chemistry_goc/images/01/05_acidic_order.png"
+									alt="Acidic order"
+									style="width: 40%; height: auto; margin-right: 10px"
+								/>
+							</li>
+							<li>
+								In the lecture, methanol is treated as slightly more acidic than
+								water in the cited comparison.
+							</li>
+							<li>
+								Only <strong>terminal alkynes</strong> show acidic hydrogen in
+								this context.
+							</li>
+							<li>
+								<strong>Example:</strong> <br />\( \mathrm{H_2O > C_2H_5OH >
+								HC{\equiv}CH} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Common Acidity Order -->
+
+					<!-- START ch11 | Mixed Acid Comparisons -->
+					<li>
+						<div id="ch11">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=3189s"
+								target="_blank"
+								rel="noopener"
+							>
+								Mixed Comparisons: Carboxylic Acids and Phenols (53:09)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								First compare the <strong>class of compound</strong>, then the
+								substituent effect.
+							</li>
+							<li>
+								Carboxylic acids are generally much more acidic than phenols.
+							</li>
+							<li>
+								Within the same class, substituent effects can significantly
+								change acidity.
+							</li>
+							<li>
+								In nitro-substituted phenols:
+								<ol>
+									<li>dinitrophenol \( > \) mononitrophenol in acidity</li>
+									<li>
+										para-nitrophenol \( > \) meta-nitrophenol in the lecture
+										comparison
+									</li>
+								</ol>
+							</li>
+							<li>
+								Reason: at <strong>ortho/para</strong> positions, mesomeric
+								effect also operates; at <strong>meta</strong>, mainly inductive
+								effect is considered.
+							</li>
+							<li>
+								<!-- IMAGE 01 SHOULD GO HERE
+               Description: Relative positions ortho, meta, and para on a benzene ring with respect to the acidic group.
+               Lecture reference: 58:49
+          -->
+							</li>
+						</ul>
+					</li>
+					<!-- END ch11 | Mixed Acid Comparisons -->
+
+					<!-- START ch12 | Atom Type Stability -->
+					<li>
+						<div id="ch12">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=3750s"
+								target="_blank"
+								rel="noopener"
+							>
+								When Atom Type Matters More Than Inductive Effect (62:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								Inductive effect should be compared only when the charged atom
+								is the same or comparable.
+							</li>
+							<li>
+								Example:
+								<ol>
+									<li>alcohol \( \rightarrow \mathrm{RO^-} \)</li>
+									<li>amine \( \rightarrow \mathrm{RNH^-} \)</li>
+								</ol>
+							</li>
+							<li>
+								These anions carry charge on <strong>different atoms</strong>.
+							</li>
+							<li>
+								<strong>Rule:</strong>
+								<ol>
+									<li>
+										negative charge is more stable on a more electronegative
+										atom
+									</li>
+									<li>
+										positive charge is more stable on a less electronegative
+										atom
+									</li>
+								</ol>
+							</li>
+							<li>
+								Therefore, alkoxide ion is more stable than the corresponding
+								amide-type anion.
+							</li>
+							<li>
+								<strong>Hence:</strong> alcohols are more acidic than amines.
+							</li>
+							<li>
+								<strong>Example:</strong> ethanol is more acidic than
+								methylamine.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch12 | Atom Type Stability -->
+
+					<!-- START ch13 | Hybridization Acidity -->
+					<li>
+						<div id="ch13">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=4050s"
+								target="_blank"
+								rel="noopener"
+							>
+								Hybridization, Terminal Alkynes, and Benzene (67:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								For hydrocarbons, acidity depends on stability of the
+								<strong>carbanion</strong> formed after deprotonation.
+							</li>
+							<li>
+								Relevant conjugate bases:
+								<ol>
+									<li>\( \mathrm{HC{\equiv}C^-} \)</li>
+									<li>\( \mathrm{H_2C{=}CH^-} \)</li>
+									<li>\( \mathrm{CH_3CH_2^-} \)</li>
+								</ol>
+							</li>
+							<li>
+								<strong>Electronegativity of carbon by hybridization:</strong>
+								<br />\( \mathrm{sp > sp^2 > sp^3} \)
+							</li>
+							<li>
+								More \( s \)-character \( \rightarrow \) greater
+								electronegativity \( \rightarrow \) better stabilization of
+								negative charge.
+							</li>
+							<li>
+								<strong>Therefore:</strong> <br />\( \mathrm{HC{\equiv}CH >
+								H_2C{=}CH_2 > CH_3CH_3} \) in acidity
+							</li>
+							<li>
+								Only <strong>terminal alkynes</strong> are acidic in this
+								comparison.
+							</li>
+							<li>
+								Lecture order including benzene: <br />\( \mathrm{HC{\equiv}CH >
+								C_6H_6 > H_2C{=}CH_2 > CH_3CH_3} \)
+							</li>
+							<li>
+								<!-- IMAGE 02 SHOULD GO HERE
+               Description: Comparison of conjugate bases of terminal alkyne, benzene, alkene, and alkane with the negative charge marked on carbon.
+               Lecture reference: 72:30
+          -->
+							</li>
+						</ul>
+					</li>
+					<!-- END ch13 | Hybridization Acidity -->
+
+					<!-- START ch14 | Hydrides Homework -->
+					<li>
+						<div id="ch14">
+							<a
+								href="https://youtu.be/hdAW3ng8gx0?t=4552s"
+								target="_blank"
+								rel="noopener"
+							>
+								Period-2 Hydrides and Final Homework (75:52)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								Compare acidity of period-2 hydrides using stability of
+								conjugate bases.
+							</li>
+							<li>
+								Conjugate bases:
+								<ol>
+									<li>\( \mathrm{CH_3^-} \)</li>
+									<li>\( \mathrm{NH_2^-} \)</li>
+									<li>\( \mathrm{OH^-} \)</li>
+									<li>\( \mathrm{F^-} \)</li>
+								</ol>
+							</li>
+							<li>
+								Since negative charge is more stable on the more electronegative
+								atom: <br />\( \mathrm{HF > H_2O > NH_3 > CH_4} \)
+							</li>
+							<li>
+								<strong>Homework from lecture:</strong> decreasing basic
+								strength in gaseous phase:
+								<ol>
+									<li>tert-butylamine</li>
+									<li>isopropylamine</li>
+									<li>ethylamine</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch14 | Hydrides Homework -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
