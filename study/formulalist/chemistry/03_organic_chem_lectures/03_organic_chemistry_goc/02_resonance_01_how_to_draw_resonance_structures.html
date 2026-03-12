@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -239,15 +253,15 @@
 
 			<div class="lecture-notes">
 				<ol>
-					<!-- START ch01 | GOC Introduction -->
+					<!-- START ch01 | Resonance Introduction -->
 					<li>
 						<div id="ch01">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=0s"
+								href="https://youtu.be/rHMMX18a8ME?t=5s"
 								target="_blank"
 								rel="noopener"
 							>
-								Introduction to GOC and Its Importance (00:00)
+								Introduction to Resonance (00:05)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -257,125 +271,54 @@
 
 						<ul class="inner-list">
 							<li>
-								General Organic Chemistry (GOC) is the foundation of organic
-								chemistry.
+								Electronic effects in organic molecules explain how electrons
+								shift and influence reactivity.
 							</li>
-							<li>
-								It explains general principles used to predict reactivity,
-								stability of intermediates, acidic character, and basic
-								character.
-							</li>
-							<li>
-								Many later chapters such as hydrocarbons, haloalkanes, alcohols,
-								phenols, aldehydes, ketones, carboxylic acids, and nitrogen
-								compounds rely on GOC concepts.
-							</li>
-							<li>
-								For higher-level problem solving, conceptual understanding of
-								GOC is essential.
-							</li>
-						</ul>
-					</li>
-					<!-- END ch01 | GOC Introduction -->
 
-					<!-- START ch02 | GOC Scope -->
-					<li>
-						<div id="ch02">
-							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=268s"
-								target="_blank"
-								rel="noopener"
-							>
-								What Is Studied in GOC (04:28)
-							</a>
-							<br />
-							<span class="back-to-index">
-								<a href="#topic-index">(Back to topic index)</a>
-							</span>
-						</div>
-
-						<ul class="inner-list">
 							<li>
-								GOC is discussed here under three broad areas:
-								<ol>
-									<li>Electronic effects</li>
-									<br />
-									<li>Reaction intermediates</li>
-									<br />
-									<li>Reaction mechanisms</li>
-								</ol>
-							</li>
-							<li>
-								The four electron-displacement effects listed are:
+								Main electron-displacement effects studied in GOC:
 								<ol>
 									<li>Inductive effect</li>
 									<br />
 									<li>Electromeric effect</li>
 									<br />
+									<li>Resonance (mesomeric effect)</li>
+									<br />
 									<li>Hyperconjugation</li>
-									<br />
-									<li>Resonance or mesomeric effect</li>
 								</ol>
 							</li>
+
 							<li>
-								This lecture begins with inductive effect and its applications.
+								Resonance explains
+								<strong>delocalization of electrons</strong> within a molecule.
 							</li>
-						</ul>
-					</li>
-					<!-- END ch02 | GOC Scope -->
 
-					<!-- START ch03 | Inductive Definition -->
-					<li>
-						<div id="ch03">
-							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=463s"
-								target="_blank"
-								rel="noopener"
-							>
-								Inductive Effect: Definition and Basic Idea (07:43)
-							</a>
-							<br />
-							<span class="back-to-index">
-								<a href="#topic-index">(Back to topic index)</a>
-							</span>
-						</div>
+							<li>
+								Electron delocalization stabilizes molecules, ions, and reaction
+								intermediates.
+							</li>
 
-						<ul class="inner-list">
+							<li>
+								Many stability trends in organic chemistry depend on resonance.
+							</li>
+
 							<!-- IMAGE 01 SHOULD GO HERE
-             Description: Partial displacement of sigma electrons in a C-X bond showing \( \delta^+ \) on carbon and \( \delta^- \) on the more electronegative atom.
-             Lecture reference: 08:00
+             Description: Simple schematic showing electron delocalization concept with curved arrows.
+             Lecture reference: 00:45
         -->
-							<li>
-								Inductive effect is the partial displacement of sigma-bond
-								electrons toward the more electronegative atom in a sigma bond.
-							</li>
-							<li>
-								The displacement is partial, so partial charges develop instead
-								of complete ionic charges.
-							</li>
-							<li>
-								If \( X \) is more electronegative than carbon in \(
-								\mathrm{C-X} \), electron density shifts toward \( X \).<br />\(
-								\mathrm{C^{\delta +}-X^{\delta -}} \)
-							</li>
-							<li>
-								If the attached atom or group is less electronegative than
-								carbon, electron density shifts toward carbon.
-							</li>
-							<li>This discussion is restricted to sigma bonds.</li>
 						</ul>
 					</li>
-					<!-- END ch03 | Inductive Definition -->
+					<!-- END ch01 | Resonance Introduction -->
 
-					<!-- START ch04 | Plus Minus I -->
+					<!-- START ch02 | Resonance Examples -->
 					<li>
-						<div id="ch04">
+						<div id="ch02">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=618s"
+								href="https://youtu.be/rHMMX18a8ME?t=100s"
 								target="_blank"
 								rel="noopener"
 							>
-								Plus I, Minus I, and Transmission Through Sigma Bonds (10:18)
+								Examples of Resonating Structures (01:40)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -384,52 +327,154 @@
 						</div>
 
 						<ul class="inner-list">
+							<li>Example: allylic carbocation.</li>
+
 							<li>
-								A group that withdraws electron density from carbon is an
-								electron-withdrawing group and shows minus I effect.
+								Structure:
+								<br />
+								\( CH_2 = CH - CH_2^{+} \)
 							</li>
+
+							<li>π electrons shift toward the positive center.</li>
+
 							<li>
-								A group that donates electron density toward carbon is an
-								electron-donating group and shows plus I effect.
+								New resonance structure formed:
+								<br />
+								\( CH_2^{+} - CH = CH_2 \)
 							</li>
+
+							<li>Both structures contribute to the resonance hybrid.</li>
+
 							<li>
-								Relative to carbon:
-								<ol>
-									<li>More electronegative group \( \rightarrow \) minus I</li>
-									<br />
-									<li>Less electronegative group \( \rightarrow \) plus I</li>
-								</ol>
+								Example with negative charge:
+								<br />
+								\( CH_2 = CH - CH_2^{-} \)
+							</li>
+
+							<li>Lone pair electrons move to form alternate structures.</li>
+
+							<li>
+								Example: carbonate ion \( CO_3^{2-} \) shows three equivalent
+								resonance structures.
 							</li>
 
 							<!-- IMAGE 02 SHOULD GO HERE
-             Description: Carbon chain attached to a withdrawing group showing transmission of partial positive character that decreases along the chain.
-             Lecture reference: 12:38
+             Description: Allylic carbocation resonance structures with curved arrow electron movement.
+             Lecture reference: 02:30
         -->
-							<li>
-								Inductive effect travels through sigma bonds and decreases with
-								distance.
-							</li>
-							<li>
-								The atom directly attached to the substituent is affected the
-								most, and more distant atoms are affected less strongly.
-							</li>
-							<li>
-								This distance dependence is important in predicting stability
-								and acidity.
-							</li>
+
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: Three resonance forms of carbonate ion showing double bond shifting.
+             Lecture reference: 04:10
+        -->
 						</ul>
 					</li>
-					<!-- END ch04 | Plus Minus I -->
+					<!-- END ch02 | Resonance Examples -->
 
-					<!-- START ch05 | Stability Minus I -->
+					<!-- START ch03 | Resonance Definition -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/rHMMX18a8ME?t=437s"
+								target="_blank"
+								rel="noopener"
+							>
+								Definition and Key Features of Resonance (07:17)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li><strong>Resonance definition:</strong></li>
+
+							<li>
+								Delocalization or displacement of π electrons or lone pair
+								electrons within a conjugated system.
+							</li>
+
+							<li>Important characteristics:</li>
+
+							<li>
+								<ol>
+									<li>Only π electrons or lone pair electrons participate.</li>
+									<br />
+									<li>σ bonds remain unchanged.</li>
+									<br />
+									<li>Atomic positions do not change.</li>
+									<br />
+									<li>Electron redistribution occurs within the molecule.</li>
+								</ol>
+							</li>
+
+							<li>Resonance structures are theoretical contributors.</li>
+
+							<li>The real structure is a hybrid of all contributors.</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Resonance Definition -->
+
+					<!-- START ch04 | Resonance Hybrid -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/rHMMX18a8ME?t=670s"
+								target="_blank"
+								rel="noopener"
+							>
+								Resonance Hybrid Concept (11:10)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The actual molecule is represented by the
+								<strong>resonance hybrid</strong>.
+							</li>
+
+							<li>
+								Resonance hybrid represents average electron distribution.
+							</li>
+
+							<li>Characteristics of resonance hybrid:</li>
+
+							<li>
+								<ol>
+									<li>More stable than any individual resonance structure.</li>
+									<br />
+									<li>Electron density becomes delocalized.</li>
+									<br />
+									<li>Bond lengths become intermediate.</li>
+								</ol>
+							</li>
+
+							<li>Example: carbonate ion.</li>
+
+							<li>All three C–O bonds have identical bond length.</li>
+
+							<!-- IMAGE 04 SHOULD GO HERE
+             Description: Resonance hybrid of carbonate ion showing partial double bonds.
+             Lecture reference: 12:30
+        -->
+						</ul>
+					</li>
+					<!-- END ch04 | Resonance Hybrid -->
+
+					<!-- START ch05 | Conjugation Condition -->
 					<li>
 						<div id="ch05">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=863s"
+								href="https://youtu.be/rHMMX18a8ME?t=959s"
 								target="_blank"
 								rel="noopener"
 							>
-								Stability of Charged Species by Minus I Effect (14:23)
+								Condition for Resonance — Conjugation (15:59)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -439,220 +484,124 @@
 
 						<ul class="inner-list">
 							<li>
-								Charged species are generally less stable than corresponding
-								neutral species.
-							</li>
-							<li>
-								A localized charge gives lower stability, whereas a dispersed
-								charge gives greater stability.
-							</li>
-							<li>
-								Minus I groups can stabilize a nearby negative charge by
-								withdrawing electron density and reducing charge concentration.
-							</li>
-							<li>
-								For halogens, the minus I order used in the lecture is:<br />\(
-								\mathrm{F > Cl > Br > I} \)
+								Resonance occurs only in <strong>conjugated systems</strong>.
 							</li>
 
-							<!-- IMAGE 03 SHOULD GO HERE
-             Description: Ordered chart of important minus I groups from strongest to weakest, including common exam groups.
-             Lecture reference: 19:02
-        -->
-							<li>
-								A longer memorized minus I order is introduced, beginning with
-								strongly electron-withdrawing positively charged nitrogen
-								groups, then \( \mathrm{NO_2} \), \( \mathrm{CN} \),
-								carbonyl-containing groups, halogens, \( \mathrm{OR} \), \(
-								\mathrm{OH} \), alkynyl, \( \mathrm{NH_2} \), phenyl, vinyl, and
-								finally hydrogen as reference.
-							</li>
-							<li>
-								Hydrogen is treated as the zero reference for inductive effect.
-							</li>
-						</ul>
-					</li>
-					<!-- END ch05 | Stability Minus I -->
+							<li>Conjugation means continuous overlap of p orbitals.</li>
 
-					<!-- START ch06 | Acidity Conjugate Base -->
-					<li>
-						<div id="ch06">
-							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=1375s"
-								target="_blank"
-								rel="noopener"
-							>
-								Acidic Strength and Conjugate-Base Stability (22:55)
-							</a>
-							<br />
-							<span class="back-to-index">
-								<a href="#topic-index">(Back to topic index)</a>
-							</span>
-						</div>
-
-						<ul class="inner-list">
-							<!-- IMAGE 04 SHOULD GO HERE
-             Description: Generic acid dissociation \( \mathrm{HA \rightleftharpoons H^+ + A^-} \) with electron-withdrawing group stabilizing the conjugate base.
-             Lecture reference: 23:03
-        -->
-							<li>
-								For an acid \( \mathrm{HA} \), acidity is judged by the
-								stability of the conjugate base formed after loss of \(
-								\mathrm{H^+} \).<br />\( \mathrm{HA \rightleftharpoons H^+ +
-								A^-} \)
-							</li>
-							<li>
-								A more stable \( \mathrm{A^-} \) means easier proton loss and
-								hence stronger acidity.
-							</li>
-							<li>
-								Minus I effect generally increases acidity because it stabilizes
-								the conjugate base.
-							</li>
-							<li>
-								This is a useful trend for comparable compounds, but it is not
-								the only factor in every acidity comparison.
-							</li>
+							<li>Basic conjugation patterns:</li>
 
 							<li>
 								<ol>
-									<li>
-										<strong
-											><a
-												href="https://youtu.be/hdAW3ng8gx0?t=1328s"
-												target="_blank"
-												rel="noopener"
-												>Question 1</a
-											></strong
-										>: Compare the stability of similarly substituted
-										carboxylate ions containing groups such as \( \mathrm{NO_2}
-										\), \( \mathrm{F} \), and vinyl.
-									</li>
+									<li>π–σ–positive charge</li>
 									<br />
-									<li>
-										Greater electron withdrawal gives greater stabilization of
-										the anion.
-									</li>
+									<li>π–σ–lone pair</li>
 									<br />
-									<li>
-										<strong
-											><a
-												href="https://youtu.be/hdAW3ng8gx0?t=1430s"
-												target="_blank"
-												rel="noopener"
-												>Question 2</a
-											></strong
-										>: Compare acidity among analogous acids with different
-										withdrawing substituents.
-									</li>
+									<li>π–σ–free radical</li>
 									<br />
-									<li>
-										Stronger minus I effect gives stronger acidity when the
-										compounds are otherwise comparable.
-									</li>
+									<li>π–σ–π</li>
+									<br />
+									<li>lone pair–σ–positive charge</li>
 								</ol>
-							</li>
-						</ul>
-					</li>
-					<!-- END ch06 | Acidity Conjugate Base -->
-
-					<!-- START ch07 | Plus I Acidity -->
-					<li>
-						<div id="ch07">
-							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=1500s"
-								target="_blank"
-								rel="noopener"
-							>
-								Plus I Effect and Acidity of Alcohols (25:00)
-							</a>
-							<br />
-							<span class="back-to-index">
-								<a href="#topic-index">(Back to topic index)</a>
-							</span>
-						</div>
-
-						<ul class="inner-list">
-							<li>
-								Plus I effect is shown by electron-donating groups, especially
-								alkyl groups.
 							</li>
 
 							<!-- IMAGE 05 SHOULD GO HERE
-             Description: Ordered chart of plus I effect showing \( \mathrm{3^\circ\ alkyl > 2^\circ\ alkyl > 1^\circ\ alkyl > CH_3} \).
-             Lecture reference: 29:09
+             Description: General conjugation patterns diagram showing p-orbital overlap.
+             Lecture reference: 17:10
         -->
-							<li>
-								The lecture emphasizes the common alkyl-group order:<br />\(
-								\mathrm{3^\circ\ alkyl > 2^\circ\ alkyl > 1^\circ\ alkyl > CH_3}
-								\)
-							</li>
-							<li>More alkyl substitution gives stronger plus I effect.</li>
-							<li>
-								For alcohols, acidity is judged by the stability of the alkoxide
-								ion formed after loss of \( \mathrm{H^+} \).
-							</li>
-							<li>
-								Plus I groups push electron density toward oxygen and
-								destabilize \( \mathrm{O^-} \), so stronger plus I effect means
-								lower acidity.
-							</li>
-							<li>
-								Thus, within a homologous set of alcohols, increasing alkyl
-								substitution lowers acidic strength.
-							</li>
-
-							<li>
-								<ol>
-									<li>
-										<strong
-											><a
-												href="https://youtu.be/hdAW3ng8gx0?t=1907s"
-												target="_blank"
-												rel="noopener"
-												>Question 3</a
-											></strong
-										>: Arrange tertiary, secondary, primary, and methyl alcohols
-										in acidic strength.
-									</li>
-									<br />
-									<li>
-										Greater plus I effect gives lower acidity; methyl alcohol is
-										most acidic and tertiary alcohol is least acidic within this
-										set.
-									</li>
-									<br />
-									<li>
-										<strong
-											><a
-												href="https://youtu.be/hdAW3ng8gx0?t=2173s"
-												target="_blank"
-												rel="noopener"
-												>Question 4</a
-											></strong
-										>: Compare acidity when one alcohol framework is influenced
-										by plus I groups and another by a minus I substituent.
-									</li>
-									<br />
-									<li>
-										The structure with stronger stabilization of \( \mathrm{O^-}
-										\) is more acidic.
-									</li>
-								</ol>
-							</li>
 						</ul>
 					</li>
-					<!-- END ch07 | Plus I Acidity -->
+					<!-- END ch05 | Conjugation Condition -->
 
-					<!-- START ch08 | Net Substituent Effect -->
+					<!-- START ch06 | Pi Sigma Positive -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/rHMMX18a8ME?t=1255s"
+								target="_blank"
+								rel="noopener"
+							>
+								Type 1 Conjugation: π–σ–Positive Charge (20:55)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Pattern: π bond – single bond – positive charge.</li>
+
+							<li>
+								Example:
+								<br />
+								\( CH_2 = CH - CH_2^{+} \)
+							</li>
+
+							<li>π electrons shift toward the positively charged carbon.</li>
+
+							<li>
+								Positive charge becomes distributed across multiple atoms.
+							</li>
+
+							<li>This stabilizes carbocations.</li>
+
+							<!-- IMAGE 06 SHOULD GO HERE
+             Description: Allylic carbocation resonance showing delocalized positive charge.
+             Lecture reference: 22:10
+        -->
+						</ul>
+					</li>
+					<!-- END ch06 | Pi Sigma Positive -->
+
+					<!-- START ch07 | Pi Sigma Lone Pair -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/rHMMX18a8ME?t=2463s"
+								target="_blank"
+								rel="noopener"
+							>
+								Type 2 Conjugation: π–σ–Lone Pair / Negative Charge (41:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Pattern: π bond – single bond – lone pair.</li>
+
+							<li>
+								Example:
+								<br />
+								\( CH_2 = CH - CH_2^{-} \)
+							</li>
+
+							<li>Lone pair electrons interact with the π system.</li>
+
+							<li>Negative charge becomes delocalized.</li>
+
+							<li>This stabilizes carbanions.</li>
+
+							<!-- IMAGE 07 SHOULD GO HERE
+             Description: Allylic carbanion resonance structures with electron arrows.
+             Lecture reference: 42:10
+        -->
+						</ul>
+					</li>
+					<!-- END ch07 | Pi Sigma Lone Pair -->
+
+					<!-- START ch08 | Resonance Rules -->
 					<li>
 						<div id="ch08">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=2312s"
+								href="https://youtu.be/rHMMX18a8ME?t=2705s"
 								target="_blank"
 								rel="noopener"
 							>
-								Net Effect of Substituents in Carboxylic Acids (38:32)
+								Rules for Valid Resonating Structures (45:05)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -661,38 +610,37 @@
 						</div>
 
 						<ul class="inner-list">
+							<li>Rules for drawing resonance structures:</li>
+
 							<li>
-								The net inductive effect of a whole substituent must be
-								considered, not only one atom inside it.
+								<ol>
+									<li>Total number of electrons must remain constant.</li>
+									<br />
+									<li>Total charge must remain unchanged.</li>
+									<br />
+									<li>Only electrons move, atoms do not move.</li>
+									<br />
+									<li>σ bonds remain intact.</li>
+								</ol>
 							</li>
+
 							<li>
-								For \( \mathrm{ClCH_2{-}} \), chlorine contributes minus I while
-								\( \mathrm{CH_2} \) contributes plus I; the overall effect
-								remains minus I.
-							</li>
-							<li>
-								For \( \mathrm{HOCH_2{-}} \), oxygen contributes minus I but \(
-								\mathrm{CH_2} \) contributes plus I; the lecture treats the net
-								effect as plus I in the given comparison.
-							</li>
-							<li>
-								This explains why some substituents that contain electronegative
-								atoms may still show net behavior different from first
-								expectation.
+								Resonance contributors must represent the same molecular
+								skeleton.
 							</li>
 						</ul>
 					</li>
-					<!-- END ch08 | Net Substituent Effect -->
+					<!-- END ch08 | Resonance Rules -->
 
-					<!-- START ch09 | Ka pKa Acidity -->
+					<!-- START ch09 | Resonance vs Tautomerism -->
 					<li>
 						<div id="ch09">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=2610s"
+								href="https://youtu.be/rHMMX18a8ME?t=2804s"
 								target="_blank"
 								rel="noopener"
 							>
-								Ka, pKa, and the Reliable Measure of Acidity (43:30)
+								Resonance vs Tautomerism (46:44)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -701,38 +649,37 @@
 						</div>
 
 						<ul class="inner-list">
+							<li><strong>Resonance:</strong> movement of electrons only.</li>
+
 							<li>
-								Inductive reasoning is useful, but the sure method for acidity
-								comparison is the acid dissociation constant.
+								<strong>Tautomerism:</strong> movement of atoms (usually
+								hydrogen).
 							</li>
+
+							<li>In resonance, atoms remain fixed.</li>
+
 							<li>
-								For \( \mathrm{HA \rightleftharpoons H^+ + A^-} \),<br />\(
-								\mathrm{K_a = \dfrac{[H^+][A^-]}{[HA]}} \)
+								If atoms shift positions, it represents isomerism rather than
+								resonance.
 							</li>
-							<li>Larger \( \mathrm{K_a} \) means stronger acid.</li>
-							<li>
-								\( \mathrm{p}K_a \) is inversely related to acidity:<br />\(
-								\mathrm{p}K_a = -\log K_a \)
-							</li>
-							<li>Smaller \( \mathrm{p}K_a \) means stronger acid.</li>
-							<li>
-								When compounds belong to very different classes, direct \(
-								\mathrm{K_a} \) or \( \mathrm{p}K_a \) trends are more reliable
-								than using a single electronic effect alone.
-							</li>
+
+							<!-- IMAGE 08 SHOULD GO HERE
+             Description: Diagram comparing resonance structures and keto-enol tautomerism.
+             Lecture reference: 48:00
+        -->
 						</ul>
 					</li>
-					<!-- END ch09 | Ka pKa Acidity -->
+					<!-- END ch09 | Resonance vs Tautomerism -->
 
-					<!-- START ch10 | Common Acidity Order -->
+					<!-- START ch10 | Pi Sigma Radical -->
 					<li>
 						<div id="ch10">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=2881s"
+								href="https://youtu.be/rHMMX18a8ME?t=3750s"
 								target="_blank"
 								rel="noopener"
 							>
-								Memorized Acidity Order of Common Organic Species (48:01)
+								Type 3 Conjugation: π–σ–Free Radical (01:02:30)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -741,75 +688,31 @@
 						</div>
 
 						<ul class="inner-list">
-							<li>
-								A broad decreasing acidity order presented in the lecture is:
-								<ol>
-									<li>\( \mathrm{ArSO_3H} \)</li>
-									<br />
-									<li>\( \mathrm{HCOOH} \)</li>
-									<br />
-									<li>Benzoic acid</li>
-									<br />
-									<li>\( \mathrm{RCOOH} \)</li>
-									<br />
-									<li>\( \mathrm{H_2CO_3} \)</li>
-									<br />
-									<li>Phenol</li>
-									<br />
-									<li>\( \mathrm{H_2O} \)</li>
-									<br />
-									<li>\( \mathrm{ROH} \)</li>
-									<br />
-									<li>\( \mathrm{HC{\equiv}CH} \)</li>
-									<br />
-									<li>\( \mathrm{H_2C{=}CH_2} \)</li>
-									<br />
-									<li>\( \mathrm{CH_3CH_3} \)</li>
-								</ol>
-							</li>
-							<li>
-								This is a practical revision list for common organic
-								comparisons.
-							</li>
-							<li>
-								A stated exception in the lecture is that methanol is treated as
-								slightly more acidic than water in the cited comparison.
-							</li>
-							<li>
-								Only terminal alkynes are acidic in this context because an
-								acidic hydrogen must be present on the triply bonded carbon.
-							</li>
+							<li>Pattern: π bond – single bond – radical.</li>
 
-							<li>
-								<ol>
-									<li>
-										<strong
-											><a
-												href="https://youtu.be/hdAW3ng8gx0?t=3050s"
-												target="_blank"
-												rel="noopener"
-												>Question 5</a
-											></strong
-										>: Arrange \( \mathrm{H_2O} \), \( \mathrm{C_2H_5OH} \), and
-										\( \mathrm{HC{\equiv}CH} \) in decreasing acidity.
-									</li>
-									<br />
-									<li>Order: \( \mathrm{H_2O > C_2H_5OH > HC{\equiv}CH} \).</li>
-								</ol>
-							</li>
+							<li>Radicals are species containing an unpaired electron.</li>
+
+							<li>Radicals form through homolytic bond cleavage.</li>
+
+							<li>Electron delocalization stabilizes allylic radicals.</li>
+
+							<!-- IMAGE 09 SHOULD GO HERE
+             Description: Allylic radical resonance showing unpaired electron delocalization.
+             Lecture reference: 63:10
+        -->
 						</ul>
 					</li>
-					<!-- END ch10 | Common Acidity Order -->
+					<!-- END ch10 | Pi Sigma Radical -->
 
-					<!-- START ch11 | Mixed Acid Comparisons -->
+					<!-- START ch11 | Pi Sigma Pi -->
 					<li>
 						<div id="ch11">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=3189s"
+								href="https://youtu.be/rHMMX18a8ME?t=4111s"
 								target="_blank"
 								rel="noopener"
 							>
-								Mixed Comparisons: Carboxylic Acids and Phenols (53:09)
+								Type 4 Conjugation: π–σ–π System (01:08:31)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -818,35 +721,31 @@
 						</div>
 
 						<ul class="inner-list">
-							<li>Class identity matters in acidity comparison.</li>
-							<li>
-								A benzoic acid derivative remains significantly more acidic than
-								phenol, even if the phenol carries a strong minus I substituent
-								and the benzoic acid carries a plus I substituent.
-							</li>
-							<li>
-								Within the same class of acids, substituent effects can strongly
-								change acidity order.
-							</li>
-							<li>
-								For nitro-substituted phenols, the lecture notes that ortho and
-								para positions can have stronger overall effect than meta
-								position because mesomeric contribution becomes relevant in
-								addition to distance-based inductive effect.
-							</li>
+							<li>Pattern: double bond – single bond – double bond.</li>
+
+							<li>Example: conjugated diene systems.</li>
+
+							<li>π electrons move across the entire conjugated system.</li>
+
+							<li>This produces delocalized electron density.</li>
+
+							<!-- IMAGE 10 SHOULD GO HERE
+             Description: Butadiene resonance showing delocalized π electrons.
+             Lecture reference: 69:10
+        -->
 						</ul>
 					</li>
-					<!-- END ch11 | Mixed Acid Comparisons -->
+					<!-- END ch11 | Pi Sigma Pi -->
 
-					<!-- START ch12 | Atom Type Stability -->
+					<!-- START ch12 | Lone Pair Sigma Positive -->
 					<li>
 						<div id="ch12">
 							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=3750s"
+								href="https://youtu.be/rHMMX18a8ME?t=4784s"
 								target="_blank"
 								rel="noopener"
 							>
-								When Atom Type Matters More Than Inductive Effect (62:30)
+								Type 5 Conjugation: Lone Pair–σ–Positive Charge (01:19:44)
 							</a>
 							<br />
 							<span class="back-to-index">
@@ -855,218 +754,31 @@
 						</div>
 
 						<ul class="inner-list">
-							<li>
-								Inductive effect should not be used blindly when the charged
-								atom in the conjugate bases is different.
-							</li>
-							<li>
-								Example: alcohol versus amine acidity cannot be decided only by
-								counting alkyl groups.
-							</li>
-							<li>
-								After deprotonation:
-								<ol>
-									<li>Alcohol gives \( \mathrm{RO^-} \)</li>
-									<br />
-									<li>Amine gives \( \mathrm{RNH^-} \)</li>
-								</ol>
-							</li>
-							<li>
-								The more stable anion is the one with negative charge on the
-								more electronegative atom.
-							</li>
-							<li>
-								General rule:
-								<ol>
-									<li>
-										Negative charge on a more electronegative atom \(
-										\rightarrow \) greater stability
-									</li>
-									<br />
-									<li>
-										Positive charge on a less electronegative atom \(
-										\rightarrow \) greater stability
-									</li>
-								</ol>
-							</li>
-							<li>
-								Therefore, alcohols are more acidic than amines in the compared
-								example because oxygen stabilizes negative charge better than
-								nitrogen.
-							</li>
+							<li>Pattern: lone pair – single bond – positive charge.</li>
 
 							<li>
-								<ol>
-									<li>
-										<strong
-											><a
-												href="https://youtu.be/hdAW3ng8gx0?t=3750s"
-												target="_blank"
-												rel="noopener"
-												>Question 6</a
-											></strong
-										>: Which is more acidic, ethanol or methylamine?
-									</li>
-									<br />
-									<li>
-										Ethanol is more acidic because \( \mathrm{CH_3CH_2O^-} \) is
-										more stable than \( \mathrm{CH_3NH^-} \).
-									</li>
-								</ol>
+								Example:
+								<br />
+								\( CH_3 - NH - CH_2^{+} \)
 							</li>
-						</ul>
-					</li>
-					<!-- END ch12 | Atom Type Stability -->
 
-					<!-- START ch13 | Hybridization Acidity -->
-					<li>
-						<div id="ch13">
-							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=4050s"
-								target="_blank"
-								rel="noopener"
-							>
-								Hybridization, Terminal Alkynes, and Benzene (67:30)
-							</a>
-							<br />
-							<span class="back-to-index">
-								<a href="#topic-index">(Back to topic index)</a>
-							</span>
-						</div>
+							<li>Lone pair electrons shift toward the positive center.</li>
 
-						<ul class="inner-list">
-							<!-- IMAGE 06 SHOULD GO HERE
-             Description: Comparison of \( \mathrm{sp} \), \( \mathrm{sp^2} \), and \( \mathrm{sp^3} \) carbon showing s-character, electronegativity trend, and acidity order \( \mathrm{HC{\equiv}CH > H_2C{=}CH_2 > CH_3CH_3} \).
-             Lecture reference: 69:04
+							<li>
+								New resonance structure:
+								<br />
+								\( CH_3 - NH^{+} = CH_2 \)
+							</li>
+
+							<li>Positive charge becomes delocalized between atoms.</li>
+
+							<!-- IMAGE 11 SHOULD GO HERE
+             Description: Lone pair donation resonance example between nitrogen and carbocation.
+             Lecture reference: 81:00
         -->
-							<li>
-								For hydrocarbon acidity, compare the stability of the carbanion
-								formed after proton removal.
-							</li>
-							<li>
-								The conjugate bases are:
-								<ol>
-									<li>\( \mathrm{HC{\equiv}C^-} \)</li>
-									<br />
-									<li>\( \mathrm{H_2C{=}CH^-} \)</li>
-									<br />
-									<li>\( \mathrm{CH_3CH_2^-} \)</li>
-								</ol>
-							</li>
-							<li>
-								The hybridization of the negatively charged carbon affects its
-								electronegativity:
-								<ol>
-									<li>\( \mathrm{sp > sp^2 > sp^3} \)</li>
-								</ol>
-							</li>
-							<li>
-								Higher \( s \)-character places electron density closer to the
-								nucleus, increasing electronegativity and stabilizing negative
-								charge better.
-							</li>
-							<li>
-								Therefore:
-								<ol>
-									<li>\( \mathrm{HC{\equiv}CH > H_2C{=}CH_2 > CH_3CH_3} \)</li>
-								</ol>
-							</li>
-
-							<!-- IMAGE 07 SHOULD GO HERE
-             Description: Terminal alkyne versus internal alkyne, highlighting that only terminal alkynes contain the acidic hydrogen.
-             Lecture reference: 68:17
-        -->
-							<li>
-								Only terminal alkynes are acidic because the proton must be
-								attached directly to the triply bonded carbon.
-							</li>
-							<li>
-								Benzene is placed between alkyne and alkene in the lecture’s
-								acidity comparison.
-							</li>
-							<li>
-								For the cited sequence, the order becomes:
-								<ol>
-									<li>
-										\( \mathrm{HC{\equiv}CH > C_6H_6 > H_2C{=}CH_2 > CH_3CH_3}
-										\)
-									</li>
-								</ol>
-							</li>
 						</ul>
 					</li>
-					<!-- END ch13 | Hybridization Acidity -->
-
-					<!-- START ch14 | Hydrides Homework -->
-					<li>
-						<div id="ch14">
-							<a
-								href="https://youtu.be/hdAW3ng8gx0?t=4552s"
-								target="_blank"
-								rel="noopener"
-							>
-								Period-2 Hydrides and Final Homework (75:52)
-							</a>
-							<br />
-							<span class="back-to-index">
-								<a href="#topic-index">(Back to topic index)</a>
-							</span>
-						</div>
-
-						<ul class="inner-list">
-							<li>
-								For period-2 hydrides \( \mathrm{CH_4} \), \( \mathrm{NH_3} \),
-								\( \mathrm{H_2O} \), and \( \mathrm{HF} \), acidity is compared
-								by stability of the conjugate base formed after loss of \(
-								\mathrm{H^+} \).
-							</li>
-							<li>
-								The conjugate bases are:
-								<ol>
-									<li>\( \mathrm{CH_3^-} \)</li>
-									<br />
-									<li>\( \mathrm{NH_2^-} \)</li>
-									<br />
-									<li>\( \mathrm{OH^-} \)</li>
-									<br />
-									<li>\( \mathrm{F^-} \)</li>
-								</ol>
-							</li>
-							<li>
-								Since negative charge is most stable on the most electronegative
-								atom, the acidity order is:
-								<ol>
-									<li>\( \mathrm{HF > H_2O > NH_3 > CH_4} \)</li>
-								</ol>
-							</li>
-							<li>
-								This again follows the rule that negative charge on a more
-								electronegative atom gives greater stability.
-							</li>
-
-							<li>
-								<ol>
-									<li>
-										<strong
-											><a
-												href="https://youtu.be/hdAW3ng8gx0?t=4611s"
-												target="_blank"
-												rel="noopener"
-												>Question 7</a
-											></strong
-										>: Arrange the given amines in decreasing basic strength in
-										gaseous phase.
-									</li>
-									<br />
-									<li>
-										This is left as homework for application of inductive effect
-										in basicity.
-									</li>
-								</ol>
-							</li>
-						</ul>
-					</li>
-					<!-- END ch14 | Hydrides Homework -->
+					<!-- END ch12 | Lone Pair Sigma Positive -->
 				</ol>
 			</div>
 		</div>
