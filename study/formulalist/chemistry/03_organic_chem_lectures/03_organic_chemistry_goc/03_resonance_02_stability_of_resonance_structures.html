@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -131,13 +145,626 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01"
+						>Introduction to Stability of Resonating Structures (00:09)</a
+					>
+				</li>
+				<li>
+					<a href="#ch02">Rule 1: Greater Number of Covalent Bonds (02:50)</a>
+				</li>
+				<li>
+					<a href="#ch03">Rule 2: Neutral Species Are More Stable (05:03)</a>
+				</li>
+				<li>
+					<a href="#ch04">Rule 3: Charge on Electronegative Atoms (06:58)</a>
+				</li>
+				<li>
+					<a href="#ch05">Carbonate and Formic Acid Comparisons (11:05)</a>
+				</li>
+				<li><a href="#ch06">IIT 2009 Stability Order Problem (15:05)</a></li>
+				<li>
+					<a href="#ch07"
+						>Valency Restriction: Nitrogen Cannot Be Pentavalent (18:32)</a
+					>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Rule 4: Like Charges Far, Unlike Charges Near (21:51)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Rule 5: Inductive Effect in Resonance Stability (26:38)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10">Final Priority Order of Stability Rules (29:24)</a>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Stability Introduction -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=9s"
+								target="_blank"
+								rel="noopener"
+							>
+								Introduction to Stability of Resonating Structures (00:09)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>Topic: stability order of resonating structures.</li>
+							<li>
+								This topic is important for objective questions asking:
+								<ol>
+									<li>most stable resonating structure,</li>
+									<br />
+									<li>least stable resonating structure,</li>
+									<br />
+									<li>impossible resonating structure,</li>
+									<br />
+									<li>stability order among given contributors.</li>
+								</ol>
+							</li>
+							<li>
+								Resonance structures must already satisfy basic resonance
+								conditions:
+								<ol>
+									<li>same atomic arrangement,</li>
+									<br />
+									<li>same total charge,</li>
+									<br />
+									<li>electron movement only.</li>
+								</ol>
+							</li>
+							<li>
+								Stability is judged by applying rules in a fixed priority order.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Stability Introduction -->
+
+					<!-- START ch02 | More Covalent Bonds -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=170s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rule 1: Greater Number of Covalent Bonds (02:50)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								<strong>Highest-priority rule:</strong> the resonating structure
+								with the greater number of covalent bonds is more stable.
+							</li>
+							<li>
+								Bond formation lowers energy; therefore, a structure containing
+								more covalent bonding is usually lower in energy.
+							</li>
+							<li>
+								Example:
+								<br />
+								\( \mathrm{CH_3-O-CH_2^{+}} \)
+								<br />
+								\( \mathrm{CH_3-O^{+}=CH_2} \)
+							</li>
+							<li>
+								Comparison:
+								<ol>
+									<li>first structure contains fewer covalent bonds,</li>
+									<br />
+									<li>second structure contains one extra covalent bond.</li>
+								</ol>
+							</li>
+							<li>Hence the second contributor is more stable.</li>
+							<li>This rule is checked before all other stability rules.</li>
+
+							<!-- IMAGE 01 SHOULD GO HERE
+             Description: Side-by-side comparison of \( \mathrm{CH_3-O-CH_2^{+}} \) and \( \mathrm{CH_3-O^{+}=CH_2} \) with bond counting.
+             Lecture reference: 03:00
+        -->
+						</ul>
+					</li>
+					<!-- END ch02 | More Covalent Bonds -->
+
+					<!-- START ch03 | Neutral Species Stable -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=303s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rule 2: Neutral Species Are More Stable (05:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								If two resonating structures have the same number of covalent
+								bonds, compare neutral and charged forms.
+							</li>
+							<li>
+								<strong
+									>Neutral species are more stable than charged species.</strong
+								>
+							</li>
+							<li>
+								Example:
+								<br />
+								\( \mathrm{CH_2=CH-NH_2} \)
+								<br />
+								\( \mathrm{CH_2^{-}-CH=NH_2^{+}} \)
+							</li>
+							<li>Both contributors have the same number of covalent bonds.</li>
+							<li>
+								The first contributor is neutral, whereas the second contains
+								separated charges.
+							</li>
+							<li>
+								Therefore:
+								<br />
+								neutral contributor \( \mathrm{>} \) charged contributor in
+								stability.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Neutral Species Stable -->
+
+					<!-- START ch04 | Electronegative Charge Rule -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=418s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rule 3: Charge on Electronegative Atoms (06:58)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								If the number of covalent bonds is equal and all contributors
+								are charged, then examine the position of charge.
+							</li>
+							<li>
+								<strong
+									>Negative charge is stabilized on a more electronegative
+									atom.</strong
+								>
+							</li>
+							<li>
+								<strong
+									>Positive charge is destabilized on a more electronegative
+									atom.</strong
+								>
+							</li>
+							<li>
+								Example:
+								<br />
+								\( \mathrm{CH_2=CH-O^{-}} \)
+								<br />
+								\( \mathrm{CH_2^{-}-CH=O} \)
+							</li>
+							<li>In the first contributor, negative charge is on oxygen.</li>
+							<li>In the second contributor, negative charge is on carbon.</li>
+							<li>
+								Since oxygen is more electronegative than carbon, the first
+								contributor is more stable.
+							</li>
+							<li>
+								Equivalent statement:
+								<ol>
+									<li>
+										negative charge should prefer a more electronegative atom,
+									</li>
+									<br />
+									<li>
+										positive charge should prefer a less electronegative atom.
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Electronegative Charge Rule -->
+
+					<!-- START ch05 | Carbonate Formic Acid -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=665s"
+								target="_blank"
+								rel="noopener"
+							>
+								Carbonate and Formic Acid Comparisons (11:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>These examples illustrate the ordered use of the rules.</li>
+							<li><strong>Carbonate ion contributors:</strong></li>
+							<li>
+								<ol>
+									<li>\( \mathrm{O=C(O^{-})O^{-}} \)</li>
+									<br />
+									<li>\( \mathrm{^{-}O-C^{+}(O^{-})-O^{-}} \)</li>
+									<br />
+									<li>\( \mathrm{O^{-}-C^{-}(=O^{+})-O^{-}} \)</li>
+								</ol>
+							</li>
+							<li>
+								Comparison logic:
+								<ol>
+									<li>
+										first contributor has more covalent bonds, so it is most
+										stable,
+									</li>
+									<br />
+									<li>
+										between the remaining charged contributors, the one with
+										negative charge on oxygen is more stable than the one with
+										negative charge on carbon.
+									</li>
+								</ol>
+							</li>
+							<li>
+								Stability order:
+								<br />
+								1 \( \mathrm{>} \) 2 \( \mathrm{>} \) 3
+							</li>
+
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: Three carbonate-ion contributors labeled 1, 2, 3 with charges highlighted.
+             Lecture reference: 11:20
+        -->
+
+							<li><strong>Formic acid contributors:</strong></li>
+							<li>
+								<ol>
+									<li>\( \mathrm{H-C(=O)-OH} \)</li>
+									<br />
+									<li>\( \mathrm{H-C(-O^{-})=O^{+}H} \)</li>
+									<br />
+									<li>\( \mathrm{H-C^{+}(-O^{-})-OH} \)</li>
+									<br />
+									<li>\( \mathrm{H-C^{-}(-O^{+})-OH} \)</li>
+								</ol>
+							</li>
+							<li>
+								First compare total covalent bonds:
+								<ol>
+									<li>contributors 1 and 2 have more covalent bonds,</li>
+									<br />
+									<li>contributors 3 and 4 have fewer covalent bonds.</li>
+								</ol>
+							</li>
+							<li>
+								Between 1 and 2, contributor 1 is neutral and is therefore more
+								stable.
+							</li>
+							<li>
+								Between 3 and 4, contributor 3 is more stable because negative
+								charge is on oxygen, not carbon.
+							</li>
+							<li>
+								Final stability order:
+								<br />
+								1 \( \mathrm{>} \) 2 \( \mathrm{>} \) 3 \( \mathrm{>} \) 4
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Carbonate Formic Acid -->
+
+					<!-- START ch06 | IIT 2009 Problem -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=905s"
+								target="_blank"
+								rel="noopener"
+							>
+								IIT 2009 Stability Order Problem (15:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								A JEE/IIT-type problem can be solved by systematic rule
+								application.
+							</li>
+							<li>
+								Method:
+								<ol>
+									<li>count covalent bonds,</li>
+									<br />
+									<li>check neutral vs charged character,</li>
+									<br />
+									<li>
+										check whether negative charge is on the more electronegative
+										atom.
+									</li>
+								</ol>
+							</li>
+							<li>
+								In the discussed 2009 problem, contributors with more covalent
+								bonds were placed above those with fewer bonds.
+							</li>
+							<li>
+								Among contributors with equal bond count, the one carrying
+								negative charge on nitrogen was preferred over the one carrying
+								negative charge on carbon.
+							</li>
+							<li>
+								This shows that the same three rules are enough to solve many
+								past-paper questions.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | IIT 2009 Problem -->
+
+					<!-- START ch07 | Nitrogen Valency Rule -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=1112s"
+								target="_blank"
+								rel="noopener"
+							>
+								Valency Restriction: Nitrogen Cannot Be Pentavalent (18:32)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								Before applying stability rules, first check whether the
+								proposed resonating structure is even valid.
+							</li>
+							<li>
+								<strong
+									>Nitrogen cannot be pentavalent in these normal organic
+									resonance contributors.</strong
+								>
+							</li>
+							<li>
+								If a proposed contributor shows five bonds around nitrogen, that
+								contributor should be rejected.
+							</li>
+							<li>
+								Example type:
+								<br />
+								\( \mathrm{CH_2=CH-NH_3^{+}} \) and a proposed contributor that
+								forces nitrogen to become pentavalent.
+							</li>
+							<li>
+								Such a contributor is not accepted as a valid resonating
+								structure.
+							</li>
+							<li>
+								This check has very high priority because an impossible
+								structure cannot be compared for stability.
+							</li>
+
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: Comparison of a valid ammonium-type contributor and an invalid pentavalent nitrogen contributor.
+             Lecture reference: 19:30
+        -->
+						</ul>
+					</li>
+					<!-- END ch07 | Nitrogen Valency Rule -->
+
+					<!-- START ch08 | Charge Separation Rule -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=1311s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rule 4: Like Charges Far, Unlike Charges Near (21:51)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								This rule is used when earlier rules do not distinguish the
+								contributors.
+							</li>
+							<li><strong>Like charges should be far apart.</strong></li>
+							<li>
+								<strong>Unlike charges should be closer together.</strong>
+							</li>
+							<li>
+								If two positive charges or two negative charges are placed very
+								near each other, the contributor becomes less stable because of
+								repulsion.
+							</li>
+							<li>
+								If opposite charges are closer, electrostatic attraction gives
+								extra stabilization.
+							</li>
+							<li>
+								Hence:
+								<ol>
+									<li>
+										\( \mathrm{+ \ ... \ +} \) is better than \( \mathrm{++} \),
+									</li>
+									<br />
+									<li>
+										\( \mathrm{+ -} \) proximity is better than keeping unlike
+										charges unnecessarily far apart.
+									</li>
+								</ol>
+							</li>
+							<li>
+								In the discussed multi-charge example, the contributor with
+								adjacent positive charges was identified as the most unstable
+								one.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Charge Separation Rule -->
+
+					<!-- START ch09 | Inductive Effect Rule -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=1598s"
+								target="_blank"
+								rel="noopener"
+							>
+								Rule 5: Inductive Effect in Resonance Stability (26:38)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								If all previous rules fail to differentiate two contributors,
+								inductive effect can be used.
+							</li>
+							<li>
+								Example comparison involves a positively charged carbon attached
+								to different substituents.
+							</li>
+							<li>
+								A \( \mathrm{+I} \) group donates electron density and reduces
+								positive charge, thus increasing stability.
+							</li>
+							<li>
+								A \( \mathrm{-I} \) group withdraws electron density and
+								increases positive charge, thus decreasing stability.
+							</li>
+							<li>
+								Therefore:
+								<ol>
+									<li>
+										\( \mathrm{+I} \) near a positively charged center \(
+										\rightarrow \) stabilizing,
+									</li>
+									<br />
+									<li>
+										\( \mathrm{-I} \) near a positively charged center \(
+										\rightarrow \) destabilizing.
+									</li>
+								</ol>
+							</li>
+							<li>
+								In the discussed example, the contributor adjacent to a \(
+								\mathrm{CH_3} \) group was more stable than the one lacking that
+								\( \mathrm{+I} \) support.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Inductive Effect Rule -->
+
+					<!-- START ch10 | Final Rule Priority -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/RdcC7_E8yeM?t=1764s"
+								target="_blank"
+								rel="noopener"
+							>
+								Final Priority Order of Stability Rules (29:24)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+						<ul class="inner-list">
+							<li>
+								<strong
+									>Priority order for judging stability of resonating
+									structures:</strong
+								>
+							</li>
+							<li>
+								<ol>
+									<li>
+										greater number of covalent bonds \( \rightarrow \) more
+										stable,
+									</li>
+									<br />
+									<li>
+										neutral species \( \rightarrow \) more stable than charged
+										species,
+									</li>
+									<br />
+									<li>
+										negative charge on more electronegative atom \( \rightarrow
+										\) more stable,
+									</li>
+									<br />
+									<li>
+										positive charge on more electronegative atom \( \rightarrow
+										\) less stable,
+									</li>
+									<br />
+									<li>invalid valency must be rejected,</li>
+									<br />
+									<li>
+										like charges should be farther apart and unlike charges
+										should be closer,
+									</li>
+									<br />
+									<li>inductive effect may be used if required.</li>
+								</ol>
+							</li>
+							<li>
+								Additional aromaticity-based comparison is mentioned as a later
+								topic and is not used here.
+							</li>
+							<li>
+								Practical conclusion: always apply the rules in sequence, not
+								randomly.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Final Rule Priority -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
