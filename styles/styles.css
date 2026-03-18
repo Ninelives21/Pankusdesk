@@ -117,7 +117,9 @@ h4 {
 	border-radius: 15px;
 	padding: 20px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: box-shadow 0.2s ease, transform 0.2s ease;
+	transition:
+		box-shadow 0.2s ease,
+		transform 0.2s ease;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -184,7 +186,6 @@ h4 {
 .green-card {
 	background-color: #519e8a;
 }
-
 .pink-card {
 	background-color: #f25c54;
 }
@@ -638,4 +639,8 @@ div[id^='ch'] h3 a {
 .back-to-index a:hover {
 	text-decoration: underline;
 	opacity: 1;
+}
+
+.left-gap {
+	margin-left: 20px; /* adjust as needed */
 }
