@@ -21,6 +21,19 @@
 			};
 		</script>
 
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+				},
+			};
+		</script>
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+		></script>
+
 		<script
 			id="MathJax-script"
 			async
@@ -211,11 +224,185 @@
 			</div>
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q17">Q 17 here</button>
+					<button class="accordion-button" id="Q17">
+						<button class="accordion-button" id="Q17">
+							Q 17. The number of integers lying between 1000 and 10000 such
+							that the sum of all the digits in each of those numbers becomes 30
+							is
+							<ul>
+								<li>(a) 84</li>
+								<li>(b) 96</li>
+								<li>(c) 45</li>
+								<li>(d) 75</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
 						<ul>
-							<li id="A17">Ans 17 here</li>
+							<li id="A17"><b>Answer: (a) 84</b></li>
 						</ul>
+
+						<ol>
+							<li>
+								<b>Step-by-step intuition (clear understanding)</b><br />
+								We are working with a <b>4-digit number</b>, so let its digits
+								be \(a, b, c, d\).
+							</li>
+
+							<li>
+								<b>Maximum possible digit sum</b><br />
+								Since each digit can be at most \(9\), the maximum possible sum
+								is <br />
+								\(9 + 9 + 9 + 9 = 36\)
+							</li>
+
+							<li>
+								<b>Given condition</b><br />
+								We are given that <br />
+								\(a + b + c + d = 30\)
+							</li>
+
+							<li>
+								<b>Key idea: think in reverse</b><br />
+								Instead of trying to build the sum \(30\) directly, start from
+								the maximum possible sum \(36\) and see how much less is
+								needed.<br />
+								So the total reduction required is <br />
+								\(36 - 30 = 6\)
+							</li>
+
+							<li>
+								<b>Meaning of this reduction</b><br />
+								Think of each digit as starting from \(9\), and then being
+								reduced by some amount. Let
+								<ul>
+									<li>\(x_1 = 9 - a\)</li>
+									<li>\(x_2 = 9 - b\)</li>
+									<li>\(x_3 = 9 - c\)</li>
+									<li>\(x_4 = 9 - d\)</li>
+								</ul>
+								Then:
+								<ul>
+									<li>if a digit is \(9\), its reduction is \(0\)</li>
+									<li>if a digit is \(8\), its reduction is \(1\)</li>
+									<li>if a digit is \(7\), its reduction is \(2\)</li>
+									<li>and so on</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>New equation formed</b><br />
+								Since total reduction is \(6\), we get <br />
+								\(x_1 + x_2 + x_3 + x_4 = 6\)<br />
+								where each \(x_i \ge 0\)
+							</li>
+
+							<li>
+								<b>Interpretation of the new equation</b><br />
+								Now the question becomes:<br />
+								<i
+									>In how many ways can total reduction \(6\) be distributed
+									among 4 digits?</i
+								><br />
+								This is the standard problem of counting the number of
+								<b>non-negative integral solutions</b> of<br />
+								\(x_1 + x_2 + x_3 + x_4 = 6\)
+							</li>
+
+							<li>
+								<b>Apply the standard result</b><br />
+								Number of non-negative integral solutions of<br />
+								\(x_1 + x_2 + x_3 + x_4 = 6\)<br />
+								is<br />
+								\(\binom{6+4-1}{4-1} = \binom{9}{3} = 84\)
+							</li>
+
+							<li>
+								<b>Why this automatically gives valid 4-digit numbers</b><br />
+								We should check whether the first digit can become \(0\).<br />
+								If \(a = 0\), then \(x_1 = 9\). But that is impossible because
+								the total of all reductions is only \(6\).<br />
+								So \(a \ge 1\) automatically, which means every solution
+								obtained is a valid 4-digit number.
+							</li>
+
+							<li>
+								<b>Final answer</b><br />
+								Therefore, the number of required integers is <br />
+								\(\boxed{84}\)
+							</li>
+						</ol>
+
+						<hr />
+
+						<ol>
+							<li>
+								<b>Intuition summary</b><br />
+								Instead of asking:<br />
+								<i>“How do I make digit sum \(30\)?”</i><br />
+								ask:<br />
+								<i>“How far is \(30\) from the maximum possible sum \(36\)?”</i
+								><br />
+								The gap is \(6\), so we only need to distribute this shortfall
+								among the 4 digits.
+							</li>
+
+							<li>
+								<b>Trick for future questions</b><br />
+								Use this whenever:
+								<ul>
+									<li>the number of digits is fixed, and</li>
+									<li>
+										the required digit sum is close to the maximum possible sum
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>General trick</b><br />
+								For an \(n\)-digit number:
+								<ul>
+									<li>maximum digit sum \(= 9n\)</li>
+									<li>if required sum \(= S\), then deficit \(= 9n - S\)</li>
+								</ul>
+								Then count the number of non-negative integral solutions of<br />
+								\(x_1 + x_2 + \dots + x_n = 9n - S\)<br />
+								using<br />
+								\(\binom{(9n-S)+n-1}{n-1}\)
+							</li>
+
+							<li>
+								<b>Apply that trick here</b><br />
+								For this question:
+								<ul>
+									<li>number of digits \(= 4\)</li>
+									<li>maximum sum \(= 36\)</li>
+									<li>required sum \(= 30\)</li>
+									<li>deficit \(= 36 - 30 = 6\)</li>
+								</ul>
+								So answer \(= \binom{6+3}{3} = \binom{9}{3} = 84\)
+							</li>
+
+							<li>
+								<b>One-line exam method</b><br />
+								Deficit from maximum sum \(= 36 - 30 = 6\).<br />
+								Number of non-negative integral solutions \(= \binom{9}{3} =
+								84\).
+							</li>
+
+							<li>
+								<b>Topic classification</b>
+								<ul>
+									<li><b>Chapter:</b> Permutations and Combinations</li>
+									<li>
+										<b>Topic:</b> Number of non-negative integral solutions
+									</li>
+									<li>
+										<b>Subtopic:</b> Digit-sum problems using deficit method
+									</li>
+								</ul>
+							</li>
+						</ol>
 					</div>
 				</div>
 			</div>
