@@ -7,6 +7,25 @@
 		<link rel="stylesheet" href="../../../../../styles/styles.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+		></script>
 	</head>
 	<body>
 		<nav></nav>
@@ -44,8 +63,170 @@
 					</button>
 					<div class="accordion-content">
 						<ul>
-							<li id="A121">Ans 121 here</li>
+							<li id="A121">
+								<b>Answer: (b) Paschen</b>
+							</li>
 						</ul>
+
+						<ol>
+							<li>
+								<b>Step 1: Convert units</b><br />
+								\(476.1 \text{ pm} = 4.761 \text{ Å}\)
+							</li>
+
+							<li>
+								<b>Step 2: Use Bohr radius formula</b><br />
+								For hydrogen atom: \[ r_n = a_0 n^2 = 0.529\, n^2 \text{ Å} \]
+							</li>
+
+							<li>
+								<b>Step 3: Solve for \(n\)</b><br />
+								\[ 4.761 = 0.529\, n^2 \Rightarrow n^2 = \frac{4.761}{0.529} = 9
+								\Rightarrow n = 3 \]
+							</li>
+
+							<li>
+								<b>Step 4: Identify spectral series</b><br />
+								The given orbit is the <b>final orbit</b> (electron falls to
+								this orbit).<br />
+								Series classification:
+								<ul>
+									<li>Lyman: \(n_f = 1\) (UV region)</li>
+									<li>Balmer: \(n_f = 2\) (visible region)</li>
+									<li><b>Paschen: \(n_f = 3\) (infrared region)</b></li>
+									<li>Brackett: \(n_f = 4\)</li>
+									<li>Pfund: \(n_f = 5\)</li>
+								</ul>
+								Since \(n_f = 3\), the transition belongs to
+								<b>Paschen series</b>.
+							</li>
+						</ol>
+
+						<hr />
+
+						<ol>
+							<li>
+								<b>Core Theory: Bohr Model (NCERT Standard)</b>
+								<ul>
+									<li>
+										Electrons revolve in fixed circular orbits without radiating
+										energy.
+									</li>
+									<li>
+										Allowed orbits are defined by quantized angular momentum: \[
+										mvr = \frac{nh}{2\pi} \]
+									</li>
+									<li>
+										Radius of \(n^{th}\) orbit: \[ r_n = a_0 n^2 \quad
+										(\text{for H atom}) \]
+									</li>
+									<li>
+										Energy of orbit: \[ E_n = -\frac{13.6}{n^2} \text{ eV} \]
+									</li>
+									<li>
+										As \(n\) increases:
+										<ul>
+											<li>Radius increases (\(\propto n^2\))</li>
+											<li>Energy increases (less negative)</li>
+											<li>Electron moves farther from nucleus</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Electronic Transitions & Spectrum</b>
+								<ul>
+									<li>
+										When electron falls from higher orbit \(n_2\) to lower orbit
+										\(n_1\), energy is released: \[ \Delta E = h\nu =
+										\frac{hc}{\lambda} \]
+									</li>
+									<li>
+										Rydberg equation: \[ \frac{1}{\lambda} =
+										R\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right) \]
+									</li>
+									<li>
+										The <b>series depends only on final orbit \(n_1\)</b>, not
+										initial orbit.
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Hydrogen Spectral Series (Must Memorize)</b>
+								<ul>
+									<li>Lyman (\(n=1\)) → Ultraviolet</li>
+									<li>Balmer (\(n=2\)) → Visible</li>
+									<li>Paschen (\(n=3\)) → Infrared</li>
+									<li>Brackett (\(n=4\)) → Infrared</li>
+									<li>Pfund (\(n=5\)) → Infrared</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Important Patterns (JEE/EAPCET)</b>
+								<ul>
+									<li>Radius ∝ \(n^2\)</li>
+									<li>Energy ∝ \(-1/n^2\)</li>
+									<li>Gap between levels decreases as \(n\) increases</li>
+									<li>
+										Longest wavelength → smallest energy transition in that
+										series
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Fast Solving Tricks</b>
+								<ul>
+									<li>Convert pm → Å quickly: divide by 100</li>
+									<li>Use: \[ r_n = 0.529 n^2 \]</li>
+									<li>
+										Recognize common values:
+										<ul>
+											<li>\(n=1\): \(0.529\) Å</li>
+											<li>\(n=2\): \(2.116\) Å</li>
+											<li>\(n=3\): \(4.761\) Å</li>
+											<li>\(n=4\): \(8.464\) Å</li>
+										</ul>
+									</li>
+									<li>If value matches → directly identify \(n\)</li>
+									<li>
+										Then map:
+										<ul>
+											<li>1 → Lyman</li>
+											<li>2 → Balmer</li>
+											<li>3 → Paschen</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Common Mistakes</b>
+								<ul>
+									<li>Using initial orbit instead of final orbit</li>
+									<li>Forgetting unit conversion</li>
+									<li>Mixing up Balmer (visible) and Paschen (IR)</li>
+								</ul>
+							</li>
+
+							<li>
+								<b>Topic Classification</b>
+								<ul>
+									<li><b>Chapter:</b> Structure of Atom</li>
+									<li><b>Topic:</b> Bohr Model of Hydrogen Atom</li>
+									<li>
+										<b>Subtopic:</b> Radius of orbit & Hydrogen spectral series
+									</li>
+									<li>
+										<b>Exam relevance:</b> Direct formula-based (high frequency
+										in JEE/EAPCET/NEET)
+									</li>
+								</ul>
+							</li>
+						</ol>
 					</div>
 				</div>
 			</div>
