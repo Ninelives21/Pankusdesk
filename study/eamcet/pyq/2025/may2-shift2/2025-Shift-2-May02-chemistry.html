@@ -1602,24 +1602,6 @@
 							<strong>\(A_3B_2\)</strong>
 						</p>
 
-						<p><strong>Textbook method integrated:</strong></p>
-						<ul>
-							<li>Let number of \(B\) atoms in ccp \(= N\)</li>
-							<li>Number of octahedral voids \(= N\)</li>
-							<li>Number of tetrahedral voids \(= 2N\)</li>
-							<li>
-								Number of \(A\) atoms from octahedral voids \(= \frac{N}{2}\)
-							</li>
-							<li>
-								Number of \(A\) atoms from tetrahedral voids \(=
-								\frac{1}{2}\times 2N = N\)
-							</li>
-							<li>
-								Total number of \(A\) atoms \(= \frac{N}{2} + N = \frac{3N}{2}\)
-							</li>
-							<li>Ratio \(A:B = \frac{3N}{2}:N = 3:2\)</li>
-						</ul>
-
 						<p>Thus the textbook answer also gives:</p>
 						<p>
 							<strong>\(A_3B_2\)</strong>
@@ -1770,30 +1752,779 @@
 			</div>
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q142">Q 142 here</button>
+					<button class="accordion-button" id="Q142">
+						<button class="accordion-button" id="Q142">
+							Q 142. The osmotic pressure (in atm) of an aqueous solution
+							containing \(0.01\) mol of \(\mathrm{NaCl}\) (degree of
+							dissociation \(0.94\)) and \(0.03\) mol of glucose in \(500\
+							\mathrm{mL}\) at \(27^\circ\mathrm{C}\) is \((R = 0.082\
+							\mathrm{L\ atm\ K^{-1}\ mol^{-1}})\)
+							<ul>
+								<li>(a) \(2.43\)</li>
+								<li>(b) \(4.23\)</li>
+								<li>(c) \(3.24\)</li>
+								<li>(d) \(3.42\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((a)\ 2.43\ \mathrm{atm}\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+						<p>We use the osmotic pressure formula:</p>
+						<p>\(\pi = iCRT\)</p>
+						<p>
+							Since the solution contains <strong>two solutes</strong>, we add
+							their <strong>effective concentrations</strong>:
+						</p>
+						<p>\(\pi = (iC)_{\text{total}}RT\)</p>
+
+						<ol>
+							<li>
+								<strong>For \(\mathrm{NaCl}\)</strong>
+								<p>\(\mathrm{NaCl \rightleftharpoons Na^+ + Cl^-}\)</p>
+								<p>For dissociation:</p>
+								<p>\(i = 1 + \alpha(n-1)\)</p>
+								<p>Here:</p>
+								<ul>
+									<li>\(\alpha = 0.94\)</li>
+									<li>\(n = 2\) for \(\mathrm{NaCl}\)</li>
+								</ul>
+								<p>So:</p>
+								<p>\(i_{\mathrm{NaCl}} = 1 + 0.94(2-1) = 1.94\)</p>
+								<p>Concentration of \(\mathrm{NaCl}\):</p>
+								<p>
+									\(C_{\mathrm{NaCl}} = \frac{0.01}{0.5} = 0.02\ \mathrm{M}\)
+								</p>
+								<p>Effective concentration of \(\mathrm{NaCl}\):</p>
+								<p>
+									\(iC_{\mathrm{NaCl}} = 1.94 \times 0.02 = 0.0388\ \mathrm{M}\)
+								</p>
+							</li>
+
+							<li>
+								<strong>For glucose</strong>
+								<p>
+									Glucose is a <strong>non-electrolyte</strong>, so it does not
+									dissociate.
+								</p>
+								<p>\(i_{\text{glucose}} = 1\)</p>
+								<p>Concentration of glucose:</p>
+								<p>
+									\(C_{\text{glucose}} = \frac{0.03}{0.5} = 0.06\ \mathrm{M}\)
+								</p>
+								<p>Effective concentration:</p>
+								<p>
+									\(iC_{\text{glucose}} = 1 \times 0.06 = 0.06\ \mathrm{M}\)
+								</p>
+							</li>
+
+							<li>
+								<strong>Total effective concentration</strong>
+								<p>
+									\((iC)_{\text{total}} = 0.0388 + 0.06 = 0.0988\ \mathrm{M}\)
+								</p>
+							</li>
+
+							<li>
+								<strong>Calculation of osmotic pressure</strong>
+								<p>Given:</p>
+								<ul>
+									<li>\(R = 0.082\ \mathrm{L\ atm\ K^{-1}\ mol^{-1}}\)</li>
+									<li>\(T = 27^\circ\mathrm{C} = 300\ \mathrm{K}\)</li>
+								</ul>
+								<p>Therefore:</p>
+								<p>\(\pi = (0.0988)(0.082)(300)\)</p>
+								<p>\(\pi \approx 2.43\ \mathrm{atm}\)</p>
+							</li>
+						</ol>
+
+						<p>Hence:</p>
+						<p>
+							<strong>\(\boxed{2.43\ \mathrm{atm}}\)</strong>
+						</p>
+						<p>So the correct option is <strong>\((a)\)</strong>.</p>
+
+						<p><strong>Theory you should know:</strong></p>
+						<ol>
+							<li>
+								<strong>Osmotic pressure formula</strong>
+								<p>For dilute solutions:</p>
+								<p>\(\pi = iCRT\)</p>
+								<p>where:</p>
+								<ul>
+									<li>\(\pi\) = osmotic pressure</li>
+									<li>\(i\) = van’t Hoff factor</li>
+									<li>\(C\) = molarity</li>
+									<li>\(R\) = gas constant</li>
+									<li>\(T\) = temperature in kelvin</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Why do we use \(i\)?</strong>
+								<p>
+									For electrolytes, one formula unit may produce more than one
+									particle in solution.
+								</p>
+								<p>Example:</p>
+								<p>\(\mathrm{NaCl \rightarrow Na^+ + Cl^-}\)</p>
+								<p>Since dissociation may not be complete, we use:</p>
+								<p>\(i = 1 + \alpha(n-1)\)</p>
+								<p>where:</p>
+								<ul>
+									<li>\(\alpha\) = degree of dissociation</li>
+									<li>\(n\) = number of particles formed after dissociation</li>
+								</ul>
+								<p>
+									For \(\mathrm{NaCl}\), \(n=2\). For glucose, there is no
+									dissociation, so \(i=1\).
+								</p>
+							</li>
+
+							<li>
+								<strong>Mixed-solute osmotic pressure</strong>
+								<p>
+									If more than one solute is present, total osmotic pressure
+									depends on total effective particle concentration:
+								</p>
+								<p>\(\pi = \left(\sum iC\right)RT\)</p>
+								<p>That is the key idea in this question.</p>
+							</li>
+						</ol>
+
+						<p><strong>NCERT / JEE concept link:</strong></p>
 						<ul>
-							<li id="A142">Ans 142 here</li>
+							<li><strong>Chapter:</strong> Solutions</li>
+							<li><strong>Topic:</strong> Colligative properties</li>
+							<li>
+								<strong>Subtopic:</strong> Osmotic pressure, van’t Hoff factor,
+								degree of dissociation
+							</li>
+						</ul>
+
+						<p><strong>One-minute solving trick:</strong></p>
+						<ul>
+							<li>For \(\mathrm{NaCl}\): \(i = 1 + 0.94 = 1.94\)</li>
+							<li>\(C_{\mathrm{NaCl}} = \frac{0.01}{0.5} = 0.02\)</li>
+							<li>\(iC_{\mathrm{NaCl}} = 1.94 \times 0.02 = 0.0388\)</li>
+							<li>For glucose: \(i = 1\), \(C = \frac{0.03}{0.5} = 0.06\)</li>
+							<li>\(iC_{\text{glucose}} = 0.06\)</li>
+							<li>
+								Total: \((iC)_{\text{total}} = 0.0388 + 0.06 = 0.0988 \approx
+								0.099\)
+							</li>
+							<li>Now use: \(\pi \approx 0.099 \times 0.082 \times 300\)</li>
+							<li>
+								Since \(0.082 \times 300 = 24.6\), we get: \(\pi \approx 0.099
+								\times 24.6 \approx 2.43\)
+							</li>
+						</ul>
+
+						<p><strong>Intuitive shortcut:</strong></p>
+						<p>Remember:</p>
+						<p>\(\pi \propto \text{total number of dissolved particles}\)</p>
+						<p>So this question is really asking:</p>
+						<ul>
+							<li>how many effective particles come from \(\mathrm{NaCl}\)</li>
+							<li>how many effective particles come from glucose</li>
+							<li>then add them</li>
+						</ul>
+						<p>
+							\(\mathrm{NaCl}\) contributes more than its actual molarity
+							because it dissociates, while glucose contributes exactly its
+							molarity because it does not dissociate.
+						</p>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								<strong>Using \(i=2\) directly for \(\mathrm{NaCl}\)</strong>
+								<p>Wrong, because dissociation is not complete. Here:</p>
+								<p>\(i = 1 + \alpha(n-1) = 1.94\)</p>
+							</li>
+
+							<li>
+								<strong
+									>Forgetting to convert \(500\ \mathrm{mL}\) to \(0.5\
+									\mathrm{L}\)</strong
+								>
+							</li>
+
+							<li>
+								<strong
+									>Adding molarities first and multiplying by one common
+									\(i\)</strong
+								>
+								<p>
+									Wrong. Each solute has its own \(i\). First calculate each
+									\(iC\), then add.
+								</p>
+							</li>
+
+							<li>
+								<strong>Using Celsius instead of kelvin</strong>
+								<p>Always use:</p>
+								<p>\(T = 27 + 273 = 300\ \mathrm{K}\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>For \(\mathrm{NaCl}\):</p>
+						<p>\(i = 1 + \alpha(n-1) = 1 + 0.94(2-1) = 1.94\)</p>
+						<p>\(C_{\mathrm{NaCl}} = \frac{0.01}{0.5} = 0.02\ \mathrm{M}\)</p>
+						<p>\(iC_{\mathrm{NaCl}} = 1.94 \times 0.02 = 0.0388\)</p>
+
+						<p>For glucose:</p>
+						<p>\(i = 1\)</p>
+						<p>\(C_{\text{glucose}} = \frac{0.03}{0.5} = 0.06\ \mathrm{M}\)</p>
+						<p>\(iC_{\text{glucose}} = 0.06\)</p>
+
+						<p>Therefore:</p>
+						<p>\((iC)_{\text{total}} = 0.0388 + 0.06 = 0.0988\)</p>
+						<p>
+							\(\pi = (iC)_{\text{total}}RT = (0.0988)(0.082)(300) \approx 2.43\
+							\mathrm{atm}\)
+						</p>
+						<p>Hence:</p>
+						<p>
+							<strong>\(\boxed{(a)\ 2.43\ \mathrm{atm}}\)</strong>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="accordion">
+				<div class="accordion-item">
+					<button class="accordion-button" id="Q143">
+						<button class="accordion-button" id="Q143">
+							Q 143. Electrolysis of aqueous copper (II) sulphate between Pt
+							electrodes gives \(X\) at anode and \(Y\) at cathode. \(X\) and
+							\(Y\) are respectively.
+							<ul>
+								<li>(a) \(\mathrm{Cu,\ O_2}\)</li>
+								<li>(b) \(\mathrm{O_2,\ Cu}\)</li>
+								<li>(c) \(\mathrm{SO_2,\ H_2}\)</li>
+								<li>(d) \(\mathrm{O_2,\ H_2}\)</li>
+							</ul>
+						</button>
+					</button>
+					<div class="accordion-content">
+						<p><strong>Answer: \((b)\ \mathrm{O_2,\ Cu}\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+						<p>
+							The electrolysis is of
+							<strong>aqueous</strong> \(\mathrm{CuSO_4}\) using
+							<strong>Pt electrodes</strong>. Since Pt is an
+							<strong>inert electrode</strong>, the electrode itself does not
+							participate in the reaction.
+						</p>
+
+						<ol>
+							<li>
+								<strong>Reaction at cathode</strong>
+								<p>
+									At cathode, reduction occurs. The main competing species are:
+								</p>
+								<ul>
+									<li>\(\mathrm{Cu^{2+}}\)</li>
+									<li>\(\mathrm{H_2O}\) / \(\mathrm{H^+}\)</li>
+								</ul>
+								<p>
+									\(\mathrm{Cu^{2+}}\) gets reduced more easily than water, so
+									copper is deposited:
+								</p>
+								<p>\(\mathrm{Cu^{2+} + 2e^- \rightarrow Cu(s)}\)</p>
+								<p>
+									So, product at cathode \(=\ \mathrm{Cu}\), i.e. \(Y =
+									\mathrm{Cu}\).
+								</p>
+							</li>
+
+							<li>
+								<strong>Reaction at anode</strong>
+								<p>
+									At anode, oxidation occurs. The competing species are mainly:
+								</p>
+								<ul>
+									<li>\(\mathrm{SO_4^{2-}}\)</li>
+									<li>\(\mathrm{H_2O}\)</li>
+								</ul>
+								<p>
+									Sulphate ion is not discharged in this case. Water gets
+									oxidized to oxygen:
+								</p>
+								<p>
+									\(\mathrm{2H_2O(l) \rightarrow O_2(g) + 4H^+(aq) + 4e^-}\)
+								</p>
+								<p>
+									So, product at anode \(=\ \mathrm{O_2}\), i.e. \(X =
+									\mathrm{O_2}\).
+								</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>\(X = \mathrm{O_2},\quad Y = \mathrm{Cu}\)</p>
+						<p>
+							<strong>Correct option: \((b)\)</strong>
+						</p>
+
+						<p><strong>Why this happens:</strong></p>
+						<ul>
+							<li>
+								Pt is inert, so it does not dissolve or take part in the
+								reaction.
+							</li>
+							<li>
+								At cathode, \(\mathrm{Cu^{2+}}\) is preferentially reduced over
+								water.
+							</li>
+							<li>
+								At anode, water is oxidized, while \(\mathrm{SO_4^{2-}}\)
+								remains essentially spectator.
+							</li>
+						</ul>
+
+						<p><strong>NCERT / JEE takeaway:</strong></p>
+						<ul>
+							<li>
+								In <strong>aqueous electrolysis</strong>, you must not look only
+								at the salt ions; water may also compete.
+							</li>
+							<li>
+								With <strong>inert electrodes</strong>, the product depends on
+								which species is preferentially discharged.
+							</li>
+							<li>
+								For aqueous \(\mathrm{CuSO_4}\) with Pt electrodes, the standard
+								result is:
+								<ul>
+									<li>anode \(\rightarrow \mathrm{O_2}\)</li>
+									<li>cathode \(\rightarrow \mathrm{Cu}\)</li>
+								</ul>
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving tip:</strong></p>
+						<ul>
+							<li>
+								See <strong>aqueous \(\mathrm{CuSO_4}\)</strong> +
+								<strong>Pt electrode</strong>.
+							</li>
+							<li>
+								Immediately recall:
+								<ul>
+									<li>\(\mathrm{Cu^{2+}}\) deposits at cathode</li>
+									<li>\(\mathrm{O_2}\) evolves at anode</li>
+								</ul>
+							</li>
+							<li>So the answer is directly \(\mathrm{O_2,\ Cu}\).</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Thinking \(\mathrm{H_2}\) must form at cathode in every aqueous
+								solution. Here \(\mathrm{Cu^{2+}}\) is reduced instead.
+							</li>
+							<li>
+								Thinking \(\mathrm{SO_4^{2-}}\) gets oxidized. In this case,
+								water is oxidized to \(\mathrm{O_2}\).
+							</li>
+							<li>
+								Ignoring electrode type. If the electrode were active, the
+								products could change.
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Electrochemistry</li>
+							<li><strong>Topic:</strong> Electrolysis</li>
+							<li>
+								<strong>Subtopic:</strong> Products at electrodes in aqueous
+								electrolysis with inert electrodes
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>At anode:</p>
+						<p>\(\mathrm{2H_2O(l) \rightarrow O_2(g) + 4H^+(aq) + 4e^-}\)</p>
+						<p>At cathode:</p>
+						<p>\(\mathrm{Cu^{2+} + 2e^- \rightarrow Cu(s)}\)</p>
+						<p>Hence:</p>
+						<p>\(X = \mathrm{O_2},\quad Y = \mathrm{Cu}\)</p>
+						<p>
+							<strong>\(\boxed{(b)\ \mathrm{O_2,\ Cu}}\)</strong>
+						</p>
+
+						<p><strong>Lecture references (FYI):</strong></p>
+						<ul>
+							<li>
+								Basic setup of electrolytic cell, inert electrodes, and what
+								happens at anode/cathode -
+								<a
+									href="https://www.youtube.com/watch?v=oFdw8j6cq6w&t=242s"
+									target="_blank"
+									>here</a
+								>
+								\((04{:}02 – 11{:}32)\)
+							</li>
+							<li>
+								Factors deciding product at electrode: nature of electrolyte,
+								medium, and nature of electrode -
+								<a
+									href="https://www.youtube.com/watch?v=oFdw8j6cq6w&t=823s"
+									target="_blank"
+									>here</a
+								>
+								\((13{:}43 – 21{:}57)\)
+							</li>
+							<li>
+								Rule to assume inert \(\mathrm{Pt}\) electrode if not otherwise
+								mentioned, and to write anode reaction first -
+								<a
+									href="https://www.youtube.com/watch?v=oFdw8j6cq6w&t=1200s"
+									target="_blank"
+									>here</a
+								>
+								\((20{:}00 – 21{:}57)\)
+							</li>
+							<li>
+								Preferential discharge in aqueous electrolysis using
+								electrochemical series: what gets oxidized at anode and reduced
+								at cathode -
+								<a
+									href="https://www.youtube.com/watch?v=oFdw8j6cq6w&t=2196s"
+									target="_blank"
+									>here</a
+								>
+								\((36{:}36 – 40{:}00)\)
+							</li>
+							<li>
+								Active vs inert electrode idea: why \(\mathrm{Pt}\) matters and
+								why inert electrodes do not themselves participate -
+								<a
+									href="https://www.youtube.com/watch?v=oFdw8j6cq6w&t=1027s"
+									target="_blank"
+									>here</a
+								>
+								\((17{:}07 – 19{:}01)\)
+							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q143">Q 143 here</button>
+					<button class="accordion-button" id="Q144">
+						<button class="accordion-button" id="Q144">
+							Q 144. Consider a general first order reaction,
+							<ul>
+								<li>\(\mathrm{A(g) \longrightarrow B(g) + C(g)}\)</li>
+							</ul>
+							If the initial pressure is \(200\ \mathrm{mm}\) and after \(20\)
+							minutes it is \(250\ \mathrm{mm}\), then the half-life period of
+							the reaction (in minutes) is \((\log 2 = 0.30, \log 3 = 0.48, \log
+							4 = 0.60)\)
+							<ul>
+								<li>(a) \(40.2\)</li>
+								<li>(b) \(50.2\)</li>
+								<li>(c) \(20.5\)</li>
+								<li>(d) \(60.5\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((b)\ 50.2\ \text{minutes}\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+						<p>Given reaction:</p>
+						<p>\(\mathrm{A(g) \rightarrow B(g) + C(g)}\)</p>
+						<p>
+							Since one mole of \(\mathrm{A}\) produces two moles of gaseous
+							products, the total pressure increases as the reaction proceeds.
+						</p>
+
+						<ol>
+							<li>
+								<strong
+									>Let decrease in pressure of \(\mathrm{A}\) be \(x\)</strong
+								>
+								<p>Initial pressure \(= p_0 = 200\ \mathrm{mm}\)</p>
+								<p>Pressure of \(\mathrm{A}\) after time \(t\):</p>
+								<p>\(p_A = p_0 - x\)</p>
+								<p>Total pressure at time \(t\):</p>
+								<p>\(p_t = (p_0 - x) + x + x = p_0 + x\)</p>
+								<p>Given:</p>
+								<p>\(250 = 200 + x\)</p>
+								<p>So:</p>
+								<p>\(x = 50\ \mathrm{mm}\)</p>
+								<p>Hence remaining pressure of \(\mathrm{A}\):</p>
+								<p>\(p_A = 200 - 50 = 150\ \mathrm{mm}\)</p>
+							</li>
+
+							<li>
+								<strong>Apply first-order rate law in pressure form</strong>
+								<p>For a first-order reaction:</p>
+								<p>\(k = \frac{2.303}{t}\log\left(\frac{p_0}{p_A}\right)\)</p>
+								<p>Here:</p>
+								<ul>
+									<li>\(t = 20\ \text{min}\)</li>
+									<li>\(p_0 = 200\)</li>
+									<li>\(p_A = 150\)</li>
+								</ul>
+								<p>Therefore:</p>
+								<p>\(k = \frac{2.303}{20}\log\left(\frac{200}{150}\right)\)</p>
+								<p>\(k = \frac{2.303}{20}\log\left(\frac{4}{3}\right)\)</p>
+								<p>Using:</p>
+								<p>
+									\(\log\left(\frac{4}{3}\right) = \log 4 - \log 3 = 0.60 - 0.48
+									= 0.12\)
+								</p>
+								<p>So:</p>
+								<p>
+									\(k = \frac{2.303}{20}\times 0.12 \approx 0.0138\
+									\mathrm{min^{-1}}\)
+								</p>
+							</li>
+
+							<li>
+								<strong>Now use half-life formula</strong>
+								<p>For a first-order reaction:</p>
+								<p>\(t_{1/2} = \frac{0.693}{k}\)</p>
+								<p>Hence:</p>
+								<p>
+									\(t_{1/2} = \frac{0.693}{0.0138} \approx 50.2\
+									\text{minutes}\)
+								</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>\(\boxed{50.2\ \text{minutes}}\)</p>
+
+						<p><strong>Why this method works:</strong></p>
 						<ul>
-							<li id="A143">Ans 143 here</li>
+							<li>
+								For a first-order reaction, the integrated rate law is:
+								<p>
+									\(k = \frac{2.303}{t}\log\left(\frac{[A]_0}{[A]_t}\right)\)
+								</p>
+							</li>
+							<li>
+								For gases, concentration can be replaced by partial pressure:
+								<p>\(k = \frac{2.303}{t}\log\left(\frac{p_0}{p_A}\right)\)</p>
+							</li>
+							<li>
+								Here total pressure changes, so we first calculate the remaining
+								pressure of reactant \(\mathrm{A}\).
+							</li>
 						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="accordion">
-				<div class="accordion-item">
-					<button class="accordion-button" id="Q144">Q 144 here</button>
-					<div class="accordion-content">
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
 						<ul>
-							<li id="A144">Ans 144 here</li>
+							<li>
+								First-order reaction:
+								<p>\(\text{Rate} = k[A]\)</p>
+							</li>
+							<li>
+								Integrated form:
+								<p>\(t = \frac{2.303}{k}\log\left(\frac{A_0}{A}\right)\)</p>
+							</li>
+							<li>
+								Half-life:
+								<p>\(t_{1/2} = \frac{0.693}{k}\)</p>
+							</li>
+							<li>
+								For first-order reactions, half-life is
+								<strong>independent of initial concentration</strong>.
+							</li>
+							<li>
+								In gas-phase numericals, pressure can be used in place of
+								concentration if temperature and volume are constant.
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								For \(\mathrm{A \rightarrow B + C}\), if decrease in
+								\(\mathrm{A}\) is \(x\), total pressure becomes:
+								<p>\(p_t = p_0 + x\)</p>
+							</li>
+							<li>
+								So directly:
+								<p>\(x = 250 - 200 = 50\)</p>
+							</li>
+							<li>
+								Remaining pressure of \(\mathrm{A}\):
+								<p>\(p_A = 200 - 50 = 150\)</p>
+							</li>
+							<li>
+								Then use:
+								<p>\(k = \frac{2.303}{20}\log\left(\frac{200}{150}\right)\)</p>
+							</li>
+							<li>
+								Then use:
+								<p>\(t_{1/2} = \frac{0.693}{k}\)</p>
+							</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Using total pressure directly in place of reactant pressure.
+							</li>
+							<li>
+								Forgetting that in \(\mathrm{A \rightarrow B + C}\), total
+								pressure increases by \(x\).
+							</li>
+							<li>
+								Using the half-life formula of zero-order reaction by mistake.
+							</li>
+							<li>
+								Forgetting the log trick:
+								<p>\(\log\left(\frac{4}{3}\right) = \log 4 - \log 3\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Chemical Kinetics</li>
+							<li><strong>Topic:</strong> First-order reactions</li>
+							<li>
+								<strong>Subtopic:</strong> Gas-phase first-order kinetics using
+								pressure
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>Let decrease in pressure of \(\mathrm{A}\) be \(x\).</p>
+						<p>Then:</p>
+						<p>\(p_t = p_0 + x\)</p>
+						<p>\(250 = 200 + x \Rightarrow x = 50\)</p>
+						<p>So remaining pressure of \(\mathrm{A}\):</p>
+						<p>\(p_A = 200 - 50 = 150\ \mathrm{mm}\)</p>
+						<p>Using:</p>
+						<p>\(k = \frac{2.303}{t}\log\left(\frac{p_0}{p_A}\right)\)</p>
+						<p>\(k = \frac{2.303}{20}\log\left(\frac{200}{150}\right)\)</p>
+						<p>\(k = \frac{2.303}{20}\log\left(\frac{4}{3}\right)\)</p>
+						<p>\(= \frac{2.303}{20}(0.60 - 0.48)\)</p>
+						<p>\(k \approx 0.0138\ \mathrm{min^{-1}}\)</p>
+						<p>Therefore:</p>
+						<p>\(t_{1/2} = \frac{0.693}{0.0138} = 50.2\ \text{minutes}\)</p>
+						<p>
+							<strong>\(\boxed{(b)\ 50.2}\)</strong>
+						</p>
+
+						<p><strong>Quick cheatsheet:</strong></p>
+						<ul>
+							<li>
+								<strong>Rate law:</strong>
+								<p>\(\text{Rate} = k[A]^m[B]^n\)</p>
+							</li>
+							<li>
+								<strong>Order:</strong>
+								<p>\(m+n\)</p>
+							</li>
+							<li>
+								<strong>First-order integrated law:</strong>
+								<p>
+									\(k = \frac{2.303}{t}\log\left(\frac{[A]_0}{[A]_t}\right)\)
+								</p>
+							</li>
+							<li>
+								<strong>Pressure form:</strong>
+								<p>\(k = \frac{2.303}{t}\log\left(\frac{p_0}{p_A}\right)\)</p>
+							</li>
+							<li>
+								<strong>Half-life of first order:</strong>
+								<p>\(t_{1/2} = \frac{0.693}{k}\)</p>
+							</li>
+							<li>
+								<strong>Key property:</strong> first-order half-life does not
+								depend on initial concentration.
+							</li>
+							<li>
+								<strong>Useful logs:</strong>
+								<p>\(\log 2 = 0.30,\quad \log 3 = 0.48,\quad \log 4 = 0.60\)</p>
+							</li>
+							<li>
+								<strong>Pressure shortcut for</strong> \(\mathrm{A \rightarrow B
+								+ C}\):
+								<p>\(x = p_t - p_0,\quad p_A = p_0 - x\)</p>
+							</li>
+							<li>
+								<strong>75% completion rule for first order:</strong>
+								<p>\(t_{75\%} = 2t_{50\%}\)</p>
+							</li>
+						</ul>
+
+						<p><strong>Lecture references (FYI):</strong></p>
+						<ul>
+							<li>
+								First-order rate law and meaning of remaining concentration
+								\(\,A\,\) versus initial concentration \(\,A_0\,\) -
+								<a
+									href="https://www.youtube.com/watch?v=djvupjkQJ1U&t=138s"
+									target="_blank"
+									>here</a
+								>
+								\((02{:}18 – 06{:}35)\)
+							</li>
+							<li>
+								Integrated rate law for first-order reaction and the main
+								formula used in numericals, \(\,t =
+								\frac{2.303}{k}\log\frac{A_0}{A}\,\) -
+								<a
+									href="https://www.youtube.com/watch?v=djvupjkQJ1U&t=900s"
+									target="_blank"
+									>here</a
+								>
+								\((15{:}00 – 17{:}26)\)
+							</li>
+							<li>
+								Exponential form and graph idea showing concentration decay with
+								time in first-order kinetics -
+								<a
+									href="https://www.youtube.com/watch?v=djvupjkQJ1U&t=1066s"
+									target="_blank"
+									>here</a
+								>
+								\((17{:}46 – 23{:}02)\)
+							</li>
+							<li>
+								Half-life of first-order reaction, \(\,t_{1/2} =
+								\frac{0.693}{k}\,\), and why it is independent of initial
+								concentration -
+								<a
+									href="https://www.youtube.com/watch?v=djvupjkQJ1U&t=1403s"
+									target="_blank"
+									>here</a
+								>
+								\((23{:}23 – 29{:}36)\)
+							</li>
+							<li>
+								Core numerical pattern using the first-order formula directly -
+								<a
+									href="https://www.youtube.com/watch?v=djvupjkQJ1U&t=2742s"
+									target="_blank"
+									>here</a
+								>
+								\((45{:}42 – 50{:}07)\)
+							</li>
+							<li>
+								Percentage completion method for first-order reaction, useful
+								when percentage reacted is given -
+								<a
+									href="https://www.youtube.com/watch?v=djvupjkQJ1U&t=3020s"
+									target="_blank"
+									>here</a
+								>
+								\((50{:}20 – 55{:}44)\)
+							</li>
 						</ul>
 					</div>
 				</div>
