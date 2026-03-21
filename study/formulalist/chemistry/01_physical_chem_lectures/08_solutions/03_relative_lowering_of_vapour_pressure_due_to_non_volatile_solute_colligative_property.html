@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -134,13 +148,610 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01"
+						>Introduction to Non-volatile Solute Solutions (00:01)</a
+					>
+				</li>
+				<li>
+					<a href="#ch02">Nature of Solute and Solvent Components (01:11)</a>
+				</li>
+				<li><a href="#ch03">Why Vapour Pressure Decreases (04:11)</a></li>
+				<li>
+					<a href="#ch04">Raoult's Law for a Non-volatile Solute (09:56)</a>
+				</li>
+				<li>
+					<a href="#ch05">Relative Lowering in Vapour Pressure (15:13)</a>
+				</li>
+				<li>
+					<a href="#ch06">Colligative Property and Its Meaning (20:01)</a>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Numerical Applications of Vapour Pressure Lowering (26:38)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Intro to topic -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/qpfnOJlL3SU?t=1s"
+								target="_blank"
+								rel="noopener"
+							>
+								Introduction to Non-volatile Solute Solutions (00:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The topic is the vapour pressure of a solution containing a
+								non-volatile solute.
+							</li>
+							<li>
+								In such a solution, the solute does not evaporate, so vapour is
+								produced only by the solvent.
+							</li>
+							<li>
+								This case differs from a solution containing two volatile
+								components, where both components contribute to vapour pressure.
+							</li>
+							<li>
+								The main objective is to determine how the presence of a
+								non-volatile solute affects the vapour pressure of the solvent.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Intro to topic -->
+
+					<!-- START ch02 | Solute solvent nature -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/qpfnOJlL3SU?t=71s"
+								target="_blank"
+								rel="noopener"
+							>
+								Nature of Solute and Solvent Components (01:11)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>A solution has two components: solute and solvent.</li>
+							<li>
+								The component present in smaller amount is called the solute,
+								and the component present in larger amount is called the
+								solvent.
+							</li>
+							<li>
+								Here, the solute is taken as non-volatile, so it is treated as a
+								solid that does not form vapour under the given conditions.
+							</li>
+							<li>
+								Common non-volatile solutes used in problems include:
+								<ul>
+									<li>
+										Urea: \( \mathrm{NH_2CONH_2} \), molar mass \( 60 \,
+										\mathrm{g \, mol^{-1}} \)
+									</li>
+									<li>
+										Glucose: \( \mathrm{C_6H_{12}O_6} \), molar mass \( 180 \,
+										\mathrm{g \, mol^{-1}} \)
+									</li>
+									<li>
+										Sucrose: \( \mathrm{C_{12}H_{22}O_{11}} \), molar mass \(
+										342 \, \mathrm{g \, mol^{-1}} \)
+									</li>
+								</ul>
+							</li>
+							<li>
+								The solvent is volatile and is generally a liquid such as water,
+								methanol, ethanol, benzene, or toluene.
+							</li>
+							<li>
+								For notation throughout the discussion:
+								<ul>
+									<li>Solvent is represented by \( A \)</li>
+									<li>Solute is represented by \( B \)</li>
+								</ul>
+							</li>
+							<li>
+								Since \( B \) is non-volatile, its contribution to vapour
+								pressure is zero.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Solute solvent nature -->
+
+					<!-- START ch03 | Vapour pressure decrease -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/qpfnOJlL3SU?t=251s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why Vapour Pressure Decreases (04:11)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For pure volatile solvent \( A \), molecules escape into the
+								vapour phase and establish the vapour pressure of pure solvent,
+								written as \( P_A^0 \).
+							</li>
+							<li>
+								When a non-volatile solute \( B \) is added, some part of the
+								liquid surface becomes occupied by solute particles.
+							</li>
+							<li>
+								Evaporation is a surface phenomenon, so fewer solvent molecules
+								are now available at the surface for escape into the vapour
+								phase.
+							</li>
+							<li>
+								As a result, the number of solvent vapour molecules above the
+								solution decreases.
+							</li>
+							<li>
+								The vapour pressure of the solution is therefore less than the
+								vapour pressure of pure solvent:
+								<br />
+								\( P_A &lt; P_A^0 \)
+							</li>
+							<li>
+								Because the solute is non-volatile, it does not contribute
+								directly to the vapour pressure of the solution.
+							</li>
+							<li>
+								Hence, addition of a non-volatile solute lowers the vapour
+								pressure of the solvent.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Vapour pressure decrease -->
+
+					<!-- START ch04 | Raoult law formula -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/qpfnOJlL3SU?t=596s"
+								target="_blank"
+								rel="noopener"
+							>
+								Raoult's Law for a Non-volatile Solute (09:56)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a solution containing volatile solvent \( A \) and
+								non-volatile solute \( B \), the vapour pressure of the solution
+								depends only on the solvent.
+							</li>
+							<li>
+								According to Raoult's law, the partial vapour pressure due to a
+								volatile component in a solution is directly proportional to the
+								mole fraction of that component.
+							</li>
+							<li>
+								For solvent \( A \):
+								<br />
+								\( P_A \propto \chi_A \)
+							</li>
+							<li>
+								Introducing the proportionality constant and evaluating it for
+								pure solvent gives:
+								<br />
+								\( P_A = P_A^0 \chi_A \)
+							</li>
+							<li>
+								Here:
+								<ul>
+									<li>\( P_A \) = vapour pressure of the solution</li>
+									<li>\( P_A^0 \) = vapour pressure of pure solvent \( A \)</li>
+									<li>\( \chi_A \) = mole fraction of solvent \( A \)</li>
+								</ul>
+							</li>
+							<li>
+								Mole fraction of solvent is:
+								<br />
+								\( \chi_A = \dfrac{n_A}{n_A + n_B} \)
+							</li>
+							<li>
+								This expression is one of the main working formulas for problems
+								involving non-volatile solutes.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Raoult law formula -->
+
+					<!-- START ch05 | Relative lowering formula -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/qpfnOJlL3SU?t=913s"
+								target="_blank"
+								rel="noopener"
+							>
+								Relative Lowering in Vapour Pressure (15:13)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Since the solution contains only two components, the mole
+								fractions satisfy:
+								<br />
+								\( \chi_A + \chi_B = 1 \)
+							</li>
+							<li>
+								Therefore:
+								<br />
+								\( \chi_A = 1 - \chi_B \)
+							</li>
+							<li>
+								Substituting this into Raoult's law:
+								<br />
+								\( P_A = P_A^0 (1 - \chi_B) \)
+							</li>
+							<li>
+								Rearranging:
+								<br />
+								\( P_A^0 - P_A = P_A^0 \chi_B \)
+							</li>
+							<li>
+								Dividing by \( P_A^0 \):
+								<br />
+								\( \dfrac{P_A^0 - P_A}{P_A^0} = \chi_B \)
+							</li>
+							<li>
+								\( P_A^0 - P_A \) is called the lowering in vapour pressure.
+							</li>
+							<li>
+								\( \dfrac{P_A^0 - P_A}{P_A^0} \) is called the relative lowering
+								in vapour pressure.
+							</li>
+							<li>
+								Thus, for a solution containing a non-volatile solute:
+								<br />
+								\( \dfrac{P_A^0 - P_A}{P_A^0} = \chi_B \)
+							</li>
+							<li>
+								Equivalent working formulas are:
+								<ul>
+									<li>\( P_A = P_A^0 \chi_A \)</li>
+									<li>\( \dfrac{P_A^0 - P_A}{P_A^0} = \chi_B \)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Relative lowering formula -->
+
+					<!-- START ch06 | Colligative property meaning -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/qpfnOJlL3SU?t=1201s"
+								target="_blank"
+								rel="noopener"
+							>
+								Colligative Property and Its Meaning (20:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Relative lowering in vapour pressure is a colligative property.
+							</li>
+							<li>
+								A colligative property depends on the number of solute particles
+								present in the solution.
+							</li>
+							<li>
+								It does not depend on the chemical nature of the solute
+								particles.
+							</li>
+							<li>
+								Since
+								<br />
+								\( \dfrac{P_A^0 - P_A}{P_A^0} = \chi_B = \dfrac{n_B}{n_A + n_B}
+								\),
+								<br />
+								this property depends on the amount of solute particles.
+							</li>
+							<li>
+								For the present discussion, only non-electrolytes are
+								considered.
+							</li>
+							<li>
+								Electrolyte effects are not included here, because dissociation
+								and van't Hoff factor are treated separately.
+							</li>
+							<li>
+								A common distinction to remember:
+								<ul>
+									<li>Vapour pressure itself is not a colligative property.</li>
+									<li>
+										Lowering in vapour pressure is not taken as the colligative
+										property in this context.
+									</li>
+									<li>
+										Relative lowering in vapour pressure is the colligative
+										property.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Other standard colligative properties studied later are
+								elevation in boiling point, depression in freezing point, and
+								osmotic pressure.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Colligative property meaning -->
+
+					<!-- START ch07 | Numerical applications -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/qpfnOJlL3SU?t=1598s"
+								target="_blank"
+								rel="noopener"
+							>
+								Numerical Applications of Vapour Pressure Lowering (26:38)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The following examples apply the two standard relations:
+								<ul>
+									<li>\( P_A = P_A^0 \chi_A \)</li>
+									<li>\( \dfrac{P_A^0 - P_A}{P_A^0} = \chi_B \)</li>
+								</ul>
+							</li>
+							<li>
+								Useful mole relation:
+								<br />
+								\( n = \dfrac{\text{mass}}{\text{molar mass}} \)
+							</li>
+							<li>
+								For a one molal solution:
+								<br />
+								\( 1 \, \text{molal} = 1 \, \text{mole solute in} \, 1000 \,
+								\mathrm{g} \, \text{solvent} \)
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/qpfnOJlL3SU?t=1598s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Given:
+												<br />
+												\( P_A^0 = 60 \, \mathrm{mmHg} \)
+											</li>
+											<li>
+												Solution contains \( 30 \, \mathrm{g} \) urea in \( 72
+												\, \mathrm{g} \) water.
+											</li>
+											<li>
+												Moles of urea:
+												<br />
+												\( n_B = \dfrac{30}{60} = 0.5 \)
+											</li>
+											<li>
+												Moles of water:
+												<br />
+												\( n_A = \dfrac{72}{18} = 4 \)
+											</li>
+											<li>
+												Mole fraction of solute:
+												<br />
+												\( \chi_B = \dfrac{0.5}{4.5} = \dfrac{1}{9} \)
+											</li>
+											<li>
+												Using
+												<br />
+												\( \dfrac{P_A^0 - P_A}{P_A^0} = \chi_B \),
+												<br />
+												\( \dfrac{60 - P_A}{60} = \dfrac{1}{9} \)
+											</li>
+											<li>
+												Therefore:
+												<br />
+												\( P_A = \dfrac{160}{3} = 53.33 \, \mathrm{mmHg} \)
+											</li>
+											<li>
+												The same result is obtained using \( P_A = P_A^0 \chi_A
+												\).
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/qpfnOJlL3SU?t=1979s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Find the mass of a non-volatile solute of molar mass \(
+												40 \, \mathrm{g \, mol^{-1}} \) to be dissolved in \(
+												114 \, \mathrm{g} \) octane so that vapour pressure
+												becomes \( 80\% \) of the original value.
+											</li>
+											<li>
+												Take original vapour pressure as \( 100 \) units and
+												final vapour pressure as \( 80 \) units.
+											</li>
+											<li>
+												Then:
+												<br />
+												\( \dfrac{P_A^0 - P_A}{P_A^0} = \dfrac{100 - 80}{100} =
+												\dfrac{1}{5} \)
+											</li>
+											<li>
+												Hence:
+												<br />
+												\( \chi_B = \dfrac{1}{5} \)
+											</li>
+											<li>
+												Octane is \( \mathrm{C_8H_{18}} \) with molar mass \(
+												114 \, \mathrm{g \, mol^{-1}} \), so moles of octane:
+												<br />
+												\( n_A = \dfrac{114}{114} = 1 \)
+											</li>
+											<li>
+												Using
+												<br />
+												\( \chi_B = \dfrac{n_B}{n_A + n_B} \),
+												<br />
+												\( \dfrac{1}{5} = \dfrac{n_B}{1 + n_B} \)
+											</li>
+											<li>
+												Solving gives:
+												<br />
+												\( n_B = \dfrac{1}{4} \)
+											</li>
+											<li>
+												Mass of solute:
+												<br />
+												\( \text{mass} = n_B \times M = \dfrac{1}{4} \times 40 =
+												10 \, \mathrm{g} \)
+											</li>
+											<li>Required mass of solute \( = 10 \, \mathrm{g} \).</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/qpfnOJlL3SU?t=2478s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 3
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Given:
+												<br />
+												\( P_A^0 = 12.3 \, \mathrm{kPa} \) at \( 300 \,
+												\mathrm{K} \)
+											</li>
+											<li>
+												The solution contains a one molal non-volatile solute.
+											</li>
+											<li>
+												One molal means \( 1 \) mole solute in \( 1000 \,
+												\mathrm{g} \) solvent.
+											</li>
+											<li>
+												Here, solvent is water, so:
+												<br />
+												\( n_B = 1 \)
+											</li>
+											<li>
+												Moles of water:
+												<br />
+												\( n_A = \dfrac{1000}{18} \)
+											</li>
+											<li>
+												Using the solvent mole fraction:
+												<br />
+												\( \chi_A = \dfrac{1000/18}{1000/18 + 1} \)
+											</li>
+											<li>
+												Then:
+												<br />
+												\( P_A = P_A^0 \chi_A = 12.3 \times
+												\dfrac{1000/18}{1000/18 + 1} \)
+											</li>
+											<li>
+												Therefore:
+												<br />
+												\( P_A \approx 12.08 \, \mathrm{kPa} \)
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+							<li>
+								Final takeaway:
+								<ul>
+									<li>
+										Addition of a non-volatile solute lowers vapour pressure.
+									</li>
+									<li>\( P_A = P_A^0 \chi_A \)</li>
+									<li>\( \dfrac{P_A^0 - P_A}{P_A^0} = \chi_B \)</li>
+									<li>
+										Relative lowering in vapour pressure is a colligative
+										property.
+									</li>
+									<li>
+										These results are applied here only to non-electrolyte
+										solutions.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Numerical applications -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
