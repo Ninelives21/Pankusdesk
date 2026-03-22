@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -130,13 +144,705 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Colligative Properties and Particle Count (01:55)</a>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Why Electrolytes and Association Change Results (05:34)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>van't Hoff Factor \( i \): Meaning and Definition (13:22)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04">Dissociation: Complete and Partial Cases (15:44)</a>
+				</li>
+				<li>
+					<a href="#ch05"
+						>Association: Dimerization, Trimerization, and \( \alpha \)
+						(29:22)</a
+					>
+				</li>
+				<li>
+					<a href="#ch06"
+						>Modified Colligative Property Formulae Using \( i \) (40:38)</a
+					>
+				</li>
+				<li>
+					<a href="#ch07">Practice Set: Comparing Osmotic Pressure (47:00)</a>
+				</li>
+				<li>
+					<a href="#ch08"
+						>Practice Set: Finding \( i \), \( \alpha \), and \( \pi \)
+						(56:09)</a
+					>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Abnormal Molar Mass and Its Relation with \( i \) (76:08)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Colligative Properties -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=115s"
+								target="_blank"
+								rel="noopener"
+							>
+								Colligative Properties and Particle Count (01:55)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For dilute solutions, colligative properties depend only on the
+								number of solute particles present, not on the chemical nature
+								of the solute.
+							</li>
+							<li>
+								The four colligative properties recalled here are:
+								<br />
+								\( \frac{P_A^\circ - P_A}{P_A^\circ} = x_{\text{solute}} \), \(
+								\Delta T_b = K_b m \), \( \Delta T_f = K_f m \), \( \pi = MRT
+								\).
+							</li>
+							<li>
+								In a dilute solution, increasing the number of solute particles
+								increases:
+								<br />
+								\( \frac{P_A^\circ - P_A}{P_A^\circ} \), \( \Delta T_b \), \(
+								\Delta T_f \), and \( \pi \).
+							</li>
+							<li>
+								For relative lowering of vapour pressure in a dilute solution:
+								<br />
+								\( x_{\text{solute}} =
+								\frac{n_{\text{solute}}}{n_{\text{solute}} + n_{\text{solvent}}}
+								\approx \frac{n_{\text{solute}}}{n_{\text{solvent}}} \), because
+								\( n_{\text{solute}} \ll n_{\text{solvent}} \).
+							</li>
+							<li>
+								The central idea of the lecture is that any process that changes
+								the actual number of particles in solution will also change the
+								observed colligative property.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Colligative Properties -->
+
+					<!-- START ch02 | Electrolytes and Association -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=334s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why Electrolytes and Association Change Results (05:34)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Earlier examples such as urea and glucose behave as
+								non-electrolytes; they neither dissociate nor associate in
+								solution.
+							</li>
+							<li>
+								Electrolytes dissociate into ions in solution. Example:
+								<br />
+								\( \mathrm{NaCl \rightarrow Na^+ + Cl^-} \)
+							</li>
+							<li>
+								If \( 1 \) mole of \( \mathrm{NaCl} \) is treated as \( 1 \)
+								solute particle during calculation, but actually dissociates
+								into \( 2 \) moles of particles in solution, the observed
+								colligative property becomes larger than the calculated value.
+							</li>
+							<li>
+								Association gives the opposite effect. If solute particles
+								combine in solution, the actual number of particles decreases,
+								so the observed colligative property becomes smaller than the
+								calculated value.
+							</li>
+							<li>
+								Therefore, mismatch between observed and calculated colligative
+								properties arises because the actual particle count in solution
+								is different from the count assumed during calculation.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Electrolytes and Association -->
+
+					<!-- START ch03 | Definition of i -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=802s"
+								target="_blank"
+								rel="noopener"
+							>
+								van't Hoff Factor \( i \): Meaning and Definition (13:22)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The van't Hoff factor \( i \) tells how many times the number of
+								solute particles increases or decreases in solution.
+							</li>
+							<li>
+								It also tells how many times the observed colligative property
+								increases or decreases relative to the calculated value.
+							</li>
+							<li>
+								Definition:
+								<br />
+								\( i = \frac{\text{total moles of solute after
+								dissociation/association}}{\text{total moles of solute before
+								dissociation/association}} \)
+							</li>
+							<li>
+								If particles increase after entering solution, then \( i &gt; 1
+								\).
+							</li>
+							<li>
+								If particles decrease due to association, then \( i &lt; 1 \).
+							</li>
+							<li>
+								If the solute neither dissociates nor associates, then \( i = 1
+								\).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Definition of i -->
+
+					<!-- START ch04 | Dissociation Cases -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=944s"
+								target="_blank"
+								rel="noopener"
+							>
+								Dissociation: Complete and Partial Cases (15:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For complete dissociation, \( i \) is found by simple particle
+								counting.
+							</li>
+							<li>
+								Examples for \( 100\% \) dissociation:
+								<br />
+								\( \mathrm{NaCl \rightarrow Na^+ + Cl^-} \Rightarrow i = 2 \)
+								<br />
+								\( \mathrm{MgCl_2 \rightarrow Mg^{2+} + 2Cl^-} \Rightarrow i = 3
+								\)
+								<br />
+								\( \mathrm{Al_2(SO_4)_3 \rightarrow 2Al^{3+} + 3SO_4^{2-}}
+								\Rightarrow i = 5 \)
+								<br />
+								\( \mathrm{K_4[Fe(CN)_6] \rightarrow 4K^+ + [Fe(CN)_6]^{4-}}
+								\Rightarrow i = 5 \)
+							</li>
+							<li>
+								Hence, in dissociation cases, \( i \) is always greater than \(
+								1 \), and the observed colligative property is greater than the
+								calculated value.
+							</li>
+							<li>
+								For partial dissociation, let \( \alpha \) be the degree of
+								dissociation, where \( \alpha \) is the fraction of initial
+								solute that dissociates.
+							</li>
+							<li>
+								For \( \mathrm{NaCl} \):
+								<br />
+								initial moles \( = 1, 0, 0 \)
+								<br />
+								equilibrium moles \( = 1 - \alpha, \alpha, \alpha \)
+								<br />
+								so \( i = (1 - \alpha) + \alpha + \alpha = 1 + \alpha \)
+							</li>
+							<li>
+								For \( \mathrm{MgCl_2} \):
+								<br />
+								\( i = (1 - \alpha) + \alpha + 2\alpha = 1 + 2\alpha \)
+							</li>
+							<li>
+								For \( \mathrm{K_4[Fe(CN)_6]} \):
+								<br />
+								\( i = (1 - \alpha) + 4\alpha + \alpha = 1 + 4\alpha \)
+							</li>
+							<li>
+								General dissociation pattern:
+								<br />
+								if one formula unit gives \( n \) particles, then
+								<br />
+								\( i = 1 + \alpha (n - 1) \)
+								<br />
+								and \( \alpha = \frac{i - 1}{n - 1} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Dissociation Cases -->
+
+					<!-- START ch05 | Association Cases -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=1762s"
+								target="_blank"
+								rel="noopener"
+							>
+								Association: Dimerization, Trimerization, and \( \alpha \)
+								(29:22)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								In association, separate solute molecules combine to form larger
+								units, so the number of particles decreases and \( i &lt; 1 \).
+							</li>
+							<li>
+								A common example is dimerization of carboxylic acids such as
+								acetic acid or benzoic acid in benzene due to hydrogen bonding.
+							</li>
+							<li>
+								<!-- IMAGE 01 SHOULD GO HERE
+     Description: Dimer of a carboxylic acid in benzene showing two molecules linked by hydrogen bonding.
+     Lecture reference: 29:40
+-->
+							</li>
+							<li>
+								For \( 100\% \) dimerization:
+								<br />
+								\( 2 \) moles become \( 1 \) mole, so \( i = \frac{1}{2} \)
+							</li>
+							<li>
+								For \( 100\% \) trimerization:
+								<br />
+								\( 3 \) moles become \( 1 \) mole, so \( i = \frac{1}{3} \)
+							</li>
+							<li>
+								For \( 100\% \) tetramerization:
+								<br />
+								\( 4 \) moles become \( 1 \) mole, so \( i = \frac{1}{4} \)
+							</li>
+							<li>
+								For partial association into an \( n \)-mer, if \( \alpha \) is
+								the degree of association, then total moles after association
+								are:
+								<br />
+								\( 1 - \alpha + \frac{\alpha}{n} \)
+							</li>
+							<li>
+								Hence:
+								<br />
+								\( i = 1 - \alpha + \frac{\alpha}{n} \)
+								<br />
+								\( i - 1 = \alpha \left( \frac{1}{n} - 1 \right) \)
+								<br />
+								\( \alpha = \frac{i - 1}{\frac{1}{n} - 1} \)
+							</li>
+							<li>
+								In association cases, the observed colligative property is less
+								than the calculated value because the actual number of particles
+								is lower.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Association Cases -->
+
+					<!-- START ch06 | Modified Formulae -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=2438s"
+								target="_blank"
+								rel="noopener"
+							>
+								Modified Colligative Property Formulae Using \( i \) (40:38)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The van't Hoff factor can be written as:
+								<br />
+								\( i = \frac{\text{Observed colligative
+								property}}{\text{Calculated colligative property}} \)
+							</li>
+							<li>
+								This follows because observed colligative properties depend on
+								the actual number of solute particles present after dissociation
+								or association.
+							</li>
+							<li>
+								The corrected formulae become:
+								<br />
+								\( \frac{P_A^\circ - P_A}{P_A^\circ} = i x_{\text{solute}} \)
+								<br />
+								\( \Delta T_b = i K_b m \)
+								<br />
+								\( \Delta T_f = i K_f m \)
+								<br />
+								\( \pi = iMRT \)
+							</li>
+							<li>
+								These formulae are valid for electrolytes, associating solutes,
+								and non-electrolytes.
+							</li>
+							<li>
+								For solutes such as urea or sucrose that neither dissociate nor
+								associate, take \( i = 1 \).
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Modified Formulae -->
+
+					<!-- START ch07 | Osmotic Pressure Practice -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=2820s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice Set: Comparing Osmotic Pressure (47:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								When temperature, gas constant, and molarity are all the same,
+								osmotic pressure depends directly on \( i \) because
+								<br />
+								\( \pi = iMRT \).
+							</li>
+							<li>
+								If concentration is not given as molarity, \( i \) alone is not
+								sufficient; the full expression must be used.
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/1b0tmhf8c3s?t=2820s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										: At a fixed temperature, compare osmotic pressure of \( 1
+										\, \mathrm{M} \) \( \mathrm{NaCl} \), \( 1 \, \mathrm{M} \)
+										\( \mathrm{Na_2SO_4} \), and \( 1 \, \mathrm{M} \) \(
+										\mathrm{Al_2(SO_4)_3} \).
+										<ul>
+											<li>
+												Assuming complete dissociation:
+												<br />
+												\( i(\mathrm{NaCl}) = 2 \), \( i(\mathrm{Na_2SO_4}) = 3
+												\), \( i(\mathrm{Al_2(SO_4)_3}) = 5 \)
+											</li>
+											<li>
+												Order of osmotic pressure:
+												<br />
+												\( \mathrm{Al_2(SO_4)_3 &gt; Na_2SO_4 &gt; NaCl} \)
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/1b0tmhf8c3s?t=2985s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										: Compare osmotic pressure of \( 1 \, \mathrm{M} \) \(
+										\mathrm{NaCl} \), \( 1 \, \mathrm{M} \) urea, and \( 1 \,
+										\mathrm{M} \) benzoic acid in water.
+										<ul>
+											<li>
+												Using complete dissociation or association:
+												<br />
+												\( i(\mathrm{NaCl}) = 2 \), \( i(\text{urea}) = 1 \), \(
+												i(\text{benzoic acid}) = \frac{1}{2} \)
+											</li>
+											<li>
+												Order:
+												<br />
+												\( \mathrm{NaCl &gt; urea &gt; benzoic\ acid} \)
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/1b0tmhf8c3s?t=3045s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 3
+											</a>
+										</strong>
+										: Compare osmotic pressure of \( 1\% \) \( \text{w/v} \)
+										urea, \( 1\% \) \( \text{w/v} \) \( \mathrm{NaCl} \), and \(
+										1\% \) \( \text{w/v} \) \( \mathrm{Na_2SO_4} \) at the same
+										temperature.
+										<ul>
+											<li>Here \( \pi \propto Mi \), not merely \( i \).</li>
+											<li>
+												For urea:
+												<br />
+												\( M = \frac{1/60}{0.1} = \frac{1}{6} \), so \( Mi =
+												\frac{1}{6} \)
+											</li>
+											<li>
+												For \( \mathrm{NaCl} \):
+												<br />
+												\( M = \frac{1/58.5}{0.1} = \frac{1}{5.85} \), so \( Mi
+												= \frac{2}{5.85} \)
+											</li>
+											<li>
+												For \( \mathrm{Na_2SO_4} \):
+												<br />
+												\( M = \frac{1/142}{0.1} = \frac{1}{14.2} \), so \( Mi =
+												\frac{3}{14.2} \)
+											</li>
+											<li>
+												Order:
+												<br />
+												\( \mathrm{NaCl &gt; Na_2SO_4 &gt; urea} \)
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Osmotic Pressure Practice -->
+
+					<!-- START ch08 | Finding i and Alpha -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=3369s"
+								target="_blank"
+								rel="noopener"
+							>
+								Practice Set: Finding \( i \), \( \alpha \), and \( \pi \)
+								(56:09)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								When a colligative property is given experimentally, \( i \) is
+								first obtained from the corrected formula, and then \( \alpha \)
+								is determined from the relevant relation between \( i \) and \(
+								\alpha \).
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/1b0tmhf8c3s?t=3369s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										: A \( 2 \, \mathrm{m} \) \( \mathrm{NaCl} \) solution shows
+										\( \Delta T_b = 1.88 \, \mathrm{K} \). For water, \( K_b =
+										0.52 \, \mathrm{K \, kg \, mol^{-1}} \). Find \( i \) and \(
+										\alpha \).
+										<ul>
+											<li>
+												Use:
+												<br />
+												\( \Delta T_b = iK_bm \)
+											</li>
+											<li>
+												So:
+												<br />
+												\( i = \frac{1.88}{0.52 \times 2} \approx 1.8 \)
+											</li>
+											<li>For \( \mathrm{NaCl} \), \( i = 1 + \alpha \).</li>
+											<li>
+												Hence:
+												<br />
+												\( \alpha = i - 1 \approx 0.8 \)
+											</li>
+											<li>Degree of dissociation \( \approx 80\% \).</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/1b0tmhf8c3s?t=3661s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										: \( \mathrm{K_4[Fe(CN)_6]} \) solution of concentration \(
+										\mathrm{M/10} \) is \( 50\% \) dissociated at \(
+										27^\circ\mathrm{C} \). Find osmotic pressure.
+										<ul>
+											<li>
+												For \( \mathrm{K_4[Fe(CN)_6]} \):
+												<br />
+												\( i = 1 + 4\alpha \)
+											</li>
+											<li>
+												With \( \alpha = 0.5 \):
+												<br />
+												\( i = 1 + 4(0.5) = 3 \)
+											</li>
+											<li>
+												Now use:
+												<br />
+												\( \pi = iMRT \)
+											</li>
+											<li>
+												Substituting:
+												<br />
+												\( \pi = 3 \times \frac{1}{10} \times 0.0821 \times 300
+												\approx 7.389 \, \mathrm{atm} \)
+											</li>
+											<li>Nearest option: \( 7.5 \, \mathrm{atm} \).</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Finding i and Alpha -->
+
+					<!-- START ch09 | Abnormal Molar Mass -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/1b0tmhf8c3s?t=4568s"
+								target="_blank"
+								rel="noopener"
+							>
+								Abnormal Molar Mass and Its Relation with \( i \) (76:08)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								If the van't Hoff factor is ignored while using a
+								colligative-property formula to calculate molar mass, the molar
+								mass obtained is abnormal.
+							</li>
+							<li>
+								This happens because dissociation or association changes the
+								actual number of particles in solution, so the particle count
+								assumed in the simple formula becomes incorrect.
+							</li>
+							<li>
+								Any colligative property is inversely proportional to the molar
+								mass of the solute, because the number of moles of solute is:
+								<br />
+								\( n = \frac{w}{M} \)
+							</li>
+							<li>
+								Therefore:
+								<br />
+								\( \text{Colligative property} \propto \frac{1}{M} \)
+							</li>
+							<li>
+								Since \( i = \frac{\text{Observed colligative
+								property}}{\text{Calculated colligative property}} \), and molar
+								mass varies inversely with colligative property:
+								<br />
+								\( i = \frac{M_{\text{calculated}}}{M_{\text{observed}}} \)
+							</li>
+							<li>
+								Equivalently:
+								<br />
+								\( M_{\text{observed}} = \frac{M_{\text{calculated}}}{i} \)
+							</li>
+							<li>
+								For dissociation, \( i &gt; 1 \), so the observed molar mass is
+								lower than the normal molar mass.
+							</li>
+							<li>
+								For association, \( i &lt; 1 \), so the observed molar mass is
+								higher than the normal molar mass.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Abnormal Molar Mass -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
