@@ -52,10 +52,252 @@
 				<!--Start Q121-->
 				<div class="accordion">
 					<div class="accordion-item">
-						<button class="accordion-button" id="Q121">Q 121 here</button>
+						<button class="accordion-button" id="Q121">
+							<button class="accordion-button" id="Q121">
+								Q 121. The energy associated with electron in first orbit of
+								hydrogen atom is \(-2.18 \times 10^{-18}\,\mathrm{J}\). The
+								frequency of the light required (in Hz) to excite the electron
+								to fifth orbit is \((h = 6.6 \times 10^{-34}\,\mathrm{Js})\)
+								<ul>
+									<li>(a) \(2.17 \times 10^{16}\)</li>
+									<li>(b) \(3.17 \times 10^{14}\)</li>
+									<li>(c) \(2.17 \times 10^{15}\)</li>
+									<li>(d) \(3.17 \times 10^{15}\)</li>
+								</ul>
+							</button>
+						</button>
 						<div class="accordion-content">
+							<p>
+								<strong>Answer: \((d)\ 3.17 \times 10^{15}\ \text{Hz}\)</strong>
+							</p>
+
+							<p><strong>Solution:</strong></p>
+							<p>
+								For hydrogen atom, the energy of electron in the \(n^\text{th}\)
+								orbit is:
+							</p>
+							<p>\(E_n = \dfrac{E_1}{n^2}\)</p>
+							<p>Given:</p>
 							<ul>
-								<li id="A121">Ans 121 here</li>
+								<li>\(E_1 = -2.18 \times 10^{-18}\ \text{J}\)</li>
+								<li>\(n = 5\)</li>
+								<li>\(h = 6.6 \times 10^{-34}\ \text{Js}\)</li>
+							</ul>
+
+							<ol>
+								<li>
+									<strong>Find energy in the fifth orbit</strong>
+									<p>\(E_5 = \dfrac{-2.18 \times 10^{-18}}{5^2}\)</p>
+									<p>\(E_5 = \dfrac{-2.18 \times 10^{-18}}{25}\)</p>
+									<p>\(E_5 = -8.72 \times 10^{-20}\ \text{J}\)</p>
+								</li>
+
+								<li>
+									<strong
+										>Find energy required for excitation from \(n=1\) to
+										\(n=5\)</strong
+									>
+									<p>\(\Delta E = E_5 - E_1\)</p>
+									<p>
+										\(\Delta E = (-8.72 \times 10^{-20}) - (-2.18 \times
+										10^{-18})\)
+									</p>
+									<p>\(\Delta E = 2.0928 \times 10^{-18}\ \text{J}\)</p>
+								</li>
+
+								<li>
+									<strong>Use Planck relation</strong>
+									<p>\(\Delta E = h\nu\)</p>
+									<p>\(\nu = \dfrac{\Delta E}{h}\)</p>
+									<p>
+										\(\nu = \dfrac{2.0928 \times 10^{-18}}{6.6 \times
+										10^{-34}}\)
+									</p>
+									<p>\(\nu = 3.17 \times 10^{15}\ \text{Hz}\)</p>
+								</li>
+							</ol>
+
+							<p><strong>Therefore:</strong></p>
+							<p>\(\boxed{(d)\ 3.17 \times 10^{15}\ \text{Hz}}\)</p>
+
+							<p><strong>Why this method works:</strong></p>
+							<ul>
+								<li>
+									In Bohr’s model, energy of electron in hydrogen atom is
+									quantized:
+									<p>\(E_n \propto -\dfrac{1}{n^2}\)</p>
+								</li>
+								<li>
+									The negative sign shows that the electron is bound to the
+									nucleus.
+								</li>
+								<li>
+									As \(n\) increases, the energy becomes less negative, so
+									energy must be supplied to excite the electron to a higher
+									orbit.
+								</li>
+								<li>
+									The absorbed photon must supply exactly the energy gap:
+									<p>\(\Delta E = h\nu\)</p>
+								</li>
+							</ul>
+
+							<p><strong>JEE / NCERT takeaway:</strong></p>
+							<ul>
+								<li>
+									For hydrogen atom:
+									<p>\(E_n = -\dfrac{2.18 \times 10^{-18}}{n^2}\ \text{J}\)</p>
+								</li>
+								<li>
+									Excitation from lower orbit to higher orbit requires
+									absorption of energy.
+								</li>
+								<li>
+									De-excitation from higher orbit to lower orbit releases
+									energy.
+								</li>
+								<li>
+									For spectral questions:
+									<p>\(\Delta E = E_f - E_i\)</p>
+								</li>
+								<li>
+									Frequency of radiation:
+									<p>\(\nu = \dfrac{\Delta E}{h}\)</p>
+								</li>
+								<li>
+									Since \(E_n\) is negative, always handle signs carefully while
+									subtracting.
+								</li>
+							</ul>
+
+							<p><strong>1-minute solving trick:</strong></p>
+							<ul>
+								<li>
+									Directly use:
+									<p>
+										\(\Delta E = 2.18 \times 10^{-18}\left(1 -
+										\dfrac{1}{n^2}\right)\)
+									</p>
+								</li>
+								<li>
+									Here \(n=5\), so:
+									<p>
+										\(\Delta E = 2.18 \times 10^{-18}\left(1 -
+										\dfrac{1}{25}\right)\)
+									</p>
+									<p>\(\Delta E = 2.18 \times 10^{-18}\cdot \dfrac{24}{25}\)</p>
+								</li>
+								<li>
+									Then:
+									<p>\(\nu = \dfrac{\Delta E}{6.6 \times 10^{-34}}\)</p>
+								</li>
+								<li>
+									Since \(\dfrac{2.1 \times 10^{-18}}{6.6 \times 10^{-34}}
+									\approx 3.17 \times 10^{15}\), option \((d)\) comes quickly.
+								</li>
+							</ul>
+
+							<p><strong>How to think intuitively:</strong></p>
+							<ul>
+								<li>
+									Ground state energy is very negative:
+									<p>\(E_1 = -2.18 \times 10^{-18}\ \text{J}\)</p>
+								</li>
+								<li>
+									Fifth orbit energy is closer to zero:
+									<p>\(E_5 = -8.72 \times 10^{-20}\ \text{J}\)</p>
+								</li>
+								<li>
+									So the electron must absorb a positive energy difference.
+								</li>
+								<li>
+									This means the required frequency must also be positive and
+									fairly large.
+								</li>
+								<li>
+									Since atomic transition energies are usually large, frequency
+									is expected around \(10^{15}\ \text{Hz}\), not too small.
+								</li>
+							</ul>
+
+							<p><strong>Common mistakes to avoid:</strong></p>
+							<ol>
+								<li>Forgetting that \(E_n\) is negative.</li>
+								<li>
+									Using \(E_1 - E_5\) without checking whether the process is
+									excitation or emission.
+								</li>
+								<li>Using \(\nu = \dfrac{\Delta E}{n}\) by mistake.</li>
+								<li>
+									Forgetting to square \(n\) in:
+									<p>\(E_n = \dfrac{E_1}{n^2}\)</p>
+								</li>
+								<li>Dropping powers of ten carelessly.</li>
+							</ol>
+
+							<p><strong>Chapter / Topic / Subtopic:</strong></p>
+							<ul>
+								<li><strong>Chapter:</strong> Structure of Atom</li>
+								<li><strong>Topic:</strong> Bohr’s model of hydrogen atom</li>
+								<li>
+									<strong>Subtopic:</strong> Energy of electron in
+									\(n^\text{th}\) orbit and excitation
+								</li>
+							</ul>
+
+							<p><strong>Final exam-style answer:</strong></p>
+							<p>For hydrogen atom:</p>
+							<p>\(E_n = \dfrac{E_1}{n^2}\)</p>
+							<p>So for \(n=5\):</p>
+							<p>
+								\(E_5 = \dfrac{-2.18 \times 10^{-18}}{25} = -8.72 \times
+								10^{-20}\ \text{J}\)
+							</p>
+							<p>
+								Energy required to excite electron from first orbit to fifth
+								orbit:
+							</p>
+							<p>\(\Delta E = E_5 - E_1\)</p>
+							<p>
+								\(\Delta E = (-8.72 \times 10^{-20}) - (-2.18 \times 10^{-18})\)
+							</p>
+							<p>\(\Delta E = 2.0928 \times 10^{-18}\ \text{J}\)</p>
+							<p>Using:</p>
+							<p>\(\Delta E = h\nu\)</p>
+							<p>
+								\(\nu = \dfrac{2.0928 \times 10^{-18}}{6.6 \times 10^{-34}}\)
+							</p>
+							<p>\(\nu = 3.17 \times 10^{15}\ \text{Hz}\)</p>
+							<p>
+								<strong>\(\boxed{(d)\ 3.17 \times 10^{15}\ \text{Hz}}\)</strong>
+							</p>
+
+							<p><strong>Quick cheatsheet:</strong></p>
+							<ul>
+								<li>
+									<strong>Energy in \(n^\text{th}\) orbit:</strong>
+									<p>\(E_n = -\dfrac{2.18 \times 10^{-18}}{n^2}\ \text{J}\)</p>
+								</li>
+								<li>
+									<strong>Energy gap:</strong>
+									<p>\(\Delta E = E_f - E_i\)</p>
+								</li>
+								<li>
+									<strong>Frequency relation:</strong>
+									<p>\(\nu = \dfrac{\Delta E}{h}\)</p>
+								</li>
+								<li>
+									<strong>Excitation:</strong> lower orbit \(\rightarrow\)
+									higher orbit, energy absorbed
+								</li>
+								<li>
+									<strong>De-excitation:</strong> higher orbit \(\rightarrow\)
+									lower orbit, energy released
+								</li>
+								<li>
+									<strong>Key sign idea:</strong> higher \(n\) means energy is
+									less negative
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -130,7 +372,20 @@
 				<!--Start Q127-->
 				<div class="accordion">
 					<div class="accordion-item">
-						<button class="accordion-button" id="Q127">Q 127 here</button>
+						<button class="accordion-button" id="Q127">
+							<button class="accordion-button" id="Q127">
+								Q 127. The RMS velocity of dihydrogen is \(\sqrt{7}\) times more
+								than that of dinitrogen. If \(T_{H_2}\) and \(T_{N_2}\) are the
+								temperatures of dihydrogen and dinitrogen, then the correct
+								relationship between them is
+								<ul>
+									<li>(a) \(T_{H_2} = T_{N_2}\)</li>
+									<li>(b) \(T_{H_2} > T_{N_2}\)</li>
+									<li>(c) \(T_{H_2} = \sqrt{7}T_{N_2}\)</li>
+									<li>(d) \(T_{H_2} = \dfrac{T_{N_2}}{2}\)</li>
+								</ul>
+							</button>
+						</button>
 						<div class="accordion-content">
 							<ul>
 								<li id="A127">Ans 127 here</li>
