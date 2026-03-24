@@ -1,96 +1,28 @@
-.chem-svg {
-	width: 340px; /* change once, affects all */
+.chem-diagram {
+	width: 220px;
 	height: auto;
-	display: block;
+	display: inline-block;
+}
+
+.chem-diagram text {
+	font-family: Arial, Helvetica, sans-serif;
+	fill: #000;
+	text-anchor: middle;
+	dominant-baseline: middle;
 }
 
 .chem-atom {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 88px;
-	fill: #000;
-}
-
-.chem-label-green {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 52px;
-	fill: #0a9f1f;
-}
-
-.chem-label-red {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 52px;
-	fill: #e02020;
-}
-
-.chem-label-orange {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 52px;
-	fill: #f28c00;
-}
-
-.chem-label-purple {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 52px;
-	fill: #7a00ff;
+	font-size: 18px;
+	font-weight: 400;
 }
 
 .chem-bond {
-	stroke: #111;
-	stroke-width: 8;
+	stroke: #000;
+	stroke-width: 2;
 	stroke-linecap: round;
 	fill: none;
 }
 
-.chem-wedge {
-	fill: #111;
-}
-
-.chem-dashed {
-	stroke: #111;
-	stroke-width: 8;
-	stroke-linecap: round;
-	stroke-dasharray: 8 12;
-	fill: none;
-}
-
-.chem-arc-red {
-	stroke: #e02020;
-	stroke-width: 4;
-	fill: none;
-}
-
-.chem-arc-orange {
-	stroke: #f28c00;
-	stroke-width: 4;
-	fill: none;
-}
-
-.chem-arc-purple {
-	stroke: #7a00ff;
-	stroke-width: 4;
-	fill: none;
-}
-
-.chem-guide-green {
-	stroke: #0a9f1f;
-	stroke-width: 4;
-	fill: none;
-}
-
-.chem-guide-red {
-	stroke: #e02020;
-	stroke-width: 4;
-	fill: none;
-}
-
-.chem-guide-orange {
-	stroke: #f28c00;
-	stroke-width: 4;
-	fill: none;
-}
-
-.chem-guide-purple {
-	stroke: #7a00ff;
-	stroke-width: 4;
-	fill: none;
+.chem-bond-dashed {
+	stroke-dasharray: 7 6;
 }
