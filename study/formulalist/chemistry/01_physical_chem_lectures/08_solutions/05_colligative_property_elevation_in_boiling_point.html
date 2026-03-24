@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -130,13 +144,521 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
+				<li><a href="#ch01">Meaning of Colligative Property (00:45)</a></li>
+				<li><a href="#ch02">Types of Colligative Properties (02:03)</a></li>
+				<li><a href="#ch03">Why Boiling Point Increases (04:14)</a></li>
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch04">Boiling Point from Vapour Pressure Graph (06:30)</a>
 				</li>
+				<li>
+					<a href="#ch05"
+						>Elevation in Boiling Point and Main Formula (13:17)</a
+					>
+				</li>
+				<li><a href="#ch06">Molal Elevation Constant \(K_b\) (15:05)</a></li>
+				<li><a href="#ch07">Example: Glucose in Water (18:40)</a></li>
+				<li><a href="#ch08">Example: Urea and Glucose Together (22:07)</a></li>
+				<li><a href="#ch09">Example: Molar Mass of Solute (28:12)</a></li>
+				<li><a href="#ch10">Formula for \(K_b\) When Not Given (33:21)</a></li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Meaning of Colligative Property -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=45s"
+								target="_blank"
+								rel="noopener"
+							>
+								Meaning of Colligative Property (00:45)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Colligative properties are properties of dilute solutions that
+								depend only on the number of solute particles and not on the
+								nature of the solute.
+							</li>
+							<li>
+								If two different non-electrolyte solutes are present in the same
+								number of moles, their colligative effect is the same under
+								similar conditions.
+							</li>
+							<li>
+								Hence these properties depend on concentration terms such as
+								mole fraction or molality, not on chemical identity.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Meaning of Colligative Property -->
+
+					<!-- START ch02 | Types of Colligative Properties -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=123s"
+								target="_blank"
+								rel="noopener"
+							>
+								Types of Colligative Properties (02:03)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The four standard colligative properties are:
+								<ol>
+									<li>Relative lowering of vapour pressure</li>
+									<li>Elevation in boiling point</li>
+									<li>Depression in freezing point</li>
+									<li>Osmotic pressure</li>
+								</ol>
+							</li>
+							<li>
+								For relative lowering of vapour pressure:
+								<br />
+								\( \dfrac{P_A^{0} - P_A}{P_A^{0}} = X_{\text{solute}} \)
+							</li>
+							<li>
+								This also shows dependence on the amount of solute present.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Types of Colligative Properties -->
+
+					<!-- START ch03 | Why Boiling Point Increases -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=254s"
+								target="_blank"
+								rel="noopener"
+							>
+								Why Boiling Point Increases (04:14)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								When a non-volatile solute is added to a solvent, the solute
+								does not contribute to vapour formation.
+							</li>
+							<li>
+								As a result, the vapour pressure of the solution becomes lower
+								than that of the pure solvent at the same temperature.
+							</li>
+							<li>
+								Because the solution now has lower vapour pressure, a higher
+								temperature is required for it to boil.
+							</li>
+							<li>
+								Therefore, addition of a non-volatile solute causes:
+								<ol>
+									<li>Lowering of vapour pressure</li>
+									<li>Increase in boiling point</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Why Boiling Point Increases -->
+
+					<!-- START ch04 | Boiling Point from Vapour Pressure Graph -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=390s"
+								target="_blank"
+								rel="noopener"
+							>
+								Boiling Point from Vapour Pressure Graph (06:30)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For both pure solvent and solution, vapour pressure increases
+								with increase in temperature.
+							</li>
+							<li>
+								The vapour pressure curve of the solution lies below that of the
+								pure solvent because the solution has lower vapour pressure at
+								every temperature.
+							</li>
+							<li>
+								Boiling point is defined as the temperature at which vapour
+								pressure becomes equal to atmospheric pressure.
+							</li>
+							<li>
+								<!-- IMAGE PLACEHOLDER: Vapour pressure vs temperature graph showing pure solvent curve above solution curve, both intersecting atmospheric pressure line at different temperatures. -->
+							</li>
+							<li>
+								If \(T_b^{0}\) is the boiling point of the pure solvent and
+								\(T_b\) is the boiling point of the solution, then \(T_b &gt;
+								T_b^{0}\).
+							</li>
+							<li>
+								The elevation in boiling point is:
+								<br />
+								\( \Delta T_b = T_b - T_b^{0} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Boiling Point from Vapour Pressure Graph -->
+
+					<!-- START ch05 | Elevation in Boiling Point and Main Formula -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=797s"
+								target="_blank"
+								rel="noopener"
+							>
+								Elevation in Boiling Point and Main Formula (13:17)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Experimentally, elevation in boiling point is directly
+								proportional to molality of the solution.
+							</li>
+							<li>\( \Delta T_b \propto m \)</li>
+							<li>
+								Hence:
+								<br />
+								\( \Delta T_b = K_b m \)
+							</li>
+							<li>
+								Molality is:
+								<br />
+								\( m = \dfrac{\text{moles of non-volatile solute}}{\text{mass of
+								solvent in kg}} \)
+							</li>
+							<li>
+								Since \( \Delta T_b \) depends on the number of solute particles
+								through molality, it is a colligative property.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Elevation in Boiling Point and Main Formula -->
+
+					<!-- START ch06 | Molal Elevation Constant \(K_b\) -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=905s"
+								target="_blank"
+								rel="noopener"
+							>
+								Molal Elevation Constant \(K_b\) (15:05)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								\(K_b\) is called the molal elevation constant or ebullioscopic
+								constant.
+							</li>
+							<li>
+								\(K_b\) is a constant for a given solvent and does not depend on
+								the solute.
+							</li>
+							<li>
+								From \( \Delta T_b = K_b m \), the unit of \(K_b\) is:
+								<br />
+								\( \text{K kg mol}^{-1} \)
+							</li>
+							<li>
+								Definition of \(K_b\):
+								<br />
+								It is the elevation in boiling point when the molality of the
+								solution is \(1\), that is, when \(1\) mole of a non-volatile
+								solute is dissolved in \(1\) kg of solvent.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Molal Elevation Constant \(K_b\) -->
+
+					<!-- START ch07 | Example: Glucose in Water -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=1120s"
+								target="_blank"
+								rel="noopener"
+							>
+								Example: Glucose in Water (18:40)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given:
+								<ol>
+									<li>\(18\) g glucose dissolved in \(1\) kg water</li>
+									<li>\(T_b^{0} = 373\) K</li>
+									<li>\(K_b\) for water \(= 0.52\ \text{K kg mol}^{-1}\)</li>
+								</ol>
+							</li>
+							<li>
+								Molar mass of glucose \( \left(
+								\text{C}_6\text{H}_{12}\text{O}_6 \right) = 180\ \text{g
+								mol}^{-1} \).
+							</li>
+							<li>
+								Moles of glucose:
+								<br />
+								\( \dfrac{18}{180} = 0.1 \)
+							</li>
+							<li>
+								Molality:
+								<br />
+								\( m = \dfrac{0.1}{1} = 0.1 \)
+							</li>
+							<li>
+								Elevation in boiling point:
+								<br />
+								\( \Delta T_b = K_b m = 0.52 \times 0.1 = 0.052\ \text{K} \)
+							</li>
+							<li>
+								Boiling point of solution:
+								<br />
+								\( T_b = 373 + 0.052 = 373.052\ \text{K} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Example: Glucose in Water -->
+
+					<!-- START ch08 | Example: Urea and Glucose Together -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=1327s"
+								target="_blank"
+								rel="noopener"
+							>
+								Example: Urea and Glucose Together (22:07)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given:
+								<ol>
+									<li>
+										\(6\) g urea + \(9\) g glucose dissolved in \(300\) g water
+									</li>
+									<li>\(T_b^{0} = 100^\circ \text{C}\)</li>
+									<li>\(K_b\) for water \(= 0.52\ \text{K kg mol}^{-1}\)</li>
+								</ol>
+							</li>
+							<li>
+								For colligative properties, total number of solute particles is
+								used. Therefore total moles of solute are added.
+							</li>
+							<li>
+								Moles of urea \( \left( \text{NH}_2\text{CONH}_2 \right) \):
+								<br />
+								\( \dfrac{6}{60} = 0.1 \)
+							</li>
+							<li>
+								Moles of glucose:
+								<br />
+								\( \dfrac{9}{180} = 0.05 \)
+							</li>
+							<li>
+								Total moles of solute:
+								<br />
+								\( 0.1 + 0.05 = 0.15 \)
+							</li>
+							<li>Mass of solvent \(= 300\) g \(= 0.3\) kg.</li>
+							<li>
+								Molality:
+								<br />
+								\( m = \dfrac{0.15}{0.3} = 0.5 \)
+							</li>
+							<li>
+								Elevation in boiling point:
+								<br />
+								\( \Delta T_b = 0.52 \times 0.5 = 0.26 \)
+							</li>
+							<li>
+								Boiling point of solution:
+								<br />
+								\( T_b = 100 + 0.26 = 100.26^\circ \text{C} \)
+							</li>
+							<li>
+								Change in temperature has the same numerical value in Kelvin and
+								Celsius.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Example: Urea and Glucose Together -->
+
+					<!-- START ch09 | Example: Molar Mass of Solute -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=1692s"
+								target="_blank"
+								rel="noopener"
+							>
+								Example: Molar Mass of Solute (28:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Given:
+								<ol>
+									<li>
+										\(3.3\) g non-volatile solute dissolved in \(125\) g benzene
+									</li>
+									<li>\(T_b^{0} = 80^\circ \text{C}\)</li>
+									<li>\(T_b = 80.66^\circ \text{C}\)</li>
+									<li>\(K_b\) for benzene \(= 3.28\ \text{K kg mol}^{-1}\)</li>
+								</ol>
+							</li>
+							<li>
+								Elevation in boiling point:
+								<br />
+								\( \Delta T_b = 80.66 - 80 = 0.66 \)
+							</li>
+							<li>
+								Use:
+								<br />
+								\( \Delta T_b = K_b m \)
+							</li>
+							<li>
+								Also:
+								<br />
+								\( m = \dfrac{\text{moles of solute}}{\text{mass of solvent in
+								kg}} = \dfrac{3.3/M}{0.125} \)
+							</li>
+							<li>
+								Substituting:
+								<br />
+								\( 0.66 = 3.28 \times \dfrac{3.3/M}{0.125} \)
+							</li>
+							<li>
+								On solving:
+								<br />
+								\( M \approx 131.2\ \text{g mol}^{-1} \)
+							</li>
+							<li>
+								Approximate molar mass of the solute:
+								<br />
+								\( 130\ \text{g mol}^{-1} \)
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Example: Molar Mass of Solute -->
+
+					<!-- START ch10 | Formula for \(K_b\) When Not Given -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/i5rSNwv9v9s?t=2001s"
+								target="_blank"
+								rel="noopener"
+							>
+								Formula for \(K_b\) When Not Given (33:21)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								If \(K_b\) is not given, it may be calculated using:
+								<br />
+								\( K_b = \dfrac{R {T_b^{0}}^2 M}{1000\,\Delta H_{\text{vap}}} \)
+							</li>
+							<li>
+								Here:
+								<ol>
+									<li>\(R\) = universal gas constant</li>
+									<li>\(T_b^{0}\) = boiling point of pure solvent in Kelvin</li>
+									<li>\(M\) = molar mass of solvent</li>
+									<li>
+										\(\Delta H_{\text{vap}}\) = enthalpy of vaporization of the
+										solvent
+									</li>
+								</ol>
+							</li>
+							<li>
+								If latent heat of vaporization \(L_v\) is given per gram, then:
+								<br />
+								\( \Delta H_{\text{vap}} = L_v \times M \)
+							</li>
+							<li>
+								For water:
+								<ol>
+									<li>\(T_b^{0} = 373\ \text{K}\)</li>
+									<li>\(M = 18\)</li>
+									<li>
+										If \(L_v = 540\ \text{cal g}^{-1}\), then \( \Delta
+										H_{\text{vap}} = 540 \times 18 \)
+									</li>
+								</ol>
+							</li>
+							<li>
+								With appropriate unit choice for \(R\), calculation gives
+								approximately:
+								<br />
+								\( K_b \approx 0.52\ \text{K kg mol}^{-1} \) for water.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Formula for \(K_b\) When Not Given -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
