@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -133,13 +147,741 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Lecture Scope and Vapour Pressure Basics (00:01)</a>
+				</li>
+				<li>
+					<a href="#ch02">Evaporation in Open and Closed Containers (01:12)</a>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Definition of Vapour Pressure and Equilibrium (08:53)</a
+					>
+				</li>
+				<li><a href="#ch04">Factors Affecting Vapour Pressure (11:57)</a></li>
+				<li>
+					<a href="#ch05">Volatile and Non-Volatile Substances (18:44)</a>
+				</li>
+				<li>
+					<a href="#ch06">Solutions Containing Two Volatile Liquids (24:11)</a>
+				</li>
+				<li>
+					<a href="#ch07">Raoult's Law and Partial Vapour Pressures (29:11)</a>
+				</li>
+				<li>
+					<a href="#ch08">Total Vapour Pressure and Core Formulae (37:56)</a>
+				</li>
+				<li>
+					<a href="#ch09"
+						>Solved Examples on Partial and Total Vapour Pressure (42:47)</a
+					>
+				</li>
+				<li>
+					<a href="#ch10">Mole Fraction in Vapour Phase and Graphs (56:54)</a>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Lecture Scope -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=1s"
+								target="_blank"
+								rel="noopener"
+							>
+								Lecture Scope and Vapour Pressure Basics (00:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The lecture introduces vapour pressure and the vapour pressure
+								of a solution containing two volatile liquids.
+							</li>
+							<li>
+								This topic forms the basis for later discussion of colligative
+								properties.
+							</li>
+							<li>
+								The starting idea is that vapour originates due to evaporation
+								of a liquid.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Lecture Scope -->
+
+					<!-- START ch02 | Open and Closed -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=72s"
+								target="_blank"
+								rel="noopener"
+							>
+								Evaporation in Open and Closed Containers (01:12)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Evaporation occurs from the surface of a liquid, not from the
+								bulk.
+							</li>
+							<li>
+								Surface molecules experience weaker net intermolecular
+								attraction than bulk molecules.
+							</li>
+							<li>
+								Surface molecules are treated as having relatively higher
+								energy, so they can escape into the vapour phase.
+							</li>
+							<li>
+								In an open container, vapours escape continuously; therefore
+								vapour pressure is not discussed for an open vessel.
+							</li>
+							<li>
+								In a closed container, evaporation continues but the vapours
+								cannot escape.
+							</li>
+							<li>
+								In a closed container, both evaporation and condensation occur
+								simultaneously.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Open and Closed -->
+
+					<!-- START ch03 | Definition and Equilibrium -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=533s"
+								target="_blank"
+								rel="noopener"
+							>
+								Definition of Vapour Pressure and Equilibrium (08:53)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								After some time in a closed container, equilibrium is
+								established between liquid and vapour.
+							</li>
+							<li>
+								At equilibrium, the rate of evaporation becomes equal to the
+								rate of condensation.
+							</li>
+							<li>
+								The pressure exerted by vapours above the liquid surface at
+								equilibrium is called vapour pressure.
+							</li>
+							<li>
+								For a pure liquid \(A\), vapour pressure is denoted by
+								\(P_A^0\).
+							</li>
+							<li>
+								Thus, \(P_A^0\) means the vapour pressure of pure liquid \(A\).
+							</li>
+							<li>
+								Vapour pressure is defined only for a closed system at
+								liquid-vapour equilibrium.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Definition and Equilibrium -->
+
+					<!-- START ch04 | Factors Affecting VP -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=717s"
+								target="_blank"
+								rel="noopener"
+							>
+								Factors Affecting Vapour Pressure (11:57)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Vapour pressure does not depend on the shape or size of the
+								container.
+							</li>
+							<li>Vapour pressure depends on the nature of the liquid.</li>
+							<li>
+								Stronger intermolecular attraction leads to lower vapour
+								pressure.
+							</li>
+							<li>
+								Hence, vapour pressure is inversely related to the strength of
+								intermolecular forces.
+							</li>
+							<li>
+								At the same temperature, ethanol has higher vapour pressure than
+								water because water has stronger hydrogen bonding.
+							</li>
+							<li>
+								For alcohols with increasing number of \(\text{OH}\) groups,
+								intermolecular hydrogen bonding increases and vapour pressure
+								decreases.
+							</li>
+							<li>
+								The trend discussed is:
+								<br />
+								\( P_{\text{ethanol}}^0 > P_{\text{glycol}}^0 >
+								P_{\text{glycerol}}^0 \)
+							</li>
+							<li>
+								Vapour pressure also increases with rise in temperature because
+								evaporation becomes more extensive.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Factors Affecting VP -->
+
+					<!-- START ch05 | Volatile Classification -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=1124s"
+								target="_blank"
+								rel="noopener"
+							>
+								Volatile and Non-Volatile Substances (18:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								On the basis of tendency to evaporate, substances are classified
+								as volatile and non-volatile.
+							</li>
+							<li>Volatile substances have non-zero vapour pressure.</li>
+							<li>
+								Non-volatile substances have negligible tendency to evaporate;
+								in this treatment, their pure vapour pressure is taken as zero.
+							</li>
+							<li>
+								Common non-volatile examples used in numericals are urea,
+								glucose and sucrose.
+							</li>
+							<li>
+								Common volatile examples used in the chapter are water,
+								methanol, ethanol, benzene and toluene.
+							</li>
+							<li>
+								This classification is important for later cases: volatile +
+								volatile and volatile + non-volatile solutions.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Volatile Classification -->
+
+					<!-- START ch06 | Two Volatile Liquids -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=1451s"
+								target="_blank"
+								rel="noopener"
+							>
+								Solutions Containing Two Volatile Liquids (24:11)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								The solution considered here contains two volatile liquid
+								components.
+							</li>
+							<li>
+								One component is treated as solvent \(A\) and the other as
+								solute \(B\).
+							</li>
+							<li>
+								Both components are liquids; the term solute here only means the
+								component present in smaller amount.
+							</li>
+							<li>
+								For the pure liquids, vapour pressures are denoted by \(P_A^0\)
+								and \(P_B^0\).
+							</li>
+							<li>
+								When pure \(A\) and pure \(B\) are mixed, both components
+								contribute to the vapour phase.
+							</li>
+							<li>
+								After mixing, the vapour pressure of each component becomes less
+								than its vapour pressure in pure state.
+							</li>
+							<li>
+								<!-- IMAGE PLACEHOLDER: separate closed containers of pure A and pure B, then mixed solution showing vapours of both components -->
+							</li>
+						</ul>
+					</li>
+					<!-- END ch06 | Two Volatile Liquids -->
+
+					<!-- START ch07 | Raoult Law -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=1751s"
+								target="_blank"
+								rel="noopener"
+							>
+								Raoult's Law and Partial Vapour Pressures (29:11)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For a solution of volatile liquids, the vapour pressure
+								contributed by each component is called its partial vapour
+								pressure.
+							</li>
+							<li>
+								Raoult's law states that the partial vapour pressure of each
+								component is directly proportional to the mole fraction of that
+								component in the solution.
+							</li>
+							<li>
+								Thus,
+								<br />
+								\( P_A \propto X_A \)
+							</li>
+							<li>
+								Similarly,
+								<br />
+								\( P_B \propto X_B \)
+							</li>
+							<li>
+								Mole fractions are:
+								<br />
+								\( X_A = \dfrac{n_A}{n_A+n_B} \)
+							</li>
+							<li>\( X_B = \dfrac{n_B}{n_A+n_B} \)</li>
+							<li>
+								Also,
+								<br />
+								\( X_A + X_B = 1 \)
+							</li>
+							<li>
+								Using the pure-liquid condition, the proportionality constants
+								become \(P_A^0\) and \(P_B^0\).
+							</li>
+							<li>
+								Hence, Raoult's law gives:
+								<br />
+								\( P_A = P_A^0 X_A \)
+							</li>
+							<li>\( P_B = P_B^0 X_B \)</li>
+						</ul>
+					</li>
+					<!-- END ch07 | Raoult Law -->
+
+					<!-- START ch08 | Total Pressure -->
+					<li>
+						<div id="ch08">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=2276s"
+								target="_blank"
+								rel="noopener"
+							>
+								Total Vapour Pressure and Core Formulae (37:56)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Total vapour pressure of the solution is the sum of the partial
+								vapour pressures of all volatile components.
+							</li>
+							<li>
+								This follows the Dalton-type addition of partial pressures in
+								the vapour phase.
+							</li>
+							<li>
+								Therefore,
+								<br />
+								\( P_T = P_A + P_B \)
+							</li>
+							<li>
+								Substituting Raoult's law:
+								<br />
+								\( P_T = P_A^0 X_A + P_B^0 X_B \)
+							</li>
+							<li>
+								At a fixed temperature, \(P_A^0\) and \(P_B^0\) are
+								experimentally known constants for the pure liquids.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch08 | Total Pressure -->
+
+					<!-- START ch09 | Solved Examples -->
+					<li>
+						<div id="ch09">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=2567s"
+								target="_blank"
+								rel="noopener"
+							>
+								Solved Examples on Partial and Total Vapour Pressure (42:47)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<ol>
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/ltirLC4AD2E?t=2567s"
+												target="_blank"
+												rel="noopener"
+												>Question 1</a
+											></strong
+										>
+										0.78 g benzene and 0.92 g toluene are mixed. Given
+										\(P_{\text{benzene}}^0 = 400\) mmHg and
+										\(P_{\text{toluene}}^0 = 200\) mmHg, find partial pressures
+										and total vapour pressure.
+										<ul>
+											<li>
+												Moles of benzene:
+												<br />
+												\( n_{\text{benzene}} = \dfrac{0.78}{78} = 0.01 \)
+											</li>
+											<li>
+												Moles of toluene:
+												<br />
+												\( n_{\text{toluene}} = \dfrac{0.92}{92} = 0.01 \)
+											</li>
+											<li>
+												Mole fractions:
+												<br />
+												\( X_{\text{benzene}} = \dfrac{1}{2}, \quad
+												X_{\text{toluene}} = \dfrac{1}{2} \)
+											</li>
+											<li>
+												Partial pressure of benzene:
+												<br />
+												\( P_{\text{benzene}} = 400 \times \dfrac{1}{2} = 200
+												\text{ mmHg} \)
+											</li>
+											<li>
+												Partial pressure of toluene:
+												<br />
+												\( P_{\text{toluene}} = 200 \times \dfrac{1}{2} = 100
+												\text{ mmHg} \)
+											</li>
+											<li>
+												Total vapour pressure:
+												<br />
+												\( P_T = 200 + 100 = 300 \text{ mmHg} \)
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/ltirLC4AD2E?t=2943s"
+												target="_blank"
+												rel="noopener"
+												>Question 2</a
+											></strong
+										>
+										Ethanol and methanol are mixed in mole ratio \(3:1\). Given
+										\(P_{\text{ethanol}}^0 = 55\) mmHg and
+										\(P_{\text{methanol}}^0 = 50\) mmHg, find total vapour
+										pressure.
+										<ul>
+											<li>
+												Mole fractions:
+												<br />
+												\( X_{\text{ethanol}} = \dfrac{3}{4}, \quad
+												X_{\text{methanol}} = \dfrac{1}{4} \)
+											</li>
+											<li>
+												Total vapour pressure:
+												<br />
+												\( P_T = 55 \times \dfrac{3}{4} + 50 \times \dfrac{1}{4}
+												\)
+											</li>
+											<li>
+												\( P_T = \dfrac{165 + 50}{4} = \dfrac{215}{4} = 53.75
+												\text{ mmHg} \)
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/ltirLC4AD2E?t=3215s"
+												target="_blank"
+												rel="noopener"
+												>Question 3</a
+											></strong
+										>
+										Two data sets are given for a binary solution:
+										<ul>
+											<li>
+												When moles of \(X:Y = 2:3\), total vapour pressure is
+												500 mmHg.
+											</li>
+											<li>
+												When moles of \(X:Y = 3:2\), total vapour pressure is
+												400 mmHg.
+											</li>
+											<li>
+												Use
+												<br />
+												\( P_T = P_X^0 X_X + P_Y^0 X_Y \)
+											</li>
+											<li>
+												First case:
+												<br />
+												\( 500 = P_X^0 \times \dfrac{2}{5} + P_Y^0 \times
+												\dfrac{3}{5} \)
+											</li>
+											<li>
+												Second case:
+												<br />
+												\( 400 = P_X^0 \times \dfrac{3}{5} + P_Y^0 \times
+												\dfrac{2}{5} \)
+											</li>
+											<li>
+												Solving gives:
+												<br />
+												\( P_X^0 = 200 \text{ mmHg}, \quad P_Y^0 = 700 \text{
+												mmHg} \)
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch09 | Solved Examples -->
+
+					<!-- START ch10 | Vapour Phase -->
+					<li>
+						<div id="ch10">
+							<a
+								href="https://youtu.be/ltirLC4AD2E?t=3414s"
+								target="_blank"
+								rel="noopener"
+							>
+								Mole Fraction in Vapour Phase and Graphs (56:54)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Mole fraction in liquid phase is represented by \(X\), whereas
+								mole fraction in vapour phase is represented by \(Y\).
+							</li>
+							<li>
+								For any component in the vapour phase:
+								<br />
+								\( Y_A = \dfrac{P_A}{P_T} \)
+							</li>
+							<li>
+								Similarly,
+								<br />
+								\( Y_B = \dfrac{P_B}{P_T} \)
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/ltirLC4AD2E?t=3480s"
+												target="_blank"
+												rel="noopener"
+												>Question 1</a
+											></strong
+										>
+										0.92 g ethanol and 0.32 g methanol are mixed. Given
+										\(P_{\text{ethanol}}^0 = 55\) mmHg and
+										\(P_{\text{methanol}}^0 = 50\) mmHg, find mole fractions in
+										vapour phase.
+										<ul>
+											<li>
+												Moles:
+												<br />
+												\( n_{\text{ethanol}} = \dfrac{0.92}{46} = 0.02,\quad
+												n_{\text{methanol}} = \dfrac{0.32}{32} = 0.01 \)
+											</li>
+											<li>
+												Liquid-phase mole fractions:
+												<br />
+												\( X_{\text{ethanol}} = \dfrac{2}{3},\quad
+												X_{\text{methanol}} = \dfrac{1}{3} \)
+											</li>
+											<li>
+												Partial pressures:
+												<br />
+												\( P_{\text{ethanol}} = 55 \times \dfrac{2}{3} = 36.66
+												\text{ mmHg} \)
+											</li>
+											<li>
+												\( P_{\text{methanol}} = 50 \times \dfrac{1}{3} = 16.66
+												\text{ mmHg} \)
+											</li>
+											<li>
+												Total pressure:
+												<br />
+												\( P_T = 36.66 + 16.66 = 53.33 \text{ mmHg} \)
+											</li>
+											<li>
+												Vapour-phase mole fractions:
+												<br />
+												\( Y_{\text{ethanol}} = \dfrac{36.66}{53.33} \approx
+												0.68 \)
+											</li>
+											<li>
+												\( Y_{\text{methanol}} = \dfrac{16.66}{53.33} \approx
+												0.32 \)
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/ltirLC4AD2E?t=4017s"
+												target="_blank"
+												rel="noopener"
+												>Question 2</a
+											></strong
+										>
+										Sketch the variation of \(P_A\), \(P_B\) and total vapour
+										pressure with composition.
+										<ul>
+											<li>
+												From Raoult's law:
+												<br />
+												\( P_A = P_A^0 X_A \)
+											</li>
+											<li>\( P_B = P_B^0 X_B \)</li>
+											<li>
+												Each partial pressure varies linearly with the
+												corresponding mole fraction.
+											</li>
+											<li>
+												Total vapour pressure is obtained by adding the two
+												partial-pressure lines:
+												<br />
+												\( P_T = P_A^0 X_A + P_B^0 X_B \)
+											</li>
+											<li>
+												<!-- IMAGE PLACEHOLDER: graph of partial pressures of A and B versus composition, along with total vapour pressure line -->
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong
+											><a
+												href="https://youtu.be/ltirLC4AD2E?t=4296s"
+												target="_blank"
+												rel="noopener"
+												>Question 3</a
+											></strong
+										>
+										If total vapour pressure is given as \( P_T = 100 +
+										60X_{\text{benzene}} \), identify vapour pressures of pure
+										benzene and pure toluene.
+										<ul>
+											<li>
+												Use
+												<br />
+												\( P_T = P_{\text{benzene}}^0 X_{\text{benzene}} +
+												P_{\text{toluene}}^0 X_{\text{toluene}} \)
+											</li>
+											<li>
+												Since
+												<br />
+												\( X_{\text{toluene}} = 1 - X_{\text{benzene}} \)
+											</li>
+											<li>
+												Rewrite:
+												<br />
+												\( P_T = P_{\text{benzene}}^0 X_{\text{benzene}} +
+												P_{\text{toluene}}^0 (1 - X_{\text{benzene}}) \)
+											</li>
+											<li>
+												\( P_T = P_{\text{toluene}}^0 + (P_{\text{benzene}}^0 -
+												P_{\text{toluene}}^0)X_{\text{benzene}} \)
+											</li>
+											<li>
+												Comparing with \( P_T = 100 + 60X_{\text{benzene}} \):
+												<br />
+												\( P_{\text{toluene}}^0 = 100 \text{ mmHg} \)
+											</li>
+											<li>
+												\( P_{\text{benzene}}^0 - P_{\text{toluene}}^0 = 60
+												\Rightarrow P_{\text{benzene}}^0 = 160 \text{ mmHg} \)
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch10 | Vapour Phase -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
