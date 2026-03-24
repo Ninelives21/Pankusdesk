@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Panku's Desk</title>
 		<link rel="stylesheet" href="../../../../../styles/styles.css" />
+		<link rel="stylesheet" href="../../../../../styles/style_chem.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
 		<script>
@@ -4002,6 +4003,197 @@ Brine + NH3 + CO2
 							<p><strong>Useful text diagram for diborane:</strong></p>
 							<ul>
 								<li>
+									<svg
+										width="1200"
+										height="700"
+										viewBox="0 0 1200 700"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<defs>
+											<style>
+												.atom {
+													font-family: Arial, Helvetica, sans-serif;
+													font-size: 88px;
+													fill: #000;
+												}
+												.label-green {
+													font-family: Arial, Helvetica, sans-serif;
+													font-size: 52px;
+													fill: #0a9f1f;
+												}
+												.label-red {
+													font-family: Arial, Helvetica, sans-serif;
+													font-size: 52px;
+													fill: #e02020;
+												}
+												.label-orange {
+													font-family: Arial, Helvetica, sans-serif;
+													font-size: 52px;
+													fill: #f28c00;
+												}
+												.label-purple {
+													font-family: Arial, Helvetica, sans-serif;
+													font-size: 52px;
+													fill: #7a00ff;
+												}
+												.bond {
+													stroke: #111;
+													stroke-width: 8;
+													stroke-linecap: round;
+												}
+												.thin {
+													stroke-width: 5;
+													fill: none;
+													stroke-linecap: round;
+												}
+												.arc-red {
+													stroke: #e02020;
+													fill: none;
+													stroke-width: 4;
+												}
+												.arc-orange {
+													stroke: #f28c00;
+													fill: none;
+													stroke-width: 4;
+												}
+												.arc-purple {
+													stroke: #7a00ff;
+													fill: none;
+													stroke-width: 4;
+												}
+												.guide-green {
+													stroke: #0a9f1f;
+													fill: none;
+													stroke-width: 4;
+												}
+												.guide-red {
+													stroke: #e02020;
+													fill: none;
+													stroke-width: 4;
+												}
+												.guide-orange {
+													stroke: #f28c00;
+													fill: none;
+													stroke-width: 4;
+												}
+												.guide-purple {
+													stroke: #7a00ff;
+													fill: none;
+													stroke-width: 4;
+												}
+											</style>
+										</defs>
+
+										<!-- main atoms -->
+										<text class="atom" x="300" y="330">B</text>
+										<text class="atom" x="640" y="330">B</text>
+
+										<text class="atom" x="470" y="140">H</text>
+										<text class="atom" x="475" y="520">H</text>
+
+										<text class="atom" x="60" y="235">H</text>
+										<text class="atom" x="55" y="430">H</text>
+
+										<text class="atom" x="850" y="235">H</text>
+										<text class="atom" x="850" y="430">H</text>
+
+										<!-- bridge bonds top -->
+										<line class="bond" x1="385" y1="255" x2="455" y2="185" />
+										<line class="bond" x1="585" y1="185" x2="655" y2="255" />
+
+										<!-- bridge bonds bottom -->
+										<line class="bond" x1="385" y1="345" x2="455" y2="415" />
+										<line class="bond" x1="585" y1="415" x2="655" y2="345" />
+
+										<!-- left terminal wedge bond -->
+										<polygon points="305,338 185,385 165,345" fill="#111" />
+
+										<!-- left terminal dashed bond -->
+										<line
+											x1="290"
+											y1="275"
+											x2="210"
+											y2="245"
+											stroke="#111"
+											stroke-width="8"
+											stroke-linecap="round"
+											stroke-dasharray="8 12"
+										/>
+
+										<!-- right terminal wedge bond -->
+										<polygon points="695,338 815,385 795,345" fill="#111" />
+
+										<!-- right terminal dashed bond -->
+										<line
+											x1="710"
+											y1="275"
+											x2="790"
+											y2="245"
+											stroke="#111"
+											stroke-width="8"
+											stroke-linecap="round"
+											stroke-dasharray="8 12"
+										/>
+
+										<!-- angle arcs -->
+										<path class="arc-red" d="M 382 256 A 82 82 0 0 1 385 347" />
+										<path
+											class="arc-orange"
+											d="M 455 415 A 120 120 0 0 1 655 345"
+										/>
+										<path
+											class="arc-purple"
+											d="M 712 272 A 76 76 0 0 1 716 346"
+										/>
+
+										<!-- labels and guide lines -->
+										<text class="label-red" x="120" y="115">97°</text>
+										<line
+											class="guide-red"
+											x1="205"
+											y1="125"
+											x2="355"
+											y2="270"
+										/>
+
+										<text class="label-green" x="725" y="95">131 pm</text>
+										<line
+											class="guide-green"
+											x1="725"
+											y1="110"
+											x2="600"
+											y2="220"
+										/>
+
+										<text class="label-green" x="120" y="610">119 pm</text>
+										<line
+											class="guide-green"
+											x1="235"
+											y1="540"
+											x2="190"
+											y2="405"
+										/>
+
+										<text class="label-orange" x="635" y="520">83°</text>
+										<line
+											class="guide-orange"
+											x1="625"
+											y1="475"
+											x2="485"
+											y2="405"
+										/>
+
+										<text class="label-purple" x="930" y="390">120°</text>
+										<line
+											class="guide-purple"
+											x1="925"
+											y1="360"
+											x2="760"
+											y2="325"
+										/>
+									</svg>
+
+									<!---OLD STARTS BELOW-->
 									<pre>
    H       H
     \     /
@@ -4170,7 +4362,23 @@ Brine + NH3 + CO2
 				<!--Start Q135-->
 				<div class="accordion">
 					<div class="accordion-item">
-						<button class="accordion-button" id="Q135">Q 135 here</button>
+						<button class="accordion-button" id="Q135">
+							<button class="accordion-button" id="Q135">
+								Q 135. The incorrect statement about the oxidation states of
+								group 14 elements is
+								<ul>
+									<li>
+										(a) In addition to \(+4\), \(+2\) carbon also shows negative
+										oxidation states.
+									</li>
+									<li>(b) Tin in \(+2\) state acts as a reducing agent.</li>
+									<li>(c) Lead in \(+2\) state acts as good reducing agent.</li>
+									<li>
+										(d) Lead in \(+4\) state acts as a good oxidising agent.
+									</li>
+								</ul>
+							</button>
+						</button>
 						<div class="accordion-content">
 							<ul>
 								<li id="A135">Ans 135 here</li>
