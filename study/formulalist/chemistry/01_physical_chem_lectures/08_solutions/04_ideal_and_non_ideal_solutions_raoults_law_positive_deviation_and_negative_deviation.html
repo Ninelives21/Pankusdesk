@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -134,13 +148,482 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Basis of Ideal and Non-Ideal Solutions (00:01)</a>
+				</li>
+				<li>
+					<a href="#ch02"
+						>Key Mixing Quantities and Interaction Logic (01:59)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03"
+						>Ideal Solution: Conditions, Graph and Examples (14:08)</a
+					>
+				</li>
+				<li>
+					<a href="#ch04">Non-Ideal Solution: General Features (27:57)</a>
+				</li>
+				<li>
+					<a href="#ch05">Negative Deviation from Raoult’s Law (33:44)</a>
+				</li>
+				<li>
+					<a href="#ch06">Positive Deviation from Raoult’s Law (46:11)</a>
+				</li>
+				<li>
+					<a href="#ch07"
+						>Positive Deviation: Type 1 and Type 2 Curves (55:17)</a
+					>
 				</li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Ideal vs Non-Ideal -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/Lrn31fEY5uc?t=1s"
+								target="_blank"
+								rel="noopener"
+							>
+								Basis of Ideal and Non-Ideal Solutions (00:01)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								An ideal solution obeys Raoult’s law at all concentrations and
+								temperatures.
+							</li>
+							<li>
+								A non-ideal solution does not obey Raoult’s law over the full
+								range of composition and temperature.
+							</li>
+							<li>
+								For two pure liquids of volumes \(V_1\) and \(V_2\), if the
+								final solution volume \(V_f = V_1 + V_2\), the behaviour is
+								ideal.
+							</li>
+							<li>If \(V_f \ne V_1 + V_2\), the behaviour is non-ideal.</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Ideal vs Non-Ideal -->
+
+					<!-- START ch02 | Mixing Quantities -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/Lrn31fEY5uc?t=119s"
+								target="_blank"
+								rel="noopener"
+							>
+								Key Mixing Quantities and Interaction Logic (01:59)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Change in volume on mixing:
+								<br />
+								\( \Delta V_{\text{mix}} = V_f - (V_1 + V_2) \)
+							</li>
+							<li>
+								If \( \Delta V_{\text{mix}} = 0 \), there is no contraction or
+								expansion on mixing.
+							</li>
+							<li>
+								Change in enthalpy on mixing depends on:
+								<br />
+								breaking \(A\!-\!A\) and \(B\!-\!B\) interactions, and forming
+								\(A\!-\!B\) interactions.
+							</li>
+							<li>
+								If heat absorbed in breaking old interactions equals heat
+								released in forming new interactions, then:
+								<br />
+								\( \Delta H_{\text{mix}} = 0 \)
+							</li>
+							<li>
+								Relative interaction strengths \(A\!-\!A\), \(B\!-\!B\), and
+								\(A\!-\!B\) decide both \( \Delta V_{\text{mix}} \) and \(
+								\Delta H_{\text{mix}} \).
+							</li>
+							<li>
+								For all solutions:
+								<ol>
+									<li>\( \Delta S_{\text{mix}} &gt; 0 \)</li>
+									<br />
+									<li>\( \Delta G_{\text{mix}} &lt; 0 \)</li>
+								</ol>
+							</li>
+							<li>Mixing increases randomness, so entropy increases.</li>
+							<li>
+								Solution formation is spontaneous, so Gibbs free energy
+								decreases.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Mixing Quantities -->
+
+					<!-- START ch03 | Ideal Solution -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/Lrn31fEY5uc?t=848s"
+								target="_blank"
+								rel="noopener"
+							>
+								Ideal Solution: Conditions, Graph and Examples (14:08)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Conditions for an ideal solution:
+								<ol>
+									<li>
+										Raoult’s law is obeyed at all concentrations and
+										temperatures.
+									</li>
+									<br />
+									<li>\( \Delta V_{\text{mix}} = 0 \)</li>
+									<br />
+									<li>\( \Delta H_{\text{mix}} = 0 \)</li>
+									<br />
+									<li>\( A\!-\!A \approx B\!-\!B \approx A\!-\!B \)</li>
+								</ol>
+							</li>
+							<li>
+								For each component:
+								<br />
+								\( P_A = P_A^0 x_A \), \( P_B = P_B^0 x_B \)
+							</li>
+							<li>
+								Total vapour pressure:
+								<br />
+								\( P_{\text{total}} = P_A^0 x_A + P_B^0 x_B \)
+							</li>
+							<li>
+								Observed vapour pressure and Raoult-law calculation give the
+								same value for both partial pressures and total pressure.
+							</li>
+							<li>
+								Because intermolecular attractions remain effectively unchanged
+								on mixing, molecules neither come significantly closer nor move
+								farther apart.
+							</li>
+							<li>
+								Hence no volume change occurs and no net heat effect appears on
+								mixing.
+							</li>
+							<li>
+								Common examples:
+								<ol>
+									<li>methanol + ethanol</li>
+									<br />
+									<li>\(\mathrm{C_2H_5Cl + C_2H_5Br}\)</li>
+									<br />
+									<li>\(n\)-hexane + \(n\)-heptane</li>
+									<br />
+									<li>\(\mathrm{C_2H_4Br_2 + C_2H_4Cl_2}\)</li>
+									<br />
+									<li>benzene + toluene</li>
+								</ol>
+							</li>
+							<li>
+								Typical requirement: similar polarity and nearly similar
+								molecular size.
+							</li>
+							<li>
+								A large size mismatch can destroy ideal behaviour even when
+								functional type appears similar.
+							</li>
+
+							<!-- IMAGE 01 SHOULD GO HERE
+             Description: Straight-line Raoult's law graph for \(P_A\), \(P_B\), and \(P_{\text{total}}\) versus mole fraction in an ideal solution.
+             Lecture reference: 21:21
+        -->
+						</ul>
+					</li>
+					<!-- END ch03 | Ideal Solution -->
+
+					<!-- START ch04 | Non-Ideal Features -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/Lrn31fEY5uc?t=1677s"
+								target="_blank"
+								rel="noopener"
+							>
+								Non-Ideal Solution: General Features (27:57)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								General features of a non-ideal solution:
+								<ol>
+									<li>Raoult’s law is not followed over the full range.</li>
+									<br />
+									<li>\( \Delta V_{\text{mix}} \ne 0 \)</li>
+									<br />
+									<li>\( \Delta H_{\text{mix}} \ne 0 \)</li>
+									<br />
+									<li>
+										\( A\!-\!A \), \( B\!-\!B \), and \( A\!-\!B \) interactions
+										are unequal.
+									</li>
+								</ol>
+							</li>
+							<li>
+								If \(A\!-\!B\) attraction becomes stronger, molecules come
+								closer and volume decreases.
+							</li>
+							<li>
+								If \(A\!-\!B\) attraction becomes weaker, molecules move farther
+								apart and volume increases.
+							</li>
+							<li>
+								Non-ideal solutions are of two types:
+								<ol>
+									<li>negative deviation from Raoult’s law</li>
+									<br />
+									<li>positive deviation from Raoult’s law</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Non-Ideal Features -->
+
+					<!-- START ch05 | Negative Deviation -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/Lrn31fEY5uc?t=2024s"
+								target="_blank"
+								rel="noopener"
+							>
+								Negative Deviation from Raoult’s Law (33:44)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For negative deviation:
+								<ol>
+									<li>
+										\( P_{\text{total, obs}} &lt; P_A^0 x_A + P_B^0 x_B \)
+									</li>
+									<br />
+									<li>\( P_{A,\text{obs}} &lt; P_A^0 x_A \)</li>
+									<br />
+									<li>\( P_{B,\text{obs}} &lt; P_B^0 x_B \)</li>
+								</ol>
+							</li>
+							<li>
+								Unlike interactions are stronger:
+								<br />
+								\( A\!-\!B &gt; A\!-\!A \) and \( A\!-\!B &gt; B\!-\!B \)
+							</li>
+							<li>
+								Stronger attraction holds molecules more tightly in the liquid
+								phase, so fewer molecules escape into vapour.
+							</li>
+							<li>Therefore vapour pressure decreases.</li>
+							<li>
+								Because molecules come closer:
+								<br />
+								\( \Delta V_{\text{mix}} &lt; 0 \)
+							</li>
+							<li>
+								Because formation of strong \(A\!-\!B\) interactions releases
+								more heat than is absorbed in breaking old interactions:
+								<br />
+								\( \Delta H_{\text{mix}} &lt; 0 \)
+							</li>
+							<li>
+								Important examples:
+								<ol>
+									<li>chloroform + acetone</li>
+									<br />
+									<li>strong acid + water</li>
+								</ol>
+							</li>
+							<li>
+								Common strong acid examples:
+								<ol>
+									<li>\(\mathrm{HCl + H_2O}\)</li>
+									<br />
+									<li>\(\mathrm{HNO_3 + H_2O}\)</li>
+									<br />
+									<li>\(\mathrm{H_2SO_4 + H_2O}\)</li>
+									<br />
+									<li>\(\mathrm{HI + H_2O}\)</li>
+								</ol>
+							</li>
+							<li>
+								Rule of thumb: if a stronger specific interaction appears after
+								mixing, negative deviation is likely.
+							</li>
+
+							<!-- IMAGE 02 SHOULD GO HERE
+             Description: Curved graph showing \(P_A\), \(P_B\), and \(P_{\text{total}}\) below the ideal straight lines for negative deviation.
+             Lecture reference: 39:35
+        -->
+						</ul>
+					</li>
+					<!-- END ch05 | Negative Deviation -->
+
+					<!-- START ch06 | Positive Deviation -->
+					<li>
+						<div id="ch06">
+							<a
+								href="https://youtu.be/Lrn31fEY5uc?t=2771s"
+								target="_blank"
+								rel="noopener"
+							>
+								Positive Deviation from Raoult’s Law (46:11)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								For positive deviation:
+								<ol>
+									<li>
+										\( P_{\text{total, obs}} &gt; P_A^0 x_A + P_B^0 x_B \)
+									</li>
+									<br />
+									<li>\( P_{A,\text{obs}} &gt; P_A^0 x_A \)</li>
+									<br />
+									<li>\( P_{B,\text{obs}} &gt; P_B^0 x_B \)</li>
+								</ol>
+							</li>
+							<li>
+								Unlike interactions are weaker:
+								<br />
+								\( A\!-\!B &lt; A\!-\!A \) and \( A\!-\!B &lt; B\!-\!B \)
+							</li>
+							<li>
+								Weaker attraction makes escape into vapour easier, so vapour
+								pressure increases.
+							</li>
+							<li>
+								Because molecules move farther apart:
+								<br />
+								\( \Delta V_{\text{mix}} &gt; 0 \)
+							</li>
+							<li>
+								Because heat absorbed in breaking strong old interactions
+								exceeds heat released on forming weaker new interactions:
+								<br />
+								\( \Delta H_{\text{mix}} &gt; 0 \)
+							</li>
+							<li>
+								Typical examples:
+								<ol>
+									<li>\(\mathrm{H_2O + C_6H_6}\) (water + benzene)</li>
+									<br />
+									<li>\(\mathrm{H_2O + C_6H_5CH_3}\) (water + toluene)</li>
+									<br />
+									<li>methanol + benzene</li>
+									<br />
+									<li>ethanol + toluene</li>
+								</ol>
+							</li>
+							<li>
+								Rule of thumb: if a strong pre-existing interaction is weakened
+								or disrupted on mixing, positive deviation is likely.
+							</li>
+
+							<!-- IMAGE 03 SHOULD GO HERE
+             Description: Curved graph showing \(P_A\), \(P_B\), and \(P_{\text{total}}\) above the ideal straight lines for positive deviation.
+             Lecture reference: 51:19
+        -->
+						</ul>
+					</li>
+					<!-- END ch06 | Positive Deviation -->
+
+					<!-- START ch07 | Type 1 vs Type 2 -->
+					<li>
+						<div id="ch07">
+							<a
+								href="https://youtu.be/Lrn31fEY5uc?t=3317s"
+								target="_blank"
+								rel="noopener"
+							>
+								Positive Deviation: Type 1 and Type 2 Curves (55:17)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>Positive-deviation systems can show two graph patterns.</li>
+							<li>
+								In both types:
+								<br />
+								\( P_{\text{total}} \) remains greater than the Raoult-law
+								prediction.
+							</li>
+							<li>
+								Type 1:
+								<br />
+								\( P_{\text{total}} \) stays above the ideal line but does not
+								exceed the vapour pressure of the more volatile pure component.
+							</li>
+							<li>
+								Type 2:
+								<br />
+								\( P_{\text{total}} \) exceeds even the vapour pressure of one
+								pure component at some intermediate composition.
+							</li>
+							<li>
+								This distinction is important for later discussion of azeotropic
+								mixtures.
+							</li>
+
+							<!-- IMAGE 04 SHOULD GO HERE
+             Description: Two positive-deviation total-pressure graphs comparing Type 1 and Type 2 behaviour, with Type 2 crossing above a pure-component vapour pressure.
+             Lecture reference: 55:39
+        -->
+						</ul>
+					</li>
+					<!-- END ch07 | Type 1 vs Type 2 -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
