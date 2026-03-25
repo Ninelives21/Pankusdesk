@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,11 +8,25 @@
 		<link rel="stylesheet" href="../../../../../styles/style_math.css" />
 		<script src="../../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../../scripts/navbar.js" defer></script>
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<!-- WARNING: MathJax v3 required. Use ONLY \( \) for math (no \[ \] anywhere). Do NOT use $...$ or $$...$$. Do NOT use tex-mml-chtml.js. Do NOT use Unicode subscripts/superscripts. -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']],
+					processEscapes: true,
+					macros: {
+						frac: ['\\dfrac{#1}{#2}', 2],
+					},
+				},
+				svg: { fontCache: 'global' },
+			};
+		</script>
+
 		<script
 			id="MathJax-script"
 			async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 		></script>
 	</head>
 	<body>
@@ -130,13 +144,398 @@
 				TOPICS IN THIS LECTURE :
 			</h3>
 
-			<ol>
+			<!-- START topic-index -->
+			<ol id="topic-index">
 				<li>
-					<a href="#ch01" class="link_no_style_2">AAAA</a>
+					<a href="#ch01">Depression in Freezing Point: Basic Idea (00:00)</a>
 				</li>
+				<li>
+					<a href="#ch02"
+						>Vapour Pressure Graph and Freezing Point Definition (01:21)</a
+					>
+				</li>
+				<li>
+					<a href="#ch03">Formula, Molality, and Cryoscopic Constant (11:02)</a>
+				</li>
+				<li>
+					<a href="#ch04"
+						>Solved Questions on Depression in Freezing Point (16:41)</a
+					>
+				</li>
+				<li><a href="#ch05">When \(K_f\) Is Not Given (36:09)</a></li>
 			</ol>
+			<!-- END topic-index -->
 
-			<br /><br />
+			<br />
+			<div class="lecture-notes">
+				<ol>
+					<!-- START ch01 | Basic Idea -->
+					<li>
+						<div id="ch01">
+							<a
+								href="https://youtu.be/aMbnHVKiYWg?t=0s"
+								target="_blank"
+								rel="noopener"
+							>
+								Depression in Freezing Point: Basic Idea (00:00)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Depression in freezing point means lowering of the freezing
+								point after adding a non-volatile solute to a solvent.
+							</li>
+							<li>
+								For a non-volatile solute:
+								<br />
+								\( \text{boiling point increases} \)
+								<br />
+								\( \text{freezing point decreases} \)
+							</li>
+							<li>
+								This is a colligative property, so it depends on the number of
+								solute particles, not on the chemical nature of the solute.
+							</li>
+							<li>
+								A simple structural interpretation is that freezing requires
+								formation of an ordered arrangement. Solute particles disturb
+								this arrangement, so a lower temperature is needed for freezing.
+							</li>
+							<li>
+								Freezing does not always imply decrease in volume. Water is a
+								standard counterexample because it expands on freezing.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch01 | Basic Idea -->
+
+					<!-- START ch02 | Vapour Pressure Graph -->
+					<li>
+						<div id="ch02">
+							<a
+								href="https://youtu.be/aMbnHVKiYWg?t=81s"
+								target="_blank"
+								rel="noopener"
+							>
+								Vapour Pressure Graph and Freezing Point Definition (01:21)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								<!-- IMAGE 01 SHOULD GO HERE
+     Description: Vapour pressure vs temperature curves for pure solvent, solution, and solid solvent.
+     Lecture reference: 01:21
+-->
+							</li>
+							<li>
+								At any given temperature, the vapour pressure of the solution is
+								lower than that of the pure solvent because the non-volatile
+								solute does not contribute to vapour formation.
+							</li>
+							<li>
+								Freezing point is defined as the temperature at which the vapour
+								pressure of the liquid state becomes equal to the vapour
+								pressure of the solid state.
+							</li>
+							<li>
+								For the pure solvent, the freezing point is where the
+								liquid-solvent curve intersects the solid-solvent curve.
+							</li>
+							<li>
+								After adding a non-volatile solute, the liquid-phase vapour
+								pressure curve shifts downward, so its intersection with the
+								solid-solvent curve occurs at a lower temperature.
+							</li>
+							<li>
+								If \(T_f^0\) is the freezing point of the pure solvent and
+								\(T_f\) is the freezing point of the solution, then:
+								<br />
+								\( \Delta T_f = T_f^0 - T_f \)
+							</li>
+							<li>
+								Since \(T_f &lt; T_f^0\), the quantity \( \Delta T_f \) is
+								positive and represents depression in freezing point.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch02 | Vapour Pressure Graph -->
+
+					<!-- START ch03 | Formula and Constant -->
+					<li>
+						<div id="ch03">
+							<a
+								href="https://youtu.be/aMbnHVKiYWg?t=662s"
+								target="_blank"
+								rel="noopener"
+							>
+								Formula, Molality, and Cryoscopic Constant (11:02)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Experimentally,
+								<br />
+								\( \Delta T_f \propto m \)
+							</li>
+							<li>
+								Hence,
+								<br />
+								\( \Delta T_f = K_f m \)
+							</li>
+							<li>
+								Molality is:
+								<br />
+								\( m = \dfrac{\text{moles of solute}}{\text{mass of solvent in
+								kg}} \)
+							</li>
+							<li>
+								This confirms that depression in freezing point is a colligative
+								property because it depends on the number of dissolved solute
+								particles.
+							</li>
+							<li>
+								\(K_f\) is the molal depression constant or cryoscopic constant.
+							</li>
+							<li>\(K_f\) depends only on the solvent, not on the solute.</li>
+							<li>
+								Unit of \(K_f\):
+								<br />
+								\( \text{K kg mol}^{-1} \)
+							</li>
+							<li>
+								Definition of \(K_f\): it is equal to the depression in freezing
+								point produced when 1 mole of a non-volatile solute is dissolved
+								in 1 kg of the solvent.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch03 | Formula and Constant -->
+
+					<!-- START ch04 | Solved Questions -->
+					<li>
+						<div id="ch04">
+							<a
+								href="https://youtu.be/aMbnHVKiYWg?t=1001s"
+								target="_blank"
+								rel="noopener"
+							>
+								Solved Questions on Depression in Freezing Point (16:41)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								Standard working formula:
+								<br />
+								\( \Delta T_f = K_f m \)
+							</li>
+							<li>
+								When required, use:
+								<br />
+								\( m = \dfrac{w_2/M_2}{w_1(\text{kg})} \)
+								<br />
+								where \(w_2\) is mass of solute, \(M_2\) is molar mass of
+								solute, and \(w_1\) is mass of solvent.
+							</li>
+							<li>
+								For percentage by mass, \(5\%\) by mass means \(5\text{ g}\)
+								solute in \(100\text{ g}\) solution.
+							</li>
+							<li>
+								<ol>
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/aMbnHVKiYWg?t=1001s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 1
+											</a>
+										</strong>
+										<ul>
+											<li>
+												Find the mass of ethanol, assumed non-volatile, to be
+												dissolved in \(1\text{ kg}\) water so that the solution
+												freezes at \(-2^\circ\text{C}\).
+											</li>
+											<li>
+												Given: \(T_f^0 = 0^\circ\text{C}\), \(T_f =
+												-2^\circ\text{C}\), so \( \Delta T_f = 2 \).
+											</li>
+											<li>
+												Also, \(K_f(\text{water}) = 1.86\text{ K kg mol}^{-1}\).
+											</li>
+											<li>
+												Using \( \Delta T_f = K_f m \):
+												<br />
+												\( 2 = 1.86 \times \dfrac{x/46}{1} \)
+											</li>
+											<li>
+												\( x \approx 49.5\text{ g} \), so about \(50\text{ g}\)
+												ethanol is required.
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/aMbnHVKiYWg?t=1250s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 2
+											</a>
+										</strong>
+										<ul>
+											<li>
+												\(50\text{ cm}^3\) ethylene glycol is dissolved in
+												\(50\text{ g}\) water. The freezing point becomes
+												\(-34^\circ\text{C}\). Find the density of ethylene
+												glycol.
+											</li>
+											<li>
+												Given: \( \Delta T_f = 34 \), \(K_f = 1.86\text{ K kg
+												mol}^{-1}\), molar mass of ethylene glycol \(= 62\text{
+												g mol}^{-1}\).
+											</li>
+											<li>
+												Using
+												<br />
+												\( 34 = 1.86 \times \dfrac{x/62}{50/1000} \)
+											</li>
+											<li>\( x \approx 56.66\text{ g} \)</li>
+											<li>
+												Density:
+												<br />
+												\( \rho = \dfrac{56.66}{50} \approx 1.13\text{ g
+												cm}^{-3} \)
+											</li>
+										</ul>
+									</li>
+									<br />
+									<li>
+										<strong>
+											<a
+												href="https://youtu.be/aMbnHVKiYWg?t=1612s"
+												target="_blank"
+												rel="noopener"
+											>
+												Question 3
+											</a>
+										</strong>
+										<ul>
+											<li>
+												\(5\%\) cane sugar by mass has freezing point
+												\(271\text{ K}\). Find the freezing point of \(5\%\)
+												glucose by mass. Take freezing point of pure water as
+												\(273.15\text{ K}\).
+											</li>
+											<li>
+												For cane sugar solution:
+												<br />
+												\( \Delta T_f = 273.15 - 271 = 2.15\text{ K} \)
+											</li>
+											<li>
+												\(5\%\) by mass means \(5\text{ g}\) solute in
+												\(100\text{ g}\) solution, so solvent mass \(=95\text{
+												g}\).
+											</li>
+											<li>
+												For equal solvent mass and same solvent, \(K_f\) cancels
+												out. Therefore,
+												<br />
+												\( \dfrac{\Delta T_f(\text{glucose})}{2.15} =
+												\dfrac{5/180}{5/342} = \dfrac{342}{180} = 1.9 \)
+											</li>
+											<li>
+												\( \Delta T_f(\text{glucose}) = 2.15 \times 1.9 =
+												4.085\text{ K} \)
+											</li>
+											<li>
+												Freezing point of glucose solution:
+												<br />
+												\( 273.15 - 4.085 = 269.065\text{ K} \approx
+												269.06\text{ K} \)
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</li>
+					<!-- END ch04 | Solved Questions -->
+
+					<!-- START ch05 | Kf Not Given -->
+					<li>
+						<div id="ch05">
+							<a
+								href="https://youtu.be/aMbnHVKiYWg?t=2169s"
+								target="_blank"
+								rel="noopener"
+							>
+								When \(K_f\) Is Not Given (36:09)
+							</a>
+							<br />
+							<span class="back-to-index">
+								<a href="#topic-index">(Back to topic index)</a>
+							</span>
+						</div>
+
+						<ul class="inner-list">
+							<li>
+								If \(K_f\) is not given, it can be calculated from:
+								<br />
+								\( K_f = \dfrac{R(T_f^0)^2 M}{1000\,\Delta H_{\text{fusion}}} \)
+							</li>
+							<li>
+								Here:
+								<br />
+								\(R\) = universal gas constant,
+								<br />
+								\(T_f^0\) = freezing point of pure solvent in Kelvin,
+								<br />
+								\(M\) = molar mass of solvent,
+								<br />
+								\( \Delta H_{\text{fusion}} \) = enthalpy of fusion of the
+								solvent.
+							</li>
+							<li>Use \(T_f^0\) only in Kelvin in this formula.</li>
+							<li>
+								If latent heat of fusion is given per gram, then:
+								<br />
+								\( \Delta H_{\text{fusion}} = (\text{latent heat of fusion})
+								\times (\text{molar mass}) \)
+							</li>
+							<li>
+								The energy form of \(R\) should be used here, not the gas-law
+								value in litre-atmosphere units.
+							</li>
+						</ul>
+					</li>
+					<!-- END ch05 | Kf Not Given -->
+				</ol>
+			</div>
 		</div>
 	</body>
 </html>
