@@ -5922,10 +5922,199 @@ H2O (bent)
 			<!--Start Q145-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q145">Q 145 here</button>
+					<button class="accordion-button" id="Q145">
+						<button class="accordion-button" id="Q145">
+							Q 145. Adsorption of a gas \((A)\) on an adsorbent follows
+							Freundlich adsorption isotherm. The slope and intercept (on
+							Y-axis) of the isotherm are \(0.5\) and \(1.0\) respectively. What
+							is the value of \(\dfrac{x}{m}\), when the pressure of the gas
+							\((A)\) is \(100\) atm ?
+							<ul>
+								<li>(a) 10</li>
+								<li>(b) 1</li>
+								<li>(c) 100</li>
+								<li>(d) 1000</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((c)\ 100\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+
+						<ol>
+							<li>
+								<strong>Start with Freundlich adsorption isotherm</strong>
+								<p>\(\dfrac{x}{m} = kp^{1/n}\)</p>
+								<p>Here:</p>
+								<ul>
+									<li>\(x\) = mass of gas adsorbed</li>
+									<li>\(m\) = mass of adsorbent</li>
+									<li>\(p\) = pressure of gas</li>
+									<li>\(k\) and \(n\) = constants</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Convert it into linear form</strong>
+								<p>Taking logarithm on both sides:</p>
+								<p>\(\log \dfrac{x}{m} = \log k + \dfrac{1}{n}\log p\)</p>
+								<p>This is of the form \(y = c + mx\), where:</p>
+								<ul>
+									<li>\(y = \log \dfrac{x}{m}\)</li>
+									<li>\(x = \log p\)</li>
+									<li>slope \(= \dfrac{1}{n}\)</li>
+									<li>intercept \(= \log k\)</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Use the given slope and intercept</strong>
+								<p>Given slope \(= 0.5\)</p>
+								<p>So:</p>
+								<p>\(\dfrac{1}{n} = 0.5\)</p>
+								<p>Given intercept \(= 1.0\)</p>
+								<p>So:</p>
+								<p>\(\log k = 1\)</p>
+								<p>\(k = 10\)</p>
+							</li>
+
+							<li>
+								<strong>Substitute pressure \(p = 100\ \mathrm{atm}\)</strong>
+								<p>\(\dfrac{x}{m} = kp^{1/n}\)</p>
+								<p>\(\dfrac{x}{m} = 10 \times (100)^{0.5}\)</p>
+								<p>\(\dfrac{x}{m} = 10 \times 10\)</p>
+								<p>\(\dfrac{x}{m} = 100\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>\(\boxed{(c)\ 100}\)</p>
+
+						<p><strong>Why this method works:</strong></p>
 						<ul>
-							<li id="A145">Ans 145 here</li>
+							<li>
+								Freundlich isotherm is an empirical relation for adsorption on
+								heterogeneous surfaces.
+							</li>
+							<li>Its basic form is \(\dfrac{x}{m} = kp^{1/n}\).</li>
+							<li>
+								When logarithm is taken, it becomes a straight-line equation:
+							</li>
+							<li>\(\log \dfrac{x}{m} = \log k + \dfrac{1}{n}\log p\)</li>
+							<li>
+								So from a graph, slope directly gives \(\dfrac{1}{n}\), and
+								intercept directly gives \(\log k\).
+							</li>
+						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>Freundlich adsorption isotherm:</li>
+							<li>\(\dfrac{x}{m} = kp^{1/n}\)</li>
+							<li>Logarithmic form:</li>
+							<li>\(\log \dfrac{x}{m} = \log k + \dfrac{1}{n}\log p\)</li>
+							<li>For a plot of \(\log \dfrac{x}{m}\) versus \(\log p\):</li>
+							<ul>
+								<li>slope \(= \dfrac{1}{n}\)</li>
+								<li>intercept \(= \log k\)</li>
+							</ul>
+							<li>
+								\(\dfrac{x}{m}\) increases with pressure, but not linearly in
+								general.
+							</li>
+							<li>This relation works well at moderate pressures.</li>
+							<li>
+								At very high pressure, adsorption tends to saturation, so
+								Freundlich isotherm becomes less accurate.
+							</li>
+						</ul>
+
+						<p><strong>Physical meaning of the constants:</strong></p>
+						<ul>
+							<li>\(k\) is related to adsorption capacity.</li>
+							<li>
+								\(\dfrac{1}{n}\) tells how strongly adsorption depends on
+								pressure.
+							</li>
+							<li>If pressure increases, \(\dfrac{x}{m}\) also increases.</li>
+							<li>
+								Because the exponent is \(0.5\) here, adsorption increases as
+								square root of pressure.
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>Immediately recall:</li>
+							<li>\(\log \dfrac{x}{m} = \log k + \dfrac{1}{n}\log p\)</li>
+							<li>So from graph data:</li>
+							<ul>
+								<li>slope \(\Rightarrow \dfrac{1}{n}\)</li>
+								<li>intercept \(\Rightarrow \log k\)</li>
+							</ul>
+							<li>Here intercept \(= 1\), so \(k = 10\) instantly.</li>
+							<li>Here slope \(= 0.5\), so exponent on pressure is \(0.5\).</li>
+							<li>Then use \(100^{0.5} = 10\).</li>
+							<li>So directly: \(\dfrac{x}{m} = 10 \times 10 = 100\).</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>Treating slope as \(n\) instead of \(\dfrac{1}{n}\).</li>
+							<li>Treating intercept as \(k\) instead of \(\log k\).</li>
+							<li>
+								Forgetting that if \(\log k = 1\), then \(k = 10\), not \(1\).
+							</li>
+							<li>
+								Using \(100^{0.5} = 50\) by mistake; actually \(100^{0.5} =
+								\sqrt{100} = 10\).
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Surface Chemistry</li>
+							<li><strong>Topic:</strong> Adsorption</li>
+							<li>
+								<strong>Subtopic:</strong> Freundlich adsorption isotherm and
+								its graph
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>
+							According to Freundlich adsorption isotherm, \(\dfrac{x}{m} =
+							kp^{1/n}\).
+						</p>
+						<p>Taking log on both sides:</p>
+						<p>\(\log \dfrac{x}{m} = \log k + \dfrac{1}{n}\log p\)</p>
+						<p>
+							Thus, slope \(= \dfrac{1}{n} = 0.5\) and intercept \(= \log k =
+							1\).
+						</p>
+						<p>So, \(k = 10\).</p>
+						<p>At \(p = 100\ \mathrm{atm}\):</p>
+						<p>\(\dfrac{x}{m} = 10 \times (100)^{0.5} = 10 \times 10 = 100\)</p>
+						<p><strong>\(\boxed{(c)\ 100}\)</strong></p>
+
+						<p><strong>Quick cheatsheet:</strong></p>
+						<ul>
+							<li>
+								<strong>Freundlich isotherm:</strong> \(\dfrac{x}{m} =
+								kp^{1/n}\)
+							</li>
+							<li>
+								<strong>Linear form:</strong> \(\log \dfrac{x}{m} = \log k +
+								\dfrac{1}{n}\log p\)
+							</li>
+							<li><strong>Slope:</strong> \(\dfrac{1}{n}\)</li>
+							<li><strong>Intercept:</strong> \(\log k\)</li>
+							<li><strong>If intercept \(= 1\):</strong> \(k = 10\)</li>
+							<li>
+								<strong>If slope \(= 0.5\):</strong> pressure exponent \(= 0.5\)
+							</li>
+							<li><strong>Useful value:</strong> \(100^{0.5} = 10\)</li>
 						</ul>
 					</div>
 				</div>
