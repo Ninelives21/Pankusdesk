@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panku's Desk</title>
+		<link rel="stylesheet" href="/styles/styles.css" />
+		<script src="/scripts/accordion.js" defer></script>
+		<script src="/scripts/navbar.js" defer></script>
+
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [
+						['\\(', '\\)'],
+						['$', '$'],
+					],
+				},
+				svg: {
+					fontCache: 'global',
+				},
+			};
+		</script>
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+		></script>
+	</head>
+	<body>
+		<nav></nav>
+
+		<h2>CRYSTAL STRUCTURE</h2>
+
+		<ul id="eapcet-list">
+			<li>
+				Voids / Holes in crystal packing
+				<ol>
+					<li>
+						When atoms or ions are packed closely, some empty spaces remain
+						between them. These empty spaces are called
+						<strong>voids</strong> or <strong>holes</strong>.
+					</li>
+					<li>
+						These holes are important because in ionic solids, usually one type
+						of ion forms the main packing and the other type of ion occupies
+						these holes.
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				Tetrahedral hole
+				<ol>
+					<li>
+						A <strong>tetrahedral hole</strong> is an empty space surrounded by
+						<strong>4 atoms</strong>.
+					</li>
+					<li>
+						Easy picture:
+						<ol>
+							<li>3 atoms in one layer</li>
+							<li>1 atom above them</li>
+						</ol>
+					</li>
+					<li>The gap between them is a tetrahedral hole.</li>
+					<li>
+						It is called tetrahedral because the surrounding atoms form a
+						<strong>tetrahedron</strong>.
+					</li>
+					<li>
+						<img
+							src="images/chem_tetrahedral_hole.png"
+							alt="Tetrahedral hole formed by three atoms in one layer and one atom above"
+							style="width: 40%; height: auto; margin-right: 10px"
+						/>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				Octahedral hole
+				<ol>
+					<li>
+						An <strong>octahedral hole</strong> is an empty space surrounded by
+						<strong>6 atoms</strong>.
+					</li>
+					<li>
+						Easy picture:
+						<ol>
+							<li>3 atoms in one layer</li>
+							<li>3 atoms in another layer</li>
+						</ol>
+					</li>
+					<li>The gap between them is an octahedral hole.</li>
+					<li>
+						It is called octahedral because the surrounding atoms form an
+						<strong>octahedron</strong>.
+					</li>
+					<li>
+						It can be visualized as two square pyramids connected at their
+						square bases.
+					</li>
+					<li>
+						<img
+							src="images/chem_octahedral_hole.png"
+							alt="Octahedral hole formed by three atoms in one layer and three atoms in another layer"
+							style="width: 40%; height: auto; margin-right: 10px"
+						/>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				Important rule for CCP/FCC packing
+				<ol>
+					<li>
+						If \(n\) atoms form <strong>ccp/fcc packing</strong>, then:
+						<ol>
+							<li>\(\text{Tetrahedral holes} = 2n\)</li>
+							<li>\(\text{Octahedral holes} = n\)</li>
+						</ol>
+					</li>
+					<li>
+						So if packed atoms \(= 4\), then:
+						<ol>
+							<li>tetrahedral holes \(= 8\)</li>
+							<li>octahedral holes \(= 4\)</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				NaCl structure
+				<ol>
+					<li>
+						In NaCl:
+						<ol>
+							<li>
+								\(\text{Cl}^-\) ions form
+								<strong>FCC/CCP lattice</strong>
+							</li>
+							<li>
+								\(\text{Na}^+\) ions occupy all
+								<strong>octahedral holes</strong>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Coordination:
+						<ol>
+							<li>
+								each \(\text{Na}^+\) is surrounded by
+								<strong>6 \(\text{Cl}^-\)</strong>
+							</li>
+							<li>
+								each \(\text{Cl}^-\) is surrounded by
+								<strong>6 \(\text{Na}^+\)</strong>
+							</li>
+						</ol>
+					</li>
+					<li>So coordination number is \(6:6\).</li>
+					<li>
+						Correct counting in one unit cell:
+						<ol>
+							<li>
+								For \(\text{Cl}^-\) ions:
+								<ol>
+									<li>
+										8 corner \(\text{Cl}^-\) \(\rightarrow 8 \times \frac{1}{8}
+										= 1\)
+									</li>
+									<li>
+										6 face-center \(\text{Cl}^-\) \(\rightarrow 6 \times
+										\frac{1}{2} = 3\)
+									</li>
+									<li>Total \(\text{Cl}^- = 1 + 3 = 4\)</li>
+								</ol>
+							</li>
+							<li>
+								For \(\text{Na}^+\) ions:
+								<ol>
+									<li>
+										12 edge-center \(\text{Na}^+\) \(\rightarrow 12 \times
+										\frac{1}{4} = 3\)
+									</li>
+									<li>1 body-center \(\text{Na}^+\) \(\rightarrow 1\)</li>
+									<li>Total \(\text{Na}^+ = 3 + 1 = 4\)</li>
+								</ol>
+							</li>
+							<li>So \(\text{Na}^+ : \text{Cl}^- = 4:4 = 1:1\).</li>
+							<li>That is why the formula is <strong>NaCl</strong>.</li>
+						</ol>
+					</li>
+					<li>
+						Important note:
+						<ol>
+							<li>
+								In diagrams, it may look like there are unequal numbers of ions,
+								but that is because the drawing is only a representation.
+							</li>
+							<li>
+								Ions must be counted by
+								<strong>fractional contribution</strong>, not by direct visual
+								counting.
+							</li>
+							<li>
+								Useful fractions:
+								<ol>
+									<li>corner \(= \frac{1}{8}\)</li>
+									<li>face center \(= \frac{1}{2}\)</li>
+									<li>edge center \(= \frac{1}{4}\)</li>
+									<li>body center / fully inside \(= 1\)</li>
+								</ol>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Below is an image of NaCl crystal structure showing chloride ions in
+						FCC arrangement and sodium ions in octahedral holes
+						<img
+							src="images/chem_nacl_structure_01.png"
+							alt="NaCl crystal structure showing chloride ions in FCC arrangement and sodium ions in octahedral holes"
+							style="width: 40%; height: auto; margin-right: 10px"
+						/>
+					</li>
+					<li>
+						This is another image of NaCl crystal structure showing chloride
+						ions in FCC arrangement and sodium ions in octahedral holes<img
+							src="images/chem_nacl_structure_02.png"
+							alt="NaCl crystal structure showing chloride ions in FCC arrangement and sodium ions in octahedral holes"
+							style="width: 40%; height: auto; margin-right: 10px"
+						/>
+					</li>
+				</ol>
+			</li>
+
+			<h4>EAPCET PYQs</h4>
+
+			<li>
+				<a href="2024/may9-shift1/2024-Shift-1-May09-chemistry.html#Q141"
+					>Question 141 - 2024, May 09 Shift 1</a
+				>
+				<br /><br />
+				\(AB_2O_4\)
+				<ol>
+					<li>
+						Given:
+						<ol>
+							<li>oxygen forms <strong>ccp</strong></li>
+							<li>A occupies \(\frac{1}{8}\) of tetrahedral holes</li>
+							<li>
+								find fraction of
+								<strong>vacant octahedral holes</strong>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				Step-by-step idea
+				<ol>
+					<li>The formula is \(AB_2O_4\).</li>
+					<li>
+						This means the ratio is:
+						<ol>
+							<li>\(A : B : O = 1 : 2 : 4\)</li>
+						</ol>
+					</li>
+					<li>
+						So take:
+						<ol>
+							<li>\(A = 1\)</li>
+							<li>\(B = 2\)</li>
+							<li>\(O = 4\)</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				Since oxygen forms CCP
+				<ol>
+					<li>
+						If oxygen atoms \(= 4\), then:
+						<ol>
+							<li>\(\text{Tetrahedral holes} = 8\)</li>
+							<li>\(\text{Octahedral holes} = 4\)</li>
+						</ol>
+					</li>
+					<li>
+						So now we have:
+						<ol>
+							<li>4 oxygen atoms</li>
+							<li>8 tetrahedral holes</li>
+							<li>4 octahedral holes</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				A occupies \(\frac{1}{8}\) of tetrahedral holes
+				<ol>
+					<li>Total tetrahedral holes \(= 8\).</li>
+					<li>
+						So number of A atoms:
+						<ol>
+							<li>\(\frac{1}{8} \times 8 = 1\)</li>
+						</ol>
+					</li>
+					<li>This matches the formula.</li>
+				</ol>
+			</li>
+
+			<li>
+				Now find B occupancy
+				<ol>
+					<li>
+						From the formula \(AB_2O_4\), when \(A = 1\) and \(O = 4\), then:
+						<ol>
+							<li>\(B = 2\)</li>
+						</ol>
+					</li>
+					<li>Total octahedral holes \(= 4\).</li>
+					<li>B atoms occupy 2 of them.</li>
+					<li>
+						So occupied octahedral fraction:
+						<ol>
+							<li>\(\frac{2}{4} = \frac{1}{2}\)</li>
+						</ol>
+					</li>
+					<li>
+						Therefore vacant octahedral fraction:
+						<ol>
+							<li>\(1 - \frac{1}{2} = \frac{1}{2}\)</li>
+						</ol>
+					</li>
+					<li>
+						Final answer:
+						<ol>
+							<li>\(\boxed{\frac{1}{2}}\)</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				Super-simple way to think of this question
+				<ol>
+					<li>
+						With 4 oxygen atoms:
+						<ol>
+							<li>tetrahedral holes \(= 8\)</li>
+							<li>octahedral holes \(= 4\)</li>
+						</ol>
+					</li>
+					<li>
+						A fills \(\frac{1}{8}\) of 8 tetrahedral holes:
+						<ol>
+							<li>so \(A = 1\)</li>
+						</ol>
+					</li>
+					<li>Formula says if \(A = 1\), then \(B = 2\).</li>
+					<li>So B fills 2 out of 4 octahedral holes.</li>
+					<li>
+						Hence:
+						<ol>
+							<li>occupied octahedral holes \(= \frac{1}{2}\)</li>
+							<li>vacant octahedral holes \(= \frac{1}{2}\)</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+
+			<li>
+				Final memory points
+				<ol>
+					<li>
+						<strong>Tetrahedral hole</strong> \(\rightarrow\) surrounded by
+						<strong>4 atoms</strong>
+					</li>
+					<li>
+						<strong>Octahedral hole</strong> \(\rightarrow\) surrounded by
+						<strong>6 atoms</strong>
+					</li>
+					<li>
+						In <strong>ccp/fcc</strong>, if atoms \(= n\):
+						<ol>
+							<li>tetrahedral holes \(= 2n\)</li>
+							<li>octahedral holes \(= n\)</li>
+						</ol>
+					</li>
+					<li>
+						In <strong>NaCl</strong>:
+						<ol>
+							<li>\(\text{Cl}^-\) forms <strong>fcc</strong></li>
+							<li>
+								\(\text{Na}^+\) occupies
+								<strong>all octahedral holes</strong>
+							</li>
+							<li>coordination number \(= 6:6\)</li>
+						</ol>
+					</li>
+					<li>
+						In \(AB_2O_4\) with oxygen in ccp:
+						<ol>
+							<li>4 O gives 8 tetrahedral holes and 4 octahedral holes</li>
+							<li>A occupies 1 tetrahedral hole</li>
+							<li>B occupies 2 octahedral holes</li>
+							<li>vacant octahedral holes \(= \frac{1}{2}\)</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+		</ul>
+	</body>
+</html>

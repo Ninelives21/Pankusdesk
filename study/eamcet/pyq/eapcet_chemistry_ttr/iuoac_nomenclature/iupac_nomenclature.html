@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panku's Desk</title>
+		<link rel="stylesheet" href="/styles/styles.css" />
+		<script src="/scripts/accordion.js" defer></script>
+		<script src="/scripts/navbar.js" defer></script>
+
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [
+						['\\(', '\\)'],
+						['$', '$'],
+					],
+				},
+				svg: {
+					fontCache: 'global',
+				},
+			};
+		</script>
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+		></script>
+	</head>
+	<body>
+		<nav></nav>
+
+		<h2>IUPAC NOMENCLATURE</h2>
+
+		<!--Start IUPAC-->
+
+		<ul id="iupac-revision">
+			<li>
+				<b>Use this exact naming method every time:</b><br />
+				1. Find the <b>principal functional group</b>.<br />
+				2. Choose the <b>main chain</b> containing that group and the
+				<b>maximum number of multiple bonds</b>.<br />
+				3. Number by: \(\mathrm{Principal\ FG > C=C > C\equiv C >
+				substituents}\).<br />
+				4. Write <b>substituents in alphabetical order</b>.<br />
+				5. Final order: \(\mathrm{prefixes + parent + en/yn + suffix}\).
+			</li>
+			<br />
+			<li>
+				<b>Functional-group priority ladder:</b>
+				\(\mathrm{COOH > SO_3H > Anhydride > Ester > COX > CONH_2 > CN > CHO >
+				CO > OH > NH_2 > C=C > C\equiv C > substituents}\)
+			</li>
+			<br />
+			<li>
+				<b>Numbering rule:</b> Principal functional group gets first priority.
+				If both double and triple bonds are present,
+				<b>\(\mathrm{ene}\)</b> gets lower locant than
+				<b>\(\mathrm{yne}\)</b>
+				in a tie.
+			</li>
+			<br />
+			<li>
+				<b>Useful instant prefixes:</b>
+				\(\mathrm{-OH \rightarrow hydroxy,\ -NH_2 \rightarrow amino,\ -CHO
+				\rightarrow formyl,\ >C=O \rightarrow oxo,\ -CN \rightarrow cyano,\
+				-COOH \rightarrow carboxy,\ -OR \rightarrow alkoxy,\ -NO_2 \rightarrow
+				nitro,\ -F/-Cl/-Br/-I \rightarrow fluoro/chloro/bromo/iodo}\)
+			</li>
+			<br />
+			<li>
+				<b>High-yield traps:</b> Do <b>not</b> choose the longest chain blindly;
+				\(\mathrm{-OH}\) beats \(\mathrm{C=C}\) and \(\mathrm{C\equiv C}\);
+				substituents are written in <b>alphabetical order</b>; in esters write
+				<b>\(\mathrm{alkyl\ first,\ alkanoate\ second}\)</b>; in
+				\(\mathrm{-COOH}\), \(\mathrm{-CN}\), and \(\mathrm{-CHO}\), the
+				functional carbon is usually carbon \(1\).
+			</li>
+		</ul>
+		<br />
+		<table class="notes_table" id="fg-priority">
+			<colgroup>
+				<col style="width: 8%" />
+				<col style="width: 28%" />
+				<col style="width: 30%" />
+				<col style="width: 34%" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Priority</th>
+					<th>Functional group</th>
+					<th>Suffix / Prefix</th>
+					<th>General structure</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>\(\mathrm{-COOH}\) Carboxylic acid</td>
+					<td>Suffix: \(\mathrm{-oic\ acid}\)<br />Prefix: carboxy</td>
+					<td>
+						<svg
+							width="160"
+							height="72"
+							viewBox="0 0 160 72"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="42" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="36"
+								x2="48"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="42" font-size="18">C</text>
+							<line
+								x1="60"
+								y1="28"
+								x2="60"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="28"
+								x2="66"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="15" font-size="18">O</text>
+							<line
+								x1="70"
+								y1="36"
+								x2="98"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="102" y="42" font-size="18">OH</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>\(\mathrm{-SO_3H}\) Sulphonic acid</td>
+					<td>Suffix: \(\mathrm{-sulphonic\ acid}\)<br />Prefix: sulpho</td>
+					<td>
+						<svg
+							width="175"
+							height="92"
+							viewBox="0 0 175 92"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="48" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="42"
+								x2="48"
+								y2="42"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="48" font-size="18">S</text>
+							<line
+								x1="60"
+								y1="34"
+								x2="60"
+								y2="14"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="34"
+								x2="66"
+								y2="14"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="18" font-size="18">O</text>
+							<line
+								x1="70"
+								y1="42"
+								x2="98"
+								y2="42"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="102" y="48" font-size="18">OH</text>
+							<line
+								x1="62"
+								y1="50"
+								x2="62"
+								y2="72"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="68"
+								y1="50"
+								x2="68"
+								y2="72"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="57" y="87" font-size="18">O</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>\(\mathrm{(RCO)_2O}\) Acid anhydride</td>
+					<td>Suffix: anhydride</td>
+					<td>
+						<svg
+							width="220"
+							height="72"
+							viewBox="0 0 220 72"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="6" y="42" font-size="18">R</text>
+							<line
+								x1="20"
+								y1="36"
+								x2="42"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="46" y="42" font-size="18">C</text>
+							<line
+								x1="54"
+								y1="28"
+								x2="54"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="60"
+								y1="28"
+								x2="60"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="49" y="15" font-size="18">O</text>
+							<line
+								x1="64"
+								y1="36"
+								x2="90"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="95" y="42" font-size="18">O</text>
+							<line
+								x1="108"
+								y1="36"
+								x2="132"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="136" y="42" font-size="18">C</text>
+							<line
+								x1="144"
+								y1="28"
+								x2="144"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="150"
+								y1="28"
+								x2="150"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="139" y="15" font-size="18">O</text>
+							<line
+								x1="154"
+								y1="36"
+								x2="178"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="182" y="42" font-size="18">R</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>\(\mathrm{-COOR}\) Ester</td>
+					<td>
+						Suffix: \(\mathrm{alkyl\ alkanoate}\)<br />Prefix: alkoxycarbonyl
+					</td>
+					<td>
+						<svg
+							width="185"
+							height="72"
+							viewBox="0 0 185 72"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="42" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="36"
+								x2="48"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="42" font-size="18">C</text>
+							<line
+								x1="60"
+								y1="28"
+								x2="60"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="28"
+								x2="66"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="15" font-size="18">O</text>
+							<line
+								x1="70"
+								y1="36"
+								x2="94"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="98" y="42" font-size="18">O</text>
+							<line
+								x1="112"
+								y1="36"
+								x2="136"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="140" y="42" font-size="18">R'</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>\(\mathrm{-COX}\) Acid halide</td>
+					<td>
+						Suffix: \(\mathrm{-oyl\ halide}\)<br />Prefix: haloformyl /
+						halocarbonyl
+					</td>
+					<td>
+						<svg
+							width="170"
+							height="72"
+							viewBox="0 0 170 72"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="42" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="36"
+								x2="48"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="42" font-size="18">C</text>
+							<line
+								x1="60"
+								y1="28"
+								x2="60"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="28"
+								x2="66"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="15" font-size="18">O</text>
+							<line
+								x1="70"
+								y1="36"
+								x2="98"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="103" y="42" font-size="18">X</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>\(\mathrm{-CONH_2}\) Amide</td>
+					<td>
+						Suffix: \(\mathrm{-amide}\)<br />Prefix: carbamoyl / carboxamido
+					</td>
+					<td>
+						<svg
+							width="185"
+							height="72"
+							viewBox="0 0 185 72"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="42" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="36"
+								x2="48"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="42" font-size="18">C</text>
+							<line
+								x1="60"
+								y1="28"
+								x2="60"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="28"
+								x2="66"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="15" font-size="18">O</text>
+							<line
+								x1="70"
+								y1="36"
+								x2="98"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="102" y="42" font-size="18">
+								NH
+								<tspan baseline-shift="sub" font-size="12">2</tspan>
+							</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>\(\mathrm{-CN}\) Nitrile</td>
+					<td>Suffix: \(\mathrm{-nitrile}\)<br />Prefix: cyano</td>
+					<td>
+						<svg
+							width="140"
+							height="60"
+							viewBox="0 0 140 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="48"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="38" font-size="18">C</text>
+							<line
+								x1="66"
+								y1="26"
+								x2="92"
+								y2="26"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="32"
+								x2="92"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="38"
+								x2="92"
+								y2="38"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="97" y="38" font-size="18">N</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>\(\mathrm{-NC}\) Isocyanide / Isonitrile</td>
+					<td>Suffix: isonitrile<br />Prefix: isocyano</td>
+					<td>
+						<svg
+							width="140"
+							height="60"
+							viewBox="0 0 140 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="48"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="38" font-size="18">N</text>
+							<line
+								x1="66"
+								y1="26"
+								x2="92"
+								y2="26"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="32"
+								x2="92"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="38"
+								x2="92"
+								y2="38"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="97" y="38" font-size="18">C</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>\(\mathrm{-CHO}\) Aldehyde</td>
+					<td>Suffix: \(\mathrm{-al}\)<br />Prefix: formyl</td>
+					<td>
+						<svg
+							width="175"
+							height="72"
+							viewBox="0 0 175 72"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="42" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="36"
+								x2="48"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="42" font-size="18">C</text>
+							<line
+								x1="60"
+								y1="28"
+								x2="60"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="28"
+								x2="66"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="15" font-size="18">O</text>
+							<line
+								x1="70"
+								y1="36"
+								x2="96"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="100" y="42" font-size="18">H</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>\(\mathrm{>C=O}\) Ketone</td>
+					<td>Suffix: \(\mathrm{-one}\)<br />Prefix: oxo / keto</td>
+					<td>
+						<svg
+							width="185"
+							height="72"
+							viewBox="0 0 185 72"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="42" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="36"
+								x2="48"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="52" y="42" font-size="18">C</text>
+							<line
+								x1="60"
+								y1="28"
+								x2="60"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<line
+								x1="66"
+								y1="28"
+								x2="66"
+								y2="10"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="15" font-size="18">O</text>
+							<line
+								x1="70"
+								y1="36"
+								x2="96"
+								y2="36"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="100" y="42" font-size="18">R'</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>\(\mathrm{-OH}\) Alcohol / Phenol</td>
+					<td>Suffix: \(\mathrm{-ol}\) / phenol<br />Prefix: hydroxy</td>
+					<td>
+						<svg
+							width="135"
+							height="60"
+							viewBox="0 0 135 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="50"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="38" font-size="18">OH</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>\(\mathrm{-SH}\) Thiol</td>
+					<td>Suffix: \(\mathrm{-thiol}\)<br />Prefix: mercapto / sulphanyl</td>
+					<td>
+						<svg
+							width="135"
+							height="60"
+							viewBox="0 0 135 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="50"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="38" font-size="18">SH</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>\(\mathrm{-NH_2}\) Amine</td>
+					<td>Suffix: \(\mathrm{-amine}\)<br />Prefix: amino</td>
+					<td>
+						<svg
+							width="150"
+							height="60"
+							viewBox="0 0 150 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="50"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="38" font-size="18">
+								NH
+								<tspan baseline-shift="sub" font-size="12">2</tspan>
+							</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>Epoxy</td>
+					<td>Prefix: epoxy</td>
+					<td>
+						<svg
+							width="110"
+							height="85"
+							viewBox="0 0 110 85"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<polygon
+								points="28,20 78,20 53,55"
+								fill="none"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="47" y="74" font-size="18">O</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>\(\mathrm{R-O-R}\) Ether</td>
+					<td>Prefix: alkoxy</td>
+					<td>
+						<svg
+							width="170"
+							height="60"
+							viewBox="0 0 170 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="48"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="53" y="38" font-size="18">O</text>
+							<line
+								x1="67"
+								y1="32"
+								x2="92"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="96" y="38" font-size="18">R'</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>\(\mathrm{-NO_2}\) Nitro</td>
+					<td>Prefix: nitro</td>
+					<td>
+						<svg
+							width="165"
+							height="60"
+							viewBox="0 0 165 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="48"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="53" y="38" font-size="18">
+								NO
+								<tspan baseline-shift="sub" font-size="12">2</tspan>
+							</text>
+						</svg>
+					</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>\(\mathrm{-F,\ -Cl,\ -Br,\ -I}\) Halo</td>
+					<td>Prefix: fluoro, chloro, bromo, iodo</td>
+					<td>
+						<svg
+							width="155"
+							height="60"
+							viewBox="0 0 155 60"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<text x="8" y="38" font-size="18">R</text>
+							<line
+								x1="22"
+								y1="32"
+								x2="50"
+								y2="32"
+								stroke="black"
+								stroke-width="2"
+							/>
+							<text x="55" y="38" font-size="18">X</text>
+						</svg>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!--End IUPAC-->
+	</body>
+</html>
