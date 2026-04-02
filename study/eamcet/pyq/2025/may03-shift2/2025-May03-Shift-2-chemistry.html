@@ -53,11 +53,283 @@
 			<!--Start Q121-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q121">Q 121 here</button>
+					<button class="accordion-button" id="Q121">
+						<button class="accordion-button" id="Q121">
+							Q 121. In the atomic spectrum of hydrogen, the wavelengths of the
+							spectral lines corresponding to electronic transitions (i) \(n =
+							4\) to \(n = 2\) and (ii) \(n = 3\) to \(n = 1\) are \(\lambda_1\)
+							and \(\lambda_2\) Å respectively. The value of \((\lambda_1 -
+							\lambda_2)\) (in cm) is \((R_H = \mathrm{Rydberg}\
+							\mathrm{constant})\)
+							<ul>
+								<li>(a) \(\frac{1}{R_H}\left(\frac{24}{101}\right)\)</li>
+								<br />
+								<li>(b) \(R_H\left(\frac{24}{101}\right)\)</li>
+								<br />
+								<li>(c) \(\frac{1}{R_H}\left(\frac{101}{24}\right)\)</li>
+								<br />
+								<li>(d) \(R_H\left(\frac{101}{24}\right)\)</li>
+							</ul>
+						</button>
+					</button>
+
 					<div class="accordion-content">
+						<p>
+							<strong
+								>Answer: \((c)\
+								\dfrac{1}{R_H}\left(\dfrac{101}{24}\right)\)</strong
+							>
+						</p>
+
+						<p><strong>Solution:</strong></p>
+						<p>We use the Rydberg relation for hydrogen spectral lines:</p>
+						<p>
+							\(\dfrac{1}{\lambda} = R_H\left(\dfrac{1}{n_1^2} -
+							\dfrac{1}{n_2^2}\right)\), where \(n_2 &gt; n_1\).
+						</p>
+
+						<ol>
+							<li>
+								<strong>Write the expression for \(\lambda_1\)</strong>
+								<p>For transition \(n = 4 \rightarrow n = 2\):</p>
+								<p>
+									\(\dfrac{1}{\lambda_1} = R_H\left(\dfrac{1}{2^2} -
+									\dfrac{1}{4^2}\right)\)
+								</p>
+								<p>\(= R_H\left(\dfrac{1}{4} - \dfrac{1}{16}\right)\)</p>
+								<p>\(= R_H\left(\dfrac{3}{16}\right)\)</p>
+								<p>So, \(\lambda_1 = \dfrac{16}{3R_H}\)</p>
+							</li>
+
+							<li>
+								<strong>Write the expression for \(\lambda_2\)</strong>
+								<p>For transition \(n = 3 \rightarrow n = 1\):</p>
+								<p>
+									\(\dfrac{1}{\lambda_2} = R_H\left(\dfrac{1}{1^2} -
+									\dfrac{1}{3^2}\right)\)
+								</p>
+								<p>\(= R_H\left(1 - \dfrac{1}{9}\right)\)</p>
+								<p>\(= R_H\left(\dfrac{8}{9}\right)\)</p>
+								<p>So, \(\lambda_2 = \dfrac{9}{8R_H}\)</p>
+							</li>
+
+							<li>
+								<strong>Now calculate \(\lambda_1 - \lambda_2\)</strong>
+								<p>
+									\(\lambda_1 - \lambda_2 = \dfrac{16}{3R_H} - \dfrac{9}{8R_H}\)
+								</p>
+								<p>Taking LCM \(= 24R_H\):</p>
+								<p>\(\lambda_1 - \lambda_2 = \dfrac{128 - 27}{24R_H}\)</p>
+								<p>\(= \dfrac{101}{24R_H}\)</p>
+								<p>\(= \dfrac{1}{R_H}\left(\dfrac{101}{24}\right)\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>\(\boxed{(c)\ \dfrac{1}{R_H}\left(\dfrac{101}{24}\right)}\)</p>
+
+						<p><strong>Why this method works:</strong></p>
 						<ul>
-							<li id="A121">Ans 121 here</li>
+							<li>
+								In hydrogen atom, each spectral line arises due to electronic
+								transition between two energy levels.
+							</li>
+							<li>
+								The wave number is directly given by:
+								<p>
+									\(\bar{\nu} = \dfrac{1}{\lambda} = R_H\left(\dfrac{1}{n_1^2} -
+									\dfrac{1}{n_2^2}\right)\)
+								</p>
+							</li>
+							<li>
+								Since the formula gives \(\dfrac{1}{\lambda}\), first find
+								\(\lambda\) separately for each transition, then subtract.
+							</li>
+							<li>
+								A common trap is to subtract the reciprocals directly:
+								<p>\(\dfrac{1}{\lambda_1} - \dfrac{1}{\lambda_2}\)</p>
+								<p>
+									This is <strong>not</strong> equal to \(\lambda_1 -
+									\lambda_2\).
+								</p>
+							</li>
 						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>
+								For hydrogen-like species:
+								<p>
+									\(\dfrac{1}{\lambda} = RZ^2\left(\dfrac{1}{n_1^2} -
+									\dfrac{1}{n_2^2}\right)\)
+								</p>
+								<p>For hydrogen, \(Z = 1\).</p>
+							</li>
+							<li>
+								Larger energy gap means larger wave number and smaller
+								wavelength.
+							</li>
+							<li>
+								Transition to \(n=1\) belongs to the
+								<strong>Lyman series</strong>.
+							</li>
+							<li>
+								Transition to \(n=2\) belongs to the
+								<strong>Balmer series</strong>.
+							</li>
+							<li>
+								Here:
+								<ul>
+									<li>\(4 \rightarrow 2\) is a Balmer line</li>
+									<li>\(3 \rightarrow 1\) is a Lyman line</li>
+								</ul>
+							</li>
+							<li>
+								Since \(3 \rightarrow 1\) has a much larger energy drop than \(4
+								\rightarrow 2\), its wavelength is much smaller.
+							</li>
+						</ul>
+
+						<p><strong>Useful physical picture:</strong></p>
+						<ul>
+							<li>
+								Energy levels in hydrogen become closer as \(n\) increases.
+							</li>
+							<li>
+								A jump to \(n=1\) is usually much more energetic than a jump to
+								\(n=2\).
+							</li>
+							<li>
+								So intuitively:
+								<p>\(\lambda_2 &lt; \lambda_1\)</p>
+								<p>
+									Hence \(\lambda_1 - \lambda_2\) must be positive, which
+									already rules out any sign-related confusion.
+								</p>
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								Memorize the quick fractions:
+								<p>
+									\(\dfrac{1}{2^2} - \dfrac{1}{4^2} = \dfrac{1}{4} -
+									\dfrac{1}{16} = \dfrac{3}{16}\)
+								</p>
+								<p>
+									\(\dfrac{1}{1^2} - \dfrac{1}{3^2} = 1 - \dfrac{1}{9} =
+									\dfrac{8}{9}\)
+								</p>
+							</li>
+							<li>
+								So immediately:
+								<p>
+									\(\lambda_1 = \dfrac{16}{3R_H},\quad \lambda_2 =
+									\dfrac{9}{8R_H}\)
+								</p>
+							</li>
+							<li>
+								Then:
+								<p>
+									\(\lambda_1 - \lambda_2 = \dfrac{16}{3R_H} - \dfrac{9}{8R_H}\)
+								</p>
+							</li>
+							<li>
+								LCM of \(3\) and \(8\) is \(24\), so the subtraction becomes
+								very fast:
+								<p>\(\dfrac{128 - 27}{24R_H} = \dfrac{101}{24R_H}\)</p>
+							</li>
+							<li>
+								In MCQs, once you see the factor \(\dfrac{1}{R_H}\), the correct
+								option becomes easy to spot.
+							</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Using \(n_2^2 - n_1^2\) directly instead of the Rydberg form.
+							</li>
+							<li>
+								Forgetting that lower level comes first in:
+								<p>
+									\(\dfrac{1}{\lambda} = R_H\left(\dfrac{1}{n_1^2} -
+									\dfrac{1}{n_2^2}\right)\)
+								</p>
+							</li>
+							<li>Subtracting wave numbers instead of wavelengths.</li>
+							<li>
+								Missing the inversion step after finding \(\dfrac{1}{\lambda}\).
+							</li>
+							<li>Confusing Balmer and Lyman series.</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Structure of Atom</li>
+							<li><strong>Topic:</strong> Hydrogen spectrum and Bohr model</li>
+							<li>
+								<strong>Subtopic:</strong> Rydberg equation, spectral series,
+								and wavelength calculation
+							</li>
+						</ul>
+
+						<p><strong>Quick theory sheet:</strong></p>
+						<ul>
+							<li>
+								<strong>Rydberg equation:</strong>
+								<p>
+									\(\dfrac{1}{\lambda} = R_H\left(\dfrac{1}{n_1^2} -
+									\dfrac{1}{n_2^2}\right)\)
+								</p>
+							</li>
+							<li>
+								<strong>Lyman series:</strong> transitions ending at \(n=1\)
+							</li>
+							<li>
+								<strong>Balmer series:</strong> transitions ending at \(n=2\)
+							</li>
+							<li>
+								<strong>Higher energy transition \(\Rightarrow\)</strong>
+								shorter wavelength
+							</li>
+							<li>
+								<strong>Wave number:</strong>
+								<p>\(\bar{\nu} = \dfrac{1}{lambda}\)</p>
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>For \(n=4 \rightarrow n=2\):</p>
+						<p>
+							\(\dfrac{1}{\lambda_1} = R_H\left(\dfrac{1}{2^2} -
+							\dfrac{1}{4^2}\right) = R_H\left(\dfrac{1}{4} -
+							\dfrac{1}{16}\right) = \dfrac{3R_H}{16}\)
+						</p>
+						<p>So, \(\lambda_1 = \dfrac{16}{3R_H}\)</p>
+
+						<p>For \(n=3 \rightarrow n=1\):</p>
+						<p>
+							\(\dfrac{1}{\lambda_2} = R_H\left(\dfrac{1}{1^2} -
+							\dfrac{1}{3^2}\right) = R_H\left(1 - \dfrac{1}{9}\right) =
+							\dfrac{8R_H}{9}\)
+						</p>
+						<p>So, \(\lambda_2 = \dfrac{9}{8R_H}\)</p>
+
+						<p>Hence:</p>
+						<p>
+							\(\lambda_1 - \lambda_2 = \dfrac{16}{3R_H} - \dfrac{9}{8R_H}\)
+						</p>
+						<p>\(= \dfrac{128 - 27}{24R_H} = \dfrac{101}{24R_H}\)</p>
+						<p>\(= \dfrac{1}{R_H}\left(\dfrac{101}{24}\right)\)</p>
+
+						<p>
+							<strong
+								>\(\boxed{(c)\
+								\dfrac{1}{R_H}\left(\dfrac{101}{24}\right)}\)</strong
+							>
+						</p>
 					</div>
 				</div>
 			</div>
