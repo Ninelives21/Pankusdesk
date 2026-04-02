@@ -1739,11 +1739,229 @@
 			<!--Start Q127-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q127">Q 127 here</button>
+					<button class="accordion-button" id="Q127">
+						<button class="accordion-button" id="Q127">
+							Q 127. At 298K, a flask ‘A’ of unknown volume \((V)\) contains
+							oxygen at 5 atm. Another flask ‘B’ of volume 2L contains helium at
+							3 atm. Two flasks are connected together by a small tube of zero
+							volume. After the two gases are completely mixed, if the resulting
+							mixture is found to have the mole fraction of oxygen as 0.2, the
+							volume of flask ‘A’ (in L) is (Assume oxygen and helium as ideal
+							gases)
+							<ul>
+								<li>(a) 0.1</li>
+								<li>(b) 0.3</li>
+								<li>(c) 0.2</li>
+								<li>(d) 0.4</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((b)\ 0.3\ \mathrm{L}\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+						<p>
+							Since both gases are ideal and temperature is the same, we use the
+							ideal gas law:
+						</p>
+						<p>\(n = \dfrac{PV}{RT}\)</p>
+						<p>
+							After connection, gases mix completely, but the number of moles of
+							each gas remains unchanged.
+						</p>
+
+						<ol>
+							<li>
+								<strong>Find moles of oxygen in flask \(A\)</strong>
+								<p>
+									Flask \(A\) contains oxygen at \(5\ \mathrm{atm}\) in volume
+									\(V\ \mathrm{L}\).
+								</p>
+								<p>So:</p>
+								<p>\(n_{\mathrm{O_2}} = \dfrac{5V}{RT}\)</p>
+							</li>
+
+							<li>
+								<strong>Find moles of helium in flask \(B\)</strong>
+								<p>
+									Flask \(B\) contains helium at \(3\ \mathrm{atm}\) in \(2\
+									\mathrm{L}\).
+								</p>
+								<p>So:</p>
+								<p>
+									\(n_{\mathrm{He}} = \dfrac{3 \times 2}{RT} = \dfrac{6}{RT}\)
+								</p>
+							</li>
+
+							<li>
+								<strong>Write the mole fraction of oxygen after mixing</strong>
+								<p>Total moles after mixing:</p>
+								<p>
+									\(n_{\text{total}} = n_{\mathrm{O_2}} + n_{\mathrm{He}} =
+									\dfrac{5V}{RT} + \dfrac{6}{RT} = \dfrac{5V+6}{RT}\)
+								</p>
+								<p>Given mole fraction of oxygen:</p>
+								<p>\(x_{\mathrm{O_2}} = 0.2\)</p>
+								<p>Now:</p>
+								<p>
+									\(x_{\mathrm{O_2}} =
+									\dfrac{n_{\mathrm{O_2}}}{n_{\text{total}}}\)
+								</p>
+								<p>So:</p>
+								<p>\(\dfrac{\frac{5V}{RT}}{\frac{5V+6}{RT}} = 0.2\)</p>
+								<p>\(\dfrac{5V}{5V+6} = 0.2\)</p>
+							</li>
+
+							<li>
+								<strong>Solve for \(V\)</strong>
+								<p>\(5V = 0.2(5V+6)\)</p>
+								<p>\(5V = V + 1.2\)</p>
+								<p>\(4V = 1.2\)</p>
+								<p>\(V = 0.3\ \mathrm{L}\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>\(\boxed{(b)\ 0.3\ \mathrm{L}}\)</p>
+
+						<p><strong>Why this method works:</strong></p>
 						<ul>
-							<li id="A127">Ans 127 here</li>
+							<li>
+								For ideal gases:
+								<p>\(n = \dfrac{PV}{RT}\)</p>
+							</li>
+							<li>
+								Since both flasks are at the same temperature, \(R\) and \(T\)
+								are constant for both gases.
+							</li>
+							<li>
+								Mole fraction depends only on the ratio of moles:
+								<p>\(x_i = \dfrac{n_i}{n_{\text{total}}}\)</p>
+							</li>
+							<li>
+								Mixing changes pressure distribution, but it does not change the
+								actual number of moles present before mixing.
+							</li>
 						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>
+								<strong>Ideal gas equation:</strong>
+								<p>\(PV = nRT\)</p>
+							</li>
+							<li>
+								<strong>Mole fraction:</strong>
+								<p>\(x_i = \dfrac{n_i}{\sum n_i}\)</p>
+							</li>
+							<li>
+								<strong>Dalton’s law of partial pressures:</strong>
+								<p>\(p_i = x_i P_{\text{total}}\)</p>
+							</li>
+							<li>
+								In mixture problems at same temperature, directly comparing
+								\(PV\) values is often enough because:
+								<p>\(n \propto PV\)</p>
+							</li>
+							<li>
+								If gases are ideal, their identity does not affect the mole
+								calculation through \(PV/RT\).
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								Since \(n \propto PV\), do not write full ideal gas law every
+								time.
+							</li>
+							<li>
+								Directly take:
+								<p>\(n_{\mathrm{O_2}} \propto 5V\)</p>
+								<p>\(n_{\mathrm{He}} \propto 3 \times 2 = 6\)</p>
+							</li>
+							<li>
+								Given:
+								<p>\(\dfrac{5V}{5V+6} = 0.2 = \dfrac{1}{5}\)</p>
+							</li>
+							<li>
+								So immediately:
+								<p>\(5(5V) = 5V + 6\)</p>
+								<p>\(25V = 5V + 6\)</p>
+								<p>\(20V = 6\)</p>
+								<p>\(V = 0.3\)</p>
+							</li>
+							<li>This is the fastest route in MCQ.</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Using final total volume to recalculate moles. Moles are already
+								fixed before mixing.
+							</li>
+							<li>
+								Confusing mole fraction with pressure fraction without using
+								ideal-gas reasoning properly.
+							</li>
+							<li>
+								Forgetting that for same \(T\), moles are proportional to
+								\(PV\).
+							</li>
+							<li>
+								Writing oxygen mole fraction as:
+								<p>\(\dfrac{n_{\mathrm{He}}}{n_{\text{total}}}\)</p>
+								instead of
+								<p>\(\dfrac{n_{\mathrm{O_2}}}{n_{\text{total}}}\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> States of Matter</li>
+							<li>
+								<strong>Topic:</strong> Ideal gas equation and gaseous mixtures
+							</li>
+							<li>
+								<strong>Subtopic:</strong> Mole fraction using \(PV=nRT\) in
+								connected flasks
+							</li>
+						</ul>
+
+						<p><strong>Quick intuition:</strong></p>
+						<ul>
+							<li>
+								Mole fraction of oxygen is only \(0.2\), so oxygen must be much
+								less than helium.
+							</li>
+							<li>Helium contributes \(PV = 6\).</li>
+							<li>Oxygen contributes \(PV = 5V\).</li>
+							<li>
+								For oxygen to be only one-fifth of the total, \(5V\) must be
+								small, so \(V\) should be well below \(1\ \mathrm{L}\).
+							</li>
+							<li>Among options, \(0.3\ \mathrm{L}\) fits naturally.</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>Moles of oxygen in flask \(A\):</p>
+						<p>\(n_{\mathrm{O_2}} = \dfrac{5V}{RT}\)</p>
+						<p>Moles of helium in flask \(B\):</p>
+						<p>\(n_{\mathrm{He}} = \dfrac{3 \times 2}{RT} = \dfrac{6}{RT}\)</p>
+						<p>Given mole fraction of oxygen after mixing is \(0.2\):</p>
+						<p>
+							\(0.2 = \dfrac{n_{\mathrm{O_2}}}{n_{\mathrm{O_2}} +
+							n_{\mathrm{He}}}\)
+						</p>
+						<p>
+							\(0.2 = \dfrac{\frac{5V}{RT}}{\frac{5V+6}{RT}} =
+							\dfrac{5V}{5V+6}\)
+						</p>
+						<p>\(5V = 0.2(5V+6)\)</p>
+						<p>\(5V = V + 1.2\)</p>
+						<p>\(4V = 1.2\)</p>
+						<p>\(V = 0.3\ \mathrm{L}\)</p>
+						<p><strong>\(\boxed{(b)\ 0.3\ \mathrm{L}}\)</strong></p>
 					</div>
 				</div>
 			</div>
