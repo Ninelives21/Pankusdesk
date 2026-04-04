@@ -326,8 +326,245 @@
 						</button>
 					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((c)\ 1.5\ \text{Å}\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+
+						<p>
+							The metal crystallises in a face centred cubic \((\mathrm{fcc})\)
+							lattice. In an \(\mathrm{fcc}\) unit cell, atoms touch each other
+							along the
+							<strong>face diagonal</strong>.
+						</p>
+
+						<ol>
+							<li>
+								<strong>Use the face diagonal relation</strong>
+								<p>For a cube, face diagonal \(d\) is:</p>
+								<p>\(d = a\sqrt{2}\)</p>
+								<p>In \(\mathrm{fcc}\), the face diagonal passes through:</p>
+								<ul>
+									<li>one corner atom radius</li>
+									<li>one face-centred atom diameter</li>
+									<li>the opposite corner atom radius</li>
+								</ul>
+								<p>So, in \(\mathrm{fcc}\):</p>
+								<p>\(4r = a\sqrt{2}\)</p>
+								<p>Therefore:</p>
+								<p>\(r = \dfrac{a\sqrt{2}}{4}\)</p>
+							</li>
+
+							<li>
+								<strong>Substitute the given edge length</strong>
+								<p>Given:</p>
+								<p>\(a = 4.242\) Å</p>
+								<p>So:</p>
+								<p>\(r = \dfrac{4.242 \times \sqrt{2}}{4}\) Å</p>
+								<p>Using \(\sqrt{2} \approx 1.414\),</p>
+								<p>\(r \approx \dfrac{4.242 \times 1.414}{4}\) Å</p>
+								<p>\(r \approx \dfrac{5.999}{4}\) Å</p>
+								<p>\(r \approx 1.5\) Å</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>\(\boxed{1.5\ \text{Å}}\)</p>
+
+						<p><strong>Why this method works:</strong></p>
 						<ul>
-							<li id="A141">Ans 141 here</li>
+							<li>
+								In crystal structure questions, the key step is identifying
+								<strong>where atoms touch</strong>.
+							</li>
+							<li>In \(\mathrm{fcc}\), atoms do not touch along the edge.</li>
+							<li>They touch along the <strong>face diagonal</strong>.</li>
+							<li>
+								The face diagonal of a cube is:
+								<p>\(a\sqrt{2}\)</p>
+							</li>
+							<li>
+								Along this diagonal, the touching length is:
+								<p>\(4r\)</p>
+							</li>
+							<li>
+								Hence:
+								<p>\(a\sqrt{2} = 4r\)</p>
+							</li>
+						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>
+								<strong>Simple cubic \((\mathrm{sc})\):</strong>
+								<p>\(a = 2r\)</p>
+							</li>
+							<li>
+								<strong>Body centred cubic \((\mathrm{bcc})\):</strong>
+								<p>\(\sqrt{3}\,a = 4r\)</p>
+							</li>
+							<li>
+								<strong>Face centred cubic \((\mathrm{fcc})\):</strong>
+								<p>\(\sqrt{2}\,a = 4r\)</p>
+							</li>
+							<li>
+								Number of atoms per unit cell:
+								<ul>
+									<li>\(\mathrm{sc} = 1\)</li>
+									<li>\(\mathrm{bcc} = 2\)</li>
+									<li>\(\mathrm{fcc} = 4\)</li>
+								</ul>
+							</li>
+							<li>
+								In \(\mathrm{fcc}\), contribution is:
+								<ul>
+									<li>
+										8 corner atoms \(\Rightarrow 8 \times \dfrac{1}{8} = 1\)
+									</li>
+									<li>
+										6 face-centred atoms \(\Rightarrow 6 \times \dfrac{1}{2} =
+										3\)
+									</li>
+									<li>Total \(= 4\)</li>
+								</ul>
+							</li>
+						</ul>
+
+						<p><strong>Helpful diagram:</strong></p>
+						<ul>
+							<li>
+								<pre>
+Face diagonal in fcc:
+
+Corner atom      Face-centred atom      Corner atom
+    ●------------------●------------------●
+         r                2r                r
+
+So total touching length on face diagonal = 4r
+
+But face diagonal of cube = \(a\sqrt{2}\)
+
+Hence, \(a\sqrt{2} = 4r\)
+      </pre
+								>
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								The moment you see <strong>fcc + edge length + radius</strong>,
+								recall:
+								<p>\(r = \dfrac{a\sqrt{2}}{4}\)</p>
+							</li>
+							<li>
+								Since \(\dfrac{\sqrt{2}}{4} \approx 0.3535\), you can also do:
+								<p>\(r \approx 0.3535\,a\)</p>
+							</li>
+							<li>
+								So directly:
+								<p>\(r \approx 0.3535 \times 4.242 \approx 1.5\)</p>
+							</li>
+							<li>
+								This is faster than doing the full diagonal reasoning every
+								time.
+							</li>
+						</ul>
+
+						<p><strong>More intuitive shortcut:</strong></p>
+						<ul>
+							<li>
+								In \(\mathrm{fcc}\), edge length is always larger than radius by
+								a fixed factor.
+							</li>
+							<li>
+								From:
+								<p>\(4r = a\sqrt{2}\)</p>
+							</li>
+							<li>
+								we get:
+								<p>\(r = \dfrac{a}{2\sqrt{2}}\)</p>
+							</li>
+							<li>
+								Since \(2\sqrt{2} \approx 2.828\),
+								<p>\(r \approx \dfrac{4.242}{2.828} = 1.5\)</p>
+							</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Using the \(\mathrm{bcc}\) formula \(\sqrt{3}\,a = 4r\) by
+								mistake.
+							</li>
+							<li>Using \(a = 2r\), which is only for simple cubic.</li>
+							<li>
+								Forgetting that in \(\mathrm{fcc}\), atoms touch along the
+								<strong>face diagonal</strong>, not the edge.
+							</li>
+							<li>
+								Writing \(r = \dfrac{a\sqrt{2}}{2}\) instead of dividing by
+								\(4\).
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Solid State</li>
+							<li><strong>Topic:</strong> Unit cell geometry</li>
+							<li>
+								<strong>Subtopic:</strong> Relation between edge length and
+								atomic radius in \(\mathrm{fcc}\)
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>
+							In \(\mathrm{fcc}\) lattice, atoms touch along the face diagonal.
+						</p>
+						<p>Therefore:</p>
+						<p>\(a\sqrt{2} = 4r\)</p>
+						<p>So:</p>
+						<p>\(r = \dfrac{a\sqrt{2}}{4}\)</p>
+						<p>Given: \(a = 4.242\) Å</p>
+						<p>Hence:</p>
+						<p>\(r = \dfrac{4.242 \times \sqrt{2}}{4}\) Å</p>
+						<p>\(\approx \dfrac{4.242 \times 1.414}{4}\) Å</p>
+						<p>\(\approx \dfrac{5.999}{4}\) Å</p>
+						<p>\(\approx 1.5\) Å</p>
+						<p><strong>\(\boxed{(c)\ 1.5\ \text{Å}}\)</strong></p>
+
+						<p><strong>Quick cheatsheet:</strong></p>
+						<ul>
+							<li>
+								<strong>sc:</strong>
+								<p>\(a = 2r\)</p>
+							</li>
+							<li>
+								<strong>bcc:</strong>
+								<p>\(\sqrt{3}\,a = 4r\)</p>
+							</li>
+							<li>
+								<strong>fcc:</strong>
+								<p>\(\sqrt{2}\,a = 4r\)</p>
+							</li>
+							<li>
+								<strong>Face diagonal of cube:</strong>
+								<p>\(a\sqrt{2}\)</p>
+							</li>
+							<li>
+								<strong>Body diagonal of cube:</strong>
+								<p>\(a\sqrt{3}\)</p>
+							</li>
+							<li>
+								<strong>Fast fcc radius formula:</strong>
+								<p>\(r = \dfrac{a\sqrt{2}}{4} = \dfrac{a}{2\sqrt{2}}\)</p>
+							</li>
+							<li>
+								<strong>Atoms per unit cell:</strong>
+								<p>
+									\(\mathrm{sc}=1,\quad \mathrm{bcc}=2,\quad \mathrm{fcc}=4\)
+								</p>
+							</li>
 						</ul>
 					</div>
 				</div>
