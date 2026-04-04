@@ -313,10 +313,295 @@
 			<!--Start Q141-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q141">Q 141 here</button>
+					<button class="accordion-button" id="Q141">
+						<button class="accordion-button" id="Q141">
+							Q 141. In bcc lattice containing \(X\) and \(Y\) type of atoms,
+							\(X\) type of atoms are present at the corners and \(Y\) type of
+							atoms are present at the centers. In its unit cell, if three atoms
+							are missing in the corners, the formula of the compound is
+							<ul>
+								<li>(a) \(X_5Y_8\)</li>
+								<li>(b) \(X_8Y_5\)</li>
+								<li>(c) \(X_3Y_5\)</li>
+								<li>(d) \(X_5Y_3\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((a)\ X_5Y_8\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+
+						<p>Given:</p>
 						<ul>
-							<li id="A141">Ans 141 here</li>
+							<li>\(X\) atoms are present at the corners</li>
+							<li>\(Y\) atoms are present at the body centre</li>
+							<li>The unit cell is bcc</li>
+							<li>Three corner atoms are missing</li>
+						</ul>
+
+						<ol>
+							<li>
+								<strong>Find the contribution of corner atoms</strong>
+								<p>
+									In any cubic unit cell, each corner atom is shared by \(8\)
+									adjacent unit cells.
+								</p>
+								<p>So contribution of one corner atom to one unit cell is:</p>
+								<p>\(\dfrac{1}{8}\)</p>
+								<p>
+									A bcc unit cell has \(8\) corners, so total contribution of
+									\(X\) atoms from corners would normally be:
+								</p>
+								<p>\(8 \times \dfrac{1}{8} = 1\)</p>
+							</li>
+
+							<li>
+								<strong>Account for the missing corner atoms</strong>
+								<p>Three corner atoms are missing.</p>
+								<p>
+									Since each corner contributes \(\dfrac{1}{8}\), the missing
+									contribution is:
+								</p>
+								<p>\(3 \times \dfrac{1}{8} = \dfrac{3}{8}\)</p>
+								<p>
+									Therefore, effective number of \(X\) atoms present in the unit
+									cell is:
+								</p>
+								<p>\(1 - \dfrac{3}{8} = \dfrac{5}{8}\)</p>
+							</li>
+
+							<li>
+								<strong>Find the contribution of body-centred atom</strong>
+								<p>
+									In bcc, the atom at the body centre lies completely inside the
+									unit cell.
+								</p>
+								<p>So its contribution is:</p>
+								<p>\(1\)</p>
+								<p>
+									Therefore, effective number of \(Y\) atoms in the unit cell
+									is:
+								</p>
+								<p>\(1\)</p>
+							</li>
+
+							<li>
+								<strong>Write the ratio and formula</strong>
+								<p>So,</p>
+								<p>\(X:Y = \dfrac{5}{8}:1\)</p>
+								<p>Multiply both sides by \(8\):</p>
+								<p>\(X:Y = 5:8\)</p>
+								<p>Hence the formula of the compound is:</p>
+								<p>\(\boxed{X_5Y_8}\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p><strong>\(\boxed{(a)\ X_5Y_8}\)</strong></p>
+
+						<p><strong>Why this method works:</strong></p>
+						<ul>
+							<li>
+								In unit-cell formula questions, we always count
+								<strong
+									>effective number of atoms contributed to one unit
+									cell</strong
+								>.
+							</li>
+							<li>Corner atoms are shared, so they do not contribute fully.</li>
+							<li>
+								Body-centred atoms are completely inside the cell, so they
+								contribute fully.
+							</li>
+							<li>
+								Once the effective numbers are found, their ratio directly gives
+								the empirical formula.
+							</li>
+						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>
+								<strong>Corner atom contribution:</strong>
+								<p>\(\dfrac{1}{8}\)</p>
+							</li>
+							<li>
+								<strong>Face-centred atom contribution:</strong>
+								<p>\(\dfrac{1}{2}\)</p>
+							</li>
+							<li>
+								<strong>Edge-centred atom contribution:</strong>
+								<p>\(\dfrac{1}{4}\)</p>
+							</li>
+							<li>
+								<strong>Body-centred atom contribution:</strong>
+								<p>\(1\)</p>
+							</li>
+							<li>
+								In a perfect bcc unit cell:
+								<p>\(8 \times \dfrac{1}{8} + 1 = 2\)</p>
+							</li>
+							<li>
+								So a normal bcc structure has \(2\) effective atoms per unit
+								cell.
+							</li>
+							<li>
+								If vacancies are introduced, subtract the missing fractional
+								contribution from the total.
+							</li>
+						</ul>
+
+						<p><strong>Helpful diagram:</strong></p>
+						<ul>
+							<li>
+								<pre>
+Corners: 8 positions of X
+Each corner contributes = 1/8
+
+So normally:
+X = 8 x (1/8) = 1
+
+If 3 corner atoms are missing:
+X = 1 - 3 x (1/8) = 5/8
+
+Body centre:
+Y = 1
+
+Thus:
+X : Y = 5/8 : 1 = 5 : 8
+      </pre
+								>
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								The moment you see <strong>bcc + corners + body centre</strong>,
+								recall:
+								<p>\(\text{corners} = 1,\quad \text{body centre} = 1\)</p>
+							</li>
+							<li>
+								Then adjust only for the missing corner atoms:
+								<p>\(X = 1 - \dfrac{3}{8} = \dfrac{5}{8}\)</p>
+							</li>
+							<li>
+								Since \(Y=1\),
+								<p>\(X:Y = \dfrac{5}{8}:1 = 5:8\)</p>
+							</li>
+							<li>
+								So directly:
+								<p>\(X_5Y_8\)</p>
+							</li>
+						</ul>
+
+						<p><strong>More intuitive shortcut:</strong></p>
+						<ul>
+							<li>
+								Think of all \(8\) corner atoms together as contributing exactly
+								\(1\) atom.
+							</li>
+							<li>
+								If \(3\) corners are absent, you have lost \(\dfrac{3}{8}\) of
+								that \(1\) atom.
+							</li>
+							<li>
+								So corner contribution becomes:
+								<p>\(\dfrac{5}{8}\)</p>
+							</li>
+							<li>
+								The centre atom remains fully present:
+								<p>\(1\)</p>
+							</li>
+							<li>
+								Convert the fractional ratio into whole numbers by multiplying
+								by \(8\).
+							</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Treating each corner atom as a full atom instead of
+								\(\dfrac{1}{8}\).
+							</li>
+							<li>Subtracting \(3\) directly from \(1\), which is wrong.</li>
+							<li>Forgetting that body-centred atom contributes fully.</li>
+							<li>
+								Writing the ratio as \(\dfrac{5}{8}:1\) and stopping there
+								without converting it to whole numbers.
+							</li>
+							<li>
+								Reversing the order and writing \(Y_8X_5\) when the compound is
+								asked in the order \(X\) then \(Y\).
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Solid State</li>
+							<li><strong>Topic:</strong> Unit cell and packing</li>
+							<li>
+								<strong>Subtopic:</strong> Effective number of atoms in unit
+								cells with vacancies
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>
+							In bcc lattice, \(X\) atoms are present at corners and \(Y\) atom
+							is present at body centre.
+						</p>
+						<p>Contribution of \(8\) corner atoms:</p>
+						<p>\(8 \times \dfrac{1}{8} = 1\)</p>
+						<p>
+							Since \(3\) corner atoms are missing, effective number of \(X\)
+							atoms becomes:
+						</p>
+						<p>\(X = 1 - \dfrac{3}{8} = \dfrac{5}{8}\)</p>
+						<p>Body-centred atom contributes fully, so:</p>
+						<p>\(Y = 1\)</p>
+						<p>Therefore,</p>
+						<p>\(X:Y = \dfrac{5}{8}:1 = 5:8\)</p>
+						<p>Hence, the formula of the compound is:</p>
+						<p><strong>\(\boxed{X_5Y_8}\)</strong></p>
+
+						<p><strong>Quick cheatsheet:</strong></p>
+						<ul>
+							<li>
+								<strong>Corner atom:</strong>
+								<p>\(\dfrac{1}{8}\)</p>
+							</li>
+							<li>
+								<strong>Face-centred atom:</strong>
+								<p>\(\dfrac{1}{2}\)</p>
+							</li>
+							<li>
+								<strong>Edge-centred atom:</strong>
+								<p>\(\dfrac{1}{4}\)</p>
+							</li>
+							<li>
+								<strong>Body-centred atom:</strong>
+								<p>\(1\)</p>
+							</li>
+							<li>
+								<strong>Perfect bcc:</strong>
+								<p>\(8 \times \dfrac{1}{8} + 1 = 2\)</p>
+							</li>
+							<li>
+								<strong>Vacancy rule:</strong>
+								<p>
+									\(\text{effective atoms} = \text{normal contribution} -
+									\text{missing contribution}\)
+								</p>
+							</li>
+							<li>
+								<strong>Formula rule:</strong>
+								<p>
+									Convert fractional ratio into smallest whole-number ratio.
+								</p>
+							</li>
 						</ul>
 					</div>
 				</div>
