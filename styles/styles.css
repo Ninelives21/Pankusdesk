@@ -712,3 +712,56 @@ div[id^='ch'] h3 a {
 	display: inline-block;
 	margin-bottom: 0.25rem;
 }
+
+.accordion-content .theory-list {
+	list-style: decimal outside !important;
+	margin: 0;
+	padding-left: 1.75rem;
+}
+
+.accordion-content .theory-list > li {
+	display: list-item !important;
+	margin: 0 0 2rem 0;
+	padding: 0;
+}
+
+.accordion-content .theory-list > li:last-child {
+	margin-bottom: 0;
+}
+
+.accordion-content .theory-list > li > ul {
+	margin-top: 0.8rem;
+	padding-left: 1.4rem;
+}
+
+.accordion-content .theory-list > li > ul > li {
+	margin-bottom: 0.9rem;
+}
+
+.accordion-content .theory-list > li > ul > li:last-child {
+	margin-bottom: 0;
+}
+
+.accordion-content .theory-list ul ul {
+	margin-top: 0.45rem;
+	padding-left: 1.35rem;
+}
+
+.accordion-content .theory-list ul ul > li {
+	margin-bottom: 0.55rem;
+}
+
+.accordion-content .theory-list ul ul > li:last-child {
+	margin-bottom: 0;
+}
+
+.accordion-content .theory-list img {
+	display: block;
+	margin-top: 0.7rem;
+	margin-bottom: 0.4rem;
+}
+
+.accordion-content .theory-list a.link_no_style {
+	display: inline-block;
+	margin-top: 0.35rem;
+}
