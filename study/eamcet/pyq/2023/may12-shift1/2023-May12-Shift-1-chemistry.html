@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="../../../../../styles/style_chem.css" />
 
 		<script src="../../../../../scripts/accordion.js" defer></script>
-		<script src="../../../../../scripts/navbar.js" defer></script>
+		<script src="/scripts/navbar.js" defer></script>
 		<script>
 			window.MathJax = {
 				tex: {
@@ -35,15 +35,15 @@
 		<h2>EAPCET 2023 MAY 12 SHIFT 1 - CHEMISTRY</h2>
 
 		<div class="left-gap">
-			<a href="../../../../../eapcet_pyq.html">All PYQs</a>
+			<a href="/eapcet_pyq.html">All PYQs</a>
 			<br />
 			<a
-				href="../../../../../study/eamcet/pyq/2023/may12-shift1/2023-May12-Shift-1-physics.html"
+				href="/study/eamcet/pyq/2023/may12-shift1/2023-May12-Shift-1-physics.html"
 				>Physics</a
 			>
 			<br />
 			<a
-				href="../../../../../study/eamcet/pyq/2023/may12-shift1/2023-May12-Shift-1-mathematics.html"
+				href="/study/eamcet/pyq/2023/may12-shift1/2023-May12-Shift-1-mathematics.html"
 				>Mathematics</a
 			>
 			<br />
@@ -53,10 +53,122 @@
 			<!--Start Q121-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q121">Q 121 here</button>
+					<button class="accordion-button" id="Q121">
+						<button class="accordion-button" id="Q121">
+							121. The radius of third orbit of hydrogen atom is \(R\) pm. The
+							radius of second orbit of \(\mathrm{He^+}\) ion (in pm is)
+							<ul>
+								<li>(a) \(\frac{4}{3}R\)</li>
+								<li>(b) \(\frac{3}{4}R\)</li>
+								<li>(c) \(\frac{9}{2}R\)</li>
+								<li>(d) \(\frac{2}{9}R\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
 						<ul>
-							<li id="A121">Ans 121 here</li>
+							<li><strong>Correct option:</strong> (d) \(\frac{2}{9}R\)</li>
+
+							<li>
+								<strong>Direct exam-solving idea</strong>
+								<p>
+									For any hydrogen-like species, the radius of the
+									\(n^{\text{th}}\) orbit is given by:
+								</p>
+								<p>\(r_n = \frac{n^2}{Z}a_0\)</p>
+								<p>
+									where \(Z\) is the atomic number and \(a_0 = 52.9\
+									\mathrm{pm}\).
+								</p>
+								<p>
+									This formula is used for one-electron species such as
+									\(\mathrm{H}\), \(\mathrm{He^+}\), \(\mathrm{Li^{2+}}\) etc.
+								</p>
+							</li>
+
+							<li>
+								<strong>Radius of 3rd orbit of hydrogen atom</strong>
+								<p>For hydrogen, \(Z = 1\).</p>
+								<p>Given that the radius of the third orbit is \(R\) pm:</p>
+								<p>\(R = \frac{3^2}{1}a_0 = 9a_0\)</p>
+							</li>
+
+							<li>
+								<strong>Radius of 2nd orbit of \(\mathrm{He^+}\)</strong>
+								<p>
+									For \(\mathrm{He^+}\), \(Z = 2\) because helium has atomic
+									number 2.
+								</p>
+								<p>For the second orbit, \(n = 2\):</p>
+								<p>\(r = \frac{2^2}{2}a_0 = \frac{4}{2}a_0 = 2a_0\)</p>
+							</li>
+
+							<li>
+								<strong>Now compare both radii</strong>
+								<p>We have:</p>
+								<p>\(R = 9a_0\)</p>
+								<p>and</p>
+								<p>\(r = 2a_0\)</p>
+								<p>Therefore:</p>
+								<p>\(\frac{r}{R} = \frac{2a_0}{9a_0} = \frac{2}{9}\)</p>
+								<p>So:</p>
+								<p>\(r = \frac{2}{9}R\)</p>
+							</li>
+
+							<li>
+								<strong>Final result</strong>
+								<p>\(\boxed{r = \frac{2}{9}R}\)</p>
+							</li>
+
+							<li>
+								<strong>Why this works</strong>
+								<p>
+									In Bohr model, orbital radius increases as \(n^2\), so higher
+									orbit means larger radius.
+								</p>
+								<p>
+									But radius also decreases as \(Z\) increases, because a larger
+									nuclear charge pulls the electron closer.
+								</p>
+								<p>
+									So for \(\mathrm{He^+}\), even though we are taking the second
+									orbit, the stronger nucleus \((Z=2)\) makes the orbit smaller
+									than one may first expect.
+								</p>
+							</li>
+
+							<li>
+								<strong>Fast shortcut for MCQs</strong>
+								<p>Use proportionality directly:</p>
+								<p>\(r \propto \frac{n^2}{Z}\)</p>
+								<p>For hydrogen third orbit:</p>
+								<p>\(R \propto \frac{3^2}{1} = 9\)</p>
+								<p>For \(\mathrm{He^+}\) second orbit:</p>
+								<p>\(r \propto \frac{2^2}{2} = 2\)</p>
+								<p>Hence immediately:</p>
+								<p>\(\frac{r}{R} = \frac{2}{9}\)</p>
+							</li>
+
+							<li>
+								<strong>Common trap</strong>
+								<p>
+									Some students use \(r \propto n^2\) only and forget the
+									division by \(Z\). That would be wrong for hydrogen-like ions.
+								</p>
+							</li>
+
+							<li>
+								<strong>Chapter / topic / subtopic</strong>
+								<p><strong>Chapter:</strong> Structure of Atom</p>
+								<p>
+									<strong>Topic:</strong> Bohr model for hydrogen and
+									hydrogen-like species
+								</p>
+								<p>
+									<strong>Subtopic:</strong> Radius of orbit, dependence on
+									\(n\) and \(Z\)
+								</p>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -67,167 +179,156 @@
 			<div class="accordion">
 				<div class="accordion-item">
 					<button class="accordion-button" id="Q122">
-						<button class="accordion-button" id="Q121">
-							Q 121. The radius of third orbit of hydrogen atom is \(R\) pm. The
-							radius of second orbit of \(\mathrm{He^+}\) ion (in pm is)
+						<button class="accordion-button" id="Q122">
+							122. The threshold frequency of a metal is \(10^{15}\
+							\mathrm{s^{-1}}\). The ratio of maximum kinetic energies of the
+							photoelectrons, when the metal is made to strike with radiations
+							of frequencies \(1.5 \times 10^{15}\ \mathrm{s^{-1}}\) and \(2.0
+							\times 10^{15}\ \mathrm{s^{-1}}\) respectively is
 							<ul>
-								<li>(a) \(\frac{4}{3}R\)</li>
-								<br />
-								<li>(b) \(\frac{3}{4}R\)</li>
-								<br />
-								<li>(c) \(\frac{9}{2}R\)</li>
-								<br />
-								<li>(d) \(\frac{2}{9}R\)</li>
+								<li>(a) \(2:1\)</li>
+								<li>(b) \(1:2\)</li>
+								<li>(c) \(4:3\)</li>
+								<li>(d) \(3:4\)</li>
 							</ul>
 						</button>
 					</button>
 					<div class="accordion-content">
-						<p><strong>Answer: \((d)\ \frac{2}{9}R\)</strong></p>
+						<ul>
+							<li><strong>Correct option:</strong> (b) \(1:2\)</li>
 
-						<p><strong>Solution:</strong></p>
-						<p>
-							We need to compare the radius of the third orbit of hydrogen atom
-							with the radius of the second orbit of \(\mathrm{He^+}\) ion.
-						</p>
-
-						<ol>
 							<li>
-								<strong
-									>Use Bohr radius formula for hydrogen-like species</strong
-								>
+								<strong>Main concept used</strong>
 								<p>
-									For a hydrogen-like atom or ion, radius of the
-									\(n^{\text{th}}\) orbit is:
+									This is a direct application of Einstein's photoelectric
+									equation:
 								</p>
-								<p>\(r_n = \frac{n^2}{Z}\times 0.529\ \text{\AA}\)</p>
-								<p>where:</p>
+								<p>\(h\nu = h\nu_0 + K E_{\max}\)</p>
+								<p>So,</p>
+								<p>\(K E_{\max} = h(\nu - \nu_0)\)</p>
+								<p>Here \(\nu_0\) is the threshold frequency.</p>
+							</li>
+
+							<li>
+								<strong>Given data</strong>
 								<ul>
-									<li>\(n\) = principal quantum number</li>
-									<li>\(Z\) = atomic number</li>
-									<li>\(0.529\ \text{\AA}\) = Bohr radius</li>
+									<li>
+										Threshold frequency: \(\nu_0 = 10^{15}\ \mathrm{s^{-1}}\)
+									</li>
+									<li>
+										First incident frequency: \(\nu_1 = 1.5 \times 10^{15}\
+										\mathrm{s^{-1}}\)
+									</li>
+									<li>
+										Second incident frequency: \(\nu_2 = 2.0 \times 10^{15}\
+										\mathrm{s^{-1}}\)
+									</li>
 								</ul>
 							</li>
 
 							<li>
-								<strong>Radius of 3rd orbit of hydrogen atom</strong>
-								<p>For hydrogen, \(Z=1\).</p>
-								<p>Given that radius of 3rd orbit is \(R\) pm:</p>
-								<p>\(R = \frac{3^2}{1}\times 0.529\ \text{\AA}\)</p>
-								<p>\(R = 9\times 0.529\ \text{\AA}\) \(\qquad ...(1)\)</p>
+								<strong>Write maximum kinetic energy for each case</strong>
+								<p>For the first radiation:</p>
+								<p>\((K E_{\max})_1 = h(\nu_1 - \nu_0)\)</p>
+								<p>
+									\((K E_{\max})_1 = h(1.5 \times 10^{15} - 1.0 \times
+									10^{15})\)
+								</p>
+								<p>\((K E_{\max})_1 = h(0.5 \times 10^{15})\)</p>
+
+								<p>For the second radiation:</p>
+								<p>\((K E_{\max})_2 = h(\nu_2 - \nu_0)\)</p>
+								<p>
+									\((K E_{\max})_2 = h(2.0 \times 10^{15} - 1.0 \times
+									10^{15})\)
+								</p>
+								<p>\((K E_{\max})_2 = h(1.0 \times 10^{15})\)</p>
 							</li>
 
 							<li>
-								<strong>Radius of 2nd orbit of \(\mathrm{He^+}\)</strong>
-								<p>For \(\mathrm{He^+}\), \(Z=2\).</p>
-								<p>Let the required radius be \(x\).</p>
-								<p>\(x = \frac{2^2}{2}\times 0.529\ \text{\AA}\)</p>
+								<strong>Take the ratio</strong>
 								<p>
-									\(x = \frac{4}{2}\times 0.529\ \text{\AA} = 2\times 0.529\
-									\text{\AA}\) \(\qquad ...(2)\)
+									\(\frac{(K E_{\max})_1}{(K E_{\max})_2} = \frac{h(0.5 \times
+									10^{15})}{h(1.0 \times 10^{15})}\)
+								</p>
+								<p>\(= \frac{0.5}{1} = \frac{1}{2}\)</p>
+								<p>Hence:</p>
+								<p>\((K E_{\max})_1 : (K E_{\max})_2 = 1:2\)</p>
+							</li>
+
+							<li>
+								<strong>Final result</strong>
+								<p>\(\boxed{1:2}\)</p>
+							</li>
+
+							<li>
+								<strong>What threshold frequency really means</strong>
+								<p>
+									The threshold frequency is the minimum frequency needed to
+									just eject electrons from the metal surface.
+								</p>
+								<p>
+									At \(\nu = \nu_0\), electrons are emitted with zero maximum
+									kinetic energy.
+								</p>
+								<p>
+									If the frequency is greater than \(\nu_0\), the extra energy
+									appears as kinetic energy of the emitted electrons.
 								</p>
 							</li>
 
 							<li>
-								<strong>Take the ratio using (1) and (2)</strong>
+								<strong>Important exam pattern</strong>
 								<p>
-									\(\frac{R}{x} = \frac{9\times 0.529}{2\times 0.529} =
-									\frac{9}{2}\)
+									In ratio questions, Planck's constant \(h\) usually cancels
+									out.
 								</p>
-								<p>So:</p>
-								<p>\(x = \frac{2}{9}R\)</p>
-							</li>
-						</ol>
-
-						<p><strong>Therefore:</strong></p>
-						<p>\(\boxed{(d)\ \frac{2}{9}R}\)</p>
-
-						<p><strong>JEE / NCERT takeaway:</strong></p>
-						<ul>
-							<li>
-								For a hydrogen-like species:
-								<p>\(r_n \propto \frac{n^2}{Z}\)</p>
-							</li>
-							<li>Radius increases with \(n^2\).</li>
-							<li>Radius decreases with nuclear charge \(Z\).</li>
-							<li>
-								So for the same \(n\), \(\mathrm{He^+}\) has smaller orbit
-								radius than \(\mathrm{H}\).
-							</li>
-							<li>
-								Hydrogen-like species commonly asked in exams:
-								<p>\(\mathrm{H,\ He^+,\ Li^{2+},\ Be^{3+}}\)</p>
-							</li>
-						</ul>
-
-						<p><strong>1-minute solving trick:</strong></p>
-						<ul>
-							<li>Immediately recall:</li>
-							<li><p>\(r_n \propto \frac{n^2}{Z}\)</p></li>
-							<li>
-								For hydrogen 3rd orbit:
-								<p>\(R \propto \frac{9}{1}\)</p>
-							</li>
-							<li>
-								For \(\mathrm{He^+}\) 2nd orbit:
-								<p>\(x \propto \frac{4}{2}=2\)</p>
-							</li>
-							<li>
-								Hence:
-								<p>\(\frac{x}{R} = \frac{2}{9}\)</p>
-							</li>
-							<li>
-								So directly:
-								<p>\(x=\frac{2}{9}R\)</p>
-							</li>
-						</ul>
-
-						<p><strong>Chapter / Topic / Subtopic:</strong></p>
-						<ul>
-							<li><strong>Chapter:</strong> Structure of Atom</li>
-							<li>
-								<strong>Topic:</strong> Bohr model for hydrogen-like species
-							</li>
-							<li>
-								<strong>Subtopic:</strong> Radius of orbit in hydrogen and
-								hydrogen-like ions
-							</li>
-						</ul>
-
-						<p><strong>Final exam-style answer:</strong></p>
-						<p>
-							Using \(r_n=\frac{n^2}{Z}\times 0.529\ \text{\AA}\), for hydrogen:
-						</p>
-						<p>\(R=\frac{3^2}{1}\times 0.529=9\times 0.529\ \text{\AA}\)</p>
-						<p>For \(\mathrm{He^+}\), required radius \(x\) is:</p>
-						<p>\(x=\frac{2^2}{2}\times 0.529=2\times 0.529\ \text{\AA}\)</p>
-						<p>Therefore:</p>
-						<p>\(\frac{R}{x}=\frac{9}{2}\Rightarrow x=\frac{2}{9}R\)</p>
-						<p><strong>\(\boxed{(d)\ \frac{2}{9}R}\)</strong></p>
-
-						<p><strong>Quick cheatsheet:</strong></p>
-						<ul>
-							<li>
-								<strong>Bohr radius formula:</strong>
-								<p>\(r_n=\frac{n^2}{Z}\times 0.529\ \text{\AA}\)</p>
-							</li>
-							<li>
-								<strong>Energy formula:</strong>
-								<p>\(E_n=-13.6\frac{Z^2}{n^2}\ \mathrm{eV}\)</p>
-							</li>
-							<li>
-								<strong>Radius trend:</strong>
-								<p>\(r_n \propto \frac{n^2}{Z}\)</p>
-							</li>
-							<li>
-								<strong>Hydrogen-like ions:</strong>
 								<p>
-									One-electron species such as \(\mathrm{He^+,\ Li^{2+},\
-									Be^{3+}}\)
+									So you often do not need numerical calculation of energy in
+									joules or electron volts.
 								</p>
+								<p>Just use:</p>
+								<p>\(K E_{\max} \propto (\nu - \nu_0)\)</p>
 							</li>
+
 							<li>
-								<strong>Key idea:</strong> bigger \(n\) increases radius, bigger
-								\(Z\) decreases radius.
+								<strong>Fast shortcut</strong>
+								<p>Subtract threshold frequency mentally:</p>
+								<ul>
+									<li>First case: \(1.5 - 1.0 = 0.5\)</li>
+									<li>Second case: \(2.0 - 1.0 = 1.0\)</li>
+								</ul>
+								<p>Therefore the ratio is \(0.5:1.0 = 1:2\).</p>
+							</li>
+
+							<li>
+								<strong>Common traps</strong>
+								<ul>
+									<li>
+										Using \(\nu_1:\nu_2\) directly instead of
+										\((\nu_1-\nu_0):(\nu_2-\nu_0)\)
+									</li>
+									<li>
+										Forgetting that threshold frequency must be subtracted first
+									</li>
+									<li>
+										Confusing intensity with frequency. Maximum kinetic energy
+										depends on frequency, not intensity
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Chapter / topic / subtopic</strong>
+								<p>
+									<strong>Chapter:</strong> Structure of Atom / Dual Nature of
+									Radiation and Matter
+								</p>
+								<p><strong>Topic:</strong> Photoelectric effect</p>
+								<p>
+									<strong>Subtopic:</strong> Einstein photoelectric equation,
+									threshold frequency, maximum kinetic energy
+								</p>
 							</li>
 						</ul>
 					</div>
@@ -238,10 +339,212 @@
 			<!--Start Q123-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q123">Q 123 here</button>
+					<button class="accordion-button" id="Q123">
+						<button class="accordion-button" id="Q123">
+							123. Consider the following.
+							<ul>
+								<li>
+									(I) The order of first ionisation enthalpy of first three
+									elements of 3rd period is \(\mathrm{Mg} > \mathrm{Al} >
+									\mathrm{Na}\).
+								</li>
+								<li>
+									(II) The element with electronegativity of \(3.5\) is
+									chlorine.
+								</li>
+								<li>
+									(III) The order of sizes of ions \(\mathrm{Mg^{2+}}\),
+									\(\mathrm{Na^+}\), \(\mathrm{F^-}\) and \(\mathrm{O^{2-}}\) is
+									\(\mathrm{Mg^{2+}} < \mathrm{Na^+} < \mathrm{F^-} <
+									\mathrm{O^{2-}}\).
+								</li>
+								<li>
+									(IV) The IUPAC name of the element with atomic number 106 is
+									bohrium.
+								</li>
+							</ul>
+							The correct statements are
+							<ul>
+								<li>(a) I and II only</li>
+								<li>(b) II and III only</li>
+								<li>(c) I and III only</li>
+								<li>(d) II and IV only</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
 						<ul>
-							<li id="A123">Ans 123 here</li>
+							<li><strong>Correct option:</strong> (c) I and III only</li>
+
+							<li>
+								<strong>Strategy for this kind of question</strong>
+								<p>
+									This is a multi-statement periodic table question. The best
+									method is to test each statement one by one using known trends
+									and standard facts.
+								</p>
+							</li>
+
+							<li>
+								<strong>Statement (I)</strong>
+								<p>
+									The first three elements of the 3rd period are
+									\(\mathrm{Na}\), \(\mathrm{Mg}\) and \(\mathrm{Al}\).
+								</p>
+								<p>
+									The usual increasing trend in ionisation enthalpy across a
+									period is from left to right.
+								</p>
+								<p>But there is an exception here:</p>
+								<p>
+									\(\mathrm{Mg}\) has configuration \(3s^2\), which is a more
+									stable fully-filled \(s\)-subshell.
+								</p>
+								<p>
+									\(\mathrm{Al}\) has configuration \(3s^2 3p^1\), and the
+									\(3p\) electron is easier to remove.
+								</p>
+								<p>Therefore:</p>
+								<p>\(\mathrm{Mg} > \mathrm{Al} > \mathrm{Na}\)</p>
+								<p>So statement (I) is <strong>correct</strong>.</p>
+							</li>
+
+							<li>
+								<strong>Statement (II)</strong>
+								<p>
+									Chlorine is highly electronegative, but its commonly used
+									electronegativity value is about \(3.0\) on the Pauling scale,
+									not \(3.5\).
+								</p>
+								<p>
+									The value near \(3.5\) is associated more closely with oxygen.
+								</p>
+								<p>So statement (II) is <strong>incorrect</strong>.</p>
+							</li>
+
+							<li>
+								<strong>Statement (III)</strong>
+								<p>
+									The ions \(\mathrm{O^{2-}}\), \(\mathrm{F^-}\),
+									\(\mathrm{Na^+}\) and \(\mathrm{Mg^{2+}}\) are isoelectronic.
+								</p>
+								<p>Each has 10 electrons.</p>
+								<p>
+									In an isoelectronic series, size decreases as nuclear charge
+									increases.
+								</p>
+								<p>Nuclear charge order is:</p>
+								<p>\(\mathrm{O} < \mathrm{F} < \mathrm{Na} < \mathrm{Mg}\)</p>
+								<p>So ionic size order will be the reverse:</p>
+								<p>
+									\(\mathrm{O^{2-}} > \mathrm{F^-} > \mathrm{Na^+} >
+									\mathrm{Mg^{2+}}\)
+								</p>
+								<p>Or in increasing order:</p>
+								<p>
+									\(\mathrm{Mg^{2+}} < \mathrm{Na^+} < \mathrm{F^-} <
+									\mathrm{O^{2-}}\)
+								</p>
+								<p>Hence statement (III) is <strong>correct</strong>.</p>
+							</li>
+
+							<li>
+								<strong>Statement (IV)</strong>
+								<p>Atomic number 106 corresponds to seaborgium, not bohrium.</p>
+								<p>Bohrium has atomic number 107.</p>
+								<p>So statement (IV) is <strong>incorrect</strong>.</p>
+							</li>
+
+							<li>
+								<strong>Conclusion</strong>
+								<p>Only statements (I) and (III) are correct.</p>
+								<p>Therefore the correct answer is option (c).</p>
+							</li>
+
+							<li>
+								<strong>Final result</strong>
+								<p>\(\boxed{\text{I and III only}}\)</p>
+							</li>
+
+							<li>
+								<strong>Expanded theory behind each idea</strong>
+								<ul>
+									<li>
+										<strong>Ionisation enthalpy exception</strong>
+										<p>
+											Across a period, ionisation enthalpy generally increases
+											because atomic size decreases and effective nuclear charge
+											increases.
+										</p>
+										<p>
+											But \(\mathrm{Mg}\) to \(\mathrm{Al}\) is an exception
+											because removing a \(3p\) electron from aluminium is
+											easier than removing a \(3s\) electron from magnesium.
+										</p>
+									</li>
+									<li>
+										<strong>Electronegativity memory point</strong>
+										<p>
+											Fluorine is the highest. Oxygen and chlorine are also
+											high, but oxygen is commonly remembered around \(3.5\),
+											while chlorine is around \(3.0\).
+										</p>
+									</li>
+									<li>
+										<strong>Isoelectronic size rule</strong>
+										<p>
+											If number of electrons is the same, then the ion with
+											greater nuclear charge pulls those electrons more strongly
+											and becomes smaller.
+										</p>
+									</li>
+									<li>
+										<strong>Element name fact recall</strong>
+										<p>Seaborgium is \(Z = 106\), bohrium is \(Z = 107\).</p>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Fast elimination method</strong>
+								<p>
+									If you know statement (IV) is false, options containing IV can
+									be rejected.
+								</p>
+								<p>
+									If you also know statement (III) is correct from isoelectronic
+									size order, only option (c) remains.
+								</p>
+							</li>
+
+							<li>
+								<strong>Common traps</strong>
+								<ul>
+									<li>
+										Missing the \(\mathrm{Mg}\) and \(\mathrm{Al}\) ionisation
+										enthalpy exception
+									</li>
+									<li>Confusing atomic number 106 and 107</li>
+									<li>
+										For isoelectronic ions, writing size order in the same
+										direction as nuclear charge instead of reverse
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Chapter / topic / subtopic</strong>
+								<p>
+									<strong>Chapter:</strong> Classification of Elements and
+									Periodicity in Properties
+								</p>
+								<p><strong>Topic:</strong> Periodic trends</p>
+								<p>
+									<strong>Subtopics:</strong> Ionisation enthalpy,
+									electronegativity, isoelectronic ionic size, element
+									identification
+								</p>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -251,10 +554,230 @@
 			<!--Start Q124-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q124">Q 124 here</button>
+					<button class="accordion-button" id="Q124">
+						<button class="accordion-button" id="Q124">
+							124. Match the following.
+							<table>
+								<tr>
+									<th>List-I (Molecule/ion)</th>
+									<th>List-II (Shape)</th>
+								</tr>
+								<tr>
+									<td>(A) \(\mathrm{SnCl_2}\)</td>
+									<td>I. Trigonal planar</td>
+								</tr>
+								<tr>
+									<td>(B) \(\mathrm{NH_3}\)</td>
+									<td>II. Linear</td>
+								</tr>
+								<tr>
+									<td>(C) \(\mathrm{I_3^-}\)</td>
+									<td>III. Angular</td>
+								</tr>
+								<tr>
+									<td>(D) \(\mathrm{SO_3}\)</td>
+									<td>IV. Trigonal pyramidal</td>
+								</tr>
+							</table>
+							The correct answer is
+							<ul>
+								<li>(a) A-III, B-I, C-II, D-IV</li>
+								<li>(b) A-IV, B-III, C-I, D-II</li>
+								<li>(c) A-III, B-I, C-IV, D-II</li>
+								<li>(d) A-III, B-IV, C-II, D-I</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
 						<ul>
-							<li id="A124">Ans 124 here</li>
+							<li>
+								<strong>Correct option:</strong> (d) A-III, B-IV, C-II, D-I
+							</li>
+
+							<li>
+								<strong>Direct solving method</strong>
+								<p>
+									This is a VSEPR theory question. Determine bond pairs and lone
+									pairs on the central atom, then predict the molecular shape.
+								</p>
+							</li>
+
+							<li>
+								<strong>(A) \(\mathrm{SnCl_2}\)</strong>
+								<p>Central atom is Sn.</p>
+								<p>
+									It forms two bond pairs with two chlorine atoms and has one
+									lone pair on the central atom.
+								</p>
+								<p>
+									So the electron pair arrangement is trigonal planar, but
+									because one position is occupied by a lone pair, the molecular
+									shape becomes <strong>angular</strong>.
+								</p>
+								<p>Therefore:</p>
+								<p>\(A \rightarrow \mathrm{III}\)</p>
+							</li>
+
+							<li>
+								<strong>(B) \(\mathrm{NH_3}\)</strong>
+								<p>Nitrogen has three bond pairs and one lone pair.</p>
+								<p>The electron pair geometry is tetrahedral.</p>
+								<p>
+									Due to one lone pair, the molecular shape is
+									<strong>trigonal pyramidal</strong>.
+								</p>
+								<p>Therefore:</p>
+								<p>\(B \rightarrow \mathrm{IV}\)</p>
+							</li>
+
+							<li>
+								<strong>(C) \(\mathrm{I_3^-}\)</strong>
+								<p>
+									The central iodine has two bond pairs and three lone pairs.
+								</p>
+								<p>
+									That gives five electron pairs in total, corresponding to
+									trigonal bipyramidal electron pair arrangement.
+								</p>
+								<p>
+									The three lone pairs occupy equatorial positions to minimize
+									repulsion.
+								</p>
+								<p>
+									The two bonded iodine atoms remain in opposite axial
+									positions.
+								</p>
+								<p>Hence the shape is <strong>linear</strong>.</p>
+								<p>Therefore:</p>
+								<p>\(C \rightarrow \mathrm{II}\)</p>
+							</li>
+
+							<li>
+								<strong>(D) \(\mathrm{SO_3}\)</strong>
+								<p>
+									Sulfur is bonded to three oxygen atoms and has no lone pair on
+									the central atom in the usual VSEPR treatment.
+								</p>
+								<p>
+									So there are three regions of electron density around sulfur.
+								</p>
+								<p>Hence the shape is <strong>trigonal planar</strong>.</p>
+								<p>Therefore:</p>
+								<p>\(D \rightarrow \mathrm{I}\)</p>
+							</li>
+
+							<li>
+								<strong>Combine all matches</strong>
+								<p>\(A\!-\!III,\ B\!-\!IV,\ C\!-\!II,\ D\!-\!I\)</p>
+								<p>So the correct option is (d).</p>
+							</li>
+
+							<li>
+								<strong>Final result</strong>
+								<p>\(\boxed{A\!-\!III,\ B\!-\!IV,\ C\!-\!II,\ D\!-\!I}\)</p>
+							</li>
+
+							<li>
+								<strong>VSEPR summary table</strong>
+								<table>
+									<tr>
+										<th>Molecule / ion</th>
+										<th>Bond pairs</th>
+										<th>Lone pairs</th>
+										<th>Shape</th>
+									</tr>
+									<tr>
+										<td>\(\mathrm{SnCl_2}\)</td>
+										<td>2</td>
+										<td>1</td>
+										<td>Angular</td>
+									</tr>
+									<tr>
+										<td>\(\mathrm{NH_3}\)</td>
+										<td>3</td>
+										<td>1</td>
+										<td>Trigonal pyramidal</td>
+									</tr>
+									<tr>
+										<td>\(\mathrm{I_3^-}\)</td>
+										<td>2</td>
+										<td>3</td>
+										<td>Linear</td>
+									</tr>
+									<tr>
+										<td>\(\mathrm{SO_3}\)</td>
+										<td>3</td>
+										<td>0</td>
+										<td>Trigonal planar</td>
+									</tr>
+								</table>
+							</li>
+
+							<li>
+								<strong>Useful theory</strong>
+								<p>
+									VSEPR theory says electron pairs around the central atom
+									arrange themselves as far apart as possible because of
+									repulsion.
+								</p>
+								<p>
+									The actual molecular shape is decided only by the positions of
+									atoms, not lone pairs. Lone pairs affect the shape by pushing
+									bond pairs more strongly.
+								</p>
+								<p>Repulsion order is:</p>
+								<p>
+									\(\text{lone pair - lone pair} > \text{lone pair - bond pair}
+									> \text{bond pair - bond pair}\)
+								</p>
+							</li>
+
+							<li>
+								<strong>Quick memory cues</strong>
+								<ul>
+									<li>
+										\(\mathrm{NH_3}\): like \(\mathrm{PCl_3}\), trigonal
+										pyramidal
+									</li>
+									<li>
+										\(\mathrm{SO_3}\): no lone pair on central S in shape
+										prediction, so trigonal planar
+									</li>
+									<li>\(\mathrm{I_3^-}\): classic linear ion</li>
+									<li>
+										\(\mathrm{SnCl_2}\): bent or angular because of one lone
+										pair
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Common traps</strong>
+								<ul>
+									<li>Confusing electron pair geometry with molecular shape</li>
+									<li>
+										Forgetting that \(\mathrm{I_3^-}\) is linear despite having
+										five electron pairs
+									</li>
+									<li>
+										Marking \(\mathrm{NH_3}\) as trigonal planar instead of
+										trigonal pyramidal
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<strong>Chapter / topic / subtopic</strong>
+								<p>
+									<strong>Chapter:</strong> Chemical Bonding and Molecular
+									Structure
+								</p>
+								<p><strong>Topic:</strong> VSEPR theory and molecular shapes</p>
+								<p>
+									<strong>Subtopic:</strong> Bond pairs, lone pairs, electron
+									pair geometry versus molecular shape
+								</p>
+							</li>
 						</ul>
 					</div>
 				</div>
