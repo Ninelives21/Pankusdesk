@@ -2390,10 +2390,308 @@ This is the basic idea for \(\mathrm{SO_2}\) and \(\mathrm{O_3}\).
 			<!--Start Q130-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q130">Q 130 here</button>
+					<button class="accordion-button" id="Q130">
+						<button class="accordion-button" id="Q130">
+							Q 130. For the reaction \(N_2O_4(g) \rightleftharpoons 2NO_2(g)\),
+							the correct relation between degree of dissociation \((\alpha)\)
+							of \(N_2O_4(g)\) and equilibrium constant, \(K_p\) is \((p =
+							\text{total pressure of mixture})\)
+							<ul>
+								<li>(a) \(\alpha = \frac{K_p/p}{4+\frac{K_p}{p}}\)</li>
+								<br />
+								<li>(b) \(\alpha = \frac{K_p}{4+K_p}\)</li>
+								<br />
+								<li>
+									(c) \(\alpha =
+									\left(\frac{K_p/p}{4+\frac{K_p}{p}}\right)^{1/2}\)
+								</li>
+								<br />
+								<li>(d) \(\alpha = \left(\frac{K_p}{4+K_p}\right)^{1/2}\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p>
+							<strong
+								>Answer: \((c)\
+								\alpha=\left(\frac{K_p/p}{4+\frac{K_p}{p}}\right)^{1/2}\)</strong
+							>
+						</p>
+
+						<p><strong>Solution:</strong></p>
+
+						<p>Given equilibrium:</p>
+						<p>\(N_2O_4(g) \rightleftharpoons 2NO_2(g)\)</p>
+
+						<ol>
+							<li>
+								<strong>Assume 1 mole of \(N_2O_4\) initially</strong>
+								<p>Let the degree of dissociation be \(\alpha\).</p>
+								<ul>
+									<li>Initial moles of \(N_2O_4 = 1\)</li>
+									<li>Initial moles of \(NO_2 = 0\)</li>
+								</ul>
+								<p>At equilibrium:</p>
+								<ul>
+									<li>\(N_2O_4 = 1-\alpha\)</li>
+									<li>\(NO_2 = 2\alpha\)</li>
+								</ul>
+								<p>Total moles at equilibrium:</p>
+								<p>\((1-\alpha)+2\alpha=1+\alpha\)</p>
+							</li>
+
+							<li>
+								<strong
+									>Write partial pressures in terms of total pressure
+									\(p\)</strong
+								>
+								<p>
+									Partial pressure \(=\) mole fraction \(\times\) total
+									pressure.
+								</p>
+								<p>So:</p>
+								<p>\(p_{N_2O_4}=\frac{1-\alpha}{1+\alpha}\,p\)</p>
+								<p>\(p_{NO_2}=\frac{2\alpha}{1+\alpha}\,p\)</p>
+							</li>
+
+							<li>
+								<strong>Apply the expression for \(K_p\)</strong>
+								<p>
+									For the reaction \(N_2O_4(g) \rightleftharpoons 2NO_2(g)\):
+								</p>
+								<p>\(K_p=\frac{(p_{NO_2})^2}{p_{N_2O_4}}\)</p>
+								<p>Substitute the partial pressures:</p>
+								<p>
+									\(K_p=\frac{\left(\frac{2\alpha}{1+\alpha}p\right)^2}{\left(\frac{1-\alpha}{1+\alpha}p\right)}\)
+								</p>
+								<p>
+									\(K_p=\frac{4\alpha^2p^2}{(1+\alpha)^2}\cdot\frac{1+\alpha}{(1-\alpha)p}\)
+								</p>
+								<p>\(K_p=\frac{4\alpha^2p}{(1+\alpha)(1-\alpha)}\)</p>
+								<p>\(K_p=\frac{4\alpha^2p}{1-\alpha^2}\)</p>
+							</li>
+
+							<li>
+								<strong>Rearrange to get \(\alpha\)</strong>
+								<p>\(K_p(1-\alpha^2)=4\alpha^2p\)</p>
+								<p>\(K_p-K_p\alpha^2=4\alpha^2p\)</p>
+								<p>\(K_p=\alpha^2(K_p+4p)\)</p>
+								<p>\(\alpha^2=\frac{K_p}{K_p+4p}\)</p>
+								<p>Divide numerator and denominator by \(p\):</p>
+								<p>\(\alpha^2=\frac{K_p/p}{\frac{K_p}{p}+4}\)</p>
+								<p>Therefore:</p>
+								<p>
+									\(\alpha=\left(\frac{K_p/p}{4+\frac{K_p}{p}}\right)^{1/2}\)
+								</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>
+							\(\boxed{(c)\
+							\alpha=\left(\frac{K_p/p}{4+\frac{K_p}{p}}\right)^{1/2}}\)
+						</p>
+
+						<p><strong>Why this method works:</strong></p>
 						<ul>
-							<li id="A130">Ans 130 here</li>
+							<li>
+								Degree of dissociation \(\alpha\) tells us what fraction of the
+								initial reactant has dissociated.
+							</li>
+							<li>
+								Once equilibrium moles are known, partial pressures follow from
+								mole fractions.
+							</li>
+							<li>
+								Then \(K_p\) is written directly using equilibrium partial
+								pressures.
+							</li>
+							<li>
+								This is the standard NCERT/JEE approach for gaseous dissociation
+								equilibria.
+							</li>
+						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>
+								For a gaseous equilibrium:
+								<p>
+									\(K_p=\frac{\text{product of partial pressures of
+									products}}{\text{product of partial pressures of reactants}}\)
+								</p>
+							</li>
+							<li>
+								Partial pressure of a gas:
+								<p>\(p_i=x_i\,p_{\text{total}}\)</p>
+							</li>
+							<li>
+								For dissociation of the type:
+								<p>\(A(g)\rightleftharpoons nB(g)\)</p>
+								total moles increase if dissociation occurs.
+							</li>
+							<li>
+								For \(N_2O_4(g)\rightleftharpoons 2NO_2(g)\), increase in moles
+								means:
+								<ul>
+									<li>low pressure favours dissociation,</li>
+									<li>high pressure suppresses dissociation.</li>
+								</ul>
+							</li>
+							<li>
+								Here \(\Delta n = 2-1 = 1\), so \(K_p\) naturally gets linked
+								with total pressure \(p\).
+							</li>
+						</ul>
+
+						<p><strong>Useful equilibrium table:</strong></p>
+						<ul>
+							<li>
+								<pre>
+\(N_2O_4(g) \rightleftharpoons 2NO_2(g)\)
+
+Initial       1        0
+Change      \(-\alpha\)  \(+2\alpha\)
+Equilibrium \(1-\alpha\) \(2\alpha\)
+
+Total moles at equilibrium = \(1+\alpha\)
+      </pre
+								>
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								For \(N_2O_4 \rightleftharpoons 2NO_2\), start with \(1\) mole.
+							</li>
+							<li>
+								Immediately write equilibrium moles as:
+								<p>\(1-\alpha,\ 2\alpha,\ 1+\alpha\)</p>
+							</li>
+							<li>
+								Then partial pressures become:
+								<p>
+									\(p_{N_2O_4}=\frac{1-\alpha}{1+\alpha}p,\quad
+									p_{NO_2}=\frac{2\alpha}{1+\alpha}p\)
+								</p>
+							</li>
+							<li>
+								Substituting into \(K_p=\frac{(p_{NO_2})^2}{p_{N_2O_4}}\) always
+								gives:
+								<p>\(K_p=\frac{4\alpha^2p}{1-\alpha^2}\)</p>
+							</li>
+							<li>
+								From this, solve directly:
+								<p>\(\alpha^2=\frac{K_p/p}{4+K_p/p}\)</p>
+							</li>
+							<li>
+								Since the options involve square root, the correct answer must
+								contain \(\sqrt{\phantom{x}}\), so that already eliminates (a)
+								and (b).
+							</li>
+						</ul>
+
+						<p><strong>Intuitive check:</strong></p>
+						<ul>
+							<li>\(\alpha\) must lie between \(0\) and \(1\).</li>
+							<li>
+								The expression in option (c) always stays physically sensible.
+							</li>
+							<li>
+								If pressure \(p\) increases, \(\frac{K_p}{p}\) decreases, so
+								\(\alpha\) decreases.
+							</li>
+							<li>
+								That matches Le Chatelier’s principle, because higher pressure
+								opposes the side with more gas moles.
+							</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Using equilibrium moles directly as partial pressures without
+								dividing by total moles.
+							</li>
+							<li>
+								Forgetting total moles at equilibrium is \(1+\alpha\), not
+								\(1+2\alpha\).
+							</li>
+							<li>Missing the square while substituting \((p_{NO_2})^2\).</li>
+							<li>
+								Forgetting that \(K_p\) depends on partial pressures, not mole
+								numbers directly.
+							</li>
+							<li>
+								Dropping the square root at the end and writing \(\alpha\)
+								instead of \(\alpha^2\).
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Equilibrium</li>
+							<li>
+								<strong>Topic:</strong> Chemical equilibrium in gaseous systems
+							</li>
+							<li>
+								<strong>Subtopic:</strong> Degree of dissociation and relation
+								between \(\alpha\), \(K_p\), and total pressure
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>
+							For \(N_2O_4(g)\rightleftharpoons 2NO_2(g)\), let initial moles of
+							\(N_2O_4\) be \(1\) and degree of dissociation be \(\alpha\).
+						</p>
+						<p>Then at equilibrium:</p>
+						<p>\(N_2O_4=1-\alpha,\quad NO_2=2\alpha\)</p>
+						<p>Total moles \(=1+\alpha\)</p>
+						<p>Hence:</p>
+						<p>
+							\(p_{N_2O_4}=\frac{1-\alpha}{1+\alpha}p,\quad
+							p_{NO_2}=\frac{2\alpha}{1+\alpha}p\)
+						</p>
+						<p>Now:</p>
+						<p>\(K_p=\frac{(p_{NO_2})^2}{p_{N_2O_4}}\)</p>
+						<p>
+							\(K_p=\frac{\left(\frac{2\alpha}{1+\alpha}p\right)^2}{\left(\frac{1-\alpha}{1+\alpha}p\right)}\)
+						</p>
+						<p>\(K_p=\frac{4\alpha^2p}{1-\alpha^2}\)</p>
+						<p>\(K_p(1-\alpha^2)=4\alpha^2p\)</p>
+						<p>\(K_p=\alpha^2(K_p+4p)\)</p>
+						<p>\(\alpha^2=\frac{K_p}{K_p+4p}=\frac{K_p/p}{4+\frac{K_p}{p}}\)</p>
+						<p>Therefore:</p>
+						<p>\(\alpha=\left(\frac{K_p/p}{4+\frac{K_p}{p}}\right)^{1/2}\)</p>
+						<p><strong>\(\boxed{(c)}\)</strong></p>
+
+						<p><strong>Quick cheatsheet:</strong></p>
+						<ul>
+							<li><strong>Partial pressure:</strong> \(p_i=x_i p\)</li>
+							<li>
+								<strong
+									>For \(A \rightleftharpoons 2B\) with initial 1 mole of
+									\(A\):</strong
+								>
+								<p>equilibrium moles \(=1-\alpha,\ 2\alpha\)</p>
+							</li>
+							<li><strong>Total moles:</strong> \(1+\alpha\)</li>
+							<li>
+								<strong>Key formula here:</strong>
+								<p>\(K_p=\frac{4\alpha^2p}{1-\alpha^2}\)</p>
+							</li>
+							<li>
+								<strong>Hence:</strong>
+								<p>
+									\(\alpha=\left(\frac{K_p/p}{4+\frac{K_p}{p}}\right)^{1/2}\)
+								</p>
+							</li>
+							<li>
+								<strong>Pressure effect:</strong> higher \(p \Rightarrow\) lower
+								dissociation for this reaction
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -2403,10 +2701,208 @@ This is the basic idea for \(\mathrm{SO_2}\) and \(\mathrm{O_3}\).
 			<!--Start Q131-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q131">Q 131 here</button>
+					<button class="accordion-button" id="Q131">
+						<button class="accordion-button" id="Q131">
+							Q 131. Oxidation state of hydrogen in compound \(X\) is \(-1\) and
+							in compound \(Y\) is \(+1\). \(X\) and \(Y\) are respectively
+							<ul>
+								<li>(a) \(\mathrm{LiAlH_4, H_2O}\)</li>
+								<li>(b) \(\mathrm{NH_3, NaH}\)</li>
+								<li>(c) \(\mathrm{CH_4, H_2O}\)</li>
+								<li>(d) \(\mathrm{H_2S, NaBH_4}\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((a)\ \mathrm{LiAlH_4,\ H_2O}\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+						<p>
+							We need the compound \(X\) in which hydrogen has oxidation state
+							\(-1\), and the compound \(Y\) in which hydrogen has oxidation
+							state \(+1\).
+						</p>
+
+						<ol>
+							<li>
+								<strong
+									>Recall the basic oxidation-state rule for hydrogen</strong
+								>
+								<ul>
+									<li>
+										In most compounds, hydrogen has oxidation state \(+1\).
+									</li>
+									<li>
+										In metal hydrides, hydrogen has oxidation state \(-1\).
+									</li>
+								</ul>
+								<p>This is the key NCERT/JEE idea being tested.</p>
+							</li>
+
+							<li>
+								<strong>Check \(\mathrm{LiAlH_4}\)</strong>
+								<p>Let oxidation state of each hydrogen be \(x\).</p>
+								<p>For neutral \(\mathrm{LiAlH_4}\):</p>
+								<p>\((+1) + (+3) + 4x = 0\)</p>
+								<p>\(4 + 4x = 0\)</p>
+								<p>\(x = -1\)</p>
+								<p>So in \(\mathrm{LiAlH_4}\), hydrogen is \(-1\).</p>
+							</li>
+
+							<li>
+								<strong>Check \(\mathrm{H_2O}\)</strong>
+								<p>Let oxidation state of hydrogen be \(x\).</p>
+								<p>For neutral \(\mathrm{H_2O}\):</p>
+								<p>\(2x + (-2) = 0\)</p>
+								<p>\(2x = 2\)</p>
+								<p>\(x = +1\)</p>
+								<p>So in \(\mathrm{H_2O}\), hydrogen is \(+1\).</p>
+							</li>
+
+							<li>
+								<strong>Therefore</strong>
+								<p>\(X = \mathrm{LiAlH_4}\) and \(Y = \mathrm{H_2O}\)</p>
+								<p>Hence the correct option is <strong>\((a)\)</strong>.</p>
+							</li>
+						</ol>
+
+						<p><strong>Why the other options fail:</strong></p>
 						<ul>
-							<li id="A131">Ans 131 here</li>
+							<li>
+								<strong>\((b)\ \mathrm{NH_3,\ NaH}\)</strong>
+								<p>In \(\mathrm{NH_3}\), hydrogen is \(+1\), not \(-1\).</p>
+								<p>In \(\mathrm{NaH}\), hydrogen is \(-1\), not \(+1\).</p>
+								<p>So the order is wrong.</p>
+							</li>
+							<li>
+								<strong>\((c)\ \mathrm{CH_4,\ H_2O}\)</strong>
+								<p>
+									In \(\mathrm{CH_4}\), hydrogen is \(+1\), because hydrogen
+									attached to a non-metal generally has \(+1\).
+								</p>
+								<p>So \(X\) is not correct.</p>
+							</li>
+							<li>
+								<strong>\((d)\ \mathrm{H_2S,\ NaBH_4}\)</strong>
+								<p>In \(\mathrm{H_2S}\), hydrogen is \(+1\), not \(-1\).</p>
+								<p>In \(\mathrm{NaBH_4}\), hydrogen is \(-1\), not \(+1\).</p>
+								<p>Again the order is wrong.</p>
+							</li>
+						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>
+								Hydrogen usually shows two common oxidation states:
+								<p>\(+1\) and \(-1\)</p>
+							</li>
+							<li>
+								<strong>Hydrogen is \(+1\)</strong> when bonded to more
+								electronegative non-metals such as:
+								<p>\(\mathrm{O,\ N,\ S,\ Cl}\)</p>
+								<p>Examples: \(\mathrm{H_2O,\ NH_3,\ HCl,\ H_2S}\)</p>
+							</li>
+							<li>
+								<strong>Hydrogen is \(-1\)</strong> in ionic or covalent
+								hydrides of electropositive elements / metals.
+								<p>Examples: \(\mathrm{NaH,\ CaH_2,\ LiAlH_4,\ NaBH_4}\)</p>
+							</li>
+							<li>
+								In oxidation-number questions, first identify:
+								<p>
+									whether hydrogen is bonded to a metal/electropositive element
+									or to a non-metal.
+								</p>
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								Do <strong>not</strong> start calculating every option in full.
+							</li>
+							<li>
+								First use the shortcut:
+								<p><strong>Metal hydride \(\Rightarrow\) \(H = -1\)</strong></p>
+								<p>
+									<strong
+										>Non-metal hydride / common covalent compound
+										\(\Rightarrow\) \(H = +1\)</strong
+									>
+								</p>
+							</li>
+							<li>
+								So immediately:
+								<p>
+									\(\mathrm{LiAlH_4}\) behaves as a hydride \(\Rightarrow H =
+									-1\)
+								</p>
+								<p>
+									\(\mathrm{H_2O}\) is a normal covalent compound \(\Rightarrow
+									H = +1\)
+								</p>
+							</li>
+							<li>Hence \((a)\) can be identified very quickly.</li>
+							<li>
+								Use full oxidation-number calculation only to confirm if needed.
+							</li>
+						</ul>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li>
+								<strong>Chapter:</strong> Classification of Elements and
+								Periodicity in Properties / Basic Principles of Chemistry
+							</li>
+							<li><strong>Topic:</strong> Oxidation number</li>
+							<li>
+								<strong>Subtopic:</strong> Oxidation state of hydrogen in
+								hydrides and covalent compounds
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>
+							In metal hydrides, hydrogen has oxidation state \(-1\), while in
+							most covalent compounds it has oxidation state \(+1\).
+						</p>
+						<p>For \(\mathrm{LiAlH_4}\):</p>
+						<p>\((+1) + (+3) + 4x = 0\)</p>
+						<p>\(x = -1\)</p>
+						<p>For \(\mathrm{H_2O}\):</p>
+						<p>\(2x + (-2) = 0\)</p>
+						<p>\(x = +1\)</p>
+						<p>
+							Therefore, \(X = \mathrm{LiAlH_4}\) and \(Y = \mathrm{H_2O}\).
+						</p>
+						<p><strong>\(\boxed{(a)\ \mathrm{LiAlH_4,\ H_2O}}\)</strong></p>
+
+						<p><strong>Quick cheatsheet:</strong></p>
+						<ul>
+							<li>
+								<strong>Hydrogen in most compounds:</strong>
+								<p>\(+1\)</p>
+							</li>
+							<li>
+								<strong>Hydrogen in metal hydrides:</strong>
+								<p>\(-1\)</p>
+							</li>
+							<li>
+								<strong>Examples with \(H = +1\):</strong>
+								<p>\(\mathrm{H_2O,\ NH_3,\ CH_4,\ H_2S}\)</p>
+							</li>
+							<li>
+								<strong>Examples with \(H = -1\):</strong>
+								<p>\(\mathrm{NaH,\ CaH_2,\ LiAlH_4,\ NaBH_4}\)</p>
+							</li>
+							<li>
+								<strong>Fast recognition rule:</strong>
+								<p>\(H\) with non-metals \(\Rightarrow +1\)</p>
+								<p>
+									\(H\) with electropositive elements / hydrides \(\Rightarrow
+									-1\)
+								</p>
+							</li>
 						</ul>
 					</div>
 				</div>
