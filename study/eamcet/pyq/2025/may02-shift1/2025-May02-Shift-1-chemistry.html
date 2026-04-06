@@ -2182,10 +2182,205 @@ This is the basic idea for \(\mathrm{SO_2}\) and \(\mathrm{O_3}\).
 			<!--Start Q129-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q129">Q 129 here</button>
+					<button class="accordion-button" id="Q129">
+						<button class="accordion-button" id="Q129">
+							Q 129. At 298 K, the enthalpy change ( in kJ ) for the reaction
+							given below is \(CH_4(g) + O_2(g) \longrightarrow C(s) +
+							2H_2O(l)\) Given: \(H_2(g) + \frac{1}{2}O_2(g) \longrightarrow
+							H_2O(l)\) ; \(\Delta H^\circ = -286\ \text{kJ}\) \(C(s) + O_2(g)
+							\longrightarrow CO_2(g)\) ; \(\Delta H^\circ = -394\ \text{kJ}\)
+							\(CH_4(g) + 2O_2(g) \longrightarrow CO_2(g) + 2H_2O(l)\) ;
+							\(\Delta H^\circ = -890\ \text{kJ}\)
+							<ul>
+								<li>(a) \(+496\)</li>
+								<li>(b) \(-496\)</li>
+								<li>(c) \(-1284\)</li>
+								<li>(d) \(+680\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
+						<p><strong>Answer: \((b)\ -496\ \text{kJ}\)</strong></p>
+
+						<p><strong>Solution:</strong></p>
+
+						<p>Required reaction:</p>
+						<p>\(CH_4(g) + O_2(g) \longrightarrow C(s) + 2H_2O(l)\)</p>
+
+						<p>
+							We use <strong>Hess’s law</strong>: if equations are added, their
+							enthalpy changes are also added.
+						</p>
+
+						<ol>
+							<li>
+								<strong>Write the given useful equation</strong>
+								<p>\(CH_4(g) + 2O_2(g) \longrightarrow CO_2(g) + 2H_2O(l)\)</p>
+								<p>\(\Delta H^\circ = -890\ \text{kJ}\)</p>
+							</li>
+
+							<li>
+								<strong>Reverse the carbon combustion equation</strong>
+								<p>Given:</p>
+								<p>\(C(s) + O_2(g) \longrightarrow CO_2(g)\)</p>
+								<p>\(\Delta H^\circ = -394\ \text{kJ}\)</p>
+								<p>On reversing:</p>
+								<p>\(CO_2(g) \longrightarrow C(s) + O_2(g)\)</p>
+								<p>\(\Delta H^\circ = +394\ \text{kJ}\)</p>
+							</li>
+
+							<li>
+								<strong>Add the two equations</strong>
+								<p>\(CH_4(g) + 2O_2(g) \longrightarrow CO_2(g) + 2H_2O(l)\)</p>
+								<p>\(CO_2(g) \longrightarrow C(s) + O_2(g)\)</p>
+								<p>After cancellation of \(CO_2(g)\):</p>
+								<p>
+									\(CH_4(g) + 2O_2(g) \longrightarrow C(s) + 2H_2O(l) + O_2(g)\)
+								</p>
+								<p>Cancel one \(O_2(g)\) from both sides:</p>
+								<p>\(CH_4(g) + O_2(g) \longrightarrow C(s) + 2H_2O(l)\)</p>
+							</li>
+
+							<li>
+								<strong>Add enthalpy changes</strong>
+								<p>\(\Delta H^\circ = -890 + 394\)</p>
+								<p>\(\Delta H^\circ = -496\ \text{kJ}\)</p>
+							</li>
+						</ol>
+
+						<p><strong>Therefore:</strong></p>
+						<p>\(\boxed{(b)\ -496\ \text{kJ}}\)</p>
+
+						<p><strong>Why this method works:</strong></p>
 						<ul>
-							<li id="A129">Ans 129 here</li>
+							<li>
+								Enthalpy is a <strong>state function</strong>, so it depends
+								only on initial and final states, not on the path.
+							</li>
+							<li>
+								That is why we can manipulate chemical equations algebraically
+								and add their \(\Delta H\) values accordingly.
+							</li>
+							<li>
+								If an equation is <strong>reversed</strong>, the sign of
+								\(\Delta H\) changes.
+							</li>
+							<li>
+								If an equation is multiplied by a number, \(\Delta H\) is
+								multiplied by the same number.
+							</li>
+						</ul>
+
+						<p><strong>JEE / NCERT takeaway:</strong></p>
+						<ul>
+							<li>
+								<strong>Hess’s law:</strong> total enthalpy change for a
+								reaction is the same whether it occurs in one step or several
+								steps.
+							</li>
+							<li>
+								For combustion and formation problems, the fastest approach is
+								usually to:
+								<ul>
+									<li>identify the target reaction,</li>
+									<li>reverse or multiply suitable given equations,</li>
+									<li>cancel common species carefully.</li>
+								</ul>
+							</li>
+							<li>
+								Standard enthalpy of formation of an element in its standard
+								state is taken as zero, but here direct equation manipulation is
+								enough.
+							</li>
+						</ul>
+
+						<p><strong>1-minute solving trick:</strong></p>
+						<ul>
+							<li>
+								Notice that the target reaction is almost the methane combustion
+								equation, except that \(CO_2\) is replaced by \(C\).
+							</li>
+							<li>
+								So mentally do:
+								<p>
+									\(\text{methane combustion} + \text{reverse of } \big(C + O_2
+									\to CO_2\big)\)
+								</p>
+							</li>
+							<li>
+								That gives immediately:
+								<p>\(-890 + 394 = -496\ \text{kJ}\)</p>
+							</li>
+							<li>
+								The first given equation involving \(H_2\) and \(H_2O\) is extra
+								here; you do not actually need it.
+							</li>
+						</ul>
+
+						<p><strong>Common mistakes to avoid:</strong></p>
+						<ol>
+							<li>
+								Forgetting to change \(\Delta H\) sign when reversing \(C(s) +
+								O_2(g) \to CO_2(g)\).
+							</li>
+							<li>
+								Adding equations without cancelling common species like \(CO_2\)
+								and \(O_2\).
+							</li>
+							<li>
+								Using all given equations compulsorily. In this question, one of
+								them is not needed.
+							</li>
+							<li>
+								Missing the fact that the final answer stays
+								<strong>negative</strong>.
+							</li>
+						</ol>
+
+						<p><strong>Chapter / Topic / Subtopic:</strong></p>
+						<ul>
+							<li><strong>Chapter:</strong> Thermodynamics</li>
+							<li><strong>Topic:</strong> Enthalpy change of reaction</li>
+							<li>
+								<strong>Subtopic:</strong> Hess’s law and enthalpy calculation
+								by equation manipulation
+							</li>
+						</ul>
+
+						<p><strong>Final exam-style answer:</strong></p>
+						<p>
+							\(CH_4(g) + 2O_2(g) \longrightarrow CO_2(g) + 2H_2O(l)\), \(\Delta
+							H^\circ = -890\ \text{kJ}\)
+						</p>
+						<p>Reverse:</p>
+						<p>
+							\(C(s) + O_2(g) \longrightarrow CO_2(g)\), \(\Delta H^\circ =
+							-394\ \text{kJ}\)
+						</p>
+						<p>to get</p>
+						<p>
+							\(CO_2(g) \longrightarrow C(s) + O_2(g)\), \(\Delta H^\circ =
+							+394\ \text{kJ}\)
+						</p>
+						<p>Adding:</p>
+						<p>\(CH_4(g) + O_2(g) \longrightarrow C(s) + 2H_2O(l)\)</p>
+						<p>\(\Delta H^\circ = -890 + 394 = -496\ \text{kJ}\)</p>
+						<p><strong>\(\boxed{(b)\ -496\ \text{kJ}}\)</strong></p>
+
+						<p><strong>Quick cheatsheet:</strong></p>
+						<ul>
+							<li>If equation is reversed: \(\Delta H\) sign changes.</li>
+							<li>
+								If equation is multiplied by \(n\): \(\Delta H\) also becomes
+								\(n\Delta H\).
+							</li>
+							<li>
+								On adding equations, cancel identical species on both sides.
+							</li>
+							<li>
+								For Hess’s law questions, always compare
+								<strong>target reaction</strong> with the given reactions first.
+							</li>
 						</ul>
 					</div>
 				</div>
