@@ -4366,10 +4366,213 @@
 			<!--Start Q145-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q145">Q 145 here</button>
+					<button class="accordion-button" id="Q145">
+						<button class="accordion-button" id="Q145">
+							Q 145. The reaction, \(2A \rightarrow 2B + C\) has a rate constant
+							of \(1.2 \times 10^{-2} \, \text{s}^{-1}\). Which of the following
+							is correct?
+							<ul>
+								<li>
+									(a) Plot of \((A)\) vs \(\dfrac{1}{t}\), will be straight line
+								</li>
+								<li>
+									(b) Plot of \(\dfrac{1}{(A)}\) vs \(t^2\) will be a straight
+									line
+								</li>
+								<li>
+									(c) Plot of \(\ln (A)\) vs \(t\) will be a straight line
+								</li>
+								<li>(d) Plot of \((A)\) vs \(t^2\) will be a straight line</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
 						<ul>
-							<li id="A145">Ans 145 here</li>
+							<li>
+								Correct answer:
+								<b>(c) Plot of \(\ln (A)\) vs \(t\) will be a straight line</b>
+							</li>
+							<li>
+								Explanation:
+								<ul>
+									<li>
+										The unit of the rate constant immediately tells us the order
+										of the reaction. Since the given unit is \(\text{s}^{-1}\),
+										the reaction is first order. For a first-order reaction, the
+										graph of \(\ln (A)\) versus time \(t\) is a straight line
+										with negative slope.
+									</li>
+								</ul>
+							</li>
+							<li>
+								<b>First-order linear plot</b><br />
+								<img
+									src="images/chem_q145a.png"
+									alt="First order reaction graph showing ln(A) versus time as a straight line with negative slope"
+									style="width: 25%; height: auto; margin-right: 10px"
+								/>
+							</li>
+							<li>
+								Step-by-step explanation:
+								<ul>
+									<li>
+										The question gives the rate constant:
+										<ul>
+											<li>\(k = 1.2 \times 10^{-2} \, \text{s}^{-1}\)</li>
+										</ul>
+									</li>
+									<li>
+										Now recall the general unit of rate constant for an \(n\)-th
+										order reaction:
+										<ul>
+											<li>\(k = (\text{mol L}^{-1})^{1-n} \text{s}^{-1}\)</li>
+										</ul>
+									</li>
+									<li>
+										Here, the unit has only \(\text{s}^{-1}\), with no
+										concentration term.
+									</li>
+									<li>
+										That happens only when:
+										<ul>
+											<li>\(1 - n = 0\)</li>
+											<li>So, \(n = 1\)</li>
+										</ul>
+									</li>
+									<li>Therefore, the reaction is first order.</li>
+									<li>
+										For a first-order reaction, the integrated rate law is:
+										<ul>
+											<li>\(\ln (A) = \ln (A)_0 - kt\)</li>
+										</ul>
+									</li>
+									<li>
+										This is of the form:
+										<ul>
+											<li>\(y = c + mx\)</li>
+										</ul>
+									</li>
+									<li>
+										So, if we plot \(\ln (A)\) on the y-axis and \(t\) on the
+										x-axis, we get a straight line.
+									</li>
+									<li>Its slope is \(-k\), so the line slopes downward.</li>
+								</ul>
+							</li>
+							<li>
+								Concept used / theory behind it:
+								<ul>
+									<li>
+										In chemical kinetics, the order of reaction is often
+										identified from the unit of \(k\).
+									</li>
+									<li>
+										Important standard results:
+										<ul>
+											<li>
+												zero order: \(k\) has unit \(\text{mol L}^{-1}
+												\text{s}^{-1}\)
+											</li>
+											<li>first order: \(k\) has unit \(\text{s}^{-1}\)</li>
+											<li>
+												second order: \(k\) has unit \(\text{L mol}^{-1}
+												\text{s}^{-1}\)
+											</li>
+										</ul>
+									</li>
+									<li>
+										For first-order reactions, the integrated equation can be
+										written as:
+										<ul>
+											<li>\(\ln (A) = \ln (A)_0 - kt\)</li>
+											<li>or \(2.303 \log \dfrac{(A)_0}{(A)} = kt\)</li>
+										</ul>
+									</li>
+									<li>
+										So the concentration does not decrease linearly with time,
+										but \(\ln (A)\) does.
+									</li>
+									<li>
+										This is one of the most common graph-based questions in
+										kinetics.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Why the correct option is right:
+								<ul>
+									<li>
+										Option (c) is correct because first-order reactions always
+										give a straight-line plot for \(\ln (A)\) versus \(t\).
+									</li>
+									<li>
+										The slope of that line is \(-k\), and the intercept is \(\ln
+										(A)_0\).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Why other options are wrong or less suitable:
+								<ul>
+									<li>
+										Option (a) is wrong because \((A)\) vs \(\dfrac{1}{t}\) is
+										not the standard linear form for a first-order reaction.
+									</li>
+									<li>
+										Option (b) is wrong because \(\dfrac{1}{(A)}\) vs \(t\) is
+										the straight-line form for a second-order reaction, not
+										\(\dfrac{1}{(A)}\) vs \(t^2\).
+									</li>
+									<li>
+										Option (d) is wrong because \((A)\) vs \(t\) is linear for a
+										zero-order reaction, not \((A)\) vs \(t^2\), and certainly
+										not for first order.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Exam tip / shortcut / elimination clue:
+								<ul>
+									<li>
+										The fastest shortcut is:
+										<ul>
+											<li>\(\text{s}^{-1} \Rightarrow\) first order</li>
+											<li>
+												first order \(\Rightarrow \ln (A)\) vs \(t\) is straight
+												line
+											</li>
+										</ul>
+									</li>
+									<li>
+										Memorize the three famous graph forms:
+										<ul>
+											<li>zero order: \((A)\) vs \(t\)</li>
+											<li>first order: \(\ln (A)\) vs \(t\)</li>
+											<li>second order: \(\dfrac{1}{(A)}\) vs \(t\)</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								Final result:
+								<ul>
+									<li>
+										The given reaction is first order, so the correct
+										straight-line plot is <b>\(\ln (A)\) vs \(t\)</b>.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Chapter / topic / subtopic:
+								<ul>
+									<li>Chapter: Chemical Kinetics</li>
+									<li>Topic: Order of reaction</li>
+									<li>
+										Subtopic: Unit of rate constant and integrated rate law
+										graphs
+									</li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -4379,10 +4582,166 @@
 			<!--Start Q146-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q146">Q 146 here</button>
+					<button class="accordion-button" id="Q146">
+						<button class="accordion-button" id="Q146">
+							Q 146. Which of the following does not show Tyndall effect?
+							<ul>
+								<li>(a) Clouds</li>
+								<li>(b) Milk</li>
+								<li>(c) Sugar solution</li>
+								<li>(d) Suspension</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
 						<ul>
-							<li id="A146">Ans 146 here</li>
+							<li>Correct answer: <b>(c) Sugar solution</b></li>
+							<li>
+								Explanation:
+								<ul>
+									<li>
+										Tyndall effect is the scattering of light by colloidal
+										particles. A sugar solution is a true solution, not a
+										colloid, so it does not show Tyndall effect.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Step-by-step explanation:
+								<ul>
+									<li>
+										The question asks which system does <b>not</b> show Tyndall
+										effect.
+									</li>
+									<li>
+										Tyndall effect happens when light falls on particles that
+										are large enough to scatter light but still small enough to
+										remain dispersed.
+									</li>
+									<li>This behavior is characteristic of <b>colloids</b>.</li>
+									<li>
+										Now check each option:
+										<ul>
+											<li>
+												clouds behave like colloidal systems and scatter light
+											</li>
+											<li>milk is a colloid and shows scattering of light</li>
+											<li>
+												suspensions also scatter light strongly because their
+												particles are even larger
+											</li>
+											<li>
+												sugar solution is a true solution, where sugar particles
+												are at molecular level, so they do not scatter visible
+												light
+											</li>
+										</ul>
+									</li>
+									<li>Hence, sugar solution does not show Tyndall effect.</li>
+								</ul>
+							</li>
+							<li>
+								Concept used / theory behind it:
+								<ul>
+									<li>
+										Dispersed systems are commonly divided into:
+										<ul>
+											<li>true solutions</li>
+											<li>colloids</li>
+											<li>suspensions</li>
+										</ul>
+									</li>
+									<li>
+										In a true solution, solute particles are extremely small,
+										usually less than \(1 \, \text{nm}\), so they do not scatter
+										light.
+									</li>
+									<li>
+										In colloids, particle size is intermediate, and these
+										particles scatter light. That scattering is called the
+										<b>Tyndall effect</b>.
+									</li>
+									<li>
+										Suspensions have even larger particles and also make the
+										path of light visible.
+									</li>
+									<li>
+										For entrance exams, the standard statement is: Tyndall
+										effect is a characteristic property of colloidal
+										dispersions, while true solutions do not show it.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Why the correct option is right:
+								<ul>
+									<li>
+										Option (c) is right because sugar dissolved in water forms a
+										true solution.
+									</li>
+									<li>
+										The dissolved sugar particles are too small to scatter
+										light, so no Tyndall effect is observed.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Why other options are wrong or less suitable:
+								<ul>
+									<li>
+										Option (a) clouds show light scattering, so they do show the
+										effect.
+									</li>
+									<li>
+										Option (b) milk is a classic colloid and is a standard
+										example of Tyndall effect.
+									</li>
+									<li>
+										Option (d) suspension also makes light path visible due to
+										large dispersed particles, so it is not the correct answer
+										here.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Exam tip / shortcut / elimination clue:
+								<ul>
+									<li>
+										Quick memory rule:
+										<ul>
+											<li>true solution \(\Rightarrow\) no Tyndall effect</li>
+											<li>colloid \(\Rightarrow\) shows Tyndall effect</li>
+										</ul>
+									</li>
+									<li>
+										Whenever you see sugar solution, salt solution, or urea
+										solution, think <b>true solution</b>, so no Tyndall effect.
+									</li>
+									<li>
+										Whenever you see milk, fog, smoke, or clouds, think
+										<b>colloid</b>.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Final result:
+								<ul>
+									<li>
+										The system that does not show Tyndall effect is
+										<b>sugar solution</b>.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Chapter / topic / subtopic:
+								<ul>
+									<li>Chapter: Surface Chemistry</li>
+									<li>Topic: Colloids</li>
+									<li>
+										Subtopic: Tyndall effect and comparison with true solutions
+									</li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -4392,7 +4751,20 @@
 			<!--Start Q147-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q147">Q 147 here</button>
+					<button class="accordion-button" id="Q147">
+						<button class="accordion-button" id="Q147">
+							Q 147. A nitrogen oxide that forms “in situ” when dilute
+							\(FeSO_4\) is treated with aqueous solution of nitrate ion and
+							then careful addition of conc. \(H_2SO_4\) along the sides of test
+							tube, is
+							<ul>
+								<li>(a) \(NO_2\)</li>
+								<li>(b) \(NO\)</li>
+								<li>(c) \(N_2O\)</li>
+								<li>(d) \(N_2O_3\)</li>
+							</ul>
+						</button>
+					</button>
 					<div class="accordion-content">
 						<ul>
 							<li id="A147">Ans 147 here</li>
