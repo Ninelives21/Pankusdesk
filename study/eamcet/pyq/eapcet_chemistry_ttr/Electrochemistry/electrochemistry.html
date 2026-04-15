@@ -40,10 +40,213 @@
 					High-value revision
 				</button>
 				<div class="accordion-content">
+					<!--START Exam map / pattern map -->
 					<ul>
-						<li>TTR imp 1</li>
-						<li>TTR imp 2</li>
+						<strong>Exam map / pattern map</strong>
+						<li>
+							This combined topic is dominated by two fast clusters:
+							electrochemistry numericals and first-order kinetics pattern
+							recognition.
+						</li>
+						<li>
+							Electrochemistry PYQs repeatedly test Nernst equation,
+							electrolysis products, conductance/molar conductivity, Faraday
+							deposition, and \( \Delta G = -nFE \).
+						</li>
+						<li>
+							Kinetics PYQs repeatedly test first-order triggers: half-life
+							independence, straight-line plots, Arrhenius slope, pressure-time
+							conversion, and log-form integrated law.
+						</li>
+						<li>
+							If the question mentions half-life independent of concentration,
+							immediately think <strong>first order</strong>.
+						</li>
+						<li>
+							If weak electrolyte conductivity is asked, immediately connect \(
+							\Lambda_m = \alpha \Lambda_m^\infty \) and Ostwald-type
+							approximation.
+						</li>
 					</ul>
+					<!--END Exam map / pattern map -->
+					<br />
+
+					<!--START Core electrochemistry formulas -->
+					<ul>
+						<strong>Core electrochemistry formulas</strong>
+						<li>
+							Nernst equation at \(298\ \mathrm{K}\): \( E = E^\circ -
+							\dfrac{0.0591}{n}\log Q \).
+						</li>
+						<li>Cell free energy: \( \Delta G = -nFE \).</li>
+						<li>
+							Faraday deposition relation: \( m = ZIt \), so electrochemical
+							equivalent \( Z = \dfrac{m}{It} \).
+						</li>
+						<li>
+							Conductivity bridge: \( \Lambda_m = \kappa \dfrac{1000}{C} \) in
+							\( \mathrm{cm^3} \) units, or use consistent SI form with cell
+							constant.
+						</li>
+						<li>
+							Resistance and conductivity: \( \kappa = (\text{cell constant})
+							\times \dfrac{1}{R} \).
+						</li>
+						<li>
+							Weak electrolyte: \( \Lambda_m = \alpha \Lambda_m^\infty \).
+						</li>
+					</ul>
+					<!--END Core electrochemistry formulas -->
+					<br />
+
+					<!--START Core kinetics formulas -->
+					<ul>
+						<strong>Core kinetics formulas</strong>
+						<li>
+							First-order integrated law: \( k = \dfrac{2.303}{t}\log
+							\dfrac{a}{a-x} \).
+						</li>
+						<li>
+							First-order half-life: \( t_{1/2} = \dfrac{0.693}{k} \), so it is
+							independent of initial concentration.
+						</li>
+						<li>Zero-order integrated law: \( [A]_t = [A]_0 - kt \).</li>
+						<li>Zero-order half-life: \( t_{1/2} = \dfrac{[A]_0}{2k} \).</li>
+						<li>
+							Arrhenius form in common log: \( \log k = \log A -
+							\dfrac{E_a}{2.303RT} \).
+						</li>
+						<li>
+							For \(\ln k\) vs \(1/T\), slope \(= -\dfrac{E_a}{R}\). For \(\log
+							k\) vs \(1/T\), slope \(= -\dfrac{E_a}{2.303R}\).
+						</li>
+					</ul>
+					<!--END Core kinetics formulas -->
+					<br />
+
+					<!--START Fast comparison and trigger rules -->
+					<ul>
+						<strong>Fast comparison and trigger rules</strong>
+						<li>
+							Half-life independent of starting concentration \(\Rightarrow\)
+							first order.
+						</li>
+						<li>
+							\([R]\) vs time is <strong>not</strong> linear for first order,
+							but \(\ln [R]\) vs time is linear.
+						</li>
+						<li>
+							\(\log \dfrac{a}{a-x}\) vs time passing through origin
+							\(\Rightarrow\) first-order plot.
+						</li>
+						<li>
+							If gaseous decomposition changes total pressure, convert pressure
+							change to reacted amount before using first-order law.
+						</li>
+						<li>
+							In electrolysis with inert Pt electrodes, aqueous \(CuSO_4\) gives
+							Cu at cathode and \(O_2\) at anode.
+						</li>
+						<li>
+							In molten NaCl electrolysis, \(Cl_2\) is liberated at anode.
+						</li>
+					</ul>
+					<!--END Fast comparison and trigger rules -->
+					<br />
+
+					<!--START Question-to-formula mapping -->
+					<ul>
+						<strong>Question-to-formula mapping</strong>
+						<li>
+							If a cell emf and concentrations are given, write anode/cathode
+							first, then apply Nernst.
+						</li>
+						<li>
+							If pH is hidden inside hydrogen-electrode term, convert \( [H^+]
+							\) from Nernst result to pH at the end.
+						</li>
+						<li>
+							If \(\Delta G\) is asked from a cell, find \(E\) first, then use
+							\( \Delta G=-nFE \).
+						</li>
+						<li>
+							If mass deposited, current, and time are given, use \(
+							Z=\frac{m}{It} \) directly.
+						</li>
+						<li>
+							If molar conductivity at finite concentration is asked for weak
+							acid, find \(\alpha\) from \(K_a\), then use \(
+							\Lambda_m=\alpha\Lambda_m^\infty \).
+						</li>
+						<li>
+							If first-order time ratios like \(t_{1/4}\) and \(t_{1/10}\) are
+							asked, use log expressions; do not derive from half-life
+							repeatedly.
+						</li>
+						<li>
+							If rate data doubles when one reactant doubles and doubles again
+							when the second doubles, order is first in each, second overall.
+						</li>
+					</ul>
+					<!--END Question-to-formula mapping -->
+					<br />
+
+					<!--START Common traps -->
+					<ul>
+						<strong>Common traps</strong>
+						<li>
+							Do not subtract standard potentials directly when electron counts
+							differ; use \(nE^\circ\) balancing in Latimer-type combinations.
+						</li>
+						<li>
+							Do not confuse slope rules for \(\ln\) and \(\log\) Arrhenius
+							plots.
+						</li>
+						<li>
+							Do not assume cathode always gives hydrogen in aqueous
+							electrolysis; compare discharge preference.
+						</li>
+						<li>
+							Do not use first-order half-life formula for zero-order questions.
+						</li>
+						<li>
+							Do not equate \(\Lambda_m\) and \(\Lambda_m^\infty\) for weak
+							electrolytes at ordinary concentration.
+						</li>
+						<li>
+							Do not force every grouped-list entry into this topic; a few 2022
+							links drift across neighboring topics.
+						</li>
+					</ul>
+					<!--END Common traps -->
+					<br />
+
+					<!--START Solve-fast reminders -->
+					<ul>
+						<strong>Solve-fast reminders</strong>
+						<li>
+							Nernst cell \(\Rightarrow\) write \(Q\) carefully before
+							substituting numbers.
+						</li>
+						<li>
+							Electrolysis product question \(\Rightarrow\) inert vs active
+							electrode is the first check.
+						</li>
+						<li>
+							First-order graph question \(\Rightarrow\) look for straight-line
+							forms first, not long algebra.
+						</li>
+						<li>
+							Pressure-based first-order gas question \(\Rightarrow\) convert to
+							reacted fraction, then apply log law.
+						</li>
+						<li>
+							Weak-acid conductivity question \(\Rightarrow\) \(K_a \to \alpha
+							\to \Lambda_m\).
+						</li>
+					</ul>
+					<!--END Solve-fast reminders -->
+					<br />
 				</div>
 			</div>
 		</div>
@@ -68,6 +271,7 @@
 										target="_blank"
 										>May 02 Shift 1, Question 143</a
 									>
+									— cell emf for Zn–hydrogen electrode used to calculate pH.
 								</li>
 								<li>
 									<a
@@ -76,6 +280,8 @@
 										target="_blank"
 										>May 02 Shift 1, Question 144</a
 									>
+									— identify incorrect graph for reaction with
+									concentration-independent half-life.
 								</li>
 								<li>
 									<a
@@ -84,6 +290,8 @@
 										target="_blank"
 										>May 02 Shift 2, Question 143</a
 									>
+									— electrolysis of aqueous copper sulphate between platinum
+									electrodes, identify products.
 								</li>
 								<li>
 									<a
@@ -92,6 +300,8 @@
 										target="_blank"
 										>May 02 Shift 2, Question 144</a
 									>
+									— first-order gaseous decomposition from pressure change, find
+									half-life period.
 								</li>
 								<li>
 									<a
@@ -100,6 +310,8 @@
 										target="_blank"
 										>May 03 Shift 1, Question 143</a
 									>
+									— calculate Gibbs energy change from chromium–iron galvanic
+									cell data.
 								</li>
 								<li>
 									<a
@@ -108,6 +320,8 @@
 										target="_blank"
 										>May 03 Shift 1, Question 144</a
 									>
+									— Arrhenius logarithmic equation given, determine activation
+									energy value.
 								</li>
 								<li>
 									<a
@@ -116,6 +330,8 @@
 										target="_blank"
 										>May 03 Shift 2, Question 143</a
 									>
+									— acetic acid molar conductivity from \(K_a\) and limiting
+									conductivity.
 								</li>
 								<li>
 									<a
@@ -124,6 +340,8 @@
 										target="_blank"
 										>May 03 Shift 2, Question 144</a
 									>
+									— zero-order reaction half-life used to find
+									concentration-drop time.
 								</li>
 								<li>
 									<a
@@ -132,6 +350,8 @@
 										target="_blank"
 										>May 04 Shift 1, Question 143</a
 									>
+									— molten aluminium chloride electrolysis, find aluminium mass
+									and chlorine volume.
 								</li>
 								<li>
 									<a
@@ -140,6 +360,8 @@
 										target="_blank"
 										>May 04 Shift 1, Question 144</a
 									>
+									— first-order \(\ln(R)\) versus time plot, identify
+									y-intercept.
 								</li>
 								<li>
 									<a
@@ -148,6 +370,8 @@
 										target="_blank"
 										>May 04 Shift 2, Question 143</a
 									>
+									— equilibrium constant of metal–silver cell used to find
+									\(E^\circ_{cell}\).
 								</li>
 								<li>
 									<a
@@ -156,6 +380,8 @@
 										target="_blank"
 										>May 04 Shift 2, Question 144</a
 									>
+									— first-order reaction started with different concentration,
+									compare rate constant.
 								</li>
 							</ol>
 						</li>
@@ -173,6 +399,8 @@
 										target="_blank"
 										>May 09 Shift 1, Question 143</a
 									>
+									— identify correct statements from the electrochemistry
+									assertion set.
 								</li>
 								<li>
 									<a
@@ -181,6 +409,8 @@
 										target="_blank"
 										>May 09 Shift 1, Question 144</a
 									>
+									— \(\ln k\) versus \(1/T\) slope given, find activation
+									energy.
 								</li>
 								<li>
 									<a
@@ -189,6 +419,8 @@
 										target="_blank"
 										>May 09 Shift 2, Question 143</a
 									>
+									— formic acid dissociation percentage given, find molar
+									conductivity.
 								</li>
 								<li>
 									<a
@@ -197,6 +429,8 @@
 										target="_blank"
 										>May 09 Shift 2, Question 144</a
 									>
+									— initial-rate data for \(A_2+B_2\to2AB\), infer reaction
+									order.
 								</li>
 								<li>
 									<a
@@ -205,6 +439,8 @@
 										target="_blank"
 										>May 10 Shift 1, Question 143</a
 									>
+									— molar conductivity and cell constant used to find
+									resistance.
 								</li>
 								<li>
 									<a
@@ -213,6 +449,8 @@
 										target="_blank"
 										>May 10 Shift 1, Question 144</a
 									>
+									— first-order decomposition, compare \(t_{1/4}\) and
+									\(t_{1/10}\).
 								</li>
 								<li>
 									<a
@@ -221,6 +459,8 @@
 										target="_blank"
 										>May 10 Shift 2, Question 143</a
 									>
+									— electrolysis statements on molten NaCl and aqueous
+									\(CuSO_4\).
 								</li>
 								<li>
 									<a
@@ -229,6 +469,7 @@
 										target="_blank"
 										>May 10 Shift 2, Question 144</a
 									>
+									— first-order graph slope used to calculate rate constant.
 								</li>
 								<li>
 									<a
@@ -237,6 +478,8 @@
 										target="_blank"
 										>May 11 Shift 1, Question 143</a
 									>
+									— deposited copper mass and current given, find
+									electrochemical equivalent.
 								</li>
 								<li>
 									<a
@@ -245,6 +488,8 @@
 										target="_blank"
 										>May 11 Shift 1, Question 144</a
 									>
+									— stoichiometric rate equations for \(N_2O_5\) decomposition,
+									relate constants.
 								</li>
 							</ol>
 						</li>
@@ -262,6 +507,8 @@
 										target="_blank"
 										>May 12 Shift 1, Question 141</a
 									>
+									— chlorine electrode potential maximum, determine chloride-ion
+									concentration.
 								</li>
 								<li>
 									<a
@@ -270,6 +517,8 @@
 										target="_blank"
 										>May 12 Shift 1, Question 142</a
 									>
+									— first-order diazonium decomposition, calculate time for 90%
+									completion.
 								</li>
 								<li>
 									<a
@@ -278,6 +527,8 @@
 										target="_blank"
 										>May 12 Shift 2, Question 141</a
 									>
+									— acetic acid conductivity data used to find dissociation
+									degree.
 								</li>
 								<li>
 									<a
@@ -286,6 +537,8 @@
 										target="_blank"
 										>May 12 Shift 2, Question 142</a
 									>
+									— \(\ln k\) versus \(1/T\) slope given, calculate activation
+									energy.
 								</li>
 								<li>
 									<a
@@ -294,6 +547,8 @@
 										target="_blank"
 										>May 13 Shift 1, Question 141</a
 									>
+									— weak monobasic acid conductivity from limiting conductivity
+									and dissociation.
 								</li>
 								<li>
 									<a
@@ -302,6 +557,8 @@
 										target="_blank"
 										>May 13 Shift 1, Question 142</a
 									>
+									— reaction rate doubles on heating, determine activation
+									energy.
 								</li>
 								<li>
 									<a
@@ -310,6 +567,8 @@
 										target="_blank"
 										>May 13 Shift 2, Question 141</a
 									>
+									— standard reduction potentials given, calculate \(\log K_c\)
+									value.
 								</li>
 								<li>
 									<a
@@ -318,6 +577,8 @@
 										target="_blank"
 										>May 13 Shift 2, Question 142</a
 									>
+									— zero-order concentration–time graph slope used to find
+									\(k\).
 								</li>
 								<li>
 									<a
@@ -326,6 +587,8 @@
 										target="_blank"
 										>May 14 Shift 1, Question 141</a
 									>
+									— decomposition rate law of HI given, determine units of
+									\(k\).
 								</li>
 								<li>
 									<a
@@ -334,22 +597,8 @@
 										target="_blank"
 										>May 14 Shift 1, Question 142</a
 									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2023/may14-shift2/2023-May14-Shift-2-chemistry.html#Q141"
-										class="link_no_style"
-										target="_blank"
-										>May 14 Shift 2, Question 141</a
-									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2023/may14-shift2/2023-May14-Shift-2-chemistry.html#Q142"
-										class="link_no_style"
-										target="_blank"
-										>May 14 Shift 2, Question 142</a
-									>
+									— electrolysis of \(CrCl_2\), calculate chlorine volume at
+									anode.
 								</li>
 							</ol>
 						</li>
@@ -362,35 +611,13 @@
 							<ol>
 								<li>
 									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july18-shift1/2022-July18-Shift-1-chemistry.html#Q144"
-										class="link_no_style"
-										target="_blank"
-										>July 18 Shift 1, Question 144</a
-									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july18-shift1/2022-July18-Shift-1-chemistry.html#Q145"
-										class="link_no_style"
-										target="_blank"
-										>July 18 Shift 1, Question 145</a
-									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july18-shift2/2022-July18-Shift-2-chemistry.html#Q128"
-										class="link_no_style"
-										target="_blank"
-										>July 18 Shift 2, Question 128</a
-									>
-								</li>
-								<li>
-									<a
 										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july19-shift1/2022-July19-Shift-1-chemistry.html#Q144"
 										class="link_no_style"
 										target="_blank"
 										>July 19 Shift 1, Question 144</a
 									>
+									— combine manganese reduction potentials to find \(E^\circ\)
+									for intermediate step.
 								</li>
 								<li>
 									<a
@@ -399,30 +626,8 @@
 										target="_blank"
 										>July 19 Shift 1, Question 145</a
 									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july19-shift2/2022-July19-Shift-2-chemistry.html#Q144"
-										class="link_no_style"
-										target="_blank"
-										>July 19 Shift 2, Question 144</a
-									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july19-shift2/2022-July19-Shift-2-chemistry.html#Q145"
-										class="link_no_style"
-										target="_blank"
-										>July 19 Shift 2, Question 145</a
-									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july20-shift1/2022-July20-Shift-1-chemistry.html#Q129"
-										class="link_no_style"
-										target="_blank"
-										>July 20 Shift 1, Question 129</a
-									>
+									— reaction rate constant given, identify correct straight-line
+									plot.
 								</li>
 								<li>
 									<a
@@ -431,6 +636,8 @@
 										target="_blank"
 										>July 20 Shift 1, Question 144</a
 									>
+									— choose correct acetic acid molar-conductivity versus
+									concentration graph.
 								</li>
 								<li>
 									<a
@@ -439,22 +646,8 @@
 										target="_blank"
 										>July 20 Shift 1, Question 145</a
 									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july20-shift2/2022-July20-Shift-2-chemistry.html#Q144"
-										class="link_no_style"
-										target="_blank"
-										>July 20 Shift 2, Question 144</a
-									>
-								</li>
-								<li>
-									<a
-										href="https://ninelives21.github.io/Pankusdesk/study/eamcet/pyq/2022/july20-shift2/2022-July20-Shift-2-chemistry.html#Q145"
-										class="link_no_style"
-										target="_blank"
-										>July 20 Shift 2, Question 145</a
-									>
+									— compare reaction rates using catalysts with different units
+									of \(k\).
 								</li>
 							</ol>
 						</li>
@@ -475,17 +668,252 @@
 					General theory
 				</button>
 				<div class="accordion-content">
-					<ol class="theory-list">
-						<!--START Topic 1-->
+					<!--START Electrochemical cells and emf -->
+					<ul>
+						<strong>Electrochemical cells and emf</strong>
 						<li>
-							<strong>Topic 1 </strong>
+							An electrochemical cell converts chemical energy into electrical
+							energy through a redox reaction.
+						</li>
+						<li>
+							Anode is the site of oxidation and cathode is the site of
+							reduction.
+						</li>
+						<li>
+							Standard cell potential is \( E^\circ_{\text{cell}} =
+							E^\circ_{\text{cathode}} - E^\circ_{\text{anode}} \).
+						</li>
+						<li>
+							For non-standard conditions use the Nernst equation: \( E =
+							E^\circ - \dfrac{0.0591}{n}\log Q \) at \(298\ \mathrm{K}\).
+						</li>
+						<li>
+							Hydrogen-electrode questions often hide pH inside \(Q\), so
+							convert \( [H^+] \) to pH only at the last step.
+						</li>
+					</ul>
+					<!--END Electrochemical cells and emf -->
+					<br />
+
+					<!--START Gibbs energy and equilibrium -->
+					<ul>
+						<strong>Gibbs energy and equilibrium</strong>
+						<li>
+							Electrical work and spontaneity are linked through: \( \Delta G =
+							-nFE \).
+						</li>
+						<li>At standard conditions: \( \Delta G^\circ = -nFE^\circ \).</li>
+						<li>
+							For spontaneous cell reactions, \(E_{\text{cell}} > 0\) and
+							\(\Delta G < 0\).
+						</li>
+						<li>
+							This is the standard route in PYQs that go from given potentials
+							to Gibbs energy directly.
+						</li>
+					</ul>
+					<!--END Gibbs energy and equilibrium -->
+					<br />
+
+					<!--START Electrolysis -->
+					<ul>
+						<strong>Electrolysis</strong>
+						<li>
+							Electrolysis uses electrical energy to drive a non-spontaneous
+							reaction.
+						</li>
+						<li>
+							For inert electrodes in aqueous \(CuSO_4\):
 							<ul>
-								<li>t1</li>
-								<li>t2</li>
+								<li>cathode: \( Cu^{2+} + 2e^- \to Cu \)</li>
+								<li>anode: water is oxidised to \(O_2\)</li>
 							</ul>
 						</li>
-						<!--END Topic 1-->
-					</ol>
+						<li>
+							For molten NaCl with inert electrodes:
+							<ul>
+								<li>cathode: \( Na^+ \to Na \)</li>
+								<li>anode: \( Cl^- \to Cl_2 \)</li>
+							</ul>
+						</li>
+						<li>
+							<img
+								src="images/chem_electrolysis_inert_electrodes.png"
+								alt="electrolysis of aqueous copper sulfate and molten sodium chloride with inert electrodes"
+								style="width: 40%; height: auto"
+							/>
+						</li>
+					</ul>
+					<!--END Electrolysis -->
+					<br />
+
+					<!--START Conductance and molar conductivity -->
+					<ul>
+						<strong>Conductance and molar conductivity</strong>
+						<li>Conductance \(G = \dfrac{1}{R}\).</li>
+						<li>
+							Conductivity \(\kappa\) depends on geometry-corrected conductance
+							through the cell constant.
+						</li>
+						<li>
+							Molar conductivity \(\Lambda_m\) is the conductance due to all
+							ions from one mole of electrolyte.
+						</li>
+						<li>
+							For strong electrolytes, \(\Lambda_m\) increases only slightly on
+							dilution.
+						</li>
+						<li>
+							For weak electrolytes, \(\Lambda_m\) increases sharply on dilution
+							because ionisation increases strongly.
+						</li>
+						<li>
+							For weak electrolytes: \( \Lambda_m = \alpha \Lambda_m^\infty \).
+						</li>
+						<li>
+							<img
+								src="images/chem_molar_conductivity_weak_strong.png"
+								alt="molar conductivity versus square root concentration for strong and weak electrolytes"
+								style="width: 40%; height: auto"
+							/>
+						</li>
+					</ul>
+					<!--END Conductance and molar conductivity -->
+					<br />
+
+					<!--START Faraday laws -->
+					<ul>
+						<strong>Faraday laws of electrolysis</strong>
+						<li>First law: deposited mass is proportional to charge passed.</li>
+						<li>\( m = ZIt \), where \(Z\) is electrochemical equivalent.</li>
+						<li>
+							Once \(m\), \(I\), and \(t\) are given, \(Z\) is usually a
+							one-step calculation.
+						</li>
+						<li>
+							Faraday constant \(F = 96500\ \mathrm{C\,mol^{-1}}\) is frequently
+							used in cell and deposition numericals.
+						</li>
+					</ul>
+					<!--END Faraday laws -->
+					<br />
+
+					<!--START Chemical kinetics basics -->
+					<ul>
+						<strong>Chemical kinetics basics</strong>
+						<li>
+							Chemical kinetics studies the rate of reaction and factors
+							affecting it.
+						</li>
+						<li>
+							Rate law expresses rate in terms of concentration: \( \text{Rate}
+							= k[A]^m[B]^n \).
+						</li>
+						<li>
+							Order is the sum of powers of concentration terms in the rate law.
+						</li>
+						<li>
+							Experimental rate data are used to infer order by observing how
+							rate changes when concentrations change.
+						</li>
+					</ul>
+					<!--END Chemical kinetics basics -->
+					<br />
+
+					<!--START Zero and first order reactions -->
+					<ul>
+						<strong>Zero and first order reactions</strong>
+						<li>
+							Zero order:
+							<ul>
+								<li>\([A]_t = [A]_0 - kt\)</li>
+								<li>\(t_{1/2} = \dfrac{[A]_0}{2k}\)</li>
+							</ul>
+						</li>
+						<li>
+							First order:
+							<ul>
+								<li>\(k = \dfrac{2.303}{t}\log\dfrac{a}{a-x}\)</li>
+								<li>\(t_{1/2} = \dfrac{0.693}{k}\)</li>
+							</ul>
+						</li>
+						<li>
+							Key diagnostic: first-order half-life does not depend on initial
+							concentration.
+						</li>
+						<li>
+							First-order straight-line plots include \(\ln [A]\) vs \(t\),
+							\(\log [A]\) vs \(t\), and \(\log \dfrac{a}{a-x}\) vs \(t\).
+						</li>
+					</ul>
+					<!--END Zero and first order reactions -->
+					<br />
+
+					<!--START Pressure and graph based kinetics -->
+					<ul>
+						<strong>Pressure and graph based kinetics</strong>
+						<li>
+							For gaseous first-order decompositions, total pressure can be used
+							to infer reacted amount.
+						</li>
+						<li>
+							Graph-based PYQs often test whether a straight line is expected,
+							and how slope relates to \(k\).
+						</li>
+						<li>
+							For \(\log \dfrac{a}{a-x}\) vs \(t\), slope \(=
+							\dfrac{k}{2.303}\).
+						</li>
+						<li>For \(\ln k\) vs \(1/T\), slope \(= -\dfrac{E_a}{R}\).</li>
+					</ul>
+					<!--END Pressure and graph based kinetics -->
+					<br />
+
+					<!--START Arrhenius equation and activation energy -->
+					<ul>
+						<strong>Arrhenius equation and activation energy</strong>
+						<li>Arrhenius equation: \( k = A e^{-E_a/RT} \).</li>
+						<li>
+							Common-log form: \( \log k = \log A - \dfrac{E_a}{2.303RT} \).
+						</li>
+						<li>From a straight-line Arrhenius plot, slope gives \(E_a\).</li>
+						<li>
+							Be careful whether the graph uses \(\ln\) or \(\log\), because the
+							denominator changes from \(R\) to \(2.303R\).
+						</li>
+						<li>
+							<img
+								src="images/chem_arrhenius_plot.png"
+								alt="Arrhenius plot of log k versus inverse temperature showing slope and activation energy"
+								style="width: 40%; height: auto"
+							/>
+						</li>
+					</ul>
+					<!--END Arrhenius equation and activation energy -->
+					<br />
+
+					<!--START Useful exam distinctions -->
+					<ul>
+						<strong>Useful exam distinctions</strong>
+						<li>
+							Electrochemistry questions here often reward clean formula
+							selection more than long derivation.
+						</li>
+						<li>
+							Kinetics questions here often reduce to spotting the correct order
+							or the correct graph.
+						</li>
+						<li>
+							Latimer-style potential combinations require electron balancing
+							through \(nE^\circ\), not plain subtraction.
+						</li>
+						<li>
+							Weak-electrolyte conductivity and first-order graph/slope
+							questions are recurring high-ROI patterns in this topic cluster.
+						</li>
+					</ul>
+					<!--END Useful exam distinctions -->
+					<br />
 				</div>
 			</div>
 		</div>
