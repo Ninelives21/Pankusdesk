@@ -906,3 +906,42 @@ div[id^='ch'] h3 a {
 		min-width: 1100px;
 	}
 }
+
+/* TTR topic list styling */
+#ttr-list,
+.ttr-list {
+	list-style: none;
+	padding-left: 0;
+	margin: 1rem 0;
+}
+
+#ttr-list li,
+.ttr-list li {
+	margin: 0.45rem 0;
+	padding-left: 0;
+}
+
+#ttr-list li a,
+.ttr-list li a {
+	display: block;
+	padding: 10px 14px;
+	margin-left: 8px;
+	border-radius: 8px;
+	text-decoration: none;
+	color: #1f2937;
+	background: #f8fafc;
+	border: 1px solid #e5e7eb;
+}
+
+#ttr-list li a:hover,
+.ttr-list li a:hover {
+	background: #f8fafc;
+	color: #1f2937;
+	border: 1px solid #e5e7eb;
+}
+
+#ttr-list li a:focus,
+.ttr-list li a:focus {
+	outline: 2px solid #93c5fd;
+	outline-offset: 2px;
+}
