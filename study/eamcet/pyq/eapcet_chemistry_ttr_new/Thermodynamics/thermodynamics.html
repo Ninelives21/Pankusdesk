@@ -40,10 +40,315 @@
 					High-value revision
 				</button>
 				<div class="accordion-content">
+					<!--START Thermodynamic basics and property types -->
 					<ul>
-						<li>TTR imp 1</li>
-						<li>TTR imp 2</li>
+						<strong>Thermodynamic basics and property types</strong>
+						<li>
+							<strong>State vs path:</strong> Internal energy \(\Delta U\) is a
+							<strong>state function</strong>, so it depends only on initial and
+							final states; work \(w\) is a <strong>path function</strong>, so
+							different paths between the same states can give different work.
+						</li>
+						<li>
+							<strong>On a \(P\)-\(V\) graph:</strong> work is the area under
+							the curve, \(w=-\int P\,dV\). For the same start and end states,
+							the higher curve gives larger magnitude of work.
+						</li>
+						<li>
+							<strong>Intensive properties:</strong> independent of amount of
+							substance — temperature, density, molar volume.
+						</li>
+						<li>
+							<strong>Extensive properties:</strong> depend on amount of
+							substance — mass, volume, internal energy, enthalpy.
+						</li>
+						<li>
+							<strong>Pitfall:</strong> do not confuse
+							<em>molar volume</em> with volume — molar volume is intensive,
+							volume is extensive.
+						</li>
 					</ul>
+					<!--END Thermodynamic basics and property types -->
+					<br />
+
+					<!--START Work heat and ideal gas processes -->
+					<ul>
+						<strong>Work, heat and ideal-gas processes</strong>
+						<li>
+							<strong>Isothermal reversible expansion/compression:</strong>
+							\(w=-nRT\ln\!\left(\frac{V_2}{V_1}\right)=-nRT\ln\!\left(\frac{P_1}{P_2}\right)=-2.303\,nRT\log_{10}\!\left(\frac{V_2}{V_1}\right)\).
+						</li>
+						<li>
+							<strong>Fast exam use:</strong> if pressure form is easier, use
+							\(w=-nRT\ln\!\left(\frac{P_1}{P_2}\right)\); if \(P_1/P_2=10\),
+							then \(\log_{10}(10)=1\), which makes calculation quick.
+						</li>
+						<li>
+							<strong>Reverse-use formula:</strong> if work is given and
+							temperature is asked in an isothermal reversible process, use
+							\(T=\dfrac{-w}{nR\ln(V_2/V_1)}\).
+						</li>
+						<li>
+							<strong>Unit shortcut:</strong> if \(R=0.0821\ \text{L atm
+							mol}^{-1}\text{K}^{-1}\), the work comes directly in L·atm;
+							convert later using \(1\ \text{L atm}=101.3\ \text{J}\).
+						</li>
+						<li>
+							<strong
+								>Irreversible process against constant external
+								pressure:</strong
+							>
+							\(w=-P_{\text{ext}}\Delta V\). This is <strong>not</strong> the
+							same as the reversible \(\ln\) formula.
+						</li>
+						<li>
+							<strong>Gas generated at constant external pressure:</strong> for
+							ideal gases, \(P\Delta V=\Delta n_gRT\), so when gas is produced
+							from zero initial gas volume, \(w=-\Delta n_gRT\).
+						</li>
+						<li>
+							<strong>At constant pressure:</strong> \(q_p=nC_p\Delta T\) and
+							\(\Delta H=q_p=nC_p\Delta T\).
+						</li>
+						<li>
+							<strong>Pitfall:</strong> use chemistry sign convention carefully
+							— expansion work is negative, compression work is positive.
+						</li>
+					</ul>
+					<!--END Work heat and ideal gas processes -->
+					<br />
+
+					<!--START Delta U Delta H and gas mole change -->
+					<ul>
+						<strong>\(\Delta U\), \(\Delta H\) and gaseous mole change</strong>
+						<li>
+							<strong>Core relation:</strong> \(\Delta H=\Delta U+\Delta
+							n_gRT\), where \(\Delta n_g\) counts
+							<strong>only gaseous moles</strong>.
+						</li>
+						<li>
+							<strong>Very common use:</strong> first convert \(\Delta U\) to
+							\(\Delta H\), then use \(\Delta G=\Delta H-T\Delta S\) if Gibbs
+							energy is asked.
+						</li>
+						<li>
+							<strong>Special case:</strong> if no gaseous mole change occurs,
+							\(\Delta n_g=0\), so \(\Delta H=\Delta U\).
+						</li>
+						<li>
+							<strong>Phase-change pitfall:</strong> for transformations
+							involving only solids/liquids, do not insert gas correction unless
+							gaseous moles actually change.
+						</li>
+					</ul>
+					<!--END Delta U Delta H and gas mole change -->
+					<br />
+
+					<!--START Reversible irreversible and adiabatic processes -->
+					<ul>
+						<strong>Reversible, irreversible and adiabatic processes</strong>
+						<li>
+							<strong>Reversible process criterion:</strong> it proceeds through
+							equilibrium states and can be reversed by an infinitesimal change
+							in conditions.
+						</li>
+						<li>
+							<strong>Standard reversible examples:</strong> melting at melting
+							point and vaporisation at boiling point.
+						</li>
+						<li>
+							<strong>Standard irreversible examples:</strong> free expansion
+							into vacuum and neutralisation of acid by base.
+						</li>
+						<li>
+							<strong>Adiabatic relation:</strong>
+							\(PV^\gamma=\text{constant}\).
+						</li>
+						<li>
+							<strong>Percentage-change form:</strong>
+							\(\dfrac{dP}{P}=-\gamma\dfrac{dV}{V}\), so pressure and volume
+							change in opposite directions; for small changes, \(|\%\Delta
+							P|=\gamma\,|\%\Delta V|\).
+						</li>
+						<li>
+							<strong>Pitfall:</strong> “adiabatic” does not mean “isothermal”;
+							do not use the isothermal \(\ln\) work formula in adiabatic
+							questions.
+						</li>
+					</ul>
+					<!--END Reversible irreversible and adiabatic processes -->
+					<br />
+
+					<!--START Enthalpy of reaction formation combustion and Hess law -->
+					<ul>
+						<strong
+							>Enthalpy of reaction, formation, combustion and Hess’s
+							law</strong
+						>
+						<li>
+							<strong>Master formula:</strong> \(\Delta_r H^\circ=\sum \nu
+							\Delta_f H^\circ(\text{products})-\sum \nu \Delta_f
+							H^\circ(\text{reactants})\).
+						</li>
+						<li>
+							<strong>Must-remember fact:</strong> \(\Delta_f H^\circ=0\) for
+							any element in its <strong>standard state</strong>.
+						</li>
+						<li>
+							<strong>Carbon special fact:</strong> standard state of carbon is
+							<strong>graphite</strong>, so \(\Delta_f
+							H^\circ(\text{graphite})=0\), not diamond or fullerene.
+						</li>
+						<li>
+							<strong>Meaning of \(\Delta_f H^\circ\):</strong> it is for
+							formation of <strong>1 mole</strong> of compound from its
+							constituent elements in standard states.
+						</li>
+						<li>
+							<strong>Stoichiometric scaling:</strong> if the balanced reaction
+							forms 2 moles of product, multiply the molar \(\Delta_f H^\circ\)
+							by 2.
+						</li>
+						<li>
+							<strong>Hess’s law method:</strong> reverse and multiply equations
+							as needed, then add them so unwanted species cancel; the target
+							\(\Delta H\) is the algebraic sum of the adjusted enthalpies.
+						</li>
+						<li>
+							<strong
+								>Combustion-data shortcut for \(\Delta_f H^\circ\):</strong
+							>
+							when formation enthalpy of a compound is asked from combustion
+							values, add combustion enthalpies of the constituent elements to
+							form the same final combustion products, then subtract combustion
+							enthalpy of the compound.
+						</li>
+						<li>
+							<strong>Combustion of CO pattern:</strong> \(\Delta_c
+							H^\circ(\mathrm{CO})=\Delta_f H^\circ(\mathrm{CO_2})-\Delta_f
+							H^\circ(\mathrm{CO})\).
+						</li>
+						<li>
+							<strong>Decomposition questions:</strong> use the same
+							formation-enthalpy identity directly and solve the unknown
+							\(\Delta_f H^\circ\).
+						</li>
+						<li>
+							<strong>Pitfall:</strong> do not forget to multiply enthalpy
+							values when you multiply the chemical equation.
+						</li>
+					</ul>
+					<!--END Enthalpy of reaction formation combustion and Hess law -->
+					<br />
+
+					<!--START Bond enthalpy and approximate reaction enthalpy -->
+					<ul>
+						<strong>Bond enthalpy and approximate reaction enthalpy</strong>
+						<li>
+							<strong>Bond enthalpy formula:</strong> \(\Delta H \approx
+							\sum(\text{bond enthalpies of bonds broken})-\sum(\text{bond
+							enthalpies of bonds formed})\).
+						</li>
+						<li>
+							<strong>Standard application type:</strong> formation of
+							water/heavy water — break H–H or D–D and \(\tfrac12\)O=O, then
+							form two O–H or O–D bonds.
+						</li>
+						<li>
+							<strong>Pitfall:</strong> bond enthalpy questions are often
+							approximate; count bonds carefully and distinguish bonds broken
+							from bonds formed.
+						</li>
+					</ul>
+					<!--END Bond enthalpy and approximate reaction enthalpy -->
+					<br />
+
+					<!--START Gibbs energy entropy spontaneity and equilibrium -->
+					<ul>
+						<strong>Gibbs energy, entropy, spontaneity and equilibrium</strong>
+						<li>
+							<strong>Gibbs relation:</strong> \(\Delta G=\Delta H-T\Delta S\).
+						</li>
+						<li>
+							<strong>Direction-change temperature:</strong> at equilibrium,
+							\(\Delta G=0\), so \(T=\dfrac{\Delta H}{\Delta S}\) provided units
+							are consistent.
+						</li>
+						<li>
+							<strong>Standard Gibbs-equilibrium relation:</strong> \(\Delta
+							G^\circ=-RT\ln K=-2.303\,RT\log_{10}K\).
+						</li>
+						<li>
+							<strong>Quick inference:</strong> if \(\Delta G^\circ&lt;0\), then
+							\(K&gt;1\); if \(\Delta G^\circ&gt;0\), then \(K&lt;1\).
+						</li>
+						<li>
+							<strong>At 298 K exam form:</strong> \(\log_{10}K=\dfrac{-\Delta
+							G^\circ}{2.303RT}\).
+						</li>
+						<li>
+							<strong>Pitfall:</strong> before using \(\Delta G=\Delta H-T\Delta
+							S\), make sure \(\Delta H\) and \(T\Delta S\) are in the same
+							units.
+						</li>
+					</ul>
+					<!--END Gibbs energy entropy spontaneity and equilibrium -->
+					<br />
+
+					<!--START Equilibrium constant and catalyst facts -->
+					<ul>
+						<strong>Equilibrium constant and catalyst facts</strong>
+						<li>
+							<strong>In equilibrium expressions,</strong> pure solids and pure
+							liquids are omitted because their activity is taken as 1.
+						</li>
+						<li>
+							<strong>Typical form:</strong> for \(A(s)\rightleftharpoons
+							B(s)+C(g)\), the equilibrium constant depends only on gaseous
+							species, so \(K_p=p_C\).
+						</li>
+						<li>
+							<strong>Catalyst fact:</strong> a catalyst changes only the rate
+							of reaching equilibrium; it does <strong>not</strong> change
+							\(\Delta H\), \(\Delta G^\circ\), \(K\), or equilibrium
+							composition.
+						</li>
+						<li>
+							<strong>Pitfall:</strong> never include pure solids/pure liquids
+							in \(K_c\) or \(K_p\) expressions.
+						</li>
+					</ul>
+					<!--END Equilibrium constant and catalyst facts -->
+					<br />
+
+					<!--START Must remember exam patterns and pitfalls -->
+					<ul>
+						<strong>Must-remember exam patterns and pitfalls</strong>
+						<li>
+							<strong>Most repeated patterns from PYQs:</strong> Hess’s law
+							manipulation, \(\Delta_r H^\circ\) from \(\Delta_f H^\circ\),
+							isothermal reversible work, irreversible work against constant
+							\(P_{\text{ext}}\), \(\Delta H=\Delta U+\Delta n_gRT\), and
+							\(\Delta G^\circ\)-\(K\) relation.
+						</li>
+						<li>
+							<strong>Carbon allotrope order:</strong> fullerene \(>\) diamond
+							\(>\) graphite in \(\Delta_f H^\circ\), because graphite is the
+							most stable standard state.
+						</li>
+						<li>
+							<strong>Do not mix formulas:</strong> reversible isothermal
+							\(\ln\) formula and irreversible constant-\(P_{\text{ext}}\)
+							formula are different and not interchangeable.
+						</li>
+						<li>
+							<strong>Always check:</strong> standard state, stoichiometric
+							coefficient, gaseous mole change, and unit conversion before
+							finalising the answer.
+						</li>
+					</ul>
+					<!--END Must remember exam patterns and pitfalls -->
+					<br />
 				</div>
 			</div>
 		</div>
@@ -376,5 +681,208 @@
 		</div>
 
 		<!--END General theory-->
+
+		<!--START PYQ by PYQ-->
+
+		<div class="accordion">
+			<div class="accordion-item">
+				<button class="accordion-button" id="high-value-revision">
+					PYQ by PYQ
+				</button>
+				<div class="accordion-content">
+					<!--START 2025 -->
+					<ol>
+						2025
+						<li>
+							Hess’s law: when a target reaction is not direct, algebraically
+							add/subtract known thermochemical equations (reverse ⇒ sign
+							changes) and cancel common species; here use combustion of CH₄ and
+							reverse formation of CO₂ to get CH₄ + O₂ → C + 2H₂O, so ΔH = −890
+							+ 394 = −496 kJ.
+						</li>
+						<li>
+							For 1 mol ideal gas in isothermal reversible
+							expansion/compression, remember
+							\(w=-nRT\ln\!\left(\frac{V_2}{V_1}\right)=-nRT\ln\!\left(\frac{P_1}{P_2}\right)=nRT\ln\!\left(\frac{P_2}{P_1}\right)\);
+							expansion gives negative work in chemistry sign convention.
+						</li>
+						<li>
+							Standard Gibbs relation: \(\Delta G^\circ=-RT\ln
+							K=-2.303\,RT\log_{10}K\); hence \(\Delta G^\circ<0 \Rightarrow
+							K>1\) and at 298 K, \(\log_{10}K=\dfrac{-\Delta
+							G^\circ}{2.303RT}\).
+						</li>
+						<li>
+							Reversible process criterion: it must proceed through equilibrium
+							and be reversible by an infinitesimal change in conditions; hence
+							phase changes at exact transition temperature (boiling/melting
+							point) are reversible, while free expansion into vacuum and
+							neutralisation are irreversible.
+						</li>
+						<li>
+							For temperature-dependent spontaneity, use \(\Delta G=\Delta
+							H-T\Delta S\); the direction changes at equilibrium where \(\Delta
+							G=0\), so \(T=\frac{\Delta H}{\Delta S}\) (use consistent units),
+							and above/below this temperature decide spontaneity from the signs
+							of \(\Delta H\) and \(\Delta S\).
+						</li>
+						<li>
+							At constant pressure, remember the direct result \(q_p=nC_p\Delta
+							T\) and \(\Delta H=q_p=nC_p\Delta T\); this is a standard
+							high-yield link between heat absorbed and enthalpy change for
+							ideal-gas processes at constant pressure.
+						</li>
+					</ol>
+					<!--END 2025 -->
+					<br />
+					<!--START 2024 -->
+					<ol>
+						2024
+						<li>
+							Standard enthalpy of formation is for formation of 1 mol of
+							compound from its elements in standard states; so if the balanced
+							reaction forms 2 mol NH₃, then \(\Delta_r H^\circ = 2\,\Delta_f
+							H^\circ(\mathrm{NH_3}) = 2(-46.2) = -92.4\ \text{kJ}\).
+						</li>
+						<li>
+							For isothermal reversible expansion, the same standard formula
+							applies in any convenient unit system:
+							\(w=-nRT\ln\!\left(\frac{V_2}{V_1}\right)=-2.303\,nRT\log_{10}\!\left(\frac{V_2}{V_1}\right)\);
+							if \(R=0.0821\ \text{L atm mol}^{-1}\text{K}^{-1}\), the answer
+							comes directly in L·atm.
+						</li>
+						<li>
+							High-yield Hess’s law pattern: when \(\Delta_f H^\circ\) is asked
+							from combustion data, add combustion enthalpies of the constituent
+							elements to form the same combustion products, then subtract
+							combustion enthalpy of the compound; for methanol, \(\Delta_f
+							H^\circ=\Delta_c H^\circ(\text{C})+2\Delta_c
+							H^\circ(\text{H}_2)-\Delta_c H^\circ(\text{CH}_3\text{OH})\).
+						</li>
+						<li>
+							Use the formation-enthalpy identity directly: \(\Delta_r
+							H^\circ=\sum \Delta_f H^\circ(\text{products})-\sum \Delta_f
+							H^\circ(\text{reactants})\); for decomposition questions, plug in
+							known values and solve the unknown \(\Delta_f H^\circ\).
+						</li>
+						<li>
+							For irreversible expansion/compression against constant external
+							pressure, use \(w=-P_{\text{ext}}\Delta V\) (not the \(\ln\)
+							formula); in isothermal ideal-gas questions, first get \(V\) from
+							\(PV=nRT\), then convert L·atm to J if needed.
+						</li>
+					</ol>
+					<!--END 2024 -->
+					<br />
+					<!--START 2023 -->
+					<ol>
+						2023
+						<li>
+							For isothermal reversible ideal-gas expansion, if work is given
+							and temperature is asked, rearrange
+							\(w=-nRT\ln\!\left(\frac{V_2}{V_1}\right)\) to
+							\(T=\dfrac{-w}{nR\ln(V_2/V_1)}\); this is the standard reverse-use
+							of the same formula.
+						</li>
+						<li>
+							For reaction enthalpy from standard enthalpies of formation, use
+							\(\Delta_r H^\circ=\sum \nu \Delta_f H^\circ(\text{products})-\sum
+							\nu \Delta_f H^\circ(\text{reactants})\); any element in its
+							standard state has \(\Delta_f H^\circ=0\).
+						</li>
+						<li>
+							Standard combustion enthalpy can be obtained by Hess’s law from
+							formation enthalpies: for \( \mathrm{CO+\tfrac12 O_2 \rightarrow
+							CO_2} \), \(\Delta_c H^\circ=\Delta_f
+							H^\circ(\mathrm{CO_2})-\Delta_f H^\circ(\mathrm{CO})\).
+						</li>
+						<li>
+							Must-remember classification: intensive properties are independent
+							of amount of substance (e.g. temperature, density, molar volume),
+							while extensive properties depend on amount (e.g. mass, volume,
+							internal energy, enthalpy).
+						</li>
+						<li>
+							For gas-phase reactions, first convert \(\Delta U\) to \(\Delta
+							H\) using \(\Delta H=\Delta U+\Delta n_gRT\), then apply \(\Delta
+							G=\Delta H-T\Delta S\); remember \(\Delta n_g\) counts only
+							gaseous moles.
+						</li>
+						<li>
+							For reversible isothermal ideal-gas expansion written in terms of
+							pressure, use
+							\(w=-nRT\ln\!\left(\frac{P_1}{P_2}\right)=-2.303\,nRT\log_{10}\!\left(\frac{P_1}{P_2}\right)\);
+							for a tenfold pressure drop, \(\log_{10}(10)=1\), which makes the
+							calculation very fast.
+						</li>
+					</ol>
+					<!--END 2023 -->
+					<br />
+					<!--START 2022 -->
+					<ol>
+						2022
+						<li>
+							For reactions generating gas at constant external pressure,
+							expansion work is found from \(w=-P_{\text{ext}}\Delta V\), and
+							for ideal gases use \(P\Delta V=\Delta n_gRT\), so \(w=-\Delta
+							n_gRT\) when gas is produced from zero initial gas volume.
+						</li>
+						<li>
+							In equilibrium expressions, pure solids and pure liquids are
+							omitted (activity = 1), so for \(A(s)\rightleftharpoons
+							B(s)+C(g)\), \(K\) depends only on gaseous species (\(K_p=p_C\));
+							also, a catalyst does not change \(\Delta H\) or \(K\), only the
+							rate.
+						</li>
+						<li>
+							On a \(P\)-\(V\) diagram, work is a path function equal to the
+							area under the curve \(\left(w=-\int P\,dV\right)\); for the same
+							initial and final states, the higher path gives larger magnitude
+							of work, while \(\Delta U\) remains the same for all paths because
+							it is a state function.
+						</li>
+						<li>
+							Must-remember fact: \(\Delta_f H^\circ = 0\) for any element in
+							its standard state; for carbon, the standard state is graphite
+							(not diamond or fullerene).
+						</li>
+						<li>
+							Hess’s law method: manipulate given equations by
+							reversing/multiplying as needed so unwanted species cancel; the
+							target \(\Delta H\) is the algebraic sum of the adjusted enthalpy
+							values.
+						</li>
+						<li>
+							For adiabatic changes, \(PV^\gamma=\text{constant}\); in
+							differential/percentage form,
+							\(\frac{dP}{P}=-\gamma\,\frac{dV}{V}\), so pressure and volume
+							change in opposite directions and \(\%\Delta P=\gamma\,\%\Delta
+							V\) in magnitude for small changes.
+						</li>
+						<li>
+							Use \(\Delta H=\Delta U+\Delta n_gRT\); for phase changes
+							involving only condensed phases (no gaseous mole change), \(\Delta
+							n_g=0\), so \(\Delta H=\Delta U\).
+						</li>
+						<li>
+							For allotropes, more stable form has lower \(\Delta_f H^\circ\);
+							carbon’s standard state is graphite, so \(\Delta_f H^\circ\) order
+							is fullerene \(>\) diamond \(>\) graphite.
+						</li>
+						<li>
+							Bond-enthalpy method: \(\Delta H \approx \sum(\text{bond
+							enthalpies of bonds broken})-\sum(\text{bond enthalpies of bonds
+							formed})\); for water/heavy water formation, break \(
+							\mathrm{H\!-\!H/D\!-\!D} \) and \( \tfrac12\mathrm{O{=}O} \), then
+							form two \( \mathrm{O\!-\!H/O\!-\!D} \) bonds.
+						</li>
+					</ol>
+					<!--END 2022 -->
+					<br />
+				</div>
+			</div>
+		</div>
+
+		<!--END PYQ by PYQ-->
 	</body>
 </html>
