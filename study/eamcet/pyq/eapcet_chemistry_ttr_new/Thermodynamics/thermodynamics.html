@@ -40,320 +40,290 @@
 					High-value revision
 				</button>
 				<div class="accordion-content">
-					<!--START Variables used -->
+					<!--START Work, path and process-type PYQs -->
 					<ul>
-						<strong>Variables used</strong>
-						<li><code>P</code> = pressure</li>
-						<li><code>V</code> = volume</li>
-						<li><code>T</code> = absolute temperature</li>
-						<li><code>q</code> = heat</li>
-						<li><code>w</code> = work</li>
-						<li><code>U</code> = internal energy</li>
-						<li><code>H</code> = enthalpy</li>
-						<li><code>G</code> = Gibbs energy</li>
-						<li><code>S</code> = entropy</li>
-						<li><code>R</code> = gas constant</li>
-						<li><code>K</code> = equilibrium constant</li>
+						<strong>Work, path and process-type PYQs</strong>
 						<li>
-							<code>C<sub>p</sub></code> = heat capacity at constant pressure
+							The most repeated gas-work pattern is this: for
+							<em>reversible isothermal</em> expansion or compression of an
+							ideal gas, use \(w=-nRT\ln\!\left(\frac{V_2}{V_1}\right)\), or
+							equivalently \(w=-nRT\ln\!\left(\frac{P_1}{P_2}\right)\).
 						</li>
 						<li>
-							<code>C<sub>v</sub></code> = heat capacity at constant volume
+							If the question uses common logarithm, write the same result as
+							\(w=-2.303\,nRT\log\!\left(\frac{V_2}{V_1}\right)\) or
+							\(w=-2.303\,nRT\log\!\left(\frac{P_1}{P_2}\right)\).
 						</li>
 						<li>
-							<code>Δn<sub>g</sub></code> = moles of gaseous products − moles of
-							gaseous reactants
-						</li>
-						<li><code>ν</code> = stoichiometric coefficient</li>
-					</ul>
-					<!--END Variables used -->
-					<br />
-
-					<!--START Work: most-tested formulas -->
-					<ul>
-						<strong>Work: most-tested formulas</strong>
-						<li>
-							For reversible isothermal expansion/compression of an ideal gas,
-							the standard formula is
-							<code
-								>w = -nRT ln(V<sub>2</sub>/V<sub>1</sub>) = -nRT
-								ln(P<sub>1</sub>/P<sub>2</sub>) = -2.303 nRT
-								log(V<sub>2</sub>/V<sub>1</sub>)</code
-							>; for expansion, work is negative in chemistry sign convention.
+							The sign convention is a frequent trap: during expansion, work
+							done by the gas is negative in chemistry convention; during
+							compression, work done on the gas is positive.
 						</li>
 						<li>
-							Same formula can be used in reverse too: if <code>w</code> is
-							given and <code>T</code> is asked, rearrange directly instead of
-							starting from scratch.
+							If the process is <em>irreversible</em> and occurs against
+							constant external pressure, do not use the logarithmic formula;
+							use \(w=-P_{\text{ext}}\Delta V\).
 						</li>
 						<li>
-							For irreversible expansion/compression against constant external
-							pressure, do <strong>not</strong> use the logarithm formula; use
-							<code>w = -P<sub>ext</sub>ΔV</code>.
+							When gas is generated from effectively zero initial gas volume at
+							constant external pressure, the shortcut \(w=-\Delta n_gRT\) is
+							often the fastest route.
 						</li>
 						<li>
-							For gas generated at constant external pressure, use
-							<code>PΔV = Δn<sub>g</sub>RT</code>, so expansion work often
-							becomes <code>w = -Δn<sub>g</sub>RT</code>.
+							On a \(P\)-\(V\) graph, work depends on the path and equals the
+							area under the curve, while \(\Delta U\) remains the same for all
+							paths between the same initial and final state.
 						</li>
 						<li>
-							When <code>R = 0.0821 L atm mol<sup>-1</sup> K<sup>-1</sup></code
-							>, answer comes in L·atm; convert later only if the question wants
-							joules.
+							Conceptual PYQs on reversibility usually reduce to one idea:
+							reversible processes pass through equilibrium states, so melting
+							or boiling exactly at the transition temperature is reversible,
+							whereas free expansion into vacuum and ordinary neutralisation are
+							irreversible.
 						</li>
 					</ul>
-					<!--END Work: most-tested formulas -->
+					<!--END Work, path and process-type PYQs -->
 					<br />
 
-					<!--START P–V path and process traps -->
+					<!--START Delta U, Delta H and direct-use formulas -->
 					<ul>
-						<strong>P–V path and process traps</strong>
+						<strong>\(\Delta U\), \(\Delta H\) and direct-use formulas</strong>
 						<li>
-							On a <code>P–V</code> diagram, work is the area under the curve,
-							so work is a path function; for the same initial and final states,
-							different paths can give different work.
+							The basic first-law equation is \(\Delta U=q+w\), but in objective
+							questions it usually appears through its special cases rather than
+							in raw form.
 						</li>
 						<li>
-							<code>ΔU</code> is a state function, so for the same initial and
-							final states it remains the same even when work changes from path
-							to path.
+							At constant volume, \(\Delta U=q_v\), so heat measured at constant
+							volume gives internal-energy change directly.
 						</li>
 						<li>
-							Reversible process means the system passes through equilibrium
-							states and can be reversed by an infinitesimal change; exact phase
-							changes at boiling/melting point are standard reversible examples.
+							At constant pressure, \(\Delta H=q_p\), and this is why many
+							heating questions directly become enthalpy questions.
 						</li>
 						<li>
-							Free expansion into vacuum is irreversible; neutralisation is also
-							a standard irreversible process.
-						</li>
-						<img
-							src="images/pv_work_area_paths.png"
-							alt="Pressure-volume diagram showing two different paths between same initial and final states and shaded work area page 199 image fig 11.2"
-							style="width: 60%; height: auto; margin-right: 10px"
-						/>
-					</ul>
-					<!--END P–V path and process traps -->
-					<br />
-
-					<!--START Enthalpy, internal energy and heat capacity -->
-					<ul>
-						<strong>Enthalpy, internal energy and heat capacity</strong>
-						<li>
-							At constant pressure, remember the direct link
-							<code>q<sub>p</sub> = ΔH = nC<sub>p</sub>ΔT</code>; this is one of
-							the most repeated thermodynamics shortcuts in PYQs.
+							A direct high-yield result from the PYQs is \(q_p=nC_p\Delta T\),
+							so for constant-pressure heating of an ideal gas, \(\Delta
+							H=nC_p\Delta T\).
 						</li>
 						<li>
-							At constant volume,
-							<code>q<sub>v</sub> = ΔU = nC<sub>v</sub>ΔT</code>.
+							For gas-phase reactions, the bridge formula \(\Delta H=\Delta
+							U+\Delta n_gRT\) must be remembered exactly, because several PYQs
+							first make you convert \(\Delta U\) to \(\Delta H\) and only then
+							continue.
 						</li>
 						<li>
-							For gaseous reactions, convert using
-							<code>ΔH = ΔU + Δn<sub>g</sub>RT</code>; count only gaseous moles
-							in <code>Δn<sub>g</sub></code
-							>.
+							In \(\Delta n_g\), count only gaseous moles; solids and liquids do
+							not contribute.
 						</li>
 						<li>
-							If there is no gaseous mole change, especially in condensed-phase
-							changes, then <code>Δn<sub>g</sub> = 0</code> and hence
-							<code>ΔH = ΔU</code>.
-						</li>
-						<li>
-							Must-remember relation for ideal gases:
-							<code>C<sub>p</sub> - C<sub>v</sub> = R</code>.
+							If there is no gaseous mole change, then \(\Delta n_g=0\), so
+							\(\Delta H=\Delta U\), which is often the quickest elimination
+							step in MCQs.
 						</li>
 					</ul>
-					<!--END Enthalpy, internal energy and heat capacity -->
+					<!--END Delta U, Delta H and direct-use formulas -->
 					<br />
 
-					<!--START Standard enthalpy of formation and reaction -->
+					<!--START Formation, combustion and Hess-law PYQs -->
 					<ul>
-						<strong>Standard enthalpy of formation and reaction</strong>
+						<strong>Formation, combustion and Hess-law PYQs</strong>
 						<li>
-							<code>Δ<sub>f</sub>H°</code> is for formation of
-							<strong>1 mol</strong> of a compound from its elements in standard
-							states; if the balanced equation forms 2 mol, multiply by 2.
+							The most-used reaction-enthalpy formula is \(\Delta_rH^\circ=\sum
+							\nu\,\Delta_fH^\circ(\text{products})-\sum
+							\nu\,\Delta_fH^\circ(\text{reactants})\), and many PYQs are simply
+							careful substitution into this relation.
 						</li>
 						<li>
-							Golden identity:
-							<code
-								>Δ<sub>r</sub>H° = ΣνΔ<sub>f</sub>H°(products) −
-								ΣνΔ<sub>f</sub>H°(reactants)</code
-							>.
+							The definition of \(\Delta_fH^\circ\) matters in exam language: it
+							is the enthalpy change for forming <em>one mole</em> of a compound
+							from its elements in their standard states.
 						</li>
 						<li>
-							Elements in their standard states have
-							<code>Δ<sub>f</sub>H° = 0</code>; for carbon, standard state is
+							A very common trap is forgetting coefficients: if the balanced
+							equation forms 2 moles of a compound, its \(\Delta_fH^\circ\)
+							contribution must also be multiplied by 2.
+						</li>
+						<li>
+							The fact \(\Delta_fH^\circ=0\) for an element in its standard
+							state is repeatedly tested, and for carbon the standard state is
 							graphite, not diamond or fullerene.
 						</li>
 						<li>
-							For allotropes, the more stable form has lower
-							<code>Δ<sub>f</sub>H°</code>; for carbon the order is fullerene
-							&gt; diamond &gt; graphite.
+							Combustion-based PYQs are usually Hess’s-law questions in
+							disguise: make both routes end at the same combustion products,
+							then add or subtract equations so the target reaction survives.
 						</li>
 						<li>
-							When a decomposition or unknown-formation question appears, plug
-							known values carefully into the same products-minus-reactants
-							identity and solve the unknown.
-						</li>
-					</ul>
-					<!--END Standard enthalpy of formation and reaction -->
-					<br />
-
-					<!--START Hess’s law: recurring PYQ patterns -->
-					<ul>
-						<strong>Hess’s law: recurring PYQ patterns</strong>
-						<li>
-							Core idea: when a target reaction is not direct,
-							add/subtract/reverse known thermochemical equations algebraically;
-							if you reverse an equation, the sign of <code>ΔH</code> changes.
+							Hess’s law should be treated algebraically: reverse an equation
+							and the sign of \(\Delta H\) changes; multiply an equation and
+							\(\Delta H\) must be multiplied by the same factor.
 						</li>
 						<li>
-							High-yield pattern 1: build the target by cancelling common
-							species and sum the adjusted enthalpy values only after the
-							equations are adjusted correctly.
+							If the target reaction is not directly measurable, that is usually
+							your signal that Hess’s law is the intended method.
 						</li>
 						<li>
-							High-yield pattern 2: when <code>Δ<sub>f</sub>H°</code> is asked
-							from combustion data, add combustion enthalpies of the constituent
-							elements to reach the same combustion products, then subtract
-							combustion enthalpy of the compound.
-						</li>
-						<li>
-							High-yield pattern 3: standard combustion enthalpy can also be
-							obtained from formation enthalpies using the same
-							products-minus-reactants logic.
-						</li>
-						<li>
-							Most common pitfall: doing the arithmetic before
-							reversing/multiplying equations, or forgetting that coefficients
-							and <code>ΔH</code> must be changed together.
-						</li>
-						<img
-							src="images/hess_law_alternate_paths.png"
-							alt="Hess law alternate paths for conversion of carbon and oxygen to carbon dioxide page 206 image fig 11.4"
-							style="width: 60%; height: auto; margin-right: 10px"
-						/>
-					</ul>
-					<!--END Hess’s law: recurring PYQ patterns -->
-					<br />
-
-					<!--START Gibbs energy, equilibrium and spontaneity -->
-					<ul>
-						<strong>Gibbs energy, equilibrium and spontaneity</strong>
-						<li>
-							Standard relation to remember exactly:
-							<code>ΔG° = -RT ln K = -2.303 RT log K</code>.
-						</li>
-						<li>
-							Quick inference: <code>ΔG° &lt; 0 ⇒ K &gt; 1</code>,
-							<code>ΔG° &gt; 0 ⇒ K &lt; 1</code>.
-						</li>
-						<li>
-							For temperature-dependent spontaneity, use
-							<code>ΔG = ΔH - TΔS</code>; the boundary temperature comes from
-							<code>ΔG = 0</code>, so <code>T = ΔH/ΔS</code>.
-						</li>
-						<li>
-							If both <code>ΔH</code> and <code>ΔS</code> are positive, high
-							temperature favours spontaneity; if both are negative, low
-							temperature favours spontaneity.
-						</li>
-						<li>
-							In mixed thermodynamics questions, first convert
-							<code>ΔU</code> to <code>ΔH</code> using
-							<code>ΔH = ΔU + Δn<sub>g</sub>RT</code>, then apply
-							<code>ΔG = ΔH - TΔS</code>.
-						</li>
-						<li>
-							Main pitfall: use consistent units before applying
-							<code>T = ΔH/ΔS</code>; typically convert <code>ΔH</code> from kJ
-							to J if <code>ΔS</code> is in J K<sup>-1</sup> mol<sup>-1</sup>.
+							A neat recurring pattern is that combustion enthalpy and formation
+							enthalpy can be interconverted by comparing two routes to the same
+							final products.
 						</li>
 					</ul>
-					<!--END Gibbs energy, equilibrium and spontaneity -->
+					<!--END Formation, combustion and Hess-law PYQs -->
 					<br />
 
-					<!--START Bond enthalpy and bond-count method -->
+					<!--START Bond enthalpy and special factual points -->
 					<ul>
-						<strong>Bond enthalpy and bond-count method</strong>
+						<strong>Bond enthalpy and special factual points</strong>
 						<li>
-							For gaseous reactions, use
-							<code
-								>ΔH ≈ Σ(bond enthalpies of bonds broken) − Σ(bond enthalpies of
-								bonds formed)</code
-							>.
+							Bond-enthalpy numericals use one standard estimate: \(\Delta H
+							\approx \sum(\text{bond enthalpies of bonds
+							broken})-\sum(\text{bond enthalpies of bonds formed})\).
 						</li>
 						<li>
-							Practical exam method: first write/visualise the structural
-							formula, then count only the bonds actually broken and formed.
+							The safest way to avoid mistakes is to list bonds broken and bonds
+							formed separately before inserting numbers.
 						</li>
 						<li>
-							This is especially useful when direct calorimetric data are not
-							available.
+							Bond dissociation enthalpy refers to breaking a particular bond in
+							a particular gaseous molecule, whereas bond enthalpy is an average
+							value for that bond type across gaseous compounds.
 						</li>
 						<li>
-							Main pitfall: counting all bonds present on both sides instead of
-							only the bonds that change.
+							Among allotropes, the more stable form has lower
+							\(\Delta_fH^\circ\), so for carbon the order is fullerene \(>\)
+							diamond \(>\) graphite.
+						</li>
+						<li>
+							The intensive-versus-extensive classification has appeared
+							directly in PYQs, so it is worth keeping a compact memory set:
+							temperature, density and molar volume are intensive, whereas mass,
+							volume, internal energy and enthalpy are extensive.
 						</li>
 					</ul>
-					<!--END Bond enthalpy and bond-count method -->
+					<!--END Bond enthalpy and special factual points -->
 					<br />
 
-					<!--START Small but repeated concept checks -->
+					<!--START Entropy, Gibbs energy and spontaneity PYQs -->
 					<ul>
-						<strong>Small but repeated concept checks</strong>
+						<strong>Entropy, Gibbs energy and spontaneity PYQs</strong>
 						<li>
-							Intensive properties are independent of amount; extensive
-							properties depend on amount.
+							The chapter’s most useful spontaneity formula is \(\Delta G=\Delta
+							H-T\Delta S\), and PYQs mostly use it either to judge spontaneity
+							or to find the temperature where spontaneity changes.
 						</li>
 						<li>
-							Pure solids and pure liquids are omitted from equilibrium
-							expressions; only gaseous or solute species appear.
+							If \(\Delta G&lt;0\), the process is spontaneous; if \(\Delta
+							G=0\), the system is at equilibrium; and if \(\Delta G&gt;0\), the
+							process is non-spontaneous.
 						</li>
 						<li>
-							A catalyst changes rate only; it does not change <code>ΔH</code>,
-							<code>K</code> or equilibrium position.
+							When the question asks for the temperature at which behaviour
+							changes, set \(\Delta G=0\) and use \(T=\dfrac{\Delta H}{\Delta
+							S}\), after first making the units consistent.
 						</li>
 						<li>
-							For adiabatic change, <code>PV<sup>γ</sup> = constant</code>; in
-							differential form, <code>dP/P = -γ dV/V</code>.
+							The sign-combination logic is highly testable: \(\Delta
+							H&lt;0,\Delta S&gt;0\) means spontaneous at all temperatures,
+							while \(\Delta H&gt;0,\Delta S&lt;0\) means non-spontaneous at all
+							temperatures.
+						</li>
+						<li>
+							If both \(\Delta H\) and \(\Delta S\) are negative, the reaction
+							is favoured at low temperature; if both are positive, it is
+							favoured at high temperature.
+						</li>
+						<li>
+							Entropy-based conceptual PYQs usually rely on simple trends:
+							disorder increases from solid to liquid to gas, and entropy
+							usually increases on mixing, melting, vaporisation, or increase in
+							gaseous particles.
+						</li>
+						<li>
+							For phase transitions at the transition temperature, the handy
+							relation is \(\Delta S=\dfrac{\Delta H_{\text{transition}}}{T}\).
+						</li>
+						<li>
+							The standard equilibrium link is \(\Delta G^\circ=-RT\ln
+							K=-2.303\,RT\log K\), so \(\Delta G^\circ&lt;0\Rightarrow K&gt;1\)
+							and \(\Delta G^\circ&gt;0\Rightarrow K&lt;1\).
+						</li>
+						<li>
+							In many PYQs, once \(\Delta G^\circ\) is known, finding \(K\) is
+							just a direct substitution step and not a new concept.
 						</li>
 					</ul>
-					<!--END Small but repeated concept checks -->
+					<!--END Entropy, Gibbs energy and spontaneity PYQs -->
 					<br />
 
-					<!--START Last-minute pitfalls and exam moves -->
+					<!--START Fast exam traps -->
 					<ul>
-						<strong>Last-minute pitfalls and exam moves</strong>
+						<strong>Fast exam traps</strong>
 						<li>
-							First identify the process: reversible isothermal, irreversible
-							against constant external pressure, constant pressure heating,
-							constant volume heating, Hess’s law, or Gibbs-equilibrium type.
+							Do not mix up reversible isothermal work with irreversible work
+							against constant external pressure; that is probably the single
+							most common method error in this chapter.
 						</li>
 						<li>
-							Do not mix up <code>q<sub>p</sub></code> with
-							<code>q<sub>v</sub></code
-							>; at constant pressure use enthalpy, at constant volume use
-							internal energy.
+							Do not forget physical states in thermochemical equations, because
+							enthalpy depends on whether a substance is in the solid, liquid,
+							gaseous or aqueous state.
 						</li>
 						<li>
-							Do not count solids/liquids in <code>Δn<sub>g</sub></code> or in
+							Do not forget to convert \(\Delta S\) into kJ K\(^{-1}\)
+							mol\(^{-1}\) if \(\Delta H\) is in kJ before using \(\Delta
+							G=\Delta H-T\Delta S\).
+						</li>
+						<li>
+							Do not count solids and liquids in \(\Delta n_g\), and do not
+							forget that pure solids and pure liquids are omitted from
 							equilibrium expressions.
 						</li>
 						<li>
-							Do not forget standard-state exceptions: elemental standard states
-							have zero formation enthalpy, and graphite is the standard state
-							of carbon.
+							Do not forget that a catalyst changes the rate of reaching
+							equilibrium but does not change \(\Delta H\), \(\Delta G^\circ\)
+							or \(K\).
 						</li>
 						<li>
-							If an equation is reversed, sign changes; if an equation is
-							multiplied, <code>ΔH</code> also multiplies; if coefficients are
-							wrong, the whole answer drifts.
+							In Hess’s-law questions, if your number looks odd, first check
+							whether you reversed a reaction without changing the sign of
+							\(\Delta H\), or changed coefficients without scaling \(\Delta
+							H\).
 						</li>
 					</ul>
-					<!--END Last-minute pitfalls and exam moves -->
+					<!--END Fast exam traps -->
+					<br />
+
+					<!--START Variables used -->
+					<ul>
+						<strong>Variables used</strong>
+						<li>\(U\): internal energy</li>
+						<li>\(H\): enthalpy</li>
+						<li>\(S\): entropy</li>
+						<li>\(G\): Gibbs energy</li>
+						<li>\(q\): heat</li>
+						<li>\(w\): work</li>
+						<li>\(q_p\): heat at constant pressure</li>
+						<li>\(q_v\): heat at constant volume</li>
+						<li>\(C_p\): heat capacity at constant pressure</li>
+						<li>\(C_v\): heat capacity at constant volume</li>
+						<li>\(P_{\text{ext}}\): external pressure</li>
+						<li>\(\Delta V\): change in volume</li>
+						<li>
+							\(\Delta n_g\): gaseous product moles minus gaseous reactant moles
+						</li>
+						<li>\(\gamma\): \(\dfrac{C_p}{C_v}\)</li>
+						<li>\(R\): universal gas constant</li>
+						<li>\(T\): absolute temperature in kelvin</li>
+						<li>\(n\): number of moles</li>
+						<li>\(\Delta_fH^\circ\): standard enthalpy of formation</li>
+						<li>\(\Delta_rH^\circ\): standard enthalpy of reaction</li>
+						<li>\(\Delta_cH^\circ\): standard enthalpy of combustion</li>
+						<li>\(\Delta G^\circ\): standard Gibbs energy change</li>
+						<li>\(K\): equilibrium constant</li>
+						<li>\(\nu\): stoichiometric coefficient</li>
+					</ul>
+					<!--END Variables used -->
 					<br />
 				</div>
 			</div>
@@ -671,414 +641,609 @@
 					General theory
 				</button>
 				<div class="accordion-content">
+					<!--START Thermodynamic basics -->
 					<ul>
-						Variables
-						<li><code>P</code> = pressure</li>
-						<li><code>V</code> = volume</li>
-						<li><code>T</code> = absolute temperature</li>
-						<li><code>q</code> = heat</li>
-						<li><code>w</code> = work</li>
-						<li><code>U</code> = internal energy</li>
-						<li><code>H</code> = enthalpy</li>
-						<li><code>S</code> = entropy</li>
-						<li><code>G</code> = Gibbs energy</li>
+						<strong>Thermodynamic basics</strong>
 						<li>
-							<code>C<sub>p</sub></code> = heat capacity at constant pressure
+							Thermodynamics studies energy changes that accompany physical and
+							chemical processes. For this chapter, the exam focus is mainly on
+							heat, work, internal energy, enthalpy, entropy and Gibbs energy.
 						</li>
 						<li>
-							<code>C<sub>v</sub></code> = heat capacity at constant volume
-						</li>
-						<li><code>R</code> = gas constant</li>
-						<li><code>K</code> = equilibrium constant</li>
-					</ul>
-					<!--START Basic thermodynamic language -->
-					<ul>
-						<strong>Basic thermodynamic language</strong>
-						<li>
-							System = the part under study; surroundings = everything else.
-							Open system exchanges both matter and energy, closed system
-							exchanges only energy, isolated system exchanges neither.
+							<strong>System</strong> is the part under study; everything else
+							is the <strong>surroundings</strong>.
 						</li>
 						<li>
-							State of a system is described by measurable variables such as
-							pressure (<code>P</code>), volume (<code>V</code>) and temperature
-							(<code>T</code>). A state function is a property whose value
-							depends only on the initial and final state, not on the path used
-							to reach there.
+							<strong>Open system</strong>: exchanges both matter and energy
+							with surroundings. <strong>Closed system</strong>: exchanges
+							energy but not matter. <strong>Isolated system</strong>: exchanges
+							neither matter nor energy.
 						</li>
 						<li>
-							Extensive properties depend on amount of substance, such as mass,
-							volume, internal energy and enthalpy. Intensive properties do not
-							depend on amount, such as temperature, pressure and density.
+							The <strong>state</strong> of a system is described by measurable
+							quantities such as pressure, volume and temperature. These are
+							called state variables.
 						</li>
 						<li>
-							Standard state means 1 bar pressure at a specified temperature,
-							with each substance in its most stable form. This matters whenever
-							standard enthalpy or standard Gibbs energy is used.
+							<strong>State functions</strong> depend only on initial and final
+							states, not on path. High-yield examples: \(U\), \(H\), \(S\),
+							\(G\), \(P\), \(V\), \(T\).
+						</li>
+						<li>
+							<strong>Path functions</strong> depend on how the change occurs.
+							The two must-know path functions here are
+							<strong>heat</strong> \(q\) and <strong>work</strong> \(w\).
+						</li>
+						<li>
+							<strong>Extensive properties</strong> depend on amount of
+							substance: mass, volume, internal energy, enthalpy.
+							<strong>Intensive properties</strong> do not: temperature,
+							pressure, density. This distinction has been directly tested in
+							PYQs.
 						</li>
 					</ul>
-					<!--END Basic thermodynamic language -->
+					<!--END Thermodynamic basics -->
 					<br />
 
-					<!--START Thermodynamic processes -->
+					<!--START Processes and sign ideas -->
 					<ul>
-						<strong>Thermodynamic processes</strong>
+						<strong>Processes and sign ideas</strong>
 						<li>
-							Isothermal process: temperature (<code>T</code>) remains constant.
-							Adiabatic process: no heat exchange, so <code>q = 0</code>, where
-							<code>q</code> means heat exchanged by the system. Reversible
-							process: proceeds through equilibrium states and can be reversed
-							by an infinitesimal change. Irreversible process: occurs through a
-							finite imbalance and cannot be exactly reversed through
-							equilibrium states.
+							<strong>Isothermal process</strong>: temperature remains constant.
+							This is the setting of many PYQs on ideal-gas work.
 						</li>
 						<li>
-							For exams, the most important reversible examples are phase
-							changes exactly at the transition temperature and very slow piston
-							expansion/compression. Free expansion into vacuum is the standard
-							irreversible example.
+							<strong>Adiabatic process</strong>: no heat exchange with
+							surroundings, so \(q=0\).
 						</li>
 						<li>
-							On a pressure-volume or <code>P–V</code> diagram, work depends on
-							path and equals the area under the curve. Internal energy change
-							does not depend on path if the initial and final states are the
-							same.
-						</li>
-						<img
-							src="images/pv_work_area_paths.png"
-							alt="Pressure-volume diagram showing two different paths between same initial and final states and shaded work area page 199 image fig 11.2"
-							style="width: 60%; height: auto; margin-right: 10px"
-						/>
-					</ul>
-					<!--END Thermodynamic processes -->
-					<br />
-
-					<!--START Heat, work and first law -->
-					<ul>
-						<strong>Heat, work and first law</strong>
-						<li>
-							First law of thermodynamics: energy is conserved. In chemistry
-							sign convention, <code>ΔU = q + w</code>. Here
-							<code>ΔU</code> means change in internal energy,
-							<code>q</code> means heat absorbed by the system, and
-							<code>w</code> means work done on the system.
+							<strong>Reversible process</strong>: proceeds through a continuous
+							series of equilibrium states and can be reversed by an
+							infinitesimal change in conditions.
 						</li>
 						<li>
-							Internal energy (<code>U</code>) is the total energy contained in
-							the system. It is a state function. Heat (<code>q</code>) and work
-							(<code>w</code>) are path functions, so their values depend on how
-							the change is carried out.
+							<strong>Irreversible process</strong>: happens suddenly or through
+							non-equilibrium states; free expansion into vacuum is the standard
+							example.
 						</li>
 						<li>
-							Expansion work at constant external pressure is
-							<code>w = -P<sub>ext</sub>ΔV</code>. Here
-							<code>P<sub>ext</sub></code> means external pressure and
-							<code>ΔV</code> means final volume minus initial volume. Expansion
-							gives negative work; compression gives positive work.
+							Exam shortcut: phase changes exactly at the transition temperature
+							are treated as reversible; free expansion and ordinary
+							neutralisation are irreversible. This is directly aligned with the
+							PYQs.
 						</li>
 						<li>
-							At constant volume, <code>ΔV = 0</code>, so
-							<code>q<sub>v</sub> = ΔU</code>. Here
-							<code>q<sub>v</sub></code> means heat exchanged at constant
-							volume.
+							<strong>Exothermic</strong> reactions release heat, so \(\Delta
+							H&lt;0\). <strong>Endothermic</strong> reactions absorb heat, so
+							\(\Delta H&gt;0\).
+						</li>
+						<li>
+							Chemistry sign convention used here: heat absorbed by the system
+							is positive; work done <strong>on</strong> the system is positive;
+							work done <strong>by</strong> the system is negative.
 						</li>
 					</ul>
-					<!--END Heat, work and first law -->
+					<!--END Processes and sign ideas -->
 					<br />
 
-					<!--START Enthalpy, heat capacities and the Delta H–Delta U link -->
+					<!--START First law internal energy and work -->
 					<ul>
-						<strong>Enthalpy, heat capacities and the ΔH–ΔU link</strong>
+						<strong>First law, internal energy and work</strong>
 						<li>
-							Enthalpy is defined as <code>H = U + PV</code>. Here
-							<code>H</code> means enthalpy, <code>U</code> means internal
-							energy, <code>P</code> means pressure and <code>V</code> means
-							volume. At constant pressure, <code>ΔH = q<sub>p</sub></code
-							>, where <code>q<sub>p</sub></code> means heat exchanged at
-							constant pressure.
+							The first law of thermodynamics is the energy-conservation
+							statement: energy is neither created nor destroyed.
 						</li>
 						<li>
-							For ideal-gas heating at constant pressure,
-							<code>q<sub>p</sub> = nC<sub>p</sub>ΔT = ΔH</code>. Here
-							<code>n</code> means number of moles,
-							<code>C<sub>p</sub></code> means molar heat capacity at constant
-							pressure, and <code>ΔT</code> means change in temperature.
+							The central equation is <strong>\(\Delta U = q + w\)</strong>.
 						</li>
 						<li>
-							At constant volume, heating follows
-							<code>q<sub>v</sub> = nC<sub>v</sub>ΔT = ΔU</code>. Here
-							<code>C<sub>v</sub></code> means molar heat capacity at constant
-							volume.
+							<strong>Internal energy</strong> \(U\) is a state function.
+							Absolute \(U\) is not measured directly, but change in internal
+							energy \(\Delta U\) is meaningful and measurable.
 						</li>
 						<li>
-							So the difference is: <code>C<sub>p</sub></code> tells how much
-							heat is needed to raise the temperature of 1 mole of substance by
-							1 K at constant pressure, while <code>C<sub>v</sub></code> tells
-							the same thing at constant volume.
+							For expansion or compression against a constant external pressure,
+							the must-know work formula is
+							<strong>\(w=-P_{\text{ext}}\Delta V\)</strong>.
 						</li>
 						<li>
-							For ideal gases, remember the standard relation
-							<code>C<sub>p</sub> - C<sub>v</sub> = R</code>, where
-							<code>R</code> is the universal gas constant.
+							At constant volume, \(\Delta V=0\), so
+							<strong>\(\Delta U=q_v\)</strong>.
 						</li>
 						<li>
-							For gaseous reactions, <code>ΔH = ΔU + Δn<sub>g</sub>RT</code>.
-							Here <code>Δn<sub>g</sub></code> means change in number of moles
-							of gases = gaseous products minus gaseous reactants,
-							<code>R</code> is the gas constant, and <code>T</code> is absolute
-							temperature in kelvin.
-						</li>
-						<li>
-							For solids and liquids, the difference between <code>ΔH</code> and
-							<code>ΔU</code> is usually negligible because volume change is
-							small.
-						</li>
-						<li>
-							Calorimetry is the measurement of heat changes. At this level, the
-							key exam idea is: constant-pressure calorimetry gives
-							<code>ΔH</code>, constant-volume calorimetry gives
-							<code>ΔU</code>.
+							On a \(P\)-\(V\) diagram, work equals the area under the curve;
+							for the same initial and final states, work can change with path,
+							but \(\Delta U\) does not. This exact contrast has appeared in
+							PYQs.
 						</li>
 					</ul>
-					<!--END Enthalpy, heat capacities and the Delta H–Delta U link -->
+					<!--END First law internal energy and work -->
 					<br />
 
-					<!--START Thermochemical equations -->
+					<!--START Enthalpy heat capacity and Cp Cv -->
 					<ul>
-						<strong>Thermochemical equations</strong>
+						<strong
+							>Enthalpy, heat capacity and the \(C_p\)–\(C_v\) link</strong
+						>
 						<li>
-							A thermochemical equation must include the balanced chemical
-							equation, physical states of reactants and products, and the
-							enthalpy change <code>ΔH</code>.
+							<strong>Enthalpy</strong> is defined as
+							<strong>\(H=U+PV\)</strong>. It is also a state function.
 						</li>
 						<li>
-							Exothermic reactions have <code>ΔH &lt; 0</code>, meaning heat is
-							released. Endothermic reactions have <code>ΔH &gt; 0</code>,
-							meaning heat is absorbed.
+							At constant pressure, the most important result is
+							<strong>\(\Delta H=q_p\)</strong>.
 						</li>
 						<li>
-							Physical state matters because enthalpy depends on whether a
-							substance is solid, liquid, gas or aqueous.
+							For heating at constant pressure, use
+							<strong>\(q_p=nC_p\Delta T\)</strong>; therefore for such cases
+							<strong>\(\Delta H=nC_p\Delta T\)</strong>. This is one of the
+							repeated high-yield links in the PYQs.
 						</li>
 						<li>
-							If the whole equation is multiplied by a number, the
-							<code>ΔH</code> value is multiplied by the same number. If the
-							equation is reversed, the sign of <code>ΔH</code> changes.
+							Heat capacity tells how much heat is needed to raise temperature.
+							\(C_p\) is heat capacity at constant pressure and \(C_v\) at
+							constant volume.
+						</li>
+						<li>
+							For ideal gases, the standard relation is
+							<strong>\(C_p-C_v=R\)</strong>.
+						</li>
+						<li>
+							For gas-phase reactions, the must-remember conversion is
+							<strong>\(\Delta H=\Delta U+\Delta n_gRT\)</strong>, where
+							\(\Delta n_g\) counts only gaseous moles of products minus gaseous
+							moles of reactants.
+						</li>
+						<li>
+							Quick trap: if there is no change in gaseous moles, then \(\Delta
+							n_g=0\) and \(\Delta H=\Delta U\).
 						</li>
 					</ul>
-					<!--END Thermochemical equations -->
+					<!--END Enthalpy heat capacity and Cp Cv -->
 					<br />
 
-					<!--START Standard enthalpies and reaction enthalpy -->
+					<!--START Ideal gas work formulas -->
 					<ul>
-						<strong>Standard enthalpies and reaction enthalpy</strong>
+						<strong>Ideal-gas work formulas that must be remembered</strong>
 						<li>
-							Standard enthalpy of reaction, <code>Δ<sub>r</sub>H°</code>, means
-							enthalpy change of a reaction when reactants and products are in
-							standard states. The subscript <code>r</code> stands for reaction
-							and the superscript <code>°</code> stands for standard state.
+							For <strong>reversible isothermal</strong> expansion/compression
+							of an ideal gas, use
+							<strong>\(w=-nRT\ln\left(\frac{V_2}{V_1}\right)\)</strong>.
 						</li>
 						<li>
-							Standard enthalpy of formation, <code>Δ<sub>f</sub>H°</code>,
-							means enthalpy change when 1 mole of a compound is formed from its
-							elements in their most stable standard states. The subscript
-							<code>f</code> stands for formation.
-						</li>
-						<li>
-							Any element in its standard state has
-							<code>Δ<sub>f</sub>H° = 0</code>. For carbon, the standard state
-							is graphite, not diamond.
-						</li>
-						<li>
-							Standard enthalpy of combustion, <code>Δ<sub>c</sub>H°</code>,
-							means heat evolved when 1 mole of a substance burns completely in
-							oxygen. The subscript <code>c</code> stands for combustion.
-						</li>
-						<li>
-							Standard enthalpy of neutralisation means the heat evolved when 1
-							mole of <code>H<sup>+</sup></code> reacts with 1 mole of
-							<code>OH<sup>-</sup></code> to form water. For strong acid and
-							strong base, this is nearly constant.
-						</li>
-						<li>
-							The most-used identity is
-							<code
-								>Δ<sub>r</sub>H° = ΣνΔ<sub>f</sub>H°(products) -
-								ΣνΔ<sub>f</sub>H°(reactants)</code
-							>. Here <code>Σ</code> means sum, and <code>ν</code> means
-							stoichiometric coefficient from the balanced equation.
-						</li>
-					</ul>
-					<!--END Standard enthalpies and reaction enthalpy -->
-					<br />
-
-					<!--START Hess’s law and high-yield calculation patterns -->
-					<ul>
-						<strong>Hess’s law and high-yield calculation patterns</strong>
-						<li>
-							Hess’s law says that enthalpy change depends only on the initial
-							and final states, not on the route. So thermochemical equations
-							can be added, subtracted, reversed or multiplied like algebra to
-							obtain a target reaction.
-						</li>
-						<li>
-							When a target reaction cannot be measured directly, build it from
-							known reactions by cancelling common species. This is one of the
-							most repeated PYQ patterns.
-						</li>
-						<li>
-							For formation enthalpy from combustion data, the common shortcut
-							is: add the combustion enthalpies of the constituent elements to
-							the same final combustion products, then subtract the combustion
-							enthalpy of the compound.
-						</li>
-						<li>
-							For reaction enthalpy from formation data, always do products
-							minus reactants, keeping stoichiometric coefficients carefully.
-							Most mistakes come from sign errors or missing coefficients.
-						</li>
-						<img
-							src="images/hess_law_alternate_paths.png"
-							alt="Hess law alternate paths for conversion of carbon and oxygen to carbon dioxide page 206 image fig 11.4"
-							style="width: 60%; height: auto; margin-right: 10px"
-						/>
-					</ul>
-					<!--END Hess’s law and high-yield calculation patterns -->
-					<br />
-
-					<!--START Bond enthalpy method -->
-					<ul>
-						<strong>Bond enthalpy method</strong>
-						<li>
-							Chemical reactions involve bond breaking and bond formation.
-							Breaking bonds absorbs energy; forming bonds releases energy.
-						</li>
-						<li>
-							For gaseous reactions, estimate reaction enthalpy using
-							<code
-								>ΔH ≈ Σ(bond enthalpies of bonds broken) - Σ(bond enthalpies of
-								bonds formed)</code
+							The same result may be written as
+							<strong
+								>\(w=-nRT\ln\left(\frac{P_1}{P_2}\right)=nRT\ln\left(\frac{P_2}{P_1}\right)\)</strong
 							>.
 						</li>
 						<li>
-							Bond dissociation enthalpy means energy needed to break a
-							particular bond in a particular gaseous molecule. Bond enthalpy
-							means the average value for that type of bond across molecules.
-							For polyatomic molecules, these are not exactly the same.
+							In base-10 form,
+							<strong>\(w=-2.303\,nRT\log\left(\frac{V_2}{V_1}\right)\)</strong>
+							or
+							<strong>\(w=-2.303\,nRT\log\left(\frac{P_1}{P_2}\right)\)</strong
+							>.
 						</li>
 						<li>
-							In exam problems, first draw structural formulas, list bonds
-							broken and bonds formed, then substitute bond enthalpy values.
-							This avoids most counting mistakes.
+							Expansion gives negative work in chemistry convention; compression
+							gives positive work.
+						</li>
+						<li>
+							Very common exam distinction: reversible isothermal work uses the
+							\(\ln\) formula, but irreversible expansion against constant
+							external pressure uses
+							<strong>\(w=-P_{\text{ext}}\Delta V\)</strong>.
+						</li>
+						<li>
+							When gas is generated from essentially zero initial gas volume at
+							constant pressure, a quick result is
+							<strong>\(w=-\Delta n_gRT\)</strong>.
 						</li>
 					</ul>
-					<!--END Bond enthalpy method -->
+					<!--END Ideal gas work formulas -->
 					<br />
 
-					<!--START Spontaneity, entropy and Gibbs energy -->
+					<!--START Thermochemical equations and standard enthalpies -->
 					<ul>
-						<strong>Spontaneity, entropy and Gibbs energy</strong>
+						<strong>Thermochemical equations and standard enthalpies</strong>
 						<li>
-							Decrease in enthalpy alone is not enough to decide spontaneity.
-							Entropy must also be considered.
+							A thermochemical equation must show physical states: \((s)\),
+							\((l)\), \((g)\), \((aq)\), because enthalpy depends on state.
 						</li>
 						<li>
-							Entropy (<code>S</code>) is a measure of disorder or dispersal of
-							energy. In general, gases have higher entropy than liquids, and
-							liquids have higher entropy than solids.
+							If a chemical equation is multiplied by a factor, \(\Delta H\) is
+							multiplied by the same factor. If the equation is reversed, the
+							sign of \(\Delta H\) changes.
 						</li>
 						<li>
-							The deciding relation is <code>ΔG = ΔH - TΔS</code>. Here
-							<code>G</code> means Gibbs energy, <code>ΔG</code> means change in
-							Gibbs energy, <code>ΔH</code> means enthalpy change,
-							<code>T</code> means absolute temperature in kelvin, and
-							<code>ΔS</code> means entropy change.
+							<strong>Standard state</strong> means 1 bar pressure at a
+							specified temperature, with the substance in its most stable form
+							under those conditions.
 						</li>
 						<li>
-							At constant temperature and pressure: <code>ΔG &lt; 0</code> means
-							spontaneous, <code>ΔG &gt; 0</code> means non-spontaneous, and
-							<code>ΔG = 0</code> means equilibrium.
+							<strong>Standard enthalpy of reaction</strong>,
+							\(\Delta_rH^\circ\), is the enthalpy change when reactants and
+							products are in their standard states.
 						</li>
 						<li>
-							Temperature-dependent spontaneity is very important: if both
-							<code>ΔH</code> and <code>ΔS</code> are positive, high temperature
-							favours spontaneity; if both are negative, low temperature favours
-							spontaneity.
+							<strong>Standard enthalpy of formation</strong>,
+							\(\Delta_fH^\circ\), is the enthalpy change for formation of
+							<strong>1 mole</strong> of a compound from its elements in their
+							standard states.
 						</li>
 						<li>
-							The boundary temperature comes from <code>ΔG = 0</code>, so
-							<code>T = ΔH/ΔS</code>, provided the units of <code>ΔH</code> and
-							<code>ΔS</code> are made consistent.
+							Absolute must-know fact:
+							<strong>\(\Delta_fH^\circ=0\)</strong> for any element in its
+							standard state. For carbon, the standard state is
+							<strong>graphite</strong>, not diamond. This has appeared in PYQs.
 						</li>
 						<li>
-							The standard relation
-							<code>ΔG° = -RT ln K = -2.303 RT log K</code> links Gibbs energy
-							to equilibrium. Here <code>K</code> is the equilibrium constant,
-							<code>ln</code> means natural logarithm and <code>log</code> means
-							logarithm base 10.
+							<strong>Standard enthalpy of combustion</strong>,
+							\(\Delta_cH^\circ\), is the heat change when 1 mole of a substance
+							undergoes complete combustion in oxygen.
 						</li>
 						<li>
-							So <code>ΔG° &lt; 0</code> means <code>K &gt; 1</code>, and
-							<code>ΔG° &gt; 0</code> means <code>K &lt; 1</code>.
+							<strong>Standard enthalpy of neutralisation</strong> is the heat
+							change when 1 mole of \(H^+\) is neutralised by 1 mole of \(OH^-\)
+							in dilute solution to form water; for strong acid–strong base, it
+							is nearly constant.
 						</li>
-						<img
-							src="images/gibbs_spontaneity_sign_table.png"
-							alt="Sign table showing spontaneity conditions for combinations of delta H and delta S and the role of temperature"
-							style="width: 40%; height: auto"
-						/>
 					</ul>
-					<!--END Spontaneity, entropy and Gibbs energy -->
+					<!--END Thermochemical equations and standard enthalpies -->
 					<br />
 
-					<!--START Third law and absolute entropy -->
+					<!--START Reaction enthalpy from formation data -->
 					<ul>
-						<strong>Third law and absolute entropy</strong>
+						<strong>Reaction enthalpy from formation data</strong>
 						<li>
-							Third law: the entropy of a pure, perfectly crystalline substance
-							is zero at absolute zero.
+							The most-used formula in this topic is
+							<strong
+								>\(\Delta_rH^\circ=\sum
+								\nu\,\Delta_fH^\circ(\text{products})-\sum
+								\nu\,\Delta_fH^\circ(\text{reactants})\)</strong
+							>.
 						</li>
 						<li>
-							This gives a reference point for assigning absolute entropy
-							values.
+							Use stoichiometric coefficients carefully; if the balanced
+							equation forms 2 moles of a substance, its contribution is
+							doubled. This exact idea appeared in the NH\(_3\) PYQ.
 						</li>
 						<li>
-							For quick revision, the main thing to remember is the statement of
-							the law and its connection to absolute entropy; the detailed
-							low-temperature heat-capacity treatment is low priority for
-							EAPCET-style revision.
+							For decomposition or unknown-formation-enthalpy questions,
+							substitute all known \(\Delta_fH^\circ\) values and solve
+							algebraically for the unknown.
+						</li>
+						<li>
+							High-yield combustion shortcut: when a compound’s
+							\(\Delta_fH^\circ\) is asked from combustion data, combine
+							combustion equations so both routes reach the same final products,
+							then subtract appropriately.
 						</li>
 					</ul>
-					<!--END Third law and absolute entropy -->
+					<!--END Reaction enthalpy from formation data -->
 					<br />
 
-					<!--START Last-minute exam focus -->
+					<!--START Hess law and algebra of equations -->
 					<ul>
-						<strong>Last-minute exam focus</strong>
+						<strong>Hess’s law and algebra of thermochemical equations</strong>
 						<li>
-							Most scoring numericals in this chapter come from a small set of
-							moves: classify state vs path functions, use
-							<code>w = -P<sub>ext</sub>ΔV</code>, use reversible isothermal
-							work formula for ideal gas, use <code>ΔH = q<sub>p</sub></code
-							>, use <code>ΔH = ΔU + Δn<sub>g</sub>RT</code>, use products minus
-							reactants for formation enthalpies, and use Hess’s law algebra.
+							<strong>Hess’s law</strong>: enthalpy change depends only on
+							initial and final states, not on the route taken.
 						</li>
 						<li>
-							For concept questions, remember: reversible means infinitesimal
-							change plus equilibrium throughout; pure solids and liquids are
-							omitted from equilibrium expressions; a catalyst changes only the
-							rate, not <code>ΔH</code>, <code>ΔG°</code> or equilibrium
-							constant.
+							So thermochemical equations can be treated like algebra: reverse,
+							multiply, divide, add and subtract until the target equation is
+							obtained.
 						</li>
 						<li>
-							Common traps: forgetting physical states, using the
-							<code>ln</code> work formula for irreversible work, counting
-							non-gaseous moles in <code>Δn<sub>g</sub></code
-							>, missing stoichiometric coefficients in enthalpy sums, and
-							forgetting that standard-state elements have zero formation
-							enthalpy.
+							When reversing an equation, change the sign of \(\Delta H\); when
+							multiplying coefficients, multiply \(\Delta H\) by the same
+							number.
+						</li>
+						<li>
+							This is one of the strongest PYQ patterns in this chapter,
+							especially for getting target reactions that are not directly
+							measurable.
+						</li>
+						<li>
+							Best exam habit: write all given equations neatly, mark which ones
+							must be reversed, then cancel common species line by line before
+							calculating the final \(\Delta H\).
 						</li>
 					</ul>
-					<!--END Last-minute exam focus -->
+					<!--END Hess law and algebra of equations -->
+					<br />
+
+					<!--START Bond enthalpy -->
+					<ul>
+						<strong>Bond enthalpy and bond dissociation enthalpy</strong>
+						<li>
+							Chemical reactions involve bond breaking and bond formation;
+							energy is absorbed in breaking bonds and released in forming
+							bonds.
+						</li>
+						<li>
+							<strong>Bond dissociation enthalpy</strong> refers to breaking a
+							particular bond in a particular gaseous molecule.
+						</li>
+						<li>
+							<strong>Bond enthalpy</strong> is the average of such bond
+							dissociation enthalpies for a given bond type across gaseous
+							compounds.
+						</li>
+						<li>
+							That is why for polyatomic molecules, bond dissociation enthalpy
+							and bond enthalpy are not always numerically identical.
+						</li>
+						<li>
+							The estimation formula is
+							<strong
+								>\(\Delta H \approx \sum(\text{bond enthalpies of bonds
+								broken})-\sum(\text{bond enthalpies of bonds formed})\)</strong
+							>.
+						</li>
+						<li>
+							This method is mainly used for gaseous reactions and is
+							approximate, but it is highly useful in objective questions.
+						</li>
+					</ul>
+					<!--END Bond enthalpy -->
+					<br />
+
+					<!--START Spontaneity and entropy -->
+					<ul>
+						<strong>Spontaneity and entropy</strong>
+						<li>
+							The first law tells whether energy is conserved; it does
+							<strong>not</strong> by itself tell whether a process is
+							spontaneous.
+						</li>
+						<li>
+							A <strong>spontaneous process</strong> occurs on its own once
+							started; a non-spontaneous one needs continuous outside help.
+						</li>
+						<li>
+							<strong>Entropy</strong> \(S\) is the measure of disorder or
+							randomness of a system.
+						</li>
+						<li>
+							Usual order of entropy:
+							<strong>solid &lt; liquid &lt; gas</strong>.
+						</li>
+						<li>
+							Entropy generally increases when gases mix, when a solid melts,
+							when a liquid vaporises, when number of gas particles increases,
+							or when temperature increases.
+						</li>
+						<li>
+							For a reversible change, the defining relation is
+							<strong>\(\Delta S=\frac{q_{\text{rev}}}{T}\)</strong>.
+						</li>
+						<li>
+							For phase change at transition temperature, the very useful result
+							is
+							<strong
+								>\(\Delta S=\frac{\Delta H_{\text{transition}}}{T}\)</strong
+							>, such as fusion or vaporisation.
+						</li>
+					</ul>
+					<!--END Spontaneity and entropy -->
+					<br />
+
+					<!--START Second law and third law -->
+					<ul>
+						<strong>Second law and third law</strong>
+						<li>
+							The correct entropy criterion for spontaneity is for the
+							<strong>universe</strong>, not just the system:
+							<strong
+								>\(\Delta S_{\text{universe}}=\Delta S_{\text{system}}+\Delta
+								S_{\text{surroundings}}&gt;0\)</strong
+							>
+							for a spontaneous process.
+						</li>
+						<li>
+							At equilibrium, <strong>\(\Delta S_{\text{universe}}=0\)</strong>.
+						</li>
+						<li>
+							This explains why \(\Delta H\) alone is not enough and \(\Delta
+							S_{\text{system}}\) alone is also not enough to judge spontaneity.
+						</li>
+						<li>
+							<strong>Third law of thermodynamics</strong>: the entropy of a
+							pure perfectly crystalline substance approaches zero at absolute
+							zero.
+						</li>
+						<li>
+							From standard molar entropy data, reaction entropy is calculated
+							as
+							<strong
+								>\(\Delta_rS^\circ=\sum \nu S_m^\circ(\text{products})-\sum \nu
+								S_m^\circ(\text{reactants})\)</strong
+							>.
+						</li>
+					</ul>
+					<!--END Second law and third law -->
+					<br />
+
+					<!--START Gibbs energy and temperature dependence -->
+					<ul>
+						<strong
+							>Gibbs energy and temperature dependence of spontaneity</strong
+						>
+						<li>
+							For constant temperature and pressure, the practical spontaneity
+							criterion is <strong>\(\Delta G=\Delta H-T\Delta S\)</strong>.
+						</li>
+						<li>
+							If <strong>\(\Delta G&lt;0\)</strong>, the process is spontaneous.
+							If <strong>\(\Delta G=0\)</strong>, the system is at equilibrium.
+							If <strong>\(\Delta G&gt;0\)</strong>, the process is
+							non-spontaneous.
+						</li>
+						<li>
+							This equation combines the enthalpy factor and the entropy factor,
+							so it is the most exam-useful test for spontaneity.
+						</li>
+						<li>
+							If \(\Delta H&lt;0\) and \(\Delta S&gt;0\), reaction is
+							spontaneous at all temperatures.
+						</li>
+						<li>
+							If \(\Delta H&gt;0\) and \(\Delta S&lt;0\), reaction is
+							non-spontaneous at all temperatures.
+						</li>
+						<li>
+							If \(\Delta H&lt;0\) and \(\Delta S&lt;0\), spontaneity is
+							favoured at low temperature.
+						</li>
+						<li>
+							If \(\Delta H&gt;0\) and \(\Delta S&gt;0\), spontaneity is
+							favoured at high temperature.
+						</li>
+						<li>
+							Very high-yield PYQ shortcut: when spontaneity changes with
+							temperature, set <strong>\(\Delta G=0\)</strong> and use
+							<strong>\(T=\frac{\Delta H}{\Delta S}\)</strong> with consistent
+							units.
+						</li>
+					</ul>
+					<!--END Gibbs energy and temperature dependence -->
+					<br />
+
+					<!--START Standard Gibbs energy and equilibrium -->
+					<ul>
+						<strong>Standard Gibbs energy and equilibrium constant</strong>
+						<li>
+							<strong>Standard Gibbs energy of formation</strong>,
+							\(\Delta_fG^\circ\), is the Gibbs energy change when 1 mole of a
+							compound is formed from its elements in their standard states.
+						</li>
+						<li>
+							For elements in standard state,
+							<strong>\(\Delta_fG^\circ=0\)</strong>.
+						</li>
+						<li>
+							The standard Gibbs energy change of reaction is found exactly like
+							formation enthalpy sums:
+							<strong
+								>\(\Delta_rG^\circ=\sum
+								\nu\,\Delta_fG^\circ(\text{products})-\sum
+								\nu\,\Delta_fG^\circ(\text{reactants})\)</strong
+							>.
+						</li>
+						<li>
+							The most repeated equilibrium link is
+							<strong>\(\Delta G^\circ=-RT\ln K=-2.303RT\log K\)</strong>.
+						</li>
+						<li>
+							Key interpretation:
+							<strong>\(\Delta G^\circ&lt;0 \Rightarrow K&gt;1\)</strong>,
+							<strong>\(\Delta G^\circ=0 \Rightarrow K=1\)</strong>, and
+							<strong>\(\Delta G^\circ&gt;0 \Rightarrow K&lt;1\)</strong>.
+						</li>
+						<li>
+							This is a direct PYQ favourite, so it should be remembered exactly
+							in this form.
+						</li>
+					</ul>
+					<!--END Standard Gibbs energy and equilibrium -->
+					<br />
+
+					<!--START Must-know equations -->
+					<ul>
+						<strong>Must-know equations</strong>
+						<li>\(\Delta U=q+w\)</li>
+						<li>\(w=-P_{\text{ext}}\Delta V\)</li>
+						<li>\(H=U+PV\)</li>
+						<li>\(\Delta H=q_p\)</li>
+						<li>\(\Delta U=q_v\)</li>
+						<li>\(\Delta H=\Delta U+\Delta n_gRT\)</li>
+						<li>\(q_p=nC_p\Delta T\)</li>
+						<li>
+							\(w=-nRT\ln\left(\frac{V_2}{V_1}\right)=-nRT\ln\left(\frac{P_1}{P_2}\right)\)
+							for reversible isothermal ideal-gas change
+						</li>
+						<li>
+							\(\Delta_rH^\circ=\sum \nu\,\Delta_fH^\circ(\text{products})-\sum
+							\nu\,\Delta_fH^\circ(\text{reactants})\)
+						</li>
+						<li>
+							\(\Delta H \approx \sum(\text{bond enthalpies
+							broken})-\sum(\text{bond enthalpies formed})\)
+						</li>
+						<li>\(\Delta S=\frac{q_{\text{rev}}}{T}\)</li>
+						<li>
+							\(\Delta_rS^\circ=\sum \nu S_m^\circ(\text{products})-\sum \nu
+							S_m^\circ(\text{reactants})\)
+						</li>
+						<li>\(\Delta G=\Delta H-T\Delta S\)</li>
+						<li>\(\Delta G^\circ=-RT\ln K=-2.303RT\log K\)</li>
+					</ul>
+					<!--END Must-know equations -->
+					<br />
+
+					<!--START Variables used -->
+					<ul>
+						<strong>Variables used</strong>
+						<li>\(U\): internal energy</li>
+						<li>\(H\): enthalpy</li>
+						<li>\(S\): entropy</li>
+						<li>\(G\): Gibbs energy</li>
+						<li>\(q\): heat</li>
+						<li>\(w\): work</li>
+						<li>\(q_p\): heat exchanged at constant pressure</li>
+						<li>\(q_v\): heat exchanged at constant volume</li>
+						<li>\(C_p\): molar heat capacity at constant pressure</li>
+						<li>\(C_v\): molar heat capacity at constant volume</li>
+						<li>\(P_{\text{ext}}\): external pressure</li>
+						<li>\(\Delta V\): change in volume</li>
+						<li>
+							\(\Delta n_g\): change in moles of gaseous species = gaseous
+							product moles minus gaseous reactant moles
+						</li>
+						<li>\(R\): universal gas constant</li>
+						<li>\(T\): absolute temperature in kelvin</li>
+						<li>\(n\): number of moles</li>
+						<li>\(\Delta_fH^\circ\): standard enthalpy of formation</li>
+						<li>\(\Delta_cH^\circ\): standard enthalpy of combustion</li>
+						<li>\(\Delta_rH^\circ\): standard enthalpy change of reaction</li>
+						<li>\(\Delta_fG^\circ\): standard Gibbs energy of formation</li>
+						<li>
+							\(\Delta_rG^\circ\): standard Gibbs energy change of reaction
+						</li>
+						<li>\(S_m^\circ\): standard molar entropy</li>
+						<li>\(K\): equilibrium constant</li>
+						<li>\(\nu\): stoichiometric coefficient</li>
+					</ul>
+					<!--END Variables used -->
+					<br />
+
+					<!--START Common exam traps -->
+					<ul>
+						<strong>Common exam traps</strong>
+						<li>
+							Do not use the reversible \(\ln\) formula for irreversible
+							expansion against constant external pressure.
+						</li>
+						<li>
+							Do not forget that \(\Delta_fH^\circ\) and \(\Delta_fG^\circ\) of
+							elements in standard state are zero.
+						</li>
+						<li>For carbon, standard state means graphite.</li>
+						<li>
+							In \(\Delta H=\Delta U+\Delta n_gRT\), count only gaseous moles.
+						</li>
+						<li>
+							Before using \(\Delta G=\Delta H-T\Delta S\), convert \(\Delta S\)
+							from J K\(^{-1}\) mol\(^{-1}\) to kJ K\(^{-1}\) mol\(^{-1}\) if
+							\(\Delta H\) is in kJ.
+						</li>
+						<li>
+							In Hess’s law, changing coefficients without changing \(\Delta H\)
+							is a very common mistake.
+						</li>
+					</ul>
+					<!--END Common exam traps -->
 					<br />
 				</div>
 			</div>
