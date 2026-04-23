@@ -42,371 +42,459 @@
 					High-value revision
 				</button>
 				<div class="accordion-content">
-					<!--START Variables used -->
+					<!--START Structural representations of organic compounds -->
 					<ul>
-						<strong>Variables used</strong>
-						<li>\(R, R', Ar\): alkyl group, another alkyl group, aryl group</li>
-						<li>\(X\): halogen atom</li>
-						<li>\(\sigma\), \(\pi\): sigma bond, pi bond</li>
-						<li>\(sp^3, sp^2, sp\): hybridisation states of carbon</li>
-						<li>\(h\nu\): light / UV energy</li>
-						<li>\(\Delta\): heat</li>
-						<li>\([O]\): oxidation shorthand</li>
-						<li>\(\mathrm{DBE}\): degree of unsaturation</li>
+						<strong>Structural representations of organic compounds</strong>
 						<li>
-							\(o\)-, \(m\)-, \(p\)-: ortho, meta, para positions in benzene
-						</li>
-					</ul>
-					<!--END Variables used -->
-					<br />
-
-					<!--START Nomenclature and structure recognition -->
-					<ul>
-						<strong>Nomenclature and structure recognition</strong>
-						<li>
-							In IUPAC naming, choose the
-							<strong
-								>longest chain containing the principal multiple bond /
-								functional group</strong
-							>, then number to give that principal feature the lowest locant
-							before optimising substituent positions.
-						</li>
-						<li>
-							For branched hydrocarbons, do not just chase the visually longest
-							chain; check whether another chain of the same length gives more
-							substituents or a lower-priority numbering pattern.
-						</li>
-						<li>
-							For unsaturated alcohol naming, the parent chain must include both
-							the \(\mathrm{-OH}\) group and the multiple bond whenever
-							possible, and numbering must favour the alcohol first in standard
-							IUPAC priority.
-						</li>
-						<li>
-							Hybridisation questions are usually direct if you count from the
-							final structure: benzene ring carbon is \(sp^2\), carbonyl carbon
-							is \(sp^2\), saturated alkyl carbon is \(sp^3\), and a carbon in
-							\(\mathrm{C \equiv C}\) is \(sp\).
-						</li>
-					</ul>
-					<!--END Nomenclature and structure recognition -->
-					<br />
-
-					<!--START Resonance and electronic effects -->
-					<ul>
-						<strong>Resonance and electronic effects</strong>
-						<li>
-							<strong>Hyperconjugation</strong> means delocalisation of
-							\(\sigma(\mathrm{C-H})\) electrons into an adjacent \(\pi\)-system
-							or vacant p-orbital. If a C–H bond sits next to \(\mathrm{C=C}\),
-							a benzylic system, or a carbocation, hyperconjugation is a strong
-							clue.
-						</li>
-						<li>
-							<strong>\(-R\) effect</strong> means electron withdrawal by
-							resonance. Carbonyl-containing groups such as \(\mathrm{-CHO}\),
-							\(\mathrm{-COR}\), \(\mathrm{-COOR}\) are classic \(-R\) groups
-							because they pull electron density from the conjugated system.
-						</li>
-						<li>
-							For resonance-contributor stability:
-							<strong>uncharged form &gt; charge-separated form</strong>, and
-							among charged forms, the one placing negative charge on the more
-							electronegative atom is more stable.
-						</li>
-						<li>
-							Do not confuse \(-R\) with \(-I\), and do not call every
-							electron-shift picture hyperconjugation. If the delocalisation is
-							through conjugation, think resonance; if it specifically uses
-							adjacent \(\sigma(\mathrm{C-H})\) overlap, think hyperconjugation.
-						</li>
-						<li>
-							<img
-								src="images/chem_q136a.png"
-								alt="Resonance-like hyperconjugative structures showing delocalisation of sigma electrons from the benzylic C-H bond into the benzene ring"
-								style="width: 30%; height: auto; margin-right: 10px"
-							/>
-						</li>
-						<li>Copy this image into the images folder.</li>
-					</ul>
-					<!--END Resonance and electronic effects -->
-					<br />
-
-					<!--START Nitrogen estimation -->
-					<ul>
-						<strong>Nitrogen estimation</strong>
-						<li>
-							<strong>Kjeldahl’s method</strong> is worth remembering mainly
-							through its limitations: it works for ordinary amino-type
-							nitrogen, but not for nitro compounds, azo compounds, diazonium
-							salts, or many aromatic ring-nitrogen systems such as pyridine.
-						</li>
-						<li>
-							If the options are amine vs nitro vs diazonium vs ring nitrogen,
-							amino-type nitrogen is usually the safe inclusion and the others
-							are the standard exclusions.
-						</li>
-					</ul>
-					<!--END Nitrogen estimation -->
-					<br />
-
-					<!--START Alkane preparation and conversion -->
-					<ul>
-						<strong>Alkane preparation and conversion</strong>
-						<li>
-							<strong>Wurtz reaction:</strong> \(\mathrm{2R-X + 2Na
-							\xrightarrow[dry\ ether]{} R-R + 2NaX}\). It couples two identical
-							alkyl halides to give a higher alkane, so count carbons carefully
-							before moving to the next step.
-						</li>
-						<li>
-							<strong>Kolbe electrolysis:</strong> \(\mathrm{2RCOO^-
-							\xrightarrow[electrolysis]{} R-R + 2CO_2 + 2e^-}\). It usually
-							gives a symmetrical higher alkane; sodium acetate gives ethane and
-							carbon dioxide at the anode.
-						</li>
-						<li>
-							<strong>Soda-lime decarboxylation:</strong> \(\mathrm{RCOONa +
-							NaOH \xrightarrow[CaO]{\Delta} RH + Na_2CO_3}\). The alkane formed
-							has <strong>one carbon less</strong> than the parent carboxylate.
-						</li>
-						<li>
-							In multistep hydrocarbon conversions, a very common pattern is:
-							Wurtz coupling \(\rightarrow\) higher alkane \(\rightarrow\)
-							catalytic aromatization \(\rightarrow\) benzene derivative
-							chemistry.
-						</li>
-					</ul>
-					<!--END Alkane preparation and conversion -->
-					<br />
-
-					<!--START Alkanes and aromatic conversion logic -->
-					<ul>
-						<strong>Alkanes and aromatic conversion logic</strong>
-						<li>
-							Higher straight-chain alkanes under catalytic dehydrogenation /
-							aromatization conditions can give aromatic compounds such as
-							benzene. This is a repeated conversion pattern and is worth
-							treating as must-know.
-						</li>
-						<li>
-							If benzene formed in one step is then treated with
-							\(\mathrm{RCOCl/AlCl_3}\), the next step is
-							<strong>Friedel–Crafts acylation</strong>, not ordinary addition.
-						</li>
-						<li>
-							Once the final product is known, count \(sp^2\) and \(sp^3\)
-							carbons directly from the final structure instead of tracing
-							hybridisation through every intermediate.
-						</li>
-					</ul>
-					<!--END Alkanes and aromatic conversion logic -->
-					<br />
-
-					<!--START Alkenes: cleavage and product prediction -->
-					<ul>
-						<strong>Alkenes: cleavage and product prediction</strong>
-						<li>
-							Hot acidic \(\mathrm{KMnO_4}\) and ozonolysis-type logic both
-							reward the same skill:
-							<strong>read the double bond and split it correctly</strong>. The
-							product depends on how substituted each alkene carbon is.
-						</li>
-						<li>
-							A terminal \(\mathrm{=CH_2}\) carbon under strong oxidative
-							cleavage can end up as \(\mathrm{CO_2}\), while the more
-							substituted partner can give a ketone or carboxylic acid depending
-							on substitution.
-						</li>
-						<li>
-							Among \(\mathrm{C_4H_8}\) alkenes, the one showing geometrical
-							isomerism is <strong>but-2-ene</strong>. This is a very standard
-							identification point.
-						</li>
-						<li>
-							If a symmetrical alkene such as but-2-ene undergoes strong
-							oxidative cleavage, both sides give the same product; this makes
-							downstream conversion chains much easier to track.
+							Be able to identify the three common ways of writing the same
+							molecule: <strong>condensed formula</strong> writes groups
+							continuously like \(\mathrm{CH_3CH_2CH_2CH_3}\),
+							<strong>bond-line formula</strong> shows only the zig-zag carbon
+							skeleton, and <strong>complete structural formula</strong> shows
+							all atoms and bonds. This is a direct PYQ type, so treat it as a
+							must-know recognition skill.
 						</li>
 						<li>
 							<img
 								src="images/chem_q137.png"
-								alt="Q137 question image"
+								alt="Question showing three representations of the same organic compound as condensed formula, bond-line formula and complete structural formula"
 								style="width: 30%; height: auto; margin-right: 10px"
 							/>
 						</li>
-						<li>Copy this image into the images folder.</li>
+						<li>
+							Copy this image into the <code>images</code> folder if you want
+							the representation pattern to be visually shown in the
+							quick-revision page.
+						</li>
 					</ul>
-					<!--END Alkenes: cleavage and product prediction -->
+					<!--END Structural representations of organic compounds -->
 					<br />
 
-					<!--START Markovnikov peroxide and alkene reaction shortcuts -->
+					<!--START Nomenclature of organic compounds -->
+					<ul>
+						<strong>Nomenclature of organic compounds</strong>
+						<li>
+							In IUPAC naming, first choose the longest chain containing the
+							<strong>principal functional group</strong> and the multiple bond,
+							then number it so that the principal functional group gets the
+							lowest locant before worrying about substituents. This matters
+							especially in PYQs with alcohol + alkene + halogen + alkyl
+							substituents packed into one structure.
+						</li>
+						<li>
+							When a molecule contains \(-\mathrm{OH}\), \(\mathrm{C=C}\),
+							halogens and alkyl branches together, write the parent as an
+							<strong>unsaturated alcohol</strong> and then add substituents in
+							alphabetical order. Students usually lose marks by numbering from
+							the wrong end or by giving the alkene lower priority than the
+							alcohol.
+						</li>
+						<li>
+							<img
+								src="images/chem_q_iupac_mixed_functionality.png"
+								alt="Organic structure for IUPAC naming with alcohol alkene halogen and alkyl substituents on the same chain"
+								style="width: 30%; height: auto; margin-right: 10px"
+							/>
+						</li>
+						<li>
+							Fetch this image from Google Images only if you feel the
+							nomenclature section needs one visual anchor; otherwise this
+							section can stay text-only.
+						</li>
+					</ul>
+					<!--END Nomenclature of organic compounds -->
+					<br />
+
+					<!--START Isomerism and carbon-type counting -->
+					<ul>
+						<strong>Isomerism and carbon-type counting</strong>
+						<li>
+							For alkane isomer PYQs, count
+							<strong
+								>primary, secondary, tertiary and quaternary carbons</strong
+							>
+							directly from the skeleton; this often identifies the correct
+							isomer faster than checking all options mechanically. A
+							\(\mathrm{C_6H_{14}}\) isomer with four primary and two tertiary
+							carbons is the highly branched one, so branch-counting is a real
+							exam shortcut.
+						</li>
+						<li>
+							In hybridisation-count PYQs, count from the
+							<strong>final product structure</strong> rather than replaying the
+							whole sequence. In acetophenone, all six benzene carbons and the
+							carbonyl carbon are \(sp^2\), while the methyl carbon is \(sp^3\).
+						</li>
+					</ul>
+					<!--END Isomerism and carbon-type counting -->
+					<br />
+
+					<!--START Fundamental concepts in reaction mechanisms -->
+					<ul>
+						<strong>Fundamental concepts in reaction mechanisms</strong>
+						<li>
+							For sequence-based PYQs, the fastest route is usually to recognise
+							the <strong>standard named transformation</strong> before
+							expanding any mechanism. Once a step is recognised as Wurtz
+							reaction, aromatization, Friedel–Crafts acylation, peroxide
+							addition or Kolbe-type logic, the rest becomes straightforward
+							structure tracking.
+						</li>
+						<li>
+							When a question is asking which compound is most reactive in an
+							\(S_\mathrm{N}1\) mechanism, compare the
+							<strong
+								>carbocation stability after leaving-group departure</strong
+							>; benzylic carbocations are strongly stabilised by resonance, and
+							extra alkyl/phenyl substitution increases the rate further.
+						</li>
+					</ul>
+					<!--END Fundamental concepts in reaction mechanisms -->
+					<br />
+
+					<!--START Electron displacement effects in covalent bonds -->
+					<ul>
+						<strong>Electron displacement effects in covalent bonds</strong>
+						<li>
+							<strong>Hyperconjugation</strong> means delocalisation of a
+							\(\sigma(\mathrm{C-H})\) bond next to a \(\pi\)-bond or vacant
+							\(p\)-orbital; in options, look for an alkyl \(\mathrm{C-H}\)
+							directly adjacent to \(\mathrm{C=C}\) or \(\mathrm{C^+}\). Do not
+							confuse this with resonance from a lone pair or with simple
+							inductive effect.
+						</li>
+						<li>
+							For resonance-stability PYQs, remember the ranking rule: an
+							<strong>uncharged contributor</strong> is usually more stable than
+							a charge-separated one, and among charged forms the better
+							contributor puts
+							<strong>negative charge on the more electronegative atom</strong>.
+							This is exactly the kind of question where one clean rule solves
+							the whole item.
+						</li>
+						<li>
+							<img
+								src="images/chem_q_hyperconjugation.png"
+								alt="Question showing electron displacement options including hyperconjugation in propene versus resonance and inductive effect"
+								style="width: 30%; height: auto; margin-right: 10px"
+							/>
+						</li>
+						<li>
+							Copy this image into the <code>images</code> folder only if you
+							want the hyperconjugation recognition pattern shown visually;
+							otherwise the text rule is enough for quick revision.
+						</li>
+					</ul>
+					<!--END Electron displacement effects in covalent bonds -->
+					<br />
+
+					<!--START Methods of purification of organic compounds -->
+					<ul>
+						<strong>Methods of purification of organic compounds</strong>
+						<li>
+							<strong>Steam distillation</strong> is used for a water-insoluble
+							or sparingly water-soluble organic liquid that is
+							<strong>volatile in steam</strong> and often has a high boiling
+							point or may decompose on direct heating. The classic PYQ logic is
+							to choose a compound like aniline with water, not a fully miscible
+							liquid.
+						</li>
+						<li>
+							The idea is that for two immiscible liquids, the total vapour
+							pressure is the sum of the individual vapour pressures, so boiling
+							occurs below the normal boiling point of either pure component. In
+							MCQs, ask: “Is the organic liquid steam-volatile and nearly
+							immiscible with water?”
+						</li>
+					</ul>
+					<!--END Methods of purification of organic compounds -->
+					<br />
+
+					<!--START Qualitative elemental analysis -->
+					<ul>
+						<strong>Qualitative elemental analysis of organic compounds</strong>
+						<li>
+							In <strong>Lassaigne’s test for nitrogen</strong>, sodium fusion
+							converts covalently bonded nitrogen into ionic cyanide, and after
+							treatment with \(\mathrm{FeSO_4}\) followed by acidification, a
+							<strong>Prussian blue colour confirms nitrogen</strong>. This is a
+							direct fact-based PYQ and should be memorised exactly.
+						</li>
+						<li>
+							If the question asks for the element confirmed by Prussian blue
+							after sodium fusion, the answer is nitrogen without overthinking
+							the rest of the procedure.
+						</li>
+					</ul>
+					<!--END Qualitative elemental analysis -->
+					<br />
+
+					<!--START Quantitative elemental analysis -->
 					<ul>
 						<strong
-							>Markovnikov, peroxide effect and alkene reaction
-							shortcuts</strong
+							>Quantitative elemental analysis of organic compounds</strong
 						>
 						<li>
-							<strong>Markovnikov rule:</strong> in normal ionic addition of HX
-							to an unsymmetrical alkene, H goes to the carbon already carrying
-							more hydrogens.
+							<strong>Kjeldahl’s method</strong> works for ordinary amine-type
+							nitrogen but
+							<strong
+								>does not estimate nitro, azo, diazonium or ring nitrogen of
+								heterocycles like pyridine</strong
+							>. This exclusion list is much more important than the digestion
+							details for PYQ purposes.
 						</li>
 						<li>
-							<strong>Peroxide effect</strong> is the anti-Markovnikov addition
-							of <strong>HBr only</strong>. Do not generalise it to HCl or HI.
+							If options mix aniline/benzylamine with nitrobenzene, diazonium
+							salt and pyridine, mark the amine-type compounds as suitable and
+							eliminate the rest immediately.
 						</li>
 						<li>
-							If hydration of an alkyne / special alkene sequence is involved,
-							remember that the initially formed enol usually rearranges by
-							keto-enol tautomerism to the more stable carbonyl compound.
+							<img
+								src="images/chem_q_kjeldahl_exceptions.png"
+								alt="Question showing aniline benzene diazonium chloride nitrobenzene pyridine and benzylamine for Kjeldahl nitrogen estimation"
+								style="width: 30%; height: auto; margin-right: 10px"
+							/>
+						</li>
+						<li>
+							Copy this image into the <code>images</code> folder if you want
+							the exception set shown exactly as in the PYQ.
 						</li>
 					</ul>
-					<!--END Markovnikov peroxide and alkene reaction shortcuts -->
+					<!--END Quantitative elemental analysis -->
 					<br />
 
-					<!--START Alkynes: acidic hydrogen and counting -->
+					<!--START Alkanes: preparation and isomer-based identification -->
 					<ul>
-						<strong>Alkynes: acidic hydrogen and counting</strong>
+						<strong
+							>Alkanes: preparation and isomer-based identification</strong
+						>
 						<li>
-							Only <strong>terminal alkynes</strong> have acidic hydrogen:
-							\(\mathrm{R-C \equiv C-H}\). Internal alkynes do not.
+							<strong>Wurtz reaction</strong> \(\left(2\mathrm{R-X} +
+							2\mathrm{Na} \rightarrow \mathrm{R-R} + 2\mathrm{NaX}\right)\) is
+							a standard carbon-chain coupling method and is worth memorising as
+							a pattern, not just as a one-question trick. In PYQs, use it both
+							for product prediction and for deciding which alkyl halide can
+							give a required symmetrical alkane.
 						</li>
 						<li>
-							The acidity comes from the high s-character of the
-							\(sp\)-hybridised carbon, which stabilises the conjugate base
-							better than in alkenes or alkanes.
-						</li>
-						<li>
-							For isomer-counting questions, do not start with acidity. First
-							list all open-chain alkyne isomers, then split them into
-							<strong>terminal</strong> and <strong>internal</strong>. That is
-							the cleanest route.
-						</li>
-						<li>
-							Useful quick checks: for one open-chain alkyne, the general
-							formula is \(\mathrm{C_{n}H_{2n-2}}\), and \(\mathrm{DBE = C + 1 -
-							\frac{H}{2}}\) helps confirm whether the formula fits one triple
-							bond.
-						</li>
-						<li>
-							For \(\mathrm{C_6H_{10}}\), total open-chain alkyne isomers \(=
-							7\), of which terminal \(= 4\) and internal \(= 3\). This exact
-							count is worth remembering because it has already been asked.
+							If the target alkane is highly branched, check whether the
+							required product can come from
+							<strong>self-coupling of the same alkyl halide</strong>; that is
+							usually the key elimination step in Wurtz-based MCQs.
 						</li>
 					</ul>
-					<!--END Alkynes: acidic hydrogen and counting -->
+					<!--END Alkanes: preparation and isomer-based identification -->
 					<br />
 
-					<!--START SN1 and carbocation stability -->
+					<!--START Alkanes: physical properties -->
 					<ul>
-						<strong>\(S_\mathrm{N}1\) and carbocation stability</strong>
+						<strong>Alkanes: physical properties</strong>
 						<li>
-							\(S_\mathrm{N}1\) reactivity follows
-							<strong>carbocation stability</strong>. The leaving group leaves
-							first, so the more stable the carbocation, the faster the
-							reaction.
+							For isomeric hydrocarbons,
+							<strong>boiling point decreases with branching</strong> because
+							branching reduces surface area and weakens van der Waals
+							attraction. So among isomeric alkanes, the most branched structure
+							usually has the lowest boiling point.
 						</li>
 						<li>
-							Resonance stabilisation is especially powerful in
-							<strong>benzylic</strong> and <strong>allylic</strong> systems;
-							alkyl substitution adds extra help through \(+I\) effect and
-							hyperconjugation.
-						</li>
-						<li>
-							A tertiary benzylic carbocation can be far more stable than a
-							primary benzylic carbocation because it combines resonance with
-							extra alkyl stabilisation.
-						</li>
-						<li>
-							Watch for the dangerous opposite case too: a
-							<strong>vinylic carbocation</strong> is very unstable, so options
-							placing positive charge directly on a double-bond carbon are
-							usually poor choices.
+							This is a compact but important PYQ rule: for the same molecular
+							formula, straight-chain \(>\) less branched \(>\) more branched in
+							boiling point.
 						</li>
 					</ul>
-					<!--END SN1 and carbocation stability -->
+					<!--END Alkanes: physical properties -->
 					<br />
 
-					<!--START Friedel-Crafts and benzene substitution -->
+					<!--START Alkanes: controlled oxidation, aromatization and related sequence logic -->
 					<ul>
-						<strong>Friedel–Crafts and benzene substitution</strong>
+						<strong
+							>Alkanes: controlled oxidation, aromatization and related sequence
+							logic</strong
+						>
 						<li>
-							Benzene prefers <strong>electrophilic substitution</strong>, not
-							addition, because aromaticity must be preserved.
+							Controlled oxidation of alkanes under special conditions can
+							appear in sequence PYQs, but the bigger recurring memory point is
+							that a straight-chain alkane under suitable catalytic
+							high-temperature conditions may undergo
+							<strong>aromatization</strong> to give benzene. Once benzene
+							appears, switch mentally to aromatic-hydrocarbon chemistry.
 						</li>
 						<li>
-							<strong>Friedel–Crafts alkylation:</strong> benzene + alkyl halide
-							/ \(\mathrm{AlCl_3}\) gives alkylbenzene.
-							<strong>Friedel–Crafts acylation:</strong> benzene + acyl chloride
-							/ \(\mathrm{AlCl_3}\) gives aryl ketone.
+							In long sequences, recognise the three-step pattern quickly:
+							<strong
+								>Wurtz coupling \(\rightarrow\) aromatization \(\rightarrow\)
+								Friedel–Crafts acylation</strong
+							>. This exact chain is high-yield because it combines alkane
+							chemistry, aromatic preparation and final structure counting in
+							one question.
 						</li>
 						<li>
-							For acylation, the real electrophile is the
-							<strong>acylium ion</strong> \(\mathrm{RCO^+}\). So benzene with
-							\(\mathrm{CH_3COCl/AlCl_3}\) gives acetophenone directly.
+							<img
+								src="images/chem_q137.png"
+								alt="2025 May 2 Shift 1 Q137 solution image"
+								style="width: 30%; height: auto; margin-right: 10px"
+							/>
 						</li>
 						<li>
-							Groups donating electron density by resonance are usually
-							activating and often ortho/para-directing; carbonyl-based
-							withdrawing groups are usually deactivating because of \(-R\)
-							effect.
+							Copy this image into the <code>images</code> folder if you want
+							the sequence visually shown at the point where this reaction-chain
+							pattern is discussed.
 						</li>
 					</ul>
-					<!--END Friedel-Crafts and benzene substitution -->
+					<!--END Alkanes: controlled oxidation, aromatization and related sequence logic -->
 					<br />
 
-					<!--START Must-remember equations -->
+					<!--START Alkenes: addition reactions and peroxide effect -->
 					<ul>
-						<strong>Must-remember equations</strong>
+						<strong>Alkenes: addition reactions and peroxide effect</strong>
 						<li>
-							\(\mathrm{2R-X + 2Na \xrightarrow[dry\ ether]{} R-R + 2NaX}\) —
-							Wurtz reaction
+							For ordinary ionic addition of hydrogen halides, use
+							<strong>Markovnikov’s rule</strong>; but in the presence of
+							peroxide, the anti-Markovnikov or Kharasch effect is the standard
+							exception and is the one the exam keeps testing. Keep the revision
+							point tight:
+							<strong>peroxide effect is relevant for \(HBr\)</strong> and gives
+							the product with bromine attached to the less substituted carbon.
 						</li>
 						<li>
-							\(\mathrm{2RCOO^- \xrightarrow[electrolysis]{} R-R + 2CO_2 +
-							2e^-}\) — Kolbe electrolysis
-						</li>
-						<li>
-							\(\mathrm{RCOONa + NaOH \xrightarrow[CaO]{\Delta} RH + Na_2CO_3}\)
-							— soda-lime decarboxylation
-						</li>
-						<li>
-							\(\mathrm{Ar-H + RCOCl \xrightarrow{AlCl_3} Ar-COR}\) —
-							Friedel–Crafts acylation
-						</li>
-						<li>\(\mathrm{R-C \equiv C-H}\) — terminal alkyne pattern</li>
-						<li>\(\mathrm{C_{n}H_{2n-2}}\) — open-chain alkyne formula</li>
-						<li>
-							\(\mathrm{DBE = C + 1 - \frac{H}{2}}\) — quick unsaturation check
+							In multi-step PYQs, once an alkene is formed by elimination, the
+							next \(HBr/\)peroxide step is often just asking whether you
+							remember this anti-Markovnikov switch. Do not overcomplicate it by
+							mixing it up with ordinary \(HBr\) addition.
 						</li>
 					</ul>
-					<!--END Must-remember equations -->
+					<!--END Alkenes: addition reactions and peroxide effect -->
 					<br />
 
-					<!--START Pitfalls and final triggers -->
+					<!--START Alkenes: oxidation and ozonolysis -->
 					<ul>
-						<strong>Pitfalls and final triggers</strong>
+						<strong>Alkenes: oxidation and ozonolysis</strong>
 						<li>
-							Do not confuse resonance with hyperconjugation, and do not confuse
-							\(-R\) with \(-I\). The direction and type of electron movement
-							matter.
+							<strong>Ozonolysis</strong> breaks the double bond into carbonyl
+							fragments, so in reverse-logic PYQs you should reconstruct the
+							original alkene by mentally joining the two carbonyl carbons. This
+							is a real exam pattern and is worth stating explicitly, not just
+							hiding inside a general oxidation note.
 						</li>
 						<li>
-							Do not generalise peroxide effect to all hydrogen halides; in this
-							syllabus block, anti-Markovnikov addition belongs to
-							<strong>HBr only</strong>.
-						</li>
-						<li>
-							Do not forget that only terminal alkynes have acidic hydrogen, and
-							do not forget the standard exclusions of Kjeldahl’s method.
-						</li>
-						<li>
-							In hydrocarbon conversion chains, the safest workflow is: identify
-							reagent pattern \(\rightarrow\) write the named transformation
-							\(\rightarrow\) count carbons / hybridisation only at the end.
+							When the question gives ozonolysis products and then a follow-up
+							reaction such as \(HBr/\)peroxide, first identify the alkene from
+							the cleavage products and only then continue the sequence.
+							Students usually lose time by trying to solve the whole chain at
+							once.
 						</li>
 					</ul>
-					<!--END Pitfalls and final triggers -->
+					<!--END Alkenes: oxidation and ozonolysis -->
+					<br />
+
+					<!--START Alkynes: nomenclature, isomerism and acidic character -->
+					<ul>
+						<strong
+							>Alkynes: nomenclature, isomerism and acidic character</strong
+						>
+						<li>
+							Only <strong>terminal alkynes</strong> of the form
+							\(\mathrm{R-C{\equiv}C-H}\) have an acidic hydrogen; internal
+							alkynes do not. In isomer-count PYQs, this one fact is the main
+							splitter between the two answer counts.
+						</li>
+						<li>
+							For \(\mathrm{C_6H_{10}}\), list all open-chain alkyne isomers
+							once and then divide them into terminal and internal structures.
+							This avoids double-counting and turns a scary counting problem
+							into an orderly classification question.
+						</li>
+						<li>
+							Also remember the general formula for an acyclic alkyne:
+							\(\mathrm{C_nH_{2n-2}}\). It helps you confirm that the given
+							molecular formula actually fits an alkyne before you start
+							counting isomers.
+						</li>
+					</ul>
+					<!--END Alkynes: nomenclature, isomerism and acidic character -->
+					<br />
+
+					<!--START Alkynes: addition of water and product prediction -->
+					<ul>
+						<strong>Alkynes: addition of water and product prediction</strong>
+						<li>
+							Hydration of a terminal alkyne under the usual mercury-catalysed
+							acidic conditions gives an <strong>enol first</strong>, which then
+							tautomerises to a <strong>carbonyl compound</strong>. In exam
+							practice, you often jump straight from the alkyne to the ketone
+							once you recognise the reagent set.
+						</li>
+						<li>
+							Do not leave the answer at the unstable enol stage unless the
+							question explicitly asks for the first intermediate.
+						</li>
+					</ul>
+					<!--END Alkynes: addition of water and product prediction -->
+					<br />
+
+					<!--START Aromatic hydrocarbons: preparation of benzene and side-chain conversion -->
+					<ul>
+						<strong
+							>Aromatic hydrocarbons: preparation of benzene and side-chain
+							conversion</strong
+						>
+						<li>
+							When a straight-chain alkane is converted to benzene under
+							catalytic high-temperature conditions, treat it as a standard
+							<strong>aromatization</strong> pattern. This matters because the
+							next step is often a classic electrophilic substitution reaction
+							on benzene.
+						</li>
+						<li>
+							Another adjacent sequence pattern that showed up is side-chain
+							oxidation of toluene derivatives to benzaldehyde under special
+							reagent conditions; even if the full reaction belongs partly to a
+							neighbouring chapter, the exam expects you to identify the
+							aromatic product quickly and move on.
+						</li>
+					</ul>
+					<!--END Aromatic hydrocarbons: preparation of benzene and side-chain conversion -->
+					<br />
+
+					<!--START Aromatic hydrocarbons: electrophilic substitution -->
+					<ul>
+						<strong>Aromatic hydrocarbons: electrophilic substitution</strong>
+						<li>
+							<strong>Friedel–Crafts acylation</strong> \(\left(\mathrm{Ar-H +
+							RCOCl \xrightarrow{AlCl_3} Ar-COR}\right)\) is a must-remember
+							aromatic reaction from this topic. If benzene is treated with an
+							acyl chloride in the presence of anhydrous \(\mathrm{AlCl_3}\),
+							jump directly to the aryl ketone.
+						</li>
+						<li>
+							This reaction also connects nicely with hybridisation-count PYQs
+							because the <strong>carbonyl carbon is \(sp^2\)</strong>; that is
+							exactly why acetophenone-type products appear in counting
+							questions.
+						</li>
+					</ul>
+					<!--END Aromatic hydrocarbons: electrophilic substitution -->
+					<br />
+
+					<!--START Miscellaneous -->
+					<ul>
+						<strong>Miscellaneous</strong>
+						<li>
+							In \(S_\mathrm{N}1\) reactions, the rate depends on the stability
+							of the carbocation formed after the leaving group departs.
+							Benzylic carbocations are especially stable because the positive
+							charge is delocalised into the benzene ring, and extra alkyl or
+							phenyl substitution increases this stability further.
+						</li>
+						<li>
+							In Kolbe electrolysis, the carboxylate ion loses \(\mathrm{CO_2}\)
+							at the anode to form a radical, and two such radicals couple to
+							give an alkane. The quick pattern to remember is: sodium salt of a
+							carboxylic acid on electrolysis gives a coupled hydrocarbon with
+							an even number of carbon atoms along with \(\mathrm{CO_2}\).
+						</li>
+					</ul>
+					<!--END Miscellaneous -->
 					<br />
 				</div>
 			</div>
@@ -1690,6 +1778,13 @@
 							\(sp\)-hybridised.
 						</li>
 						<li>
+							In hybridisation-count PYQs, do not replay the whole reaction
+							sequence if the final product is known; count hybridisation
+							directly from the final structure. As a quick reminder, saturated
+							carbon is usually \(sp^3\), carbon in a double bond is \(sp^2\),
+							and carbon in a triple bond is \(sp\).
+						</li>
+						<li>
 							A homologous series is a family of compounds in which successive
 							members differ by a \(\mathrm{CH_2}\) unit. For this chapter, the
 							core general formulae are: alkanes \(\mathrm{C_{n}H_{2n+2}}\),
@@ -2128,7 +2223,12 @@
 							isopentane and neopentane all have the same molecular formula but
 							different carbon branching.
 						</li>
-
+						<li>
+							In alkane isomer PYQs, a fast shortcut is to count primary,
+							secondary, tertiary and quaternary carbons directly from the
+							carbon skeleton; this can identify the correct isomer much faster
+							than checking every option by full naming.
+						</li>
 						<li>
 							In <strong>position isomerism</strong>, the carbon skeleton
 							remains the same but the position of a double bond, triple bond,
@@ -2672,6 +2772,14 @@
 							not any one single canonical structure.
 						</li>
 						<li>
+							When comparing resonance contributors, an
+							<strong>uncharged structure</strong> is usually more stable than a
+							charge-separated one; among charged contributors, the better form
+							places
+							<strong>negative charge on the more electronegative atom</strong>
+							and keeps octets complete wherever possible.
+						</li>
+						<li>
 							<strong>Hyperconjugation</strong> is delocalisation of
 							\(\sigma(\mathrm{C-H})\) electrons into an adjacent \(\pi\)-system
 							or vacant p-orbital; it is often called no-bond resonance.
@@ -2747,6 +2855,13 @@
 							exploited: difference in solubility for crystallisation,
 							volatility / boiling point for distillation, and selective
 							movement between two phases for chromatography.
+						</li>
+						<li>
+							For <strong>steam distillation</strong>, the exam-safe decision
+							rule is: choose it for an organic liquid that is
+							<strong>volatile in steam</strong>, nearly
+							<strong>immiscible with water</strong>, and often has a high
+							boiling point or may decompose on direct heating.
 						</li>
 						<li>
 							In qualitative elemental analysis, carbon and hydrogen are
@@ -2842,6 +2957,13 @@
 							\xrightarrow[dry\ ether]{} R-R + 2NaX}\)
 						</li>
 						<li>
+							In Wurtz-reaction PYQs, first check whether the target alkane can
+							arise from
+							<strong>self-coupling of the same alkyl halide</strong>; this is
+							the quickest way to eliminate impossible options, especially for
+							highly branched products.
+						</li>
+						<li>
 							<strong>Soda-lime decarboxylation:</strong> \(\mathrm{RCOONa +
 							NaOH \xrightarrow[CaO]{\Delta} RH + Na_2CO_3}\)
 						</li>
@@ -2932,6 +3054,12 @@
 							ozonide, and on hydrolysis with Zn / water gives aldehydes and /
 							or ketones. It is one of the cleanest ways to locate the original
 							double bond.
+						</li>
+						<li>
+							In reverse-logic PYQs, reconstruct the original alkene by mentally
+							joining the two carbonyl carbons obtained after ozonolysis; this
+							is often the fastest way to identify the starting alkene before
+							doing any further reaction step.
 						</li>
 					</ul>
 					<!--END Alkenes -->
