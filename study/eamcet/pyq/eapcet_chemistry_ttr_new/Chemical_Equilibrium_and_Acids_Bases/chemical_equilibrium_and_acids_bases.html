@@ -40,10 +40,431 @@
 					High-value revision
 				</button>
 				<div class="accordion-content">
+					<!--START Variables used -->
 					<ul>
-						<li>TTR imp 1</li>
-						<li>TTR imp 2</li>
+						<strong>Variables used</strong>
+						<li>
+							<b>Kc</b>: equilibrium constant in terms of molar concentration
+						</li>
+						<li>
+							<b>Kp</b>: equilibrium constant in terms of partial pressure
+						</li>
+						<li>
+							<b>K<sub>a</sub></b
+							>: acid ionisation constant
+						</li>
+						<li>
+							<b>K<sub>b</sub></b
+							>: base ionisation constant
+						</li>
+						<li>
+							<b>K<sub>w</sub></b
+							>: ionic product of water
+						</li>
+						<li>
+							<b>K<sub>sp</sub></b
+							>: solubility product
+						</li>
+						<li><b>Q</b>: reaction quotient</li>
+						<li>
+							<b>Δn<sub>g</sub></b
+							>: moles of gaseous products − moles of gaseous reactants
+						</li>
+						<li><b>ΔG°</b>: standard Gibbs energy change</li>
+						<li><b>R</b>: gas constant</li>
+						<li><b>T</b>: absolute temperature in kelvin</li>
+						<li><b>S</b>: molar solubility</li>
+						<li><b>\(\alpha\)</b>: degree of dissociation</li>
+						<li>
+							<b>pK<sub>a</sub></b
+							>: \(-\log K_a\)
+						</li>
 					</ul>
+					<!--END Variables used -->
+					<br />
+
+					```
+					<!--START Equilibrium expression and setup -->
+					<ul>
+						<strong
+							>1. Equilibrium expression: write it cleanly before doing anything
+							else</strong
+						>
+						<li>
+							For \(aA+bB \rightleftharpoons cC+dD\), write
+							\(K_c=\dfrac{[C]^c[D]^d}{[A]^a[B]^b}\) or the matching \(K_p\)
+							form first; many PYQs become one-line substitutions once the
+							balanced equation is written correctly.
+						</li>
+						<li>
+							In 1:1:1:1 or similar problems, assign the shift as \(x\), change
+							each species according to stoichiometry, then substitute only the
+							<em>equilibrium</em> values into \(K_c\).
+						</li>
+						<li>
+							If equal initial amounts of reactants and products are given, do
+							not guess the direction blindly; use \((\text{initial} \pm x)\)
+							carefully and let the value of \(K\) decide the shift.
+						</li>
+						<li>
+							For reactions such as \( \mathrm{PCl_5 \rightleftharpoons PCl_3 +
+							Cl_2} \), if one product amount at equilibrium is given,
+							immediately use stoichiometry to get the other product and the
+							remaining reactant.
+						</li>
+					</ul>
+					<!--END Equilibrium expression and setup -->
+					<br />
+
+					<!--START Kp Kc and gaseous equilibrium -->
+					<ul>
+						<strong
+							>2. Gaseous equilibrium: the few formulas that keep
+							repeating</strong
+						>
+						<li>
+							Use \(K_p=K_c(RT)^{\Delta n_g}\), where \(\Delta n_g\) is only for
+							gaseous species. If \(\Delta n_g=0\), then \(K_p=K_c\); if
+							\(\Delta n_g&lt;0\), then \(K_p/K_c=(RT)^{\Delta n_g}\) gives an
+							inverse power.
+						</li>
+						<li>
+							When all equilibrium partial pressures are equal, substitute the
+							same \(p\) everywhere; the final result depends only on the net
+							exponent difference, so \(K_p=(p)^{\Delta n_g}\).
+						</li>
+						<li>
+							For \(A \rightleftharpoons 2B\) starting with pure \(A\),
+							mole-fraction partial pressures are the cleanest route. A very
+							useful special result is for \(N_2O_4 \rightleftharpoons 2NO_2\):
+							\(K_p=\dfrac{4\alpha^2 p}{1-\alpha^2}\), so
+							\(\alpha=\sqrt{\dfrac{K_p/p}{4+K_p/p}}\).
+						</li>
+						<li>
+							For \(2SO_2+O_2 \rightleftharpoons 2SO_3\), if
+							\(p_{SO_2}=p_{SO_3}\), then the expression collapses to
+							\(K_p=\dfrac{1}{p_{O_2}}\). Such equal-pressure conditions are
+							meant to simplify the algebra, so use them immediately.
+						</li>
+					</ul>
+					<!--END Kp Kc and gaseous equilibrium -->
+					<br />
+
+					<!--START Manipulating equilibrium constants -->
+					<ul>
+						<strong
+							>3. How equilibrium constants change when the equation is
+							changed</strong
+						>
+						<li>
+							If the reaction is reversed, the new equilibrium constant becomes
+							\(1/K\). If every coefficient is multiplied by \(n\), the new
+							constant becomes \(K^n\); if divided by \(n\), it becomes
+							\(K^{1/n}\).
+						</li>
+						<li>
+							When the target reaction is built by adding or scaling given
+							equations, do the same operations on their equilibrium constants:
+							multiply the constants and raise each one to the same power as the
+							corresponding scaled equation.
+						</li>
+						<li>
+							This is one of the easiest places to lose marks by doing chemistry
+							correctly but algebra carelessly, so convert the target reaction
+							first and only then touch the constants.
+						</li>
+					</ul>
+					<!--END Manipulating equilibrium constants -->
+					<br />
+
+					<!--START Direction and spontaneity -->
+					<ul>
+						<strong
+							>4. Fast meaning of \(K\), \(Q\), and \(\Delta G^\circ\)</strong
+						>
+						<li>
+							At constant temperature, \(K\) changes only with temperature, not
+							with pressure, concentration, or catalyst. A catalyst only helps
+							the system reach equilibrium faster.
+						</li>
+						<li>
+							The bridge formula to remember is
+							<strong>\(\Delta G^\circ=-RT\ln K=-2.303RT\log K\)</strong>. If
+							\(\Delta G^\circ\) is negative, then \(K&gt;1\); if \(\Delta
+							G^\circ\) is positive, then \(K&lt;1\).
+						</li>
+						<li>
+							In numericals based on \(\Delta G^\circ\), convert kJ to J before
+							substitution. This small unit error can ruin an otherwise correct
+							solution.
+						</li>
+						<li>
+							If a question gives \(Q\), compare it with \(K\): \(Q&lt;K\) means
+							forward shift, \(Q&gt;K\) means backward shift, and \(Q=K\) means
+							equilibrium.
+						</li>
+					</ul>
+					<!--END Direction and spontaneity -->
+					<br />
+
+					<!--START Le Chatelier shortcuts -->
+					<ul>
+						<strong
+							>5. Le Chatelier shortcuts that are actually useful in
+							MCQs</strong
+						>
+						<li>
+							Pressure increase shifts a gaseous equilibrium toward the side
+							with fewer moles of gas, so products are favoured only when
+							\(\Delta n_g&lt;0\). This is the quickest way to handle
+							pressure-based equilibrium questions.
+						</li>
+						<li>
+							Temperature is the only ordinary factor here that changes \(K\).
+							Concentration and pressure can change the position of equilibrium,
+							but not the value of the equilibrium constant if temperature stays
+							fixed.
+						</li>
+						<li>
+							For industrial equilibria such as \(N_2+3H_2 \rightleftharpoons
+							2NH_3\) and \(2SO_2+O_2 \rightleftharpoons 2SO_3\), link the shift
+							directly to gaseous mole count and reaction heat rather than
+							memorising isolated statements.
+						</li>
+					</ul>
+					<!--END Le Chatelier shortcuts -->
+					<br />
+
+					<!--START Heterogeneous equilibrium -->
+					<ul>
+						<strong
+							>6. Heterogeneous equilibrium: the standard omission rule</strong
+						>
+						<li>
+							In heterogeneous equilibrium, pure solids and pure liquids are
+							omitted from the equilibrium expression because their active mass
+							is taken constant. So for \(A(s)\rightleftharpoons B(s)+C(g)\),
+							write \(K_c=[C]\) and \(K_p=P_C\).
+						</li>
+						<li>
+							This omission is not optional and not based on “small amount”; it
+							is based on phase. Include gases and dissolved species, omit pure
+							solids and pure liquids.
+						</li>
+					</ul>
+					<!--END Heterogeneous equilibrium -->
+					<br />
+
+					<!--START Acids bases and oxyacid basics -->
+					<ul>
+						<strong
+							>7. Acids, bases, and oxyacid basics that repeatedly get
+							asked</strong
+						>
+						<li>
+							Lewis base means electron-pair donor. \(NH_3\) is a Lewis base
+							because nitrogen has a lone pair available for donation.
+						</li>
+						<li>
+							For oxyacids,
+							<strong
+								>basicity = number of ionisable H attached to O as –OH</strong
+							>, not the total number of H atoms in the formula. So \(H_3PO_3\)
+							is dibasic, \(H_3PO_2\) is monobasic, and \(H_2SO_4\) is dibasic.
+						</li>
+						<li>
+							For oxoacids of the same type \(HOX\), acidity increases with
+							electronegativity of the central atom because the \(-I\) effect
+							weakens the O–H bond; hence \(HClO &gt; HBrO &gt; HIO\).
+						</li>
+						<li>
+							If the question is about di-, tri-, or polybasic acids, count
+							replaceable protons only. This is a concept question disguised as
+							a memory question.
+						</li>
+					</ul>
+					<!--END Acids bases and oxyacid basics -->
+					<br />
+
+					<!--START Water pH and neutralization -->
+					<ul>
+						<strong>8. Water, pH, and acid-base mixing numericals</strong>
+						<li>
+							Neutral water does not always have pH 7. As temperature rises,
+							\(K_w\) increases, so the pH of pure water can fall below 7 and
+							still remain neutral because \([H^+]=[OH^-]\).
+						</li>
+						<li>
+							For strong acid–strong base mixing, the safest order is: convert
+							pH or pOH to molarity if needed, convert to moles, subtract excess
+							\(H^+\) or \(OH^-\), divide by final total volume, and only then
+							calculate pH or pOH.
+						</li>
+						<li>
+							Never decide the final pH from concentration values before doing
+							mole subtraction. Mixing is a mole problem first and a pH problem
+							only after that.
+						</li>
+					</ul>
+					<!--END Water pH and neutralization -->
+					<br />
+
+					<!--START Buffers -->
+					<ul>
+						<strong
+							>9. Buffers: the one formula and the one condition to
+							remember</strong
+						>
+						<li>
+							For an acidic buffer, use
+							\(\mathrm{pH}=pK_a+\log\dfrac{[\text{salt}]}{[\text{acid}]}\). If
+							the salt and acid concentrations are equal, then
+							\(\mathrm{pH}=pK_a\).
+						</li>
+						<li>
+							Dilution does not change the pH of a buffer if both components are
+							diluted equally, because the ratio \([\text{salt}]/[\text{acid}]\)
+							stays unchanged.
+						</li>
+						<li>
+							A buffer forms only when a weak acid or weak base and its
+							conjugate partner both remain in solution after partial
+							neutralisation. Complete neutralisation in equivalent amounts does
+							not give a buffer.
+						</li>
+					</ul>
+					<!--END Buffers -->
+					<br />
+
+					<!--START Salt hydrolysis -->
+					<ul>
+						<strong
+							>10. Salt hydrolysis: quick classification before
+							calculation</strong
+						>
+						<li>
+							Strong acid + weak base salt gives an acidic solution, weak acid +
+							strong base salt gives a basic solution, and strong acid + strong
+							base salt gives a neutral solution. This classification solves
+							many direct PYQs without any formula work.
+						</li>
+						<li>
+							Useful anchors: \(AlCl_3\) behaves acidic in water, \(CH_3COONa\)
+							behaves basic, and \(KCl\) is neutral. \(Al_2O_3\) is amphoteric,
+							which is a separate property and easy to mix up with salt
+							hydrolysis if you rush.
+						</li>
+					</ul>
+					<!--END Salt hydrolysis -->
+					<br />
+
+					<!--START Ksp solubility formulas -->
+					<ul>
+						<strong
+							>11. Solubility product: the standard forms worth
+							memorising</strong
+						>
+						<li>
+							For a 1:1 salt \(AB\), if molar solubility is \(S\), then
+							\(K_{sp}=S^2\). For \(AB_2\) or \(A_2B\), \(K_{sp}=4S^3\). These
+							are worth remembering because they recur directly in PYQs.
+						</li>
+						<li>
+							For \(PbCl_2\), write \(PbCl_2 \rightleftharpoons Pb^{2+}+2Cl^-\),
+							so if solubility is \(S\), then \(K_{sp}=S(2S)^2=4S^3\). Write the
+							ionic breakdown first; the formula becomes obvious and you avoid
+							coefficient mistakes.
+						</li>
+						<li>
+							When the question asks volume or mass dissolved, first find \(S\)
+							in mol L\(^{-1}\), then convert it to g L\(^{-1}\) using molar
+							mass. Only after that should you compute the required volume.
+						</li>
+						<li>
+							For 1:1 salts such as metal sulphides, smaller \(K_{sp}\) means
+							lower solubility, so order questions can often be solved by
+							comparing the magnitudes of \(K_{sp}\) directly.
+						</li>
+					</ul>
+					<!--END Ksp solubility formulas -->
+					<br />
+
+					<!--START Common ion effect in solubility -->
+					<ul>
+						<strong
+							>12. Common ion effect in solubility: the exam pattern</strong
+						>
+						<li>
+							When a sparingly soluble salt is placed in a solution already
+							containing a common ion, treat that pre-existing ion concentration
+							as fixed if the additional solubility is tiny. Then substitute it
+							directly into the \(K_{sp}\) expression and solve for the small
+							solubility.
+						</li>
+						<li>
+							For \(Cd(OH)_2 \rightleftharpoons Cd^{2+}+2OH^-\) in
+							\(0.1\,\mathrm{M}\) KOH, use \([OH^-]\approx 0.1\), so
+							\(K_{sp}=s(0.1)^2\). This approximation is exactly what the
+							question expects.
+						</li>
+						<li>
+							In mixed saturated-salt problems, first use the known salt to find
+							the common-ion concentration, then plug that value into the second
+							salt’s \(K_{sp}\). Example: find \([CO_3^{2-}]\) from \(MgCO_3\)
+							first, then use it for \(Ag_2CO_3\).
+						</li>
+					</ul>
+					<!--END Common ion effect in solubility -->
+					<br />
+
+					<!--START Must know equations -->
+					<ul>
+						<strong
+							>13. Must-know equations to keep on the mental front page</strong
+						>
+						<li>
+							\(K_c=\dfrac{[products]^{\text{coefficients}}}{[reactants]^{\text{coefficients}}}\)
+						</li>
+						<li>\(K_p=K_c(RT)^{\Delta n_g}\)</li>
+						<li>\(\Delta G^\circ=-RT\ln K=-2.303RT\log K\)</li>
+						<li>
+							\(\mathrm{pH}=pK_a+\log\dfrac{[\text{salt}]}{[\text{acid}]}\)
+						</li>
+						<li>\(K_w=[H^+][OH^-]\)</li>
+						<li>\(N_2+3H_2 \rightleftharpoons 2NH_3\)</li>
+						<li>\(2SO_2+O_2 \rightleftharpoons 2SO_3\)</li>
+						<li>\(PbCl_2 \rightleftharpoons Pb^{2+}+2Cl^-\)</li>
+						<li>\(Cd(OH)_2 \rightleftharpoons Cd^{2+}+2OH^-\)</li>
+					</ul>
+					<!--END Must know equations -->
+					<br />
+
+					<!--START Pitfalls -->
+					<ul>
+						<strong>14. Quick pitfalls that PYQs keep targeting</strong>
+						<li>
+							Do not include pure solids or pure liquids in equilibrium
+							expressions.
+						</li>
+						<li>
+							Do not change \(K\) because of pressure, concentration, or
+							catalyst when temperature is constant.
+						</li>
+						<li>
+							Do not count all hydrogen atoms as ionisable in oxyacids; count
+							only those attached through oxygen.
+						</li>
+						<li>
+							Do not calculate final pH after mixing acid and base without doing
+							mole subtraction and using the final total volume.
+						</li>
+						<li>
+							Do not apply a memorised \(K_{sp}\) formula without first writing
+							the ionic dissociation; most mistakes in this chapter start there.
+						</li>
+					</ul>
+					<!--END Pitfalls -->
+					<br />
 				</div>
 			</div>
 		</div>
@@ -388,21 +809,595 @@
 
 		<div class="accordion">
 			<div class="accordion-item">
-				<button class="accordion-button" id="general-theory">
+				<button class="accordion-button" id="high-value-revision">
 					General theory
 				</button>
 				<div class="accordion-content">
-					<ol class="theory-list">
-						<!--START Topic 1-->
+					<!--START Variables used -->
+					<ul>
+						<strong>Variables used</strong>
 						<li>
-							<strong>Topic 1 </strong>
+							<b>Kc</b>: equilibrium constant in terms of molar concentrations
+						</li>
+						<li>
+							<b>Kp</b>: equilibrium constant in terms of partial pressures
+						</li>
+						<li>
+							<b>Q</b>: reaction quotient; same form as equilibrium expression
+							but for any instant, not necessarily equilibrium
+						</li>
+						<li>
+							<b>Δn<sub>g</sub></b
+							>: moles of gaseous products − moles of gaseous reactants
+						</li>
+						<li><b>ΔG°</b>: standard Gibbs energy change</li>
+						<li><b>R</b>: gas constant</li>
+						<li><b>T</b>: absolute temperature in kelvin</li>
+						<li>
+							<b>K<sub>a</sub></b
+							>: acid ionisation constant
+						</li>
+						<li>
+							<b>K<sub>b</sub></b
+							>: base ionisation constant
+						</li>
+						<li>
+							<b>K<sub>w</sub></b
+							>: ionic product of water
+						</li>
+						<li><b>pH</b>: \(-\log[H_3O^+]\)</li>
+						<li><b>pOH</b>: \(-\log[OH^-]\)</li>
+						<li>
+							<b>pK<sub>a</sub></b
+							>: \(-\log K_a\)
+						</li>
+						<li><b>S</b>: molar solubility of a sparingly soluble salt</li>
+						<li>
+							<b>K<sub>sp</sub></b
+							>: solubility product
+						</li>
+						<li><b>\(\alpha\)</b>: degree of ionisation / dissociation</li>
+					</ul>
+					<!--END Variables used -->
+					<br />
+
+					<!--START Nature of equilibrium -->
+					<ul>
+						<strong>1. Nature of equilibrium: the big picture</strong>
+						<li>
+							Chemical equilibrium is <b>dynamic</b>, not static: forward and
+							reverse reactions continue, but at equilibrium their rates become
+							equal, so concentrations stay constant.
+						</li>
+						<li>
+							Equilibrium is established only in a <b>closed system</b>; if
+							reactants or products escape, true equilibrium is not maintained.
+						</li>
+						<li>
+							Physical equilibria and chemical equilibria both matter for
+							EAPCET. Physical examples include liquid \(\rightleftharpoons\)
+							vapour, solid \(\rightleftharpoons\) vapour, and solute
+							\(\rightleftharpoons\) saturated solution.
+						</li>
+						<li>
+							A catalyst helps equilibrium be reached <b>faster</b>, but does
+							<b>not</b> change the equilibrium composition or value of \(K\).
+						</li>
+						<li>
+							Quick exam idea: “constant concentration” does <b>not</b> mean
+							reaction has stopped; it means opposite reactions are occurring at
+							equal rates.
+						</li>
+						<img
+							src="images/equilibrium_concentration_time_graph.png"
+							alt="Equilibrium concentration versus time graph for reversible reaction page 224 image fig 13.1"
+							style="width: 30%; height: auto; margin-right: 10px"
+						/>
+					</ul>
+					<!--END Nature of equilibrium -->
+					<br />
+
+					<!--START Homogeneous and heterogeneous equilibrium -->
+					<ul>
+						<strong>2. Homogeneous and heterogeneous equilibrium</strong>
+						<li>
+							<b>Homogeneous equilibrium</b>: all reactants and products are in
+							the same phase, usually all gases or all in one liquid phase.
+							Example: \(N_2(g)+3H_2(g)\rightleftharpoons 2NH_3(g)\).
+						</li>
+						<li>
+							<b>Heterogeneous equilibrium</b>: reactants and products are in
+							different phases. Example: \(CaCO_3(s)\rightleftharpoons
+							CaO(s)+CO_2(g)\).
+						</li>
+						<li>
+							PYQ favourite: in heterogeneous equilibrium,
+							<b>pure solids and pure liquids are omitted</b> from the
+							equilibrium expression because their concentration is effectively
+							constant.
+						</li>
+						<li>
+							So for \(A(s)\rightleftharpoons B(s)+C(g)\), write \(K_c=[C]\) and
+							\(K_p=P_C\), not an expression including the solids.
+						</li>
+					</ul>
+					<!--END Homogeneous and heterogeneous equilibrium -->
+					<br />
+
+					<!--START Law of mass action and equilibrium constant -->
+					<ul>
+						<strong>3. Law of mass action and equilibrium constant</strong>
+						<li>
+							For \(aA+bB\rightleftharpoons cC+dD\), the equilibrium constant in
+							concentration form is \(K_c=\dfrac{[C]^c[D]^d}{[A]^a[B]^b}\),
+							using only equilibrium concentrations.
+						</li>
+						<li>
+							For gaseous systems, partial pressures can be used:
+							\(K_p=\dfrac{(P_C)^c(P_D)^d}{(P_A)^a(P_B)^b}\).
+						</li>
+						<li>
+							Must-know relation: \(K_p=K_c(RT)^{\Delta n_g}\), where \(\Delta
+							n_g=\) gaseous product moles \(-\) gaseous reactant moles.
+						</li>
+						<li>
+							For \(N_2+3H_2\rightleftharpoons 2NH_3\), \(\Delta n_g=2-4=-2\),
+							so \(\dfrac{K_p}{K_c}=(RT)^{-2}=\dfrac{1}{(RT)^2}\).
+						</li>
+						<li>
+							If \(\Delta n_g=0\), then \(K_p=K_c\). This is a common shortcut
+							in numericals.
+						</li>
+						<li>
+							The <b>magnitude of \(K\)</b> shows position of equilibrium:
+							\(K\gg1\) means products are favoured, \(K\ll1\) means reactants
+							are favoured.
+						</li>
+						<li>
+							Very common PYQ rule: if an equation is reversed, new constant
+							becomes \(1/K\); if all coefficients are multiplied by \(n\), new
+							constant becomes \(K^n\); if divided by \(n\), new constant
+							becomes \(K^{1/n}\).
+						</li>
+					</ul>
+					<!--END Law of mass action and equilibrium constant -->
+					<br />
+
+					<!--START Reaction quotient and Gibbs energy -->
+					<ul>
+						<strong
+							>4. Reaction quotient, direction prediction, and \(\Delta
+							G^\circ\)</strong
+						>
+						<li>
+							\(Q\) has the same form as the equilibrium constant expression,
+							but it is calculated using the concentrations or partial pressures
+							at any instant.
+						</li>
+						<li>
+							If \(Q&lt;K\), the reaction proceeds forward; if \(Q&gt;K\), it
+							shifts backward; if \(Q=K\), the system is at equilibrium.
+						</li>
+						<li>
+							Must-remember bridge formula from PYQs: \(\Delta G^\circ=-RT\ln
+							K=-2.303RT\log K\).
+						</li>
+						<li>
+							Direct exam meaning: <b>negative \(\Delta G^\circ\)</b> implies
+							\(K&gt;1\), so products are favoured under standard conditions;
+							positive \(\Delta G^\circ\) implies \(K&lt;1\).
+						</li>
+						<li>
+							In numericals, convert kJ to J before substituting in the \(\Delta
+							G^\circ\) relation.
+						</li>
+					</ul>
+					<!--END Reaction quotient and Gibbs energy -->
+					<br />
+
+					<!--START Le Chatelier principle -->
+					<ul>
+						<strong
+							>5. Factors affecting equilibrium: Le Chatelier principle</strong
+						>
+						<li>
+							Le Chatelier principle: when an equilibrium is disturbed by change
+							in concentration, pressure, or temperature, the system shifts in
+							the direction that opposes that disturbance.
+						</li>
+						<li>
+							<b>Concentration change</b>: adding a reactant drives the system
+							toward products; adding a product drives it toward reactants.
+						</li>
+						<li>
+							<b>Pressure change</b> matters only when gases are involved.
+							Increasing pressure shifts equilibrium toward the side with
+							<b>fewer moles of gas</b>.
+						</li>
+						<li>
+							So products are favoured on pressure increase only when \(\Delta
+							n_g&lt;0\).
+						</li>
+						<li>
+							<b>Temperature change</b> is special because it changes the value
+							of \(K\). For exothermic reactions, heat behaves like a product;
+							for endothermic reactions, heat behaves like a reactant.
+						</li>
+						<li>
+							<b>Catalyst</b>: changes rate, not equilibrium position and not
+							\(K\).
+						</li>
+						<li>
+							Very common trap: changing concentration or pressure may shift
+							equilibrium position, but <b>does not change \(K\)</b> if
+							temperature is unchanged.
+						</li>
+					</ul>
+					<!--END Le Chatelier principle -->
+					<br />
+
+					<!--START Industrial applications -->
+					<ul>
+						<strong
+							>6. Industrial applications: Haber and Contact process</strong
+						>
+						<li>
+							<b>Haber process</b>: \(N_2(g)+3H_2(g)\rightleftharpoons
+							2NH_3(g)\), \(\Delta H&lt;0\). Low temperature and high pressure
+							favour ammonia formation; catalyst speeds attainment of
+							equilibrium.
+						</li>
+						<li>
+							Industrial idea: ammonia is continuously removed, and \(N_2\) and
+							\(H_2\) are continuously supplied, so the forward reaction is
+							promoted.
+						</li>
+						<li>
+							<b>Contact process</b>: \(2SO_2(g)+O_2(g)\rightleftharpoons
+							2SO_3(g)\), \(\Delta H&lt;0\). Lower temperature and higher
+							pressure favour \(SO_3\), though practical conditions balance
+							yield with rate.
+						</li>
+						<li>
+							PYQ-flavoured point: for this reaction, if \(p_{SO_2}=p_{SO_3}\),
+							then \(K_p=\dfrac{1}{p_{O_2}}\).
+						</li>
+					</ul>
+					<!--END Industrial applications -->
+					<br />
+
+					<!--START Acids and bases concepts -->
+					<ul>
+						<strong
+							>7. Acids and bases: Arrhenius, Bronsted-Lowry, and Lewis</strong
+						>
+						<li>
+							<b>Arrhenius acid</b>: gives \(H^+\) / \(H_3O^+\) in water.
+							Example: \(HCl+H_2O\rightarrow H_3O^++Cl^-\).
+						</li>
+						<li>
+							<b>Arrhenius base</b>: gives \(OH^-\) in water. Example:
+							\(NaOH\rightarrow Na^++OH^-\).
+						</li>
+						<li>
+							Limitation of Arrhenius concept: it is restricted to aqueous
+							solutions and cannot explain species like \(NH_3\) and \(AlCl_3\)
+							properly.
+						</li>
+						<li>
+							<b>Bronsted-Lowry acid</b>: proton donor;
+							<b>Bronsted-Lowry base</b>: proton acceptor. Example:
+							\(NH_3+H_2O\rightleftharpoons NH_4^++OH^-\).
+						</li>
+						<li>
+							This concept introduces <b>conjugate acid-base pairs</b>:
+							\(NH_4^+/NH_3\) and \(H_2O/OH^-\). Stronger acid \(\Rightarrow\)
+							weaker conjugate base.
+						</li>
+						<li>
+							<b>Lewis acid</b>: electron-pair acceptor; <b>Lewis base</b>:
+							electron-pair donor. Example: \(AlCl_3+NH_3\rightarrow
+							Cl_3Al\leftarrow NH_3\).
+						</li>
+						<li>
+							Water is <b>amphoteric / amphiprotic</b>: it can behave as both
+							acid and base depending on the reaction partner.
+						</li>
+					</ul>
+					<!--END Acids and bases concepts -->
+					<br />
+
+					<!--START Strength of acids and bases -->
+					<ul>
+						<strong
+							>8. Strength of acids and bases; basicity and acidity
+							trends</strong
+						>
+						<li>
+							Strong acids and bases ionise almost completely; weak ones ionise
+							only partially and establish equilibrium.
+						</li>
+						<li>
+							For a weak acid \(HA\): \(HA+H_2O\rightleftharpoons H_3O^++A^-\),
+							and \(K_a=\dfrac{[H_3O^+][A^-]}{[HA]}\).
+						</li>
+						<li>
+							For a weak base \(B\): \(B+H_2O\rightleftharpoons BH^++OH^-\), and
+							\(K_b=\dfrac{[BH^+][OH^-]}{[B]}\).
+						</li>
+						<li>
+							Larger \(K_a\) means stronger acid; larger \(K_b\) means stronger
+							base.
+						</li>
+						<li>
+							For weak electrolytes, \(\alpha\) is the degree of ionisation; in
+							dilute solutions, \(\alpha\approx\sqrt{K_a/c}\) for a weak acid
+							and \(\alpha\approx\sqrt{K_b/c}\) for a weak base.
+						</li>
+						<li>
+							For oxyacids,
+							<b>basicity = number of ionisable hydrogens attached to oxygen</b
+							>, not total hydrogens present. So \(H_3PO_3\) is dibasic,
+							\(H_3PO_2\) is monobasic, and \(H_2SO_4\) is dibasic.
+						</li>
+						<li>
+							For oxoacids of similar type \(HOX\), acidity increases with
+							electronegativity of the central atom because the \(-I\) effect
+							weakens the O–H bond; hence \(HClO&gt;HBrO&gt;HIO\).
+						</li>
+						<li>
+							Polyprotic acids ionise stepwise, each step having its own
+							ionisation constant; usually \(K_{a1}&gt;K_{a2}&gt;K_{a3}\).
+						</li>
+					</ul>
+					<!--END Strength of acids and bases -->
+					<br />
+
+					<!--START Ionic product of water and pH -->
+					<ul>
+						<strong>9. Ionic product of water and pH scale</strong>
+						<li>
+							Water auto-ionises: \(2H_2O\rightleftharpoons H_3O^++OH^-\).
+						</li>
+						<li>
+							Ionic product of water: \(K_w=[H_3O^+][OH^-]\). At 298 K,
+							\(K_w=1.0\times10^{-14}\).
+						</li>
+						<li>
+							In pure water at 298 K, \([H_3O^+]=[OH^-]=1.0\times10^{-7}\), so
+							pH = 7.
+						</li>
+						<li>
+							\(pH=-\log[H_3O^+]\), \(pOH=-\log[OH^-]\), and at 298 K,
+							\(pH+pOH=14\).
+						</li>
+						<li>
+							Acidic solution: \([H_3O^+]&gt;[OH^-]\). Basic solution:
+							\([OH^-]&gt;[H_3O^+]\). Neutral solution: \([H_3O^+]=[OH^-]\).
+						</li>
+						<li>
+							Important PYQ caution: neutral water does <b>not always</b> have
+							pH 7. At higher temperature, \(K_w\) increases, so neutral water
+							can have pH below 7 while still remaining neutral because
+							\([H^+]=[OH^-]\).
+						</li>
+						<li>
+							For strong acid–strong base mixtures, the safe order is: convert
+							pH/pOH to molarity if needed, convert to moles, subtract excess,
+							divide by total final volume, then find final pH or pOH.
+						</li>
+					</ul>
+					<!--END Ionic product of water and pH -->
+					<br />
+
+					<!--START Common ion effect and buffers -->
+					<ul>
+						<strong>10. Common ion effect and buffer solutions</strong>
+						<li>
+							<b>Common ion effect</b>: ionisation of a weak acid or weak base
+							is suppressed by adding a strong electrolyte containing a common
+							ion.
+						</li>
+						<li>
+							Example: ionisation of acetic acid is suppressed by adding sodium
+							acetate; ionisation of ammonium hydroxide is suppressed by adding
+							ammonium chloride.
+						</li>
+						<li>
+							<b>Buffer solution</b>: resists change in pH when small amounts of
+							acid or base are added.
+						</li>
+						<li>
+							<b>Acidic buffer</b>: weak acid + its salt with a strong base, for
+							example \(CH_3COOH/CH_3COONa\).
+						</li>
+						<li>
+							<b>Basic buffer</b>: weak base + its salt with a strong acid, for
+							example \(NH_4OH/NH_4Cl\).
+						</li>
+						<li>
+							Must-know acidic buffer formula:
+							\(\mathrm{pH}=pK_a+\log\dfrac{[\text{salt}]}{[\text{acid}]}\).
+						</li>
+						<li>
+							PYQ shortcut: if \([\text{salt}]=[\text{acid}]\), then
+							\(\mathrm{pH}=pK_a\). Equal dilution of both does not change the
+							ratio, so pH remains the same.
+						</li>
+						<li>
+							Buffer forms only when weak acid/base and its conjugate partner
+							both remain after partial neutralisation; complete neutralisation
+							in equivalent amount does <b>not</b> produce a buffer.
+						</li>
+					</ul>
+					<!--END Common ion effect and buffers -->
+					<br />
+
+					<!--START Salt hydrolysis -->
+					<ul>
+						<strong>11. Hydrolysis of salts and pH of salt solutions</strong>
+						<li>
+							Salt hydrolysis happens when ions of a salt react with water to
+							produce \(H_3O^+\) or \(OH^-\), making the solution acidic or
+							basic.
+						</li>
+						<li>
+							<b>Strong acid + strong base salt</b>: neutral solution. Example:
+							\(NaCl\), \(KCl\).
+						</li>
+						<li>
+							<b>Strong acid + weak base salt</b>: acidic solution. Example:
+							\(NH_4Cl\), \(AlCl_3\).
+						</li>
+						<li>
+							<b>Weak acid + strong base salt</b>: basic solution. Example:
+							\(CH_3COONa\), \(Na_2CO_3\).
+						</li>
+						<li>
+							<b>Weak acid + weak base salt</b>: pH depends on relative
+							strengths of the acid and base.
+						</li>
+						<li>
+							For fast MCQs, first identify the parent acid and base, then
+							decide whether hydrolysis increases \(H_3O^+\) or \(OH^-\).
+						</li>
+					</ul>
+					<!--END Salt hydrolysis -->
+					<br />
+
+					<!--START Solubility equilibrium and Ksp -->
+					<ul>
+						<strong>12. Solubility equilibrium and solubility product</strong>
+						<li>
+							For a sparingly soluble salt, undissolved solid and dissolved ions
+							are in equilibrium. Example: \(AgCl(s)\rightleftharpoons
+							Ag^++Cl^-\).
+						</li>
+						<li>Its solubility product is \(K_{sp}=[Ag^+][Cl^-]\).</li>
+						<li>
+							If molar solubility is \(S\), then:
 							<ul>
-								<li>t1</li>
-								<li>t2</li>
+								<li>For \(AB\): \(K_{sp}=S^2\)</li>
+								<li>For \(AB_2\): \(K_{sp}=S(2S)^2=4S^3\)</li>
+								<li>For \(A_2B\): \(K_{sp}=(2S)^2(S)=4S^3\)</li>
+								<li>For \(A_2B_3\): \(K_{sp}=(2S)^2(3S)^3=108S^5\)</li>
 							</ul>
 						</li>
-						<!--END Topic 1-->
-					</ol>
+						<li>
+							PYQ must-know: for \(PbCl_2\), if molar solubility is \(S\), use
+							\(K_{sp}=4S^3\).
+						</li>
+						<li>
+							After finding \(S\) in mol L\(^{-1}\), convert to g L\(^{-1}\)
+							using molar mass if the question asks mass solubility or required
+							volume.
+						</li>
+						<li>
+							Smaller \(K_{sp}\) generally means lower solubility for salts of
+							the same stoichiometric type.
+						</li>
+					</ul>
+					<!--END Solubility equilibrium and Ksp -->
+					<br />
+
+					<!--START Common ion effect on solubility -->
+					<ul>
+						<strong>13. Common ion effect on solubility</strong>
+						<li>
+							Adding a common ion decreases the solubility of a sparingly
+							soluble salt by shifting dissolution equilibrium backward.
+						</li>
+						<li>
+							Example: \(AgCl\) becomes less soluble in \(NaCl\) solution
+							because extra \(Cl^-\) is already present.
+						</li>
+						<li>
+							Typical numerical approach: first find the pre-existing common-ion
+							concentration, then substitute it into the \(K_{sp}\) expression
+							and solve for the small remaining solubility.
+						</li>
+						<li>
+							For \(Cd(OH)_2\rightleftharpoons Cd^{2+}+2OH^-\) in \(0.1\,M\)
+							KOH, take \([OH^-]\approx 0.1\) if the added solubility is very
+							small, then \(K_{sp}=s(0.1)^2\).
+						</li>
+						<li>
+							In mixed saturated-salt problems, use the more directly known salt
+							first to obtain common-ion concentration, then use it in the
+							second salt’s \(K_{sp}\).
+						</li>
+					</ul>
+					<!--END Common ion effect on solubility -->
+					<br />
+
+					<!--START Must-know equations -->
+					<ul>
+						<strong
+							>14. Must-know equations and chemical equations for exam
+							recall</strong
+						>
+						<li>
+							\(K_c=\dfrac{[products]^{coefficients}}{[reactants]^{coefficients}}\)
+						</li>
+						<li>\(K_p=K_c(RT)^{\Delta n_g}\)</li>
+						<li>\(\Delta G^\circ=-RT\ln K=-2.303RT\log K\)</li>
+						<li>
+							\(Q\) compared with \(K\): \(Q&lt;K\) forward, \(Q&gt;K\)
+							backward, \(Q=K\) equilibrium
+						</li>
+						<li>
+							\(K_a=\dfrac{[H_3O^+][A^-]}{[HA]}\),
+							\(\;K_b=\dfrac{[BH^+][OH^-]}{[B]}\)
+						</li>
+						<li>\(K_w=[H_3O^+][OH^-]=1.0\times10^{-14}\) at 298 K</li>
+						<li>
+							\(\mathrm{pH}=-\log[H_3O^+]\), \(\mathrm{pOH}=-\log[OH^-]\),
+							\(pH+pOH=14\) at 298 K
+						</li>
+						<li>
+							\(\mathrm{pH}=pK_a+\log\dfrac{[\text{salt}]}{[\text{acid}]}\) for
+							acidic buffer
+						</li>
+						<li>\(N_2+3H_2\rightleftharpoons 2NH_3\)</li>
+						<li>\(2SO_2+O_2\rightleftharpoons 2SO_3\)</li>
+						<li>\(2H_2O\rightleftharpoons H_3O^++OH^-\)</li>
+						<li>\(CH_3COOH+H_2O\rightleftharpoons H_3O^++CH_3COO^-\)</li>
+						<li>\(NH_3+H_2O\rightleftharpoons NH_4^++OH^-\)</li>
+						<li>\(AgCl(s)\rightleftharpoons Ag^++Cl^-\)</li>
+					</ul>
+					<!--END Must-know equations -->
+					<br />
+
+					<!--START Quick pitfalls -->
+					<ul>
+						<strong>15. Quick pitfalls to avoid</strong>
+						<li>
+							Do not include pure solids or pure liquids in equilibrium
+							expressions.
+						</li>
+						<li>
+							Do not say catalyst changes equilibrium constant or equilibrium
+							composition.
+						</li>
+						<li>
+							Do not decide pH after mixing acid and base before doing
+							<b>mole subtraction</b> and dividing by <b>total final volume</b>.
+						</li>
+						<li>
+							Do not count all hydrogens in oxyacids as ionisable; count only
+							those attached through \(-OH\).
+						</li>
+						<li>
+							Do not assume pH 7 means neutral at every temperature; neutral
+							means \([H^+]=[OH^-]\).
+						</li>
+						<li>
+							In \(K_{sp}\) numericals, write ionic stoichiometry first; many
+							mistakes come from wrong ion ratios.
+						</li>
+					</ul>
+					<!--END Quick pitfalls -->
+					<br />
 				</div>
 			</div>
 		</div>
