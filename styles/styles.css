@@ -202,8 +202,13 @@ h4 {
 	margin: 20px;
 }
 
-.accordion li {
+.accordion ul li {
 	list-style-type: none;
+}
+
+.accordion-content ol > li {
+	display: list-item !important;
+	list-style: decimal inside !important;
 }
 
 .accordion-item {
