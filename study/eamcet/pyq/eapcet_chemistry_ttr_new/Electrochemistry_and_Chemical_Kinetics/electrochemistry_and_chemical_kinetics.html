@@ -40,10 +40,484 @@
 					High-value revision
 				</button>
 				<div class="accordion-content">
+					<!--START Variables used -->
 					<ul>
-						<li>TTR imp 1</li>
-						<li>TTR imp 2</li>
+						<strong>Variables used</strong>
+						<li>
+							\(E^\circ_{\mathrm{cell}}\): standard cell potential;
+							\(E_{\mathrm{cell}}\): cell potential under non-standard
+							conditions.
+						</li>
+						<li>
+							\(n\): number of electrons transferred in the balanced redox
+							reaction or electrode process.
+						</li>
+						<li>
+							\(F\): Faraday constant, approximately \(96500\ \mathrm{C\
+							mol^{-1}}\); \(1F\) is the charge on \(1\) mole of electrons.
+						</li>
+						<li>
+							\(Q\): reaction quotient in the Nernst equation, or electric
+							charge passed in electrolysis depending on context. In
+							electrolysis, \(Q=It\).
+						</li>
+						<li>
+							\(\Lambda_m\): molar conductivity; \(\Lambda_m^\circ\): limiting
+							molar conductivity at infinite dilution; \(\lambda_i^\circ\):
+							limiting ionic molar conductivity.
+						</li>
+						<li>
+							\(\kappa\): conductivity or specific conductance; \(R\):
+							resistance; cell constant \(=\dfrac{l}{A}\).
+						</li>
+						<li>
+							\(\alpha\): degree of dissociation of weak electrolyte; \(K_a\):
+							acid dissociation constant.
+						</li>
+						<li>
+							\(k\): rate constant; \(r\): rate of reaction; \(t_{1/2}\):
+							half-life period.
+						</li>
+						<li>
+							\(E_a\): activation energy; \(E_t\): threshold energy; \(E_i\):
+							internal energy of reactants; \(A\): Arrhenius frequency factor.
+						</li>
 					</ul>
+					<!--END Variables used -->
+					<br />
+
+					<!--START Electrochemical cells and electrode potentials -->
+					<ul>
+						<strong>Electrochemical cells and electrode potentials</strong>
+						<li>
+							For any galvanic cell,
+							\(E^\circ_{\mathrm{cell}}=E^\circ_{\mathrm{cathode}}-E^\circ_{\mathrm{anode}}\).
+							The electrode with higher reduction potential acts as cathode, and
+							the lower one acts as anode.
+						</li>
+						<li>
+							Cell feasibility is decided by the sign of
+							\(E^\circ_{\mathrm{cell}}\). If \(E^\circ_{\mathrm{cell}}\) is
+							negative, the proposed redox reaction is non-spontaneous under
+							standard conditions; for example, \(\mathrm{Fe^{3+}}\) cannot
+							oxidise \(\mathrm{Ce^{3+}}\) when
+							\(E^\circ_{\mathrm{cell}}=0.76-1.60=-0.84\ \mathrm{V}\).
+						</li>
+						<li>
+							Electrode potentials are not directly additive. Since \(\Delta
+							G^\circ=-nFE^\circ\), combine multi-step electrode potentials
+							using electron-weighted terms \(nE^\circ\), not plain voltage
+							addition or subtraction.
+						</li>
+						<li>
+							In Latimer-style questions, count electrons in each
+							oxidation-state change first. For \(\mathrm{Mn^{7+}\rightarrow
+							Mn^{2+}}\), use \(5(1.51)=3x+2(1.23)\), giving
+							\(E^\circ_{\mathrm{Mn^{7+}/Mn^{4+}}}\approx1.7\ \mathrm{V}\), not
+							\(1.51-1.23\).
+						</li>
+						<li>
+							For hydrogen electrode at \(298\ \mathrm{K}\), \(E=-0.0591\times
+							pH\) when \(P_{\mathrm{H_2}}=1\). Thus at \(pH=10\),
+							\(E\approx-0.591\ \mathrm{V}\).
+						</li>
+						<li>
+							For a chlorine electrode,
+							\(\mathrm{Cl_2(g)+2e^-\rightarrow2Cl^-(aq)}\), the Nernst
+							expression is
+							\(E=E^\circ-\dfrac{0.0591}{2}\log\dfrac{[\mathrm{Cl^-}]^2}{P_{\mathrm{Cl_2}}}\).
+							Increasing chloride-ion concentration lowers the reduction
+							potential, so maximum potential occurs at minimum
+							\([\mathrm{Cl^-}]\).
+						</li>
+						<li>
+							For \(\mathrm{Fe^{3+}+e^-\rightarrow Fe^{2+}}\),
+							\(E=E^\circ-0.059\log\dfrac{[\mathrm{Fe^{2+}}]}{[\mathrm{Fe^{3+}}]}\).
+							A high product-to-reactant ion ratio lowers \(E\); for ratio
+							\(100\), \(E=0.771-0.118=0.653\ \mathrm{V}\).
+						</li>
+						<li>
+							Aqueous standard reduction potentials of alkali metals are
+							strongly affected by hydration enthalpy. Lithium has an
+							exceptionally negative value, so
+							\(E^\circ(\mathrm{Li^+/Li})=-3.04\ \mathrm{V}\),
+							\(E^\circ(\mathrm{Na^+/Na})=-2.714\ \mathrm{V}\), and the
+							negative-potential order among Li, K, Na is \(\mathrm{Li>K>Na}\).
+						</li>
+						<li>
+							Oxidation-state logic can appear inside electrochemistry-linked
+							redox questions. In \(\mathrm{Se_2Cl_2}\), selenium is \(+1\);
+							disproportionation requires one product with higher oxidation
+							state and another with lower oxidation state, so
+							\(\mathrm{SeCl_4}\) \((+4)\) and elemental \(\mathrm{Se}\) \((0)\)
+							are formed.
+						</li>
+					</ul>
+					<!--END Electrochemical cells and electrode potentials -->
+					<br />
+
+					<!--START Nernst equation, equilibrium constant and Gibbs energy -->
+					<ul>
+						<strong
+							>Nernst equation, equilibrium constant and Gibbs energy</strong
+						>
+						<li>
+							At \(298\ \mathrm{K}\), use \(E=E^\circ-\dfrac{0.0591}{n}\log Q\).
+							Balance the redox reaction first to obtain \(n\), and omit pure
+							solids and pure liquids from \(Q\).
+						</li>
+						<li>
+							For \(\mathrm{Zn(s)+2H^+\rightarrow Zn^{2+}+H_2}\),
+							\(Q=\dfrac{[\mathrm{Zn^{2+}}]P_{\mathrm{H_2}}}{[\mathrm{H^+}]^2}\).
+							The square on \([\mathrm{H^+}]\) and \(n=2\) are essential;
+							solving the Nernst equation can directly give \(pH\).
+						</li>
+						<li>
+							The relation between standard cell potential and equilibrium
+							constant is \(E^\circ_{\mathrm{cell}}=\dfrac{0.06}{n}\log K\) at
+							\(298\ \mathrm{K}\). For \(K=10^{15}\) and \(n=2\),
+							\(E^\circ=0.45\ \mathrm{V}\).
+						</li>
+						<li>
+							When two half-cell potentials are given, first identify cathode
+							and anode, then use \(E^\circ_{\mathrm{cell}}=\dfrac{0.06}{n}\log
+							K_c\). For a one-electron cell with \(E^\circ_{\mathrm{cell}}=1.0\
+							\mathrm{V}\), \(\log K_c=\dfrac{100}{6}\).
+						</li>
+						<li>
+							Gibbs energy of a cell reaction is calculated from \(\Delta
+							G=-nFE\). The sign is important: a positive cell potential gives
+							negative \(\Delta G\), meaning the cell reaction is spontaneous.
+						</li>
+						<li>
+							For concentration-cell or non-standard cell questions, the
+							numerical answer depends heavily on the correctly balanced \(Q\).
+							Recheck powers of ion concentrations and electron count before
+							substituting in the Nernst equation.
+						</li>
+					</ul>
+					<!--END Nernst equation, equilibrium constant and Gibbs energy -->
+					<br />
+
+					<!--START Conductance and molar conductivity -->
+					<ul>
+						<strong>Conductance and molar conductivity</strong>
+						<li>
+							Kohlrausch’s law states that \(\Lambda_m^\circ\) is the sum of
+							limiting ionic conductivities with stoichiometric coefficients.
+							For \(\mathrm{CaCl_2}\),
+							\(\Lambda_m^\circ=\lambda^\circ_{\mathrm{Ca^{2+}}}+2\lambda^\circ_{\mathrm{Cl^-}}=119+2(76)=271\
+							\mathrm{S\ cm^2\ mol^{-1}}\), not \(195\).
+						</li>
+						<li>
+							For weak acids, \(\Lambda_m^\circ\) is obtained from ionic values:
+							\(\Lambda_m^\circ(\mathrm{HCOOH})=\lambda^\circ_{\mathrm{H^+}}+\lambda^\circ_{\mathrm{HCOO^-}}\).
+							If \(\alpha=11\%=0.11\), then
+							\(\Lambda_m=\alpha\Lambda_m^\circ=0.11(404.2)=44.46\ \mathrm{S\
+							cm^2\ mol^{-1}}\).
+						</li>
+						<li>
+							For weak electrolytes,
+							\(\alpha=\dfrac{\Lambda_m}{\Lambda_m^\circ}\). In
+							conductivity-data problems, first calculate
+							\(\Lambda_m=\kappa\times\dfrac{1000}{C}\), then divide by
+							\(\Lambda_m^\circ\).
+						</li>
+						<li>
+							For weak monobasic acids, \(\Lambda_m=\alpha\Lambda_m^\circ\) and
+							\(\kappa=\dfrac{\Lambda_m C}{1000}\). Keep track of whether the
+							question asks for molar conductivity \(\Lambda_m\) or conductivity
+							\(\kappa\).
+						</li>
+						<li>
+							Ostwald’s dilution law for a weak electrolyte is
+							\(K_a=\dfrac{C\alpha^2}{1-\alpha}\); for small \(\alpha\),
+							\(\alpha=\sqrt{\dfrac{K_a}{C}}\). For \(0.01\ \mathrm{M}\) acetic
+							acid with \(K_a=1.8\times10^{-5}\), \(\alpha\approx0.0424\), so
+							\(\Lambda_m\approx16.54\ \mathrm{S\ cm^2\ mol^{-1}}\) when
+							\(\Lambda_m^\circ=390\).
+						</li>
+						<li>
+							Molar conductivity of a weak electrolyte such as acetic acid
+							increases sharply on dilution because the degree of ionisation
+							increases. Do not apply the nearly linear strong-electrolyte
+							pattern of \(\Lambda_m\) versus \(\sqrt{C}\) to weak acids.
+						</li>
+						<li>
+							For resistance questions, use \(\kappa=\dfrac{\text{cell
+							constant}}{R}\) and \(\Lambda_m=\dfrac{\kappa}{C}\) with
+							compatible units. Convert \(0.02\ \mathrm{M}\) to \(20\
+							\mathrm{mol\ m^{-3}}\) and \(124\ \mathrm{S\ cm^2\ mol^{-1}}\) to
+							\(124\times10^{-4}\ \mathrm{S\ m^2\ mol^{-1}}\) before calculating
+							\(R\).
+						</li>
+					</ul>
+					<!--END Conductance and molar conductivity -->
+					<br />
+
+					<!--START Electrolysis and Faraday laws -->
+					<ul>
+						<strong>Electrolysis and Faraday laws</strong>
+						<li>
+							One Faraday is the charge on one mole of electrons:
+							\(1F\approx96500\ \mathrm{C}\). Deposition of one gram equivalent
+							of any substance requires exactly \(1F\), so “one equivalent
+							deposited” immediately means charge \(=1F\).
+						</li>
+						<li>
+							For electrolysis numericals, first calculate charge \(Q=It\),
+							converting time to seconds. Then calculate faradays passed as
+							\(\dfrac{Q}{F}\).
+						</li>
+						<li>
+							Electrochemical equivalent is \(Z=\dfrac{m}{Q}=\dfrac{m}{It}\). In
+							time-based problems, convert minutes to seconds before using
+							\(Q=It\); for \(0.5\ \mathrm{A}\) passed for \(60\) min, \(Q=1800\
+							\mathrm{C}\).
+						</li>
+						<li>
+							Equivalent weight from deposited mass is obtained using “mass
+							deposited per Faraday = equivalent weight.” For Cu deposition with
+							\(Q=2880\ \mathrm{C}\) and mass \(0.96\ \mathrm{g}\), the
+							equivalent weight is approximately \(31.75\ \mathrm{g}\), while
+							\(63.5\) is the atomic mass.
+						</li>
+						<li>
+							For the same quantity of electricity through different
+							electrolytes, masses deposited are proportional to equivalent
+							masses: \(\dfrac{m_1}{m_2}=\dfrac{E_1}{E_2}\), where
+							\(E=\dfrac{\text{atomic mass}}{\text{valency}}\). Using Ag as
+							monovalent gives the valency of Au as \(3\) from the given Ag/Au
+							deposition ratio.
+						</li>
+						<li>
+							For molten \(\mathrm{AlCl_3}\), \(\mathrm{Al^{3+}+3e^-\rightarrow
+							Al}\) and \(2\mathrm{Cl^-}\rightarrow\mathrm{Cl_2}+2e^-\). Use
+							\(3F\) per mole of Al and \(2F\) per mole of \(\mathrm{Cl_2}\);
+							for \(5\times10^{-4}F\), Al deposited is \(4.5\ \mathrm{mg}\) and
+							\(\mathrm{Cl_2}\) evolved is \(5.6\ \mathrm{mL}\) at STP.
+						</li>
+						<li>
+							For chlorine gas liberation, the anode reaction \(2Cl^-\rightarrow
+							Cl_2+2e^-\) requires \(2F\) for \(1\) mole of \(\mathrm{Cl_2}\).
+							After finding \(Q=It\), calculate
+							\(n(\mathrm{Cl_2})=\dfrac{Q}{2F}\) and convert to volume using
+							\(22.4\ \mathrm{L\ mol^{-1}}\) at STP.
+						</li>
+						<li>
+							In aqueous \(\mathrm{Na_2SO_4}\), \(\mathrm{Na^+}\) and
+							\(\mathrm{SO_4^{2-}}\) mainly act as spectator ions and water is
+							electrolysed. Oxygen is liberated at the anode by
+							\(2H_2O\rightarrow O_2+4H^++4e^-\), so \(4F\) gives \(1\) mole of
+							\(\mathrm{O_2}\).
+						</li>
+						<li>
+							In aqueous \(\mathrm{CuSO_4}\) with inert Pt electrodes,
+							\(\mathrm{Cu^{2+}}\) is reduced to Cu at the cathode and water is
+							oxidised to \(\mathrm{O_2}\) at the anode. Do not discharge
+							\(\mathrm{SO_4^{2-}}\) at the anode in this standard treatment.
+						</li>
+						<li>
+							Molten and aqueous electrolysis give different products. Molten
+							\(\mathrm{NaCl}\) gives Na at the cathode and \(\mathrm{Cl_2}\) at
+							the anode, while aqueous \(\mathrm{CuSO_4}\) with Pt gives Cu at
+							the cathode and \(\mathrm{O_2}\) at the anode.
+						</li>
+						<li>
+							In the Castner-Kellner process, brine is electrolysed to
+							manufacture \(\mathrm{NaOH}\). Mercury acts as cathode and forms
+							sodium amalgam, while carbon or graphite acts as anode and
+							liberates chlorine by \(2Cl^-\rightarrow Cl_2+2e^-\).
+						</li>
+					</ul>
+					<!--END Electrolysis and Faraday laws -->
+					<br />
+
+					<!--START Rate law, order and molecularity -->
+					<ul>
+						<strong>Rate law, order and molecularity</strong>
+						<li>
+							Reaction order is determined experimentally from the rate law, not
+							from stoichiometric coefficients. In initial-rate tables, double
+							one reactant while keeping the other constant to find the order
+							with respect to that reactant.
+						</li>
+						<li>
+							If doubling \([\mathrm{A_2}]\) doubles rate and doubling
+							\([\mathrm{B_2}]\) also doubles rate, then the reaction is first
+							order in each and overall second order:
+							\(\mathrm{Rate}=k[\mathrm{A_2}][\mathrm{B_2}]\).
+						</li>
+						<li>
+							Units of \(k\) reveal the order: zero order has \(\mathrm{mol\
+							L^{-1}\ s^{-1}}\), first order has \(\mathrm{s^{-1}}\), and second
+							order has \(\mathrm{L\ mol^{-1}\ s^{-1}}\). Thus
+							\(k=1.2\times10^{-2}\ \mathrm{s^{-1}}\) immediately indicates
+							first order.
+						</li>
+						<li>
+							For rate \(=k[\mathrm{HI}]^2\), the reaction is second order and
+							\(k\) has units \(\mathrm{L\ mol^{-1}\ s^{-1}}\). Do not confuse
+							this with third-order units \(\mathrm{L^2\ mol^{-2}\ s^{-1}}\).
+						</li>
+						<li>
+							At fixed temperature, the rate constant \(k\) for a given reaction
+							does not change when initial concentration changes. In a
+							first-order reaction, doubling initial concentration doubles
+							initial rate but leaves \(k\) unchanged.
+						</li>
+						<li>
+							When comparing rates from different \(k\) values, apply the actual
+							rate law and concentration. At \([A]=1\ \mathrm{M}\), numerical
+							comparison becomes direct, but the order inferred from the unit of
+							\(k\) must still be respected.
+						</li>
+						<li>
+							In mechanism-based questions, write the rate law from the slow
+							step first, then eliminate intermediates using fast equilibrium.
+							For \(R=k[N_2O_2][H_2]\) and \(2NO\rightleftharpoons N_2O_2\), use
+							\([N_2O_2]\propto[NO]^2\), giving \(R=k[NO]^2[H_2]\).
+						</li>
+						<li>
+							Rate expressions for appearance and disappearance must account for
+							stoichiometric coefficients. For
+							\(\mathrm{N_2O_5\rightarrow2NO_2+\dfrac{1}{2}O_2}\),
+							\(-\dfrac{d[\mathrm{N_2O_5}]}{dt}=\dfrac{1}{2}\dfrac{d[\mathrm{NO_2}]}{dt}=2\dfrac{d[\mathrm{O_2}]}{dt}\),
+							so \(2K_1=K_2=4K_3\).
+						</li>
+					</ul>
+					<!--END Rate law, order and molecularity -->
+					<br />
+
+					<!--START Integrated rate equations and graphs -->
+					<ul>
+						<strong>Integrated rate equations and graphs</strong>
+						<li>
+							For zero-order reactions, \([A]=[A]_0-kt\). Therefore, a graph of
+							\([A]\) versus \(t\) is a straight line with slope \(-k\) and
+							intercept \([A]_0\).
+						</li>
+						<li>
+							Zero-order half-life is \(t_{1/2}=\dfrac{[A]_0}{2k}\). Unlike
+							first order, it depends on initial concentration; if \([A]_0=4\)
+							and \(t_{1/2}=0.5\ \mathrm{hr}\), then \(k=4\ \mathrm{mol\ L^{-1}\
+							hr^{-1}}\).
+						</li>
+						<li>
+							Photochemical \(H_2+Cl_2\xrightarrow{h\nu}2HCl\) is treated as a
+							standard zero-order example in basic kinetics because the rate is
+							controlled mainly by light intensity rather than reactant
+							concentration.
+						</li>
+						<li>
+							For first-order reactions, \(\ln[R]=\ln[R]_0-kt\). Hence
+							\(\ln[R]\) versus \(t\) is linear with slope \(-k\) and
+							y-intercept \(\ln[R]_0\).
+						</li>
+						<li>
+							First-order half-life is \(t_{1/2}=\dfrac{0.693}{k}\) and is
+							independent of initial concentration. If \(t_{1/2}\) does not
+							change when \([R]_0\) changes, the reaction is first order.
+						</li>
+						<li>
+							For first-order reactions,
+							\(\log\dfrac{a}{a-x}=\dfrac{k}{2.303}t\). A graph of
+							\(\log\dfrac{a}{a-x}\) versus \(t\) has slope
+							\(\dfrac{k}{2.303}\), so multiply the slope by \(2.303\) to obtain
+							\(k\).
+						</li>
+						<li>
+							For percentage completion in first-order reactions, use the
+							fraction remaining. At \(90\%\) completion, \(10\%\) remains, so
+							\(\dfrac{a}{a-x}=10\) and \(t=\dfrac{2.303}{k}\).
+						</li>
+						<li>
+							For first-order time-ratio questions,
+							\(t\propto\log\dfrac{\text{initial}}{\text{remaining}}\). Thus
+							time for \(75\%\) completion uses \(\log4=0.6\), while time for
+							\(90\%\) completion uses \(\log10=1\), giving a ratio of \(60\%\).
+						</li>
+						<li>
+							For first-order gas-phase decomposition \(\mathrm{A(g)\rightarrow
+							B(g)+C(g)}\), pressure changes must be converted into remaining
+							reactant pressure. If initial pressure is \(p_0\), total pressure
+							rises to \(p_t=p_0+x\), so \(p_A=p_0-x\), not \(p_t\).
+						</li>
+						<li>
+							For second-order identification from half-life, use
+							\(t_{1/2}\propto\dfrac{1}{a}\). If initial concentration decreases
+							\(10\) times and half-life increases \(10\) times, the reaction is
+							second order.
+						</li>
+						<li>
+							The three most repeated graph forms are: zero order \([A]\) versus
+							\(t\), first order \(\ln[A]\) versus \(t\), and second order
+							\(\dfrac{1}{[A]}\) versus \(t\). Avoid choosing non-standard forms
+							such as \([A]\) versus \(\dfrac{1}{t}\) or \(\dfrac{1}{[A]}\)
+							versus \(t^2\).
+						</li>
+					</ul>
+					<!--END Integrated rate equations and graphs -->
+					<br />
+
+					<!--START Arrhenius equation, activation energy and catalyst -->
+					<ul>
+						<strong>Arrhenius equation, activation energy and catalyst</strong>
+						<li>
+							The Arrhenius equation is \(k=Ae^{-E_a/RT}\). In logarithmic form,
+							\(\ln k=\ln A-\dfrac{E_a}{RT}\), so a plot of \(\ln k\) versus
+							\(\dfrac{1}{T}\) has slope \(-\dfrac{E_a}{R}\).
+						</li>
+						<li>
+							For common logarithm, \(\log k=\log A-\dfrac{E_a}{2.303RT}\). If
+							the coefficient of \(\dfrac{1}{T}\) is \(10^4\), then
+							\(E_a=2.303R\times10^4\); the \(2.303\) factor is used only with
+							\(\log\), not \(\ln\).
+						</li>
+						<li>
+							For an Arrhenius plot using \(\ln k\), do not include \(2.303\).
+							If slope \(=-10^3\ \mathrm{K}\), then \(E_a=8.314\times10^3\
+							\mathrm{J\ mol^{-1}}=8.314\ \mathrm{kJ\ mol^{-1}}\).
+						</li>
+						<li>
+							For two-temperature Arrhenius problems, use
+							\(\log\dfrac{k_2}{k_1}=\dfrac{E_a}{2.303R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)\).
+							Temperatures must be in Kelvin.
+						</li>
+						<li>
+							The phrase “temperature coefficient holds good” usually means rate
+							or rate constant doubles for a \(10^{\circ}\mathrm{C}\) rise. From
+							\(300\ \mathrm{K}\) to \(310\ \mathrm{K}\), \(k_2/k_1=2\) gives
+							\(E_a\approx53.3\text{–}53.5\ \mathrm{kJ\ mol^{-1}}\).
+						</li>
+						<li>
+							For first-order reactions, rate is directly proportional to \(k\)
+							at the same concentration pattern. Therefore, “rate doubles from
+							\(300\ \mathrm{K}\) to \(310\ \mathrm{K}\)” can be treated as
+							\(k_2/k_1=2\).
+						</li>
+						<li>
+							A catalyst increases rate by lowering activation energy. At the
+							same temperature, use
+							\(\ln\left(\dfrac{k_1}{k_2}\right)=\dfrac{\Delta E_a}{RT}\); if
+							\(k_2=4k_1\), use \(\ln(1/4)\), giving a negative \(\Delta E_a\).
+						</li>
+						<li>
+							A fourfold increase in rate constant at \(300\ \mathrm{K}\)
+							corresponds to \(\Delta
+							E_a=-1.386\times8.314\times300\approx-3.45\ \mathrm{kJ\
+							mol^{-1}}\). The negative sign is expected because the catalyst
+							lowers the energy barrier.
+						</li>
+						<li>
+							Activation energy is related to threshold energy by
+							\(E_a=E_t-E_i\). Threshold energy itself is not activation energy;
+							if \(E_t=75\ \mathrm{kJ\ mol^{-1}}\) and \(E_i=20\ \mathrm{kJ\
+							mol^{-1}}\), then \(E_a=55\ \mathrm{kJ\ mol^{-1}}\).
+						</li>
+					</ul>
+					<!--END Arrhenius equation, activation energy and catalyst -->
+					<br />
 				</div>
 			</div>
 		</div>
@@ -624,26 +1098,1345 @@
 
 		<div class="accordion">
 			<div class="accordion-item">
-				<button class="accordion-button" id="general-theory">
+				<button class="accordion-button" id="high-value-revision">
 					General theory
 				</button>
 				<div class="accordion-content">
-					<ol class="theory-list">
-						<!--START Topic 1-->
+					<!--START Variables used -->
+					<ul>
+						<strong>Variables used</strong>
 						<li>
-							<strong>Topic 1 </strong>
-							<ul>
-								<li>t1</li>
-								<li>t2</li>
-							</ul>
+							\(E^\circ\): standard electrode potential;
+							\(E^\circ_{\mathrm{cell}}\): standard cell emf;
+							\(E_{\mathrm{cell}}\): cell emf under non-standard conditions.
 						</li>
-						<!--END Topic 1-->
-					</ol>
+						<li>
+							\(n\): number of electrons transferred in the balanced cell
+							reaction or electrode reaction.
+						</li>
+						<li>
+							\(F\): Faraday constant, approximately \(96500\ \mathrm{C\
+							mol^{-1}}\).
+						</li>
+						<li>
+							\(Q\): reaction quotient in Nernst equation; in electrolysis,
+							\(Q\) may also mean charge passed, where \(Q=It\).
+						</li>
+						<li>\(\Delta G\): Gibbs energy change of cell reaction.</li>
+						<li>
+							\(\kappa\): conductivity or specific conductance; \(R\):
+							resistance; cell constant \(=\dfrac{l}{A}\).
+						</li>
+						<li>
+							\(\Lambda_m\): molar conductivity; \(\Lambda_m^\circ\): limiting
+							molar conductivity at infinite dilution; \(\lambda_i^\circ\):
+							limiting ionic molar conductivity.
+						</li>
+						<li>
+							\(\alpha\): degree of dissociation; \(K_a\): acid dissociation
+							constant.
+						</li>
+						<li>
+							\(r\): rate of reaction; \(k\): rate constant; \(t_{1/2}\):
+							half-life period.
+						</li>
+						<li>
+							\(E_a\): activation energy; \(A\): Arrhenius frequency factor;
+							\(T\): absolute temperature in kelvin.
+						</li>
+					</ul>
+					<!--END Variables used -->
+					<br />
+
+					<!--START Redox basis and oxidation number -->
+					<ul>
+						<strong>Redox basis and oxidation number</strong>
+						<li>
+							Electrochemistry is based on electron-transfer reactions.
+							Oxidation is loss of electrons and reduction is gain of electrons;
+							the species losing electrons is the reducing agent, and the
+							species gaining electrons is the oxidising agent.
+						</li>
+						<li>
+							Oxidation number is the apparent charge assigned to an atom by
+							assuming that shared electrons belong to the more electronegative
+							atom. It is especially useful for identifying oxidation and
+							reduction in polyatomic species.
+						</li>
+						<li>
+							The oxidation number of an element in its free state is zero; a
+							monatomic ion has oxidation number equal to its charge. Oxygen is
+							usually \(-2\), except in peroxides and superoxides; hydrogen is
+							\(+1\) with non-metals and \(-1\) with metals.
+						</li>
+						<li>
+							In neutral compounds, the sum of oxidation numbers is zero; in
+							polyatomic ions, the sum equals the charge on the ion. These rules
+							are enough for most EAPCET redox and disproportionation questions.
+						</li>
+						<li>
+							In disproportionation, the same element in one oxidation state is
+							simultaneously oxidised and reduced. For example, in
+							\(\mathrm{Se_2Cl_2}\), selenium is \(+1\); formation of
+							\(\mathrm{SeCl_4}\) \((+4)\) and \(\mathrm{Se}\) \((0)\) shows
+							both oxidation and reduction.
+						</li>
+					</ul>
+					<!--END Redox basis and oxidation number -->
+					<br />
+
+					<!--START Electrolytic conduction, conductivity and molar conductivity -->
+					<ul>
+						<strong
+							>Electrolytic conduction, conductivity and molar
+							conductivity</strong
+						>
+						<li>
+							Electrolytic conduction occurs due to movement of cations and
+							anions in solution or molten electrolyte. Conductance \(L\) is the
+							reciprocal of resistance, \(L=\dfrac{1}{R}\), and conductivity
+							\(\kappa\) is the reciprocal of resistivity.
+						</li>
+						<li>
+							For a conductivity cell,
+							\(\kappa=\text{conductance}\times\text{cell constant}\), where
+							cell constant \(=\dfrac{l}{A}\). Therefore,
+							\(\kappa=\dfrac{\text{cell constant}}{R}\).
+						</li>
+						<li>
+							Molar conductivity is the conducting power of all ions produced by
+							one mole of electrolyte at a given concentration. In common
+							\(\mathrm{cm}\)-based units, \(\Lambda_m=\dfrac{1000\kappa}{C}\),
+							where \(C\) is molarity.
+						</li>
+						<li>
+							In SI-based numerical problems, keep units consistent: \(1\
+							\mathrm{M}=1000\ \mathrm{mol\ m^{-3}}\), and \(\mathrm{S\ cm^2\
+							mol^{-1}}\) must be converted to \(\mathrm{S\ m^2\ mol^{-1}}\)
+							when using \(C\) in \(\mathrm{mol\ m^{-3}}\).
+						</li>
+						<li>
+							On dilution, conductivity \(\kappa\) decreases because the number
+							of ions per unit volume decreases. Molar conductivity
+							\(\Lambda_m\) increases because the volume containing one mole of
+							electrolyte increases and interionic effects decrease.
+						</li>
+						<li>
+							Strong electrolytes are almost completely ionised at all
+							concentrations, so \(\Lambda_m\) increases gradually on dilution.
+							Weak electrolytes are only partially ionised, so \(\Lambda_m\)
+							increases sharply on dilution due to increase in degree of
+							ionisation.
+						</li>
+						<li>
+							For weak electrolytes,
+							\(\alpha=\dfrac{\Lambda_m}{\Lambda_m^\circ}\). This relation is
+							repeatedly useful for weak acid conductivity questions, where
+							\(\Lambda_m\) may first be calculated from \(\kappa\) and
+							concentration.
+						</li>
+						<li>
+							Ostwald’s dilution law connects conductivity and weak-acid
+							ionisation: \(K_a=\dfrac{C\alpha^2}{1-\alpha}\). For small
+							\(\alpha\), the useful approximation is
+							\(\alpha=\sqrt{\dfrac{K_a}{C}}\).
+						</li>
+						<li>
+							Kohlrausch’s law states that at infinite dilution each ion
+							contributes independently to the total molar conductivity. For
+							\(\mathrm{A}_x\mathrm{B}_y\),
+							\(\Lambda_m^\circ=x\lambda_A^\circ+y\lambda_B^\circ\).
+						</li>
+						<li>
+							Stoichiometric coefficients must be included in Kohlrausch-law
+							calculations. For example,
+							\(\Lambda_m^\circ(\mathrm{CaCl_2})=\lambda^\circ_{\mathrm{Ca^{2+}}}+2\lambda^\circ_{\mathrm{Cl^-}}\),
+							not
+							\(\lambda^\circ_{\mathrm{Ca^{2+}}}+\lambda^\circ_{\mathrm{Cl^-}}\).
+						</li>
+						<li>
+							For weak acids such as \(\mathrm{HCOOH}\),
+							\(\Lambda_m^\circ=\lambda^\circ_{\mathrm{H^+}}+\lambda^\circ_{\mathrm{HCOO^-}}\).
+							Once \(\Lambda_m^\circ\) is known,
+							\(\Lambda_m=\alpha\Lambda_m^\circ\) gives the molar conductivity
+							at a given dissociation.
+						</li>
+					</ul>
+					<!--END Electrolytic conduction, conductivity and molar conductivity -->
+					<br />
+
+					<!--START Electrochemical cells and electrode potential -->
+					<ul>
+						<strong>Electrochemical cells and electrode potential</strong>
+						<li>
+							An electrochemical cell converts chemical energy into electrical
+							energy or electrical energy into chemical energy. A galvanic cell
+							produces electricity from a spontaneous redox reaction, while an
+							electrolytic cell uses electricity to drive a chemical change.
+						</li>
+						<li>
+							In a galvanic cell, oxidation occurs at the anode and reduction
+							occurs at the cathode. In standard cell notation, the anode is
+							written on the left and the cathode on the right, with a double
+							vertical line representing the salt bridge.
+						</li>
+						<li>
+							For the Daniell cell, zinc undergoes oxidation and copper ion
+							undergoes reduction: \(\mathrm{Zn\rightarrow Zn^{2+}+2e^-}\),
+							\(\mathrm{Cu^{2+}+2e^-\rightarrow Cu}\). Electrons flow externally
+							from zinc to copper.
+						</li>
+						<li>
+							The salt bridge maintains electrical neutrality. Anions move
+							towards the oxidation half-cell where excess positive charge
+							develops, and cations move towards the reduction half-cell.
+						</li>
+						<li>
+							Electrode potential is the potential developed when a metal is
+							placed in contact with a solution of its own ions. It cannot be
+							measured independently, so it is measured relative to the standard
+							hydrogen electrode.
+						</li>
+						<li>
+							The standard hydrogen electrode has assigned potential \(0.00\
+							\mathrm{V}\) under standard conditions: \(1\ \mathrm{M}\
+							\mathrm{H^+}\), \(1\ \mathrm{bar}\ \mathrm{H_2}\), and \(298\
+							\mathrm{K}\). It may act as anode or cathode depending on the
+							other electrode.
+						</li>
+						<li>
+							The standard electrode potential of an electrode is obtained by
+							coupling it with SHE and observing the cell emf and polarity. Zinc
+							has negative standard reduction potential, while copper has
+							positive standard reduction potential relative to SHE.
+						</li>
+						<li>
+							The electrochemical series arranges electrodes in increasing
+							standard reduction potential. A species with higher reduction
+							potential acts more readily as oxidising agent, while a species
+							with lower reduction potential is more easily oxidised.
+						</li>
+						<li>
+							For a cell,
+							\(E^\circ_{\mathrm{cell}}=E^\circ_{\mathrm{cathode}}-E^\circ_{\mathrm{anode}}\).
+							A positive \(E^\circ_{\mathrm{cell}}\) indicates a spontaneous
+							galvanic reaction under standard conditions.
+						</li>
+						<li>
+							Electrode potentials are reduction potentials by convention. When
+							checking whether one species oxidises another, assign reduction to
+							the oxidising species and oxidation to the other species before
+							applying \(E^\circ_{\mathrm{cell}}\).
+						</li>
+						<li>
+							Electrode potentials are not simply additive. Since \(\Delta
+							G^\circ=-nFE^\circ\), multi-step potential calculations must use
+							electron-weighted terms \(nE^\circ\). This is the central idea
+							behind Latimer-style calculations.
+						</li>
+						<li>
+							Aqueous electrode potentials also reflect hydration effects.
+							Lithium has a very negative \(E^\circ(\mathrm{Li^+/Li})\) because
+							its hydration enthalpy is very high; therefore aqueous potential
+							order should not be guessed only from atomic size or group
+							reactivity.
+						</li>
+					</ul>
+					<!--END Electrochemical cells and electrode potential -->
+					<br />
+
+					<!--START Nernst equation, equilibrium constant and Gibbs energy -->
+					<ul>
+						<strong
+							>Nernst equation, equilibrium constant and Gibbs energy</strong
+						>
+						<li>
+							The Nernst equation gives cell potential under non-standard
+							conditions. At \(298\ \mathrm{K}\),
+							\(E=E^\circ-\dfrac{0.0591}{n}\log Q\), where \(Q\) is the reaction
+							quotient and \(n\) is the number of electrons transferred.
+						</li>
+						<li>
+							Before using the Nernst equation, balance the redox reaction and
+							identify \(n\). Pure solids and pure liquids are not included in
+							\(Q\); only gases and dissolved species appear.
+						</li>
+						<li>
+							For a hydrogen electrode, the potential depends on hydrogen-ion
+							concentration. When \(P_{\mathrm{H_2}}=1\), \(E=-0.0591\times
+							pH\), which makes pH-based electrode-potential questions very
+							direct.
+						</li>
+						<li>
+							For \(\mathrm{Zn(s)+2H^+\rightarrow Zn^{2+}+H_2}\),
+							\(Q=\dfrac{[\mathrm{Zn^{2+}}]P_{\mathrm{H_2}}}{[\mathrm{H^+}]^2}\).
+							The square on \([\mathrm{H^+}]\) follows from the coefficient
+							\(2\) and is a common source of error.
+						</li>
+						<li>
+							For \(\mathrm{Cl_2(g)+2e^-\rightarrow2Cl^-}\),
+							\(E=E^\circ-\dfrac{0.0591}{2}\log\dfrac{[\mathrm{Cl^-}]^2}{P_{\mathrm{Cl_2}}}\).
+							Increasing product-ion concentration lowers the reduction
+							potential.
+						</li>
+						<li>
+							For \(\mathrm{Fe^{3+}+e^-\rightarrow Fe^{2+}}\),
+							\(E=E^\circ-0.0591\log\dfrac{[\mathrm{Fe^{2+}}]}{[\mathrm{Fe^{3+}}]}\).
+							A larger \([\mathrm{Fe^{2+}}]/[\mathrm{Fe^{3+}}]\) ratio decreases
+							the electrode potential.
+						</li>
+						<li>
+							At equilibrium, \(E_{\mathrm{cell}}=0\). Therefore,
+							\(E^\circ_{\mathrm{cell}}=\dfrac{0.0591}{n}\log K\) at \(298\
+							\mathrm{K}\), often rounded to
+							\(E^\circ_{\mathrm{cell}}=\dfrac{0.06}{n}\log K\).
+						</li>
+						<li>
+							The standard Gibbs energy relation is \(\Delta
+							G^\circ=-nFE^\circ_{\mathrm{cell}}\), and under non-standard
+							conditions \(\Delta G=-nFE_{\mathrm{cell}}\). Positive cell emf
+							corresponds to negative Gibbs energy change.
+						</li>
+						<li>
+							In cell numericals involving \(\Delta G\), \(K\), or pH, the same
+							sequence is safest: identify anode/cathode, balance electrons,
+							write \(Q\), substitute in Nernst equation, then connect to
+							\(\Delta G\) or \(K\) if required.
+						</li>
+					</ul>
+					<!--END Nernst equation, equilibrium constant and Gibbs energy -->
+					<br />
+
+					<!--START Electrolytic cells and products of electrolysis -->
+					<ul>
+						<strong>Electrolytic cells and products of electrolysis</strong>
+						<li>
+							In an electrolytic cell, electrical energy is converted into
+							chemical energy. Cations move to the cathode and undergo
+							reduction; anions move to the anode and undergo oxidation.
+						</li>
+						<li>
+							For molten salts, the ions of the salt are discharged directly.
+							Molten \(\mathrm{NaCl}\) gives \(\mathrm{Na}\) at the cathode and
+							\(\mathrm{Cl_2}\) at the anode.
+						</li>
+						<li>
+							For aqueous solutions, water competes with dissolved ions. In
+							aqueous \(\mathrm{CuSO_4}\) using inert Pt electrodes,
+							\(\mathrm{Cu^{2+}}\) is reduced to Cu at the cathode, while water
+							is oxidised to \(\mathrm{O_2}\) at the anode.
+						</li>
+						<li>
+							In aqueous \(\mathrm{Na_2SO_4}\), \(\mathrm{Na^+}\) and
+							\(\mathrm{SO_4^{2-}}\) mainly remain spectator ions. Water is
+							electrolysed, giving \(\mathrm{H_2}\) at cathode and
+							\(\mathrm{O_2}\) at anode.
+						</li>
+						<li>
+							At the anode in water oxidation, \(2H_2O\rightarrow
+							O_2+4H^++4e^-\). Therefore, \(4F\) of charge produces \(1\) mole
+							of oxygen gas.
+						</li>
+						<li>
+							At a chloride anode, \(2Cl^-\rightarrow Cl_2+2e^-\). Therefore,
+							\(2F\) of charge produces \(1\) mole of chlorine gas.
+						</li>
+						<li>
+							In the Castner-Kellner process for sodium hydroxide manufacture,
+							brine is electrolysed using a mercury cathode and carbon or
+							graphite anode. Sodium forms amalgam at the cathode and chlorine
+							is liberated at the anode.
+						</li>
+						<li>
+							Product-prediction questions are easiest when electrode type and
+							medium are noted first: molten salt, aqueous solution, active
+							electrode, or inert electrode. Confusing aqueous and molten
+							conditions leads to wrong cathode/anode products.
+						</li>
+					</ul>
+					<!--END Electrolytic cells and products of electrolysis -->
+					<br />
+
+					<!--START Faraday laws of electrolysis -->
+					<ul>
+						<strong>Faraday laws of electrolysis</strong>
+						<li>
+							Faraday’s first law states that the mass liberated or deposited at
+							an electrode is proportional to the quantity of electricity
+							passed: \(m\propto Q\), and \(Q=It\).
+						</li>
+						<li>
+							Electrochemical equivalent \(Z\) is the mass deposited by \(1\
+							\mathrm{C}\) of charge. Hence \(m=ZIt\) and \(Z=\dfrac{m}{It}\).
+						</li>
+						<li>
+							One Faraday is the charge on one mole of electrons: \(1F=96500\
+							\mathrm{C}\). One Faraday deposits or liberates one gram
+							equivalent of a substance.
+						</li>
+						<li>
+							The chemical equivalent or equivalent weight is
+							\(E=\dfrac{\text{atomic mass}}{\text{valency}}\). For aluminium,
+							\(E=\dfrac{27}{3}=9\ \mathrm{g}\).
+						</li>
+						<li>
+							The most useful electrolysis formula is \(m=\dfrac{EIt}{96500}\),
+							where \(E\) is equivalent weight. Always convert time into seconds
+							before substituting.
+						</li>
+						<li>
+							Faradays passed \(=\dfrac{It}{96500}\). Once faradays are known,
+							use the electron requirement of the electrode reaction: \(3F\)
+							deposits \(1\) mole of Al, \(2F\) produces \(1\) mole of
+							\(\mathrm{Cl_2}\), and \(4F\) produces \(1\) mole of
+							\(\mathrm{O_2}\).
+						</li>
+						<li>
+							Faraday’s second law states that when the same quantity of
+							electricity passes through different electrolytes, the masses
+							deposited are proportional to equivalent weights:
+							\(\dfrac{m_1}{m_2}=\dfrac{E_1}{E_2}\).
+						</li>
+						<li>
+							For valency determination from deposited masses, write
+							\(E=\dfrac{\text{atomic mass}}{\text{valency}}\). If Ag is
+							involved, use Ag as monovalent unless otherwise stated.
+						</li>
+						<li>
+							For gas-volume electrolysis problems, calculate moles of gas from
+							faradays and then use \(22.4\ \mathrm{L\ mol^{-1}}\) at STP. Do
+							not stop at charge or mass if the question asks for volume.
+						</li>
+					</ul>
+					<!--END Faraday laws of electrolysis -->
+					<br />
+
+					<!--START Batteries, fuel cells, corrosion and hydrogen economy -->
+					<ul>
+						<strong
+							>Batteries, fuel cells, corrosion and hydrogen economy</strong
+						>
+						<li>
+							A battery is a practical electrochemical source of electrical
+							energy. Primary batteries are not designed for recharging, while
+							secondary batteries can be recharged by reversing the cell
+							reaction using external electrical energy.
+						</li>
+						<li>
+							Dry cells are common primary cells. Their usefulness lies in
+							producing portable electrical energy from spontaneous redox
+							reactions.
+						</li>
+						<li>
+							Lead-acid storage batteries are typical secondary batteries used
+							in automobiles. They can be discharged to supply current and
+							recharged by applying external electrical energy.
+						</li>
+						<li>
+							Fuel cells convert the chemical energy of continuously supplied
+							fuel and oxidant directly into electrical energy. A
+							hydrogen-oxygen fuel cell produces water as the main product and
+							is important in clean-energy discussions.
+						</li>
+						<li>
+							Corrosion is an electrochemical process in which a metal is
+							oxidised by environmental substances such as oxygen and water.
+							Rusting of iron involves anodic oxidation of iron and cathodic
+							reduction of oxygen.
+						</li>
+						<li>
+							Protection from corrosion is based on preventing oxidation of the
+							metal or preventing formation of local electrochemical cells.
+							Common methods include coating, galvanisation and cathodic
+							protection.
+						</li>
+						<li>
+							Hydrogen economy refers to using hydrogen as an energy carrier,
+							especially with fuel cells. Its importance is linked with high
+							energy output and cleaner product formation, but storage,
+							transport and production remain practical challenges.
+						</li>
+					</ul>
+					<!--END Batteries, fuel cells, corrosion and hydrogen economy -->
+					<br />
+
+					<!--START Rate of reaction and stoichiometric rate expression -->
+					<ul>
+						<strong>Rate of reaction and stoichiometric rate expression</strong>
+						<li>
+							Chemical kinetics studies the speed of reactions and the factors
+							affecting it. A reaction may be thermodynamically feasible but
+							still slow if the activation barrier is high.
+						</li>
+						<li>
+							Rate of reaction is the change in concentration of a reactant or
+							product per unit time. For reactants, the rate is written with a
+							negative sign because their concentration decreases.
+						</li>
+						<li>
+							For a balanced reaction, rates written using different species
+							must be divided by their stoichiometric coefficients to give the
+							same reaction rate.
+						</li>
+						<li>
+							For \(\mathrm{2N_2O_5\rightarrow4NO_2+O_2}\), the reaction rate is
+							\(-\dfrac{1}{2}\dfrac{d[\mathrm{N_2O_5}]}{dt}=\dfrac{1}{4}\dfrac{d[\mathrm{NO_2}]}{dt}=\dfrac{d[\mathrm{O_2}]}{dt}\).
+							Coefficients and reciprocals must be handled carefully.
+						</li>
+						<li>
+							Average rate is calculated over a finite time interval, whereas
+							instantaneous rate is the rate at a particular moment and is
+							written using derivatives such as \(\dfrac{d[A]}{dt}\).
+						</li>
+						<li>
+							The main factors affecting rate are concentration of reactants,
+							temperature and catalyst. Increasing volume of a gaseous system
+							lowers pressure and concentration, so rate usually decreases.
+						</li>
+					</ul>
+					<!--END Rate of reaction and stoichiometric rate expression -->
+					<br />
+
+					<!--START Rate law, rate constant, order and molecularity -->
+					<ul>
+						<strong>Rate law, rate constant, order and molecularity</strong>
+						<li>
+							The rate law expresses rate as a function of reactant
+							concentrations: \(r=k[A]^x[B]^y\). Here \(x\) and \(y\) are
+							experimentally determined orders with respect to \(A\) and \(B\).
+						</li>
+						<li>
+							The overall order of reaction is \(x+y\). It may be zero, one,
+							two, three or fractional, and it cannot be predicted simply from
+							the balanced equation.
+						</li>
+						<li>
+							The rate constant \(k\) is the proportionality constant in the
+							rate law. It is numerically equal to the rate when all reactant
+							concentrations are unity, and it depends on temperature but not on
+							initial concentration.
+						</li>
+						<li>
+							In initial-rate data, changing one reactant concentration while
+							keeping the other constant reveals the order with respect to that
+							reactant. If doubling a concentration doubles rate, the reaction
+							is first order in that reactant.
+						</li>
+						<li>
+							Units of \(k\) are order-specific. For zero order, \(k\) has units
+							of concentration per time; for first order, \(k\) has units of
+							time\(^{-1}\); for second order, \(k\) has units \(\mathrm{L\
+							mol^{-1}\ s^{-1}}\).
+						</li>
+						<li>
+							In general, for an \(n\)-th order reaction, units of
+							\(k=(\mathrm{mol\ L^{-1}})^{1-n}\mathrm{s^{-1}}\). Unit-based
+							order identification is a quick method in objective questions.
+						</li>
+						<li>
+							Molecularity is the number of reacting species taking part in an
+							elementary step. Unlike order, molecularity is never zero or
+							fractional and is applied to elementary steps, not necessarily the
+							overall reaction.
+						</li>
+						<li>
+							For a mechanism, the rate law is written from the slow step. If a
+							fast pre-equilibrium forms an intermediate, substitute its
+							concentration in terms of stable reactants before writing the
+							final rate law.
+						</li>
+					</ul>
+					<!--END Rate law, rate constant, order and molecularity -->
+					<br />
+
+					<!--START Zero-order and first-order integrated rate equations -->
+					<ul>
+						<strong
+							>Zero-order and first-order integrated rate equations</strong
+						>
+						<li>
+							For a zero-order reaction, rate is independent of reactant
+							concentration: \(r=k\). The integrated equation is
+							\([A]=[A]_0-kt\).
+						</li>
+						<li>
+							A plot of \([A]\) versus \(t\) for a zero-order reaction is a
+							straight line with slope \(-k\) and intercept \([A]_0\). Its
+							half-life is \(t_{1/2}=\dfrac{[A]_0}{2k}\), so it depends on
+							initial concentration.
+						</li>
+						<li>
+							Zero-order reactions are uncommon but can occur when a surface or
+							external factor controls the reaction, such as decomposition on a
+							saturated catalyst surface or photochemical conditions controlled
+							by light intensity.
+						</li>
+						<li>
+							For a first-order reaction, rate \(=k[A]\). The integrated
+							equation is \(\ln\dfrac{[A]_0}{[A]}=kt\), or
+							\(k=\dfrac{2.303}{t}\log\dfrac{[A]_0}{[A]}\).
+						</li>
+						<li>
+							The first-order straight-line form is \(\ln[A]=\ln[A]_0-kt\), or
+							\(\log[A]=\log[A]_0-\dfrac{k}{2.303}t\). Therefore, \(\ln[A]\)
+							versus \(t\) has slope \(-k\), while \(\log[A]\) versus \(t\) has
+							slope \(-\dfrac{k}{2.303}\).
+						</li>
+						<li>
+							A graph of \(\log\dfrac{a}{a-x}\) versus \(t\) for a first-order
+							reaction has slope \(\dfrac{k}{2.303}\). Therefore,
+							\(k=2.303\times\text{slope}\).
+						</li>
+						<li>
+							First-order half-life is \(t_{1/2}=\dfrac{0.693}{k}\). It is
+							independent of initial concentration, which is one of the most
+							useful experimental tests for first-order behaviour.
+						</li>
+						<li>
+							For percentage-completion questions, always use the amount
+							remaining. At \(90\%\) completion, \(10\%\) remains, so
+							\(\dfrac{a}{a-x}=10\) and \(t=\dfrac{2.303}{k}\).
+						</li>
+						<li>
+							For first-order gas reactions such as \(\mathrm{A(g)\rightarrow
+							B(g)+C(g)}\), total pressure must be converted into remaining
+							reactant pressure before using the first-order formula. If
+							\(p_t=p_0+x\), then \(p_A=p_0-x\).
+						</li>
+						<li>
+							For second-order recognition by half-life,
+							\(t_{1/2}\propto\dfrac{1}{[A]_0}\). If concentration decreases ten
+							times and half-life increases ten times, the reaction is second
+							order.
+						</li>
+					</ul>
+					<!--END Zero-order and first-order integrated rate equations -->
+					<br />
+
+					<!--START Pseudo-first-order reaction -->
+					<ul>
+						<strong>Pseudo-first-order reaction</strong>
+						<li>
+							A pseudo-first-order reaction is actually of higher order, but
+							behaves like first order because one reactant is present in large
+							excess and its concentration remains nearly constant.
+						</li>
+						<li>
+							Hydrolysis reactions in water are common examples because water is
+							present in large excess. The rate law then absorbs the nearly
+							constant concentration into a new apparent rate constant.
+						</li>
+						<li>
+							The practical form becomes \(r=k'[A]\), where
+							\(k'=k[B]_{\text{excess}}\). Such reactions are treated using
+							first-order integrated equations and half-life relations.
+						</li>
+					</ul>
+					<!--END Pseudo-first-order reaction -->
+					<br />
+
+					<!--START Temperature dependence, Arrhenius equation and catalyst -->
+					<ul>
+						<strong
+							>Temperature dependence, Arrhenius equation and catalyst</strong
+						>
+						<li>
+							Reaction rate generally increases with temperature because a
+							larger fraction of molecules acquire energy equal to or greater
+							than the threshold energy.
+						</li>
+						<li>
+							The rough temperature-coefficient rule states that rates of many
+							reactions approximately double for every \(10^{\circ}\mathrm{C}\)
+							rise in temperature. This rule is often connected to
+							Arrhenius-equation numericals.
+						</li>
+						<li>
+							The Arrhenius equation is \(k=Ae^{-E_a/RT}\), where \(A\) is
+							frequency factor, \(E_a\) is activation energy, \(R\) is gas
+							constant, and \(T\) is absolute temperature.
+						</li>
+						<li>
+							For natural logarithm, \(\ln k=\ln A-\dfrac{E_a}{RT}\). A graph of
+							\(\ln k\) versus \(\dfrac{1}{T}\) is a straight line with slope
+							\(-\dfrac{E_a}{R}\).
+						</li>
+						<li>
+							For common logarithm, \(\log k=\log A-\dfrac{E_a}{2.303RT}\). The
+							factor \(2.303\) is used only with \(\log\), not with \(\ln\).
+						</li>
+						<li>
+							For two temperatures,
+							\(\log\dfrac{k_2}{k_1}=\dfrac{E_a}{2.303R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)\).
+							Temperatures must always be converted to kelvin.
+						</li>
+						<li>
+							If the rate or rate constant doubles from \(300\ \mathrm{K}\) to
+							\(310\ \mathrm{K}\), using \(k_2/k_1=2\) in the two-temperature
+							Arrhenius equation gives \(E_a\approx53.5\ \mathrm{kJ\
+							mol^{-1}}\).
+						</li>
+						<li>
+							Activation energy is the energy gap between reactants and the
+							activated complex. If threshold energy \(E_t\) and internal energy
+							of reactants \(E_i\) are given, \(E_a=E_t-E_i\).
+						</li>
+						<li>
+							A catalyst changes the reaction rate without being consumed. It
+							provides an alternative pathway with lower activation energy,
+							thereby increasing \(k\) at the same temperature.
+						</li>
+						<li>
+							For catalyst questions at the same temperature, compare the two
+							Arrhenius expressions. If \(k_2\) is the catalysed rate constant
+							and \(k_2=4k_1\), then \(\ln\dfrac{k_1}{k_2}=\dfrac{\Delta
+							E_a}{RT}\), so \(\Delta E_a\) is negative.
+						</li>
+					</ul>
+					<!--END Temperature dependence, Arrhenius equation and catalyst -->
+					<br />
+
+					<!--START Collision theory of reaction rates -->
+					<ul>
+						<strong>Collision theory of reaction rates</strong>
+						<li>
+							Collision theory explains reaction rate in terms of effective
+							collisions between reacting molecules. A collision is effective
+							only if the molecules collide with sufficient energy and proper
+							orientation.
+						</li>
+						<li>
+							The minimum energy required for effective collision is linked with
+							activation energy. Molecules with energy lower than this barrier
+							collide but do not form products.
+						</li>
+						<li>
+							Increasing temperature increases the fraction of molecules having
+							energy greater than or equal to activation energy. This explains
+							why a small rise in temperature can cause a large increase in
+							rate.
+						</li>
+						<li>
+							A catalyst increases the number of effective collisions by
+							lowering the activation-energy barrier. It does not change the
+							overall thermodynamic feasibility of the reaction.
+						</li>
+					</ul>
+					<!--END Collision theory of reaction rates -->
+					<br />
 				</div>
 			</div>
 		</div>
 
 		<!--END General theory-->
+
+		<!--START PYQ Summaries-->
+
+		<div class="accordion">
+			<div class="accordion-item">
+				<button class="accordion-button" id="high-value-revision">
+					PYQ Summaries
+				</button>
+				<div class="accordion-content">
+					<!--Start Part 1-->
+					<ol>
+						<li>
+							2025 Q143 Core concept — Nernst equation with hydrogen electrode
+							and pH calculation. Key formula/rule:
+							\(E_{\mathrm{cell}}=E^\circ_{\mathrm{cell}}-\dfrac{0.06}{n}\log
+							Q\),
+							\(Q=\dfrac{[\mathrm{Zn^{2+}}]P_{\mathrm{H_2}}}{[\mathrm{H^+}]^2}\),
+							and \(pH=-\log[\mathrm{H^+}]\). Trap: do not forget \(n=2\),
+							\(P_{\mathrm{H_2}}=1\), and the square on \([\mathrm{H^+}]\).
+							Crux: For \(\mathrm{Zn(s)+2H^+\rightarrow Zn^{2+}+H_2}\),
+							\(E^\circ_{\mathrm{cell}}=0.76\,V\); solving the Nernst equation
+							gives \([\mathrm{H^+}]=10^{-9}\), hence \(pH=9\).
+						</li>
+
+						<li>
+							2025 Q144 Core concept — identifying first-order reaction from
+							half-life and graph behaviour. Key formula/rule: first-order
+							half-life is independent of initial concentration;
+							\(\ln[R]=\ln[R]_0-kt\), \(\log[R]=\log[R]_0-\dfrac{k}{2.303}t\),
+							and \(\log\dfrac{[R]_0}{[R]}=\dfrac{k}{2.303}t\). Trap: \([R]\) vs
+							time is exponential decay, not a straight line. Crux: If
+							\(t_{1/2}\) is independent of \([R]_0\), the reaction is first
+							order; \(\ln[R]\), \(\log[R]\), and \(\log\dfrac{[R]_0}{[R]}\)
+							plots are linear, but \([R]\) vs \(t\) is not.
+						</li>
+
+						<li>
+							2025 Q143 Core concept — products of electrolysis of aqueous
+							\(\mathrm{CuSO_4}\) using inert Pt electrodes. Key formula/rule:
+							cathode reduction is \(\mathrm{Cu^{2+}+2e^-\rightarrow Cu}\);
+							anode oxidation is \(\mathrm{2H_2O\rightarrow O_2+4H^++4e^-}\).
+							Trap: do not assume \(\mathrm{H_2}\) forms at every aqueous
+							cathode or that \(\mathrm{SO_4^{2-}}\) is discharged at anode.
+							Crux: In aqueous \(\mathrm{CuSO_4}\) with Pt electrodes,
+							\(\mathrm{Cu}\) is deposited at cathode and \(\mathrm{O_2}\)
+							evolves at anode, so \(X,Y=\mathrm{O_2,Cu}\).
+						</li>
+
+						<li>
+							2025 Q144 Core concept — first-order gas-phase kinetics using
+							total pressure change. Key formula/rule: for
+							\(\mathrm{A(g)\rightarrow B(g)+C(g)}\), if pressure increase is
+							\(x\), then \(p_t=p_0+x\) and remaining reactant pressure
+							\(p_A=p_0-x\); \(k=\dfrac{2.303}{t}\log\dfrac{p_0}{p_A}\),
+							\(t_{1/2}=\dfrac{0.693}{k}\). Trap: do not use total pressure
+							\(p_t\) directly as reactant pressure. Crux: Here
+							\(x=250-200=50\), so \(p_A=150\);
+							\(k=\dfrac{2.303}{20}\log\dfrac{200}{150}\), giving
+							\(t_{1/2}\approx50.2\) min.
+						</li>
+
+						<li>
+							2025 Q132 Core concept — Castner-Kellner cell electrode roles and
+							products. Key fact/rule: brine is electrolysed to manufacture
+							\(\mathrm{NaOH}\); carbon/graphite is anode, mercury is cathode,
+							and \(\mathrm{Cl_2}\) is liberated at anode by
+							\(\mathrm{2Cl^-\rightarrow Cl_2+2e^-}\). Trap: mercury is cathode,
+							not anode. Crux: In the Castner-Kellner process, mercury cathode
+							forms sodium amalgam and carbon anode liberates chlorine; the
+							statement reversing these electrodes is incorrect.
+						</li>
+
+						<li>
+							2025 Q143 Core concept — Nernst equation and Gibbs free energy of
+							a galvanic cell. Key formula/rule:
+							\(E^\circ_{\mathrm{cell}}=E^\circ_{\mathrm{cathode}}-E^\circ_{\mathrm{anode}}\),
+							\(E=E^\circ-\dfrac{0.0591}{n}\log Q\), and \(\Delta G=-nFE\).
+							Trap: balance electrons before choosing \(n\), omit solids from
+							\(Q\), and watch for answer-key inconsistency in \(Q\). Crux: For
+							\(\mathrm{Cr|Cr^{3+}||Fe^{2+}|Fe}\), Fe is cathode and Cr is anode
+							with \(n=6\); using the provided key route gives
+							\(E\approx0.2607\,V\) and \(\Delta
+							G=-150.9\,\mathrm{kJ\,mol^{-1}}\), though the strictly balanced
+							\(Q\) from the printed concentrations should be checked carefully.
+						</li>
+
+						<li>
+							2025 Q144 Core concept — activation energy from Arrhenius
+							common-log equation. Key formula/rule: \(\log k=\log
+							A-\dfrac{E_a}{2.303RT}\). Trap: the coefficient of
+							\(\dfrac{1}{T}\) equals \(\dfrac{E_a}{2.303R}\), not \(E_a/R\);
+							convert J to kJ at the end. Crux: Comparing \(\log
+							k=7.14-\dfrac{1\times10^4}{T}\) gives
+							\(E_a=2.303\times8.3\times10^4\approx191.1\,\mathrm{kJ\,mol^{-1}}\).
+						</li>
+
+						<li>
+							2025 Q143 Core concept — molar conductivity of weak electrolyte
+							using Ostwald’s dilution law. Key formula/rule:
+							\(\alpha=\dfrac{\Lambda_m}{\Lambda_m^0}\),
+							\(K_a=\dfrac{C\alpha^2}{1-\alpha}\), and for small \(\alpha\),
+							\(\alpha=\sqrt{\dfrac{K_a}{C}}\). Trap: do not use
+							\(\Lambda_m=\Lambda_m^0\) for weak electrolytes at finite
+							concentration. Crux: For \(0.01\,M\) acetic acid,
+							\(\alpha=\sqrt{\dfrac{1.8\times10^{-5}}{0.01}}\approx0.0424\);
+							hence
+							\(\Lambda_m=0.0424\times390\approx16.54\,\mathrm{S\,cm^2\,mol^{-1}}\).
+						</li>
+
+						<li>
+							2025 Q144 Core concept — zero-order half-life and time for
+							concentration drop. Key formula/rule: for zero order,
+							\([A]_t=[A]_0-kt\) and \(t_{1/2}=\dfrac{[A]_0}{2k}\). Trap:
+							zero-order half-life depends on initial concentration; do not use
+							first-order \(t_{1/2}=\dfrac{0.693}{k}\). Crux: Given
+							\(t_{1/2}=0.5\,hr\) for \([A]_0=4\),
+							\(k=4\,\mathrm{mol\,L^{-1}\,hr^{-1}}\); the time for \([A]\) to
+							fall from \(2.0\) to \(1.0\) is \(\dfrac{1}{4}\,hr\).
+						</li>
+
+						<li>
+							2025 Q143 Core concept — Faraday’s laws for molten
+							\(\mathrm{AlCl_3}\) electrolysis. Key formula/rule: charge
+							\(Q=It\), faradays \(=\dfrac{Q}{F}\);
+							\(\mathrm{Al^{3+}+3e^-\rightarrow Al}\),
+							\(2\mathrm{Cl^-}\rightarrow\mathrm{Cl_2}+2e^-\). Trap: use
+							equivalent mass for Al \(\left(\dfrac{27}{3}=9\right)\) and \(2F\)
+							per mole of \(\mathrm{Cl_2}\). Crux:
+							\(Q=0.5\times96.5=48.25\,C=5\times10^{-4}F\); Al deposited
+							\(=4.5\,mg\), and \(\mathrm{Cl_2}\) liberated \(=5.6\,mL\) at STP.
+						</li>
+
+						<li>
+							2025 Q144 Core concept — first-order integrated-rate graph
+							intercept. Key formula/rule: \(\ln[R]=\ln[R]_0-kt\). Trap: slope
+							and intercept are different; slope is \(-k\), but y-intercept is
+							\(\ln[R]_0\). Crux: For a first-order plot of \(\ln(R)\) against
+							time, the straight line has negative slope \(-k\) and y-axis
+							intercept \(\ln(R)_0\).
+						</li>
+
+						<li>
+							2025 Q133 Core concept — order of negative standard electrode
+							potentials for alkali metals. Key fact/rule: aqueous standard
+							reduction potentials do not simply follow periodic reactivity
+							trend; hydration effects make lithium exceptionally negative.
+							Trap: do not arrange only by group reactivity or atomic size.
+							Crux: The order of negative standard potential values among Li, Na
+							and K is \(\mathrm{Li>K>Na}\).
+						</li>
+
+						<li>
+							2025 Q143 Core concept — equilibrium constant from standard cell
+							potential. Key formula/rule: at \(298\,K\),
+							\(E^\circ_{\mathrm{cell}}=\dfrac{0.06}{n}\log K\). Trap: determine
+							\(n\) from the balanced redox reaction; here
+							\(\mathrm{M\rightarrow M^{2+}+2e^-}\), so \(n=2\). Crux: For
+							\(K=10^{15}\), \(E^\circ=\dfrac{0.06}{2}\times15=0.45\,V\).
+						</li>
+
+						<li>
+							2025 Q144 Core concept — rate constant dependence on temperature,
+							not initial concentration. Key formula/rule: for a given reaction
+							at fixed temperature, \(k\) remains constant even if initial
+							concentration changes; rate changes because rate \(=k[A]\) for
+							first order. Trap: do not double \(k\) just because \([A]_0\)
+							doubles. Crux: Starting the same first-order reaction with
+							\(1\,M\) instead of \(0.5\,M\) at the same \(300\,K\) changes the
+							initial rate but not \(k\); the rate constant remains
+							\(0.125\,\mathrm{min^{-1}}\).
+						</li>
+					</ol>
+					<!--End Part 1-->
+
+					<!--Start Part 2-->
+					<ol>
+						<li>
+							2024 Q143 Core concept — combined electrochemistry statement check
+							using hydrogen electrode potential, Kohlrausch law and
+							\(E^\circ_{\mathrm{cell}}-K_c\) relation. Key formula/fact: for
+							hydrogen electrode at \(298\ \mathrm{K}\), \(E=-0.0591\times pH\);
+							\(\Lambda_m^\circ=\sum \nu_i\lambda_i^\circ\);
+							\(E^\circ_{\mathrm{cell}}=\dfrac{2.303RT}{nF}\log K_c\). Trap: for
+							\(\mathrm{CaCl_2}\), chloride contribution must be doubled, so
+							\(119+2(76)=271\), not \(195\). Crux: Statement A is correct, B is
+							incorrect, and C is correct; hence the correct set is A and C
+							only.
+						</li>
+
+						<li>
+							2024 Q144 Core concept — activation energy from Arrhenius plot of
+							\(\ln k\) versus \(\dfrac{1}{T}\). Key formula/fact: \(\ln k=\ln
+							A-\dfrac{E_a}{RT}\), so slope \(=-\dfrac{E_a}{R}\). Trap: because
+							the graph uses \(\ln k\), do not include the \(2.303\) factor;
+							that factor is used for \(\log k\), not \(\ln k\). Crux: Given
+							slope \(=-10^3\ \mathrm{K}\), \(E_a=R\times10^3=8.314\times10^3\
+							\mathrm{J\,mol^{-1}}=8.314\ \mathrm{kJ\,mol^{-1}}\).
+						</li>
+
+						<li>
+							2024 Q143 Core concept — molar conductivity of weak acid from
+							degree of dissociation. Key formula/fact:
+							\(\Lambda_m^\circ(\mathrm{HCOOH})=\lambda^\circ(\mathrm{H^+})+\lambda^\circ(\mathrm{HCOO^-})\),
+							and \(\alpha=\dfrac{\Lambda_m}{\Lambda_m^\circ}\). Trap: convert
+							\(11.0\%\) to \(\alpha=0.11\), and keep the unit as \(\mathrm{S\
+							cm^2\ mol^{-1}}\) because the given ionic conductivities are in
+							that unit. Crux: \(\Lambda_m^\circ=349.6+54.6=404.2\), so
+							\(\Lambda_m=0.11\times404.2=44.46\ \mathrm{S\ cm^2\ mol^{-1}}\).
+						</li>
+
+						<li>
+							2024 Q144 Core concept — order and rate constant from initial-rate
+							data. Key formula/fact: assume
+							\(\mathrm{Rate}=k[\mathrm{A_2}]^x[\mathrm{B_2}]^y\); doubling one
+							reactant while keeping the other constant reveals the order with
+							respect to that reactant. Trap: do not use stoichiometric
+							coefficients directly as orders; orders are obtained
+							experimentally from the rate table. Crux: Doubling
+							\([\mathrm{A_2}]\) doubles rate, so \(x=1\); doubling
+							\([\mathrm{B_2}]\) doubles rate, so \(y=1\); hence
+							\(k=\dfrac{2.5\times10^{-4}}{0.1\times0.1}=2.5\times10^{-2}\).
+						</li>
+
+						<li>
+							2024 Q143 Core concept — resistance from molar conductivity,
+							concentration and cell constant. Key formula/fact:
+							\(\Lambda_m=\dfrac{\kappa}{C}\) in SI-compatible form when \(C\)
+							is in \(\mathrm{mol\ m^{-3}}\), and \(\kappa=\dfrac{\text{cell
+							constant}}{R}\). Trap: handle units carefully: \(0.02\
+							\mathrm{M}=20\ \mathrm{mol\ m^{-3}}\) and
+							\(\Lambda_m=124\times10^{-4}\ \mathrm{S\ m^2\ mol^{-1}}\). Crux:
+							\(\kappa=\Lambda_m C=(124\times10^{-4})\times20=0.248\ \mathrm{S\
+							m^{-1}}\); therefore \(R=\dfrac{129}{0.248}\approx520\ \Omega\).
+						</li>
+
+						<li>
+							2024 Q144 Core concept — first-order time ratio using fraction
+							remaining. Key formula/fact: for first order,
+							\(t=\dfrac{2.303}{k}\log\dfrac{\text{initial
+							concentration}}{\text{remaining concentration}}\). Trap: \(\log
+							4=2\log2=0.6\), not \(0.3\). Crux: \(t_{1/4}\propto\log4=0.6\) and
+							\(t_{1/10}\propto\log10=1\), so
+							\(\dfrac{t_{1/4}}{t_{1/10}}\times100=60\).
+						</li>
+
+						<li>
+							2024 Q132 Core concept — standard electrode potentials of alkali
+							metals. Key formula/fact: \(E^\circ(\mathrm{Li^+/Li})=-3.04\
+							\mathrm{V}\) and \(E^\circ(\mathrm{Na^+/Na})=-2.714\ \mathrm{V}\).
+							Trap: do not swap the values; lithium is more negative than sodium
+							due to its very high hydration enthalpy in aqueous standard
+							potential data. Crux: The required values for \(\mathrm{Li^+/Li}\)
+							and \(\mathrm{Na^+/Na}\), respectively, are \(-3.04\ \mathrm{V}\)
+							and \(-2.714\ \mathrm{V}\).
+						</li>
+
+						<li>
+							2024 Q143 Core concept — products of electrolysis in molten salt
+							versus aqueous solution with inert Pt electrodes. Key
+							formula/fact: molten \(\mathrm{NaCl}\) gives \(\mathrm{Na}\) at
+							cathode and \(\mathrm{Cl_2}\) at anode; aqueous
+							\(\mathrm{CuSO_4}\) with Pt gives \(\mathrm{Cu}\) at cathode and
+							\(\mathrm{O_2}\) at anode. Trap: oxygen is an oxidation product,
+							so it forms at the anode, not the cathode. Crux: Statement I is
+							correct because \(\mathrm{Cl_2}\) is liberated at the anode in
+							molten NaCl electrolysis; Statement II is incorrect because
+							aqueous \(\mathrm{CuSO_4}\) gives \(\mathrm{O_2}\) at anode and Cu
+							at cathode.
+						</li>
+
+						<li>
+							2024 Q144 Core concept — first-order rate constant from graph of
+							\(\log\dfrac{a}{a-x}\) versus time. Key formula/fact:
+							\(k=\dfrac{2.303}{t}\log\dfrac{a}{a-x}\), so
+							\(\log\dfrac{a}{a-x}=\dfrac{k}{2.303}t\). Trap: the slope is
+							\(\dfrac{k}{2.303}\), not \(k\); multiply the slope by \(2.303\).
+							Crux: Given slope \(=2\times10^{-3}\ \mathrm{min^{-1}}\),
+							\(k=2.303\times2\times10^{-3}=4.606\times10^{-3}\
+							\mathrm{min^{-1}}\).
+						</li>
+
+						<li>
+							2024 Q143 Core concept — electrochemical equivalent from deposited
+							mass and charge. Key formula/fact: \(Q=It\) and electrochemical
+							equivalent \(Z=\dfrac{m}{Q}=\dfrac{m}{It}\). Trap: convert \(60\)
+							minutes to \(3600\) seconds before calculating charge. Crux:
+							\(Q=0.5\times3600=1800\ \mathrm{C}\); therefore
+							\(Z=\dfrac{0.592}{1800}=3.3\times10^{-4}\ \mathrm{g\,C^{-1}}\).
+						</li>
+
+						<li>
+							2024 Q144 Core concept — stoichiometric relation between rates of
+							disappearance and appearance. Key formula/fact: for
+							\(\mathrm{N_2O_5\rightarrow2NO_2+\dfrac{1}{2}O_2}\),
+							\(-\dfrac{d[\mathrm{N_2O_5}]}{dt}=\dfrac{1}{2}\dfrac{d[\mathrm{NO_2}]}{dt}=2\dfrac{d[\mathrm{O_2}]}{dt}\).
+							Trap: use reciprocals of stoichiometric coefficients in the rate
+							expression, especially for the fractional coefficient
+							\(\dfrac{1}{2}\) of oxygen. Crux: Comparing with
+							\(K_1[\mathrm{N_2O_5}], K_2[\mathrm{N_2O_5}],
+							K_3[\mathrm{N_2O_5}]\) gives \(K_1=\dfrac{1}{2}K_2=2K_3\), hence
+							\(2K_1=K_2=4K_3\).
+						</li>
+					</ol>
+					<!--End Part 2-->
+
+					<!--Start Part 3-->
+					<ol>
+						<li>
+							2023 Q141 (chlorine electrode) Core concept — effect of ion
+							concentration on electrode potential using Nernst equation. Key
+							formula/fact: for \(\mathrm{Cl_2(g)+2e^- \rightarrow 2Cl^-(aq)}\),
+							\(E=E^\circ-\dfrac{0.0591}{2}\log\dfrac{[\mathrm{Cl^-}]^2}{P_{\mathrm{Cl_2}}}\);
+							at constant chlorine pressure, increasing \([\mathrm{Cl^-}]\)
+							decreases \(E\). Trap: do not choose higher chloride concentration
+							for higher potential; product-ion concentration lowers the
+							reduction potential. Crux: Chlorine electrode potential is maximum
+							at the minimum \([\mathrm{Cl^-}]\), so \(X=2.5\times10^{-3}\
+							\mathrm{mol\ L^{-1}}\).
+						</li>
+
+						<li>
+							2023 Q142 (benzene diazonium chloride, 90% completion) Core
+							concept — first-order integrated rate law for percentage
+							completion. Key formula/fact:
+							\(t=\dfrac{2.303}{k}\log\dfrac{a}{a-x}\); for \(90\%\) completion,
+							only \(10\%\) remains, so \(\dfrac{a}{a-x}=10\). Trap: use the
+							amount remaining, not the amount decomposed, in the denominator.
+							Crux: For \(90\%\) completion, \(t=\dfrac{2.303}{k}\); with
+							\(k=6.93\times10^{-2}\ \mathrm{min^{-1}}\), \(t\approx33\
+							\mathrm{min}\).
+						</li>
+
+						<li>
+							2023 Q141 (acetic acid degree of dissociation) Core concept —
+							degree of dissociation of weak electrolyte from conductivity data.
+							Key formula/fact: \(\Lambda_m=\kappa\times\dfrac{1000}{C}\) and
+							\(\alpha=\dfrac{\Lambda_m}{\Lambda_m^\circ}\). Trap: do not forget
+							the \(1000/C\) factor while converting conductivity to molar
+							conductivity. Crux:
+							\(\Lambda_m=19.5\times10^{-5}\times\dfrac{1000}{0.01}=19.5\
+							\mathrm{S\ cm^2\ mol^{-1}}\), so
+							\(\alpha=\dfrac{19.5}{390}=5.0\times10^{-2}\).
+						</li>
+
+						<li>
+							2023 Q142 (Arrhenius slope, \(\ln k\) vs \(1/T\)) Core concept —
+							activation energy from Arrhenius graph. Key formula/fact: for
+							\(\ln k\) versus \(\dfrac{1}{T}\), slope \(=-\dfrac{E_a}{R}\).
+							Trap: because the graph uses natural logarithm \(\ln k\), do not
+							insert \(2.303\). Crux: Given slope \(=-4\times10^4\ \mathrm{K}\),
+							\(E_a=4\times10^4\times8.31=3.324\times10^5\ \mathrm{J\
+							mol^{-1}}=332\ \mathrm{kJ\ mol^{-1}}\).
+						</li>
+
+						<li>
+							2023 Q141 (weak monobasic acid conductivity) Core concept —
+							conductivity from limiting molar conductivity and degree of
+							dissociation. Key formula/fact: for a weak electrolyte,
+							\(\Lambda_m=\alpha\Lambda_m^\circ\), and
+							\(\Lambda_m=\dfrac{\kappa\times1000}{C}\). Trap: distinguish
+							\(\Lambda_m\) from \(\kappa\); the final answer asked is
+							conductivity in \(\mathrm{S\ cm^{-1}}\), not molar conductivity.
+							Crux: \(\Lambda_m=0.02\times400=8\ \mathrm{S\ cm^2\ mol^{-1}}\),
+							so \(\kappa=\dfrac{8\times0.1}{1000}=8\times10^{-4}\ \mathrm{S\
+							cm^{-1}}\).
+						</li>
+
+						<li>
+							2023 Q142 (rate doubles from 300 K to 310 K) Core concept —
+							activation energy from two-temperature Arrhenius equation. Key
+							formula/fact:
+							\(\log\dfrac{k_2}{k_1}=\dfrac{E_a}{2.303R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)\).
+							Trap: for a first-order reaction, doubling of rate means
+							\(k_2/k_1=2\); also keep \(E_a\) in \(\mathrm{J\ mol^{-1}}\)
+							before converting to \(\mathrm{kJ\ mol^{-1}}\). Crux: Using
+							\(T_1=300\ \mathrm{K}\), \(T_2=310\ \mathrm{K}\), \(R=8.3\), and
+							\(\log2=0.3\), \(E_a\approx53.33\ \mathrm{kJ\ mol^{-1}}\).
+						</li>
+
+						<li>
+							2023 Q141 (\(\log K_c\) from \(E^\circ_{\mathrm{cell}}\)) Core
+							concept — relation between standard cell potential and equilibrium
+							constant. Key formula/fact:
+							\(E^\circ_{\mathrm{cell}}=E^\circ_{\mathrm{cathode}}-E^\circ_{\mathrm{anode}}\)
+							and \(E^\circ_{\mathrm{cell}}=\dfrac{2.303RT}{nF}\log K_c\). Trap:
+							identify cathode from higher reduction potential; here \(B^+/B\)
+							is cathode and \(A^+/A\) is anode. Crux:
+							\(E^\circ_{\mathrm{cell}}=0.5-(-0.5)=1.0\ \mathrm{V}\), \(n=1\),
+							so \(1.0=0.06\log K_c\) and \(\log K_c=\dfrac{100}{6}\).
+						</li>
+
+						<li>
+							2023 Q142 (zero-order graph) Core concept — graph interpretation
+							for zero-order reaction. Key formula/fact: for zero order,
+							\([A]=[A]_0-kt\), so the slope of \([A]\) versus \(t\) is \(-k\).
+							Trap: the intercept gives \([A]_0\), not the rate constant. Crux:
+							Given slope \(=-3\times10^{-3}\ \mathrm{M\ min^{-1}}\),
+							\(k=3\times10^{-3}\ \mathrm{M\ min^{-1}}\).
+						</li>
+
+						<li>
+							2023 Q141 (unit of second-order rate constant) Core concept —
+							units of rate constant from rate law order. Key formula/fact: for
+							rate \(=k[\mathrm{HI}]^2\), order \(=2\), so units of
+							\(k=\dfrac{\mathrm{mol\ L^{-1}\ s^{-1}}}{(\mathrm{mol\
+							L^{-1}})^2}=L\ \mathrm{mol^{-1}\ s^{-1}}\). Trap: do not confuse
+							second-order units with third-order units \(L^2\ \mathrm{mol^{-2}\
+							s^{-1}}\). Crux: Since the decomposition rate is proportional to
+							\([\mathrm{HI}]^2\), \(k\) has units \(L\ \mathrm{mol^{-1}\
+							s^{-1}}\).
+						</li>
+
+						<li>
+							2023 Q142 (Faraday law, chlorine gas volume) Core concept —
+							electrolysis calculation from current, time and gas volume at STP.
+							Key formula/fact: \(Q=It\), moles of electrons \(=\dfrac{Q}{F}\),
+							and at anode \(2Cl^-\rightarrow Cl_2+2e^-\), so
+							\(n(Cl_2)=\dfrac{Q}{2F}\). Trap: convert \(45\) minutes to seconds
+							and remember that \(1\) mole of \(\mathrm{Cl_2}\) needs \(2F\),
+							not \(1F\). Crux: \(Q=15\times45\times60=40500\ \mathrm{C}\), so
+							\(n(Cl_2)=\dfrac{40500}{2\times96500}\approx0.21\), giving volume
+							\(\approx0.21\times22.4=4.7\ \mathrm{L}\).
+						</li>
+
+						<li>
+							2023 Q141 (mechanism-derived rate law) Core concept — deriving
+							rate law from slow step and fast pre-equilibrium. Key
+							formula/fact: rate is first written from the slow step,
+							\(R=k[N_2O_2][H_2]\), and the fast equilibrium
+							\(2NO\rightleftharpoons N_2O_2\) gives \([N_2O_2]\propto[NO]^2\).
+							Trap: do not write the rate law directly from the overall balanced
+							equation. Crux: Eliminating the intermediate gives
+							\(R=k[NO]^2[H_2]\); the reaction is second order in NO and first
+							order in \(H_2\).
+						</li>
+
+						<li>
+							2023 Q142 (\(\mathrm{Fe^{3+}/Fe^{2+}}\) Nernst equation) Core
+							concept — reduction potential of a redox half-cell from
+							concentration ratio. Key formula/fact: for \(\mathrm{Fe^{3+}+e^-
+							\rightarrow Fe^{2+}}\),
+							\(E=E^\circ-\dfrac{0.059}{1}\log\dfrac{[\mathrm{Fe^{2+}}]}{[\mathrm{Fe^{3+}}]}\).
+							Trap: the product \(\mathrm{Fe^{2+}}\) is in the numerator of
+							\(Q\), so a high \([\mathrm{Fe^{2+}}]/[\mathrm{Fe^{3+}}]\) lowers
+							\(E\) below \(E^\circ\). Crux:
+							\(\dfrac{[\mathrm{Fe^{2+}}]}{[\mathrm{Fe^{3+}}]}=\dfrac{2.0}{0.02}=100\),
+							so \(E=0.771-0.059\log100=0.771-0.118=0.653\ \mathrm{V}\).
+						</li>
+					</ol>
+					<!--End Part 3-->
+
+					<!--Start Part 4-->
+					<ol>
+						<li>
+							2022 Q144 Core concept: Faraday’s law for deposition of one
+							equivalent — one gram equivalent of any substance requires one
+							Faraday of charge, \(1F \approx 96500\ \text{C}\), equal to the
+							charge on \(1\) mole of electrons. Trap: \(193000\ \text{C}\) is
+							\(2F\), not \(1F\), and \(1\ \text{A/s}\) is dimensionally wrong.
+							Crux: “One equivalent deposited” directly means \(Q = 1F\), i.e.
+							charge on \(1\) mole of electrons.
+						</li>
+						<li>
+							2022 Q145 Core concept: temperature coefficient and Arrhenius
+							equation — for a \(10^{\circ}\text{C}\) rise from
+							\(27^{\circ}\text{C}\) to \(37^{\circ}\text{C}\), take
+							\(\dfrac{k_2}{k_1}=2\), \(T_1=300\ \text{K}\), \(T_2=310\
+							\text{K}\), and use
+							\(\log\dfrac{k_2}{k_1}=\dfrac{E_a}{2.303R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)\).
+							Trap: use Kelvin temperatures, not Celsius, and do not ignore the
+							\(10\ \text{K}\) interval. Crux: “Temperature coefficient holds
+							good” usually signals rate doubles for \(10^{\circ}\text{C}\);
+							Arrhenius substitution gives \(E_a \approx 53.5\ \text{kJ
+							mol}^{-1}\).
+						</li>
+						<li>
+							2022 Q128 Core concept: catalyst effect on activation energy — at
+							constant temperature, a catalyst increases \(k\) by lowering
+							\(E_a\); use \(\ln\left(\dfrac{k_1}{k_2}\right)=\dfrac{\Delta
+							E_a}{RT}\). Trap: since \(k_2=4k_1\), use \(\ln(1/4)\), giving a
+							negative \(\Delta E_a\); convert J to kJ. Crux: A fourfold
+							increase in rate constant at \(300\ \text{K}\) gives \(\Delta
+							E_a=-1.386\times 8.314\times 300\approx -3.45\ \text{kJ
+							mol}^{-1}\).
+						</li>
+						<li>
+							2022 Q144 Core concept: equivalent weight from electrolysis data —
+							calculate charge \(Q=It=1.2\times 2400=2880\ \text{C}\), then
+							moles of electrons \(=\dfrac{Q}{96500}\), and equivalent weight
+							\(=\dfrac{\text{mass deposited}}{\text{faradays passed}}\). Trap:
+							\(63.5\) is atomic mass of Cu, not equivalent weight under this
+							deposition calculation. Crux: For electrolysis numericals, first
+							find \(Q=It\), convert to faradays, then use “mass deposited per
+							faraday = equivalent weight”; here \(E_{\text{Cu}}\approx 31.75\
+							\text{g}\).
+						</li>
+						<li>
+							2022 Q145 Core concept: order from half-life variation — for an
+							\(n\)-th order reaction, \(t_{1/2}\propto \dfrac{1}{a^{n-1}}\).
+							Trap: first-order half-life is independent of initial
+							concentration, so a change from \(5\) min to \(50\) min rules out
+							first order. Crux: When initial concentration decreases \(10\)
+							times and half-life increases \(10\) times, \(t_{1/2}\propto
+							\dfrac{1}{a}\), so the reaction is second order.
+						</li>
+						<li>
+							2022 Q148 Core concept: disproportionation using oxidation states
+							— in \(\mathrm{Se_2Cl_2}\), each Se has oxidation state \(+1\);
+							products must contain Se in one higher and one lower oxidation
+							state. Trap: do not balance first; identify oxidation and
+							reduction from oxidation-state changes. Crux: \(\mathrm{SeCl_4}\)
+							has Se \(+4\) and elemental \(\mathrm{Se}\) has Se \(0\), so
+							\(\mathrm{Se_2Cl_2}\) disproportionates to \(\mathrm{SeCl_4}\) and
+							\(\mathrm{Se}\).
+						</li>
+						<li>
+							2022 Q144 Core concept: Latimer-style standard potential
+							calculation — electrode potentials are not directly additive; use
+							\(\Delta G^\circ=-nFE^\circ\), so electron-weighted potentials
+							\(nE^\circ\) must be combined. Trap: simple subtraction
+							\(1.51-1.23=0.28\ \text{V}\) is wrong because electron numbers
+							differ. Crux: For \(\mathrm{Mn}^{7+}\rightarrow\mathrm{Mn}^{2+}\),
+							\(5(1.51)=3x+2(1.23)\), so
+							\(E^\circ_{\mathrm{Mn}^{7+}/\mathrm{Mn}^{4+}}\approx 1.7\
+							\text{V}\).
+						</li>
+						<li>
+							2022 Q145 Core concept: order from unit of rate constant and
+							linear plots — \(k=1.2\times 10^{-2}\ \text{s}^{-1}\) indicates a
+							first-order reaction; first-order integrated law is
+							\(\ln(A)=\ln(A)_0-kt\). Trap: \((A)\) vs \(t\) is zero-order
+							linear form and \(\dfrac{1}{(A)}\) vs \(t\) is second-order linear
+							form. Crux: Unit \(\text{s}^{-1}\Rightarrow\) first order, so
+							\(\ln(A)\) vs \(t\) is the straight-line plot with slope \(-k\).
+						</li>
+						<li>
+							2022 Q144 Core concept: Faraday’s second law and valency — for the
+							same quantity of electricity, deposited masses are proportional to
+							equivalent masses,
+							\(\dfrac{m_{\text{Au}}}{m_{\text{Ag}}}=\dfrac{197/n}{107.9/1}\).
+							Trap: use equivalent mass, not atomic mass directly; silver is
+							monovalent. Crux: \(\dfrac{1.31}{2.15}=\dfrac{197/n}{107.9}\)
+							gives \(n\approx 3\), so the valency of gold is \(3\).
+						</li>
+						<li>
+							2022 Q145 Core concept: standard example of zero-order reaction —
+							a zero-order reaction has rate independent of reactant
+							concentration; photochemical \(H_2+Cl_2\xrightarrow{h\nu}2HCl\) is
+							treated as zero order because rate is controlled by light
+							intensity. Trap: do not decide order from stoichiometric
+							coefficients alone. Crux: In basic kinetics MCQs, \(h\nu\) in
+							\(H_2+Cl_2\rightarrow 2HCl\) is the clue for photochemical
+							zero-order behaviour.
+						</li>
+						<li>
+							2022 Q129 Core concept: electrolysis of aqueous
+							\(\mathrm{Na_2SO_4}\) — \(\mathrm{Na^+}\) and
+							\(\mathrm{SO_4^{2-}}\) act mainly as spectator ions; water is
+							electrolysed and oxygen is liberated at the anode. Trap: anode gas
+							is \(\mathrm{O_2}\), not \(\mathrm{H_2}\), and the final answer
+							must be volume at STP, not mass. Crux: \(Q=It=3\times 600=1800\
+							\text{C}\); since \(4F\) gives \(1\) mole \(\mathrm{O_2}\), the
+							oxygen volume at STP is approximately \(0.10\ \text{L}\).
+						</li>
+						<li>
+							2022 Q144 Core concept: molar conductivity of weak electrolyte
+							with concentration — acetic acid is a weak electrolyte;
+							\(\lambda_m\) increases sharply on dilution because degree of
+							ionisation increases. Trap: weak electrolytes do not show the
+							nearly linear strong-electrolyte pattern in \(\lambda_m\) vs
+							\(\sqrt{C}\). Crux: For acetic acid, as concentration decreases,
+							molar conductivity rises steeply; therefore the correct graph is
+							the one showing sharp increase on dilution, option (b).
+						</li>
+						<li>
+							2022 Q145 Core concept: comparing reaction rates from rate
+							constants at \([A]=1\ \text{M}\) — use the unit of \(k\) to infer
+							order, then calculate rate at \(1\ \text{M}\). Trap: do not
+							compare only numerical values of \(k\) without considering rate
+							law and concentration. Crux: At \([A]=1\), \(r_1=1\), \(r_2=0.1\),
+							\(r_3=0.01\), so \(r_1=10r_2\) and \(r_3=\dfrac{r_2}{10}\).
+						</li>
+						<li>
+							2022 Q144 Core concept: cell potential for redox feasibility — use
+							\(E^\circ_{\text{cell}}=E^\circ_{\text{cathode}}-E^\circ_{\text{anode}}\)
+							for the proposed reaction. Trap: \(\mathrm{Fe^{3+}}\) oxidising
+							\(\mathrm{Ce^{3+}}\) means \(\mathrm{Fe^{3+}}\) is reduced and
+							\(\mathrm{Ce^{3+}}\) is oxidised; do not reverse signs blindly.
+							Crux: \(E^\circ_{\text{cell}}=0.76-1.60=-0.84\ \text{V}\), so
+							oxidation of \(\mathrm{Ce^{3+}}\) by \(\mathrm{Fe^{3+}}\) is not
+							spontaneous under standard conditions.
+						</li>
+						<li>
+							2022 Q145 Core concept: relation between threshold energy and
+							activation energy — activation energy is the extra energy needed
+							to reach threshold energy: \(E_a=E_t-E_i\). Trap: threshold energy
+							itself is not activation energy; do not add \(75+20\). Crux: With
+							threshold energy \(75\ \text{kJ mol}^{-1}\) and internal energy of
+							reactants \(20\ \text{kJ mol}^{-1}\), \(E_a=75-20=55\ \text{kJ
+							mol}^{-1}\).
+						</li>
+					</ol>
+					<!--End Part 4-->
+				</div>
+			</div>
+		</div>
+
+		<!--END PYQ Summaries-->
 
 		<!--START PYQ by PYQ-->
 
