@@ -40,10 +40,275 @@
 					High-value revision
 				</button>
 				<div class="accordion-content">
+					<!--START Crystal systems and unit-cell geometry -->
 					<ul>
-						<li>TTR imp 1</li>
-						<li>TTR imp 2</li>
+						<strong>Crystal systems and unit-cell geometry</strong>
+						<li>
+							Crystal systems are identified by comparing axial lengths
+							\(a,b,c\) and axial angles \(\alpha,\beta,\gamma\). Tetragonal has
+							\(a=b\neq c\) and \(\alpha=\beta=\gamma=90^\circ\), so a unit cell
+							with two equal edges and one different edge belongs to the
+							tetragonal system.
+						</li>
+						<li>
+							Hexagonal crystal system has \(a=b\neq c\),
+							\(\alpha=\beta=90^\circ\), and \(\gamma=120^\circ\). The
+							\(120^\circ\) angle is the fastest identification clue; \(a=b\neq
+							c\) with all angles \(90^\circ\) is tetragonal, not hexagonal.
+						</li>
+						<li>
+							Coordination number is the number of nearest neighbours. For the
+							common cubic lattices, remember: simple cubic \(=6\), bcc \(=8\),
+							and fcc/ccp \(=12\).
+						</li>
+						<li>
+							In bcc, atoms touch along the body diagonal, so \(\sqrt{3}a=4r\)
+							and \(a=\dfrac{4r}{\sqrt{3}}\). Do not use \(a=2r\) for bcc;
+							\(a=2r\) belongs to simple cubic, while \(\sqrt{2}a=4r\) belongs
+							to fcc.
+						</li>
+						<li>
+							In fcc, octahedral voids are located at the body centre and edge
+							centres. If the body diagonal is \(x\), then \(x=\sqrt{3}a\), and
+							the nearest body-centre to edge-centre octahedral void distance is
+							\(\dfrac{a}{\sqrt{2}}=\dfrac{x}{\sqrt{6}}\).
+						</li>
 					</ul>
+					<!--END Crystal systems and unit-cell geometry -->
+					<br />
+
+					<!--START Atom contribution and empirical formula from unit cells -->
+					<ul>
+						<strong
+							>Atom contribution and empirical formula from unit cells</strong
+						>
+						<li>
+							The standard positional contributions are: corner atom
+							\(=\dfrac{1}{8}\), edge-centre atom \(=\dfrac{1}{4}\), face-centre
+							atom \(=\dfrac{1}{2}\), and body-centre atom \(=1\). Most formula
+							questions reduce to multiplying these contributions by the number
+							of occupied positions.
+						</li>
+						<li>
+							If \(X\) is at the body centre and \(Y\) occupies only \(7\) of
+							the \(8\) corners, then \(X=1\) and
+							\(Y=7\times\dfrac{1}{8}=\dfrac{7}{8}\). Multiplying by \(8\), the
+							empirical formula becomes \(X_8Y_7\).
+						</li>
+						<li>
+							If three of eight \(X\) corner atoms are missing in a bcc-type
+							unit cell and \(Y\) is at the body centre, then
+							\(X=5\times\dfrac{1}{8}=\dfrac{5}{8}\) and \(Y=1\). Multiplying by
+							\(8\), the formula becomes \(X_5Y_8\).
+						</li>
+						<li>
+							For a cubic unit cell with \(W\) at \(8\) corners, \(O\) at \(12\)
+							edge centres, and \(Na\) at the body centre: \(W=1\), \(O=3\), and
+							\(Na=1\). The formula is therefore \(NaWO_3\).
+						</li>
+						<li>
+							In vacancy-based formula questions, first count only the occupied
+							positions, then apply fractional contribution. Do not count all
+							corners or all edges automatically when the question mentions
+							missing atoms or vacancies.
+						</li>
+					</ul>
+					<!--END Atom contribution and empirical formula from unit cells -->
+					<br />
+
+					<!--START Close packing, voids and formula from occupied voids -->
+					<ul>
+						<strong
+							>Close packing, voids and formula from occupied voids</strong
+						>
+						<li>
+							In close packing of \(N\) atoms or ions, the number of octahedral
+							voids is \(N\), and the number of tetrahedral voids is \(2N\).
+							This is the central rule for formula questions based on ccp/hcp
+							lattices.
+						</li>
+						<li>
+							In a ccp/fcc unit cell, there are \(4\) packed atoms, \(4\)
+							octahedral voids and \(8\) tetrahedral voids. Use this directly
+							when oxide ions or anions are said to form a ccp lattice.
+						</li>
+						<li>
+							If \(B\) ions form ccp packing and \(A\) ions occupy \(50\%\) of
+							tetrahedral voids plus all octahedral voids, then
+							\(A=\dfrac{2N}{2}+N=2N\) if both parts are counted as \(A\). If
+							the PYQ states \(A=\dfrac{N}{2}+N=\dfrac{3N}{2}\), follow the
+							exact occupied-void data given and reduce \(A:B\) accordingly.
+						</li>
+						<li>
+							For \(AB_2O_4\) with oxide ions forming ccp: \(O=4\), tetrahedral
+							voids \(=8\), and octahedral voids \(=4\). If \(A\) occupies
+							\(\dfrac{1}{8}\) of tetrahedral voids, \(A=1\); if \(B\) occupies
+							half of octahedral voids, \(B=2\), giving \(AB_2O_4\).
+						</li>
+						<li>
+							In percentage occupancy questions for \(AB_2O_4\), \(A\) occupies
+							\(1\) out of \(8\) tetrahedral voids, so tetrahedral occupancy
+							\(=12.5\%\). \(B\) occupies \(2\) out of \(4\) octahedral voids,
+							so octahedral occupancy \(=50\%\).
+						</li>
+						<li>
+							If the question asks for vacant octahedral voids in \(AB_2O_4\),
+							do not report occupied octahedral fraction. Since \(2\) out of
+							\(4\) octahedral voids are occupied, the vacant fraction is also
+							\(\dfrac{1}{2}\).
+						</li>
+					</ul>
+					<!--END Close packing, voids and formula from occupied voids -->
+					<br />
+
+					<!--START Density and unit-cell dimension calculations -->
+					<ul>
+						<strong>Density and unit-cell dimension calculations</strong>
+						<li>
+							The master formula is \(\rho=\dfrac{ZM}{N_Aa^3}\). Use it flexibly
+							as \(M=\dfrac{\rho N_Aa^3}{Z}\), \(Z=\dfrac{\rho N_Aa^3}{M}\), or
+							\(a^3=\dfrac{ZM}{\rho N_A}\), depending on the unknown.
+						</li>
+						<li>
+							For cubic unit cells, remember \(Z\): simple cubic \(=1\), bcc
+							\(=2\), fcc \(=4\). Rock-salt type structures such as NaCl/KBr
+							also have \(Z=4\) formula units per unit cell.
+						</li>
+						<li>
+							Unit conversion is often the main calculation trap. Use
+							\(1\,\text{Å}=10^{-8}\,\mathrm{cm}\),
+							\(1\,\mathrm{pm}=10^{-10}\,\mathrm{cm}=10^{-12}\,\mathrm{m}\), and
+							cube the converted edge length before substitution.
+						</li>
+						<li>
+							For fcc copper with edge length \(x\,\text{Å}\), use \(Z=4\),
+							\(M=63.5\), and \(a=x\times10^{-8}\,\mathrm{cm}\). Substitution
+							gives \(d\approx\dfrac{423}{x^3}\,\mathrm{g\,cm^{-3}}\), so
+							density varies as \(\dfrac{1}{x^3}\), not \(\dfrac{1}{x}\).
+						</li>
+						<li>
+							For molar mass from density and edge length in an fcc crystal, use
+							\(M=\dfrac{\rho N_Aa^3}{4}\). With
+							\(a=600\,\mathrm{pm}=6\times10^{-8}\,\mathrm{cm}\), the edge
+							length must be cubed after conversion.
+						</li>
+						<li>
+							To find number of atoms per unit cell from density, rearrange as
+							\(Z=\dfrac{\rho N_Aa^3}{M}\). Maintain unit consistency
+							throughout; if density is in \(\mathrm{kg\,m^{-3}}\), convert
+							molar mass to \(\mathrm{kg\,mol^{-1}}\) and edge length to metres.
+						</li>
+						<li>
+							For ratio of densities of the same metal in fcc and bcc phases,
+							use \(d\propto\dfrac{Z}{a^3}\). Therefore,
+							\(\dfrac{d_{\mathrm{fcc}}}{d_{\mathrm{bcc}}}=\dfrac{Z_{\mathrm{fcc}}}{Z_{\mathrm{bcc}}}\times\dfrac{a_{\mathrm{bcc}}^3}{a_{\mathrm{fcc}}^3}\);
+							compare both \(Z\) and cubed edge lengths.
+						</li>
+						<li>
+							For KBr with rock-salt structure, \(Z=4\),
+							\(M\approx120\,\mathrm{g\,mol^{-1}}\), and
+							\(\rho=3.70\,\mathrm{g\,cm^{-3}}\). Using \(a^3=\dfrac{ZM}{\rho
+							N_A}\), the edge length is approximately
+							\(6\times10^{-8}\,\mathrm{cm}\).
+						</li>
+						<li>
+							When Schottky defects are included in a density problem, adjust
+							the effective \(Z\) before using the density formula. For
+							\(0.1\%\) Schottky defect in fcc iron,
+							\(Z=4-\dfrac{0.1}{100}\times4=3.996\), giving density close to
+							\(5.8\,\mathrm{g\,cm^{-3}}\).
+						</li>
+					</ul>
+					<!--END Density and unit-cell dimension calculations -->
+					<br />
+
+					<!--START Defects and non-stoichiometry -->
+					<ul>
+						<strong>Defects and non-stoichiometry</strong>
+						<li>
+							Schottky defect involves missing equal numbers of cations and
+							anions from lattice sites. It maintains electrical neutrality and
+							stoichiometry but decreases density because mass is removed from
+							the crystal.
+						</li>
+						<li>
+							Frenkel defect is a dislocation defect in which a smaller ion,
+							usually the cation, leaves its normal lattice site and occupies an
+							interstitial site. It is favoured by a large difference in cation
+							and anion sizes.
+						</li>
+						<li>
+							F-centres form when electrons are trapped in anion vacancies.
+							These trapped electrons are responsible for colour in many
+							non-stoichiometric ionic crystals.
+						</li>
+						<li>
+							In metal-deficient oxides with mixed oxidation states, apply
+							charge neutrality. For \(M_{0.96}O\), if \(x\) metal ions are
+							\(M^{3+}\) and \(0.96-x\) are \(M^{2+}\), then \(3x+2(0.96-x)=2\).
+						</li>
+						<li>
+							In the \(M_{0.96}O\) calculation, solving gives \(x=0.08\), but
+							this is the amount of \(M^{3+}\), not the fraction. Fractions must
+							be calculated over total metal \(0.96\): \(M^{3+}=0.083\) and
+							\(M^{2+}=0.916\).
+						</li>
+					</ul>
+					<!--END Defects and non-stoichiometry -->
+					<br />
+
+					<!--START Size scaling and surface area -->
+					<ul>
+						<strong>Size scaling and surface area</strong>
+						<li>
+							When a cube of side \(a\) is divided into smaller cubes of side
+							\(b\), the total surface area ratio is \(\dfrac{a}{b}\). This
+							shortcut comes from number of small cubes
+							\(\left(\dfrac{a}{b}\right)^3\) and surface area of each small
+							cube \(6b^2\).
+						</li>
+						<li>
+							For a \(1\,\mathrm{cm}\) cube divided into \(1\,\mathrm{nm}\)
+							cubes, convert \(1\,\mathrm{cm}=10^7\,\mathrm{nm}\). The total
+							surface area ratio is \(10^7\), not \((10^7)^3\); the cubed value
+							is the number of small cubes.
+						</li>
+					</ul>
+					<!--END Size scaling and surface area -->
+					<br />
+
+					<!--START Variables used -->
+					<ul>
+						<strong>Variables used</strong>
+						<li>
+							\(\rho\) or \(d\): density of the crystal, usually in
+							\(\mathrm{g\,cm^{-3}}\) unless SI units are specified.
+						</li>
+						<li>
+							\(Z\): number of atoms or formula units per unit cell, depending
+							on whether the substance is elemental or ionic.
+						</li>
+						<li>
+							\(M\): molar mass or atomic mass in \(\mathrm{g\,mol^{-1}}\)
+							unless SI units are used.
+						</li>
+						<li>
+							\(N_A\): Avogadro constant, usually
+							\(6.022\times10^{23}\,\mathrm{mol^{-1}}\) or rounded as given in
+							the question.
+						</li>
+						<li>\(a\): edge length of a cubic unit cell.</li>
+						<li>\(r\): atomic radius.</li>
+						<li>\(\alpha,\beta,\gamma\): axial angles of the unit cell.</li>
+						<li>
+							\(N\): number of close-packed atoms or ions used to count voids.
+						</li>
+						<li>
+							TV and OV: tetrahedral voids and octahedral voids respectively.
+						</li>
+					</ul>
+					<!--END Variables used -->
+					<br />
 				</div>
 			</div>
 		</div>
@@ -714,6 +979,258 @@
 		</div>
 
 		<!--END General theory-->
+
+		<!--START PYQ Summaries-->
+
+		<div class="accordion">
+			<div class="accordion-item">
+				<button class="accordion-button" id="high-value-revision">
+					PYQ Summaries
+				</button>
+				<div class="accordion-content">
+					<!--Start Part 1-->
+					<ol>
+						<li>
+							2025 Q141 Core concept — density of a cubic unit cell and molar
+							mass calculation for fcc crystal. Key formula:
+							\(\rho=\dfrac{ZM}{N_Aa^3}\), so \(M=\dfrac{\rho N_Aa^3}{Z}\); for
+							fcc, \(Z=4\), and
+							\(600\,\mathrm{pm}=6\times10^{-8}\,\mathrm{cm}\). Trap: convert pm
+							to cm before cubing and do not use \(Z=2\) for fcc. Crux: For
+							density-edge length questions, use unit-cell volume \(a^3\) in
+							\(\mathrm{cm^3}\); here \(M=64.8\,\mathrm{g\,mol^{-1}}\).
+						</li>
+						<li>
+							2025 Q141 Core concept — formula of ionic solid from ccp anions
+							and occupied voids. Key rule: if \(N\) anions form ccp/fcc
+							packing, octahedral voids \(=N\) and tetrahedral voids \(=2N\).
+							Trap: \(50\%\) of tetrahedral voids means \(50\%\) of \(2N\), not
+							\(N\). Crux: \(A\) ions \(=\dfrac{N}{2}+N=\dfrac{3N}{2}\),
+							\(B=N\), so \(A:B=3:2\) and formula \(A_3B_2\).
+						</li>
+						<li>
+							2025 Q141 Core concept — ratio of densities of the same metal in
+							fcc and bcc phases. Key formula: for the same substance,
+							\(d\propto\dfrac{Z}{a^3}\), so
+							\(\dfrac{d_{\mathrm{fcc}}}{d_{\mathrm{bcc}}}=\dfrac{Z_{\mathrm{fcc}}}{Z_{\mathrm{bcc}}}\times\dfrac{a_{\mathrm{bcc}}^3}{a_{\mathrm{fcc}}^3}\).
+							Trap: do not compare only \(Z\); edge length must be cubed and
+							placed in the inverse volume ratio. Crux: With
+							\(Z_{\mathrm{fcc}}=4\), \(Z_{\mathrm{bcc}}=2\),
+							\(a_{\mathrm{fcc}}=3.5\,\text{Å}\),
+							\(a_{\mathrm{bcc}}=3\,\text{Å}\), the ratio is about \(1.26\).
+						</li>
+						<li>
+							2025 Q141 Core concept — Schottky defect and its effect on
+							density. Key fact: Schottky defect involves missing equal numbers
+							of cations and anions from lattice sites, so electrical neutrality
+							and stoichiometry are maintained. Trap: missing ions reduce mass,
+							so density decreases; it does not increase. Crux: Schottky defect
+							\(=\) equal cation-anion vacancies \(+\) neutrality maintained
+							\(+\) density decreases; the incorrect statement is “density
+							increases.”
+						</li>
+						<li>
+							2025 Q141 Core concept — relation between atomic radius and edge
+							length in bcc lattice. Key formula: in bcc, atoms touch along the
+							body diagonal, so \(\sqrt{3}\,a=4r\) and
+							\(a=\dfrac{4r}{\sqrt{3}}\). Trap: do not use \(a=2r\) for bcc;
+							that is simple cubic, and \(\sqrt{2}\,a=4r\) is fcc. Crux: For
+							bcc, body diagonal contact is the deciding geometry; with
+							\(r=1.86\,\text{Å}\), \(a\approx4.29\,\text{Å}\).
+						</li>
+						<li>
+							2024 Q141 Core concept — vacant octahedral void fraction in
+							\(AB_2O_4\) with ccp oxide lattice. Key rule: for \(4\) oxide ions
+							in ccp, tetrahedral voids \(=8\) and octahedral voids \(=4\);
+							\(A\) occupying \(\dfrac{1}{8}\) of tetrahedral voids gives \(1\)
+							\(A\), matching \(AB_2O_4\). Trap: the question asks for vacant
+							octahedral voids, not occupied octahedral voids. Crux: \(B=2\)
+							occupies \(2\) out of \(4\) octahedral voids, so occupied fraction
+							\(=\dfrac{1}{2}\) and vacant fraction \(=\dfrac{1}{2}\).
+						</li>
+						<li>
+							2024 Q141 Core concept — correct statement about Frenkel defect,
+							Schottky defect and F-centres. Key facts: Frenkel defect is a
+							dislocation defect favoured by large cation-anion size difference;
+							Schottky defect affects physical properties such as density;
+							F-centres form when electrons are trapped in anion vacancies.
+							Trap: Frenkel is not favoured by very small size difference and is
+							not “not a dislocation defect.” Crux: The correct statement is
+							that trapped electrons in lattice vacancies form F-centres.
+						</li>
+						<li>
+							2024 Q141 Core concept — calculating number of atoms per unit cell
+							from density, molar mass and edge length. Key formula:
+							\(\rho=\dfrac{ZM}{N_Aa^3}\), so \(Z=\dfrac{\rho N_Aa^3}{M}\); use
+							SI units consistently when density is in \(\mathrm{kg\,m^{-3}}\)
+							and molar mass is in \(\mathrm{kg\,mol^{-1}}\). Trap: convert
+							\(405\,\mathrm{pm}=405\times10^{-12}\,\mathrm{m}\) before cubing.
+							Crux: Unit consistency gives \(Z\approx4\), so the unit cell
+							contains \(4\) atoms.
+						</li>
+						<li>
+							2024 Q141 Core concept — percentage occupancy of tetrahedral and
+							octahedral voids in \(AB_2O_4\). Key rule: for \(4\) oxygen atoms
+							in ccp, tetrahedral voids \(=8\) and octahedral voids \(=4\);
+							formula \(AB_2O_4\) needs \(1\) \(A\) and \(2\) \(B\). Trap:
+							calculate percentage out of the relevant void type, not out of
+							total voids. Crux: \(A\) occupies \(\dfrac{1}{8}\times100=12.5\%\)
+							of tetrahedral voids and \(B\) occupies
+							\(\dfrac{2}{4}\times100=50\%\) of octahedral voids.
+						</li>
+						<li>
+							2024 Q141 Core concept — effective atom count in a bcc-type unit
+							cell with missing corner atoms. Key rule: each corner atom
+							contributes \(\dfrac{1}{8}\), and the body-centred atom
+							contributes \(1\); if three of eight \(X\) corner atoms are
+							missing, only five \(X\) corner atoms contribute. Trap: do not
+							count corner atoms as whole atoms; corner contribution must be
+							divided by \(8\). Crux: \(X=\dfrac{5}{8}\), \(Y=1\), so
+							multiplying by \(8\) gives formula \(X_5Y_8\).
+						</li>
+					</ol>
+					<!--End Part 1-->
+
+					<!--Start Part 2-->
+					<ol>
+						<li>
+							2023 Q139 Core concept — density expression for fcc copper in
+							terms of edge length. Key formula: \(d=\dfrac{ZM}{N_Aa^3}\); for
+							fcc, \(Z=4\), \(M=63.5\), and
+							\(a=x\,\text{Å}=x\times10^{-8}\,\mathrm{cm}\). Trap: density
+							varies as \(\dfrac{1}{x^3}\), not \(\dfrac{1}{x}\), because
+							unit-cell volume is \(a^3\). Crux: Substitution gives
+							\(d=\dfrac{4\times63.5}{6.0\times10^{23}\times
+							x^3\times10^{-24}}\approx\dfrac{423}{x^3}\,\mathrm{g\,cm^{-3}}\).
+						</li>
+						<li>
+							2023 Q139 Core concept — identification of crystal system from
+							axial lengths and angles. Key rule: tetragonal system has
+							\(a=b\neq c\) and \(\alpha=\beta=\gamma=90^\circ\). Trap: do not
+							choose cubic because cubic requires \(a=b=c\); do not choose
+							rhombohedral because it requires \(a=b=c\) with equal
+							non-\(90^\circ\) angles. Crux: Given \(a=b=200\,\mathrm{pm}\),
+							\(c=300\,\mathrm{pm}\), and all angles same, the unit cell matches
+							tetragonal.
+						</li>
+						<li>
+							2023 Q139 Core concept — empirical formula from body-centre and
+							corner occupancy with one corner vacant. Key rule: a body-centred
+							atom contributes \(1\), while each corner atom contributes
+							\(\dfrac{1}{8}\). Trap: only \(7\) corners are occupied, not
+							\(8\), and corner atoms must not be counted as whole atoms. Crux:
+							\(X=1\), \(Y=7\times\dfrac{1}{8}=\dfrac{7}{8}\); multiplying by
+							\(8\) gives empirical formula \(X_8Y_7\).
+						</li>
+						<li>
+							2023 Q139 Core concept — molecular formula from ccp oxygen lattice
+							and occupied void fractions. Key rule: in ccp/fcc packing, if
+							\(n\) atoms form the lattice, octahedral voids \(=n\) and
+							tetrahedral voids \(=2n\); for ccp oxygen, take \(O=4\), so TV
+							\(=8\), OV \(=4\). Trap: \(\dfrac{1}{8}\) of tetrahedral voids
+							gives \(A=1\), while half of octahedral voids gives \(B=2\). Crux:
+							The ratio \(A:B:O=1:2:4\), so the formula is \(AB_2O_4\).
+						</li>
+						<li>
+							2023 Q139 Core concept — non-stoichiometric metal oxide with mixed
+							oxidation states. Key rule: use charge neutrality for
+							\(M_{0.96}O\); if \(x\) metal ions are \(M^{3+}\), then \(0.96-x\)
+							are \(M^{2+}\), so \(3x+2(0.96-x)=2\). Trap: \(x=0.08\) is the
+							amount of \(M^{3+}\), not its fraction; divide by total metal
+							\(0.96\). Crux: Fraction of \(M^{3+}=\dfrac{0.08}{0.96}=0.083\),
+							and fraction of \(M^{2+}=\dfrac{0.88}{0.96}=0.916\).
+						</li>
+						<li>
+							2023 Q139 Core concept — formula from atoms at corners, edge
+							centres and body centre. Key rule: corner contribution
+							\(=\dfrac{1}{8}\), edge-centre contribution \(=\dfrac{1}{4}\),
+							body-centre contribution \(=1\). Trap: there are \(12\) edges, so
+							edge-centred oxygen contributes \(12\times\dfrac{1}{4}=3\), not
+							\(1\) or \(12\). Crux: \(W=8\times\dfrac{1}{8}=1\),
+							\(O=12\times\dfrac{1}{4}=3\), \(Na=1\), so the formula is
+							\(NaWO_3\).
+						</li>
+						<li>
+							2022 Q141 Core concept — density calculation with Schottky defect
+							correction in fcc iron. Key formula: \(\rho=\dfrac{ZM}{N_Aa^3}\);
+							for fcc, \(Z=4\), and \(0.1\%\) Schottky defect makes effective
+							\(Z=4-\dfrac{0.1}{100}\times4=3.996\). Trap: Schottky defects
+							reduce the number of particles and hence density; do not increase
+							density or leave \(Z\) fully unchanged when defect correction is
+							asked. Crux: Use
+							\(a=400\,\mathrm{pm}=400\times10^{-10}\,\mathrm{cm}\) and
+							\(Z=3.996\); density comes approximately
+							\(5.8\,\mathrm{g\,cm^{-3}}\).
+						</li>
+						<li>
+							2022 Q129 Core concept — surface-area scaling when a cube is
+							divided into smaller cubes. Key rule: if a cube of side \(a\) is
+							divided into cubes of side \(b\), total surface area ratio
+							\(=\dfrac{a}{b}\). Trap: convert units correctly:
+							\(1\,\mathrm{cm}=10^7\,\mathrm{nm}\); do not confuse number of
+							small cubes \((10^7)^3\) with surface-area ratio. Crux: The total
+							surface area of all \(1\,\mathrm{nm}\) cubes divided by original
+							cube surface area is \(10^7\).
+						</li>
+						<li>
+							2022 Q141 Core concept — axial distances and angles for the
+							hexagonal crystal system. Key rule: hexagonal system has \(a=b\neq
+							c\), \(\alpha=\beta=90^\circ\), and \(\gamma=120^\circ\). Trap:
+							\(a=b\neq c\) with all angles \(90^\circ\) is tetragonal, not
+							hexagonal. Crux: The \(120^\circ\) basal-plane angle is the
+							quickest identification clue for hexagonal crystals.
+						</li>
+						<li>
+							2022 Q141 Core concept — coordination number of a bcc unit cell.
+							Key fact: in bcc, the number of nearest neighbours is \(8\). Trap:
+							do not confuse bcc with simple cubic \((6)\) or fcc \((12)\).
+							Crux: Memorise the coordination-number trio: sc \(=6\), bcc
+							\(=8\), fcc/ccp \(=12\).
+						</li>
+						<li>
+							2022 Q141 Core concept — distance between octahedral voids in fcc
+							using body diagonal. Key facts: in fcc, octahedral voids are at
+							the body centre and edge centres; cube body diagonal
+							\(x=\sqrt{3}a\), so \(a=\dfrac{x}{\sqrt{3}}\). Trap: the nearest
+							body-centre-to-edge-centre octahedral void distance is
+							\(\dfrac{a}{\sqrt{2}}\), not \(a\) or \(\dfrac{a}{2}\). Crux:
+							Distance
+							\(=\dfrac{a}{\sqrt{2}}=\dfrac{x}{\sqrt{3}\sqrt{2}}=\dfrac{x}{\sqrt{6}}\).
+						</li>
+						<li>
+							2022 Q141 Core concept — edge length of rock-salt type KBr from
+							density. Key formula: \(\rho=\dfrac{ZM}{N_Aa^3}\), so
+							\(a^3=\dfrac{ZM}{\rho N_A}\); for rock-salt \((NaCl)\) type
+							structure, \(Z=4\). Trap: use molar mass of KBr
+							\(\approx120\,\mathrm{g\,mol^{-1}}\) and remember that rock-salt
+							structure has \(4\) formula units per unit cell. Crux:
+							Substitution with \(\rho=3.70\,\mathrm{g\,cm^{-3}}\) gives
+							\(a\approx6\times10^{-8}\,\mathrm{cm}\).
+						</li>
+						<li>
+							2022 Q141 Core concept — formula from cubic unit-cell positions
+							for \(Na\), \(W\), and \(O\). Key rule: \(W\) at \(8\) corners
+							contributes \(1\), \(O\) at \(12\) edge centres contributes \(3\),
+							and \(Na\) at body centre contributes \(1\). Trap: edge-centred
+							atoms contribute \(\dfrac{1}{4}\) each; do not count \(12\)
+							oxygens directly. Crux: The simplest ratio is \(Na:W:O=1:1:3\), so
+							the compound formula is \(NaWO_3\).
+						</li>
+					</ol>
+					<!--End Part 2-->
+
+					<!--Start Part 3-->
+					<ol></ol>
+					<!--End Part 3-->
+
+					<!--Start Part 4-->
+					<ol></ol>
+					<!--End Part 4-->
+				</div>
+			</div>
+		</div>
+
+		<!--END PYQ Summaries-->
 
 		<!--START PYQ by PYQ-->
 
