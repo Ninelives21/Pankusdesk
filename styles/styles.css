@@ -969,3 +969,59 @@ div[id^='ch'] h3 a {
 	margin: 24px auto;
 	background: #fff;
 }
+
+.hybrid-table {
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: calc(100% - 80px);
+	margin: 20px 40px;
+	background: #fff;
+}
+
+.hybrid-table th,
+.hybrid-table td {
+	border: 1px solid #999;
+	padding: 10px 12px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+.hybrid-table th {
+	font-weight: 700;
+	background: #f3f4f6;
+}
+
+.hybrid-table td:first-child,
+.hybrid-table th:first-child {
+	text-align: left;
+}
+
+.hybrid-table img {
+	display: block;
+	width: 120px;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.hybrid-table .col-geometry {
+	width: 22%;
+}
+
+.hybrid-table .col-orbitals {
+	width: 12%;
+}
+
+.hybrid-table .col-hybrid {
+	width: 14%;
+}
+
+.hybrid-table .col-diagram {
+	width: 28%;
+}
+
+.hybrid-table .col-examples {
+	width: 24%;
+}
