@@ -1120,3 +1120,168 @@ div[id^='ch'] h3 a {
 	font-size: 70%;
 	vertical-align: super;
 }
+
+.transition-config-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 20px;
+	text-align: center;
+	border-top: 3px solid #b94a4a;
+	border-bottom: 3px solid #b94a4a;
+}
+
+.transition-config-table caption {
+	caption-side: top;
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 0;
+	border-bottom: 3px solid #b94a4a;
+}
+
+.transition-config-table th {
+	font-size: 22px;
+	font-weight: bold;
+	padding: 3px 8px;
+	border-bottom: 3px solid #b94a4a;
+}
+
+.transition-config-table td {
+	padding: 3px 8px;
+	vertical-align: middle;
+}
+
+/* Main alternating rows */
+.transition-config-table tbody tr:nth-child(odd) td {
+	background-color: #ead0d0;
+}
+
+.transition-config-table tbody tr:nth-child(even) td {
+	background-color: #ffffff;
+}
+
+/* Central columns in each half also alternate */
+.transition-config-table tbody tr:nth-child(odd) td:nth-child(2),
+.transition-config-table tbody tr:nth-child(odd) td:nth-child(3),
+.transition-config-table tbody tr:nth-child(odd) td:nth-child(6),
+.transition-config-table tbody tr:nth-child(odd) td:nth-child(7) {
+	background-color: #e3bcbc;
+}
+
+.transition-config-table tbody tr:nth-child(even) td:nth-child(2),
+.transition-config-table tbody tr:nth-child(even) td:nth-child(3),
+.transition-config-table tbody tr:nth-child(even) td:nth-child(6),
+.transition-config-table tbody tr:nth-child(even) td:nth-child(7) {
+	background-color: #f4dddd;
+}
+
+/* Header tinting */
+.transition-config-table thead tr:nth-child(1) th {
+	background-color: #ead0d0;
+}
+
+.transition-config-table thead tr:nth-child(2) th:nth-child(2),
+.transition-config-table thead tr:nth-child(2) th:nth-child(3),
+.transition-config-table thead tr:nth-child(2) th:nth-child(6),
+.transition-config-table thead tr:nth-child(2) th:nth-child(7) {
+	background-color: #e3bcbc;
+}
+
+.transition-config-table thead tr:nth-child(2) th:nth-child(1),
+.transition-config-table thead tr:nth-child(2) th:nth-child(4),
+.transition-config-table thead tr:nth-child(2) th:nth-child(5),
+.transition-config-table thead tr:nth-child(2) th:nth-child(8) {
+	background-color: #ffffff;
+}
+
+/* Middle divider between lanthanoids and actinoids */
+.transition-config-table th:nth-child(5),
+.transition-config-table td:nth-child(5) {
+	border-left: 3px solid #b94a4a;
+}
+
+.transition-config-table sup {
+	font-size: 70%;
+	line-height: 0;
+}
+
+.d-block-config-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 18px;
+	text-align: center;
+	border-top: 3px solid #b94a4a;
+	border-bottom: 3px solid #b94a4a;
+}
+
+.d-block-config-table caption {
+	caption-side: top;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 0;
+	border-bottom: 3px solid #b94a4a;
+}
+
+.d-block-config-table th {
+	font-size: 19px;
+	font-weight: bold;
+	padding: 3px 6px;
+	border-bottom: 3px solid #b94a4a;
+}
+
+.d-block-config-table td {
+	padding: 3px 6px;
+	vertical-align: middle;
+}
+
+/* Main alternating rows */
+.d-block-config-table tbody tr:nth-child(odd) td {
+	background-color: #ead0d0;
+}
+
+.d-block-config-table tbody tr:nth-child(even) td {
+	background-color: #ffffff;
+}
+
+/* First two label columns */
+.d-block-config-table td:nth-child(1),
+.d-block-config-table td:nth-child(2),
+.d-block-config-table th:nth-child(1),
+.d-block-config-table th:nth-child(2) {
+	font-weight: bold;
+}
+
+/* Highlight important exception groups: 6, 10, 11, 12 */
+.d-block-config-table th:nth-child(6),
+.d-block-config-table th:nth-child(10),
+.d-block-config-table th:nth-child(11),
+.d-block-config-table th:nth-child(12),
+.d-block-config-table td:nth-child(6),
+.d-block-config-table td:nth-child(10),
+.d-block-config-table td:nth-child(11),
+.d-block-config-table td:nth-child(12) {
+	background-color: #f4dddd;
+}
+
+/* Group-number header */
+.d-block-config-table thead th {
+	background-color: #e3bcbc;
+}
+
+/* Series separators */
+.d-block-config-table tbody tr:nth-child(4),
+.d-block-config-table tbody tr:nth-child(7) {
+	border-top: 3px solid #b94a4a;
+}
+
+/* Slightly stronger line after orbital label column */
+.d-block-config-table th:nth-child(2),
+.d-block-config-table td:nth-child(2) {
+	border-right: 2px solid #b94a4a;
+}
+
+.d-block-config-table sup {
+	font-size: 70%;
+	line-height: 0;
+}
