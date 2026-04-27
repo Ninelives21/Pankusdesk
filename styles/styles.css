@@ -1285,3 +1285,74 @@ div[id^='ch'] h3 a {
 	font-size: 70%;
 	line-height: 0;
 }
+
+.pretty-table-wrap {
+	width: 100%;
+	margin: 16px auto;
+	overflow-x: auto;
+}
+
+.pretty-polymer-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: Georgia, 'Times New Roman', serif;
+	text-align: center;
+	border-top: 4px solid #c2474d;
+	border-bottom: 4px solid #c2474d;
+	background: #fff;
+}
+
+.pretty-polymer-table caption {
+	caption-side: top;
+	font-size: 1.55rem;
+	font-weight: 700;
+	color: #111;
+	padding: 6px 10px 5px;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.pretty-polymer-table thead th {
+	background: #ead0d2;
+	color: #111;
+	font-size: 1.05rem;
+	font-weight: 700;
+	padding: 8px 10px;
+	border-bottom: 3px solid #c2474d;
+}
+
+.pretty-polymer-table tbody td {
+	font-size: 0.92rem;
+	font-weight: 600;
+	padding: 7px 10px;
+	vertical-align: middle;
+	line-height: 1.35;
+}
+
+.pretty-polymer-table tbody tr:nth-child(odd) {
+	background: #ead0d2;
+}
+
+.pretty-polymer-table tbody tr:nth-child(even) {
+	background: #fff;
+}
+
+.pretty-polymer-table tbody td:nth-child(1) {
+	width: 6%;
+}
+
+.pretty-polymer-table tbody td:nth-child(2) {
+	width: 25%;
+}
+
+.pretty-polymer-table tbody td:nth-child(3) {
+	width: 31%;
+}
+
+.pretty-polymer-table tbody td:nth-child(4) {
+	width: 38%;
+}
+
+.pretty-polymer-table tbody tr:hover {
+	background: #f3dddd;
+}
