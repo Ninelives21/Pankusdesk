@@ -1025,3 +1025,62 @@ div[id^='ch'] h3 a {
 .hybrid-table .col-examples {
 	width: 24%;
 }
+
+.ores-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	line-height: 1.35;
+	color: #000;
+	border-top: 3px solid #c84d4d;
+	border-bottom: 3px solid #c84d4d;
+}
+
+.ores-table caption {
+	caption-side: top;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 1.1;
+	margin-bottom: 4px;
+}
+
+.ores-table thead tr {
+	border-bottom: 3px solid #c84d4d;
+}
+
+.ores-table th {
+	text-align: left;
+	font-weight: bold;
+	font-size: 22px;
+	padding: 0 24px 6px 24px;
+	vertical-align: top;
+}
+
+.ores-table th:nth-child(1),
+.ores-table td:nth-child(1) {
+	width: 170px;
+}
+
+.ores-table td {
+	padding: 0 24px;
+	vertical-align: middle;
+}
+
+.ores-table th span {
+	background-color: #9bc8dd;
+	padding: 0 3px;
+}
+
+.ores-table tr.shade {
+	background-color: #efd2d2;
+}
+
+.ores-table tbody tr:last-child {
+	border-top: 3px solid #c84d4d;
+}
+
+.ores-table sub {
+	font-size: 65%;
+	line-height: 0;
+}
