@@ -1116,10 +1116,10 @@
 						</li>
 						<li>
 							\(F\): Faraday constant, approximately \(96500\ \mathrm{C\
-							mol^{-1}}\).
+							mol^{-1}}\); \(1F\) is the charge on \(1\) mole of electrons.
 						</li>
 						<li>
-							\(Q\): reaction quotient in Nernst equation; in electrolysis,
+							\(Q\): reaction quotient in the Nernst equation; in electrolysis,
 							\(Q\) may also mean charge passed, where \(Q=It\).
 						</li>
 						<li>\(\Delta G\): Gibbs energy change of cell reaction.</li>
@@ -1133,15 +1133,16 @@
 							limiting ionic molar conductivity.
 						</li>
 						<li>
-							\(\alpha\): degree of dissociation; \(K_a\): acid dissociation
-							constant.
+							\(\alpha\): degree of dissociation of weak electrolyte; \(K_a\):
+							acid dissociation constant.
 						</li>
 						<li>
 							\(r\): rate of reaction; \(k\): rate constant; \(t_{1/2}\):
 							half-life period.
 						</li>
 						<li>
-							\(E_a\): activation energy; \(A\): Arrhenius frequency factor;
+							\(E_a\): activation energy; \(E_t\): threshold energy; \(E_i\):
+							internal energy of reactants; \(A\): Arrhenius frequency factor;
 							\(T\): absolute temperature in kelvin.
 						</li>
 					</ul>
@@ -1154,8 +1155,8 @@
 						<li>
 							Electrochemistry is based on electron-transfer reactions.
 							Oxidation is loss of electrons and reduction is gain of electrons;
-							the species losing electrons is the reducing agent, and the
-							species gaining electrons is the oxidising agent.
+							the species losing electrons acts as reducing agent, and the
+							species gaining electrons acts as oxidising agent.
 						</li>
 						<li>
 							Oxidation number is the apparent charge assigned to an atom by
@@ -1170,16 +1171,16 @@
 							\(+1\) with non-metals and \(-1\) with metals.
 						</li>
 						<li>
-							In neutral compounds, the sum of oxidation numbers is zero; in
-							polyatomic ions, the sum equals the charge on the ion. These rules
-							are enough for most EAPCET redox and disproportionation questions.
+							In a neutral compound, the sum of oxidation numbers is zero; in a
+							polyatomic ion, the sum equals the charge on the ion. These rules
+							are enough for most EAPCET oxidation-state and redox questions.
 						</li>
 						<li>
 							In disproportionation, the same element in one oxidation state is
 							simultaneously oxidised and reduced. For example, in
 							\(\mathrm{Se_2Cl_2}\), selenium is \(+1\); formation of
-							\(\mathrm{SeCl_4}\) \((+4)\) and \(\mathrm{Se}\) \((0)\) shows
-							both oxidation and reduction.
+							\(\mathrm{SeCl_4}\) \((+4)\) and elemental \(\mathrm{Se}\) \((0)\)
+							shows both oxidation and reduction.
 						</li>
 					</ul>
 					<!--END Redox basis and oxidation number -->
@@ -1193,15 +1194,21 @@
 						>
 						<li>
 							Electrolytic conduction occurs due to movement of cations and
-							anions in solution or molten electrolyte. Conductance \(L\) is the
-							reciprocal of resistance, \(L=\dfrac{1}{R}\), and conductivity
-							\(\kappa\) is the reciprocal of resistivity.
+							anions in solution or molten electrolyte. The electrical
+							conductance of an electrolyte depends on nature of solute, valency
+							of ions, concentration and temperature.
 						</li>
 						<li>
-							For a conductivity cell,
-							\(\kappa=\text{conductance}\times\text{cell constant}\), where
-							cell constant \(=\dfrac{l}{A}\). Therefore,
-							\(\kappa=\dfrac{\text{cell constant}}{R}\).
+							Conductance \(L\) is the reciprocal of resistance,
+							\(L=\dfrac{1}{R}\), and conductivity \(\kappa\) is the reciprocal
+							of resistivity. For a conductivity cell,
+							\(\kappa=\text{conductance}\times\text{cell constant}\).
+						</li>
+						<li>
+							The cell constant is \(\dfrac{l}{A}\), where \(l\) is the distance
+							between electrodes and \(A\) is their area of cross-section.
+							Therefore, \(\kappa=\dfrac{\text{cell constant}}{R}\), which is
+							the form used in resistance-based numericals.
 						</li>
 						<li>
 							Molar conductivity is the conducting power of all ions produced by
@@ -1213,7 +1220,7 @@
 							In SI-based numerical problems, keep units consistent: \(1\
 							\mathrm{M}=1000\ \mathrm{mol\ m^{-3}}\), and \(\mathrm{S\ cm^2\
 							mol^{-1}}\) must be converted to \(\mathrm{S\ m^2\ mol^{-1}}\)
-							when using \(C\) in \(\mathrm{mol\ m^{-3}}\).
+							when \(C\) is in \(\mathrm{mol\ m^{-3}}\).
 						</li>
 						<li>
 							On dilution, conductivity \(\kappa\) decreases because the number
@@ -1221,6 +1228,7 @@
 							\(\Lambda_m\) increases because the volume containing one mole of
 							electrolyte increases and interionic effects decrease.
 						</li>
+
 						<li>
 							Strong electrolytes are almost completely ionised at all
 							concentrations, so \(\Lambda_m\) increases gradually on dilution.
@@ -1228,6 +1236,7 @@
 							increases sharply on dilution due to increase in degree of
 							ionisation.
 						</li>
+
 						<li>
 							For weak electrolytes,
 							\(\alpha=\dfrac{\Lambda_m}{\Lambda_m^\circ}\). This relation is
@@ -1243,14 +1252,14 @@
 						</li>
 						<li>
 							Kohlrausch’s law states that at infinite dilution each ion
-							contributes independently to the total molar conductivity. For
+							contributes independently to total molar conductivity. For
 							\(\mathrm{A}_x\mathrm{B}_y\),
 							\(\Lambda_m^\circ=x\lambda_A^\circ+y\lambda_B^\circ\).
 						</li>
 						<li>
 							Stoichiometric coefficients must be included in Kohlrausch-law
-							calculations. For example,
-							\(\Lambda_m^\circ(\mathrm{CaCl_2})=\lambda^\circ_{\mathrm{Ca^{2+}}}+2\lambda^\circ_{\mathrm{Cl^-}}\),
+							calculations. For \(\mathrm{CaCl_2}\),
+							\(\Lambda_m^\circ=\lambda^\circ_{\mathrm{Ca^{2+}}}+2\lambda^\circ_{\mathrm{Cl^-}}\),
 							not
 							\(\lambda^\circ_{\mathrm{Ca^{2+}}}+\lambda^\circ_{\mathrm{Cl^-}}\).
 						</li>
@@ -1287,9 +1296,16 @@
 							from zinc to copper.
 						</li>
 						<li>
-							The salt bridge maintains electrical neutrality. Anions move
-							towards the oxidation half-cell where excess positive charge
-							develops, and cations move towards the reduction half-cell.
+							<img
+								src="images/daniell_cell.png"
+								alt="15_electrochemistry.pdf page 285 Fig. 15.6 Daniell cell having zinc and copper electrodes"
+								style="width: 60%; height: auto; margin-right: 10px"
+							/>
+						</li>
+						<li>
+							The salt bridge completes the internal circuit and maintains
+							electrical neutrality. Anions move towards the oxidation
+							half-cell, while cations move towards the reduction half-cell.
 						</li>
 						<li>
 							Electrode potential is the potential developed when a metal is
@@ -1303,6 +1319,13 @@
 							\mathrm{H^+}\), \(1\ \mathrm{bar}\ \mathrm{H_2}\), and \(298\
 							\mathrm{K}\). It may act as anode or cathode depending on the
 							other electrode.
+						</li>
+						<li>
+							<img
+								src="images/standard_hydrogen_electrode.png"
+								alt="15_electrochemistry.pdf page 288 Fig. 15.9 Measurement of standard electrode potential of Zn/Zn2+ electrode using standard hydrogen electrode"
+								style="width: 60%; height: auto; margin-right: 10px"
+							/>
 						</li>
 						<li>
 							The standard electrode potential of an electrode is obtained by
@@ -1331,8 +1354,8 @@
 						<li>
 							Electrode potentials are not simply additive. Since \(\Delta
 							G^\circ=-nFE^\circ\), multi-step potential calculations must use
-							electron-weighted terms \(nE^\circ\). This is the central idea
-							behind Latimer-style calculations.
+							electron-weighted terms \(nE^\circ\), not plain voltage addition
+							or subtraction.
 						</li>
 						<li>
 							Aqueous electrode potentials also reflect hydration effects.
@@ -1414,6 +1437,13 @@
 							In an electrolytic cell, electrical energy is converted into
 							chemical energy. Cations move to the cathode and undergo
 							reduction; anions move to the anode and undergo oxidation.
+						</li>
+						<li>
+							<img
+								src="images/electrolytic_cell.png"
+								alt="15_electrochemistry.pdf page 281 Fig. 15.3 Electrolytic Cell"
+								style="width: 60%; height: auto; margin-right: 10px"
+							/>
 						</li>
 						<li>
 							For molten salts, the ions of the salt are discharged directly.
@@ -1568,6 +1598,7 @@
 							affecting it. A reaction may be thermodynamically feasible but
 							still slow if the activation barrier is high.
 						</li>
+
 						<li>
 							Rate of reaction is the change in concentration of a reactant or
 							product per unit time. For reactants, the rate is written with a
@@ -1587,6 +1618,13 @@
 							Average rate is calculated over a finite time interval, whereas
 							instantaneous rate is the rate at a particular moment and is
 							written using derivatives such as \(\dfrac{d[A]}{dt}\).
+						</li>
+						<li>
+							<img
+								src="images/reaction_concentration_time.png"
+								alt="16_chemical_kinetics.pdf page 302 concentration versus time graph for reactant and product"
+								style="width: 50%; height: auto; margin-right: 10px"
+							/>
 						</li>
 						<li>
 							The main factors affecting rate are concentration of reactants,
@@ -1683,6 +1721,13 @@
 							slope \(-\dfrac{k}{2.303}\).
 						</li>
 						<li>
+							<img
+								src="images/all_order_graph.png"
+								alt="16_chemical_kinetics.pdf page 307 Fig. 16.1 graph of log10 concentration against time for a first-order reaction"
+								style="width: 70%; height: auto; margin-right: 10px"
+							/>
+						</li>
+						<li>
 							A graph of \(\log\dfrac{a}{a-x}\) versus \(t\) for a first-order
 							reaction has slope \(\dfrac{k}{2.303}\). Therefore,
 							\(k=2.303\times\text{slope}\).
@@ -1746,6 +1791,13 @@
 							than the threshold energy.
 						</li>
 						<li>
+							<img
+								src="images/temperature_dependence.png"
+								alt="Temperature dependence"
+								style="width: 60%; height: auto; margin-right: 10px"
+							/>
+						</li>
+						<li>
 							The rough temperature-coefficient rule states that rates of many
 							reactions approximately double for every \(10^{\circ}\mathrm{C}\)
 							rise in temperature. This rule is often connected to
@@ -1766,6 +1818,13 @@
 							factor \(2.303\) is used only with \(\log\), not with \(\ln\).
 						</li>
 						<li>
+							<img
+								src="images/arrhenius_graph.png"
+								alt="16_chemical_kinetics.pdf page 311 Fig. 16.3 Graphical determination of Ea"
+								style="width: 60%; height: auto; margin-right: 10px"
+							/>
+						</li>
+						<li>
 							For two temperatures,
 							\(\log\dfrac{k_2}{k_1}=\dfrac{E_a}{2.303R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)\).
 							Temperatures must always be converted to kelvin.
@@ -1782,9 +1841,24 @@
 							of reactants \(E_i\) are given, \(E_a=E_t-E_i\).
 						</li>
 						<li>
+							<img
+								src="images/KE_vs_no_0f_molecules.png"
+								alt="distribution of kinetic energies in a sample of particles at a given temperature."
+								style="width: 60%; height: auto; margin-right: 10px"
+							/>
+						</li>
+
+						<li>
 							A catalyst changes the reaction rate without being consumed. It
 							provides an alternative pathway with lower activation energy,
 							thereby increasing \(k\) at the same temperature.
+						</li>
+						<li>
+							<img
+								src="images/catalyst.png"
+								alt="A catalyst changes the reaction rate"
+								style="width: 60%; height: auto; margin-right: 10px"
+							/>
 						</li>
 						<li>
 							For catalyst questions at the same temperature, compare the two
