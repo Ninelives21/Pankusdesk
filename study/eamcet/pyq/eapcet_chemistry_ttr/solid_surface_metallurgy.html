@@ -31,6 +31,506 @@
 
 		<h2>SOLID STATE, SURFACE CHEMISTRY, METALLURGY</h2>
 
-		<ol id="ttr_imp_equations"></ol>
+		<ol id="ttr_imp_equations">
+			<!--Start Solid State-->
+			<li id="solid-state">
+				<div class="accordion-item">
+					<button class="accordion-button" id="solid-state">Solid State</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong>Density of cubic unit cell</strong><br /><br />
+								\( \rho=\dfrac{ZM}{N_Aa^3} \)<br /><br />
+								\( M=\dfrac{\rho N_Aa^3}{Z} \)<br /><br />
+								\( Z=\dfrac{\rho N_Aa^3}{M} \)<br /><br />
+								Use \(Z=4\) for fcc and rock-salt type structures.<br /><br />
+								Convert edge length before cubing:
+								\(1\,\mathrm{pm}=10^{-10}\,\mathrm{cm}\),
+								\(1\,\text{\AA}=10^{-8}\,\mathrm{cm}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Effective contribution of atoms in a unit cell</strong
+								><br /><br />
+								Corner atom contribution \(=\dfrac{1}{8}\).<br /><br />
+								Edge-centre atom contribution \(=\dfrac{1}{4}\).<br /><br />
+								Face-centre atom contribution \(=\dfrac{1}{2}\).<br /><br />
+								Body-centre atom contribution \(=1\).<br /><br />
+								These contribution rules are the base for empirical-formula
+								questions from unit-cell positions.<br /><br />
+							</li>
+
+							<li>
+								<strong>Common cubic unit-cell anchors</strong><br /><br />
+								\( \mathrm{sc:\ Z=1,\ CN=6} \)<br /><br />
+								\( \mathrm{bcc:\ Z=2,\ CN=8} \)<br /><br />
+								\( \mathrm{fcc/ccp:\ Z=4,\ CN=12} \)<br /><br />
+								Rock-salt \((\mathrm{NaCl})\)-type structure has \(4\) formula
+								units per unit cell.<br /><br />
+							</li>
+
+							<li>
+								<strong>Radius and edge-length relations</strong><br /><br />
+								Simple cubic: \( a=2r \).<br /><br />
+								bcc: atoms touch along body diagonal, so \( \sqrt{3}a=4r \) and
+								\( a=\dfrac{4r}{\sqrt{3}} \).<br /><br />
+								fcc/ccp: atoms touch along face diagonal, so \( \sqrt{2}a=4r \)
+								and \( a=2\sqrt{2}r \).<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Density ratio for same metal in two crystal forms</strong
+								><br /><br />
+								For the same substance, \( d\propto\dfrac{Z}{a^3} \).<br /><br />
+								\( \dfrac{d_1}{d_2}=\dfrac{Z_1}{Z_2}\times\dfrac{a_2^3}{a_1^3}
+								\)<br /><br />
+								Edge length must be cubed because unit-cell volume is
+								\(a^3\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Voids in ccp/fcc packing</strong><br /><br />
+								If \(N\) particles form ccp/fcc packing:<br /><br />
+								Octahedral voids \(=N\).<br /><br />
+								Tetrahedral voids \(=2N\).<br /><br />
+								For \(4\) oxide ions in ccp: octahedral voids \(=4\),
+								tetrahedral voids \(=8\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Formula from occupied voids</strong><br /><br />
+								First count the lattice-forming ions.<br /><br />
+								Then count the occupied tetrahedral and octahedral voids.<br /><br />
+								For \(\mathrm{AB_2O_4}\) with ccp oxide lattice: \(O=4\),
+								tetrahedral voids \(=8\), octahedral voids \(=4\).<br /><br />
+								\(A=1\) means \(A\) occupies \(\dfrac{1}{8}\) of tetrahedral
+								voids.<br /><br />
+								\(B=2\) means \(B\) occupies \(\dfrac{1}{2}\) of octahedral
+								voids.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Vacant octahedral void fraction in
+									\(\mathrm{AB_2O_4}\)</strong
+								><br /><br />
+								With \(4\) oxide ions in ccp, total octahedral voids \(=4\).<br /><br />
+								\(B=2\) occupies \(2\) octahedral voids.<br /><br />
+								Occupied octahedral fraction \(=\dfrac{2}{4}=\dfrac{1}{2}\).<br /><br />
+								Vacant octahedral fraction \(=\dfrac{1}{2}\).<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Formula from corners, edge centres and body centre</strong
+								><br /><br />
+								If \(W\) is at \(8\) corners: \(W=8\times\dfrac{1}{8}=1\).<br /><br />
+								If \(O\) is at \(12\) edge centres:
+								\(O=12\times\dfrac{1}{4}=3\).<br /><br />
+								If \(\mathrm{Na}\) is at body centre: \(\mathrm{Na}=1\).<br /><br />
+								Formula \(=\mathrm{NaWO_3}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Formula when corner atoms are missing</strong
+								><br /><br />
+								If \(3\) out of \(8\) corner atoms are missing, only \(5\)
+								corners contribute.<br /><br />
+								Corner species contribution
+								\(=5\times\dfrac{1}{8}=\dfrac{5}{8}\).<br /><br />
+								Body-centred species contribution \(=1\).<br /><br />
+								Multiply by \(8\) to get the simplest whole-number formula.<br /><br />
+							</li>
+
+							<li>
+								<strong>Schottky defect</strong><br /><br />
+								Schottky defect involves equal number of cation and anion
+								vacancies.<br /><br />
+								Electrical neutrality is maintained.<br /><br />
+								Stoichiometry is maintained.<br /><br />
+								Density decreases because ions are missing from lattice
+								sites.<br /><br />
+							</li>
+
+							<li>
+								<strong>Frenkel defect and F-centres</strong><br /><br />
+								Frenkel defect is a dislocation defect where an ion leaves its
+								normal lattice site and occupies an interstitial site.<br /><br />
+								It is favoured by large cation-anion size difference.<br /><br />
+								F-centres are electrons trapped in anion vacancies.<br /><br />
+								F-centres are responsible for colour in many ionic crystals.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Non-stoichiometric oxide with mixed oxidation states</strong
+								><br /><br />
+								For \( \mathrm{M_{0.96}O} \), let \(x\) metal ions be
+								\(\mathrm{M^{3+}}\).<br /><br />
+								Remaining \(\mathrm{M^{2+}}\) ions \(=0.96-x\).<br /><br />
+								Charge neutrality gives \( 3x+2(0.96-x)=2 \).<br /><br />
+								After solving, fraction of
+								\(\mathrm{M^{3+}}=\dfrac{x}{0.96}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Crystal-system identification</strong><br /><br />
+								Tetragonal: \( a=b\neq c \), \( \alpha=\beta=\gamma=90^\circ
+								\).<br /><br />
+								Hexagonal: \( a=b\neq c \), \( \alpha=\beta=90^\circ,\
+								\gamma=120^\circ \).<br /><br />
+								Cubic: \( a=b=c \), \( \alpha=\beta=\gamma=90^\circ \).<br /><br />
+								The \(120^\circ\) basal angle is the quickest clue for the
+								hexagonal system.<br /><br />
+							</li>
+
+							<li>
+								<strong>Distance between octahedral voids in fcc</strong
+								><br /><br />
+								In fcc, octahedral voids occur at body centre and edge
+								centres.<br /><br />
+								If body diagonal \(=x\), then \(x=\sqrt{3}a\), so
+								\(a=\dfrac{x}{\sqrt{3}}\).<br /><br />
+								Nearest body-centre to edge-centre octahedral void distance
+								\(=\dfrac{a}{\sqrt{2}}\).<br /><br />
+								Therefore distance \(=\dfrac{x}{\sqrt{6}}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Surface-area scaling after cutting a cube</strong
+								><br /><br />
+								If a cube of side \(a\) is divided into smaller cubes of side
+								\(b\):<br /><br />
+								\( \dfrac{\text{total surface area after
+								cutting}}{\text{original surface area}}=\dfrac{a}{b} \)<br /><br />
+								\(1\,\mathrm{cm}=10^7\,\mathrm{nm}\).<br /><br />
+								Surface-area ratio is not the same as the number of small
+								cubes.<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End Solid State-->
+			<br />
+
+			<!--Start Surface Chemistry-->
+			<li id="surface-chemistry">
+				<div class="accordion-item">
+					<button class="accordion-button" id="surface-chemistry">
+						Surface Chemistry
+					</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong
+									><span class="named-formula"
+										>Freundlich adsorption isotherm</span
+									></strong
+								><br /><br />
+								\( \dfrac{x}{m}=kp^{1/n} \), where \(n&gt;1\).<br /><br />
+								\( \log\dfrac{x}{m}=\log k+\dfrac{1}{n}\log p \)<br /><br />
+								Slope of \(\log\dfrac{x}{m}\) vs \(\log p\) graph
+								\(=\dfrac{1}{n}\).<br /><br />
+								Intercept \(=\log k\); if intercept \(=1\), then \(k=10\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Physical adsorption conditions</strong><br /><br />
+								Physisorption is due to weak van der Waals forces.<br /><br />
+								It is favoured by high surface area, low temperature and high
+								pressure.<br /><br />
+								Adsorption of gases on solids is generally exothermic.<br /><br />
+								In adsorption-versus-pressure curves, the curve with higher
+								\(x/m\) at the same pressure corresponds to lower
+								temperature.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Hardy-Schulze rule</span> for
+									coagulation</strong
+								><br /><br />
+								Coagulating power depends mainly on the valency of the
+								oppositely charged ion.<br /><br />
+								For negatively charged sols, cations cause coagulation.<br /><br />
+								For positively charged sols, anions cause coagulation.<br /><br />
+								For negative \(\mathrm{As_2S_3}\) or \(\mathrm{Sb_2S_3}\) sol:
+								\(\mathrm{Al^{3+}}\) or \(\mathrm{Fe^{3+}}\) is more effective
+								than \(\mathrm{Ca^{2+}}\) or \(\mathrm{Na^+}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Flocculating value</strong><br /><br />
+								Flocculating value \(=\) millimoles of electrolyte required to
+								coagulate \(1\,\mathrm{L}\) of sol.<br /><br />
+								If molarity and volume are given: millimoles
+								\(=M\times\mathrm{mL}\).<br /><br />
+								If mass is given: first convert mass to moles, then scale to
+								\(1\,\mathrm{L}\).<br /><br />
+								Lower flocculating value means greater coagulating power.<br /><br />
+							</li>
+
+							<li>
+								<strong>Classification of colloids</strong><br /><br />
+								Sol \(=\) solid dispersed in liquid.<br /><br />
+								Foam \(=\) gas dispersed in liquid or solid.<br /><br />
+								Gel \(=\) liquid dispersed in solid.<br /><br />
+								Aerosol \(=\) solid or liquid dispersed in gas.<br /><br />
+								Examples: paint \(=\) sol, whipped cream \(=\) foam, butter
+								\(=\) gel, cloud \(=\) aerosol.<br /><br />
+							</li>
+
+							<li>
+								<strong>Tyndall effect</strong><br /><br />
+								Tyndall effect is scattering of light by colloidal particles.<br /><br />
+								It distinguishes colloids from true solutions.<br /><br />
+								It is prominent when dispersed phase and dispersion medium
+								differ appreciably in refractive index.<br /><br />
+								Examples showing Tyndall effect: milk, clouds, suspensions.<br /><br />
+								Sugar solution is a true solution, so it does not show Tyndall
+								effect appreciably.<br /><br />
+							</li>
+
+							<li>
+								<strong>Brownian motion and stability of sols</strong
+								><br /><br />
+								Brownian motion is random zig-zag motion of colloidal
+								particles.<br /><br />
+								It helps prevent settling and stabilises sols.<br /><br />
+								Brownian motion becomes slower in high-viscosity media.<br /><br />
+							</li>
+
+							<li>
+								<strong>Electrophoresis</strong><br /><br />
+								Electrophoresis is movement of charged colloidal particles under
+								a DC electric field.<br /><br />
+								Particles move towards the oppositely charged electrode.<br /><br />
+								It is different from Brownian motion, which is random thermal
+								motion.<br /><br />
+							</li>
+
+							<li>
+								<strong>Bredig's arc method</strong><br /><br />
+								Bredig's arc method is an electrical dispersion method.<br /><br />
+								It is used to prepare metal sols such as gold, silver and
+								platinum sols.<br /><br />
+								Metal sols prepared this way are treated as negatively charged
+								in the PYQ pattern.<br /><br />
+								It is not the standard method for metal sulphide sols such as
+								\(\mathrm{As_2S_3}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Gold number and protective colloids</strong><br /><br />
+								Gold number measures protective power of a lyophilic colloid.<br /><br />
+								Lower gold number means better protective action.<br /><br />
+								It is used in questions on protection of colloids from
+								coagulation.<br /><br />
+							</li>
+
+							<li>
+								<strong>Micelle formation</strong><br /><br />
+								Ionic micelles form from amphiphilic ionic surfactants above
+								critical micelle concentration.<br /><br />
+								A micelle-forming molecule has a long hydrophobic hydrocarbon
+								tail and a hydrophilic ionic head.<br /><br />
+								Sodium lauryl sulphate forms ionic micelles in water.<br /><br />
+								Iodine, \(\mathrm{S_8}\) and starch are not standard
+								ionic-micelle examples.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Catalyst selectivity in \(\mathrm{CO}\) hydrogenation</strong
+								><br /><br />
+								\( \mathrm{CO+H_2\xrightarrow{Cu}HCHO} \)<br /><br />
+								\( \mathrm{CO+3H_2\xrightarrow{Ni}CH_4+H_2O} \)<br /><br />
+								Copper gives partial hydrogenation to formaldehyde.<br /><br />
+								Nickel gives complete hydrogenation/methanation to methane.<br /><br />
+							</li>
+
+							<li>
+								<strong>Industrial catalysts</strong><br /><br />
+								<span class="inorganic-named-reaction">Ostwald process</span>:
+								Pt gauze.<br /><br />
+								<span class="inorganic-named-reaction">Haber process</span>:
+								Fe.<br /><br />
+								<span class="inorganic-named-reaction">Deacon process</span>:
+								\(\mathrm{CuCl_2}\).<br /><br />
+								Catalytic cracking of hydrocarbons: zeolites.<br /><br />
+								Contact-process oxidation of \(\mathrm{SO_2}\) to
+								\(\mathrm{SO_3}\): Pt in the PYQ summary pattern.<br /><br />
+								Lead chamber oxidation: NO.<br /><br />
+							</li>
+
+							<li>
+								<strong>Calcination versus roasting</strong><br /><br />
+								Calcination is heating ore in absence or limited supply of
+								air.<br /><br />
+								It commonly removes \(\mathrm{H_2O}\) or \(\mathrm{CO_2}\) from
+								hydrated or carbonate ores.<br /><br />
+								\( \mathrm{Fe_2O_3\cdot xH_2O\xrightarrow{\Delta}Fe_2O_3+xH_2O}
+								\)<br /><br />
+								Roasting is heating sulphide ore in oxygen to form oxide and
+								\(\mathrm{SO_2}\).<br /><br />
+								Dehydration of hydrated ore is calcination, not roasting.<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End Surface Chemistry-->
+			<br />
+
+			<!--Start General Principles of Metallurgy-->
+			<li id="general-principles-of-metallurgy">
+				<div class="accordion-item">
+					<button
+						class="accordion-button"
+						id="general-principles-of-metallurgy"
+					>
+						General Principles of Metallurgy
+					</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong>Ore and metal identification anchors</strong
+								><br /><br />
+								\(\mathrm{sphalerite=ZnS\rightarrow Zn}\)<br /><br />
+								\(\mathrm{siderite=FeCO_3\rightarrow Fe}\)<br /><br />
+								\(\mathrm{calamine=ZnCO_3\rightarrow Zn}\)<br /><br />
+								\(\mathrm{malachite=CuCO_3\cdot Cu(OH)_2\rightarrow Cu}\)<br /><br />
+								\(\mathrm{copper\ pyrites/chalcopyrite=CuFeS_2\rightarrow
+								Cu}\)<br /><br />
+								Malachite is a copper ore; calamine and sphalerite are zinc
+								ores.<br /><br />
+							</li>
+
+							<li>
+								<strong>Mineral-to-metal matching</strong><br /><br />
+								Kaolinite \(\rightarrow\) aluminium mineral.<br /><br />
+								Calamine \(\rightarrow\) zinc ore.<br /><br />
+								Sphalerite \(\rightarrow\) zinc ore.<br /><br />
+								Siderite \(\rightarrow\) iron ore.<br /><br />
+								Malachite \(\rightarrow\) copper ore.<br /><br />
+								Calamine is the strong clue for zinc; kaolinite is the aluminium
+								mineral clue.<br /><br />
+							</li>
+
+							<li>
+								<strong>Concentration by leaching</strong><br /><br />
+								Bauxite is concentrated by leaching in
+								<span class="inorganic-named-reaction">Bayer's process</span>
+								using concentrated \(\mathrm{NaOH}\).<br /><br />
+								Alumina dissolves while many impurities remain undissolved.<br /><br />
+								Cyanide leaching of silver:<br /><br />
+								\(\mathrm{4Ag+8CN^-+2H_2O+O_2\rightarrow4[Ag(CN)_2]^-+4OH^-}\)<br /><br />
+								Leaching is chemical dissolution, not a physical concentration
+								method like froth flotation or levigation.<br /><br />
+							</li>
+
+							<li>
+								<strong>Calcination versus roasting</strong><br /><br />
+								Calcination: heating ore in absence or limited supply of air.<br /><br />
+								Used for hydrated ores and carbonate ores.<br /><br />
+								\(\mathrm{Fe_2O_3\cdot
+								xH_2O\xrightarrow{\Delta}Fe_2O_3+xH_2O}\)<br /><br />
+								Roasting: heating sulphide ore in oxygen to form oxide and
+								\(\mathrm{SO_2}\).<br /><br />
+								Sulphide ore heated in oxygen indicates roasting, not
+								calcination.<br /><br />
+							</li>
+
+							<li>
+								<strong>Copper extraction roasting reactions</strong
+								><br /><br />
+								\(\mathrm{2Cu_2S+3O_2\xrightarrow{\Delta}2Cu_2O+2SO_2}\)<br /><br />
+								\(\mathrm{2FeS+3O_2\xrightarrow{\Delta}2FeO+2SO_2}\)<br /><br />
+								Copper matte is mainly \(\mathrm{Cu_2S+FeS}\).<br /><br />
+								Matte is sulphide-rich; slag is silicate-rich.<br /><br />
+							</li>
+
+							<li>
+								<strong>Copper extraction slag formation</strong><br /><br />
+								\(\mathrm{FeO+SiO_2\xrightarrow{\Delta}FeSiO_3}\)<br /><br />
+								Silica flux removes iron impurity as ferrous silicate slag.<br /><br />
+								\(\mathrm{CaO+SiO_2\rightarrow CaSiO_3}\) belongs more naturally
+								to iron extraction slag logic, not copper extraction.<br /><br />
+							</li>
+
+							<li>
+								<strong>Copper self-reduction</strong><br /><br />
+								\(\mathrm{2Cu_2O+Cu_2S\xrightarrow{\Delta}6Cu+SO_2}\)<br /><br />
+								\(\mathrm{SO_2}\) is the gaseous product and has bent/angular
+								shape.<br /><br />
+								This is the key self-reduction step in copper extraction from
+								sulphide ore.<br /><br />
+							</li>
+
+							<li>
+								<strong>Iron extraction flux and slag</strong><br /><br />
+								\(\mathrm{CaCO_3\xrightarrow{\Delta}CaO+CO_2}\)<br /><br />
+								\(\mathrm{CaO+SiO_2\xrightarrow{\Delta}CaSiO_3}\)<br /><br />
+								In blast furnace, \(\mathrm{SiO_2}\) is acidic gangue and
+								\(\mathrm{CaCO_3}\) is added flux.<br /><br />
+								\(\mathrm{CaSiO_3}\) is the slag.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Ellingham diagram</span></strong
+								><br /><br />
+								Ellingham diagram is a plot of \(\Delta G^\circ\) versus
+								\(T\).<br /><br />
+								It helps choose reducing agents for oxide reduction.<br /><br />
+								Lower \(\Delta G^\circ\) means more stable oxide.<br /><br />
+								The x-axis is \(T\), not \(1/T\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Refining by distillation and liquation</strong
+								><br /><br />
+								Distillation is used for volatile metals such as \(\mathrm{Zn}\)
+								and \(\mathrm{Hg}\).<br /><br />
+								Distillation works when the metal has low boiling point and
+								impurity has high boiling point.<br /><br />
+								Liquation is used for metals with low melting point, such as
+								\(\mathrm{Sn}\).<br /><br />
+								Distillation is boiling-point based; liquation is melting-point
+								based.<br /><br />
+							</li>
+
+							<li>
+								<strong>Special refining methods</strong><br /><br />
+								Zone refining: ultra-pure metals such as \(\mathrm{Ga}\).<br /><br />
+								Poling: \(\mathrm{Cu}\).<br /><br />
+								<span class="inorganic-named-reaction">Mond process</span>:
+								\(\mathrm{Ni}\).<br /><br />
+								<span class="inorganic-named-reaction">van Arkel process</span>:
+								\(\mathrm{Ti/Zr}\).<br /><br />
+								Vapour phase refining: \(\mathrm{Ti}\) in the PYQ matching
+								pattern.<br /><br />
+								Mond and van Arkel are both vapour-phase type examples, but they
+								are different processes.<br /><br />
+							</li>
+
+							<li>
+								<strong>Alloy-use anchors</strong><br /><br />
+								\(\mathrm{Li-Pb}\) alloy: bearings for motor engines.<br /><br />
+								\(\mathrm{Be-Cu}\) alloy: high-strength springs.<br /><br />
+								\(\mathrm{Mg-Al}\) alloy: aircraft construction.<br /><br />
+								\(\mathrm{Na-Pb}\) alloy: tetraethyl lead preparation.<br /><br />
+								\(\mathrm{Li-Pb}\) and \(\mathrm{Na-Pb}\) are easy to
+								interchange, so keep their uses separate.<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End General Principles of Metallurgy-->
+			<br />
+		</ol>
 	</body>
 </html>
