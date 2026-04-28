@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>states, stoichio, thermo</title>
+		<title>States, stoichio, thermo</title>
 		<link rel="stylesheet" href="../../../../styles/styles.css" />
 		<script src="../../../../scripts/accordion.js" defer></script>
 		<script src="../../../../scripts/navbar.js" defer></script>
@@ -31,6 +31,429 @@
 
 		<h2>STATES OF MATTER, STOICHIOMETRY, THERMODYNAMICS</h2>
 
-		<ol id="ttr_imp_equations"></ol>
+		<ol id="ttr_imp_equations">
+			<!--Start States of Matter Gases and Liquids-->
+			<li id="states-of-matter-gases-and-liquids">
+				<div class="accordion-item">
+					<button
+						class="accordion-button"
+						id="states-of-matter-gases-and-liquids"
+					>
+						States of Matter Gases and Liquids
+					</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong>Ideal gas equation and comparison form</strong
+								><br /><br />
+								\( pV=nRT \)<br /><br />
+								\( n=\dfrac{pV}{RT} \)<br /><br />
+								For the same gas, \( w\propto\dfrac{pV}{T} \).<br /><br />
+								For fixed \(T\) and \(V\), \( p\propto\dfrac{w}{M} \).<br /><br />
+								Trap: compare moles using \(pV/RT\), not just pressure or volume
+								separately.<br /><br />
+							</li>
+
+							<li>
+								<strong>Combined gas law</strong><br /><br />
+								\( \dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2} \)<br /><br />
+								Use this only for a fixed amount of gas.<br /><br />
+								Trap: always convert temperature to Kelvin before
+								substitution.<br /><br />
+							</li>
+
+							<li>
+								<strong>Open vessel heating rule</strong><br /><br />
+								\( pV=nRT \)<br /><br />
+								At constant \(p\) and \(V\), \( n\propto\dfrac{1}{T} \).<br /><br />
+								\( \dfrac{n_2}{n_1}=\dfrac{T_1}{T_2} \)<br /><br />
+								Trap: in an open vessel, gas escapes; moles are not constant.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Dalton's law</span> for gas
+									mixtures</strong
+								><br /><br />
+								\( p_{\text{total}}=p_1+p_2+p_3+\cdots \)<br /><br />
+								\( p_i=x_i p_{\text{total}} \)<br /><br />
+								\( x_i=\dfrac{n_i}{n_{\text{total}}} \)<br /><br />
+								Trap: partial pressures must add up to total pressure.<br /><br />
+							</li>
+
+							<li>
+								<strong>Mixing gases in connected vessels</strong><br /><br />
+								\( p_i=\dfrac{n_iRT}{V_{\text{total}}} \)<br /><br />
+								Fast form at same temperature: \(
+								p_i=\dfrac{P_iV_i}{V_{\text{total}}} \).<br /><br />
+								After opening the stopcock, each gas occupies the total
+								volume.<br /><br />
+								Trap: do not keep each gas in its original vessel volume after
+								mixing.<br /><br />
+							</li>
+
+							<li>
+								<strong>Mole fraction from initial gas data</strong><br /><br />
+								\( x_i=\dfrac{n_i}{n_{\text{total}}}=\dfrac{p_iV_i}{\sum pV}
+								\)<br /><br />
+								This shortcut works when gases are initially at the same
+								temperature.<br /><br />
+								Trap: for mole fraction, compare moles first; do not use final
+								total volume blindly.<br /><br />
+							</li>
+
+							<li>
+								<strong>Average molar mass of gas mixture</strong><br /><br />
+								\( M_{\text{avg}}=x_1M_1+x_2M_2+\cdots \)<br /><br />
+								From density: \( M=\dfrac{dRT}{p} \).<br /><br />
+								For mass percent: \( \%A=\dfrac{x_AM_A}{\sum x_iM_i}\times100
+								\).<br /><br />
+								Trap: mole percent and mass percent are not the same unless
+								molar masses are equal.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Graham's law</span> of
+									diffusion</strong
+								><br /><br />
+								\( r\propto\dfrac{1}{\sqrt{M}} \)<br /><br />
+								\( \dfrac{r_1}{r_2}=\sqrt{\dfrac{M_2}{M_1}} \)<br /><br />
+								For equal diffused volume: \(
+								\dfrac{t_1}{t_2}=\sqrt{\dfrac{M_1}{M_2}} \).<br /><br />
+								Trap: rate is inversely proportional to time for the same
+								diffused volume.<br /><br />
+							</li>
+
+							<li>
+								<strong>Diffusion when pressure also changes</strong
+								><br /><br />
+								\( r\propto\dfrac{p}{\sqrt{M}} \)<br /><br />
+								\( \dfrac{r_1}{r_2}=\dfrac{p_1}{p_2}\sqrt{\dfrac{M_2}{M_1}}
+								\)<br /><br />
+								Trap: if pressures are different, do not use only molar mass
+								unless the answer key explicitly ignores pressure.<br /><br />
+							</li>
+
+							<li>
+								<strong>RMS, average and most probable speeds</strong
+								><br /><br />
+								\( v_{\mathrm{rms}}=\sqrt{\dfrac{3RT}{M}} \)<br /><br />
+								\( v_{\mathrm{mp}}=\sqrt{\dfrac{2RT}{M}} \)<br /><br />
+								\( v_{\mathrm{avg}}=\sqrt{\dfrac{8RT}{\pi M}} \)<br /><br />
+								\( v_{\mathrm{rms}}\propto\sqrt{\dfrac{T}{M}} \)<br /><br />
+								Trap: square the speed ratio before comparing \(T/M\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Kinetic energy of gas molecules</strong><br /><br />
+								\( E=\dfrac{1}{2}Mv_{\mathrm{rms}}^2 \)<br /><br />
+								For one mole: \( E=\dfrac{3}{2}RT \).<br /><br />
+								Average kinetic energy per molecule: \( \dfrac{3}{2}kT \).<br /><br />
+								Trap: use \(M\) in \(\mathrm{kg\,mol^{-1}}\), not
+								\(\mathrm{g\,mol^{-1}}\), when calculating joules per mole.<br /><br />
+							</li>
+
+							<li>
+								<strong>Gas-law graph slopes</strong><br /><br />
+								For \(V\) vs \(T\) at constant pressure: \( V=\dfrac{nR}{p}T
+								\).<br /><br />
+								Slope \(=\dfrac{nR}{p}\), so slope \( \propto\dfrac{1}{p} \).<br /><br />
+								For \(V\) vs \(n\) at constant \(T,p\): slope
+								\(=\dfrac{RT}{p}\).<br /><br />
+								Trap: steeper \(V-T\) line means lower pressure.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula"
+										>Compressibility factor</span
+									></strong
+								><br /><br />
+								\( Z=\dfrac{pV}{nRT} \)<br /><br />
+								Ideal gas: \( Z=1 \).<br /><br />
+								At moderate pressure, attractions dominate and \( Z\lt1 \).<br /><br />
+								At high pressure, molecular volume/repulsions dominate and \(
+								Z\gt1 \).<br /><br />
+								Trap: stronger attraction gives a deeper dip below \(1\).<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">van der Waals equation</span>
+									high-pressure shortcut</strong
+								><br /><br />
+								\( \left(p+\dfrac{a}{V^2}\right)(V-b)=RT \)<br /><br />
+								At very high pressure, attraction term is neglected: \(
+								p(V-b)=RT \).<br /><br />
+								\( V=\dfrac{RT}{p}+b \)<br /><br />
+								\( Z=1+\dfrac{pb}{RT} \), so \( Z\gt1 \).<br /><br />
+							</li>
+
+							<li>
+								<strong>van der Waals constant \(a\)</strong><br /><br />
+								\( \text{larger }a\Rightarrow\text{ stronger intermolecular
+								attraction} \)<br /><br />
+								\(\mathrm{NH_3}\) has large \(a\) because of strong
+								intermolecular attraction/hydrogen bonding.<br /><br />
+								\(\mathrm{CO_2}\) also shows stronger attraction than
+								\(\mathrm{N_2}\).<br /><br />
+								Trap: lower \(Z\) at moderate pressure usually indicates
+								stronger attractions.<br /><br />
+							</li>
+
+							<li>
+								<strong>Gaseous hydrocarbon combustion by volume ratio</strong
+								><br /><br />
+								C<sub>x</sub>H<sub>y</sub> + (x + y/4)O<sub>2</sub> &rarr;
+								xCO<sub>2</sub> <br /><br />At same \(T,p\), gaseous volumes are
+								proportional to mole ratios.<br /><br />
+								If hydrocarbon : \(\mathrm{CO_2}\) :
+								\(\mathrm{H_2O}=1:x:\dfrac{y}{2}\), identify \(x\) and \(y\).<br /><br />
+								Trap: use vapour volume ratios only when all species are treated
+								as gases.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula"
+										>Newton's law of viscosity</span
+									></strong
+								><br /><br />
+								\( F=\eta A\dfrac{du}{dz} \)<br /><br />
+								Force is proportional to area of contact and velocity
+								gradient.<br /><br />
+								\(\eta\) is the coefficient of viscosity.<br /><br />
+							</li>
+
+							<li>
+								<strong>Kinetic molecular theory standard traps</strong
+								><br /><br />
+								Gas molecules are treated as point particles with negligible
+								volume in ideal gas theory.<br /><br />
+								Collisions are perfectly elastic.<br /><br />
+								Pressure is due to collisions with container walls.<br /><br />
+								Trap: molecules do not all have the same speed at a given
+								instant.<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End States of Matter Gases and Liquids-->
+			<br />
+
+			<!--Start States of Matter Gases and Liquids-->
+			<li id="states-of-matter-gases-and-liquids">
+				<div class="accordion-item">
+					<button
+						class="accordion-button"
+						id="states-of-matter-gases-and-liquids"
+					>
+						States of Matter Gases and Liquids
+					</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong>Ideal gas equation and comparison form</strong
+								><br /><br />
+								\( pV=nRT \)<br /><br />
+								\( n=\dfrac{pV}{RT} \)<br /><br />
+								For the same gas, \( w\propto\dfrac{pV}{T} \).<br /><br />
+								For fixed \(T\) and \(V\), \( p\propto\dfrac{w}{M} \).<br /><br />
+								Trap: compare moles using \(pV/RT\), not just pressure or volume
+								separately.<br /><br />
+							</li>
+
+							<li>
+								<strong>Combined gas law</strong><br /><br />
+								\( \dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2} \)<br /><br />
+								Use this only for a fixed amount of gas.<br /><br />
+								Trap: always convert temperature to Kelvin before
+								substitution.<br /><br />
+							</li>
+
+							<li>
+								<strong>Open vessel heating rule</strong><br /><br />
+								\( pV=nRT \)<br /><br />
+								At constant \(p\) and \(V\), \( n\propto\dfrac{1}{T} \).<br /><br />
+								\( \dfrac{n_2}{n_1}=\dfrac{T_1}{T_2} \)<br /><br />
+								Trap: in an open vessel, gas escapes; moles are not constant.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Dalton's law</span> for gas
+									mixtures</strong
+								><br /><br />
+								\( p_{\text{total}}=p_1+p_2+p_3+\cdots \)<br /><br />
+								\( p_i=x_i p_{\text{total}} \)<br /><br />
+								\( x_i=\dfrac{n_i}{n_{\text{total}}} \)<br /><br />
+								Trap: partial pressures must add up to total pressure.<br /><br />
+							</li>
+
+							<li>
+								<strong>Mixing gases in connected vessels</strong><br /><br />
+								\( p_i=\dfrac{n_iRT}{V_{\text{total}}} \)<br /><br />
+								Fast form at same temperature: \(
+								p_i=\dfrac{P_iV_i}{V_{\text{total}}} \).<br /><br />
+								After opening the stopcock, each gas occupies the total
+								volume.<br /><br />
+								Trap: do not keep each gas in its original vessel volume after
+								mixing.<br /><br />
+							</li>
+
+							<li>
+								<strong>Mole fraction from initial gas data</strong><br /><br />
+								\( x_i=\dfrac{n_i}{n_{\text{total}}}=\dfrac{p_iV_i}{\sum pV}
+								\)<br /><br />
+								This shortcut works when gases are initially at the same
+								temperature.<br /><br />
+								Trap: for mole fraction, compare moles first; do not use final
+								total volume blindly.<br /><br />
+							</li>
+
+							<li>
+								<strong>Average molar mass of gas mixture</strong><br /><br />
+								\( M_{\text{avg}}=x_1M_1+x_2M_2+\cdots \)<br /><br />
+								From density: \( M=\dfrac{dRT}{p} \).<br /><br />
+								For mass percent: \( \%A=\dfrac{x_AM_A}{\sum x_iM_i}\times100
+								\).<br /><br />
+								Trap: mole percent and mass percent are not the same unless
+								molar masses are equal.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Graham's law</span> of
+									diffusion</strong
+								><br /><br />
+								\( r\propto\dfrac{1}{\sqrt{M}} \)<br /><br />
+								\( \dfrac{r_1}{r_2}=\sqrt{\dfrac{M_2}{M_1}} \)<br /><br />
+								For equal diffused volume: \(
+								\dfrac{t_1}{t_2}=\sqrt{\dfrac{M_1}{M_2}} \).<br /><br />
+								Trap: rate is inversely proportional to time for the same
+								diffused volume.<br /><br />
+							</li>
+
+							<li>
+								<strong>Diffusion when pressure also changes</strong
+								><br /><br />
+								\( r\propto\dfrac{p}{\sqrt{M}} \)<br /><br />
+								\( \dfrac{r_1}{r_2}=\dfrac{p_1}{p_2}\sqrt{\dfrac{M_2}{M_1}}
+								\)<br /><br />
+								Trap: if pressures are different, do not use only molar mass
+								unless the answer key explicitly ignores pressure.<br /><br />
+							</li>
+
+							<li>
+								<strong>RMS, average and most probable speeds</strong
+								><br /><br />
+								\( v_{\mathrm{rms}}=\sqrt{\dfrac{3RT}{M}} \)<br /><br />
+								\( v_{\mathrm{mp}}=\sqrt{\dfrac{2RT}{M}} \)<br /><br />
+								\( v_{\mathrm{avg}}=\sqrt{\dfrac{8RT}{\pi M}} \)<br /><br />
+								\( v_{\mathrm{rms}}\propto\sqrt{\dfrac{T}{M}} \)<br /><br />
+								Trap: square the speed ratio before comparing \(T/M\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Kinetic energy of gas molecules</strong><br /><br />
+								\( E=\dfrac{1}{2}Mv_{\mathrm{rms}}^2 \)<br /><br />
+								For one mole: \( E=\dfrac{3}{2}RT \).<br /><br />
+								Average kinetic energy per molecule: \( \dfrac{3}{2}kT \).<br /><br />
+								Trap: use \(M\) in \(\mathrm{kg\,mol^{-1}}\), not
+								\(\mathrm{g\,mol^{-1}}\), when calculating joules per mole.<br /><br />
+							</li>
+
+							<li>
+								<strong>Gas-law graph slopes</strong><br /><br />
+								For \(V\) vs \(T\) at constant pressure: \( V=\dfrac{nR}{p}T
+								\).<br /><br />
+								Slope \(=\dfrac{nR}{p}\), so slope \( \propto\dfrac{1}{p} \).<br /><br />
+								For \(V\) vs \(n\) at constant \(T,p\): slope
+								\(=\dfrac{RT}{p}\).<br /><br />
+								Trap: steeper \(V-T\) line means lower pressure.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula"
+										>Compressibility factor</span
+									></strong
+								><br /><br />
+								\( Z=\dfrac{pV}{nRT} \)<br /><br />
+								Ideal gas: \( Z=1 \).<br /><br />
+								At moderate pressure, attractions dominate and \( Z\lt1 \).<br /><br />
+								At high pressure, molecular volume/repulsions dominate and \(
+								Z\gt1 \).<br /><br />
+								Trap: stronger attraction gives a deeper dip below \(1\).<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">van der Waals equation</span>
+									high-pressure shortcut</strong
+								><br /><br />
+								\( \left(p+\dfrac{a}{V^2}\right)(V-b)=RT \)<br /><br />
+								At very high pressure, attraction term is neglected: \(
+								p(V-b)=RT \).<br /><br />
+								\( V=\dfrac{RT}{p}+b \)<br /><br />
+								\( Z=1+\dfrac{pb}{RT} \), so \( Z\gt1 \).<br /><br />
+							</li>
+
+							<li>
+								<strong>van der Waals constant \(a\)</strong><br /><br />
+								\( \text{larger }a\Rightarrow\text{ stronger intermolecular
+								attraction} \)<br /><br />
+								\(\mathrm{NH_3}\) has large \(a\) because of strong
+								intermolecular attraction/hydrogen bonding.<br /><br />
+								\(\mathrm{CO_2}\) also shows stronger attraction than
+								\(\mathrm{N_2}\).<br /><br />
+								Trap: lower \(Z\) at moderate pressure usually indicates
+								stronger attractions.<br /><br />
+							</li>
+
+							<li>
+								<strong>Gaseous hydrocarbon combustion by volume ratio</strong
+								><br /><br />
+								C<sub>x</sub>H<sub>y</sub> + (x + y/4)O<sub>2</sub> &rarr;
+								xCO<sub>2</sub><br /><br />
+								At same \(T,p\), gaseous volumes are proportional to mole
+								ratios.<br /><br />
+								If hydrocarbon : \(\mathrm{CO_2}\) :
+								\(\mathrm{H_2O}=1:x:\dfrac{y}{2}\), identify \(x\) and \(y\).<br /><br />
+								Trap: use vapour volume ratios only when all species are treated
+								as gases.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula"
+										>Newton's law of viscosity</span
+									></strong
+								><br /><br />
+								\( F=\eta A\dfrac{du}{dz} \)<br /><br />
+								Force is proportional to area of contact and velocity
+								gradient.<br /><br />
+								\(\eta\) is the coefficient of viscosity.<br /><br />
+							</li>
+
+							<li>
+								<strong>Kinetic molecular theory standard traps</strong
+								><br /><br />
+								Gas molecules are treated as point particles with negligible
+								volume in ideal gas theory.<br /><br />
+								Collisions are perfectly elastic.<br /><br />
+								Pressure is due to collisions with container walls.<br /><br />
+								Trap: molecules do not all have the same speed at a given
+								instant.<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End States of Matter Gases and Liquids-->
+			<br />
+		</ol>
 	</body>
 </html>
