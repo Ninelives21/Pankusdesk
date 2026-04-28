@@ -31,6 +31,771 @@
 
 		<h2>EQUILIBRIUM, SOLUTIONS, ELECTROCHEMISTRY, CHEMICAL KINETICS</h2>
 
-		<ol id="ttr_imp_equations"></ol>
+		<ol id="ttr_imp_equations">
+			<!--Start Chemical Equilibrium and Acids Bases-->
+			<li id="chemical-equilibrium-and-acids-bases">
+				<div class="accordion-item">
+					<button
+						class="accordion-button"
+						id="chemical-equilibrium-and-acids-bases"
+					>
+						Chemical Equilibrium and Acids Bases
+					</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong
+									>Writing \(K_c\) and \(K_p\) from balanced equations</strong
+								><br /><br />
+								For \(aA+bB \rightleftharpoons cC+dD\):<br /><br />
+								\( K_c=\dfrac{[C]^c[D]^d}{[A]^a[B]^b} \)<br /><br />
+								\( K_p=\dfrac{(p_C)^c(p_D)^d}{(p_A)^a(p_B)^b} \)<br /><br />
+								Trap: use powers from balanced coefficients; pure solids and
+								pure liquids are omitted.<br /><br />
+							</li>
+
+							<li>
+								<strong>\(K_p\) and \(K_c\) relation</strong><br /><br />
+								\( K_p=K_c(RT)^{\Delta n_g} \)<br /><br />
+								\( \Delta n_g=\text{moles of gaseous products}-\text{moles of
+								gaseous reactants} \)<br /><br />
+								For \( \mathrm{N_2+3H_2\rightleftharpoons2NH_3} \), \( \Delta
+								n_g=2-4=-2 \).<br /><br />
+								Trap: count only gaseous species in \(\Delta n_g\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Changing equation changes equilibrium constant</strong
+								><br /><br />
+								Reverse reaction: \(K_{\text{new}}=\dfrac{1}{K}\).<br /><br />
+								Multiply equation by \(n\): \(K_{\text{new}}=K^n\).<br /><br />
+								Divide equation by \(n\): \(K_{\text{new}}=K^{1/n}\).<br /><br />
+								Add equations: multiply their equilibrium constants.<br /><br />
+								Trap: scale \(K\) the same way the equation is scaled, not the
+								same way enthalpy is scaled.<br /><br />
+							</li>
+
+							<li>
+								<strong>Equilibrium from ICE table</strong><br /><br />
+								For \( \mathrm{PCl_5\rightleftharpoons PCl_3+Cl_2} \):<br /><br />
+								\( K_c=\dfrac{[\mathrm{PCl_3}][\mathrm{Cl_2}]}{[\mathrm{PCl_5}]}
+								\)<br /><br />
+								If product formed is \(x\), then equilibrium values are \(a-x,\
+								x,\ x\).<br /><br />
+								Trap: write equilibrium moles first, then convert to
+								concentration if volume is needed.<br /><br />
+							</li>
+
+							<li>
+								<strong>Dissociation of \( \mathrm{N_2O_4} \)</strong
+								><br /><br />
+								\( \mathrm{N_2O_4\rightleftharpoons2NO_2} \)<br /><br />
+								\( K_p=\dfrac{4\alpha^2p}{1-\alpha^2} \)<br /><br />
+								\( \alpha=\sqrt{\dfrac{K_p/p}{4+K_p/p}} \)<br /><br />
+								Trap: this shortcut applies to pure \(\mathrm{N_2O_4}\)
+								dissociation with total pressure \(p\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Pressure effect on gaseous equilibrium</strong
+								><br /><br />
+								Increase in pressure favours the side with fewer moles of
+								gas.<br /><br />
+								Products are favoured by pressure increase when \( \Delta
+								n_g&lt;0 \).<br /><br />
+								If \( \Delta n_g=0 \), pressure has no effect on composition.<br /><br />
+								Trap: compare gaseous moles only; solids and liquids do not
+								count.<br /><br />
+							</li>
+
+							<li>
+								<strong>Equilibrium constant depends only on temperature</strong
+								><br /><br />
+								At fixed temperature, \(K\) is unchanged by pressure,
+								concentration, volume, or catalyst.<br /><br />
+								Catalyst changes the rate of forward and reverse reactions
+								equally.<br /><br />
+								Trap: catalyst helps equilibrium reach faster; it does not
+								change \(K\) or equilibrium position.<br /><br />
+							</li>
+
+							<li>
+								<strong>Heterogeneous equilibrium</strong><br /><br />
+								Pure solids and pure liquids are omitted from \(K_c\) and
+								\(K_p\).<br /><br />
+								For \( \mathrm{A(s)\rightleftharpoons B(s)+C(g)} \):<br /><br />
+								\( K_c=[C] \)<br /><br />
+								\( K_p=p_C \)<br /><br />
+								Trap: do not include \(\mathrm{A(s)}\) or \(\mathrm{B(s)}\) in
+								the equilibrium expression.<br /><br />
+							</li>
+
+							<li>
+								<strong>Gibbs energy and equilibrium constant</strong
+								><br /><br />
+								\( \Delta G^\circ=-RT\ln K \)<br /><br />
+								\( \Delta G^\circ=-2.303RT\log K \)<br /><br />
+								Negative \(\Delta G^\circ\) means \(K&gt;1\) and
+								product-favoured equilibrium.<br /><br />
+								Trap: convert kJ to J before using
+								\(R=8.314\,\mathrm{J\,mol^{-1}K^{-1}}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Strong acid and strong base mixing</strong><br /><br />
+								\( \text{moles of }H^+=M_aV_a \)<br /><br />
+								\( \text{moles of }OH^-=M_bV_b \)<br /><br />
+								Subtract excess \(H^+\) or \(OH^-\), then divide by final total
+								volume.<br /><br />
+								Trap: never average pH values directly; always subtract moles
+								first.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula"
+										>Henderson-Hasselbalch equation</span
+									>
+									for acidic buffer</strong
+								><br /><br />
+								\( \mathrm{pH}=pK_a+\log\dfrac{[\text{salt}]}{[\text{acid}]}
+								\)<br /><br />
+								If \([\text{salt}]=[\text{acid}]\), then \( \mathrm{pH}=pK_a
+								\).<br /><br />
+								Equal dilution of acid and salt does not change the ratio.<br /><br />
+								Trap: buffer exists only when weak acid/base and its conjugate
+								salt remain together.<br /><br />
+							</li>
+
+							<li>
+								<strong>Buffer formation trap</strong><br /><br />
+								Weak acid + strong base gives buffer only after partial
+								neutralisation.<br /><br />
+								Weak base + strong acid gives buffer only after partial
+								neutralisation.<br /><br />
+								Complete neutralisation in equivalent amount does not give a
+								buffer.<br /><br />
+								Trap: weak acid plus strong base in exact \(1:1\) amount leaves
+								only salt, not buffer.<br /><br />
+							</li>
+
+							<li>
+								<strong>Neutral water and temperature</strong><br /><br />
+								Neutral water means \( [H^+]=[OH^-] \).<br /><br />
+								At \(25^\circ\mathrm{C}\), neutral water has
+								\(\mathrm{pH}=7\).<br /><br />
+								At higher temperature, \(K_w\) increases and neutral pH becomes
+								less than \(7\).<br /><br />
+								Trap: neutral does not always mean pH \(7\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Salt hydrolysis classification</strong><br /><br />
+								Strong acid + strong base salt \(\rightarrow\) neutral
+								solution.<br /><br />
+								Strong acid + weak base salt \(\rightarrow\) acidic solution.<br /><br />
+								Weak acid + strong base salt \(\rightarrow\) basic solution.<br /><br />
+								Example: \(\mathrm{AlCl_3}\) acidic, \(\mathrm{CH_3COONa}\)
+								basic, \(\mathrm{KCl}\) neutral.<br /><br />
+								Trap: classify by parent acid and parent base, not by formula
+								appearance alone.<br /><br />
+							</li>
+
+							<li>
+								<strong>Lewis acids and Lewis bases</strong><br /><br />
+								Lewis acid \(=\) electron-pair acceptor.<br /><br />
+								Lewis base \(=\) electron-pair donor.<br /><br />
+								Lewis acids: \(\mathrm{AlCl_3,\ SnCl_4,\ CO_2,\ Ag^+}\).<br /><br />
+								Lewis base: \(\mathrm{NH_3}\), due to lone pair on nitrogen.<br /><br />
+								Trap: metal cations and electron-deficient central atoms are
+								common Lewis acids.<br /><br />
+							</li>
+
+							<li>
+								<strong>Basicity of oxyacids</strong><br /><br />
+								Basicity \(=\) number of ionisable hydrogens attached to oxygen
+								as \(\mathrm{-OH}\).<br /><br />
+								\(\mathrm{H_3PO_3}\) is dibasic.<br /><br />
+								\(\mathrm{H_3PO_2}\) is monobasic.<br /><br />
+								\(\mathrm{H_2SO_4}\) is dibasic.<br /><br />
+								Trap: do not count total hydrogens; \(\mathrm{P-H}\) hydrogen is
+								non-ionisable.<br /><br />
+							</li>
+
+							<li>
+								<strong>Acidic strength of hypohalous acids</strong><br /><br />
+								For \(\mathrm{HOX}\), acidity increases with electronegativity
+								of \(X\).<br /><br />
+								\( \mathrm{HClO&gt;HBrO&gt;HIO} \)<br /><br />
+								Stronger \(-I\) effect weakens the \(\mathrm{O-H}\) bond
+								more.<br /><br />
+								Trap: for same type of oxyacid, compare electronegativity of
+								central atom.<br /><br />
+							</li>
+
+							<li>
+								<strong>Solubility product for simple salts</strong><br /><br />
+								For \( \mathrm{AB\rightleftharpoons A^++B^-} \):<br /><br />
+								\( K_{sp}=s^2 \)<br /><br />
+								For \( \mathrm{AB_2\rightleftharpoons A^{2+}+2B^-} \):<br /><br />
+								\( K_{sp}=S(2S)^2=4S^3 \)<br /><br />
+								Trap: include stoichiometric powers of ions in \(K_{sp}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Common-ion effect in \(K_{sp}\)</strong><br /><br />
+								For \( \mathrm{Cd(OH)_2\rightleftharpoons Cd^{2+}+2OH^-} \):<br /><br />
+								\( K_{sp}=[\mathrm{Cd^{2+}}][\mathrm{OH^-}]^2 \)<br /><br />
+								In \(0.1\,\mathrm{M}\) KOH, use \(
+								[\mathrm{OH^-}]\approx0.1\,\mathrm{M} \), so
+								\(K_{sp}=s(0.1)^2\).<br /><br />
+								Trap: if common ion concentration is large, treat it as
+								fixed.<br /><br />
+							</li>
+
+							<li>
+								<strong>Mixed saturated salts with common ion</strong
+								><br /><br />
+								First find the common-ion concentration from the known salt.<br /><br />
+								Example: \(
+								K_{sp}(\mathrm{MgCO_3})=[\mathrm{Mg^{2+}}][\mathrm{CO_3^{2-}}]
+								\).<br /><br />
+								Then use that \([\mathrm{CO_3^{2-}}]\) in \(
+								K_{sp}(\mathrm{Ag_2CO_3})=[\mathrm{Ag^+}]^2[\mathrm{CO_3^{2-}}]
+								\).<br /><br />
+								Trap: do not solve both salts independently when they share a
+								common ion.<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End Chemical Equilibrium and Acids Bases-->
+			<br />
+
+			<!--Start Solutions-->
+			<li id="solutions">
+				<div class="accordion-item">
+					<button class="accordion-button" id="solutions">Solutions</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong
+									><span class="named-formula">Raoult's law</span> for ideal
+									binary solutions</strong
+								><br /><br />
+								\( p_A=x_Ap_A^\circ \)<br /><br />
+								\( p_B=x_Bp_B^\circ \)<br /><br />
+								\( p_{\text{total}}=x_Ap_A^\circ+x_Bp_B^\circ \)<br /><br />
+								Trap: after adding more solute/solvent, recalculate mole
+								fractions before using vapour pressures.<br /><br />
+							</li>
+
+							<li>
+								<strong>Vapour-phase composition above liquid solution</strong
+								><br /><br />
+								\( y_A=\dfrac{p_A}{p_{\text{total}}} \)<br /><br />
+								\( p_A=x_Ap_A^\circ \)<br /><br />
+								The vapour phase is richer in the more volatile component.<br /><br />
+								Trap: vapour mole fraction is not the same as liquid mole
+								fraction unless pure vapour pressures are equal.<br /><br />
+							</li>
+
+							<li>
+								<strong>Relative lowering of vapour pressure</strong
+								><br /><br />
+								\( \dfrac{p^\circ-p}{p^\circ}=x_{\text{solute}} \)<br /><br />
+								For dilute non-volatile solute:<br /><br />
+								\(
+								\dfrac{p^\circ-p}{p^\circ}\approx\dfrac{n_2}{n_1}=\dfrac{w_2/M_2}{w_1/M_1}
+								\)<br /><br />
+								Trap: use moles of solvent, not solvent mass directly.<br /><br />
+							</li>
+
+							<li>
+								<strong>Vapour pressure lowering by non-volatile solute</strong
+								><br /><br />
+								\(
+								p_{\text{solution}}=x_{\text{solvent}}p^\circ_{\text{solvent}}
+								\)<br /><br />
+								\(
+								x_{\text{solvent}}=\dfrac{n_{\text{solvent}}}{n_{\text{solvent}}+n_{\text{solute}}}
+								\)<br /><br />
+								Trap: mole fraction of solvent must be calculated from total
+								moles, not read directly from solvent amount alone.<br /><br />
+							</li>
+
+							<li>
+								<strong><span class="named-formula">Henry's law</span></strong
+								><br /><br />
+								\( p=K_Hx \)<br /><br />
+								\( x=\dfrac{p}{K_H} \)<br /><br />
+								At fixed pressure, gas solubility \( \propto \dfrac{1}{K_H}
+								\).<br /><br />
+								Trap: lower \(K_H\) means higher solubility; do not arrange
+								solubility in the same order as \(K_H\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Henry's law with partial pressure of gas</strong
+								><br /><br />
+								\( p_{\text{gas}}=y_{\text{gas}}P_{\text{total}} \)<br /><br />
+								\( x_{\text{gas}}=\dfrac{p_{\text{gas}}}{K_H} \)<br /><br />
+								For dissolved gas ratio:<br /><br />
+								\( \dfrac{x_1}{x_2}=\dfrac{p_1/K_{H,1}}{p_2/K_{H,2}} \)<br /><br />
+								Trap: use partial pressure, not total pressure of air.<br /><br />
+							</li>
+
+							<li>
+								<strong>Validity of Henry's law</strong><br /><br />
+								Henry's law applies when gas dissolves physically without
+								chemical reaction or strong binding.<br /><br />
+								Valid exam examples: \(\mathrm{O_2}\) in water and
+								\(\mathrm{CO_2}\) in water.<br /><br />
+								Not simple Henry-law cases: \(\mathrm{NH_3}\) in water and
+								\(\mathrm{O_2}\) in blood.<br /><br />
+								Trap: reaction with solvent or binding to haemoglobin breaks the
+								simple physical-dissolution model.<br /><br />
+							</li>
+
+							<li>
+								<strong>Boiling point elevation</strong><br /><br />
+								\( \Delta T_b=iK_bm \)<br /><br />
+								For non-electrolytes, \(i=1\).<br /><br />
+								For ideal \(\mathrm{KCl}\), \(i\approx2\).<br /><br />
+								Trap: same molarity does not mean same colligative effect if one
+								solute dissociates.<br /><br />
+							</li>
+
+							<li>
+								<strong>Freezing point depression</strong><br /><br />
+								\( \Delta T_f=iK_fm \)<br /><br />
+								\( T_f(\text{solution})=T_f^\circ-\Delta T_f \)<br /><br />
+								Highest freezing point means smallest \(\Delta T_f\).<br /><br />
+								Trap: choose smallest \(i\), not largest, for highest freezing
+								point among equimolal solutions.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Same solution: boiling point and freezing point link</strong
+								><br /><br />
+								\( \Delta T_b=K_bm \)<br /><br />
+								\( \Delta T_f=K_fm \)<br /><br />
+								For the same non-electrolyte solution:<br /><br />
+								\( \dfrac{\Delta T_f}{\Delta T_b}=\dfrac{K_f}{K_b} \)<br /><br />
+								Trap: first find elevation/depression, not absolute boiling or
+								freezing point.<br /><br />
+							</li>
+
+							<li>
+								<strong>Molal depression constant</strong><br /><br />
+								\( K_f=\dfrac{RT_f^2}{1000L_f} \)<br /><br />
+								\(T_f\) must be in kelvin.<br /><br />
+								\(L_f\) must be in \(\mathrm{J\,g^{-1}}\).<br /><br />
+								Trap: keep the \(1000\) factor when latent heat is per gram.<br /><br />
+							</li>
+
+							<li>
+								<strong>Osmotic pressure</strong><br /><br />
+								\( \pi=iCRT \)<br /><br />
+								For mixed solutes:<br /><br />
+								\( \pi=(\sum iC)RT \)<br /><br />
+								Trap: apply each solute's own \(i\) first, then add \(iC\)
+								values.<br /><br />
+							</li>
+
+							<li>
+								<strong>van't Hoff factor and dissociation</strong><br /><br />
+								\( i=1+\alpha(n-1) \)<br /><br />
+								For \(\mathrm{NaCl}\), \(n=2\), so \(i=1+\alpha\).<br /><br />
+								For \(94\%\) dissociation of \(\mathrm{NaCl}\), \(i=1.94\).<br /><br />
+								Trap: do not use full dissociation \(i=2\) when degree of
+								dissociation is given.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Highest colligative property at equal concentration</strong
+								><br /><br />
+								Colligative effect \( \propto i \times \text{concentration}
+								\).<br /><br />
+								Typical \(i\) values:<br /><br />
+								\( \mathrm{urea}=1,\ \mathrm{AgNO_3}=2,\ \mathrm{BaCl_2}=3,\
+								(\mathrm{NH_4})_3\mathrm{PO_4}=4 \)<br /><br />
+								Trap: at equal molarity/molality, compare number of particles,
+								not molar mass.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Osmotic pressure on dilution and temperature change</strong
+								><br /><br />
+								For non-electrolyte: \( \pi=CRT \)<br /><br />
+								\( \dfrac{C_1}{C_2}=\dfrac{\pi_1T_2}{\pi_2T_1} \)<br /><br />
+								Trap: include temperature change; do not use osmotic pressure
+								ratio alone.<br /><br />
+							</li>
+
+							<li>
+								<strong>Ideal solution conditions</strong><br /><br />
+								Ideal solution obeys Raoult's law at all concentrations.<br /><br />
+								\( \Delta H_{\text{mix}}=0 \)<br /><br />
+								\( \Delta V_{\text{mix}}=0 \)<br /><br />
+								Interactions \(A-A\), \(B-B\), and \(A-B\) are similar.<br /><br />
+								Trap: chemical reaction between components means the solution is
+								not ideal.<br /><br />
+							</li>
+
+							<li>
+								<strong>Non-ideal solution clue</strong><br /><br />
+								Different unlike interactions cause deviation from Raoult's
+								law.<br /><br />
+								\(\mathrm{CH_3OH+CH_3COOH}\) is treated as non-ideal in the PYQ
+								pattern.<br /><br />
+								Trap: if the question asks for the "not correct" statement,
+								check whether it falsely calls a real mixture ideal.<br /><br />
+							</li>
+
+							<li>
+								<strong>Molarity temperature dependence</strong><br /><br />
+								\( M=\dfrac{n}{V} \)<br /><br />
+								Moles of solute remain constant on heating, but solution volume
+								can change.<br /><br />
+								Molarity is temperature-dependent; molality is not
+								temperature-dependent in the same way.<br /><br />
+								Trap: if volume increases on heating, molarity decreases.<br /><br />
+							</li>
+
+							<li>
+								<strong>Carbonate-bicarbonate acid requirement</strong
+								><br /><br />
+								\( \mathrm{Na_2CO_3+2HCl\rightarrow2NaCl+H_2O+CO_2} \)<br /><br />
+								\( \mathrm{NaHCO_3+HCl\rightarrow NaCl+H_2O+CO_2} \)<br /><br />
+								\(\mathrm{Na_2CO_3}\) needs \(2\) mol \(\mathrm{HCl}\) per mole;
+								\(\mathrm{NaHCO_3}\) needs \(1\) mol \(\mathrm{HCl}\) per
+								mole.<br /><br />
+								Trap: equal moles of carbonate and bicarbonate require \(3n\)
+								moles of \(\mathrm{HCl}\).<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End Solutions-->
+			<br />
+
+			<!--Start Electrochemistry and Chemical Kinetics-->
+			<li id="electrochemistry-and-chemical-kinetics">
+				<div class="accordion-item">
+					<button
+						class="accordion-button"
+						id="electrochemistry-and-chemical-kinetics"
+					>
+						Electrochemistry and Chemical Kinetics
+					</button>
+					<div class="accordion-content">
+						<ol>
+							<li>
+								<strong
+									><span class="named-formula">Nernst equation</span> for cell
+									potential</strong
+								><br /><br />
+								\(
+								E_{\mathrm{cell}}=E^\circ_{\mathrm{cell}}-\dfrac{0.0591}{n}\log
+								Q \)<br /><br />
+								\(
+								E^\circ_{\mathrm{cell}}=E^\circ_{\mathrm{cathode}}-E^\circ_{\mathrm{anode}}
+								\)<br /><br />
+								\( \Delta G=-nFE \)<br /><br />
+								Trap: balance electrons first to get \(n\), and omit pure
+								solids/liquids from \(Q\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Hydrogen electrode and pH from Nernst equation</strong
+								><br /><br />
+								For hydrogen electrode at \(298\,\mathrm{K}\): \(
+								E=-0.0591\,\mathrm{pH} \).<br /><br />
+								\( \mathrm{pH}=-\log[H^+] \)<br /><br />
+								For \( \mathrm{Zn(s)+2H^+\rightarrow Zn^{2+}+H_2} \):<br /><br />
+								\( Q=\dfrac{[\mathrm{Zn^{2+}}]P_{\mathrm{H_2}}}{[H^+]^2} \)<br /><br />
+								Trap: do not forget the square on \([H^+]\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Electrode potential and concentration effect</strong
+								><br /><br />
+								For \( \mathrm{Fe^{3+}+e^-\rightarrow Fe^{2+}} \):<br /><br />
+								\(
+								E=E^\circ-0.0591\log\dfrac{[\mathrm{Fe^{2+}}]}{[\mathrm{Fe^{3+}}]}
+								\)<br /><br />
+								For \( \mathrm{Cl_2+2e^-\rightarrow2Cl^-} \): increasing
+								\([\mathrm{Cl^-}]\) decreases reduction potential.<br /><br />
+								Trap: product-ion concentration appears in \(Q\) and lowers
+								\(E\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Standard cell potential and equilibrium constant</strong
+								><br /><br />
+								\( E^\circ_{\mathrm{cell}}=\dfrac{2.303RT}{nF}\log K \)<br /><br />
+								At \(298\,\mathrm{K}\): \(
+								E^\circ_{\mathrm{cell}}=\dfrac{0.0591}{n}\log K \)<br /><br />
+								Trap: determine \(n\) from the balanced redox equation, not from
+								one half-cell alone.<br /><br />
+							</li>
+
+							<li>
+								<strong>Latimer-style potential calculation</strong><br /><br />
+								Electrode potentials are not directly additive.<br /><br />
+								Use \( \Delta G^\circ=-nFE^\circ \).<br /><br />
+								Combine \(nE^\circ\) values, not \(E^\circ\) values alone.<br /><br />
+								Example pattern:
+								\(5E^\circ_{\mathrm{overall}}=3E^\circ_1+2E^\circ_2\).<br /><br />
+								Trap: simple subtraction of potentials is wrong when electron
+								numbers differ.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Faraday's laws</span> of
+									electrolysis</strong
+								><br /><br />
+								\( Q=It \)<br /><br />
+								Faradays passed \(=\dfrac{Q}{F}\), where
+								\(F\approx96500\,\mathrm{C\,mol^{-1}}\).<br /><br />
+								\( \text{mass deposited}=\dfrac{Q}{F}\times\text{equivalent
+								mass} \)<br /><br />
+								One gram-equivalent needs \(1F\) of charge.<br /><br />
+								Trap: convert time to seconds before using \(Q=It\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Electrochemical equivalent</strong><br /><br />
+								\( Z=\dfrac{m}{Q}=\dfrac{m}{It} \)<br /><br />
+								\(Z\) is mass deposited per coulomb.<br /><br />
+								Trap: electrochemical equivalent is not the same as equivalent
+								weight; equivalent weight is mass deposited per faraday.<br /><br />
+							</li>
+
+							<li>
+								<strong>Electrolysis products with inert electrodes</strong
+								><br /><br />
+								Aqueous \(\mathrm{CuSO_4}\) with Pt electrodes:<br /><br />
+								\( \mathrm{Cu^{2+}+2e^-\rightarrow Cu} \) at cathode.<br /><br />
+								\( \mathrm{2H_2O\rightarrow O_2+4H^++4e^-} \) at anode.<br /><br />
+								Molten \(\mathrm{NaCl}\): \(\mathrm{Na}\) at cathode and
+								\(\mathrm{Cl_2}\) at anode.<br /><br />
+								Trap: oxygen forms at the anode, not cathode, in aqueous sulfate
+								electrolysis.<br /><br />
+							</li>
+
+							<li>
+								<strong>Electrolysis gas volume at STP</strong><br /><br />
+								\( n(e^-)=\dfrac{Q}{F} \)<br /><br />
+								\( \mathrm{2Cl^-\rightarrow Cl_2+2e^-} \), so \(1\) mol
+								\(\mathrm{Cl_2}\) needs \(2F\).<br /><br />
+								\( \mathrm{2H_2O\rightarrow O_2+4H^++4e^-} \), so \(1\) mol
+								\(\mathrm{O_2}\) needs \(4F\).<br /><br />
+								At STP, gas volume \(=n\times22.4\,\mathrm{L}\).<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="inorganic-named-reaction"
+										>Castner-Kellner process</span
+									>
+									electrode roles</strong
+								><br /><br />
+								Brine is electrolysed to manufacture \(\mathrm{NaOH}\).<br /><br />
+								Carbon/graphite is anode; mercury is cathode.<br /><br />
+								\( \mathrm{2Cl^-\rightarrow Cl_2+2e^-} \) at anode.<br /><br />
+								Mercury cathode forms sodium amalgam.<br /><br />
+								Trap: mercury is cathode, not anode.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Kohlrausch's law</span> and
+									limiting molar conductivity</strong
+								><br /><br />
+								\( \Lambda_m^\circ=\sum \nu_i\lambda_i^\circ \)<br /><br />
+								For \(\mathrm{CaCl_2}\): \(
+								\Lambda_m^\circ=\lambda^\circ_{\mathrm{Ca^{2+}}}+2\lambda^\circ_{\mathrm{Cl^-}}
+								\).<br /><br />
+								Trap: multiply ionic conductance by ion coefficient; chloride
+								contribution is doubled in \(\mathrm{CaCl_2}\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Molar conductivity and conductivity</strong><br /><br />
+								In common \(\mathrm{S\,cm^2\,mol^{-1}}\) form:<br /><br />
+								\( \Lambda_m=\dfrac{\kappa\times1000}{C} \)<br /><br />
+								\( \alpha=\dfrac{\Lambda_m}{\Lambda_m^\circ} \)<br /><br />
+								Trap: distinguish \(\Lambda_m\) from \(\kappa\); conductivity is
+								in \(\mathrm{S\,cm^{-1}}\).<br /><br />
+							</li>
+
+							<li>
+								<strong
+									>Weak electrolyte: degree of dissociation and Ostwald
+									relation</strong
+								><br /><br />
+								\( \alpha=\dfrac{\Lambda_m}{\Lambda_m^\circ} \)<br /><br />
+								\( K_a=\dfrac{C\alpha^2}{1-\alpha} \)<br /><br />
+								For small \(\alpha\): \( \alpha\approx\sqrt{\dfrac{K_a}{C}}
+								\).<br /><br />
+								Trap: weak electrolytes do not have
+								\(\Lambda_m=\Lambda_m^\circ\) at finite concentration.<br /><br />
+							</li>
+
+							<li>
+								<strong>Order and rate law from initial-rate data</strong
+								><br /><br />
+								\( \mathrm{Rate}=k[A]^x[B]^y \)<br /><br />
+								Change one reactant concentration while keeping the other
+								constant to find its order.<br /><br />
+								Overall order \(=x+y\).<br /><br />
+								Trap: reaction order is experimental; do not copy stoichiometric
+								coefficients blindly.<br /><br />
+							</li>
+
+							<li>
+								<strong>Units of rate constant</strong><br /><br />
+								For order \(n\): \(
+								[k]=(\mathrm{mol\,L^{-1}})^{1-n}\mathrm{s^{-1}} \).<br /><br />
+								First order: \( \mathrm{s^{-1}} \).<br /><br />
+								Second order: \( \mathrm{L\,mol^{-1}\,s^{-1}} \).<br /><br />
+								Trap: unit \(\mathrm{s^{-1}}\) strongly indicates first
+								order.<br /><br />
+							</li>
+
+							<li>
+								<strong>Zero-order integrated rate law</strong><br /><br />
+								\( [A]_t=[A]_0-kt \)<br /><br />
+								\( t_{1/2}=\dfrac{[A]_0}{2k} \)<br /><br />
+								Plot of \([A]\) vs \(t\) is straight line with slope \(-k\).<br /><br />
+								Trap: zero-order half-life depends on initial concentration.<br /><br />
+							</li>
+
+							<li>
+								<strong>First-order integrated rate law</strong><br /><br />
+								\( k=\dfrac{2.303}{t}\log\dfrac{[A]_0}{[A]} \)<br /><br />
+								\( t_{1/2}=\dfrac{0.693}{k} \)<br /><br />
+								\( \ln[A]=\ln[A]_0-kt \)<br /><br />
+								Trap: \([A]\) vs \(t\) is not linear for first order; \(\ln[A]\)
+								vs \(t\) is linear.<br /><br />
+							</li>
+
+							<li>
+								<strong>First-order graph traps</strong><br /><br />
+								Plot of \(\ln[A]\) vs \(t\): slope \(=-k\), intercept
+								\(=\ln[A]_0\).<br /><br />
+								Plot of \(\log\dfrac{a}{a-x}\) vs \(t\): slope
+								\(=\dfrac{k}{2.303}\).<br /><br />
+								Trap: if slope is given for common-log plot, multiply by
+								\(2.303\) to get \(k\).<br /><br />
+							</li>
+
+							<li>
+								<strong>First-order gas-phase pressure method</strong
+								><br /><br />
+								For \(\mathrm{A(g)\rightarrow B(g)+C(g)}\), if pressure increase
+								is \(x\):<br /><br />
+								\( p_t=p_0+x \)<br /><br />
+								\( p_A=p_0-x \)<br /><br />
+								\( k=\dfrac{2.303}{t}\log\dfrac{p_0}{p_A} \)<br /><br />
+								Trap: do not use total pressure \(p_t\) directly as remaining
+								reactant pressure.<br /><br />
+							</li>
+
+							<li>
+								<strong>Completion percentage in first-order reaction</strong
+								><br /><br />
+								\( t=\dfrac{2.303}{k}\log\dfrac{a}{a-x} \)<br /><br />
+								For \(90\%\) completion, \(10\%\) remains, so
+								\(\dfrac{a}{a-x}=10\).<br /><br />
+								Therefore \( t=\dfrac{2.303}{k} \).<br /><br />
+								Trap: denominator is amount remaining, not amount decomposed.<br /><br />
+							</li>
+
+							<li>
+								<strong>Half-life and order identification</strong><br /><br />
+								First order: \(t_{1/2}\) is independent of initial
+								concentration.<br /><br />
+								For \(n\)-th order: \( t_{1/2}\propto\dfrac{1}{a^{\,n-1}} \).<br /><br />
+								If concentration decreases \(10\) times and half-life increases
+								\(10\) times, order \(=2\).<br /><br />
+								Trap: changing half-life rules out first order.<br /><br />
+							</li>
+
+							<li>
+								<strong>Stoichiometric rate relation</strong><br /><br />
+								For \( \mathrm{N_2O_5\rightarrow2NO_2+\dfrac{1}{2}O_2} \):<br /><br />
+								\(
+								-\dfrac{d[\mathrm{N_2O_5}]}{dt}=\dfrac{1}{2}\dfrac{d[\mathrm{NO_2}]}{dt}=2\dfrac{d[\mathrm{O_2}]}{dt}
+								\)<br /><br />
+								Trap: use reciprocal of stoichiometric coefficients in rate
+								expression.<br /><br />
+							</li>
+
+							<li>
+								<strong>Mechanism-derived rate law</strong><br /><br />
+								Write rate from the slow step first.<br /><br />
+								If slow step gives \(R=k[\mathrm{N_2O_2}][\mathrm{H_2}]\), and
+								fast pre-equilibrium gives
+								\([\mathrm{N_2O_2}]\propto[\mathrm{NO}]^2\), then:<br /><br />
+								\( R=k[\mathrm{NO}]^2[\mathrm{H_2}] \)<br /><br />
+								Trap: do not write rate law directly from overall balanced
+								equation.<br /><br />
+							</li>
+
+							<li>
+								<strong
+									><span class="named-formula">Arrhenius equation</span> and
+									activation energy</strong
+								><br /><br />
+								\( \ln k=\ln A-\dfrac{E_a}{RT} \)<br /><br />
+								For \(\ln k\) vs \(1/T\): slope \(=-\dfrac{E_a}{R}\).<br /><br />
+								\( \log k=\log A-\dfrac{E_a}{2.303RT} \)<br /><br />
+								Trap: use \(2.303\) only for common-log form, not for \(\ln
+								k\).<br /><br />
+							</li>
+
+							<li>
+								<strong>Two-temperature Arrhenius equation</strong><br /><br />
+								\(
+								\log\dfrac{k_2}{k_1}=\dfrac{E_a}{2.303R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)
+								\)<br /><br />
+								If rate doubles for a \(10^\circ\mathrm{C}\) rise, use
+								\(k_2/k_1=2\).<br /><br />
+								Trap: always use Kelvin temperatures.<br /><br />
+							</li>
+
+							<li>
+								<strong>Catalyst and activation energy</strong><br /><br />
+								A catalyst increases \(k\) by lowering \(E_a\).<br /><br />
+								\( \ln\dfrac{k_1}{k_2}=\dfrac{\Delta E_a}{RT} \)<br /><br />
+								\( E_a=E_t-E_i \)<br /><br />
+								Trap: threshold energy is not activation energy; activation
+								energy is the extra energy needed to reach threshold energy.<br /><br />
+							</li>
+
+							<li>
+								<strong>Standard zero-order example</strong><br /><br />
+								\( \mathrm{H_2+Cl_2\xrightarrow{h\nu}2HCl} \)<br /><br />
+								Photochemical formation of \(\mathrm{HCl}\) is treated as zero
+								order in basic kinetics MCQs.<br /><br />
+								Trap: \(h\nu\) is the clue; do not decide order from
+								stoichiometric coefficients alone.<br /><br />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</li>
+			<!--End Electrochemistry and Chemical Kinetics-->
+			<br />
+		</ol>
 	</body>
 </html>
