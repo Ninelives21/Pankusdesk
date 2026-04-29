@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function getRootPath() {
-	let depth = window.location.pathname.split('/').length - 2;
+	let depth = window.location.pathname.split('/').length - 3;
 	let pathToRoot = '';
 	for (let i = 0; i < depth; i++) {
 		pathToRoot += '../';
