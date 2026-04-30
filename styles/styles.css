@@ -1379,3 +1379,66 @@ div[id^='ch'] h3 a {
 	color: #d97706;
 	font-weight: 700;
 }
+
+.pretty-notes-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 12px 0 18px 0;
+	font-size: 0.92rem;
+	line-height: 1.45;
+}
+
+.pretty-notes-table caption {
+	font-weight: 700;
+	font-size: 1rem;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+.pretty-notes-table th,
+.pretty-notes-table td {
+	border: 1px solid #333;
+	padding: 8px 10px;
+	vertical-align: top;
+}
+
+.pretty-notes-table th {
+	background: #f2f2f2;
+	font-weight: 700;
+	text-align: center;
+}
+
+.pretty-notes-table tr:nth-child(even) td {
+	background: #fafafa;
+}
+
+.notes-rule-list {
+	margin-top: 8px;
+	padding-left: 22px;
+}
+
+.notes-rule-list > li {
+	margin-bottom: 12px;
+}
+
+.notes-rule-title {
+	font-weight: 700;
+	display: block;
+	margin-bottom: 4px;
+}
+
+.notes-formula {
+	display: inline-block;
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	padding: 2px 6px;
+	border-radius: 4px;
+	margin: 2px 0;
+}
+
+.notes-img {
+	width: 60%;
+	height: auto;
+	margin: 10px 10px 12px 0;
+	display: block;
+}
