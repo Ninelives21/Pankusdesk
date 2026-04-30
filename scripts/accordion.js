@@ -30,3 +30,32 @@ function openAllAccordions() {
 // 		openAllAccordions();
 // 	}
 // });
+
+function openAccordionFromHash() {
+	const hash = window.location.hash;
+
+	if (!hash) return;
+
+	const target = document.querySelector(hash);
+	if (!target) return;
+
+	const accordionContent = target.closest('.accordion-content');
+	const accordionItem = target.closest('.accordion-item');
+	const accordionButton = accordionItem?.querySelector('.accordion-button');
+
+	if (accordionContent) {
+		accordionContent.style.display = 'block';
+		accordionContent.classList.add('accordion-open');
+	}
+
+	if (accordionButton) {
+		accordionButton.classList.add('active');
+	}
+
+	setTimeout(() => {
+		target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}, 150);
+}
+
+document.addEventListener('DOMContentLoaded', openAccordionFromHash);
+window.addEventListener('hashchange', openAccordionFromHash);
