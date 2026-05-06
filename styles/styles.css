@@ -920,23 +920,35 @@ div[id^='ch'] h3 a {
 	margin: 1rem 0;
 }
 
-/* Main chapter accordion headings inside TTR list */
-#ttr-list .accordion-button,
-.ttr-list .accordion-button {
-	background-color: #dbeafe;
-	color: #1f2937;
-	border: 1px solid #bfdbfe;
-	border-radius: 8px;
+#ttr-list li,
+.ttr-list li {
+	margin: 0.45rem 0;
+	padding-left: 0;
 }
 
-/* Slightly darker when hovered or opened */
-#ttr-list .accordion-button:hover,
-#ttr-list .accordion-button.active,
-.ttr-list .accordion-button:hover,
-.ttr-list .accordion-button.active {
-	background-color: #dbeafe;
+#ttr-list li a,
+.ttr-list li a {
+	display: block;
+	padding: 10px 14px;
+	margin-left: 8px;
+	border-radius: 8px;
+	text-decoration: none;
 	color: #1f2937;
-	border-color: #93c5fd;
+	background: #f8fafc;
+	border: 1px solid #e5e7eb;
+}
+
+#ttr-list li a:hover,
+.ttr-list li a:hover {
+	background: #f8fafc;
+	color: #1f2937;
+	border: 1px solid #e5e7eb;
+}
+
+#ttr-list li a:focus,
+.ttr-list li a:focus {
+	outline: 2px solid #93c5fd;
+	outline-offset: 2px;
 }
 
 /* Keyboard focus */
