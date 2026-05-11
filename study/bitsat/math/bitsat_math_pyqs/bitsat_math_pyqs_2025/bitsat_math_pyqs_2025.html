@@ -51,8 +51,104 @@
 			<!--Start Q91-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q91">Q91</button>
-					<div class="accordion-content">A91</div>
+					<button class="accordion-button" id="Q91">
+						Q 91. If \(f:X\rightarrow Y\) be a function defined by
+						\(f(x)=a\sin\left(x+\dfrac{\pi}{4}\right)+b\cos x+c\) and \(f\) is
+						bijective, then the set \(X\) with
+						\(\theta=\tan^{-1}\left(\dfrac{a+\sqrt{2}b}{a}\right)\) is
+						<ul>
+							<li>
+								(a)
+								\(\left[-\dfrac{\pi}{2}+\theta,\dfrac{\pi}{2}+\theta\right]\)
+							</li>
+							<br />
+							<li>(b) \([\pi-\theta,\pi+\theta]\)</li>
+							<br />
+							<li>
+								(c)
+								\(\left[-\dfrac{\pi}{2}-\theta,\dfrac{\pi}{2}-\theta\right]\)
+							</li>
+							<br />
+							<li>
+								(d)
+								\(\left[2\pi-\dfrac{\theta}{2},\dfrac{\pi}{2}+\theta\right]\)
+							</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((c)\
+									\left[-\dfrac{\pi}{2}-\theta,\dfrac{\pi}{2}-\theta\right]\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> First rewrite
+								\(a\sin\left(x+\dfrac{\pi}{4}\right)+b\cos x+c\) into the form
+								\(r\sin(x+\theta)+c\). For this sine function to be one-one,
+								\(x+\theta\) must lie in an interval where sine is one-one,
+								namely \(\left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36<br />Trigonometry \(\rightarrow\) Graphs of Trigonometric
+								Functions - Page M35<br />Relations and Functions - Page M2
+							</li>
+							<li>Use the identity \(\sin(A+B)=\sin A\cos B+\cos A\sin B\).</li>
+							<li>
+								So, \(\sin\left(x+\dfrac{\pi}{4}\right)=\dfrac{\sin
+								x}{\sqrt{2}}+\dfrac{\cos x}{\sqrt{2}}\).
+							</li>
+							<li>
+								Therefore, \(f(x)=\dfrac{a}{\sqrt{2}}\sin
+								x+\left(\dfrac{a}{\sqrt{2}}+b\right)\cos x+c\).
+							</li>
+							<li>
+								This can be written as \(f(x)=r\sin(x+\theta)+c\), where \(r\sin
+								x\cos\theta+r\cos x\sin\theta\) matches the expression.
+							</li>
+							<li>
+								Here,
+								\(\tan\theta=\dfrac{\dfrac{a}{\sqrt{2}}+b}{\dfrac{a}{\sqrt{2}}}=\dfrac{a+\sqrt{2}b}{a}\),
+								so \(\theta=\tan^{-1}\left(\dfrac{a+\sqrt{2}b}{a}\right)\).
+							</li>
+							<li>
+								Now, \(\sin u\) is one-one on
+								\(\left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]\).
+							</li>
+							<li>
+								Here \(u=x+\theta\), so for \(f\) to be one-one, we need
+								\(-\dfrac{\pi}{2}\leq x+\theta\leq \dfrac{\pi}{2}\).
+							</li>
+							<li>
+								Subtract \(\theta\) throughout: \(-\dfrac{\pi}{2}-\theta\leq
+								x\leq \dfrac{\pi}{2}-\theta\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(X=\left[-\dfrac{\pi}{2}-\theta,\dfrac{\pi}{2}-\theta\right]\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Convert \(A\sin x+B\cos x\)
+								into \(R\sin(x+\theta)\), then shift the safe one-one interval
+								of sine by \(-\theta\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They use
+								incorrect shifting or a different interval where the sine
+								expression is not the required one-one interval after the
+								\(+\theta\) shift.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Once you get
+								\(r\sin(x+\theta)+c\), immediately write
+								\(x+\theta\in\left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]\). Then
+								just subtract \(\theta\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q91-->
@@ -60,8 +156,83 @@
 			<!--Start Q92-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q92">Q92</button>
-					<div class="accordion-content">A92</div>
+					<button class="accordion-button" id="Q92">
+						Q 92. The value of \(\lim\limits_{x\rightarrow
+						\frac{\pi}{2}}\dfrac{\cot x-\cos x}{(\pi-2x)^3}\) is
+						<ul>
+							<li>(a) \(\dfrac{1}{16}\)</li>
+							<br />
+							<li>(b) \(\dfrac{2}{17}\)</li>
+							<br />
+							<li>(c) \(\dfrac{1}{8}\)</li>
+							<br />
+							<li>(d) \(\dfrac{2}{33}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ \dfrac{1}{16}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Rewrite \(\cot x-\cos x\) as
+								\(\cot x(1-\sin x)\). Then use \(x\rightarrow \dfrac{\pi}{2}\),
+								so \(\cot x=\tan\left(\dfrac{\pi}{2}-x\right)\) and \(1-\sin
+								x=1-\cos\left(\dfrac{\pi}{2}-x\right)\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus \(\rightarrow\) Limits - Page M74<br />Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36
+							</li>
+							<li>
+								We have \(\cot x-\cos x=\dfrac{\cos x}{\sin x}-\cos
+								x=\dfrac{\cos x(1-\sin x)}{\sin x}=\cot x(1-\sin x)\).
+							</li>
+							<li>
+								Let \(t=\dfrac{\pi}{2}-x\). Then \(t\rightarrow 0\), \(\cot
+								x=\tan t\), and \(\sin x=\cos t\).
+							</li>
+							<li>Also, \(\pi-2x=2\left(\dfrac{\pi}{2}-x\right)=2t\).</li>
+							<li>
+								So the limit becomes \(\lim\limits_{t\rightarrow 0}\dfrac{\tan
+								t(1-\cos t)}{(2t)^3}\).
+							</li>
+							<li>Use \(1-\cos t=2\sin^2\dfrac{t}{2}\).</li>
+							<li>
+								Then the expression becomes \(\lim\limits_{t\rightarrow
+								0}\dfrac{\tan t\cdot 2\sin^2\dfrac{t}{2}}{8t^3}\).
+							</li>
+							<li>
+								Now use the standard limits \(\dfrac{\tan t}{t}\rightarrow 1\)
+								and \(\dfrac{\sin(t/2)}{t/2}\rightarrow 1\).
+							</li>
+							<li>
+								Since \(\sin^2\dfrac{t}{2}\sim
+								\left(\dfrac{t}{2}\right)^2=\dfrac{t^2}{4}\), the numerator
+								behaves like \(t\cdot 2\cdot \dfrac{t^2}{4}=\dfrac{t^3}{2}\).
+							</li>
+							<li>The denominator is \(8t^3\).</li>
+							<li>
+								Therefore, the limit is \(\dfrac{t^3/2}{8t^3}=\dfrac{1}{16}\).
+							</li>
+							<li><strong>Final result:</strong> \(\dfrac{1}{16}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Near \(0\), \(\tan t\sim t\)
+								and \(1-\cos t\sim \dfrac{t^2}{2}\). So the numerator becomes
+								almost \(t\cdot\dfrac{t^2}{2}\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They usually
+								come from missing the factor \((\pi-2x)=2t\), which gives
+								\((2t)^3=8t^3\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Put \(t=\dfrac{\pi}{2}-x\). Then
+								the expression instantly becomes \(\dfrac{\tan t(1-\cos
+								t)}{8t^3}\), and using approximations gives \(\dfrac{1}{16}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q92-->
@@ -69,8 +240,95 @@
 			<!--Start Q93-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q93">Q93</button>
-					<div class="accordion-content">A93</div>
+					<button class="accordion-button" id="Q93">
+						Q 93. The function \(f(x)=\dfrac{x}{\sin x}\) is strictly increasing
+						in the interval.
+						<ul>
+							<li>(a) \(\left[0,\dfrac{\pi}{2}\right]\)</li>
+							<br />
+							<li>(b) \(\left[\dfrac{\pi}{2},\pi\right]\)</li>
+							<br />
+							<li>(c) \(\left(0,\dfrac{\pi}{2}\right)\)</li>
+							<br />
+							<li>(d) \(\left(\dfrac{\pi}{2},\pi\right)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((c)\ \left(0,\dfrac{\pi}{2}\right)\)</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Differentiate
+								\(f(x)=\dfrac{x}{\sin x}\). The sign of \(f'(x)\) depends on
+								\(g(x)=\sin x-x\cos x\), and this \(g(x)\) is positive on
+								\(\left(0,\dfrac{\pi}{2}\right)\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus \(\rightarrow\) Increasing and decreasing functions -
+								Page M76<br />Differential Calculus \(\rightarrow\)
+								Differentiability - Page M75
+							</li>
+							<li>Given \(f(x)=\dfrac{x}{\sin x}\).</li>
+							<li>
+								Differentiate using quotient rule: \(f'(x)=\dfrac{\sin x-x\cos
+								x}{\sin^2 x}\).
+							</li>
+							<li>
+								Let \(g(x)=\sin x-x\cos x\). Then \(f'(x)=\dfrac{g(x)}{\sin^2
+								x}\).
+							</li>
+							<li>
+								Now differentiate \(g(x)\): \(g'(x)=\cos x-(\cos x-x\sin
+								x)=x\sin x\).
+							</li>
+							<li>
+								For \(x\in\left(0,\dfrac{\pi}{2}\right)\), both \(x>0\) and
+								\(\sin x>0\), so \(g'(x)>0\).
+							</li>
+							<li>
+								Therefore, \(g(x)\) is increasing on
+								\(\left(0,\dfrac{\pi}{2}\right)\).
+							</li>
+							<li>Also, \(g(0)=\sin 0-0\cdot\cos 0=0\).</li>
+							<li>
+								So for \(x\in\left(0,\dfrac{\pi}{2}\right)\), \(g(x)>g(0)=0\).
+							</li>
+							<li>
+								Also, \(\sin^2 x>0\) for \(x\in\left(0,\dfrac{\pi}{2}\right)\).
+							</li>
+							<li>
+								Hence, \(f'(x)=\dfrac{g(x)}{\sin^2 x}>0\) on
+								\(\left(0,\dfrac{\pi}{2}\right)\).
+							</li>
+							<li>
+								Therefore, \(f(x)\) is strictly increasing on
+								\(\left(0,\dfrac{\pi}{2}\right)\).
+							</li>
+							<li>
+								<strong>Final result:</strong> The function is strictly
+								increasing in \(\left(0,\dfrac{\pi}{2}\right)\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For increasing/decreasing
+								questions, derivative sign decides everything. Positive
+								derivative means increasing.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The option
+								with closed interval includes \(x=0\), where \(\dfrac{x}{\sin
+								x}\) is not directly defined. The interval
+								\(\left(0,\dfrac{\pi}{2}\right)\) is the clean valid interval
+								from the derivative test.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For \(x/\sin x\), remember the
+								key derivative numerator: \(\sin x-x\cos x\). Then use
+								\(g'(x)=x\sin x>0\) in the first quadrant.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q93-->
@@ -78,8 +336,84 @@
 			<!--Start Q94-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q94">Q94</button>
-					<div class="accordion-content">A94</div>
+					<button class="accordion-button" id="Q94">
+						Q 94. The value of integral \(\int_a^b e^x\,dx\) as limit of sums is
+						<ul>
+							<li>(a) \(e^a-e^b\)</li>
+							<li>(b) \(e^b-e^a\)</li>
+							<li>(c) \(e^b+e^a\)</li>
+							<li>(d) \(-e^a-e^b\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ e^b-e^a\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The antiderivative of
+								\(e^x\) is \(e^x\). Therefore, \(\int_a^b e^x\,dx=e^b-e^a\), and
+								the limit-of-sums method also gives the same result.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Definite Integrals - Page M90<br />Integral
+								Calculus \(\rightarrow\) General Rule of Integration - Page M88
+							</li>
+							<li>
+								As a limit of sums, divide \([a,b]\) into small equal parts of
+								width \(h\).
+							</li>
+							<li>
+								The terms are approximately
+								\(e^a,e^{a+h},e^{a+2h},\ldots,e^{a+(n-1)h}\).
+							</li>
+							<li>
+								So, \(\int_a^b e^x\,dx=\lim\limits_{h\rightarrow
+								0}h\left[e^a+e^{a+h}+e^{a+2h}+\cdots+e^{a+(n-1)h}\right]\).
+							</li>
+							<li>
+								Take \(e^a\) common: \(\lim\limits_{h\rightarrow
+								0}he^a\left[1+e^h+e^{2h}+\cdots+e^{(n-1)h}\right]\).
+							</li>
+							<li>
+								The bracket is a geometric progression with first term \(1\),
+								common ratio \(e^h\), and \(n\) terms.
+							</li>
+							<li>
+								So, \(1+e^h+e^{2h}+\cdots+e^{(n-1)h}=\dfrac{e^{nh}-1}{e^h-1}\).
+							</li>
+							<li>Since \(nh=b-a\), we get \(e^{nh}=e^{b-a}\).</li>
+							<li>
+								Therefore, the expression becomes \(\lim\limits_{h\rightarrow
+								0}he^a\dfrac{e^{b-a}-1}{e^h-1}\).
+							</li>
+							<li>
+								Rewrite it as \(e^a(e^{b-a}-1)\lim\limits_{h\rightarrow
+								0}\dfrac{h}{e^h-1}\).
+							</li>
+							<li>
+								Since \(\lim\limits_{h\rightarrow 0}\dfrac{e^h-1}{h}=1\), we
+								have \(\lim\limits_{h\rightarrow 0}\dfrac{h}{e^h-1}=1\).
+							</li>
+							<li>So the value becomes \(e^a(e^{b-a}-1)=e^b-e^a\).</li>
+							<li>
+								<strong>Final result:</strong> \(\int_a^b e^x\,dx=e^b-e^a\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> \(e^x\) is special because
+								its integral is also \(e^x\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Definite
+								integral means upper value minus lower value, so it must be
+								\(e^b-e^a\), not \(e^a-e^b\) or a sum.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Even if the question says "as
+								limit of sums", the final value of the definite integral is
+								still \([e^x]_a^b=e^b-e^a\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q94-->
@@ -87,8 +421,96 @@
 			<!--Start Q95-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q95">Q95</button>
-					<div class="accordion-content">A95</div>
+					<button class="accordion-button" id="Q95">
+						Q 95. For what values of the parameter \(a\) does the function
+						\(f(x)=x^3+3(a-7)x^2+3(a^2-9)x-1\) have a positive point of maximum.
+						<ul>
+							<li>(a) \((-\infty,9)\)</li>
+							<br />
+							<li>(b) \((-\infty,-3)\cup\left(3,\dfrac{29}{7}\right)\)</li>
+							<br />
+							<li>(c) \((-\infty,9)\cup\left(9,\dfrac{29}{7}\right)\)</li>
+							<br />
+							<li>(d) \(\left(9,\dfrac{29}{7}\right),(6,\infty)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((b)\
+									(-\infty,-3)\cup\left(3,\dfrac{29}{7}\right)\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> For a local maximum, first
+								find the critical points using \(f'(x)=0\), then check which
+								critical point gives \(f''(x)&lt;0\). After that, impose the
+								condition that this maximum point is positive, i.e. \(x&gt;0\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus \(\rightarrow\) Minima and maxima - Page M77<br />Differential
+								Calculus \(\rightarrow\) Differentiability - Page M75
+							</li>
+							<li>Given \(f(x)=x^3+3(a-7)x^2+3(a^2-9)x-1\).</li>
+							<li>Differentiate: \(f'(x)=3x^2+6(a-7)x+3(a^2-9)\).</li>
+							<li>
+								Taking \(3\) common,
+								\(f'(x)=3\left[x^2+2(a-7)x+(a^2-9)\right]\).
+							</li>
+							<li>For local maximum or minimum, put \(f'(x)=0\).</li>
+							<li>So, \(x^2+2(a-7)x+(a^2-9)=0\).</li>
+							<li>Using quadratic formula, \(x=-(a-7)\pm\sqrt{58-14a}\).</li>
+							<li>
+								Let \(x_1=-(a-7)+\sqrt{58-14a}\) and
+								\(x_2=-(a-7)-\sqrt{58-14a}\).
+							</li>
+							<li>
+								For these points to be real, \(58-14a&gt;0\), so
+								\(a&lt;\dfrac{58}{14}=\dfrac{29}{7}\).
+							</li>
+							<li>Now, \(f''(x)=6x+6(a-7)=6(x+a-7)\).</li>
+							<li>
+								For \(x_2=-(a-7)-\sqrt{58-14a}\), we get
+								\(f''(x_2)=-6\sqrt{58-14a}&lt;0\).
+							</li>
+							<li>Therefore, \(x_2\) is the point of local maximum.</li>
+							<li>
+								Now the question says the point of maximum should be positive,
+								so \(x_2&gt;0\).
+							</li>
+							<li>Thus, \(-(a-7)-\sqrt{58-14a}&gt;0\).</li>
+							<li>This gives \(7-a&gt;\sqrt{58-14a}\).</li>
+							<li>Squaring both sides gives \((7-a)^2&gt;58-14a\).</li>
+							<li>Expand: \(49-14a+a^2&gt;58-14a\).</li>
+							<li>Cancel \(-14a\) from both sides: \(a^2&gt;9\).</li>
+							<li>So, \(a&lt;-3\) or \(a&gt;3\).</li>
+							<li>Combine this with \(a&lt;\dfrac{29}{7}\).</li>
+							<li>
+								Therefore, \(a\in(-\infty,-3)\cup\left(3,\dfrac{29}{7}\right)\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(a\in(-\infty,-3)\cup\left(3,\dfrac{29}{7}\right)\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For maximum point questions,
+								use three checks: \(f'(x)=0\), \(f''(x)&lt;0\), and then apply
+								the extra condition given in the question.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They either
+								miss the real-root condition \(a&lt;\dfrac{29}{7}\), or they do
+								not correctly apply the positive maximum point condition.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Once
+								\(x=-(a-7)\pm\sqrt{58-14a}\), the minus root gives maximum
+								because \(f''\) becomes negative there.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q95-->
@@ -96,8 +518,100 @@
 			<!--Start Q96-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q96">Q96</button>
-					<div class="accordion-content">A96</div>
+					<button class="accordion-button" id="Q96">
+						Q 96. The solution of the differential equation
+						\(\dfrac{dy}{dx}+x\sin 2y=x^3\cos^2 y\) is
+						<ul>
+							<li>(a) \(\tan y=(x^2-1)e^{x^2}+C\)</li>
+							<br />
+							<li>(b) \(e^{x^2}=\dfrac{1}{2}(x^2-1)\tan y\,e^{x^2}+C\)</li>
+							<br />
+							<li>(c) \(\tan y(x^2-1)=e^{x^2}+C\)</li>
+							<br />
+							<li>(d) \(e^{x^2}\tan y=\dfrac{1}{2}(x^2-1)e^{x^2}+C\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((d)\ e^{x^2}\tan
+									y=\dfrac{1}{2}(x^2-1)e^{x^2}+C\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Divide the equation by
+								\(\cos^2 y\) and put \(v=\tan y\). This converts the equation
+								into a linear differential equation \(\dfrac{dv}{dx}+2xv=x^3\),
+								whose integrating factor is \(e^{x^2}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Ordinary
+								Differential Equations \(\rightarrow\) Solution of a
+								Differential Equation - Page M103<br />Integral Calculus
+								\(\rightarrow\) Methods of Integration - Page M88
+							</li>
+							<li>Given \(\dfrac{dy}{dx}+x\sin 2y=x^3\cos^2 y\).</li>
+							<li>
+								Divide both sides by \(\cos^2 y\): \(\sec^2
+								y\dfrac{dy}{dx}+x\dfrac{\sin 2y}{\cos^2 y}=x^3\).
+							</li>
+							<li>
+								Use \(\sin 2y=2\sin y\cos y\), so \(\dfrac{\sin 2y}{\cos^2
+								y}=2\tan y\).
+							</li>
+							<li>Therefore, \(\sec^2 y\dfrac{dy}{dx}+2x\tan y=x^3\).</li>
+							<li>
+								Put \(v=\tan y\). Then \(\dfrac{dv}{dx}=\sec^2
+								y\dfrac{dy}{dx}\).
+							</li>
+							<li>So the equation becomes \(\dfrac{dv}{dx}+2xv=x^3\).</li>
+							<li>
+								This is a first-order linear differential equation of the form
+								\(\dfrac{dv}{dx}+Pv=Q\), where \(P=2x\) and \(Q=x^3\).
+							</li>
+							<li>The integrating factor is \(IF=e^{\int 2x\,dx}=e^{x^2}\).</li>
+							<li>
+								Multiplying by \(e^{x^2}\), we get
+								\(e^{x^2}\dfrac{dv}{dx}+2xve^{x^2}=x^3e^{x^2}\).
+							</li>
+							<li>The left side becomes \(\dfrac{d}{dx}(ve^{x^2})\).</li>
+							<li>So, \(\dfrac{d}{dx}(ve^{x^2})=x^3e^{x^2}\).</li>
+							<li>Integrate both sides: \(ve^{x^2}=\int x^3e^{x^2}\,dx+C\).</li>
+							<li>
+								Put \(t=x^2\), so \(dt=2x\,dx\). Then \(x^3dx=x^2\cdot
+								xdx=\dfrac{t}{2}dt\).
+							</li>
+							<li>
+								Therefore, \(\int x^3e^{x^2}\,dx=\dfrac{1}{2}\int te^t\,dt\).
+							</li>
+							<li>Using integration by parts, \(\int te^t\,dt=te^t-e^t\).</li>
+							<li>So, \(\int x^3e^{x^2}\,dx=\dfrac{1}{2}(x^2-1)e^{x^2}\).</li>
+							<li>Hence, \(ve^{x^2}=\dfrac{1}{2}(x^2-1)e^{x^2}+C\).</li>
+							<li>
+								Since \(v=\tan y\), we get \(e^{x^2}\tan
+								y=\dfrac{1}{2}(x^2-1)e^{x^2}+C\).
+							</li>
+							<li>
+								<strong>Final result:</strong> \(e^{x^2}\tan
+								y=\dfrac{1}{2}(x^2-1)e^{x^2}+C\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Whenever you see \(\sec^2
+								y\dfrac{dy}{dx}\), think of \(\dfrac{d}{dx}(\tan y)\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The correct
+								integrating factor \(e^{x^2}\) must multiply \(\tan y\), and the
+								integral gives the extra factor \(\dfrac{1}{2}(x^2-1)e^{x^2}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Divide by \(\cos^2 y\)
+								immediately. This reveals the substitution \(v=\tan y\) and
+								turns the question into a standard linear differential equation.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q96-->
@@ -105,8 +619,127 @@
 			<!--Start Q97-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q97">Q97</button>
-					<div class="accordion-content">A97</div>
+					<button class="accordion-button" id="Q97">
+						Q 97. If \(a\) is a complex number such that \(|a|=1\). Find the
+						value of \(a\), so that the equation \(az^2+z+1=0\) has one purely
+						imaginary root.
+						<ul>
+							<li>
+								(a)
+								\(\cos\left\{\cos^{-1}\left(\dfrac{-\sqrt{5}+1}{4}\right)\right\}\)
+							</li>
+							<br />
+							<li>
+								(b)
+								\(\cos\left\{\sin^{-1}\left(\dfrac{\sqrt{5}+1}{4}\right)\right\}+i\sin\left\{\cos^{-1}\left(\dfrac{\sqrt{5}+1}{4}\right)\right\}\)
+							</li>
+							<br />
+							<li>
+								(c)
+								\(\sin\left\{\cos^{-1}\left(\dfrac{\sqrt{5}-1}{4}\right)\right\}+i\sin^{-1}\left(\dfrac{-\sqrt{5}+1}{2}\right)\)
+							</li>
+							<br />
+							<li>(d) None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\) None of the above</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Let the purely imaginary
+								root be \(\alpha\). Since \(\overline{\alpha}=-\alpha\), compare
+								the equation and its conjugate, then use \(|a|=1\) by writing
+								\(a=\cos\theta+i\sin\theta\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Complex Numbers - Page M4<br />Algebra
+								\(\rightarrow\) Quadratic Equations - Page M6
+							</li>
+							<li>
+								Let \(\alpha\) be a purely imaginary root of \(az^2+z+1=0\).
+							</li>
+							<li>Then \(a\alpha^2+\alpha+1=0\).</li>
+							<li>
+								Taking conjugate on both sides,
+								\(\overline{a}\,(\overline{\alpha})^2+\overline{\alpha}+1=0\).
+							</li>
+							<li>
+								Since \(\alpha\) is purely imaginary,
+								\(\overline{\alpha}=-\alpha\).
+							</li>
+							<li>So, \(\overline{a}\alpha^2-\alpha+1=0\).</li>
+							<li>
+								Now solve \(a\alpha^2+\alpha+1=0\) and
+								\(\overline{a}\alpha^2-\alpha+1=0\) together.
+							</li>
+							<li>
+								Using cross-multiplication, we get
+								\(\alpha^2=\dfrac{-2}{a+\overline{a}}\) and
+								\(\alpha=\dfrac{\overline{a}-a}{-a-\overline{a}}\).
+							</li>
+							<li>
+								Now, \(\alpha^2=(\alpha)^2\), so
+								\(\dfrac{-2}{a+\overline{a}}=\dfrac{(\overline{a}-a)^2}{(a+\overline{a})^2}\).
+							</li>
+							<li>Therefore, \(-2(a+\overline{a})=(\overline{a}-a)^2\).</li>
+							<li>
+								This can be written as
+								\((\overline{a}-a)^2+2(a+\overline{a})=0\).
+							</li>
+							<li>Since \(|a|=1\), write \(a=\cos\theta+i\sin\theta\).</li>
+							<li>Then \(\overline{a}=\cos\theta-i\sin\theta\).</li>
+							<li>
+								So, \(\overline{a}-a=-2i\sin\theta\) and
+								\(a+\overline{a}=2\cos\theta\).
+							</li>
+							<li>
+								Substitute in the condition:
+								\((-2i\sin\theta)^2+2(2\cos\theta)=0\).
+							</li>
+							<li>This gives \(-4\sin^2\theta+4\cos\theta=0\).</li>
+							<li>So, \(\sin^2\theta=\cos\theta\).</li>
+							<li>Use \(\sin^2\theta=1-\cos^2\theta\).</li>
+							<li>
+								Then \(1-\cos^2\theta=\cos\theta\), so
+								\(\cos^2\theta+\cos\theta-1=0\).
+							</li>
+							<li>
+								Solving, \(\cos\theta=\dfrac{\sqrt{5}-1}{2}\) or
+								\(\cos\theta=\dfrac{-\sqrt{5}-1}{2}\).
+							</li>
+							<li>
+								But \(\cos\theta\in[-1,1]\), so
+								\(\cos\theta=\dfrac{\sqrt{5}-1}{2}\).
+							</li>
+							<li>
+								Therefore,
+								\(\theta=\cos^{-1}\left(\dfrac{\sqrt{5}-1}{2}\right)\).
+							</li>
+							<li>
+								Hence,
+								\(a=\cos\left\{\cos^{-1}\left(\dfrac{\sqrt{5}-1}{2}\right)\right\}+i\sin\left\{\cos^{-1}\left(\dfrac{\sqrt{5}-1}{2}\right)\right\}\).
+							</li>
+							<li>This exact value is not present in the given options.</li>
+							<li><strong>Final result:</strong> None of the above.</li>
+							<li>
+								<strong>Simple memory tip:</strong> For \(|a|=1\), always try
+								\(a=\cos\theta+i\sin\theta\). It makes \(a+\overline{a}\) and
+								\(a-\overline{a}\) very easy.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The correct
+								value involves \(\dfrac{\sqrt{5}-1}{2}\), while the listed
+								expressions do not match the derived value of \(a\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> In complex number questions with
+								\(|a|=1\), convert to trigonometric form early. Then use
+								\(a+\overline{a}=2\cos\theta\) and
+								\(a-\overline{a}=2i\sin\theta\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q97-->
@@ -114,8 +747,88 @@
 			<!--Start Q98-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q98">Q98</button>
-					<div class="accordion-content">A98</div>
+					<button class="accordion-button" id="Q98">
+						Q 98. If \(\mathbf{a},\mathbf{b},\mathbf{c}\) are vectors such that
+						\(|\mathbf{b}|=|\mathbf{c}|\), then
+						\(\{(\mathbf{a}+\mathbf{b})\times(\mathbf{a}+\mathbf{c})\}\times(\mathbf{b}\times\mathbf{c})\cdot(\mathbf{b}+\mathbf{c})\)
+						is equal to
+						<ul>
+							<li>(a) \(1\)</li>
+							<li>(b) \(4\)</li>
+							<li>(c) \(2\)</li>
+							<li>(d) \(0\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\ 0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Expand
+								\((\mathbf{a}+\mathbf{b})\times(\mathbf{a}+\mathbf{c})\), then
+								use vector triple product identities. The final expression
+								contains the factor \(|\mathbf{c}|^2-|\mathbf{b}|^2\), which
+								becomes \(0\) because \(|\mathbf{b}|=|\mathbf{c}|\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Vectors
+								\(\rightarrow\) Vector product or cross product - Page M125<br />Vectors
+								\(\rightarrow\) Scalar triple product - Page M126<br />Vectors
+								\(\rightarrow\) Vector triple product - Page M127
+							</li>
+							<li>
+								We need to simplify
+								\(\{(\mathbf{a}+\mathbf{b})\times(\mathbf{a}+\mathbf{c})\}\times(\mathbf{b}\times\mathbf{c})\cdot(\mathbf{b}+\mathbf{c})\).
+							</li>
+							<li>
+								First expand
+								\((\mathbf{a}+\mathbf{b})\times(\mathbf{a}+\mathbf{c})\).
+							</li>
+							<li>
+								We get
+								\(\mathbf{a}\times\mathbf{a}+\mathbf{a}\times\mathbf{c}+\mathbf{b}\times\mathbf{a}+\mathbf{b}\times\mathbf{c}\).
+							</li>
+							<li>
+								Since \(\mathbf{a}\times\mathbf{a}=0\), this becomes
+								\(\mathbf{a}\times\mathbf{c}+\mathbf{b}\times\mathbf{a}+\mathbf{b}\times\mathbf{c}\).
+							</li>
+							<li>Now this is crossed with \(\mathbf{b}\times\mathbf{c}\).</li>
+							<li>
+								Use the vector triple product identity:
+								\((\mathbf{p}\times\mathbf{q})\times(\mathbf{r}\times\mathbf{s})=[\mathbf{p}\
+								\mathbf{q}\ \mathbf{s}]\mathbf{r}-[\mathbf{p}\ \mathbf{q}\
+								\mathbf{r}]\mathbf{s}\), where \([\mathbf{p}\ \mathbf{q}\
+								\mathbf{r}]\) means scalar triple product.
+							</li>
+							<li>
+								After applying the identity and simplifying, the expression
+								becomes \([\mathbf{a}\ \mathbf{b}\
+								\mathbf{c}]\left(|\mathbf{c}|^2-|\mathbf{b}|^2\right)\).
+							</li>
+							<li>But it is given that \(|\mathbf{b}|=|\mathbf{c}|\).</li>
+							<li>So, \(|\mathbf{c}|^2-|\mathbf{b}|^2=0\).</li>
+							<li>
+								Therefore, the whole expression becomes \([\mathbf{a}\
+								\mathbf{b}\ \mathbf{c}]\times 0=0\).
+							</li>
+							<li><strong>Final result:</strong> \(0\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> If a long vector expression
+								has \(|\mathbf{b}|=|\mathbf{c}|\), expect the final expression
+								to contain \(|\mathbf{c}|^2-|\mathbf{b}|^2\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Since the
+								expression is multiplied by \(|\mathbf{c}|^2-|\mathbf{b}|^2\),
+								and this is zero, no non-zero option can be correct.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Do not try to assign coordinates
+								unless necessary. Use scalar triple product notation and look
+								for cancellation from the condition
+								\(|\mathbf{b}|=|\mathbf{c}|\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q98-->
@@ -123,8 +836,74 @@
 			<!--Start Q99-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q99">Q99</button>
-					<div class="accordion-content">A99</div>
+					<button class="accordion-button" id="Q99">
+						Q 99. For what value of \(a\), \(6\) lies between the roots of the
+						equation \(x^2+2(a-3)x+9=0\).
+						<ul>
+							<li>(a) \(\left(\dfrac{-3}{4},\infty\right)\)</li>
+							<br />
+							<li>(b) \(\left(-\infty,\dfrac{-3}{4}\right)\cup(2,\infty)\)</li>
+							<br />
+							<li>(c) \(\left(-\infty,\dfrac{-3}{4}\right)\)</li>
+							<br />
+							<li>(d) \(\left(\dfrac{3}{4},\infty\right)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((c)\ \left(-\infty,\dfrac{-3}{4}\right)\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Let \(f(x)=x^2+2(a-3)x+9\).
+								Since the coefficient of \(x^2\) is positive, a number lies
+								between the two roots when \(f(\text{that number})&lt;0\), along
+								with the condition that the roots are real.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Quadratic Equations - Page M6
+							</li>
+							<li>Let \(f(x)=x^2+2(a-3)x+9\).</li>
+							<li>
+								For \(6\) to lie between the roots, the quadratic must cut the
+								\(x\)-axis at two real points, so discriminant \(>0\).
+							</li>
+							<li>Discriminant \(>0\): \([2(a-3)]^2-4(1)(9)>0\).</li>
+							<li>So, \(4(a-3)^2-36>0\).</li>
+							<li>Divide by \(4\): \((a-3)^2-9>0\).</li>
+							<li>This gives \(a^2-6a>0\), so \(a(a-6)>0\).</li>
+							<li>Therefore, \(a<0\) or \(a>6\).</li>
+							<li>Now apply the condition \(f(6)<0\).</li>
+							<li>\(f(6)=36+12(a-3)+9\).</li>
+							<li>So, \(36+12a-36+9<0\).</li>
+							<li>This gives \(12a+9<0\), hence \(a<-\dfrac{3}{4}\).</li>
+							<li>
+								Combining \(a<0\) or \(a>6\) with \(a<-\dfrac{3}{4}\), we get
+								\(a<-\dfrac{3}{4}\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(a\in\left(-\infty,\dfrac{-3}{4}\right)\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For an upward-opening
+								quadratic, points between the roots give negative function
+								value.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Options
+								including positive intervals do not satisfy \(f(6)<0\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Since \(x^2\) coefficient is
+								positive, directly use \(f(6)<0\), then check that the
+								discriminant condition does not remove the answer.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q99-->
@@ -132,8 +911,65 @@
 			<!--Start Q100-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q100">Q100</button>
-					<div class="accordion-content">A100</div>
+					<button class="accordion-button" id="Q100">
+						Q 100. What is the probability of getting a sum of \(9\) in single
+						throw of three fair dice?
+						<ul>
+							<li>(a) \(\dfrac{6}{216}\)</li>
+							<br />
+							<li>(b) \(\dfrac{36}{216}\)</li>
+							<br />
+							<li>(c) \(\dfrac{9}{216}\)</li>
+							<br />
+							<li>(d) \(\dfrac{25}{216}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\ \dfrac{25}{216}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Total outcomes for three
+								dice are \(6^3=216\). Count the ordered triples whose sum is
+								\(9\); there are \(25\) such outcomes.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Probability
+								\(\rightarrow\) Definition of Probability - Page M114<br />Probability
+								\(\rightarrow\) Probability - Page M114
+							</li>
+							<li>
+								When three fair dice are thrown, total possible outcomes
+								\(=6\times6\times6=216\).
+							</li>
+							<li>Now count the combinations that give sum \(9\).</li>
+							<li>\((1,2,6)\) gives \(6\) arrangements.</li>
+							<li>\((1,3,5)\) gives \(6\) arrangements.</li>
+							<li>\((1,4,4)\) gives \(3\) arrangements.</li>
+							<li>\((2,2,5)\) gives \(3\) arrangements.</li>
+							<li>\((2,3,4)\) gives \(6\) arrangements.</li>
+							<li>\((3,3,3)\) gives \(1\) arrangement.</li>
+							<li>Total favourable outcomes \(=6+6+3+3+6+1=25\).</li>
+							<li>
+								Therefore, probability \(=\dfrac{\text{favourable
+								outcomes}}{\text{total outcomes}}=\dfrac{25}{216}\).
+							</li>
+							<li><strong>Final result:</strong> \(\dfrac{25}{216}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> For dice sum problems, first
+								list unordered triples, then multiply by number of arrangements.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They miss some
+								ordered arrangements or count only a few combinations instead of
+								all dice outcomes.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For three dice, denominator is
+								always \(216\). So the task is only to count favourable ordered
+								triples correctly.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q100-->
@@ -141,8 +977,91 @@
 			<!--Start Q101-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q101">Q101</button>
-					<div class="accordion-content">A101</div>
+					<button class="accordion-button" id="Q101">
+						Q 101. The coefficient of \(x^n\) in the expansion of
+						\(\dfrac{1-ax-x^2}{e^x}\) is
+						<ul>
+							<li>(a) \(\dfrac{(-1)^n}{n!}\{-n^2-n(a+1)+1\}\)</li>
+							<br />
+							<li>(b) \(\dfrac{(-1)^n}{n!}\{n^2-n(a+1)-1\}\)</li>
+							<br />
+							<li>(c) \(\dfrac{(-1)^n}{n!}\{-n^2+n(a+1)+1\}\)</li>
+							<br />
+							<li>(d) None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((c)\ \dfrac{(-1)^n}{n!}\{-n^2+n(a+1)+1\}\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Write
+								\(\dfrac{1-ax-x^2}{e^x}=(1-ax-x^2)e^{-x}\). Then collect the
+								coefficient of \(x^n\) separately from \(e^{-x}\),
+								\(-axe^{-x}\), and \(-x^2e^{-x}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Sequences and Series - Page M6<br />Algebra
+								\(\rightarrow\) Binomial Theorem - Page M9
+							</li>
+							<li>
+								We know the expansion
+								\(e^{-x}=1-\dfrac{x}{1!}+\dfrac{x^2}{2!}-\dfrac{x^3}{3!}+\cdots=\sum\limits_{k=0}^{\infty}\dfrac{(-1)^k
+								x^k}{k!}\).
+							</li>
+							<li>Now, \(\dfrac{1-ax-x^2}{e^x}=(1-ax-x^2)e^{-x}\).</li>
+							<li>So, \((1-ax-x^2)e^{-x}=e^{-x}-axe^{-x}-x^2e^{-x}\).</li>
+							<li>
+								From \(e^{-x}\), coefficient of \(x^n\) is
+								\(\dfrac{(-1)^n}{n!}\).
+							</li>
+							<li>
+								From \(-axe^{-x}\), coefficient of \(x^n\) is \(-a\) times
+								coefficient of \(x^{n-1}\) in \(e^{-x}\).
+							</li>
+							<li>So this contribution is \(-a\dfrac{(-1)^{n-1}}{(n-1)!}\).</li>
+							<li>
+								From \(-x^2e^{-x}\), coefficient of \(x^n\) is \(-1\) times
+								coefficient of \(x^{n-2}\) in \(e^{-x}\).
+							</li>
+							<li>So this contribution is \(-\dfrac{(-1)^{n-2}}{(n-2)!}\).</li>
+							<li>
+								Therefore, coefficient of \(x^n\) is
+								\(\dfrac{(-1)^n}{n!}-a\dfrac{(-1)^{n-1}}{(n-1)!}-\dfrac{(-1)^{n-2}}{(n-2)!}\).
+							</li>
+							<li>
+								Convert all terms to denominator \(n!\):
+								\(\dfrac{(-1)^n}{n!}\left[1+an-n(n-1)\right]\).
+							</li>
+							<li>Simplify: \(1+an-n^2+n=-n^2+n(a+1)+1\).</li>
+							<li>
+								Hence, coefficient \(=\dfrac{(-1)^n}{n!}\{-n^2+n(a+1)+1\}\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(\dfrac{(-1)^n}{n!}\{-n^2+n(a+1)+1\}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Multiplying by \(x\) shifts
+								the required coefficient from \(x^n\) to \(x^{n-1}\), and
+								multiplying by \(x^2\) shifts it to \(x^{n-2}\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Their signs
+								differ because of incorrect handling of \((-1)^{n-1}\) and
+								\((-1)^{n-2}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Split the expression into
+								\(e^{-x}-axe^{-x}-x^2e^{-x}\), then collect coefficients by
+								shifting powers.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q101-->
@@ -150,8 +1069,70 @@
 			<!--Start Q102-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q102">Q102</button>
-					<div class="accordion-content">A102</div>
+					<button class="accordion-button" id="Q102">
+						Q 102. The locus of the middle points of chords of the circle
+						\(x^2+y^2=25\) which are parallel to the line \(x-2y+3=0\) is
+						<ul>
+							<li>(a) \(x+2y=0\)</li>
+							<li>(b) \(2x+y=0\)</li>
+							<li>(c) \(x-2y=0\)</li>
+							<li>(d) \(2x-y=0\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ 2x+y=0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> For a circle centered at the
+								origin, the line joining the centre to the midpoint of a chord
+								is perpendicular to the chord. Since the chord is parallel to
+								\(x-2y+3=0\), its midpoint lies on the diameter perpendicular to
+								that line.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Circles -
+								Page M49<br />Two-dimensional Coordinate Geometry
+								\(\rightarrow\) Lines - Page M48
+							</li>
+							<li>
+								Let \((h,k)\) be the midpoint of a chord of the circle
+								\(x^2+y^2=25\).
+							</li>
+							<li>
+								The equation of the chord with midpoint \((h,k)\) for the circle
+								\(x^2+y^2=25\) is \(hx+ky=h^2+k^2\).
+							</li>
+							<li>The slope of this chord is \(-\dfrac{h}{k}\).</li>
+							<li>The given line is \(x-2y+3=0\).</li>
+							<li>
+								Rewrite it as \(y=\dfrac{x+3}{2}\), so its slope is
+								\(\dfrac{1}{2}\).
+							</li>
+							<li>
+								Since the chord is parallel to this line,
+								\(-\dfrac{h}{k}=\dfrac{1}{2}\).
+							</li>
+							<li>So, \(-2h=k\), hence \(2h+k=0\).</li>
+							<li>Therefore, the locus of \((h,k)\) is \(2x+y=0\).</li>
+							<li><strong>Final result:</strong> \(2x+y=0\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Midpoint of a chord of a
+								circle lies on a line from the centre perpendicular to that
+								chord.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They have
+								slopes that are not perpendicular to the given chord direction
+								or do not match the midpoint-chord relation.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Given chord slope
+								\(=\dfrac{1}{2}\), radius to midpoint slope \(=-2\). A line
+								through origin with slope \(-2\) is \(y=-2x\), i.e. \(2x+y=0\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q102-->
@@ -159,8 +1140,95 @@
 			<!--Start Q103-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q103">Q103</button>
-					<div class="accordion-content">A103</div>
+					<button class="accordion-button" id="Q103">
+						Q 103. What is the value of the definite integral
+						\(\int_0^{\frac{\pi}{2}}\log(\sin x)\,dx\)?
+						<ul>
+							<li>(a) \(-\dfrac{\pi}{4}\log 2\)</li>
+							<br />
+							<li>(b) \(-\dfrac{\pi}{2}\log 2\)</li>
+							<br />
+							<li>(c) \(-\pi\log 2\)</li>
+							<br />
+							<li>(d) \(-\dfrac{\pi}{4}\log\left(\dfrac{1}{2}\right)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ -\dfrac{\pi}{2}\log 2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Use the property \(\int_0^a
+								f(x)\,dx=\int_0^a f(a-x)\,dx\). This changes \(\log(\sin x)\)
+								into \(\log(\cos x)\), and adding the two integrals gives
+								\(\log(\sin x\cos x)\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Definite Integrals - Page M90<br />Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36
+							</li>
+							<li>Let \(I=\int_0^{\frac{\pi}{2}}\log(\sin x)\,dx\).</li>
+							<li>
+								Using \(\int_0^a f(x)\,dx=\int_0^a f(a-x)\,dx\), replace \(x\)
+								by \(\dfrac{\pi}{2}-x\).
+							</li>
+							<li>
+								Then
+								\(I=\int_0^{\frac{\pi}{2}}\log\left(\sin\left(\dfrac{\pi}{2}-x\right)\right)\,dx=\int_0^{\frac{\pi}{2}}\log(\cos
+								x)\,dx\).
+							</li>
+							<li>
+								Now add both forms of \(I\):
+								\(2I=\int_0^{\frac{\pi}{2}}\left[\log(\sin x)+\log(\cos
+								x)\right]dx\).
+							</li>
+							<li>
+								Using \(\log A+\log B=\log(AB)\), we get
+								\(2I=\int_0^{\frac{\pi}{2}}\log(\sin x\cos x)\,dx\).
+							</li>
+							<li>
+								Since \(2\sin x\cos x=\sin 2x\), we have \(\sin x\cos
+								x=\dfrac{1}{2}\sin 2x\).
+							</li>
+							<li>
+								So, \(2I=\int_0^{\frac{\pi}{2}}\log\left(\dfrac{1}{2}\sin
+								2x\right)dx\).
+							</li>
+							<li>
+								This becomes
+								\(2I=\int_0^{\frac{\pi}{2}}\log\left(\dfrac{1}{2}\right)dx+\int_0^{\frac{\pi}{2}}\log(\sin
+								2x)\,dx\).
+							</li>
+							<li>
+								Now, \(\log\left(\dfrac{1}{2}\right)=-\log 2\), so the first
+								integral is \(-\dfrac{\pi}{2}\log 2\).
+							</li>
+							<li>
+								The second integral reduces back to \(I\), using the standard
+								symmetry of \(\log(\sin x)\).
+							</li>
+							<li>Therefore, \(2I=-\dfrac{\pi}{2}\log 2+I\).</li>
+							<li>Hence, \(I=-\dfrac{\pi}{2}\log 2\).</li>
+							<li><strong>Final result:</strong> \(-\dfrac{\pi}{2}\log 2\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Remember the standard
+								result: \(\int_0^{\frac{\pi}{2}}\log(\sin
+								x)\,dx=\int_0^{\frac{\pi}{2}}\log(\cos
+								x)\,dx=-\dfrac{\pi}{2}\log 2\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They miss the
+								full interval factor \(\dfrac{\pi}{2}\) or make a sign mistake
+								with \(\log\left(\dfrac{1}{2}\right)=-\log 2\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> This is a direct standard
+								definite integral. In one-minute solving, recall the result
+								instead of deriving it fully.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q103-->
@@ -168,8 +1236,65 @@
 			<!--Start Q104-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q104">Q104</button>
-					<div class="accordion-content">A104</div>
+					<button class="accordion-button" id="Q104">
+						Q 104. If \(p,q,r\) are in GP and the line \(px+qy+r=0\) forms a
+						triangle with the coordinate axes, what is the area of the triangle
+						if \(p=2,q=4\) and \(r=8\)?
+						<ul>
+							<li>(a) \(2\)</li>
+							<li>(b) \(-4\)</li>
+							<li>(c) \(4\)</li>
+							<li>(d) \(-2\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ 4\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> For \(px+qy+r=0\), the
+								\(x\)-intercept is \(-\dfrac{r}{p}\) and the \(y\)-intercept is
+								\(-\dfrac{r}{q}\). The area of the triangle with coordinate axes
+								is \(\dfrac{1}{2}\times |\text{x-intercept}|\times
+								|\text{y-intercept}|\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Lines - Page
+								M48<br />Algebra \(\rightarrow\) Sequences and Series - Page M6
+							</li>
+							<li>
+								Given line: \(px+qy+r=0\), with \(p=2\), \(q=4\), and \(r=8\).
+							</li>
+							<li>So the line is \(2x+4y+8=0\).</li>
+							<li>
+								For the \(x\)-intercept, put \(y=0\): \(2x+8=0\), so \(x=-4\).
+							</li>
+							<li>
+								For the \(y\)-intercept, put \(x=0\): \(4y+8=0\), so \(y=-2\).
+							</li>
+							<li>
+								The triangle formed with coordinate axes has base length \(4\)
+								and height \(2\).
+							</li>
+							<li>Area \(=\dfrac{1}{2}\times 4\times 2=4\).</li>
+							<li><strong>Final result:</strong> \(4\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Area with axes uses positive
+								lengths, so take absolute values of intercepts.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Area cannot be
+								negative, so \(-4\) and \(-2\) are not possible. Option \(2\)
+								comes from missing one intercept length or the multiplication
+								step.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For \(px+qy+r=0\), directly use
+								area
+								\(=\dfrac{1}{2}\left|\dfrac{r}{p}\right|\left|\dfrac{r}{q}\right|\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q104-->
@@ -177,8 +1302,72 @@
 			<!--Start Q105-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q105">Q105</button>
-					<div class="accordion-content">A105</div>
+					<button class="accordion-button" id="Q105">
+						Q 105. What is the area enclosed by the curves \(y=x^4\) and
+						\(y=x^{\frac{1}{3}}\)
+						<ul>
+							<li>(a) \(\dfrac{2}{5}\)</li>
+							<br />
+							<li>(b) \(\dfrac{11}{20}\)</li>
+							<br />
+							<li>(c) \(\dfrac{3}{4}\)</li>
+							<br />
+							<li>(d) \(\dfrac{1}{5}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ \dfrac{11}{20}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> First find the intersection
+								points by solving \(x^4=x^{\frac{1}{3}}\). The curves meet at
+								\(x=0\) and \(x=1\), and between them \(x^{\frac{1}{3}}\) lies
+								above \(x^4\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Area of Bounded Regions - Page M90<br />Integral
+								Calculus \(\rightarrow\) Definite Integrals - Page M90
+							</li>
+							<li>Set the two curves equal: \(x^4=x^{\frac{1}{3}}\).</li>
+							<li>This gives \(x^{\frac{1}{3}}(x^{\frac{11}{3}}-1)=0\).</li>
+							<li>So, \(x=0\) or \(x=1\).</li>
+							<li>On \([0,1]\), \(x^{\frac{1}{3}}\) is above \(x^4\).</li>
+							<li>
+								Therefore, enclosed area
+								\(=\int_0^1\left(x^{\frac{1}{3}}-x^4\right)dx\).
+							</li>
+							<li>
+								Integrate: \(\int
+								x^{\frac{1}{3}}dx=\dfrac{3}{4}x^{\frac{4}{3}}\), and \(\int
+								x^4dx=\dfrac{x^5}{5}\).
+							</li>
+							<li>
+								So, area
+								\(=\left[\dfrac{3}{4}x^{\frac{4}{3}}-\dfrac{x^5}{5}\right]_0^1\).
+							</li>
+							<li>Substitute limits: \(A=\dfrac{3}{4}-\dfrac{1}{5}\).</li>
+							<li>
+								Taking LCM \(20\),
+								\(A=\dfrac{15}{20}-\dfrac{4}{20}=\dfrac{11}{20}\).
+							</li>
+							<li><strong>Final result:</strong> \(\dfrac{11}{20}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Area between curves is
+								always upper curve minus lower curve.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They come from
+								wrong integration, wrong curve order, or missing the
+								intersection limits \(0\) and \(1\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For powers between \(0\) and
+								\(1\), smaller exponent gives larger value. So
+								\(x^{\frac{1}{3}}\) is above \(x^4\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q105-->
@@ -186,53 +1375,478 @@
 			<!--Start Q106-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q106">Q106</button>
-					<div class="accordion-content">A106</div>
+					<button class="accordion-button" id="Q106">
+						Q 106. The number of real solution of
+						\(\sqrt{(7-\log_3|x|)}=4-\log_3|x|\) is equal
+						<ul>
+							<li>(a) \(1\)</li>
+							<li>(b) \(2\)</li>
+							<li>(c) \(3\)</li>
+							<li>(d) \(4\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ 2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(t=\log_3|x|\). Since
+								the right side \(4-t\) must be non-negative, \(t\leq 4\), and
+								the square-root part also needs \(t\leq 7\). Solving the
+								resulting quadratic gives only one valid \(t\), and each valid
+								\(t\) gives two real \(x\)-values because of \(|x|\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Relations and Functions - Page M2<br />Algebra
+								\(\rightarrow\) Quadratic Equations - Page M6
+							</li>
+							<li>Given \(\sqrt{7-\log_3|x|}=4-\log_3|x|\).</li>
+							<li>
+								For the square root to be defined, \(7-\log_3|x|\geq 0\), so
+								\(\log_3|x|\leq 7\).
+							</li>
+							<li>
+								Also, since the left side is non-negative, the right side must
+								be non-negative: \(4-\log_3|x|\geq 0\).
+							</li>
+							<li>So, \(\log_3|x|\leq 4\).</li>
+							<li>
+								Let \(t=\log_3|x|\). Then the effective condition is \(t\leq
+								4\).
+							</li>
+							<li>The equation becomes \(\sqrt{7-t}=4-t\).</li>
+							<li>Squaring both sides: \(7-t=(4-t)^2\).</li>
+							<li>So, \(7-t=16-8t+t^2\).</li>
+							<li>Rearrange: \(t^2-7t+9=0\).</li>
+							<li>
+								Using quadratic formula,
+								\(t=\dfrac{7\pm\sqrt{49-36}}{2}=\dfrac{7\pm\sqrt{13}}{2}\).
+							</li>
+							<li>Now check the condition \(t\leq 4\).</li>
+							<li>\(\dfrac{7+\sqrt{13}}{2}>4\), so it is rejected.</li>
+							<li>\(\dfrac{7-\sqrt{13}}{2}\leq 4\), so it is accepted.</li>
+							<li>Thus there is one valid value of \(t=\log_3|x|\).</li>
+							<li>
+								For one valid value of \(\log_3|x|\), we get \(|x|=3^t\), so
+								\(x=\pm 3^t\).
+							</li>
+							<li>Hence, there are \(2\) real solutions for \(x\).</li>
+							<li>
+								<strong>Final result:</strong> Number of real solutions \(=2\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Whenever \(|x|\) is inside a
+								log, one valid \(|x|\) usually gives two \(x\)-values: one
+								positive and one negative.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Counting only
+								\(t\)-values gives \(1\), but the question asks real
+								\(x\)-solutions. The invalid larger \(t\)-value must be rejected
+								because it makes \(4-t\) negative.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Before squaring a square-root
+								equation, always note that the right-hand side must be
+								non-negative.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q106-->
 
-			<!--Start Q107-->
+			<!--Start Q103-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q107">Q107</button>
-					<div class="accordion-content">A107</div>
+					<button class="accordion-button" id="Q103">
+						Q 103. What is the value of the definite integral
+						\(\int_0^{\frac{\pi}{2}}\log(\sin x)\,dx\)?
+						<ul>
+							<li>(a) \(-\dfrac{\pi}{4}\log 2\)</li>
+							<br />
+							<li>(b) \(-\dfrac{\pi}{2}\log 2\)</li>
+							<br />
+							<li>(c) \(-\pi\log 2\)</li>
+							<br />
+							<li>(d) \(-\dfrac{\pi}{4}\log\left(\dfrac{1}{2}\right)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ -\dfrac{\pi}{2}\log 2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Use the property \(\int_0^a
+								f(x)\,dx=\int_0^a f(a-x)\,dx\). This changes \(\log(\sin x)\)
+								into \(\log(\cos x)\), and adding the two integrals gives
+								\(\log(\sin x\cos x)\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Definite Integrals - Page M90<br />Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36
+							</li>
+							<li>Let \(I=\int_0^{\frac{\pi}{2}}\log(\sin x)\,dx\).</li>
+							<li>
+								Using \(\int_0^a f(x)\,dx=\int_0^a f(a-x)\,dx\), replace \(x\)
+								by \(\dfrac{\pi}{2}-x\).
+							</li>
+							<li>
+								Then
+								\(I=\int_0^{\frac{\pi}{2}}\log\left(\sin\left(\dfrac{\pi}{2}-x\right)\right)\,dx=\int_0^{\frac{\pi}{2}}\log(\cos
+								x)\,dx\).
+							</li>
+							<li>
+								Now add both forms of \(I\):
+								\(2I=\int_0^{\frac{\pi}{2}}\left[\log(\sin x)+\log(\cos
+								x)\right]dx\).
+							</li>
+							<li>
+								Using \(\log A+\log B=\log(AB)\), we get
+								\(2I=\int_0^{\frac{\pi}{2}}\log(\sin x\cos x)\,dx\).
+							</li>
+							<li>
+								Since \(2\sin x\cos x=\sin 2x\), we have \(\sin x\cos
+								x=\dfrac{1}{2}\sin 2x\).
+							</li>
+							<li>
+								So, \(2I=\int_0^{\frac{\pi}{2}}\log\left(\dfrac{1}{2}\sin
+								2x\right)dx\).
+							</li>
+							<li>
+								This becomes
+								\(2I=\int_0^{\frac{\pi}{2}}\log\left(\dfrac{1}{2}\right)dx+\int_0^{\frac{\pi}{2}}\log(\sin
+								2x)\,dx\).
+							</li>
+							<li>
+								Now, \(\log\left(\dfrac{1}{2}\right)=-\log 2\), so the first
+								integral is \(-\dfrac{\pi}{2}\log 2\).
+							</li>
+							<li>
+								The second integral reduces back to \(I\), using the standard
+								symmetry of \(\log(\sin x)\).
+							</li>
+							<li>Therefore, \(2I=-\dfrac{\pi}{2}\log 2+I\).</li>
+							<li>Hence, \(I=-\dfrac{\pi}{2}\log 2\).</li>
+							<li><strong>Final result:</strong> \(-\dfrac{\pi}{2}\log 2\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Remember the standard
+								result: \(\int_0^{\frac{\pi}{2}}\log(\sin
+								x)\,dx=\int_0^{\frac{\pi}{2}}\log(\cos
+								x)\,dx=-\dfrac{\pi}{2}\log 2\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They miss the
+								full interval factor \(\dfrac{\pi}{2}\) or make a sign mistake
+								with \(\log\left(\dfrac{1}{2}\right)=-\log 2\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> This is a direct standard
+								definite integral. In one-minute solving, recall the result
+								instead of deriving it fully.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<!--End Q107-->
+			<!--End Q103-->
 
-			<!--Start Q108-->
+			<!--Start Q104-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q108">Q108</button>
-					<div class="accordion-content">A108</div>
+					<button class="accordion-button" id="Q104">
+						Q 104. If \(p,q,r\) are in GP and the line \(px+qy+r=0\) forms a
+						triangle with the coordinate axes, what is the area of the triangle
+						if \(p=2,q=4\) and \(r=8\)?
+						<ul>
+							<li>(a) \(2\)</li>
+							<li>(b) \(-4\)</li>
+							<li>(c) \(4\)</li>
+							<li>(d) \(-2\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ 4\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> For \(px+qy+r=0\), the
+								\(x\)-intercept is \(-\dfrac{r}{p}\) and the \(y\)-intercept is
+								\(-\dfrac{r}{q}\). The area of the triangle with coordinate axes
+								is \(\dfrac{1}{2}\times |\text{x-intercept}|\times
+								|\text{y-intercept}|\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Lines - Page
+								M48<br />Algebra \(\rightarrow\) Sequences and Series - Page M6
+							</li>
+							<li>
+								Given line: \(px+qy+r=0\), with \(p=2\), \(q=4\), and \(r=8\).
+							</li>
+							<li>So the line is \(2x+4y+8=0\).</li>
+							<li>
+								For the \(x\)-intercept, put \(y=0\): \(2x+8=0\), so \(x=-4\).
+							</li>
+							<li>
+								For the \(y\)-intercept, put \(x=0\): \(4y+8=0\), so \(y=-2\).
+							</li>
+							<li>
+								The triangle formed with coordinate axes has base length \(4\)
+								and height \(2\).
+							</li>
+							<li>Area \(=\dfrac{1}{2}\times 4\times 2=4\).</li>
+							<li><strong>Final result:</strong> \(4\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Area with axes uses positive
+								lengths, so take absolute values of intercepts.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Area cannot be
+								negative, so \(-4\) and \(-2\) are not possible. Option \(2\)
+								comes from missing one intercept length or the multiplication
+								step.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For \(px+qy+r=0\), directly use
+								area
+								\(=\dfrac{1}{2}\left|\dfrac{r}{p}\right|\left|\dfrac{r}{q}\right|\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<!--End Q108-->
+			<!--End Q104-->
 
-			<!--Start Q109-->
+			<!--Start Q105-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q109">Q109</button>
-					<div class="accordion-content">A109</div>
+					<button class="accordion-button" id="Q105">
+						Q 105. What is the area enclosed by the curves \(y=x^4\) and
+						\(y=x^{\frac{1}{3}}\)
+						<ul>
+							<li>(a) \(\dfrac{2}{5}\)</li>
+							<br />
+							<li>(b) \(\dfrac{11}{20}\)</li>
+							<br />
+							<li>(c) \(\dfrac{3}{4}\)</li>
+							<br />
+							<li>(d) \(\dfrac{1}{5}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ \dfrac{11}{20}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> First find the intersection
+								points by solving \(x^4=x^{\frac{1}{3}}\). The curves meet at
+								\(x=0\) and \(x=1\), and between them \(x^{\frac{1}{3}}\) lies
+								above \(x^4\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Area of Bounded Regions - Page M90<br />Integral
+								Calculus \(\rightarrow\) Definite Integrals - Page M90
+							</li>
+							<li>Set the two curves equal: \(x^4=x^{\frac{1}{3}}\).</li>
+							<li>This gives \(x^{\frac{1}{3}}(x^{\frac{11}{3}}-1)=0\).</li>
+							<li>So, \(x=0\) or \(x=1\).</li>
+							<li>On \([0,1]\), \(x^{\frac{1}{3}}\) is above \(x^4\).</li>
+							<li>
+								Therefore, enclosed area
+								\(=\int_0^1\left(x^{\frac{1}{3}}-x^4\right)dx\).
+							</li>
+							<li>
+								Integrate: \(\int
+								x^{\frac{1}{3}}dx=\dfrac{3}{4}x^{\frac{4}{3}}\), and \(\int
+								x^4dx=\dfrac{x^5}{5}\).
+							</li>
+							<li>
+								So, area
+								\(=\left[\dfrac{3}{4}x^{\frac{4}{3}}-\dfrac{x^5}{5}\right]_0^1\).
+							</li>
+							<li>Substitute limits: \(A=\dfrac{3}{4}-\dfrac{1}{5}\).</li>
+							<li>
+								Taking LCM \(20\),
+								\(A=\dfrac{15}{20}-\dfrac{4}{20}=\dfrac{11}{20}\).
+							</li>
+							<li><strong>Final result:</strong> \(\dfrac{11}{20}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Area between curves is
+								always upper curve minus lower curve.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They come from
+								wrong integration, wrong curve order, or missing the
+								intersection limits \(0\) and \(1\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For powers between \(0\) and
+								\(1\), smaller exponent gives larger value. So
+								\(x^{\frac{1}{3}}\) is above \(x^4\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<!--End Q109-->
+			<!--End Q105-->
 
-			<!--Start Q110-->
+			<!--Start Q106-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q110">Q110</button>
-					<div class="accordion-content">A110</div>
+					<button class="accordion-button" id="Q106">
+						Q 106. The number of real solution of
+						\(\sqrt{(7-\log_3|x|)}=4-\log_3|x|\) is equal
+						<ul>
+							<li>(a) \(1\)</li>
+							<li>(b) \(2\)</li>
+							<li>(c) \(3\)</li>
+							<li>(d) \(4\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ 2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(t=\log_3|x|\). Since
+								the right side \(4-t\) must be non-negative, \(t\leq 4\), and
+								the square-root part also needs \(t\leq 7\). Solving the
+								resulting quadratic gives only one valid \(t\), and each valid
+								\(t\) gives two real \(x\)-values because of \(|x|\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Relations and Functions - Page M2<br />Algebra
+								\(\rightarrow\) Quadratic Equations - Page M6
+							</li>
+							<li>Given \(\sqrt{7-\log_3|x|}=4-\log_3|x|\).</li>
+							<li>
+								For the square root to be defined, \(7-\log_3|x|\geq 0\), so
+								\(\log_3|x|\leq 7\).
+							</li>
+							<li>
+								Also, since the left side is non-negative, the right side must
+								be non-negative: \(4-\log_3|x|\geq 0\).
+							</li>
+							<li>So, \(\log_3|x|\leq 4\).</li>
+							<li>
+								Let \(t=\log_3|x|\). Then the effective condition is \(t\leq
+								4\).
+							</li>
+							<li>The equation becomes \(\sqrt{7-t}=4-t\).</li>
+							<li>Squaring both sides: \(7-t=(4-t)^2\).</li>
+							<li>So, \(7-t=16-8t+t^2\).</li>
+							<li>Rearrange: \(t^2-7t+9=0\).</li>
+							<li>
+								Using quadratic formula,
+								\(t=\dfrac{7\pm\sqrt{49-36}}{2}=\dfrac{7\pm\sqrt{13}}{2}\).
+							</li>
+							<li>Now check the condition \(t\leq 4\).</li>
+							<li>\(\dfrac{7+\sqrt{13}}{2}>4\), so it is rejected.</li>
+							<li>\(\dfrac{7-\sqrt{13}}{2}\leq 4\), so it is accepted.</li>
+							<li>Thus there is one valid value of \(t=\log_3|x|\).</li>
+							<li>
+								For one valid value of \(\log_3|x|\), we get \(|x|=3^t\), so
+								\(x=\pm 3^t\).
+							</li>
+							<li>Hence, there are \(2\) real solutions for \(x\).</li>
+							<li>
+								<strong>Final result:</strong> Number of real solutions \(=2\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Whenever \(|x|\) is inside a
+								log, one valid \(|x|\) usually gives two \(x\)-values: one
+								positive and one negative.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Counting only
+								\(t\)-values gives \(1\), but the question asks real
+								\(x\)-solutions. The invalid larger \(t\)-value must be rejected
+								because it makes \(4-t\) negative.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Before squaring a square-root
+								equation, always note that the right-hand side must be
+								non-negative.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<!--End Q110-->
+			<!--End Q106-->
 
 			<!--Start Q111-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q111">Q111</button>
-					<div class="accordion-content">A111</div>
+					<button class="accordion-button" id="Q111">
+						Q 111. If \(a,b,c,d\) be four positive unequal quantities and
+						\(s=a+b+c+d\), then \((s-a)(s-b)(s-c)(s-d)>kabcd\). Then, value of
+						\(k\) is
+						<ul>
+							<li>(a) \(3\)</li>
+							<li>(b) \(27\)</li>
+							<li>(c) \(36\)</li>
+							<li>(d) \(81\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\ 81\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since \(s-a=b+c+d\), apply
+								AM-GM to each of \(b+c+d\), \(a+c+d\), \(a+b+d\), and \(a+b+c\).
+								Multiplying the four inequalities gives
+								\((s-a)(s-b)(s-c)(s-d)>81abcd\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Sequences and Series - Page M6<br />Algebra
+								\(\rightarrow\) Mathematical Reasoning - Page M12
+							</li>
+							<li>Given \(s=a+b+c+d\).</li>
+							<li>
+								So, \(s-a=b+c+d\), \(s-b=a+c+d\), \(s-c=a+b+d\), and
+								\(s-d=a+b+c\).
+							</li>
+							<li>
+								Using AM-GM, \(\dfrac{a+b+c}{3}>(abc)^{\frac{1}{3}}\), since the
+								quantities are positive and unequal.
+							</li>
+							<li>
+								Therefore, \(a+b+c>3(abc)^{\frac{1}{3}}\), so
+								\(s-d>3(abc)^{\frac{1}{3}}\).
+							</li>
+							<li>
+								Similarly, \(s-a>3(bcd)^{\frac{1}{3}}\),
+								\(s-b>3(acd)^{\frac{1}{3}}\), and \(s-c>3(abd)^{\frac{1}{3}}\).
+							</li>
+							<li>
+								Multiplying all four inequalities,
+								\((s-a)(s-b)(s-c)(s-d)>3^4(bcd)^{\frac{1}{3}}(acd)^{\frac{1}{3}}(abd)^{\frac{1}{3}}(abc)^{\frac{1}{3}}\).
+							</li>
+							<li>Now \(3^4=81\).</li>
+							<li>
+								Also, \((bcd)(acd)(abd)(abc)=a^3b^3c^3d^3\), so its cube root is
+								\(abcd\).
+							</li>
+							<li>Hence, \((s-a)(s-b)(s-c)(s-d)>81abcd\).</li>
+							<li><strong>Final result:</strong> \(k=81\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> AM-GM for three positive
+								numbers gives sum \(>3\) times cube root of product.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The multiplier
+								is \(3^4\), not \(3\), \(3^3\), or \(36\), because four AM-GM
+								inequalities are multiplied.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Notice \(s-a\), \(s-b\),
+								\(s-c\), \(s-d\) are sums of three terms each, so AM-GM gives
+								four factors of \(3\), hence \(81\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q111-->
@@ -240,8 +1854,85 @@
 			<!--Start Q112-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q112">Q112</button>
-					<div class="accordion-content">A112</div>
+					<button class="accordion-button" id="Q112">
+						Q 112. If four lines \(ax\pm by\pm c=0\) encloses a rhombus, then
+						the area is
+						<ul>
+							<li>(a) \(\dfrac{1}{abc}\) sq. units</li>
+							<li>(b) \(2abc\) sq. units</li>
+							<li>(c) \(\dfrac{2c^2}{ab}\) sq. units</li>
+							<li>(d) None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((c)\ \dfrac{2c^2}{ab}\) sq. units</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The four lines form a
+								rhombus with vertices on the coordinate axes:
+								\(\left(\dfrac{c}{a},0\right)\),
+								\(\left(0,\dfrac{c}{b}\right)\),
+								\(\left(-\dfrac{c}{a},0\right)\), and
+								\(\left(0,-\dfrac{c}{b}\right)\). Its diagonals are
+								\(\dfrac{2c}{a}\) and \(\dfrac{2c}{b}\), so area
+								\(=\dfrac{1}{2}d_1d_2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Lines - Page
+								M48
+							</li>
+							<li>
+								The four lines are \(ax+by+c=0\), \(ax-by+c=0\), \(ax+by-c=0\),
+								and \(ax-by-c=0\).
+							</li>
+							<li>
+								These lines form a parallelogram, and because the diagonals are
+								perpendicular, the parallelogram is a rhombus.
+							</li>
+							<li>
+								The vertices of the rhombus are
+								\(A\left(\dfrac{c}{a},0\right)\),
+								\(B\left(0,\dfrac{c}{b}\right)\),
+								\(C\left(-\dfrac{c}{a},0\right)\), and
+								\(D\left(0,-\dfrac{c}{b}\right)\).
+							</li>
+							<li>The diagonal \(AC\) lies on the \(x\)-axis.</li>
+							<li>
+								So,
+								\(AC=\dfrac{c}{a}-\left(-\dfrac{c}{a}\right)=\dfrac{2c}{a}\).
+							</li>
+							<li>The diagonal \(BD\) lies on the \(y\)-axis.</li>
+							<li>
+								So,
+								\(BD=\dfrac{c}{b}-\left(-\dfrac{c}{b}\right)=\dfrac{2c}{b}\).
+							</li>
+							<li>Area of rhombus \(=\dfrac{1}{2}\times AC\times BD\).</li>
+							<li>
+								Therefore, area
+								\(=\dfrac{1}{2}\times\dfrac{2c}{a}\times\dfrac{2c}{b}=\dfrac{2c^2}{ab}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> \(\dfrac{2c^2}{ab}\) sq. units.
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Area of a rhombus
+								\(=\dfrac{1}{2}\times\) product of diagonals.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They do not
+								match the diagonal lengths \(\dfrac{2c}{a}\) and
+								\(\dfrac{2c}{b}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For symmetric lines \(ax\pm
+								by\pm c=0\), quickly take intercept vertices and use diagonal
+								formula.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q112-->
@@ -249,8 +1940,71 @@
 			<!--Start Q113-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q113">Q113</button>
-					<div class="accordion-content">A113</div>
+					<button class="accordion-button" id="Q113">
+						Q 113. If the equation \(2hxy+2gx+2fy+c=0\) represents two straight
+						lines, then the area of the rectangle formed with the coordinates
+						axes is
+						<ul>
+							<li>(a) \(\dfrac{|fg|}{h^2}\)</li>
+							<li>(b) \(-\dfrac{f}{h}\)</li>
+							<li>(c) \(\dfrac{fg}{h}\)</li>
+							<li>(d) \(\dfrac{2fg}{h}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ \dfrac{|fg|}{h^2}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since the equation
+								represents a pair of straight lines, use the condition for a
+								second-degree equation to split into two lines. It factors as
+								\((hx+f)(hy+g)=0\), giving lines \(hx+f=0\) and \(hy+g=0\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Lines - Page
+								M48<br />Two-dimensional Coordinate Geometry \(\rightarrow\)
+								Conic Sections - Page M50
+							</li>
+							<li>Given equation: \(2hxy+2gx+2fy+c=0\).</li>
+							<li>
+								For this equation to represent a pair of straight lines, the
+								condition gives \(2fg=ch\).
+							</li>
+							<li>So, \(c=\dfrac{2fg}{h}\).</li>
+							<li>
+								Substitute this in the equation:
+								\(2hxy+2gx+2fy+\dfrac{2fg}{h}=0\).
+							</li>
+							<li>Multiply by \(\dfrac{h}{2}\): \(h^2xy+ghx+fhy+fg=0\).</li>
+							<li>Factorize by grouping: \(hy(hx+f)+g(hx+f)=0\).</li>
+							<li>So, \((hx+f)(hy+g)=0\).</li>
+							<li>
+								Therefore, the two straight lines are \(hx+f=0\) and \(hy+g=0\).
+							</li>
+							<li>From \(hx+f=0\), we get \(x=-\dfrac{f}{h}\).</li>
+							<li>From \(hy+g=0\), we get \(y=-\dfrac{g}{h}\).</li>
+							<li>These two lines and the coordinate axes form a rectangle.</li>
+							<li>
+								Area
+								\(=\left|-\dfrac{f}{h}\right|\times\left|-\dfrac{g}{h}\right|=\dfrac{|fg|}{h^2}\).
+							</li>
+							<li><strong>Final result:</strong> \(\dfrac{|fg|}{h^2}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Area is always positive, so
+								use absolute value when intercepts may be negative.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They either
+								give only one side length or miss the square in the denominator.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Once it factors into
+								\(x=\text{constant}\) and \(y=\text{constant}\), area with axes
+								is simply product of the two distances from axes.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q113-->
@@ -258,8 +2012,77 @@
 			<!--Start Q114-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q114">Q114</button>
-					<div class="accordion-content">A114</div>
+					<button class="accordion-button" id="Q114">
+						Q 114. What is the set of values of \(a\) for which the point
+						\((2a,a+1)\) is an interior point of the larger segment of the
+						circle \(x^2+y^2-2x-2y-8=0\) made by the chord \(x-y+1=0\).
+						<ul>
+							<li>(a) \(\left(0,\dfrac{9}{5}\right)\)</li>
+							<li>(b) \((0,\infty)\)</li>
+							<li>(c) \(\left(\dfrac{9}{5},\infty\right)\)</li>
+							<li>(d) \((-\infty,0)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((a)\ \left(0,\dfrac{9}{5}\right)\)</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The point must be inside the
+								circle, and for the larger segment it must lie on the same side
+								of the chord as the centre of the circle. These two conditions
+								give \(5a^2-4a-9&lt;0\) and \(a&gt;0\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Circles -
+								Page M49<br />Two-dimensional Coordinate Geometry
+								\(\rightarrow\) Lines - Page M48
+							</li>
+							<li>The circle is \(x^2+y^2-2x-2y-8=0\).</li>
+							<li>Its centre is \((1,1)\).</li>
+							<li>The given point is \(P(2a,a+1)\).</li>
+							<li>First, \(P\) must be inside the circle.</li>
+							<li>
+								Substitute \(x=2a\), \(y=a+1\) in \(x^2+y^2-2x-2y-8&lt;0\).
+							</li>
+							<li>This gives \((2a)^2+(a+1)^2-2(2a)-2(a+1)-8&lt;0\).</li>
+							<li>Simplifying: \(4a^2+a^2+2a+1-4a-2a-2-8&lt;0\).</li>
+							<li>So, \(5a^2-4a-9&lt;0\).</li>
+							<li>Factorize: \((5a-9)(a+1)&lt;0\).</li>
+							<li>Hence, \(-1 &lt; a &lt; \dfrac{9}{5}\).</li>
+							<li>
+								Now, for \(P\) to be in the larger segment, \(P\) and the centre
+								\((1,1)\) must lie on the same side of the chord \(x-y+1=0\).
+							</li>
+							<li>For \(P(2a,a+1)\), \(x-y+1=2a-(a+1)+1=a\).</li>
+							<li>For centre \((1,1)\), \(x-y+1=1-1+1=1\).</li>
+							<li>Same side means product \(a\cdot 1>0\), so \(a>0\).</li>
+							<li>
+								Combining \(-1 &lt; a &lt; \dfrac{9}{5}\) with \(a &gt; 0\), we
+								get \(0 &lt; a &lt; \dfrac{9}{5}\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(a\in\left(0,\dfrac{9}{5}\right)\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For segment questions, check
+								two things: inside the circle and correct side of the chord.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They miss
+								either the inside-circle condition or the same-side-as-centre
+								condition.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Larger segment means the side
+								containing the centre. So directly compare signs of chord
+								expression at the point and at the centre.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q114-->
