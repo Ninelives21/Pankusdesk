@@ -1506,3 +1506,77 @@ div[id^='ch'] h3 a {
 	background-color: #e0e0e0;
 	color: #1f2937;
 }
+
+/* BITSAT consolidated blueprint table styling */
+.blueprint-table {
+	width: calc(100% - 40px);
+	margin: 20px;
+	border-collapse: collapse;
+	table-layout: fixed;
+	font-size: 15px;
+	line-height: 1.45;
+	background: #ffffff;
+}
+
+/* Header */
+.blueprint-table thead th {
+	background: #4b5563;
+	color: #ffffff;
+	font-weight: 600;
+	text-align: left;
+	padding: 12px 14px;
+	border: 1px solid #5f6b7a;
+}
+
+/* Body cells */
+.blueprint-table tbody td {
+	padding: 12px 14px;
+	vertical-align: top;
+	border: 1px solid #e5e7eb;
+}
+
+/* Alternate row shading */
+.blueprint-table tbody tr:nth-child(even) {
+	background: #f3f4f6;
+}
+
+/* Column widths */
+.blueprint-table th:nth-child(1),
+.blueprint-table td:nth-child(1) {
+	width: 55px;
+	text-align: left;
+}
+
+.blueprint-table th:nth-child(2),
+.blueprint-table td:nth-child(2) {
+	width: 320px;
+	font-weight: 500;
+}
+
+.blueprint-table th:nth-child(n + 3),
+.blueprint-table td:nth-child(n + 3) {
+	width: 180px;
+}
+
+/* PYQ links */
+.blueprint-table .link_no_style {
+	color: #0097a7;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.blueprint-table .link_no_style:hover {
+	text-decoration: underline;
+}
+
+/* Better spacing for stacked PYQ numbers */
+.blueprint-table td a {
+	display: inline-block;
+	margin-bottom: 3px;
+}
+
+/* Optional: mobile horizontal scroll wrapper */
+.blueprint-table-wrapper {
+	margin: 20px;
+	overflow-x: auto;
+}
