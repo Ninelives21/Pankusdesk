@@ -2052,8 +2052,71 @@
 			<!--Start Q115-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q115">Q115</button>
-					<div class="accordion-content">A115</div>
+					<button class="accordion-button" id="Q115">
+						Q 115. Number of real solution of \(\sqrt{5-\log_2|x|}=3-\log_2|x|\)
+						is equal to
+						<ul>
+							<li>(a) \(1\)</li>
+							<li>(b) \(2\)</li>
+							<li>(c) \(3\)</li>
+							<li>(d) \(4\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ 2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(\log_2|x|=t\). Then
+								the equation becomes \(\sqrt{5-t}=3-t\). Squaring gives \(t=1\)
+								or \(t=4\), but \(t=4\) is rejected because the right side
+								becomes negative.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Relations and Functions - Page M2<br />Algebra
+								\(\rightarrow\) Quadratic Equations - Page M6
+							</li>
+							<li>Let \(\log_2|x|=t\).</li>
+							<li>Then the given equation becomes \(\sqrt{5-t}=3-t\).</li>
+							<li>
+								Since the left side is a square root, it is always non-negative.
+								So the right side \(3-t\) must also be non-negative.
+							</li>
+							<li>Therefore, \(3-t\ge0\), so \(t\le3\).</li>
+							<li>Now square both sides: \(5-t=(3-t)^2\).</li>
+							<li>Expanding the right side, \(5-t=9-6t+t^2\).</li>
+							<li>Bring all terms to one side: \(t^2-5t+4=0\).</li>
+							<li>Factorise: \((t-4)(t-1)=0\).</li>
+							<li>So, \(t=4\) or \(t=1\).</li>
+							<li>
+								But \(t=4\) is rejected because \(3-t=3-4=-1\), while a square
+								root cannot be negative.
+							</li>
+							<li>Thus, only \(t=1\) is valid.</li>
+							<li>So, \(\log_2|x|=1\).</li>
+							<li>This gives \(|x|=2\).</li>
+							<li>Therefore, \(x=\pm2\).</li>
+							<li>Hence, there are \(2\) real solutions.</li>
+							<li>
+								<strong>Final result:</strong> Number of real solutions \(=2\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> When you square an equation
+								with a square root, always check the solutions again. Squaring
+								can introduce extra roots.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> After getting \(t=1,4\),
+								immediately check \(3-t\). Since \(t=4\) makes the right side
+								negative, reject it.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Only \(x=2\)
+								and \(x=-2\) satisfy the original equation, so the number of
+								real solutions is \(2\), not \(1\), \(3\), or \(4\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q115-->
@@ -2061,8 +2124,84 @@
 			<!--Start Q116-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q116">Q116</button>
-					<div class="accordion-content">A116</div>
+					<button class="accordion-button" id="Q116">
+						Q 116. The value of definite integral
+						\(\int\limits_0^{\pi/2}\log(\tan x)\,dx\) is
+						<ul>
+							<li>(a) \(0\)</li>
+							<li>(b) \(\dfrac{\pi}{4}\)</li>
+							<br />
+							<li>(c) \(\dfrac{\pi}{2}\)</li>
+							<br />
+							<li>(d) \(\pi\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ 0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Let
+								\(I=\int_0^{\pi/2}\log(\tan x)\,dx\). Using the property
+								\(\int_a^b f(x)\,dx=\int_a^b f(a+b-x)\,dx\), we get
+								\(I=\int_0^{\pi/2}\log(\cot x)\,dx\). Adding both forms gives
+								\(2I=\int_0^{\pi/2}\log(\tan x\cdot\cot x)\,dx=0\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Definite Integrals - Page M90<br />Integral
+								Calculus \(\rightarrow\) Trigonometric Integrals - Page M90
+							</li>
+							<li>Let \(I=\int\limits_0^{\pi/2}\log(\tan x)\,dx\).</li>
+							<li>
+								Use the definite integral property \(\int_a^b f(x)\,dx=\int_a^b
+								f(a+b-x)\,dx\).
+							</li>
+							<li>Here, \(a=0\) and \(b=\dfrac{\pi}{2}\).</li>
+							<li>
+								So,
+								\(I=\int\limits_0^{\pi/2}\log\left(\tan\left(\dfrac{\pi}{2}-x\right)\right)\,dx\).
+							</li>
+							<li>
+								Since \(\tan\left(\dfrac{\pi}{2}-x\right)=\cot x\), we get
+								\(I=\int\limits_0^{\pi/2}\log(\cot x)\,dx\).
+							</li>
+							<li>
+								Now add the two forms of \(I\):
+								\(2I=\int\limits_0^{\pi/2}\left[\log(\tan x)+\log(\cot
+								x)\right]dx\).
+							</li>
+							<li>
+								Using \(\log A+\log B=\log(AB)\), we get
+								\(2I=\int\limits_0^{\pi/2}\log(\tan x\cdot\cot x)\,dx\).
+							</li>
+							<li>
+								Since \(\tan x\cdot\cot x=1\), this becomes
+								\(2I=\int\limits_0^{\pi/2}\log1\,dx\).
+							</li>
+							<li>Now \(\log1=0\).</li>
+							<li>Therefore, \(2I=0\), so \(I=0\).</li>
+							<li>
+								<strong>Final result:</strong> \(\int\limits_0^{\pi/2}\log(\tan
+								x)\,dx=0\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> On
+								\(\left(0,\dfrac{\pi}{2}\right)\), \(\tan x\) and \(\cot x\)
+								balance each other under the substitution
+								\(x\mapsto\dfrac{\pi}{2}-x\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> For \(\int_0^{\pi/2}\log(\tan
+								x)\,dx\), remember the direct result is \(0\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The integral
+								cancels symmetrically after pairing \(\log(\tan x)\) with
+								\(\log(\cot x)\), so no positive multiple of \(\pi\) is
+								obtained.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q116-->
@@ -2070,8 +2209,76 @@
 			<!--Start Q117-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q117">Q117</button>
-					<div class="accordion-content">A117</div>
+					<button class="accordion-button" id="Q117">
+						Q 117. If the number of available constraints is \(3\) and the
+						number of parameters to be optimise is \(4\), then
+						<ul>
+							<li>(a) the objective function can be optimised</li>
+							<li>(b) the constraint are short in number</li>
+							<li>(c) the solution is problem oriented</li>
+							<li>(d) None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((b)\) the constraint are short in number</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> To optimise \(n\)
+								parameters, we generally need at least \(n\) independent
+								constraints. Here there are \(4\) parameters but only \(3\)
+								available constraints, so the constraints are insufficient.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Linear
+								Programming \(\rightarrow\) Linear Programming - Page M145<br />Mathematical
+								Modeling \(\rightarrow\) Process involved in modeling - Page
+								M157
+							</li>
+							<li>Given number of available constraints \(=3\).</li>
+							<li>Given number of parameters to be optimised \(=4\).</li>
+							<li>
+								In an optimisation or modelling problem, the constraints
+								restrict the possible values of the parameters.
+							</li>
+							<li>
+								To optimise \(n\) parameters properly, we generally need at
+								least \(n\) effective independent constraints.
+							</li>
+							<li>
+								Here, the number of constraints is less than the number of
+								parameters.
+							</li>
+							<li>
+								So, the available constraints are not enough to fully restrict
+								the \(4\) parameters.
+							</li>
+							<li>Therefore, the constraints are short in number.</li>
+							<li>
+								<strong>Final result:</strong> The constraint are short in
+								number.
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> More variables or parameters
+								need enough restrictions. If constraints are fewer than
+								parameters, the problem is under-constrained.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Compare constraints and
+								parameters directly: \(3&lt;4\), so constraints are
+								insufficient.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The objective
+								function cannot be confidently optimised with fewer constraints
+								than required. The key issue is the shortage of constraints, so
+								option \((b)\) is correct.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q117-->
@@ -2079,8 +2286,95 @@
 			<!--Start Q118-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q118">Q118</button>
-					<div class="accordion-content">A118</div>
+					<button class="accordion-button" id="Q118">
+						Q 118. The locus of the mid-point of a chord of the circle
+						\(x^2+y^2=4\), which subtends a right angle at the origin is
+						<ul>
+							<li>(a) \(x+y=2\)</li>
+							<li>(b) \(x^2+y^2=1\)</li>
+							<li>(c) \(x^2+y^2=2\)</li>
+							<li>(d) \(x+y=1\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ x^2+y^2=2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The circle \(x^2+y^2=4\) has
+								radius \(2\). If a chord subtends \(90^\circ\) at the origin,
+								then the perpendicular distance from the origin to the chord's
+								midpoint is \(2\cos45^\circ=\sqrt{2}\). Hence if the midpoint is
+								\((h,k)\), then \(h^2+k^2=2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Circles -
+								Page M49
+							</li>
+							<li>
+								<img
+									src="images/math_q118a.png"
+									alt="chord of circle subtending right angle at origin with midpoint"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>The given circle is \(x^2+y^2=4\).</li>
+							<li>
+								So its centre is the origin \(O(0,0)\), and its radius is \(2\).
+							</li>
+							<li>
+								Let \(AB\) be the chord which subtends a right angle at the
+								origin.
+							</li>
+							<li>So, \(\angle AOB=90^\circ\).</li>
+							<li>Let \(C(h,k)\) be the midpoint of chord \(AB\).</li>
+							<li>
+								In a circle, the line from the centre to the midpoint of a chord
+								is perpendicular to the chord.
+							</li>
+							<li>
+								Thus, \(OC\) is the distance from the centre to the chord.
+							</li>
+							<li>
+								In right triangle \(OCB\), \(OB=2\), because \(B\) lies on the
+								circle.
+							</li>
+							<li>
+								Since \(\angle AOB=90^\circ\), the angle \(\angle
+								COB=45^\circ\).
+							</li>
+							<li>Therefore, \(\cos45^\circ=\dfrac{OC}{OB}\).</li>
+							<li>So, \(\dfrac{1}{\sqrt{2}}=\dfrac{\sqrt{h^2+k^2}}{2}\).</li>
+							<li>Hence, \(\sqrt{h^2+k^2}=\sqrt{2}\).</li>
+							<li>Squaring both sides, \(h^2+k^2=2\).</li>
+							<li>
+								Replacing \(h\) by \(x\) and \(k\) by \(y\), the locus is
+								\(x^2+y^2=2\).
+							</li>
+							<li>
+								<strong>Final result:</strong> The locus is \(x^2+y^2=2\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For a chord subtending angle
+								\(2\alpha\) at the centre, distance from centre to chord is
+								\(r\cos\alpha\). Here \(2\alpha=90^\circ\), so
+								\(\alpha=45^\circ\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Radius \(=2\), half-angle
+								\(=45^\circ\), so midpoint distance from origin
+								\(=2\cos45^\circ=\sqrt{2}\). Therefore, locus is radius-square
+								\(2\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The midpoint
+								traces a circle centred at the origin with radius \(\sqrt{2}\),
+								so its equation is \(x^2+y^2=2\), not a line or a circle with
+								radius \(1\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q118-->
@@ -2088,8 +2382,87 @@
 			<!--Start Q119-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q119">Q119</button>
-					<div class="accordion-content">A119</div>
+					<button class="accordion-button" id="Q119">
+						Q 119. A person invites a party of \(10\) friends at dinner and
+						place so that \(4\) are on one round table and \(6\) on the other
+						round table. The number of ways in which he can arrange the guests
+						is
+						<ul>
+							<li>(a) \(\dfrac{10!}{6!}\)</li>
+							<br />
+							<li>(b) \(\dfrac{10!}{24}\)</li>
+							<br />
+							<li>(c) \(\dfrac{9!}{24}\)</li>
+							<br />
+							<li>(d) None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ \dfrac{10!}{24}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> First choose which \(4\)
+								people sit at one table and which \(6\) sit at the other table.
+								Then arrange each group around a round table using circular
+								permutation: \(4\) people can be arranged in \((4-1)!\) ways and
+								\(6\) people in \((6-1)!\) ways.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Permutations and Combinations - Page M8
+							</li>
+							<li>Total number of friends is \(10\).</li>
+							<li>
+								They are divided into two groups: one group of \(4\) and one
+								group of \(6\).
+							</li>
+							<li>
+								The number of ways to form these two groups is
+								\(\dfrac{10!}{4!6!}\).
+							</li>
+							<li>Now arrange the \(4\) people around one round table.</li>
+							<li>
+								For circular arrangements of \(n\) people, the number of
+								arrangements is \((n-1)!\).
+							</li>
+							<li>
+								So, \(4\) people can be arranged around a round table in
+								\((4-1)!=3!\) ways.
+							</li>
+							<li>
+								Similarly, \(6\) people can be arranged around the other round
+								table in \((6-1)!=5!\) ways.
+							</li>
+							<li>
+								Therefore, total number of arrangements is
+								\(\dfrac{10!}{4!6!}\times3!\times5!\).
+							</li>
+							<li>
+								Simplify:
+								\(\dfrac{10!}{4!6!}\times3!\times5!=\dfrac{10!}{4\cdot6}=\dfrac{10!}{24}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> The number of ways is
+								\(\dfrac{10!}{24}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For a round table, one
+								rotation is counted the same, so \(n\) people around a round
+								table are arranged in \((n-1)!\) ways.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use group selection
+								\(\dfrac{10!}{4!6!}\), then multiply by circular arrangements
+								\(3!\cdot5!\). Most terms cancel quickly to \(\dfrac{10!}{24}\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Option \((a)\)
+								ignores circular arrangement cancellation correctly, and option
+								\((c)\) loses an extra factor. The correct simplified value is
+								\(\dfrac{10!}{24}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q119-->
@@ -2097,8 +2470,102 @@
 			<!--Start Q120-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q120">Q120</button>
-					<div class="accordion-content">A120</div>
+					<button class="accordion-button" id="Q120">
+						Q 120. From the top of a cliff \(50\ \mathrm{m}\) high, the angles
+						of depression of the top and bottom of a tower are observed to be
+						\(30^\circ\) and \(45^\circ\). The height of tower is
+						<ul>
+							<li>(a) \(50\ \mathrm{m}\)</li>
+							<li>(b) \(50\sqrt{3}\ \mathrm{m}\)</li>
+							<li>(c) \(50(\sqrt{3}-1)\ \mathrm{m}\)</li>
+							<li>(d) \(50\left(1-\dfrac{\sqrt{3}}{3}\right)\ \mathrm{m}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((d)\ 50\left(1-\dfrac{\sqrt{3}}{3}\right)\
+									\mathrm{m}\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The angle of depression to
+								the bottom of the tower is \(45^\circ\), so the horizontal
+								distance between cliff and tower is \(50\ \mathrm{m}\). Then
+								using the \(30^\circ\) depression to the top of the tower,
+								\(\tan30^\circ=\dfrac{50-h}{50}\), giving
+								\(h=50\left(1-\dfrac{\sqrt{3}}{3}\right)\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36<br />Two-dimensional Coordinate Geometry \(\rightarrow\)
+								Lines - Page M48
+							</li>
+							<li>
+								<img
+									src="images/math_q120a.png"
+									alt="cliff and tower angles of depression diagram"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>Let the height of the tower be \(h\).</li>
+							<li>The height of the cliff is \(50\ \mathrm{m}\).</li>
+							<li>
+								From the top of the cliff, the angle of depression to the bottom
+								of the tower is \(45^\circ\).
+							</li>
+							<li>
+								Angle of depression equals the corresponding angle of elevation.
+							</li>
+							<li>
+								So, in the right triangle formed with the bottom of the tower,
+								\(\tan45^\circ=\dfrac{50}{BD}\), where \(BD\) is the horizontal
+								distance.
+							</li>
+							<li>Since \(\tan45^\circ=1\), we get \(BD=50\ \mathrm{m}\).</li>
+							<li>
+								Now consider the angle of depression to the top of the tower,
+								which is \(30^\circ\).
+							</li>
+							<li>
+								The vertical difference between the top of the cliff and the top
+								of the tower is \(50-h\).
+							</li>
+							<li>The horizontal distance is still \(50\ \mathrm{m}\).</li>
+							<li>So, \(\tan30^\circ=\dfrac{50-h}{50}\).</li>
+							<li>
+								Since \(\tan30^\circ=\dfrac{1}{\sqrt{3}}\), we get
+								\(\dfrac{1}{\sqrt{3}}=\dfrac{50-h}{50}\).
+							</li>
+							<li>Therefore, \(50-h=\dfrac{50}{\sqrt{3}}\).</li>
+							<li>So, \(h=50-\dfrac{50}{\sqrt{3}}\).</li>
+							<li>
+								Rationalising,
+								\(h=50\left(1-\dfrac{1}{\sqrt{3}}\right)=50\left(1-\dfrac{\sqrt{3}}{3}\right)\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Height of tower
+								\(=50\left(1-\dfrac{\sqrt{3}}{3}\right)\ \mathrm{m}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Angle of depression from the
+								observer equals angle of elevation from the object.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use the \(45^\circ\) depression
+								first; it immediately gives horizontal distance \(=50\). Then
+								apply \(\tan30^\circ\) for the height difference.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Options
+								\(50\), \(50\sqrt{3}\), and \(50(\sqrt{3}-1)\) do not satisfy
+								\(\tan30^\circ=\dfrac{50-h}{50}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q120-->
@@ -2106,8 +2573,83 @@
 			<!--Start Q121-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q121">Q121</button>
-					<div class="accordion-content">A121</div>
+					<button class="accordion-button" id="Q121">
+						Q 121. If \(y=\tan^{-1}\left(\dfrac{\sqrt{x}-x}{1+x^{3/2}}\right)\),
+						then \(y'(1)\) is equal to
+						<ul>
+							<li>(a) \(0\)</li>
+							<li>(b) \(\dfrac{1}{2}\)</li>
+							<br />
+							<li>(c) \(-1\)</li>
+							<li>(d) \(-\dfrac{1}{4}\)</li>
+							<br />
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\ -\dfrac{1}{4}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Recognise the inverse
+								tangent identity:
+								\(\tan^{-1}\left(\dfrac{u-v}{1+uv}\right)=\tan^{-1}u-\tan^{-1}v\).
+								Here \(u=\sqrt{x}\) and \(v=x\), so
+								\(y=\tan^{-1}\sqrt{x}-\tan^{-1}x\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								\(\rightarrow\) Properties of Inverse Trigonometric Functions -
+								Page M38<br />Differential Calculus \(\rightarrow\)
+								Differentiability - Page M75
+							</li>
+							<li>
+								Given \(y=\tan^{-1}\left(\dfrac{\sqrt{x}-x}{1+x^{3/2}}\right)\).
+							</li>
+							<li>Notice that \(x^{3/2}=x\sqrt{x}\).</li>
+							<li>
+								So the expression is
+								\(y=\tan^{-1}\left(\dfrac{\sqrt{x}-x}{1+x\sqrt{x}}\right)\).
+							</li>
+							<li>
+								Use the identity
+								\(\tan^{-1}\left(\dfrac{u-v}{1+uv}\right)=\tan^{-1}u-\tan^{-1}v\).
+							</li>
+							<li>Here, \(u=\sqrt{x}\) and \(v=x\).</li>
+							<li>Therefore, \(y=\tan^{-1}(\sqrt{x})-\tan^{-1}x\).</li>
+							<li>Now differentiate with respect to \(x\).</li>
+							<li>
+								\(\dfrac{d}{dx}\tan^{-1}(\sqrt{x})=\dfrac{1}{1+x}\cdot\dfrac{1}{2\sqrt{x}}\).
+							</li>
+							<li>Also, \(\dfrac{d}{dx}\tan^{-1}x=\dfrac{1}{1+x^2}\).</li>
+							<li>
+								So,
+								\(y'(x)=\dfrac{1}{1+x}\cdot\dfrac{1}{2\sqrt{x}}-\dfrac{1}{1+x^2}\).
+							</li>
+							<li>Now substitute \(x=1\).</li>
+							<li>
+								\(y'(1)=\dfrac{1}{1+1}\cdot\dfrac{1}{2\sqrt{1}}-\dfrac{1}{1+1^2}\).
+							</li>
+							<li>So, \(y'(1)=\dfrac{1}{2}\cdot\dfrac{1}{2}-\dfrac{1}{2}\).</li>
+							<li>
+								Therefore, \(y'(1)=\dfrac{1}{4}-\dfrac{1}{2}=-\dfrac{1}{4}\).
+							</li>
+							<li><strong>Final result:</strong> \(y'(1)=-\dfrac{1}{4}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> If you see
+								\(\dfrac{u-v}{1+uv}\) inside \(\tan^{-1}\), think
+								\(\tan^{-1}u-\tan^{-1}v\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Do not differentiate the big
+								fraction directly. First simplify using inverse tangent
+								subtraction identity.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Direct
+								differentiation after simplification gives \(-\dfrac{1}{4}\), so
+								\(0\), \(\dfrac{1}{2}\), and \(-1\) are not correct.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q121-->
@@ -2115,8 +2657,93 @@
 			<!--Start Q122-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q122">Q122</button>
-					<div class="accordion-content">A122</div>
+					<button class="accordion-button" id="Q122">
+						Q 122. The coefficient of \(x^2\) term in the binomial expansion of
+						\(\left(\dfrac{1}{3}x^{1/2}+x^{-1/4}\right)^{10}\) is
+						<ul>
+							<li>(a) \(\dfrac{70}{243}\)</li>
+							<br />
+							<li>(b) \(\dfrac{60}{423}\)</li>
+							<br />
+							<li>(c) \(\dfrac{50}{13}\)</li>
+							<br />
+							<li>(d) None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ \dfrac{70}{243}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Write the general term of
+								\(\left(\dfrac{1}{3}x^{1/2}+x^{-1/4}\right)^{10}\). The power of
+								\(x\) in the \((r+1)\)th term is
+								\(\dfrac{10-r}{2}-\dfrac{r}{4}\). Set this equal to \(2\), which
+								gives \(r=4\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Binomial Theorem - Page M9
+							</li>
+							<li>
+								The given expansion is
+								\(\left(\dfrac{1}{3}x^{1/2}+x^{-1/4}\right)^{10}\).
+							</li>
+							<li>
+								The general term is
+								\(T_{r+1}={}^{10}C_r\left(\dfrac{1}{3}x^{1/2}\right)^{10-r}\left(x^{-1/4}\right)^r\).
+							</li>
+							<li>
+								So,
+								\(T_{r+1}={}^{10}C_r\left(\dfrac{1}{3}\right)^{10-r}x^{(10-r)/2}x^{-r/4}\).
+							</li>
+							<li>
+								The total power of \(x\) is \(\dfrac{10-r}{2}-\dfrac{r}{4}\).
+							</li>
+							<li>
+								We need the coefficient of \(x^2\), so set
+								\(\dfrac{10-r}{2}-\dfrac{r}{4}=2\).
+							</li>
+							<li>Multiply by \(4\): \(2(10-r)-r=8\).</li>
+							<li>So, \(20-2r-r=8\).</li>
+							<li>Thus, \(20-3r=8\), giving \(3r=12\).</li>
+							<li>Hence, \(r=4\).</li>
+							<li>
+								Now substitute \(r=4\) in the coefficient part:
+								\({}^{10}C_4\left(\dfrac{1}{3}\right)^{10-4}\).
+							</li>
+							<li>
+								So coefficient of \(x^2\) is
+								\({}^{10}C_4\left(\dfrac{1}{3}\right)^6\).
+							</li>
+							<li>
+								Now,
+								\({}^{10}C_4=\dfrac{10\cdot9\cdot8\cdot7}{4\cdot3\cdot2\cdot1}=210\).
+							</li>
+							<li>
+								Therefore, coefficient
+								\(=210\cdot\dfrac{1}{3^6}=210\cdot\dfrac{1}{729}=\dfrac{210}{729}=\dfrac{70}{243}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Coefficient of \(x^2\) is
+								\(\dfrac{70}{243}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> In binomial coefficient
+								questions, first find which term gives the required power of
+								\(x\), then calculate only that coefficient.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Solve the exponent equation
+								\(\dfrac{10-r}{2}-\dfrac{r}{4}=2\) first. Once \(r=4\),
+								coefficient is simply \({}^{10}C_4/3^6\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The required
+								coefficient comes from \(r=4\) and equals \(\dfrac{70}{243}\),
+								so the other numerical options do not match.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q122-->
@@ -2124,8 +2751,90 @@
 			<!--Start Q123-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q123">Q123</button>
-					<div class="accordion-content">A123</div>
+					<button class="accordion-button" id="Q123">
+						Q 123. If \(a,c,b\) are in GP, then the area of the triangle formed
+						by the lines \(ax+by+c=0\) with the coordinates axes is equal to
+						<ul>
+							<li>(a) \(1\)</li>
+							<li>(b) \(2\)</li>
+							<li>(c) \(\dfrac{1}{2}\)</li>
+							<br />
+							<li>(d) None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ \dfrac{1}{2}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since \(a,c,b\) are in GP,
+								the middle term squared equals the product of the extremes, so
+								\(c^2=ab\). The line \(ax+by+c=0\) cuts the axes at
+								\(\left(-\dfrac{c}{a},0\right)\) and
+								\(\left(0,-\dfrac{c}{b}\right)\), so the area is
+								\(\dfrac{1}{2}\cdot\dfrac{c^2}{ab}=\dfrac{1}{2}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Sequences and Series - Page M6<br />Two-dimensional
+								Coordinate Geometry \(\rightarrow\) Lines - Page M48
+							</li>
+							<li>Given \(a,c,b\) are in GP.</li>
+							<li>
+								For three terms in GP, the square of the middle term equals the
+								product of the first and third terms.
+							</li>
+							<li>So, \(c^2=ab\).</li>
+							<li>The given line is \(ax+by+c=0\).</li>
+							<li>
+								To find the \(x\)-intercept, put \(y=0\): \(ax+c=0\), so
+								\(x=-\dfrac{c}{a}\).
+							</li>
+							<li>
+								Thus, the line meets the \(x\)-axis at
+								\(\left(-\dfrac{c}{a},0\right)\).
+							</li>
+							<li>
+								To find the \(y\)-intercept, put \(x=0\): \(by+c=0\), so
+								\(y=-\dfrac{c}{b}\).
+							</li>
+							<li>
+								Thus, the line meets the \(y\)-axis at
+								\(\left(0,-\dfrac{c}{b}\right)\).
+							</li>
+							<li>
+								The triangle is formed by the line and the two coordinate axes.
+							</li>
+							<li>
+								Area of this triangle is
+								\(\dfrac{1}{2}\times\left|\text{x-intercept}\right|\times\left|\text{y-intercept}\right|\).
+							</li>
+							<li>
+								So, area
+								\(=\dfrac{1}{2}\left|-\dfrac{c}{a}\right|\left|-\dfrac{c}{b}\right|\).
+							</li>
+							<li>This gives area \(=\dfrac{1}{2}\cdot\dfrac{c^2}{ab}\).</li>
+							<li>
+								Since \(c^2=ab\), area
+								\(=\dfrac{1}{2}\cdot\dfrac{ab}{ab}=\dfrac{1}{2}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> The area is \(\dfrac{1}{2}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For a line \(ax+by+c=0\),
+								the intercepts are \(-\dfrac{c}{a}\) and \(-\dfrac{c}{b}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Directly use area
+								\(=\dfrac{1}{2}\cdot\dfrac{c^2}{ab}\), and GP gives \(c^2=ab\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The GP
+								condition fixes the area as \(\dfrac{1}{2}\), so \(1\), \(2\),
+								and “None of these” are not correct.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q123-->
@@ -2133,8 +2842,88 @@
 			<!--Start Q124-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q124">Q124</button>
-					<div class="accordion-content">A124</div>
+					<button class="accordion-button" id="Q124">
+						Q 124. Suppose \(p,q,r\ne0\) and system of equation
+						\((p+a)x+by+cz=0\), \(ax+(q+b)y+cz=0\), \(ax+by+(r+c)z=0\), has a
+						non-trivial solution, then the value of
+						\(\dfrac{a}{p}+\dfrac{b}{q}+\dfrac{c}{r}\) is
+						<ul>
+							<li>(a) \(-1\)</li>
+							<li>(b) \(0\)</li>
+							<li>(c) \(1\)</li>
+							<li>(d) \(2\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ -1\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> A homogeneous system has a
+								non-trivial solution only when the determinant of its
+								coefficient matrix is zero. Expanding the determinant gives
+								\(pqr+pqc+prb+qra=0\), and dividing by \(pqr\) gives
+								\(1+\dfrac{c}{r}+\dfrac{b}{q}+\dfrac{a}{p}=0\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Matrices and Determinants - Page M9
+							</li>
+							<li>
+								The given homogeneous system has coefficient matrix
+								\(\begin{vmatrix}p+a&b&c\\a&q+b&c\\a&b&r+c\end{vmatrix}\).
+							</li>
+							<li>
+								Since the system has a non-trivial solution, the determinant of
+								the coefficient matrix must be zero.
+							</li>
+							<li>
+								So, \(\begin{vmatrix}p+a&b&c\\a&q+b&c\\a&b&r+c\end{vmatrix}=0\).
+							</li>
+							<li>
+								Expanding along the first row:
+								\((p+a)\{(q+b)(r+c)-bc\}-b\{a(r+c)-ca\}+c\{ab-a(q+b)\}=0\).
+							</li>
+							<li>Now simplify each bracket.</li>
+							<li>\((q+b)(r+c)-bc=qr+qc+br+bc-bc=qr+qc+br\).</li>
+							<li>\(a(r+c)-ca=ar+ac-ca=ar\).</li>
+							<li>\(ab-a(q+b)=ab-aq-ab=-aq\).</li>
+							<li>
+								So the determinant condition becomes
+								\((p+a)(qr+qc+br)-b(ar)+c(-aq)=0\).
+							</li>
+							<li>On simplifying, this reduces to \(pqr+pqc+pbr+aqr=0\).</li>
+							<li>
+								Divide the whole equation by \(pqr\), which is allowed because
+								\(p,q,r\ne0\).
+							</li>
+							<li>
+								We get
+								\(\dfrac{pqr}{pqr}+\dfrac{pqc}{pqr}+\dfrac{pbr}{pqr}+\dfrac{aqr}{pqr}=0\).
+							</li>
+							<li>
+								Therefore, \(1+\dfrac{c}{r}+\dfrac{b}{q}+\dfrac{a}{p}=0\).
+							</li>
+							<li>Hence, \(\dfrac{a}{p}+\dfrac{b}{q}+\dfrac{c}{r}=-1\).</li>
+							<li>
+								<strong>Final result:</strong>
+								\(\dfrac{a}{p}+\dfrac{b}{q}+\dfrac{c}{r}=-1\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For a homogeneous system,
+								“non-trivial solution” means determinant \(=0\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Form the determinant and expand
+								carefully; after simplification, divide by \(pqr\) to directly
+								get the required expression.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								determinant condition gives the exact value \(-1\), so \(0\),
+								\(1\), and \(2\) are not correct.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q124-->
@@ -2142,8 +2931,78 @@
 			<!--Start Q125-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q125">Q125</button>
-					<div class="accordion-content">A125</div>
+					<button class="accordion-button" id="Q125">
+						Q 125. The coefficient of \(x^n\) in the expansion of
+						\(\dfrac{e^{7x}+e^x}{e^{3x}}\) is
+						<ul>
+							<li>(a) \(\dfrac{4^{n-1}+(-2)^n}{n!}\)</li>
+							<br />
+							<li>(b) \(\dfrac{4^{n-1}+2^n}{n!}\)</li>
+							<br />
+							<li>(c) \(\dfrac{4^n+(-2)^n}{n!}\)</li>
+							<br />
+							<li>(d) \(\dfrac{4^{n-1}+(-2)^{n-1}}{n!}\)</li>
+							<br />
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ \dfrac{4^n+(-2)^n}{n!}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> First simplify
+								\(\dfrac{e^{7x}+e^x}{e^{3x}}=e^{4x}+e^{-2x}\). In the expansion
+								of \(e^{ax}\), the coefficient of \(x^n\) is
+								\(\dfrac{a^n}{n!}\), so the required coefficient is
+								\(\dfrac{4^n+(-2)^n}{n!}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Binomial Theorem - Page M9<br />Algebra
+								\(\rightarrow\) Sequences and Series - Page M6
+							</li>
+							<li>Given expression is \(\dfrac{e^{7x}+e^x}{e^{3x}}\).</li>
+							<li>
+								Split the denominator:
+								\(\dfrac{e^{7x}}{e^{3x}}+\dfrac{e^x}{e^{3x}}\).
+							</li>
+							<li>This gives \(e^{4x}+e^{-2x}\).</li>
+							<li>
+								Now use the expansion
+								\(e^u=1+\dfrac{u}{1!}+\dfrac{u^2}{2!}+\dfrac{u^3}{3!}+\cdots\).
+							</li>
+							<li>
+								For \(e^{4x}\), the coefficient of \(x^n\) is
+								\(\dfrac{4^n}{n!}\).
+							</li>
+							<li>
+								For \(e^{-2x}\), the coefficient of \(x^n\) is
+								\(\dfrac{(-2)^n}{n!}\).
+							</li>
+							<li>
+								Therefore, in \(e^{4x}+e^{-2x}\), the coefficient of \(x^n\) is
+								\(\dfrac{4^n}{n!}+\dfrac{(-2)^n}{n!}\).
+							</li>
+							<li>So, coefficient of \(x^n=\dfrac{4^n+(-2)^n}{n!}\).</li>
+							<li>
+								<strong>Final result:</strong> The coefficient of \(x^n\) is
+								\(\dfrac{4^n+(-2)^n}{n!}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> In \(e^{ax}\), the
+								coefficient of \(x^n\) is always \(\dfrac{a^n}{n!}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Simplify the exponential
+								expression first; do not expand before reducing it to
+								\(e^{4x}+e^{-2x}\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The powers
+								must be \(4^n\) and \((-2)^n\), because the simplified exponents
+								are \(4x\) and \(-2x\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q125-->
@@ -2151,8 +3010,74 @@
 			<!--Start Q126-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q126">Q126</button>
-					<div class="accordion-content">A126</div>
+					<button class="accordion-button" id="Q126">
+						Q 126. The modulus of the complex number \(z\) such that
+						\(|z+3-i|=1\) and \(\arg(z)=\pi\) is equal to
+						<ul>
+							<li>(a) \(3\)</li>
+							<li>(b) \(2\)</li>
+							<li>(c) \(9\)</li>
+							<li>(d) \(4\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ 3\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Let \(z=x+iy\). The equation
+								\(|z+3-i|=1\) represents a circle \((x+3)^2+(y-1)^2=1\). Also,
+								\(\arg(z)=\pi\) means \(z\) lies on the negative real axis, so
+								\(y=0\). Substituting gives \(x=-3\), hence \(|z|=3\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Complex Numbers - Page M4<br />Two-dimensional
+								Coordinate Geometry \(\rightarrow\) Circles - Page M49
+							</li>
+							<li>
+								<img
+									src="images/math_q126a.png"
+									alt="circle in Argand plane with centre minus 3 comma 1 and point on negative real axis"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>Let \(z=x+iy\).</li>
+							<li>Then \(z+3-i=(x+3)+i(y-1)\).</li>
+							<li>So, \(|z+3-i|=1\) becomes \(\sqrt{(x+3)^2+(y-1)^2}=1\).</li>
+							<li>Squaring both sides, \((x+3)^2+(y-1)^2=1\).</li>
+							<li>This is a circle with centre \((-3,1)\) and radius \(1\).</li>
+							<li>
+								Also, \(\arg(z)=\pi\) means \(z\) lies on the negative real
+								axis.
+							</li>
+							<li>Therefore, \(y=0\).</li>
+							<li>
+								Substitute \(y=0\) in the circle equation:
+								\((x+3)^2+(0-1)^2=1\).
+							</li>
+							<li>So, \((x+3)^2+1=1\).</li>
+							<li>Thus, \((x+3)^2=0\), giving \(x=-3\).</li>
+							<li>Therefore, \(z=-3+0i\).</li>
+							<li>The modulus of \(z\) is \(|z|=|-3|=3\).</li>
+							<li>
+								<strong>Final result:</strong> The modulus of \(z\) is \(3\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> \(\arg(z)=\pi\) means the
+								point is on the negative \(x\)-axis.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Put \(y=0\) immediately from
+								\(\arg(z)=\pi\), then solve the circle equation to get \(x=-3\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The only point
+								satisfying both conditions is \(z=-3\), whose modulus is \(3\),
+								not \(2\), \(9\), or \(4\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q126-->
