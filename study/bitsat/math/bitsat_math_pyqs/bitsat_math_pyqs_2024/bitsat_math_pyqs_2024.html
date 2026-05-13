@@ -3085,8 +3085,100 @@
 			<!--Start Q127-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q127">Q127</button>
-					<div class="accordion-content">A127</div>
+					<button class="accordion-button" id="Q127">
+						Q 127. \(ABC\) is a triangular park with \(AB=AC=100\ \mathrm{m}\).
+						A TV tower stands at the mid-point of \(BC\). The angles of
+						elevation of the top of the tower at \(A\), \(B\), \(C\) are
+						\(45^\circ,60^\circ,60^\circ\) respectively. The height of the tower
+						is
+						<ul>
+							<li>(a) \(50\ \mathrm{m}\)</li>
+							<li>(b) \(50\sqrt{3}\ \mathrm{m}\)</li>
+							<li>(c) \(50\sqrt{2}\ \mathrm{m}\)</li>
+							<li>(d) \(50(3-\sqrt{3})\ \mathrm{m}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ 50\sqrt{3}\ \mathrm{m}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Let the tower stand at
+								\(D\), the midpoint of \(BC\), and let its height be \(DE=h\).
+								From \(B\) and \(C\), \(\tan60^\circ=\dfrac{h}{DB}\), so
+								\(DB=\dfrac{h}{\sqrt{3}}\). From \(A\),
+								\(\tan45^\circ=\dfrac{h}{DA}\), so \(DA=h\). Using right
+								triangle \(ABD\), \(AD^2+BD^2=AB^2\), giving \(h=50\sqrt{3}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36<br />Two-dimensional Coordinate Geometry \(\rightarrow\)
+								Lines - Page M48
+							</li>
+							<li>
+								<img
+									src="images/math_q127a.png"
+									alt="triangular park with tower at midpoint of BC and angles of elevation"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>
+								Let the tower stand at \(D\), the midpoint of \(BC\), and let
+								the top of the tower be \(E\).
+							</li>
+							<li>Let \(DE=h\) and \(DB=DC=x\).</li>
+							<li>
+								From point \(B\), the angle of elevation of the top of the tower
+								is \(60^\circ\).
+							</li>
+							<li>
+								So, in \(\triangle EDB\),
+								\(\tan60^\circ=\dfrac{DE}{DB}=\dfrac{h}{x}\).
+							</li>
+							<li>
+								Since \(\tan60^\circ=\sqrt{3}\), we get
+								\(\sqrt{3}=\dfrac{h}{x}\), so \(x=\dfrac{h}{\sqrt{3}}\).
+							</li>
+							<li>From point \(A\), the angle of elevation is \(45^\circ\).</li>
+							<li>
+								So, in \(\triangle ADE\),
+								\(\tan45^\circ=\dfrac{DE}{DA}=\dfrac{h}{DA}\).
+							</li>
+							<li>Since \(\tan45^\circ=1\), we get \(DA=h\).</li>
+							<li>
+								Now, \(AB=100\ \mathrm{m}\), and \(D\) is the midpoint of
+								\(BC\). Since \(AB=AC\), \(AD\) is perpendicular to \(BC\).
+							</li>
+							<li>Therefore, in right triangle \(ABD\), \(AB^2=AD^2+BD^2\).</li>
+							<li>
+								Substitute \(AB=100\), \(AD=h\), and \(BD=\dfrac{h}{\sqrt{3}}\).
+							</li>
+							<li>So, \(100^2=h^2+\left(\dfrac{h}{\sqrt{3}}\right)^2\).</li>
+							<li>This gives \(10000=h^2+\dfrac{h^2}{3}=\dfrac{4h^2}{3}\).</li>
+							<li>Hence, \(h^2=7500\).</li>
+							<li>Therefore, \(h=50\sqrt{3}\ \mathrm{m}\).</li>
+							<li>
+								<strong>Final result:</strong> The height of the tower is
+								\(50\sqrt{3}\ \mathrm{m}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For an isosceles triangle,
+								the line from the equal-vertex to the midpoint of the base is
+								perpendicular to the base.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use \(\tan60^\circ\) to get
+								\(BD=\dfrac{h}{\sqrt{3}}\), use \(\tan45^\circ\) to get
+								\(AD=h\), then apply Pythagoras in \(\triangle ABD\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								right-triangle relation gives \(\dfrac{4h^2}{3}=10000\), so only
+								\(50\sqrt{3}\ \mathrm{m}\) fits.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q127-->
@@ -3094,8 +3186,80 @@
 			<!--Start Q128-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q128">Q128</button>
-					<div class="accordion-content">A128</div>
+					<button class="accordion-button" id="Q128">
+						Q 128. How many different nine digit numbers can be formed from the
+						number \(223355888\) by rearranging its digits so that the odd
+						digits occupy even positions
+						<ul>
+							<li>(a) \(16\)</li>
+							<li>(b) \(36\)</li>
+							<li>(c) \(60\)</li>
+							<li>(d) \(100\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ 60\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The odd digits are
+								\(3,3,5,5\), and they must occupy the even positions
+								\(2,4,6,8\). These can be arranged in \(\dfrac{4!}{2!2!}\) ways.
+								The remaining even digits \(2,2,8,8,8\) occupy the odd positions
+								in \(\dfrac{5!}{2!3!}\) ways, so total \(=6\times10=60\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Permutations and Combinations - Page M8
+							</li>
+							<li>The given digits are \(2,2,3,3,5,5,8,8,8\).</li>
+							<li>The odd digits are \(3,3,5,5\), total \(4\) digits.</li>
+							<li>
+								The even positions in a nine-digit number are positions
+								\(2,4,6,8\), total \(4\) positions.
+							</li>
+							<li>
+								So the odd digits must occupy exactly these \(4\) even
+								positions.
+							</li>
+							<li>
+								Number of ways to arrange \(3,3,5,5\) in the even positions is
+								\(\dfrac{4!}{2!2!}\).
+							</li>
+							<li>This equals \(\dfrac{24}{4}=6\).</li>
+							<li>
+								The remaining digits are \(2,2,8,8,8\), and they occupy the odd
+								positions \(1,3,5,7,9\).
+							</li>
+							<li>
+								Number of ways to arrange \(2,2,8,8,8\) in these \(5\) positions
+								is \(\dfrac{5!}{2!3!}\).
+							</li>
+							<li>This equals \(\dfrac{120}{2\cdot6}=10\).</li>
+							<li>
+								Therefore, total number of arrangements is
+								\(\dfrac{4!}{2!2!}\times\dfrac{5!}{2!3!}=6\times10=60\).
+							</li>
+							<li>
+								<strong>Final result:</strong> \(60\) different numbers can be
+								formed.
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> When digits repeat, always
+								divide by factorials of repeated counts.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Odd digits must fill the \(4\)
+								even places: \(\dfrac{4!}{2!2!}=6\). Remaining digits fill the
+								\(5\) odd places: \(\dfrac{5!}{2!3!}=10\). Multiply to get
+								\(60\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> \(16\),
+								\(36\), and \(100\) do not account correctly for the repeated
+								digits and position restriction together.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q128-->
@@ -3103,8 +3267,75 @@
 			<!--Start Q129-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q129">Q129</button>
-					<div class="accordion-content">A129</div>
+					<button class="accordion-button" id="Q129">
+						Q 129. If matrix
+						\(A=\begin{bmatrix}3&-2&4\\1&2&-1\\0&1&1\end{bmatrix}\) and
+						\(A^{-1}=\dfrac{1}{k}\operatorname{adj}(A)\), then \(k\) is
+						<ul>
+							<li>(a) \(7\)</li>
+							<li>(b) \(-7\)</li>
+							<li>(c) \(15\)</li>
+							<li>(d) \(-11\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ 15\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> For any invertible matrix,
+								\(A^{-1}=\dfrac{\operatorname{adj}(A)}{|A|}\). Comparing this
+								with \(A^{-1}=\dfrac{1}{k}\operatorname{adj}(A)\), we get
+								\(k=|A|\). So calculate the determinant of \(A\), which is
+								\(15\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Matrices and Determinants - Page M9
+							</li>
+							<li>
+								Given \(A=\begin{bmatrix}3&-2&4\\1&2&-1\\0&1&1\end{bmatrix}\).
+							</li>
+							<li>
+								We know the formula
+								\(A^{-1}=\dfrac{\operatorname{adj}(A)}{|A|}\).
+							</li>
+							<li>Given \(A^{-1}=\dfrac{1}{k}\operatorname{adj}(A)\).</li>
+							<li>Comparing the two forms, \(k=|A|\).</li>
+							<li>
+								Now calculate
+								\(|A|=\begin{vmatrix}3&-2&4\\1&2&-1\\0&1&1\end{vmatrix}\).
+							</li>
+							<li>
+								Expanding along the first row:
+								\(|A|=3\begin{vmatrix}2&-1\\1&1\end{vmatrix}-(-2)\begin{vmatrix}1&-1\\0&1\end{vmatrix}+4\begin{vmatrix}1&2\\0&1\end{vmatrix}\).
+							</li>
+							<li>
+								Now, \(\begin{vmatrix}2&-1\\1&1\end{vmatrix}=2(1)-(-1)(1)=3\).
+							</li>
+							<li>
+								Also, \(\begin{vmatrix}1&-1\\0&1\end{vmatrix}=1(1)-(-1)(0)=1\).
+							</li>
+							<li>
+								And, \(\begin{vmatrix}1&2\\0&1\end{vmatrix}=1(1)-2(0)=1\).
+							</li>
+							<li>Therefore, \(|A|=3(3)+2(1)+4(1)=9+2+4=15\).</li>
+							<li>So, \(k=15\).</li>
+							<li><strong>Final result:</strong> \(k=15\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Inverse formula is always
+								\(A^{-1}=\dfrac{\operatorname{adj}(A)}{\det A}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Do not find the adjoint. Just
+								compare with the inverse formula and calculate only \(\det A\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Since \(\det
+								A=15\), the value of \(k\) must be \(15\), not \(7\), \(-7\), or
+								\(-11\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q129-->
@@ -3112,8 +3343,95 @@
 			<!--Start Q130-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q130">Q130</button>
-					<div class="accordion-content">A130</div>
+					<button class="accordion-button" id="Q130">
+						Q 130. The area enclosed by the curves \(y=x^3\) and \(y=\sqrt{x}\)
+						is
+						<ul>
+							<li>(a) \(\dfrac{5}{3}\ \mathrm{sq.\ units}\)</li>
+							<br />
+							<li>(b) \(\dfrac{5}{4}\ \mathrm{sq.\ units}\)</li>
+							<br />
+							<li>(c) \(\dfrac{5}{12}\ \mathrm{sq.\ unit}\)</li>
+							<br />
+							<li>(d) \(\dfrac{12}{5}\ \mathrm{sq.\ units}\)</li>
+							<br />
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((c)\ \dfrac{5}{12}\ \mathrm{sq.\ unit}\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The curves \(y=x^3\) and
+								\(y=\sqrt{x}\) intersect at \(x=0\) and \(x=1\). On \([0,1]\),
+								\(\sqrt{x}\) lies above \(x^3\), so the required area is
+								\(\int_0^1(\sqrt{x}-x^3)\,dx=\dfrac{5}{12}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Area of Bounded Regions - Page M90
+							</li>
+							<li>
+								<img
+									src="images/math_q130a.png"
+									alt="area enclosed by y equals x cubed and y equals square root of x"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>The given curves are \(y=x^3\) and \(y=\sqrt{x}\).</li>
+							<li>
+								To find their points of intersection, put \(x^3=\sqrt{x}\).
+							</li>
+							<li>For \(x\ge0\), this gives \(x^3=x^{1/2}\).</li>
+							<li>So, \(x=0\) or \(x^{5/2}=1\), giving \(x=1\).</li>
+							<li>Thus, the curves intersect at \(x=0\) and \(x=1\).</li>
+							<li>
+								On the interval \([0,1]\), \(\sqrt{x}\) is greater than \(x^3\).
+							</li>
+							<li>
+								So, the enclosed area is \(A=\int_0^1(\sqrt{x}-x^3)\,dx\).
+							</li>
+							<li>
+								Now integrate: \(\int\sqrt{x}\,dx=\int
+								x^{1/2}\,dx=\dfrac{2x^{3/2}}{3}\).
+							</li>
+							<li>Also, \(\int x^3\,dx=\dfrac{x^4}{4}\).</li>
+							<li>
+								Therefore,
+								\(A=\left[\dfrac{2x^{3/2}}{3}-\dfrac{x^4}{4}\right]_0^1\).
+							</li>
+							<li>
+								Substitute limits:
+								\(A=\left(\dfrac{2}{3}-\dfrac{1}{4}\right)-0\).
+							</li>
+							<li>
+								Using denominator \(12\),
+								\(A=\dfrac{8}{12}-\dfrac{3}{12}=\dfrac{5}{12}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> The area enclosed is
+								\(\dfrac{5}{12}\ \mathrm{sq.\ unit}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Area between curves
+								\(=\int(\text{upper curve}-\text{lower curve})\,dx\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> On \([0,1]\), \(\sqrt{x}\) is
+								above \(x^3\), so directly compute
+								\(\int_0^1(\sqrt{x}-x^3)\,dx\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The definite
+								integral gives \(\dfrac{5}{12}\), so \(\dfrac{5}{3}\),
+								\(\dfrac{5}{4}\), and \(\dfrac{12}{5}\) are not correct.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q130-->
