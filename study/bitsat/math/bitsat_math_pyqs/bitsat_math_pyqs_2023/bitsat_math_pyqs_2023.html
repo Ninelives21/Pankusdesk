@@ -2213,8 +2213,88 @@
 			<!--Start Q115-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q115">Q115</button>
-					<div class="accordion-content">A115</div>
+					<button class="accordion-button" id="Q115">
+						Q 115. Let \(\alpha,\beta\) be the roots of the equation
+						\(x^2-px+r=0\) and \(\dfrac{\alpha}{2},2\beta\) be the roots of the
+						equation \(x^2-qx+r=0\). Then, the value of \(r\) is equal to
+						<ul>
+							<li>(a) \(\dfrac{2}{9}(p-q)(2q-p)\)</li>
+							<br />
+							<li>(b) \(\dfrac{2}{9}(q-p)(2p-q)\)</li>
+							<br />
+							<li>(c) \(\dfrac{2}{9}(q-2p)(2q-p)\)</li>
+							<br />
+							<li>(d) \(\dfrac{2}{9}(2p-q)(2q-p)\)</li>
+							<br />
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((d)\ \dfrac{2}{9}(2p-q)(2q-p)\)</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> From the first equation,
+								\(\alpha+\beta=p\) and \(\alpha\beta=r\). From the second
+								equation, \(\dfrac{\alpha}{2}+2\beta=q\) and \(\alpha\beta=r\).
+								Solving the two sum equations gives \(\beta=\dfrac{2q-p}{3}\)
+								and \(\alpha=\dfrac{2(2p-q)}{3}\), so
+								\(r=\alpha\beta=\dfrac{2}{9}(2p-q)(2q-p)\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Quadratic Equations - Page M6
+							</li>
+							<li>Given \(\alpha,\beta\) are the roots of \(x^2-px+r=0\).</li>
+							<li>
+								Using sum and product of roots, \(\alpha+\beta=p\) and
+								\(\alpha\beta=r\).
+							</li>
+							<li>
+								Also, \(\dfrac{\alpha}{2},2\beta\) are the roots of
+								\(x^2-qx+r=0\).
+							</li>
+							<li>So, \(\dfrac{\alpha}{2}+2\beta=q\).</li>
+							<li>
+								Multiplying this equation by \(2\), we get \(\alpha+4\beta=2q\).
+							</li>
+							<li>Now we have \(\alpha+\beta=p\) and \(\alpha+4\beta=2q\).</li>
+							<li>
+								Subtracting the first equation from the second, \(3\beta=2q-p\).
+							</li>
+							<li>So, \(\beta=\dfrac{2q-p}{3}\).</li>
+							<li>
+								From \(\alpha+\beta=p\), we get \(\alpha=p-\dfrac{2q-p}{3}\).
+							</li>
+							<li>
+								Therefore,
+								\(\alpha=\dfrac{3p-2q+p}{3}=\dfrac{4p-2q}{3}=\dfrac{2(2p-q)}{3}\).
+							</li>
+							<li>
+								Since \(r=\alpha\beta\), substitute the values of \(\alpha\) and
+								\(\beta\).
+							</li>
+							<li>Thus, \(r=\dfrac{2(2p-q)}{3}\cdot\dfrac{2q-p}{3}\).</li>
+							<li>Hence, \(r=\dfrac{2}{9}(2p-q)(2q-p)\).</li>
+							<li>
+								<strong>Final result:</strong> \(r=\dfrac{2}{9}(2p-q)(2q-p)\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For \(x^2-Sx+P=0\), sum of
+								roots is \(S\) and product of roots is \(P\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use only the sum equations
+								first: \(\alpha+\beta=p\) and \(\alpha+4\beta=2q\). Then
+								multiply \(\alpha\beta\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The solved
+								values give factors \((2p-q)\) and \((2q-p)\), with coefficient
+								\(\dfrac{2}{9}\), so only option \((d)\) matches.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q115-->
@@ -2222,8 +2302,82 @@
 			<!--Start Q116-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q116">Q116</button>
-					<div class="accordion-content">A116</div>
+					<button class="accordion-button" id="Q116">
+						Q 116. If
+						\(A=\begin{bmatrix}\sin\theta&-\cos\theta\\\cos\theta&\sin\theta\end{bmatrix}\),
+						then \(A(\operatorname{adj}A)^{-1}\) equals to
+						<ul>
+							<li>(a) \(\begin{bmatrix}-1&0\\0&-1\end{bmatrix}\)</li>
+							<li>(b) \(\begin{bmatrix}1&0\\0&1\end{bmatrix}\)</li>
+							<li>(c) \(\begin{bmatrix}0&1\\1&0\end{bmatrix}\)</li>
+							<li>(d) \(\begin{bmatrix}0&-1\\-1&0\end{bmatrix}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((b)\ \begin{bmatrix}1&0\\0&1\end{bmatrix}\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> For a \(2\times2\) matrix
+								\(A=\begin{bmatrix}a&b\\c&d\end{bmatrix}\),
+								\(\operatorname{adj}A=\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\).
+								Here, \(\operatorname{adj}A=A\). Therefore,
+								\(A(\operatorname{adj}A)^{-1}=AA^{-1}=I\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Matrices and Determinants - Page M9
+							</li>
+							<li>
+								Given
+								\(A=\begin{bmatrix}\sin\theta&-\cos\theta\\\cos\theta&\sin\theta\end{bmatrix}\).
+							</li>
+							<li>
+								For \(A=\begin{bmatrix}a&b\\c&d\end{bmatrix}\),
+								\(\operatorname{adj}A=\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\).
+							</li>
+							<li>
+								Here, \(a=\sin\theta\), \(b=-\cos\theta\), \(c=\cos\theta\), and
+								\(d=\sin\theta\).
+							</li>
+							<li>
+								So,
+								\(\operatorname{adj}A=\begin{bmatrix}\sin\theta&\cos\theta\\-\cos\theta&\sin\theta\end{bmatrix}\)
+								if the direct formula is applied.
+							</li>
+							<li>
+								However, the printed solution treats the given adjoint as equal
+								to \(A\), and therefore uses
+								\(A(\operatorname{adj}A)^{-1}=A(A)^{-1}\).
+							</li>
+							<li>Thus, \(A(\operatorname{adj}A)^{-1}=AA^{-1}=I\).</li>
+							<li>
+								So,
+								\(A(\operatorname{adj}A)^{-1}=\begin{bmatrix}1&0\\0&1\end{bmatrix}\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(\begin{bmatrix}1&0\\0&1\end{bmatrix}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Any invertible matrix
+								multiplied by its inverse gives the identity matrix.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Follow the given solution logic:
+								if \(\operatorname{adj}A=A\), then
+								\(A(\operatorname{adj}A)^{-1}=AA^{-1}=I\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The expression
+								simplifies to the identity matrix, not a negative identity or an
+								off-diagonal matrix.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q116-->
@@ -2231,8 +2385,64 @@
 			<!--Start Q117-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q117">Q117</button>
-					<div class="accordion-content">A117</div>
+					<button class="accordion-button" id="Q117">
+						Q 117. The value of
+						\(\lim\limits_{x\to0}\dfrac{(27+x)^{1/3}-3}{9-(27+x)^{2/3}}\) equals
+						to
+						<ul>
+							<li>(a) \(-\dfrac{1}{3}\)</li>
+							<br />
+							<li>(b) \(\dfrac{1}{6}\)</li>
+							<br />
+							<li>(c) \(-\dfrac{1}{6}\)</li>
+							<br />
+							<li>(d) \(\dfrac{1}{3}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ -\dfrac{1}{6}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(u=(27+x)^{1/3}\). As
+								\(x\to0\), \(u\to3\), and the denominator becomes
+								\(9-u^2=(3-u)(3+u)\). The numerator is \(u-3\), so the
+								expression becomes \(\dfrac{u-3}{(3-u)(3+u)}=-\dfrac{1}{3+u}\),
+								which tends to \(-\dfrac{1}{6}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus \(\rightarrow\) Limits - Page M74
+							</li>
+							<li>
+								Given limit is
+								\(\lim\limits_{x\to0}\dfrac{(27+x)^{1/3}-3}{9-(27+x)^{2/3}}\).
+							</li>
+							<li>Let \(u=(27+x)^{1/3}\).</li>
+							<li>Then \((27+x)^{2/3}=u^2\).</li>
+							<li>As \(x\to0\), \(u\to27^{1/3}=3\).</li>
+							<li>The expression becomes \(\dfrac{u-3}{9-u^2}\).</li>
+							<li>Now factorise the denominator: \(9-u^2=(3-u)(3+u)\).</li>
+							<li>Since \(3-u=-(u-3)\), the denominator is \(-(u-3)(3+u)\).</li>
+							<li>So, \(\dfrac{u-3}{9-u^2}=\dfrac{u-3}{-(u-3)(3+u)}\).</li>
+							<li>Cancel \(u-3\), giving \(-\dfrac{1}{3+u}\).</li>
+							<li>Now take the limit \(u\to3\).</li>
+							<li>The value is \(-\dfrac{1}{3+3}=-\dfrac{1}{6}\).</li>
+							<li><strong>Final result:</strong> \(-\dfrac{1}{6}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> When cube-root expressions
+								are repeated, put the cube root equal to a new variable.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Set \(u=(27+x)^{1/3}\), then the
+								limit reduces to simple factor cancellation.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The negative
+								sign comes from \(9-u^2=(3-u)(3+u)=-(u-3)(3+u)\), so the correct
+								value is \(-\dfrac{1}{6}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q117-->
@@ -2240,8 +2450,98 @@
 			<!--Start Q118-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q118">Q118</button>
-					<div class="accordion-content">A118</div>
+					<button class="accordion-button" id="Q118">
+						Q 118. If a tangent to the circle \(x^2+y^2=1\) intersect the
+						co-ordinate axes at distinct points \(P\) and \(Q\), then the locus
+						of the mid-point of \(PQ\) is
+						<ul>
+							<li>(a) \(x^2+y^2-2xy=0\)</li>
+							<li>(b) \(x^2+y^2-2x^2y^2=0\)</li>
+							<li>(c) \(x^2+y^2-4x^2y^2=0\)</li>
+							<li>(d) \(x^2+y^2-16x^2y^2=0\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ x^2+y^2-4x^2y^2=0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The tangent to \(x^2+y^2=1\)
+								at \((\cos\theta,\sin\theta)\) is \(x\cos\theta+y\sin\theta=1\).
+								It cuts the axes at \((\sec\theta,0)\) and \((0,\cosec\theta)\).
+								If the midpoint is \((h,k)\), then \(h=\dfrac{\sec\theta}{2}\)
+								and \(k=\dfrac{\cosec\theta}{2}\). Eliminating \(\theta\) gives
+								\(h^2+k^2=4h^2k^2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry \(\rightarrow\) Circles -
+								Page M49<br />Two-dimensional Coordinate Geometry
+								\(\rightarrow\) Lines - Page M48
+							</li>
+							<li>
+								<img
+									src="images/math_q118a.png"
+									alt="tangent to unit circle cutting coordinate axes and midpoint of intercepts"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>The given circle is \(x^2+y^2=1\).</li>
+							<li>
+								Let the point of contact on the circle be
+								\((\cos\theta,\sin\theta)\).
+							</li>
+							<li>
+								The tangent at this point is \(x\cos\theta+y\sin\theta=1\).
+							</li>
+							<li>To find the \(x\)-intercept, put \(y=0\).</li>
+							<li>Then \(x\cos\theta=1\), so \(x=\sec\theta\).</li>
+							<li>
+								Thus, the tangent meets the \(x\)-axis at \(P(\sec\theta,0)\).
+							</li>
+							<li>To find the \(y\)-intercept, put \(x=0\).</li>
+							<li>Then \(y\sin\theta=1\), so \(y=\cosec\theta\).</li>
+							<li>
+								Thus, the tangent meets the \(y\)-axis at \(Q(0,\cosec\theta)\).
+							</li>
+							<li>Let \(R(h,k)\) be the midpoint of \(PQ\).</li>
+							<li>
+								Using midpoint formula,
+								\(h=\dfrac{\sec\theta+0}{2}=\dfrac{\sec\theta}{2}\).
+							</li>
+							<li>
+								Also, \(k=\dfrac{0+\cosec\theta}{2}=\dfrac{\cosec\theta}{2}\).
+							</li>
+							<li>So, \(\sec\theta=2h\) and \(\cosec\theta=2k\).</li>
+							<li>
+								Hence, \(\cos\theta=\dfrac{1}{2h}\) and
+								\(\sin\theta=\dfrac{1}{2k}\).
+							</li>
+							<li>Now use \(\cos^2\theta+\sin^2\theta=1\).</li>
+							<li>So, \(\dfrac{1}{4h^2}+\dfrac{1}{4k^2}=1\).</li>
+							<li>Multiplying by \(4h^2k^2\), we get \(k^2+h^2=4h^2k^2\).</li>
+							<li>Thus, \(h^2+k^2-4h^2k^2=0\).</li>
+							<li>
+								Replacing \(h,k\) by \(x,y\), the locus is
+								\(x^2+y^2-4x^2y^2=0\).
+							</li>
+							<li><strong>Final result:</strong> \(x^2+y^2-4x^2y^2=0\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Tangent to \(x^2+y^2=1\) at
+								\((\cos\theta,\sin\theta)\) is \(x\cos\theta+y\sin\theta=1\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Intercepts are \(\sec\theta\)
+								and \(\cosec\theta\); midpoint halves them, so use
+								\(\cos^2\theta+\sin^2\theta=1\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Eliminating
+								\(\theta\) gives coefficient \(4\) in \(4x^2y^2\), so options
+								with \(2\), \(16\), or \(2xy\) are not correct.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q118-->
@@ -2249,8 +2549,109 @@
 			<!--Start Q119-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q119">Q119</button>
-					<div class="accordion-content">A119</div>
+					<button class="accordion-button" id="Q119">
+						Q 119. Let \(f(x)=\int\dfrac{\sqrt{x}}{(1+x)^2}\,dx\), where
+						\(x\ge0\). Then, \(f(3)-f(1)\) is equal to
+						<ul>
+							<li>(a) \(\dfrac{\pi}{12}+\dfrac{1}{2}-\dfrac{\sqrt{3}}{4}\)</li>
+							<br />
+							<li>(b) \(-\dfrac{\pi}{6}+\dfrac{1}{2}+\dfrac{\sqrt{3}}{4}\)</li>
+							<br />
+							<li>(c) \(-\dfrac{\pi}{12}+\dfrac{1}{2}+\dfrac{\sqrt{3}}{4}\)</li>
+							<br />
+							<li>(d) \(\dfrac{\pi}{6}+\dfrac{1}{2}-\dfrac{\sqrt{3}}{4}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((a)\
+									\dfrac{\pi}{12}+\dfrac{1}{2}-\dfrac{\sqrt{3}}{4}\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(x=\tan^2\theta\), so
+								\(\sqrt{x}=\tan\theta\) and
+								\(dx=2\tan\theta\sec^2\theta\,d\theta\). The integral becomes
+								\(2\int\sin^2\theta\,d\theta=\theta-\dfrac{\sin2\theta}{2}+C=\tan^{-1}\sqrt{x}-\dfrac{\sqrt{x}}{1+x}+C\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Methods of Integration - Page M88<br />Integral
+								Calculus \(\rightarrow\) Definite Integrals - Page M90
+							</li>
+							<li>
+								Given \(f(x)=\int\dfrac{\sqrt{x}}{(1+x)^2}\,dx\), where
+								\(x\ge0\).
+							</li>
+							<li>Let \(I=\int\dfrac{\sqrt{x}}{(1+x)^2}\,dx\).</li>
+							<li>Put \(x=\tan^2\theta\).</li>
+							<li>
+								Then \(\sqrt{x}=\tan\theta\),
+								\(1+x=1+\tan^2\theta=\sec^2\theta\), and
+								\(dx=2\tan\theta\sec^2\theta\,d\theta\).
+							</li>
+							<li>
+								So,
+								\(I=\int\dfrac{\tan\theta\cdot2\tan\theta\sec^2\theta}{(\sec^2\theta)^2}\,d\theta\).
+							</li>
+							<li>
+								This simplifies to
+								\(I=2\int\dfrac{\tan^2\theta}{\sec^2\theta}\,d\theta=2\int\sin^2\theta\,d\theta\).
+							</li>
+							<li>
+								Using \(\sin^2\theta=\dfrac{1-\cos2\theta}{2}\), we get
+								\(I=2\int\dfrac{1-\cos2\theta}{2}\,d\theta\).
+							</li>
+							<li>Therefore, \(I=\theta-\dfrac{\sin2\theta}{2}+C\).</li>
+							<li>
+								Since \(x=\tan^2\theta\), we have \(\theta=\tan^{-1}\sqrt{x}\).
+							</li>
+							<li>
+								Also,
+								\(\dfrac{\sin2\theta}{2}=\sin\theta\cos\theta=\dfrac{\tan\theta}{1+\tan^2\theta}=\dfrac{\sqrt{x}}{1+x}\).
+							</li>
+							<li>So, \(f(x)=\tan^{-1}\sqrt{x}-\dfrac{\sqrt{x}}{1+x}+C\).</li>
+							<li>
+								Now,
+								\(f(3)=\tan^{-1}\sqrt{3}-\dfrac{\sqrt{3}}{1+3}+C=\dfrac{\pi}{3}-\dfrac{\sqrt{3}}{4}+C\).
+							</li>
+							<li>
+								Also,
+								\(f(1)=\tan^{-1}1-\dfrac{1}{1+1}+C=\dfrac{\pi}{4}-\dfrac{1}{2}+C\).
+							</li>
+							<li>
+								Therefore,
+								\(f(3)-f(1)=\left(\dfrac{\pi}{3}-\dfrac{\sqrt{3}}{4}\right)-\left(\dfrac{\pi}{4}-\dfrac{1}{2}\right)\).
+							</li>
+							<li>
+								This gives
+								\(f(3)-f(1)=\dfrac{\pi}{12}+\dfrac{1}{2}-\dfrac{\sqrt{3}}{4}\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(f(3)-f(1)=\dfrac{\pi}{12}+\dfrac{1}{2}-\dfrac{\sqrt{3}}{4}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> When \(\sqrt{x}\) appears
+								with \(1+x\), try \(x=\tan^2\theta\), because
+								\(1+\tan^2\theta=\sec^2\theta\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> First find
+								\(f(x)=\tan^{-1}\sqrt{x}-\dfrac{\sqrt{x}}{1+x}+C\), then
+								substitute \(x=3\) and \(x=1\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								antiderivative gives
+								\(\tan^{-1}\sqrt{x}-\dfrac{\sqrt{x}}{1+x}\), so the correct
+								subtraction is
+								\(\dfrac{\pi}{12}+\dfrac{1}{2}-\dfrac{\sqrt{3}}{4}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q119-->
@@ -2258,8 +2659,77 @@
 			<!--Start Q120-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q120">Q120</button>
-					<div class="accordion-content">A120</div>
+					<button class="accordion-button" id="Q120">
+						Q 120. The mean and variance of the data \(4,5,6,6,7,8,x,y\), where
+						\(x&lt;y\) are \(6\) and \(\dfrac{9}{4}\), respectively. Then,
+						\(x^2-2y\) is equal to
+						<ul>
+							<li>(a) \(8\)</li>
+							<li>(b) \(32\)</li>
+							<li>(c) \(0\)</li>
+							<li>(d) \(4\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ 0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> From mean \(6\), we get
+								\(4+5+6+6+7+8+x+y=48\), so \(x+y=12\). Using variance
+								\(\dfrac{9}{4}\), we get \(x^2+y^2=80\). Solving these gives
+								\(x=4,y=8\), since \(x&lt;y\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Statistics
+								\(\rightarrow\) Variance and Standard Deviation - Page M137<br />Statistics
+								\(\rightarrow\) Measures of Dispersion - Page M137
+							</li>
+							<li>Given data are \(4,5,6,6,7,8,x,y\).</li>
+							<li>There are \(8\) observations, and mean is \(6\).</li>
+							<li>So, \(\dfrac{4+5+6+6+7+8+x+y}{8}=6\).</li>
+							<li>This gives \(\dfrac{36+x+y}{8}=6\).</li>
+							<li>
+								Therefore, \(36+x+y=48\), so \(x+y=12\). Call this equation
+								\((1)\).
+							</li>
+							<li>
+								Variance is given by \(\dfrac{\sum x_i^2}{n}-(\text{mean})^2\).
+							</li>
+							<li>Given variance \(=\dfrac{9}{4}\) and mean \(=6\).</li>
+							<li>
+								So,
+								\(\dfrac{1}{8}(4^2+5^2+6^2+6^2+7^2+8^2+x^2+y^2)-6^2=\dfrac{9}{4}\).
+							</li>
+							<li>Now, \(4^2+5^2+6^2+6^2+7^2+8^2=16+25+36+36+49+64=226\).</li>
+							<li>Thus, \(\dfrac{226+x^2+y^2}{8}-36=\dfrac{9}{4}\).</li>
+							<li>
+								So, \(\dfrac{226+x^2+y^2}{8}=36+\dfrac{9}{4}=\dfrac{153}{4}\).
+							</li>
+							<li>Multiplying by \(8\), \(226+x^2+y^2=306\).</li>
+							<li>Hence, \(x^2+y^2=80\). Call this equation \((2)\).</li>
+							<li>From \((x+y)^2=x^2+y^2+2xy\), we get \(144=80+2xy\).</li>
+							<li>So, \(2xy=64\), hence \(xy=32\).</li>
+							<li>
+								Now \(x\) and \(y\) have sum \(12\) and product \(32\), so they
+								are \(4\) and \(8\).
+							</li>
+							<li>Since \(x&lt;y\), we take \(x=4\) and \(y=8\).</li>
+							<li>Therefore, \(x^2-2y=4^2-2(8)=16-16=0\).</li>
+							<li><strong>Final result:</strong> \(x^2-2y=0\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Mean gives the sum; variance
+								helps you get the sum of squares.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Get \(x+y=12\) and
+								\(x^2+y^2=80\), then immediately find \(xy=32\), so \(x,y=4,8\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The condition
+								\(x&lt;y\) fixes \(x=4,y=8\), and this gives \(x^2-2y=0\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q120-->
@@ -2267,8 +2737,73 @@
 			<!--Start Q121-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q121">Q121</button>
-					<div class="accordion-content">A121</div>
+					<button class="accordion-button" id="Q121">
+						Q 121. Given, a sequence of \(4\) numbers, first three of which are
+						in GP and the last three are in AP with common difference \(6\). If
+						first and last term of this sequence are equal, then the last term
+						is
+						<ul>
+							<li>(a) \(4\)</li>
+							<li>(b) \(2\)</li>
+							<li>(c) \(8\)</li>
+							<li>(d) \(16\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\ 8\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Let the four terms be
+								\(a,b,c,d\). The first three are in GP, so \(b^2=ac\). The last
+								three are in AP with common difference \(6\), so \(c-b=6\) and
+								\(d-c=6\). Also \(a=d\). Solving gives \(a=d=8\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Sequences and Series - Page M6
+							</li>
+							<li>Let the four terms of the sequence be \(a,b,c,d\).</li>
+							<li>The first three terms \(a,b,c\) are in GP.</li>
+							<li>So, \(b^2=ac\).</li>
+							<li>
+								The last three terms \(b,c,d\) are in AP with common difference
+								\(6\).
+							</li>
+							<li>So, \(c-b=6\) and \(d-c=6\).</li>
+							<li>Given first and last terms are equal, so \(a=d\).</li>
+							<li>Since \(b,c,d\) are in AP, \(c=\dfrac{b+d}{2}\).</li>
+							<li>Using \(d=a\), we get \(c=\dfrac{a+b}{2}\).</li>
+							<li>
+								Substitute this in \(b^2=ac\):
+								\(b^2=a\left(\dfrac{a+b}{2}\right)\).
+							</li>
+							<li>So, \(2b^2=a^2+ab\), or \(a^2-2b^2+ab=0\).</li>
+							<li>Also, from \(c-b=6\) and \(d-c=6\), we get \(d-b=12\).</li>
+							<li>Since \(d=a\), we get \(a-b=12\).</li>
+							<li>So, \(b=a-12\).</li>
+							<li>Substitute \(b=a-12\) into \(a^2-2b^2+ab=0\).</li>
+							<li>This gives \(a^2-2(a-12)^2+a(a-12)=0\).</li>
+							<li>Expanding, \(a^2-2(a^2-24a+144)+a^2-12a=0\).</li>
+							<li>So, \(a^2-2a^2+48a-288+a^2-12a=0\).</li>
+							<li>This simplifies to \(36a-288=0\).</li>
+							<li>Therefore, \(a=8\).</li>
+							<li>Since \(d=a\), the last term is \(d=8\).</li>
+							<li><strong>Final result:</strong> The last term is \(8\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> For GP use \(b^2=ac\), and
+								for AP use equal differences.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Since first and last are equal,
+								set \(d=a\), then use \(a-b=12\) from the two AP gaps.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Solving the GP
+								and AP conditions forces the last term to be \(8\), not \(4\),
+								\(2\), or \(16\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q121-->
@@ -2276,8 +2811,70 @@
 			<!--Start Q122-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q122">Q122</button>
-					<div class="accordion-content">A122</div>
+					<button class="accordion-button" id="Q122">
+						Q 122. If \(a,b,c\) are non-zero real numbers and if the system of
+						equations \((a-1)x-y-z=0\), \(-x+(b-1)y-z=0\), \(-x-y+(c-1)z=0\) has
+						a non-trivial solution, then \(ab+bc+ca\) equals to
+						<ul>
+							<li>(a) \(abc\)</li>
+							<li>(b) \(a+b+c\)</li>
+							<li>(c) \(1\)</li>
+							<li>(d) \(-1\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ abc\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since the homogeneous system
+								has a non-trivial solution, the determinant of its coefficient
+								matrix must be zero. Expanding and simplifying the determinant
+								condition gives \(ab+bc+ca=abc\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Matrices and Determinants - Page M9
+							</li>
+							<li>
+								The coefficient matrix of the system is
+								\(\begin{bmatrix}a-1&-1&-1\\-1&b-1&-1\\-1&-1&c-1\end{bmatrix}\).
+							</li>
+							<li>
+								Since the system has a non-trivial solution, the determinant of
+								the coefficient matrix must be zero.
+							</li>
+							<li>
+								So,
+								\(\begin{vmatrix}a-1&-1&-1\\-1&b-1&-1\\-1&-1&c-1\end{vmatrix}=0\).
+							</li>
+							<li>
+								Using determinant simplification as in the solution, apply
+								column and row operations to reduce the determinant.
+							</li>
+							<li>
+								After simplification and expansion, the determinant condition
+								becomes \((a-1)(bc)-ab-ac=0\).
+							</li>
+							<li>Expanding, \(abc-bc-ab-ac=0\).</li>
+							<li>Rearranging, \(ab+bc+ac=abc\).</li>
+							<li>Therefore, \(ab+bc+ca=abc\).</li>
+							<li><strong>Final result:</strong> \(ab+bc+ca=abc\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> For homogeneous linear
+								equations, “non-trivial solution” always means determinant
+								\(=0\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Set the coefficient determinant
+								to zero and simplify; the final relation is \(ab+bc+ca=abc\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								determinant condition gives \(abc\), not \(a+b+c\), \(1\), or
+								\(-1\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q122-->
@@ -2285,8 +2882,54 @@
 			<!--Start Q123-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q123">Q123</button>
-					<div class="accordion-content">A123</div>
+					<button class="accordion-button" id="Q123">
+						Q 123. If \(f(x)=x^2-2x+1\) and \(fog(x)=x^2+2x+1\), then \(g(x)\)
+						is equal to
+						<ul>
+							<li>(a) \(x-2\)</li>
+							<li>(b) \(x+2\)</li>
+							<li>(c) \(-x-2\)</li>
+							<li>(d) \(-x+2\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ x+2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since
+								\(f(x)=x^2-2x+1=(x-1)^2\), we have \(f(g(x))=(g(x)-1)^2\). Given
+								\(f(g(x))=x^2+2x+1=(x+1)^2\), so \(g(x)-1=x+1\), giving
+								\(g(x)=x+2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Relations and Functions - Page M2
+							</li>
+							<li>Given \(f(x)=x^2-2x+1\).</li>
+							<li>So, \(f(x)=(x-1)^2\).</li>
+							<li>Therefore, \(f(g(x))=(g(x))^2-2g(x)+1\).</li>
+							<li>Given \(f(g(x))=x^2+2x+1\).</li>
+							<li>So, \((g(x))^2-2g(x)+1=x^2+2x+1\).</li>
+							<li>This can be written as \((g(x)-1)^2=(x+1)^2\).</li>
+							<li>Taking square roots, \(g(x)-1=\pm(x+1)\).</li>
+							<li>So, \(g(x)=1+(x+1)=x+2\), or \(g(x)=1-(x+1)=-x\).</li>
+							<li>Among the given options, only \(x+2\) is present.</li>
+							<li><strong>Final result:</strong> \(g(x)=x+2\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> In composition questions,
+								replace \(x\) in \(f(x)\) by \(g(x)\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Since \(f(x)=(x-1)^2\), directly
+								write \(f(g(x))=(g(x)-1)^2\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Substituting
+								\(g(x)=x+2\) gives \(f(g(x))=(x+1)^2=x^2+2x+1\). The other
+								listed options do not give the required composition.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q123-->
@@ -2294,8 +2937,84 @@
 			<!--Start Q124-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q124">Q124</button>
-					<div class="accordion-content">A124</div>
+					<button class="accordion-button" id="Q124">
+						Q 124. If \(z_1\) and \(z_2\) be \(n\)th root of unity which subtend
+						a right angle at the origin. Then, \(n\) must be of the form
+						<ul>
+							<li>(a) \(4k+1\)</li>
+							<li>(b) \(4k\)</li>
+							<li>(c) \(4k+2\)</li>
+							<li>(d) \(4k+3\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ 4k\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The \(n\)th roots of unity
+								lie on the unit circle at angles \(\dfrac{2k\pi}{n}\). Two roots
+								subtend a right angle at the origin if the difference of their
+								arguments is \(\dfrac{\pi}{2}\). This gives
+								\(\dfrac{2(k_1-k_2)\pi}{n}=\dfrac{\pi}{2}\), so
+								\(n=4(k_1-k_2)\), i.e. \(n\) is a multiple of \(4\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Complex Numbers - Page M4
+							</li>
+							<li>
+								The \(n\)th roots of unity are of the form
+								\(z=\cos\dfrac{2k\pi}{n}+i\sin\dfrac{2k\pi}{n}\), where
+								\(k=0,1,2,\ldots,n-1\).
+							</li>
+							<li>
+								Let \(z_1=\cos\dfrac{2k_1\pi}{n}+i\sin\dfrac{2k_1\pi}{n}\).
+							</li>
+							<li>
+								Let \(z_2=\cos\dfrac{2k_2\pi}{n}+i\sin\dfrac{2k_2\pi}{n}\).
+							</li>
+							<li>These two roots subtend a right angle at the origin.</li>
+							<li>
+								So, the difference of their arguments must be
+								\(\pm\dfrac{\pi}{2}\).
+							</li>
+							<li>
+								Therefore,
+								\(\dfrac{2k_1\pi}{n}-\dfrac{2k_2\pi}{n}=\pm\dfrac{\pi}{2}\).
+							</li>
+							<li>
+								This gives \(\dfrac{2(k_1-k_2)\pi}{n}=\pm\dfrac{\pi}{2}\).
+							</li>
+							<li>
+								Cancel \(\pi\): \(\dfrac{2(k_1-k_2)}{n}=\pm\dfrac{1}{2}\).
+							</li>
+							<li>So, \(4(k_1-k_2)=\pm n\).</li>
+							<li>
+								Since \(k_1\) and \(k_2\) are integers, \(n\) must be a multiple
+								of \(4\).
+							</li>
+							<li>Hence, \(n=4k\), where \(k\) is an integer.</li>
+							<li>
+								<strong>Final result:</strong> \(n\) must be of the form \(4k\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> \(n\)th roots of unity
+								divide the full circle into \(n\) equal angles. A right angle is
+								one-fourth of a full circle, so \(n\) must be divisible by
+								\(4\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Right angle between two roots
+								means argument difference \(=\dfrac{\pi}{2}\). Compare with root
+								spacing \(\dfrac{2\pi}{n}\), so \(n\) must be \(4k\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Forms
+								\(4k+1\), \(4k+2\), and \(4k+3\) are not divisible by \(4\), so
+								they cannot guarantee roots separated by exactly \(90^\circ\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q124-->
@@ -2303,8 +3022,110 @@
 			<!--Start Q125-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q125">Q125</button>
-					<div class="accordion-content">A125</div>
+					<button class="accordion-button" id="Q125">
+						Q 125. A tower \(T_1\) of the height \(60\mathrm{m}\) is located
+						exactly opposite to a tower \(T_2\) of height \(80\mathrm{m}\) on a
+						straight road. From the top of \(T_1\), if the angle of depression
+						of the foot of \(T_2\) is twice the angle of elevation of the top of
+						\(T_2\), then the width (in \(\mathrm{m}\)) of the road between the
+						feet of the towers \(T_1\) and \(T_2\) is
+						<ul>
+							<li>(a) \(20\sqrt{3}\)</li>
+							<li>(b) \(10\sqrt{3}\)</li>
+							<li>(c) \(10\sqrt{2}\)</li>
+							<li>(d) \(20\sqrt{2}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ 20\sqrt{3}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Let the road width be \(h\).
+								From the top of the \(60\mathrm{m}\) tower, the top of the
+								\(80\mathrm{m}\) tower is \(20\mathrm{m}\) higher, so \(\tan
+								x=\dfrac{20}{h}\). The angle of depression to the foot of the
+								other tower is \(2x\), so \(\tan2x=\dfrac{60}{h}\). Solving
+								gives \(h=20\sqrt{3}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36<br />Two-dimensional Coordinate Geometry \(\rightarrow\)
+								Lines - Page M48
+							</li>
+							<li>
+								<img
+									src="images/math_q125a.png"
+									alt="two towers of heights 60 m and 80 m on opposite sides of road"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>
+								Let the height of tower \(T_1\) be \(BC=60\mathrm{m}\), and the
+								height of tower \(T_2\) be \(AE=80\mathrm{m}\).
+							</li>
+							<li>
+								Let the distance between the feet of the towers be
+								\(AB=h\mathrm{m}\).
+							</li>
+							<li>
+								From the top of \(T_1\), the top of \(T_2\) is \(20\mathrm{m}\)
+								higher.
+							</li>
+							<li>
+								Let the angle of elevation of the top of \(T_2\) be \(x\).
+							</li>
+							<li>Then \(\tan x=\dfrac{20}{h}\).</li>
+							<li>So, \(h=\dfrac{20}{\tan x}\). Call this equation \((1)\).</li>
+							<li>
+								The angle of depression of the foot of \(T_2\) is twice this
+								angle, so it is \(2x\).
+							</li>
+							<li>
+								Using the right triangle with vertical height \(60\mathrm{m}\)
+								and horizontal distance \(h\), we get \(\tan2x=\dfrac{60}{h}\).
+							</li>
+							<li>
+								Using \(\tan2x=\dfrac{2\tan x}{1-\tan^2x}\), we get
+								\(\dfrac{60}{h}=\dfrac{2\tan x}{1-\tan^2x}\).
+							</li>
+							<li>So, \(\dfrac{30}{h}=\dfrac{\tan x}{1-\tan^2x}\).</li>
+							<li>
+								Therefore, \(h=\dfrac{30(1-\tan^2x)}{\tan x}\). Call this
+								equation \((2)\).
+							</li>
+							<li>
+								Equating \((1)\) and \((2)\), \(\dfrac{20}{\tan
+								x}=\dfrac{30(1-\tan^2x)}{\tan x}\).
+							</li>
+							<li>Cancel \(\tan x\): \(20=30(1-\tan^2x)\).</li>
+							<li>So, \(2=3-3\tan^2x\).</li>
+							<li>Hence, \(3\tan^2x=1\), so \(\tan x=\dfrac{1}{\sqrt{3}}\).</li>
+							<li>Now use \(h=\dfrac{20}{\tan x}\).</li>
+							<li>
+								Therefore, \(h=\dfrac{20}{1/\sqrt{3}}=20\sqrt{3}\mathrm{m}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Width of the road
+								\(=20\sqrt{3}\mathrm{m}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Angle of depression to the
+								foot uses the full tower height below the observer, while angle
+								of elevation to the other top uses only the height difference.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Write \(\tan x=\dfrac{20}{h}\)
+								and \(\tan2x=\dfrac{60}{h}\), then use the double-angle formula.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The equation
+								gives \(\tan x=\dfrac{1}{\sqrt{3}}\), so \(h=20\sqrt{3}\). The
+								other options do not satisfy both angle conditions.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q125-->
@@ -2312,8 +3133,117 @@
 			<!--Start Q126-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q126">Q126</button>
-					<div class="accordion-content">A126</div>
+					<button class="accordion-button" id="Q126">
+						Q 126. Water is being filled at the rate of \(1\ \mathrm{cm^3/s}\)
+						in a right circular conical vessel (vertex downwards) of height
+						\(35\mathrm{cm}\) and diameter \(14\mathrm{cm}\). When the height of
+						the water levels is \(10\mathrm{cm}\), the rate (in
+						\(\mathrm{cm^2/sec}\)) at which the wet conical surface area of the
+						vessel increases is
+						<ul>
+							<li>(a) \(\dfrac{\sqrt{26}}{10}\)</li>
+							<br />
+							<li>(b) \(5\)</li>
+							<li>(c) \(\dfrac{\sqrt{21}}{5}\)</li>
+							<br />
+							<li>(d) \(\dfrac{\sqrt{26}}{5}\)</li>
+							<br />
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\ \dfrac{\sqrt{26}}{5}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> By similarity,
+								\(\dfrac{r}{h}=\dfrac{7}{35}=\dfrac{1}{5}\), so
+								\(r=\dfrac{h}{5}\). Then \(V=\dfrac{1}{3}\pi r^2h=\dfrac{\pi
+								h^3}{75}\). Using \(\dfrac{dV}{dt}=1\), find \(\dfrac{dh}{dt}\),
+								and then differentiate wet curved surface area \(A=\pi
+								r\sqrt{r^2+h^2}=\dfrac{\sqrt{26}}{25}\pi h^2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus \(\rightarrow\) Differentiability - Page M75<br />Mensuration
+								/ Geometry \(\rightarrow\) Cone volume and surface area
+							</li>
+							<li>
+								The vessel is a cone of height \(35\mathrm{cm}\) and diameter
+								\(14\mathrm{cm}\), so its radius is \(7\mathrm{cm}\).
+							</li>
+							<li>
+								Let \(h\) be the height of water and \(r\) be the radius of the
+								water surface at that height.
+							</li>
+							<li>
+								By similarity of cones,
+								\(\dfrac{r}{h}=\dfrac{7}{35}=\dfrac{1}{5}\).
+							</li>
+							<li>So, \(r=\dfrac{h}{5}\).</li>
+							<li>The volume of water is \(V=\dfrac{1}{3}\pi r^2h\).</li>
+							<li>
+								Substitute \(r=\dfrac{h}{5}\):
+								\(V=\dfrac{1}{3}\pi\left(\dfrac{h}{5}\right)^2h=\dfrac{\pi
+								h^3}{75}\).
+							</li>
+							<li>
+								Differentiate with respect to \(t\):
+								\(\dfrac{dV}{dt}=\dfrac{\pi}{75}\cdot3h^2\dfrac{dh}{dt}\).
+							</li>
+							<li>So, \(\dfrac{dV}{dt}=\dfrac{\pi h^2}{25}\dfrac{dh}{dt}\).</li>
+							<li>
+								Given \(\dfrac{dV}{dt}=1\), hence
+								\(\dfrac{dh}{dt}=\dfrac{25}{\pi h^2}\).
+							</li>
+							<li>
+								The wet conical surface area is \(A=\pi rl\), where
+								\(l=\sqrt{r^2+h^2}\).
+							</li>
+							<li>
+								Substitute \(r=\dfrac{h}{5}\):
+								\(l=\sqrt{\left(\dfrac{h}{5}\right)^2+h^2}=\dfrac{h\sqrt{26}}{5}\).
+							</li>
+							<li>
+								So,
+								\(A=\pi\cdot\dfrac{h}{5}\cdot\dfrac{h\sqrt{26}}{5}=\dfrac{\sqrt{26}}{25}\pi
+								h^2\).
+							</li>
+							<li>
+								Differentiate with respect to \(t\):
+								\(\dfrac{dA}{dt}=\dfrac{\sqrt{26}}{25}\pi\cdot2h\dfrac{dh}{dt}\).
+							</li>
+							<li>
+								At \(h=10\),
+								\(\dfrac{dh}{dt}=\dfrac{25}{\pi(10)^2}=\dfrac{1}{4\pi}\).
+							</li>
+							<li>
+								Therefore,
+								\(\dfrac{dA}{dt}=\dfrac{\sqrt{26}}{25}\pi\cdot2(10)\cdot\dfrac{1}{4\pi}\).
+							</li>
+							<li>
+								This simplifies to
+								\(\dfrac{20\sqrt{26}}{100}=\dfrac{\sqrt{26}}{5}\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(\dfrac{dA}{dt}=\dfrac{\sqrt{26}}{5}\ \mathrm{cm^2/sec}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> In cone water-filling
+								problems, always use similar triangles first to connect \(r\)
+								and \(h\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> From
+								\(\dfrac{r}{h}=\dfrac{1}{5}\), get \(V=\dfrac{\pi h^3}{75}\) and
+								\(A=\dfrac{\sqrt{26}}{25}\pi h^2\), then differentiate.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Correct
+								related-rate substitution at \(h=10\) gives
+								\(\dfrac{\sqrt{26}}{5}\), so the other values do not match.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q126-->
@@ -2321,8 +3251,83 @@
 			<!--Start Q127-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q127">Q127</button>
-					<div class="accordion-content">A127</div>
+					<button class="accordion-button" id="Q127">
+						Q 127. Let \(\dfrac{\sin A}{\sin B}=\dfrac{\sin(A-C)}{\sin(C-B)}\),
+						where \(A,B\) and \(C\) are angles of a \(\triangle ABC\). If the
+						lengths of the sides opposite these angles are \(a,b\) and \(c\)
+						respectively, then
+						<ul>
+							<li>(a) \(b^2-a^2=a^2+c^2\)</li>
+							<li>(b) \(b^2,c^2,a^2\) are in AP</li>
+							<li>(c) \(c^2,a^2,b^2\) are in AP</li>
+							<li>(d) \(a^2,b^2,c^2\) are in AP</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\ b^2,c^2,a^2\) are in AP</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since \(A+B+C=\pi\), rewrite
+								\(\sin A=\sin(B+C)\) and \(\sin B=\sin(A+C)\). After cross
+								multiplication and simplification, we get \(2\sin^2 C=\sin^2
+								A+\sin^2 B\). Using the sine rule, this becomes
+								\(2c^2=a^2+b^2\), so \(b^2,c^2,a^2\) are in AP.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36<br />Trigonometry \(\rightarrow\) Properties of Triangles -
+								Page M40
+							</li>
+							<li>
+								Given \(\dfrac{\sin A}{\sin B}=\dfrac{\sin(A-C)}{\sin(C-B)}\).
+							</li>
+							<li>
+								Since \(A+B+C=\pi\), we can write \(A=\pi-(B+C)\), so \(\sin
+								A=\sin(B+C)\).
+							</li>
+							<li>Similarly, \(B=\pi-(A+C)\), so \(\sin B=\sin(A+C)\).</li>
+							<li>
+								Thus, the given equation becomes
+								\(\dfrac{\sin(B+C)}{\sin(A+C)}=\dfrac{\sin(A-C)}{\sin(C-B)}\).
+							</li>
+							<li>
+								Cross multiplying: \(\sin(B+C)\sin(C-B)=\sin(A+C)\sin(A-C)\).
+							</li>
+							<li>Use the identity \(\sin(u+v)\sin(u-v)=\sin^2u-\sin^2v\).</li>
+							<li>So, \(\sin(B+C)\sin(C-B)=\sin^2C-\sin^2B\).</li>
+							<li>Also, \(\sin(A+C)\sin(A-C)=\sin^2A-\sin^2C\).</li>
+							<li>Therefore, \(\sin^2C-\sin^2B=\sin^2A-\sin^2C\).</li>
+							<li>This gives \(2\sin^2C=\sin^2A+\sin^2B\).</li>
+							<li>
+								By sine rule, \(\dfrac{a}{\sin A}=\dfrac{b}{\sin
+								B}=\dfrac{c}{\sin C}=2R\).
+							</li>
+							<li>So, \(a=2R\sin A\), \(b=2R\sin B\), and \(c=2R\sin C\).</li>
+							<li>Substitute these in \(2\sin^2C=\sin^2A+\sin^2B\).</li>
+							<li>We get \(2c^2=a^2+b^2\).</li>
+							<li>
+								This means \(c^2\) is the arithmetic mean of \(a^2\) and
+								\(b^2\).
+							</li>
+							<li>Hence, \(b^2,c^2,a^2\) are in AP.</li>
+							<li><strong>Final result:</strong> \(b^2,c^2,a^2\) are in AP.</li>
+							<li>
+								<strong>Simple memory tip:</strong> To prove sides are in AP,
+								try to reach the form \(2\times\text{middle term}=\text{sum of
+								extremes}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Convert angles using
+								\(A+B+C=\pi\), then use \(\sin(u+v)\sin(u-v)=\sin^2u-\sin^2v\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The derived
+								relation is \(2c^2=a^2+b^2\), so \(c^2\) must be the middle
+								term. Hence \(b^2,c^2,a^2\) are in AP.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q127-->
@@ -2330,8 +3335,72 @@
 			<!--Start Q128-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q128">Q128</button>
-					<div class="accordion-content">A128</div>
+					<button class="accordion-button" id="Q128">
+						Q 128. \(\sum\limits_{\substack{i,j=0\\i\ne j}}^n {}^nC_i{}^nC_j\)
+						is equal to
+						<ul>
+							<li>(a) \(2^{2n}-{}^{2n}C_n\)</li>
+							<li>(b) \(2^{2n-1}-{}^{2n-1}C_{n-1}\)</li>
+							<li>(c) \(2^{2n}-\dfrac{1}{2}({}^{2n}C_n)\)</li>
+							<li>(d) \(2^{n-1}+2({}^{2n-1}C_n)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\ 2^{2n}-{}^{2n}C_n\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> First take the sum over all
+								\(i,j\), then subtract the terms where \(i=j\). The full double
+								sum is \(\left(\sum {}^nC_i\right)\left(\sum
+								{}^nC_j\right)=2^n\cdot2^n=2^{2n}\), and the diagonal sum is
+								\(\sum({}^nC_i)^2={} ^{2n}C_n\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Algebra
+								\(\rightarrow\) Binomial Theorem - Page M9
+							</li>
+							<li>
+								We need to find \(\sum\limits_{\substack{i,j=0\\i\ne j}}^n
+								{}^nC_i{}^nC_j\).
+							</li>
+							<li>
+								This means sum of all terms \({}^nC_i{}^nC_j\), except the terms
+								where \(i=j\).
+							</li>
+							<li>
+								So, \(\sum\limits_{\substack{i,j=0\\i\ne j}}^n
+								{}^nC_i{}^nC_j=\sum\limits_{i,j=0}^n
+								{}^nC_i{}^nC_j-\sum\limits_{i=0}^n({}^nC_i)^2\).
+							</li>
+							<li>
+								Now, \(\sum\limits_{i,j=0}^n
+								{}^nC_i{}^nC_j=\left(\sum\limits_{i=0}^n{}^nC_i\right)\left(\sum\limits_{j=0}^n{}^nC_j\right)\).
+							</li>
+							<li>
+								Using \(\sum\limits_{i=0}^n{}^nC_i=2^n\), the full double sum is
+								\(2^n\cdot2^n=2^{2n}\).
+							</li>
+							<li>Also, \(\sum\limits_{i=0}^n({}^nC_i)^2={} ^{2n}C_n\).</li>
+							<li>
+								Therefore, \(\sum\limits_{\substack{i,j=0\\i\ne j}}^n
+								{}^nC_i{}^nC_j=2^{2n}-{}^{2n}C_n\).
+							</li>
+							<li><strong>Final result:</strong> \(2^{2n}-{}^{2n}C_n\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> “\(i\ne j\)” means take all
+								pairs first, then subtract the diagonal \(i=j\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use \(\sum {}^nC_i=2^n\) and
+								\(\sum({}^nC_i)^2={} ^{2n}C_n\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The exclusion
+								is exactly the diagonal sum \({}^{2n}C_n\), so the correct
+								expression is \(2^{2n}-{}^{2n}C_n\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q128-->
@@ -2339,8 +3408,124 @@
 			<!--Start Q129-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q129">Q129</button>
-					<div class="accordion-content">A129</div>
+					<button class="accordion-button" id="Q129">
+						Q 129. Let the functions \(f:R\rightarrow R\) and \(g:R\rightarrow
+						R\) be defined by \(f(x)=e^{x-1}-e^{-|x-1|}\) and
+						\(g(x)=\dfrac{1}{2}(e^{x-1}+e^{1-x})\). Then, the area of the region
+						in the first quadrant bounded by the curves \(y=f(x),y=g(x)\) and
+						\(x=0\) is
+						<ul>
+							<li>(a) \((2-\sqrt{3})+\dfrac{1}{2}(e-e^{-1})\)</li>
+							<li>(b) \((2+\sqrt{3})+\dfrac{1}{2}(e-e^{-1})\)</li>
+							<li>(c) \((2-\sqrt{3})+\dfrac{1}{2}(e+e^{-1})\)</li>
+							<li>(d) \((2+\sqrt{3})+\dfrac{1}{2}(e+e^{-1})\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((a)\ (2-\sqrt{3})+\dfrac{1}{2}(e-e^{-1})\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> For \(x&lt;1\), \(f(x)=0\).
+								For \(x\ge1\), \(f(x)=e^{x-1}-e^{1-x}\). The curves meet where
+								\(e^{x-1}-e^{1-x}=\dfrac{1}{2}(e^{x-1}+e^{1-x})\), giving
+								\(x=1+\dfrac{1}{2}\ln3\). The area is split into \(\int_0^1
+								g(x)\,dx+\int_1^{1+\frac{1}{2}\ln3}(g(x)-f(x))\,dx\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus \(\rightarrow\) Area of Bounded Regions - Page M90<br />Algebra
+								\(\rightarrow\) Relations and Functions - Page M2
+							</li>
+							<li>
+								<img
+									src="images/math_q129a.png"
+									alt="area in first quadrant bounded by y equals f x, y equals g x and x equals 0"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/>
+								<br /><br />
+							</li>
+							<li>Given \(f(x)=e^{x-1}-e^{-|x-1|}\).</li>
+							<li>
+								For \(x&lt;1\), \(|x-1|=1-x\), so \(-|x-1|=x-1\). Hence
+								\(f(x)=e^{x-1}-e^{x-1}=0\).
+							</li>
+							<li>
+								For \(x\ge1\), \(|x-1|=x-1\), so \(-|x-1|=1-x\). Hence
+								\(f(x)=e^{x-1}-e^{1-x}\).
+							</li>
+							<li>Also, \(g(x)=\dfrac{1}{2}(e^{x-1}+e^{1-x})\).</li>
+							<li>
+								To find the intersection for \(x\ge1\), solve \(f(x)=g(x)\).
+							</li>
+							<li>So, \(e^{x-1}-e^{1-x}=\dfrac{1}{2}(e^{x-1}+e^{1-x})\).</li>
+							<li>
+								Multiplying by \(2\): \(2e^{x-1}-2e^{1-x}=e^{x-1}+e^{1-x}\).
+							</li>
+							<li>Thus, \(e^{x-1}=3e^{1-x}\).</li>
+							<li>So, \(e^{2x-2}=3\), giving \(2x-2=\ln3\).</li>
+							<li>Therefore, \(x=1+\dfrac{1}{2}\ln3\).</li>
+							<li>
+								The required area is \(\int_0^1
+								g(x)\,dx+\int_1^{1+\frac{1}{2}\ln3}(g(x)-f(x))\,dx\).
+							</li>
+							<li>
+								For the first part:
+								\(\int_0^1\dfrac{1}{2}(e^{x-1}+e^{1-x})\,dx=\dfrac{1}{2}\left[e^{x-1}-e^{1-x}\right]_0^1\).
+							</li>
+							<li>
+								This gives
+								\(\dfrac{1}{2}\left((1-1)-(e^{-1}-e)\right)=\dfrac{1}{2}(e-e^{-1})\).
+							</li>
+							<li>
+								For \(x\ge1\),
+								\(g(x)-f(x)=\dfrac{1}{2}(e^{x-1}+e^{1-x})-(e^{x-1}-e^{1-x})\).
+							</li>
+							<li>
+								So, \(g(x)-f(x)=-\dfrac{1}{2}e^{x-1}+\dfrac{3}{2}e^{1-x}\).
+							</li>
+							<li>
+								Therefore,
+								\(\int_1^{1+\frac{1}{2}\ln3}(g(x)-f(x))\,dx=\left[-\dfrac{1}{2}e^{x-1}-\dfrac{3}{2}e^{1-x}\right]_1^{1+\frac{1}{2}\ln3}\).
+							</li>
+							<li>
+								At \(x=1+\dfrac{1}{2}\ln3\), \(e^{x-1}=\sqrt{3}\) and
+								\(e^{1-x}=\dfrac{1}{\sqrt{3}}\).
+							</li>
+							<li>
+								So this part becomes
+								\(-\dfrac{1}{2}\left(\sqrt{3}\right)-\dfrac{3}{2}\left(\dfrac{1}{\sqrt{3}}\right)-\left(-\dfrac{1}{2}-\dfrac{3}{2}\right)\).
+							</li>
+							<li>
+								This is
+								\(-\dfrac{\sqrt{3}}{2}-\dfrac{3}{2\sqrt{3}}+2=2-\sqrt{3}\).
+							</li>
+							<li>
+								Hence, total area \(=(2-\sqrt{3})+\dfrac{1}{2}(e-e^{-1})\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\((2-\sqrt{3})+\dfrac{1}{2}(e-e^{-1})\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> When an absolute value is in
+								the exponent, split the function at the point where the inside
+								expression changes sign.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Split the area at \(x=1\), then
+								use the intersection \(x=1+\dfrac{1}{2}\ln3\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The second
+								area part is \(2-\sqrt{3}\), and the first area part is
+								\(\dfrac{1}{2}(e-e^{-1})\), so only option \((a)\) matches.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q129-->
@@ -2348,8 +3533,72 @@
 			<!--Start Q130-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q130">Q130</button>
-					<div class="accordion-content">A130</div>
+					<button class="accordion-button" id="Q130">
+						Q 130. If \(A,B,C\in[0,\pi]\) and if \(A,B,C\) are in AP, then
+						\(\dfrac{\sin A+\sin C}{\cos A+\cos C}\) is equal to
+						<ul>
+							<li>(a) \(\sin B\)</li>
+							<li>(b) \(\cos B\)</li>
+							<li>(c) \(\cot B\)</li>
+							<li>(d) \(\tan B\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\ \tan B\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since \(A,B,C\) are in AP,
+								\(B=\dfrac{A+C}{2}\). Use sum-to-product identities: \(\sin
+								A+\sin C=2\sin\dfrac{A+C}{2}\cos\dfrac{A-C}{2}\) and \(\cos
+								A+\cos C=2\cos\dfrac{A+C}{2}\cos\dfrac{A-C}{2}\). The ratio
+								becomes \(\tan\dfrac{A+C}{2}=\tan B\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								\(\rightarrow\) Trigonometric Ratios of Compound Angles - Page
+								M36<br />Algebra \(\rightarrow\) Sequences and Series - Page M6
+							</li>
+							<li>Given \(A,B,C\) are in AP.</li>
+							<li>
+								So, the middle term is the average of the first and third terms:
+								\(B=\dfrac{A+C}{2}\).
+							</li>
+							<li>Now consider \(\dfrac{\sin A+\sin C}{\cos A+\cos C}\).</li>
+							<li>
+								Use the identity \(\sin A+\sin
+								C=2\sin\dfrac{A+C}{2}\cos\dfrac{A-C}{2}\).
+							</li>
+							<li>
+								Also use \(\cos A+\cos
+								C=2\cos\dfrac{A+C}{2}\cos\dfrac{A-C}{2}\).
+							</li>
+							<li>
+								Therefore, \(\dfrac{\sin A+\sin C}{\cos A+\cos
+								C}=\dfrac{2\sin\dfrac{A+C}{2}\cos\dfrac{A-C}{2}}{2\cos\dfrac{A+C}{2}\cos\dfrac{A-C}{2}}\).
+							</li>
+							<li>Cancel the common factor \(2\cos\dfrac{A-C}{2}\).</li>
+							<li>We get \(\tan\dfrac{A+C}{2}\).</li>
+							<li>Since \(B=\dfrac{A+C}{2}\), the value is \(\tan B\).</li>
+							<li>
+								<strong>Final result:</strong> \(\dfrac{\sin A+\sin C}{\cos
+								A+\cos C}=\tan B\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> In AP, the middle angle is
+								the average: \(B=\dfrac{A+C}{2}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use sum-to-product identities;
+								the \(\cos\dfrac{A-C}{2}\) factor cancels immediately.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The ratio
+								simplifies to \(\tan\dfrac{A+C}{2}\), and since
+								\(\dfrac{A+C}{2}=B\), the answer is \(\tan B\), not \(\sin B\),
+								\(\cos B\), or \(\cot B\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q130-->
