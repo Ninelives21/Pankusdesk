@@ -1156,8 +1156,94 @@
 			<!--Start Q121-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q121">Q121</button>
-					<div class="accordion-content">A121</div>
+					<button class="accordion-button" id="Q121">
+						121. The minimum value of \((\sin^{-1}x)^3+(\cos^{-1}x)^3\) is equal
+						to
+						<ul>
+							<li>a. \(\dfrac{\pi^3}{32}\)</li>
+							<br />
+							<li>b. \(\dfrac{5\pi^3}{32}\)</li>
+							<br />
+							<li>c. \(\dfrac{9\pi^3}{32}\)</li>
+							<br />
+							<li>d. \(\dfrac{11\pi^3}{32}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\) \(\dfrac{\pi^3}{32}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Use
+								\(\sin^{-1}x+\cos^{-1}x=\dfrac{\pi}{2}\). Then write the
+								expression as a sum of cubes and complete the square to find the
+								minimum.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								/ Properties of Inverse Trigonometric Functions - Page M38<br />Differential
+								Calculus / Minima and maxima - Page M77
+							</li>
+							<li>Let \(A=\sin^{-1}x\) and \(B=\cos^{-1}x\).</li>
+							<li>
+								We know the standard identity
+								\(A+B=\sin^{-1}x+\cos^{-1}x=\dfrac{\pi}{2}\).
+							</li>
+							<li>The given expression is \(A^3+B^3\).</li>
+							<li>
+								Use the identity \(A^3+B^3=(A+B)\left[(A+B)^2-3AB\right]\).
+							</li>
+							<li>
+								So,
+								\(A^3+B^3=\dfrac{\pi}{2}\left[\left(\dfrac{\pi}{2}\right)^2-3AB\right]\).
+							</li>
+							<li>
+								Since \(B=\dfrac{\pi}{2}-A\), we get
+								\(AB=A\left(\dfrac{\pi}{2}-A\right)\).
+							</li>
+							<li>
+								Therefore,
+								\(A^3+B^3=\dfrac{\pi}{2}\left[\dfrac{\pi^2}{4}-3A\left(\dfrac{\pi}{2}-A\right)\right]\).
+							</li>
+							<li>
+								Simplifying inside the bracket,
+								\(A^3+B^3=\dfrac{\pi}{2}\left[3A^2-\dfrac{3\pi}{2}A+\dfrac{\pi^2}{4}\right]\).
+							</li>
+							<li>
+								Complete the square:
+								\(3A^2-\dfrac{3\pi}{2}A+\dfrac{\pi^2}{4}=3\left(A-\dfrac{\pi}{4}\right)^2+\dfrac{\pi^2}{16}\).
+							</li>
+							<li>
+								Hence,
+								\(A^3+B^3=\dfrac{\pi}{2}\left[3\left(\sin^{-1}x-\dfrac{\pi}{4}\right)^2+\dfrac{\pi^2}{16}\right]\).
+							</li>
+							<li>The square term is always non-negative.</li>
+							<li>
+								So, the minimum occurs when \(\sin^{-1}x-\dfrac{\pi}{4}=0\).
+							</li>
+							<li>
+								At minimum, the value is
+								\(\dfrac{\pi}{2}\cdot\dfrac{\pi^2}{16}=\dfrac{\pi^3}{32}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Minimum value
+								\(=\dfrac{\pi^3}{32}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Always remember
+								\(\sin^{-1}x+\cos^{-1}x=\dfrac{\pi}{2}\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The expression
+								reduces to a constant plus a non-negative square, and the least
+								possible constant is exactly \(\dfrac{\pi^3}{32}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Once you see \(\sin^{-1}x\) and
+								\(\cos^{-1}x\) together, replace one using
+								\(\cos^{-1}x=\dfrac{\pi}{2}-\sin^{-1}x\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q121-->
@@ -1165,8 +1251,62 @@
 			<!--Start Q122-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q122">Q122</button>
-					<div class="accordion-content">A122</div>
+					<button class="accordion-button" id="Q122">
+						122. The origin is shifted to \((1,2)\). The equation
+						\(y^2-8x-4y+12=0\) changes to \(y^2=4ax\), then \(a\) is equal to
+						<ul>
+							<li>a. 1</li>
+							<li>b. 2</li>
+							<li>c. \(-2\)</li>
+							<li>d. \(-1\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\) 2</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> When the origin shifts to
+								\((1,2)\), use \(x'=x-1\) and \(y'=y-2\). The old equation
+								becomes \((y')^2=8x'\), which matches \(y^2=4ax\), so \(a=2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry / Conic Sections - Page M50
+							</li>
+							<li>Let the old coordinates be \((x,y)\).</li>
+							<li>
+								When the origin is shifted to \((h,k)\), the new coordinates are
+								\(x'=x-h\) and \(y'=y-k\).
+							</li>
+							<li>Here the new origin is \((1,2)\), so \(h=1\) and \(k=2\).</li>
+							<li>Therefore, \(x'=x-1\) and \(y'=y-2\).</li>
+							<li>This means \(x=x'+1\) and \(y=y'+2\).</li>
+							<li>
+								Substitute these in the original equation \(y^2-8x-4y+12=0\).
+							</li>
+							<li>We get \((y'+2)^2-8(x'+1)-4(y'+2)+12=0\).</li>
+							<li>Expanding, \(y'^2+4y'+4-8x'-8-4y'-8+12=0\).</li>
+							<li>Simplifying, \(y'^2-8x'=0\).</li>
+							<li>So, \(y'^2=8x'\).</li>
+							<li>Comparing with \(y^2=4ax\), we get \(4a=8\).</li>
+							<li>Therefore, \(a=2\).</li>
+							<li><strong>Final result:</strong> \(a=2\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> If origin shifts to
+								\((h,k)\), use old coordinates \(x=X+h\), \(y=Y+k\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								transformed equation is \(y^2=8x\), so \(4a\) must be \(8\),
+								giving only \(a=2\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Complete the square mentally:
+								\(y^2-4y=(y-2)^2-4\), so the shift \((1,2)\) quickly gives the
+								standard parabola.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q122-->
@@ -1174,8 +1314,72 @@
 			<!--Start Q123-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q123">Q123</button>
-					<div class="accordion-content">A123</div>
+					<button class="accordion-button" id="Q123">
+						123. The equations of the bisector of the angles between the
+						straight lines \(3x+4y+7=0\) and \(12x+5y-8=0\) are
+						<ul>
+							<li>a. \(7x+9y+17=0, 99x+77y+51=0\)</li>
+							<li>b. \(7x-9y-17=0, 99x+77y-51=0\)</li>
+							<li>c. \(7x-9y+17=0, 99x+77y+51=0\)</li>
+							<li>d. None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\) None of the above</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Use the angle-bisector
+								formula
+								\(\dfrac{L_1}{\sqrt{a_1^2+b_1^2}}=\pm\dfrac{L_2}{\sqrt{a_2^2+b_2^2}}\).
+								The two bisectors obtained do not match any of the listed paired
+								options completely.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry / Lines - Page M48
+							</li>
+							<li>Given lines are \(3x+4y+7=0\) and \(12x+5y-8=0\).</li>
+							<li>
+								The angle bisectors of two lines \(L_1=0\) and \(L_2=0\) are
+								given by
+								\(\dfrac{L_1}{\sqrt{a_1^2+b_1^2}}=\pm\dfrac{L_2}{\sqrt{a_2^2+b_2^2}}\).
+							</li>
+							<li>
+								So,
+								\(\dfrac{3x+4y+7}{\sqrt{3^2+4^2}}=\pm\dfrac{12x+5y-8}{\sqrt{12^2+5^2}}\).
+							</li>
+							<li>
+								This becomes \(\dfrac{3x+4y+7}{5}=\pm\dfrac{12x+5y-8}{13}\).
+							</li>
+							<li>Cross-multiply: \(13(3x+4y+7)=\pm5(12x+5y-8)\).</li>
+							<li>Taking the positive sign, \(39x+52y+91=60x+25y-40\).</li>
+							<li>So, \(-21x+27y+131=0\), or \(21x-27y-131=0\).</li>
+							<li>Taking the negative sign, \(39x+52y+91=-(60x+25y-40)\).</li>
+							<li>So, \(39x+52y+91=-60x-25y+40\).</li>
+							<li>Therefore, \(99x+77y+51=0\).</li>
+							<li>
+								The two angle bisectors are \(21x-27y-131=0\) and
+								\(99x+77y+51=0\).
+							</li>
+							<li>These do not match any of the paired options exactly.</li>
+							<li><strong>Final result:</strong> None of the above.</li>
+							<li>
+								<strong>Simple memory tip:</strong> For angle bisectors, divide
+								each line by the square root of the sum of squares of its
+								\(x,y\) coefficients.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Although some
+								options contain a similar-looking second equation, the first
+								bisector is not correctly listed with it.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> First compute
+								\(\sqrt{3^2+4^2}=5\) and \(\sqrt{12^2+5^2}=13\), then use
+								\(13L_1=\pm5L_2\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q123-->
@@ -1183,8 +1387,72 @@
 			<!--Start Q124-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q124">Q124</button>
-					<div class="accordion-content">A124</div>
+					<button class="accordion-button" id="Q124">
+						124. Equation of circle which passes through the points \((1,-2)\)
+						and \((3,-4)\) and touch the X-axis is
+						<ul>
+							<li>a. \(x^2+y^2+6x+2y+9=0\)</li>
+							<li>b. \(x^2+y^2+10x+20y+25=0\)</li>
+							<li>c. \(x^2+y^2+6x+4y+9=0\)</li>
+							<li>d. None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\) \(x^2+y^2+10x+20y+25=0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since the circle touches the
+								X-axis, its radius is equal to the distance of the centre from
+								the X-axis. Let the centre be \((h,k)\), so the equation is
+								\((x-h)^2+(y-k)^2=k^2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry / Circles - Page M49
+							</li>
+							<li>Let the centre of the circle be \((h,k)\).</li>
+							<li>
+								Since the circle touches the X-axis, its radius is \(|k|\).
+							</li>
+							<li>So the circle can be written as \((x-h)^2+(y-k)^2=k^2\).</li>
+							<li>
+								The circle passes through \((1,-2)\), so
+								\((1-h)^2+(-2-k)^2=k^2\).
+							</li>
+							<li>
+								It also passes through \((3,-4)\), so \((3-h)^2+(-4-k)^2=k^2\).
+							</li>
+							<li>
+								Solving these two equations gives possible centres \((-5,-10)\)
+								and \((3,-2)\).
+							</li>
+							<li>For centre \((-5,-10)\), the radius is \(10\).</li>
+							<li>So, the equation is \((x+5)^2+(y+10)^2=100\).</li>
+							<li>Expanding, \(x^2+10x+25+y^2+20y+100=100\).</li>
+							<li>Therefore, \(x^2+y^2+10x+20y+25=0\).</li>
+							<li>This matches option \((b)\).</li>
+							<li>
+								The other possible centre \((3,-2)\) gives another tangent
+								circle, but that equation is not listed among the options.
+							</li>
+							<li><strong>Final result:</strong> \(x^2+y^2+10x+20y+25=0\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> A circle touching the X-axis
+								has radius equal to the vertical distance of its centre from the
+								X-axis.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Option \((b)\)
+								is the listed circle that passes through the two given points
+								and touches the X-axis; options \((a)\) and \((c)\) do not
+								satisfy the full condition.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> If the circle touches the
+								X-axis, write \((x-h)^2+(y-k)^2=k^2\) directly.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q124-->
@@ -1192,8 +1460,77 @@
 			<!--Start Q125-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q125">Q125</button>
-					<div class="accordion-content">A125</div>
+					<button class="accordion-button" id="Q125">
+						125. If \(x=9\) is the chord of contact of the hyperbola
+						\(x^2-y^2=9\), then the equation of the corresponding pair of
+						tangent is
+						<ul>
+							<li>a. \(9x^2-8y^2+18x-9=0\)</li>
+							<li>b. \(9x^2-8y^2-18x+9=0\)</li>
+							<li>c. \(9x^2-8y^2-18x-9=0\)</li>
+							<li>d. \(9x^2-8y^2+18x+9=0\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\) \(9x^2-8y^2-18x+9=0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The line \(x=9\) cuts the
+								hyperbola \(x^2-y^2=9\) at two points. Write the tangents at
+								those two points and multiply their equations to get the
+								combined equation of the pair of tangents.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Two-dimensional Coordinate Geometry / Conic Sections - Page M50
+							</li>
+							<li>Given hyperbola is \(x^2-y^2=9\).</li>
+							<li>The chord of contact is \(x=9\).</li>
+							<li>
+								To find where this chord meets the hyperbola, put \(x=9\) in
+								\(x^2-y^2=9\).
+							</li>
+							<li>So, \(81-y^2=9\), hence \(y^2=72\).</li>
+							<li>Therefore, \(y=\pm6\sqrt{2}\).</li>
+							<li>
+								The two points of contact are \((9,6\sqrt{2})\) and
+								\((9,-6\sqrt{2})\).
+							</li>
+							<li>
+								For the hyperbola \(x^2-y^2=9\), tangent at \((x_1,y_1)\) is
+								\(xx_1-yy_1=9\).
+							</li>
+							<li>
+								At \((9,6\sqrt{2})\), tangent is \(9x-6\sqrt{2}y=9\), or
+								\(3x-2\sqrt{2}y-3=0\).
+							</li>
+							<li>
+								At \((9,-6\sqrt{2})\), tangent is \(9x+6\sqrt{2}y=9\), or
+								\(3x+2\sqrt{2}y-3=0\).
+							</li>
+							<li>
+								The combined equation of the pair of tangents is
+								\((3x-2\sqrt{2}y-3)(3x+2\sqrt{2}y-3)=0\).
+							</li>
+							<li>This is of the form \((3x-3)^2-(2\sqrt{2}y)^2=0\).</li>
+							<li>So, \(9x^2-18x+9-8y^2=0\).</li>
+							<li>Therefore, \(9x^2-8y^2-18x+9=0\).</li>
+							<li><strong>Final result:</strong> \(9x^2-8y^2-18x+9=0\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> For \(x^2-y^2=a^2\), tangent
+								at \((x_1,y_1)\) is \(xx_1-yy_1=a^2\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The correct
+								expansion has \(-18x\) and \(+9\), so the sign pattern must
+								match option \((b)\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Find the two contact points from
+								the chord, write the two tangents, and multiply them as a pair.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q125-->
@@ -1201,8 +1538,72 @@
 			<!--Start Q126-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q126">Q126</button>
-					<div class="accordion-content">A126</div>
+					<button class="accordion-button" id="Q126">
+						126. The points with position vectors \(10\hat{i}+3\hat{j}\),
+						\(12\hat{i}-15\hat{j}\) and \(a\hat{i}+11\hat{j}\) are collinear, if
+						\(a\) is
+						<ul>
+							<li>a. \(-8\)</li>
+							<li>b. 4</li>
+							<li>c. 2</li>
+							<li>d. \(\dfrac{82}{9}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\) \(\dfrac{82}{9}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Treat the position vectors
+								as points \(A(10,3)\), \(B(12,-15)\), and \(C(a,11)\). For
+								collinearity, vectors \(\overrightarrow{AB}\) and
+								\(\overrightarrow{AC}\) must be parallel.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Vectors /
+								Components of a vector in 2D - Page M126<br />Vectors /
+								Multiplication of a vector by a scalar - Page M125
+							</li>
+							<li>
+								Let the three points be \(A(10,3)\), \(B(12,-15)\), and
+								\(C(a,11)\).
+							</li>
+							<li>
+								Then
+								\(\overrightarrow{AB}=B-A=(12-10)\hat{i}+(-15-3)\hat{j}=2\hat{i}-18\hat{j}\).
+							</li>
+							<li>
+								Also,
+								\(\overrightarrow{AC}=C-A=(a-10)\hat{i}+(11-3)\hat{j}=(a-10)\hat{i}+8\hat{j}\).
+							</li>
+							<li>
+								If \(A,B,C\) are collinear, then \(\overrightarrow{AB}\) and
+								\(\overrightarrow{AC}\) are parallel.
+							</li>
+							<li>
+								Therefore, their corresponding components are proportional.
+							</li>
+							<li>So, \(\dfrac{2}{a-10}=\dfrac{-18}{8}\).</li>
+							<li>Cross-multiply: \(16=-18(a-10)\).</li>
+							<li>Thus, \(16=-18a+180\).</li>
+							<li>
+								So, \(18a=164\), hence \(a=\dfrac{164}{18}=\dfrac{82}{9}\).
+							</li>
+							<li><strong>Final result:</strong> \(a=\dfrac{82}{9}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Three points are collinear
+								if the vectors formed from one common point are parallel.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Only
+								\(a=\dfrac{82}{9}\) makes the component ratios of
+								\(\overrightarrow{AB}\) and \(\overrightarrow{AC}\) equal.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Convert position vectors into
+								coordinate points and compare slopes or component ratios.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q126-->
@@ -1210,8 +1611,67 @@
 			<!--Start Q127-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q127">Q127</button>
-					<div class="accordion-content">A127</div>
+					<button class="accordion-button" id="Q127">
+						127. Let \(a,b,c\) be vectors of lengths 3, 4, 5 respectively and
+						\(a\) be perpendicular to \((b+c)\), \(b\) to \((c+a)\) and \(c\) to
+						\((a+b)\), then the value of \((a+b+c)\) is
+						<ul>
+							<li>a. \(2\sqrt{5}\)</li>
+							<li>b. \(2\sqrt{2}\)</li>
+							<li>c. \(10\sqrt{5}\)</li>
+							<li>d. \(5\sqrt{2}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\) \(5\sqrt{2}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Convert the perpendicular
+								conditions into dot products. Adding them gives \(a\cdot
+								b+b\cdot c+c\cdot a=0\), so \(|a+b+c|^2=|a|^2+|b|^2+|c|^2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Vectors /
+								Scalar product or dot product - Page M125<br />Vectors /
+								Addition of vectors - Page M125
+							</li>
+							<li>Given \(|a|=3\), \(|b|=4\), and \(|c|=5\).</li>
+							<li>Since \(a\perp(b+c)\), we have \(a\cdot(b+c)=0\).</li>
+							<li>So, \(a\cdot b+a\cdot c=0\).</li>
+							<li>Since \(b\perp(c+a)\), we have \(b\cdot(c+a)=0\).</li>
+							<li>So, \(b\cdot c+b\cdot a=0\).</li>
+							<li>Since \(c\perp(a+b)\), we have \(c\cdot(a+b)=0\).</li>
+							<li>So, \(c\cdot a+c\cdot b=0\).</li>
+							<li>
+								Adding all three equations, \(2(a\cdot b+b\cdot c+c\cdot a)=0\).
+							</li>
+							<li>Therefore, \(a\cdot b+b\cdot c+c\cdot a=0\).</li>
+							<li>
+								Now, \(|a+b+c|^2=|a|^2+|b|^2+|c|^2+2(a\cdot b+b\cdot c+c\cdot
+								a)\).
+							</li>
+							<li>
+								Since \(a\cdot b+b\cdot c+c\cdot a=0\), this becomes
+								\(|a+b+c|^2=3^2+4^2+5^2\).
+							</li>
+							<li>So, \(|a+b+c|^2=9+16+25=50\).</li>
+							<li>Hence, \(|a+b+c|=\sqrt{50}=5\sqrt{2}\).</li>
+							<li><strong>Final result:</strong> \(|a+b+c|=5\sqrt{2}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Perpendicular vectors have
+								dot product zero.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The square of
+								the required vector magnitude is \(50\), so the value must be
+								\(5\sqrt{2}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Convert every perpendicular
+								condition to a dot product and add the equations.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q127-->
@@ -1219,8 +1679,92 @@
 			<!--Start Q128-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q128">Q128</button>
-					<div class="accordion-content">A128</div>
+					<button class="accordion-button" id="Q128">
+						128. For non-zero vectors \(a,b,c\); \(|(a\times b)\cdot
+						c|=|a||b||c|\) holds if and only if
+						<ul>
+							<li>a. \(a\cdot b=0, b\cdot c=0\)</li>
+							<li>b. \(b\cdot c=0, c\cdot a=0\)</li>
+							<li>c. \(c\cdot a=0, a\cdot b=0\)</li>
+							<li>d. \(a\cdot b=b\cdot c=c\cdot a=0\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((d)\) \(a\cdot b=b\cdot c=c\cdot a=0\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The scalar triple product
+								magnitude is \(|(a\times b)\cdot
+								c|=|a||b||c||\sin\theta||\cos\alpha|\). For it to equal
+								\(|a||b||c|\), both factors must be 1, so \(a,b,c\) must be
+								mutually perpendicular.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Vectors /
+								Vector product or cross product - Page M125<br />Vectors /
+								Scalar triple product - Page M126<br />Vectors / Scalar product
+								or dot product - Page M125
+							</li>
+							<li>
+								For two vectors \(a\) and \(b\), \(|a\times
+								b|=|a||b|\sin\theta\), where \(\theta\) is the angle between
+								\(a\) and \(b\).
+							</li>
+							<li>
+								Now \(|(a\times b)\cdot c|=|a\times b||c||\cos\alpha|\), where
+								\(\alpha\) is the angle between \(a\times b\) and \(c\).
+							</li>
+							<li>
+								So, \(|(a\times b)\cdot c|=|a||b||c||\sin\theta||\cos\alpha|\).
+							</li>
+							<li>Given \(|(a\times b)\cdot c|=|a||b||c|\).</li>
+							<li>
+								Since \(a,b,c\) are non-zero vectors, divide both sides by
+								\(|a||b||c|\).
+							</li>
+							<li>We get \(|\sin\theta||\cos\alpha|=1\).</li>
+							<li>
+								This is possible only when \(|\sin\theta|=1\) and
+								\(|\cos\alpha|=1\).
+							</li>
+							<li>So, \(\theta=\dfrac{\pi}{2}\), meaning \(a\perp b\).</li>
+							<li>
+								Also, \(\alpha=0\) or \(\pi\), meaning \(c\) is parallel to
+								\(a\times b\).
+							</li>
+							<li>
+								But \(a\times b\) is perpendicular to both \(a\) and \(b\).
+							</li>
+							<li>
+								Therefore, \(c\) is perpendicular to both \(a\) and \(b\).
+							</li>
+							<li>Hence, \(a,b,c\) are mutually perpendicular.</li>
+							<li>So, \(a\cdot b=0\), \(b\cdot c=0\), and \(c\cdot a=0\).</li>
+							<li>
+								<strong>Final result:</strong> \(a\cdot b=b\cdot c=c\cdot a=0\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> The scalar triple product
+								gives maximum volume when the three vectors are mutually
+								perpendicular.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Options
+								\((a)\), \((b)\), and \((c)\) make only two dot products zero,
+								but the condition requires all three vectors to be mutually
+								perpendicular.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Equality with \(|a||b||c|\)
+								means maximum possible scalar triple product, which occurs for
+								three mutually perpendicular vectors.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q128-->
@@ -1228,8 +1772,77 @@
 			<!--Start Q129-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q129">Q129</button>
-					<div class="accordion-content">A129</div>
+					<button class="accordion-button" id="Q129">
+						129. Angle between the diagonals of a cube is
+						<ul>
+							<li>a. \(\pi/3\)</li>
+							<li>b. \(\pi/2\)</li>
+							<li>c. \(\cos^{-1}(1/3)\)</li>
+							<li>d. \(\cos^{-1}(1/\sqrt{3})\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\) \(\cos^{-1}(1/3)\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Take direction ratios of two
+								body diagonals of a cube, such as \((a,a,a)\) and \((-a,a,a)\).
+								Use the dot product formula for angle between two vectors to get
+								\(\cos\theta=\dfrac{1}{3}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Three-dimensional Coordinate Geometry / Direction cosine and
+								direction ratios - Page M64<br />Vectors / Scalar product or dot
+								product - Page M125
+							</li>
+							<li>
+								<img
+									src="images/math_q129a.png"
+									alt="cube showing body diagonals and coordinates of vertices"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/><br /><br />
+							</li>
+							<li>Let each edge of the cube be \(a\).</li>
+							<li>
+								Take two body diagonals of the cube with direction ratios
+								\((a,a,a)\) and \((-a,a,a)\).
+							</li>
+							<li>
+								Let the acute angle between these diagonals be \(\theta\).
+							</li>
+							<li>
+								For two vectors with direction ratios \((a_1,b_1,c_1)\) and
+								\((a_2,b_2,c_2)\),
+								\(\cos\theta=\dfrac{a_1a_2+b_1b_2+c_1c_2}{\sqrt{a_1^2+b_1^2+c_1^2}\sqrt{a_2^2+b_2^2+c_2^2}}\).
+							</li>
+							<li>
+								Here,
+								\(\cos\theta=\dfrac{a(-a)+a(a)+a(a)}{\sqrt{a^2+a^2+a^2}\sqrt{(-a)^2+a^2+a^2}}\).
+							</li>
+							<li>
+								This gives
+								\(\cos\theta=\dfrac{-a^2+a^2+a^2}{\sqrt{3a^2}\sqrt{3a^2}}\).
+							</li>
+							<li>So, \(\cos\theta=\dfrac{a^2}{3a^2}=\dfrac{1}{3}\).</li>
+							<li>Therefore, \(\theta=\cos^{-1}\left(\dfrac{1}{3}\right)\).</li>
+							<li><strong>Final result:</strong> \(\cos^{-1}(1/3)\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Body diagonals of a cube can
+								be represented using sign combinations of \((a,a,a)\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The dot
+								product gives \(\cos\theta=\dfrac{1}{3}\), not \(\dfrac{1}{2}\),
+								\(0\), or \(\dfrac{1}{\sqrt{3}}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use direction ratios \((1,1,1)\)
+								and \((-1,1,1)\); their dot product ratio is immediately
+								\(\dfrac{1}{3}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q129-->
@@ -1237,8 +1850,96 @@
 			<!--Start Q130-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q130">Q130</button>
-					<div class="accordion-content">A130</div>
+					<button class="accordion-button" id="Q130">
+						130. Consider the two lines<br />
+						\(L_1:\dfrac{x+1}{3}=\dfrac{y+2}{1}=\dfrac{z+1}{2}\)<br />
+						and \(L_2:\dfrac{x-2}{1}=\dfrac{y+2}{2}=\dfrac{z-3}{3}\)<br />
+						The unit vector perpendicular to both the lines \(L_1\) and \(L_2\)
+						is
+						<ul>
+							<li>a. \(\dfrac{-\hat{i}+7\hat{j}+7\hat{k}}{\sqrt{99}}\)</li>
+							<br />
+							<li>b. \(\dfrac{-\hat{i}-7\hat{j}+5\hat{k}}{5\sqrt{3}}\)</li>
+							<br />
+							<li>c. \(\dfrac{-\hat{i}+7\hat{j}+5\hat{k}}{5\sqrt{3}}\)</li>
+							<br />
+							<li>d. \(\dfrac{7\hat{i}-7\hat{j}+\hat{k}}{\sqrt{99}}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((b)\)
+									\(\dfrac{-\hat{i}-7\hat{j}+5\hat{k}}{5\sqrt{3}}\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The direction vector of
+								\(L_1\) is \(3\hat{i}+\hat{j}+2\hat{k}\), and that of \(L_2\) is
+								\(\hat{i}+2\hat{j}+3\hat{k}\). A vector perpendicular to both is
+								their cross product.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Three-dimensional Coordinate Geometry / Equation of a line in
+								space - Page M64<br />Vectors / Vector product or cross product
+								- Page M125
+							</li>
+							<li>
+								The line \(L_1:\dfrac{x+1}{3}=\dfrac{y+2}{1}=\dfrac{z+1}{2}\)
+								has direction ratios \(3,1,2\).
+							</li>
+							<li>
+								So, its direction vector is \(b_1=3\hat{i}+\hat{j}+2\hat{k}\).
+							</li>
+							<li>
+								The line \(L_2:\dfrac{x-2}{1}=\dfrac{y+2}{2}=\dfrac{z-3}{3}\)
+								has direction ratios \(1,2,3\).
+							</li>
+							<li>
+								So, its direction vector is \(b_2=\hat{i}+2\hat{j}+3\hat{k}\).
+							</li>
+							<li>
+								A vector perpendicular to both lines is \(b_1\times b_2\).
+							</li>
+							<li>
+								\(b_1\times b_2=\begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 3
+								& 1 & 2 \\ 1 & 2 & 3 \end{vmatrix}\).
+							</li>
+							<li>
+								Expanding, \(b_1\times
+								b_2=\hat{i}(3-4)-\hat{j}(9-2)+\hat{k}(6-1)\).
+							</li>
+							<li>So, \(b_1\times b_2=-\hat{i}-7\hat{j}+5\hat{k}\).</li>
+							<li>
+								Now find its magnitude:
+								\(\sqrt{(-1)^2+(-7)^2+5^2}=\sqrt{1+49+25}=\sqrt{75}=5\sqrt{3}\).
+							</li>
+							<li>
+								Therefore, the required unit vector is
+								\(\dfrac{-\hat{i}-7\hat{j}+5\hat{k}}{5\sqrt{3}}\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(\dfrac{-\hat{i}-7\hat{j}+5\hat{k}}{5\sqrt{3}}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> A vector perpendicular to
+								two given vectors is found using their cross product.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They either
+								have the wrong sign pattern or the wrong magnitude after
+								normalising the cross product.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Extract direction ratios
+								directly from the denominators of the symmetric line equation,
+								then cross multiply.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q130-->
@@ -1246,8 +1947,90 @@
 			<!--Start Q131-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q131">Q131</button>
-					<div class="accordion-content">A131</div>
+					<button class="accordion-button" id="Q131">
+						131. The distance between the line
+						\(r=2\hat{i}-2\hat{j}+3\hat{k}+\lambda(\hat{i}-\hat{j}+4\hat{k})\)
+						and the plane \(r\cdot(\hat{i}+5\hat{j}+\hat{k})=5\) is
+						<ul>
+							<li>a. \(\dfrac{10}{9}\)</li>
+							<br />
+							<li>b. \(\dfrac{10}{3\sqrt{3}}\)</li>
+							<br />
+							<li>c. \(\dfrac{10}{3}\)</li>
+							<br />
+							<li>d. None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((b)\) \(\dfrac{10}{3\sqrt{3}}\)</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The line direction vector is
+								\(\hat{i}-\hat{j}+4\hat{k}\), and the plane normal is
+								\(\hat{i}+5\hat{j}+\hat{k}\). Their dot product is \(0\), so the
+								line is parallel to the plane, and the distance is the
+								perpendicular distance from any point on the line to the plane.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong>
+								Three-dimensional Coordinate Geometry / Equation of a plane in
+								normal form - Page M65<br />Three-dimensional Coordinate
+								Geometry / Distance of a point from a plane - Page M65<br />Three-dimensional
+								Coordinate Geometry / Angle between a line and a plane - Page
+								M65
+							</li>
+							<li>
+								The given line is \(r=a+\lambda b\), where
+								\(a=2\hat{i}-2\hat{j}+3\hat{k}\) and
+								\(b=\hat{i}-\hat{j}+4\hat{k}\).
+							</li>
+							<li>
+								The given plane is \(r\cdot n=d\), where
+								\(n=\hat{i}+5\hat{j}+\hat{k}\) and \(d=5\).
+							</li>
+							<li>
+								Check whether the line is parallel to the plane by calculating
+								\(b\cdot n\).
+							</li>
+							<li>\(b\cdot n=(1)(1)+(-1)(5)+(4)(1)=1-5+4=0\).</li>
+							<li>
+								Since \(b\cdot n=0\), the direction vector of the line is
+								perpendicular to the normal of the plane.
+							</li>
+							<li>Therefore, the line is parallel to the plane.</li>
+							<li>
+								So the distance between the line and the plane is the distance
+								from any point on the line to the plane.
+							</li>
+							<li>Take the point \(a=(2,-2,3)\) on the line.</li>
+							<li>
+								Distance from point \(a\) to plane \(r\cdot n=5\) is
+								\(\dfrac{|a\cdot n-5|}{|n|}\).
+							</li>
+							<li>Now, \(a\cdot n=(2)(1)+(-2)(5)+(3)(1)=2-10+3=-5\).</li>
+							<li>So, \(|a\cdot n-5|=|-5-5|=10\).</li>
+							<li>Also, \(|n|=\sqrt{1^2+5^2+1^2}=\sqrt{27}=3\sqrt{3}\).</li>
+							<li>Therefore, required distance \(=\dfrac{10}{3\sqrt{3}}\).</li>
+							<li><strong>Final result:</strong> \(\dfrac{10}{3\sqrt{3}}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> If a line is parallel to a
+								plane, use any point on the line to find the distance from the
+								plane.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								denominator must be the magnitude of the normal vector,
+								\(\sqrt{27}=3\sqrt{3}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> First check \(b\cdot n=0\). If
+								yes, avoid complicated line-plane calculations and use
+								point-to-plane distance.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q131-->
@@ -1255,8 +2038,81 @@
 			<!--Start Q132-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q132">Q132</button>
-					<div class="accordion-content">A132</div>
+					<button class="accordion-button" id="Q132">
+						132. Two cards are drawn from a pack of 52 cards. What is the
+						probability that either both are red or both are kings?
+						<ul>
+							<li>a. \(7/13\)</li>
+							<li>b. \(63/221\)</li>
+							<li>c. \(55/221\)</li>
+							<li>d. \(3/26\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\) \(55/221\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Use \(P(E_1\cup
+								E_2)=P(E_1)+P(E_2)-P(E_1\cap E_2)\), where \(E_1\) is the event
+								of both cards being red and \(E_2\) is the event of both cards
+								being kings.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Probability
+								/ Addition Theorems - Page M114<br />Probability / Definition of
+								Probability - Page M114
+							</li>
+							<li>Let \(E_1\) be the event that both cards are red.</li>
+							<li>Let \(E_2\) be the event that both cards are kings.</li>
+							<li>
+								Total number of ways of drawing 2 cards from 52 cards is
+								\({}^{52}C_2\).
+							</li>
+							<li>
+								There are 26 red cards, so
+								\(P(E_1)=\dfrac{{}^{26}C_2}{{}^{52}C_2}\).
+							</li>
+							<li>
+								Now, \({}^{26}C_2=325\) and \({}^{52}C_2=1326\), so
+								\(P(E_1)=\dfrac{325}{1326}\).
+							</li>
+							<li>
+								There are 4 kings, so
+								\(P(E_2)=\dfrac{{}^{4}C_2}{{}^{52}C_2}=\dfrac{6}{1326}\).
+							</li>
+							<li>
+								The overlap \(E_1\cap E_2\) means both cards are red kings.
+							</li>
+							<li>
+								There are 2 red kings, so \(P(E_1\cap
+								E_2)=\dfrac{{}^{2}C_2}{{}^{52}C_2}=\dfrac{1}{1326}\).
+							</li>
+							<li>
+								Now use the addition theorem: \(P(E_1\cup
+								E_2)=P(E_1)+P(E_2)-P(E_1\cap E_2)\).
+							</li>
+							<li>
+								So, \(P(E_1\cup
+								E_2)=\dfrac{325}{1326}+\dfrac{6}{1326}-\dfrac{1}{1326}\).
+							</li>
+							<li>This gives \(\dfrac{330}{1326}\).</li>
+							<li>Simplifying, \(\dfrac{330}{1326}=\dfrac{55}{221}\).</li>
+							<li><strong>Final result:</strong> \(\dfrac{55}{221}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> For "either A or B", use
+								\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They either
+								miss the overlap of red kings or count the favourable cases
+								incorrectly.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> In card probability, always
+								check if two events overlap before adding them.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q132-->
@@ -1264,8 +2120,101 @@
 			<!--Start Q133-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q133">Q133</button>
-					<div class="accordion-content">A133</div>
+					<button class="accordion-button" id="Q133">
+						133. If \(A\) and \(B\) are two independent events such that
+						\(P(A)=\dfrac{1}{2}\) and \(P(B)=\dfrac{1}{5}\), then which of the
+						following is correct?
+						<ul>
+							<li>a. \(P\left(\dfrac{A}{B}\right)=\dfrac{1}{2}\)</li>
+							<br />
+							<li>b. \(P\left(\dfrac{A}{A\cup B}\right)=\dfrac{5}{6}\)</li>
+							<br />
+							<li>c. \(P\left(\dfrac{A\cap B}{A'\cup B'}\right)=0\)</li>
+							<br />
+							<li>d. All of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\) All of these</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Since \(A\) and \(B\) are
+								independent, \(P(A/B)=P(A)=\dfrac{1}{2}\). Also, \(P(A\cup
+								B)=P(A)+P(B)-P(A\cap B)=\dfrac{3}{5}\), so
+								\(P\left(\dfrac{A}{A\cup B}\right)=\dfrac{5}{6}\), and the third
+								conditional probability becomes \(0\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Probability
+								/ Conditional Probability - Page M114<br />Probability /
+								Independent Events - Page M115<br />Probability / Addition
+								Theorems - Page M114
+							</li>
+							<li>Given \(P(A)=\dfrac{1}{2}\) and \(P(B)=\dfrac{1}{5}\).</li>
+							<li>
+								Since \(A\) and \(B\) are independent events, \(P(A\cap
+								B)=P(A)P(B)\).
+							</li>
+							<li>
+								So, \(P(A\cap B)=\dfrac{1}{2}\cdot\dfrac{1}{5}=\dfrac{1}{10}\).
+							</li>
+							<li>
+								For option \((a)\), \(P(A/B)=P(A)\) for independent events.
+							</li>
+							<li>
+								Therefore, \(P(A/B)=\dfrac{1}{2}\), so option \((a)\) is
+								correct.
+							</li>
+							<li>Now find \(P(A\cup B)\).</li>
+							<li>\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\).</li>
+							<li>
+								So, \(P(A\cup
+								B)=\dfrac{1}{2}+\dfrac{1}{5}-\dfrac{1}{10}=\dfrac{5+2-1}{10}=\dfrac{6}{10}=\dfrac{3}{5}\).
+							</li>
+							<li>
+								For option \((b)\), \(P\left(\dfrac{A}{A\cup
+								B}\right)=\dfrac{P(A\cap(A\cup B))}{P(A\cup B)}\).
+							</li>
+							<li>
+								Since \(A\cap(A\cup B)=A\), this becomes \(\dfrac{P(A)}{P(A\cup
+								B)}\).
+							</li>
+							<li>
+								Therefore, \(P\left(\dfrac{A}{A\cup
+								B}\right)=\dfrac{1/2}{3/5}=\dfrac{1}{2}\cdot\dfrac{5}{3}=\dfrac{5}{6}\),
+								so option \((b)\) is correct.
+							</li>
+							<li>For option \((c)\), the denominator is \(A'\cup B'\).</li>
+							<li>By De Morgan's law, \(A'\cup B'=(A\cap B)'\).</li>
+							<li>
+								So, \((A\cap B)\cap(A'\cup B')=(A\cap B)\cap(A\cap
+								B)'=\varnothing\).
+							</li>
+							<li>
+								Therefore, \(P\left(\dfrac{A\cap B}{A'\cup B'}\right)=0\), so
+								option \((c)\) is also correct.
+							</li>
+							<li>Hence all the statements are correct.</li>
+							<li><strong>Final result:</strong> All of these.</li>
+							<li>
+								<strong>Simple memory tip:</strong> For independent events,
+								conditioning on one event does not change the probability of the
+								other.
+							</li>
+							<li>
+								<strong
+									>Why the other options are not separately enough:</strong
+								>
+								Options \((a)\), \((b)\), and \((c)\) are all true, so the best
+								option is \((d)\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> First calculate \(P(A\cap
+								B)=P(A)P(B)\), then use it in union and conditional probability
+								formulas.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q133-->
@@ -1273,8 +2222,97 @@
 			<!--Start Q134-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q134">Q134</button>
-					<div class="accordion-content">A134</div>
+					<button class="accordion-button" id="Q134">
+						134. Box I contains 5 red and 2 blue balls, while box II contains 2
+						red and 6 blue balls. A fair coin is tossed. If it turns up head, a
+						ball is drawn from box I, else a ball is drawn from box II. The
+						probability ball drawn is from box I, if it is blue, is
+						<ul>
+							<li>a. \(27/56\)</li>
+							<li>b. \(8/29\)</li>
+							<li>c. \(21/29\)</li>
+							<li>d. \(29/56\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\) \(8/29\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> This is a Bayes' theorem
+								problem. We need the probability that box I was chosen given
+								that the drawn ball is blue.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Probability
+								/ Bayes' Theorem - Page M115<br />Probability / Conditional
+								Probability - Page M114
+							</li>
+							<li>
+								Let \(E_1\) be the event that the coin shows head, so the ball
+								is drawn from box I.
+							</li>
+							<li>
+								Let \(E_2\) be the event that the coin shows tail, so the ball
+								is drawn from box II.
+							</li>
+							<li>
+								Since the coin is fair, \(P(E_1)=\dfrac{1}{2}\) and
+								\(P(E_2)=\dfrac{1}{2}\).
+							</li>
+							<li>Let \(A\) be the event that the drawn ball is blue.</li>
+							<li>
+								Box I contains 5 red and 2 blue balls, so
+								\(P(A/E_1)=\dfrac{2}{7}\).
+							</li>
+							<li>
+								Box II contains 2 red and 6 blue balls, so
+								\(P(A/E_2)=\dfrac{6}{8}\).
+							</li>
+							<li>
+								We need \(P(E_1/A)\), the probability that the ball was drawn
+								from box I given that it is blue.
+							</li>
+							<li>
+								By Bayes' theorem,
+								\(P(E_1/A)=\dfrac{P(E_1)P(A/E_1)}{P(E_1)P(A/E_1)+P(E_2)P(A/E_2)}\).
+							</li>
+							<li>
+								Substitute the values:
+								\(P(E_1/A)=\dfrac{\dfrac{1}{2}\cdot\dfrac{2}{7}}{\dfrac{1}{2}\cdot\dfrac{2}{7}+\dfrac{1}{2}\cdot\dfrac{6}{8}}\).
+							</li>
+							<li>
+								Cancel the common factor \(\dfrac{1}{2}\) from numerator and
+								denominator.
+							</li>
+							<li>
+								So,
+								\(P(E_1/A)=\dfrac{\dfrac{2}{7}}{\dfrac{2}{7}+\dfrac{6}{8}}\).
+							</li>
+							<li>
+								Now,
+								\(\dfrac{2}{7}+\dfrac{6}{8}=\dfrac{2}{7}+\dfrac{3}{4}=\dfrac{8+21}{28}=\dfrac{29}{28}\).
+							</li>
+							<li>
+								Therefore,
+								\(P(E_1/A)=\dfrac{2}{7}\cdot\dfrac{28}{29}=\dfrac{8}{29}\).
+							</li>
+							<li><strong>Final result:</strong> \(\dfrac{8}{29}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Bayes' theorem reverses the
+								condition: from "blue given box" to "box given blue".
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> They do not
+								correctly account for both ways of getting a blue ball: from box
+								I and from box II.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Because the coin is fair, the
+								\(\dfrac{1}{2}\) factors cancel; just compare \(\dfrac{2}{7}\)
+								and \(\dfrac{6}{8}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q134-->
@@ -1282,8 +2320,54 @@
 			<!--Start Q135-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q135">Q135</button>
-					<div class="accordion-content">A135</div>
+					<button class="accordion-button" id="Q135">
+						135. For a random variable \(X\), \(E(X)=3\) and \(E(X^2)=11\). The
+						variable of \(X\) is
+						<ul>
+							<li>a. 8</li>
+							<li>b. 5</li>
+							<li>c. 2</li>
+							<li>d. 1</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\) 2</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The question is asking for
+								the variance of \(X\). Use
+								\(\operatorname{Var}(X)=E(X^2)-[E(X)]^2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Probability
+								/ Mean and Variance of Random Variable - Page M115<br />Statistics
+								/ Variance and standard deviation - Page M137
+							</li>
+							<li>Given \(E(X)=3\).</li>
+							<li>Also given \(E(X^2)=11\).</li>
+							<li>
+								The variance formula for a random variable is
+								\(\operatorname{Var}(X)=E(X^2)-[E(X)]^2\).
+							</li>
+							<li>
+								Substitute the values: \(\operatorname{Var}(X)=11-(3)^2\).
+							</li>
+							<li>So, \(\operatorname{Var}(X)=11-9=2\).</li>
+							<li><strong>Final result:</strong> Variance of \(X=2\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Variance is "mean of square
+								minus square of mean".
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The direct
+								formula gives \(2\), not \(8\), \(5\), or \(1\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Whenever \(E(X)\) and \(E(X^2)\)
+								are given, immediately use \(E(X^2)-[E(X)]^2\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q135-->
@@ -1291,8 +2375,75 @@
 			<!--Start Q136-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q136">Q136</button>
-					<div class="accordion-content">A136</div>
+					<button class="accordion-button" id="Q136">
+						136. The sum of 10 items is 12 and the sum of their squares is 18,
+						then the standard deviation will be
+						<ul>
+							<li>a. \(-3/5\)</li>
+							<li>b. \(6/5\)</li>
+							<li>c. \(4/5\)</li>
+							<li>d. \(3/5\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((d)\) \(3/5\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Use
+								\(\sigma^2=\dfrac{1}{n}\sum x_i^2-\left(\dfrac{1}{n}\sum
+								x_i\right)^2\). Here \(n=10\), \(\sum x_i=12\), and \(\sum
+								x_i^2=18\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Statistics /
+								Variance and standard deviation - Page M137
+							</li>
+							<li>Given number of items \(n=10\).</li>
+							<li>Given \(\sum x_i=12\).</li>
+							<li>Given \(\sum x_i^2=18\).</li>
+							<li>
+								The variance formula is \(\sigma^2=\dfrac{1}{n}\sum
+								x_i^2-\left(\dfrac{1}{n}\sum x_i\right)^2\).
+							</li>
+							<li>
+								Substitute the values:
+								\(\sigma^2=\dfrac{18}{10}-\left(\dfrac{12}{10}\right)^2\).
+							</li>
+							<li>
+								So, \(\sigma^2=\dfrac{9}{5}-\left(\dfrac{6}{5}\right)^2\).
+							</li>
+							<li>This gives \(\sigma^2=\dfrac{9}{5}-\dfrac{36}{25}\).</li>
+							<li>
+								Convert \(\dfrac{9}{5}\) to denominator \(25\):
+								\(\dfrac{9}{5}=\dfrac{45}{25}\).
+							</li>
+							<li>
+								Therefore,
+								\(\sigma^2=\dfrac{45}{25}-\dfrac{36}{25}=\dfrac{9}{25}\).
+							</li>
+							<li>
+								So, standard deviation
+								\(\sigma=\sqrt{\dfrac{9}{25}}=\dfrac{3}{5}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Standard deviation
+								\(=\dfrac{3}{5}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Standard deviation is the
+								square root of variance, so it cannot be negative.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong>
+								\(-\dfrac{3}{5}\) is impossible because standard deviation is
+								never negative, and the calculation gives \(\dfrac{3}{5}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use \(\sigma^2=\text{mean of
+								squares}-(\text{mean})^2\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q136-->
@@ -1300,8 +2451,81 @@
 			<!--Start Q137-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q137">Q137</button>
-					<div class="accordion-content">A137</div>
+					<button class="accordion-button" id="Q137">
+						137. The height of the chimney when it is found that on walking
+						towards it 50 m in the horizontal line through its base, the angle
+						of elevation of its top changes from \(30^\circ\) to \(60^\circ\) is
+						<ul>
+							<li>a. \(25\ \mathrm{m}\)</li>
+							<li>b. \(25\sqrt{2}\ \mathrm{m}\)</li>
+							<li>c. \(25\sqrt{3}\ \mathrm{m}\)</li>
+							<li>d. None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((c)\) \(25\sqrt{3}\ \mathrm{m}\)</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Let the distance from the
+								nearer point to the chimney base be \(x\), and height be \(h\).
+								Use \(\tan60^\circ=\dfrac{h}{x}\) and
+								\(\tan30^\circ=\dfrac{h}{50+x}\), then solve.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								/ Heights and Distances - Page M42
+							</li>
+							<li>
+								<img
+									src="images/math_q137a.png"
+									alt="chimney height angle of elevation changes from 30 degrees to 60 degrees after walking 50 m"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/><br /><br />
+							</li>
+							<li>Let \(PQ\) be the chimney and its height be \(h\) metres.</li>
+							<li>Let the nearer point be \(B\), and let \(BP=x\).</li>
+							<li>From \(B\), the angle of elevation is \(60^\circ\).</li>
+							<li>
+								So, in \(\triangle BPQ\), \(\tan60^\circ=\dfrac{PQ}{BP}\).
+							</li>
+							<li>
+								Therefore, \(\sqrt{3}=\dfrac{h}{x}\), so \(h=\sqrt{3}x\). This
+								is equation \((i)\).
+							</li>
+							<li>The farther point is \(A\), and \(AB=50\ \mathrm{m}\).</li>
+							<li>So, \(AP=50+x\).</li>
+							<li>From \(A\), the angle of elevation is \(30^\circ\).</li>
+							<li>In \(\triangle APQ\), \(\tan30^\circ=\dfrac{PQ}{AP}\).</li>
+							<li>Thus, \(\dfrac{1}{\sqrt{3}}=\dfrac{h}{50+x}\).</li>
+							<li>So, \(50+x=h\sqrt{3}\).</li>
+							<li>
+								Using \(h=\sqrt{3}x\), we get \(50+x=(\sqrt{3}x)\sqrt{3}=3x\).
+							</li>
+							<li>Therefore, \(50=2x\), so \(x=25\).</li>
+							<li>Now \(h=\sqrt{3}x=25\sqrt{3}\).</li>
+							<li>
+								<strong>Final result:</strong> Height of the chimney
+								\(=25\sqrt{3}\ \mathrm{m}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> In height-distance
+								questions, draw two right triangles sharing the same height.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Only
+								\(25\sqrt{3}\ \mathrm{m}\) satisfies both angle conditions
+								\(30^\circ\) and \(60^\circ\) with the 50 m movement.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> If angles change from
+								\(30^\circ\) to \(60^\circ\), use the standard values
+								\(\tan30^\circ=\dfrac{1}{\sqrt{3}}\) and
+								\(\tan60^\circ=\sqrt{3}\) immediately.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q137-->
@@ -1309,8 +2533,80 @@
 			<!--Start Q138-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q138">Q138</button>
-					<div class="accordion-content">A138</div>
+					<button class="accordion-button" id="Q138">
+						138. The value of \(\lim_{x\to0}\dfrac{\sqrt{1-\cos x^2}}{1-\cos
+						x}\) is
+						<ul>
+							<li>a. \(1/2\)</li>
+							<li>b. \(2\)</li>
+							<li>c. \(\sqrt{2}\)</li>
+							<li>d. None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\) \(\sqrt{2}\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Rationalize the numerator
+								using \(1-\cos x^2\). Then use the standard limits \(\dfrac{\sin
+								x}{x}\to1\) and \(\dfrac{\sin(x/2)}{x/2}\to1\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus / Limits - Page M74
+							</li>
+							<li>
+								We need \(\lim_{x\to0}\dfrac{\sqrt{1-\cos x^2}}{1-\cos x}\).
+							</li>
+							<li>Multiply and divide by \(\sqrt{1+\cos x^2}\).</li>
+							<li>
+								So the limit becomes \(\lim_{x\to0}\dfrac{\sqrt{(1-\cos
+								x^2)(1+\cos x^2)}}{(1-\cos x)\sqrt{1+\cos x^2}}\).
+							</li>
+							<li>
+								Using \(1-\cos^2u=\sin^2u\), the numerator becomes
+								\(\sqrt{\sin^2x^2}\).
+							</li>
+							<li>Near \(x=0\), this behaves as \(\sin x^2\).</li>
+							<li>Also, \(1-\cos x=2\sin^2\dfrac{x}{2}\).</li>
+							<li>
+								So the limit becomes \(\lim_{x\to0}\dfrac{\sin
+								x^2}{2\sin^2(x/2)\sqrt{1+\cos x^2}}\).
+							</li>
+							<li>
+								Rewrite it as \(\lim_{x\to0}\dfrac{\dfrac{\sin
+								x^2}{x^2}}{2\dfrac{\sin^2(x/2)}{x^2}\sqrt{1+\cos x^2}}\).
+							</li>
+							<li>Now, \(\dfrac{\sin x^2}{x^2}\to1\).</li>
+							<li>
+								Also,
+								\(\dfrac{\sin^2(x/2)}{x^2}=\dfrac{1}{4}\left(\dfrac{\sin(x/2)}{x/2}\right)^2\to\dfrac{1}{4}\).
+							</li>
+							<li>And \(\sqrt{1+\cos x^2}\to\sqrt{2}\).</li>
+							<li>
+								Therefore, the limit is
+								\(\dfrac{1}{2\cdot\dfrac{1}{4}\cdot\sqrt{2}}\).
+							</li>
+							<li>This equals \(\dfrac{1}{\dfrac{\sqrt{2}}{2}}=\sqrt{2}\).</li>
+							<li><strong>Final result:</strong> \(\sqrt{2}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> For \(1-\cos x\), use
+								\(2\sin^2\dfrac{x}{2}\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								denominator contributes a factor \(2\cdot\dfrac{1}{4}\), and the
+								extra \(\sqrt{1+\cos x^2}\) gives \(\sqrt{2}\), producing
+								\(\sqrt{2}\), not \(1/2\) or \(2\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use small-angle approximations:
+								\(1-\cos x^2\sim\dfrac{x^4}{2}\) and \(1-\cos
+								x\sim\dfrac{x^2}{2}\), so the ratio is
+								\(\dfrac{x^2/\sqrt{2}}{x^2/2}=\sqrt{2}\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q138-->
@@ -1318,8 +2614,72 @@
 			<!--Start Q139-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q139">Q139</button>
-					<div class="accordion-content">A139</div>
+					<button class="accordion-button" id="Q139">
+						139. If \(f(x)=\begin{cases} ax^2+1, & x\leq1 \\ x^2+ax+b, & x&gt;1
+						\end{cases}\) is differentiable at \(x=1\), then
+						<ul>
+							<li>a. \(a=1, b=1\)</li>
+							<li>b. \(a=1, b=0\)</li>
+							<li>c. \(a=2, b=0\)</li>
+							<li>d. \(a=2, b=1\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\) \(a=2, b=0\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> For differentiability at
+								\(x=1\), the function must first be continuous at \(x=1\),
+								giving \(b=0\). Then equate left-hand derivative and right-hand
+								derivative to get \(a=2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus / Continuity - Page M75<br />Differential Calculus /
+								Differentiability - Page M75
+							</li>
+							<li>
+								For a function to be differentiable at a point, it must be
+								continuous at that point.
+							</li>
+							<li>At \(x=1\), from the left branch, \(f(1)=a(1)^2+1=a+1\).</li>
+							<li>
+								From the right branch, the limiting value as \(x\to1^+\) is
+								\(1^2+a(1)+b=1+a+b\).
+							</li>
+							<li>For continuity, \(a+1=1+a+b\).</li>
+							<li>So, \(b=0\).</li>
+							<li>Now check differentiability at \(x=1\).</li>
+							<li>
+								For \(x\leq1\), \(f(x)=ax^2+1\), so left derivative at \(x=1\)
+								is \(2a\).
+							</li>
+							<li>
+								For \(x&gt;1\), \(f(x)=x^2+ax+b\), so right derivative at
+								\(x=1\) is \(2+a\).
+							</li>
+							<li>
+								For differentiability, left derivative = right derivative.
+							</li>
+							<li>So, \(2a=2+a\).</li>
+							<li>Therefore, \(a=2\).</li>
+							<li>Combining with \(b=0\), we get \(a=2, b=0\).</li>
+							<li><strong>Final result:</strong> \(a=2, b=0\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> Differentiability always
+								requires continuity first.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Only \(a=2,
+								b=0\) satisfies both continuity and equality of left and right
+								derivatives at \(x=1\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> First equate function values to
+								get \(b\), then equate derivatives to get \(a\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q139-->
@@ -1327,8 +2687,66 @@
 			<!--Start Q140-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q140">Q140</button>
-					<div class="accordion-content">A140</div>
+					<button class="accordion-button" id="Q140">
+						140. The slope of the tangent to the curve \(x=t^2+3t-8\),
+						\(y=2t^2-2t-5\) at the point \(t=2\) is
+						<ul>
+							<li>a. \(7/6\)</li>
+							<li>b. \(5/6\)</li>
+							<li>c. \(6/7\)</li>
+							<li>d. 1</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((c)\) \(6/7\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> For parametric equations,
+								slope is \(\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}\). Differentiate
+								\(x\) and \(y\) with respect to \(t\), then substitute \(t=2\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus / Tangents and normals - Page M76<br />Differential
+								Calculus / Differentiability - Page M75
+							</li>
+							<li>Given \(x=t^2+3t-8\) and \(y=2t^2-2t-5\).</li>
+							<li>
+								Differentiate \(x\) with respect to \(t\):
+								\(\dfrac{dx}{dt}=2t+3\).
+							</li>
+							<li>
+								Differentiate \(y\) with respect to \(t\):
+								\(\dfrac{dy}{dt}=4t-2\).
+							</li>
+							<li>
+								For a parametric curve, \(\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}\).
+							</li>
+							<li>So, \(\dfrac{dy}{dx}=\dfrac{4t-2}{2t+3}\).</li>
+							<li>At \(t=2\), \(\dfrac{dy}{dx}=\dfrac{4(2)-2}{2(2)+3}\).</li>
+							<li>
+								This gives \(\dfrac{dy}{dx}=\dfrac{8-2}{4+3}=\dfrac{6}{7}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Slope of the tangent
+								\(=\dfrac{6}{7}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For parametric equations,
+								never divide \(y\) by \(x\); divide their derivatives.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The correct
+								derivative ratio at \(t=2\) is \(\dfrac{6}{7}\), not
+								\(\dfrac{7}{6}\), \(\dfrac{5}{6}\), or \(1\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use
+								\(\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}\) directly and substitute
+								\(t=2\) only after differentiating.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q140-->
@@ -1336,8 +2754,98 @@
 			<!--Start Q141-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q141">Q141</button>
-					<div class="accordion-content">A141</div>
+					<button class="accordion-button" id="Q141">
+						141. \(\int \dfrac{1}{1-2\sin x}\,dx\) is equal to
+						<ul>
+							<li>
+								a.
+								\(\dfrac{1}{2\sqrt{3}}\log\left|\dfrac{\tan\dfrac{x}{2}-2-\sqrt{3}}{\tan\dfrac{x}{2}-2+\sqrt{3}}\right|+c\)
+							</li>
+							<br />
+							<li>
+								b.
+								\(\dfrac{\sqrt{3}}{2}\log\left|\dfrac{\tan\dfrac{x}{2}-2-\sqrt{3}}{\tan\dfrac{x}{2}-2+\sqrt{3}}\right|+c\)
+							</li>
+							<br />
+							<li>
+								c.
+								\(\dfrac{1}{\sqrt{3}}\log\left|\dfrac{\tan\dfrac{x}{2}-2-\sqrt{3}}{\tan\dfrac{x}{2}-2+\sqrt{3}}\right|+c\)
+							</li>
+							<br />
+							<li>d. None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((c)\)
+									\(\dfrac{1}{\sqrt{3}}\log\left|\dfrac{\tan\dfrac{x}{2}-2-\sqrt{3}}{\tan\dfrac{x}{2}-2+\sqrt{3}}\right|+c\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Use the standard
+								substitution \(t=\tan\dfrac{x}{2}\), so \(\sin
+								x=\dfrac{2t}{1+t^2}\) and \(dx=\dfrac{2\,dt}{1+t^2}\). The
+								integral reduces to \(\int \dfrac{2\,dt}{(t-2)^2-3}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus / Methods of Integration - Page M88<br />Integral
+								Calculus / Trigonometric Integrals - Page M90
+							</li>
+							<li>Let \(I=\int \dfrac{1}{1-2\sin x}\,dx\).</li>
+							<li>Use the half-angle substitution \(t=\tan\dfrac{x}{2}\).</li>
+							<li>
+								Then \(\sin x=\dfrac{2t}{1+t^2}\) and
+								\(dx=\dfrac{2\,dt}{1+t^2}\).
+							</li>
+							<li>
+								Substitute these in the integral: \(I=\int
+								\dfrac{1}{1-\dfrac{4t}{1+t^2}}\cdot\dfrac{2\,dt}{1+t^2}\).
+							</li>
+							<li>This becomes \(I=\int \dfrac{2\,dt}{1+t^2-4t}\).</li>
+							<li>
+								Complete the square in the denominator: \(1+t^2-4t=(t-2)^2-3\).
+							</li>
+							<li>So, \(I=2\int \dfrac{dt}{(t-2)^2-(\sqrt{3})^2}\).</li>
+							<li>
+								Use the standard result \(\int
+								\dfrac{du}{u^2-a^2}=\dfrac{1}{2a}\log\left|\dfrac{u-a}{u+a}\right|+C\).
+							</li>
+							<li>Here \(u=t-2\) and \(a=\sqrt{3}\).</li>
+							<li>
+								Therefore,
+								\(I=2\cdot\dfrac{1}{2\sqrt{3}}\log\left|\dfrac{t-2-\sqrt{3}}{t-2+\sqrt{3}}\right|+C\).
+							</li>
+							<li>
+								So,
+								\(I=\dfrac{1}{\sqrt{3}}\log\left|\dfrac{t-2-\sqrt{3}}{t-2+\sqrt{3}}\right|+C\).
+							</li>
+							<li>
+								Putting \(t=\tan\dfrac{x}{2}\), we get
+								\(I=\dfrac{1}{\sqrt{3}}\log\left|\dfrac{\tan\dfrac{x}{2}-2-\sqrt{3}}{\tan\dfrac{x}{2}-2+\sqrt{3}}\right|+C\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(\dfrac{1}{\sqrt{3}}\log\left|\dfrac{\tan\dfrac{x}{2}-2-\sqrt{3}}{\tan\dfrac{x}{2}-2+\sqrt{3}}\right|+C\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For integrals involving
+								\(1\), \(\sin x\), and \(\cos x\) in a rational form,
+								\(t=\tan\dfrac{x}{2}\) is often the safest substitution.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The multiplier
+								after integration is \(\dfrac{1}{\sqrt{3}}\), not
+								\(\dfrac{1}{2\sqrt{3}}\) or \(\dfrac{\sqrt{3}}{2}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> After \(t=\tan\dfrac{x}{2}\),
+								immediately complete the square: \(t^2-4t+1=(t-2)^2-3\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q141-->
@@ -1345,8 +2853,85 @@
 			<!--Start Q142-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q142">Q142</button>
-					<div class="accordion-content">A142</div>
+					<button class="accordion-button" id="Q142">
+						142. \(\int_0^1 \dfrac{\log(1+x)}{1+x^2}\,dx\) is equal to
+						<ul>
+							<li>a. \(\dfrac{\pi}{8}\log 2\)</li>
+							<br />
+							<li>b. \(\dfrac{\pi}{8}\log\dfrac{1}{2}\)</li>
+							<br />
+							<li>c. \(\dfrac{\pi}{4}\log 2\)</li>
+							<br />
+							<li>d. None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\) \(\dfrac{\pi}{8}\log 2\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(x=\tan\theta\), which
+								changes the limits from \(0\) to \(\dfrac{\pi}{4}\). Then use
+								the property \(I=\int_0^{\pi/4}\log(1+\tan\theta)\,d\theta\) and
+								replace \(\theta\) by \(\dfrac{\pi}{4}-\theta\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus / Definite Integrals - Page M90<br />Integral Calculus
+								/ Methods of Integration - Page M88
+							</li>
+							<li>Let \(I=\int_0^1 \dfrac{\log(1+x)}{1+x^2}\,dx\).</li>
+							<li>
+								Put \(x=\tan\theta\). Then \(dx=\sec^2\theta\,d\theta\) and
+								\(1+x^2=1+\tan^2\theta=\sec^2\theta\).
+							</li>
+							<li>
+								When \(x=0\), \(\theta=0\), and when \(x=1\),
+								\(\theta=\dfrac{\pi}{4}\).
+							</li>
+							<li>So, \(I=\int_0^{\pi/4}\log(1+\tan\theta)\,d\theta\).</li>
+							<li>
+								Now use the definite integral property by replacing \(\theta\)
+								with \(\dfrac{\pi}{4}-\theta\).
+							</li>
+							<li>
+								Then
+								\(I=\int_0^{\pi/4}\log\left(1+\tan\left(\dfrac{\pi}{4}-\theta\right)\right)d\theta\).
+							</li>
+							<li>
+								Using
+								\(\tan\left(\dfrac{\pi}{4}-\theta\right)=\dfrac{1-\tan\theta}{1+\tan\theta}\),
+								we get
+								\(1+\tan\left(\dfrac{\pi}{4}-\theta\right)=1+\dfrac{1-\tan\theta}{1+\tan\theta}\).
+							</li>
+							<li>This simplifies to \(\dfrac{2}{1+\tan\theta}\).</li>
+							<li>
+								Therefore,
+								\(I=\int_0^{\pi/4}\log\left(\dfrac{2}{1+\tan\theta}\right)d\theta\).
+							</li>
+							<li>
+								So,
+								\(I=\int_0^{\pi/4}\left[\log2-\log(1+\tan\theta)\right]d\theta\).
+							</li>
+							<li>This gives \(I=\dfrac{\pi}{4}\log2-I\).</li>
+							<li>Hence, \(2I=\dfrac{\pi}{4}\log2\).</li>
+							<li>Therefore, \(I=\dfrac{\pi}{8}\log2\).</li>
+							<li><strong>Final result:</strong> \(\dfrac{\pi}{8}\log2\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> For \(\int_0^1
+								\dfrac{f(x)}{1+x^2}\,dx\), try \(x=\tan\theta\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The definite
+								integral symmetry gives \(2I=\dfrac{\pi}{4}\log2\), so the value
+								is \(\dfrac{\pi}{8}\log2\), not \(\dfrac{\pi}{4}\log2\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> After \(x=\tan\theta\), use the
+								transformation \(\theta\to\dfrac{\pi}{4}-\theta\) to pair the
+								integral with itself.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q142-->
@@ -1354,8 +2939,85 @@
 			<!--Start Q143-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q143">Q143</button>
-					<div class="accordion-content">A143</div>
+					<button class="accordion-button" id="Q143">
+						143. The area of one curvilinear triangle formed by the curves
+						\(y=\sin x\), \(y=\cos x\) and X-axis, is
+						<ul>
+							<li>a. \(2\) sq units</li>
+							<li>b. \((2+\sqrt{2})\) sq units</li>
+							<li>c. \((2-\sqrt{2})\) sq units</li>
+							<li>d. None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((c)\) \((2-\sqrt{2})\) sq units</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> The curves \(y=\sin x\) and
+								\(y=\cos x\) meet at \(x=\dfrac{\pi}{4}\). The required
+								curvilinear triangle is bounded by \(y=\sin x\) from \(0\) to
+								\(\dfrac{\pi}{4}\), by \(y=\cos x\) from \(\dfrac{\pi}{4}\) to
+								\(\dfrac{\pi}{2}\), and by the X-axis.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus / Area of Bounded Regions - Page M90
+							</li>
+							<li>
+								<img
+									src="images/math_q143a.png"
+									alt="area enclosed by y equals sin x y equals cos x and x-axis"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/><br /><br />
+							</li>
+							<li>
+								The curves are \(y=\sin x\), \(y=\cos x\), and the X-axis.
+							</li>
+							<li>
+								The curves \(y=\sin x\) and \(y=\cos x\) intersect when \(\sin
+								x=\cos x\).
+							</li>
+							<li>This gives \(x=\dfrac{\pi}{4}\) in the first quadrant.</li>
+							<li>
+								The required region is made of two parts: area under \(y=\sin
+								x\) from \(0\) to \(\dfrac{\pi}{4}\), and area under \(y=\cos
+								x\) from \(\dfrac{\pi}{4}\) to \(\dfrac{\pi}{2}\).
+							</li>
+							<li>
+								So, required area \(=\int_0^{\pi/4}\sin
+								x\,dx+\int_{\pi/4}^{\pi/2}\cos x\,dx\).
+							</li>
+							<li>
+								Now, \(\int_0^{\pi/4}\sin x\,dx=[-\cos
+								x]_0^{\pi/4}=1-\dfrac{1}{\sqrt{2}}\).
+							</li>
+							<li>
+								Also, \(\int_{\pi/4}^{\pi/2}\cos x\,dx=[\sin
+								x]_{\pi/4}^{\pi/2}=1-\dfrac{1}{\sqrt{2}}\).
+							</li>
+							<li>
+								Therefore, total area \(=2\left(1-\dfrac{1}{\sqrt{2}}\right)\).
+							</li>
+							<li>This simplifies to \(2-\sqrt{2}\).</li>
+							<li><strong>Final result:</strong> \((2-\sqrt{2})\) sq units.</li>
+							<li>
+								<strong>Simple memory tip:</strong> For area bounded by two
+								curves and an axis, split the integral at the intersection
+								point.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The two equal
+								area parts each contribute \(1-\dfrac{1}{\sqrt{2}}\), so the
+								total is \(2-\sqrt{2}\), not \(2\) or \(2+\sqrt{2}\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> In the first quadrant, \(\sin
+								x=\cos x\) at \(x=\dfrac{\pi}{4}\); split there immediately.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q143-->
@@ -1363,8 +3025,99 @@
 			<!--Start Q144-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q144">Q144</button>
-					<div class="accordion-content">A144</div>
+					<button class="accordion-button" id="Q144">
+						144. Solution of
+						\(\left(\dfrac{x+y-1}{x+y-2}\right)\dfrac{dy}{dx}=\left(\dfrac{x+y+1}{x+y+2}\right)\)
+						given that \(y=1\) when \(x=1\) is
+						<ul>
+							<li>a. \(\ln\left|\dfrac{(x-y)^2-2}{2}\right|=2(x+y)\)</li>
+							<br />
+							<li>b. \(\ln\left|\dfrac{(x+y)^2-2}{2}\right|=2(x-y)\)</li>
+							<br />
+							<li>c. \(\ln\left|\dfrac{(x-y)^2+2}{2}\right|=2(x+y)\)</li>
+							<br />
+							<li>d. \(\ln\left|\dfrac{(x+y)^2+2}{2}\right|=2(x-y)\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong
+									>Answer: \((b)\)
+									\(\ln\left|\dfrac{(x+y)^2-2}{2}\right|=2(x-y)\)</strong
+								>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(v=x+y\), so
+								\(\dfrac{dv}{dx}=1+\dfrac{dy}{dx}\). The differential equation
+								becomes separable and integrates to
+								\(v-x+\dfrac{1}{2}\ln|v^2-2|=C\). Use \(y=1\) when \(x=1\) to
+								find the constant.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Ordinary
+								Differential Equations / Solution of a Differential Equation -
+								Page M103
+							</li>
+							<li>
+								Given
+								\(\left(\dfrac{x+y-1}{x+y-2}\right)\dfrac{dy}{dx}=\left(\dfrac{x+y+1}{x+y+2}\right)\).
+							</li>
+							<li>
+								Since the equation contains \(x+y\) repeatedly, put \(v=x+y\).
+							</li>
+							<li>
+								Then \(\dfrac{dv}{dx}=1+\dfrac{dy}{dx}\), so
+								\(\dfrac{dy}{dx}=\dfrac{dv}{dx}-1\).
+							</li>
+							<li>
+								Substitute this in the differential equation:
+								\(\dfrac{v-1}{v-2}\left(\dfrac{dv}{dx}-1\right)=\dfrac{v+1}{v+2}\).
+							</li>
+							<li>So, \(\dfrac{dv}{dx}-1=\dfrac{(v+1)(v-2)}{(v-1)(v+2)}\).</li>
+							<li>
+								Therefore, \(\dfrac{dv}{dx}=\dfrac{(v+1)(v-2)}{(v-1)(v+2)}+1\).
+							</li>
+							<li>Simplifying, \(\dfrac{dv}{dx}=\dfrac{2v^2-4}{v^2+v-2}\).</li>
+							<li>So, \(\dfrac{v^2+v-2}{v^2-2}\,dv=2\,dx\).</li>
+							<li>
+								Write the left side as
+								\(\left(1+\dfrac{v}{v^2-2}\right)dv=2\,dx\).
+							</li>
+							<li>
+								Integrating both sides, \(v+\dfrac{1}{2}\ln|v^2-2|=2x+C\).
+							</li>
+							<li>Rearrange: \(v-2x+\dfrac{1}{2}\ln|v^2-2|=C\).</li>
+							<li>
+								Since \(v=x+y\), we get \(y-x+\dfrac{1}{2}\ln|(x+y)^2-2|=C\).
+							</li>
+							<li>Given \(y=1\) when \(x=1\), so \(x+y=2\).</li>
+							<li>Substitute \(x=1,y=1\): \(1-1+\dfrac{1}{2}\ln|4-2|=C\).</li>
+							<li>Thus, \(C=\dfrac{1}{2}\ln2\).</li>
+							<li>So, \(y-x+\dfrac{1}{2}\ln|(x+y)^2-2|=\dfrac{1}{2}\ln2\).</li>
+							<li>Multiply by \(2\): \(2(y-x)+\ln|(x+y)^2-2|=\ln2\).</li>
+							<li>
+								Therefore, \(\ln\left|\dfrac{(x+y)^2-2}{2}\right|=2(x-y)\).
+							</li>
+							<li>
+								<strong>Final result:</strong>
+								\(\ln\left|\dfrac{(x+y)^2-2}{2}\right|=2(x-y)\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> If a differential equation
+								repeatedly contains \(x+y\), try \(v=x+y\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								substitution gives \((x+y)^2-2\), and the right side becomes
+								\(2(x-y)\), matching option \((b)\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Spot \(x+y\) in every bracket
+								and substitute \(v=x+y\) immediately.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q144-->
@@ -1372,8 +3125,74 @@
 			<!--Start Q145-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q145">Q145</button>
-					<div class="accordion-content">A145</div>
+					<button class="accordion-button" id="Q145">
+						145. If \(y=\sin\left(2\tan^{-1}\sqrt{\dfrac{1-x}{1+x}}\right)\),
+						then \(\dfrac{dy}{dx}\) is
+						<ul>
+							<li>a. \(1\)</li>
+							<li>b. \(-1\)</li>
+							<li>c. \(\dfrac{x}{\sqrt{x^2-1}}\)</li>
+							<li>d. \(\dfrac{-x}{\sqrt{1-x^2}}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((d)\) \(\dfrac{-x}{\sqrt{1-x^2}}\)</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(x=\cos2\theta\). Then
+								\(\sqrt{\dfrac{1-x}{1+x}}=\tan\theta\), so the expression
+								becomes \(y=\sin2\theta=\sqrt{1-x^2}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Trigonometry
+								/ Properties of Inverse Trigonometric Functions - Page M38<br />Differential
+								Calculus / Differentiability - Page M75
+							</li>
+							<li>
+								Given \(y=\sin\left(2\tan^{-1}\sqrt{\dfrac{1-x}{1+x}}\right)\).
+							</li>
+							<li>Let \(x=\cos2\theta\).</li>
+							<li>
+								Then \(1-x=1-\cos2\theta=2\sin^2\theta\), and
+								\(1+x=1+\cos2\theta=2\cos^2\theta\).
+							</li>
+							<li>
+								So,
+								\(\sqrt{\dfrac{1-x}{1+x}}=\sqrt{\dfrac{2\sin^2\theta}{2\cos^2\theta}}=\tan\theta\).
+							</li>
+							<li>Therefore, \(y=\sin\left(2\tan^{-1}(\tan\theta)\right)\).</li>
+							<li>Thus, \(y=\sin2\theta\).</li>
+							<li>
+								Since \(x=\cos2\theta\), we have
+								\(\sin2\theta=\sqrt{1-\cos^22\theta}\).
+							</li>
+							<li>So, \(y=\sqrt{1-x^2}\).</li>
+							<li>
+								Differentiate with respect to \(x\):
+								\(\dfrac{dy}{dx}=\dfrac{1}{2\sqrt{1-x^2}}(-2x)\).
+							</li>
+							<li>Therefore, \(\dfrac{dy}{dx}=\dfrac{-x}{\sqrt{1-x^2}}\).</li>
+							<li>
+								<strong>Final result:</strong> \(\dfrac{-x}{\sqrt{1-x^2}}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> Expressions like
+								\(\sqrt{\dfrac{1-x}{1+x}}\) often simplify beautifully by
+								putting \(x=\cos2\theta\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The simplified
+								function is \(y=\sqrt{1-x^2}\), whose derivative is negative for
+								positive \(x\), matching option \((d)\).
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Use the identity
+								\(\dfrac{1-\cos2\theta}{1+\cos2\theta}=\tan^2\theta\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q145-->
@@ -1381,8 +3200,74 @@
 			<!--Start Q146-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q146">Q146</button>
-					<div class="accordion-content">A146</div>
+					<button class="accordion-button" id="Q146">
+						146. The maximum value of the function \(y=x(x-1)^2\), is
+						<ul>
+							<li>a. \(0\)</li>
+							<li>b. \(4/27\)</li>
+							<li>c. \(-4\)</li>
+							<li>d. None of these</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\) \(4/27\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Differentiate
+								\(y=x(x-1)^2\), set \(\dfrac{dy}{dx}=0\), and use the second
+								derivative test. The local maximum occurs at \(x=\dfrac{1}{3}\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Differential
+								Calculus / Minima and maxima - Page M77
+							</li>
+							<li>Given \(y=x(x-1)^2\).</li>
+							<li>
+								Differentiate using product rule:
+								\(\dfrac{dy}{dx}=(x-1)^2+2x(x-1)\).
+							</li>
+							<li>So, \(\dfrac{dy}{dx}=(x-1)\{(x-1)+2x\}\).</li>
+							<li>Therefore, \(\dfrac{dy}{dx}=(x-1)(3x-1)\).</li>
+							<li>For maximum or minimum, put \(\dfrac{dy}{dx}=0\).</li>
+							<li>
+								Thus, \((x-1)(3x-1)=0\), so \(x=1\) or \(x=\dfrac{1}{3}\).
+							</li>
+							<li>Now, \(\dfrac{d^2y}{dx^2}=6x-4\).</li>
+							<li>
+								At \(x=\dfrac{1}{3}\), \(\dfrac{d^2y}{dx^2}=2-4=-2&lt;0\), so
+								the function has a local maximum there.
+							</li>
+							<li>
+								At \(x=1\), \(\dfrac{d^2y}{dx^2}=2&gt;0\), so the function has a
+								local minimum there.
+							</li>
+							<li>
+								Now find the maximum value:
+								\(y=\dfrac{1}{3}\left(\dfrac{1}{3}-1\right)^2\).
+							</li>
+							<li>
+								This gives
+								\(y=\dfrac{1}{3}\left(-\dfrac{2}{3}\right)^2=\dfrac{1}{3}\cdot\dfrac{4}{9}=\dfrac{4}{27}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Maximum value \(=\dfrac{4}{27}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> For maximum/minimum
+								questions, first derivative gives candidate points, second
+								derivative tells their nature.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The value at
+								the local maximum is \(\dfrac{4}{27}\), not \(0\), \(-4\), or
+								none of these.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Factor \(\dfrac{dy}{dx}\) as
+								\((x-1)(3x-1)\) and test \(x=\dfrac{1}{3}\) quickly.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q146-->
@@ -1390,8 +3275,78 @@
 			<!--Start Q147-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q147">Q147</button>
-					<div class="accordion-content">A147</div>
+					<button class="accordion-button" id="Q147">
+						147. The solution of \(x^3\dfrac{dy}{dx}+4x^2\tan y=e^x\sec y\)
+						satisfying \(y(1)=0\), is
+						<ul>
+							<li>a. \(\tan y=(x-2)e^x\log x\)</li>
+							<li>b. \(\sin y=e^x(x-1)x^{-4}\)</li>
+							<li>c. \(\tan y=(x-1)e^xx^{-3}\)</li>
+							<li>d. \(\sin y=e^x(x-1)x^{-3}\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li>
+								<strong>Answer: \((b)\) \(\sin y=e^x(x-1)x^{-4}\)</strong>
+							</li>
+							<li>
+								<strong>Quick explanation:</strong> Divide by \(x^3\sec y\) to
+								get an equation in \(\sin y\). Put \(t=\sin y\), which converts
+								the equation into a linear differential equation.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Ordinary
+								Differential Equations / Solution of a Differential Equation -
+								Page M103
+							</li>
+							<li>Given \(x^3\dfrac{dy}{dx}+4x^2\tan y=e^x\sec y\).</li>
+							<li>Divide by \(x^3\sec y\).</li>
+							<li>
+								We get \(\cos y\dfrac{dy}{dx}+\dfrac{4}{x}\sin
+								y=\dfrac{e^x}{x^3}\).
+							</li>
+							<li>Put \(t=\sin y\).</li>
+							<li>Then \(\dfrac{dt}{dx}=\cos y\dfrac{dy}{dx}\).</li>
+							<li>
+								So the equation becomes
+								\(\dfrac{dt}{dx}+\dfrac{4}{x}t=\dfrac{e^x}{x^3}\).
+							</li>
+							<li>This is a linear differential equation in \(t\).</li>
+							<li>
+								Here \(P=\dfrac{4}{x}\), so integrating factor \(IF=e^{\int
+								4/x\,dx}=e^{4\log x}=x^4\).
+							</li>
+							<li>
+								Multiplying by \(x^4\), the solution is \(tx^4=\int
+								x^4\cdot\dfrac{e^x}{x^3}\,dx+C\).
+							</li>
+							<li>So, \(tx^4=\int xe^x\,dx+C\).</li>
+							<li>Now, \(\int xe^x\,dx=xe^x-e^x\).</li>
+							<li>Therefore, \(tx^4=xe^x-e^x+C=e^x(x-1)+C\).</li>
+							<li>
+								Since \(t=\sin y\), we get \(\sin y\cdot x^4=e^x(x-1)+C\).
+							</li>
+							<li>Given \(y(1)=0\), so \(\sin y=0\) when \(x=1\).</li>
+							<li>Substitute \(x=1\): \(0=e(1-1)+C\), so \(C=0\).</li>
+							<li>Hence, \(\sin y\cdot x^4=e^x(x-1)\).</li>
+							<li>Therefore, \(\sin y=e^x(x-1)x^{-4}\).</li>
+							<li><strong>Final result:</strong> \(\sin y=e^x(x-1)x^{-4}\).</li>
+							<li>
+								<strong>Simple memory tip:</strong> If you see \(\cos
+								y\dfrac{dy}{dx}\), think of differentiating \(\sin y\).
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The
+								substitution gives \(\sin y\), not \(\tan y\), and the
+								integrating factor gives \(x^{-4}\) in the final answer.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Convert the equation into linear
+								form by choosing \(t=\sin y\).
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q147-->
@@ -1399,8 +3354,101 @@
 			<!--Start Q148-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q148">Q148</button>
-					<div class="accordion-content">A148</div>
+					<button class="accordion-button" id="Q148">
+						148. The runs of two players for 10 innings each are as follows
+						<table class="notes_table_2">
+							<thead>
+								<tr>
+									<th>Player</th>
+									<th>Runs</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>A</td>
+									<td>58, 59, 60, 54, 65, 66, 52, 75, 69, 52</td>
+								</tr>
+								<tr>
+									<td>B</td>
+									<td>94, 26, 92, 65, 96, 78, 14, 34, 98, 13</td>
+								</tr>
+							</tbody>
+						</table>
+						The more consistent player is
+						<ul>
+							<li>a. player A</li>
+							<li>b. player B</li>
+							<li>c. both player A and B</li>
+							<li>d. None of the above</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\) player A</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Consistency is judged by
+								standard deviation. Both players have mean \(61\), but player A
+								has a much smaller standard deviation than player B, so player A
+								is more consistent.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Statistics /
+								Variance and standard deviation - Page M137<br />Statistics /
+								Measures of dispersion - Page M137
+							</li>
+							<li>Player A runs are \(58,59,60,54,65,66,52,75,69,52\).</li>
+							<li>Player B runs are \(94,26,92,65,96,78,14,34,98,13\).</li>
+							<li>
+								The sum of runs for player A is \(610\), so mean of player A
+								\(=\dfrac{610}{10}=61\).
+							</li>
+							<li>
+								The sum of runs for player B is also \(610\), so mean of player
+								B \(=\dfrac{610}{10}=61\).
+							</li>
+							<li>
+								Since both means are equal, compare their standard deviations.
+							</li>
+							<li>
+								For player A, using deviations from mean \(61\),
+								\(\sum(x_i-61)^2=526\).
+							</li>
+							<li>
+								So, standard deviation of player A
+								\(=\sqrt{\dfrac{526}{10}}=\sqrt{52.6}\approx7.25\).
+							</li>
+							<li>
+								For player B, using deviations from mean \(61\),
+								\(\sum(y_i-61)^2=11416\).
+							</li>
+							<li>
+								So, standard deviation of player B
+								\(=\sqrt{\dfrac{11416}{10}}=\sqrt{1141.6}\approx33.79\).
+							</li>
+							<li>
+								A smaller standard deviation means the scores are less spread
+								out from the mean.
+							</li>
+							<li>Since \(7.25&lt;33.79\), player A is more consistent.</li>
+							<li>
+								<strong>Final result:</strong> Player A is more consistent.
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> In consistency questions,
+								lower standard deviation means higher consistency.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Player B has a
+								much larger standard deviation, so player B is less consistent;
+								both players are not equally consistent.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> If means are equal, compare
+								standard deviation directly; no need for coefficient of
+								variation.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q148-->
@@ -1408,8 +3456,98 @@
 			<!--Start Q149-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q149">Q149</button>
-					<div class="accordion-content">A149</div>
+					<button class="accordion-button" id="Q149">
+						149. The linear programming problem minimise \(z=3x+2y\) subject to
+						constraints \(x+y\geq8\), \(3x+5y\leq15\), \(x\geq0\) and
+						\(y\geq0\), has
+						<ul>
+							<li>a. one solution</li>
+							<li>b. no feasible solution</li>
+							<li>c. two solutions</li>
+							<li>d. infinitely many solutions</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((b)\) no feasible solution</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> The condition \(x+y\geq8\)
+								requires points on or above the line \(x+y=8\), while
+								\(3x+5y\leq15\) lies near the origin. These two regions do not
+								overlap in the first quadrant, so there is no feasible solution.
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Linear
+								Programming / Linear Programming - Page M145<br />Linear
+								Programming / Graphical Method - Page M145
+							</li>
+							<li>
+								<img
+									src="images/math_q149a.png"
+									alt="linear programming graph showing no common feasible region for x plus y greater than 8 and 3x plus 5y less than 15"
+									style="width: 60%; height: auto; margin-right: 10px"
+								/><br /><br />
+							</li>
+							<li>
+								Given constraints are \(x+y\geq8\), \(3x+5y\leq15\), \(x\geq0\),
+								and \(y\geq0\).
+							</li>
+							<li>
+								First draw the line \(x+y=8\). Its intercepts are \((8,0)\) and
+								\((0,8)\).
+							</li>
+							<li>
+								The inequality \(x+y\geq8\) represents the region on or above
+								this line.
+							</li>
+							<li>
+								Now draw the line \(3x+5y=15\). Its intercepts are \((5,0)\) and
+								\((0,3)\).
+							</li>
+							<li>
+								The inequality \(3x+5y\leq15\) represents the region on or below
+								this line, near the origin.
+							</li>
+							<li>
+								Since \(x\geq0\) and \(y\geq0\), we are restricted to the first
+								quadrant.
+							</li>
+							<li>
+								In the first quadrant, the region \(3x+5y\leq15\) lies below a
+								line with intercepts only \(5\) and \(3\).
+							</li>
+							<li>
+								But \(x+y\geq8\) requires points at or beyond the line with
+								intercepts \(8\) and \(8\).
+							</li>
+							<li>
+								These two regions have no common point in the first quadrant.
+							</li>
+							<li>Therefore, there is no feasible region.</li>
+							<li>
+								If there is no feasible region, the objective function
+								\(z=3x+2y\) cannot have a minimum under the given constraints.
+							</li>
+							<li>
+								<strong>Final result:</strong> The LPP has no feasible solution.
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> In linear programming, first
+								check whether the feasible region exists before optimizing the
+								objective function.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> Since no point
+								satisfies all constraints together, the problem cannot have one
+								solution, two solutions, or infinitely many solutions.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Compare intercepts: \(x+y=8\) is
+								far from the origin, while \(3x+5y=15\) stays near the origin;
+								their required shaded regions do not overlap.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q149-->
@@ -1417,8 +3555,85 @@
 			<!--Start Q150-->
 			<div class="accordion">
 				<div class="accordion-item">
-					<button class="accordion-button" id="Q150">Q150</button>
-					<div class="accordion-content">A150</div>
+					<button class="accordion-button" id="Q150">
+						150. Find the area enclosed by the loop in the curve
+						\(4y^2=4x^2-x^3\)
+						<ul>
+							<li>a. \(128/15\)</li>
+							<li>b. \(15/128\)</li>
+							<li>c. \(130/17\)</li>
+							<li>d. \(17/30\)</li>
+						</ul>
+					</button>
+					<div class="accordion-content">
+						<ul>
+							<li><strong>Answer: \((a)\) \(128/15\)</strong></li>
+							<li>
+								<strong>Quick explanation:</strong> Put \(y=0\) to get the loop
+								endpoints \(x=0\) and \(x=4\). Since the curve is symmetric
+								about the X-axis, area of the loop is \(2\int_0^4 y\,dx\).
+							</li>
+							<li>
+								<strong>BITSAT chapter / topic / subtopic:</strong> Integral
+								Calculus / Area of Bounded Regions - Page M90
+							</li>
+							<li>Given curve is \(4y^2=4x^2-x^3\).</li>
+							<li>Put \(y=0\) to find where the curve meets the X-axis.</li>
+							<li>Then \(0=4x^2-x^3=x^2(4-x)\).</li>
+							<li>So, \(x=0\) or \(x=4\).</li>
+							<li>
+								The equation contains \(y^2\), so the curve is symmetric about
+								the X-axis.
+							</li>
+							<li>
+								Therefore, area enclosed by the loop \(=2\int_0^4 y\,dx\).
+							</li>
+							<li>
+								From \(4y^2=4x^2-x^3\), we get \(y^2=\dfrac{4x^2-x^3}{4}\).
+							</li>
+							<li>So, \(y=\dfrac{1}{2}\sqrt{4x^2-x^3}\).</li>
+							<li>
+								Hence, area \(=2\int_0^4 \dfrac{1}{2}\sqrt{4x^2-x^3}\,dx\).
+							</li>
+							<li>This simplifies to \(\int_0^4 \sqrt{4x^2-x^3}\,dx\).</li>
+							<li>
+								Since \(\sqrt{4x^2-x^3}=\sqrt{x^2(4-x)}=x\sqrt{4-x}\) for
+								\(0\leq x\leq4\), area \(=\int_0^4 x\sqrt{4-x}\,dx\).
+							</li>
+							<li>Put \(4-x=t\), so \(-dx=dt\) and \(x=4-t\).</li>
+							<li>When \(x=0\), \(t=4\), and when \(x=4\), \(t=0\).</li>
+							<li>So, area \(=\int_0^4 (4-t)\sqrt{t}\,dt\).</li>
+							<li>This becomes \(\int_0^4 (4\sqrt{t}-t\sqrt{t})\,dt\).</li>
+							<li>
+								Integrating, area
+								\(=\left[4\cdot\dfrac{2}{3}t^{3/2}-\dfrac{2}{5}t^{5/2}\right]_0^4\).
+							</li>
+							<li>Now, \(4^{3/2}=8\) and \(4^{5/2}=32\).</li>
+							<li>So, area \(=\dfrac{8}{3}\cdot8-\dfrac{2}{5}\cdot32\).</li>
+							<li>
+								This gives
+								\(\dfrac{64}{3}-\dfrac{64}{5}=\dfrac{320-192}{15}=\dfrac{128}{15}\).
+							</li>
+							<li>
+								<strong>Final result:</strong> Area enclosed by the loop
+								\(=\dfrac{128}{15}\).
+							</li>
+							<li>
+								<strong>Simple memory tip:</strong> If the curve has \(y^2\),
+								check symmetry about the X-axis and double the upper-half area.
+							</li>
+							<li>
+								<strong>Why the other options are wrong:</strong> The correct
+								integral from \(0\) to \(4\) gives \(\dfrac{128}{15}\), not the
+								other listed values.
+							</li>
+							<li>
+								<strong>Exam shortcut:</strong> Convert \(4y^2=4x^2-x^3\) to
+								\(y=\dfrac{x}{2}\sqrt{4-x}\), then use symmetry to cancel the
+								\(\dfrac{1}{2}\) factor.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<!--End Q150-->
