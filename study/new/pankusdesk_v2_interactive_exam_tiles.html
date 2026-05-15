@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pankusdesk v2 – Exam Tiles Landing Page</title>
+  <style>
+    :root {
+      --bg: #f5f8ff;
+      --surface: #ffffff;
+      --ink: #172033;
+      --muted: #64748b;
+      --border: #dbe6f5;
+
+      --blue: #2463eb;
+      --blue-dark: #1746b8;
+      --teal: #0f766e;
+      --purple: #7c3aed;
+      --yellow: #e0b400;
+      --orange: #f97316;
+      --green: #16a34a;
+
+      --soft-blue: #eaf2ff;
+      --soft-teal: #e6f7f4;
+      --soft-purple: #f0ebff;
+      --soft-yellow: #fff7d1;
+      --soft-orange: #fff0e5;
+      --soft-green: #e9f8ee;
+
+      --radius: 22px;
+      --shadow: 0 14px 34px rgba(30, 64, 175, 0.08);
+      --page-width: 1180px;
+      --left-width: 220px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(36, 99, 235, 0.11), transparent 28rem),
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.09), transparent 24rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245, 248, 255, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(219, 230, 245, 0.9);
+    }
+
+    .top-inner {
+      width: min(100% - 32px, var(--page-width));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--blue-dark);
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      box-shadow: var(--shadow);
+      font-size: 0.92rem;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 750;
+    }
+
+    .top-links a {
+      padding: 8px 11px;
+      border-radius: 999px;
+    }
+
+    .top-links a:hover,
+    .top-links a.active {
+      background: var(--soft-blue);
+      color: var(--blue-dark);
+    }
+
+    .layout {
+      width: min(100% - 32px, var(--page-width));
+      margin: 30px auto 56px;
+      display: grid;
+      grid-template-columns: var(--left-width) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .left-nav {
+      position: sticky;
+      top: 98px;
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .left-nav h2 {
+      margin: 0 0 12px;
+      font-size: 0.82rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .left-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 15px;
+      color: var(--muted);
+      font-weight: 780;
+      font-size: 0.94rem;
+    }
+
+    .left-nav a:hover,
+    .left-nav a.active {
+      background: var(--soft-blue);
+      color: var(--blue-dark);
+    }
+
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex: 0 0 10px;
+    }
+
+    .left-nav a:nth-of-type(2) .nav-dot { background: var(--purple); }
+    .left-nav a:nth-of-type(3) .nav-dot { background: var(--teal); }
+    .left-nav a:nth-of-type(4) .nav-dot { background: var(--yellow); }
+    .left-nav a:nth-of-type(5) .nav-dot { background: var(--orange); }
+
+    .content {
+      min-width: 0;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .hero-main {
+      background: linear-gradient(135deg, #173b8f, #0f766e);
+      color: white;
+      border-radius: 30px;
+      padding: clamp(30px, 5vw, 52px);
+      box-shadow: var(--shadow);
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-label {
+      align-self: flex-start;
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.15rem, 5vw, 4rem);
+      line-height: 1.01;
+      letter-spacing: -0.06em;
+      max-width: 760px;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 700px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.08rem;
+    }
+
+    .hero-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-note h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+    }
+
+    .hero-note p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .workflow-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .workflow-item {
+      padding: 11px 12px;
+      border-radius: 15px;
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      font-weight: 760;
+      color: var(--blue-dark);
+      font-size: 0.94rem;
+    }
+
+    .section-head {
+      margin: 0 0 16px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .exam-board {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: minmax(170px, auto);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .exam-tile {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .exam-tile:hover,
+    .exam-tile:focus-within {
+      transform: translateY(-4px);
+      border-color: #b9cff0;
+      box-shadow: 0 20px 44px rgba(30, 64, 175, 0.13);
+    }
+
+    .exam-tile::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: var(--accent);
+    }
+
+    .exam-tile::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -60px;
+      bottom: -70px;
+      border-radius: 999px;
+      background: var(--soft);
+    }
+
+    .exam-content,
+    .exam-links {
+      position: relative;
+      z-index: 1;
+    }
+
+    .exam-symbol {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--soft);
+      color: var(--accent);
+      font-weight: 950;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .exam-kicker {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .exam-tile h3 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+    }
+
+    .exam-tile p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 390px;
+    }
+
+    .exam-links {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: 180ms ease;
+    }
+
+    .exam-tile:hover .exam-links,
+    .exam-tile:focus-within .exam-links {
+      max-height: 160px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .exam-links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 11px;
+      border-radius: 13px;
+      background: rgba(248, 251, 255, 0.92);
+      border: 1px solid var(--border);
+      color: var(--blue-dark);
+      font-weight: 850;
+      font-size: 0.9rem;
+    }
+
+    .exam-links a:hover {
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    .tile-jee {
+      --accent: var(--blue);
+      --soft: var(--soft-blue);
+      grid-column: span 3;
+      grid-row: span 2;
+      min-height: 356px;
+    }
+
+    .tile-bitsat {
+      --accent: var(--purple);
+      --soft: var(--soft-purple);
+      grid-column: span 3;
+    }
+
+    .tile-eapcet {
+      --accent: var(--teal);
+      --soft: var(--soft-teal);
+      grid-column: span 2;
+    }
+
+    .tile-cbse {
+      --accent: var(--yellow);
+      --soft: var(--soft-yellow);
+      grid-column: span 2;
+    }
+
+    .tile-tgipe {
+      --accent: var(--orange);
+      --soft: var(--soft-orange);
+      grid-column: span 2;
+    }
+
+    .tile-jee .exam-symbol {
+      width: 62px;
+      height: 62px;
+      border-radius: 20px;
+      font-size: 1.25rem;
+    }
+
+    .tile-jee h3 {
+      font-size: clamp(2.35rem, 5vw, 4rem);
+    }
+
+    .tile-jee .exam-links {
+      max-height: 180px;
+      opacity: 1;
+      transform: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .below-strip {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--blue-dark);
+      margin-bottom: 6px;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-note {
+      margin-top: 34px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1040px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .left-nav {
+        position: static;
+      }
+
+      .left-nav div {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .exam-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tile-jee,
+      .tile-bitsat,
+      .tile-eapcet,
+      .tile-cbse,
+      .tile-tgipe {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 245px;
+      }
+
+      .tile-jee h3 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+      }
+
+      .tile-jee .exam-symbol {
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+        font-size: 1.05rem;
+      }
+
+      .tile-jee .exam-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .top-inner {
+        min-height: auto;
+        padding: 12px 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .top-links {
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .layout {
+        margin-top: 18px;
+      }
+
+      .left-nav div {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 7px;
+      }
+
+      .exam-board,
+      .below-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .exam-tile {
+        min-height: 245px;
+      }
+
+      .exam-links {
+        max-height: 180px;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-nav">
+    <div class="top-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">PD</span>
+        <span>Pankusdesk</span>
+      </a>
+
+      <nav class="top-links" aria-label="Top navigation">
+        <a class="active" href="#">Home</a>
+        <a href="#exams">Exams</a>
+        <a href="#how">How it works</a>
+        <a href="#">Search</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="left-nav" aria-label="Exam navigation">
+      <h2>Choose exam</h2>
+      <div>
+        <a class="active" href="#jee"><span class="nav-dot"></span>JEE</a>
+        <a href="#bitsat"><span class="nav-dot"></span>BITSAT</a>
+        <a href="#eapcet"><span class="nav-dot"></span>TG EAPCET</a>
+        <a href="#cbse"><span class="nav-dot"></span>CBSE</a>
+        <a href="#tgipe"><span class="nav-dot"></span>TGIPE</a>
+      </div>
+    </aside>
+
+    <section class="content">
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-label">Chemistry only • Exam-wise</div>
+          <h1>Pick your exam. Study the same Chemistry with the right depth.</h1>
+          <p>
+            One Chemistry brain underneath. Five exam doors on top.
+            Notes are built from official syllabus first, then connected to lectures and PYQs.
+          </p>
+        </div>
+
+        <aside class="hero-note" id="how">
+          <h2>How Pankusdesk is being built</h2>
+          <p>The site starts exam-wise, but the notes stay consistent across exams.</p>
+          <div class="workflow-list">
+            <div class="workflow-item">Official syllabus → notes</div>
+            <div class="workflow-item">Notes → lecture links</div>
+            <div class="workflow-item">PYQs → exact concept backlinks</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="exams">
+        <div class="section-head">
+          <h2>Choose your exam</h2>
+          <p>
+            The tiles stay compact at first. Hover on desktop or tap on mobile to see where each exam can take you.
+          </p>
+        </div>
+
+        <div class="exam-board">
+          <article class="exam-tile tile-jee" id="jee" tabindex="0">
+            <div class="exam-content">
+              <div class="exam-symbol">J</div>
+              <div class="exam-kicker">Main + Advanced</div>
+              <h3>JEE</h3>
+              <p>Deep concept clarity, lecture-linked notes, and detailed PYQ explanations.</p>
+            </div>
+            <div class="exam-links">
+              <a href="#">Official syllabus <span>→</span></a>
+              <a href="#">Chapter notes <span>→</span></a>
+              <a href="#">Lecture map <span>→</span></a>
+              <a href="#">PYQs <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="exam-tile tile-bitsat" id="bitsat" tabindex="0">
+            <div class="exam-content">
+              <div class="exam-symbol">B</div>
+              <div class="exam-kicker">Speed + coverage</div>
+              <h3>BITSAT</h3>
+              <p>Fast revision, repeated concepts, and topic-wise PYQ maps.</p>
+            </div>
+            <div class="exam-links">
+              <a href="#">Official syllabus <span>→</span></a>
+              <a href="#">Revision notes <span>→</span></a>
+              <a href="#">PYQ map <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="exam-tile tile-eapcet" id="eapcet" tabindex="0">
+            <div class="exam-content">
+              <div class="exam-symbol">E</div>
+              <div class="exam-kicker">State entrance</div>
+              <h3>TG EAPCET</h3>
+              <p>Direct concept practice and state-exam aligned preparation.</p>
+            </div>
+            <div class="exam-links">
+              <a href="#">Syllabus <span>→</span></a>
+              <a href="#">Notes <span>→</span></a>
+              <a href="#">Questions <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="exam-tile tile-cbse" id="cbse" tabindex="0">
+            <div class="exam-content">
+              <div class="exam-symbol">C</div>
+              <div class="exam-kicker">Board exam</div>
+              <h3>CBSE</h3>
+              <p>NCERT-aligned explanations and board-style answer support.</p>
+            </div>
+            <div class="exam-links">
+              <a href="#">Syllabus <span>→</span></a>
+              <a href="#">NCERT notes <span>→</span></a>
+              <a href="#">Board Qs <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="exam-tile tile-tgipe" id="tgipe" tabindex="0">
+            <div class="exam-content">
+              <div class="exam-symbol">T</div>
+              <div class="exam-kicker">Intermediate board</div>
+              <h3>TGIPE</h3>
+              <p>Telangana Intermediate Chemistry notes and exam-answer practice.</p>
+            </div>
+            <div class="exam-links">
+              <a href="#">Syllabus <span>→</span></a>
+              <a href="#">Notes <span>→</span></a>
+              <a href="#">Board Qs <span>→</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="below-strip">
+          <article class="mini-card">
+            <strong>Why exam-wise?</strong>
+            <p>Students start with the exam they are preparing for. That keeps the first choice simple.</p>
+          </article>
+          <article class="mini-card">
+            <strong>Why one notes layer?</strong>
+            <p>Good Chemistry should not be duplicated five times. Exam depth can change, but the concept stays clean.</p>
+          </article>
+          <article class="mini-card">
+            <strong>Why hover/tap tiles?</strong>
+            <p>The page feels alive without showing too many links at once.</p>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer-note">Pankusdesk v2 landing page concept • five interactive exam tiles.</p>
+    </section>
+  </main>
+</body>
+</html>
