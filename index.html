@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Panku's Desk</title>
+
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				font-family: Helvetica, Arial, sans-serif;
+				background: #f5f7f8;
+				color: #1f2933;
+			}
+
+			/* ---------------- NAVBAR ---------------- */
+
+			.navbar {
+				background: white;
+				border-bottom: 1px solid #e4e7eb;
+				padding: 18px 40px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				position: sticky;
+				top: 0;
+				z-index: 10;
+			}
+
+			.logo {
+				font-size: 24px;
+				font-weight: 700;
+				color: #244f4b;
+			}
+
+			.nav-links {
+				display: flex;
+				gap: 28px;
+			}
+
+			.nav-links a {
+				color: #52616b;
+				text-decoration: none;
+				font-size: 15px;
+				font-weight: 600;
+			}
+
+			.nav-links a:hover {
+				color: #244f4b;
+			}
+
+			/* ---------------- PAGE ---------------- */
+
+			main {
+				max-width: 1100px;
+				margin: 0 auto;
+				padding: 55px 28px 80px;
+			}
+
+			.eyebrow {
+				font-size: 13px;
+				font-weight: 700;
+				letter-spacing: 1.5px;
+				color: #5d7d78;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
+
+			h1 {
+				margin: 0;
+				font-size: 42px;
+				color: #203a38;
+			}
+
+			.subtitle {
+				margin-top: 10px;
+				color: #66747d;
+				font-size: 17px;
+			}
+
+			/* ---------------- CURRENT SEMESTER ---------------- */
+
+			.section {
+				margin-top: 55px;
+			}
+
+			.section-title {
+				font-size: 14px;
+				font-weight: 800;
+				letter-spacing: 1.2px;
+				text-transform: uppercase;
+				color: #52616b;
+				margin-bottom: 18px;
+			}
+
+			.current-card {
+				background: #dcefea;
+				border-radius: 20px;
+				padding: 32px;
+				display: grid;
+				grid-template-columns: 1.5fr 1fr;
+				gap: 30px;
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+			}
+
+			.sem-label {
+				font-size: 13px;
+				font-weight: 700;
+				color: #56736f;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+			.current-card h2 {
+				font-size: 30px;
+				margin: 8px 0 18px;
+				color: #203a38;
+			}
+
+			.subjects {
+				line-height: 1.9;
+				color: #344a48;
+			}
+
+			.open-semester {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+			}
+
+			.open-semester a {
+				background: #244f4b;
+				color: white;
+				text-decoration: none;
+				padding: 13px 20px;
+				border-radius: 9px;
+				font-weight: 700;
+			}
+
+			/* ---------------- SEMESTERS ---------------- */
+
+			.years-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 20px;
+			}
+
+			.year-column h3 {
+				margin: 0 0 10px;
+				font-size: 16px;
+				color: #52616b;
+			}
+
+			.semester-card {
+				background: white;
+				border: 1px solid #e1e6e8;
+				border-radius: 12px;
+				padding: 22px 18px;
+				margin-bottom: 12px;
+				font-size: 20px;
+				font-weight: 700;
+				color: #244f4b;
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+			}
+
+			.semester-card.active {
+				border: 2px solid #5b8f87;
+				background: #eef8f5;
+			}
+
+			/* ---------------- RECENT ---------------- */
+
+			.recent-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 18px;
+			}
+
+			.recent-card {
+				background: white;
+				border-radius: 14px;
+				padding: 22px;
+				border: 1px solid #e5e8ea;
+			}
+
+			.recent-subject {
+				font-size: 12px;
+				font-weight: 800;
+				color: #64817c;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+
+			.recent-card h3 {
+				font-size: 18px;
+				margin: 10px 0 8px;
+				color: #293b39;
+			}
+
+			.date {
+				font-size: 13px;
+				color: #89969d;
+			}
+
+			/* ---------------- OLD SITE ---------------- */
+
+			.old-site {
+				margin-top: 70px;
+				padding-top: 28px;
+				border-top: 1px solid #d8dee2;
+				text-align: center;
+			}
+
+			.old-site a {
+				color: #536f6b;
+				text-decoration: none;
+				font-weight: 700;
+			}
+
+			.old-site a:hover {
+				text-decoration: underline;
+			}
+
+			/* ---------------- MOBILE ---------------- */
+
+			@media (max-width: 800px) {
+				.navbar {
+					padding: 16px 20px;
+				}
+
+				.nav-links {
+					display: none;
+				}
+
+				h1 {
+					font-size: 34px;
+				}
+
+				.current-card {
+					grid-template-columns: 1fr;
+				}
+
+				.open-semester {
+					justify-content: flex-start;
+				}
+
+				.years-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.recent-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="navbar">
+			<div class="logo">Panku's Desk</div>
+
+			<nav class="nav-links">
+				<a href="#">Home</a>
+				<a href="#">College</a>
+				<a href="#">Archive</a>
+				<a href="#">Computer Science</a>
+				<a href="#">German</a>
+				<a href="#">Blog</a>
+			</nav>
+		</header>
+
+		<main>
+			<section>
+				<div class="eyebrow">College</div>
+
+				<h1>Panku's Desk</h1>
+
+				<div class="subtitle">
+					B.Tech Information Technology · VNR VJIET · Regulation R25
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-title">Current Semester</div>
+
+				<div class="current-card">
+					<div>
+						<div class="sem-label">Year 1 · Semester 1</div>
+
+						<h2>Semester 1.1</h2>
+
+						<div class="subjects">
+							Matrices & Calculus<br />
+							Chemistry for Engineers<br />
+							Basic Electrical Engineering<br />
+							Programming for Problem Solving<br />
+							Engineering Drawing<br />
+							Labs & Workshops
+						</div>
+					</div>
+
+					<div class="open-semester">
+						<a href="#">Open Semester →</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-title">Recently Studied</div>
+
+				<div class="recent-grid">
+					<div class="recent-card">
+						<div class="recent-subject">Basic Electrical Engineering</div>
+						<h3>Star & Delta Connections</h3>
+						<div class="date">12 August</div>
+					</div>
+
+					<div class="recent-card">
+						<div class="recent-subject">Programming for Problem Solving</div>
+						<h3>Assembly Language & Top-down Approach</h3>
+						<div class="date">12 August</div>
+					</div>
+
+					<div class="recent-card">
+						<div class="recent-subject">Matrices & Calculus</div>
+						<h3>Matrices, Arrays & Expressions</h3>
+						<div class="date">12 August</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-title">Four-Year Journey</div>
+
+				<div class="years-grid">
+					<div class="year-column">
+						<h3>Year 1</h3>
+						<div class="semester-card active">1.1</div>
+						<div class="semester-card">1.2</div>
+					</div>
+
+					<div class="year-column">
+						<h3>Year 2</h3>
+						<div class="semester-card">2.1</div>
+						<div class="semester-card">2.2</div>
+					</div>
+
+					<div class="year-column">
+						<h3>Year 3</h3>
+						<div class="semester-card">3.1</div>
+						<div class="semester-card">3.2</div>
+					</div>
+
+					<div class="year-column">
+						<h3>Year 4</h3>
+						<div class="semester-card">4.1</div>
+						<div class="semester-card">4.2</div>
+					</div>
+				</div>
+			</section>
+
+			<div class="old-site">
+				<a href="index_old.html"> ← Open Earlier PankusDesk </a>
+			</div>
+		</main>
+	</body>
+</html>
