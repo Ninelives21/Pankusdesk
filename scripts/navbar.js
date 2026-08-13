@@ -42,7 +42,7 @@ function updatePaths(pathToRoot) {
 	const logoLink = document.querySelector('.logo a');
 	if (logoLink) {
 		//alert('here');
-		logoLink.setAttribute('href', pathToRoot + 'index.html');
+		logoLink.setAttribute('href', pathToRoot + 'index_old.html');
 	}
 }
 
