@@ -1,0 +1,55 @@
+/* Landing page */
+.hero { padding-top: 4px; }
+.hero h1 {
+	margin: 0; font-size: clamp(38px,5vw,52px); letter-spacing: -1.4px;
+	color: #203a38; line-height: 1.05;
+}
+.sem-label, .recent-subject, .old-site-label {
+	text-transform: uppercase; letter-spacing: 1.2px; font-weight: 800;
+}
+.current-semester-card {
+	background: var(--primary-soft); border-radius: var(--radius-lg); padding: 32px;
+	display: grid; grid-template-columns: minmax(0,1.6fr) minmax(180px,.7fr); gap: 28px; box-shadow: var(--shadow);
+}
+.sem-label { font-size: 12px; color: #56736f; }
+.current-semester-card h2 { margin: 6px 0 18px; font-size: 30px; color: #203a38; }
+.subject-list { display: flex; flex-direction: column; gap: 6px; color: #344a48; }
+.card-action { display: flex; align-items: center; justify-content: flex-end; }
+.recent-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.recent-card {
+	background: var(--surface); border: 1px solid #e5e8ea; border-radius: var(--radius-md);
+	padding: 22px; box-shadow: 0 3px 12px rgba(0,0,0,.025);
+}
+.recent-subject { font-size: 11px; color: #64817c; }
+.recent-card h3 { font-size: 18px; line-height: 1.3; margin: 9px 0 7px; color: #293b39; }
+.recent-card p { margin: 0 0 14px; font-size: 14px; color: var(--muted); }
+.date { font-size: 12px; color: var(--muted-2); }
+.years-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.year-column h3 { margin: 0 0 10px; font-size: 15px; color: #52616b; }
+.semester-card {
+	min-height: 76px; background: var(--surface); border: 1px solid #e1e6e8; border-radius: 12px;
+	padding: 17px 18px; margin-bottom: 11px; text-decoration: none; display: flex; align-items: center;
+	justify-content: space-between; box-shadow: 0 3px 10px rgba(0,0,0,.025);
+}
+.semester-card span { font-size: 21px; font-weight: 800; color: var(--primary); }
+.semester-card small { font-size: 11px; color: var(--muted-2); }
+.semester-card.active { border: 2px solid #6d9d95; background: var(--surface-soft); }
+.semester-card.disabled { opacity: .55; }
+.old-site {
+	margin-top: 72px; padding: 28px 0 0; border-top: 1px solid #d8dee2; display: flex;
+	align-items: center; justify-content: space-between; gap: 20px;
+}
+.old-site-label { font-size: 11px; color: #70817d; }
+.old-site p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+@media (max-width: 900px) {
+	.current-semester-card { grid-template-columns: 1fr; }
+	.card-action { justify-content: flex-start; }
+	.recent-grid { grid-template-columns: 1fr; }
+	.years-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 620px) {
+	.current-semester-card { padding: 24px; }
+	.years-grid { grid-template-columns: 1fr; }
+	.old-site { align-items: flex-start; flex-direction: column; }
+	.hero h1 { font-size: 38px; }
+}

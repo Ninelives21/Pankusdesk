@@ -1,0 +1,34 @@
+/* Semester dashboard */
+.semester-hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.semester-hero h1 { margin: 0; font-size: 40px; color: #203a38; }
+.semester-meta { margin: 8px 0 0; color: var(--muted); }
+.dashboard-grid {
+	display: grid; grid-template-columns: minmax(0,2fr) minmax(280px,.85fr); gap: 26px; margin-top: 34px;
+}
+.today-date { font-size: 12px; color: var(--muted-2); margin-bottom: 14px; }
+.today-list { display: flex; flex-direction: column; gap: 10px; }
+.today-item { padding: 12px 14px; border-radius: 10px; background: #f7faf9; border: 1px solid #e5eeeb; }
+.today-time { font-size: 11px; color: #7a8c88; margin-bottom: 2px; }
+.today-subject { font-weight: 800; color: #34514d; }
+.subject-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.subject-card {
+	background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px;
+	text-decoration: none; box-shadow: 0 3px 12px rgba(0,0,0,.025);
+	transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.subject-card:hover { transform: translateY(-2px); border-color: #a7beb9; box-shadow: 0 10px 22px rgba(31,66,62,.08); }
+.subject-code { font-size: 11px; font-weight: 800; color: #6c827d; letter-spacing: .7px; text-transform: uppercase; }
+.subject-card h3 { margin: 8px 0; font-size: 19px; line-height: 1.25; color: #263c39; }
+.subject-card p { margin: 0; font-size: 13px; color: var(--muted); }
+.subject-card.placeholder { opacity: .68; pointer-events: none; }
+.lab-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.lab-item { background: #f8fafb; border: 1px solid var(--line); border-radius: 10px; padding: 13px 14px; }
+.lab-item strong { display: block; font-size: 14px; color: #354a47; margin-bottom: 2px; }
+.lab-item span { font-size: 12px; color: var(--muted-2); }
+@media (max-width: 900px) {
+	.dashboard-grid { grid-template-columns: 1fr; }
+	.semester-hero { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 620px) {
+	.subject-grid, .lab-list { grid-template-columns: 1fr; }
+}

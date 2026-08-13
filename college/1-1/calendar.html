@@ -1,45 +1,209 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Semester 1.1 Calendar · Panku's Desk</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="stylesheet" href="../../styles/styles_new.css" />
-	<script src="../../scripts/navbar_new.js" defer></script>
-</head>
+		<!--
+		Site root:
+		Local Live Server  -> /
+		GitHub Pages       -> /Pankusdesk/
+	-->
+		<base id="site-base" href="/" />
 
-<body data-root="../../">
+		<script>
+			const base = document.getElementById('site-base');
 
-	<div id="navbar-new"></div>
+			if (window.location.hostname.endsWith('github.io')) {
+				base.href = '/Pankusdesk/';
+			}
+		</script>
 
-	<main class="page-shell">
+		<title>Semester 1.1 Calendar · Panku's Desk</title>
 
-		<div class="breadcrumbs">
-			<a href="../../index.html">Panku's Desk</a>
-			<span> › </span>
-			<a href="index.html">Semester 1.1</a>
-			<span> › </span>
-			<span>Calendar</span>
-		</div>
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/calendar.css" />
 
-		<div class="eyebrow">Semester 1.1</div>
-		<h1 style="margin:0; color:#203a38;">Calendar</h1>
-		<p class="subtitle">
-			Timetable + holidays + daily class log.
-		</p>
+		<script src="scripts/new/navbar.js" defer></script>
+		<script src="scripts/new/calendar.js" defer></script>
+	</head>
 
-		<section class="section">
-			<div class="panel">
-				<h2>Calendar prototype</h2>
-				<p style="margin:0; color:#687780;">
-					This page is intentionally a placeholder in the first build.
-					Next we will wire it to timetable, holiday and class-log data.
-				</p>
+	<body>
+		<div id="navbar-new"></div>
+
+		<main class="page-shell">
+			<div class="breadcrumbs">
+				<a href="index.html">Panku's Desk</a>
+				<span>›</span>
+
+				<a href="college/1-1/index.html"> Semester 1.1 </a>
+
+				<span>›</span>
+				<span>Calendar</span>
 			</div>
-		</section>
 
-	</main>
+			<section class="calendar-page-header">
+				<div>
+					<div class="eyebrow">Semester 1.1</div>
 
-</body>
+					<h1>Calendar</h1>
+
+					<p class="subtitle">Timetable · holidays · daily class log</p>
+				</div>
+
+				<a class="secondary-button" href="college/1-1/index.html">
+					Semester dashboard →
+				</a>
+			</section>
+
+			<section class="calendar-layout">
+				<div class="calendar-main">
+					<div class="calendar-toolbar">
+						<button
+							class="calendar-nav-button"
+							id="calendar-prev"
+							type="button"
+							aria-label="Previous month"
+						>
+							←
+						</button>
+
+						<div>
+							<div class="calendar-month-title" id="calendar-month-title">
+								August 2026
+							</div>
+
+							<div class="calendar-month-subtitle" id="calendar-month-subtitle">
+								Semester 1.1
+							</div>
+						</div>
+
+						<button
+							class="calendar-nav-button"
+							id="calendar-next"
+							type="button"
+							aria-label="Next month"
+						>
+							→
+						</button>
+					</div>
+
+					<div class="calendar-legend">
+						<span>
+							<i class="legend-dot today-dot"></i>
+							Today
+						</span>
+
+						<span>
+							<i class="legend-dot notes-dot"></i>
+							Notes added
+						</span>
+
+						<span>
+							<i class="legend-dot holiday-dot"></i>
+							Holiday
+						</span>
+
+						<span>
+							<i class="legend-dot scheduled-dot"></i>
+							Scheduled classes
+						</span>
+					</div>
+
+					<div class="calendar-weekdays" aria-hidden="true">
+						<div>Mon</div>
+						<div>Tue</div>
+						<div>Wed</div>
+						<div>Thu</div>
+						<div>Fri</div>
+						<div>Sat</div>
+						<div>Sun</div>
+					</div>
+
+					<div
+						id="calendar-grid"
+						class="calendar-grid"
+						aria-label="Semester calendar"
+					></div>
+				</div>
+
+				<aside class="calendar-sidebar">
+					<section class="panel day-detail-panel">
+						<div class="day-detail-kicker">Selected day</div>
+
+						<h2 id="day-detail-title">Choose a date</h2>
+
+						<div id="day-detail-status" class="day-detail-status"></div>
+
+						<div id="day-detail-content">
+							<p class="calendar-empty">
+								Click a day to see its timetable and brief class notes.
+							</p>
+						</div>
+					</section>
+
+					<section class="panel calendar-timetable-panel">
+						<div class="day-detail-kicker">Weekly timetable</div>
+
+						<h2>Semester 1.1</h2>
+
+						<p class="calendar-panel-copy">
+							The calendar uses the official class timetable effective 05 August
+							2026.
+						</p>
+
+						<button
+							id="show-weekly-timetable"
+							class="secondary-button calendar-full-button"
+							type="button"
+						>
+							View weekly timetable
+						</button>
+					</section>
+				</aside>
+			</section>
+
+			<section class="section">
+				<div class="calendar-source-note">
+					<strong>Calendar scope:</strong>
+					Classes are generated from the supplied Semester I timetable. Holidays
+					are generated from the supplied VNR 2026 holiday notice, including the
+					2nd and 4th Saturday rule. Exam dates and other academic milestones
+					can be added when VNR issues them.
+				</div>
+			</section>
+		</main>
+
+		<div class="calendar-modal-backdrop" id="timetable-modal" hidden>
+			<div
+				class="calendar-modal"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="timetable-modal-title"
+			>
+				<div class="calendar-modal-header">
+					<div>
+						<div class="day-detail-kicker">Official weekly schedule</div>
+
+						<h2 id="timetable-modal-title">Semester 1.1 Timetable</h2>
+					</div>
+
+					<button
+						id="close-timetable-modal"
+						class="calendar-modal-close"
+						type="button"
+						aria-label="Close"
+					>
+						×
+					</button>
+				</div>
+
+				<div id="weekly-timetable-table"></div>
+			</div>
+		</div>
+	</body>
 </html>

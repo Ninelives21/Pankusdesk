@@ -1,0 +1,35 @@
+/* Shared page geometry */
+.page-shell {
+	max-width: var(--content-width);
+	margin: 0 auto;
+	padding: 52px 28px 80px;
+}
+.section { margin-top: 54px; }
+.section-heading-row {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 18px;
+}
+.section-title {
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	font-weight: 800;
+	font-size: 13px;
+	color: #52616b;
+	margin-bottom: 18px;
+}
+.section-heading-row .section-title { margin-bottom: 0; }
+.section-note { color: var(--muted-2); font-size: 13px; }
+.breadcrumbs {
+	margin-bottom: 22px;
+	font-size: 13px;
+	color: #718087;
+}
+.breadcrumbs a { text-decoration: none; color: #55736e; }
+.breadcrumbs a:hover { text-decoration: underline; }
+@media (max-width: 620px) {
+	.page-shell { padding: 38px 18px 64px; }
+	.section-heading-row { align-items: flex-start; flex-direction: column; }
+}

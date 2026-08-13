@@ -1,129 +1,188 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Panku's Desk</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="stylesheet" href="styles/styles_new.css" />
-	<script src="scripts/navbar_new.js" defer></script>
-</head>
+		<!--
+		Site root:
+		Local Live Server  -> /
+		GitHub Pages       -> /Pankusdesk/
+	-->
+		<base id="site-base" href="/" />
 
-<body data-root="">
+		<script>
+			const base = document.getElementById('site-base');
 
-	<div id="navbar-new"></div>
+			if (window.location.hostname.endsWith('github.io')) {
+				base.href = '/Pankusdesk/';
+			}
+		</script>
 
-	<main class="page-shell">
+		<title>Panku's Desk</title>
 
-		<section class="hero">
-			<div class="eyebrow">College</div>
-			<h1>Panku's Desk</h1>
-			<p class="subtitle">
-				B.Tech Information Technology · VNR VJIET · Regulation R25
-			</p>
-		</section>
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/home.css" />
 
-		<section class="section">
-			<div class="section-title">Current Semester</div>
+		<script src="scripts/new/navbar.js" defer></script>
+	</head>
 
-			<div class="current-semester-card">
+	<body>
+		<div id="navbar-new"></div>
+
+		<main class="page-shell">
+			<section class="hero">
+				<div class="eyebrow">College</div>
+
+				<h1>Panku's Desk</h1>
+
+				<p class="subtitle">
+					B.Tech Information Technology · VNR VJIET · Regulation R25
+				</p>
+			</section>
+
+			<section class="section">
+				<div class="section-title">Current Semester</div>
+
+				<div class="current-semester-card">
+					<div>
+						<div class="sem-label">Year 1 · Semester 1</div>
+
+						<h2>Semester 1.1</h2>
+
+						<div class="subject-list">
+							<span>Matrices &amp; Calculus</span>
+							<span>Chemistry for Engineers</span>
+							<span>Basic Electrical Engineering</span>
+							<span>Programming for Problem Solving</span>
+							<span>Engineering Drawing</span>
+							<span>Labs &amp; Workshops</span>
+						</div>
+					</div>
+
+					<div class="card-action">
+						<a class="primary-button" href="college/1-1/index.html">
+							Open Semester →
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-heading-row">
+					<div class="section-title">Recently Studied</div>
+
+					<div class="section-note">
+						A quick view of what was covered most recently.
+					</div>
+				</div>
+
+				<div class="recent-grid">
+					<article class="recent-card">
+						<div class="recent-subject">Basic Electrical Engineering</div>
+
+						<h3>Star &amp; Delta Connections</h3>
+
+						<p>Three-phase relationships and lab context.</p>
+
+						<div class="date">12 August</div>
+					</article>
+
+					<article class="recent-card">
+						<div class="recent-subject">Programming for Problem Solving</div>
+
+						<h3>Assembly Language &amp; Top-down Approach</h3>
+
+						<p>
+							Programming levels, procedural design and problem decomposition.
+						</p>
+
+						<div class="date">12 August</div>
+					</article>
+
+					<article class="recent-card">
+						<div class="recent-subject">Matrices &amp; Calculus</div>
+
+						<h3>Matrices, Arrays &amp; Expressions</h3>
+
+						<p>Foundational definitions from the first classes.</p>
+
+						<div class="date">12 August</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-title">Four-Year Journey</div>
+
+				<div class="years-grid">
+					<div class="year-column">
+						<h3>Year 1</h3>
+
+						<a class="semester-card active" href="college/1-1/index.html">
+							<span>1.1</span>
+							<small>Current</small>
+						</a>
+
+						<div class="semester-card disabled">
+							<span>1.2</span>
+							<small>Upcoming</small>
+						</div>
+					</div>
+
+					<div class="year-column">
+						<h3>Year 2</h3>
+
+						<div class="semester-card disabled">
+							<span>2.1</span>
+						</div>
+
+						<div class="semester-card disabled">
+							<span>2.2</span>
+						</div>
+					</div>
+
+					<div class="year-column">
+						<h3>Year 3</h3>
+
+						<div class="semester-card disabled">
+							<span>3.1</span>
+						</div>
+
+						<div class="semester-card disabled">
+							<span>3.2</span>
+						</div>
+					</div>
+
+					<div class="year-column">
+						<h3>Year 4</h3>
+
+						<div class="semester-card disabled">
+							<span>4.1</span>
+						</div>
+
+						<div class="semester-card disabled">
+							<span>4.2</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="old-site">
 				<div>
-					<div class="sem-label">Year 1 · Semester 1</div>
-					<h2>Semester 1.1</h2>
+					<div class="old-site-label">Earlier study material</div>
 
-					<div class="subject-list">
-						<span>Matrices &amp; Calculus</span>
-						<span>Chemistry for Engineers</span>
-						<span>Basic Electrical Engineering</span>
-						<span>Programming for Problem Solving</span>
-						<span>Engineering Drawing</span>
-						<span>Labs &amp; Workshops</span>
-					</div>
+					<p>JEE · EAPCET · BITSAT · Intermediate</p>
 				</div>
 
-				<div class="card-action">
-					<a class="primary-button" href="college/1-1/index.html">
-						Open Semester →
-					</a>
-				</div>
-			</div>
-		</section>
-
-		<section class="section">
-			<div class="section-heading-row">
-				<div class="section-title">Recently Studied</div>
-				<div class="section-note">A quick view of what was covered most recently.</div>
-			</div>
-
-			<div class="recent-grid">
-				<article class="recent-card">
-					<div class="recent-subject">Basic Electrical Engineering</div>
-					<h3>Star &amp; Delta Connections</h3>
-					<p>Three-phase relationships and lab context.</p>
-					<div class="date">12 August</div>
-				</article>
-
-				<article class="recent-card">
-					<div class="recent-subject">Programming for Problem Solving</div>
-					<h3>Assembly Language &amp; Top-down Approach</h3>
-					<p>Programming levels, procedural design and problem decomposition.</p>
-					<div class="date">12 August</div>
-				</article>
-
-				<article class="recent-card">
-					<div class="recent-subject">Matrices &amp; Calculus</div>
-					<h3>Matrices, Arrays &amp; Expressions</h3>
-					<p>Foundational definitions from the first classes.</p>
-					<div class="date">12 August</div>
-				</article>
-			</div>
-		</section>
-
-		<section class="section">
-			<div class="section-title">Four-Year Journey</div>
-
-			<div class="years-grid">
-				<div class="year-column">
-					<h3>Year 1</h3>
-					<a class="semester-card active" href="college/1-1/index.html">
-						<span>1.1</span>
-						<small>Current</small>
-					</a>
-					<div class="semester-card disabled">
-						<span>1.2</span>
-						<small>Upcoming</small>
-					</div>
-				</div>
-
-				<div class="year-column">
-					<h3>Year 2</h3>
-					<div class="semester-card disabled"><span>2.1</span></div>
-					<div class="semester-card disabled"><span>2.2</span></div>
-				</div>
-
-				<div class="year-column">
-					<h3>Year 3</h3>
-					<div class="semester-card disabled"><span>3.1</span></div>
-					<div class="semester-card disabled"><span>3.2</span></div>
-				</div>
-
-				<div class="year-column">
-					<h3>Year 4</h3>
-					<div class="semester-card disabled"><span>4.1</span></div>
-					<div class="semester-card disabled"><span>4.2</span></div>
-				</div>
-			</div>
-		</section>
-
-		<section class="old-site">
-			<div>
-				<div class="old-site-label">Earlier study material</div>
-				<p>JEE · EAPCET · BITSAT · Intermediate</p>
-			</div>
-			<a class="secondary-button" href="index_old.html">Open Earlier PankusDesk →</a>
-		</section>
-
-	</main>
-
-</body>
+				<a class="secondary-button" href="index_old.html">
+					Open Earlier PankusDesk →
+				</a>
+			</section>
+		</main>
+	</body>
 </html>

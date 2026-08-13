@@ -1,0 +1,31 @@
+/* Reusable components */
+.primary-button,
+.secondary-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	font-weight: 800;
+	border-radius: 10px;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.primary-button { background: var(--primary); color: #fff; padding: 13px 19px; }
+.primary-button:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 8px 18px rgba(36, 79, 75, 0.18);
+}
+.secondary-button {
+	padding: 11px 16px;
+	border: 1px solid #b9c8c5;
+	color: var(--primary);
+	background: #fff;
+}
+.secondary-button:hover { background: var(--surface-soft); }
+.panel {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	padding: 22px;
+	box-shadow: 0 3px 12px rgba(0,0,0,0.025);
+}
+.panel h2 { margin: 0 0 14px; font-size: 20px; color: #293b39; }
