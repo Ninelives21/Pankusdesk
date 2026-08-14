@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--
+		Site root:
+		Local Live Server  -> /
+		GitHub Pages       -> /Pankusdesk/
+	-->
+		<base id="site-base" href="/" />
+
+		<script>
+			const base = document.getElementById('site-base');
+
+			if (window.location.hostname.endsWith('github.io')) {
+				base.href = '/Pankusdesk/';
+			}
+		</script>
+
+		<title>Progress · Semester 1.1 · Panku's Desk</title>
+
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/progress.css" />
+
+		<script src="scripts/new/navbar.js" defer></script>
+	</head>
+
+	<body>
+		<div id="navbar-new"></div>
+
+		<main class="page-shell">
+			<div class="breadcrumbs">
+				<a href="index.html">Panku's Desk</a>
+				<span>›</span>
+
+				<a href="college/1-1/index.html"> Semester 1.1 </a>
+
+				<span>›</span>
+				<span>Progress</span>
+			</div>
+
+			<section class="progress-header">
+				<div>
+					<div class="eyebrow">Semester 1.1</div>
+
+					<h1>Progress</h1>
+
+					<p class="subtitle">
+						What has been taught, documented and completed across the semester.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="progress-summary-grid">
+					<article class="progress-summary-card">
+						<div class="progress-summary-label">Theory subjects</div>
+
+						<div class="progress-summary-value">5</div>
+
+						<div class="progress-summary-note">
+							Tracked against the official R25 syllabus
+						</div>
+					</article>
+
+					<article class="progress-summary-card">
+						<div class="progress-summary-label">Labs &amp; workshops</div>
+
+						<div class="progress-summary-value">4</div>
+
+						<div class="progress-summary-note">
+							Practical work tracked separately
+						</div>
+					</article>
+
+					<article class="progress-summary-card">
+						<div class="progress-summary-label">Semester credits</div>
+
+						<div class="progress-summary-value">20</div>
+
+						<div class="progress-summary-note">Official Semester 1.1 total</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-heading-row">
+					<div>
+						<div class="section-title">Subject Progress</div>
+
+						<p class="section-note">
+							Completion will be calculated from syllabus coverage and the class
+							log as the semester grows.
+						</p>
+					</div>
+				</div>
+
+				<div class="progress-subject-list">
+					<article class="progress-subject-card">
+						<div class="progress-subject-main">
+							<div class="subject-code">25BS1MT101</div>
+
+							<h2>Matrices &amp; Calculus</h2>
+						</div>
+
+						<div class="progress-status">
+							<span class="progress-status-pill"> Tracking started </span>
+						</div>
+
+						<a
+							class="progress-subject-link"
+							href="college/1-1/matrices-calculus/index.html"
+						>
+							Open subject →
+						</a>
+					</article>
+
+					<article class="progress-subject-card">
+						<div class="progress-subject-main">
+							<div class="subject-code">25BS1CH101</div>
+
+							<h2>Chemistry for Engineers</h2>
+						</div>
+
+						<div class="progress-status">
+							<span class="progress-status-pill"> Tracking started </span>
+						</div>
+
+						<a
+							class="progress-subject-link"
+							href="college/1-1/chemistry-engineers/index.html"
+						>
+							Open subject →
+						</a>
+					</article>
+
+					<article class="progress-subject-card">
+						<div class="progress-subject-main">
+							<div class="subject-code">25ES1EE101</div>
+
+							<h2>Basic Electrical Engineering</h2>
+						</div>
+
+						<div class="progress-status">
+							<span class="progress-status-pill"> Tracking started </span>
+						</div>
+
+						<a
+							class="progress-subject-link"
+							href="college/1-1/basic-electrical-engineering/index.html"
+						>
+							Open subject →
+						</a>
+					</article>
+
+					<article class="progress-subject-card">
+						<div class="progress-subject-main">
+							<div class="subject-code">25ES1CS101</div>
+
+							<h2>Programming for Problem Solving</h2>
+						</div>
+
+						<div class="progress-status">
+							<span class="progress-status-pill"> Tracking started </span>
+						</div>
+
+						<a
+							class="progress-subject-link"
+							href="college/1-1/programming-problem-solving/index.html"
+						>
+							Open subject →
+						</a>
+					</article>
+
+					<article class="progress-subject-card">
+						<div class="progress-subject-main">
+							<div class="subject-code">25ES3ME101</div>
+
+							<h2>Engineering Drawing</h2>
+						</div>
+
+						<div class="progress-status">
+							<span class="progress-status-pill"> Tracking started </span>
+						</div>
+
+						<a
+							class="progress-subject-link"
+							href="college/1-1/engineering-drawing/index.html"
+						>
+							Open subject →
+						</a>
+					</article>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="progress-next-stage">
+					<div>
+						<div class="progress-next-label">Next stage</div>
+
+						<h2>Automatic syllabus tracking</h2>
+
+						<p>
+							As subject notebooks are built, this page can compare the official
+							syllabus with actual classroom coverage and show completed,
+							current and pending concepts.
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<base id="site-base" href="/" />
+	<script>
+		const base = document.getElementById('site-base');
+		if (window.location.hostname.endsWith('github.io')) {
+			base.href = '/Pankusdesk/';
+		}
+	</script>
+
+	<title>Calendar · Panku's Desk</title>
+
+	<link rel="stylesheet" href="styles/new/variables.css" />
+	<link rel="stylesheet" href="styles/new/base.css" />
+	<link rel="stylesheet" href="styles/new/layout.css" />
+	<link rel="stylesheet" href="styles/new/navbar.css" />
+	<link rel="stylesheet" href="styles/new/components.css" />
+	<link rel="stylesheet" href="styles/new/pages/calendar.css" />
+
+	<script src="scripts/new/navbar.js" defer></script>
+	<script type="module" src="scripts/new/calendar.js"></script>
+</head>
+<body>
+	<div id="navbar-new"></div>
+
+	<main class="page-shell">
+		<div class="breadcrumbs">
+			<a href="index.html">Panku's Desk</a>
+			<span>›</span>
+			<a id="calendar-semester-breadcrumb" href="index.html#four-year-journey">Semester</a>
+			<span>›</span>
+			<span>Calendar</span>
+		</div>
+
+		<section class="calendar-page-header">
+			<div>
+				<div class="eyebrow" id="calendar-semester-eyebrow">Semester</div>
+				<h1>Calendar</h1>
+				<p class="subtitle">Academic calendar · timetable · holidays · daily class log</p>
+			</div>
+			<a class="secondary-button" id="calendar-dashboard-link" href="index.html#four-year-journey">
+				Semester dashboard →
+			</a>
+		</section>
+
+		<section class="calendar-layout">
+			<div class="calendar-main">
+				<div class="calendar-toolbar">
+					<button class="calendar-nav-button" id="calendar-prev" type="button" aria-label="Previous month">←</button>
+					<div>
+						<div class="calendar-month-title" id="calendar-month-title">Calendar</div>
+						<div class="calendar-month-subtitle" id="calendar-month-subtitle">Semester</div>
+					</div>
+					<button class="calendar-nav-button" id="calendar-next" type="button" aria-label="Next month">→</button>
+				</div>
+
+				<div class="calendar-legend">
+					<span><i class="legend-dot today-dot"></i>Today</span>
+					<span><i class="legend-dot notes-dot"></i>Notes added</span>
+					<span><i class="legend-dot holiday-dot"></i>Holiday</span>
+					<span><i class="legend-dot scheduled-dot"></i>Scheduled classes</span>
+				</div>
+
+				<div class="calendar-weekdays" aria-hidden="true">
+					<div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+				</div>
+
+				<div id="calendar-grid" class="calendar-grid" aria-label="Semester calendar"></div>
+			</div>
+
+			<aside class="calendar-sidebar">
+				<section class="panel day-detail-panel">
+					<div class="day-detail-kicker">Selected day</div>
+					<h2 id="day-detail-title">Choose a date</h2>
+					<div id="day-detail-status" class="day-detail-status"></div>
+					<div id="day-detail-content">
+						<p class="calendar-empty">Click a day to see its academic events, timetable and class notes.</p>
+					</div>
+				</section>
+
+				<section class="panel calendar-timetable-panel" id="weekly-timetable-panel">
+					<div class="day-detail-kicker">Weekly timetable</div>
+					<h2 id="weekly-timetable-semester">Semester</h2>
+					<p class="calendar-panel-copy" id="weekly-timetable-copy"></p>
+					<button id="show-weekly-timetable" class="secondary-button calendar-full-button" type="button">
+						View weekly timetable
+					</button>
+				</section>
+			</aside>
+		</section>
+
+		<section class="section">
+			<div class="calendar-source-note" id="calendar-source-note"></div>
+		</section>
+	</main>
+
+	<div class="calendar-modal-backdrop" id="timetable-modal" hidden>
+		<div class="calendar-modal" role="dialog" aria-modal="true" aria-labelledby="timetable-modal-title">
+			<div class="calendar-modal-header">
+				<div>
+					<div class="day-detail-kicker">Official weekly schedule</div>
+					<h2 id="timetable-modal-title">Timetable</h2>
+				</div>
+				<button id="close-timetable-modal" class="calendar-modal-close" type="button" aria-label="Close">×</button>
+			</div>
+			<div id="weekly-timetable-table"></div>
+		</div>
+	</div>
+</body>
+</html>

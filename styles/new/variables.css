@@ -1,18 +1,182 @@
-/* PankusDesk 2.0 design tokens */
+/* ====================================================================== */
+/*                     PANKUSDESK 2.0 DESIGN TOKENS                       */
+/* ====================================================================== */
+/*
+ * Single source of truth for the visual system.
+ *
+ * Future palette changes belong here.
+ * Shared typography, spacing, radii, shadows, layout widths and motion
+ * also belong here rather than being duplicated throughout page CSS.
+ */
+
 :root {
-	--page-bg: #f5f7f8;
+	/* ------------------------------------------------------------------ */
+	/* Colour: surfaces                                                     */
+	/* ------------------------------------------------------------------ */
+
+	--page-bg: #f5f7fa;
 	--surface: #ffffff;
-	--surface-soft: #eef8f5;
-	--primary: #244f4b;
-	--primary-2: #519e8a;
-	--primary-soft: #dcefea;
-	--text: #1f2933;
-	--muted: #687780;
-	--muted-2: #89969d;
-	--line: #dfe5e7;
-	--shadow: 0 8px 24px rgba(23, 46, 43, 0.07);
-	--radius-lg: 20px;
-	--radius-md: 14px;
+	--surface-soft: #eef4fb;
+	--surface-hover: #e6eff8;
+	--surface-subtle: #f8fafc;
+	--surface-muted: #f3f6f9;
+
+	/* ------------------------------------------------------------------ */
+	/* Colour: primary palette                                              */
+	/* ------------------------------------------------------------------ */
+
+	--primary: #234a73;
+	--primary-2: #4f7fae;
+	--primary-soft: #dce9f6;
+	--primary-dark: #193854;
+	--primary-muted: #6786a3;
+
+	/* ------------------------------------------------------------------ */
+	/* Colour: text                                                         */
+	/* ------------------------------------------------------------------ */
+
+	--text: #24313d;
+	--text-strong: #203040;
+	--text-secondary: #526474;
+	--muted: #687786;
+	--muted-2: #8795a1;
+	--text-on-primary: #ffffff;
+
+	/* ------------------------------------------------------------------ */
+	/* Colour: borders                                                      */
+	/* ------------------------------------------------------------------ */
+
+	--line: #dce3ea;
+	--line-soft: #edf1f4;
+	--line-strong: #b8c7d5;
+	--line-primary: #9bb5cc;
+
+	/* ------------------------------------------------------------------ */
+	/* Colour: semantic states                                              */
+	/* ------------------------------------------------------------------ */
+
+	--notes: #4f7fae;
+	--notes-text: #3e6886;
+	--notes-soft: #e3eef8;
+	--notes-border: #c6d9e9;
+
+	--holiday: #b84f4a;
+	--holiday-text: #93413d;
+	--holiday-soft: #fff3f2;
+	--holiday-strong-soft: #fde2df;
+	--holiday-border: #efd1ce;
+
+	--scheduled: #7894aa;
+	--scheduled-text: #5f7890;
+	--scheduled-soft: #edf3f7;
+
+	--quiet-soft: #f0f2f3;
+	--quiet-text: #6f7b80;
+
+	--error: #8f443e;
+	--error-soft: #fff3f1;
+
+	--today: var(--primary);
+
+	/* ------------------------------------------------------------------ */
+	/* Colour: overlays                                                     */
+	/* ------------------------------------------------------------------ */
+
+	--overlay: rgba(17, 30, 43, 0.48);
+
+	/* ------------------------------------------------------------------ */
+	/* Typography                                                           */
+	/* ------------------------------------------------------------------ */
+
+	--font-sans: Helvetica, Arial, sans-serif;
+
+	--font-size-xs: 10px;
+	--font-size-sm: 11px;
+	--font-size-body-sm: 12px;
+	--font-size-body: 13px;
+	--font-size-body-lg: 14px;
+	--font-size-nav: 15px;
+	--font-size-subtitle: 17px;
+	--font-size-card-title: 19px;
+	--font-size-panel-title: 20px;
+	--font-size-month-title: 22px;
+	--font-size-brand: 24px;
+	--font-size-semester-title: 30px;
+	--font-size-page-title: 40px;
+
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-heavy: 800;
+
+	--tracking-label: 1.2px;
+	--tracking-small-label: 0.8px;
+
+	/* ------------------------------------------------------------------ */
+	/* Spacing scale                                                        */
+	/* ------------------------------------------------------------------ */
+
+	--space-1: 4px;
+	--space-2: 6px;
+	--space-3: 8px;
+	--space-4: 10px;
+	--space-5: 12px;
+	--space-6: 14px;
+	--space-7: 16px;
+	--space-8: 18px;
+	--space-9: 20px;
+	--space-10: 22px;
+	--space-12: 24px;
+	--space-14: 28px;
+	--space-16: 32px;
+	--space-20: 40px;
+	--space-24: 52px;
+	--space-28: 54px;
+	--space-32: 72px;
+
+	/* ------------------------------------------------------------------ */
+	/* Shape                                                               */
+	/* ------------------------------------------------------------------ */
+
+	--radius-xs: 8px;
 	--radius-sm: 10px;
+	--radius-md: 14px;
+	--radius-lg: 20px;
+	--radius-pill: 999px;
+
+	/* ------------------------------------------------------------------ */
+	/* Shadows                                                             */
+	/* ------------------------------------------------------------------ */
+
+	--shadow: 0 8px 24px rgba(35, 74, 115, 0.07);
+	--shadow-small: 0 3px 12px rgba(35, 74, 115, 0.04);
+	--shadow-nav: 0 2px 10px rgba(31, 48, 65, 0.05);
+	--shadow-hover: 0 10px 24px rgba(35, 74, 115, 0.10);
+	--shadow-menu: 0 14px 36px rgba(31, 48, 65, 0.14);
+	--shadow-modal: 0 24px 70px rgba(31, 48, 65, 0.20);
+	--shadow-inset-selected: inset 0 0 0 2px var(--primary-2);
+
+	/* ------------------------------------------------------------------ */
+	/* Motion                                                              */
+	/* ------------------------------------------------------------------ */
+
+	--transition-fast: 0.12s ease;
+	--transition-standard: 0.15s ease;
+
+	/* ------------------------------------------------------------------ */
+	/* Layout                                                              */
+	/* ------------------------------------------------------------------ */
+
 	--content-width: 1120px;
+	--navbar-height: 72px;
+	--navbar-page-padding: 34px;
+	--navbar-page-padding-mobile: 20px;
+	--sticky-panel-top: 94px;
+
+	/* ------------------------------------------------------------------ */
+	/* Breakpoints (documentation only — CSS custom properties cannot be   */
+	/* used directly in @media conditions in standard CSS).                */
+	/* ------------------------------------------------------------------ */
+
+	--breakpoint-tablet: 900px;
+	--breakpoint-mobile: 620px;
 }

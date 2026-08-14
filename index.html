@@ -29,6 +29,7 @@
 		<link rel="stylesheet" href="styles/new/pages/home.css" />
 
 		<script src="scripts/new/navbar.js" defer></script>
+		<script src="scripts/new/home.js" defer></script>
 	</head>
 
 	<body>
@@ -46,28 +47,39 @@
 			</section>
 
 			<section class="section">
-				<div class="section-title">Current Semester</div>
+				<div class="section-title">Selected Semester</div>
 
 				<div class="current-semester-card">
 					<div>
-						<div class="sem-label">Year 1 · Semester 1</div>
-
-						<h2>Semester 1.1</h2>
-
-						<div class="subject-list">
-							<span>Matrices &amp; Calculus</span>
-							<span>Chemistry for Engineers</span>
-							<span>Basic Electrical Engineering</span>
-							<span>Programming for Problem Solving</span>
-							<span>Engineering Drawing</span>
-							<span>Labs &amp; Workshops</span>
+						<div class="sem-label" id="selected-semester-eyebrow">
+							Loading semester…
 						</div>
+
+						<h2 id="selected-semester-title">Semester</h2>
+
+						<div
+							class="subject-list"
+							id="selected-semester-subjects"
+						></div>
 					</div>
 
 					<div class="card-action">
-						<a class="primary-button" href="college/1-1/index.html">
+						<a
+							class="primary-button"
+							id="selected-semester-open"
+							href="index.html"
+							hidden
+						>
 							Open Semester →
 						</a>
+
+						<span
+							class="semester-page-unavailable"
+							id="selected-semester-unavailable"
+							hidden
+						>
+							Semester page not built yet
+						</span>
 					</div>
 				</div>
 			</section>
@@ -81,7 +93,7 @@
 					</div>
 				</div>
 
-				<div class="recent-grid">
+				<div class="recent-grid" id="recent-study-content">
 					<article class="recent-card">
 						<div class="recent-subject">Basic Electrical Engineering</div>
 
@@ -114,61 +126,17 @@
 						<div class="date">12 August</div>
 					</article>
 				</div>
+
+				<div class="recent-empty" id="recent-study-empty" hidden>
+					No study activity has been recorded for this semester yet.
+				</div>
 			</section>
 
-			<section class="section">
+			<section class="section" id="four-year-journey">
 				<div class="section-title">Four-Year Journey</div>
 
-				<div class="years-grid">
-					<div class="year-column">
-						<h3>Year 1</h3>
-
-						<a class="semester-card active" href="college/1-1/index.html">
-							<span>1.1</span>
-							<small>Current</small>
-						</a>
-
-						<div class="semester-card disabled">
-							<span>1.2</span>
-							<small>Upcoming</small>
-						</div>
-					</div>
-
-					<div class="year-column">
-						<h3>Year 2</h3>
-
-						<div class="semester-card disabled">
-							<span>2.1</span>
-						</div>
-
-						<div class="semester-card disabled">
-							<span>2.2</span>
-						</div>
-					</div>
-
-					<div class="year-column">
-						<h3>Year 3</h3>
-
-						<div class="semester-card disabled">
-							<span>3.1</span>
-						</div>
-
-						<div class="semester-card disabled">
-							<span>3.2</span>
-						</div>
-					</div>
-
-					<div class="year-column">
-						<h3>Year 4</h3>
-
-						<div class="semester-card disabled">
-							<span>4.1</span>
-						</div>
-
-						<div class="semester-card disabled">
-							<span>4.2</span>
-						</div>
-					</div>
+				<div class="years-grid" id="semester-journey">
+					<!-- Built dynamically from college/semesters.json -->
 				</div>
 			</section>
 

@@ -1,25 +1,43 @@
-/* Global reset + typography defaults for PankusDesk 2.0 */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* ====================================================================== */
+/*                       PANKUSDESK 2.0 BASE                              */
+/* ====================================================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	margin: 0;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: var(--font-sans);
 	background: var(--page-bg);
 	color: var(--text);
 	line-height: 1.5;
 }
-a { color: inherit; }
-button, input { font: inherit; }
-.eyebrow {
-	text-transform: uppercase;
-	letter-spacing: 1.2px;
-	font-weight: 800;
-	font-size: 13px;
-	color: #5d7d78;
-	margin-bottom: 8px;
+
+a {
+	color: inherit;
 }
+
+button,
+input {
+	font: inherit;
+}
+
+.eyebrow {
+	margin-bottom: var(--space-3);
+	font-size: var(--font-size-body);
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: var(--tracking-label);
+	text-transform: uppercase;
+	color: var(--primary-muted);
+}
+
 .subtitle {
-	margin: 12px 0 0;
+	margin: var(--space-5) 0 0;
+	font-size: var(--font-size-subtitle);
 	color: var(--muted);
-	font-size: 17px;
 }

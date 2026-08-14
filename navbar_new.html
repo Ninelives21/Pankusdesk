@@ -1,5 +1,9 @@
 <header class="navbar-new">
-	<a class="navbar-brand" href="index.html" aria-label="Panku's Desk home">
+	<a
+		class="navbar-brand"
+		href="index.html"
+		aria-label="Panku's Desk home"
+	>
 		Panku's Desk
 	</a>
 
@@ -15,46 +19,53 @@
 		<span></span>
 	</button>
 
-	<nav id="main-navigation" class="navbar-links" aria-label="Main navigation">
-		<a href="index.html" data-nav="home"> Home </a>
+	<nav
+		id="main-navigation"
+		class="navbar-links"
+		aria-label="Main navigation"
+	>
+		<a href="index.html" data-nav="home">Home</a>
 
-		<a href="college/1-1/index.html" data-nav="semester"> Semester 1.1 </a>
+		<a
+			id="current-semester-link"
+			href="index.html"
+			data-nav="semester"
+		>
+			Semester
+		</a>
 
 		<div class="nav-dropdown">
-			<button class="nav-dropdown-button" type="button" aria-expanded="false">
+			<button
+				class="nav-dropdown-button"
+				type="button"
+				aria-expanded="false"
+			>
 				Subjects
-				<span class="dropdown-arrow" aria-hidden="true"> ▾ </span>
+				<span class="dropdown-arrow" aria-hidden="true">▾</span>
 			</button>
 
-			<div class="nav-dropdown-menu">
-				<a href="college/1-1/matrices-calculus/index.html">
-					Matrices &amp; Calculus
-				</a>
-
-				<a href="college/1-1/chemistry-engineers/index.html">
-					Chemistry for Engineers
-				</a>
-
-				<a href="college/1-1/basic-electrical-engineering/index.html">
-					Basic Electrical Engineering
-				</a>
-
-				<a href="college/1-1/programming-problem-solving/index.html">
-					Programming for Problem Solving
-				</a>
-
-				<a href="college/1-1/engineering-drawing/index.html">
-					Engineering Drawing
-				</a>
-
-				<div class="dropdown-divider" aria-hidden="true"></div>
-
-				<a href="college/1-1/index.html#labs"> Labs &amp; Workshops </a>
+			<div
+				class="nav-dropdown-menu"
+				id="subject-dropdown-menu"
+			>
+				<!-- Populated dynamically from active semester metadata -->
 			</div>
 		</div>
 
-		<a href="college/1-1/calendar.html" data-nav="calendar"> Calendar </a>
+		<a
+			id="calendar-nav-link"
+			href="college/calendar.html"
+			data-nav="calendar"
+		>
+			Calendar
+		</a>
 
-		<a href="index_old.html" data-nav="archive"> Archive </a>
+		<a
+			id="progress-nav-link"
+			href="index.html"
+			data-nav="progress"
+		>
+			Progress
+		</a>
 	</nav>
 </header>

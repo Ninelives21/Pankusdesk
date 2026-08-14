@@ -1,31 +1,53 @@
-/* Reusable components */
+/* ====================================================================== */
+/*                         REUSABLE COMPONENTS                            */
+/* ====================================================================== */
+
 .primary-button,
 .secondary-button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
-	font-weight: 800;
-	border-radius: 10px;
-	transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+	font-weight: var(--font-weight-heavy);
+	border-radius: var(--radius-sm);
+	transition:
+		transform var(--transition-standard),
+		box-shadow var(--transition-standard),
+		background var(--transition-standard);
 }
-.primary-button { background: var(--primary); color: #fff; padding: 13px 19px; }
+
+.primary-button {
+	padding: 13px 19px;
+	background: var(--primary);
+	color: var(--text-on-primary);
+}
+
 .primary-button:hover {
 	transform: translateY(-1px);
-	box-shadow: 0 8px 18px rgba(36, 79, 75, 0.18);
+	box-shadow: var(--shadow-hover);
 }
+
 .secondary-button {
-	padding: 11px 16px;
-	border: 1px solid #b9c8c5;
+	padding: 11px var(--space-7);
+	border: 1px solid var(--line-strong);
+	background: var(--surface);
 	color: var(--primary);
-	background: #fff;
 }
-.secondary-button:hover { background: var(--surface-soft); }
+
+.secondary-button:hover {
+	background: var(--surface-soft);
+}
+
 .panel {
+	padding: var(--space-10);
 	background: var(--surface);
 	border: 1px solid var(--line);
 	border-radius: var(--radius-md);
-	padding: 22px;
-	box-shadow: 0 3px 12px rgba(0,0,0,0.025);
+	box-shadow: var(--shadow-small);
 }
-.panel h2 { margin: 0 0 14px; font-size: 20px; color: #293b39; }
+
+.panel h2 {
+	margin: 0 0 var(--space-6);
+	font-size: var(--font-size-panel-title);
+	color: var(--text-strong);
+}

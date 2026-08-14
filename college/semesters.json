@@ -1,0 +1,54 @@
+{
+  "regulation": "R25",
+  "semesters": [
+    {
+      "id": "1-1",
+      "label": "Semester 1.1",
+      "year": 1,
+      "semesterNumber": 1,
+      "data": "college/1-1/semester.json",
+      "routes": {
+        "dashboard": "college/1-1/index.html",
+        "calendar": "college/calendar.html?semester=1-1",
+        "progress": "college/1-1/progress.html"
+      }
+    },
+    {
+      "id": "1-2",
+      "label": "Semester 1.2",
+      "year": 1,
+      "semesterNumber": 2,
+      "data": "college/1-2/semester.json",
+      "routes": {
+        "dashboard": null,
+        "calendar": "college/calendar.html?semester=1-2",
+        "progress": null
+      }
+    },
+    {
+      "id": "2-1",
+      "label": "Semester 2.1",
+      "year": 2,
+      "semesterNumber": 3,
+      "data": "college/2-1/semester.json",
+      "routes": {
+        "dashboard": null,
+        "calendar": "college/calendar.html?semester=2-1",
+        "progress": null
+      }
+    },
+    {
+      "id": "2-2",
+      "label": "Semester 2.2",
+      "year": 2,
+      "semesterNumber": 4,
+      "data": "college/2-2/semester.json",
+      "routes": {
+        "dashboard": null,
+        "calendar": "college/calendar.html?semester=2-2",
+        "progress": null
+      }
+    }
+  ],
+  "academicCalendar": "college/academic-calendar-2026-27.json"
+}
