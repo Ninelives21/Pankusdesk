@@ -115,6 +115,7 @@ function renderQuestion(question) {
 function renderAnswer(answer) {
 	const pieces = [];
 	for (const paragraph of answer.paragraphs || []) pieces.push(`<p>${escapeHtml(paragraph)}</p>`);
+	if (answer.figures?.length) pieces.push(`<div class="answer-figures">${answer.figures.map(renderAnswerFigure).join('')}</div>`);
 	if (answer.diagram) pieces.push(`<div class="answer-diagram">${escapeHtml(answer.diagram)}</div>`);
 	if (answer.bullets?.length) pieces.push(`<ul>${answer.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`);
 	if (answer.table) pieces.push(renderTable(answer.table));
@@ -125,6 +126,24 @@ function renderAnswer(answer) {
 	if (answer.book_check) pieces.push(`<div class="book-check">${escapeHtml(answer.book_check)}</div>`);
 	if (answer.note) pieces.push(`<div class="answer-note">${escapeHtml(answer.note)}</div>`);
 	return pieces.join('') || '<p>No answer has been added yet.</p>';
+}
+
+function renderAnswerFigure(figure) {
+	if (!figure?.src || !figure?.alt) return '';
+	const width = Number(figure.width);
+	const height = Number(figure.height);
+	const dimensions = Number.isFinite(width) && Number.isFinite(height)
+		? ` width="${width}" height="${height}"`
+		: '';
+	const caption = figure.caption ? `<span>${escapeHtml(figure.caption)}</span>` : '';
+	const page = figure.page ? `<span class="answer-figure-page">Book p. ${escapeHtml(figure.page)}</span>` : '';
+
+	return `
+		<figure class="answer-figure">
+			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
+			${caption || page ? `<figcaption>${caption}${page}</figcaption>` : ''}
+		</figure>
+	`;
 }
 
 function renderTable(table) {

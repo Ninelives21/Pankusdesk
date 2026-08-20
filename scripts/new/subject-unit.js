@@ -264,17 +264,74 @@ function renderSections(sections) {
 }
 
 function renderSection(section) {
-	const paragraphs = (section.paragraphs ?? []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('');
-	const bullets = section.bullets?.length
-		? `<ul>${section.bullets.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>`
-		: '';
-
 	return `
 		<section class="note-section">
 			<div class="note-section-heading"><h3>${escapeHtml(section.heading)}</h3></div>
-			${paragraphs}${bullets}
+			${renderSectionContent(section)}
 			${renderSectionBookRefs(section.book_refs ?? [])}
 		</section>
+	`;
+}
+
+function renderSectionContent(section) {
+	const figures = section.figures ?? [];
+	const figuresAfter = (type, index) => figures
+		.filter(figure => figure.after?.type === type && Number(figure.after?.index) === index)
+		.map(renderTextbookFigure)
+		.join('');
+
+	let html = '';
+
+	(section.paragraphs ?? []).forEach((paragraph, index) => {
+		html += `<p>${formatText(paragraph)}</p>`;
+		html += figuresAfter('paragraph', index);
+	});
+
+	const bullets = section.bullets ?? [];
+	let bulletBuffer = [];
+	const flushBullets = () => {
+		if (!bulletBuffer.length) return;
+		html += `<ul>${bulletBuffer.join('')}</ul>`;
+		bulletBuffer = [];
+	};
+
+	bullets.forEach((item, index) => {
+		bulletBuffer.push(`<li>${formatText(item)}</li>`);
+		const anchoredFigures = figuresAfter('bullet', index);
+		if (anchoredFigures) {
+			flushBullets();
+			html += anchoredFigures;
+		}
+	});
+	flushBullets();
+
+	const explicitlyEnded = figures
+		.filter(figure => figure.after?.type === 'end')
+		.map(renderTextbookFigure)
+		.join('');
+	html += explicitlyEnded;
+
+	const anchored = new Set(figures.filter(figure => figure.after?.type).map(figure => figure.src));
+	html += figures.filter(figure => !anchored.has(figure.src)).map(renderTextbookFigure).join('');
+
+	return html;
+}
+
+function renderTextbookFigure(figure) {
+	if (!figure?.src || !figure?.alt) return '';
+	const width = Number(figure.width);
+	const height = Number(figure.height);
+	const dimensions = Number.isFinite(width) && Number.isFinite(height)
+		? ` width="${width}" height="${height}"`
+		: '';
+	const caption = figure.caption ? `<span>${escapeHtml(figure.caption)}</span>` : '';
+	const page = figure.page ? `<span class="textbook-figure-page">Book p. ${escapeHtml(figure.page)}</span>` : '';
+
+	return `
+		<figure class="textbook-figure">
+			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
+			${caption || page ? `<figcaption>${caption}${page}</figcaption>` : ''}
+		</figure>
 	`;
 }
 
