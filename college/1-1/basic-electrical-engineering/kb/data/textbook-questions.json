@@ -1,0 +1,1347 @@
+{
+  "schema_version": 3,
+  "subject_code": "25ES1EE101",
+  "source": {
+    "type": "prescribed-textbook",
+    "title": "Basics of Electrical Energy for Engineers",
+    "note": "Question wording comes from the supplied chapter-end review pages. Answers are PankusDesk study solutions consolidated only from the supplied source-backed material for the corresponding unit; they are not official textbook solutions."
+  },
+  "units": {
+    "1": {
+      "title": "Introduction to Electrical Energy and DC Circuits",
+      "summary": {
+        "official_question_count": 26,
+        "short_answer_count": 16,
+        "essay_count": 10,
+        "answered_from_current_unit_sources": 23,
+        "outside_current_r25_source_set": 3,
+        "essay_answers_expanded_for_six_marks": 9,
+        "essay_source_gaps": 1,
+        "answer_provenance": "PankusDesk-derived from supplied source-backed Unit I corpus; not official textbook solutions"
+      },
+      "scope_note": "The official Chapter 1 review contains 26 questions. Short Q15–Q16 and Essay Q10 concern transient material from textbook pp.63–69. Those pages were intentionally excluded from the supplied R25 Unit I capture, so these three questions are retained for completeness but no model-written answer is inserted.",
+      "groups": [
+        {
+          "id": "short-answer",
+          "title": "Short Answer (Two marks) Questions",
+          "questions": [
+            {
+              "id": "u1-sa-01",
+              "number": 1,
+              "book_page": 70,
+              "topic_id": "u1-electrical-energy",
+              "question": "List the advantages of electrical energy over other forms of energy.",
+              "answer": {
+                "bullets": [
+                  "It is convenient because it can be converted readily into light, heat, cooling and mechanical motion.",
+                  "It is easily controllable: electrically operated equipment can be started, stopped and regulated conveniently.",
+                  "It is economical and suitable for domestic, commercial and industrial loads.",
+                  "It is clean at the point of use because utilisation itself does not produce smoke or fumes.",
+                  "It can be transmitted from the generating location to distant load centres."
+                ]
+              },
+              "answer_basis": [
+                "u1-electrical-energy"
+              ]
+            },
+            {
+              "id": "u1-sa-02",
+              "number": 2,
+              "book_page": 70,
+              "topic_id": "u1-electrical-energy",
+              "question": "Define an electric generator and an electric motor.",
+              "answer": {
+                "bullets": [
+                  "Electric generator: an electrical machine that converts mechanical energy into electrical energy.",
+                  "Electric motor: an electrical machine that converts electrical energy into mechanical energy."
+                ]
+              },
+              "answer_basis": [
+                "u1-electrical-energy"
+              ]
+            },
+            {
+              "id": "u1-sa-03",
+              "number": 3,
+              "book_page": 70,
+              "topic_id": "u1-circuit-concept",
+              "question": "What is an electric circuit?",
+              "answer": {
+                "paragraphs": [
+                  "An electric circuit is an interconnection of electrical elements arranged so that at least one closed conducting path exists for current. A basic circuit contains a source, load, connecting conductors and usually a control such as a switch."
+                ]
+              },
+              "answer_basis": [
+                "u1-circuit-concept"
+              ]
+            },
+            {
+              "id": "u1-sa-04",
+              "number": 4,
+              "book_page": 70,
+              "topic_id": "u1-circuit-concept",
+              "question": "Compare electric and magnetic circuits.",
+              "answer": {
+                "paragraphs": [
+                  "The textbook presents electric and magnetic circuits as analogous systems."
+                ],
+                "table": {
+                  "headers": [
+                    "Electric circuit",
+                    "Magnetic circuit"
+                  ],
+                  "rows": [
+                    [
+                      "EMF (V) provides the driving force",
+                      "MMF = NI (ampere-turns) provides the driving force"
+                    ],
+                    [
+                      "Current I is the through quantity",
+                      "Magnetic flux Φ is the corresponding through quantity"
+                    ],
+                    [
+                      "Resistance R opposes current",
+                      "Reluctance opposes magnetic flux"
+                    ],
+                    [
+                      "For a resistive circuit, I = V/R",
+                      "For a magnetic circuit, Φ = MMF/Reluctance"
+                    ]
+                  ]
+                }
+              },
+              "answer_basis": [
+                "u1-circuit-concept"
+              ]
+            },
+            {
+              "id": "u1-sa-05",
+              "number": 5,
+              "book_page": 70,
+              "topic_id": "u1-rlc",
+              "question": "Name the basic circuit parameters.",
+              "answer": {
+                "paragraphs": [
+                  "The three basic passive circuit parameters are resistance (R), inductance (L) and capacitance (C)."
+                ]
+              },
+              "answer_basis": [
+                "u1-rlc"
+              ]
+            },
+            {
+              "id": "u1-sa-06",
+              "number": 6,
+              "book_page": 70,
+              "topic_id": "u1-rlc",
+              "question": "Differentiate between resistance and inductance.",
+              "answer": {
+                "table": {
+                  "headers": [
+                    "Resistance",
+                    "Inductance"
+                  ],
+                  "rows": [
+                    [
+                      "Opposes current and dissipates absorbed electrical energy mainly as heat.",
+                      "Opposes change in current and stores energy in a magnetic field."
+                    ],
+                    [
+                      "For a linear resistor: v = Ri.",
+                      "For an ideal inductor: v = L·di/dt."
+                    ],
+                    [
+                      "Unit: ohm (Ω).",
+                      "Unit: henry (H)."
+                    ],
+                    [
+                      "Power is dissipated: p = i²R = v²/R.",
+                      "Stored energy: W = ½Li²."
+                    ]
+                  ]
+                }
+              },
+              "answer_basis": [
+                "u1-rlc"
+              ]
+            },
+            {
+              "id": "u1-sa-07",
+              "number": 7,
+              "book_page": 70,
+              "topic_id": "u1-rlc",
+              "question": "How does an inductor behave in a DC circuit?",
+              "answer": {
+                "paragraphs": [
+                  "For steady DC, current is constant, so di/dt = 0. Hence vL = L·di/dt = 0. An ideal inductor therefore behaves as a short circuit after DC steady state has been reached."
+                ],
+                "note": "The switching transient itself is not part of the current R25 Unit I source set."
+              },
+              "answer_basis": [
+                "u1-rlc"
+              ]
+            },
+            {
+              "id": "u1-sa-08",
+              "number": 8,
+              "book_page": 70,
+              "topic_id": "u1-rlc",
+              "question": "Write the expression for energy stored in a capacitor.",
+              "answer": {
+                "equations": [
+                  "W_C = ½CV²"
+                ],
+                "paragraphs": [
+                  "Thus the energy stored in the electric field of a capacitor is one-half of C times the square of the capacitor voltage."
+                ]
+              },
+              "answer_basis": [
+                "u1-rlc"
+              ]
+            },
+            {
+              "id": "u1-sa-09",
+              "number": 9,
+              "book_page": 70,
+              "topic_id": "u1-rlc",
+              "question": "How does a capacitor behave in a DC circuit?",
+              "answer": {
+                "paragraphs": [
+                  "For steady DC, capacitor voltage is constant, so dv/dt = 0. Hence iC = C·dv/dt = 0. An ideal capacitor therefore behaves as an open circuit in DC steady state."
+                ],
+                "note": "The charging/discharging transient is outside the current R25 Unit I source set."
+              },
+              "answer_basis": [
+                "u1-rlc"
+              ]
+            },
+            {
+              "id": "u1-sa-10",
+              "number": 10,
+              "book_page": 70,
+              "topic_id": "u1-sources",
+              "question": "Differentiate between independent and dependent voltage sources.",
+              "answer": {
+                "table": {
+                  "headers": [
+                    "Independent voltage source",
+                    "Dependent voltage source"
+                  ],
+                  "rows": [
+                    [
+                      "Its specified voltage is set independently of other circuit variables.",
+                      "Its voltage is controlled by another voltage or current elsewhere in the circuit."
+                    ],
+                    [
+                      "Ideal source maintains the prescribed terminal voltage regardless of the current demanded by the connected circuit.",
+                      "Its value changes according to its controlling-variable relationship, such as v = μvₓ or v = riₓ."
+                    ]
+                  ]
+                }
+              },
+              "answer_basis": [
+                "u1-sources"
+              ]
+            },
+            {
+              "id": "u1-sa-11",
+              "number": 11,
+              "book_page": 70,
+              "topic_id": "u1-sources",
+              "question": "Describe the V–I characteristics of ideal voltage and current sources.",
+              "answer": {
+                "bullets": [
+                  "Ideal voltage source: terminal voltage remains fixed at Vₛ while current may take whatever value the external circuit requires. Its characteristic is therefore a constant-voltage line.",
+                  "Ideal current source: source current remains fixed at Iₛ while terminal voltage may take whatever value the external circuit requires. Its characteristic is therefore a constant-current line."
+                ]
+              },
+              "answer_basis": [
+                "u1-sources"
+              ]
+            },
+            {
+              "id": "u1-sa-12",
+              "number": 12,
+              "book_page": 71,
+              "topic_id": "u1-sources",
+              "question": "Show the equivalent circuits of practical voltage and current sources.",
+              "answer": {
+                "bullets": [
+                  "Practical voltage source: an ideal voltage source Vₛ in series with an internal resistance Rₛ.",
+                  "Practical current source: an ideal current source Iₛ in parallel with an internal resistance Rₛ."
+                ],
+                "note": "These two practical-source forms are also the pair used in source transformation."
+              },
+              "answer_basis": [
+                "u1-sources",
+                "u1-source-transformation"
+              ]
+            },
+            {
+              "id": "u1-sa-13",
+              "number": 13,
+              "book_page": 71,
+              "topic_id": "u1-source-transformation",
+              "question": "For the 48 V source with 25 Ω series resistance in Fig. 1.73, find the equivalent current source.",
+              "answer": {
+                "steps": [
+                  "Use source transformation: Iₛ = Vₛ/Rₛ.",
+                  "Iₛ = 48/25 = 1.92 A.",
+                  "Keep the same resistance value, 25 Ω, but place it in parallel with the current source."
+                ],
+                "result": "Equivalent source: 1.92 A current source in parallel with 25 Ω.",
+                "book_check": "Printed answer: 1.92 A, 25 Ω."
+              },
+              "answer_basis": [
+                "u1-source-transformation"
+              ]
+            },
+            {
+              "id": "u1-sa-14",
+              "number": 14,
+              "book_page": 71,
+              "topic_id": "u1-kirchhoff",
+              "question": "State KCL and KVL.",
+              "answer": {
+                "bullets": [
+                  "Kirchhoff’s Current Law (KCL): the algebraic sum of currents at a node is zero; equivalently, total current entering a node equals total current leaving it.",
+                  "Kirchhoff’s Voltage Law (KVL): the algebraic sum of all voltage rises and drops around any closed loop is zero."
+                ]
+              },
+              "answer_basis": [
+                "u1-kirchhoff"
+              ]
+            },
+            {
+              "id": "u1-sa-15",
+              "number": 15,
+              "book_page": 71,
+              "question": "Define transient state.",
+              "r25_scope": "outside-current-r25",
+              "answer": {
+                "status": "source-gap",
+                "note": "This question belongs to the transient section of Chapter 1. The supplied R25 Unit I capture intentionally omits textbook pp.63–69, so an answer is not inserted from model memory."
+              }
+            },
+            {
+              "id": "u1-sa-16",
+              "number": 16,
+              "book_page": 71,
+              "question": "Write the expression for the time constant of an RC network.",
+              "r25_scope": "outside-current-r25",
+              "answer": {
+                "status": "source-gap",
+                "note": "This question belongs to the RC-transient material on the intentionally omitted textbook pp.63–69. It is retained because it is an official chapter-end question, but no unsupported answer is inserted."
+              }
+            }
+          ]
+        },
+        {
+          "id": "essay",
+          "title": "Essay (Six marks) Questions",
+          "questions": [
+            {
+              "id": "u1-es-01",
+              "number": 1,
+              "book_page": 71,
+              "topic_id": "u1-electrical-energy",
+              "question": "Explain the role of electrical energy in modern life.",
+              "answer": {
+                "paragraphs": [
+                  "Electrical energy is one of the most useful forms of energy in modern society because it can be generated from many primary energy sources, transmitted to the place of use, controlled conveniently and converted into the form of energy required by the load.",
+                  "Its importance is seen not only in homes but also in commerce, industry, transport, communication, medicine, scientific work and computing. The prescribed text also connects electrical-energy use with economic activity and quality of life."
+                ],
+                "bullets": [
+                  "Convenience: electrical energy can be converted readily into light, heat, cooling and mechanical rotation.",
+                  "Easy control and flexibility: electrical equipment can be started, stopped and regulated conveniently; an electric motor, for example, can be controlled electrically without handling the mechanical load directly.",
+                  "Economy: electricity is suitable for domestic, commercial and industrial service and is economical for a wide range of loads.",
+                  "Clean point of use: electrical utilisation itself does not produce smoke, fumes or poisonous gases at the load, giving cleaner working conditions than direct combustion at the point of use.",
+                  "Easy transmission: electrical energy can be generated where resources are available and transmitted efficiently to distant load centres.",
+                  "Domestic and commercial applications include lighting, heating, cooling, refrigeration, appliances, computers, electronics and office equipment.",
+                  "Industrial applications include motor drives, process and production equipment, lighting, computers and building services such as heating, cooling and ventilation.",
+                  "Transport and communication depend strongly on electricity: electric trains, battery vehicles, radio, television and related systems are examples.",
+                  "Medicine and science use electrically powered equipment such as X-ray and ECG systems, while modern computers, robots and communication infrastructure depend fundamentally on electrical power.",
+                  "Electric vehicles and renewable-energy systems are growing applications; solar, wind and hydel resources can be converted into electrical energy for useful consumption."
+                ],
+                "paragraphs_after": [
+                  "Thus electrical energy is not merely another form of energy: it is the common intermediate form that links generation, transmission and a very large variety of useful end applications. Its controllability, transmissibility and ease of conversion make it central to modern engineering and daily life."
+                ],
+                "note": "For a 6-mark answer, write a short introduction, any five advantages, several modern applications, and a one-line conclusion."
+              },
+              "answer_basis": [
+                "u1-electrical-energy"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P001",
+                "TB-P002",
+                "TB-P003"
+              ]
+            },
+            {
+              "id": "u1-es-02",
+              "number": 2,
+              "book_page": 71,
+              "topic_id": "u1-electrical-energy",
+              "question": "With the help of a single-line diagram, explain electrical power generation, transmission and utilization.",
+              "answer": {
+                "diagram": "Primary energy / mechanical energy → Generating system (prime mover + generator) → Electrical energy → Transmission → Load centre → Distribution → Utilisation loads",
+                "paragraphs": [
+                  "Electrical power generation means converting an available form of energy into electrical energy. Natural energy may be available as heat, chemical, solar, wind, water or mechanical energy. In conventional generating stations, a prime mover supplies mechanical energy to a generator, and the generator converts that mechanical energy into electrical energy.",
+                  "Generating stations are generally located according to the availability of the primary resource, whereas consumers may be far away. The generated electrical power therefore has to be carried from the generating station to the load centre through a transmission system."
+                ],
+                "steps": [
+                  "Generation: a primary source supplies energy. In a conventional plant the prime mover produces mechanical power and drives the generator.",
+                  "Energy conversion in the generator: mechanical energy is converted into electrical energy.",
+                  "Transmission: bulk electrical power is carried over conductors from the generating station towards the load centres.",
+                  "Distribution: at the receiving/load centre, the power is distributed through the distribution system to individual consumers.",
+                  "Utilisation: consumers convert the received electrical energy into the required useful effect—lighting, heating, cooling, computing, communication or mechanical output.",
+                  "Motive loads: many practical loads ultimately require mechanical motion; an electric motor performs the reverse conversion of a generator, converting electrical energy into mechanical energy."
+                ],
+                "paragraphs_after": [
+                  "The complete chain consisting of generation, transmission, distribution and utilisation is called an electrical power system. In energy-conversion terms, the generator is a mechanical-to-electrical converter, while the motor is an electrical-to-mechanical converter."
+                ],
+                "note": "In the examination, draw the single-line block diagram first and then explain each block in order."
+              },
+              "answer_basis": [
+                "u1-electrical-energy"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P001",
+                "TB-P002",
+                "TB-P003"
+              ]
+            },
+            {
+              "id": "u1-es-03",
+              "number": 3,
+              "book_page": 71,
+              "topic_id": "u1-rlc",
+              "question": "Discuss the behavior of (a) inductance and (b) capacitance when placed in electrical circuits.",
+              "answer": {
+                "paragraphs": [
+                  "Inductance and capacitance are energy-storage parameters. Unlike an ideal resistor, they are dynamic elements: their present terminal behaviour depends on the rate of change of current or voltage and therefore carries memory of the previous state."
+                ],
+                "table": {
+                  "headers": [
+                    "Inductance (L)",
+                    "Capacitance (C)"
+                  ],
+                  "rows": [
+                    [
+                      "A current-carrying coil establishes magnetic flux. For a linear inductor, flux linkage is proportional to current.",
+                      "A capacitor consists of conducting plates separated by an insulating dielectric; equal and opposite charge is stored on the plates."
+                    ],
+                    [
+                      "Flux linkage relation: ψ = Li.",
+                      "Charge-voltage relation: q = Cv."
+                    ],
+                    [
+                      "Terminal relation: v = dψ/dt = L·di/dt.",
+                      "Terminal relation: i = dq/dt = C·dv/dt."
+                    ],
+                    [
+                      "Integral form: i(t₁) = i(t₀) + (1/L)∫v dt.",
+                      "Integral form: v(t₁) = v(t₀) + (1/C)∫i dt."
+                    ],
+                    [
+                      "A finite voltage cannot change ideal-inductor current instantaneously; inductor current is continuous.",
+                      "A finite current cannot change ideal-capacitor voltage instantaneously; capacitor voltage is continuous."
+                    ],
+                    [
+                      "The induced emf opposes the change in current that produces it (Lenz-law interpretation).",
+                      "Current flows while the capacitor voltage is changing; charge accumulation creates the electric field between the plates."
+                    ],
+                    [
+                      "Stored magnetic-field energy: W_L = ½Li².",
+                      "Stored electric-field energy: W_C = ½Cv²."
+                    ],
+                    [
+                      "Under steady DC, di/dt = 0, so v_L = 0 and an ideal inductor behaves as a short circuit.",
+                      "Under steady DC, dv/dt = 0, so i_C = 0 and an ideal capacitor behaves as an open circuit."
+                    ],
+                    [
+                      "Unit: henry (H).",
+                      "Unit: farad (F)."
+                    ]
+                  ]
+                },
+                "paragraphs_after": [
+                  "The integral relations show why both elements are said to have memory: their current or voltage at a later time contains the initial value. This distinction from a resistor is important whenever a circuit changes with time.",
+                  "For the present R25 Unit I, the required emphasis is on the element relations, stored energy and steady-DC behaviour. Detailed RL/RC switching transients lie outside the supplied R25 Unit-I source set."
+                ]
+              },
+              "answer_basis": [
+                "u1-rlc"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P005",
+                "TB-P006",
+                "TB-P007",
+                "TB-P008",
+                "LEC-U1-05",
+                "LEC-U1-06",
+                "LEC-U1-07",
+                "LEC-U1-08",
+                "SUP-P042",
+                "SUP-P043",
+                "SUP-P044",
+                "SUP-P045",
+                "SUP-P046",
+                "SUP-P047",
+                "SUP-P048",
+                "SUP-P049",
+                "SUP-P050",
+                "SUP-P051",
+                "SUP-P052",
+                "SUP-P053",
+                "SUP-P018",
+                "SUP-P019"
+              ]
+            },
+            {
+              "id": "u1-es-04",
+              "number": 4,
+              "book_page": 71,
+              "topic_id": "u1-sources",
+              "question": "What are the different types of dependent sources? Give their controlling relations and characteristics.",
+              "answer": {
+                "paragraphs": [
+                  "A dependent or controlled source is a source whose output voltage or current is determined by another voltage or current elsewhere in the circuit. It is represented by a diamond-shaped source symbol, distinguishing it from the circular symbol normally used for an independent source.",
+                  "Controlled sources are very useful as linear models of more complicated circuits. The Unit-I lectures use an amplifier as an example of a system that can be represented by a controlled source."
+                ],
+                "table": {
+                  "headers": [
+                    "Controlled source",
+                    "Relation",
+                    "Controlling factor / unit",
+                    "Characteristic"
+                  ],
+                  "rows": [
+                    [
+                      "Voltage Controlled Voltage Source (VCVS)",
+                      "v_o = μv_x",
+                      "μ: dimensionless voltage gain",
+                      "An input/control voltage determines the output voltage."
+                    ],
+                    [
+                      "Voltage Controlled Current Source (VCCS)",
+                      "i_o = gv_x",
+                      "g: siemens (transconductance)",
+                      "An input/control voltage determines the output current."
+                    ],
+                    [
+                      "Current Controlled Voltage Source (CCVS)",
+                      "v_o = ri_x",
+                      "r: ohms (transresistance)",
+                      "A sensed/control current determines the output voltage."
+                    ],
+                    [
+                      "Current Controlled Current Source (CCCS)",
+                      "i_o = βi_x",
+                      "β: dimensionless current gain",
+                      "A sensed/control current determines the output current."
+                    ]
+                  ]
+                },
+                "bullets": [
+                  "The controlling quantity and the output quantity may be in different parts of the circuit.",
+                  "For a voltage-controlled source, the controlling variable is a voltage measured between specified nodes.",
+                  "For a current-controlled source, the controlling variable is a branch current; the lecture representation uses a sensing short-circuit branch to define that current.",
+                  "With constant proportionality factors μ, g, r or β, the controlled-source relation is linear, so the source can participate in linear-circuit analysis and superposition.",
+                  "A dependent source is not turned off merely because independent sources are deactivated; it remains active as long as its controlling variable exists."
+                ],
+                "paragraphs_after": [
+                  "Hence the four dependent sources arise from the four possible combinations of input/control variable (voltage or current) and output variable (voltage or current). Remembering this 2 × 2 classification makes the four types easy to reconstruct in an examination."
+                ]
+              },
+              "answer_basis": [
+                "u1-sources"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P008",
+                "TB-P009",
+                "TB-P010",
+                "TB-P011",
+                "TB-P012",
+                "TB-P013",
+                "TB-P014",
+                "LEC-U1-08",
+                "LEC-U1-09",
+                "LEC-U1-10",
+                "LEC-U1-11",
+                "LEC-U1-12",
+                "LEC-U1-13",
+                "LEC-U1-14",
+                "LEC-U1-21",
+                "SUP-P030",
+                "SUP-P031",
+                "SUP-P032",
+                "SUP-P033",
+                "SUP-P034"
+              ]
+            },
+            {
+              "id": "u1-es-05",
+              "number": 5,
+              "book_page": 71,
+              "topic_id": "u1-source-transformation",
+              "question": "Explain the procedure for converting a current source into its equivalent voltage source.",
+              "answer": {
+                "paragraphs": [
+                  "A practical current source consists of an ideal current source I_s in parallel with a resistance R. It can be replaced, at the same pair of external terminals, by an equivalent practical voltage source consisting of an ideal voltage source V_s in series with the same resistance R."
+                ],
+                "equations": [
+                  "V_s = I_sR",
+                  "R_voltage-form = R_current-form"
+                ],
+                "steps": [
+                  "Identify the current-source value I_s and the resistance R connected directly in parallel with it.",
+                  "Retain exactly the same resistance value R in the transformed circuit, but place it in series with the voltage source.",
+                  "Calculate the equivalent voltage-source value from V_s = I_sR.",
+                  "Choose the voltage polarity so that the open-circuit terminal voltage has the same polarity as that produced by the original current source.",
+                  "Reconnect the external load to the same two terminals. The load voltage and load current will be the same for both source representations."
+                ],
+                "paragraphs_after": [
+                  "Why the transformation works: with the load removed, the current source drives I_s through R, giving an open-circuit terminal voltage V_oc = I_sR. In the voltage-source form, the open-circuit terminal voltage is V_s, so choosing V_s = I_sR makes the two open-circuit voltages equal. With the terminals shorted, the voltage-source form supplies I_sc = V_s/R = I_s, which is also the short-circuit current of the original current-source form. Thus the two networks have the same terminal behaviour.",
+                  "The reverse transformation follows immediately: a voltage source V_s in series with R is equivalent to a current source I_s = V_s/R in parallel with the same R."
+                ],
+                "note": "Source transformation gives terminal equivalence. Internal branch voltages and currents inside the two source representations need not be identical."
+              },
+              "answer_basis": [
+                "u1-source-transformation"
+              ],
+              "answer_source_refs": [
+                "TB-P012",
+                "TB-P013",
+                "TB-P014",
+                "TB-P015",
+                "TB-P016",
+                "SUP-P035",
+                "SUP-P036",
+                "SUP-P037",
+                "SUP-P038",
+                "SUP-P039"
+              ]
+            },
+            {
+              "id": "u1-es-06",
+              "number": 6,
+              "book_page": 71,
+              "topic_id": "u1-kirchhoff",
+              "question": "Explain Kirchhoff’s laws with examples.",
+              "answer": {
+                "paragraphs": [
+                  "Kirchhoff’s laws are general laws for currents at a node and voltages around a closed loop. They are not tied to a particular resistor or source; they are used to write circuit equations for an interconnected network."
+                ],
+                "equations": [
+                  "KCL: Σi = 0 at a node",
+                  "KVL: Σv = 0 around a closed loop"
+                ],
+                "bullets": [
+                  "Kirchhoff’s Current Law (KCL): the algebraic sum of currents at a node is zero. Equivalently, total current entering a node equals total current leaving it. This expresses conservation of electric charge.",
+                  "A convenient sign convention is to take currents entering the node as positive and currents leaving as negative, or vice versa. Either convention gives the same physical result if used consistently.",
+                  "Example of KCL: if 2 A and 3 A enter a node and only one branch leaves, the leaving current must be 5 A, because 2 + 3 − 5 = 0.",
+                  "Kirchhoff’s Voltage Law (KVL): as a loop is traversed once and returns to the starting node, the algebraic sum of all voltage rises and voltage drops is zero. This is the circuit form of conservation of energy.",
+                  "For KVL, first choose a loop direction. Treat each encountered voltage as a rise or a drop according to its marked polarity, write the algebraic sum, and set it equal to zero.",
+                  "Example of KVL: a 10 V rise followed by drops of 4 V and 6 V gives +10 − 4 − 6 = 0."
+                ],
+                "paragraphs_after": [
+                  "KCL is applied at nodes; KVL is applied around closed loops. Together with the voltage-current relations of the elements, these laws provide the basic equations from which unknown branch currents and voltages are obtained.",
+                  "The Unit-I lecture also notes the usual lumped-circuit assumption behind KVL: the loop should not be linked by a significant time-varying magnetic field. This assumption is satisfied for the ordinary circuit problems treated here."
+                ],
+                "note": "In an exam answer, state each law, write its equation, mention the physical conservation principle, and give one small signed example."
+              },
+              "answer_basis": [
+                "u1-kirchhoff"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P016",
+                "TB-P017",
+                "TB-P018",
+                "TB-P019",
+                "TB-P020",
+                "TB-P021",
+                "TB-P022",
+                "TB-P023",
+                "TB-P024",
+                "TB-P025",
+                "TB-P026",
+                "TB-P027",
+                "TB-P028",
+                "TB-P029",
+                "TB-P030",
+                "LEC-U1-15",
+                "LEC-U1-16",
+                "SUP-P021",
+                "SUP-P022",
+                "SUP-P023",
+                "SUP-P026",
+                "SUP-P027"
+              ]
+            },
+            {
+              "id": "u1-es-07",
+              "number": 7,
+              "book_page": 71,
+              "topic_id": "u1-kirchhoff",
+              "question": "Using Kirchhoff’s laws, find the current through the 3 Ω resistor in Fig. 1.74.",
+              "answer": {
+                "paragraphs": [
+                  "Use the polarities shown in Fig. 1.74 and write KCL equations for the unknown upper nodes. Take the bottom conductor as the reference node (0 V). The 12 V source fixes the left upper node at +12 V. Let the top-centre node be V and the top-right node be V_r. Because the 8 V source in the centre branch has its positive terminal below as drawn, the node immediately above the 3 Ω resistor is V + 8."
+                ],
+                "equations": [
+                  "At node V: (V − 12)/10 + (V − V_r)/5 + (V + 8)/3 = 0",
+                  "At node V_r: (V_r − V)/5 + V_r/6 = 0"
+                ],
+                "steps": [
+                  "From the second equation, solve the relationship between V_r and V, then substitute it into the first KCL equation.",
+                  "Solving the two simultaneous equations gives V ≈ −2.80 V and V_r ≈ −1.53 V.",
+                  "The voltage across the 3 Ω resistor, measured from its upper end to the reference node, is V + 8 ≈ 5.20 V.",
+                  "Therefore I_3Ω = (V + 8)/3 ≈ 1.734 A."
+                ],
+                "result": "Current through the 3 Ω resistor ≈ 1.73 A downward through the middle branch.",
+                "book_check": "The textbook prints 1.736 A; the direct calculation from the supplied figure gives about 1.734 A, consistent with the printed rounding.",
+                "note": "A complete 6-mark numerical answer should show the reference node, variable definitions, both Kirchhoff equations, the simultaneous-equation solution and the final current with direction."
+              },
+              "answer_basis": [
+                "u1-kirchhoff"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P016",
+                "TB-P017",
+                "TB-P018",
+                "TB-P019",
+                "TB-P020",
+                "TB-P021",
+                "TB-P022",
+                "TB-P023",
+                "TB-P024",
+                "TB-P025",
+                "TB-P026",
+                "TB-P027",
+                "TB-P028",
+                "TB-P029",
+                "TB-P030",
+                "LEC-U1-15",
+                "LEC-U1-16",
+                "SUP-P021",
+                "SUP-P022",
+                "SUP-P023",
+                "SUP-P026",
+                "SUP-P027"
+              ]
+            },
+            {
+              "id": "u1-es-08",
+              "number": 8,
+              "book_page": 72,
+              "topic_id": "u1-star-delta",
+              "question": "Using Star–Delta transformation, find the source current for the circuit in Fig. 1.75.",
+              "answer": {
+                "paragraphs": [
+                  "The network in Fig. 1.75 is not immediately reducible by ordinary series/parallel combinations because the right-hand 2 Ω, 4 Ω and 10 Ω resistors form a Δ. Convert that Δ into its equivalent star; after the conversion, the remaining network becomes series-parallel."
+                ],
+                "equations": [
+                  "For Δ → Y: R_a = (product of the two Δ arms touching terminal a)/(sum of all three Δ arms)",
+                  "Δ sum = 2 + 4 + 10 = 16 Ω"
+                ],
+                "steps": [
+                  "Star arm toward the top node = (2×4)/16 = 0.5 Ω.",
+                  "Star arm toward the bottom node = (2×10)/16 = 1.25 Ω.",
+                  "Star arm toward the right/source terminal = (4×10)/16 = 2.5 Ω.",
+                  "The upper left path becomes 8 + 0.5 = 8.5 Ω.",
+                  "The lower left path becomes 6 + 1.25 = 7.25 Ω.",
+                  "These two paths are in parallel: R_p = (8.5×7.25)/(8.5+7.25) ≈ 3.913 Ω.",
+                  "The 2.5 Ω star arm is then in series with this parallel equivalent: R_eq = 3.913 + 2.5 ≈ 6.413 Ω.",
+                  "Source current I = 18/R_eq = 18/6.413 ≈ 2.807 A."
+                ],
+                "result": "Source current ≈ 2.81 A.",
+                "book_check": "Printed answer: 2.81 A.",
+                "note": "The key scoring step is the correct Δ-to-Y conversion followed by a clearly redrawn series-parallel equivalent."
+              },
+              "answer_basis": [
+                "u1-star-delta"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P036",
+                "TB-P037",
+                "TB-P038",
+                "TB-P039",
+                "TB-P040",
+                "TB-P041",
+                "TB-P042",
+                "TB-P043",
+                "TB-P044",
+                "TB-P045",
+                "TB-P046",
+                "TB-P047",
+                "SUP-P066",
+                "SUP-P067",
+                "SUP-P068",
+                "SUP-P070",
+                "SUP-P071",
+                "SUP-P072"
+              ]
+            },
+            {
+              "id": "u1-es-09",
+              "number": 9,
+              "book_page": 72,
+              "topic_id": "u1-superposition",
+              "question": "State and explain the Superposition theorem.",
+              "answer": {
+                "paragraphs": [
+                  "Superposition theorem applies to linear circuits containing more than one independent source. It allows the effect of the sources to be separated, one source at a time, and then recombined algebraically.",
+                  "Statement: in a linear circuit, the voltage across or current through any chosen element with all independent sources acting together equals the algebraic sum of the voltages or currents produced by each independent source acting alone."
+                ],
+                "bullets": [
+                  "The circuit elements involved in the superposition argument must be linear. Resistors and the linear controlled sources used in this unit satisfy this condition.",
+                  "When considering one independent voltage source, every other independent voltage source is set to zero. A zero-valued ideal voltage source is a short circuit.",
+                  "When considering one independent current source, every other independent current source is set to zero. A zero-valued ideal current source is an open circuit.",
+                  "Dependent/controlled sources are not deactivated because their values are determined by circuit variables; they remain part of every partial circuit.",
+                  "The reference direction of the desired current or the reference polarity of the desired voltage must remain the same in every partial case so that signs are combined correctly."
+                ],
+                "steps": [
+                  "Identify the branch voltage or current to be found and mark its reference direction/polarity.",
+                  "Keep the first independent source active and replace all other independent sources by their zero-valued equivalents.",
+                  "Calculate the partial response produced by that source.",
+                  "Repeat the procedure for every remaining independent source.",
+                  "Add all partial responses algebraically. A negative partial value means that source acts opposite to the chosen reference direction/polarity."
+                ],
+                "paragraphs_after": [
+                  "The reason the theorem works is linearity: the circuit equations are linear in the source excitations and in the response variables, so the response to several excitations is the sum of the separate responses.",
+                  "Superposition is applied directly to voltages and currents, not to power. Power expressions such as p = vi, i²R or v²/R are nonlinear. Therefore first obtain the total voltage or current by superposition and only then calculate power from that total response."
+                ],
+                "note": "A strong 6-mark answer should contain the statement, conditions, source-deactivation rules, step-by-step procedure, dependent-source rule and the power limitation."
+              },
+              "answer_basis": [
+                "u1-superposition"
+              ],
+              "answer_source_refs": [
+                "SYL-R25-U1",
+                "TB-P048",
+                "TB-P049",
+                "TB-P050",
+                "LEC-U1-23",
+                "LEC-U1-24",
+                "LEC-U1-25",
+                "SUP-P086",
+                "SUP-P087",
+                "SUP-P088",
+                "SUP-P089"
+              ]
+            },
+            {
+              "id": "u1-es-10",
+              "number": 10,
+              "book_page": 72,
+              "question": "Discuss the DC response of an RL circuit and write the expression for transient current with respect to time.",
+              "r25_scope": "outside-current-r25",
+              "answer": {
+                "status": "source-gap",
+                "note": "This official Chapter 1 question requires the RL-transient material from printed textbook pp.63–69. Those pages are not present in the supplied Unit-I source capture and RL/RC transients are outside VNR R25 Unit I. The supplied Unit-I lecture transcripts and supplementary PDF do not supply this missing derivation either, so PankusDesk intentionally leaves the answer unfilled rather than completing it from model memory."
+              },
+              "answer_source_refs": []
+            }
+          ]
+        }
+      ],
+      "source": {
+        "chapter": "Chapter 1 — Introduction to Electrical Energy and DC Circuits",
+        "review_pages": [
+          70,
+          71,
+          72
+        ],
+        "capture_files": [
+          "70.png",
+          "71.png",
+          "72.png"
+        ]
+      }
+    },
+    "2": {
+      "title": "Steady State AC Circuits",
+      "source": {
+        "chapter": "Chapter 2 — Steady State A.C Circuits",
+        "review_pages": [
+          129
+        ],
+        "capture_files": [
+          "129.png"
+        ]
+      },
+      "summary": {
+        "official_question_count": 17,
+        "short_answer_count": 11,
+        "essay_count": 6,
+        "answered_from_current_unit_sources": 17,
+        "outside_current_r25_source_set": 0,
+        "essay_answers_expanded_for_six_marks": 6,
+        "essay_source_gaps": 0,
+        "answer_provenance": "PankusDesk-derived from supplied source-backed Unit II corpus; not official textbook solutions"
+      },
+      "scope_note": "The official Chapter 2 review page contains 17 questions: 11 short-answer (two-mark) and 6 essay (six-mark) questions. All are answerable from the supplied Unit II textbook pages 73–129 and the consolidated Unit II notes. Answers below are PankusDesk study solutions, not official textbook solutions.",
+      "groups": [
+        {
+          "id": "short-answer",
+          "title": "Short Answer (Two marks) Questions",
+          "questions": [
+            {
+              "id": "u2-sa-01",
+              "number": 1,
+              "book_page": 129,
+              "topic_id": "u2-sinusoid",
+              "question": "What are the advantages of a sinusoidal wave over other alternating waves?",
+              "answer": {
+                "bullets": [
+                  "Many alternating quantities can be represented as sums of sinusoidal components, making sinusoidal analysis broadly useful.",
+                  "Sinusoidal signals are easy to generate and transmit.",
+                  "They are mathematically convenient because differentiation and integration of a sinusoid produce another sinusoid.",
+                  "In a linear circuit, a sinusoidal excitation gives a sinusoidal steady-state response at the same frequency, so analysis can focus on magnitude and phase."
+                ]
+              },
+              "answer_basis": [
+                "u2-sinusoid"
+              ]
+            },
+            {
+              "id": "u2-sa-02",
+              "number": 2,
+              "book_page": 129,
+              "topic_id": "u2-sinusoid",
+              "question": "Define cycle and time period of an alternating quantity.",
+              "answer": {
+                "bullets": [
+                  "Cycle: one complete set of positive and negative values through which an alternating quantity passes before the waveform repeats.",
+                  "Time period T: the time in seconds required to complete one cycle.",
+                  "Frequency is related by f = 1/T."
+                ]
+              },
+              "answer_basis": [
+                "u2-sinusoid"
+              ]
+            },
+            {
+              "id": "u2-sa-03",
+              "number": 3,
+              "book_page": 129,
+              "topic_id": "u2-sinusoid",
+              "question": "How do you represent the instantaneous value of an alternating quantity in terms of its maximum value and frequency?",
+              "answer": {
+                "paragraphs": [
+                  "For a sinusoidal quantity with zero initial phase, the instantaneous value is"
+                ],
+                "equations": [
+                  "v(t) = V_m sinωt = V_m sin(2πft)"
+                ],
+                "paragraphs_after": [
+                  "If an initial phase φ is present, v(t) = V_m sin(2πft + φ)."
+                ]
+              },
+              "answer_basis": [
+                "u2-sinusoid"
+              ]
+            },
+            {
+              "id": "u2-sa-04",
+              "number": 4,
+              "book_page": 129,
+              "topic_id": "u2-pure-r",
+              "question": "Show the voltage and current phasors in pure resistive, inductive and capacitive circuits.",
+              "answer": {
+                "table": {
+                  "headers": [
+                    "Circuit",
+                    "Voltage–current phase relation",
+                    "Phasor statement"
+                  ],
+                  "rows": [
+                    [
+                      "Pure R",
+                      "V and I are in phase",
+                      "φ = 0°"
+                    ],
+                    [
+                      "Pure L",
+                      "Current lags voltage by 90°",
+                      "V is 90° ahead of I"
+                    ],
+                    [
+                      "Pure C",
+                      "Current leads voltage by 90°",
+                      "I is 90° ahead of V"
+                    ]
+                  ]
+                },
+                "note": "For drawing, take current as reference: pure R has V along I; pure L has V vertically +90° from I; pure C has V vertically −90° from I."
+              },
+              "answer_basis": [
+                "u2-pure-r",
+                "u2-pure-l",
+                "u2-pure-c"
+              ]
+            },
+            {
+              "id": "u2-sa-05",
+              "number": 5,
+              "book_page": 129,
+              "topic_id": "u2-sinusoid",
+              "question": "Find the phase angle between v = 250 sin(314t − 15°) and i = 10 sin(314t + 45°).",
+              "answer": {
+                "steps": [
+                  "Both quantities are already in sine form and have the same angular frequency.",
+                  "Voltage phase = −15°.",
+                  "Current phase = +45°.",
+                  "Phase difference = 45° − (−15°) = 60°."
+                ],
+                "result": "Current leads voltage by 60°.",
+                "book_check": "This matches the printed answer of 60°."
+              },
+              "answer_basis": [
+                "u2-sinusoid",
+                "u2-phasors"
+              ]
+            },
+            {
+              "id": "u2-sa-06",
+              "number": 6,
+              "book_page": 129,
+              "topic_id": "u2-average-rms",
+              "question": "Define form factor and peak factor.",
+              "answer": {
+                "bullets": [
+                  "Form factor = RMS value / Average value.",
+                  "Peak factor = Maximum (peak) value / RMS value.",
+                  "For a sine wave, form factor ≈ 1.11 and peak factor = √2 ≈ 1.414."
+                ]
+              },
+              "answer_basis": [
+                "u2-average-rms"
+              ]
+            },
+            {
+              "id": "u2-sa-07",
+              "number": 7,
+              "book_page": 129,
+              "topic_id": "u2-phasors",
+              "question": "Express the phasor 8 − j6 in polar and exponential forms.",
+              "answer": {
+                "steps": [
+                  "Magnitude = √(8² + (−6)²) = √100 = 10.",
+                  "Angle φ = tan⁻¹(−6/8) = −36.87°.",
+                  "Polar form = 10∠−36.87°.",
+                  "Exponential form = 10e^(−j36.87°)."
+                ],
+                "result": "10∠−36.87° = 10e^(−j36.87°).",
+                "book_check": "Consistent with the printed check answer."
+              },
+              "answer_basis": [
+                "u2-phasors"
+              ]
+            },
+            {
+              "id": "u2-sa-08",
+              "number": 8,
+              "book_page": 129,
+              "topic_id": "u2-pure-l",
+              "question": "Does a pure inductor consume active power? Why?",
+              "answer": {
+                "paragraphs": [
+                  "No. In a pure inductor, current lags voltage by 90°, so the power factor is cos90° = 0. Hence average active power P = VI cosφ = 0.",
+                  "Instantaneous power alternates between positive and negative values as energy is stored in the magnetic field and then returned to the source. The net energy consumed over a complete cycle is therefore zero."
+                ]
+              },
+              "answer_basis": [
+                "u2-pure-l",
+                "u2-power"
+              ]
+            },
+            {
+              "id": "u2-sa-09",
+              "number": 9,
+              "book_page": 129,
+              "topic_id": "u2-series-rc",
+              "question": "Show the impedance triangle of a series RC circuit.",
+              "answer": {
+                "paragraphs": [
+                  "For a series RC circuit, Z = R − jX_C. In the impedance triangle, R is drawn horizontally to the right, X_C vertically downward, and |Z| is the hypotenuse joining the origin to the resultant."
+                ],
+                "equations": [
+                  "|Z| = √(R² + X_C²)",
+                  "cosφ = R/|Z|",
+                  "tan|φ| = X_C/R"
+                ],
+                "note": "The downward reactive side represents the negative capacitive reactance; current leads the supply voltage."
+              },
+              "answer_basis": [
+                "u2-series-rc"
+              ]
+            },
+            {
+              "id": "u2-sa-10",
+              "number": 10,
+              "book_page": 129,
+              "topic_id": "u2-three-phase",
+              "question": "Differentiate between star and delta connections.",
+              "answer": {
+                "table": {
+                  "headers": [
+                    "Star connection",
+                    "Delta connection"
+                  ],
+                  "rows": [
+                    [
+                      "Similar-polarity ends of three phases are joined to a common neutral/star point.",
+                      "Dissimilar-polarity ends are connected to form a closed loop."
+                    ],
+                    [
+                      "Neutral point is available in the basic star arrangement.",
+                      "No neutral point in the basic delta arrangement."
+                    ],
+                    [
+                      "V_L = √3V_ph.",
+                      "V_L = V_ph."
+                    ],
+                    [
+                      "I_L = I_ph.",
+                      "I_L = √3I_ph."
+                    ],
+                    [
+                      "Line voltage leads corresponding phase voltage by 30°.",
+                      "Line current lags corresponding phase current by 30°."
+                    ]
+                  ]
+                }
+              },
+              "answer_basis": [
+                "u2-three-phase"
+              ]
+            },
+            {
+              "id": "u2-sa-11",
+              "number": 11,
+              "book_page": 129,
+              "topic_id": "u2-three-phase",
+              "question": "What is the phase difference between (i) any two phase voltages and (ii) any two line voltages in a balanced three-phase system?",
+              "answer": {
+                "bullets": [
+                  "Any two phase voltages are displaced by 120°.",
+                  "Any two line voltages are also displaced by 120°."
+                ]
+              },
+              "answer_basis": [
+                "u2-three-phase"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "essay",
+          "title": "Essay (Six marks) Questions",
+          "questions": [
+            {
+              "id": "u2-es-01",
+              "number": 1,
+              "book_page": 129,
+              "topic_id": "u2-sinusoid",
+              "question": "The maximum value of a sinusoidal alternating voltage of frequency 50 Hz is 300 V. Find the voltage at t = 5 ms, 10 ms and 12 ms.",
+              "answer": {
+                "paragraphs": [
+                  "For a zero-phase sinusoidal voltage, v(t) = V_m sinωt. Here V_m = 300 V and f = 50 Hz."
+                ],
+                "equations": [
+                  "ω = 2πf = 100π rad/s",
+                  "v(t) = 300 sin(100πt)"
+                ],
+                "steps": [
+                  "At t = 5 ms = 0.005 s: angle = 100π×0.005 = π/2, so v = 300 sin(π/2) = 300 V.",
+                  "At t = 10 ms = 0.010 s: angle = π, so v = 300 sinπ = 0 V.",
+                  "At t = 12 ms = 0.012 s: angle = 1.2π = 216°, so v ≈ 300 sin216° ≈ −176.3 V."
+                ],
+                "result": "v(5 ms) = 300 V; v(10 ms) = 0 V; v(12 ms) ≈ −176 V.",
+                "book_check": "The printed check answer gives 300 V, 0 V and approximately −175.87 V; the small difference is rounding."
+              },
+              "answer_basis": [
+                "u2-sinusoid"
+              ]
+            },
+            {
+              "id": "u2-es-02",
+              "number": 2,
+              "book_page": 129,
+              "topic_id": "u2-average-rms",
+              "question": "Derive the expressions for average and RMS values of a sinusoidal alternating quantity.",
+              "answer": {
+                "paragraphs": [
+                  "Let the sinusoidal current be i = I_m sinθ. For a symmetrical sine wave, the algebraic average over one complete cycle is zero, so average magnitude is evaluated over a positive half cycle 0 ≤ θ ≤ π."
+                ],
+                "equations": [
+                  "I_avg = (1/π)∫₀^π I_m sinθ dθ",
+                  "I_avg = (I_m/π)[−cosθ]₀^π = 2I_m/π = 0.637I_m"
+                ],
+                "paragraphs_after": [
+                  "For RMS value, use the effective-value definition: square the instantaneous current, find its mean over the half cycle (equivalently a full cycle for i²), and take the square root."
+                ],
+                "steps": [
+                  "I_rms = √[(1/π)∫₀^π i² dθ].",
+                  "Substitute i = I_m sinθ: I_rms = I_m√[(1/π)∫₀^π sin²θ dθ].",
+                  "Use sin²θ = (1 − cos2θ)/2.",
+                  "The integral of cos2θ over 0 to π is zero, leaving a mean value of 1/2.",
+                  "Therefore I_rms = I_m/√2 = 0.707I_m."
+                ],
+                "result": "For a sine wave: Average over half cycle = 0.637 × peak; RMS = 0.707 × peak. The same derivation applies to voltage.",
+                "note": "For full marks, state why the half-cycle is used for average value and the heating/effective interpretation of RMS before the mathematics."
+              },
+              "answer_basis": [
+                "u2-average-rms"
+              ]
+            },
+            {
+              "id": "u2-es-03",
+              "number": 3,
+              "book_page": 129,
+              "topic_id": "u2-series-rl",
+              "question": "Discuss the analysis of an AC circuit having a pure resistance and inductance in series.",
+              "answer": {
+                "paragraphs": [
+                  "Consider a resistor R and ideal inductor L connected in series across a sinusoidal AC supply. The same current I flows through both elements, so current is taken as the reference phasor.",
+                  "The resistor voltage V_R = IR is in phase with current. The inductor voltage V_L = IX_L leads current by 90°, where X_L = 2πfL. Therefore the supply voltage is the phasor sum of these two perpendicular drops."
+                ],
+                "equations": [
+                  "V = V_R + jV_L",
+                  "Z = V/I = R + jX_L",
+                  "|Z| = √(R² + X_L²)",
+                  "tanφ = X_L/R",
+                  "cosφ = R/|Z|"
+                ],
+                "bullets": [
+                  "Current lags the applied voltage by angle φ, so the power factor is lagging.",
+                  "Supply current: I = V/|Z|.",
+                  "Voltage drops: V_R = IR and V_L = IX_L.",
+                  "Active power: P = VI cosφ.",
+                  "Reactive power: Q = VI sinφ.",
+                  "Apparent power: S = VI = √(P² + Q²)."
+                ],
+                "paragraphs_after": [
+                  "The phasor diagram is a right triangle with V_R along the current axis and V_L vertically +90°. The corresponding impedance triangle has R horizontally, X_L vertically and |Z| as the hypotenuse. A complete six-mark answer should include the circuit, phasor diagram, impedance triangle, phase relation and power expressions."
+                ]
+              },
+              "answer_basis": [
+                "u2-series-rl",
+                "u2-power"
+              ]
+            },
+            {
+              "id": "u2-es-04",
+              "number": 4,
+              "book_page": 129,
+              "topic_id": "u2-series-rlc",
+              "question": "Is there any possibility for a series RLC circuit to operate at unity power factor? Explain.",
+              "answer": {
+                "paragraphs": [
+                  "Yes. A series RLC circuit operates at unity power factor when its inductive and capacitive reactances are equal. The series impedance is"
+                ],
+                "equations": [
+                  "Z = R + j(X_L − X_C)"
+                ],
+                "steps": [
+                  "For unity power factor, current and supply voltage must be in phase, so the net reactive component must be zero.",
+                  "Set X_L − X_C = 0, hence X_L = X_C.",
+                  "Using X_L = 2πfL and X_C = 1/(2πfC): 2πfL = 1/(2πfC).",
+                  "Solving gives f_r = 1/(2π√LC)."
+                ],
+                "bullets": [
+                  "At f = f_r, the circuit is in series resonance.",
+                  "Net reactance is zero.",
+                  "Impedance is minimum and equals R.",
+                  "Current is I = V/R.",
+                  "Phase angle φ = 0°.",
+                  "Power factor cosφ = 1."
+                ],
+                "result": "A series RLC circuit has unity power factor at the resonant frequency, where X_L = X_C.",
+                "note": "R25 names series RLC analysis but not resonance as a separate topic; this condition is nevertheless explicitly developed in the prescribed chapter and is directly asked in its review questions."
+              },
+              "answer_basis": [
+                "u2-series-rlc",
+                "u2-power"
+              ]
+            },
+            {
+              "id": "u2-es-05",
+              "number": 5,
+              "book_page": 129,
+              "topic_id": "u2-series-rlc",
+              "question": "In a series RLC circuit, R = 6 Ω, L = 0.02 H and C = 300 μF are connected to a 230 V, 50 Hz AC supply. Find (i) supply current, (ii) voltage across each element and (iii) power-factor angle. Also draw the phasor diagram.",
+              "answer": {
+                "equations": [
+                  "X_L = 2πfL = 2π×50×0.02 ≈ 6.28 Ω",
+                  "X_C = 1/(2πfC) = 1/(2π×50×300×10⁻⁶) ≈ 10.61 Ω",
+                  "Z = R + j(X_L − X_C) = 6 − j4.33 Ω",
+                  "|Z| = √(6² + 4.33²) ≈ 7.40 Ω"
+                ],
+                "steps": [
+                  "Supply current I = V/|Z| = 230/7.40 ≈ 31.09 A.",
+                  "V_R = IR ≈ 31.09×6 = 186.5 V.",
+                  "V_L = IX_L ≈ 31.09×6.28 = 195.3 V.",
+                  "V_C = IX_C ≈ 31.09×10.61 = 329.9 V.",
+                  "Since X_C > X_L, the circuit is net capacitive and current leads the supply voltage.",
+                  "Power-factor angle magnitude φ = tan⁻¹[(X_C − X_L)/R] = tan⁻¹(4.33/6) ≈ 35.8° leading."
+                ],
+                "result": "I ≈ 31.09 A; V_R ≈ 186.5 V; V_L ≈ 195.3 V; V_C ≈ 329.9 V; φ ≈ 35.8° leading.",
+                "diagram": "Take I as the horizontal reference. Draw V_R along I, V_L upward, V_C downward, and the supply voltage V as the vector from the origin to the resultant of V_R and (V_L − V_C). Because V_C > V_L, the resultant lies below the current axis.",
+                "book_check": "The printed current and element-voltage checks agree closely with these values. The review page prints 54.17° for the power-factor angle, but applying the chapter's own relation tanφ = |X_L − X_C|/R to the stated R, L, C and f gives about 35.8° leading. This discrepancy is retained explicitly rather than silently copied."
+              },
+              "answer_basis": [
+                "u2-series-rlc"
+              ]
+            },
+            {
+              "id": "u2-es-06",
+              "number": 6,
+              "book_page": 129,
+              "topic_id": "u2-three-phase",
+              "question": "Obtain the relation between phase and line values of voltage and current in a balanced three-phase delta-connected system.",
+              "answer": {
+                "paragraphs": [
+                  "In a balanced delta connection, each phase winding or load branch is connected directly between two line conductors. Therefore the voltage across each phase is the line-to-line voltage."
+                ],
+                "equations": [
+                  "V_L = V_ph"
+                ],
+                "paragraphs_after": [
+                  "For current, consider one line junction. The line current is the phasor difference of the two equal phase currents meeting at that junction, for example I_A(line) = I_A − I_C. The two phase currents have equal magnitude I_ph and are 120° apart."
+                ],
+                "steps": [
+                  "Represent −I_C as a phasor opposite to I_C. The angle between I_A and −I_C is 60°.",
+                  "By the parallelogram law: I_L² = I_ph² + I_ph² + 2I_ph² cos60°.",
+                  "I_L² = 3I_ph².",
+                  "Therefore I_L = √3I_ph.",
+                  "The resultant line current is displaced by 30° from the corresponding phase current; in the delta connection shown, line current lags the corresponding phase current by 30°."
+                ],
+                "bullets": [
+                  "Voltage relation: V_L = V_ph.",
+                  "Current relation: I_L = √3I_ph.",
+                  "Line currents are mutually 120° apart.",
+                  "Total balanced three-phase power can therefore be written P = √3V_LI_L cosφ."
+                ],
+                "result": "Balanced delta: V_L = V_ph and I_L = √3I_ph; line current lags the corresponding phase current by 30°.",
+                "note": "For full marks, include the delta connection and phasor diagram showing the phase-current difference that produces the line current."
+              },
+              "answer_basis": [
+                "u2-three-phase"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--
+		Site root:
+		Local Live Server  -> /
+		GitHub Pages       -> /Pankusdesk/
+		-->
+		<base id="site-base" href="/" />
+
+		<script>
+			const base = document.getElementById('site-base');
+
+			if (window.location.hostname.endsWith('github.io')) {
+				base.href = '/Pankusdesk/';
+			}
+		</script>
+
+		<title>Basic Electrical Engineering · Panku's Desk</title>
+
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/subject.css" />
+
+		<script src="scripts/new/navbar.js" defer></script>
+		<script src="scripts/new/subject-home.js" defer></script>
+	</head>
+
+	<body>
+		<div id="navbar-new"></div>
+
+		<main
+			class="page-shell subject-page"
+			data-subject-json="college/1-1/basic-electrical-engineering/subject.json"
+			data-syllabus-json="college/1-1/basic-electrical-engineering/kb/data/syllabus.json"
+			data-kb-status-json="college/1-1/basic-electrical-engineering/kb/data/kb-status.json"
+		>
+			<div class="breadcrumbs">
+				<a href="index.html">Panku's Desk</a>
+				<span>›</span>
+				<a href="college/1-1/index.html">Semester 1.1</a>
+				<span>›</span>
+				<span>BEE</span>
+			</div>
+
+			<section class="subject-hero">
+				<div class="subject-hero-copy">
+					<div class="eyebrow">Semester 1.1 · <a href="college/1-1/basic-electrical-engineering/r25-syllabus.html">R25 ↗</a></div>
+
+					<h1 data-subject-name>Basic Electrical Engineering</h1>
+
+					<p class="subtitle">
+						<span data-subject-code>25ES1EE101</span>
+						<span class="meta-separator" aria-hidden="true">·</span>
+						<span data-subject-credits>3 credits</span>
+					</p>
+
+					<p class="subject-intro">
+						Five source-backed study units organised exactly around the VNR R25
+						syllabus. Book references inside the notes point to the physical copy
+						rather than reproducing textbook pages online.
+					</p>
+				</div>
+
+				<div class="subject-status-card" aria-label="Knowledge base status">
+					<div class="status-kicker">Knowledge base</div>
+
+					<div class="status-line">
+						<span class="status-dot" aria-hidden="true"></span>
+						<strong data-kb-label>Verified</strong>
+					</div>
+
+					<div class="status-stats">
+						<div>
+							<strong data-unit-count>5</strong>
+							<span>units</span>
+						</div>
+
+						<div>
+							<strong data-r25-count>68</strong>
+							<span>R25 syllabus points</span>
+						</div>
+
+						<div>
+							<strong data-gap-count>4</strong>
+							<span>supplemented topics</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-heading-row">
+					<div>
+						<div class="section-title">Study by unit</div>
+						<p class="section-note">
+							Each unit page will carry clean notes, methods, formulas and physical-book references.
+						</p>
+					</div>
+				</div>
+
+				<div class="unit-grid" id="subject-unit-grid" data-unit-grid aria-live="polite">
+					<div class="unit-loading">Loading R25 unit map…</div>
+				</div>
+			</section>
+
+			<section class="section subject-tools-section">
+				<div class="section-title">Study tools</div>
+
+				<div class="study-tool-grid">
+					<div class="study-tool-card">
+						<div class="tool-label">References</div>
+						<h2>Physical-book pointers</h2>
+						<p>
+							Important diagrams, worked examples and source material are referenced
+							by printed page number and source-image number inside the unit notes.
+						</p>
+					</div>
+
+					<div class="study-tool-card">
+						<div class="tool-label">Methods</div>
+						<h2>Formula &amp; method sheet</h2>
+						<p>
+							A compact formula/method layer is already indexed in the KB and will be
+							wired into the visible study pages next.
+						</p>
+						<span class="tool-state">Coming next</span>
+					</div>
+
+					<a class="study-tool-card study-tool-link" data-pyq-link href="college/1-1/basic-electrical-engineering/pyqs.html">
+						<div class="tool-label">Exam practice</div>
+						<h2>VNR PYQs</h2>
+						<p>
+							Keep previous-year questions together at subject level, with source, exam and topic tags added as they are verified.
+						</p>
+						<span class="tool-action">Open BEE PYQs →</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="section source-policy-panel">
+				<div class="source-policy-copy">
+					<div class="section-title">Source discipline</div>
+					<h2>No phantom notes</h2>
+					<p>
+						Core notes are built only from the supplied prescribed textbook captures,
+						lecture transcripts, supplementary PDF, official R25 syllabus and the
+						approved gap package. Material supplied but outside R25 is retained as
+						supplementary rather than silently promoted into the syllabus.
+					</p>
+				</div>
+
+				<details class="supplement-details">
+					<summary>
+						<span>4 R25 topics use supplementary sources</span>
+						<span aria-hidden="true">+</span>
+					</summary>
+
+					<ul>
+						<li>Swinburne’s test</li>
+						<li>Synchronous-generator voltage regulation by synchronous impedance method</li>
+						<li>Principle of operation of synchronous motor</li>
+						<li>ELCB</li>
+					</ul>
+				</details>
+			</section>
+		</main>
+	</body>
+</html>

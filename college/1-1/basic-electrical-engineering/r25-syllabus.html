@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<base id="site-base" href="/" />
+		<script>
+			const base = document.getElementById('site-base');
+			if (window.location.hostname.endsWith('github.io')) {
+				base.href = '/Pankusdesk/';
+			}
+		</script>
+
+		<title>R25 Syllabus · Basic Electrical Engineering · Panku's Desk</title>
+
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/bee-syllabus.css" />
+
+		<script src="scripts/new/navbar.js" defer></script>
+	</head>
+
+	<body>
+		<div id="navbar-new"></div>
+
+		<main class="page-shell bee-syllabus-page">
+			<div class="breadcrumbs">
+				<a href="index.html">Panku's Desk</a>
+				<span>›</span>
+				<a href="college/1-1/index.html">Semester 1.1</a>
+				<span>›</span>
+				<a href="college/1-1/basic-electrical-engineering/index.html">BEE</a>
+				<span>›</span>
+				<span>R25 syllabus</span>
+			</div>
+
+			<section class="syllabus-hero">
+				<div>
+					<div class="eyebrow">VNR VJIET · B.Tech. I Semester · R25</div>
+					<h1>Basic Electrical Engineering</h1>
+					<p class="syllabus-code">25ES1EE101</p>
+					<p class="syllabus-intro">
+						BEE-only HTML extract of the official R25 Information Technology syllabus.
+						The wording below is preserved from the supplied VNR specification.
+					</p>
+				</div>
+				<div class="syllabus-source-card">
+					<span>Official source</span>
+					<strong>R25 IT syllabus</strong>
+					<p>Original document pages 14–15</p>
+				</div>
+			</section>
+
+			<nav class="syllabus-jump" aria-label="Syllabus sections">
+				<a href="#course">Course</a>
+				<a href="#outcomes">Outcomes</a>
+				<a href="#unit-1">Unit I</a>
+				<a href="#unit-2">Unit II</a>
+				<a href="#unit-3">Unit III</a>
+				<a href="#unit-4">Unit IV</a>
+				<a href="#unit-5">Unit V</a>
+				<a href="#sources">Books &amp; resources</a>
+			</nav>
+
+			<section class="syllabus-section" id="course">
+				<div class="section-kicker">Course details</div>
+				<h2>Teaching &amp; evaluation scheme</h2>
+
+				<div class="scheme-grid">
+					<div class="scheme-card">
+						<span>Teaching</span>
+						<div class="scheme-values">
+							<div><strong>3</strong><small>L</small></div>
+							<div><strong>0</strong><small>T/P</small></div>
+							<div><strong>3</strong><small>C</small></div>
+						</div>
+					</div>
+					<div class="scheme-card wide">
+						<span>Evaluation</span>
+						<div class="scheme-values five">
+							<div><strong>30</strong><small>SE</small></div>
+							<div><strong>05</strong><small>CA</small></div>
+							<div><strong>05</strong><small>ELA</small></div>
+							<div><strong>60</strong><small>SEE</small></div>
+							<div><strong>100</strong><small>Total</small></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="syllabus-block">
+					<h3>Course pre-requisites</h3>
+					<p>Mathematics, Physics</p>
+				</div>
+
+				<div class="syllabus-block">
+					<h3>Course objectives</h3>
+					<ul>
+						<li>To understand the use of electrical energy in different engineering fields</li>
+						<li>To analyze electrical circuits using different network reduction techniques</li>
+						<li>To know the working &amp; construction of electrical machines</li>
+						<li>To identify different LT electrical installation components and know the safety measures</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="syllabus-section" id="outcomes">
+				<div class="section-kicker">Course outcomes</div>
+				<h2>After completion of the course, the student should be able to</h2>
+				<ol class="outcome-list">
+					<li><strong>CO-1:</strong> Appreciate the role of electrical energy in various engineering branches and analyze the DC circuits using various network reduction techniques</li>
+					<li><strong>CO-2:</strong> Analyze the various electrical parameters of AC circuits with R-L-C elements</li>
+					<li><strong>CO-3:</strong> Understand the operation of various Electrical Machines</li>
+					<li><strong>CO-4:</strong> Know about low voltage electrical installation components and the safety measures</li>
+				</ol>
+
+				<details class="articulation-details">
+					<summary>Course articulation matrix</summary>
+					<p class="matrix-note">Correlation of Course Outcomes with Program Outcomes and Program Specific Outcomes using mapping levels 1 = Slight, 2 = Moderate and 3 = Substantial.</p>
+					<div class="matrix-wrap">
+						<table class="articulation-table">
+							<thead>
+								<tr>
+									<th>CO</th>
+									<th>PO-1</th><th>PO-2</th><th>PO-3</th><th>PO-4</th><th>PO-5</th><th>PO-6</th><th>PO-7</th><th>PO-8</th><th>PO-9</th><th>PO-10</th><th>PO-11</th>
+									<th>PSO-1</th><th>PSO-2</th><th>PSO-3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><th>CO-1</th><td>3</td><td>3</td><td>2</td><td>2</td><td>1</td><td>1</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1</td><td>1</td><td>2</td><td>–</td></tr>
+								<tr><th>CO-2</th><td>2</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1</td><td>1</td><td>2</td><td>–</td></tr>
+								<tr><th>CO-3</th><td>2</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1</td><td>1</td><td>2</td><td>–</td></tr>
+								<tr><th>CO-4</th><td>2</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1</td><td>1</td><td>2</td><td>–</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</details>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-1">
+				<div class="section-kicker">Unit I</div>
+				<h2>Introduction to Electrical Energy and DC Circuits</h2>
+				<p>The role of Electrical Energy in modern life and various engineering branches- Circuit Concept – Types of Elements R-L-C parameters – Voltage and Current sources – Independent and dependent sources- Kirchhoff’s laws – network reduction techniques: series, parallel, series parallel, star/delta transformations, Superposition theorem, Thevenin’s theorem.</p>
+				<a class="study-unit-link" href="college/1-1/basic-electrical-engineering/unit-1.html">Open Unit I notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-2">
+				<div class="section-kicker">Unit II</div>
+				<h2>Steady State AC Circuits</h2>
+				<p>Representation of sinusoidal waveforms, average and RMS values, form factor and peak factor, phasor representation, Analysis of single-phase AC circuits consisting of R, L, C, series RL, RC, RLC combinations, real power, reactive power, apparent power, power factor - Three-phase balanced circuits, voltage and current relations in star and delta connections (Derivation only).</p>
+				<a class="study-unit-link" href="college/1-1/basic-electrical-engineering/unit-2.html">Open Unit II notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-3">
+				<div class="section-kicker">Unit III</div>
+				<h2>Transformers and DC Machines</h2>
+				<p>Transformer principle, Ideal and Practical Transformers, Equivalent circuit, Regulation and Efficiency, Basic Construction of DC machine, DC generator principle, Emf equation, DC motor principle, back Emf, Load characteristics and speed control of separately excited DC motor, Swinburne’s test.</p>
+				<a class="study-unit-link" href="college/1-1/basic-electrical-engineering/unit-3.html">Open Unit III notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-4">
+				<div class="section-kicker">Unit IV</div>
+				<h2>Alternating Current Machines</h2>
+				<p>Three phase induction motor, types, principle, torque Slip characteristics, working principle of Synchronous generator, Voltage regulation using synchronous impedance method, principle of operation of synchronous motor, stepper motor principle and applications.</p>
+				<a class="study-unit-link" href="college/1-1/basic-electrical-engineering/unit-4.html">Open Unit IV notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-5">
+				<div class="section-kicker">Unit V</div>
+				<h2>Electrical Installations and Batteries</h2>
+				<p>Basic layout of domestic electrical installation, Components of LT Switchgear: Switch Fuse Unit (SFU), MCB, ELCB, MCCB, Types of Wiring, Earthing: Need of earthing, Types (Pipe and Plate earthing), classification of batteries, working and electrical characteristics of Lead Acid battery, Block diagram of UPS and its operation.</p>
+				<a class="study-unit-link" href="college/1-1/basic-electrical-engineering/unit-5.html">Open Unit V notes →</a>
+			</section>
+
+			<section class="syllabus-section" id="sources">
+				<div class="section-kicker">Prescribed sources</div>
+				<h2>Text books</h2>
+				<ol class="source-list">
+					<li><em>Basics of Electrical Energy for Engineers</em>, V. Ramesh Babu, BS Publications, 2023</li>
+					<li><em>Basic Electrical Engineering</em>, P. Ramana, M. Suryakalavathi, G. T. Chandra Sekhar, 1st Edition, S. Chand, 2018</li>
+					<li><em>Basic Electrical Engineering</em>, D. C. Kulshreshtha, 2nd Edition, TMH, 2019</li>
+				</ol>
+
+				<h2 class="sources-subheading">References</h2>
+				<ol class="source-list">
+					<li><em>Engineering Circuit Analysis</em>, William Hayt and Jack E. Kemmerly, 8th Edition, McGraw-Hill, 2013</li>
+					<li><em>Electrical and Electronics Technology</em>, E. Hughes, 10th Edition, Pearson, 2010</li>
+					<li><em>Electrical and Electronics Measurements and Instrumentation</em>, A. K. Sawhney, 3rd Edition, Dhanpat Rai &amp; Co., 1983</li>
+					<li><em>Basic Electrical Engineering</em>, D. P. Kothari and I. J. Nagrath, 3rd Edition, Tata McGraw-Hill, 2010</li>
+					<li><em>Basic Electrical Engineering</em>, Ravish R Singh, 3rd Edition, Tata McGraw-Hill, 2018</li>
+				</ol>
+
+				<div class="online-resource">
+					<span>Online resource</span>
+					<strong>NPTEL course 117106108</strong>
+					<code>https://nptel.ac.in/courses/117106108</code>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

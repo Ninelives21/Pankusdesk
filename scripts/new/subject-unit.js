@@ -1,0 +1,662 @@
+document.addEventListener('DOMContentLoaded', () => {
+	initSubjectUnitPage();
+});
+
+async function initSubjectUnitPage() {
+	const page = document.querySelector('.subject-unit-page');
+	if (!page) return;
+
+	const unitNumber = Number(page.dataset.unit);
+	const subjectJsonUrl = page.dataset.subjectJson;
+
+	try {
+		if (!unitNumber || !subjectJsonUrl) {
+			throw new Error('Unit page configuration is incomplete.');
+		}
+
+		const subjectUrl = new URL(subjectJsonUrl, document.baseURI);
+		const subject = await fetchJson(subjectUrl.href);
+		const unitMeta = subject.units?.find(unit => Number(unit.number) === unitNumber);
+
+		if (!unitMeta) {
+			throw new Error(`Unit ${unitNumber} is not defined in subject.json.`);
+		}
+
+		const syllabusUrl = resolveSubjectUrl(subjectUrl, subject.syllabus);
+		const syllabus = await fetchJson(syllabusUrl);
+		const syllabusUnit = syllabus.units?.find(unit => Number(unit.unit) === unitNumber);
+
+		if (!syllabusUnit) {
+			throw new Error(`Unit ${unitNumber} is not defined in the syllabus data.`);
+		}
+
+		const context = createPageContext(page, subject, subjectUrl, unitMeta, syllabusUnit);
+		renderBaseShell(context);
+
+		if (unitMeta.publicationStatus !== 'ready') {
+			renderScaffold(context);
+			return;
+		}
+
+		const topicsUrl = resolveSubjectUrl(subjectUrl, subject.kb);
+		const [topics, sourceCollections] = await Promise.all([
+			fetchJson(topicsUrl),
+			loadSourceCollections(subject, subjectUrl),
+		]);
+
+		const unitTopics = topics.filter(topic => Number(topic.unit) === unitNumber);
+		if (!unitTopics.length) {
+			throw new Error(`No published study topics were found for Unit ${unitNumber}.`);
+		}
+
+		renderReadyUnit(context, unitTopics, sourceCollections);
+		setupTopicNavigation(unitTopics);
+	} catch (error) {
+		console.error('Subject unit page load failed:', error);
+		renderPageError(page, error);
+	}
+}
+
+function createPageContext(page, subject, subjectUrl, unitMeta, syllabusUnit) {
+	const unitLabel = toRoman(Number(unitMeta.number));
+	const subjectHomeUrl = new URL('./index.html', subjectUrl).href;
+	const semesterHomeUrl = new URL('../index.html', subjectUrl).href;
+	const siteHomeUrl = new URL('index.html', document.baseURI).href;
+	const syllabusPage = subject.unitRenderer?.syllabusPage;
+	const syllabusPageUrl = syllabusPage ? resolveSubjectUrl(subjectUrl, syllabusPage) : null;
+	const syllabusUnitUrl = syllabusPageUrl ? `${syllabusPageUrl}#unit-${unitMeta.number}` : null;
+
+	return {
+		page,
+		subject,
+		subjectUrl,
+		unitMeta,
+		syllabusUnit,
+		unitLabel,
+		subjectHomeUrl,
+		semesterHomeUrl,
+		siteHomeUrl,
+		syllabusPageUrl,
+		syllabusUnitUrl,
+	};
+}
+
+function renderBaseShell(context) {
+	const { page, subject, unitMeta, unitLabel, siteHomeUrl, semesterHomeUrl, subjectHomeUrl } = context;
+	const semesterLabel = String(subject.semester ?? '').replace('-', '.');
+
+	document.title = `Unit ${unitLabel} · ${subject.name} · Panku's Desk`;
+
+	page.innerHTML = `
+		<div class="breadcrumbs">
+			<a href="${escapeHtml(siteHomeUrl)}">Panku's Desk</a>
+			<span>›</span>
+			<a href="${escapeHtml(semesterHomeUrl)}">Semester ${escapeHtml(semesterLabel)}</a>
+			<span>›</span>
+			<a href="${escapeHtml(subjectHomeUrl)}">${escapeHtml(subject.shortName || subject.name)}</a>
+			<span>›</span>
+			<span>Unit ${escapeHtml(unitLabel)}</span>
+		</div>
+		<div id="unit-page-body"></div>
+	`;
+}
+
+function renderScaffold(context) {
+	const { subject, unitMeta, syllabusUnit, unitLabel, subjectHomeUrl, syllabusUnitUrl } = context;
+	const body = document.getElementById('unit-page-body');
+	if (!body) return;
+
+	body.innerHTML = `
+		${renderUnitHero(context, [])}
+		<section class="unit-template-card">
+			<div class="note-kicker">Official ${escapeHtml(subject.regulation)} scope</div>
+			<h2>${escapeHtml(unitMeta.title)}</h2>
+			<ul class="unit-template-scope">
+				${syllabusUnit.atoms.map(atom => `<li>${formatText(atom)}</li>`).join('')}
+			</ul>
+			<p class="unit-template-note">The page is reserved and linked now. Full consolidated study notes will replace this scaffold when this unit is published.</p>
+			<div class="unit-template-actions">
+				${syllabusUnitUrl ? `<a href="${escapeHtml(syllabusUnitUrl)}">Open Unit ${escapeHtml(unitLabel)} in ${escapeHtml(subject.regulation)} syllabus →</a>` : ''}
+				<a href="${escapeHtml(subjectHomeUrl)}">Back to ${escapeHtml(subject.shortName || subject.name)} →</a>
+			</div>
+		</section>
+	`;
+}
+
+function renderReadyUnit(context, unitTopics, sourceCollections) {
+	const body = document.getElementById('unit-page-body');
+	if (!body) return;
+
+	body.innerHTML = `
+		${renderUnitHero(context, unitTopics)}
+		${renderSyllabusBoundary(context)}
+		<div class="unit-layout section">
+			<aside class="unit-toc" aria-label="Unit ${escapeHtml(context.unitLabel)} topic navigation">
+				<div class="toc-label">On this page</div>
+				<nav id="unit-topic-nav"></nav>
+			</aside>
+
+			<section class="unit-content" aria-label="Unit ${escapeHtml(context.unitLabel)} study notes">
+				<div id="unit-topic-list"></div>
+			</section>
+		</div>
+	`;
+
+	renderTopicNav(unitTopics);
+	renderTopicNotes(unitTopics, context, sourceCollections);
+	setupSelfCheckAccordions();
+}
+
+function renderUnitHero(context, unitTopics) {
+	const { subject, unitMeta, unitLabel, syllabusUnit, syllabusUnitUrl } = context;
+	const isReady = unitMeta.publicationStatus === 'ready';
+	const coreCount = unitTopics.filter(topic => topic.status === 'core').length;
+	const regulation = escapeHtml(subject.regulation || 'Syllabus');
+
+	return `
+		<section class="unit-hero">
+			<div>
+				<div class="eyebrow">
+					${escapeHtml(subject.name)}
+					${syllabusUnitUrl ? ` · <a class="regulation-inline-link" href="${escapeHtml(syllabusUnitUrl)}">${regulation} ↗</a>` : ` · ${regulation}`}
+				</div>
+				<h1>Unit ${escapeHtml(unitLabel)}</h1>
+				<p class="unit-subtitle">${escapeHtml(unitMeta.title)}</p>
+				<p class="unit-description">${isReady
+					? 'Complete study notes for the unit, organised for day-to-day revision and problem solving.'
+					: 'This destination is in place now; the full consolidated study notes will be populated here next.'}</p>
+			</div>
+
+			${isReady ? `
+				<div class="unit-hero-stats" aria-label="Unit ${escapeHtml(unitLabel)} coverage summary">
+					<div><strong>${unitTopics.length}</strong><span>study topics</span></div>
+					<div><strong>${syllabusUnit.atoms.length}</strong><span>${regulation} syllabus points</span></div>
+					<div><strong>${coreCount}</strong><span>core topics</span></div>
+				</div>
+			` : ''}
+		</section>
+	`;
+}
+
+function renderSyllabusBoundary(context) {
+	const { subject, syllabusUnit, syllabusUnitUrl } = context;
+	return `
+		<section class="unit-boundary section">
+			<details>
+				<summary>
+					<span>
+						<strong>Official ${escapeHtml(subject.regulation)} syllabus for this unit</strong>
+						<span>${syllabusUnit.atoms.length} required syllabus points</span>
+					</span>
+					<span class="details-plus" aria-hidden="true">+</span>
+				</summary>
+				${syllabusUnitUrl ? `<div class="syllabus-source-row"><a href="${escapeHtml(syllabusUnitUrl)}">Open the ${escapeHtml(subject.shortName || subject.name)} ${escapeHtml(subject.regulation)} syllabus →</a></div>` : ''}
+				<ol class="syllabus-atom-list">
+					${syllabusUnit.atoms.map(atom => `<li>${formatText(atom)}</li>`).join('')}
+				</ol>
+			</details>
+		</section>
+	`;
+}
+
+function renderTopicNav(unitTopics) {
+	const nav = document.getElementById('unit-topic-nav');
+	if (!nav) return;
+
+	nav.innerHTML = unitTopics
+		.map((topic, index) => `
+			<a class="unit-toc-link" href="#${escapeHtml(topic.id)}">
+				<span class="toc-index">${String(index + 1).padStart(2, '0')}</span>
+				<span>${escapeHtml(topic.title)}</span>
+			</a>
+		`)
+		.join('');
+}
+
+function renderTopicNotes(unitTopics, context, sourceCollections) {
+	const list = document.getElementById('unit-topic-list');
+	if (!list) return;
+
+	list.innerHTML = unitTopics
+		.map((topic, index) => renderTopic(topic, index, context, sourceCollections))
+		.join('');
+}
+
+function renderTopic(topic, index, context, sourceCollections) {
+	const isSupporting = topic.status === 'supporting';
+	const statusLabel = isSupporting ? 'Supporting topic' : `${context.subject.regulation} core`;
+
+	return `
+		<article class="topic-note ${isSupporting ? 'supporting' : ''}" id="${escapeHtml(topic.id)}">
+			<header class="topic-note-header">
+				<div>
+					<div class="topic-index">${String(index + 1).padStart(2, '0')}</div>
+					<h2>${escapeHtml(topic.title)}</h2>
+				</div>
+				<span class="topic-status ${escapeHtml(topic.status)}"${isSupporting ? ' title="Useful supplied course material; not separately named as a syllabus item."' : ''}>${escapeHtml(statusLabel)}</span>
+			</header>
+
+			${renderQuickRecall(topic.learn ?? [])}
+			${renderSelfChecks(topic.self_checks ?? topic.questions ?? [], topic.id)}
+			${renderSections(topic.sections ?? [])}
+			${renderFormulas(topic.formulas ?? [])}
+			${renderMethod(topic.method ?? [])}
+			${renderCautions(topic.cautions ?? [])}
+			${renderPractice(topic.practice ?? [])}
+			${renderReferenceFooter(topic, context, sourceCollections)}
+		</article>
+	`;
+}
+
+function renderQuickRecall(items) {
+	if (!items.length) return '';
+	return `
+		<section class="quick-recall" aria-label="Quick recall">
+			<div class="note-kicker">Quick recall</div>
+			<ul>${items.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>
+		</section>
+	`;
+}
+
+function renderSections(sections) {
+	if (!sections.length) return '';
+	return `<div class="topic-sections">${sections.map(renderSection).join('')}</div>`;
+}
+
+function renderSection(section) {
+	const paragraphs = (section.paragraphs ?? []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('');
+	const bullets = section.bullets?.length
+		? `<ul>${section.bullets.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>`
+		: '';
+
+	return `
+		<section class="note-section">
+			<div class="note-section-heading"><h3>${escapeHtml(section.heading)}</h3></div>
+			${paragraphs}${bullets}
+			${renderSectionBookRefs(section.book_refs ?? [])}
+		</section>
+	`;
+}
+
+function renderSectionBookRefs(bookRefs) {
+	if (!bookRefs.length) return '';
+
+	return `
+		<div class="section-book-refs" aria-label="Physical book reference for this note section">
+			${bookRefs.map(ref => {
+				const pages = String(ref.pages ?? '');
+				const images = String(ref.images ?? '');
+				const pageLabel = /[–,;]/.test(pages) ? 'Book pp.' : 'Book p.';
+				const imageLabel = /[–,;]/.test(images) ? 'capture images' : 'capture image';
+				return `
+					<div class="section-book-ref">
+						<span class="section-book-page">${pageLabel} ${escapeHtml(pages)}</span>
+						${images ? `<span class="section-book-image">${imageLabel} ${escapeHtml(images)}</span>` : ''}
+						${ref.note ? `<span class="section-book-note">${escapeHtml(ref.note)}</span>` : ''}
+					</div>
+				`;
+			}).join('')}
+		</div>
+	`;
+}
+
+function renderSelfChecks(checks, topicId) {
+	if (!checks.length) return '';
+
+	const safeTopicId = String(topicId || 'topic').replace(/[^A-Za-z0-9_-]/g, '-');
+
+	return `
+		<section class="self-check-block" aria-label="Check yourself">
+			<div class="self-check-heading">
+				<div class="study-box-title">Check yourself</div>
+				<span>Try the question first, then click it to reveal the answer.</span>
+			</div>
+			<div class="self-check-list">
+				${checks.map((check, index) => {
+					const questionId = `self-check-${safeTopicId}-${index + 1}-question`;
+					const answerId = `self-check-${safeTopicId}-${index + 1}-answer`;
+					return `
+						<div class="self-check-item">
+							<button
+								type="button"
+								class="self-check-question-button"
+								id="${escapeHtml(questionId)}"
+								aria-expanded="false"
+								aria-controls="${escapeHtml(answerId)}"
+							>
+								<span class="self-check-number">Q${index + 1}</span>
+								<span class="self-check-question">${formatText(check.question)}</span>
+								<span class="self-check-toggle" aria-hidden="true">+</span>
+							</button>
+							<div
+								class="self-check-answer"
+								id="${escapeHtml(answerId)}"
+								role="region"
+								aria-labelledby="${escapeHtml(questionId)}"
+								hidden
+							>
+								<div class="answer-label">Answer</div>
+								<p>${formatText(check.answer)}</p>
+							</div>
+						</div>
+					`;
+				}).join('')}
+			</div>
+		</section>
+	`;
+}
+
+function setupSelfCheckAccordions() {
+	const buttons = Array.from(document.querySelectorAll('.self-check-question-button'));
+	if (!buttons.length) return;
+
+	buttons.forEach(button => {
+		button.addEventListener('click', () => {
+			const item = button.closest('.self-check-item');
+			const list = button.closest('.self-check-list');
+			const answerId = button.getAttribute('aria-controls');
+			const answer = answerId ? document.getElementById(answerId) : null;
+			if (!item || !answer) return;
+
+			const willOpen = button.getAttribute('aria-expanded') !== 'true';
+
+			// Behave as a real accordion: opening one answer closes the other
+			// answers in the same topic's Check yourself block.
+			if (willOpen && list) {
+				list.querySelectorAll('.self-check-question-button[aria-expanded="true"]').forEach(openButton => {
+					if (openButton === button) return;
+					const openAnswerId = openButton.getAttribute('aria-controls');
+					const openAnswer = openAnswerId ? document.getElementById(openAnswerId) : null;
+					openButton.setAttribute('aria-expanded', 'false');
+					openButton.closest('.self-check-item')?.classList.remove('is-open');
+					if (openAnswer) openAnswer.hidden = true;
+				});
+			}
+
+			button.setAttribute('aria-expanded', String(willOpen));
+			item.classList.toggle('is-open', willOpen);
+			answer.hidden = !willOpen;
+		});
+	});
+}
+
+function renderFormulas(formulas) {
+	if (!formulas.length) return '';
+	return `
+		<section class="study-box formula-box">
+			<div class="study-box-title">Key formulas</div>
+			<div class="formula-list">${formulas.map(formula => `<div class="formula-line">${formatText(formula)}</div>`).join('')}</div>
+		</section>
+	`;
+}
+
+function renderMethod(steps) {
+	if (!steps.length) return '';
+	return `
+		<section class="study-box method-box">
+			<div class="study-box-title">Problem-solving method</div>
+			<ol class="method-list">${steps.map(step => `<li>${formatText(step)}</li>`).join('')}</ol>
+		</section>
+	`;
+}
+
+function renderCautions(cautions) {
+	if (!cautions.length) return '';
+	return `
+		<aside class="topic-cautions">
+			<div class="study-box-title">Important note</div>
+			${cautions.map(caution => `<p>${formatText(caution)}</p>`).join('')}
+		</aside>
+	`;
+}
+
+function renderPractice(practice) {
+	if (!practice.length) return '';
+	return `
+		<section class="study-box practice-box">
+			<div class="study-box-title">Practice from the prescribed book</div>
+			<div class="practice-list">
+				${practice.map(item => `
+					<div class="practice-item">
+						<span class="practice-page">p. ${escapeHtml(item.book_page)}</span>
+						<span class="practice-type">${escapeHtml(item.type)}</span>
+						<span class="practice-items">${escapeHtml(item.items)}</span>
+					</div>
+				`).join('')}
+			</div>
+		</section>
+	`;
+}
+
+function renderReferenceFooter(topic, context, sourceCollections) {
+	const sourceRefs = topic.source_refs ?? [];
+	if (!sourceRefs.length) return '';
+
+	return `
+		<footer class="topic-reference-footer">
+			${renderSources(sourceRefs, context, sourceCollections)}
+		</footer>
+	`;
+}
+
+function renderSources(sourceRefs, context, sourceCollections) {
+	if (!sourceRefs.length) return '';
+	const sources = sourceRefs.map(ref => resolveSource(ref, context, sourceCollections));
+
+	return `
+		<details class="topic-sources">
+			<summary>
+				<span>Detailed sources · ${sources.length}</span>
+				<span class="details-plus" aria-hidden="true">+</span>
+			</summary>
+			<ul class="source-list">
+				${sources.map(source => `
+					<li class="source-item">
+						<span class="source-kind">${escapeHtml(source.kind)}</span>
+						${source.href
+							? `<a class="source-detail source-link" href="${escapeHtml(source.href)}"${isExternalUrl(source.href) ? ' target="_blank" rel="noopener"' : ''}>${escapeHtml(source.detail)} ↗</a>`
+							: `<span class="source-detail">${escapeHtml(source.detail)}</span>`}
+					</li>
+				`).join('')}
+			</ul>
+		</details>
+	`;
+}
+
+async function loadSourceCollections(subject, subjectUrl) {
+	const definitions = subject.unitRenderer?.sources ?? [];
+	if (!definitions.length) return [];
+
+	const cache = new Map();
+	const collections = [];
+
+	for (const definition of definitions) {
+		const url = resolveSubjectUrl(subjectUrl, definition.path);
+		if (!cache.has(url)) cache.set(url, fetchJson(url));
+		const data = await cache.get(url);
+		const records = definition.collection ? getByPath(data, definition.collection) : data;
+		collections.push({ definition, records: Array.isArray(records) ? records : [] });
+	}
+
+	return collections;
+}
+
+function resolveSource(ref, context, sourceCollections) {
+	for (const collection of sourceCollections) {
+		const { definition, records } = collection;
+		const idField = definition.idField || 'source_id';
+		const record = records.find(item => String(item?.[idField]) === String(ref));
+		if (record) return formatSourceRecord(record, definition, context);
+	}
+	return { kind: 'Source', detail: ref };
+}
+
+function formatSourceRecord(record, definition, context) {
+	const kind = definition.kind || 'Source';
+
+	switch (definition.format) {
+		case 'syllabus':
+			return {
+				kind,
+				detail: record.document_pages
+					? `Official ${context.subject.regulation} specification · document pp. ${record.document_pages}`
+					: record.file || record.source_id || record.id,
+				href: context.syllabusPageUrl && record.unit
+					? `${context.syllabusPageUrl}#unit-${record.unit}`
+					: context.syllabusPageUrl,
+			};
+
+		case 'book-page': {
+			const capture = record.captures?.[0];
+			return {
+				kind,
+				detail: `Printed p. ${record.printed_page}${capture?.image_file ? ` · image ${capture.image_file}` : ''}`,
+			};
+		}
+
+		case 'lecture':
+			return {
+				kind,
+				detail: `${record.unit ? `U${record.unit}-` : ''}${record.lecture_number != null ? String(record.lecture_number).padStart(2, '0') : ''}${record.file ? ` · ${cleanFileTitle(record.file)}` : ''}`,
+			};
+
+		case 'pdf-page':
+			return { kind, detail: record.pdf_page != null ? `PDF p. ${record.pdf_page}` : record.file || record.source_id || record.id };
+
+		case 'external':
+			return {
+				kind,
+				detail: record.lecture || record.topic || record.location || record.title || record.file || record.id,
+				href: record.url || null,
+			};
+
+		default:
+			return {
+				kind,
+				detail: record.detail || record.title || record.name || record.topic || record.file || record.source_id || record.id,
+				href: record.url || record.href || null,
+			};
+	}
+}
+
+function setupTopicNavigation(unitTopics) {
+	const nav = document.getElementById('unit-topic-nav');
+	if (!nav) return;
+
+	const links = Array.from(nav.querySelectorAll('.unit-toc-link'));
+	const sections = unitTopics.map(topic => document.getElementById(topic.id)).filter(Boolean);
+	if (!links.length || !sections.length) return;
+
+	const setActive = id => {
+		links.forEach(link => {
+			const active = link.getAttribute('href') === `#${id}`;
+			link.classList.toggle('is-active', active);
+			if (active) link.setAttribute('aria-current', 'location');
+			else link.removeAttribute('aria-current');
+		});
+	};
+
+	links.forEach(link => {
+		link.addEventListener('click', event => {
+			const id = link.getAttribute('href')?.slice(1);
+			const target = id ? document.getElementById(id) : null;
+			if (!target) return;
+
+			event.preventDefault();
+			setActive(id);
+			history.replaceState(null, '', `#${id}`);
+			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+	});
+
+	const observer = new IntersectionObserver(entries => {
+		const visible = entries
+			.filter(entry => entry.isIntersecting)
+			.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+		if (visible[0]?.target?.id) setActive(visible[0].target.id);
+	}, {
+		rootMargin: '-18% 0px -68% 0px',
+		threshold: [0, 0.01, 0.15],
+	});
+
+	sections.forEach(section => observer.observe(section));
+
+	const initialId = window.location.hash.slice(1);
+	if (initialId && document.getElementById(initialId)) {
+		setActive(initialId);
+		requestAnimationFrame(() => document.getElementById(initialId)?.scrollIntoView({ block: 'start' }));
+	} else {
+		setActive(sections[0].id);
+	}
+}
+
+function renderPageError(page, error) {
+	page.innerHTML = `
+		<div class="unit-error">
+			The unit page could not be loaded. Open the site through Live Server or GitHub Pages so its JSON files can be fetched.
+			${error?.message ? `<div class="unit-error-detail">${escapeHtml(error.message)}</div>` : ''}
+		</div>
+	`;
+}
+
+async function fetchJson(url) {
+	if (!url) throw new Error('Missing JSON source URL.');
+	const response = await fetch(url);
+	if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+	return response.json();
+}
+
+function resolveSubjectUrl(subjectUrl, relativePath) {
+	if (!relativePath) throw new Error('Missing subject resource path.');
+	return new URL(relativePath, subjectUrl).href;
+}
+
+function getByPath(value, path) {
+	return String(path).split('.').reduce((current, key) => current?.[key], value);
+}
+
+function cleanFileTitle(filename) {
+	return String(filename)
+		.replace(/\.[^.]+$/i, '')
+		.replace(/^\d+_/, '')
+		.replaceAll('_', ' ');
+}
+
+function formatText(value) {
+	return escapeHtml(value)
+		.replace(/\b([A-Za-z][A-Za-z0-9]*)_\{?([A-Za-z0-9]+)\}?/g, '$1<sub>$2</sub>');
+}
+
+function toRoman(value) {
+	const numerals = [
+		[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
+		[100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
+		[10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I'],
+	];
+	let number = Number(value);
+	let result = '';
+	for (const [amount, numeral] of numerals) {
+		while (number >= amount) {
+			result += numeral;
+			number -= amount;
+		}
+	}
+	return result || String(value);
+}
+
+function isExternalUrl(value) {
+	try {
+		return new URL(value).origin !== window.location.origin;
+	} catch {
+		return false;
+	}
+}
+
+function escapeHtml(value) {
+	return String(value ?? '')
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;')
+		.replaceAll("'", '&#039;');
+}

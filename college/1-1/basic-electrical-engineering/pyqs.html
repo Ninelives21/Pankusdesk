@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<base id="site-base" href="/" />
+		<script>
+			const base = document.getElementById('site-base');
+			if (window.location.hostname.endsWith('github.io')) base.href = '/Pankusdesk/';
+		</script>
+		<title>BEE PYQs · Panku's Desk</title>
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/practice.css" />
+		<script src="scripts/new/navbar.js" defer></script>
+	</head>
+	<body>
+		<div id="navbar-new"></div>
+		<main class="page-shell practice-page">
+			<div class="breadcrumbs">
+				<a href="index.html">Panku's Desk</a><span>›</span>
+				<a href="college/1-1/index.html">Semester 1.1</a><span>›</span>
+				<a href="college/1-1/basic-electrical-engineering/index.html">BEE</a><span>›</span>
+				<span>PYQs</span>
+			</div>
+			<section class="practice-hero">
+				<div class="eyebrow">Basic Electrical Engineering · Exam practice</div>
+				<h1>BEE PYQs</h1>
+				<p>One subject-wide home for VNR previous-year questions. Questions will stay traceable to their source and will only receive unit/topic tags when that mapping is confident.</p>
+				<div class="practice-hero-actions">
+					<a href="college/1-1/basic-electrical-engineering/index.html">← Back to BEE</a>
+				</div>
+			</section>
+			<section class="practice-source-note">
+				<strong>PYQ corpus not loaded yet</strong>
+				<p>This destination is ready. When the VNR official papers and other PYQ sources are added, each question can carry source, exam/year and topic metadata here without being duplicated across unit pages.</p>
+			</section>
+		</main>
+	</body>
+</html>

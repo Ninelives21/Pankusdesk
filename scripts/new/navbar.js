@@ -1,3 +1,4 @@
+(function () {
 let semesterContextModule;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -21,12 +22,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 		initDropdowns();
 		highlightCurrentNav();
 
-		window.addEventListener(
-			'pankusdesk:semester-change',
-			async event => {
-				await configureSemesterNavigation(event.detail);
-			},
-		);
 	} catch (error) {
 		console.error('Navbar error:', error);
 	}
@@ -52,11 +47,23 @@ function updateCurrentSemesterLink(semester) {
 }
 
 function updateSemesterUtilityLinks(semester) {
-	const calendarLink = document.getElementById('calendar-nav-link');
-	const progressLink = document.getElementById('progress-nav-link');
+	const calendarLink =
+		document.getElementById(
+			'calendar-nav-link',
+		);
+
+	const progressLink =
+		document.getElementById(
+			'progress-nav-link',
+		);
 
 	if (calendarLink) {
-		calendarLink.href = `college/calendar.html?semester=${encodeURIComponent(semester.id)}`;
+		calendarLink.href =
+			semester.routes?.calendar ??
+			`college/calendar.html?semester=${encodeURIComponent(
+				semester.id,
+			)}`;
+
 		calendarLink.hidden = false;
 	}
 
@@ -120,7 +127,7 @@ function buildSubjectDropdown(semesterSummary, semesterData) {
 }
 
 function subjectItemHtml(semesterId, course, linksEnabled) {
-	if (!linksEnabled) {
+	if (!linksEnabled || !course.page) {
 		return `
 			<span class="nav-dropdown-unavailable">
 				${escapeHtml(course.name)}
@@ -129,7 +136,7 @@ function subjectItemHtml(semesterId, course, linksEnabled) {
 	}
 
 	return `
-		<a href="college/${escapeHtml(semesterId)}/${escapeHtml(course.slug)}/index.html">
+		<a href="${escapeHtml(course.page)}">
 			${escapeHtml(course.name)}
 		</a>
 	`;
@@ -209,3 +216,4 @@ function escapeHtml(value) {
 		.replaceAll('"', '&quot;')
 		.replaceAll("'", '&#039;');
 }
+})();

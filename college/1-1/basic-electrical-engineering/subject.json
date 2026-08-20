@@ -1,0 +1,99 @@
+{
+  "code": "25ES1EE101",
+  "name": "Basic Electrical Engineering",
+  "shortName": "BEE",
+  "regulation": "R25",
+  "semester": "1-1",
+  "credits": 3,
+  "kb": "kb/data/topics.json",
+  "syllabus": "kb/data/syllabus.json",
+  "coverage": "kb/data/coverage-audit.json",
+  "units": [
+    {
+      "number": 1,
+      "title": "Introduction to Electrical Energy and DC Circuits",
+      "notes": "kb/notes/unit-1.md",
+      "publicationStatus": "ready"
+    },
+    {
+      "number": 2,
+      "title": "Steady State AC Circuits",
+      "notes": "kb/notes/unit-2.md",
+      "publicationStatus": "ready"
+    },
+    {
+      "number": 3,
+      "title": "Transformers and DC Machines",
+      "notes": "kb/notes/unit-3.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 4,
+      "title": "Alternating Current Machines",
+      "notes": "kb/notes/unit-4.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 5,
+      "title": "Electrical Installations and Batteries",
+      "notes": "kb/notes/unit-5.md",
+      "publicationStatus": "scaffold"
+    }
+  ],
+  "pyqStatus": "not-added-yet",
+  "unitRenderer": {
+    "syllabusPage": "r25-syllabus.html",
+    "sources": [
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "syllabus_refs",
+        "idField": "source_id",
+        "kind": "Syllabus",
+        "format": "syllabus"
+      },
+      {
+        "path": "kb/data/book-index.json",
+        "idField": "source_id",
+        "kind": "Textbook",
+        "format": "book-page"
+      },
+      {
+        "path": "kb/data/lecture-index.json",
+        "idField": "source_id",
+        "kind": "Lecture",
+        "format": "lecture"
+      },
+      {
+        "path": "kb/data/supplementary-pdf-index.json",
+        "idField": "source_id",
+        "kind": "Supplementary PDF",
+        "format": "pdf-page"
+      },
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "gap_sources",
+        "idField": "id",
+        "kind": "Approved source",
+        "format": "external"
+      }
+    ]
+  },
+  "practice": {
+    "unitQuestions": {
+      "label": "Textbook Questions",
+      "description": "Prescribed textbook chapter-end questions for each unit.",
+      "hrefPattern": "unit-{unit}-questions.html",
+      "availableUnits": [
+        1,
+        2
+      ],
+      "data": "kb/data/textbook-questions.json"
+    },
+    "pyqs": {
+      "label": "BEE PYQs",
+      "description": "VNR previous-year questions for Basic Electrical Engineering.",
+      "href": "pyqs.html",
+      "status": "scaffold"
+    }
+  }
+}

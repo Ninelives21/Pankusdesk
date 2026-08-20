@@ -1,0 +1,2834 @@
+[
+  {
+    "id": "u1-electrical-energy",
+    "unit": 1,
+    "title": "Electrical energy in modern life and engineering",
+    "status": "core",
+    "learn": [
+      "Electrical energy is widely used because it is convenient, controllable, economical, clean at the point of use and easy to transmit.",
+      "Electrical power reaches users through the chain generation → transmission → distribution → utilisation.",
+      "For an IT student, electrical energy is the physical foundation beneath computers, communication equipment, data infrastructure and electrically driven systems."
+    ],
+    "sections": [
+      {
+        "heading": "Why electrical energy is used so widely",
+        "scope": "core",
+        "bullets": [
+          "Convenience: electrical energy can be converted readily into light, heat, cooling and mechanical motion.",
+          "Control and flexibility: electrical equipment can be started, stopped and regulated conveniently.",
+          "Economy: electricity is suitable for domestic, commercial and industrial use and can be supplied efficiently to many kinds of loads.",
+          "Clean point of use: unlike direct combustion at the load, electrical utilisation does not itself produce smoke, fumes or poisonous gases.",
+          "Transmission: electrical energy can be generated at one location and carried over distance to the place where it is required."
+        ],
+        "source_refs": [
+          "TB-P001"
+        ]
+      },
+      {
+        "heading": "Role in everyday life and engineering",
+        "scope": "core",
+        "paragraphs": [
+          "Modern life depends on electrical energy at almost every level. Homes and commercial buildings use it for lighting, fans, heating and cooling, refrigeration, appliances, computers and office equipment. Industry uses it for motor drives, process equipment, lighting, computing and building services.",
+          "Transport and communication also depend on electricity: electric trains and battery vehicles use electrical energy directly, while radio, television and other communication systems require electrical power. Medical and scientific equipment such as X-ray and ECG systems are further examples of electrically powered applications."
+        ],
+        "source_refs": [
+          "TB-P001",
+          "TB-P002"
+        ]
+      },
+      {
+        "heading": "Why BEE matters to an IT student",
+        "scope": "core",
+        "paragraphs": [
+          "A computer is an electrical/electronic system before it is a programming platform. Its processor, memory, storage, display, networking equipment and power supply all depend on electrical energy. The same is true for servers, network infrastructure, laboratories and the machines that support an IT workplace.",
+          "BEE therefore gives the engineering vocabulary needed to understand sources, voltage, current, circuit elements, power systems and machines that coexist with computing systems."
+        ],
+        "source_refs": [
+          "TB-P002"
+        ]
+      },
+      {
+        "heading": "From generation to utilisation",
+        "scope": "supporting",
+        "bullets": [
+          "Generation converts another available form of energy into electrical energy. Possible inputs include mechanical, heat, chemical, solar and wind energy.",
+          "In conventional generation, a prime mover supplies mechanical energy to a generator; the generator converts mechanical energy into electrical energy.",
+          "Transmission carries bulk electrical power from generating stations toward load centres.",
+          "Distribution delivers power from the transmission system to individual consumers and loads.",
+          "Utilisation is the final conversion of electrical energy into the required useful effect: light, heat, motion, computing, communication and so on.",
+          "Motor and generator are inverse energy-conversion examples: motor — electrical → mechanical; generator — mechanical → electrical."
+        ],
+        "source_refs": [
+          "TB-P002",
+          "TB-P003"
+        ]
+      }
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P001",
+      "TB-P002",
+      "TB-P003"
+    ],
+    "book_refs": [
+      {
+        "pages": "1–3",
+        "images": "01.png–03.png",
+        "note": "role of electrical energy; CSE relevance; generation/transmission/utilisation"
+      }
+    ],
+    "cautions": [],
+    "practice": [
+      {
+        "book_page": 70,
+        "type": "2-mark",
+        "items": "Q1–Q2"
+      },
+      {
+        "book_page": 71,
+        "type": "6-mark",
+        "items": "Q1–Q2"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "Why is electrical energy used so widely?",
+        "answer": "It is convenient to convert into useful forms, easy to control, economical for many kinds of loads, clean at the point of use, and can be transmitted from the place of generation to the place of utilisation."
+      },
+      {
+        "question": "What is the basic chain from electrical-energy production to use?",
+        "answer": "Generation → transmission → distribution → utilisation. A generator converts another form of energy into electrical energy; the final load converts electrical energy into the required useful effect."
+      }
+    ]
+  },
+  {
+    "id": "u1-circuit-concept",
+    "unit": 1,
+    "title": "Circuit concept, current, voltage and basic electrical quantities",
+    "status": "core",
+    "learn": [
+      "A network is an interconnection of two or more circuit elements; a circuit is a network in which a closed path exists for current.",
+      "Current is rate of flow of charge: i = dq/dt. Voltage is energy transferred per unit charge between two points: v = dw/dq.",
+      "Reference directions and polarities are choices. A negative solved value means the actual direction/polarity is opposite to the chosen reference."
+    ],
+    "sections": [
+      {
+        "heading": "Network and circuit — know the distinction",
+        "scope": "core",
+        "paragraphs": [
+          "An electrical network is an interconnection of two or more electrical elements. A network does not necessarily provide a closed conducting path through which current can circulate.",
+          "An electrical circuit is a network arranged so that at least one closed path or loop exists. Therefore every circuit is a network, but a network need not be a circuit. This is a useful exam distinction as well as a useful way to read circuit diagrams."
+        ],
+        "source_refs": [
+          "TB-P004",
+          "LEC-U1-04"
+        ]
+      },
+      {
+        "heading": "Element, terminal, node and loop",
+        "scope": "core",
+        "bullets": [
+          "Circuit element: a component represented through terminal voltage-current relationships. A two-terminal element has two terminals through which current may enter or leave.",
+          "Terminal: a connection point of an element. Voltage is measured between a pair of terminals.",
+          "Node: the interconnection of two or more elements. A continuous ideal wire is treated as one equipotential node even if it is drawn over a large area of the page.",
+          "Loop: a closed path that begins at a node, passes through circuit elements and returns to the starting node.",
+          "A basic circuit contains a source, a load, a controlling switch and connecting wires."
+        ],
+        "source_refs": [
+          "TB-P004",
+          "LEC-U1-04",
+          "SUP-P020"
+        ]
+      },
+      {
+        "heading": "Current: charge in motion",
+        "scope": "core",
+        "paragraphs": [
+          "Electric current measures how rapidly electric charge crosses a chosen surface or flows through a conductor. If a net charge dQ crosses in time dt, the current is i = dQ/dt. One ampere is one coulomb per second.",
+          "Circuit analysis normally ignores the microscopic distribution of moving charge across the wire and works with the total current in each branch. This is one of the simplifications that makes circuit theory much easier than a full electromagnetic-field calculation."
+        ],
+        "bullets": [
+          "Conventional current is defined in the direction in which positive charge would move.",
+          "In metallic conductors the mobile charges are electrons, so electron motion is opposite to conventional-current direction.",
+          "A current marked A→B as +1 A is exactly the same physical current as −1 A marked B→A. Direction arrows are reference choices."
+        ],
+        "source_refs": [
+          "LEC-U1-01",
+          "LEC-U1-02",
+          "SUP-P009",
+          "SUP-P011"
+        ]
+      },
+      {
+        "heading": "Voltage: potential difference and energy per charge",
+        "scope": "core",
+        "paragraphs": [
+          "Voltage is always a difference between two points. It is the electrical potential-energy change per unit charge, so v = dw/dq. One volt means one joule of energy per coulomb of charge.",
+          "The sign of a voltage depends on the polarity chosen. If A is 5 V above B, then VAB = +5 V and VBA = −5 V. A negative result is not a mistake; it says that the actual polarity is opposite to the reference marking.",
+          "Circuit theory uses node-to-node voltage as a compact representation of electric-field effects instead of solving the spatial electric field everywhere."
+        ],
+        "source_refs": [
+          "LEC-U1-01",
+          "LEC-U1-03",
+          "SUP-P012",
+          "SUP-P013"
+        ]
+      },
+      {
+        "heading": "Power and energy",
+        "scope": "core",
+        "paragraphs": [
+          "Electrical power is the rate at which energy is transferred. With voltage polarity and current direction chosen according to the passive sign convention, p = vi. For constant power P acting for a time t, the transferred energy is W = Pt.",
+          "For a passive element, positive p means the element is absorbing electrical power. The sign depends on the selected voltage/current references, so draw the polarity and current arrow before interpreting power."
+        ],
+        "source_refs": [
+          "LEC-U1-09",
+          "LEC-U1-10",
+          "SUP-P014",
+          "SUP-P015",
+          "SUP-P016",
+          "SUP-P017"
+        ]
+      },
+      {
+        "heading": "Electrical, magnetic and mechanical analogy",
+        "scope": "supporting",
+        "paragraphs": [
+          "A useful analogy connects electrical, magnetic and mechanical systems: EMF drives current against electrical resistance; magnetomotive force (MMF) drives magnetic flux against reluctance; mechanical torque drives speed against friction. The analogy becomes useful later in transformers and electrical machines.",
+          "For Unit I, retain only the basic MMF idea: MMF is the driving quantity of a magnetic circuit and, for a coil, MMF = NI. Detailed magnetic-circuit calculations are not an R25 Unit-I requirement."
+        ],
+        "source_refs": [
+          "TB-P004"
+        ]
+      }
+    ],
+    "formulas": [
+      "i = dq/dt",
+      "1 A = 1 C/s",
+      "v = dw/dq",
+      "1 V = 1 J/C",
+      "p = vi",
+      "W = Pt (constant power)",
+      "MMF (coil): NI"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P004",
+      "LEC-U1-01",
+      "LEC-U1-02",
+      "LEC-U1-03",
+      "LEC-U1-04",
+      "LEC-U1-09",
+      "LEC-U1-10",
+      "SUP-P009",
+      "SUP-P011",
+      "SUP-P012",
+      "SUP-P013",
+      "SUP-P014",
+      "SUP-P015",
+      "SUP-P016",
+      "SUP-P017",
+      "SUP-P020"
+    ],
+    "book_refs": [
+      {
+        "pages": "4",
+        "images": "04.png",
+        "note": "electric circuit and basic circuit schematic"
+      }
+    ],
+    "cautions": [
+      "Do not confuse electron-flow direction with conventional-current direction.",
+      "Voltage is between two points; always keep the chosen +/− reference visible when solving a circuit."
+    ],
+    "practice": [
+      {
+        "book_page": 70,
+        "type": "2-mark",
+        "items": "Q3–Q5"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What is the difference between an electrical network and an electrical circuit?",
+        "answer": "A network is an interconnection of two or more electrical elements and need not contain a closed conducting path. A circuit is a network with at least one closed path. Therefore every circuit is a network, but every network need not be a circuit."
+      },
+      {
+        "question": "What do 1 ampere and 1 volt mean in base electrical terms?",
+        "answer": "1 ampere means 1 coulomb of charge crossing a section per second. 1 volt means 1 joule of energy transferred per coulomb of charge."
+      },
+      {
+        "question": "What is MMF at the level needed here?",
+        "answer": "Magnetomotive force is the driving quantity of a magnetic circuit. For a coil, MMF = NI. Detailed magnetic-circuit calculations are not part of R25 Unit I."
+      }
+    ]
+  },
+  {
+    "id": "u1-rlc",
+    "unit": 1,
+    "title": "R, L and C parameters",
+    "status": "core",
+    "learn": [
+      "R dissipates energy, L stores energy in a magnetic field, and C stores energy in an electric field.",
+      "The ideal element laws are v = Ri, v = L·di/dt and i = C·dv/dt.",
+      "In steady DC an ideal inductor behaves as a short circuit and an ideal capacitor as an open circuit; inductor current and capacitor voltage cannot jump instantaneously under finite excitation."
+    ],
+    "sections": [
+      {
+        "heading": "Resistance and Ohm’s law",
+        "scope": "core",
+        "paragraphs": [
+          "Resistance is the property of a material or element that opposes current. For the linear resistor used in this course, voltage drop is proportional to current at a given temperature: v = Ri. The proportionality constant R is resistance, measured in ohms (Ω). Conductance is G = 1/R, measured in siemens (S), so i = Gv.",
+          "For a uniform conductor, resistance depends on the material and geometry: R = ρl/A. Increasing length increases resistance, while increasing cross-sectional area decreases it. In metals, resistivity increases with temperature, so real resistance can change with temperature."
+        ],
+        "source_refs": [
+          "TB-P005",
+          "LEC-U1-05",
+          "SUP-P018",
+          "SUP-P019",
+          "SUP-P042",
+          "SUP-P043",
+          "SUP-P044"
+        ]
+      },
+      {
+        "heading": "Power, heat and resistor rating",
+        "scope": "core",
+        "paragraphs": [
+          "A resistor converts absorbed electrical energy into heat. Combining p = vi with v = Ri gives the familiar forms p = i²R and p = v²/R.",
+          "Because electrical energy is dissipated as heat, a practical resistor must have a sufficient power rating. Inadequate heat dissipation can overheat or damage the resistor."
+        ],
+        "source_refs": [
+          "TB-P005",
+          "LEC-U1-05",
+          "SUP-P043",
+          "SUP-P044"
+        ]
+      },
+      {
+        "heading": "Inductance: current, flux and induced emf",
+        "scope": "core",
+        "paragraphs": [
+          "A current-carrying conductor produces magnetic flux around it; the direction follows the right-hand thumb rule. When the conductor is formed into a coil, the flux links multiple turns. Flux linkage is the number of turns multiplied by the flux linked by each turn.",
+          "When the flux linkage changes with time, an emf is induced. For the ideal linear inductor this becomes v = L·di/dt. L is inductance, measured in henrys. The induced emf opposes the change that produces it, which is the Lenz-law idea behind the statement that an inductor opposes changes in current."
+        ],
+        "source_refs": [
+          "TB-P005",
+          "TB-P006",
+          "LEC-U1-07",
+          "SUP-P049",
+          "SUP-P050",
+          "SUP-P051"
+        ]
+      },
+      {
+        "heading": "Inductor behaviour you should remember",
+        "scope": "core",
+        "bullets": [
+          "If current is constant, di/dt = 0 and the ideal inductor voltage is zero.",
+          "Therefore an ideal inductor behaves as a short circuit after steady DC has been established.",
+          "A finite voltage cannot produce an instantaneous jump in inductor current. Current through an ideal inductor is continuous unless an infinite voltage is allowed.",
+          "The integral relation i(t1) = i(t0) + (1/L)∫v dt shows that present current depends on the previous current — an inductor has memory.",
+          "Stored magnetic energy is W = ½Li². Energy can remain stored even when the current has become constant and the ideal inductor voltage has fallen to zero.",
+          "A useful analogy is “electrical inertia”: a flywheel resists change in speed, while an inductor resists change in current."
+        ],
+        "source_refs": [
+          "TB-P006",
+          "TB-P007",
+          "LEC-U1-07"
+        ]
+      },
+      {
+        "heading": "Capacitance: charge stored by an electric field",
+        "scope": "core",
+        "paragraphs": [
+          "A capacitor is formed by conducting plates separated by an insulating dielectric. Equal and opposite charge accumulates on the plates and an electric field is established between them. Charge and voltage are related by q = Cv, where C is capacitance measured in farads.",
+          "Differentiating q = Cv for constant C gives i = C·dv/dt. The integral form v(t1) = v(t0) + (1/C)∫i dt makes the memory property explicit."
+        ],
+        "source_refs": [
+          "TB-P007",
+          "TB-P008",
+          "LEC-U1-06",
+          "SUP-P045",
+          "SUP-P046",
+          "SUP-P047",
+          "SUP-P048"
+        ]
+      },
+      {
+        "heading": "Capacitor behaviour you should remember",
+        "scope": "core",
+        "bullets": [
+          "If capacitor voltage is constant, dv/dt = 0 and the ideal capacitor current is zero.",
+          "Therefore an ideal capacitor behaves as an open circuit under steady DC.",
+          "A finite current cannot change capacitor voltage instantaneously. Capacitor voltage is continuous unless an infinite current is allowed.",
+          "Stored electric-field energy is W = ½Cv². Energy can remain stored at constant voltage even though current is zero.",
+          "For a parallel-plate capacitor, capacitance increases with plate area and permittivity and decreases as plate spacing increases."
+        ],
+        "source_refs": [
+          "TB-P007",
+          "TB-P008",
+          "LEC-U1-06"
+        ]
+      },
+      {
+        "heading": "Memoryless versus memory elements",
+        "scope": "supporting",
+        "paragraphs": [
+          "The resistor is memoryless: at a given instant its voltage depends only on the current at that instant through v = Ri. The capacitor and inductor are dynamic elements because their terminal relationships contain time derivatives and their states depend on earlier voltage/current history.",
+          "This distinction becomes important when circuits contain stored energy. R dissipates; ideal L and C store and can later return energy to the circuit."
+        ],
+        "source_refs": [
+          "LEC-U1-05",
+          "LEC-U1-06",
+          "LEC-U1-07"
+        ]
+      },
+      {
+        "heading": "Linearity of R, L and C",
+        "scope": "supporting",
+        "paragraphs": [
+          "A linear element obeys superposition: if one excitation produces one response and a second excitation produces a second response, a linear combination of the excitations produces the same linear combination of responses.",
+          "For constant R, L and C, the relations v = Ri, v = L·di/dt and i = C·dv/dt are linear. This is the foundation for applying Superposition and Thevenin’s theorem later in the unit."
+        ],
+        "source_refs": [
+          "LEC-U1-08"
+        ]
+      }
+    ],
+    "formulas": [
+      "Resistor: v = Ri; i = Gv; G = 1/R",
+      "Uniform conductor: R = ρl/A",
+      "Resistor power: p = vi = i²R = v²/R",
+      "Inductor: v = L·di/dt",
+      "Inductor energy: W = ½Li²",
+      "Capacitor: q = Cv; i = C·dv/dt",
+      "Capacitor energy: W = ½Cv²"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P005",
+      "TB-P006",
+      "TB-P007",
+      "TB-P008",
+      "LEC-U1-05",
+      "LEC-U1-06",
+      "LEC-U1-07",
+      "LEC-U1-08",
+      "SUP-P042",
+      "SUP-P043",
+      "SUP-P044",
+      "SUP-P045",
+      "SUP-P046",
+      "SUP-P047",
+      "SUP-P048",
+      "SUP-P049",
+      "SUP-P050",
+      "SUP-P051",
+      "SUP-P052",
+      "SUP-P053",
+      "SUP-P018",
+      "SUP-P019"
+    ],
+    "book_refs": [
+      {
+        "pages": "5–8",
+        "images": "05.png–08.png",
+        "note": "R, L and C definitions, equations, energy and DC behaviour"
+      }
+    ],
+    "cautions": [
+      "Terminology can vary between introductory sources. For problem solving, use the unambiguous physical behaviour: R dissipates energy; ideal L and C store energy.",
+      "Steady-DC short/open statements apply to ideal L and C after transients have settled; they are not general replacements for all time-varying conditions."
+    ],
+    "practice": [
+      {
+        "book_page": 70,
+        "type": "2-mark",
+        "items": "Q6–Q9"
+      },
+      {
+        "book_page": 71,
+        "type": "6-mark",
+        "items": "Q3"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "How do ideal L and C behave after steady DC has been established?",
+        "answer": "An ideal inductor behaves as a short circuit because di/dt = 0 and hence v = 0. An ideal capacitor behaves as an open circuit because dv/dt = 0 and hence i = 0."
+      },
+      {
+        "question": "Which quantities cannot jump instantaneously under finite excitation?",
+        "answer": "Current through an ideal inductor cannot change instantaneously under finite voltage, and voltage across an ideal capacitor cannot change instantaneously under finite current."
+      },
+      {
+        "question": "How do R, L and C differ in their energy behaviour?",
+        "answer": "A resistor dissipates absorbed electrical energy as heat. An ideal inductor stores energy in a magnetic field, W = ½Li², and an ideal capacitor stores energy in an electric field, W = ½Cv²."
+      }
+    ]
+  },
+  {
+    "id": "u1-sources",
+    "unit": 1,
+    "title": "Independent and dependent voltage/current sources",
+    "status": "core",
+    "learn": [
+      "Ideal voltage sources fix voltage; ideal current sources fix current. Their other terminal variable adjusts to whatever the connected circuit requires.",
+      "Dependent sources are controlled by a voltage or current elsewhere in the circuit: VCVS, VCCS, CCVS and CCCS.",
+      "Practical source models add internal resistance: series resistance for a voltage source and parallel resistance for a current source."
+    ],
+    "sections": [
+      {
+        "heading": "What an electrical source does",
+        "scope": "core",
+        "paragraphs": [
+          "A source supplies electrical energy or power to the circuit. Sources are first classified by the quantity they impose — voltage source or current source — and then by whether the imposed quantity is independent or controlled by another circuit variable."
+        ],
+        "source_refs": [
+          "TB-P008"
+        ]
+      },
+      {
+        "heading": "Ideal independent voltage source",
+        "scope": "core",
+        "paragraphs": [
+          "An ideal independent voltage source maintains the specified terminal voltage irrespective of the current drawn from it. The current is determined by the rest of the connected circuit; the source model itself does not impose that current.",
+          "The circular source symbol and marked polarity define the reference voltage. If the specified source voltage is negative, the actual polarity is opposite to the marked reference. On the V-I characteristic, voltage stays fixed while current may take any value."
+        ],
+        "source_refs": [
+          "TB-P008",
+          "TB-P009",
+          "LEC-U1-09",
+          "SUP-P031",
+          "SUP-P032"
+        ]
+      },
+      {
+        "heading": "Ideal independent current source",
+        "scope": "core",
+        "paragraphs": [
+          "An ideal independent current source maintains the specified current irrespective of the voltage developed across its terminals. The terminal voltage is whatever value the surrounding circuit requires.",
+          "The arrow fixes the reference current direction. A negative source value means actual current is opposite to the arrow. On the V-I characteristic, current is fixed while voltage may take any value."
+        ],
+        "source_refs": [
+          "TB-P009",
+          "LEC-U1-10",
+          "SUP-P033",
+          "SUP-P034"
+        ]
+      },
+      {
+        "heading": "Practical source models",
+        "scope": "supporting",
+        "bullets": [
+          "Practical voltage source: ideal voltage source Vs in series with internal resistance R. As load current increases, the terminal voltage falls; the supplementary notes express this as Vt = Vs − iR for the shown reference directions.",
+          "Practical current source: ideal current source in parallel with internal resistance. Some source current is diverted through the internal resistance, so the current delivered to the external circuit depends on terminal voltage.",
+          "The ideal models are limiting cases. They are extremely useful in analysis even though real sources have finite internal effects."
+        ],
+        "source_refs": [
+          "SUP-P031",
+          "SUP-P032",
+          "SUP-P033",
+          "SUP-P034"
+        ]
+      },
+      {
+        "heading": "Dependent or controlled sources",
+        "scope": "core",
+        "paragraphs": [
+          "For a dependent source, the output voltage or current is controlled by another voltage or current elsewhere in the circuit. A diamond symbol distinguishes a controlled source from an independent source. Controlled sources are useful models for active devices and amplifying behaviour."
+        ],
+        "source_refs": [
+          "TB-P009",
+          "TB-P010",
+          "LEC-U1-11",
+          "LEC-U1-12",
+          "LEC-U1-13",
+          "LEC-U1-14"
+        ]
+      },
+      {
+        "heading": "VCVS — voltage-controlled voltage source",
+        "scope": "core",
+        "bullets": [
+          "Controlling quantity: voltage vx.",
+          "Controlled quantity: output voltage vo.",
+          "Relation: vo = K·vx. K is dimensionless voltage gain.",
+          "A VCVS is a simple amplifier model: a small controlling voltage can produce a scaled output voltage."
+        ],
+        "source_refs": [
+          "TB-P010",
+          "LEC-U1-11"
+        ],
+        "paragraphs": [
+          "Quick check: if K = 5, a control voltage of 1 V gives 5 V at the controlled source. Likewise, 20 mV·sin(ωt) becomes 100 mV·sin(ωt)."
+        ]
+      },
+      {
+        "heading": "VCCS — voltage-controlled current source",
+        "scope": "core",
+        "bullets": [
+          "Controlling quantity: voltage vx.",
+          "Controlled quantity: output current io.",
+          "Relation: io = Gm·vx. Gm has units of conductance and is commonly called transconductance.",
+          "A VCCS is a useful model for active devices such as transistors."
+        ],
+        "source_refs": [
+          "TB-P011",
+          "LEC-U1-12"
+        ],
+        "paragraphs": [
+          "For Gm = 1 mS, a controlling voltage of 1 V produces 1 mA of controlled current. The units work naturally: siemens × volts = amperes."
+        ]
+      },
+      {
+        "heading": "CCVS — current-controlled voltage source",
+        "scope": "core",
+        "bullets": [
+          "Controlling quantity: current ix sensed in another branch.",
+          "Controlled quantity: output voltage vo.",
+          "Relation: vo = Rm·ix. Rm has dimensions of resistance and is called transresistance or transimpedance.",
+          "The controlling current is sensed without changing the branch-current value in the ideal model."
+        ],
+        "source_refs": [
+          "TB-P011",
+          "TB-P012",
+          "LEC-U1-13"
+        ],
+        "paragraphs": [
+          "For Rm = 2 kΩ, a controlling current of 1 mA produces 2 V. This makes the resistance dimension of Rm easy to remember."
+        ]
+      },
+      {
+        "heading": "CCCS — current-controlled current source",
+        "scope": "core",
+        "bullets": [
+          "Controlling quantity: current ix.",
+          "Controlled quantity: output current io.",
+          "Relation: io = K·ix. K is a dimensionless current gain.",
+          "It is the current counterpart of a VCVS: the output is a scaled version of the controlling current."
+        ],
+        "source_refs": [
+          "TB-P012",
+          "LEC-U1-14"
+        ],
+        "paragraphs": [
+          "For current gain K = 5, a controlling current of 1 mA produces a 5 mA controlled current."
+        ]
+      },
+      {
+        "heading": "Linearity and one-way control",
+        "scope": "supporting",
+        "paragraphs": [
+          "The four controlled-source relations above are linear in their controlling variables and therefore fit naturally into linear circuit analysis. Their control is unilateral: the controlling side determines the controlled side, not the reverse.",
+          "A non-zero independent ideal voltage or current source does not itself satisfy the superposition test even though its V-I characteristic is a straight line. A straight characteristic is not sufficient for linearity unless it passes through the origin. This is why setting an independent source to zero is a special step in superposition-based theorems."
+        ],
+        "source_refs": [
+          "LEC-U1-08",
+          "LEC-U1-11",
+          "LEC-U1-14"
+        ]
+      },
+      {
+        "heading": "Zero-valued source equivalents",
+        "scope": "supporting",
+        "bullets": [
+          "0 V ideal voltage source → short circuit.",
+          "0 A ideal current source → open circuit.",
+          "These equivalents are used repeatedly when independent sources are deactivated in Superposition and Thevenin calculations."
+        ],
+        "source_refs": [
+          "LEC-U1-08",
+          "LEC-U1-21"
+        ]
+      }
+    ],
+    "formulas": [
+      "Practical voltage source: Vt = Vs − iR (for the shown references)",
+      "VCVS: vo = K·vx",
+      "VCCS: io = Gm·vx",
+      "CCVS: vo = Rm·ix",
+      "CCCS: io = K·ix",
+      "0 V source ≡ short circuit",
+      "0 A source ≡ open circuit"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P008",
+      "TB-P009",
+      "TB-P010",
+      "TB-P011",
+      "TB-P012",
+      "TB-P013",
+      "TB-P014",
+      "LEC-U1-08",
+      "LEC-U1-09",
+      "LEC-U1-10",
+      "LEC-U1-11",
+      "LEC-U1-12",
+      "LEC-U1-13",
+      "LEC-U1-14",
+      "LEC-U1-21",
+      "SUP-P030",
+      "SUP-P031",
+      "SUP-P032",
+      "SUP-P033",
+      "SUP-P034"
+    ],
+    "book_refs": [
+      {
+        "pages": "8–14",
+        "images": "08.png–11.png; 13.png = p.12; 12.png = p.13; 14.png = p.14",
+        "note": "ideal/practical independent sources and four controlled-source types; p.12/p.13 screenshots were captured out of order"
+      }
+    ],
+    "cautions": [
+      "Do not “turn off” a dependent source when applying Superposition or finding Thevenin resistance. It must remain active because its value depends on a circuit variable.",
+      "Do not infer that a source is linear merely because its V-I graph is a straight line; use the superposition test."
+    ],
+    "practice": [
+      {
+        "book_page": 70,
+        "type": "2-mark",
+        "items": "Q10–Q11"
+      },
+      {
+        "book_page": 71,
+        "type": "2-mark",
+        "items": "Q12"
+      },
+      {
+        "book_page": 71,
+        "type": "6-mark",
+        "items": "Q4"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What is the key difference between an ideal voltage source and an ideal current source?",
+        "answer": "An ideal voltage source fixes its terminal voltage and lets current be determined by the connected circuit. An ideal current source fixes its current and lets terminal voltage be determined by the connected circuit."
+      },
+      {
+        "question": "What are the four dependent-source types?",
+        "answer": "VCVS: voltage-controlled voltage source; VCCS: voltage-controlled current source; CCVS: current-controlled voltage source; CCCS: current-controlled current source."
+      },
+      {
+        "question": "What do zero-valued ideal sources become?",
+        "answer": "A 0 V ideal voltage source is equivalent to a short circuit. A 0 A ideal current source is equivalent to an open circuit."
+      }
+    ]
+  },
+  {
+    "id": "u1-source-transformation",
+    "unit": 1,
+    "title": "Source transformation",
+    "status": "supporting",
+    "learn": [
+      "A voltage source Vs in series with R is terminally equivalent to a current source Is = Vs/R in parallel with the same R.",
+      "The reverse transformation is Is in parallel R → Vs = IsR in series R.",
+      "The transformation preserves behaviour only at the same pair of external terminals."
+    ],
+    "sections": [
+      {
+        "heading": "Why source transformation is useful",
+        "scope": "supporting",
+        "paragraphs": [
+          "Source transformation changes the form of a source-resistance combination without changing the voltage-current behaviour seen by the rest of the circuit at its two external terminals. It can turn an awkward network into one that reduces directly by series/parallel rules."
+        ],
+        "source_refs": [
+          "TB-P013",
+          "SUP-P035"
+        ]
+      },
+      {
+        "heading": "Voltage source to current source",
+        "scope": "supporting",
+        "bullets": [
+          "Start with an ideal voltage source Vs in series with resistance R.",
+          "Replace it by an ideal current source Is = Vs/R in parallel with exactly the same resistance R.",
+          "Choose the current-source arrow so that the open-circuit terminal voltage has the same polarity as the original voltage source."
+        ],
+        "source_refs": [
+          "TB-P013",
+          "TB-P014",
+          "TB-P015",
+          "SUP-P035",
+          "SUP-P036",
+          "SUP-P037"
+        ]
+      },
+      {
+        "heading": "Current source to voltage source",
+        "scope": "supporting",
+        "bullets": [
+          "Start with an ideal current source Is in parallel with resistance R.",
+          "Replace it by an ideal voltage source Vs = IsR in series with the same resistance R.",
+          "Choose the voltage polarity consistently with the original current-source direction."
+        ],
+        "source_refs": [
+          "TB-P015",
+          "TB-P016",
+          "SUP-P038",
+          "SUP-P039"
+        ]
+      },
+      {
+        "heading": "What must remain unchanged",
+        "scope": "supporting",
+        "bullets": [
+          "The two external terminals being observed.",
+          "The internal resistance value R.",
+          "The terminal voltage-current relationship as seen by the load.",
+          "The source orientation (polarity/arrow) after conversion."
+        ],
+        "source_refs": [
+          "TB-P013",
+          "TB-P016"
+        ]
+      }
+    ],
+    "formulas": [
+      "Voltage form: Vs in series R",
+      "Current form: Is = Vs/R in parallel R",
+      "Reverse: Vs = IsR"
+    ],
+    "method": [
+      "Identify a source with its associated series/parallel resistance.",
+      "Apply Is = Vs/R or Vs = IsR.",
+      "Keep the same R and preserve the same external terminals.",
+      "Redraw the circuit and continue series/parallel reduction."
+    ],
+    "source_refs": [
+      "TB-P012",
+      "TB-P013",
+      "TB-P014",
+      "TB-P015",
+      "TB-P016",
+      "SUP-P035",
+      "SUP-P036",
+      "SUP-P037",
+      "SUP-P038",
+      "SUP-P039"
+    ],
+    "book_refs": [
+      {
+        "pages": "13–16",
+        "images": "12.png = p.13; 14.png–16.png = pp.14–16",
+        "note": "source-transformation derivation and examples"
+      }
+    ],
+    "cautions": [
+      "Source transformation is supplied in the prescribed chapter and supplementary PDF, but it is not separately named in the R25 Unit-I syllabus line; it is therefore kept as Supporting material."
+    ],
+    "practice": [
+      {
+        "book_page": 71,
+        "type": "2-mark",
+        "items": "Q12–Q13"
+      },
+      {
+        "book_page": 71,
+        "type": "6-mark",
+        "items": "Q5"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "A 24 V source is in series with 10 Ω. What is its equivalent current-source form?",
+        "answer": "The equivalent is a 2.4 A current source in parallel with 10 Ω. The resistance value stays 10 Ω; only the source type and its series/parallel arrangement change."
+      }
+    ]
+  },
+  {
+    "id": "u1-kirchhoff",
+    "unit": 1,
+    "title": "Kirchhoff’s laws",
+    "status": "core",
+    "learn": [
+      "KCL expresses conservation of charge at a node: the algebraic sum of currents at a node is zero.",
+      "KVL expresses the potential balance around a closed loop: the algebraic sum of voltage rises/drops around the loop is zero.",
+      "Reference directions are arbitrary but must be used consistently; negative answers simply reverse the assumed direction or polarity."
+    ],
+    "sections": [
+      {
+        "heading": "Kirchhoff’s Current Law (KCL)",
+        "scope": "core",
+        "paragraphs": [
+          "KCL states that the algebraic sum of currents entering a node is zero. Equivalently, total current entering equals total current leaving. This follows from conservation of charge: if a node does not create, destroy or accumulate charge, the rate of charge flowing in must balance the rate flowing out.",
+          "You may choose “entering positive” or “leaving positive”. Either convention works. What matters is that every branch current at that node is written using the same sign convention."
+        ],
+        "source_refs": [
+          "LEC-U1-15",
+          "TB-P016",
+          "TB-P017",
+          "SUP-P021",
+          "SUP-P022",
+          "SUP-P023"
+        ]
+      },
+      {
+        "heading": "KCL intuition and sign handling",
+        "scope": "supporting",
+        "paragraphs": [
+          "Water-flow analogy: if 10 L/min and 15 L/min enter a junction, 25 L/min must leave. If every flow is referenced toward the junction, the outgoing 25 L/min appears as −25 L/min and the algebraic sum is zero.",
+          "The same idea prevents confusion in circuits. An assumed branch current may solve to a negative value; keep the equation and interpret the negative sign as actual flow opposite to the reference arrow."
+        ],
+        "source_refs": [
+          "LEC-U1-15"
+        ]
+      },
+      {
+        "heading": "Kirchhoff’s Voltage Law (KVL)",
+        "scope": "core",
+        "paragraphs": [
+          "KVL states that the algebraic sum of voltages around a closed loop is zero. Start from any node, traverse the loop once and add either voltage rises or voltage drops consistently. Returning to the starting point returns to the same electrical potential, so the net change is zero.",
+          "A voltage encountered from − to + is a rise; from + to − is a drop. You can formulate KVL using either convention as long as the signs are consistent around the whole loop."
+        ],
+        "source_refs": [
+          "LEC-U1-16",
+          "TB-P016",
+          "TB-P018",
+          "SUP-P026",
+          "SUP-P027"
+        ]
+      },
+      {
+        "heading": "KVL intuition and circuit assumption",
+        "scope": "supporting",
+        "paragraphs": [
+          "Height analogy: after climbing and descending during a closed journey and returning to the starting point, the algebraic sum of all height changes is zero. KVL applies the same idea to electrical potential around a loop.",
+          "The circuit form of KVL assumes there is no significant time-varying magnetic flux linking the loop. That assumption is appropriate for the lumped circuits treated in this course."
+        ],
+        "source_refs": [
+          "LEC-U1-16"
+        ]
+      },
+      {
+        "heading": "Using KCL and KVL together",
+        "scope": "core",
+        "bullets": [
+          "Label nodes, choose current arrows and mark voltage polarities before writing equations.",
+          "Use element relations such as v = Ri to connect branch voltages and currents.",
+          "Use KCL where branch currents meet and KVL where loop voltages are convenient.",
+          "Solve the simultaneous equations without changing reference directions halfway through.",
+          "Interpret a negative solution only after the algebra is complete."
+        ],
+        "source_refs": [
+          "TB-P019",
+          "TB-P020",
+          "TB-P021",
+          "TB-P022",
+          "TB-P023",
+          "TB-P024",
+          "TB-P025",
+          "TB-P026",
+          "TB-P027",
+          "TB-P028",
+          "TB-P029",
+          "TB-P030",
+          "LEC-U1-15",
+          "LEC-U1-16"
+        ]
+      }
+    ],
+    "formulas": [
+      "KCL: Σi = 0 at a node",
+      "Equivalent KCL form: Σiin = Σiout",
+      "KVL: Σv = 0 around a closed loop"
+    ],
+    "method": [
+      "Mark current references and voltage polarities.",
+      "Write KCL at the required node(s).",
+      "Choose a loop direction and write KVL consistently.",
+      "Substitute element/source relations.",
+      "Solve and use the signs of the answers to interpret actual direction/polarity."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P016",
+      "TB-P017",
+      "TB-P018",
+      "TB-P019",
+      "TB-P020",
+      "TB-P021",
+      "TB-P022",
+      "TB-P023",
+      "TB-P024",
+      "TB-P025",
+      "TB-P026",
+      "TB-P027",
+      "TB-P028",
+      "TB-P029",
+      "TB-P030",
+      "LEC-U1-15",
+      "LEC-U1-16",
+      "SUP-P021",
+      "SUP-P022",
+      "SUP-P023",
+      "SUP-P026",
+      "SUP-P027"
+    ],
+    "book_refs": [
+      {
+        "pages": "16–30",
+        "images": "16.png–30.png",
+        "note": "law statements plus extensive KCL/KVL worked examples, including controlled-source circuits"
+      }
+    ],
+    "cautions": [
+      "Do not switch sign convention partway through an equation. A negative answer is information, not a reason to rewrite the original reference arrows."
+    ],
+    "practice": [
+      {
+        "book_page": 71,
+        "type": "2-mark",
+        "items": "Q14"
+      },
+      {
+        "book_page": 71,
+        "type": "6-mark",
+        "items": "Q6–Q7"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "In the KCL sign example, I₁ = 1 A, I₂ = −2 A and I₄ = 1 A are referenced as entering a node. What is I₃?",
+        "answer": "Using KCL: 1 − 2 + I₃ + 1 = 0, so I₃ = 0 A. A negative branch-current value is valid; it means the actual direction is opposite to the chosen reference."
+      },
+      {
+        "question": "In the KVL sign example, V₁ = 1 V, V₂ = 3 V and V₄ = 5 V. If 3 + V₃ + 5 − 1 = 0, what is V₃?",
+        "answer": "V₃ = −7 V. The negative sign means the actual polarity is opposite to the chosen voltage reference."
+      }
+    ]
+  },
+  {
+    "id": "u1-network-reduction",
+    "unit": 1,
+    "title": "Series, parallel and series-parallel reduction",
+    "status": "core",
+    "learn": [
+      "Series elements share the same current; parallel elements share the same voltage.",
+      "Use equivalent R/L/C and source-combination rules only when the topology really satisfies those series/parallel conditions.",
+      "Reduce the circuit step by step, solve the simple equivalent, then work backward with Ohm’s law and divider rules."
+    ],
+    "sections": [
+      {
+        "heading": "How to recognise true series and parallel connections",
+        "scope": "core",
+        "paragraphs": [
+          "Two elements are in series when the same current is forced through both — their common node has no additional branch through which current can leave. Two elements are in parallel when both terminals of one connect to the same two nodes as both terminals of the other, so they have exactly the same voltage.",
+          "Visual proximity on the drawing is not enough. Always decide from the nodes and current paths."
+        ],
+        "source_refs": [
+          "LEC-U1-17",
+          "LEC-U1-18",
+          "LEC-U1-19"
+        ]
+      },
+      {
+        "heading": "Voltage sources and current sources in series/parallel",
+        "scope": "core",
+        "bullets": [
+          "Voltage sources in series add algebraically according to their marked polarities.",
+          "Parallel independent current sources add algebraically according to their arrow directions.",
+          "Unequal ideal current sources cannot be placed in series: each tries to impose a different value on the same series current, violating KCL.",
+          "Unequal ideal voltage sources cannot be placed directly in parallel: each tries to impose a different voltage across the same two nodes.",
+          "Identical ideal sources can share the same imposed value; for circuit reduction the combination is equivalent to that same ideal source."
+        ],
+        "source_refs": [
+          "LEC-U1-17",
+          "LEC-U1-18",
+          "LEC-U1-19"
+        ]
+      },
+      {
+        "heading": "Resistors",
+        "scope": "core",
+        "bullets": [
+          "Series: Req = R1 + R2 + … + Rn.",
+          "Parallel: 1/Req = 1/R1 + 1/R2 + … + 1/Rn.",
+          "Conductance form for parallel branches: Geq = G1 + G2 + … + Gn.",
+          "For two parallel resistors: Req = R1R2/(R1+R2)."
+        ],
+        "source_refs": [
+          "LEC-U1-18",
+          "LEC-U1-19",
+          "SUP-P055",
+          "SUP-P056",
+          "SUP-P057",
+          "SUP-P058",
+          "SUP-P059",
+          "SUP-P060",
+          "SUP-P061",
+          "SUP-P062",
+          "SUP-P063",
+          "SUP-P064",
+          "SUP-P065"
+        ]
+      },
+      {
+        "heading": "Inductors",
+        "scope": "supporting",
+        "bullets": [
+          "For uncoupled ideal inductors in series: Leq = ΣL.",
+          "For uncoupled ideal inductors in parallel: 1/Leq = Σ(1/L).",
+          "The parallel-inductor formula follows from the integral voltage-current relation when initial inductor currents are zero."
+        ],
+        "source_refs": [
+          "LEC-U1-18",
+          "LEC-U1-19"
+        ]
+      },
+      {
+        "heading": "Capacitors",
+        "scope": "supporting",
+        "bullets": [
+          "Parallel capacitors: Ceq = ΣC.",
+          "Series capacitors: 1/Ceq = Σ(1/C).",
+          "The series-capacitor derivation used here assumes zero initial capacitor voltages."
+        ],
+        "source_refs": [
+          "LEC-U1-18",
+          "LEC-U1-19"
+        ]
+      },
+      {
+        "heading": "Dissimilar element combinations with ideal sources",
+        "scope": "supporting",
+        "paragraphs": [
+          "An ideal current source fixes the current of its series path. Therefore a current source in series with another element is externally equivalent to that same ideal current source: the extra element affects the internal voltage distribution but not the imposed terminal current.",
+          "Similarly, an ideal voltage source fixes the voltage across its parallel terminals. A voltage source in parallel with another element is externally equivalent to that voltage source: the extra element affects internal current but not the imposed terminal voltage."
+        ],
+        "source_refs": [
+          "LEC-U1-20"
+        ]
+      },
+      {
+        "heading": "Open and short circuits",
+        "scope": "supporting",
+        "bullets": [
+          "Short circuit: terminal voltage is zero while current may take whatever value the surrounding circuit requires. Equivalent ideal forms include a 0 V voltage source and R = 0.",
+          "Open circuit: terminal current is zero while voltage may take whatever value the surrounding circuit requires. Equivalent ideal forms include a 0 A current source and R → ∞ (G = 0).",
+          "These ideas are not merely definitions: they are used directly when sources are nulled in Superposition and Thevenin’s theorem."
+        ],
+        "source_refs": [
+          "LEC-U1-21"
+        ]
+      },
+      {
+        "heading": "Voltage divider",
+        "scope": "core",
+        "paragraphs": [
+          "For resistors in series, the same current flows through each resistor. The source voltage is therefore divided in proportion to resistance. For two resistors R1 and R2 across V, V1 = V·R1/(R1+R2) and V2 = V·R2/(R1+R2)."
+        ],
+        "source_refs": [
+          "LEC-U1-22"
+        ]
+      },
+      {
+        "heading": "Current divider",
+        "scope": "core",
+        "paragraphs": [
+          "For parallel branches, the same voltage appears across each branch. Current divides according to conductance. For two resistors, the current through R1 is I·R2/(R1+R2), and the current through R2 is I·R1/(R1+R2); the branch with lower resistance carries the larger current."
+        ],
+        "source_refs": [
+          "LEC-U1-22"
+        ]
+      },
+      {
+        "heading": "General series-parallel reduction method",
+        "scope": "core",
+        "bullets": [
+          "Start at a part of the network that is unambiguously series or parallel.",
+          "Replace that group by its equivalent and redraw the circuit with node connections preserved.",
+          "Repeat until the source sees a single equivalent load or the requested variable becomes easy to calculate.",
+          "Solve the reduced circuit.",
+          "Work backward through the reductions using Ohm’s law, voltage division or current division to obtain the original branch quantities."
+        ],
+        "source_refs": [
+          "TB-P031",
+          "TB-P032",
+          "TB-P033",
+          "TB-P034",
+          "TB-P035",
+          "LEC-U1-22"
+        ]
+      }
+    ],
+    "formulas": [
+      "Series R: Req = ΣR",
+      "Parallel R: 1/Req = Σ(1/R); Geq = ΣG",
+      "Series L (uncoupled): Leq = ΣL",
+      "Parallel L (uncoupled): 1/Leq = Σ(1/L)",
+      "Parallel C: Ceq = ΣC",
+      "Series C: 1/Ceq = Σ(1/C)",
+      "Voltage divider: Vk = V·Rk/ΣR",
+      "Two-resistor current divider: I1 = I·R2/(R1+R2), I2 = I·R1/(R1+R2)"
+    ],
+    "method": [
+      "Identify true series/parallel groups from the nodes.",
+      "Replace one group at a time and redraw.",
+      "Solve the fully reduced circuit.",
+      "Back-substitute through the reductions to recover original voltages/currents."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P031",
+      "TB-P032",
+      "TB-P033",
+      "TB-P034",
+      "TB-P035",
+      "LEC-U1-17",
+      "LEC-U1-18",
+      "LEC-U1-19",
+      "LEC-U1-20",
+      "LEC-U1-21",
+      "LEC-U1-22",
+      "SUP-P055",
+      "SUP-P056",
+      "SUP-P057",
+      "SUP-P058",
+      "SUP-P059",
+      "SUP-P060",
+      "SUP-P061",
+      "SUP-P062",
+      "SUP-P063",
+      "SUP-P064",
+      "SUP-P065"
+    ],
+    "book_refs": [
+      {
+        "pages": "31–35",
+        "images": "31.png–35.png",
+        "note": "series-parallel network examples; the detailed combination rules are reinforced by lectures 17–22 and supplementary pp.55–65"
+      }
+    ],
+    "cautions": [
+      "Never combine elements just because they look adjacent on the page. Series/parallel is determined by topology: same current for series, same pair of nodes for parallel."
+    ],
+    "practice": [],
+    "self_checks": [
+      {
+        "question": "How can you tell that two elements are truly in series?",
+        "answer": "They must carry the same current, with no branching node between them. Drawing elements next to one another does not by itself make them series-connected."
+      },
+      {
+        "question": "For two parallel resistors, which branch carries the larger current?",
+        "answer": "The lower-resistance branch carries the larger current. For total current I, current through R₁ is I·R₂/(R₁+R₂), and current through R₂ is I·R₁/(R₁+R₂)."
+      }
+    ]
+  },
+  {
+    "id": "u1-star-delta",
+    "unit": 1,
+    "title": "Star/Delta transformations",
+    "status": "core",
+    "learn": [
+      "Star/Delta transformation replaces a three-terminal Y or Δ resistor network by an equivalent network seen from the same three external terminals.",
+      "Use Y↔Δ when a bridge-like resistor network cannot be reduced by ordinary series/parallel combinations.",
+      "For an equal network, RΔ = 3RY and RY = RΔ/3 — a useful error check."
+    ],
+    "sections": [
+      {
+        "heading": "Why Star/Delta transformation is needed",
+        "scope": "core",
+        "paragraphs": [
+          "Some three-terminal resistor groups are neither series nor parallel. Converting a star (Y) to an equivalent delta (Δ), or a delta to an equivalent star, can change the topology so that ordinary series/parallel reduction becomes possible.",
+          "Equivalence means that the resistance behaviour seen between the same three external terminals is unchanged. Label those terminals before using any formula."
+        ],
+        "source_refs": [
+          "TB-P036",
+          "TB-P037",
+          "SUP-P066"
+        ]
+      },
+      {
+        "heading": "Star (Y) and Delta (Δ) notation",
+        "scope": "core",
+        "paragraphs": [
+          "Let the star arms from terminals a, b and c to the common star point be Ra, Rb and Rc. Let the equivalent delta branches between the corresponding terminal pairs be Rab, Rbc and Rca."
+        ],
+        "source_refs": [
+          "TB-P036",
+          "TB-P037",
+          "SUP-P066",
+          "SUP-P067"
+        ]
+      },
+      {
+        "heading": "Star → Delta",
+        "scope": "core",
+        "bullets": [
+          "Form S = RaRb + RbRc + RcRa.",
+          "Rab = S/Rc — divide by the star arm opposite branch ab.",
+          "Rbc = S/Ra.",
+          "Rca = S/Rb.",
+          "A memory aid: each delta branch equals “sum of pairwise star products ÷ opposite star arm”."
+        ],
+        "source_refs": [
+          "TB-P037",
+          "TB-P038",
+          "TB-P039",
+          "SUP-P067",
+          "SUP-P068"
+        ]
+      },
+      {
+        "heading": "Delta → Star",
+        "scope": "core",
+        "bullets": [
+          "Form D = Rab + Rbc + Rca.",
+          "Ra = Rab·Rca/D.",
+          "Rb = Rab·Rbc/D.",
+          "Rc = Rbc·Rca/D.",
+          "A memory aid: each star arm equals “product of the two delta branches touching that terminal ÷ sum of all three delta branches”."
+        ],
+        "source_refs": [
+          "TB-P039",
+          "TB-P040",
+          "SUP-P070",
+          "SUP-P071",
+          "SUP-P072"
+        ]
+      },
+      {
+        "heading": "Equal-resistance check",
+        "scope": "core",
+        "bullets": [
+          "If Rab = Rbc = Rca = RΔ, then every star arm is RY = RΔ/3.",
+          "If Ra = Rb = Rc = RY, then every delta branch is RΔ = 3RY.",
+          "Use this equal case as a quick sanity check on the general formulas."
+        ],
+        "source_refs": [
+          "TB-P040",
+          "TB-P041"
+        ]
+      },
+      {
+        "heading": "How to choose the useful conversion",
+        "scope": "core",
+        "paragraphs": [
+          "The goal is not to transform every Y or Δ you see. Choose the conversion that creates obvious series or parallel combinations in the rest of the circuit. After conversion, redraw the network clearly and continue with ordinary reduction."
+        ],
+        "source_refs": [
+          "TB-P041",
+          "TB-P042",
+          "TB-P043",
+          "TB-P044",
+          "TB-P045",
+          "TB-P046",
+          "TB-P047"
+        ]
+      }
+    ],
+    "formulas": [
+      "Y→Δ: S = RaRb + RbRc + RcRa",
+      "Rab = S/Rc; Rbc = S/Ra; Rca = S/Rb",
+      "Δ→Y: D = Rab + Rbc + Rca",
+      "Ra = Rab·Rca/D; Rb = Rab·Rbc/D; Rc = Rbc·Rca/D",
+      "Equal case: RY = RΔ/3; RΔ = 3RY"
+    ],
+    "method": [
+      "Label the three external terminals.",
+      "Choose Y→Δ or Δ→Y to make the remaining network reducible.",
+      "Apply formulas by terminal labels, not visual position.",
+      "Redraw, reduce and solve the resulting series-parallel circuit."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P036",
+      "TB-P037",
+      "TB-P038",
+      "TB-P039",
+      "TB-P040",
+      "TB-P041",
+      "TB-P042",
+      "TB-P043",
+      "TB-P044",
+      "TB-P045",
+      "TB-P046",
+      "TB-P047",
+      "SUP-P066",
+      "SUP-P067",
+      "SUP-P068",
+      "SUP-P070",
+      "SUP-P071",
+      "SUP-P072"
+    ],
+    "book_refs": [
+      {
+        "pages": "36–47",
+        "images": "36.png–47.png",
+        "note": "derivation, equal-resistance checks and worked Star/Delta reductions"
+      }
+    ],
+    "cautions": [],
+    "practice": [
+      {
+        "book_page": 72,
+        "type": "6-mark",
+        "items": "Q8"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What quick check applies when all three Delta resistances are equal?",
+        "answer": "If every delta branch equals RΔ, every equivalent star arm equals RΔ/3. Conversely, if every star arm equals RY, every equivalent delta branch equals 3RY."
+      },
+      {
+        "question": "What is the practical goal of a Star/Delta transformation?",
+        "answer": "Choose the conversion that creates obvious series or parallel combinations while preserving the resistance behaviour seen at the same three external terminals."
+      }
+    ]
+  },
+  {
+    "id": "u1-superposition",
+    "unit": 1,
+    "title": "Superposition theorem",
+    "status": "core",
+    "learn": [
+      "In a linear circuit, the total voltage or current response equals the algebraic sum of the responses produced by the independent sources acting one at a time.",
+      "Deactivate other independent sources: voltage source → short; current source → open. Controlled sources remain active.",
+      "Superposition applies to voltages and currents, not directly to power."
+    ],
+    "sections": [
+      {
+        "heading": "Statement of Superposition theorem",
+        "scope": "core",
+        "paragraphs": [
+          "For a linear circuit containing more than one independent source, choose a particular branch voltage or current. The value of that response with all sources present equals the algebraic sum of the values obtained when each independent source acts alone while the others are set to zero.",
+          "The same reference polarity or current direction must be used in every one-source case so that the individual responses can be added with the correct signs."
+        ],
+        "source_refs": [
+          "TB-P048",
+          "LEC-U1-23",
+          "LEC-U1-25",
+          "SUP-P086"
+        ]
+      },
+      {
+        "heading": "How to deactivate independent sources",
+        "scope": "core",
+        "bullets": [
+          "Independent ideal voltage source set to zero → replace by a short circuit.",
+          "Independent ideal current source set to zero → replace by an open circuit.",
+          "Dependent/controlled sources are not deactivated; they stay in the circuit and continue to depend on their controlling variables."
+        ],
+        "source_refs": [
+          "LEC-U1-23",
+          "LEC-U1-25",
+          "LEC-U1-21"
+        ]
+      },
+      {
+        "heading": "Why linearity is essential",
+        "scope": "supporting",
+        "paragraphs": [
+          "Superposition follows directly from linearity. If the circuit equations are linear, the response to a linear combination of source excitations is the same linear combination of the individual responses. Splitting the complete source set into one-source cases therefore preserves the total response when the partial results are added."
+        ],
+        "source_refs": [
+          "LEC-U1-08",
+          "LEC-U1-25"
+        ]
+      },
+      {
+        "heading": "Worked-solution pattern",
+        "scope": "core",
+        "bullets": [
+          "Mark the required response and fix its reference direction/polarity.",
+          "Case 1: keep source 1 active, null every other independent source, and calculate the response.",
+          "Case 2, Case 3, …: repeat for every independent source.",
+          "Add the signed responses. A negative contribution simply opposes the chosen reference.",
+          "As a final check, the algebraic sum should have the same units and reference definition as the original requested quantity."
+        ],
+        "source_refs": [
+          "TB-P049",
+          "TB-P050",
+          "LEC-U1-23",
+          "LEC-U1-24",
+          "SUP-P087",
+          "SUP-P088",
+          "SUP-P089"
+        ]
+      },
+      {
+        "heading": "Do not superpose power",
+        "scope": "core",
+        "paragraphs": [
+          "Power is not a linear response because it contains products or squares such as p = vi, i²R or v²/R. Therefore the power obtained in each one-source subproblem cannot simply be added to obtain the actual power with all sources present. First superpose the voltage or current; then calculate power from the final total response."
+        ],
+        "source_refs": [
+          "LEC-U1-25",
+          "SUP-P087"
+        ]
+      },
+      {
+        "heading": "When Superposition is useful",
+        "scope": "supporting",
+        "paragraphs": [
+          "The theorem can make a multi-source circuit easier to understand because each source contribution is isolated. It also provides the conceptual bridge to Thevenin’s theorem through linearity and source separation."
+        ],
+        "source_refs": [
+          "LEC-U1-23",
+          "LEC-U1-25",
+          "LEC-U1-26"
+        ]
+      }
+    ],
+    "formulas": [
+      "Linear response: x = x₁ + x₂ + … + xₙ (same reference)",
+      "Deactivate voltage source: Vs = 0 → short",
+      "Deactivate current source: Is = 0 → open"
+    ],
+    "method": [
+      "Fix the response reference.",
+      "Keep one independent source active and null the others.",
+      "Keep all dependent sources active.",
+      "Solve each one-source circuit.",
+      "Add the signed voltage/current responses.",
+      "Calculate power only after the total voltage/current is known."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P048",
+      "TB-P049",
+      "TB-P050",
+      "LEC-U1-23",
+      "LEC-U1-24",
+      "LEC-U1-25",
+      "SUP-P086",
+      "SUP-P087",
+      "SUP-P088",
+      "SUP-P089"
+    ],
+    "book_refs": [
+      {
+        "pages": "48–50",
+        "images": "48.png–50.png",
+        "note": "statement and worked superposition example"
+      }
+    ],
+    "cautions": [
+      "Superposition is for linear-circuit voltages and currents. Do not add partial powers."
+    ],
+    "practice": [
+      {
+        "book_page": 72,
+        "type": "6-mark",
+        "items": "Q9"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "When applying Superposition, how are the other independent sources deactivated?",
+        "answer": "Replace each independent ideal voltage source by a short circuit and each independent ideal current source by an open circuit. Dependent sources remain active."
+      },
+      {
+        "question": "Can the individual source powers be added directly using Superposition?",
+        "answer": "No. Power is not a linear response because it involves products or squares such as vi, i²R or v²/R. First superpose the required voltage or current, then calculate power from the final total response."
+      }
+    ]
+  },
+  {
+    "id": "u1-thevenin",
+    "unit": 1,
+    "title": "Thevenin’s theorem",
+    "status": "core",
+    "learn": [
+      "Any linear two-terminal network can be replaced at those terminals by a Thevenin voltage source V_th in series with a Thevenin resistance R_th.",
+      "V_th is the open-circuit terminal voltage. R_th is the resistance seen looking into the terminals after independent sources are nulled.",
+      "If controlled sources remain, find R_th with a test source; do not deactivate the controlled sources."
+    ],
+    "sections": [
+      {
+        "heading": "What Thevenin’s theorem really says",
+        "scope": "core",
+        "paragraphs": [
+          "Choose two terminals of a linear network. No matter how complicated the internal circuit is, its external voltage-current behaviour at those two terminals can be represented by one ideal voltage source V_th in series with one resistance R_th.",
+          "The equivalence is only a terminal equivalence. It reproduces the voltage and current seen by whatever load is connected to those terminals; it does not reproduce every internal current or voltage of the original network."
+        ],
+        "source_refs": [
+          "TB-P051",
+          "LEC-U1-26",
+          "SUP-P090"
+        ]
+      },
+      {
+        "heading": "Step 1 — find V_th",
+        "scope": "core",
+        "paragraphs": [
+          "Remove the external load so the chosen output terminals are open-circuited. Keep the original independent and dependent sources operating. Calculate the voltage across the open terminals using a clearly marked polarity. That open-circuit voltage is V_th.",
+          "If the calculated value is negative, keep the negative sign. It means the actual terminal polarity is opposite to the reference used to define V_th."
+        ],
+        "source_refs": [
+          "TB-P051",
+          "TB-P052",
+          "LEC-U1-26",
+          "LEC-U1-27",
+          "SUP-P090",
+          "SUP-P091"
+        ]
+      },
+      {
+        "heading": "Step 2 — find R_th when only independent sources and resistors remain",
+        "scope": "core",
+        "bullets": [
+          "Set every independent voltage source to zero → short circuit.",
+          "Set every independent current source to zero → open circuit.",
+          "Look into the chosen terminals and reduce the remaining resistor network.",
+          "The equivalent resistance seen from the terminals is R_th."
+        ],
+        "source_refs": [
+          "TB-P052",
+          "TB-P053",
+          "LEC-U1-26",
+          "SUP-P091"
+        ]
+      },
+      {
+        "heading": "R_th with controlled sources",
+        "scope": "core",
+        "paragraphs": [
+          "Controlled sources must remain active. After nulling only the independent sources, apply a test voltage V_test or test current I_test at the output terminals and solve the resulting circuit.",
+          "Then R_th = V_test/I_test. The test source is needed because a controlled source may create a terminal relationship that cannot be found by simply combining visible resistor values."
+        ],
+        "source_refs": [
+          "LEC-U1-26",
+          "LEC-U1-27"
+        ]
+      },
+      {
+        "heading": "Step 3 — reconnect the load",
+        "scope": "core",
+        "paragraphs": [
+          "Replace the original network by V_th in series with R_th, reconnect the load to the same two terminals, and solve the now-simple circuit. For a resistive load R_L, I_L = V_th/(R_th + R_L) and V_L = I_LR_L.",
+          "For the usual reference with current delivered from the source to the load, the Thevenin terminal relation is V = V_th − IR_th."
+        ],
+        "source_refs": [
+          "LEC-U1-26",
+          "TB-P054",
+          "TB-P055",
+          "SUP-P092",
+          "SUP-P093"
+        ]
+      },
+      {
+        "heading": "Fast exam procedure",
+        "scope": "core",
+        "bullets": [
+          "Mark the two output terminals and the polarity of V_th.",
+          "Remove the load and calculate open-circuit voltage → V_th.",
+          "Null independent sources only.",
+          "Find R_th by ordinary reduction, or use V_test/I_test when controlled sources remain.",
+          "Draw V_th in series with R_th.",
+          "Reconnect the load and solve."
+        ],
+        "source_refs": [
+          "TB-P051",
+          "TB-P052",
+          "TB-P053",
+          "TB-P054",
+          "TB-P055",
+          "TB-P056",
+          "TB-P057",
+          "TB-P058",
+          "TB-P059",
+          "TB-P060",
+          "TB-P061",
+          "TB-P062",
+          "LEC-U1-26",
+          "LEC-U1-27"
+        ]
+      }
+    ],
+    "formulas": [
+      "V_th = open-circuit terminal voltage",
+      "R_th = resistance seen at the terminals with independent sources nulled",
+      "Controlled-source case: R_th = V_test/I_test",
+      "Resistive load: I_L = V_th/(R_th + R_L)",
+      "V_L = I_L·R_L",
+      "Terminal relation: V = V_th − I·R_th"
+    ],
+    "method": [
+      "Remove the load and mark terminal polarity.",
+      "Calculate V_th with the output open.",
+      "Null only independent sources.",
+      "Calculate R_th directly, or use a test source if controlled sources remain.",
+      "Draw the Thevenin equivalent and reconnect the load."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P051",
+      "TB-P052",
+      "TB-P053",
+      "TB-P054",
+      "TB-P055",
+      "TB-P056",
+      "TB-P057",
+      "TB-P058",
+      "TB-P059",
+      "TB-P060",
+      "TB-P061",
+      "TB-P062",
+      "LEC-U1-26",
+      "LEC-U1-27",
+      "SUP-P090",
+      "SUP-P091",
+      "SUP-P092",
+      "SUP-P093"
+    ],
+    "book_refs": [
+      {
+        "pages": "51–62",
+        "images": "51.png–62.png",
+        "note": "Thevenin procedure and multiple worked examples; lecture 27 additionally covers a controlled-source example"
+      }
+    ],
+    "cautions": [
+      "The Thevenin equivalent is valid at the chosen terminal pair. It is not a claim that internal voltages/currents of the original network are reproduced.",
+      "Controlled sources remain active when finding R_th."
+    ],
+    "practice": [],
+    "self_checks": [
+      {
+        "question": "What are the two quantities in a Thevenin equivalent and how are they found?",
+        "answer": "The equivalent is V_th in series with R_th. V_th is the open-circuit voltage at the chosen terminals. R_th is the resistance seen looking into those terminals after nulling independent sources, or is found using a test source when controlled sources remain."
+      },
+      {
+        "question": "For the supplied resistor-network check with V₀ = 8 V and R = 16 kΩ, what Thevenin equivalent is obtained?",
+        "answer": "The source material gives V_th = V₀/4 = 2 V and R_th = 5R/8 = 10 kΩ, so the equivalent is a 2 V source in series with 10 kΩ."
+      },
+      {
+        "question": "What must you do when finding R_th if a controlled source is present?",
+        "answer": "Keep the controlled source active. Null only the independent sources, apply a test voltage or test current at the output terminals, and use R_th = V_test/I_test."
+      }
+    ]
+  },
+  {
+    "id": "u2-sinusoid",
+    "unit": 2,
+    "title": "Sinusoidal waveforms and basic quantities",
+    "status": "core",
+    "learn": [
+      "The textbook represents a sinusoid by its maximum value, angular frequency and phase. One cycle corresponds to 2π radians; frequency and period are reciprocals.",
+      "The book notes practical advantages of sinusoidal quantities and the lecture corpus separately motivates why sinusoids are useful for measurement and linear steady-state response."
+    ],
+    "formulas": [
+      "T = 1/f",
+      "ω = 2πf",
+      "v(t) = Vm sin(ωt + φ)"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P073",
+      "TB-P074",
+      "TB-P075",
+      "TB-P076",
+      "TB-P077",
+      "TB-P078",
+      "TB-P079",
+      "LEC-U2-01"
+    ],
+    "book_refs": [
+      {
+        "pages": "73–79",
+        "images": "73.png–79.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-average-rms",
+    "unit": 2,
+    "title": "Average, RMS, form factor and peak factor",
+    "status": "core",
+    "learn": [
+      "For a symmetrical sinusoid, the book takes average value over a half-cycle because the full-cycle algebraic average is zero.",
+      "RMS/effective value is introduced through equal heating in a resistor for DC and AC.",
+      "For a sine wave, the textbook obtains average = 0.637 of peak and RMS = 0.707 of peak; form factor is RMS/average and peak factor is peak/RMS."
+    ],
+    "formulas": [
+      "Sine half-cycle average = 0.637·peak",
+      "Sine RMS = peak/√2 ≈ 0.707·peak",
+      "Form factor = RMS/Average = 1.11 for sine wave",
+      "Peak factor = Peak/RMS = √2 ≈ 1.414 for sine wave"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P080",
+      "TB-P081",
+      "TB-P082",
+      "TB-P083",
+      "TB-P084",
+      "TB-P085",
+      "TB-P086",
+      "TB-P087",
+      "TB-P088"
+    ],
+    "book_refs": [
+      {
+        "pages": "80–88",
+        "images": "80.png–88.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-phasors",
+    "unit": 2,
+    "title": "Phasor representation",
+    "status": "core",
+    "learn": [
+      "The book and lectures represent same-frequency sinusoids by phasors carrying magnitude and phase. Phase lead/lag is read from the relative angular displacement.",
+      "The Unit-II lecture set develops sinusoidal steady-state analysis further through phasors and complex exponentials; this deeper method is retained as lecture enrichment rather than being allowed to expand the R25 syllabus."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P075",
+      "TB-P076",
+      "LEC-U2-02",
+      "LEC-U2-03",
+      "LEC-U2-05",
+      "LEC-U2-06",
+      "LEC-U2-07"
+    ],
+    "book_refs": [
+      {
+        "pages": "75–76",
+        "images": "75.png–76.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-pure-r",
+    "unit": 2,
+    "title": "Single-phase AC through pure R",
+    "status": "core",
+    "learn": [
+      "For a pure resistance, current and voltage are in phase. The impedance is purely resistive, the power factor is unity and the average power is active/real power consumed by the resistor."
+    ],
+    "formulas": [
+      "Z = R",
+      "φ = 0°; power factor = 1",
+      "P = VI for the pure-resistive RMS case"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P089",
+      "TB-P090"
+    ],
+    "book_refs": [
+      {
+        "pages": "89–90",
+        "images": "89.png–90.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-pure-l",
+    "unit": 2,
+    "title": "Single-phase AC through pure L",
+    "status": "core",
+    "learn": [
+      "For an ideal inductor with zero internal resistance, the supplied book derives a current that lags the applied voltage by 90°. The opposition to AC is expressed as inductive reactance."
+    ],
+    "formulas": [
+      "XL = ωL = 2πfL",
+      "Ideal L: current lags voltage by 90°"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P090",
+      "TB-P091",
+      "TB-P092"
+    ],
+    "book_refs": [
+      {
+        "pages": "90–92",
+        "images": "90.png–92.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-pure-c",
+    "unit": 2,
+    "title": "Single-phase AC through pure C",
+    "status": "core",
+    "learn": [
+      "For an ideal capacitor, the textbook derives current leading voltage by 90°. Capacitive opposition is represented by capacitive reactance."
+    ],
+    "formulas": [
+      "XC = 1/(ωC) = 1/(2πfC)",
+      "Ideal C: current leads voltage by 90°"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P093",
+      "TB-P094"
+    ],
+    "book_refs": [
+      {
+        "pages": "93–94",
+        "images": "93.png–94.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-series-rl",
+    "unit": 2,
+    "title": "Series RL circuit",
+    "status": "core",
+    "learn": [
+      "For series R-L, the book combines resistance and inductive reactance as a complex impedance. Current lags supply voltage by the impedance angle.",
+      "The source separates active power, reactive power and apparent power, with lagging power factor for the inductive case."
+    ],
+    "formulas": [
+      "Z = R + jXL",
+      "|Z| = √(R²+XL²)",
+      "tanφ = XL/R",
+      "P = VI cosφ",
+      "Q = VI sinφ",
+      "S = VI"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P095",
+      "TB-P096",
+      "TB-P097"
+    ],
+    "book_refs": [
+      {
+        "pages": "95–97",
+        "images": "95.png–97.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-series-rc",
+    "unit": 2,
+    "title": "Series RC circuit",
+    "status": "core",
+    "learn": [
+      "For series R-C, the source combines R with negative capacitive reactance. Current leads the supply voltage and the circuit has a leading power factor.",
+      "The book uses the same P/Q/S framework, with capacitive reactive power carrying the opposite sign convention to the inductive case."
+    ],
+    "formulas": [
+      "Z = R − jXC",
+      "|Z| = √(R²+XC²)",
+      "P = VI cosφ",
+      "Q = VI sinφ (capacitive sign as used in the source treatment)",
+      "S = P − jQ for the capacitive case as presented"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P098",
+      "TB-P099"
+    ],
+    "book_refs": [
+      {
+        "pages": "98–99",
+        "images": "98.png–99.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-series-rlc",
+    "unit": 2,
+    "title": "Series RLC circuit",
+    "status": "core",
+    "learn": [
+      "For a series RLC circuit the net reactance is XL − XC, so the source treats the circuit as inductive, capacitive or purely resistive depending on their relative values.",
+      "The book also includes the resonance condition XL = XC. Resonance is retained as supporting textbook content because R25 names RLC analysis but does not separately name resonance."
+    ],
+    "formulas": [
+      "Z = R + j(XL − XC)",
+      "|Z| = √(R²+(XL−XC)²)",
+      "At resonance XL = XC, Z = R and power factor = 1",
+      "fr = 1/(2π√(LC))"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P100",
+      "TB-P101",
+      "TB-P102",
+      "TB-P103",
+      "TB-P104",
+      "TB-P105",
+      "TB-P106",
+      "TB-P107",
+      "TB-P108",
+      "TB-P109",
+      "TB-P110",
+      "TB-P111",
+      "TB-P112",
+      "LEC-U2-04",
+      "LEC-U2-05",
+      "LEC-U2-09"
+    ],
+    "book_refs": [
+      {
+        "pages": "100–112",
+        "images": "100.png–112.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-power",
+    "unit": 2,
+    "title": "Real, reactive and apparent power; power factor",
+    "status": "core",
+    "learn": [
+      "The textbook defines power factor as the cosine of the phase angle between voltage and current.",
+      "For sinusoidal steady state it distinguishes active/real power P, reactive power Q and apparent power S. The RL and RC sections show the lagging/leading distinction."
+    ],
+    "formulas": [
+      "Power factor = cosφ",
+      "P = VI cosφ",
+      "Q = VI sinφ",
+      "S = VI"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P090",
+      "TB-P096",
+      "TB-P099",
+      "TB-P117",
+      "TB-P119"
+    ],
+    "book_refs": [
+      {
+        "pages": "90, 96, 99, 117, 119",
+        "images": "90.png, 96.png, 99.png, 117.png, 119.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u2-three-phase",
+    "unit": 2,
+    "title": "Three-phase balanced circuits",
+    "status": "core",
+    "learn": [
+      "A balanced three-phase system in the book has three quantities of equal magnitude and frequency separated by 120°. The book also introduces phase sequence.",
+      "The text then derives line/phase relationships for star and delta connections and gives total three-phase P, Q and S."
+    ],
+    "formulas": [
+      "Star: VL = √3·Vph, IL = Iph; line voltage leads corresponding phase voltage by 30°",
+      "Delta: VL = Vph, IL = √3·Iph; line current lags corresponding phase current by 30°",
+      "Balanced 3φ: P = √3 VL IL cosφ; Q = √3 VL IL sinφ; S = √3 VL IL"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P112",
+      "TB-P113",
+      "TB-P114",
+      "TB-P115",
+      "TB-P116",
+      "TB-P117",
+      "TB-P118",
+      "TB-P119",
+      "TB-P120",
+      "TB-P121",
+      "TB-P122",
+      "TB-P123",
+      "TB-P124",
+      "TB-P125",
+      "TB-P126",
+      "TB-P127",
+      "TB-P128"
+    ],
+    "book_refs": [
+      {
+        "pages": "112–128",
+        "images": "112.png–128.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-transformer-principle",
+    "unit": 3,
+    "title": "Transformer principle and construction",
+    "status": "core",
+    "learn": [
+      "The prescribed text defines a transformer as a static machine that changes voltage level without changing frequency and transfers energy through magnetic coupling between circuits.",
+      "Its working principle is electromagnetic induction: AC in the primary produces alternating core flux that links the secondary and induces emf. The source explicitly states that a transformer does not work on DC because DC does not produce alternating flux.",
+      "The basic construction described includes primary and secondary copper windings, a laminated silicon-steel core, transformer oil for cooling/insulation, radiators and bushings."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "TB-P130",
+      "TB-P131",
+      "TB-P132"
+    ],
+    "book_refs": [
+      {
+        "pages": "130–132",
+        "images": "130.png–132.png",
+        "figures": "3.1–3.4"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-transformer-emf-ratio",
+    "unit": 3,
+    "title": "Transformer EMF equation and transformation ratio",
+    "status": "supporting",
+    "learn": [
+      "For sinusoidal core flux, the textbook derives RMS induced emf proportional to frequency, turns and maximum flux.",
+      "With winding drops neglected, the voltage ratio follows the turns ratio; the book uses this to classify step-up, step-down and unit transformers."
+    ],
+    "formulas": [
+      "E1 = 4.44 f N1 Φm",
+      "E2 = 4.44 f N2 Φm",
+      "k = N2/N1 = E2/E1 ≈ V2/V1 (ideal/neglected-drop treatment)"
+    ],
+    "method": [],
+    "source_refs": [
+      "TB-P133",
+      "TB-P134",
+      "TB-P135",
+      "TB-P136",
+      "TB-P137"
+    ],
+    "book_refs": [
+      {
+        "pages": "133–137",
+        "images": "133.png–137.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-transformer-no-load",
+    "unit": 3,
+    "title": "Practical transformer on no-load",
+    "status": "supporting",
+    "learn": [
+      "The practical transformer takes a small no-load current even with secondary open. The book resolves it into a magnetising component that establishes flux and an iron-loss component that supplies core losses.",
+      "This no-load model is one step toward the practical equivalent circuit."
+    ],
+    "formulas": [
+      "Im = I0 sinφ0",
+      "Iw = I0 cosφ0"
+    ],
+    "method": [],
+    "source_refs": [
+      "TB-P137",
+      "TB-P138",
+      "TB-P139"
+    ],
+    "book_refs": [
+      {
+        "pages": "137–139",
+        "images": "137.png–139.png",
+        "figures": "3.7–3.10"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-ideal-practical-equivalent",
+    "unit": 3,
+    "title": "Ideal/practical transformer and equivalent circuit",
+    "status": "core",
+    "learn": [
+      "The ideal transformer assumptions in the source remove winding resistance, leakage, magnetic reluctance and losses; the practical transformer includes these effects.",
+      "The book develops an equivalent circuit using winding resistance/reactance and the shunt magnetising/iron-loss branch, and shows how impedances are referred across the turns ratio."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "TB-P139",
+      "TB-P140",
+      "TB-P141",
+      "TB-P142",
+      "TB-P143"
+    ],
+    "book_refs": [
+      {
+        "pages": "139–143",
+        "images": "139.png–143.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-transformer-regulation",
+    "unit": 3,
+    "title": "Transformer voltage regulation",
+    "status": "core",
+    "learn": [
+      "The text relates the loaded secondary terminal voltage to the induced secondary emf and internal equivalent impedance drop.",
+      "Voltage regulation is presented as the change from no-load to loaded secondary voltage; the approximate drop uses resistance and reactance components, with a sign change for the leading-power-factor reactance term. The book notes that leading loads can produce negative regulation."
+    ],
+    "formulas": [
+      "As printed: %VR = (E2 − V2)/E2 × 100",
+      "Approx. lagging drop ∝ I2(R02 cosφ + X02 sinφ)",
+      "Approx. leading drop ∝ I2(R02 cosφ − X02 sinφ)"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "TB-P144",
+      "TB-P145",
+      "TB-P146",
+      "TB-P147",
+      "TB-P148"
+    ],
+    "book_refs": [
+      {
+        "pages": "144–148",
+        "images": "144.png–148.png"
+      }
+    ],
+    "cautions": [
+      "Use the textbook’s regulation denominator/convention when answering from this KB; do not silently replace it with another convention."
+    ]
+  },
+  {
+    "id": "u3-transformer-efficiency",
+    "unit": 3,
+    "title": "Transformer losses and efficiency",
+    "status": "core",
+    "learn": [
+      "The textbook divides losses into winding/copper loss and iron/core loss. Copper loss varies with load current squared; core loss is treated as approximately constant with load in the presented analysis.",
+      "Efficiency is output/input. The source states the maximum-efficiency condition as variable copper loss equal to constant loss."
+    ],
+    "formulas": [
+      "Copper loss ∝ I²",
+      "η = output/input × 100",
+      "Maximum efficiency condition (source treatment): copper loss = constant/core loss"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "TB-P149",
+      "TB-P150",
+      "TB-P151",
+      "TB-P152",
+      "TB-P153",
+      "TB-P154",
+      "TB-P155",
+      "TB-P156",
+      "TB-P157"
+    ],
+    "book_refs": [
+      {
+        "pages": "149–157",
+        "images": "149.png–157.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-dc-generator",
+    "unit": 3,
+    "title": "DC machine construction, generator principle and EMF equation",
+    "status": "core",
+    "learn": [
+      "The book introduces the DC machine as an electromechanical energy converter and describes the generator principle using electromagnetic induction and Fleming’s right-hand rule.",
+      "Constructional material covers the major magnetic/electrical parts before deriving the generated-emf equation and classifying generators by excitation."
+    ],
+    "formulas": [
+      "Eg = Φ Z N P / (60 A)",
+      "For wave winding A = 2; for lap winding A = P (as presented)"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "TB-P158",
+      "TB-P159",
+      "TB-P160",
+      "TB-P161",
+      "TB-P162",
+      "TB-P163",
+      "TB-P164",
+      "TB-P165",
+      "TB-P166",
+      "TB-P167",
+      "TB-P168",
+      "TB-P169",
+      "TB-P170"
+    ],
+    "book_refs": [
+      {
+        "pages": "158–170",
+        "images": "158.png–170.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-dc-motor",
+    "unit": 3,
+    "title": "DC motor principle and back EMF",
+    "status": "core",
+    "learn": [
+      "The motor principle in the book is force on a current-carrying conductor in a magnetic field, with direction given by Fleming’s left-hand rule.",
+      "As the armature rotates it also generates an emf opposing the applied supply; the source calls this back emf and uses it in the motor voltage balance."
+    ],
+    "formulas": [
+      "Force relation shown: F = BIl",
+      "Motor voltage balance: V = Eb + IaRa (with brush drop added where considered)",
+      "Generated/back-emf form uses Eg = ΦZNP/(60A)"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "TB-P171",
+      "TB-P172",
+      "TB-P173",
+      "TB-P174",
+      "TB-P175",
+      "TB-P176",
+      "TB-P177"
+    ],
+    "book_refs": [
+      {
+        "pages": "171–177",
+        "images": "171.png–177.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-separately-excited-motor",
+    "unit": 3,
+    "title": "Load characteristics and speed control of separately excited DC motor",
+    "status": "core",
+    "learn": [
+      "For the separately excited motor, the textbook presents torque versus armature current, speed versus armature current and speed versus torque characteristics.",
+      "With field flux treated as constant, developed torque is proportional to armature current. The speed relation shows control through armature voltage/resistance effects and field flux; the text presents field control and armature-voltage control."
+    ],
+    "formulas": [
+      "T ∝ ΦIa; with constant Φ, T ∝ Ia",
+      "N ∝ (V − IaRa)/Φ"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "TB-P178",
+      "TB-P179",
+      "TB-P180",
+      "TB-P181",
+      "TB-P182",
+      "TB-P183",
+      "TB-P184"
+    ],
+    "book_refs": [
+      {
+        "pages": "178–184",
+        "images": "178.png–184.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u3-swinburne",
+    "unit": 3,
+    "title": "Swinburne’s test",
+    "status": "core-gap-filled",
+    "learn": [
+      "R25 explicitly requires Swinburne’s test, but the prescribed textbook chapter captured at pp.130–185 does not contain a Swinburne section. This subsection is therefore gap-filled, not inferred from the book.",
+      "The selected NPTEL Electrical Machines-I course identifies Lecture 89 as “Swinburne Test”. A tightly scoped institutional BEEE lab-manual cross-check describes it as a no-load test used to predetermine efficiency of a DC shunt machine as motor/generator.",
+      "The cross-check procedure records supply voltage, no-load line current and field current at rated speed. From these, no-load armature current and armature copper loss are obtained; the remainder of no-load input is treated as constant loss for the efficiency calculation sequence."
+    ],
+    "formulas": [
+      "Iao = IL0 − If",
+      "No-load armature copper loss = Iao²Ra",
+      "Constant loss = no-load input − no-load armature copper loss",
+      "Motor efficiency = (input − total losses)/input",
+      "Generator efficiency = output/(output + total losses)"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U3",
+      "GAP-U3-SWINBURNE-NPTEL",
+      "GAP-U3-SWINBURNE-IARE-BEE-LAB"
+    ],
+    "book_refs": [],
+    "cautions": [
+      "Gap content is intentionally limited to what the selected NPTEL lecture identification and institutional lab-manual cross-check support."
+    ]
+  },
+  {
+    "id": "u4-induction-types-construction",
+    "unit": 4,
+    "title": "Three-phase induction motor types and construction",
+    "status": "core",
+    "learn": [
+      "The textbook separates the machine into stator and rotor and gives two rotor forms: phase-wound/slip-ring and squirrel-cage.",
+      "The phase-wound rotor permits external rotor resistance through slip rings during starting; the squirrel-cage rotor uses bars shorted by end rings and is presented as the robust running construction."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U4",
+      "TB-P186",
+      "TB-P187",
+      "TB-P188"
+    ],
+    "book_refs": [
+      {
+        "pages": "186–188",
+        "images": "186.png–188.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u4-induction-principle",
+    "unit": 4,
+    "title": "Three-phase induction motor principle, slip and rotor frequency",
+    "status": "core",
+    "learn": [
+      "A balanced three-phase stator supply produces a rotating magnetic field. The textbook gives its synchronous speed from supply frequency and pole count.",
+      "Relative motion between that rotating field and the rotor induces rotor emf/current; their interaction produces torque. The rotor cannot reach synchronous speed in motoring operation because zero relative speed would remove induced rotor emf/current and torque.",
+      "The text defines slip from the difference between synchronous and rotor speed and gives rotor-current frequency proportional to slip."
+    ],
+    "formulas": [
+      "Ns = 120f/P",
+      "s = (Ns − N)/Ns",
+      "fr = s f"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U4",
+      "TB-P188",
+      "TB-P189",
+      "TB-P190",
+      "TB-P191",
+      "TB-P192",
+      "TB-P193",
+      "TB-P194"
+    ],
+    "book_refs": [
+      {
+        "pages": "188–194",
+        "images": "188.png–194.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u4-torque-slip",
+    "unit": 4,
+    "title": "Torque-slip characteristics",
+    "status": "core",
+    "learn": [
+      "The textbook gives a torque-slip expression with rotor resistance in the numerator and resistance/reactance terms in the denominator.",
+      "From that expression it describes the low-slip region where torque is approximately proportional to slip, the high-slip region where torque is approximately inversely proportional to slip, and the maximum-torque condition."
+    ],
+    "formulas": [
+      "T ∝ sR2 / (R2² + (sX2)²) (source proportional form)",
+      "Low slip: T ∝ s",
+      "High slip: T ∝ 1/s",
+      "Maximum torque condition: s = R2/X2"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U4",
+      "TB-P195",
+      "TB-P196",
+      "TB-P197"
+    ],
+    "book_refs": [
+      {
+        "pages": "195–197",
+        "images": "195.png–197.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u4-synchronous-generator",
+    "unit": 4,
+    "title": "Working principle of synchronous generator",
+    "status": "core",
+    "learn": [
+      "The textbook presents a synchronous generator as a machine converting mechanical input to AC electrical output by electromagnetic induction.",
+      "Its field system is on the rotor and the armature is on the stator in the presented construction. Rotation of the rotor field produces alternating induced emf in the stator windings.",
+      "The generated frequency is tied to rotor speed and pole count."
+    ],
+    "formulas": [
+      "f = PNs/120",
+      "Per-phase induced emf shown: E = 4.44 Φ f N"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U4",
+      "TB-P197",
+      "TB-P198",
+      "TB-P199"
+    ],
+    "book_refs": [
+      {
+        "pages": "197–199",
+        "images": "197.png–199.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u4-sync-impedance",
+    "unit": 4,
+    "title": "Synchronous-generator voltage regulation by synchronous impedance method",
+    "status": "core-gap-filled",
+    "learn": [
+      "This R25 item is absent from the captured prescribed-book section and is filled only from the approved gap package.",
+      "The BIET lab source defines the open-circuit characteristic (OCC) as terminal/generated voltage versus field excitation at rated speed with no load, and the short-circuit characteristic (SCC) as armature current versus field excitation under symmetrical three-phase short circuit.",
+      "For a chosen excitation, the source obtains synchronous impedance from open-circuit voltage divided by short-circuit current. It then derives synchronous reactance using armature resistance and uses the resulting synchronous impedance in the EMF/synchronous-impedance regulation calculation. IARE independently labels the EMF method as the synchronous impedance method."
+    ],
+    "formulas": [
+      "Zs = Voc/Isc (for the same field excitation, per the BIET source)",
+      "Xs = √(Zs² − Ra²)",
+      "Regulation = (E0 − V)/V × 100 (conceptual EMF-method form; use the source’s phasor/sign convention for a numerical problem)"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U4",
+      "GAP-U4-SYNC-REACTANCE-NPTEL",
+      "GAP-U4-OCSC-NPTEL",
+      "GAP-U4-SYNC-IMPEDANCE-BIET",
+      "GAP-U4-SYNC-IMPEDANCE-IARE"
+    ],
+    "book_refs": [],
+    "cautions": [
+      "BIET OCR notation around the regulation equation is imperfect. For numerical PYQs, consult the original gap PDF/figure before committing to a sign/phasor expression."
+    ]
+  },
+  {
+    "id": "u4-synchronous-motor",
+    "unit": 4,
+    "title": "Principle of operation of synchronous motor",
+    "status": "core-gap-filled",
+    "learn": [
+      "This R25 item is not covered in the captured textbook pages and is therefore gap-filled.",
+      "The selected NPTEL material uses a DC-excited rotor to establish rotor magnetic poles and AC stator windings to establish a rotating magnetic field. Electromagnetic torque acts so that the rotor field follows the rotating stator field.",
+      "In steady synchronous operation the rotor turns at the speed of the rotating field; that speed relationship is why it is called a synchronous machine."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U4",
+      "GAP-U4-SYNC-MOTOR-NPTEL",
+      "GAP-U4-SYNC-MOTOR-NPTEL-ARCHIVE"
+    ],
+    "book_refs": [],
+    "cautions": [
+      "Phasor and power-expression material from NPTEL Lecture 82 is deliberately not promoted into R25 core because the syllabus asks only for the operating principle."
+    ]
+  },
+  {
+    "id": "u4-stepper",
+    "unit": 4,
+    "title": "Stepper motor principle and applications",
+    "status": "core",
+    "learn": [
+      "The textbook describes a stepper motor as rotating in discrete equal angular steps rather than continuously. Its variable-reluctance example energises stator phase groups in sequence so rotor teeth repeatedly align with the minimum-reluctance position.",
+      "In the worked description, sequential excitation moves the rotor through 30° steps; the exact example is an illustration, not a universal step angle.",
+      "Applications listed include scanners, printers/3D printers, plotters, slot machines, CD drives, intelligent lighting, camera lenses, CNC machines, laser/optics actuators and fluid-control systems."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U4",
+      "TB-P199",
+      "TB-P200"
+    ],
+    "book_refs": [
+      {
+        "pages": "199–200",
+        "images": "199.png + 200_01.png (Unit-IV scan)"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u5-domestic-layout",
+    "unit": 5,
+    "title": "Basic layout of domestic electrical installation",
+    "status": "core",
+    "learn": [
+      "The prescribed text traces a domestic supply through service connection/protection, energy meter, main MCB, distribution board and individual subcircuits protected by MCBs.",
+      "It also states that metallic covers/enclosures in the installation are connected to earth. Use the physical-book page for the exact diagram/layout."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P200",
+      "TB-P201"
+    ],
+    "book_refs": [
+      {
+        "pages": "200–201",
+        "images": "200_2.png + 201.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u5-wiring",
+    "unit": 5,
+    "title": "Types of wiring",
+    "status": "core",
+    "learn": [
+      "The book surveys cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring, including surface and concealed conduit forms.",
+      "These are retained because “Types of Wiring” is an explicit R25 item; detailed advantages/disadvantages should be answered from the specific physical-book pages."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P201",
+      "TB-P202",
+      "TB-P203",
+      "TB-P204"
+    ],
+    "book_refs": [
+      {
+        "pages": "201–204",
+        "images": "201.png–204.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u5-sfu",
+    "unit": 5,
+    "title": "Switch Fuse Unit (SFU)",
+    "status": "core",
+    "learn": [
+      "The secure statement from the textbook is that an SFU combines a switch and fuse arrangement in a compact metal enclosure for switching/protection.",
+      "The remainder of the paragraph under the SFU heading on p.206 describes a current-balance/search-coil trip mechanism that resembles earth-leakage protection; the KB does not silently relabel that text. ELCB is sourced separately below."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P206"
+    ],
+    "book_refs": [
+      {
+        "pages": "206",
+        "images": "206.png"
+      }
+    ],
+    "cautions": [
+      "Source anomaly: textbook p.206 heading is SFU but subsequent mechanism is ELCB-like. Do not use that ambiguous passage as authoritative ELCB content."
+    ]
+  },
+  {
+    "id": "u5-mcb-mccb",
+    "unit": 5,
+    "title": "MCB and MCCB",
+    "status": "core",
+    "learn": [
+      "The textbook presents an MCB as an automatically operating protective switch for abnormal overcurrent/short-circuit conditions and notes that it can be reset rather than replaced like a fuse.",
+      "MCCB is presented for higher current/fault capacity, with overload/short-circuit protection and adjustable trip settings in the source comparison."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P206",
+      "TB-P207"
+    ],
+    "book_refs": [
+      {
+        "pages": "206–207",
+        "images": "206.png–207.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u5-elcb",
+    "unit": 5,
+    "title": "ELCB",
+    "status": "core-gap-filled",
+    "learn": [
+      "R25 explicitly names ELCB, but the textbook’s p.206 treatment is internally ambiguous, so the KB uses the approved government gap sources instead of guessing from the mislabeled paragraph.",
+      "HESCOM identifies an Earth Leakage Circuit Breaker as earth-leakage protection that automatically disconnects the supply when leakage occurs, protecting the user from electrical hazard.",
+      "The DGT curriculum independently includes single-phase ELCB among protection devices and includes connecting/testing an ELCB for leakage; the CEA source is retained as a regulatory cross-check."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "GAP-U5-ELCB-HESCOM",
+      "GAP-U5-ELCB-DGT",
+      "GAP-U5-ELCB-CEA"
+    ],
+    "book_refs": [],
+    "cautions": [
+      "Do not silently replace “ELCB” with “RCCB” terminology unless a supplied source explicitly makes that equivalence."
+    ]
+  },
+  {
+    "id": "u5-earthing",
+    "unit": 5,
+    "title": "Need for earthing; pipe and plate earthing",
+    "status": "core",
+    "learn": [
+      "The textbook presents earthing as connecting exposed metallic parts to earth so leakage/fault current has a low-resistance path, reducing shock/fire hazard.",
+      "The captured pages describe rod, strip, pipe and plate methods. R25 specifically requires pipe and plate earthing; rod and strip are retained only as supplied supporting content.",
+      "The pipe/plate descriptions include buried electrodes and moisture/charcoal/salt treatment in the textbook. Exact dimensions should be read from the physical book rather than reconstructed from OCR."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P208",
+      "TB-P209",
+      "TB-P210"
+    ],
+    "book_refs": [
+      {
+        "pages": "208–210",
+        "images": "208.png–210.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u5-battery-classification",
+    "unit": 5,
+    "title": "Classification of batteries",
+    "status": "core",
+    "learn": [
+      "The textbook classifies batteries into primary (non-rechargeable) and secondary (rechargeable) categories and gives examples for each.",
+      "Lead-acid appears as a secondary/rechargeable battery in the captured material."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P211"
+    ],
+    "book_refs": [
+      {
+        "pages": "211",
+        "images": "211.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u5-lead-acid",
+    "unit": 5,
+    "title": "Lead-acid battery: construction, working and electrical characteristics",
+    "status": "core",
+    "learn": [
+      "The captured text identifies lead dioxide as the positive active material, sponge lead as the negative active material and diluted sulphuric acid as electrolyte.",
+      "During discharge the overall reaction printed in the source converts the active materials and sulphuric acid to lead sulphate and water; charging reverses the process.",
+      "The electrical-characteristics section covers cell voltage, ampere-hour capacity and efficiency, and notes the effect of discharge rate on usable capacity/life."
+    ],
+    "formulas": [
+      "Discharge reaction as printed: Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O",
+      "Capacity unit: ampere-hour (Ah)",
+      "Ah efficiency = Ah discharged / Ah charged × 100"
+    ],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P211",
+      "TB-P212",
+      "TB-P213",
+      "TB-P214"
+    ],
+    "book_refs": [
+      {
+        "pages": "211–214",
+        "images": "211.png–214.png"
+      }
+    ],
+    "cautions": [
+      "When quoting exact cell-voltage limits/percentages, consult the physical page because those are textbook-specific values."
+    ]
+  },
+  {
+    "id": "u5-energy-safety",
+    "unit": 5,
+    "title": "Energy-use calculations and electrical safety",
+    "status": "supporting",
+    "learn": [
+      "Although not separately named in the R25 Unit-V line, the supplied chapter includes energy-consumption examples and electrical-safety precautions. They are preserved as supporting textbook material, not promoted to additional syllabus atoms.",
+      "The energy section uses electrical energy = power × time and identifies one billing unit as one kilowatt-hour."
+    ],
+    "formulas": [
+      "Energy = Power × Time",
+      "1 unit = 1 kWh"
+    ],
+    "method": [],
+    "source_refs": [
+      "TB-P214",
+      "TB-P215",
+      "TB-P216",
+      "TB-P217"
+    ],
+    "book_refs": [
+      {
+        "pages": "214–217",
+        "images": "214.png–217.png"
+      }
+    ],
+    "cautions": []
+  },
+  {
+    "id": "u5-ups",
+    "unit": 5,
+    "title": "UPS block diagram and operation",
+    "status": "core",
+    "learn": [
+      "Textbook p.243 defines the UPS as providing continuity of power for critical loads and gives a block diagram: AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.",
+      "Under normal conditions the rectifier supplies DC to the inverter and charges the battery. When the AC supply fails, the inverter converts battery DC to AC and supplies the load after filtering.",
+      "The source also states that the UPS improves supply quality and regulates output-load voltage against input fluctuations."
+    ],
+    "formulas": [],
+    "method": [],
+    "source_refs": [
+      "SYL-R25-U5",
+      "TB-P243"
+    ],
+    "book_refs": [
+      {
+        "pages": "243",
+        "images": "243_2.png / standalone 243.png",
+        "figures": "5.44 UPS Block Diagram"
+      }
+    ],
+    "cautions": []
+  }
+]

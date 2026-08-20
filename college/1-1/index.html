@@ -4,16 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!--
-		Site root:
-		Local Live Server  -> /
-		GitHub Pages       -> /Pankusdesk/
-	-->
 		<base id="site-base" href="/" />
-
 		<script>
 			const base = document.getElementById('site-base');
-
 			if (window.location.hostname.endsWith('github.io')) {
 				base.href = '/Pankusdesk/';
 			}
@@ -29,32 +22,35 @@
 		<link rel="stylesheet" href="styles/new/pages/semester.css" />
 
 		<script src="scripts/new/navbar.js" defer></script>
+		<script src="scripts/new/semester-home.js" defer></script>
 	</head>
 
 	<body>
 		<div id="navbar-new"></div>
 
-		<main class="page-shell">
+		<main
+			class="page-shell semester-page"
+			data-semester-json="college/1-1/semester.json"
+		>
 			<div class="breadcrumbs">
 				<a href="index.html">Panku's Desk</a>
 				<span>›</span>
-				<span>Semester 1.1</span>
+				<span data-semester-label>Semester 1.1</span>
 			</div>
 
 			<section class="semester-hero">
-				<div>
-					<div class="eyebrow">Year 1 · Semester 1</div>
-
-					<h1>Semester 1.1</h1>
-
-					<p class="subtitle">B.Tech Information Technology · Regulation R25</p>
+				<div class="semester-hero-copy">
+					<div class="eyebrow" data-semester-eyebrow>Year 1 · Semester 1</div>
+					<h1 data-semester-label>Semester 1.1</h1>
+					<p class="subtitle">B.Tech Information Technology · Regulation <span data-regulation>R25</span></p>
 				</div>
 
-				<div class="semester-meta">
-					<div>
-						<span class="semester-meta-label">Total credits</span>
-						<strong>20</strong>
+				<div class="semester-overview-card">
+					<div class="semester-credit-block">
+						<span>Total credits</span>
+						<strong data-total-credits>20</strong>
 					</div>
+					<a class="secondary-button" data-calendar-link href="college/calendar.html?semester=1-1">Open Calendar →</a>
 				</div>
 			</section>
 
@@ -62,206 +58,27 @@
 				<div class="section-heading-row">
 					<div>
 						<div class="section-title">Subjects</div>
-						<p class="section-note">
-							Cumulative semester notebooks organised by subject.
-						</p>
+						<p class="section-note">Cumulative semester notebooks organised by subject.</p>
 					</div>
-
-					<a class="secondary-button" href="college/1-1/calendar.html">
-						Open Calendar →
-					</a>
 				</div>
-
-				<div class="subject-grid">
-					<a
-						class="subject-card"
-						href="college/1-1/matrices-calculus/index.html"
-					>
-						<div class="subject-code">25BS1MT101</div>
-
-						<h2>Matrices &amp; Calculus</h2>
-
-						<div class="subject-card-footer">
-							<span>4 credits</span>
-							<span>Open subject →</span>
-						</div>
-					</a>
-
-					<a
-						class="subject-card"
-						href="college/1-1/chemistry-engineers/index.html"
-					>
-						<div class="subject-code">25BS1CH101</div>
-
-						<h2>Chemistry for Engineers</h2>
-
-						<div class="subject-card-footer">
-							<span>3 credits</span>
-							<span>Open subject →</span>
-						</div>
-					</a>
-
-					<a
-						class="subject-card"
-						href="college/1-1/basic-electrical-engineering/index.html"
-					>
-						<div class="subject-code">25ES1EE101</div>
-
-						<h2>Basic Electrical Engineering</h2>
-
-						<div class="subject-card-footer">
-							<span>3 credits</span>
-							<span>Open subject →</span>
-						</div>
-					</a>
-
-					<a
-						class="subject-card"
-						href="college/1-1/programming-problem-solving/index.html"
-					>
-						<div class="subject-code">25ES1CS101</div>
-
-						<h2>Programming for Problem Solving</h2>
-
-						<div class="subject-card-footer">
-							<span>3 credits</span>
-							<span>Open subject →</span>
-						</div>
-					</a>
-
-					<a
-						class="subject-card"
-						href="college/1-1/engineering-drawing/index.html"
-					>
-						<div class="subject-code">25ES3ME101</div>
-
-						<h2>Engineering Drawing</h2>
-
-						<div class="subject-card-footer">
-							<span>3 credits</span>
-							<span>Open subject →</span>
-						</div>
-					</a>
-				</div>
+				<div class="subject-grid" id="semester-subject-grid" aria-live="polite"></div>
 			</section>
 
 			<section class="section" id="labs">
 				<div class="section-title">Labs &amp; Workshops</div>
-
-				<div class="lab-list">
-					<div class="lab-item">
-						<div>
-							<div class="subject-code">25BS2CH101</div>
-							<h3>Engineering Chemistry Laboratory</h3>
-						</div>
-
-						<span>1 credit</span>
-					</div>
-
-					<div class="lab-item">
-						<div>
-							<div class="subject-code">25ES2CS101</div>
-							<h3>Programming for Problem Solving Laboratory</h3>
-						</div>
-
-						<span>1 credit</span>
-					</div>
-
-					<div class="lab-item">
-						<div>
-							<div class="subject-code">25ES2IT101</div>
-							<h3>IT Workshop</h3>
-						</div>
-
-						<span>1 credit</span>
-					</div>
-
-					<div class="lab-item">
-						<div>
-							<div class="subject-code">25ES2EE101</div>
-							<h3>Basic Electrical Engineering Laboratory</h3>
-						</div>
-
-						<span>1 credit</span>
-					</div>
-
-					<div class="lab-item">
-						<div>
-							<div class="subject-code">25MN6HS101</div>
-							<h3>Induction Programme</h3>
-						</div>
-
-						<span>0 credits</span>
-					</div>
-				</div>
+				<div class="lab-list" id="semester-lab-list"></div>
 			</section>
 
 			<section class="section">
 				<div class="section-heading-row">
 					<div>
 						<div class="section-title">Today</div>
-						<p class="section-note">
-							A quick view of today's timetable and study activity.
-						</p>
+						<p class="section-note">Today's timetable from the current Semester 1.1 schedule.</p>
 					</div>
-
-					<a class="secondary-button" href="college/1-1/calendar.html">
-						Full calendar →
-					</a>
+					<a class="secondary-button" data-calendar-link href="college/calendar.html?semester=1-1">Full calendar →</a>
 				</div>
-
-				<div class="today-panel">
-					<div class="today-date">
-						<div class="eyebrow">Thursday</div>
-						<h2>13 August 2026</h2>
-					</div>
-
-					<div class="today-list">
-						<div class="today-item">
-							<div class="today-time">9:00 AM</div>
-
-							<div>
-								<strong>Chemistry for Engineers</strong>
-								<span>CFE</span>
-							</div>
-						</div>
-
-						<div class="today-item">
-							<div class="today-time">10:00 AM</div>
-
-							<div>
-								<strong>Programming for Problem Solving</strong>
-								<span>PPS</span>
-							</div>
-						</div>
-
-						<div class="today-item">
-							<div class="today-time">11:00 AM</div>
-
-							<div>
-								<strong>Basic Electrical Engineering</strong>
-								<span>BEE</span>
-							</div>
-						</div>
-
-						<div class="today-item">
-							<div class="today-time">12:40 PM</div>
-
-							<div>
-								<strong>BEE Lab / Engineering Chemistry Lab</strong>
-								<span>Laboratory block</span>
-							</div>
-						</div>
-
-						<div class="today-item">
-							<div class="today-time">2:40 PM</div>
-
-							<div>
-								<strong>Sports</strong>
-								<span>Activity period</span>
-							</div>
-						</div>
-					</div>
+				<div class="today-panel" id="semester-today-panel">
+					<div class="semester-loading">Loading today's timetable…</div>
 				</div>
 			</section>
 		</main>
