@@ -134,10 +134,12 @@ function renderReadyUnit(context, unitTopics, sourceCollections) {
 			<aside class="unit-toc" aria-label="Unit ${escapeHtml(context.unitLabel)} topic navigation">
 				<div class="toc-label">On this page</div>
 				<nav id="unit-topic-nav"></nav>
+				${renderPracticeNav(context)}
 			</aside>
 
 			<section class="unit-content" aria-label="Unit ${escapeHtml(context.unitLabel)} study notes">
 				<div id="unit-topic-list"></div>
+				${renderEndOfUnitPractice(context)}
 			</section>
 		</div>
 	`;
@@ -195,6 +197,73 @@ function renderSyllabusBoundary(context) {
 					${syllabusUnit.atoms.map(atom => `<li>${formatText(atom)}</li>`).join('')}
 				</ol>
 			</details>
+		</section>
+	`;
+}
+
+function getPracticeLinks(context) {
+	const practice = context.subject.practice ?? {};
+	const links = [];
+	const unitQuestions = practice.unitQuestions;
+	const unitNumber = Number(context.unitMeta.number);
+	const availableUnits = unitQuestions?.availableUnits ?? [];
+
+	if (unitQuestions?.hrefPattern && availableUnits.map(Number).includes(unitNumber)) {
+		const href = unitQuestions.hrefPattern.replace('{unit}', String(unitNumber));
+		links.push({
+			kind: 'unit-questions',
+			label: unitQuestions.label || 'Textbook Questions',
+			description: unitQuestions.description || '',
+			href: new URL(href, context.subjectUrl).href,
+			primary: true,
+		});
+	}
+
+	if (practice.pyqs?.href) {
+		links.push({
+			kind: 'pyqs',
+			label: practice.pyqs.label || 'PYQs',
+			description: practice.pyqs.description || '',
+			href: new URL(practice.pyqs.href, context.subjectUrl).href,
+			primary: false,
+		});
+	}
+
+	return links;
+}
+
+function renderPracticeNav(context) {
+	const links = getPracticeLinks(context);
+	if (!links.length) return '';
+	return `
+		<div class="toc-practice">
+			<div class="toc-label">Practice</div>
+			${links.map(link => `
+				<a class="toc-practice-link" href="${escapeHtml(link.href)}">
+					<span>${escapeHtml(link.label)}</span>
+					<span aria-hidden="true">→</span>
+				</a>
+			`).join('')}
+		</div>
+	`;
+}
+
+function renderEndOfUnitPractice(context) {
+	const links = getPracticeLinks(context);
+	if (!links.length) return '';
+	const primary = links.find(link => link.primary) ?? links[0];
+	const secondary = links.filter(link => link !== primary);
+	return `
+		<section class="end-unit-practice" aria-label="End of unit practice">
+			<div>
+				<div class="note-kicker">Finished Unit ${escapeHtml(context.unitLabel)}?</div>
+				<h2>Put the unit into practice</h2>
+				<p>Move from the notes into source-backed practice while the ideas are still fresh.</p>
+			</div>
+			<div class="end-unit-actions">
+				<a class="end-unit-primary" href="${escapeHtml(primary.href)}">Practice ${escapeHtml(primary.label)} →</a>
+				${secondary.map(link => `<a class="end-unit-secondary" href="${escapeHtml(link.href)}">Browse ${escapeHtml(link.label)} →</a>`).join('')}
+			</div>
 		</section>
 	`;
 }
@@ -268,7 +337,6 @@ function renderSection(section) {
 		<section class="note-section">
 			<div class="note-section-heading"><h3>${escapeHtml(section.heading)}</h3></div>
 			${renderSectionContent(section)}
-			${renderSectionBookRefs(section.book_refs ?? [])}
 		</section>
 	`;
 }
@@ -332,28 +400,6 @@ function renderTextbookFigure(figure) {
 			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
 			${caption || page ? `<figcaption>${caption}${page}</figcaption>` : ''}
 		</figure>
-	`;
-}
-
-function renderSectionBookRefs(bookRefs) {
-	if (!bookRefs.length) return '';
-
-	return `
-		<div class="section-book-refs" aria-label="Physical book reference for this note section">
-			${bookRefs.map(ref => {
-				const pages = String(ref.pages ?? '');
-				const images = String(ref.images ?? '');
-				const pageLabel = /[–,;]/.test(pages) ? 'Book pp.' : 'Book p.';
-				const imageLabel = /[–,;]/.test(images) ? 'capture images' : 'capture image';
-				return `
-					<div class="section-book-ref">
-						<span class="section-book-page">${pageLabel} ${escapeHtml(pages)}</span>
-						${images ? `<span class="section-book-image">${imageLabel} ${escapeHtml(images)}</span>` : ''}
-						${ref.note ? `<span class="section-book-note">${escapeHtml(ref.note)}</span>` : ''}
-					</div>
-				`;
-			}).join('')}
-		</div>
 	`;
 }
 
@@ -563,13 +609,11 @@ function formatSourceRecord(record, definition, context) {
 					: context.syllabusPageUrl,
 			};
 
-		case 'book-page': {
-			const capture = record.captures?.[0];
+		case 'book-page':
 			return {
 				kind,
-				detail: `Printed p. ${record.printed_page}${capture?.image_file ? ` · image ${capture.image_file}` : ''}`,
+				detail: `Textbook p. ${record.printed_page}`,
 			};
-		}
 
 		case 'lecture':
 			return {
