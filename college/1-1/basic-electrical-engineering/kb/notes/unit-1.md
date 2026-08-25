@@ -6,7 +6,7 @@
 
 **Status:** Core R25
 
-Electrical engineering begins with an energy-conversion chain: some available form of energy is converted into electrical energy, carried to where it is needed, and finally converted again into a useful effect. This topic follows that chain from generation to utilisation and explains why electrical energy is so central to modern engineering.
+Electrical energy is produced by converting an available form of energy, transmitted and distributed to the place of use, and finally converted by the load into the required useful effect. Generation, transmission, distribution and utilisation together form the basic energy path of an electrical power system.
 
 ### Quick recall
 
@@ -28,15 +28,15 @@ Modern life depends on electrical energy at almost every level. Homes and commer
 
 Transport and communication also depend on electricity: electric trains and battery vehicles use electrical energy directly, while radio, television and other communication systems require electrical power. Medical and scientific equipment such as X-ray and ECG systems are further examples of electrically powered applications.
 
-### Why BEE matters to an IT student
+### Electrical foundations of computing and IT systems
 
 A computer is an electrical/electronic system before it is a programming platform. Its processor, memory, storage, display, networking equipment and power supply all depend on electrical energy. The same is true for servers, network infrastructure, laboratories and the machines that support an IT workplace.
 
-BEE therefore gives the engineering vocabulary needed to understand sources, voltage, current, circuit elements, power systems and machines that coexist with computing systems.
+Computing systems therefore depend on the same electrical foundations as other engineered systems: sources provide energy, voltages and currents describe electrical conditions, circuit elements determine electrical behaviour, and power systems deliver the energy required by the equipment.
 
 ### From generation to utilisation
 
-Electrical power generation is an energy-conversion process: the input may be heat, chemical, solar, wind or mechanical energy, but the output of the generating system is electrical energy. In the conventional mechanical route described in the prescribed textbook, the machine that supplies the required mechanical input is called the prime mover, and the generator converts that mechanical input into electrical energy.
+Electrical power generation is an energy-conversion process: the input may be heat, chemical, solar, wind or mechanical energy, but the output of the generating system is electrical energy. In a conventional mechanical-generation system, the machine that supplies mechanical input to the generator is called the prime mover. The generator then converts that mechanical input into electrical energy.
 
 Generation is only the first stage. Generating stations are often located where the energy resource is available rather than where the load is concentrated, so the generated power must be transmitted toward load centres, distributed to individual consumers, and finally utilised by the connected loads. Together, generation, transmission, distribution and utilisation form the electrical power system.
 
@@ -73,7 +73,7 @@ Generation is only the first stage. Generating stations are often located where 
 
 **Status:** Core R25
 
-Once electrical energy reaches a load, circuit theory gives us a compact language for describing what happens. We first distinguish a network from a circuit, then build the basic quantities in a natural order — charge, current, voltage, energy and power — before using them throughout the rest of Unit I.
+Circuit theory describes interconnected electrical elements in terms of charge, current, voltage, energy and power. A clear distinction between a network and a circuit, together with consistent current directions and voltage polarities, provides the foundation for analysing electrical circuits.
 
 ### Quick recall
 
@@ -89,9 +89,9 @@ An electrical network is the broader idea: it is simply an interconnection of tw
 
 ### DC and AC circuits
 
-The class notes use the current carried by the closed path to distinguish two basic cases: a closed path carrying direct current is referred to as a DC circuit, while one carrying alternating current is an AC circuit. Unit I concentrates on DC-circuit ideas; steady-state AC circuits are developed in Unit II.
+A DC circuit carries direct current, whose reference direction does not alternate with time. An AC circuit carries alternating current, whose magnitude and direction vary periodically with time.
 
-In a DC network, loads may appear in series, parallel or series-parallel combinations. Those connection rules are developed later in this unit after the basic quantities and element models are established.
+DC networks may contain series, parallel or series-parallel combinations of loads and circuit elements. Their behaviour is determined from the element laws together with the way the elements are interconnected.
 
 ### Element, terminal, node and loop
 
@@ -103,21 +103,21 @@ In a DC network, loads may appear in series, parallel or series-parallel combina
 
 *Figure: Fig. 1.3 · Basic circuit schematic*
 
-### How network elements were classified in class
+### Classification of network elements
 
-The 24 August class grouped network elements first as active elements (sources) and passive elements (R, L and C), and then listed four further classification pairs: linear/non-linear, unilateral/bilateral, time-variant/time-invariant, and lumped/distributed. The diagram below preserves that class organisation exactly as a study map.
+Network elements may be classified as active or passive. Sources are active elements, while R, L and C are commonly grouped as passive elements in introductory circuit analysis. Other useful classifications are linear/non-linear, unilateral/bilateral, time-variant/time-invariant, and lumped/distributed.
 
-*Figure: Class-note redraw · Types of network elements · 24 Aug 2026*
+*Figure: Classification of network elements*
 
 ### Charge: the quantity behind current
 
-Electric charge is the property carried by charged particles. The class notes identify protons as positively charged, electrons as negatively charged and neutrons as neutral. The SI unit of charge is the coulomb (C).
+Electric charge is a fundamental property of matter. Protons carry positive charge, electrons carry negative charge, and neutrons are electrically neutral. The SI unit of charge is the coulomb (C).
 
 Current is defined from charge, so it helps to think of charge as the quantity being transported and current as the rate at which that quantity crosses a chosen cross-section.
 
 ### Current: charge in motion
 
-Electric current measures how rapidly electric charge crosses a chosen surface or flows through a conductor. For a steady transfer of charge Q over a time interval T, the class notes write I = Q/T. In the general time-varying case, current is i = dq/dt. One ampere is one coulomb per second.
+Electric current is the rate at which electric charge crosses a chosen surface or flows through a conductor. For a steady transfer of charge Q over a time interval T, I = Q/T. In the general time-varying case, i = dq/dt. One ampere is one coulomb per second.
 
 Circuit analysis normally ignores the microscopic distribution of moving charge across the wire and works with the total current in each branch. This is one of the simplifications that makes circuit theory much easier than a full electromagnetic-field calculation.
 
@@ -127,7 +127,7 @@ Circuit analysis normally ignores the microscopic distribution of moving charge 
 
 ### Electrical potential and potential difference
 
-The class notes distinguish an absolute electrical potential from a potential difference. An absolute potential uses a reference at infinity, whereas circuit analysis normally works with the difference in potential between two points. Potential difference is the work or energy transferred per unit positive test charge in moving between those points.
+Electrical potential is measured relative to a reference. Absolute potential may use infinity as the reference, whereas circuit analysis normally uses the potential difference between two points. Potential difference is the work or energy transferred per unit positive test charge in moving between those points.
 
 For a finite or steady energy transfer, V = W/Q. In differential form, voltage is v = dw/dq. One volt means one joule of energy per coulomb of charge. Because voltage is always referenced between points, its sign depends on the chosen polarity: if A is 5 V above B, then V_AB = +5 V and V_BA = −5 V.
 
@@ -145,7 +145,7 @@ For a passive element, positive p means the element is absorbing electrical powe
 
 A useful analogy connects electrical, magnetic and mechanical systems: EMF drives current against electrical resistance; magnetomotive force (MMF) drives magnetic flux against reluctance; mechanical torque drives speed against friction. The analogy becomes useful later in transformers and electrical machines.
 
-For Unit I, retain only the basic MMF idea: MMF is the driving quantity of a magnetic circuit and, for a coil, MMF = NI. Detailed magnetic-circuit calculations are not an R25 Unit-I requirement.
+Magnetomotive force (MMF) is the driving quantity of a magnetic circuit. For a coil of N turns carrying current I, MMF = NI.
 
 *Figure: Fig. 1.4 · Analogy between electrical, magnetic and mechanical systems*
 
@@ -155,8 +155,8 @@ For Unit I, retain only the basic MMF idea: MMF is the driving quantity of a mag
   A network is an interconnection of two or more electrical elements and need not contain a closed conducting path. A circuit is a network with at least one closed path. Therefore every circuit is a network, but every network need not be a circuit.
 - **What do 1 ampere and 1 volt mean in base electrical terms?**  
   1 ampere means 1 coulomb of charge crossing a section per second. 1 volt means 1 joule of energy transferred per coulomb of charge.
-- **What is MMF at the level needed here?**  
-  Magnetomotive force is the driving quantity of a magnetic circuit. For a coil, MMF = NI. Detailed magnetic-circuit calculations are not part of R25 Unit I.
+- **What is magnetomotive force (MMF)?**  
+  Magnetomotive force is the driving quantity of a magnetic circuit. For a coil of N turns carrying current I, MMF = NI.
 
 ### Formula / method sheet
 
@@ -176,7 +176,7 @@ For Unit I, retain only the basic MMF idea: MMF is the driving quantity of a mag
 
 - Do not confuse electron-flow direction with conventional-current direction.
 - Voltage is between two points; always keep the chosen +/− reference visible when solving a circuit.
-- The supplied sources use different terminology for ideal energy-storage elements: the 24 Aug class notes group R, L and C under passive elements, while the prescribed textbook on pp. 7–8 calls ideal L and C active because they store energy. This source difference is preserved rather than silently reconciled; for a class-based classification question, follow the lecturer’s stated classification unless told otherwise.
+- The terms active and passive are used with more than one convention in introductory electrical engineering. In common circuit-analysis classification, sources are active and R, L and C are passive; physically, R dissipates energy while ideal L and C store energy.
 
 ### Class history
 
@@ -206,7 +206,7 @@ The behaviour of most introductory circuit elements is built from three basic pa
 
 ### Resistance and Ohm’s law
 
-Resistance is the property of a material or element that opposes current. For the linear resistor used in this course, voltage drop is proportional to current at a given temperature: v = Ri. The proportionality constant R is resistance, measured in ohms (Ω); from Ohm’s law, 1 Ω corresponds to 1 V/A. Conductance is G = 1/R, measured in siemens (S), so i = Gv.
+Resistance is the property of a material or element that opposes current. For a linear resistor, voltage drop is proportional to current at a given temperature: v = Ri. The proportionality constant R is resistance, measured in ohms (Ω); from Ohm’s law, 1 Ω corresponds to 1 V/A. Conductance is G = 1/R, measured in siemens (S), so i = Gv.
 
 For a uniform conductor, resistance depends on the material and geometry: R = ρl/A. Increasing length increases resistance, while increasing cross-sectional area decreases it. In metals, resistivity increases with temperature, so real resistance can change with temperature.
 
@@ -224,7 +224,7 @@ Because electrical energy is dissipated as heat, a practical resistor must have 
 
 A current-carrying conductor produces magnetic flux around it; the direction follows the right-hand thumb rule. When the conductor is formed into a coil, the flux links multiple turns. If N turns link a flux Φ, the flux linkage is Ψ = NΦ and is expressed in weber-turns.
 
-When the flux linkage changes with time, an emf is induced. For the ideal linear inductor used in circuit theory this gives v = L·di/dt. The proportionality constant L is inductance and its unit is the henry (H). The prescribed textbook defines one henry as the inductance of a coil in which a current changing at 1 ampere per second produces an induced emf of 1 volt.
+When flux linkage changes with time, an emf is induced. For an ideal linear inductor, v = L·di/dt. The proportionality constant L is inductance and its unit is the henry (H). One henry is the inductance of a coil in which a current changing at 1 ampere per second produces an induced emf of 1 volt.
 
 By Lenz’s law the induced emf opposes the change that produces it. This is the physical basis for the statement that an inductor opposes changes in current.
 
@@ -234,7 +234,7 @@ By Lenz’s law the induced emf opposes the change that produces it. This is the
 
 *Figure: Fig. 1.9 · Induced emf in a coil opposes change in current*
 
-### Inductor behaviour you should remember
+### Inductor behaviour
 
 - If current is constant, di/dt = 0 and the ideal inductor voltage is zero.
 - Therefore an ideal inductor behaves as a short circuit after steady DC has been established.
@@ -251,7 +251,7 @@ Differentiating q = Cv for constant C gives i = C·dv/dt. The integral form v(t1
 
 *Figure: Fig. 1.10 · Capacitor*
 
-### Capacitor behaviour you should remember
+### Capacitor behaviour
 
 - If capacitor voltage is constant, dv/dt = 0 and the ideal capacitor current is zero.
 - Therefore an ideal capacitor behaves as an open circuit under steady DC.
@@ -269,7 +269,7 @@ This distinction becomes important when circuits contain stored energy. R dissip
 
 A linear element obeys superposition: if one excitation produces one response and a second excitation produces a second response, a linear combination of the excitations produces the same linear combination of responses.
 
-For constant R, L and C, the relations v = Ri, v = L·di/dt and i = C·dv/dt are linear. This is the foundation for applying Superposition and Thevenin’s theorem later in the unit.
+For constant R, L and C, the relations v = Ri, v = L·di/dt and i = C·dv/dt are linear. Their linearity allows network theorems such as Superposition and Thevenin’s theorem to be applied to circuits containing these ideal elements.
 
 ### Check yourself
 
@@ -295,7 +295,7 @@ For constant R, L and C, the relations v = Ri, v = L·di/dt and i = C·dv/dt are
 
 ### Important notes
 
-- Terminology can vary between introductory sources. For problem solving, use the unambiguous physical behaviour: R dissipates energy; ideal L and C store energy.
+- Energy behaviour is unambiguous: a resistor dissipates electrical energy, while ideal inductors and capacitors store energy in magnetic and electric fields respectively.
 - Steady-DC short/open statements apply to ideal L and C after transients have settled; they are not general replacements for all time-varying conditions.
 
 ### Class history
@@ -329,9 +329,9 @@ Circuit elements need excitation, and electrical sources provide it. The two bas
 
 An electrical source supplies electrical energy or power to a load. The first distinction is between a voltage source, which specifies a terminal voltage, and a current source, which specifies a current. Each of those may then be independent or dependent on another voltage or current elsewhere in the circuit.
 
-The class sketch below shows a voltage source feeding a resistor together with the horizontal V–I characteristic used for an ideal voltage source: the source voltage remains fixed while the load determines the current.
+For an ideal voltage source, the terminal voltage remains fixed while the current is determined by the connected circuit. Its V–I characteristic is therefore a horizontal constant-voltage line when voltage is plotted on the vertical axis.
 
-*Figure: Class-note redraw · Voltage source and constant-voltage characteristic · 24 Aug 2026*
+*Figure: Voltage source and constant-voltage characteristic*
 
 ### Ideal independent voltage source
 
@@ -351,7 +351,7 @@ The arrow fixes the reference current direction. A negative source value means a
 
 ### Practical source models
 
-- Practical voltage source: ideal voltage source Vs in series with internal resistance R. As load current increases, the terminal voltage falls; the supplementary notes express this as Vt = Vs − iR for the shown reference directions.
+- Practical voltage source: an ideal voltage source Vs in series with internal resistance R. As load current increases, the terminal voltage falls according to Vt = Vs − iR for the shown reference directions.
 - Practical current source: ideal current source in parallel with internal resistance. Some source current is diverted through the internal resistance, so the current delivered to the external circuit depends on terminal voltage.
 - The ideal models are limiting cases. They are extremely useful in analysis even though real sources have finite internal effects.
 
@@ -524,7 +524,6 @@ Source transformation changes the form of a source-resistance combination withou
 
 ### Important notes
 
-- Source transformation is supplied in the prescribed chapter and supplementary PDF, but it is not separately named in the R25 Unit-I syllabus line; it is therefore kept as Supporting material.
 
 ### Physical-book reference
 
@@ -575,7 +574,7 @@ A voltage encountered from − to + is a rise; from + to − is a drop. You can 
 
 Height analogy: after climbing and descending during a closed journey and returning to the starting point, the algebraic sum of all height changes is zero. KVL applies the same idea to electrical potential around a loop.
 
-The circuit form of KVL assumes there is no significant time-varying magnetic flux linking the loop. That assumption is appropriate for the lumped circuits treated in this course.
+The circuit form of KVL assumes that no significant time-varying magnetic flux links the loop. Under the lumped-circuit assumption, the algebraic sum of potential changes around the loop is zero.
 
 ### Using KCL and KVL together
 
@@ -664,7 +663,7 @@ Visual proximity on the drawing is not enough. Always decide from the nodes and 
 
 - Parallel capacitors: Ceq = ΣC.
 - Series capacitors: 1/Ceq = Σ(1/C).
-- The series-capacitor derivation used here assumes zero initial capacitor voltages.
+- For zero initial capacitor voltages, the series-capacitor relation leads to the usual reciprocal equivalent-capacitance formula.
 
 ### Dissimilar element combinations with ideal sources
 
@@ -966,7 +965,7 @@ For the usual reference with current delivered from the source to the load, the 
 - **What are the two quantities in a Thevenin equivalent and how are they found?**  
   The equivalent is V_th in series with R_th. V_th is the open-circuit voltage at the chosen terminals. R_th is the resistance seen looking into those terminals after nulling independent sources, or is found using a test source when controlled sources remain.
 - **For the supplied resistor-network check with V₀ = 8 V and R = 16 kΩ, what Thevenin equivalent is obtained?**  
-  The source material gives V_th = V₀/4 = 2 V and R_th = 5R/8 = 10 kΩ, so the equivalent is a 2 V source in series with 10 kΩ.
+  V_th = V₀/4 = 2 V and R_th = 5R/8 = 10 kΩ, so the equivalent is a 2 V source in series with 10 kΩ.
 - **What must you do when finding R_th if a controlled source is present?**  
   Keep the controlled source active. Null only the independent sources, apply a test voltage or test current at the output terminals, and use R_th = V_test/I_test.
 
