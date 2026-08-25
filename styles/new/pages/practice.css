@@ -376,3 +376,13 @@
 	white-space: nowrap;
 	color: var(--primary-muted);
 }
+
+/* Direct links from unit-note practice boxes land on the exact question. */
+.chapter-question[id] {
+	scroll-margin-top: 96px;
+}
+
+.chapter-question:target {
+	border-color: var(--primary-muted);
+	box-shadow: 0 0 0 3px var(--primary-soft);
+}

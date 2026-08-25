@@ -217,7 +217,10 @@ function selectInitialDate(state) {
 	const semester =
 		state.academicCalendar?.semesters?.[state.semesterId];
 
-	let initial = today;
+	const requestedDate = new URLSearchParams(window.location.search).get('date');
+	let initial = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate || '')
+		? parseLocalDate(requestedDate)
+		: today;
 
 	if (
 		semester?.semesterPeriod?.start &&

@@ -305,16 +305,23 @@ function renderTopic(topic, index, context, sourceCollections) {
 				<span class="topic-status ${escapeHtml(topic.status)}"${isSupporting ? ' title="Useful supplied course material; not separately named as a syllabus item."' : ''}>${escapeHtml(statusLabel)}</span>
 			</header>
 
+			${renderTopicIntro(topic.intro)}
 			${renderQuickRecall(topic.learn ?? [])}
 			${renderSelfChecks(topic.self_checks ?? topic.questions ?? [], topic.id)}
 			${renderSections(topic.sections ?? [])}
 			${renderFormulas(topic.formulas ?? [])}
 			${renderMethod(topic.method ?? [])}
 			${renderCautions(topic.cautions ?? [])}
-			${renderPractice(topic.practice ?? [])}
+			${renderPractice(topic.practice ?? [], context)}
+			${renderClassHistory(topic.class_history ?? [])}
 			${renderReferenceFooter(topic, context, sourceCollections)}
 		</article>
 	`;
+}
+
+function renderTopicIntro(value) {
+	if (!value) return '';
+	return `<p class="topic-intro">${formatText(value)}</p>`;
 }
 
 function renderQuickRecall(items) {
@@ -395,8 +402,10 @@ function renderTextbookFigure(figure) {
 	const caption = figure.caption ? `<span>${escapeHtml(figure.caption)}</span>` : '';
 	const page = figure.page ? `<span class="textbook-figure-page">Book p. ${escapeHtml(figure.page)}</span>` : '';
 
+	const kindClass = figure.kind === 'class-note' ? ' class-note-figure' : '';
+
 	return `
-		<figure class="textbook-figure">
+		<figure class="textbook-figure${kindClass}">
 			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
 			${caption || page ? `<figcaption>${caption}${page}</figcaption>` : ''}
 		</figure>
@@ -513,18 +522,44 @@ function renderCautions(cautions) {
 	`;
 }
 
-function renderPractice(practice) {
+function renderPractice(practice, context) {
 	if (!practice.length) return '';
+	const questionLink = getPracticeLinks(context).find(link => link.kind === 'unit-questions');
+
 	return `
 		<section class="study-box practice-box">
 			<div class="study-box-title">Practice from the prescribed book</div>
 			<div class="practice-list">
-				${practice.map(item => `
-					<div class="practice-item">
+				${practice.map(item => {
+					const href = questionLink && item.anchor
+						? `${questionLink.href}#question-${encodeURIComponent(item.anchor)}`
+						: questionLink?.href || null;
+					const content = `
 						<span class="practice-page">p. ${escapeHtml(item.book_page)}</span>
 						<span class="practice-type">${escapeHtml(item.type)}</span>
 						<span class="practice-items">${escapeHtml(item.items)}</span>
-					</div>
+						${href ? '<span class="practice-arrow" aria-hidden="true">→</span>' : ''}
+					`;
+					return href
+						? `<a class="practice-item" href="${escapeHtml(href)}">${content}</a>`
+						: `<div class="practice-item">${content}</div>`;
+				}).join('')}
+			</div>
+		</section>
+	`;
+}
+
+function renderClassHistory(items) {
+	if (!items.length) return '';
+	return `
+		<section class="class-history" aria-label="Class history">
+			<div class="study-box-title">Covered in class</div>
+			<div class="class-history-links">
+				${items.map(item => `
+					<a href="${escapeHtml(item.href)}">
+						<span>${escapeHtml(item.label || item.date)}</span>
+						<span aria-hidden="true">→</span>
+					</a>
 				`).join('')}
 			</div>
 		</section>
@@ -624,6 +659,13 @@ function formatSourceRecord(record, definition, context) {
 		case 'pdf-page':
 			return { kind, detail: record.pdf_page != null ? `PDF p. ${record.pdf_page}` : record.file || record.source_id || record.id };
 
+		case 'class-log':
+			return {
+				kind,
+				detail: record.date ? `${formatIsoDate(record.date)} · ${record.title || 'Class notes'}` : record.title || record.id,
+				href: record.href ? new URL(record.href, context.subjectUrl).href : null,
+			};
+
 		case 'external':
 			return {
 				kind,
@@ -721,6 +763,14 @@ function cleanFileTitle(filename) {
 		.replace(/\.[^.]+$/i, '')
 		.replace(/^\d+_/, '')
 		.replaceAll('_', ' ');
+}
+
+function formatIsoDate(value) {
+	const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+	if (!match) return String(value || '');
+	const [, year, month, day] = match;
+	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	return `${Number(day)} ${months[Number(month) - 1] || month} ${year}`;
 }
 
 function formatText(value) {

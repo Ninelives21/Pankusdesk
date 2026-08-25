@@ -69,11 +69,11 @@
         "heading": "From generation to utilisation",
         "scope": "supporting",
         "bullets": [
-          "Generation converts another available form of energy into electrical energy. Possible inputs include mechanical, heat, chemical, solar and wind energy.",
-          "In conventional generation, a prime mover supplies mechanical energy to a generator; the generator converts mechanical energy into electrical energy.",
-          "Transmission carries bulk electrical power from generating stations toward load centres.",
-          "Distribution delivers power from the transmission system to individual consumers and loads.",
-          "Utilisation is the final conversion of electrical energy into the required useful effect: light, heat, motion, computing, communication and so on.",
+          "Generation: converts an available form of energy into electrical energy.",
+          "Prime mover: supplies the mechanical energy needed to drive a generator in the conventional mechanical-generation route.",
+          "Transmission: carries bulk electrical power from generating stations toward load centres.",
+          "Distribution: delivers power from the transmission system to individual consumers and loads.",
+          "Utilisation: converts electrical energy into the required useful effect — light, heat, motion, computing, communication and so on.",
           "Motor and generator are inverse energy-conversion examples: motor — electrical → mechanical; generator — mechanical → electrical."
         ],
         "source_refs": [
@@ -111,6 +111,10 @@
               "index": 3
             }
           }
+        ],
+        "paragraphs": [
+          "Electrical power generation is an energy-conversion process: the input may be heat, chemical, solar, wind or mechanical energy, but the output of the generating system is electrical energy. In the conventional mechanical route described in the prescribed textbook, the machine that supplies the required mechanical input is called the prime mover, and the generator converts that mechanical input into electrical energy.",
+          "Generation is only the first stage. Generating stations are often located where the energy resource is available rather than where the load is concentrated, so the generated power must be transmitted toward load centres, distributed to individual consumers, and finally utilised by the connected loads. Together, generation, transmission, distribution and utilisation form the electrical power system."
         ]
       }
     ],
@@ -134,12 +138,14 @@
       {
         "book_page": 70,
         "type": "2-mark",
-        "items": "Q1–Q2"
+        "items": "Q1–Q2",
+        "anchor": "u1-sa-01"
       },
       {
         "book_page": 71,
         "type": "6-mark",
-        "items": "Q1–Q2"
+        "items": "Q1–Q2",
+        "anchor": "u1-es-01"
       }
     ],
     "self_checks": [
@@ -151,7 +157,8 @@
         "question": "What is the basic chain from electrical-energy production to use?",
         "answer": "Generation → transmission → distribution → utilisation. A generator converts another form of energy into electrical energy; the final load converts electrical energy into the required useful effect."
       }
-    ]
+    ],
+    "intro": "Electrical engineering begins with an energy-conversion chain: some available form of energy is converted into electrical energy, carried to where it is needed, and finally converted again into a useful effect. This topic follows that chain from generation to utilisation and explains why electrical energy is so central to modern engineering."
   },
   {
     "id": "u1-circuit-concept",
@@ -168,18 +175,31 @@
         "heading": "Network and circuit — know the distinction",
         "scope": "core",
         "paragraphs": [
-          "An electrical network is an interconnection of two or more electrical elements. A network does not necessarily provide a closed conducting path through which current can circulate.",
-          "An electrical circuit is a network arranged so that at least one closed path or loop exists. Therefore every circuit is a network, but a network need not be a circuit. This is a useful exam distinction as well as a useful way to read circuit diagrams."
+          "A circuit is built by interconnecting electrical elements such as a source, load, switch and connecting wires. For current to circulate continuously, the arrangement must provide a closed conducting path. The source transfers electrical energy to the load, and the load converts that energy into another useful form such as heat, light or mechanical output.",
+          "An electrical network is the broader idea: it is simply an interconnection of two or more electrical elements and need not contain a closed path through every element. A circuit is therefore a network with at least one closed path. Every circuit is a network, but a network need not be a circuit."
         ],
         "source_refs": [
           "TB-P004",
-          "LEC-U1-04"
+          "LEC-U1-04",
+          "CLASS-U1-2026-08-24"
         ],
         "book_refs": [
           {
             "pages": "4",
             "images": "04.png"
           }
+        ]
+      },
+      {
+        "heading": "DC and AC circuits",
+        "scope": "core",
+        "paragraphs": [
+          "The class notes use the current carried by the closed path to distinguish two basic cases: a closed path carrying direct current is referred to as a DC circuit, while one carrying alternating current is an AC circuit. Unit I concentrates on DC-circuit ideas; steady-state AC circuits are developed in Unit II.",
+          "In a DC network, loads may appear in series, parallel or series-parallel combinations. Those connection rules are developed later in this unit after the basic quantities and element models are established."
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-24",
+          "SYL-R25-U1"
         ]
       },
       {
@@ -213,10 +233,46 @@
         ]
       },
       {
+        "heading": "How network elements were classified in class",
+        "scope": "core",
+        "paragraphs": [
+          "The 24 August class grouped network elements first as active elements (sources) and passive elements (R, L and C), and then listed four further classification pairs: linear/non-linear, unilateral/bilateral, time-variant/time-invariant, and lumped/distributed. The diagram below preserves that class organisation exactly as a study map."
+        ],
+        "figures": [
+          {
+            "kind": "class-note",
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-24/figures/c2.png",
+            "alt": "Handwritten-style classification tree of network elements into active sources and passive R, L and C elements, plus linear or non-linear, unilateral or bilateral, time-variant or time-invariant, and lumped or distributed classifications.",
+            "caption": "Class-note redraw · Types of network elements · 24 Aug 2026",
+            "width": 1448,
+            "height": 1086,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-24"
+        ]
+      },
+      {
+        "heading": "Charge: the quantity behind current",
+        "scope": "core",
+        "paragraphs": [
+          "Electric charge is the property carried by charged particles. The class notes identify protons as positively charged, electrons as negatively charged and neutrons as neutral. The SI unit of charge is the coulomb (C).",
+          "Current is defined from charge, so it helps to think of charge as the quantity being transported and current as the rate at which that quantity crosses a chosen cross-section."
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-24",
+          "LEC-U1-02"
+        ]
+      },
+      {
         "heading": "Current: charge in motion",
         "scope": "core",
         "paragraphs": [
-          "Electric current measures how rapidly electric charge crosses a chosen surface or flows through a conductor. If a net charge dQ crosses in time dt, the current is i = dQ/dt. One ampere is one coulomb per second.",
+          "Electric current measures how rapidly electric charge crosses a chosen surface or flows through a conductor. For a steady transfer of charge Q over a time interval T, the class notes write I = Q/T. In the general time-varying case, current is i = dq/dt. One ampere is one coulomb per second.",
           "Circuit analysis normally ignores the microscopic distribution of moving charge across the wire and works with the total current in each branch. This is one of the simplifications that makes circuit theory much easier than a full electromagnetic-field calculation."
         ],
         "bullets": [
@@ -228,29 +284,32 @@
           "LEC-U1-01",
           "LEC-U1-02",
           "SUP-P009",
-          "SUP-P011"
+          "SUP-P011",
+          "CLASS-U1-2026-08-24"
         ]
       },
       {
-        "heading": "Voltage: potential difference and energy per charge",
+        "heading": "Electrical potential and potential difference",
         "scope": "core",
         "paragraphs": [
-          "Voltage is always a difference between two points. It is the electrical potential-energy change per unit charge, so v = dw/dq. One volt means one joule of energy per coulomb of charge.",
-          "The sign of a voltage depends on the polarity chosen. If A is 5 V above B, then VAB = +5 V and VBA = −5 V. A negative result is not a mistake; it says that the actual polarity is opposite to the reference marking.",
-          "Circuit theory uses node-to-node voltage as a compact representation of electric-field effects instead of solving the spatial electric field everywhere."
+          "The class notes distinguish an absolute electrical potential from a potential difference. An absolute potential uses a reference at infinity, whereas circuit analysis normally works with the difference in potential between two points. Potential difference is the work or energy transferred per unit positive test charge in moving between those points.",
+          "For a finite or steady energy transfer, V = W/Q. In differential form, voltage is v = dw/dq. One volt means one joule of energy per coulomb of charge. Because voltage is always referenced between points, its sign depends on the chosen polarity: if A is 5 V above B, then V_AB = +5 V and V_BA = −5 V.",
+          "A negative calculated voltage is therefore not automatically an error; it indicates that the actual polarity is opposite to the reference polarity chosen at the start."
         ],
         "source_refs": [
           "LEC-U1-01",
           "LEC-U1-03",
           "SUP-P012",
-          "SUP-P013"
+          "SUP-P013",
+          "CLASS-U1-2026-08-24"
         ]
       },
       {
-        "heading": "Power and energy",
+        "heading": "Energy and power",
         "scope": "core",
         "paragraphs": [
-          "Electrical power is the rate at which energy is transferred. With voltage polarity and current direction chosen according to the passive sign convention, p = vi. For constant power P acting for a time t, the transferred energy is W = Pt.",
+          "Energy is the capacity to do work and may exist in electrical, mechanical, thermal and other forms. Its SI unit is the joule (J). In a circuit, electrical energy is transferred from sources to elements and loads, where it may be dissipated, stored or converted into another form.",
+          "Power tells us how fast that energy transfer is taking place. Average power over an interval is P = W/t. Instantaneous power is p = dw/dt, and with the passive sign convention it becomes p = vi. The SI unit of power is the watt (W), equal to one joule per second.",
           "For a passive element, positive p means the element is absorbing electrical power. The sign depends on the selected voltage/current references, so draw the polarity and current arrow before interpreting power."
         ],
         "source_refs": [
@@ -259,7 +318,8 @@
           "SUP-P014",
           "SUP-P015",
           "SUP-P016",
-          "SUP-P017"
+          "SUP-P017",
+          "CLASS-U1-2026-08-24"
         ]
       },
       {
@@ -295,12 +355,16 @@
       }
     ],
     "formulas": [
-      "i = dq/dt",
+      "Charge unit: coulomb (C)",
+      "Steady current: I = Q/T",
+      "Time-varying current: i = dq/dt",
       "1 A = 1 C/s",
-      "v = dw/dq",
+      "Steady voltage: V = W/Q",
+      "Time-varying voltage: v = dw/dq",
       "1 V = 1 J/C",
-      "p = vi",
-      "W = Pt (constant power)",
+      "Average power: P = W/t",
+      "Instantaneous power: p = vi = dw/dt",
+      "1 W = 1 J/s",
       "MMF (coil): NI"
     ],
     "method": [],
@@ -321,7 +385,8 @@
       "SUP-P015",
       "SUP-P016",
       "SUP-P017",
-      "SUP-P020"
+      "SUP-P020",
+      "CLASS-U1-2026-08-24"
     ],
     "book_refs": [
       {
@@ -332,13 +397,15 @@
     ],
     "cautions": [
       "Do not confuse electron-flow direction with conventional-current direction.",
-      "Voltage is between two points; always keep the chosen +/− reference visible when solving a circuit."
+      "Voltage is between two points; always keep the chosen +/− reference visible when solving a circuit.",
+      "The supplied sources use different terminology for ideal energy-storage elements: the 24 Aug class notes group R, L and C under passive elements, while the prescribed textbook on pp. 7–8 calls ideal L and C active because they store energy. This source difference is preserved rather than silently reconciled; for a class-based classification question, follow the lecturer’s stated classification unless told otherwise."
     ],
     "practice": [
       {
         "book_page": 70,
         "type": "2-mark",
-        "items": "Q3–Q5"
+        "items": "Q3–Q4",
+        "anchor": "u1-sa-03"
       }
     ],
     "self_checks": [
@@ -353,6 +420,14 @@
       {
         "question": "What is MMF at the level needed here?",
         "answer": "Magnetomotive force is the driving quantity of a magnetic circuit. For a coil, MMF = NI. Detailed magnetic-circuit calculations are not part of R25 Unit I."
+      }
+    ],
+    "intro": "Once electrical energy reaches a load, circuit theory gives us a compact language for describing what happens. We first distinguish a network from a circuit, then build the basic quantities in a natural order — charge, current, voltage, energy and power — before using them throughout the rest of Unit I.",
+    "class_history": [
+      {
+        "date": "2026-08-24",
+        "label": "24 Aug 2026 · Circuit concept and basic quantities",
+        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
       }
     ]
   },
@@ -371,7 +446,7 @@
         "heading": "Resistance and Ohm’s law",
         "scope": "core",
         "paragraphs": [
-          "Resistance is the property of a material or element that opposes current. For the linear resistor used in this course, voltage drop is proportional to current at a given temperature: v = Ri. The proportionality constant R is resistance, measured in ohms (Ω). Conductance is G = 1/R, measured in siemens (S), so i = Gv.",
+          "Resistance is the property of a material or element that opposes current. For the linear resistor used in this course, voltage drop is proportional to current at a given temperature: v = Ri. The proportionality constant R is resistance, measured in ohms (Ω); from Ohm’s law, 1 Ω corresponds to 1 V/A. Conductance is G = 1/R, measured in siemens (S), so i = Gv.",
           "For a uniform conductor, resistance depends on the material and geometry: R = ρl/A. Increasing length increases resistance, while increasing cross-sectional area decreases it. In metals, resistivity increases with temperature, so real resistance can change with temperature."
         ],
         "source_refs": [
@@ -440,9 +515,9 @@
         "heading": "Inductance: current, flux and induced emf",
         "scope": "core",
         "paragraphs": [
-          "A current-carrying conductor produces magnetic flux around it; the direction follows the right-hand thumb rule.",
-          "When the conductor is formed into a coil, the flux links multiple turns. Flux linkage is the number of turns multiplied by the flux linked by each turn.",
-          "When the flux linkage changes with time, an emf is induced. For the ideal linear inductor this becomes v = L·di/dt. L is inductance, measured in henrys. The induced emf opposes the change that produces it, which is the Lenz-law idea behind the statement that an inductor opposes changes in current."
+          "A current-carrying conductor produces magnetic flux around it; the direction follows the right-hand thumb rule. When the conductor is formed into a coil, the flux links multiple turns. If N turns link a flux Φ, the flux linkage is Ψ = NΦ and is expressed in weber-turns.",
+          "When the flux linkage changes with time, an emf is induced. For the ideal linear inductor used in circuit theory this gives v = L·di/dt. The proportionality constant L is inductance and its unit is the henry (H). The prescribed textbook defines one henry as the inductance of a coil in which a current changing at 1 ampere per second produces an induced emf of 1 volt.",
+          "By Lenz’s law the induced emf opposes the change that produces it. This is the physical basis for the statement that an inductor opposes changes in current."
         ],
         "source_refs": [
           "TB-P005",
@@ -524,7 +599,7 @@
         "heading": "Capacitance: charge stored by an electric field",
         "scope": "core",
         "paragraphs": [
-          "A capacitor is formed by conducting plates separated by an insulating dielectric. Equal and opposite charge accumulates on the plates and an electric field is established between them. Charge and voltage are related by q = Cv, where C is capacitance measured in farads.",
+          "A capacitor is formed by conducting plates separated by an insulating dielectric. Equal and opposite charge accumulates on the plates and an electric field is established between them. Charge and voltage are related by q = Cv, where C is capacitance measured in farads (F). One farad is the capacitance that stores one coulomb of charge when one volt is applied, so 1 F = 1 C/V.",
           "Differentiating q = Cv for constant C gives i = C·dv/dt. The integral form v(t1) = v(t0) + (1/C)∫i dt makes the memory property explicit."
         ],
         "source_refs": [
@@ -611,12 +686,15 @@
       }
     ],
     "formulas": [
-      "Resistor: v = Ri; i = Gv; G = 1/R",
+      "Resistance: v = Ri; R in ohms (Ω); 1 Ω = 1 V/A",
+      "Conductance: G = 1/R; G in siemens (S)",
       "Uniform conductor: R = ρl/A",
       "Resistor power: p = vi = i²R = v²/R",
-      "Inductor: v = L·di/dt",
+      "Flux linkage: Ψ = NΦ (weber-turns)",
+      "Inductor: v = L·di/dt; L in henrys (H)",
       "Inductor energy: W = ½Li²",
-      "Capacitor: q = Cv; i = C·dv/dt",
+      "Capacitor: q = Cv; C in farads (F); 1 F = 1 C/V",
+      "Capacitor: i = C·dv/dt",
       "Capacitor energy: W = ½Cv²"
     ],
     "method": [],
@@ -643,7 +721,8 @@
       "SUP-P052",
       "SUP-P053",
       "SUP-P018",
-      "SUP-P019"
+      "SUP-P019",
+      "CLASS-U1-2026-08-24"
     ],
     "book_refs": [
       {
@@ -660,12 +739,14 @@
       {
         "book_page": 70,
         "type": "2-mark",
-        "items": "Q6–Q9"
+        "items": "Q5–Q9",
+        "anchor": "u1-sa-05"
       },
       {
         "book_page": 71,
         "type": "6-mark",
-        "items": "Q3"
+        "items": "Q3",
+        "anchor": "u1-es-03"
       }
     ],
     "self_checks": [
@@ -680,6 +761,14 @@
       {
         "question": "How do R, L and C differ in their energy behaviour?",
         "answer": "A resistor dissipates absorbed electrical energy as heat. An ideal inductor stores energy in a magnetic field, W = ½Li², and an ideal capacitor stores energy in an electric field, W = ½Cv²."
+      }
+    ],
+    "intro": "The behaviour of most introductory circuit elements is built from three basic parameters: resistance R, inductance L and capacitance C. A resistor dissipates electrical energy as heat, while ideal inductors and capacitors store energy in magnetic and electric fields respectively; their voltage-current relations determine how they respond in a circuit.",
+    "class_history": [
+      {
+        "date": "2026-08-24",
+        "label": "24 Aug 2026 · Types of elements",
+        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
       }
     ]
   },
@@ -698,15 +787,32 @@
         "heading": "What an electrical source does",
         "scope": "core",
         "paragraphs": [
-          "A source supplies electrical energy or power to the circuit. Sources are first classified by the quantity they impose — voltage source or current source — and then by whether the imposed quantity is independent or controlled by another circuit variable."
+          "An electrical source supplies electrical energy or power to a load. The first distinction is between a voltage source, which specifies a terminal voltage, and a current source, which specifies a current. Each of those may then be independent or dependent on another voltage or current elsewhere in the circuit.",
+          "The class sketch below shows a voltage source feeding a resistor together with the horizontal V–I characteristic used for an ideal voltage source: the source voltage remains fixed while the load determines the current."
         ],
         "source_refs": [
-          "TB-P008"
+          "TB-P008",
+          "CLASS-U1-2026-08-24",
+          "TB-P009"
         ],
         "book_refs": [
           {
             "pages": "8",
             "images": "08.png"
+          }
+        ],
+        "figures": [
+          {
+            "kind": "class-note",
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-24/figures/c1.png",
+            "alt": "Handwritten-style class-note redraw of a voltage source connected to a resistor, alongside a voltage-current graph showing constant source voltage V_s as current changes.",
+            "caption": "Class-note redraw · Voltage source and constant-voltage characteristic · 24 Aug 2026",
+            "width": 1672,
+            "height": 941,
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
           }
         ]
       },
@@ -1092,7 +1198,8 @@
       "SUP-P031",
       "SUP-P032",
       "SUP-P033",
-      "SUP-P034"
+      "SUP-P034",
+      "CLASS-U1-2026-08-24"
     ],
     "book_refs": [
       {
@@ -1109,17 +1216,20 @@
       {
         "book_page": 70,
         "type": "2-mark",
-        "items": "Q10–Q11"
+        "items": "Q10–Q11",
+        "anchor": "u1-sa-10"
       },
       {
         "book_page": 71,
         "type": "2-mark",
-        "items": "Q12"
+        "items": "Q12",
+        "anchor": "u1-sa-12"
       },
       {
         "book_page": 71,
         "type": "6-mark",
-        "items": "Q4"
+        "items": "Q4",
+        "anchor": "u1-es-04"
       }
     ],
     "self_checks": [
@@ -1134,6 +1244,14 @@
       {
         "question": "What do zero-valued ideal sources become?",
         "answer": "A 0 V ideal voltage source is equivalent to a short circuit. A 0 A ideal current source is equivalent to an open circuit."
+      }
+    ],
+    "intro": "Circuit elements need excitation, and electrical sources provide it. The two basic source models are voltage sources and current sources; each may be independent or controlled by another circuit variable. Ideal-source behaviour is introduced first, followed by practical source models and the four dependent-source types.",
+    "class_history": [
+      {
+        "date": "2026-08-24",
+        "label": "24 Aug 2026 · Source classification",
+        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
       }
     ]
   },
@@ -1295,12 +1413,14 @@
       {
         "book_page": 71,
         "type": "2-mark",
-        "items": "Q12–Q13"
+        "items": "Q13",
+        "anchor": "u1-sa-13"
       },
       {
         "book_page": 71,
         "type": "6-mark",
-        "items": "Q5"
+        "items": "Q5",
+        "anchor": "u1-es-05"
       }
     ],
     "self_checks": [
@@ -1308,7 +1428,8 @@
         "question": "A 24 V source is in series with 10 Ω. What is its equivalent current-source form?",
         "answer": "The equivalent is a 2.4 A current source in parallel with 10 Ω. The resistance value stays 10 Ω; only the source type and its series/parallel arrangement change."
       }
-    ]
+    ],
+    "intro": "A practical source can often be represented in two equivalent ways. Source transformation lets us switch between a voltage-source form and a current-source form while preserving the same terminal behaviour seen by the external load."
   },
   {
     "id": "u1-kirchhoff",
@@ -1511,12 +1632,14 @@
       {
         "book_page": 71,
         "type": "2-mark",
-        "items": "Q14"
+        "items": "Q14",
+        "anchor": "u1-sa-14"
       },
       {
         "book_page": 71,
         "type": "6-mark",
-        "items": "Q6–Q7"
+        "items": "Q6–Q7",
+        "anchor": "u1-es-06"
       }
     ],
     "self_checks": [
@@ -1528,7 +1651,8 @@
         "question": "In the KVL sign example, V₁ = 1 V, V₂ = 3 V and V₄ = 5 V. If 3 + V₃ + 5 − 1 = 0, what is V₃?",
         "answer": "V₃ = −7 V. The negative sign means the actual polarity is opposite to the chosen voltage reference."
       }
-    ]
+    ],
+    "intro": "After defining elements and sources, the next step is to connect them. Kirchhoff’s laws provide the bookkeeping rules for any lumped circuit: KCL balances current at a node, while KVL balances voltage around a closed loop."
   },
   {
     "id": "u1-network-reduction",
@@ -1752,7 +1876,8 @@
         "question": "For two parallel resistors, which branch carries the larger current?",
         "answer": "The lower-resistance branch carries the larger current. For total current I, current through R₁ is I·R₂/(R₁+R₂), and current through R₂ is I·R₁/(R₁+R₂)."
       }
-    ]
+    ],
+    "intro": "Many DC networks can be simplified without solving a large set of simultaneous equations. The key is to recognise genuine series and parallel connections from the nodes, replace them by equivalent elements, and work back to the original branch quantities when needed."
   },
   {
     "id": "u1-star-delta",
@@ -1954,7 +2079,8 @@
       {
         "book_page": 72,
         "type": "6-mark",
-        "items": "Q8"
+        "items": "Q8",
+        "anchor": "u1-es-08"
       }
     ],
     "self_checks": [
@@ -1966,7 +2092,8 @@
         "question": "What is the practical goal of a Star/Delta transformation?",
         "answer": "Choose the conversion that creates obvious series or parallel combinations while preserving the resistance behaviour seen at the same three external terminals."
       }
-    ]
+    ],
+    "intro": "Some three-terminal resistor groups are not reducible by ordinary series-parallel rules. Star-Delta conversion changes the internal connection while preserving the resistance seen from the same three external terminals, often exposing simpler series or parallel combinations."
   },
   {
     "id": "u1-superposition",
@@ -2177,7 +2304,8 @@
       {
         "book_page": 72,
         "type": "6-mark",
-        "items": "Q9"
+        "items": "Q9",
+        "anchor": "u1-es-09"
       }
     ],
     "self_checks": [
@@ -2189,7 +2317,8 @@
         "question": "Can the individual source powers be added directly using Superposition?",
         "answer": "No. Power is not a linear response because it involves products or squares such as vi, i²R or v²/R. First superpose the required voltage or current, then calculate power from the final total response."
       }
-    ]
+    ],
+    "intro": "When a linear circuit contains several independent sources, Superposition separates the problem into one-source-at-a-time cases. The individual voltage or current contributions are then added algebraically using the same reference direction or polarity."
   },
   {
     "id": "u1-thevenin",
@@ -2462,7 +2591,8 @@
         "question": "What must you do when finding R_th if a controlled source is present?",
         "answer": "Keep the controlled source active. Null only the independent sources, apply a test voltage or test current at the output terminals, and use R_th = V_test/I_test."
       }
-    ]
+    ],
+    "intro": "Thevenin’s theorem compresses a linear two-terminal network into the simplest useful source model: one voltage source V_th in series with one resistance R_th. Once that equivalent is known, changing or reconnecting the load becomes much easier."
   },
   {
     "id": "u2-sinusoid",

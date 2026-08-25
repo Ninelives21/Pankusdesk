@@ -22,6 +22,7 @@ async function initUnitQuestions() {
 
 		renderPage(page, subject, subjectUrl, unitMeta, unitBank, { ...(bank.source || {}), ...(unitBank.source || {}) });
 		initAccordions(page);
+		revealHashTarget(page);
 	} catch (error) {
 		console.error('Unit textbook questions load failed:', error);
 		page.innerHTML = `<div class="practice-error">Textbook questions could not be loaded.${error?.message ? ` ${escapeHtml(error.message)}` : ''}</div>`;
@@ -95,7 +96,7 @@ function renderQuestion(question) {
 	const answerId = `answer-${question.id}`;
 	const isGap = question.answer?.status === 'source-gap';
 	return `
-		<article class="chapter-question ${isGap ? 'question-source-gap' : ''}">
+		<article class="chapter-question ${isGap ? 'question-source-gap' : ''}" id="question-${escapeHtml(question.id)}">
 			<button class="chapter-question-toggle" type="button" aria-expanded="false" aria-controls="${escapeHtml(answerId)}">
 				<span class="chapter-question-number">Q${escapeHtml(question.number)}</span>
 				<span class="chapter-question-copy">
@@ -177,6 +178,27 @@ function initAccordions(page) {
 			answer.hidden = !willOpen;
 		});
 	});
+}
+
+function revealHashTarget(page) {
+	if (!window.location.hash) return;
+	const targetId = decodeURIComponent(window.location.hash.slice(1));
+	const target = document.getElementById(targetId);
+	if (!target || !page.contains(target)) return;
+
+	const card = target.classList.contains('chapter-question')
+		? target
+		: target.closest('.chapter-question');
+	if (card) {
+		const button = card.querySelector('.chapter-question-toggle');
+		const answer = card.querySelector('.chapter-question-answer');
+		if (button && answer) {
+			button.setAttribute('aria-expanded', 'true');
+			answer.hidden = false;
+		}
+	}
+
+	requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
 }
 
 function formatReviewPages(pages) {

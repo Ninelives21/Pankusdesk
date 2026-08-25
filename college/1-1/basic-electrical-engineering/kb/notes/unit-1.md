@@ -1,10 +1,12 @@
 # Unit 1 — Introduction to Electrical Energy and DC Circuits
 
-> **R25 consolidated study note.** Main notes are synthesized only from the supplied prescribed-book capture, Unit-I lecture transcripts, supplied supplementary PDF and the official VNR R25 specification. Supporting scope is retained in KB metadata for auditing, but ordinary explanatory detail is presented as normal study notes.
+> **R25 cumulative study note.** The live study page is driven by `kb/data/topics.json`. It consolidates the supplied prescribed textbook, lecture transcripts, supplementary material, official R25 specification and dated class notes. Dated class records remain separately preserved in the class log; only useful non-duplicative material is absorbed here.
 
 ## 1. Electrical energy in modern life and engineering
 
 **Status:** Core R25
+
+Electrical engineering begins with an energy-conversion chain: some available form of energy is converted into electrical energy, carried to where it is needed, and finally converted again into a useful effect. This topic follows that chain from generation to utilisation and explains why electrical energy is so central to modern engineering.
 
 ### Quick recall
 
@@ -34,18 +36,25 @@ BEE therefore gives the engineering vocabulary needed to understand sources, vol
 
 ### From generation to utilisation
 
-- Generation converts another available form of energy into electrical energy. Possible inputs include mechanical, heat, chemical, solar and wind energy.
-- In conventional generation, a prime mover supplies mechanical energy to a generator; the generator converts mechanical energy into electrical energy.
-- Transmission carries bulk electrical power from generating stations toward load centres.
-- Distribution delivers power from the transmission system to individual consumers and loads.
-- Utilisation is the final conversion of electrical energy into the required useful effect: light, heat, motion, computing, communication and so on.
+Electrical power generation is an energy-conversion process: the input may be heat, chemical, solar, wind or mechanical energy, but the output of the generating system is electrical energy. In the conventional mechanical route described in the prescribed textbook, the machine that supplies the required mechanical input is called the prime mover, and the generator converts that mechanical input into electrical energy.
+
+Generation is only the first stage. Generating stations are often located where the energy resource is available rather than where the load is concentrated, so the generated power must be transmitted toward load centres, distributed to individual consumers, and finally utilised by the connected loads. Together, generation, transmission, distribution and utilisation form the electrical power system.
+
+- Generation: converts an available form of energy into electrical energy.
+- Prime mover: supplies the mechanical energy needed to drive a generator in the conventional mechanical-generation route.
+- Transmission: carries bulk electrical power from generating stations toward load centres.
+- Distribution: delivers power from the transmission system to individual consumers and loads.
+- Utilisation: converts electrical energy into the required useful effect — light, heat, motion, computing, communication and so on.
 - Motor and generator are inverse energy-conversion examples: motor — electrical → mechanical; generator — mechanical → electrical.
+
+*Figure: Fig. 1.1 · Electrical energy generation*
+
+*Figure: Fig. 1.2 · Electrical power system*
 
 ### Check yourself
 
 - **Why is electrical energy used so widely?**  
   It is convenient to convert into useful forms, easy to control, economical for many kinds of loads, clean at the point of use, and can be transmitted from the place of generation to the place of utilisation.
-
 - **What is the basic chain from electrical-energy production to use?**  
   Generation → transmission → distribution → utilisation. A generator converts another form of energy into electrical energy; the final load converts electrical energy into the required useful effect.
 
@@ -55,14 +64,16 @@ BEE therefore gives the engineering vocabulary needed to understand sources, vol
 
 ### Textbook practice pointer
 
-- p. 70 · 2-mark · Q1–Q2
-- p. 71 · 6-mark · Q1–Q2
+- p. 70 · 2-mark · Q1–Q2 · anchor `u1-sa-01`
+- p. 71 · 6-mark · Q1–Q2 · anchor `u1-es-01`
 
 ---
 
 ## 2. Circuit concept, current, voltage and basic electrical quantities
 
 **Status:** Core R25
+
+Once electrical energy reaches a load, circuit theory gives us a compact language for describing what happens. We first distinguish a network from a circuit, then build the basic quantities in a natural order — charge, current, voltage, energy and power — before using them throughout the rest of Unit I.
 
 ### Quick recall
 
@@ -72,9 +83,15 @@ BEE therefore gives the engineering vocabulary needed to understand sources, vol
 
 ### Network and circuit — know the distinction
 
-An electrical network is an interconnection of two or more electrical elements. A network does not necessarily provide a closed conducting path through which current can circulate.
+A circuit is built by interconnecting electrical elements such as a source, load, switch and connecting wires. For current to circulate continuously, the arrangement must provide a closed conducting path. The source transfers electrical energy to the load, and the load converts that energy into another useful form such as heat, light or mechanical output.
 
-An electrical circuit is a network arranged so that at least one closed path or loop exists. Therefore every circuit is a network, but a network need not be a circuit. This is a useful exam distinction as well as a useful way to read circuit diagrams.
+An electrical network is the broader idea: it is simply an interconnection of two or more electrical elements and need not contain a closed path through every element. A circuit is therefore a network with at least one closed path. Every circuit is a network, but a network need not be a circuit.
+
+### DC and AC circuits
+
+The class notes use the current carried by the closed path to distinguish two basic cases: a closed path carrying direct current is referred to as a DC circuit, while one carrying alternating current is an AC circuit. Unit I concentrates on DC-circuit ideas; steady-state AC circuits are developed in Unit II.
+
+In a DC network, loads may appear in series, parallel or series-parallel combinations. Those connection rules are developed later in this unit after the basic quantities and element models are established.
 
 ### Element, terminal, node and loop
 
@@ -84,9 +101,23 @@ An electrical circuit is a network arranged so that at least one closed path or 
 - Loop: a closed path that begins at a node, passes through circuit elements and returns to the starting node.
 - A basic circuit contains a source, a load, a controlling switch and connecting wires.
 
+*Figure: Fig. 1.3 · Basic circuit schematic*
+
+### How network elements were classified in class
+
+The 24 August class grouped network elements first as active elements (sources) and passive elements (R, L and C), and then listed four further classification pairs: linear/non-linear, unilateral/bilateral, time-variant/time-invariant, and lumped/distributed. The diagram below preserves that class organisation exactly as a study map.
+
+*Figure: Class-note redraw · Types of network elements · 24 Aug 2026*
+
+### Charge: the quantity behind current
+
+Electric charge is the property carried by charged particles. The class notes identify protons as positively charged, electrons as negatively charged and neutrons as neutral. The SI unit of charge is the coulomb (C).
+
+Current is defined from charge, so it helps to think of charge as the quantity being transported and current as the rate at which that quantity crosses a chosen cross-section.
+
 ### Current: charge in motion
 
-Electric current measures how rapidly electric charge crosses a chosen surface or flows through a conductor. If a net charge dQ crosses in time dt, the current is i = dQ/dt. One ampere is one coulomb per second.
+Electric current measures how rapidly electric charge crosses a chosen surface or flows through a conductor. For a steady transfer of charge Q over a time interval T, the class notes write I = Q/T. In the general time-varying case, current is i = dq/dt. One ampere is one coulomb per second.
 
 Circuit analysis normally ignores the microscopic distribution of moving charge across the wire and works with the total current in each branch. This is one of the simplifications that makes circuit theory much easier than a full electromagnetic-field calculation.
 
@@ -94,18 +125,19 @@ Circuit analysis normally ignores the microscopic distribution of moving charge 
 - In metallic conductors the mobile charges are electrons, so electron motion is opposite to conventional-current direction.
 - A current marked A→B as +1 A is exactly the same physical current as −1 A marked B→A. Direction arrows are reference choices.
 
+### Electrical potential and potential difference
 
-### Voltage: potential difference and energy per charge
+The class notes distinguish an absolute electrical potential from a potential difference. An absolute potential uses a reference at infinity, whereas circuit analysis normally works with the difference in potential between two points. Potential difference is the work or energy transferred per unit positive test charge in moving between those points.
 
-Voltage is always a difference between two points. It is the electrical potential-energy change per unit charge, so v = dw/dq. One volt means one joule of energy per coulomb of charge.
+For a finite or steady energy transfer, V = W/Q. In differential form, voltage is v = dw/dq. One volt means one joule of energy per coulomb of charge. Because voltage is always referenced between points, its sign depends on the chosen polarity: if A is 5 V above B, then V_AB = +5 V and V_BA = −5 V.
 
-The sign of a voltage depends on the polarity chosen. If A is 5 V above B, then VAB = +5 V and VBA = −5 V. A negative result is not a mistake; it says that the actual polarity is opposite to the reference marking.
+A negative calculated voltage is therefore not automatically an error; it indicates that the actual polarity is opposite to the reference polarity chosen at the start.
 
-Circuit theory uses node-to-node voltage as a compact representation of electric-field effects instead of solving the spatial electric field everywhere.
+### Energy and power
 
-### Power and energy
+Energy is the capacity to do work and may exist in electrical, mechanical, thermal and other forms. Its SI unit is the joule (J). In a circuit, electrical energy is transferred from sources to elements and loads, where it may be dissipated, stored or converted into another form.
 
-Electrical power is the rate at which energy is transferred. With voltage polarity and current direction chosen according to the passive sign convention, p = vi. For constant power P acting for a time t, the transferred energy is W = Pt.
+Power tells us how fast that energy transfer is taking place. Average power over an interval is P = W/t. Instantaneous power is p = dw/dt, and with the passive sign convention it becomes p = vi. The SI unit of power is the watt (W), equal to one joule per second.
 
 For a passive element, positive p means the element is absorbing electrical power. The sign depends on the selected voltage/current references, so draw the polarity and current arrow before interpreting power.
 
@@ -115,31 +147,40 @@ A useful analogy connects electrical, magnetic and mechanical systems: EMF drive
 
 For Unit I, retain only the basic MMF idea: MMF is the driving quantity of a magnetic circuit and, for a coil, MMF = NI. Detailed magnetic-circuit calculations are not an R25 Unit-I requirement.
 
+*Figure: Fig. 1.4 · Analogy between electrical, magnetic and mechanical systems*
+
 ### Check yourself
 
 - **What is the difference between an electrical network and an electrical circuit?**  
   A network is an interconnection of two or more electrical elements and need not contain a closed conducting path. A circuit is a network with at least one closed path. Therefore every circuit is a network, but every network need not be a circuit.
-
 - **What do 1 ampere and 1 volt mean in base electrical terms?**  
   1 ampere means 1 coulomb of charge crossing a section per second. 1 volt means 1 joule of energy transferred per coulomb of charge.
-
 - **What is MMF at the level needed here?**  
   Magnetomotive force is the driving quantity of a magnetic circuit. For a coil, MMF = NI. Detailed magnetic-circuit calculations are not part of R25 Unit I.
 
 ### Formula / method sheet
 
-- `i = dq/dt`
+- `Charge unit: coulomb (C)`
+- `Steady current: I = Q/T`
+- `Time-varying current: i = dq/dt`
 - `1 A = 1 C/s`
-- `v = dw/dq`
+- `Steady voltage: V = W/Q`
+- `Time-varying voltage: v = dw/dq`
 - `1 V = 1 J/C`
-- `p = vi`
-- `W = Pt (constant power)`
+- `Average power: P = W/t`
+- `Instantaneous power: p = vi = dw/dt`
+- `1 W = 1 J/s`
 - `MMF (coil): NI`
 
 ### Important notes
 
 - Do not confuse electron-flow direction with conventional-current direction.
 - Voltage is between two points; always keep the chosen +/− reference visible when solving a circuit.
+- The supplied sources use different terminology for ideal energy-storage elements: the 24 Aug class notes group R, L and C under passive elements, while the prescribed textbook on pp. 7–8 calls ideal L and C active because they store energy. This source difference is preserved rather than silently reconciled; for a class-based classification question, follow the lecturer’s stated classification unless told otherwise.
+
+### Class history
+
+- [24 Aug 2026 · Circuit concept and basic quantities](college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24)
 
 ### Physical-book reference
 
@@ -147,13 +188,15 @@ For Unit I, retain only the basic MMF idea: MMF is the driving quantity of a mag
 
 ### Textbook practice pointer
 
-- p. 70 · 2-mark · Q3–Q5
+- p. 70 · 2-mark · Q3–Q4 · anchor `u1-sa-03`
 
 ---
 
 ## 3. R, L and C parameters
 
 **Status:** Core R25
+
+The behaviour of most introductory circuit elements is built from three basic parameters: resistance R, inductance L and capacitance C. A resistor dissipates electrical energy as heat, while ideal inductors and capacitors store energy in magnetic and electric fields respectively; their voltage-current relations determine how they respond in a circuit.
 
 ### Quick recall
 
@@ -163,9 +206,13 @@ For Unit I, retain only the basic MMF idea: MMF is the driving quantity of a mag
 
 ### Resistance and Ohm’s law
 
-Resistance is the property of a material or element that opposes current. For the linear resistor used in this course, voltage drop is proportional to current at a given temperature: v = Ri. The proportionality constant R is resistance, measured in ohms (Ω). Conductance is G = 1/R, measured in siemens (S), so i = Gv.
+Resistance is the property of a material or element that opposes current. For the linear resistor used in this course, voltage drop is proportional to current at a given temperature: v = Ri. The proportionality constant R is resistance, measured in ohms (Ω); from Ohm’s law, 1 Ω corresponds to 1 V/A. Conductance is G = 1/R, measured in siemens (S), so i = Gv.
 
 For a uniform conductor, resistance depends on the material and geometry: R = ρl/A. Increasing length increases resistance, while increasing cross-sectional area decreases it. In metals, resistivity increases with temperature, so real resistance can change with temperature.
+
+*Figure: Fig. 1.5 · V–I characteristic of resistance*
+
+*Figure: Fig. 1.6 · Circular conductor*
 
 ### Power, heat and resistor rating
 
@@ -175,9 +222,17 @@ Because electrical energy is dissipated as heat, a practical resistor must have 
 
 ### Inductance: current, flux and induced emf
 
-A current-carrying conductor produces magnetic flux around it; the direction follows the right-hand thumb rule. When the conductor is formed into a coil, the flux links multiple turns. Flux linkage is the number of turns multiplied by the flux linked by each turn.
+A current-carrying conductor produces magnetic flux around it; the direction follows the right-hand thumb rule. When the conductor is formed into a coil, the flux links multiple turns. If N turns link a flux Φ, the flux linkage is Ψ = NΦ and is expressed in weber-turns.
 
-When the flux linkage changes with time, an emf is induced. For the ideal linear inductor this becomes v = L·di/dt. L is inductance, measured in henrys. The induced emf opposes the change that produces it, which is the Lenz-law idea behind the statement that an inductor opposes changes in current.
+When the flux linkage changes with time, an emf is induced. For the ideal linear inductor used in circuit theory this gives v = L·di/dt. The proportionality constant L is inductance and its unit is the henry (H). The prescribed textbook defines one henry as the inductance of a coil in which a current changing at 1 ampere per second produces an induced emf of 1 volt.
+
+By Lenz’s law the induced emf opposes the change that produces it. This is the physical basis for the statement that an inductor opposes changes in current.
+
+*Figure: Fig. 1.7 · Flux lines around a current-carrying conductor*
+
+*Figure: Fig. 1.8 · Representation of a coil or winding axis*
+
+*Figure: Fig. 1.9 · Induced emf in a coil opposes change in current*
 
 ### Inductor behaviour you should remember
 
@@ -190,9 +245,11 @@ When the flux linkage changes with time, an emf is induced. For the ideal linear
 
 ### Capacitance: charge stored by an electric field
 
-A capacitor is formed by conducting plates separated by an insulating dielectric. Equal and opposite charge accumulates on the plates and an electric field is established between them. Charge and voltage are related by q = Cv, where C is capacitance measured in farads.
+A capacitor is formed by conducting plates separated by an insulating dielectric. Equal and opposite charge accumulates on the plates and an electric field is established between them. Charge and voltage are related by q = Cv, where C is capacitance measured in farads (F). One farad is the capacitance that stores one coulomb of charge when one volt is applied, so 1 F = 1 C/V.
 
 Differentiating q = Cv for constant C gives i = C·dv/dt. The integral form v(t1) = v(t0) + (1/C)∫i dt makes the memory property explicit.
+
+*Figure: Fig. 1.10 · Capacitor*
 
 ### Capacitor behaviour you should remember
 
@@ -218,21 +275,22 @@ For constant R, L and C, the relations v = Ri, v = L·di/dt and i = C·dv/dt are
 
 - **How do ideal L and C behave after steady DC has been established?**  
   An ideal inductor behaves as a short circuit because di/dt = 0 and hence v = 0. An ideal capacitor behaves as an open circuit because dv/dt = 0 and hence i = 0.
-
 - **Which quantities cannot jump instantaneously under finite excitation?**  
   Current through an ideal inductor cannot change instantaneously under finite voltage, and voltage across an ideal capacitor cannot change instantaneously under finite current.
-
 - **How do R, L and C differ in their energy behaviour?**  
   A resistor dissipates absorbed electrical energy as heat. An ideal inductor stores energy in a magnetic field, W = ½Li², and an ideal capacitor stores energy in an electric field, W = ½Cv².
 
 ### Formula / method sheet
 
-- `Resistor: v = Ri; i = Gv; G = 1/R`
+- `Resistance: v = Ri; R in ohms (Ω); 1 Ω = 1 V/A`
+- `Conductance: G = 1/R; G in siemens (S)`
 - `Uniform conductor: R = ρl/A`
 - `Resistor power: p = vi = i²R = v²/R`
-- `Inductor: v = L·di/dt`
+- `Flux linkage: Ψ = NΦ (weber-turns)`
+- `Inductor: v = L·di/dt; L in henrys (H)`
 - `Inductor energy: W = ½Li²`
-- `Capacitor: q = Cv; i = C·dv/dt`
+- `Capacitor: q = Cv; C in farads (F); 1 F = 1 C/V`
+- `Capacitor: i = C·dv/dt`
 - `Capacitor energy: W = ½Cv²`
 
 ### Important notes
@@ -240,20 +298,26 @@ For constant R, L and C, the relations v = Ri, v = L·di/dt and i = C·dv/dt are
 - Terminology can vary between introductory sources. For problem solving, use the unambiguous physical behaviour: R dissipates energy; ideal L and C store energy.
 - Steady-DC short/open statements apply to ideal L and C after transients have settled; they are not general replacements for all time-varying conditions.
 
+### Class history
+
+- [24 Aug 2026 · Types of elements](college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24)
+
 ### Physical-book reference
 
 - **pp. 5–8** · source image(s): `05.png–08.png` — R, L and C definitions, equations, energy and DC behaviour
 
 ### Textbook practice pointer
 
-- p. 70 · 2-mark · Q6–Q9
-- p. 71 · 6-mark · Q3
+- p. 70 · 2-mark · Q5–Q9 · anchor `u1-sa-05`
+- p. 71 · 6-mark · Q3 · anchor `u1-es-03`
 
 ---
 
 ## 4. Independent and dependent voltage/current sources
 
 **Status:** Core R25
+
+Circuit elements need excitation, and electrical sources provide it. The two basic source models are voltage sources and current sources; each may be independent or controlled by another circuit variable. Ideal-source behaviour is introduced first, followed by practical source models and the four dependent-source types.
 
 ### Quick recall
 
@@ -263,7 +327,11 @@ For constant R, L and C, the relations v = Ri, v = L·di/dt and i = C·dv/dt are
 
 ### What an electrical source does
 
-A source supplies electrical energy or power to the circuit. Sources are first classified by the quantity they impose — voltage source or current source — and then by whether the imposed quantity is independent or controlled by another circuit variable.
+An electrical source supplies electrical energy or power to a load. The first distinction is between a voltage source, which specifies a terminal voltage, and a current source, which specifies a current. Each of those may then be independent or dependent on another voltage or current elsewhere in the circuit.
+
+The class sketch below shows a voltage source feeding a resistor together with the horizontal V–I characteristic used for an ideal voltage source: the source voltage remains fixed while the load determines the current.
+
+*Figure: Class-note redraw · Voltage source and constant-voltage characteristic · 24 Aug 2026*
 
 ### Ideal independent voltage source
 
@@ -271,11 +339,15 @@ An ideal independent voltage source maintains the specified terminal voltage irr
 
 The circular source symbol and marked polarity define the reference voltage. If the specified source voltage is negative, the actual polarity is opposite to the marked reference. On the V-I characteristic, voltage stays fixed while current may take any value.
 
+*Figure: Fig. 1.11 · Independent voltage source and V–I characteristic*
+
 ### Ideal independent current source
 
 An ideal independent current source maintains the specified current irrespective of the voltage developed across its terminals. The terminal voltage is whatever value the surrounding circuit requires.
 
 The arrow fixes the reference current direction. A negative source value means actual current is opposite to the arrow. On the V-I characteristic, current is fixed while voltage may take any value.
+
+*Figure: Fig. 1.12 · Independent current source and V–I characteristic*
 
 ### Practical source models
 
@@ -283,9 +355,19 @@ The arrow fixes the reference current direction. A negative source value means a
 - Practical current source: ideal current source in parallel with internal resistance. Some source current is diverted through the internal resistance, so the current delivered to the external circuit depends on terminal voltage.
 - The ideal models are limiting cases. They are extremely useful in analysis even though real sources have finite internal effects.
 
+*Figure: Fig. 1.18 · V–I characteristic of a practical voltage source*
+
+*Figure: Fig. 1.20 · Practical voltage source*
+
+*Figure: Fig. 1.19 · V–I characteristic of a practical current source*
+
+*Figure: Fig. 1.21 · Practical current source*
+
 ### Dependent or controlled sources
 
 For a dependent source, the output voltage or current is controlled by another voltage or current elsewhere in the circuit. A diamond symbol distinguishes a controlled source from an independent source. Controlled sources are useful models for active devices and amplifying behaviour.
+
+*Figure: Fig. 1.13 · Symbols of dependent voltage and current sources*
 
 ### VCVS — voltage-controlled voltage source
 
@@ -296,14 +378,7 @@ Quick check: if K = 5, a control voltage of 1 V gives 5 V at the controlled sour
 - Relation: vo = K·vx. K is dimensionless voltage gain.
 - A VCVS is a simple amplifier model: a small controlling voltage can produce a scaled output voltage.
 
-### VCCS — voltage-controlled current source
-
-For Gm = 1 mS, a controlling voltage of 1 V produces 1 mA of controlled current. The units work naturally: siemens × volts = amperes.
-
-- Controlling quantity: voltage vx.
-- Controlled quantity: output current io.
-- Relation: io = Gm·vx. Gm has units of conductance and is commonly called transconductance.
-- A VCCS is a useful model for active devices such as transistors.
+*Figure: Fig. 1.14 · Voltage-controlled voltage source*
 
 ### CCVS — current-controlled voltage source
 
@@ -314,6 +389,19 @@ For Rm = 2 kΩ, a controlling current of 1 mA produces 2 V. This makes the resis
 - Relation: vo = Rm·ix. Rm has dimensions of resistance and is called transresistance or transimpedance.
 - The controlling current is sensed without changing the branch-current value in the ideal model.
 
+*Figure: Fig. 1.15 · Current-controlled voltage source*
+
+### VCCS — voltage-controlled current source
+
+For Gm = 1 mS, a controlling voltage of 1 V produces 1 mA of controlled current. The units work naturally: siemens × volts = amperes.
+
+- Controlling quantity: voltage vx.
+- Controlled quantity: output current io.
+- Relation: io = Gm·vx. Gm has units of conductance and is commonly called transconductance.
+- A VCCS is a useful model for active devices such as transistors.
+
+*Figure: Fig. 1.16 · Voltage-controlled current source*
+
 ### CCCS — current-controlled current source
 
 For current gain K = 5, a controlling current of 1 mA produces a 5 mA controlled current.
@@ -322,6 +410,8 @@ For current gain K = 5, a controlling current of 1 mA produces a 5 mA controlled
 - Controlled quantity: output current io.
 - Relation: io = K·ix. K is a dimensionless current gain.
 - It is the current counterpart of a VCVS: the output is a scaled version of the controlling current.
+
+*Figure: Fig. 1.17 · Current-controlled current source*
 
 ### Linearity and one-way control
 
@@ -339,10 +429,8 @@ A non-zero independent ideal voltage or current source does not itself satisfy t
 
 - **What is the key difference between an ideal voltage source and an ideal current source?**  
   An ideal voltage source fixes its terminal voltage and lets current be determined by the connected circuit. An ideal current source fixes its current and lets terminal voltage be determined by the connected circuit.
-
 - **What are the four dependent-source types?**  
   VCVS: voltage-controlled voltage source; VCCS: voltage-controlled current source; CCVS: current-controlled voltage source; CCCS: current-controlled current source.
-
 - **What do zero-valued ideal sources become?**  
   A 0 V ideal voltage source is equivalent to a short circuit. A 0 A ideal current source is equivalent to an open circuit.
 
@@ -361,21 +449,27 @@ A non-zero independent ideal voltage or current source does not itself satisfy t
 - Do not “turn off” a dependent source when applying Superposition or finding Thevenin resistance. It must remain active because its value depends on a circuit variable.
 - Do not infer that a source is linear merely because its V-I graph is a straight line; use the superposition test.
 
+### Class history
+
+- [24 Aug 2026 · Source classification](college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24)
+
 ### Physical-book reference
 
 - **pp. 8–14** · source image(s): `08.png–11.png; 13.png = p.12; 12.png = p.13; 14.png = p.14` — ideal/practical independent sources and four controlled-source types; p.12/p.13 screenshots were captured out of order
 
 ### Textbook practice pointer
 
-- p. 70 · 2-mark · Q10–Q11
-- p. 71 · 2-mark · Q12
-- p. 71 · 6-mark · Q4
+- p. 70 · 2-mark · Q10–Q11 · anchor `u1-sa-10`
+- p. 71 · 2-mark · Q12 · anchor `u1-sa-12`
+- p. 71 · 6-mark · Q4 · anchor `u1-es-04`
 
 ---
 
 ## 5. Source transformation
 
-**Status:** Supporting topic — supplied course material, not separately named in R25
+**Status:** Supporting topic
+
+A practical source can often be represented in two equivalent ways. Source transformation lets us switch between a voltage-source form and a current-source form while preserving the same terminal behaviour seen by the external load.
 
 ### Quick recall
 
@@ -393,12 +487,15 @@ Source transformation changes the form of a source-resistance combination withou
 - Replace it by an ideal current source Is = Vs/R in parallel with exactly the same resistance R.
 - Choose the current-source arrow so that the open-circuit terminal voltage has the same polarity as the original voltage source.
 
+*Figure: Fig. 1.22 · Conversion of a voltage source into a current source*
+
 ### Current source to voltage source
 
 - Start with an ideal current source Is in parallel with resistance R.
 - Replace it by an ideal voltage source Vs = IsR in series with the same resistance R.
 - Choose the voltage polarity consistently with the original current-source direction.
 
+*Figure: Fig. 1.23 · Conversion of a current source into a voltage source*
 
 ### What must remain unchanged
 
@@ -435,14 +532,16 @@ Source transformation changes the form of a source-resistance combination withou
 
 ### Textbook practice pointer
 
-- p. 71 · 2-mark · Q12–Q13
-- p. 71 · 6-mark · Q5
+- p. 71 · 2-mark · Q13 · anchor `u1-sa-13`
+- p. 71 · 6-mark · Q5 · anchor `u1-es-05`
 
 ---
 
 ## 6. Kirchhoff’s laws
 
 **Status:** Core R25
+
+After defining elements and sources, the next step is to connect them. Kirchhoff’s laws provide the bookkeeping rules for any lumped circuit: KCL balances current at a node, while KVL balances voltage around a closed loop.
 
 ### Quick recall
 
@@ -456,12 +555,13 @@ KCL states that the algebraic sum of currents entering a node is zero. Equivalen
 
 You may choose “entering positive” or “leaving positive”. Either convention works. What matters is that every branch current at that node is written using the same sign convention.
 
+*Figure: Fig. 1.26 · Representation of KCL*
+
 ### KCL intuition and sign handling
 
 Water-flow analogy: if 10 L/min and 15 L/min enter a junction, 25 L/min must leave. If every flow is referenced toward the junction, the outgoing 25 L/min appears as −25 L/min and the algebraic sum is zero.
 
 The same idea prevents confusion in circuits. An assumed branch current may solve to a negative value; keep the equation and interpret the negative sign as actual flow opposite to the reference arrow.
-
 
 ### Kirchhoff’s Voltage Law (KVL)
 
@@ -469,12 +569,13 @@ KVL states that the algebraic sum of voltages around a closed loop is zero. Star
 
 A voltage encountered from − to + is a rise; from + to − is a drop. You can formulate KVL using either convention as long as the signs are consistent around the whole loop.
 
+*Figure: Fig. 1.27 · Representation of KVL*
+
 ### KVL intuition and circuit assumption
 
 Height analogy: after climbing and descending during a closed journey and returning to the starting point, the algebraic sum of all height changes is zero. KVL applies the same idea to electrical potential around a loop.
 
 The circuit form of KVL assumes there is no significant time-varying magnetic flux linking the loop. That assumption is appropriate for the lumped circuits treated in this course.
-
 
 ### Using KCL and KVL together
 
@@ -488,7 +589,6 @@ The circuit form of KVL assumes there is no significant time-varying magnetic fl
 
 - **In the KCL sign example, I₁ = 1 A, I₂ = −2 A and I₄ = 1 A are referenced as entering a node. What is I₃?**  
   Using KCL: 1 − 2 + I₃ + 1 = 0, so I₃ = 0 A. A negative branch-current value is valid; it means the actual direction is opposite to the chosen reference.
-
 - **In the KVL sign example, V₁ = 1 V, V₂ = 3 V and V₄ = 5 V. If 3 + V₃ + 5 − 1 = 0, what is V₃?**  
   V₃ = −7 V. The negative sign means the actual polarity is opposite to the chosen voltage reference.
 
@@ -516,14 +616,16 @@ The circuit form of KVL assumes there is no significant time-varying magnetic fl
 
 ### Textbook practice pointer
 
-- p. 71 · 2-mark · Q14
-- p. 71 · 6-mark · Q6–Q7
+- p. 71 · 2-mark · Q14 · anchor `u1-sa-14`
+- p. 71 · 6-mark · Q6–Q7 · anchor `u1-es-06`
 
 ---
 
 ## 7. Series, parallel and series-parallel reduction
 
 **Status:** Core R25
+
+Many DC networks can be simplified without solving a large set of simultaneous equations. The key is to recognise genuine series and parallel connections from the nodes, replace them by equivalent elements, and work back to the original branch quantities when needed.
 
 ### Quick recall
 
@@ -596,7 +698,6 @@ For parallel branches, the same voltage appears across each branch. Current divi
 
 - **How can you tell that two elements are truly in series?**  
   They must carry the same current, with no branching node between them. Drawing elements next to one another does not by itself make them series-connected.
-
 - **For two parallel resistors, which branch carries the larger current?**  
   The lower-resistance branch carries the larger current. For total current I, current through R₁ is I·R₂/(R₁+R₂), and current through R₂ is I·R₁/(R₁+R₂).
 
@@ -632,6 +733,8 @@ For parallel branches, the same voltage appears across each branch. Current divi
 
 **Status:** Core R25
 
+Some three-terminal resistor groups are not reducible by ordinary series-parallel rules. Star-Delta conversion changes the internal connection while preserving the resistance seen from the same three external terminals, often exposing simpler series or parallel combinations.
+
 ### Quick recall
 
 - Star/Delta transformation replaces a three-terminal Y or Δ resistor network by an equivalent network seen from the same three external terminals.
@@ -647,6 +750,8 @@ Equivalence means that the resistance behaviour seen between the same three exte
 ### Star (Y) and Delta (Δ) notation
 
 Let the star arms from terminals a, b and c to the common star point be Ra, Rb and Rc. Let the equivalent delta branches between the corresponding terminal pairs be Rab, Rbc and Rca.
+
+*Figure: Fig. 1.45 · Star and Delta networks*
 
 ### Star → Delta
 
@@ -678,7 +783,6 @@ The goal is not to transform every Y or Δ you see. Choose the conversion that c
 
 - **What quick check applies when all three Delta resistances are equal?**  
   If every delta branch equals RΔ, every equivalent star arm equals RΔ/3. Conversely, if every star arm equals RY, every equivalent delta branch equals 3RY.
-
 - **What is the practical goal of a Star/Delta transformation?**  
   Choose the conversion that creates obvious series or parallel combinations while preserving the resistance behaviour seen at the same three external terminals.
 
@@ -703,13 +807,15 @@ The goal is not to transform every Y or Δ you see. Choose the conversion that c
 
 ### Textbook practice pointer
 
-- p. 72 · 6-mark · Q8
+- p. 72 · 6-mark · Q8 · anchor `u1-es-08`
 
 ---
 
 ## 9. Superposition theorem
 
 **Status:** Core R25
+
+When a linear circuit contains several independent sources, Superposition separates the problem into one-source-at-a-time cases. The individual voltage or current contributions are then added algebraically using the same reference direction or polarity.
 
 ### Quick recall
 
@@ -737,9 +843,18 @@ Superposition follows directly from linearity. If the circuit equations are line
 
 - Mark the required response and fix its reference direction/polarity.
 - Case 1: keep source 1 active, null every other independent source, and calculate the response.
-- Case 2, Case 3, …: repeat for every independent source.
+- Case 2: keep source 2 active, null every other independent source, and calculate the response.
+- Case 3 and any further cases: repeat the same process for each remaining independent source.
 - Add the signed responses. A negative contribution simply opposes the chosen reference.
 - As a final check, the algebraic sum should have the same units and reference definition as the original requested quantity.
+
+*Figure: Fig. 1.50 · Original circuit for the Superposition example*
+
+*Figure: Fig. 1.50(a) · First source acting alone*
+
+*Figure: Fig. 1.50(b) · Second source acting alone*
+
+*Figure: Fig. 1.50(c) · Third source acting alone*
 
 ### Do not superpose power
 
@@ -753,7 +868,6 @@ The theorem can make a multi-source circuit easier to understand because each so
 
 - **When applying Superposition, how are the other independent sources deactivated?**  
   Replace each independent ideal voltage source by a short circuit and each independent ideal current source by an open circuit. Dependent sources remain active.
-
 - **Can the individual source powers be added directly using Superposition?**  
   No. Power is not a linear response because it involves products or squares such as vi, i²R or v²/R. First superpose the required voltage or current, then calculate power from the final total response.
 
@@ -782,7 +896,7 @@ The theorem can make a multi-source circuit easier to understand because each so
 
 ### Textbook practice pointer
 
-- p. 72 · 6-mark · Q9
+- p. 72 · 6-mark · Q9 · anchor `u1-es-09`
 
 ---
 
@@ -790,95 +904,96 @@ The theorem can make a multi-source circuit easier to understand because each so
 
 **Status:** Core R25
 
+Thevenin’s theorem compresses a linear two-terminal network into the simplest useful source model: one voltage source V_th in series with one resistance R_th. Once that equivalent is known, changing or reconnecting the load becomes much easier.
+
 ### Quick recall
 
-- Any linear two-terminal network can be replaced at those terminals by a Thevenin voltage source Vth in series with a Thevenin resistance Rth.
-- Vth is the open-circuit terminal voltage. Rth is the resistance seen looking into the terminals after independent sources are nulled.
-- If controlled sources remain, find Rth with a test source; do not deactivate the controlled sources.
+- Any linear two-terminal network can be replaced at those terminals by a Thevenin voltage source V_th in series with a Thevenin resistance R_th.
+- V_th is the open-circuit terminal voltage. R_th is the resistance seen looking into the terminals after independent sources are nulled.
+- If controlled sources remain, find R_th with a test source; do not deactivate the controlled sources.
 
 ### What Thevenin’s theorem really says
 
-Choose two terminals of a linear network. No matter how complicated the internal circuit is, its external voltage-current behaviour at those two terminals can be represented by one ideal voltage source Vth in series with one resistance Rth.
+Choose two terminals of a linear network. No matter how complicated the internal circuit is, its external voltage-current behaviour at those two terminals can be represented by one ideal voltage source V_th in series with one resistance R_th.
 
 The equivalence is only a terminal equivalence. It reproduces the voltage and current seen by whatever load is connected to those terminals; it does not reproduce every internal current or voltage of the original network.
 
-### Step 1 — find Vth
+*Figure: Fig. 1.51 · Thevenin equivalent circuit concept*
 
-Remove the external load so the chosen output terminals are open-circuited. Keep the original independent and dependent sources operating. Calculate the voltage across the open terminals using a clearly marked polarity. That open-circuit voltage is Vth.
-
-If the calculated value is negative, keep the negative sign. It means the actual terminal polarity is opposite to the reference used to define Vth.
-
-### Step 2 — find Rth when only independent sources and resistors remain
+### Step 1 — find R_th when only independent sources and resistors remain
 
 - Set every independent voltage source to zero → short circuit.
 - Set every independent current source to zero → open circuit.
 - Look into the chosen terminals and reduce the remaining resistor network.
-- The equivalent resistance seen from the terminals is Rth.
+- The equivalent resistance seen from the terminals is R_th.
 
-### Rth with controlled sources
+*Figure: Fig. 1.52 · Finding Thevenin equivalent resistance*
 
-Controlled sources must remain active. After nulling only the independent sources, apply a test voltage Vtest or test current Itest at the output terminals and solve the resulting circuit.
+### R_th with controlled sources
 
-Then Rth = Vtest/Itest. The test source is needed because a controlled source may create a terminal relationship that cannot be found by simply combining visible resistor values.
+Controlled sources must remain active. After nulling only the independent sources, apply a test voltage V_test or test current I_test at the output terminals and solve the resulting circuit.
+
+Then R_th = V_test/I_test. The test source is needed because a controlled source may create a terminal relationship that cannot be found by simply combining visible resistor values.
+
+### Step 2 — find V_th
+
+Remove the external load so the chosen output terminals are open-circuited. Keep the original independent and dependent sources operating. Calculate the voltage across the open terminals using a clearly marked polarity. That open-circuit voltage is V_th.
+
+If the calculated value is negative, keep the negative sign. It means the actual terminal polarity is opposite to the reference used to define V_th.
+
+*Figure: Fig. 1.53 · Finding Thevenin voltage*
+
+*Figure: Fig. 1.54 · Thevenin equivalent circuit*
 
 ### Step 3 — reconnect the load
 
-Replace the original network by Vth in series with Rth, reconnect the load to the same two terminals, and solve the now-simple circuit. For a resistive load RL, IL = Vth/(Rth + RL) and VL = ILRL.
+Replace the original network by V_th in series with R_th, reconnect the load to the same two terminals, and solve the now-simple circuit. For a resistive load R_L, I_L = V_th/(R_th + R_L) and V_L = I_LR_L.
 
-For the usual reference with current delivered from the source to the load, the Thevenin terminal relation is V = Vth − IRth.
+For the usual reference with current delivered from the source to the load, the Thevenin terminal relation is V = V_th − IR_th.
 
-
+*Figure: Fig. 1.55 · Thevenin equivalent circuit including load*
 
 ### Fast exam procedure
 
-- Mark the two output terminals and the polarity of Vth.
-- Remove the load and calculate open-circuit voltage → Vth.
-- Null independent sources only.
-- Find Rth by ordinary reduction, or use Vtest/Itest when controlled sources remain.
-- Draw Vth in series with Rth.
+- Mark the two output terminals and the polarity of V_th.
+- Null independent sources only and find R_th by ordinary reduction; if controlled sources remain, use V_test/I_test.
+- Restore the original sources, remove the load and calculate the open-circuit terminal voltage → V_th.
+- Draw V_th in series with R_th.
 - Reconnect the load and solve.
 
 ### Check yourself
 
 - **What are the two quantities in a Thevenin equivalent and how are they found?**  
-  The equivalent is Vth in series with Rth. Vth is the open-circuit voltage at the chosen terminals. Rth is the resistance seen looking into those terminals after nulling independent sources, or is found using a test source when controlled sources remain.
-
+  The equivalent is V_th in series with R_th. V_th is the open-circuit voltage at the chosen terminals. R_th is the resistance seen looking into those terminals after nulling independent sources, or is found using a test source when controlled sources remain.
 - **For the supplied resistor-network check with V₀ = 8 V and R = 16 kΩ, what Thevenin equivalent is obtained?**  
-  The source material gives Vth = V₀/4 = 2 V and Rth = 5R/8 = 10 kΩ, so the equivalent is a 2 V source in series with 10 kΩ.
-
-- **What must you do when finding Rth if a controlled source is present?**  
-  Keep the controlled source active. Null only the independent sources, apply a test voltage or test current at the output terminals, and use Rth = Vtest/Itest.
+  The source material gives V_th = V₀/4 = 2 V and R_th = 5R/8 = 10 kΩ, so the equivalent is a 2 V source in series with 10 kΩ.
+- **What must you do when finding R_th if a controlled source is present?**  
+  Keep the controlled source active. Null only the independent sources, apply a test voltage or test current at the output terminals, and use R_th = V_test/I_test.
 
 ### Formula / method sheet
 
-- `Vth = open-circuit terminal voltage`
-- `Rth = resistance seen at the terminals with independent sources nulled`
-- `Controlled-source case: Rth = Vtest/Itest`
-- `Resistive load: IL = Vth/(Rth + RL)`
-- `VL = IL·RL`
-- `Terminal relation: V = Vth − I·Rth`
+- `V_th = open-circuit terminal voltage`
+- `R_th = resistance seen at the terminals with independent sources nulled`
+- `Controlled-source case: R_th = V_test/I_test`
+- `Resistive load: I_L = V_th/(R_th + R_L)`
+- `V_L = I_L·R_L`
+- `Terminal relation: V = V_th − I·R_th`
 
 ### Problem-solving method
 
 1. Remove the load and mark terminal polarity.
-2. Calculate Vth with the output open.
+2. Calculate V_th with the output open.
 3. Null only independent sources.
-4. Calculate Rth directly, or use a test source if controlled sources remain.
+4. Calculate R_th directly, or use a test source if controlled sources remain.
 5. Draw the Thevenin equivalent and reconnect the load.
 
 ### Important notes
 
 - The Thevenin equivalent is valid at the chosen terminal pair. It is not a claim that internal voltages/currents of the original network are reproduced.
-- Controlled sources remain active when finding Rth.
+- Controlled sources remain active when finding R_th.
 
 ### Physical-book reference
 
 - **pp. 51–62** · source image(s): `51.png–62.png` — Thevenin procedure and multiple worked examples; lecture 27 additionally covers a controlled-source example
 
 ---
-
-## Unit-I boundary / supplied material kept outside the core path
-
-- Source transformation, linearity, open/short-circuit edge cases and detailed single-source reduction rules are retained as **Supporting** because they are present in the supplied Unit-I sources and directly support R25 circuit analysis.
-- The supplied supplementary PDF also contains **mesh analysis, nodal analysis and Maximum Power Transfer theorem**. These remain outside the R25 Unit-I core path.
-- Prescribed-book pp. **63–69** contain RL/RC transient response and remain outside the authoritative R25 Unit-I capture. Chapter-end material on pp.70–72 is retained for practice/reference.

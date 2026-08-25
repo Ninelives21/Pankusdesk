@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<base id="site-base" href="/" />
+	<script>
+		const base = document.getElementById('site-base');
+		if (window.location.hostname.endsWith('github.io')) base.href = '/Pankusdesk/';
+	</script>
+	<title>Class Log · BEE · Panku's Desk</title>
+	<link rel="stylesheet" href="styles/new/variables.css" />
+	<link rel="stylesheet" href="styles/new/base.css" />
+	<link rel="stylesheet" href="styles/new/layout.css" />
+	<link rel="stylesheet" href="styles/new/navbar.css" />
+	<link rel="stylesheet" href="styles/new/components.css" />
+	<link rel="stylesheet" href="styles/new/pages/class-log.css" />
+	<script src="scripts/new/navbar.js" defer></script>
+	<script src="scripts/new/class-log.js" defer></script>
+</head>
+<body>
+	<div id="navbar-new"></div>
+	<main
+		class="page-shell class-log-page"
+		data-subject-json="college/1-1/basic-electrical-engineering/subject.json"
+	>
+		<div class="class-log-loading">Loading class log…</div>
+	</main>
+</body>
+</html>

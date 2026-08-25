@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-24",
+  "date_label": "24 August 2026",
+  "source_id": "CLASS-U1-2026-08-24",
+  "subject": {
+    "code": "25ES1EE101",
+    "name": "Basic Electrical Engineering",
+    "shortName": "BEE"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Introduction to Electrical Energy and DC Circuits"
+  },
+  "title": "Circuit concept and basic electrical quantities",
+  "summary": "Circuit concept; charge, current, voltage, potential difference, energy and power; classification of network elements and sources.",
+  "transcription_policy": "Notebook wording is preserved as written. Line wrapping is normalized for the web; where handwriting is not safely readable, the record says so instead of guessing.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-circuit-concept",
+      "label": "Circuit concept, current, voltage and basic electrical quantities",
+      "href": "unit-1.html#u1-circuit-concept"
+    },
+    {
+      "topic_id": "u1-rlc",
+      "label": "R, L and C parameters",
+      "href": "unit-1.html#u1-rlc"
+    },
+    {
+      "topic_id": "u1-sources",
+      "label": "Independent and dependent voltage/current sources",
+      "href": "unit-1.html#u1-sources"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Unit 1 · Circuit concept and charge",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "Intro to electrical engineering and DC circuits"
+        },
+        {
+          "type": "line",
+          "text": "UNIT - 1"
+        },
+        {
+          "type": "line",
+          "text": "Introduction to electrical engineering and D C circuits"
+        },
+        {
+          "type": "heading",
+          "text": "Circuit concept"
+        },
+        {
+          "type": "bullet",
+          "text": "Electric circuit consists of closed path interconnecting active and passive elements"
+        },
+        {
+          "type": "bullet",
+          "text": "Components are named as circuit elements"
+        },
+        {
+          "type": "bullet",
+          "text": "The closed path followed by direct current (DC) is called DC circuit"
+        },
+        {
+          "type": "bullet",
+          "text": "The closed path followed by AC current is called AC circuit."
+        },
+        {
+          "type": "bullet",
+          "text": "The source supplies electrical energy to the load which converts it into heat or other forms of energy. In a DC-circuit, loads may be connected in series, parallel, or series-parallel."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-24/figures/c1.png",
+          "alt": "Handwritten-style class-note redraw of a voltage source connected to a resistor, alongside a voltage-current graph showing constant source voltage V_s as current changes.",
+          "caption": "Class-note redraw · Voltage source and constant-voltage characteristic",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "type": "heading",
+          "text": "Definition of various terms"
+        },
+        {
+          "type": "subheading",
+          "text": "Charge"
+        },
+        {
+          "type": "paragraph",
+          "text": "Charge is the characteristic property of an elementric particle of the matter, such as protons, neutrons, and electrons."
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "Charge, current and voltage",
+      "blocks": [
+        {
+          "type": "bullet",
+          "text": "Protons possess + charge, electrons possess - charge and neutrons possess neutral."
+        },
+        {
+          "type": "bullet",
+          "text": "The unit of charge is coulomb (C)"
+        },
+        {
+          "type": "heading",
+          "text": "Current"
+        },
+        {
+          "type": "paragraph",
+          "text": "A steady current can be represented as I = Q/T where Q = charge, T = time."
+        },
+        {
+          "type": "paragraph",
+          "text": "A time varying current can be expressed as I = dq/dt"
+        },
+        {
+          "type": "bullet",
+          "text": "It is defined as rate of change of charge passing through the cross sectional area of the conductor"
+        },
+        {
+          "type": "line",
+          "text": "Unit of current is amperes (A)"
+        },
+        {
+          "type": "heading",
+          "text": "Voltage/absolute potential"
+        },
+        {
+          "type": "bullet",
+          "text": "It is defined a amount of work required to move a point from infinity to a point in the field"
+        },
+        {
+          "type": "bullet",
+          "text": "Unit : Volts (V)"
+        },
+        {
+          "type": "heading",
+          "text": "Potential difference"
+        },
+        {
+          "type": "bullet",
+          "text": "The amount of work to be done to move a unit positive test charge from one place to another in the field."
+        },
+        {
+          "type": "equation",
+          "text": "V = W/Q   } Steady voltage"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "Voltage, energy and power",
+      "blocks": [
+        {
+          "type": "bullet",
+          "text": "Time-varying voltage:"
+        },
+        {
+          "type": "equation",
+          "text": "dV = dW/dQ"
+        },
+        {
+          "type": "line",
+          "text": "Unit of potential difference : (Volts)"
+        },
+        {
+          "type": "heading",
+          "text": "Energy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Capacity to do work. The energy may exist in many forms such as electrical, mechanical, thermal, etc."
+        },
+        {
+          "type": "bullet",
+          "text": "Unit: Joules (J)"
+        },
+        {
+          "type": "heading",
+          "text": "Power"
+        },
+        {
+          "type": "paragraph",
+          "text": "Rate at which electrical energy is converted to other forms of energy [crossed out / illegible] = product of voltage and current."
+        },
+        {
+          "type": "equation",
+          "text": "P = W/t = work/time = VI   } avg. power"
+        },
+        {
+          "type": "bullet",
+          "text": "Instantaneous power:"
+        },
+        {
+          "type": "equation",
+          "text": "P = dW/dt = VI"
+        },
+        {
+          "type": "bullet",
+          "text": "Units : Watts (W)"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "heading": "Types of elements",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Types of elements"
+        },
+        {
+          "type": "line",
+          "text": "Network elements"
+        },
+        {
+          "type": "bullet",
+          "text": "ACTIVE ELEMENTS (Source)"
+        },
+        {
+          "type": "bullet",
+          "text": "voltage source → Independent, Dependent"
+        },
+        {
+          "type": "bullet",
+          "text": "current source → Independent, Dependent"
+        },
+        {
+          "type": "bullet",
+          "text": "PASSIVE ELEMENTS (Sink) → R Resistor, L Inductor, C Capacitor"
+        },
+        {
+          "type": "line",
+          "text": "NETWORK ELEMENT"
+        },
+        {
+          "type": "bullet",
+          "text": "Linear / Non linear"
+        },
+        {
+          "type": "bullet",
+          "text": "unilateral and Bilateral"
+        },
+        {
+          "type": "bullet",
+          "text": "Time variant / Time invariant"
+        },
+        {
+          "type": "bullet",
+          "text": "Lumped and Distributed"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-24/figures/c2.png",
+          "alt": "Handwritten-style classification tree of network elements into active sources and passive R, L and C elements, plus linear or non-linear, unilateral or bilateral, time-variant or time-invariant, and lumped or distributed classifications.",
+          "caption": "Class-note redraw · Classification of network elements",
+          "width": 1448,
+          "height": 1086
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The dated class log preserves the notebook wording as a verbatim transcription; the original notebook photographs are intake/archive material and are not stored in the website repository.",
+    "The two clean redraws preserve the useful diagrams but are not substitutes for the verbatim notebook record.",
+    "The class notes group R, L and C under passive elements. The prescribed textbook uses different terminology on pp. 7–8 for ideal inductors and capacitors; this source difference is flagged on the cumulative Unit I page rather than silently reconciled."
+  ]
+}

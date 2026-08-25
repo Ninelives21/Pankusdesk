@@ -1000,9 +1000,9 @@ sub {
 /* ---------------------------------------------------------------------- */
 
 .textbook-figure {
-	margin: var(--space-6) 0 var(--space-7);
+	margin: var(--space-6) auto var(--space-7);
 	width: fit-content;
-	max-width: 100%;
+	max-width: min(88%, 720px);
 }
 
 .textbook-figure img {
@@ -1121,4 +1121,86 @@ sub {
 @media (max-width: 720px) {
 	.end-unit-practice { grid-template-columns: 1fr; }
 	.end-unit-actions { min-width: 0; }
+}
+
+
+/* ---------------------------------------------------------------------- */
+/*                  CUMULATIVE NOTE FLOW + CLASS HISTORY                  */
+/* ---------------------------------------------------------------------- */
+.topic-intro {
+	margin: 0 0 var(--space-7);
+	padding: 0 0 var(--space-6);
+	border-bottom: 1px solid var(--line-soft);
+	font-size: 17px;
+	line-height: 1.78;
+	color: var(--text-secondary);
+}
+
+.textbook-figure.class-note-figure {
+	max-width: min(84%, 680px);
+	background: var(--surface-subtle);
+}
+
+.textbook-figure.class-note-figure figcaption {
+	color: var(--notes-text);
+}
+
+@media (max-width: 720px) {
+	.textbook-figure,
+	.textbook-figure.class-note-figure {
+		max-width: 100%;
+	}
+}
+
+.practice-item:is(a) {
+	grid-template-columns: auto auto minmax(0, 1fr) auto;
+	padding: 6px 8px;
+	margin: -6px -8px;
+	border-radius: var(--radius-xs);
+	text-decoration: none;
+	transition: background 140ms ease, transform 140ms ease;
+}
+
+.practice-item:is(a):hover,
+.practice-item:is(a):focus-visible {
+	background: var(--primary-soft);
+	transform: translateX(2px);
+}
+
+.practice-arrow {
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary);
+}
+
+.class-history {
+	margin-top: var(--space-8);
+	padding-top: var(--space-6);
+	border-top: 1px solid var(--line-soft);
+}
+
+.class-history-links {
+	margin-top: var(--space-3);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+}
+
+.class-history-links a {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-3);
+	padding: 7px 10px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-xs);
+	background: var(--surface-subtle);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+	color: var(--primary-dark);
+}
+
+.class-history-links a:hover,
+.class-history-links a:focus-visible {
+	border-color: var(--primary-muted);
+	background: var(--primary-soft);
 }

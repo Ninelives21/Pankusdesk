@@ -31,6 +31,7 @@ valid_refs.update(x['source_id'] for x in lectures)
 valid_refs.update(f"SUP-P{n:03d}" for n in range(1,98))
 valid_refs.update(x['source_id'] for x in manifest.get('syllabus_refs',[]))
 valid_refs.update(x['id'] for x in manifest.get('gap_sources',[]))
+valid_refs.update(x['id'] for x in manifest.get('class_sources',[]))
 # every topic must have provenance
 ids=set()
 for t in topics:
