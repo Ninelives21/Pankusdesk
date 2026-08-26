@@ -51,6 +51,11 @@ async function initSubjectUnitPage() {
 
 		renderReadyUnit(context, unitTopics, sourceCollections);
 		setupTopicNavigation(unitTopics);
+		try {
+			await typesetMath(page);
+		} catch (mathError) {
+			console.warn('Math typesetting failed; leaving LaTeX source visible.', mathError);
+		}
 	} catch (error) {
 		console.error('Subject unit page load failed:', error);
 		renderPageError(page, error);
@@ -340,9 +345,16 @@ function renderSections(sections) {
 }
 
 function renderSection(section) {
+	const isClassNote = section.kind === 'class-note';
+	const className = isClassNote ? 'note-section class-note-section' : 'note-section';
+	const sourceLabel = isClassNote
+		? `<div class="class-note-source-label">${escapeHtml(section.source_label || 'Priyanka\'s class notes')}</div>`
+		: '';
+
 	return `
-		<section class="note-section">
-			<div class="note-section-heading"><h3>${escapeHtml(section.heading)}</h3></div>
+		<section class="${className}">
+			${sourceLabel}
+			<div class="note-section-heading"><h3>${formatText(section.heading)}</h3></div>
 			${renderSectionContent(section)}
 		</section>
 	`;
@@ -774,8 +786,60 @@ function formatIsoDate(value) {
 }
 
 function formatText(value) {
+	const input = String(value ?? '');
+	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
+	let result = '';
+	let lastIndex = 0;
+	let match;
+
+	while ((match = mathPattern.exec(input)) !== null) {
+		result += formatPlainText(input.slice(lastIndex, match.index));
+		result += escapeHtml(match[0]);
+		lastIndex = match.index + match[0].length;
+	}
+
+	result += formatPlainText(input.slice(lastIndex));
+	return result;
+}
+
+function formatPlainText(value) {
 	return escapeHtml(value)
 		.replace(/\b([A-Za-z][A-Za-z0-9]*)_\{?([A-Za-z0-9]+)\}?/g, '$1<sub>$2</sub>');
+}
+
+let mathJaxPromise = null;
+
+async function typesetMath(root) {
+	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
+	await ensureMathJax();
+	if (window.MathJax?.typesetPromise) {
+		await window.MathJax.typesetPromise([root]);
+	}
+}
+
+function ensureMathJax() {
+	if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
+	if (mathJaxPromise) return mathJaxPromise;
+
+	mathJaxPromise = new Promise((resolve, reject) => {
+		window.MathJax = {
+			tex: {
+				inlineMath: [['\\\(', '\\\)']],
+				displayMath: [['\\\[', '\\\]']],
+				processEscapes: true,
+			},
+			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
+		};
+
+		const script = document.createElement('script');
+		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+		script.async = true;
+		script.onload = () => resolve(window.MathJax);
+		script.onerror = () => reject(new Error('MathJax could not be loaded.'));
+		document.head.appendChild(script);
+	});
+
+	return mathJaxPromise;
 }
 
 function toRoman(value) {

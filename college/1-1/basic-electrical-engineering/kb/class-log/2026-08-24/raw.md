@@ -2,7 +2,7 @@
 
 ## Source policy
 
-This is the dated notebook record. Wording and spelling are preserved as written; line wrapping is normalized. Where handwriting is not safely readable, the transcription says so instead of guessing. The original notebook photographs are intake/archive material and are not stored in the website repository.
+This is the dated notebook record. Wording and spelling are preserved as written; line wrapping is normalized. Where handwriting is not safely readable, the transcription says so instead of guessing. The original notebook photographs remain in the supplied `2026-08-24` source archive and are not copied into website assets.
 
 ## Page 1
 
@@ -33,9 +33,9 @@ Introduction to electrical engineering and D C circuits
 
 ### Current
 
-A steady current can be represented as I = Q/T where Q = charge, T = time.
+A steady current can be represented as \(I=\frac{Q}{T}\) where \(Q=\text{charge}\), \(T=\text{time}\).
 
-A time varying current can be expressed as I = dq/dt
+A time varying current can be expressed as \(i=\frac{dq}{dt}\)
 
 - It is defined as rate of change of charge passing through the cross sectional area of the conductor
 
@@ -50,13 +50,13 @@ Unit of current is amperes (A)
 
 - The amount of work to be done to move a unit positive test charge from one place to another in the field.
 
-V = W/Q   } Steady voltage
+\[V=\frac{W}{Q}\qquad \text{Steady voltage}\]
 
 ## Page 3
 
 - Time-varying voltage:
 
-dV = dW/dQ
+\[dV=\frac{dW}{dQ}\]
 
 Unit of potential difference : (Volts)
 
@@ -68,13 +68,13 @@ Capacity to do work. The energy may exist in many forms such as electrical, mech
 
 ### Power
 
-Rate at which electrical energy is converted to other forms of energy [crossed out / illegible] = product of voltage and current.
+Rate at which electrical energy is converted to other forms of energy [crossed out / illegible] \(=\) product of voltage and current.
 
-P = W/t = work/time = VI   } avg. power
+\[P=\frac{W}{t}=VI\qquad \text{average power}\]
 
 - Instantaneous power:
 
-P = dW/dt = VI
+\[P=\frac{dW}{dt}=VI\]
 
 - Units : Watts (W)
 

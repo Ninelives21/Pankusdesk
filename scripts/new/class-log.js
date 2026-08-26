@@ -18,6 +18,11 @@ async function initClassLog() {
 		const entryUrl = new URL(`kb/class-log/${date}/entry.json`, subjectUrl);
 		const entry = await fetchJson(entryUrl.href);
 		renderPage(page, subject, subjectUrl, entry);
+		try {
+			await typesetMath(page);
+		} catch (mathError) {
+			console.warn('Math typesetting failed; leaving LaTeX source visible.', mathError);
+		}
 	} catch (error) {
 		console.error('Class log failed to load:', error);
 		page.innerHTML = `<div class="class-log-error">Class log could not be loaded.${error?.message ? ` ${escapeHtml(error.message)}` : ''}</div>`;
@@ -113,13 +118,13 @@ function renderBlocks(blocks) {
 
 	for (const block of blocks) {
 		if (block.type === 'bullet') {
-			bullets.push(`<li>${escapeHtml(block.text)}</li>`);
+			bullets.push(`<li>${formatText(block.text)}</li>`);
 			continue;
 		}
 		flush();
 		switch (block.type) {
-			case 'heading': html += `<h4>${escapeHtml(block.text)}</h4>`; break;
-			case 'subheading': html += `<h5>${escapeHtml(block.text)}</h5>`; break;
+			case 'heading': html += `<h4>${formatText(block.text)}</h4>`; break;
+			case 'subheading': html += `<h5>${formatText(block.text)}</h5>`; break;
 			case 'equation': html += `<div class="verbatim-equation">${formatText(block.text)}</div>`; break;
 			case 'figure': html += renderClassFigure(block); break;
 			case 'line': html += `<p class="verbatim-line">${formatText(block.text)}</p>`; break;
@@ -150,7 +155,44 @@ async function fetchJson(url) {
 }
 
 function formatText(value) {
+	const input = String(value ?? '');
+	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
+	let result = '';
+	let lastIndex = 0;
+	let match;
+
+	while ((match = mathPattern.exec(input)) !== null) {
+		result += formatPlainText(input.slice(lastIndex, match.index));
+		result += escapeHtml(match[0]);
+		lastIndex = match.index + match[0].length;
+	}
+	result += formatPlainText(input.slice(lastIndex));
+	return result;
+}
+
+function formatPlainText(value) {
 	return escapeHtml(value).replace(/\b([A-Za-z][A-Za-z0-9]*)_\{?([A-Za-z0-9]+)\}?/g, '$1<sub>$2</sub>');
+}
+
+let mathJaxPromise = null;
+async function typesetMath(root) {
+	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
+	await ensureMathJax();
+	if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise([root]);
+}
+function ensureMathJax() {
+	if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
+	if (mathJaxPromise) return mathJaxPromise;
+	mathJaxPromise = new Promise((resolve, reject) => {
+		window.MathJax = { tex: { inlineMath: [['\\\(', '\\\)']], displayMath: [['\\\[', '\\\]']], processEscapes: true }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] } };
+		const script = document.createElement('script');
+		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+		script.async = true;
+		script.onload = () => resolve(window.MathJax);
+		script.onerror = () => reject(new Error('MathJax could not be loaded.'));
+		document.head.appendChild(script);
+	});
+	return mathJaxPromise;
 }
 
 function toRoman(value) {

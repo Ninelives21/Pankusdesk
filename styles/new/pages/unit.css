@@ -1204,3 +1204,80 @@ sub {
 	border-color: var(--primary-muted);
 	background: var(--primary-soft);
 }
+
+/* ---------------------------------------------------------------------- */
+/*            PRIYANKA CLASS NOTES + LATEX EQUATION PRESENTATION          */
+/* ---------------------------------------------------------------------- */
+.class-note-section {
+	max-width: 900px;
+	padding: var(--space-6) var(--space-7);
+	border: 1px solid var(--notes-border);
+	border-left: 4px solid var(--notes);
+	border-radius: var(--radius-md);
+	background: var(--notes-soft);
+}
+
+.note-section + .class-note-section,
+.class-note-section + .note-section {
+	padding-top: var(--space-6);
+}
+
+.class-note-source-label {
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: var(--space-4);
+	padding: 5px 9px;
+	border: 1px solid var(--notes-border);
+	border-radius: 999px;
+	background: var(--surface);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	color: var(--notes-text);
+}
+
+.class-note-section .note-section-heading {
+	margin-bottom: var(--space-4);
+}
+
+.class-note-section p,
+.class-note-section li {
+	color: var(--text-strong);
+}
+
+.note-section mjx-container[display="true"],
+.class-note-section mjx-container[display="true"] {
+	margin: .8em 0 1em !important;
+	overflow-x: auto;
+	overflow-y: hidden;
+	text-align: left !important;
+}
+
+.formula-line {
+	font-family: inherit;
+}
+
+.formula-line mjx-container {
+	font-size: 1.08em !important;
+}
+
+@media (max-width: 720px) {
+	.class-note-section {
+		padding: var(--space-5);
+	}
+}
+
+/* v5: make integrated class notes impossible to miss */
+.class-note-section {
+	position: relative;
+	margin: var(--space-7) 0;
+	box-shadow: 0 8px 24px rgba(35, 75, 110, .08);
+}
+.class-note-source-label {
+	font-size: 13px;
+	padding: 7px 11px;
+}
+.class-note-section .note-section-heading h3 {
+	font-weight: var(--font-weight-heavy);
+}
