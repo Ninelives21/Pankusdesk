@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pankusdesk.local/schemas/class-log.schema.json",
+  "title": "PankusDesk Dated Class Log Entry",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "date", "source_id", "subject", "unit", "title", "mapped_topics", "pages"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "date": {"type": "string", "format": "date"},
+    "date_label": {"type": "string"},
+    "source_id": {"type": "string", "minLength": 1},
+    "subject": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["code", "name", "shortName"],
+      "properties": {
+        "code": {"type": "string"},
+        "name": {"type": "string"},
+        "shortName": {"type": "string"}
+      }
+    },
+    "unit": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["number", "title"],
+      "properties": {
+        "number": {"type": "integer", "minimum": 1},
+        "title": {"type": "string", "minLength": 1}
+      }
+    },
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string"},
+    "transcription_policy": {"type": "string"},
+    "mapped_topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["topic_id", "label", "href"],
+        "properties": {
+          "topic_id": {"type": "string", "minLength": 1},
+          "label": {"type": "string", "minLength": 1},
+          "href": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["page", "blocks"],
+        "properties": {
+          "page": {"type": "integer", "minimum": 1},
+          "heading": {"type": "string"},
+          "blocks": {
+            "type": "array",
+            "items": {"$ref": "#/$defs/block"}
+          }
+        }
+      }
+    },
+    "source_notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "figure": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "src", "alt"],
+      "properties": {
+        "type": {"const": "figure"},
+        "src": {"type": "string", "minLength": 1},
+        "alt": {"type": "string", "minLength": 8},
+        "caption": {"type": "string"},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      }
+    },
+    "textBlock": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "text"],
+      "properties": {
+        "type": {"enum": ["line", "heading", "subheading", "paragraph", "bullet", "equation"]},
+        "text": {"type": "string"}
+      }
+    },
+    "block": {
+      "oneOf": [
+        {"$ref": "#/$defs/figure"},
+        {"$ref": "#/$defs/textBlock"}
+      ]
+    }
+  }
+}
