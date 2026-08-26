@@ -152,6 +152,7 @@ function renderReadyUnit(context, unitTopics, sourceCollections) {
 	renderTopicNav(unitTopics);
 	renderTopicNotes(unitTopics, context, sourceCollections);
 	setupSelfCheckAccordions();
+	setupExplanationAccordions();
 }
 
 function renderUnitHero(context, unitTopics) {
@@ -392,6 +393,8 @@ function renderSectionContent(section) {
 	});
 	flushBullets();
 
+	html += renderExplanationAccordions(section.accordions ?? [], section.accordion_recap ?? []);
+
 	const explicitlyEnded = figures
 		.filter(figure => figure.after?.type === 'end')
 		.map(renderTextbookFigure)
@@ -402,6 +405,52 @@ function renderSectionContent(section) {
 	html += figures.filter(figure => !anchored.has(figure.src)).map(renderTextbookFigure).join('');
 
 	return html;
+}
+
+function renderExplanationAccordions(items, recapItems = []) {
+	if (!items.length && !recapItems.length) return '';
+
+	const accordionHtml = items.length ? `
+		<div class="explanation-accordion" aria-label="Understand this diagram">
+			<div class="explanation-accordion-label">Understand this diagram</div>
+			${items.map((item, index) => `
+				<details class="explanation-accordion-item">
+					<summary>
+						<span>${formatText(item.title)}</span>
+						<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
+					</summary>
+					<div class="explanation-accordion-content">
+						${(item.paragraphs ?? []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+						${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+					</div>
+				</details>
+			`).join('')}
+		</div>
+	` : '';
+
+	const recapHtml = recapItems.length ? `
+		<div class="diagram-quick-recall">
+			<div class="diagram-quick-recall-title">Quick way to read the diagram</div>
+			<ul>${recapItems.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>
+		</div>
+	` : '';
+
+	return accordionHtml + recapHtml;
+}
+
+function setupExplanationAccordions() {
+	const groups = Array.from(document.querySelectorAll('.explanation-accordion'));
+	groups.forEach(group => {
+		const detailsItems = Array.from(group.querySelectorAll('.explanation-accordion-item'));
+		detailsItems.forEach(details => {
+			details.addEventListener('toggle', () => {
+				if (!details.open) return;
+				detailsItems.forEach(other => {
+					if (other !== details) other.open = false;
+				});
+			});
+		});
+	});
 }
 
 function renderTextbookFigure(figure) {

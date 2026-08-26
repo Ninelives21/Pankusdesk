@@ -33,9 +33,9 @@ Introduction to electrical engineering and D C circuits
 
 ### Current
 
-A steady current can be represented as \(I=\frac{Q}{T}\) where \(Q=\text{charge}\), \(T=\text{time}\).
+A steady current can be represented as \(I=\dfrac{Q}{T}\) where \(Q=\text{charge}\), \(T=\text{time}\).
 
-A time varying current can be expressed as \(i=\frac{dq}{dt}\)
+A time varying current can be expressed as \(i=\dfrac{dq}{dt}\)
 
 - It is defined as rate of change of charge passing through the cross sectional area of the conductor
 
@@ -50,13 +50,13 @@ Unit of current is amperes (A)
 
 - The amount of work to be done to move a unit positive test charge from one place to another in the field.
 
-\[V=\frac{W}{Q}\qquad \text{Steady voltage}\]
+\[V=\dfrac{W}{Q}\qquad \text{Steady voltage}\]
 
 ## Page 3
 
 - Time-varying voltage:
 
-\[dV=\frac{dW}{dQ}\]
+\[dV=\dfrac{dW}{dQ}\]
 
 Unit of potential difference : (Volts)
 
@@ -70,11 +70,11 @@ Capacity to do work. The energy may exist in many forms such as electrical, mech
 
 Rate at which electrical energy is converted to other forms of energy [crossed out / illegible] \(=\) product of voltage and current.
 
-\[P=\frac{W}{t}=VI\qquad \text{average power}\]
+\[P=\dfrac{W}{t}=VI\qquad \text{average power}\]
 
 - Instantaneous power:
 
-\[P=\frac{dW}{dt}=VI\]
+\[P=\dfrac{dW}{dt}=VI\]
 
 - Units : Watts (W)
 

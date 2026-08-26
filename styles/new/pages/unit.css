@@ -1281,3 +1281,115 @@ sub {
 .class-note-section .note-section-heading h3 {
 	font-weight: var(--font-weight-heavy);
 }
+
+
+/* ---------------------------------------------------------------------- */
+/*                EXPLANATION ACCORDION FOR CLASS-NOTE DIAGRAMS           */
+/* ---------------------------------------------------------------------- */
+.explanation-accordion {
+	margin-top: var(--space-6);
+	display: grid;
+	gap: var(--space-2);
+}
+
+.explanation-accordion-label,
+.diagram-quick-recall-title {
+	margin-bottom: var(--space-2);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	color: var(--notes-text);
+}
+
+.explanation-accordion-item {
+	border: 1px solid var(--notes-border);
+	border-radius: var(--radius-sm);
+	background: var(--surface);
+	overflow: hidden;
+}
+
+.explanation-accordion-item summary {
+	list-style: none;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: var(--space-4);
+	padding: 14px 16px;
+	font-size: 16px;
+	font-weight: var(--font-weight-semibold);
+	line-height: 1.45;
+	color: var(--text-strong);
+}
+
+.explanation-accordion-item summary::-webkit-details-marker {
+	display: none;
+}
+
+.explanation-accordion-item summary:hover,
+.explanation-accordion-item summary:focus-visible {
+	background: var(--notes-soft);
+}
+
+.explanation-accordion-item summary:focus-visible {
+	outline: 2px solid var(--notes);
+	outline-offset: -2px;
+}
+
+.explanation-accordion-toggle {
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 1;
+	color: var(--notes-text);
+	transition: transform 160ms ease;
+}
+
+.explanation-accordion-item[open] .explanation-accordion-toggle {
+	transform: rotate(45deg);
+}
+
+.explanation-accordion-content {
+	padding: 4px 16px 16px;
+	border-top: 1px solid var(--line-soft);
+}
+
+.explanation-accordion-content p {
+	margin: 12px 0 0;
+	line-height: 1.72;
+}
+
+.explanation-accordion-content ul {
+	margin: 12px 0 0;
+	padding-left: 1.25rem;
+}
+
+.explanation-accordion-content li + li {
+	margin-top: 7px;
+}
+
+.diagram-quick-recall {
+	margin-top: var(--space-5);
+	padding: 14px 16px;
+	border: 1px dashed var(--notes-border);
+	border-radius: var(--radius-sm);
+	background: rgba(255, 255, 255, .58);
+}
+
+.diagram-quick-recall ul {
+	margin: 0;
+	padding-left: 1.2rem;
+}
+
+.diagram-quick-recall li + li {
+	margin-top: 6px;
+}
+
+@media (max-width: 720px) {
+	.explanation-accordion-item summary,
+	.explanation-accordion-content,
+	.diagram-quick-recall {
+		padding-left: 13px;
+		padding-right: 13px;
+	}
+}

@@ -111,13 +111,13 @@ Charge is the characteristic property of an elementary particle of matter. A pro
 
 For a steady current,
 
-\[I=\frac{Q}{T}\]
+\[I=\dfrac{Q}{T}\]
 
 where \(Q\) is charge and \(T\) is time.
 
 For a time-varying current, the notebook gives
 
-\[i=\frac{dq}{dt}\]
+\[i=\dfrac{dq}{dt}\]
 
 Current is the rate of change of charge passing through the cross-sectional area of a conductor. Its unit is the ampere (A).
 
@@ -131,11 +131,11 @@ Potential difference is the amount of work required to move a unit positive test
 
 For steady voltage, the notebook gives
 
-\[V=\frac{W}{Q}\]
+\[V=\dfrac{W}{Q}\]
 
 For time-varying voltage,
 
-\[dV=\frac{dW}{dQ}\]
+\[dV=\dfrac{dW}{dQ}\]
 
 The unit of voltage or potential difference is the volt (V).
 
@@ -149,11 +149,11 @@ Power is the rate at which electrical energy is converted into other forms of en
 
 Average power:
 
-\[P=\frac{W}{t}=VI\]
+\[P=\dfrac{W}{t}=VI\]
 
 Instantaneous power:
 
-\[P=\frac{dW}{dt}=VI\]
+\[P=\dfrac{dW}{dt}=VI\]
 
 The unit of power is the watt (W).
 
@@ -168,20 +168,114 @@ Hence EMF, MMF and torque are analogous. Current, flux and speed are similar qua
 
 ### Types of network elements
 
-- Active elements (source): voltage source and current source; each may be independent or dependent.
-- Passive elements (sink): \(R\) — resistor, \(L\) — inductor and \(C\) — capacitor.
-- Other classifications: linear / non-linear; unilateral / bilateral; time-variant / time-invariant; lumped / distributed.
+A network element is any individual electrical component that forms part of an electrical network. The same element can be classified in different ways depending on the property being considered.
 
 *Figure: Class-note redraw · Classification of network elements*
 
+#### Explanation dropdowns
+
+**Active and passive elements**
+
+Active elements supply electrical energy to a circuit and are therefore called sources.
+
+Passive elements do not generate electrical energy. They either dissipate the supplied energy or store it temporarily. In this classification, the basic passive elements are:
+
+- \(R\) — resistor: opposes current and dissipates electrical energy mainly as heat.
+- \(L\) — inductor: stores energy in a magnetic field and can later return it to the circuit.
+- \(C\) — capacitor: stores energy in an electric field and can later return it to the circuit.
+
+**What are voltage and current sources?**
+
+An electrical source supplies electrical energy to a circuit. Sources are broadly classified as voltage sources and current sources.
+
+Voltage is the electrical potential difference between two points. It represents energy transferred per unit charge:
+
+\[V=\dfrac{W}{Q}\]
+
+A voltage source maintains a specified voltage across its terminals. The current supplied can change when the connected load changes.
+
+For example, if an ideal \(10\,\text{V}\) source is connected to a \(5\,\Omega\) resistor,
+
+\[I=\dfrac{V}{R}=\dfrac{10}{5}=2\,\text{A}\]
+
+If the load becomes \(10\,\Omega\), the current becomes \(1\,\text{A}\), while the ideal source still maintains \(10\,\text{V}\).
+
+A current source maintains a specified current through the circuit. The voltage across it can change when the load changes.
+
+For example, for an ideal \(2\,\text{A}\) current source connected to a \(5\,\Omega\) load,
+
+\[V=IR=2\times5=10\,\text{V}\]
+
+- Voltage source → voltage is maintained; current may change with the load.
+- Current source → current is maintained; voltage may change with the load.
+
+**Independent and dependent sources**
+
+Both voltage sources and current sources may be independent or dependent.
+
+An independent source has a specified value that does not depend on another voltage or current elsewhere in the circuit.
+
+A dependent source, also called a controlled source, has a value determined by another voltage or current in the circuit. Dependent sources are usually represented by diamond-shaped symbols.
+
+- VCVS — Voltage-Controlled Voltage Source.
+- CCVS — Current-Controlled Voltage Source.
+- VCCS — Voltage-Controlled Current Source.
+- CCCS — Current-Controlled Current Source.
+
+**Linear and non-linear elements**
+
+A linear element has a proportional relationship between voltage and current. If its parameter remains constant, increasing the voltage by a certain factor increases the current by the same factor.
+
+For a resistor of constant resistance,
+
+\[V=IR\]
+
+so its \(V\)-\(I\) characteristic is a straight line through the origin.
+
+A non-linear element does not have a proportional \(V\)-\(I\) relationship. Its behaviour changes with the applied voltage or current; a diode is a common example.
+
+This distinction is important because the Superposition theorem is applied to linear circuits.
+
+**Bilateral and unilateral elements**
+
+A bilateral element behaves essentially the same way when the direction of current or voltage is reversed. Ideal resistors, inductors and capacitors are generally treated as bilateral elements.
+
+A unilateral element behaves differently in the two directions. A diode is the standard example: it conducts readily in one direction but strongly restricts current in the reverse direction.
+
+- Bilateral → reversing direction does not fundamentally change its behaviour.
+- Unilateral → behaviour depends on direction.
+
+**Time-invariant and time-variant elements**
+
+A time-invariant element has a parameter whose value does not change simply because time passes. For example, an ideal \(10\,\Omega\) resistor remains \(10\,\Omega\).
+
+A time-variant element has a parameter that changes with time. For example,
+
+\[R=R(t)\]
+
+**Lumped and distributed elements**
+
+In a lumped element, the electrical property is treated as concentrated in one physical component. Ordinary resistors, inductors and capacitors used in basic circuit analysis are treated as lumped elements.
+
+In a distributed element, resistance, inductance and capacitance are spread continuously along its physical length. A transmission line is a common example.
+
+**Quick way to read the diagram**
+
+- Active / passive → does it supply energy or does it use/store energy?
+- Voltage / current source → which quantity does the source maintain?
+- Linear / non-linear → is the \(V\)-\(I\) relationship proportional?
+- Bilateral / unilateral → does reversing direction change its behaviour?
+- Time-invariant / time-variant → does its parameter change with time?
+- Lumped / distributed → is the electrical property concentrated or spread along its length?
+
 ### Key formulas
 
-- Steady current: \(I=\frac{Q}{T}\)
-- Time-varying current: \(i=\frac{dq}{dt}\)
-- Steady potential difference: \(V=\frac{W}{Q}\)
-- Class-note time-varying voltage: \(dV=\frac{dW}{dQ}\)
-- Average power: \(P=\frac{W}{t}=VI\)
-- Instantaneous power: \(P=\frac{dW}{dt}=VI\)
+- Steady current: \(I=\dfrac{Q}{T}\)
+- Time-varying current: \(i=\dfrac{dq}{dt}\)
+- Steady potential difference: \(V=\dfrac{W}{Q}\)
+- Class-note time-varying voltage: \(dV=\dfrac{dW}{dQ}\)
+- Average power: \(P=\dfrac{W}{t}=VI\)
+- Instantaneous power: \(P=\dfrac{dW}{dt}=VI\)
 
 ### Important note
 ### Check yourself
@@ -191,7 +285,7 @@ Hence EMF, MMF and torque are analogous. Current, flux and speed are similar qua
 - **What does the textbook call an electric network?**  
   The interconnection of two or more circuit elements.
 - **What relation for time-varying current was written in class?**  
-  \(i=\frac{dq}{dt}\).
+  \(i=\dfrac{dq}{dt}\).
 
 ### Physical-book reference
 
@@ -226,14 +320,14 @@ The constant \(R\) is called resistance. The unit of resistance is the ohm (\(\O
 
 The resistance of a material is proportional to its length \(l\) and inversely proportional to its cross-sectional area \(A\).
 
-\[R\propto\frac{l}{A}\qquad\text{or}\qquad R\propto\rho\frac{l}{A}\]
+\[R\propto\dfrac{l}{A}\qquad\text{or}\qquad R\propto\rho\dfrac{l}{A}\]
 
 Here \(
 ho\) is the specific resistance or resistivity, whose unit is ohm-metre. The resistivity of metals increases as temperature increases and hence resistance changes with temperature.
 
 The power absorbed by the resistance is
 
-\[P=V\times I\qquad\text{or}\qquad P=I^2R\qquad\text{or}\qquad P=\frac{V^2}{R}\]
+\[P=V\times I\qquad\text{or}\qquad P=I^2R\qquad\text{or}\qquad P=\dfrac{V^2}{R}\]
 
 The corresponding energy consumed in the resistance appears as heat and is expressed as
 
@@ -256,7 +350,7 @@ The unit is weber-turns.
 
 According to Faraday’s laws of electromagnetic induction, whenever the flux linkages with the coil change with respect to time, an emf is induced in it. This emf is given by
 
-\[e\propto\frac{d\varphi}{dt}\]
+\[e\propto\dfrac{d\varphi}{dt}\]
 
 The textbook next states
 
@@ -264,7 +358,7 @@ The textbook next states
 
 and then gives
 
-\[e\propto\frac{d\varphi}{dt}\qquad\text{or}\qquad e=L\frac{d\varphi}{dt}\]
+\[e\propto\dfrac{d\varphi}{dt}\qquad\text{or}\qquad e=L\dfrac{d\varphi}{dt}\]
 
 The constant \(L\) is called inductance and its unit is the henry (H). One henry is the inductance of a coil when it produces one volt in it if the current passing through it changes at the rate of one ampere per second.
 
@@ -272,7 +366,7 @@ According to Lenz’s law, the induced emf opposes the cause of its generation. 
 
 When the current passing through the coil is steady or constant,
 
-\[\frac{di}{dt}=0\]
+\[\dfrac{di}{dt}=0\]
 
 and hence no emf is generated. Therefore, inductance is the property of a coil by which changes in current are opposed.
 
@@ -280,17 +374,17 @@ Like a flywheel having large inertia opposes changes in speed, an inductor oppos
 
 The electrical energy absorbed by an inductor is given by
 
-\[W=\int_{0}^{t}P\,dt=\int_{0}^{t}ei\,dt=\int_{0}^{t}L\frac{di}{dt}\,i\,dt=\int_{0}^{I}Li\,di=\frac{1}{2}LI^2\]
+\[W=\int_{0}^{t}P\,dt=\int_{0}^{t}ei\,dt=\int_{0}^{t}L\dfrac{di}{dt}\,i\,dt=\int_{0}^{I}Li\,di=\dfrac{1}{2}LI^2\]
 
 Since the coil is made with a conductor having negligible resistance and is assumed to be ideal, it does not consume any energy. It stores the electrical energy absorbed by it in the form of a magnetic field. Hence, the textbook calls the inductor an active element.
 
 Therefore, the energy stored by an inductor is
 
-\[W=\frac{1}{2}LI^2\ \text{joules}\]
+\[W=\dfrac{1}{2}LI^2\ \text{joules}\]
 
 The textbook summarizes the important points related to an inductor as follows.
 
-- The induced emf across an inductor is zero if \(\frac{di}{dt}=0\). Hence a pure inductor behaves as a short circuit to direct current (DC).
+- The induced emf across an inductor is zero if \(\dfrac{di}{dt}=0\). Hence a pure inductor behaves as a short circuit to direct current (DC).
 - The current in an inductor cannot change instantaneously, because the induced emf would become infinite and would not allow the current to change instantaneously.
 - An inductor stores energy only when the current passing through it changes.
 - A pure inductor does not consume power or energy; it stores energy.
@@ -314,21 +408,21 @@ The proportionality constant \(C\) is called capacitance. Capacitance is the cap
 
 The charging current \(i\) is given by
 
-\[i=\frac{dq}{dt}=\frac{d(CV)}{dt}=C\frac{dV}{dt}\]
+\[i=\dfrac{dq}{dt}=\dfrac{d(CV)}{dt}=C\dfrac{dV}{dt}\]
 
 The energy absorbed by the capacitor is
 
-\[W=\int_{0}^{t}P\,dt=\int_{0}^{t}Vi\,dt=\int_{0}^{t}V\,C\frac{dV}{dt}\,dt=\frac{1}{2}CV^2\]
+\[W=\int_{0}^{t}P\,dt=\int_{0}^{t}Vi\,dt=\int_{0}^{t}V\,C\dfrac{dV}{dt}\,dt=\dfrac{1}{2}CV^2\]
 
 Neglecting the resistance of the connecting wires and electrodes and assuming no leakage current through the dielectric, the energy input to the capacitor is stored in the capacitor in the form of an electrostatic field.
 
 Energy stored in the capacitor is
 
-\[W=\frac{1}{2}CV^2\ \text{joules}\]
+\[W=\dfrac{1}{2}CV^2\ \text{joules}\]
 
 As the capacitor stores energy and does not consume energy, the textbook calls it an active element. The textbook summarizes the important points related to a capacitor as follows.
 
-- The current in a capacitor is zero if the voltage across it is constant, \(\frac{dV}{dt}=0\). Hence it acts as an open circuit for direct current (DC).
+- The current in a capacitor is zero if the voltage across it is constant, \(\dfrac{dV}{dt}=0\). Hence it acts as an open circuit for direct current (DC).
 - The voltage across a capacitor cannot change instantaneously because an instantaneous change would require an infinite current.
 - A capacitor stores energy only when the voltage across it changes.
 - A pure capacitor does not consume energy; it stores energy.
@@ -339,23 +433,19 @@ As the capacitor stores energy and does not consume energy, the textbook calls i
 
 ### R, L and C classification
 
-\(R\) (resistor), \(L\) (inductor) and \(C\) (capacitor) are classified as passive elements or sinks.
+\(R\) (resistor), \(L\) (inductor) and \(C\) (capacitor) are classified as passive elements.
 
 ### Key formulas
 
 - Resistance: \(V=IR\)
-- Resistance-length-area relation as printed: \(R\propto\rho\frac{l}{A}\)
-- Resistor power: \(P=VI=I^2R=\frac{V^2}{R}\)
+- Resistance-length-area relation as printed: \(R\propto\rho\dfrac{l}{A}\)
+- Resistor power: \(P=VI=I^2R=\dfrac{V^2}{R}\)
 - Flux linkage: \(\varphi=N\phi\)
-- Faraday relation as printed: \(e\propto\frac{d\varphi}{dt}\)
-- Inductor energy: \(W=\frac12LI^2\)
+- Faraday relation as printed: \(e\propto\dfrac{d\varphi}{dt}\)
+- Inductor energy: \(W=\dfrac12LI^2\)
 - Capacitor: \(Q=CV\)
-- Capacitor current: \(i=C\frac{dV}{dt}\)
-- Capacitor energy: \(W=\frac12CV^2\)
-
-### Important note
-
-- Priyanka’s 24 Aug notes classify \(R\), \(L\) and \(C\) as passive elements. In the book, the resistor is described as passive, while ideal inductors and capacitors are described as “Active Element” because they store energy. Keep these two source wordings distinct.
+- Capacitor current: \(i=C\dfrac{dV}{dt}\)
+- Capacitor energy: \(W=\dfrac12CV^2\)
 
 ### Check yourself
 
@@ -363,8 +453,8 @@ As the capacitor stores energy and does not consume energy, the textbook calls i
   Inductance is the property of a coil by which changes in current are opposed.
 - **What happens to an ideal inductor and capacitor under steady DC?**  
   The ideal inductor behaves as a short circuit and the ideal capacitor behaves as an open circuit.
-- **What classification of R, L and C appears in Priyanka’s class notes?**  
-  They are grouped under passive elements or sinks.
+- **Which three basic elements are grouped under passive elements in the network-element classification?**  
+  The resistor \(R\), inductor \(L\) and capacitor \(C\).
 
 ### Physical-book reference
 
@@ -514,11 +604,11 @@ A practical voltage source can be converted into an equivalent practical current
 
 Consider the practical voltage source in Figure 1.20 feeding a load current \(I_L\) at voltage \(V_L\). The load current is
 
-\[I_L=\frac{V_s}{R_s+R_L}\]
+\[I_L=\dfrac{V_s}{R_s+R_L}\]
 
 The load voltage is
 
-\[V_L=I_LR_L=\frac{V_s}{R_s+R_L}R_L\]
+\[V_L=I_LR_L=\dfrac{V_s}{R_s+R_L}R_L\]
 
 The open-circuit voltage across the load terminals, which would drive the load current, is
 
@@ -526,11 +616,11 @@ The open-circuit voltage across the load terminals, which would drive the load c
 
 Now consider the practical current source in Figure 1.21 driving the same load current \(I_L\) at the same load voltage \(V_L\). The load current is
 
-\[I_L=I_s\frac{R_p}{R_p+R_L}\]
+\[I_L=I_s\dfrac{R_p}{R_p+R_L}\]
 
 The load voltage is
 
-\[V_L=I_LR_L=I_s\frac{R_p}{R_p+R_L}R_L\]
+\[V_L=I_LR_L=I_s\dfrac{R_p}{R_p+R_L}R_L\]
 
 The open-circuit voltage across the load terminals is
 
@@ -542,11 +632,11 @@ Equating the open-circuit voltages in both cases gives
 
 Equating the load voltages gives
 
-\[\frac{V_s}{R_s+R_L}R_L=I_s\frac{R_p}{R_p+R_L}R_L\]
+\[\dfrac{V_s}{R_s+R_L}R_L=I_s\dfrac{R_p}{R_p+R_L}R_L\]
 
 or
 
-\[\frac{V_s}{R_s+R_L}=I_s\frac{R_p}{R_p+R_L}\]
+\[\dfrac{V_s}{R_s+R_L}=I_s\dfrac{R_p}{R_p+R_L}\]
 
 Using \(I_sR_p=V_s\) in the above equation, the textbook obtains
 
@@ -558,7 +648,7 @@ and
 
 Hence a practical voltage source of voltage \(V_s\) and internal resistance \(R_s\) can be replaced by a practical current source whose current is
 
-\[I_s=\frac{V_s}{R_s}\]
+\[I_s=\dfrac{V_s}{R_s}\]
 
 with an internal resistance \(R_p=R_s\) connected in parallel, as shown in Figure 1.22.
 
@@ -591,11 +681,11 @@ Find the equivalent current source for the given voltage source. The resistance 
 
 and the current source value is
 
-\[I_s=\frac{V_s}{R_s}=\frac{50}{30}=1.66\ \text{A}\]
+\[I_s=\dfrac{V_s}{R_s}=\dfrac{50}{30}=1.66\ \text{A}\]
 
 ### Key formulas
 
-- Voltage-to-current source: \(I_s=\frac{V_s}{R_s}\), \(R_p=R_s\)
+- Voltage-to-current source: \(I_s=\dfrac{V_s}{R_s}\), \(R_p=R_s\)
 - Current-to-voltage source: \(V_s=I_sR_p\), \(R_s=R_p\)
 
 ### Important note
@@ -605,7 +695,7 @@ and the current source value is
 ### Check yourself
 
 - **What is the current-source equivalent of a voltage source V_s in series with R?**  
-  A current source \(I_s=\frac{V_s}{R}\) in parallel with the same resistance \(R\).
+  A current source \(I_s=\dfrac{V_s}{R}\) in parallel with the same resistance \(R\).
 
 ### Physical-book reference
 
@@ -675,7 +765,7 @@ Find \(V_1\) and \(V_2\). Assume the current \(i\) in a particular direction. Le
 
 \[6i=18\]
 
-\[i=\frac{18}{6}=3\ \text{A}\]
+\[i=\dfrac{18}{6}=3\ \text{A}\]
 
 \[V_1=4i=4\times3=12\ \text{V}\]
 
@@ -700,7 +790,7 @@ The source \(2V_x\) is a dependent voltage source whose voltage is a function of
 
 \[35-35i=0\]
 
-\[i=\frac{35}{35}=1\ \text{A}\]
+\[i=\dfrac{35}{35}=1\ \text{A}\]
 
 \[V_x=10i=10\times1=10\ \text{V}\]
 
@@ -709,27 +799,27 @@ The source \(2V_x\) is a dependent voltage source whose voltage is a function of
 ### Exercise 1.5.3 — KCL with a dependent source
 Find \(V_o\) and \(i_o\). Assume the current through the 8-ohm resistance in the direction required by the given polarity of \(V_o\). Since the 8-ohm and 2-ohm resistances are connected in parallel, the textbook writes
 
-\[2i_o=V_o\qquad\text{or}\qquad i_o=\frac{V_o}{2}\tag{1}\]
+\[2i_o=V_o\qquad\text{or}\qquad i_o=\dfrac{V_o}{2}\tag{1}\]
 
 Applying KCL at node \(a\),
 
-\[6-i_o-\frac{i_o}{4}-i=0\]
+\[6-i_o-\dfrac{i_o}{4}-i=0\]
 
-\[6-i_o\left(1+\frac14\right)-\frac{V_o}{8}=0\]
+\[6-i_o\left(1+\dfrac14\right)-\dfrac{V_o}{8}=0\]
 
-\[6-1.25i_o-\frac{V_o}{8}=0\]
+\[6-1.25i_o-\dfrac{V_o}{8}=0\]
 
 Writing \(i_o=V_o/2\) in the above equation,
 
-\[6-1.25\left(\frac{V_o}{2}\right)-\frac{V_o}{8}=0\]
+\[6-1.25\left(\dfrac{V_o}{2}\right)-\dfrac{V_o}{8}=0\]
 
 The textbook then prints
 
-\[6-1.375\left(\frac{V_o}{2}\right)=0\]
+\[6-1.375\left(\dfrac{V_o}{2}\right)=0\]
 
-\[V_o=\frac{6\times2}{1.375}=8\ \text{V}\]
+\[V_o=\dfrac{6\times2}{1.375}=8\ \text{V}\]
 
-\[i_o=\frac{V_o}{2}=\frac82=4\ \text{A}\]
+\[i_o=\dfrac{V_o}{2}=\dfrac82=4\ \text{A}\]
 
 ### Exercise 1.5.4 — KCL
 Obtain currents \(i_1\), \(i_2\) and \(i_3\). Applying KCL at node \(a\),
@@ -772,9 +862,9 @@ Calculate \(V\) and \(i_2\). Assume currents \(i_1\) and \(i_2\) and identify no
 
 \[10-12i_1=0\]
 
-\[i_1=\frac{10}{12}=\frac56\ \text{A}\]
+\[i_1=\dfrac{10}{12}=\dfrac56\ \text{A}\]
 
-\[V=i_1\times12=\frac56\times12=10\ \text{V}\]
+\[V=i_1\times12=\dfrac56\times12=10\ \text{V}\]
 
 In loop \(acda\),
 
@@ -782,7 +872,7 @@ In loop \(acda\),
 
 \[3i_2=-6\]
 
-\[i_2=\frac{-6}{3}=-2\ \text{A}\]
+\[i_2=\dfrac{-6}{3}=-2\ \text{A}\]
 
 ### Exercise 1.5.7 — KVL
 Find \(V_1\), \(V_2\) and \(V_3\) using KVL. Identify nodes \(a,b,c,d,e,f\). In loop \(abedefa\),
@@ -812,7 +902,7 @@ Find \(V_{ab}\) and \(I\). Applying KVL,
 
 \[32-8i=0\]
 
-\[i=\frac{32}{8}=4\ \text{A}\]
+\[i=\dfrac{32}{8}=4\ \text{A}\]
 
 The voltage drop across the 5-ohm resistance is
 
@@ -829,11 +919,11 @@ Determine the voltage drop across the 10-ohm resistance. The points \(A\) and \(
 
 Applying KCL at node \(A\),
 
-\[10-\frac{V}{20}-\frac{V}{10}-\frac{V}{5}+15=0\]
+\[10-\dfrac{V}{20}-\dfrac{V}{10}-\dfrac{V}{5}+15=0\]
 
-\[25-V\left(\frac1{20}+\frac1{10}+\frac15\right)=0\]
+\[25-V\left(\dfrac1{20}+\dfrac1{10}+\dfrac15\right)=0\]
 
-\[25-V\left(\frac{1+2+4}{20}\right)=0\]
+\[25-V\left(\dfrac{1+2+4}{20}\right)=0\]
 
 \[V=71.4\ \text{V}\]
 
@@ -888,23 +978,23 @@ Solving equations (4) and (5),
 
 \[-65i_3=-36\]
 
-\[i_3=\frac{36}{65}=0.553\ \text{A}\]
+\[i_3=\dfrac{36}{65}=0.553\ \text{A}\]
 
 From equation (4),
 
-\[-2i_2+11\left(\frac{36}{65}\right)=0\]
+\[-2i_2+11\left(\dfrac{36}{65}\right)=0\]
 
-\[i_2=\frac{396}{130}\ \text{A}\]
+\[i_2=\dfrac{396}{130}\ \text{A}\]
 
 From equation (1),
 
-\[i_1-3\left(\frac{396}{130}\right)-\frac{36}{65}=0\]
+\[i_1-3\left(\dfrac{396}{130}\right)-\dfrac{36}{65}=0\]
 
 \[i_1=9.69\ \text{A}\]
 
 The branch currents printed by the textbook are
 
-\[i_1=9.69\ \text{A},\qquad i_2=\frac{396}{130}\ \text{A},\qquad i_3=0.553\ \text{A}\]
+\[i_1=9.69\ \text{A},\qquad i_2=\dfrac{396}{130}\ \text{A},\qquad i_3=0.553\ \text{A}\]
 
 ### Exercise 1.5.11 — dependent source
 Find \(V_x\). Assume current \(i\) in the circuit and apply KVL:
@@ -915,11 +1005,11 @@ Find \(V_x\). Assume current \(i\) in the circuit and apply KVL:
 
 Writing \(i=V_x/5\),
 
-\[15-8\left(\frac{V_x}{5}\right)-2V_x=0\]
+\[15-8\left(\dfrac{V_x}{5}\right)-2V_x=0\]
 
 \[15=1.6V_x+2V_x\]
 
-\[V_x=\frac{15}{3.6}=4.16\ \text{V}\]
+\[V_x=\dfrac{15}{3.6}=4.16\ \text{V}\]
 
 ### Exercise 1.5.12 — KCL and KVL together
 Find the voltage across all resistances and the branch currents. Identify nodes \(a,b,c,d\) and assume the branch currents as shown. Applying KCL at node \(c\),
@@ -946,13 +1036,13 @@ Solving (1) and (2),
 
 \[28i_2=7\]
 
-\[i_2=\frac7{28}=0.25\ \text{A}\]
+\[i_2=\dfrac7{28}=0.25\ \text{A}\]
 
 From equation (1),
 
 \[2i_1+8(0.25)=5\]
 
-\[i_1=\frac32=1.5\ \text{A}\]
+\[i_1=\dfrac32=1.5\ \text{A}\]
 
 \[i_3=i_1-i_2=1.5-0.25=1.25\ \text{A}\]
 
@@ -967,13 +1057,13 @@ The voltage drops are
 ### Exercise 1.5.13 — potential difference
 Find the voltage between points \(A\) and \(B\). Assume currents \(i_1\) and \(i_2\). No current flows through the 12-V source branch because there is no closed or return path for current entering that branch. Identify the polarity of voltage drops across the resistances for the assumed current directions.
 
-\[i_1=\frac{6}{6+4}=0.6\ \text{A}\]
+\[i_1=\dfrac{6}{6+4}=0.6\ \text{A}\]
 
-\[i_2=\frac{12}{4+10}=\frac67\ \text{A}\]
+\[i_2=\dfrac{12}{4+10}=\dfrac67\ \text{A}\]
 
 To find the voltage between \(A\) and \(B\), start from point \(B\). From \(B\) to \(D\), the voltage rises by
 
-\[4i_2=4\left(\frac67\right)=3.4\ \text{V}\]
+\[4i_2=4\left(\dfrac67\right)=3.4\ \text{V}\]
 
 From \(D\) to \(C\), the voltage rises by \(12\ \text{V}\). From \(C\) to \(A\), it drops by
 
@@ -992,7 +1082,7 @@ Find the power absorbed by each element. Identify nodes \(x\) and \(y\). By obse
 
 \[1000i_1=4000i_2\]
 
-\[i_2=-\frac{1000}{4000}i_1=-0.25i_1\]
+\[i_2=-\dfrac{1000}{4000}i_1=-0.25i_1\]
 
 Applying KCL at node \(x\),
 
@@ -1068,36 +1158,36 @@ Identify nodes \(A\), \(B\) and \(C\). Between \(A\) and \(B\), the two 2-ohm re
 
 The reduction figures then show \(4\ \Omega\parallel4\ \Omega=2\ \Omega\) between \(A\) and \(B\), and between \(B\) and \(C\),
 
-\[R_{BC}=\frac{2\times3}{2+3}=\frac65=1.2\ \Omega\]
+\[R_{BC}=\dfrac{2\times3}{2+3}=\dfrac65=1.2\ \Omega\]
 
 Between \(A\) and \(C\), the path through \(2\ \Omega+1.2\ \Omega\) is in parallel with a 2-ohm branch. Hence
 
-\[R_{AC}=\frac{(2+1.2)\times2}{2+(2+1.2)}=1.23\ \Omega\]
+\[R_{AC}=\dfrac{(2+1.2)\times2}{2+(2+1.2)}=1.23\ \Omega\]
 
 The textbook reduction figures then add the series 1-ohm resistor to obtain \(2.23\ \Omega\), and place this in parallel with the remaining 2-ohm branch:
 
-\[R_{eq}=\frac{2\times2.23}{2+2.23}=1.05\ \Omega\]
+\[R_{eq}=\dfrac{2\times2.23}{2+2.23}=1.05\ \Omega\]
 
 Therefore the current supplied by the 30-V source is
 
-\[I=\frac{30}{1.05}=28.57\ \text{A}\]
+\[I=\dfrac{30}{1.05}=28.57\ \text{A}\]
 
 ### Exercise 1.6.2 — resistance between x and y
 Identify nodes \(A,B,C,D,E\). Between \(E\) and \(D\), the 5-k\(\Omega\) and 4.7-k\(\Omega\) resistances are in parallel:
 
-\[5\ \mathrm{k}\Omega\parallel4.7\ \mathrm{k}\Omega=\frac{5\times4.7}{5+4.7}=2.42\ \mathrm{k}\Omega\]
+\[5\ \mathrm{k}\Omega\parallel4.7\ \mathrm{k}\Omega=\dfrac{5\times4.7}{5+4.7}=2.42\ \mathrm{k}\Omega\]
 
 Between \(C\) and \(E\), the 4-k\(\Omega\) resistor is in series with \(2.42\ \mathrm{k}\Omega\), and this combination is in parallel with 3 k\(\Omega\):
 
-\[3\parallel(4+2.42)=\frac{3(4+2.42)}{3+(4+2.42)}=2.04\ \mathrm{k}\Omega\]
+\[3\parallel(4+2.42)=\dfrac{3(4+2.42)}{3+(4+2.42)}=2.04\ \mathrm{k}\Omega\]
 
 The resistance between \(x\) and \(y\) is then
 
-\[R_{xy}=\frac{10\times2.04}{10+2.04}=1.698\ \mathrm{k}\Omega\]
+\[R_{xy}=\dfrac{10\times2.04}{10+2.04}=1.698\ \mathrm{k}\Omega\]
 
 When a 6-V battery is connected between \(x\) and \(y\), the current driven is
 
-\[I=\frac{6}{1.698\times10^3}=3.53\ \text{mA}\]
+\[I=\dfrac{6}{1.698\times10^3}=3.53\ \text{mA}\]
 
 ### Exercise 1.6.3 — same-potential nodes
 Find the resistance between \(a\) and \(b\). The textbook notes that nodes \(A\) and \(B\) are at the same potential; therefore they are one and the same node. The reduction figure then gives the upper pair as
@@ -1114,7 +1204,7 @@ These two reduced resistances are in series, so
 
 ### Key formulas
 
-- Parallel pair: \(R_{eq}=\frac{R_1R_2}{R_1+R_2}\)
+- Parallel pair: \(R_{eq}=\dfrac{R_1R_2}{R_1+R_2}\)
 - Series pair: \(R_{eq}=R_1+R_2\)
 
 ### Problem-solving method
@@ -1165,75 +1255,75 @@ For the delta connection, the resistance between \(a\) and \(b\) is
 
 \[R_{ab}^{(eq)}=R_{ab}\parallel(R_{bc}+R_{ca})\]
 
-\[R_{ab}^{(eq)}=\frac{R_{ab}(R_{bc}+R_{ca})}{R_{ab}+R_{bc}+R_{ca}}\]
+\[R_{ab}^{(eq)}=\dfrac{R_{ab}(R_{bc}+R_{ca})}{R_{ab}+R_{bc}+R_{ca}}\]
 
-\[R_{ab}^{(eq)}=\frac{R_{ab}R_{bc}+R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\]
+\[R_{ab}^{(eq)}=\dfrac{R_{ab}R_{bc}+R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\]
 
 Similarly,
 
-\[R_{bc}^{(eq)}=\frac{R_{bc}R_{ab}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\]
+\[R_{bc}^{(eq)}=\dfrac{R_{bc}R_{ab}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\]
 
-\[R_{ca}^{(eq)}=\frac{R_{ca}R_{ab}+R_{ca}R_{bc}}{R_{ab}+R_{bc}+R_{ca}}\]
+\[R_{ca}^{(eq)}=\dfrac{R_{ca}R_{ab}+R_{ca}R_{bc}}{R_{ab}+R_{bc}+R_{ca}}\]
 
 *Figure: Fig. 1.45 · Star and Delta networks*
 
 ### Delta → Star derivation
 To convert a delta network into an equivalent star network, equate the resistances measured between the same terminal pairs. The textbook obtains
 
-\[R_a+R_b=\frac{R_{ab}R_{bc}+R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{1}\]
+\[R_a+R_b=\dfrac{R_{ab}R_{bc}+R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{1}\]
 
-\[R_b+R_c=\frac{R_{ab}R_{bc}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{2}\]
+\[R_b+R_c=\dfrac{R_{ab}R_{bc}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{2}\]
 
-\[R_a+R_c=\frac{R_{ab}R_{ca}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{3}\]
+\[R_a+R_c=\dfrac{R_{ab}R_{ca}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{3}\]
 
 Subtracting equation (2) from equation (1), the textbook writes
 
-\[R_a-R_c=\frac{R_{ab}R_{ca}-R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{4}\]
+\[R_a-R_c=\dfrac{R_{ab}R_{ca}-R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{4}\]
 
 Adding equations (3) and (4),
 
-\[2R_a=\frac{2R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\]
+\[2R_a=\dfrac{2R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\]
 
-\[R_a=\frac{R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{5}\]
+\[R_a=\dfrac{R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{5}\]
 
 Similarly,
 
-\[R_b=\frac{R_{ab}R_{bc}}{R_{ab}+R_{bc}+R_{ca}}\tag{6}\]
+\[R_b=\dfrac{R_{ab}R_{bc}}{R_{ab}+R_{bc}+R_{ca}}\tag{6}\]
 
-\[R_c=\frac{R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{7}\]
+\[R_c=\dfrac{R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{7}\]
 
 ### Star → Delta derivation
 To obtain the reverse transformation, multiply equations (5) and (6):
 
-\[R_aR_b=\frac{R_{ab}^2R_{bc}R_{ca}}{(R_{ab}+R_{bc}+R_{ca})^2}\]
+\[R_aR_b=\dfrac{R_{ab}^2R_{bc}R_{ca}}{(R_{ab}+R_{bc}+R_{ca})^2}\]
 
 Multiply equations (6) and (7):
 
-\[R_bR_c=\frac{R_{ab}R_{bc}^2R_{ca}}{(R_{ab}+R_{bc}+R_{ca})^2}\]
+\[R_bR_c=\dfrac{R_{ab}R_{bc}^2R_{ca}}{(R_{ab}+R_{bc}+R_{ca})^2}\]
 
 Multiply equations (7) and (5):
 
-\[R_cR_a=\frac{R_{ab}R_{bc}R_{ca}^2}{(R_{ab}+R_{bc}+R_{ca})^2}\]
+\[R_cR_a=\dfrac{R_{ab}R_{bc}R_{ca}^2}{(R_{ab}+R_{bc}+R_{ca})^2}\]
 
 Adding the three equations gives
 
-\[R_aR_b+R_bR_c+R_cR_a=\frac{R_{ab}R_{bc}R_{ca}(R_{ab}+R_{bc}+R_{ca})}{(R_{ab}+R_{bc}+R_{ca})^2}\]
+\[R_aR_b+R_bR_c+R_cR_a=\dfrac{R_{ab}R_{bc}R_{ca}(R_{ab}+R_{bc}+R_{ca})}{(R_{ab}+R_{bc}+R_{ca})^2}\]
 
-\[R_aR_b+R_bR_c+R_cR_a=\frac{R_{ab}R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{8}\]
+\[R_aR_b+R_bR_c+R_cR_a=\dfrac{R_{ab}R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{8}\]
 
 Dividing equation (8) by equation (5),
 
-\[R_{bc}=\frac{R_aR_b+R_bR_c+R_cR_a}{R_a}\]
+\[R_{bc}=\dfrac{R_aR_b+R_bR_c+R_cR_a}{R_a}\]
 
 Similarly,
 
-\[R_{ca}=\frac{R_aR_b+R_bR_c+R_cR_a}{R_b}\]
+\[R_{ca}=\dfrac{R_aR_b+R_bR_c+R_cR_a}{R_b}\]
 
-\[R_{ab}=\frac{R_aR_b+R_bR_c+R_cR_a}{R_c}\]
+\[R_{ab}=\dfrac{R_aR_b+R_bR_c+R_cR_a}{R_c}\]
 
 If all branches in the delta network have equal resistance \(R_{\Delta}\), then each equivalent star arm is
 
-\[R_a=R_b=R_c=R_{star}=\frac{R_{\Delta}}{3}\]
+\[R_a=R_b=R_c=R_{star}=\dfrac{R_{\Delta}}{3}\]
 
 If all star arms have equal resistance \(R_{star}\), then each equivalent delta branch is
 
@@ -1244,39 +1334,39 @@ Thus, when transforming from delta to star the resistance in each corresponding 
 ### Exercise 1.7.1 — Delta to Star
 Convert the delta network of Figure 1.46 to the equivalent star network. The textbook calculates
 
-\[R_a=\frac{25\times10}{25+15+10}=\frac{250}{50}=5\ \Omega\]
+\[R_a=\dfrac{25\times10}{25+15+10}=\dfrac{250}{50}=5\ \Omega\]
 
-\[R_b=\frac{25\times15}{25+15+10}=\frac{375}{50}=7.5\ \Omega\]
+\[R_b=\dfrac{25\times15}{25+15+10}=\dfrac{375}{50}=7.5\ \Omega\]
 
-\[R_c=\frac{10\times15}{25+15+10}=\frac{150}{50}=3\ \Omega\]
+\[R_c=\dfrac{10\times15}{25+15+10}=\dfrac{150}{50}=3\ \Omega\]
 
 ### Exercise 1.7.2 — Star to Delta and source current
 Convert the star network between points \(a,b,c\) into a delta network. The three delta resistances are
 
-\[R_{ac}=\frac{5\times10+10\times20+20\times5}{20}=\frac{350}{20}=17.5\ \Omega\]
+\[R_{ac}=\dfrac{5\times10+10\times20+20\times5}{20}=\dfrac{350}{20}=17.5\ \Omega\]
 
-\[R_{ab}=\frac{5\times10+10\times20+20\times5}{5}=\frac{350}{5}=70\ \Omega\]
+\[R_{ab}=\dfrac{5\times10+10\times20+20\times5}{5}=\dfrac{350}{5}=70\ \Omega\]
 
-\[R_{bc}=\frac{5\times10+10\times20+20\times5}{10}=\frac{350}{10}=35\ \Omega\]
+\[R_{bc}=\dfrac{5\times10+10\times20+20\times5}{10}=\dfrac{350}{10}=35\ \Omega\]
 
 The textbook reduction figures next show the parallel reductions \(17.5\parallel30=10.5\ \Omega\), \(70\parallel15=12.35\ \Omega\) approximately, and \(35\parallel45\approx19.69\ \Omega\), followed by further series/parallel reduction to an equivalent resistance of \(9.63\ \Omega\).
 
 The current supplied is then
 
-\[I=\frac{120}{9.63}=12.46\ \text{A}\]
+\[I=\dfrac{120}{9.63}=12.46\ \text{A}\]
 
 ### Exercise 1.7.3 — Delta to Star followed by reduction
 For the delta between points \(a,b,c\),
 
-\[R_a=\frac{3\times2}{3+2+1}=\frac66=1\ \Omega\]
+\[R_a=\dfrac{3\times2}{3+2+1}=\dfrac66=1\ \Omega\]
 
-\[R_b=\frac{3\times1}{3+2+1}=\frac36=0.5\ \Omega\]
+\[R_b=\dfrac{3\times1}{3+2+1}=\dfrac36=0.5\ \Omega\]
 
-\[R_c=\frac{1\times2}{3+2+1}=\frac26=0.33\ \Omega\]
+\[R_c=\dfrac{1\times2}{3+2+1}=\dfrac26=0.33\ \Omega\]
 
 After substituting these values, the textbook reduction figures show the series branches and their parallel reduction, ultimately giving an equivalent resistance of about \(3.44\ \Omega\). Hence
 
-\[I=\frac{12}{3.44}=3.49\ \text{A}\]
+\[I=\dfrac{12}{3.44}=3.49\ \text{A}\]
 
 ### Exercise 1.7.4 — two Delta networks
 First, the 2-ohm and 1-ohm resistors are in series, and the 3-ohm and 5-ohm resistors are in series. The circuit is redrawn. The delta connections between \(a,b,c\) and \(d,c,f\) are then changed to equivalent star networks.
@@ -1295,16 +1385,16 @@ for the lower transformed delta. Subsequent reduction figures combine these bran
 
 The source current is
 
-\[I=\frac{20}{12.211}=1.638\ \text{A}\]
+\[I=\dfrac{20}{12.211}=1.638\ \text{A}\]
 
 ### Key formulas
 
-- \(R_a=\frac{R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\)
-- \(R_b=\frac{R_{ab}R_{bc}}{R_{ab}+R_{bc}+R_{ca}}\)
-- \(R_c=\frac{R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\)
-- \(R_{bc}=\frac{R_aR_b+R_bR_c+R_cR_a}{R_a}\)
-- \(R_{ca}=\frac{R_aR_b+R_bR_c+R_cR_a}{R_b}\)
-- \(R_{ab}=\frac{R_aR_b+R_bR_c+R_cR_a}{R_c}\)
+- \(R_a=\dfrac{R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\)
+- \(R_b=\dfrac{R_{ab}R_{bc}}{R_{ab}+R_{bc}+R_{ca}}\)
+- \(R_c=\dfrac{R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\)
+- \(R_{bc}=\dfrac{R_aR_b+R_bR_c+R_cR_a}{R_a}\)
+- \(R_{ca}=\dfrac{R_aR_b+R_bR_c+R_cR_a}{R_b}\)
+- \(R_{ab}=\dfrac{R_aR_b+R_bR_c+R_cR_a}{R_c}\)
 
 ### Problem-solving method
 
@@ -1321,7 +1411,7 @@ The source current is
 - **When is a Star/Delta transformation useful?**  
   When a resistor network cannot be simplified easily by ordinary series-parallel reduction.
 - **If all three delta resistances are equal to 12 Ω, what is each equivalent star arm?**  
-  \(R_Y=\frac{R_\Delta}{3}=\frac{12}{3}=4\ \Omega\).
+  \(R_Y=\dfrac{R_\Delta}{3}=\dfrac{12}{3}=4\ \Omega\).
 
 ### Physical-book reference
 
@@ -1353,7 +1443,7 @@ The textbook illustrates the theorem through Exercise 1.8.1.
 ### Exercise 1.8.1 — response due to 10-V source alone
 Find the voltage across the 2-ohm resistor. First find the current through that resistor. To find the response caused by the 10-V source alone, the other sources are made non-operative as shown in Figure 1.50(a). The 2-ohm and 5-ohm resistors are in series and this combination is in parallel with 20 ohms. Hence
 
-\[R_1=\frac{20(2+5)}{20+2+5}=5.18\ \Omega\]
+\[R_1=\dfrac{20(2+5)}{20+2+5}=5.18\ \Omega\]
 
 The total resistance is
 
@@ -1361,11 +1451,11 @@ The total resistance is
 
 The total current supplied by the 10-V source is
 
-\[I=\frac{10}{15.18}=0.658\ \text{A}\]
+\[I=\dfrac{10}{15.18}=0.658\ \text{A}\]
 
 By current division, the current through the 2-ohm resistor from \(A\) to \(B\) is
 
-\[i_1=0.658\frac{20}{20+7}=0.4879\ \text{A}\]
+\[i_1=0.658\dfrac{20}{20+7}=0.4879\ \text{A}\]
 
 *Figure: Fig. 1.50 · Original circuit for the Superposition example*
 
@@ -1374,11 +1464,11 @@ By current division, the current through the 2-ohm resistor from \(A\) to \(B\) 
 ### Exercise 1.8.1 — response due to 2-A source alone
 For the 2-A source acting alone, the two voltage sources are replaced by short circuits, as shown in Figure 1.50(b). The 10-ohm resistor is in parallel with the 20-ohm resistor, and this combination is in series with the 2-ohm resistor. Thus
 
-\[R_{eq}=2+\frac{20\times10}{20+10}=8.66\ \Omega\]
+\[R_{eq}=2+\dfrac{20\times10}{20+10}=8.66\ \Omega\]
 
 The current through the 2-ohm resistor from \(B\) to \(A\) is
 
-\[i_2=2\frac{5}{5+8.66}=0.732\ \text{A}\]
+\[i_2=2\dfrac{5}{5+8.66}=0.732\ \text{A}\]
 
 Since the chosen positive direction is \(A\) to \(B\),
 
@@ -1389,11 +1479,11 @@ Since the chosen positive direction is \(A\) to \(B\),
 ### Exercise 1.8.1 — response due to 20-V source alone and total response
 For the 20-V source acting alone, the textbook sentence describing which other sources are opened/shorted is internally inconsistent with its own Figure 1.50(c). The figure is preserved as the source reference, and the numerical reduction printed by the book is retained below.
 
-\[R_{eq}=\frac{10\times20}{10+20}+2+5=13.66\ \Omega\]
+\[R_{eq}=\dfrac{10\times20}{10+20}+2+5=13.66\ \Omega\]
 
 The current supplied by the 20-V battery is printed as
 
-\[I=\frac{20}{13.66}=1.464\ \text{A}\]
+\[I=\dfrac{20}{13.66}=1.464\ \text{A}\]
 
 The textbook then prints the current through the 2-ohm resistor from \(B\) to \(A\) as
 
@@ -1471,18 +1561,18 @@ Remove the load resistance between terminals \(a\) and \(b\). Replace voltage so
 
 For that generic figure, the textbook prints the following expression on p. 52:
 
-\[R_{th}=\frac{R_1R_2}{R_1+R_2}+R_2\]
+\[R_{th}=\dfrac{R_1R_2}{R_1+R_2}+R_2\]
 
 *Figure: Fig. 1.52 · Finding Thevenin equivalent resistance*
 
 ### Step 2 — finding Thevenin voltage \(V_{th}\)
 Remove the load resistance between terminals \(a\) and \(b\). Obtain the open-circuit voltage between \(a\) and \(b\). This open-circuit voltage is the Thevenin voltage \(V_{th}\). For the generic circuit in Figure 1.53, the textbook writes
 
-\[I_1=\frac{V_s}{R_1+R_2}\]
+\[I_1=\dfrac{V_s}{R_1+R_2}\]
 
 \[V_0=V_{ab}=I_1R_3\]
 
-\[V_0=\frac{V_s}{R_1+R_2}R_3\]
+\[V_0=\dfrac{V_s}{R_1+R_2}R_3\]
 
 \[V_0=V_{th}\]
 
@@ -1493,7 +1583,7 @@ Obtain the Thevenin equivalent circuit as shown in Figure 1.54. This circuit rem
 
 Reconnect the load resistance \(R_L\), as shown in Figure 1.55, and find the load current.
 
-\[I_L=\frac{V_{th}}{R_{th}+R_L}\]
+\[I_L=\dfrac{V_{th}}{R_{th}+R_L}\]
 
 *Figure: Fig. 1.54 · Thevenin equivalent circuit*
 
@@ -1502,7 +1592,7 @@ Reconnect the load resistance \(R_L\), as shown in Figure 1.55, and find the loa
 ### Example 1.9.1 — current through 4 Ω
 To find the Thevenin resistance, remove the 4-ohm load and short-circuit the 20-V voltage source. The resistance seen between \(a\) and \(b\) is
 
-\[R_{th}=R_{ab}=\frac{5\times15}{5+15}+2+3=8.75\ \Omega\]
+\[R_{th}=R_{ab}=\dfrac{5\times15}{5+15}+2+3=8.75\ \Omega\]
 
 To find the Thevenin voltage, remove the 4-ohm load and find the open-circuit voltage. Since no current flows through the 2-ohm and 3-ohm resistances,
 
@@ -1510,7 +1600,7 @@ To find the Thevenin voltage, remove the 4-ohm load and find the open-circuit vo
 
 The current in the 5-ohm/15-ohm path is
 
-\[I=\frac{20}{5+15}=1\ \text{A}\]
+\[I=\dfrac{20}{5+15}=1\ \text{A}\]
 
 Hence
 
@@ -1518,16 +1608,16 @@ Hence
 
 Reconnect \(R_L=4\ \Omega\). The load current is
 
-\[I_L=\frac{15}{8.75+4}=1.17\ \text{A}\]
+\[I_L=\dfrac{15}{8.75+4}=1.17\ \text{A}\]
 
 ### Example 1.9.2 — Thevenin equivalent and two load values
 Remove the load and short the voltage sources to find \(R_{th}\):
 
-\[R_{th}=R_{ab}=\frac{(8+2)\times20}{(8+2)+20}=\frac{200}{30}=6.66\ \Omega\]
+\[R_{th}=R_{ab}=\dfrac{(8+2)\times20}{(8+2)+20}=\dfrac{200}{30}=6.66\ \Omega\]
 
 Remove the load and restore the sources to find the open-circuit voltage. The current in the loop is
 
-\[I_1=\frac{8-32}{8+2+20}=-0.8\ \text{A}\]
+\[I_1=\dfrac{8-32}{8+2+20}=-0.8\ \text{A}\]
 
 The textbook then finds
 
@@ -1535,18 +1625,18 @@ The textbook then finds
 
 For \(R=3\ \Omega\),
 
-\[I_L=\frac{16}{6.66+3}=1.65\ \text{A}\]
+\[I_L=\dfrac{16}{6.66+3}=1.65\ \text{A}\]
 
 For \(R=8\ \Omega\),
 
-\[I_L=\frac{16}{6.66+8}=1.09\ \text{A}\]
+\[I_L=\dfrac{16}{6.66+8}=1.09\ \text{A}\]
 
 ### Example 1.9.3 — current through a 2 Ω load
 Remove the 2-ohm load and short the source to find \(R_{th}\). The two reduced branches are
 
-\[\frac{4\times6}{4+6}=2.4\ \Omega\]
+\[\dfrac{4\times6}{4+6}=2.4\ \Omega\]
 
-\[\frac{3\times5}{3+5}=1.875\ \Omega\]
+\[\dfrac{3\times5}{3+5}=1.875\ \Omega\]
 
 Therefore
 
@@ -1554,9 +1644,9 @@ Therefore
 
 Restore the source and leave the load open to find \(V_{th}\). The branch currents printed by the textbook are
 
-\[x=\frac{12}{4+6}=1.2\ \text{A}\]
+\[x=\dfrac{12}{4+6}=1.2\ \text{A}\]
 
-\[y=\frac{12}{3+5}=1.5\ \text{A}\]
+\[y=\dfrac{12}{3+5}=1.5\ \text{A}\]
 
 The voltage drop across the 4-ohm resistance is
 
@@ -1576,14 +1666,14 @@ The textbook then uses the magnitude as the Thevenin voltage:
 
 With the 2-ohm load reconnected,
 
-\[I_L=\frac{0.3}{4.275+2}=\frac{0.3}{6.275}=0.0478\ \text{A}\]
+\[I_L=\dfrac{0.3}{4.275+2}=\dfrac{0.3}{6.275}=0.0478\ \text{A}\]
 
 ### Example 1.9.4 — two values of \(R_L\)
 The given 2-A current source in parallel with 12 ohms is first converted into its equivalent voltage source. The equivalent source voltage shown is \(24\ \text{V}\) with the same 12-ohm resistance. This source is inserted into the original circuit.
 
 To find \(V_{th}\), remove \(R_L\). The loop current is
 
-\[i=\frac{32-24}{4+12}=\frac8{16}=0.5\ \text{A}\]
+\[i=\dfrac{32-24}{4+12}=\dfrac8{16}=0.5\ \text{A}\]
 
 The voltage drop across 12 ohms is
 
@@ -1595,20 +1685,20 @@ Hence
 
 To find \(R_{th}\), short the voltage sources and keep the load removed. The textbook obtains
 
-\[R_{th}=1+\frac{4\times12}{4+12}=1+3=4\ \Omega\]
+\[R_{th}=1+\dfrac{4\times12}{4+12}=1+3=4\ \Omega\]
 
 For \(R_L=6\ \Omega\),
 
-\[I_L=\frac{30}{4+6}=3\ \text{A}\]
+\[I_L=\dfrac{30}{4+6}=3\ \text{A}\]
 
 For \(R_L=16\ \Omega\),
 
-\[I_L=\frac{30}{4+16}=1.5\ \text{A}\]
+\[I_L=\dfrac{30}{4+16}=1.5\ \text{A}\]
 
 ### Key formulas
 
 - \(V_{th}=V_{oc}\)
-- \(I_L=\frac{V_{th}}{R_{th}+R_L}\)
+- \(I_L=\dfrac{V_{th}}{R_{th}+R_L}\)
 
 ### Problem-solving method
 
@@ -1629,7 +1719,7 @@ For \(R_L=16\ \Omega\),
 - **What is the textbook procedure for \(R_{th}\) in its examples?**  
   Remove the load, short-circuit voltage sources, open-circuit current sources, and find the resistance seen between the load terminals.
 - **After the Thevenin equivalent is found, how is the load current calculated?**  
-  \(I_L=\frac{V_{th}}{R_{th}+R_L}\).
+  \(I_L=\dfrac{V_{th}}{R_{th}+R_L}\).
 
 ### Physical-book reference
 
