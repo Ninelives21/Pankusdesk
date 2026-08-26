@@ -1000,9 +1000,9 @@ sub {
 /* ---------------------------------------------------------------------- */
 
 .textbook-figure {
-	margin: var(--space-6) auto var(--space-7);
-	width: fit-content;
-	max-width: min(88%, 720px);
+	margin: 0;
+	width: 100%;
+	max-width: 100%;
 }
 
 .textbook-figure img {
@@ -1030,6 +1030,88 @@ sub {
 	white-space: nowrap;
 	color: var(--primary-muted);
 }
+
+
+/* Textbook-faithful figure placement. Every textbook figure is rendered
+   through a CSS Grid row so it stays attached to the exact text it explains.
+   Side-by-side rows use an equal 50/50 text-image split on desktop. */
+.textbook-grid-row {
+	display: grid;
+	width: 100%;
+	margin: var(--space-5) 0 var(--space-6);
+	align-items: start;
+}
+
+.textbook-grid-row--full {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.textbook-grid-row--full .textbook-grid-visual {
+	justify-self: center;
+	width: min(100%, 760px);
+}
+
+.textbook-grid-row--full.textbook-grid-row--small .textbook-grid-visual {
+	width: min(100%, 360px);
+}
+
+.textbook-grid-row--full.textbook-grid-row--medium .textbook-grid-visual {
+	width: min(100%, 540px);
+}
+
+.textbook-grid-row--full.textbook-grid-row--large .textbook-grid-visual {
+	width: min(100%, 780px);
+}
+
+.textbook-grid-row--side {
+	column-gap: clamp(22px, 3vw, 42px);
+	row-gap: var(--space-5);
+}
+
+.textbook-grid-row--side.textbook-grid-row--small {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.textbook-grid-row--side.textbook-grid-row--medium {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.textbook-grid-row--side.textbook-grid-row--large {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.textbook-grid-row--left.textbook-grid-row--small {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.textbook-grid-row--left.textbook-grid-row--medium {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.textbook-grid-row--left.textbook-grid-row--large {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.textbook-grid-text > :first-child,
+.textbook-grid-visual > :first-child {
+	margin-top: 0;
+}
+
+.textbook-grid-text > :last-child,
+.textbook-grid-visual > :last-child {
+	margin-bottom: 0;
+}
+
+.textbook-grid-visual {
+	min-width: 0;
+}
+
+.textbook-grid-row .textbook-figure img {
+	width: 100%;
+	object-fit: contain;
+}
+
+
 
 
 /* ---------------------------------------------------------------------- */
@@ -1145,12 +1227,30 @@ sub {
 	color: var(--notes-text);
 }
 
+
 @media (max-width: 720px) {
-	.textbook-figure,
-	.textbook-figure.class-note-figure {
-		max-width: 100%;
+	.textbook-grid-row--side,
+	.textbook-grid-row--left.textbook-grid-row--small,
+	.textbook-grid-row--left.textbook-grid-row--medium,
+	.textbook-grid-row--left.textbook-grid-row--large {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.textbook-grid-row--left .textbook-grid-text {
+		order: 1;
+	}
+
+	.textbook-grid-row--left .textbook-grid-visual {
+		order: 2;
+	}
+
+	.textbook-grid-row--full .textbook-grid-visual,
+	.textbook-grid-row--side .textbook-grid-visual {
+		width: min(100%, 620px);
+		justify-self: center;
 	}
 }
+
 
 .practice-item:is(a) {
 	grid-template-columns: auto auto minmax(0, 1fr) auto;

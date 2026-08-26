@@ -363,17 +363,37 @@ function renderSection(section) {
 
 function renderSectionContent(section) {
 	const figures = section.figures ?? [];
-	const figuresAfter = (type, index) => figures
-		.filter(figure => figure.after?.type === type && Number(figure.after?.index) === index)
-		.map(renderTextbookFigure)
+	const sideFigures = figures.filter(figure => figure.grid && Number.isInteger(Number(figure.grid.start)));
+	const ordinaryFigures = figures.filter(figure => !figure.grid);
+
+	const figuresAt = (hook, index) => ordinaryFigures
+		.filter(figure => figure.after?.type === hook && Number(figure.after?.index) === index)
+		.map(renderTextbookFigureRow)
 		.join('');
 
-	let html = '';
+	const sideFiguresStartingAt = index => sideFigures
+		.filter(figure => Number(figure.grid.start) === index);
 
-	(section.paragraphs ?? []).forEach((paragraph, index) => {
-		html += `<p>${formatText(paragraph)}</p>`;
-		html += figuresAfter('paragraph', index);
-	});
+	let html = '';
+	const paragraphs = section.paragraphs ?? [];
+
+	for (let index = 0; index < paragraphs.length; index += 1) {
+		const startingFigures = sideFiguresStartingAt(index);
+		if (startingFigures.length) {
+			const endIndex = Math.max(index, ...startingFigures.map(figure => Number(figure.grid.end ?? figure.grid.start)));
+			const textHtml = paragraphs
+				.slice(index, endIndex + 1)
+				.map(paragraph => `<p>${formatText(paragraph)}</p>`)
+				.join('');
+			html += renderTextFigureGrid(textHtml, startingFigures);
+			index = endIndex;
+			continue;
+		}
+
+		html += figuresAt('before-paragraph', index);
+		html += `<p>${formatText(paragraphs[index])}</p>`;
+		html += figuresAt('paragraph', index);
+	}
 
 	const bullets = section.bullets ?? [];
 	let bulletBuffer = [];
@@ -385,7 +405,7 @@ function renderSectionContent(section) {
 
 	bullets.forEach((item, index) => {
 		bulletBuffer.push(`<li>${formatText(item)}</li>`);
-		const anchoredFigures = figuresAfter('bullet', index);
+		const anchoredFigures = figuresAt('bullet', index);
 		if (anchoredFigures) {
 			flushBullets();
 			html += anchoredFigures;
@@ -395,16 +415,48 @@ function renderSectionContent(section) {
 
 	html += renderExplanationAccordions(section.accordions ?? [], section.accordion_recap ?? []);
 
-	const explicitlyEnded = figures
+	const explicitlyEnded = ordinaryFigures
 		.filter(figure => figure.after?.type === 'end')
-		.map(renderTextbookFigure)
+		.map(renderTextbookFigureRow)
 		.join('');
 	html += explicitlyEnded;
 
-	const anchored = new Set(figures.filter(figure => figure.after?.type).map(figure => figure.src));
-	html += figures.filter(figure => !anchored.has(figure.src)).map(renderTextbookFigure).join('');
+	const anchored = new Set(
+		figures
+			.filter(figure => figure.after?.type || figure.grid)
+			.map(figure => figure.src)
+	);
+	html += figures
+		.filter(figure => !anchored.has(figure.src))
+		.map(renderTextbookFigureRow)
+		.join('');
 
 	return html;
+}
+
+function renderTextFigureGrid(textHtml, figures) {
+	if (!figures.length) return textHtml;
+	const lead = figures[0];
+	const side = lead.grid?.side === 'left' ? 'left' : 'right';
+	const size = lead.grid?.size || lead.size || 'medium';
+	const figureHtml = figures.map(renderTextbookFigure).join('');
+	const text = `<div class="textbook-grid-text">${textHtml}</div>`;
+	const visual = `<div class="textbook-grid-visual">${figureHtml}</div>`;
+
+	return `
+		<div class="textbook-grid-row textbook-grid-row--side textbook-grid-row--${escapeHtml(side)} textbook-grid-row--${escapeHtml(size)}">
+			${side === 'left' ? `${visual}${text}` : `${text}${visual}`}
+		</div>
+	`;
+}
+
+function renderTextbookFigureRow(figure) {
+	const size = figure.size || 'medium';
+	return `
+		<div class="textbook-grid-row textbook-grid-row--full textbook-grid-row--${escapeHtml(size)}">
+			<div class="textbook-grid-visual">${renderTextbookFigure(figure)}</div>
+		</div>
+	`;
 }
 
 function renderExplanationAccordions(items, recapItems = []) {
@@ -462,7 +514,6 @@ function renderTextbookFigure(figure) {
 		: '';
 	const caption = figure.caption ? `<span>${escapeHtml(figure.caption)}</span>` : '';
 	const page = figure.page ? `<span class="textbook-figure-page">Book p. ${escapeHtml(figure.page)}</span>` : '';
-
 	const kindClass = figure.kind === 'class-note' ? ' class-note-figure' : '';
 
 	return `

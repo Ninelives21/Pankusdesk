@@ -322,8 +322,7 @@ The resistance of a material is proportional to its length \(l\) and inversely p
 
 \[R\propto\dfrac{l}{A}\qquad\text{or}\qquad R\propto\rho\dfrac{l}{A}\]
 
-Here \(
-ho\) is the specific resistance or resistivity, whose unit is ohm-metre. The resistivity of metals increases as temperature increases and hence resistance changes with temperature.
+Here \(\rho\) is the specific resistance or resistivity, whose unit is ohm-metre. The resistivity of metals increases as temperature increases and hence resistance changes with temperature.
 
 The power absorbed by the resistance is
 

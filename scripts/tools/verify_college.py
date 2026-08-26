@@ -150,17 +150,34 @@ def check_figure(fig, context: str, paragraph_count: int | None, bullet_count: i
         errors.append(f"{context}: figure needs descriptive alt text")
     after = fig.get("after")
     if after is not None:
-        if not isinstance(after, dict) or after.get("type") not in {"paragraph", "bullet", "end"}:
+        if not isinstance(after, dict) or after.get("type") not in {"before-paragraph", "paragraph", "bullet", "end"}:
             errors.append(f"{context}: invalid figure insertion anchor")
         else:
             typ = after.get("type")
             idx = after.get("index")
             if typ != "end" and (not isinstance(idx, int) or idx < 0):
                 errors.append(f"{context}: invalid figure insertion index")
-            if typ == "paragraph" and paragraph_count is not None and isinstance(idx, int) and idx >= paragraph_count:
+            if typ in {"before-paragraph", "paragraph"} and paragraph_count is not None and isinstance(idx, int) and idx >= paragraph_count:
                 errors.append(f"{context}: paragraph anchor index {idx} out of range ({paragraph_count})")
             if typ == "bullet" and bullet_count is not None and isinstance(idx, int) and idx >= bullet_count:
                 errors.append(f"{context}: bullet anchor index {idx} out of range ({bullet_count})")
+    grid = fig.get("grid")
+    if grid is not None:
+        if not isinstance(grid, dict):
+            errors.append(f"{context}: invalid figure grid placement")
+        else:
+            start = grid.get("start")
+            end = grid.get("end", start)
+            side = grid.get("side", "right")
+            size = grid.get("size", "medium")
+            if not isinstance(start, int) or not isinstance(end, int) or start < 0 or end < start:
+                errors.append(f"{context}: invalid figure grid paragraph range")
+            elif paragraph_count is not None and end >= paragraph_count:
+                errors.append(f"{context}: grid paragraph range {start}-{end} out of range ({paragraph_count})")
+            if side not in {"left", "right"}:
+                errors.append(f"{context}: invalid figure grid side")
+            if size not in {"small", "medium", "large"}:
+                errors.append(f"{context}: invalid figure grid size")
 
 
 def check_class_logs(subject_dir: Path, subject: dict, topic_ids: set[str]):
