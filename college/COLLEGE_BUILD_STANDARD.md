@@ -1,168 +1,352 @@
-# PankusDesk College Build Standard
+# PankusDesk College Build Standard — Design Lock v2
 
 **Status:** Normative project contract  
+**Design lock:** v2 · 28 Aug 2026  
 **Canonical reference implementation:** Semester 1.1 → Basic Electrical Engineering → Unit I  
-**Reference workspace generation:** the current BEE Unit-I architecture represented by `redo(8)` when this standard was created.
+**Reference workspace:** the latest Unit-I-complete workspace supplied with this design-lock update.
 
-This document defines the default build contract for every college unit, subject, and semester in PankusDesk. If a future implementation choice is ambiguous, follow the current BEE Unit-I reference implementation unless the user explicitly changes the standard.
+This document defines the default build contract for every future college unit, subject and semester in PankusDesk/PadhaiSpace. If a future implementation choice is ambiguous, follow the finished BEE Unit I implementation and the files listed in `REFERENCE_IMPLEMENTATION.md` unless the user explicitly changes the standard.
 
-## 1. Non-negotiable design principles
+---
 
-1. **Source-locked academics.** Core academic content must come from supplied sources or explicitly approved gap sources. Never fill a source gap silently from model memory.
-2. **Official syllabus defines scope.** The current regulation/syllabus determines what belongs in the core course. Textbooks, lectures, class notes, and supplementary sources support that scope; they do not redefine it.
-3. **One cumulative study version.** The unit page is a consolidated, de-duplicated theory notebook. Do not create parallel textbook notes, lecture notes, and class notes on the main unit page.
-4. **Chronology is preserved separately.** Dated class logs preserve what happened on a specific day. They are not substitutes for the cumulative unit page.
-5. **Provenance stays in the backend.** Student-facing theory should teach the subject, not narrate how the notes were built.
-6. **Generic renderers first.** Shared scripts/styles serve all subjects and semesters. Extend generic data/schema support before creating subject-specific rendering code.
-7. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic coverage, assets, links, and verification pass.
-8. **Deterministic verification.** “Done” means both human QA and verifier PASS, not merely that the page looks complete.
+## 1. Non-negotiable principles
 
-## 2. The four-layer model
+1. **Official syllabus defines scope.** The current regulation/syllabus determines what is core. Textbooks, lectures, class notes and supplementary sources support that scope; they do not redefine it.
+2. **The prescribed textbook is the primary notes source.** For a textbook-led unit, do not reduce the book to a thin summary. Preserve its sequence, terminology, definitions, equations, derivations, explanatory steps and useful worked-example calculation lines as closely as practical. Correct only grammar, punctuation, obvious typographical errors and clearly accidental formatting defects unless the user asks for a conceptual rewrite.
+3. **One cumulative study version.** The unit page is the best current, de-duplicated semester notebook. Do not create parallel “textbook notes”, “lecture notes” and “class notes” pages for the same theory.
+4. **Class chronology is preserved separately.** A dated class log records what happened on a particular date. Useful material is then integrated at the correct conceptual point in the cumulative unit page.
+5. **Class-note material must remain visibly identifiable.** Integrated class-note sections use the dedicated class-note visual treatment and date/source label, but their prose states the content directly; it must not narrate the note-building workflow.
+6. **Explanations are separated from source notes.** PankusDesk-authored plain-language teaching material belongs in the blue explanation accordion (`Understand this diagram` / explanation dropdown), not mixed into textbook or class-note prose as though it came from the source.
+7. **Provenance stays in data.** Student-facing theory teaches the subject. Source IDs, capture filenames, ingestion commentary and build decisions live in metadata/audits, not ordinary theory prose.
+8. **Source discrepancies are never silently repaired.** Preserve the source-backed statement/result and flag the discrepancy explicitly. A clarification accordion may explain the standard relationship, but it must not rewrite the source unnoticed.
+9. **Generic architecture first.** Shared renderers/styles serve all subjects and semesters. Extend the generic schema/renderer before creating subject-specific duplicate code.
+10. **Figures are part of the teaching flow.** Every production figure is placed at the text it explains. No “all figures at the end” dump and no unanchored fallback in a ready unit.
+11. **Technical redraw accuracy outranks appearance.** All NRS work follows `NOTEBOOK_REDRAW_STYLE.md`, including the mandatory semantic-verification gate.
+12. **Mathematics is rendered, not improvised.** Use MathJax/LaTeX in student-facing data. Fractions use `\dfrac`, not `\frac`.
+13. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic, visual, practice, class-log/link and verifier checks pass.
+14. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
 
-Keep these layers distinct:
+---
 
-1. **Source material** — syllabus, prescribed textbook, supplied lectures, class notes, supplementary material, approved gap sources.
-2. **Archival/provenance record** — source IDs, page indexes, lecture indexes, class-log records, source manifests, coverage audits.
-3. **Cumulative knowledge** — `kb/data/topics.json`, containing the best current study version.
-4. **Student-facing pages** — generic renderers presenting clean theory, practice, class logs, and PYQs.
+## 2. The five-layer model
 
-Do not leak archival language into theory prose.
+Keep these concerns distinct:
 
-## 3. Mandatory source workflow
+1. **Source material** — official syllabus, prescribed textbook, supplied lectures, handwritten class notes, supplementary documents, approved gap sources.
+2. **Archival/provenance record** — source manifests, page/lecture indexes, class-log source IDs, coverage audits, anomaly notes.
+3. **Cumulative knowledge** — `kb/data/topics.json`, the canonical rendered study content.
+4. **Chronological class record** — `kb/class-log/YYYY-MM-DD/entry.json` plus optional `raw.md`.
+5. **Student-facing shells/renderers** — unit, questions, class-log, syllabus, calendar and PYQ pages rendered from shared code.
 
-Before writing a new unit:
+The layers may link to one another, but they must not collapse into one another.
 
-1. Inspect the latest workspace and the target subject's `subject.json`.
-2. Inventory every supplied source relevant to the unit.
-3. Extract the official syllabus and atomise the unit into small syllabus requirements.
-4. Map every syllabus atom to one or more source references.
-5. Record a true missing requirement as `SOURCE_GAP`; do not guess.
-6. Use outside material only after explicit approval, then record it as an approved gap source.
-7. Preserve known source anomalies and missing lecture numbers exactly. Never invent sequence items to make numbering look complete.
+---
 
-### Source hierarchy
+## 3. Source authority and source lock
 
-Use this default authority order:
+### 3.1 Default authority order
 
 1. Official current syllabus/regulation — defines required scope.
-2. Prescribed textbook — primary theory/figure/chapter-question source.
-3. Supplied lecture/class material — explanations, emphasis, methods, examples.
-4. Supplied supplementary material — supporting material only; cannot redefine syllabus.
-5. Explicitly approved gap source — fills a syllabus-required hole when needed.
+2. Prescribed textbook — canonical core theory, figure and chapter-question source.
+3. Supplied lecturer/class material — emphasis, explanation, notation, worked methods and class-specific additions.
+4. Supplied supplementary material — supporting evidence only.
+5. Explicitly approved gap source — used only to fill an unresolved syllabus requirement.
 
-## 4. Topic status rules
+### 3.2 Mandatory intake workflow
+
+Before writing or extending a unit:
+
+1. Inspect the **latest workspace**, never reconstruct the design from an old chat delta.
+2. Read the target `subject.json`, current schemas and this design lock.
+3. Inventory all supplied sources relevant to the unit.
+4. Atomise the official syllabus into small requirements.
+5. Map every requirement to real source IDs.
+6. Mark a genuine unsupported requirement as `SOURCE_GAP`.
+7. Obtain explicit approval before using an outside source to fill a gap.
+8. Preserve missing lecture numbers, source anomalies and inconsistent results exactly in provenance/audit records.
+
+Never manufacture a source ID, page, lecture or exam record to make the corpus look complete.
+
+---
+
+## 4. Topic and publication status
+
+### 4.1 Topic status
 
 Allowed topic statuses:
 
 - `core` — directly within the official syllabus.
-- `supporting` — useful supplied material that helps the course but is not separately named by the official syllabus.
-- `core-gap-filled` — official syllabus content filled from an explicitly approved source because the primary supplied corpus lacked it.
+- `supporting` — useful supplied material that supports the course but is not separately named by the official syllabus.
+- `core-gap-filled` — required syllabus material filled from an explicitly approved source because the primary supplied corpus lacked it.
 
-Do not promote useful extra material to official syllabus status.
+### 4.2 Unit publication status
 
-## 5. Cumulative unit-note rules
+Allowed unit publication states:
 
-The canonical rendered theory lives in `kb/data/topics.json`.
+- `ready`
+- `scaffold`
 
-Each topic should contain, where relevant:
+A scaffold may expose the syllabus boundary and a reserved destination, but must not imitate finished notes.
 
-- stable topic ID
-- unit number
-- title
-- status
+---
+
+## 5. Canonical cumulative unit-note contract
+
+The live theory is data-driven from:
+
+`<subject>/kb/data/topics.json`
+
+A topic should contain, where relevant:
+
+- stable `id`
+- `unit`
+- `title`
+- `status`
 - concise `intro`
-- quick-recall `learn` points
+- `learn` quick-recall points
 - detailed `sections`
-- formulas
-- problem-solving method
-- cautions
-- prescribed-book practice links
-- generated self-checks
-- provenance (`source_refs`)
-- optional class history
+- `formulas`
+- `method`
+- `cautions`
+- prescribed-textbook `practice` anchors
+- generated `self_checks`
+- topic/section `source_refs`
+- `book_refs`
+- optional `class_history`
 
-### Prose standard
+### 5.1 Textbook-as-notes rule
 
-The main unit page must read as **actual theory notes**.
+For prescribed-textbook theory:
 
-Write directly:
+- preserve the textbook's conceptual sequence;
+- keep definitions and terminology recognisable;
+- keep equations and derivations in the body where they occur;
+- keep useful worked-example calculation lines in context;
+- do not replace a detailed explanation with a terse model-generated summary;
+- do not silently modernise unusual notation or “correct” a printed inconsistency.
 
-- “A DC circuit carries direct current…”
-- “Network elements may be classified…”
-- “An ideal inductor…”
+PankusDesk additions such as Quick recall, Check yourself, explanation accordions, navigation, formula consolidation, method boxes and cautions are **additive study aids**, not substitutes for the primary notes.
 
-Do not write source/workflow commentary such as:
+### 5.2 Direct-prose rule
 
-- “The class notes say…”
-- “The 24 August class grouped…”
+The main unit page must read like subject notes.
+
+Write:
+
+- “A voltage source maintains…”
+- “The current in an inductor…”
+- “A practical current source…”
+
+Do not write workflow narration such as:
+
+- “Priyanka’s notes say…”
 - “The textbook says…”
-- “The prescribed textbook defines…”
 - “The lecture explains…”
-- “The source material gives…”
-- “At the level needed here…”
-- “R25 Unit I does not require…”
-- “This page retains…”
-- “We include…”
+- “The supplied source shows…”
+- “We retained…”
+- “This page includes…”
+- “R25 requires…”
 
-Scope and provenance belong in metadata, syllabus pages, or source sections—not in ordinary theory prose.
+The **class-note source label itself is allowed and intentional**; source-management prose inside the teaching paragraph is not.
 
-### De-duplication rule
+### 5.3 De-duplication rule
 
-If textbook, lecture, and class notes cover the same idea, write the concept once and attach all appropriate source references. Do not append repeated source-specific versions.
+If textbook, lecture and class notes overlap, teach the concept once in the best location and attach all appropriate provenance. An integrated class-note panel may remain when it represents lecturer-specific wording, notation, emphasis or a useful visual; it must not simply duplicate the surrounding textbook paragraph.
 
-## 6. Section-level provenance
+---
 
-Every topic must have non-empty `source_refs`. Detailed sections should also have `source_refs` whenever practical.
+## 6. Mathematics and notation
 
-A source reference must resolve through the subject's configured source collections or indexes. Never invent a reference ID.
+1. Use MathJax-compatible delimiters: `\(...\)` and `\[...\]`.
+2. **All authored fractions use `\dfrac`.** `\frac` is not allowed in ready-unit student-facing topic data.
+3. Preserve source variable names and subscripts unless a user-approved correction is being made.
+4. Do not let code-generation escapes corrupt LaTeX (`\rho`, `\varphi`, etc.). Check for control characters after programmatic edits.
+5. If a source equation appears wrong, preserve/flag it rather than silently substituting a standard formula.
 
-`book_refs` may retain printed-page/capture bookkeeping internally. Internal capture filenames are not student-facing content.
+---
 
-## 7. Human-readable Markdown companion
+## 7. Section types and class-note integration
 
-Maintain `kb/notes/unit-N.md` as a readable companion where the subject workflow uses it.
+### 7.1 Ordinary section
 
-The rendered JSON is canonical when the live page is data-driven. Never overwrite newer JSON merely because an older Markdown companion differs. When editing a unit, keep the Markdown synchronized where practical.
+An ordinary section is part of the cumulative textbook-led theory and normally has:
 
-## 8. Generated self-checks vs official questions
+- `heading`
+- `scope`
+- `paragraphs` and/or `bullets`
+- `source_refs`
+- optional `book_refs`
+- optional figures
 
-Keep these distinct:
+### 7.2 Integrated class-note section
 
-- `self_checks` in `topics.json` are generated study/revision prompts.
-- `textbook-questions.json` stores official prescribed-textbook chapter-end questions.
-- PYQs are a separate subject-wide layer.
+Use:
 
-Never present a generated self-check as an official textbook or university question.
+```json
+{
+  "kind": "class-note",
+  "source_label": "Priyanka’s class notes · 27 Aug 2026"
+}
+```
 
-## 9. Prescribed-textbook question workflow
-
-Official chapter-end questions belong to the corresponding unit and are rendered through the generic unit-question renderer.
+The renderer gives this a visibly separate class-note treatment. Use it when class material adds real value at that point in the topic.
 
 Rules:
 
-1. Preserve supplied textbook question wording.
-2. Use stable IDs such as `u1-sa-01` / `u1-es-01` or another consistent unit-scoped convention.
-3. Practice links from theory should use stable question anchors.
-4. PankusDesk-created answers must not be called official textbook solutions unless official solutions were actually supplied.
-5. If the book supplies only a final answer, store it as a check, not as proof that the full derivation came from the book.
-6. If a printed result conflicts with a source-backed derivation, flag the discrepancy explicitly.
-7. If the source set cannot support the answer, retain the question with `status: source-gap` rather than filling it from model memory.
+- place it beside the concept it belongs to;
+- keep the date/source label visible;
+- write content directly, without “Priyanka’s notes…” narration;
+- include the class source ID in `source_refs`;
+- class-derived figures in cumulative topics use `kind: "class-note"`;
+- do not dump a whole day's notes at the end of the unit.
 
-## 10. PYQ architecture
+### 7.3 Ambiguous handwriting
 
-Use one subject-wide `pyqs.html` page unless the architecture is explicitly changed.
+If a reading is uncertain, ask the user. A user-confirmed reading becomes the authoritative transcription for that class record and should be documented in `transcription_policy` / `source_notes` where useful.
 
-Do not invent PYQs, years, marks, or exam metadata. Unit/topic mappings should be added only when confident.
+---
 
-## 11. Daily class-log workflow
+## 8. Explanation accordions — the teaching layer
 
-The permanent daily workflow is:
+Use a blue explanation dropdown when source material is correct but too terse, symbol-heavy or easy to misunderstand.
 
-**raw intake → verbatim dated record → topic mapping → selective integration into cumulative notes**
+Data lives at section level:
 
-### Dated record
+```json
+{
+  "accordions": [
+    {
+      "title": "Ideal and Practical Voltage",
+      "paragraphs": ["..."],
+      "bullets": ["..."]
+    }
+  ],
+  "accordion_recap": ["..."]
+}
+```
 
-Store a dated entry under:
+The shared renderer presents these under **Understand this diagram**.
+
+Rules:
+
+1. Explanation prose is PankusDesk-authored and intentionally visually separate from the source notes.
+2. Explain in plain language before introducing more abstraction.
+3. Decode equations and symbols line by line when that is the actual stumbling block.
+4. Keep the explanation concise enough for study use, but do not be so terse that it fails to explain the confusing step.
+5. Use source-backed facts; do not invent new syllabus content.
+6. If an explanation corrects or contrasts a questionable printed expression, make the distinction explicit rather than silently replacing the source.
+7. Multiple related accordions may be used in one section; the UI behaves as an accordion, not an always-open essay.
+
+Canonical Unit-I examples include:
+
+- **How to read the energy-source classification**
+- **Ideal and Practical Voltage**
+- **Ideal and Practical Current**
+
+---
+
+## 9. Figure contract: content, placement and accessibility
+
+### 9.1 Asset roles
+
+Textbook theory figures:
+
+`assets/book/uN/theory/`
+
+Textbook question/example figures:
+
+`assets/book/uN/examples/`
+
+Class-derived redraws:
+
+`assets/class/YYYY-MM-DD/figures/`
+
+Raw notebook photographs remain source/intake material and are not normal website assets.
+
+### 9.2 Every ready-unit figure must be explicitly placed
+
+A ready-unit figure must have either:
+
+- an `after` anchor, or
+- a `grid` placement.
+
+Do not rely on renderer fallback placement.
+
+Supported anchor concepts are:
+
+- `before-paragraph`
+- `paragraph`
+- `bullet`
+- `end` only when the source genuinely places the figure after the whole section
+
+### 9.3 CSS Grid placement
+
+For textbook-like side-by-side placement, use `grid` metadata:
+
+```json
+{
+  "grid": {
+    "start": 4,
+    "end": 6,
+    "side": "right",
+    "size": "small"
+  }
+}
+```
+
+Design Lock v2 layout rule:
+
+- side-by-side textbook rows use **CSS Grid, not floats**;
+- default desktop text/image split is **50/50** (`1fr 1fr`);
+- `side` follows the source layout where meaningful;
+- full-width figures remain full-width;
+- mobile collapses to one column;
+- image labels must remain readable at normal web size.
+
+### 9.4 Source-placement audit
+
+Before a unit is ready, compare each used textbook figure with the actual source page and place it beside the corresponding text. Unit I's figure-placement audit is the reference standard.
+
+### 9.5 Figure metadata
+
+A production figure normally carries:
+
+- `src`
+- descriptive `alt`
+- caption
+- printed `page` where applicable
+- intrinsic `width` / `height`
+- `size`
+- placement metadata
+- `kind: "class-note"` for class-derived cumulative figures
+
+Alt text describes the electrical/scientific content, not merely the filename or figure number.
+
+---
+
+## 10. Notebook Redraw Style (NRS)
+
+All redraws follow `college/NOTEBOOK_REDRAW_STYLE.md`.
+
+Design Lock v2 adds a mandatory semantic gate:
+
+**understand/confirm meaning-bearing details → draw → visually verify those same details**
+
+For technical drawings, arrow direction, polarity, dot/cross convention, source orientation, graph axes, topology and spatial relationships are academic content. A beautiful redraw with one of these wrong is a failed redraw.
+
+Never use a textbook/reference image to override the actual class-note source. Reference material may clarify standard symbol shape only after the source meaning is understood.
+
+---
+
+## 11. Dated class-log workflow
+
+Permanent workflow:
+
+**raw intake → faithful dated record → topic mapping → NRS derivation where useful → cumulative integration → calendar link**
+
+### 11.1 Dated record
+
+Store:
 
 `<subject>/kb/class-log/YYYY-MM-DD/entry.json`
 
@@ -170,177 +354,228 @@ and, where retained:
 
 `<subject>/kb/class-log/YYYY-MM-DD/raw.md`
 
-The dated record preserves notebook wording faithfully. It may normalize line wrapping/markup, but must not silently rewrite the student's/lecturer's meaning. If handwriting is unreadable, mark it as illegible rather than guessing.
+`entry.json` preserves the page sequence using structured blocks such as headings, lines, paragraphs, bullets, equations and figures.
 
-### Calendar index
+### 11.2 Calendar index
 
-The semester calendar index lives under the semester data layer (currently `college/<semester>/data/class-log.json`). Calendar entries link to the generic class-log shell with a date query.
+The semester index is:
 
-### Bidirectional linking
+`college/<semester>/data/class-log.json`
 
-Calendar → dated class log → cumulative unit topic.
+A dated class entry links to the generic subject shell:
 
-Where useful, cumulative topics may contain quiet `class_history` links back to dated class logs.
+`class-log.html?date=YYYY-MM-DD`
 
-### Integration rule
+The calendar, dated log and cumulative topic must resolve bidirectionally where mappings exist.
 
-For each daily class item:
+### 11.3 Integration policy
 
-- already covered adequately → do not duplicate
-- useful new detail → integrate into the existing cumulative topic
-- lecturer-specific emphasis → retain as structured class emphasis where appropriate
-- assignment/example → route to the appropriate structured layer
-- contradiction → preserve verbatim in class log and flag; do not silently replace the cumulative theory
+For each class item:
 
-### Raw notebook images
+- already covered adequately → do not duplicate;
+- useful new detail → integrate into the existing topic;
+- lecturer-specific notation/emphasis → keep in a class-note section;
+- confusing sketch → redraw in NRS after semantic confirmation;
+- two adjacent sketches that clearly form one concept may be combined in one class redraw when explicitly understood/approved;
+- contradiction → preserve in class log and flag; do not silently reconcile;
+- assignment/question → route to the appropriate practice layer.
 
-Original notebook photographs are **intake/archive material**, not normal website assets. Do not commit them under `assets/class/**/raw/`.
+### 11.4 Raw source handling
 
-Retain only useful derived/redrawn class visuals in the site when needed.
+Do not commit raw notebook photographs under `assets/class/**/raw/`. Production assets are clean derived redraws only.
 
-## 12. Figure-selection policy
+---
 
-Do not bulk-copy every textbook figure.
+## 12. Human-readable Markdown companion
 
-Capture/redraw a figure only if it has a concrete role in:
+Where used, maintain:
 
-- cumulative theory, or
-- a worked example/question actually represented in the site.
+`kb/notes/unit-N.md`
 
-Keep asset roles separate:
+It is a readable companion, not the rendering authority. `topics.json` is canonical for the live unit page. Never overwrite newer JSON from an older Markdown copy.
 
-`assets/book/uN/theory/` — figures supporting cumulative theory  
-`assets/book/uN/examples/` — figures required by textbook questions/examples
+---
 
-Class-derived figures remain under a separate class asset path.
+## 13. Self-checks, textbook questions and PYQs
 
-## 13. Figure data and accessibility
+Keep three layers distinct:
 
-A rendered theory figure should normally include:
+- `self_checks` — generated revision prompts in `topics.json`;
+- `textbook-questions.json` — official prescribed-textbook chapter-end questions, with PankusDesk study answers where source-backed;
+- `pyqs.html` / PYQ data — previous university examination questions.
 
-- `src`
-- descriptive `alt`
-- caption
-- printed page where applicable
-- intrinsic `width` / `height` when known
-- exact insertion anchor (`after` paragraph/bullet)
+Never label a generated question as textbook/PYQ material.
 
-Alt text must describe the technical content. Never use meaningless alt text such as “image”, “figure”, or only the filename/figure number.
+### 13.1 Textbook question rules
 
-Internal capture filenames must not be shown in normal student-facing UI.
+1. Preserve official question wording.
+2. Use stable unit-scoped IDs/anchors.
+3. Link theory practice rows to exact anchors.
+4. PankusDesk answers are not “official textbook solutions” unless official solutions were supplied.
+5. A book final answer may be stored as a check, not falsely cited as the derivation source.
+6. Preserve/flag printed discrepancies.
+7. If sources cannot support an answer, keep `status: "source-gap"` instead of filling from memory.
 
-## 14. Notebook Redraw Style
+### 13.2 PYQ rules
 
-All redraws must follow `college/NOTEBOOK_REDRAW_STYLE.md`.
+Use a subject-wide PYQ layer by default. Never invent year, marks, wording or mappings.
 
-Key non-negotiable rule: **all visible text in a redraw uses the same handwriting-style visual language.** Do not mix handwritten labels with textbook/serif/sans-serif print captions.
+---
 
-Scientific/source fidelity outranks aesthetics.
+## 14. Shared renderer architecture
 
-## 15. Shared renderer architecture
-
-Current generic renderers include:
+Current generic college renderers include:
 
 - `scripts/new/subject-unit.js`
 - `scripts/new/unit-questions.js`
 - `scripts/new/class-log.js`
-- semester/calendar/shared navigation renderers
+- `scripts/new/calendar.js`
+- shared semester/subject/navigation renderers
 
-Current shared page styles include:
+Unit I demonstrates that the generic unit renderer supports:
 
-- `styles/new/pages/unit.css`
-- `styles/new/pages/practice.css`
-- `styles/new/pages/class-log.css`
-- related semester/calendar/subject styles
+- lightweight HTML shells;
+- topic navigation and active tracking;
+- Quick recall;
+- Check yourself accordions;
+- textbook practice links;
+- class-history links;
+- integrated class-note panels;
+- blue explanation accordions;
+- MathJax;
+- explicitly anchored figures;
+- CSS-Grid text/figure rows;
+- full-width figure rows;
+- quiet provenance/reference footer.
 
-Do not create `chemistry-unit.js`, `physics-unit.js`, etc. just because a new subject is easier to hard-code. Add a generic optional data field/renderer capability first.
+Do not fork subject-specific renderers just to avoid extending generic data structures.
 
-If a genuinely new architecture is required, explain it before changing the shared contract.
+---
 
-## 16. Lightweight HTML shells
+## 15. Lightweight shells
 
-Unit, textbook-question, and class-log pages should remain lightweight shells that point to subject metadata and shared renderers.
+Unit, class-log and question HTML files remain small shells that declare the subject/unit context and load shared renderers/styles. Do not copy full theory HTML into every shell.
 
-Do not duplicate full note HTML per unit/date when the generic renderer can generate it from data.
+---
 
-## 17. Publication status
+## 16. Source/reference resolution
 
-Allowed unit publication states:
+Every topic and detailed section has non-empty `source_refs`. References must resolve through collections configured in `subject.json → unitRenderer.sources`.
 
-- `ready`
-- `scaffold`
+`book_refs` may hold printed page/capture bookkeeping internally. Internal capture filenames are not normal student-facing content.
 
-A scaffold may expose the official syllabus boundary and a reserved destination, but must not fake completed theory.
+Class-note sections must include their corresponding `CLASS-...` source reference.
 
-Set a unit to `ready` only after:
+---
 
-- all required syllabus atoms are covered or explicitly resolved
-- topic provenance exists
-- required assets resolve
-- practice links resolve
-- student prose has been audited
-- visual QA is complete
-- verifier passes
+## 17. Verification contract
 
-## 18. Verification contract
+Run:
 
-Run both:
+1. subject-specific verifier (source-corpus invariants), and
+2. `python3 scripts/tools/verify_college.py` (cross-subject architecture).
 
-1. any subject-specific verifier (for source-corpus invariants), and
-2. `scripts/tools/verify_college.py` (for cross-subject architectural invariants).
+Design Lock v2 generic verification covers, among other things:
 
-Do not weaken a verifier merely to make an error disappear. Fix the underlying data or explicitly change the standard.
+- unit/topic status and shells;
+- topic/section provenance;
+- configured source-reference resolution;
+- figure assets, alt text and explicit placement;
+- figure Grid ranges;
+- class-note labels/source references;
+- explanation-accordion structure;
+- textbook practice anchors;
+- class-log mappings/assets/calendar links;
+- absence of raw notebook binaries in website class assets;
+- no `\frac` in ready-unit topic content;
+- no student-facing source/build meta-commentary.
 
-## 19. Stop conditions
+Do not weaken verification merely to make an error disappear. Fix data or explicitly change the design lock.
+
+---
+
+## 18. Stop conditions
 
 Stop and report rather than guessing when:
 
-- official syllabus is unavailable/ambiguous
-- prescribed-textbook page/figure is missing
-- figure identity cannot be verified
-- a lecture appears to be missing
-- required syllabus content is unsupported
-- authoritative supplied sources materially conflict
-- numerical source results conflict
-- question needs unsupplied material
-- PYQ mapping is uncertain
-- current workspace schema differs materially from this contract
+- official syllabus is unavailable or ambiguous;
+- prescribed textbook page/figure is missing;
+- a figure's technical meaning cannot be verified;
+- handwriting is ambiguous and materially changes meaning;
+- a lecture/source sequence item appears missing;
+- required syllabus content is unsupported;
+- supplied authoritative sources materially conflict;
+- a numerical result/equation conflicts with another authoritative source;
+- a question needs unsupplied material;
+- a PYQ mapping is uncertain;
+- current data/schema materially differs from this contract.
 
-## 20. Standard unit-build sequence
+---
 
-1. Read this standard and `REFERENCE_IMPLEMENTATION.md`.
-2. Inspect latest workspace and target subject metadata.
-3. Inventory sources.
-4. Atomise official syllabus.
-5. Audit source coverage and gaps.
-6. Obtain approval for any required gap sources.
-7. Build/update cumulative topics.
-8. Consolidate lecture/class material without duplication.
-9. Audit student-facing prose for theory-note style.
-10. Build/verify prescribed-textbook questions.
-11. Audit required figures.
-12. Redraw figures using Notebook Redraw Style.
-13. Add descriptive alt text and exact anchors.
-14. Link theory practice to stable question anchors.
-15. Add dated class-log integration when supplied.
-16. Maintain subject-wide PYQ layer separately.
-17. Run visual QA.
-18. Run subject verifier.
-19. Run generic college verifier.
-20. Only then mark `publicationStatus: ready` and hand off a minimal delta.
+## 19. Standard build sequence
 
-## 21. Artifact handoff convention
+1. Read this file, `REFERENCE_IMPLEMENTATION.md`, `NOTEBOOK_REDRAW_STYLE.md` and `UNIT_BUILD_CHECKLIST.md`.
+2. Inspect the latest workspace and target subject metadata.
+3. Inventory/lock sources.
+4. Atomise syllabus and audit source coverage.
+5. Resolve/approve gaps.
+6. Build textbook-faithful cumulative topics.
+7. Integrate supplied lecture/class material without duplication.
+8. Add NRS visuals only after semantic verification.
+9. Place every figure at the corresponding text using explicit anchor/Grid metadata.
+10. Add explanation accordions where a source is too terse to learn from easily.
+11. Build/verify prescribed textbook questions.
+12. Maintain dated class logs and calendar links.
+13. Audit student-facing prose and all LaTeX (`\dfrac`).
+14. Synchronize `unit-N.md` where applicable.
+15. Run visual QA.
+16. Run subject verifier.
+17. Run generic college verifier.
+18. Mark `publicationStatus: ready` only after the unit satisfies the completion checklist.
 
-Prefer a minimal delta rather than a whole workspace.
+---
 
-Always provide:
+## 20. Design-lock maintenance
 
-```bash
-unzip <delta>.zip
-rsync -avhn "<delta-folder>/" "Pankusdesk/"
-rsync -avh "<delta-folder>/" "Pankusdesk/"
-cd Pankusdesk
-git status
+The following files form one contract and must be updated together when architecture changes:
+
+```text
+college/
+├── COLLEGE_BUILD_STANDARD.md
+├── REFERENCE_IMPLEMENTATION.md
+├── NOTEBOOK_REDRAW_STYLE.md
+├── UNIT_BUILD_CHECKLIST.md
+└── schemas/
+    ├── subject.schema.json
+    ├── topics.schema.json
+    ├── textbook-questions.schema.json
+    └── class-log.schema.json
+
+scripts/
+└── tools/
+    └── verify_college.py
 ```
 
-When relevant, also provide the exact verifier command.
+Do not update only the prose spec while leaving schemas/verifier behind.
+
+---
+
+## 21. Handoff convention
+
+Prefer a minimal delta ZIP with **one top-level folder** so extraction is predictable.
+
+Always provide dry-run before real sync. Do not use `--delete` for a delta.
+
+Typical handoff:
+
+```bash
+cd ~/Downloads
+unzip -q "<delta>.zip"
+rsync -avhn "<delta>/" "/actual/path/to/Pankusdesk/"
+rsync -avh  "<delta>/" "/actual/path/to/Pankusdesk/"
+cd "/actual/path/to/Pankusdesk"
+git status
+python3 scripts/tools/verify_college.py
+```
+
+If the destination path is not known, do not invent it.

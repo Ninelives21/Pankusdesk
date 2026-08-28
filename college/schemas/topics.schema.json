@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/topics.schema.json",
-  "title": "PankusDesk Cumulative Topics",
+  "$comment": "Design Lock v2: cumulative topics, class-note panels, explanation accordions and explicit Grid/anchor figure placement.",
+  "title": "PankusDesk Cumulative Topics — Design Lock v2",
   "type": "array",
   "items": {"$ref": "#/$defs/topic"},
   "$defs": {
@@ -21,6 +22,33 @@
         "note": {"type": "string"}
       }
     },
+    "afterPlacement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": {"enum": ["before-paragraph", "paragraph", "bullet", "end"]},
+        "index": {"type": "integer", "minimum": 0}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"type": {"const": "end"}}, "required": ["type"]},
+          "then": {},
+          "else": {"required": ["index"]}
+        }
+      ]
+    },
+    "gridPlacement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start"],
+      "properties": {
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 0},
+        "side": {"enum": ["left", "right"]},
+        "size": {"enum": ["small", "medium", "large"]}
+      }
+    },
     "figure": {
       "type": "object",
       "additionalProperties": true,
@@ -32,17 +60,26 @@
         "page": {"type": "integer", "minimum": 1},
         "width": {"type": "integer", "minimum": 1},
         "height": {"type": "integer", "minimum": 1},
-        "kind": {"type": "string"},
-        "after": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["type", "index"],
-          "properties": {
-            "type": {"enum": ["paragraph", "bullet", "end"]},
-            "index": {"type": "integer", "minimum": 0}
-          }
-        }
-      }
+        "size": {"enum": ["small", "medium", "large"]},
+        "kind": {"type": "string", "minLength": 1},
+        "after": {"$ref": "#/$defs/afterPlacement"},
+        "grid": {"$ref": "#/$defs/gridPlacement"}
+      },
+      "not": {"required": ["after", "grid"]}
+    },
+    "accordion": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "paragraphs": {"type": "array", "items": {"type": "string"}},
+        "bullets": {"type": "array", "items": {"type": "string"}}
+      },
+      "anyOf": [
+        {"required": ["paragraphs"]},
+        {"required": ["bullets"]}
+      ]
     },
     "section": {
       "type": "object",
@@ -51,16 +88,27 @@
       "properties": {
         "heading": {"type": "string", "minLength": 1},
         "scope": {"enum": ["core", "supporting", "core-gap-filled"]},
+        "kind": {"type": "string", "minLength": 1},
+        "source_label": {"type": "string", "minLength": 1},
         "paragraphs": {"type": "array", "items": {"type": "string"}},
         "bullets": {"type": "array", "items": {"type": "string"}},
         "source_refs": {"$ref": "#/$defs/sourceRefs"},
         "book_refs": {"type": "array", "items": {"$ref": "#/$defs/bookRef"}},
-        "figures": {"type": "array", "items": {"$ref": "#/$defs/figure"}}
+        "figures": {"type": "array", "items": {"$ref": "#/$defs/figure"}},
+        "accordions": {"type": "array", "items": {"$ref": "#/$defs/accordion"}},
+        "accordion_recap": {"type": "array", "items": {"type": "string"}}
       },
+      "allOf": [
+        {
+          "if": {"properties": {"kind": {"const": "class-note"}}, "required": ["kind"]},
+          "then": {"required": ["source_label"]}
+        }
+      ],
       "anyOf": [
         {"required": ["paragraphs"]},
         {"required": ["bullets"]},
-        {"required": ["figures"]}
+        {"required": ["figures"]},
+        {"required": ["accordions"]}
       ]
     },
     "practice": {
@@ -110,9 +158,9 @@
         "source_refs": {"$ref": "#/$defs/sourceRefs"},
         "book_refs": {"type": "array", "items": {"$ref": "#/$defs/bookRef"}},
         "cautions": {"type": "array", "items": {"type": "string"}},
-        "practice": {"type": "array", "items": {"$ref": "#/$defs/practice"}},
+        "practice": {"type": ["array", "null"], "items": {"$ref": "#/$defs/practice"}},
         "self_checks": {"type": "array", "items": {"$ref": "#/$defs/selfCheck"}},
-        "class_history": {"type": "array", "items": {"$ref": "#/$defs/classHistory"}}
+        "class_history": {"type": ["array", "null"], "items": {"$ref": "#/$defs/classHistory"}}
       }
     }
   }

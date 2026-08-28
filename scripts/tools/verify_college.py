@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generic PankusDesk college architecture verifier.
+"""Generic PankusDesk college architecture verifier — Design Lock v2.
 
 Run from repository root:
     python3 scripts/tools/verify_college.py
@@ -7,9 +7,9 @@ Run from repository root:
 Optional subject root(s):
     python3 scripts/tools/verify_college.py college/1-1/basic-electrical-engineering
 
-This verifier intentionally checks cross-subject architectural invariants only.
-Subject-specific source counts/anomalies remain the responsibility of each
-subject's own kb/tools/verify_kb.py (or equivalent).
+This verifier checks cross-subject architectural invariants. Subject-specific
+source counts, known corpus anomalies and exact syllabus-coverage counts remain
+the responsibility of each subject's own kb/tools/verify_kb.py (or equivalent).
 """
 
 from __future__ import annotations
@@ -24,8 +24,23 @@ import sys
 REPO = Path(__file__).resolve().parents[2]
 ALLOWED_TOPIC_STATUS = {"core", "supporting", "core-gap-filled"}
 ALLOWED_PUBLICATION = {"ready", "scaffold"}
+ALLOWED_FIGURE_ANCHORS = {"before-paragraph", "paragraph", "bullet", "end"}
+ALLOWED_GRID_SIDE = {"left", "right"}
+ALLOWED_FIGURE_SIZE = {"small", "medium", "large"}
+DESIGN_LOCK_FILES = [
+    REPO / "college" / "COLLEGE_BUILD_STANDARD.md",
+    REPO / "college" / "REFERENCE_IMPLEMENTATION.md",
+    REPO / "college" / "NOTEBOOK_REDRAW_STYLE.md",
+    REPO / "college" / "UNIT_BUILD_CHECKLIST.md",
+    REPO / "college" / "schemas" / "subject.schema.json",
+    REPO / "college" / "schemas" / "topics.schema.json",
+    REPO / "college" / "schemas" / "textbook-questions.schema.json",
+    REPO / "college" / "schemas" / "class-log.schema.json",
+]
+
 META_PATTERNS = [
     r"\bthe class notes?\b",
+    r"\bPriyanka(?:'s|’s) notes?\b",
     r"\bthe \d{1,2} [A-Za-z]+ class\b",
     r"\bthe prescribed textbook\b",
     r"\bthe textbook says\b",
@@ -40,6 +55,7 @@ META_PATTERNS = [
     r"\bwe (?:retain|include|use|have kept)\b",
 ]
 META_RE = re.compile("|".join(f"(?:{p})" for p in META_PATTERNS), re.I)
+BAD_ALT_RE = re.compile(r"^(?:image|figure|fig\.?\s*\d+(?:\.\d+)?|[a-z]?f\d+(?:[-_][a-z0-9]+)?)$", re.I)
 
 errors: list[str] = []
 warnings: list[str] = []
@@ -73,22 +89,33 @@ def resolve_repo_asset(value: str) -> Path | None:
 
 
 def visible_topic_strings(topic: dict):
-    for key in ("intro",):
-        if isinstance(topic.get(key), str):
-            yield f"{key}", topic[key]
+    if isinstance(topic.get("intro"), str):
+        yield "intro", topic["intro"]
+
     for key in ("learn", "formulas", "method", "cautions"):
-        for i, text in enumerate(topic.get(key, []) or []):
-            if isinstance(text, str):
-                yield f"{key}[{i}]", text
+        for i, value in enumerate(topic.get(key, []) or []):
+            if isinstance(value, str):
+                yield f"{key}[{i}]", value
+
     for si, section in enumerate(topic.get("sections", []) or []):
         if not isinstance(section, dict):
             continue
         if isinstance(section.get("heading"), str):
             yield f"sections[{si}].heading", section["heading"]
-        for key in ("paragraphs", "bullets"):
-            for i, text in enumerate(section.get(key, []) or []):
-                if isinstance(text, str):
-                    yield f"sections[{si}].{key}[{i}]", text
+        for key in ("paragraphs", "bullets", "accordion_recap"):
+            for i, value in enumerate(section.get(key, []) or []):
+                if isinstance(value, str):
+                    yield f"sections[{si}].{key}[{i}]", value
+        for ai, item in enumerate(section.get("accordions", []) or []):
+            if not isinstance(item, dict):
+                continue
+            if isinstance(item.get("title"), str):
+                yield f"sections[{si}].accordions[{ai}].title", item["title"]
+            for key in ("paragraphs", "bullets"):
+                for i, value in enumerate(item.get(key, []) or []):
+                    if isinstance(value, str):
+                        yield f"sections[{si}].accordions[{ai}].{key}[{i}]", value
+
     for qi, item in enumerate(topic.get("self_checks", []) or []):
         if isinstance(item, dict):
             for key in ("question", "answer"):
@@ -103,41 +130,79 @@ def collect_topic_figures(topic: dict):
         paragraphs = section.get("paragraphs", []) or []
         bullets = section.get("bullets", []) or []
         for fi, fig in enumerate(section.get("figures", []) or []):
-            yield si, fi, fig, len(paragraphs), len(bullets)
+            yield si, fi, fig, len(paragraphs), len(bullets), section
 
 
-def load_question_ids(subject_dir: Path, subject: dict) -> tuple[set[str], dict | None]:
-    qcfg = (subject.get("practice") or {}).get("unitQuestions") or {}
-    data_path = qcfg.get("data")
-    if not data_path:
-        return set(), None
-    data = load_json(subject_dir / data_path)
-    if not isinstance(data, dict):
-        return set(), data
-    ids: set[str] = set()
-    for unit in (data.get("units") or {}).values():
-        if not isinstance(unit, dict):
+def configured_source_ids(subject_dir: Path, subject: dict) -> set[str]:
+    result: set[str] = set()
+    for i, cfg in enumerate(((subject.get("unitRenderer") or {}).get("sources") or [])):
+        if not isinstance(cfg, dict):
+            errors.append(f"{rel(subject_dir / 'subject.json')}: unitRenderer.sources[{i}] is not an object")
             continue
-        for group in unit.get("groups", []) or []:
-            for q in group.get("questions", []) or []:
-                qid = q.get("id") if isinstance(q, dict) else None
-                if not qid:
-                    errors.append(f"question without id in {rel(subject_dir / data_path)}")
-                elif qid in ids:
-                    errors.append(f"duplicate question id {qid} in {rel(subject_dir / data_path)}")
-                else:
-                    ids.add(qid)
-                if isinstance(q, dict):
-                    ans = q.get("answer") or {}
-                    for fig in ans.get("figures", []) if isinstance(ans, dict) else []:
-                        check_figure(fig, f"question {qid or '?'}", None, None)
-    return ids, data
+        source_path = cfg.get("path")
+        id_field = cfg.get("idField")
+        if not source_path or not id_field:
+            errors.append(f"{rel(subject_dir / 'subject.json')}: source config {i} missing path/idField")
+            continue
+        data = load_json(subject_dir / str(source_path))
+        if data is None:
+            continue
+        collection = cfg.get("collection")
+        if collection:
+            if not isinstance(data, dict) or collection not in data:
+                errors.append(f"{rel(subject_dir / str(source_path))}: configured collection {collection!r} missing")
+                continue
+            data = data.get(collection)
+        if not isinstance(data, list):
+            errors.append(f"{rel(subject_dir / str(source_path))}: configured source data is not a list")
+            continue
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            source_id = item.get(id_field)
+            if isinstance(source_id, str) and source_id:
+                result.add(source_id)
+    return result
 
 
-def check_figure(fig, context: str, paragraph_count: int | None, bullet_count: int | None):
+def check_source_refs(refs, known_ids: set[str], context: str):
+    if not isinstance(refs, list) or not refs:
+        errors.append(f"{context}: no provenance source_refs")
+        return
+    if known_ids:
+        for source_id in refs:
+            if source_id not in known_ids:
+                errors.append(f"{context}: unresolved source_ref {source_id!r}")
+
+
+def check_accordion(item, context: str):
+    if not isinstance(item, dict):
+        errors.append(f"{context}: accordion is not an object")
+        return
+    title = item.get("title")
+    if not isinstance(title, str) or not title.strip():
+        errors.append(f"{context}: accordion missing title")
+    paragraphs = item.get("paragraphs") or []
+    bullets = item.get("bullets") or []
+    if not paragraphs and not bullets:
+        errors.append(f"{context}: accordion has no paragraphs or bullets")
+    for key, values in (("paragraphs", paragraphs), ("bullets", bullets)):
+        if not isinstance(values, list) or any(not isinstance(v, str) for v in values):
+            errors.append(f"{context}: accordion {key} must be an array of strings")
+
+
+def check_figure(
+    fig,
+    context: str,
+    paragraph_count: int | None,
+    bullet_count: int | None,
+    *,
+    require_placement: bool = False,
+):
     if not isinstance(fig, dict):
         errors.append(f"{context}: figure is not an object")
         return
+
     src = fig.get("src")
     alt = fig.get("alt")
     if not isinstance(src, str) or not src.strip():
@@ -146,11 +211,26 @@ def check_figure(fig, context: str, paragraph_count: int | None, bullet_count: i
         path = resolve_repo_asset(src)
         if path is not None and not path.exists():
             errors.append(f"{context}: missing figure asset {src}")
+
     if not isinstance(alt, str) or len(alt.strip()) < 8:
         errors.append(f"{context}: figure needs descriptive alt text")
+    elif BAD_ALT_RE.fullmatch(alt.strip()):
+        errors.append(f"{context}: figure alt text is generic/non-descriptive: {alt!r}")
+
+    size = fig.get("size")
+    if size is not None and size not in ALLOWED_FIGURE_SIZE:
+        errors.append(f"{context}: invalid figure size {size!r}")
+
     after = fig.get("after")
+    grid = fig.get("grid")
+    if after is not None and grid is not None:
+        errors.append(f"{context}: figure cannot use both after and grid placement")
+
+    if require_placement and after is None and grid is None:
+        errors.append(f"{context}: ready-unit figure has no explicit after/grid placement")
+
     if after is not None:
-        if not isinstance(after, dict) or after.get("type") not in {"before-paragraph", "paragraph", "bullet", "end"}:
+        if not isinstance(after, dict) or after.get("type") not in ALLOWED_FIGURE_ANCHORS:
             errors.append(f"{context}: invalid figure insertion anchor")
         else:
             typ = after.get("type")
@@ -161,7 +241,7 @@ def check_figure(fig, context: str, paragraph_count: int | None, bullet_count: i
                 errors.append(f"{context}: paragraph anchor index {idx} out of range ({paragraph_count})")
             if typ == "bullet" and bullet_count is not None and isinstance(idx, int) and idx >= bullet_count:
                 errors.append(f"{context}: bullet anchor index {idx} out of range ({bullet_count})")
-    grid = fig.get("grid")
+
     if grid is not None:
         if not isinstance(grid, dict):
             errors.append(f"{context}: invalid figure grid placement")
@@ -169,41 +249,126 @@ def check_figure(fig, context: str, paragraph_count: int | None, bullet_count: i
             start = grid.get("start")
             end = grid.get("end", start)
             side = grid.get("side", "right")
-            size = grid.get("size", "medium")
+            grid_size = grid.get("size", size or "medium")
             if not isinstance(start, int) or not isinstance(end, int) or start < 0 or end < start:
                 errors.append(f"{context}: invalid figure grid paragraph range")
             elif paragraph_count is not None and end >= paragraph_count:
                 errors.append(f"{context}: grid paragraph range {start}-{end} out of range ({paragraph_count})")
-            if side not in {"left", "right"}:
+            if side not in ALLOWED_GRID_SIDE:
                 errors.append(f"{context}: invalid figure grid side")
-            if size not in {"small", "medium", "large"}:
+            if grid_size not in ALLOWED_FIGURE_SIZE:
                 errors.append(f"{context}: invalid figure grid size")
 
 
-def check_class_logs(subject_dir: Path, subject: dict, topic_ids: set[str]):
+def load_question_ids(subject_dir: Path, subject: dict, topic_ids: set[str], source_ids: set[str]) -> tuple[set[str], dict | None]:
+    qcfg = (subject.get("practice") or {}).get("unitQuestions") or {}
+    data_path = qcfg.get("data")
+    if not data_path:
+        return set(), None
+    data = load_json(subject_dir / data_path)
+    if not isinstance(data, dict):
+        return set(), data
+
+    ids: set[str] = set()
+    for unit in (data.get("units") or {}).values():
+        if not isinstance(unit, dict):
+            continue
+        for group in unit.get("groups", []) or []:
+            if not isinstance(group, dict):
+                continue
+            for q in group.get("questions", []) or []:
+                if not isinstance(q, dict):
+                    errors.append(f"question record is not an object in {rel(subject_dir / data_path)}")
+                    continue
+                qid = q.get("id")
+                if not qid:
+                    errors.append(f"question without id in {rel(subject_dir / data_path)}")
+                elif qid in ids:
+                    errors.append(f"duplicate question id {qid} in {rel(subject_dir / data_path)}")
+                else:
+                    ids.add(qid)
+
+                topic_id = q.get("topic_id")
+                if topic_id and topic_ids and topic_id not in topic_ids:
+                    errors.append(f"question {qid or '?'} points to unknown topic_id {topic_id}")
+
+                for source_id in q.get("answer_source_refs", []) or []:
+                    if source_ids and source_id not in source_ids:
+                        errors.append(f"question {qid or '?'} unresolved answer_source_ref {source_id!r}")
+
+                ans = q.get("answer") or {}
+                if isinstance(ans, dict):
+                    for fi, fig in enumerate(ans.get("figures", []) or []):
+                        check_figure(fig, f"question {qid or '?'} figure {fi}", None, None)
+    return ids, data
+
+
+def iter_class_text(entry: dict):
+    for pi, page in enumerate(entry.get("pages", []) or []):
+        if not isinstance(page, dict):
+            continue
+        for bi, block in enumerate(page.get("blocks", []) or []):
+            if isinstance(block, dict) and isinstance(block.get("text"), str):
+                yield f"pages[{pi}].blocks[{bi}]", block["text"]
+
+
+def check_class_logs(subject_dir: Path, topic_ids: set[str], source_ids: set[str]):
     class_root = subject_dir / "kb" / "class-log"
     if class_root.exists():
         for entry_path in sorted(class_root.glob("*/entry.json")):
             entry = load_json(entry_path)
             if not isinstance(entry, dict):
                 continue
+
             date = entry.get("date")
             if date and entry_path.parent.name != date:
                 errors.append(f"{rel(entry_path)}: date does not match directory name")
+
+            source_id = entry.get("source_id")
+            if source_ids and source_id not in source_ids:
+                errors.append(f"{rel(entry_path)}: source_id does not resolve through subject source collections: {source_id!r}")
+
             for mapped in entry.get("mapped_topics", []) or []:
                 tid = mapped.get("topic_id") if isinstance(mapped, dict) else None
                 if tid not in topic_ids:
                     errors.append(f"{rel(entry_path)}: mapped topic does not exist: {tid}")
+
             for page in entry.get("pages", []) or []:
                 for block in page.get("blocks", []) if isinstance(page, dict) else []:
                     if isinstance(block, dict) and block.get("type") == "figure":
                         check_figure(block, f"{rel(entry_path)} class figure", None, None)
 
+            for location, text in iter_class_text(entry):
+                if "\\frac" in text:
+                    errors.append(f"{rel(entry_path)} {location}: use \\dfrac instead of \\frac")
+
     raw_dirs = list((subject_dir / "assets" / "class").glob("**/raw")) if (subject_dir / "assets" / "class").exists() else []
     for raw_dir in raw_dirs:
-        binaries = [p for p in raw_dir.rglob("*") if p.is_file() and p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".heic", ".tif", ".tiff"}]
+        binaries = [
+            p for p in raw_dir.rglob("*")
+            if p.is_file() and p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".heic", ".tif", ".tiff"}
+        ]
         if binaries:
             errors.append(f"raw notebook binaries must stay outside website assets: {rel(raw_dir)} ({len(binaries)} file(s))")
+
+
+def check_class_history(subject_dir: Path, topic: dict, context: str):
+    for i, item in enumerate(topic.get("class_history", []) or []):
+        if not isinstance(item, dict):
+            errors.append(f"{context}: class_history[{i}] is not an object")
+            continue
+        date = item.get("date")
+        href = item.get("href")
+        if not date or not href:
+            errors.append(f"{context}: class_history[{i}] missing date/href")
+            continue
+        parsed = urlparse(href)
+        qdate = (parse_qs(parsed.query).get("date") or [None])[0]
+        if qdate and qdate != date:
+            errors.append(f"{context}: class_history[{i}] date {date} does not match href query {qdate}")
+        entry_path = subject_dir / "kb" / "class-log" / str(date) / "entry.json"
+        if not entry_path.exists():
+            errors.append(f"{context}: class_history[{i}] dated entry missing: {rel(entry_path)}")
 
 
 def verify_subject(subject_dir: Path):
@@ -213,7 +378,7 @@ def verify_subject(subject_dir: Path):
         return
 
     label = f"{subject.get('semester','?')} / {subject.get('shortName') or subject.get('name') or subject_dir.name}"
-    required = ("code", "name", "shortName", "regulation", "semester", "kb", "syllabus", "units")
+    required = ("code", "name", "shortName", "regulation", "semester", "kb", "syllabus", "coverage", "units")
     for key in required:
         if key not in subject:
             errors.append(f"{label}: subject.json missing {key}")
@@ -243,10 +408,19 @@ def verify_subject(subject_dir: Path):
     if not isinstance(topics, list):
         return
 
+    source_ids = configured_source_ids(subject_dir, subject)
+    if not source_ids:
+        warnings.append(f"{label}: no source IDs resolved from unitRenderer.sources; provenance resolution skipped")
+
     topic_ids: set[str] = set()
     topics_by_unit: dict[int, int] = {}
-    question_ids, _ = load_question_ids(subject_dir, subject)
+    for t in topics:
+        if isinstance(t, dict) and isinstance(t.get("id"), str):
+            topic_ids.add(t["id"])
 
+    question_ids, _ = load_question_ids(subject_dir, subject, topic_ids, source_ids)
+
+    seen_topic_ids: set[str] = set()
     for t in topics:
         if not isinstance(t, dict):
             errors.append(f"{label}: topic record is not an object")
@@ -256,35 +430,54 @@ def verify_subject(subject_dir: Path):
         if not isinstance(tid, str) or not tid:
             errors.append(f"{label}: topic without id")
             continue
-        if tid in topic_ids:
+        if tid in seen_topic_ids:
             errors.append(f"{label}: duplicate topic id {tid}")
-        topic_ids.add(tid)
+        seen_topic_ids.add(tid)
+
         if not isinstance(unit, int) or unit not in unit_numbers:
             errors.append(f"{label}: {tid} points to undefined Unit {unit}")
         else:
             topics_by_unit[unit] = topics_by_unit.get(unit, 0) + 1
+
         if t.get("status") not in ALLOWED_TOPIC_STATUS:
             errors.append(f"{label}: {tid} invalid topic status {t.get('status')!r}")
-        refs = t.get("source_refs")
-        if not isinstance(refs, list) or not refs:
-            errors.append(f"{label}: {tid} has no provenance source_refs")
+
+        check_source_refs(t.get("source_refs"), source_ids, f"{label}: {tid}")
 
         for si, section in enumerate(t.get("sections", []) or []):
             if not isinstance(section, dict):
                 errors.append(f"{label}: {tid} section {si} is not an object")
                 continue
-            srefs = section.get("source_refs")
-            if not isinstance(srefs, list) or not srefs:
-                errors.append(f"{label}: {tid} section {si} has no source_refs")
+
+            scontext = f"{label}: {tid} section {si}"
+            check_source_refs(section.get("source_refs"), source_ids, scontext)
+
+            if section.get("kind") == "class-note":
+                source_label = section.get("source_label")
+                if not isinstance(source_label, str) or not source_label.strip():
+                    errors.append(f"{scontext}: class-note section missing source_label")
+                refs = section.get("source_refs") or []
+                if not any(isinstance(ref, str) and ref.startswith("CLASS-") for ref in refs):
+                    errors.append(f"{scontext}: class-note section needs a CLASS- source_ref")
+                for fi, fig in enumerate(section.get("figures", []) or []):
+                    if isinstance(fig, dict) and fig.get("kind") != "class-note":
+                        errors.append(f"{scontext} figure {fi}: class-note cumulative figure needs kind='class-note'")
+
+            for ai, accordion in enumerate(section.get("accordions", []) or []):
+                check_accordion(accordion, f"{scontext} accordion {ai}")
 
         if unit in ready_units:
             if not (t.get("sections") or []):
                 errors.append(f"{label}: ready-unit topic {tid} has no detailed sections")
+
             for location, text in visible_topic_strings(t):
                 if META_RE.search(text):
                     errors.append(f"{label}: student-facing meta commentary in {tid}.{location}: {text[:100]!r}")
-            for si, fi, fig, pc, bc in collect_topic_figures(t):
-                check_figure(fig, f"{label}: {tid} section {si} figure {fi}", pc, bc)
+                if "\\frac" in text:
+                    errors.append(f"{label}: {tid}.{location} uses \\frac; Design Lock v2 requires \\dfrac")
+
+            for si, fi, fig, pc, bc, _section in collect_topic_figures(t):
+                check_figure(fig, f"{label}: {tid} section {si} figure {fi}", pc, bc, require_placement=True)
 
         for pi, practice in enumerate(t.get("practice", []) or []):
             if not isinstance(practice, dict):
@@ -293,6 +486,8 @@ def verify_subject(subject_dir: Path):
             if anchor and question_ids and anchor not in question_ids:
                 errors.append(f"{label}: {tid} practice[{pi}] anchor {anchor} does not resolve to a textbook question")
 
+        check_class_history(subject_dir, t, f"{label}: {tid}")
+
     for n in sorted(ready_units):
         if topics_by_unit.get(n, 0) == 0:
             errors.append(f"{label}: Unit {n} is ready but has no topics")
@@ -300,18 +495,17 @@ def verify_subject(subject_dir: Path):
         if not unit_shell.exists():
             errors.append(f"{label}: ready Unit {n} missing shell {rel(unit_shell)}")
 
-    # Verify configured question availability.
     qcfg = (subject.get("practice") or {}).get("unitQuestions") or {}
     for n in qcfg.get("availableUnits", []) or []:
         shell = subject_dir / str(qcfg.get("hrefPattern", "unit-{unit}-questions.html")).replace("{unit}", str(n))
         if not shell.exists():
             errors.append(f"{label}: Unit {n} marked as having textbook questions but shell is missing: {rel(shell)}")
 
-    check_class_logs(subject_dir, subject, topic_ids)
+    check_class_logs(subject_dir, topic_ids, source_ids)
 
 
-def verify_calendar_indexes(subject_dirs: list[Path]):
-    # Validate only links that are explicitly present; older calendar entries may intentionally have link=null.
+def verify_calendar_indexes():
+    # Validate only links explicitly present; older calendar entries may intentionally have link=null.
     for index_path in sorted(REPO.glob("college/*/data/class-log.json")):
         data = load_json(index_path)
         if not isinstance(data, dict):
@@ -328,11 +522,21 @@ def verify_calendar_indexes(subject_dirs: list[Path]):
                     continue
                 qs = parse_qs(parsed.query)
                 qdate = (qs.get("date") or [None])[0]
+                if qdate and qdate != date:
+                    errors.append(f"{rel(index_path)} {date}: link query date {qdate} does not match calendar key")
                 subject_dir = shell.parent
                 if qdate:
                     dated = subject_dir / "kb" / "class-log" / qdate / "entry.json"
                     if not dated.exists():
                         errors.append(f"{rel(index_path)} {date}: dated entry missing for link {link}")
+
+
+def verify_design_lock_files():
+    for path in DESIGN_LOCK_FILES:
+        if not path.exists():
+            errors.append(f"missing Design Lock v2 file: {rel(path)}")
+        elif path.suffix == ".json":
+            load_json(path)
 
 
 def discover_subjects(args: list[str]) -> list[Path]:
@@ -350,9 +554,11 @@ def discover_subjects(args: list[str]) -> list[Path]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Verify PankusDesk college architecture")
+    parser = argparse.ArgumentParser(description="Verify PankusDesk college architecture (Design Lock v2)")
     parser.add_argument("subjects", nargs="*", help="Optional subject directories or subject.json paths")
     ns = parser.parse_args()
+
+    verify_design_lock_files()
 
     subjects = discover_subjects(ns.subjects)
     if not subjects:
@@ -362,27 +568,31 @@ def main() -> int:
 
     for subject_dir in subjects:
         verify_subject(subject_dir)
-    verify_calendar_indexes(subjects)
+    verify_calendar_indexes()
 
     if warnings:
-        for w in warnings:
-            print("WARNING:", w)
+        for warning in warnings:
+            print("WARNING:", warning)
 
     if errors:
         print("COLLEGE VERIFY: FAIL")
-        for e in errors:
-            print(" -", e)
+        for error in errors:
+            print(" -", error)
         return 1
 
     print("COLLEGE VERIFY: PASS")
     print(f" - {len(subjects)} subject configuration(s) checked")
-    print(" - ready units have topic data and shells")
-    print(" - topic/section provenance present")
-    print(" - figure assets/alt text/anchors checked")
+    print(" - Design Lock v2 contract files present/parseable")
+    print(" - ready units have detailed topic data and shells")
+    print(" - topic/section provenance present and configured refs resolved")
+    print(" - class-note labels/source refs checked")
+    print(" - explanation accordions checked")
+    print(" - figure assets/alt text/explicit anchors/Grid placement checked")
     print(" - textbook practice anchors checked where configured")
-    print(" - class-log mappings/assets checked")
+    print(" - class-log mappings/assets/calendar links checked")
     print(" - raw notebook binaries absent from class asset raw folders")
-    print(" - student-facing topic prose passed meta-commentary audit")
+    print(" - ready-unit topic/class-log fractions use \\dfrac")
+    print(" - student-facing topic/accordion prose passed meta-commentary audit")
     return 0
 
 

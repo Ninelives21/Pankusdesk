@@ -472,11 +472,35 @@ Electrical energy sources are classified as voltage sources and current sources,
 - Voltage sources supply different currents at a given voltage; current sources supply different voltages at a constant current.
 - Sources may be independent or dependent (controlled).
 - Dependent sources are VCVS, CCVS, VCCS and CCCS.
+- Ideal voltage source → voltage stays fixed; practical voltage source → internal series resistance causes terminal voltage to fall as current increases.
+- Ideal current source → current stays fixed; practical current source → internal parallel resistance diverts some current, so delivered current falls as terminal voltage rises.
 
 ### 1.3.2 Electrical Energy Sources
 The purpose of an electrical energy source is to supply electrical energy or power to a load. These sources are broadly classified into voltage sources and current sources. Voltage sources supply different values of current at a given voltage, whereas current sources supply different values of voltage at a constant current.
 
 The other classification of electrical energy sources is: (1) independent sources and (2) dependent sources.
+
+> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
+
+### Energy-source classification and source symbols
+
+Energy sources are classified as independent and dependent. Independent sources may be voltage sources or current sources; each may be ideal or practical. Dependent sources are VCCS, CCCS, CCVS and VCVS.
+
+*Figure: Class-note redraw · Classification of energy sources*
+
+For voltage sources, a DC source may be represented by a cell/battery symbol or by a circular source symbol with marked \(+\) and \(-\) polarity. A circular source symbol with a sine wave represents an AC source.
+
+*Figure: Class-note redraw · DC and AC voltage-source symbols*
+
+**Understand this diagram — How to read the energy-source classification**
+
+Independent does not mean “constant”. It means the source value is specified by the source itself rather than being controlled by another voltage or current elsewhere in the circuit. The specified value may be fixed or may vary with time. Dependent sources take their value from another circuit voltage or current.
+
+- VCVS — voltage-controlled voltage source.
+- CCVS — current-controlled voltage source.
+- VCCS — voltage-controlled current source.
+- CCCS — current-controlled current source.
+- The first pair tells what controls the source (VC or CC); the last pair tells what the source produces (VS or CS).
 
 ### 1. Independent Sources
 An independent source can be an independent voltage source or an independent current source.
@@ -487,6 +511,16 @@ An independent voltage source is characterized by a terminal voltage which is co
 \[V=\text{constant}\]
 
 *Figure: Fig. 1.11 · Independent voltage source and V–I characteristic*
+
+> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
+
+### Ideal voltage source — class-note view
+
+An independent voltage source maintains a voltage—fixed or varying with time—that is not affected by another circuit quantity.
+
+For an ideal voltage source, \(V_s\) is completely independent of source current \(I_s\). Its V–I characteristic therefore shows voltage remaining constant as current changes.
+
+*Figure: Class-note redraw · Ideal voltage source and V–I characteristic*
 
 > **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
 
@@ -502,6 +536,20 @@ In an independent current source, the current supplied is completely independent
 \[I=\text{constant}\]
 
 *Figure: Fig. 1.12 · Independent current source and V–I characteristic*
+
+> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
+
+### Ideal current source — class-note view
+
+An ideal current source is a two-terminal element in which source current \(I_s\) is completely independent of the voltage across its terminals.
+
+The current-source symbol may be labelled with a fixed value such as \(I_1\) or a time-varying value \(I(t)\). The arrow shows the chosen source-current direction.
+
+*Figure: Class-note redraw · Ideal current-source symbols*
+
+For an ideal current source, current remains constant as terminal voltage changes.
+
+*Figure: Class-note redraw · Ideal current source and I–V characteristic*
 
 ### 2. Dependent Sources
 In dependent sources, the voltage of a voltage source or the current of a current source is controlled by a voltage or current that exists at some other location or point of the circuit. These sources are also called controlled sources.
@@ -557,12 +605,60 @@ When \(I\) becomes zero under no-load conditions, \(V_L\) becomes equal to \(V_s
 
 *Figure: Fig. 1.18 · V–I characteristic of a practical voltage source*
 
+> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
+
+### Practical voltage source — class-note view
+
+A practical voltage source is represented as an ideal voltage source in series with source resistance. The terminal voltage falls as load current increases because of the voltage drop in the source resistance.
+
+\[V=V_s-IR\]
+
+*Figure: Class-note redraw · Practical voltage source and V–I characteristic*
+
+If the source resistance is zero, the ideal voltage-source condition is obtained.
+
+**Understand this diagram — Ideal and Practical Voltage**
+
+Think of a voltage source as something whose job is to provide a certain electrical “push” between its two terminals. A battery is the easiest example. An ideal voltage source is an imaginary perfect battery: if it is a \(10\,\text{V}\) source, it would remain exactly \(10\,\text{V}\) no matter how much current the connected circuit draws.
+
+A practical voltage source has some unavoidable internal resistance, so it can be pictured as an ideal voltage source with a small resistor hidden in series inside it. When no current flows, there is no voltage drop across that resistance, so \(V=V_s\). When current flows, some voltage is lost inside the source:
+
+\[V=V_s-IR\]
+
+As current increases, \(IR\) increases and terminal voltage falls. An ideal voltage source is the limiting case with internal resistance \(0\).
+
 ### Practical Current Sources
 Ideal current sources are not found in practice. As the voltage demanded by the load increases with an increase in load resistance, the source current starts reducing. Hence a practical current source is represented by an ideal current source in parallel with an internal resistance \(R_p\).
 
 As the load resistance increases, the current through \(R_p\) increases and the load current slightly decreases, as shown in Figure 1.19.
 
 *Figure: Fig. 1.19 · V–I characteristic of a practical current source*
+
+> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
+
+### Practical current source — class-note view
+
+A practical current source is represented as an ideal current source in parallel with a source/internal resistance. Some source current is drawn through this parallel resistance, so the current delivered to the load is reduced.
+
+\[I=I_s-\dfrac{V}{R}\]
+
+*Figure: Class-note redraw · Practical current source and I–V characteristic*
+
+As the source resistance approaches infinity, the ideal current-source condition is approached.
+
+**Understand this diagram — Ideal and Practical Current**
+
+Think of a current source as a device whose job is to make a certain amount of current flow. An ideal current source keeps that current fixed and lets the voltage across its terminals change to whatever value the connected load requires.
+
+A practical current source is modelled as an ideal current source with a large internal resistance in parallel. The parallel resistance acts like an internal bypass, so some source current can flow through it instead of going to the load:
+
+\[I_s=I_L+I_p\]
+
+\[I_L=I_s-I_p\]
+
+Since \(I_p=\dfrac{V}{R_p}\), increasing terminal voltage diverts more current internally and the load current falls slightly. For an ideal current source, \(R_p\to\infty\), so \(I_p\to0\) and no source current is lost through the internal bypass.
+
+**Memory aid:** practical voltage source → unwanted voltage drop in series; practical current source → unwanted current diversion in parallel.
 
 ### Key formulas
 
@@ -573,6 +669,7 @@ As the load resistance increases, the current through \(R_p\) increases and the 
 - VCCS: \(i_2=G_mV_1\)
 - CCCS: \(i_2=\alpha i_1\)
 - Practical voltage source: \(V_L=V_s-IR_s\)
+- Class-note practical current source: \(I=I_s-\dfrac{V}{R}\)
 
 ### Check yourself
 
@@ -580,6 +677,15 @@ As the load resistance increases, the current through \(R_p\) increases and the 
   A voltage source supplies different values of current at a given voltage; a current source supplies different values of voltage at a constant current.
 - **What are the four controlled-source types?**  
   VCVS, CCVS, VCCS and CCCS.
+- **What is the key difference between an ideal and practical voltage source?**  
+  An ideal voltage source keeps its terminal voltage fixed and has zero internal resistance; a practical source has internal series resistance, so its terminal voltage falls as current increases.
+- **Why is the internal resistance of an ideal current source taken as infinite?**  
+  The internal resistance is in parallel. Infinite resistance means no source current is diverted through that internal path, so all the prescribed current is delivered to the external circuit.
+
+### Class history
+
+- 24 Aug 2026 · Source classification
+- 27 Aug 2026 · Ideal and practical voltage/current sources
 
 ### Physical-book reference
 

@@ -1,10 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/class-log.schema.json",
-  "title": "PankusDesk Dated Class Log Entry",
+  "$comment": "Design Lock v2: faithful dated class record with mapped cumulative topics and derived class figures.",
+  "title": "PankusDesk Dated Class Log Entry — Design Lock v2",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schema_version", "date", "source_id", "subject", "unit", "title", "mapped_topics", "pages"],
+  "required": ["schema_version", "date", "source_id", "subject", "unit", "title", "summary", "transcription_policy", "mapped_topics", "pages"],
   "properties": {
     "schema_version": {"type": "integer", "minimum": 1},
     "date": {"type": "string", "format": "date"},
@@ -15,9 +16,9 @@
       "additionalProperties": true,
       "required": ["code", "name", "shortName"],
       "properties": {
-        "code": {"type": "string"},
-        "name": {"type": "string"},
-        "shortName": {"type": "string"}
+        "code": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "shortName": {"type": "string", "minLength": 1}
       }
     },
     "unit": {
@@ -30,10 +31,11 @@
       }
     },
     "title": {"type": "string", "minLength": 1},
-    "summary": {"type": "string"},
-    "transcription_policy": {"type": "string"},
+    "summary": {"type": "string", "minLength": 1},
+    "transcription_policy": {"type": "string", "minLength": 1},
     "mapped_topics": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": true,
@@ -62,7 +64,10 @@
         }
       }
     },
-    "source_notes": {"type": "array", "items": {"type": "string"}}
+    "source_notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
   },
   "$defs": {
     "figure": {

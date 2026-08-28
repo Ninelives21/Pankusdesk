@@ -1,14 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/textbook-questions.schema.json",
-  "title": "PankusDesk Prescribed Textbook Questions",
+  "$comment": "Design Lock v2: prescribed textbook wording plus source-backed PankusDesk study answers and source-gap handling.",
+  "title": "PankusDesk Prescribed Textbook Questions — Design Lock v2",
   "type": "object",
   "additionalProperties": true,
   "required": ["schema_version", "subject_code", "source", "units"],
   "properties": {
     "schema_version": {"type": "integer", "minimum": 1},
     "subject_code": {"type": "string", "minLength": 1},
-    "source": {"type": "object", "required": ["type", "title"], "additionalProperties": true},
+    "source": {
+      "type": "object",
+      "required": ["type", "title"],
+      "additionalProperties": true,
+      "properties": {
+        "type": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "note": {"type": "string"}
+      }
+    },
     "units": {
       "type": "object",
       "additionalProperties": {"$ref": "#/$defs/unitQuestions"}

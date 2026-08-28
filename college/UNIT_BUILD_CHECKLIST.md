@@ -1,109 +1,199 @@
-# Unit Build Checklist
+# Unit Build Checklist — Design Lock v2
 
-Use this checklist for every new college unit, regardless of subject or semester.
+Use this checklist for every college unit. A unit is not `ready` until the applicable items pass.
 
-## A. Start
+---
+
+## A. Design lock and workspace
 
 - [ ] Read `college/COLLEGE_BUILD_STANDARD.md`.
 - [ ] Read `college/REFERENCE_IMPLEMENTATION.md`.
+- [ ] Read `college/NOTEBOOK_REDRAW_STYLE.md` before any redraw work.
 - [ ] Inspect the latest workspace, not an old delta/chat reconstruction.
-- [ ] Inspect target `subject.json`, target unit status, generic renderers, and current schemas.
+- [ ] Inspect target `subject.json`, current schemas and shared renderers.
+- [ ] Confirm whether the unit is currently `scaffold` or `ready`.
 
-## B. Source intake
+## B. Source intake and lock
 
-- [ ] Inventory official syllabus/regulation source.
-- [ ] Inventory prescribed textbook pages/figures/questions.
+- [ ] Inventory the official syllabus/regulation source.
+- [ ] Inventory prescribed textbook pages, figures and chapter questions.
 - [ ] Inventory supplied lectures/transcripts.
-- [ ] Inventory class notes/daily material.
-- [ ] Inventory supplementary sources.
-- [ ] Record known missing files/lecture numbers/anomalies exactly.
+- [ ] Inventory dated class notes.
+- [ ] Inventory supplementary documents.
+- [ ] Record missing lecture numbers/pages/files and known source anomalies exactly.
+- [ ] Do not use model memory to fill a source gap silently.
 
-## C. Syllabus and gaps
+## C. Syllabus coverage and gaps
 
 - [ ] Atomise the official unit syllabus.
-- [ ] Map every atom to real source references.
+- [ ] Map every syllabus atom to real source references.
 - [ ] Mark unsupported required material as `SOURCE_GAP`.
-- [ ] Obtain explicit approval before using outside gap sources.
-- [ ] Record approved gap sources/provenance.
+- [ ] Obtain explicit approval before using an outside gap source.
+- [ ] Record approved gap-source provenance.
+- [ ] Do not promote useful extra material to official/core scope.
 
-## D. Cumulative theory
+## D. Textbook-faithful cumulative theory
 
+- [ ] Treat the prescribed textbook as the primary notes source.
+- [ ] Preserve textbook sequence and terminology.
+- [ ] Preserve definitions and explanatory detail; do not over-summarise.
+- [ ] Keep equations/derivations in situ.
+- [ ] Keep useful worked-example calculation lines where they teach the method.
+- [ ] Correct only grammar/punctuation/obvious typos unless a larger correction is explicitly approved.
+- [ ] Preserve/flag source inconsistencies rather than silently reconciling them.
 - [ ] Build/update stable topic IDs.
-- [ ] Set each topic to `core`, `supporting`, or `core-gap-filled` correctly.
-- [ ] Consolidate overlapping textbook/lecture/class explanations.
-- [ ] Remove duplication.
-- [ ] Write theory as theory—no source/workflow commentary.
-- [ ] Add formulas/methods/cautions only when source-backed/useful.
-- [ ] Add section/topic provenance.
-- [ ] Synchronize human-readable `unit-N.md` where used.
+- [ ] Set `core`, `supporting`, `core-gap-filled` correctly.
+- [ ] De-duplicate overlapping textbook/lecture/class material.
+- [ ] Write theory directly; remove source/workflow narration from student-facing prose.
+- [ ] Add topic + section `source_refs`.
+- [ ] Add `book_refs` where useful for internal/page reference.
+- [ ] Synchronize `kb/notes/unit-N.md` where used.
 
-## E. Self-checks and practice
+## E. Mathematics
 
-- [ ] Keep generated self-checks distinct from official textbook questions.
-- [ ] Audit all prescribed chapter-end questions for the unit.
-- [ ] Preserve official question wording.
-- [ ] Never invent unsupported answers.
-- [ ] Flag source gaps/discrepancies explicitly.
-- [ ] Give each question a stable ID/anchor.
-- [ ] Link “Practice from the prescribed book” to exact question anchors.
+- [ ] Use MathJax/LaTeX delimiters for mathematical content.
+- [ ] Use `\dfrac` for every authored fraction; no `\frac` in ready-unit topic content.
+- [ ] Verify subscripts/symbols (`\rho`, `\varphi`, etc.) were not corrupted by code escapes.
+- [ ] Check equations against the source after programmatic edits.
 
-## F. Figures
+## F. Quick recall, self-checks and teaching aids
 
-- [ ] Audit which figures are actually needed before cropping/redrawing.
-- [ ] Put theory figures in `assets/book/uN/theory/`.
-- [ ] Put question/example figures in `assets/book/uN/examples/`.
-- [ ] Follow `college/NOTEBOOK_REDRAW_STYLE.md`.
-- [ ] Verify topology/labels/values against source.
-- [ ] Use descriptive alt text.
-- [ ] Add exact insertion anchors in topic data.
-- [ ] Record intrinsic width/height when available.
-- [ ] Do not expose internal capture filenames in student UI.
+- [ ] Add concise `learn` points where useful.
+- [ ] Keep generated `self_checks` separate from official textbook/PYQ material.
+- [ ] Add formulas/methods/cautions only when useful and source-safe.
+- [ ] If source notes are too terse or symbol-heavy, add a blue explanation accordion rather than rewriting the source material.
+- [ ] Give each explanation dropdown a meaningful title.
+- [ ] Keep explanation language simple enough to teach the confusing step.
+- [ ] Use `accordion_recap` only when it adds real revision value.
 
-## G. Daily class notes (when supplied)
+## G. Figures — selection and asset role
 
-- [ ] Preserve dated verbatim record separately.
-- [ ] Map dated record to stable topic IDs.
-- [ ] Integrate only useful new theory into cumulative topics.
-- [ ] Preserve lecturer emphasis/assignments in the correct structured layer.
-- [ ] Flag contradictions instead of silently reconciling them.
-- [ ] Link calendar → dated log → cumulative topics.
-- [ ] Add quiet class-history links where useful.
-- [ ] Do not commit raw notebook photographs under website assets.
+- [ ] Audit which figures are actually needed.
+- [ ] Put textbook theory figures in `assets/book/uN/theory/`.
+- [ ] Put textbook question/example figures in `assets/book/uN/examples/`.
+- [ ] Put derived dated class visuals in `assets/class/YYYY-MM-DD/figures/`.
+- [ ] Do not commit raw notebook photographs under website asset `raw` folders.
+- [ ] Give every embedded figure descriptive alt text.
+- [ ] Record intrinsic `width`/`height` when available.
+- [ ] Do not expose capture filenames as student-facing descriptions.
 
-## H. UI/architecture
+## H. NRS technical redraw gate
 
-- [ ] Reuse generic `subject-unit.js` / `unit-questions.js` / `class-log.js` architecture.
-- [ ] Do not create subject-specific duplicate renderers without an approved architectural reason.
-- [ ] Keep HTML pages as lightweight data-driven shells.
-- [ ] Preserve left-nav independent scroll and active-topic navigation.
-- [ ] Preserve Practice links below TOC.
-- [ ] Preserve end-of-unit practice CTA.
-- [ ] Keep Detailed sources quiet/collapsed.
-- [ ] Verify desktop/tablet/mobile rendering.
+For **every technical redraw**:
 
-## I. PYQs
+- [ ] Identify what the drawing actually is (circuit, graph, field diagram, classification, etc.).
+- [ ] State meaning-bearing details before generation.
+- [ ] Confirm ambiguous details with the user.
+- [ ] Verify arrow directions individually, not just “clockwise/anticlockwise” as a label.
+- [ ] Verify polarity.
+- [ ] Verify dot/cross / into-page/out-of-page conventions.
+- [ ] Verify source orientation and graph axes.
+- [ ] Verify circuit connectivity/topology.
+- [ ] Verify around/through/front/behind spatial relationships.
+- [ ] Verify meaningful counts (loops, turns, arrows, terminals, panels).
+- [ ] Generate only after the semantic audit is understood.
+- [ ] Inspect the actual output against the audit.
+- [ ] Reject/regenerate any technically wrong output.
+- [ ] Do not let a textbook cue override the actual class-note source.
+
+## I. Figure placement
+
+- [ ] Compare each used textbook figure with the actual source page.
+- [ ] Place every ready-unit figure explicitly with `after` or `grid` metadata.
+- [ ] Do not leave unanchored fallback figures.
+- [ ] Use CSS Grid, not floats, for side-by-side textbook placement.
+- [ ] Use the source-faithful paragraph range (`grid.start`–`grid.end`).
+- [ ] Default side-by-side desktop layout to 50/50 text/image.
+- [ ] Keep genuine full-width figures full-width.
+- [ ] Verify mobile one-column behaviour.
+- [ ] Verify labels/arrows remain readable at normal page size.
+
+## J. Daily class notes
+
+- [ ] Create/maintain `kb/class-log/YYYY-MM-DD/entry.json`.
+- [ ] Keep `raw.md` where the workflow retains it.
+- [ ] Preserve page sequence and notebook meaning faithfully.
+- [ ] Record user-confirmed ambiguous readings where useful.
+- [ ] Map the dated entry to stable topic IDs.
+- [ ] Add/update the class source in provenance/source manifest.
+- [ ] Add the date to `college/<semester>/data/class-log.json`.
+- [ ] Verify calendar → dated log link.
+- [ ] Integrate useful material into the correct point in the cumulative topic.
+- [ ] Use visibly labelled class-note sections, not source-management prose.
+- [ ] Add quiet `class_history` links where useful.
+- [ ] Combine adjacent class sketches only when they clearly form one concept and the interpretation is confirmed.
+- [ ] Preserve contradictions; do not silently reconcile them.
+
+## K. Prescribed textbook questions
+
+- [ ] Audit all chapter-end questions belonging to the unit.
+- [ ] Preserve official wording.
+- [ ] Give every question a stable ID/anchor.
+- [ ] Link theory practice rows to exact anchors.
+- [ ] Keep PankusDesk answers distinct from official textbook solutions.
+- [ ] Use source-backed steps/equations/tables/figures only.
+- [ ] Store printed final answers as `book_check` where appropriate.
+- [ ] Flag printed/source discrepancies.
+- [ ] Use `status: source-gap` when sources cannot support an answer.
+
+## L. PYQs
 
 - [ ] Keep PYQs subject-wide by default.
-- [ ] Do not invent PYQ content/year/marks.
+- [ ] Do not invent wording, year, marks or exam metadata.
 - [ ] Add unit/topic mappings only when confident.
 
-## J. Verification
+## M. UI and generic architecture
+
+- [ ] Reuse `scripts/new/subject-unit.js`.
+- [ ] Reuse `scripts/new/unit-questions.js`.
+- [ ] Reuse `scripts/new/class-log.js`.
+- [ ] Reuse `scripts/new/calendar.js` and semester data architecture.
+- [ ] Keep unit/question/class-log HTML as lightweight shells.
+- [ ] Do not create a subject-specific duplicate renderer without an approved architectural reason.
+- [ ] Preserve topic-nav independent scroll and active tracking.
+- [ ] Preserve Quick recall / Check yourself / practice navigation.
+- [ ] Preserve visibly separate class-note and explanation treatments.
+- [ ] Verify desktop/tablet/mobile behaviour.
+
+## N. Verification
 
 - [ ] Parse all changed JSON.
 - [ ] Syntax-check changed JavaScript/Python.
+- [ ] Validate changed data against current schemas where tooling is available.
 - [ ] Run subject-specific verifier.
 - [ ] Run `python3 scripts/tools/verify_college.py`.
-- [ ] Resolve errors rather than suppressing checks.
-- [ ] Confirm all ready-unit assets/links exist.
-- [ ] Confirm student-facing prose contains no build/source commentary.
+- [ ] Confirm configured source references resolve.
+- [ ] Confirm ready-unit figures exist, have useful alt text and explicit placement.
+- [ ] Confirm class-note sections have source labels + class source refs.
+- [ ] Confirm explanation accordions are structurally valid.
+- [ ] Confirm practice anchors resolve.
+- [ ] Confirm class-log mappings and calendar links resolve.
+- [ ] Confirm no raw notebook binaries are inside website class `raw` folders.
+- [ ] Confirm no `\frac` remains in ready-unit topic content.
+- [ ] Confirm student-facing theory/accordion prose contains no build/source meta-commentary.
+- [ ] Fix underlying errors; do not weaken verification to obtain PASS.
 
-## K. Publish/handoff
+## O. Ready gate
 
-- [ ] Change `publicationStatus` to `ready` only after verification.
-- [ ] Generate a minimal delta.
-- [ ] List every changed/added file.
-- [ ] Provide unzip command.
-- [ ] Provide `rsync -avhn` dry run.
-- [ ] Provide real `rsync -avh` command.
-- [ ] Provide `git status` command.
-- [ ] Provide verifier command(s).
+Set `publicationStatus: "ready"` only when:
+
+- [ ] official scope is fully covered or explicitly gap-resolved;
+- [ ] textbook-faithful theory is complete;
+- [ ] all required figures are source-checked and correctly placed;
+- [ ] class material supplied to date has been integrated/logged;
+- [ ] questions/practice links are complete for the intended unit release;
+- [ ] visual QA passes;
+- [ ] subject verifier passes;
+- [ ] generic college verifier passes for the unit's changes.
+
+## P. Handoff
+
+- [ ] Create a **minimal delta** unless a full workspace is explicitly requested.
+- [ ] Package the delta with one top-level folder.
+- [ ] List changed/added files.
+- [ ] Provide an extraction command that works from the stated directory.
+- [ ] Provide `rsync -avhn` dry-run first.
+- [ ] Provide real `rsync -avh` second.
+- [ ] Never use `--delete` for a normal delta.
+- [ ] Do not guess the user's Pankusdesk path.
+- [ ] Provide `git status` and verifier command(s).

@@ -851,13 +851,20 @@
         "date": "2026-08-24",
         "label": "24 Aug 2026 · Source classification",
         "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
+      },
+      {
+        "date": "2026-08-27",
+        "label": "27 Aug 2026 · Ideal and practical voltage/current sources",
+        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-27"
       }
     ],
     "intro": "Electrical energy sources are classified as voltage sources and current sources, and also as independent and dependent sources.",
     "learn": [
       "Voltage sources supply different currents at a given voltage; current sources supply different voltages at a constant current.",
       "Sources may be independent or dependent (controlled).",
-      "Dependent sources are VCVS, CCVS, VCCS and CCCS."
+      "Dependent sources are VCVS, CCVS, VCCS and CCCS.",
+      "Ideal voltage source → voltage stays fixed; practical voltage source → internal series resistance causes terminal voltage to fall as current increases.",
+      "Ideal current source → current stays fixed; practical current source → internal parallel resistance diverts some current, so delivered current falls as terminal voltage rises."
     ],
     "sections": [
       {
@@ -875,6 +882,63 @@
             "pages": "8",
             "images": "08.png"
           }
+        ]
+      },
+      {
+        "heading": "Energy-source classification and source symbols",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 27 Aug 2026",
+        "paragraphs": [
+          "Energy sources are classified as independent and dependent. Independent sources may be voltage sources or current sources; each may be ideal or practical. Dependent sources are VCCS, CCCS, CCVS and VCVS.",
+          "For voltage sources, a DC source may be represented by a cell/battery symbol or by a circular source symbol with marked \\(+\\) and \\(-\\) polarity. A circular source symbol with a sine wave represents an AC source."
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c1.png",
+            "alt": "Notebook-style classification tree of energy sources into independent voltage/current sources with ideal and practical forms, and dependent VCCS, CCCS, CCVS and VCVS sources.",
+            "caption": "Class-note redraw · Classification of energy sources",
+            "width": 1448,
+            "height": 1086,
+            "kind": "class-note",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            },
+            "size": "large"
+          },
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c2.png",
+            "alt": "Notebook-style symbols for DC voltage sources using a cell and a circular source with plus/minus polarity, plus the circular sine-wave symbol for an AC source.",
+            "caption": "Class-note redraw · DC and AC voltage-source symbols",
+            "width": 1448,
+            "height": 1086,
+            "kind": "class-note",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            },
+            "size": "medium"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "How to read the energy-source classification",
+            "paragraphs": [
+              "Independent does not mean “constant”. It means the source value is specified by the source itself rather than being controlled by another voltage or current elsewhere in the circuit. The specified value may be fixed or may vary with time.",
+              "Dependent (controlled) sources take their value from another circuit voltage or current."
+            ],
+            "bullets": [
+              "VCVS — voltage-controlled voltage source.",
+              "CCVS — current-controlled voltage source.",
+              "VCCS — voltage-controlled current source.",
+              "CCCS — current-controlled current source.",
+              "In each abbreviation, the first pair tells what controls the source (VC or CC); the last pair tells what the source produces (VS or CS)."
+            ]
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-27"
         ]
       },
       {
@@ -924,6 +988,34 @@
             "pages": "8–9",
             "images": "08.png–09.png"
           }
+        ]
+      },
+      {
+        "heading": "Ideal voltage source — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 27 Aug 2026",
+        "paragraphs": [
+          "An independent voltage source maintains a voltage—fixed or varying with time—that is not affected by another circuit quantity.",
+          "For an ideal voltage source, \\(V_s\\) is completely independent of source current \\(I_s\\). Its V–I characteristic therefore shows voltage remaining constant as current changes."
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c3.png",
+            "alt": "Notebook-style ideal voltage-source two-terminal element with source voltage V_s, current I_s and terminal-voltage label V, alongside a constant-voltage V–I characteristic.",
+            "caption": "Class-note redraw · Ideal voltage source and V–I characteristic",
+            "width": 1447,
+            "height": 1087,
+            "kind": "class-note",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            },
+            "size": "large"
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-27"
         ]
       },
       {
@@ -983,6 +1075,48 @@
             "pages": "9",
             "images": "09.png"
           }
+        ]
+      },
+      {
+        "heading": "Ideal current source — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 27 Aug 2026",
+        "paragraphs": [
+          "An ideal current source is a two-terminal element in which source current \\(I_s\\) is completely independent of the voltage across its terminals.",
+          "The current-source symbol may be labelled with a fixed value such as \\(I_1\\) or a time-varying value \\(I(t)\\). The arrow shows the chosen source-current direction.",
+          "For an ideal current source, current remains constant as terminal voltage changes."
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c5.png",
+            "alt": "Notebook-style strip of three equivalent ideal current-source representations labelled I_1 or I(t), with arrows showing current direction and a brace marked SAME.",
+            "caption": "Class-note redraw · Ideal current-source symbols",
+            "width": 1448,
+            "height": 1086,
+            "kind": "class-note",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            },
+            "size": "medium"
+          },
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c6.png",
+            "alt": "Notebook-style ideal current source with source current I_s and terminal voltage V, alongside a graph of constant I_s versus output voltage V_o.",
+            "caption": "Class-note redraw · Ideal current source and I–V characteristic",
+            "width": 1448,
+            "height": 1086,
+            "kind": "class-note",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            },
+            "size": "large"
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-27"
         ]
       },
       {
@@ -1187,6 +1321,54 @@
         ]
       },
       {
+        "heading": "Practical voltage source — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 27 Aug 2026",
+        "paragraphs": [
+          "A practical voltage source is represented as an ideal voltage source in series with source resistance. The terminal voltage falls as load current increases because of the voltage drop in the source resistance.",
+          "\\[V=V_s-IR\\]",
+          "If the source resistance is zero, the ideal voltage-source condition is obtained."
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c4.png",
+            "alt": "Notebook-style practical voltage source shown as source V_s in series with internal resistance R, together with its downward-sloping V–I characteristic and relation V equals V_s minus IR.",
+            "caption": "Class-note redraw · Practical voltage source and V–I characteristic",
+            "width": 1621,
+            "height": 970,
+            "kind": "class-note",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            },
+            "size": "large"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Ideal and Practical Voltage",
+            "paragraphs": [
+              "Think of a voltage source as something whose job is to provide a certain electrical “push” between its two terminals. A battery is the easiest example.",
+              "An ideal voltage source is an imaginary perfect battery. If it is a \\(10\\,\text{V}\\) source, it would remain exactly \\(10\\,\text{V}\\) no matter how much current the connected circuit draws.",
+              "A practical voltage source is what a real battery or power supply is like. A real source has some unavoidable internal resistance, so it can be pictured as an ideal voltage source with a small resistor hidden in series inside it.",
+              "When no current flows, there is no voltage drop across that internal resistance, so the terminal voltage is essentially the source voltage: \\(V=V_s\\). When current \\(I\\) flows, some voltage is lost inside the source as \\(IR\\).",
+              "\\[V=V_s-IR\\]",
+              "In words: voltage available outside = voltage produced inside − voltage lost inside the source.",
+              "For example, if \\(V_s=10\\,\text{V}\\), \\(R=1\\,\\Omega\\), and \\(I=2\\,\text{A}\\), the internal drop is \\(IR=2\\,\text{V}\\), so the terminal voltage is \\(8\\,\text{V}\\).",
+              "This is why the practical-source graph slopes downward: as current increases, the internal drop \\(IR\\) increases and the terminal voltage falls. If the internal resistance were zero, no voltage would be lost and the source would behave ideally."
+            ],
+            "bullets": [
+              "Ideal voltage source → voltage stays fixed; internal resistance is \\(0\\).",
+              "Practical voltage source → terminal voltage falls somewhat as current increases; internal resistance is small but non-zero."
+            ]
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-27"
+        ]
+      },
+      {
         "heading": "Practical Current Sources",
         "scope": "core",
         "paragraphs": [
@@ -1218,6 +1400,55 @@
             "images": "12.png–13.png"
           }
         ]
+      },
+      {
+        "heading": "Practical current source — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 27 Aug 2026",
+        "paragraphs": [
+          "A practical current source is represented as an ideal current source in parallel with a source/internal resistance. Some source current is drawn through this parallel resistance, so the current delivered to the load is reduced.",
+          "\\[I=I_s-\\dfrac{V}{R}\\]",
+          "As the source resistance approaches infinity, the ideal current-source condition is approached."
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c7.png",
+            "alt": "Notebook-style practical current-source circuit with ideal source I_s in parallel with source resistance R_s, alongside an I–V characteristic showing practical current decreasing as output voltage V_o increases.",
+            "caption": "Class-note redraw · Practical current source and I–V characteristic",
+            "width": 1537,
+            "height": 755,
+            "kind": "class-note",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            },
+            "size": "large"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Ideal and Practical Current",
+            "paragraphs": [
+              "Think of a current source as a device whose job is to make a certain amount of current flow. An ideal current source keeps that current fixed and lets the voltage across its terminals change to whatever value the connected load requires.",
+              "For example, an ideal \\(2\\,\text{A}\\) source connected to \\(5\\,\\Omega\\) needs \\(10\\,\text{V}\\) across the load. If the load becomes \\(10\\,\\Omega\\), the current is still \\(2\\,\text{A}\\), so the required voltage becomes \\(20\\,\text{V}\\).",
+              "A practical current source cannot maintain exactly the same current under every condition. It is modelled as an ideal current source with a large internal resistance in parallel.",
+              "The parallel resistance acts like an internal bypass: some source current can flow through it instead of going to the load.",
+              "\\[I_s=I_L+I_p\\]",
+              "\\[I_L=I_s-I_p\\]",
+              "Because the same terminal voltage appears across the internal parallel resistance, \\(I_p=\\dfrac{V}{R_p}\\). As terminal voltage rises, more current is diverted internally and the load current falls slightly.",
+              "For an ideal current source, the internal parallel resistance is treated as infinite. Then \\(I_p=\\dfrac{V}{R_p}\to0\\), so none of the source current is lost through the internal bypass."
+            ],
+            "bullets": [
+              "Ideal current source → current stays fixed; internal parallel resistance is \\(\\infty\\).",
+              "Practical current source → some current is diverted internally; internal parallel resistance is large but finite.",
+              "Memory aid: practical voltage source → unwanted voltage drop in series; practical current source → unwanted current diversion in parallel."
+            ]
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-27"
+        ]
       }
     ],
     "formulas": [
@@ -1227,7 +1458,8 @@
       "CCVS: \\(V_2=R_mi_1\\)",
       "VCCS: \\(i_2=G_mV_1\\)",
       "CCCS: \\(i_2=\\alpha i_1\\)",
-      "Practical voltage source: \\(V_L=V_s-IR_s\\)"
+      "Practical voltage source: \\(V_L=V_s-IR_s\\)",
+      "Class-note practical current source: \\(I=I_s-\\dfrac{V}{R}\\)"
     ],
     "method": [],
     "source_refs": [
@@ -1238,7 +1470,8 @@
       "TB-P011",
       "TB-P012",
       "TB-P013",
-      "CLASS-U1-2026-08-24"
+      "CLASS-U1-2026-08-24",
+      "CLASS-U1-2026-08-27"
     ],
     "book_refs": [
       {
@@ -1256,6 +1489,14 @@
       {
         "question": "What are the four controlled-source types?",
         "answer": "VCVS, CCVS, VCCS and CCCS."
+      },
+      {
+        "question": "What is the key difference between an ideal and practical voltage source?",
+        "answer": "An ideal voltage source keeps its terminal voltage fixed and has zero internal resistance; a practical source has internal series resistance, so its terminal voltage falls as current increases."
+      },
+      {
+        "question": "Why is the internal resistance of an ideal current source taken as infinite?",
+        "answer": "The internal resistance is in parallel. Infinite resistance means no source current is diverted through that internal path, so all the prescribed current is delivered to the external circuit."
       }
     ]
   },

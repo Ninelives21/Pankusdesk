@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-27",
+  "date_label": "27 August 2026",
+  "source_id": "CLASS-U1-2026-08-27",
+  "subject": {
+    "code": "25ES1EE101",
+    "name": "Basic Electrical Engineering",
+    "shortName": "BEE"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Introduction to Electrical Energy and DC Circuits"
+  },
+  "title": "Electrical energy sources — ideal and practical voltage/current sources",
+  "summary": "Energy-source classification; independent voltage and current sources; ideal and practical source models; source symbols and V–I/I–V characteristics.",
+  "transcription_policy": "Notebook wording is preserved as written as far as it is safely readable. User-confirmed readings are used where the handwriting was ambiguous; line wrapping is normalized for the web.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-sources",
+      "label": "Electrical energy sources: voltage, current, independent and dependent sources",
+      "href": "unit-1.html#u1-sources"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Energy sources and ideal voltage source",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Energy sources"
+        },
+        {
+          "type": "bullet",
+          "text": "Independent → voltage source → Ideal, Practical"
+        },
+        {
+          "type": "bullet",
+          "text": "Independent → current source → Ideal, Practical"
+        },
+        {
+          "type": "bullet",
+          "text": "Dependent → VCCS, CCCS, CCVS, VCVS"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c1.png",
+          "alt": "Notebook-style classification tree of energy sources into independent voltage/current sources with ideal and practical forms, and dependent VCCS, CCCS, CCVS and VCVS sources.",
+          "caption": "Class-note redraw · Classification of energy sources",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "type": "heading",
+          "text": "Independent voltage source"
+        },
+        {
+          "type": "line",
+          "text": "Symbol: \\(V_s\\) / \\(V\\); a source may also be written as \\(V(t)\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c2.png",
+          "alt": "Notebook-style symbols for DC voltage sources using a cell and a circular source with plus/minus polarity, plus the circular sine-wave symbol for an AC source.",
+          "caption": "Class-note redraw · DC and AC voltage-source symbols",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "type": "paragraph",
+          "text": "An independent voltage source maintains a voltage (fixed or varying with time) which is not affected by any other quantity."
+        },
+        {
+          "type": "heading",
+          "text": "Ideal voltage source"
+        },
+        {
+          "type": "paragraph",
+          "text": "A two-terminal element in which \\(V_s\\) is completely independent of current \\(I_s\\) through its terminals."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the V–I characteristic, at any time the value of \\(V_s\\) is constant with respect to current \\(I_s\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c3.png",
+          "alt": "Notebook-style ideal voltage-source two-terminal element with source voltage V_s, current I_s and terminal-voltage label V, alongside a constant-voltage V–I characteristic.",
+          "caption": "Class-note redraw · Ideal voltage source and V–I characteristic",
+          "width": 1447,
+          "height": 1087
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "Practical voltage source and ideal current-source symbols",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Practical voltage source"
+        },
+        {
+          "type": "equation",
+          "text": "\\[V=V_s-IR\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Practical voltage source can be considered as series-combination of an ideal voltage source and resistance which is known as source resistance."
+        },
+        {
+          "type": "paragraph",
+          "text": "The reduction in voltage across the terminals with increasing load current is due to voltage drop in source resistance."
+        },
+        {
+          "type": "paragraph",
+          "text": "When the value of source resistance is 0, ideal condition is achieved in the voltage source. Hence source resistance/internal resistance of an ideal voltage source is 0."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c4.png",
+          "alt": "Notebook-style practical voltage source shown as source V_s in series with internal resistance R, together with its downward-sloping V–I characteristic and relation V equals V_s minus IR.",
+          "caption": "Class-note redraw · Practical voltage source and V–I characteristic",
+          "width": 1621,
+          "height": 970
+        },
+        {
+          "type": "heading",
+          "text": "Ideal current source"
+        },
+        {
+          "type": "line",
+          "text": "The source current may be written as a fixed value \\(I_1\\) or a time-varying value \\(I(t)\\); the arrow shows the chosen source-current direction."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c5.png",
+          "alt": "Notebook-style strip of three equivalent ideal current-source representations, labelled I_1 or I(t), with arrows showing current direction and a brace marked SAME.",
+          "caption": "Class-note redraw · Ideal current-source symbols",
+          "width": 1448,
+          "height": 1086
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "Ideal and practical current source",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Ideal current source"
+        },
+        {
+          "type": "paragraph",
+          "text": "An ideal current source is a two-terminal element in which current \\(I_s\\) is completely independent of voltage \\(V_s\\) across its terminals."
+        },
+        {
+          "type": "paragraph",
+          "text": "If we observe the V–I characteristics of an ideal current source, at any time the value of current \\(I_s\\) is constant with respect to the voltage across it."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c6.png",
+          "alt": "Notebook-style ideal current source with source current I_s and terminal voltage V, alongside a graph of constant I_s versus output voltage V_o.",
+          "caption": "Class-note redraw · Ideal current source and I–V characteristic",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "type": "heading",
+          "text": "Practical current source"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I=I_s-\\dfrac{V}{R}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The reduction in current delivered by source is due to current drawn by parallel source resistance."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ideal condition: \\(R=\\infty\\) (source resistance). Hence source resistance/internal resistance of an ideal current source is \\(\\infty\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c7.png",
+          "alt": "Notebook-style practical current-source circuit with ideal source I_s in parallel with source resistance R_s, alongside an I–V characteristic showing practical current decreasing as output voltage V_o increases.",
+          "caption": "Class-note redraw · Practical current source and I–V characteristic",
+          "width": 1537,
+          "height": 755
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The dated class log preserves the three-page 27 August notebook record in sequence; the original notebook photographs remain in the supplied source archive and are not copied into website assets.",
+    "The energy-source classification uses the user-confirmed readings “Practical” and “VCCS” where the handwriting was ambiguous.",
+    "The original third-page class relation is rendered as I = I_s − V/R in the web text. The practical-current redraw is cropped above its malformed generated equation so the website does not display an incorrect formula; the equation is rendered accurately as MathJax immediately beside the class material.",
+    "The class redraw that combines the ideal-voltage-source circuit and V–I characteristic corresponds to the two separate sketches in the notebook."
+  ]
+}

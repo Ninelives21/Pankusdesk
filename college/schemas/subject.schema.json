@@ -1,10 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/subject.schema.json",
-  "title": "PankusDesk College Subject",
+  "$comment": "Design Lock v2 subject metadata and generic source/practice renderer configuration.",
+  "title": "PankusDesk College Subject — Design Lock v2",
   "type": "object",
   "additionalProperties": true,
-  "required": ["code", "name", "shortName", "regulation", "semester", "kb", "syllabus", "units"],
+  "required": ["code", "name", "shortName", "regulation", "semester", "kb", "syllabus", "coverage", "units"],
   "properties": {
     "code": {"type": "string", "minLength": 1},
     "name": {"type": "string", "minLength": 1},
@@ -14,7 +15,7 @@
     "credits": {"type": ["number", "integer"]},
     "kb": {"type": "string", "minLength": 1},
     "syllabus": {"type": "string", "minLength": 1},
-    "coverage": {"type": "string"},
+    "coverage": {"type": "string", "minLength": 1},
     "units": {
       "type": "array",
       "minItems": 1,
@@ -64,7 +65,11 @@
             "label": {"type": "string"},
             "description": {"type": "string"},
             "hrefPattern": {"type": "string"},
-            "availableUnits": {"type": "array", "items": {"type": "integer", "minimum": 1}, "uniqueItems": true},
+            "availableUnits": {
+              "type": "array",
+              "items": {"type": "integer", "minimum": 1},
+              "uniqueItems": true
+            },
             "data": {"type": "string"}
           }
         },
