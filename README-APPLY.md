@@ -1,20 +1,11 @@
-# MAC Unit I — class-note integration delta
+# MAC examples — full-working delta
 
-Adds Priyanka's dated MAC class notes for 25, 28 and 29 August 2026 to the cumulative Unit I page and Semester 1.1 calendar.
+This delta enforces the PankusDesk global example rule and expands the five supplied Unit I class examples so every solution is fully worked inside its dropdown.
 
-- Blue class-note boxes are integrated into the relevant topics.
-- Class-worked examples are dropdowns.
-- Dated class-log records are preserved separately.
-- No chapter-end-question changes are included.
+Changed:
+- `college/1-1/matrices-calculus/kb/data/topics.json`
+- `college/COLLEGE_BUILD_STANDARD.md`
+- `college/UNIT_BUILD_CHECKLIST.md`
+- `college/1-1/matrices-calculus/kb/audits/unit-1-example-full-working-2026-08-29.md`
 
-Dry run:
-
-```bash
-rsync -avhn mac-unit1-classnotes-delta/ Pankusdesk/
-```
-
-Real sync:
-
-```bash
-rsync -avh mac-unit1-classnotes-delta/ Pankusdesk/
-```
+No chapter-end question integration is changed.

@@ -143,7 +143,7 @@
       {
         "date": "2026-08-25",
         "label": "25 Aug 2026 · Rank and normal form",
-        "href": "class-log.html?date=2026-08-25"
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-25"
       }
     ]
   },
@@ -211,25 +211,58 @@
           {
             "title": "Class example 1 — Inverse of a 3 × 3 matrix",
             "paragraphs": [
-              "\\[A=\\begin{bmatrix}-2&1&3\\\\0&-1&1\\\\1&2&0\\end{bmatrix}\\]",
-              "The class solution writes \\([A\\mid I]\\) and applies the same row transformations to both halves until the left side becomes \\(I\\).",
-              "The final result recorded is",
-              "\\[A^{-1}=\\dfrac18\\begin{bmatrix}-2&6&4\\\\1&-3&2\\\\1&5&2\\end{bmatrix}.\\]"
+              "\\[A=\\begin{bmatrix}-2&1&3\\\\0&-1&1\\\\1&2&0\\end{bmatrix}.\\]",
+              "Write \\([A\\mid I]\\):",
+              "\\[\\left[\\begin{array}{ccc|ccc}-2&1&3&1&0&0\\\\0&-1&1&0&1&0\\\\1&2&0&0&0&1\\end{array}\\right].\\]",
+              "Interchange \\(R_1\\) and \\(R_3\\): \\(R_1\\leftrightarrow R_3\\).",
+              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&2&0&0&0&1\\\\0&-1&1&0&1&0\\\\-2&1&3&1&0&0\\end{array}\\right].\\]",
+              "Clear the first-column entry below the pivot: \\(R_3\to R_3+2R_1\\).",
+              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&2&0&0&0&1\\\\0&-1&1&0&1&0\\\\0&5&3&1&0&2\\end{array}\\right].\\]",
+              "Clear the second-column entries above and below the pivot using \\(R_1\to R_1+2R_2\\) and \\(R_3\to R_3+5R_2\\):",
+              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&2&0&2&1\\\\0&-1&1&0&1&0\\\\0&0&8&1&5&2\\end{array}\\right].\\]",
+              "Make the second and third pivots equal to 1: \\(R_2\to-R_2\\), \\(R_3\to\\dfrac18R_3\\).",
+              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&2&0&2&1\\\\0&1&-1&0&-1&0\\\\0&0&1&\\dfrac18&\\dfrac58&\\dfrac14\\end{array}\\right].\\]",
+              "Clear the entries above the third pivot using \\(R_1\to R_1-2R_3\\) and \\(R_2\to R_2+R_3\\):",
+              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&0&-\\dfrac14&\\dfrac34&\\dfrac12\\\\0&1&0&\\dfrac18&-\\dfrac38&\\dfrac14\\\\0&0&1&\\dfrac18&\\dfrac58&\\dfrac14\\end{array}\\right].\\]",
+              "The left side is now \\(I\\), so the right side is \\(A^{-1}\\):",
+              "\\[A^{-1}=\\begin{bmatrix}-\\dfrac14&\\dfrac34&\\dfrac12\\\\\\dfrac18&-\\dfrac38&\\dfrac14\\\\\\dfrac18&\\dfrac58&\\dfrac14\\end{bmatrix}=\\dfrac18\\begin{bmatrix}-2&6&4\\\\1&-3&2\\\\1&5&2\\end{bmatrix}.\\]"
             ]
           },
           {
             "title": "Class example 2 — Grewal p. 39 example worked again in class",
             "paragraphs": [
               "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}\\]",
+              "Solution: Writing the same matrix side by side with the unit matrix of order 3, we have",
+              "\\[\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\1&3&-3&0&1&0\\\\-2&-4&-4&0&0&1\\end{array}\\right]\\quad[\\text{Operate }R_2-R_1\\text{ and }R_3+2R_1]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&2&-6&-1&1&0\\\\0&-2&2&2&0&1\\end{array}\\right]\\quad[\\text{Operate }\\dfrac12R_2\\text{ and }\\dfrac12R_3]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&-1&1&1&0&\\dfrac12\\end{array}\\right]\\quad[\\text{Operate }R_1-R_2\\text{ and }R_3+R_2]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&6&\\dfrac32&-\\dfrac12&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&0&-2&\\dfrac12&\\dfrac12&\\dfrac12\\end{array}\\right]\\]",
+              "\\[\\left[\\text{Operate }R_1+3R_3,\\ R_2-\\dfrac32R_3\\text{ and }\\left(-\\dfrac12\\right)R_3\\right]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&0&3&1&\\dfrac32\\\\0&1&0&-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\0&0&1&-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{array}\\right]\\]",
+              "Hence the inverse of the given matrix is",
               "\\[A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}.\\]"
             ]
           },
           {
             "title": "Class example 3 — Inverse of a 4 × 4 matrix",
             "paragraphs": [
-              "\\[A=\\begin{bmatrix}0&1&2&2\\\\1&1&2&3\\\\2&2&2&3\\\\2&3&3&3\\end{bmatrix}\\]",
-              "The class working starts with \\(R_1\\leftrightarrow R_2\\), then successively clears the pivot columns on the left while carrying exactly the same operations on the identity matrix on the right.",
-              "The final inverse is",
+              "\\[A=\\begin{bmatrix}0&1&2&2\\\\1&1&2&3\\\\2&2&2&3\\\\2&3&3&3\\end{bmatrix}.\\]",
+              "Write the augmented matrix \\([A\\mid I]\\):",
+              "\\[\\left[\\begin{array}{cccc|cccc}0&1&2&2&1&0&0&0\\\\1&1&2&3&0&1&0&0\\\\2&2&2&3&0&0&1&0\\\\2&3&3&3&0&0&0&1\\end{array}\\right].\\]",
+              "Put a 1 in the first pivot position by interchanging \\(R_1\\) and \\(R_2\\):",
+              "\\[R_1\\leftrightarrow R_2\\]",
+              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&1&2&3&0&1&0&0\\\\0&1&2&2&1&0&0&0\\\\2&2&2&3&0&0&1&0\\\\2&3&3&3&0&0&0&1\\end{array}\\right].\\]",
+              "Clear the first column below the pivot: \\(R_3\to R_3-2R_1\\), \\(R_4\to R_4-2R_1\\).",
+              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&1&2&3&0&1&0&0\\\\0&1&2&2&1&0&0&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&1&-1&-3&0&-2&0&1\\end{array}\\right].\\]",
+              "Use the second pivot to clear the other second-column entries needed at this stage: \\(R_1\to R_1-R_2\\), \\(R_4\to R_4-R_2\\).",
+              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&1&-1&1&0&0\\\\0&1&2&2&1&0&0&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&0&-3&-5&-1&-2&0&1\\end{array}\\right].\\]",
+              "Eliminate the third-column entries in rows 2 and 4 without introducing fractions: \\(R_2\to R_2+R_3\\), \\(R_4\to2R_4-3R_3\\).",
+              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&1&-1&1&0&0\\\\0&1&0&-1&1&-2&1&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&0&0&-1&-2&2&-3&2\\end{array}\\right].\\]",
+              "Now use the fourth pivot to clear the fourth column above it: \\(R_1\to R_1+R_4\\), \\(R_2\to R_2-R_4\\), \\(R_3\to R_3-3R_4\\).",
+              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&0&-3&3&-3&2\\\\0&1&0&0&3&-4&4&-2\\\\0&0&-2&0&6&-8&10&-6\\\\0&0&0&-1&-2&2&-3&2\\end{array}\\right].\\]",
+              "Finally make the remaining pivots equal to 1: \\(R_3\to-\\dfrac12R_3\\), \\(R_4\to-R_4\\).",
+              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&0&-3&3&-3&2\\\\0&1&0&0&3&-4&4&-2\\\\0&0&1&0&-3&4&-5&3\\\\0&0&0&1&2&-2&3&-2\\end{array}\\right].\\]",
+              "The left side is \\(I_4\\). Hence",
               "\\[A^{-1}=\\begin{bmatrix}-3&3&-3&2\\\\3&-4&4&-2\\\\-3&4&-5&3\\\\2&-2&3&-2\\end{bmatrix}.\\]"
             ]
           }
@@ -253,7 +286,7 @@
       {
         "date": "2026-08-28",
         "label": "28 Aug 2026 · Gauss–Jordan inverse",
-        "href": "class-log.html?date=2026-08-28"
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-28"
       }
     ]
   },
@@ -385,32 +418,42 @@
             "title": "Class example 1 — Find the rank using normal form",
             "paragraphs": [
               "\\[A=\\begin{bmatrix}2&3&-1&1\\\\1&-1&-2&-4\\\\3&1&3&-2\\\\6&3&0&-7\\end{bmatrix}\\]",
-              "Using \\(R_2\\to2R_2-R_1,\\ R_3\\to2R_3-3R_1,\\ R_4\\to R_4-3R_1\\):",
-              "\\[A\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}\\]",
-              "Using \\(C_2\\to2C_2-3C_1,\\ C_3\\to2C_3+C_1,\\ C_4\\to2C_4-C_1\\):",
-              "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}\\]",
-              "After changing signs/scaling the rows, the class working uses",
-              "\\[\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}.\\]",
-              "Then \\(R_3\\to5R_3-7R_2\\) and \\(R_4\\to5R_4-6R_2\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&0&-66&-28\\\\0&0&-33&-4\\end{bmatrix}\\]",
-              "Using \\(C_3\\to5C_3-3C_2\\) and \\(C_4\\to5C_4-9C_2\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}\\]",
-              "With \\(R_4\\to2R_4-R_3\\), followed by row scaling:",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&14\\\\0&0&0&1\\end{bmatrix}\\]",
-              "Finally, a column transformation eliminates the 14 and the remaining diagonal entries are scaled to 1, giving \\(I_4\\).",
-              "\\[\\therefore\\ \\rho(A)=4.\\]"
+              "Apply the row transformations \\(R_2\to2R_2-R_1,\\ R_3\to2R_3-3R_1,\\ R_4\to R_4-3R_1\\):",
+              "\\[A\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}.\\]",
+              "Now apply the column transformations \\(C_2\to2C_2-3C_1,\\ C_3\to2C_3+C_1,\\ C_4\to2C_4-C_1\\):",
+              "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}.\\]",
+              "Scale the rows using \\(R_1\to\\dfrac12R_1,\\ R_2\to-\\dfrac12R_2,\\ R_3\to-\\dfrac12R_3,\\ R_4\to-\\dfrac12R_4\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}.\\]",
+              "Eliminate the second-column entries below the pivot using \\(R_3\to5R_3-7R_2\\) and \\(R_4\to5R_4-6R_2\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&0&-66&-28\\\\0&0&-33&-4\\end{bmatrix}.\\]",
+              "Next use \\(C_3\to5C_3-3C_2\\) and \\(C_4\to5C_4-9C_2\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}.\\]",
+              "Now eliminate the remaining entry in the third column of \\(R_4\\): \\(R_4\to2R_4-R_3\\).",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&0&100\\end{bmatrix}.\\]",
+              "Scale \\(R_2\to\\dfrac15R_2,\\ R_3\to-\\dfrac1{10}R_3,\\ R_4\to\\dfrac1{100}R_4\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&14\\\\0&0&0&1\\end{bmatrix}.\\]",
+              "Remove the 14 by the column transformation \\(C_4\to33C_4-14C_3\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&0\\\\0&0&0&33\\end{bmatrix}.\\]",
+              "Finally scale \\(R_3\to\\dfrac1{33}R_3\\) and \\(R_4\to\\dfrac1{33}R_4\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&1&0\\\\0&0&0&1\\end{bmatrix}=I_4.\\]",
+              "The normal form is \\(I_4\\). Therefore \\[\\rho(A)=4.\\]"
             ]
           },
           {
             "title": "Class example 2 — Reduce to normal form and find the rank",
             "paragraphs": [
               "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}\\]",
-              "The class working begins with \\(R_1\\leftrightarrow R_2\\), then eliminates the first-column entries below the leading 1:",
+              "First interchange the first two rows: \\(R_1\\leftrightarrow R_2\\).",
+              "\\[A\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]",
+              "Clear the first-column entries below the pivot using \\(R_3\to R_3-3R_1\\) and \\(R_4\to R_4-R_1\\):",
               "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]",
-              "Column transformations \\(C_3\\to C_3-C_1\\) and \\(C_4\\to C_4-C_1\\) make the first row \\([1,0,0,0]\\). The repeated lower rows are then eliminated and the remaining non-pivot column entries are removed.",
-              "The normal form reached in the notebook is",
-              "\\[\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}.\\]",
-              "\\[\\therefore\\ \\rho(A)=2.\\]"
+              "Now apply \\(C_3\to C_3-C_1\\) and \\(C_4\to C_4-C_1\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]",
+              "The last three rows are identical. Eliminate the repetitions with \\(R_3\to R_3-R_2\\) and \\(R_4\to R_4-R_2\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}.\\]",
+              "Finally clear the non-pivot entries in row 2 using \\(C_3\to C_3+3C_2\\) and \\(C_4\to C_4+C_2\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}.\\]",
+              "Hence the order of the identity block is 2, so \\[\\rho(A)=2.\\]"
             ]
           }
         ],
@@ -435,7 +478,7 @@
       {
         "date": "2026-08-25",
         "label": "25 Aug 2026 · Normal form and rank",
-        "href": "class-log.html?date=2026-08-25"
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-25"
       }
     ]
   },
@@ -585,7 +628,7 @@
       {
         "date": "2026-08-29",
         "label": "29 Aug 2026 · Systems of linear equations",
-        "href": "class-log.html?date=2026-08-29"
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
       }
     ]
   },
@@ -811,7 +854,7 @@
       {
         "date": "2026-08-29",
         "label": "29 Aug 2026 · Consistency and non-homogeneous systems",
-        "href": "class-log.html?date=2026-08-29"
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
       }
     ]
   },
@@ -911,7 +954,7 @@
       {
         "date": "2026-08-29",
         "label": "29 Aug 2026 · Homogeneous systems",
-        "href": "class-log.html?date=2026-08-29"
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
       }
     ]
   },
