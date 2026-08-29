@@ -126,6 +126,68 @@
     "class_history": null
   },
   {
+    "id": "u1-inverse-gauss-jordan",
+    "unit": 1,
+    "title": "Inverse of non-singular matrices by Gauss-Jordan method",
+    "status": "core",
+    "sections": [
+      {
+        "heading": "2.7 (6) Gauss-Jordan method of finding the inverse",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0039",
+          "TB-P0040"
+        ],
+        "book_refs": [
+          {
+            "pages": "39–40",
+            "note": "2.7 (6) Gauss-Jordan method of finding the inverse"
+          }
+        ],
+        "paragraphs": [
+          "Those elementary row transformations which reduce a given square matrix A to the unit matrix, when applied to unit matrix I give the inverse of A.",
+          "Let the successive row transformations which reduce A to I result from pre-multiplication by the elementary matrices \\(R_1,R_2,\\ldots,R_i\\), so that",
+          "\\[R_iR_{i-1}\\cdots R_2R_1A=I\\]",
+          "\\[R_iR_{i-1}\\cdots R_2R_1AA^{-1}=IA^{-1}\\]",
+          "or \\[R_iR_{i-1}\\cdots R_2R_1I=A^{-1}\\qquad[\\because\\ AA^{-1}=I]\\]",
+          "Hence the result.",
+          "Working rule to evaluate A⁻¹. Write the two matrices A and I side by side. Then perform the same row transformations on both. As soon as A is reduced to I, the other matrix represents A⁻¹."
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.25 — Using the Gauss-Jordan method, find the inverse of the matrix",
+            "paragraphs": [
+              "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}\\]",
+              "Solution: Writing the same matrix side by side with the unit matrix of order 3, we have",
+              "\\[\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\1&3&-3&0&1&0\\\\-2&-4&-4&0&0&1\\end{array}\\right]\\quad[\\text{Operate }R_2-R_1\\text{ and }R_3+2R_1]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&2&-6&-1&1&0\\\\0&-2&2&2&0&1\\end{array}\\right]\\quad[\\text{Operate }\\dfrac12R_2\\text{ and }\\dfrac12R_3]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&-1&1&1&0&\\dfrac12\\end{array}\\right]\\quad[\\text{Operate }R_1-R_2\\text{ and }R_3+R_2]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&6&\\dfrac32&-\\dfrac12&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&0&-2&\\dfrac12&\\dfrac12&\\dfrac12\\end{array}\\right]\\]",
+              "\\[\\left[\\text{Operate }R_1+3R_3,\\ R_2-\\dfrac32R_3\\text{ and }\\left(-\\dfrac12\\right)R_3\\right]\\]",
+              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&0&3&1&\\dfrac32\\\\0&1&0&-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\0&0&1&-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{array}\\right]\\]",
+              "Hence the inverse of the given matrix is",
+              "\\[A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}.\\]"
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0039",
+      "TB-P0040"
+    ],
+    "book_refs": [
+      {
+        "pages": "39–40",
+        "note": "Gauss-Jordan rule and Example 2.25"
+      }
+    ],
+    "class_history": null
+  },
+  {
     "id": "u1-rank-normal",
     "unit": 1,
     "title": "Rank of a matrix by Normal form",
@@ -247,68 +309,6 @@
       {
         "pages": "40–43",
         "note": "Normal form and Examples 2.26–2.28"
-      }
-    ],
-    "class_history": null
-  },
-  {
-    "id": "u1-inverse-gauss-jordan",
-    "unit": 1,
-    "title": "Inverse of non-singular matrices by Gauss-Jordan method",
-    "status": "core",
-    "sections": [
-      {
-        "heading": "2.7 (6) Gauss-Jordan method of finding the inverse",
-        "scope": "core",
-        "source_refs": [
-          "SYL-R25-U1",
-          "TB-P0039",
-          "TB-P0040"
-        ],
-        "book_refs": [
-          {
-            "pages": "39–40",
-            "note": "2.7 (6) Gauss-Jordan method of finding the inverse"
-          }
-        ],
-        "paragraphs": [
-          "Those elementary row transformations which reduce a given square matrix A to the unit matrix, when applied to unit matrix I give the inverse of A.",
-          "Let the successive row transformations which reduce A to I result from pre-multiplication by the elementary matrices \\(R_1,R_2,\\ldots,R_i\\), so that",
-          "\\[R_iR_{i-1}\\cdots R_2R_1A=I\\]",
-          "\\[R_iR_{i-1}\\cdots R_2R_1AA^{-1}=IA^{-1}\\]",
-          "or \\[R_iR_{i-1}\\cdots R_2R_1I=A^{-1}\\qquad[\\because\\ AA^{-1}=I]\\]",
-          "Hence the result.",
-          "Working rule to evaluate A⁻¹. Write the two matrices A and I side by side. Then perform the same row transformations on both. As soon as A is reduced to I, the other matrix represents A⁻¹."
-        ],
-        "accordions": [
-          {
-            "title": "Example 2.25 — Using the Gauss-Jordan method, find the inverse of the matrix",
-            "paragraphs": [
-              "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}\\]",
-              "Solution: Writing the same matrix side by side with the unit matrix of order 3, we have",
-              "\\[\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\1&3&-3&0&1&0\\\\-2&-4&-4&0&0&1\\end{array}\\right]\\quad[\\text{Operate }R_2-R_1\\text{ and }R_3+2R_1]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&2&-6&-1&1&0\\\\0&-2&2&2&0&1\\end{array}\\right]\\quad[\\text{Operate }\\dfrac12R_2\\text{ and }\\dfrac12R_3]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&-1&1&1&0&\\dfrac12\\end{array}\\right]\\quad[\\text{Operate }R_1-R_2\\text{ and }R_3+R_2]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&6&\\dfrac32&-\\dfrac12&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&0&-2&\\dfrac12&\\dfrac12&\\dfrac12\\end{array}\\right]\\]",
-              "\\[\\left[\\text{Operate }R_1+3R_3,\\ R_2-\\dfrac32R_3\\text{ and }\\left(-\\dfrac12\\right)R_3\\right]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&0&3&1&\\dfrac32\\\\0&1&0&-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\0&0&1&-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{array}\\right]\\]",
-              "Hence the inverse of the given matrix is",
-              "\\[A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}.\\]"
-            ]
-          }
-        ],
-        "accordion_label": "Worked examples"
-      }
-    ],
-    "source_refs": [
-      "SYL-R25-U1",
-      "TB-P0039",
-      "TB-P0040"
-    ],
-    "book_refs": [
-      {
-        "pages": "39–40",
-        "note": "Gauss-Jordan rule and Example 2.25"
       }
     ],
     "class_history": null
@@ -437,85 +437,6 @@
       {
         "pages": "47–49",
         "note": "Solution of linear systems, Examples 2.31–2.32"
-      }
-    ],
-    "class_history": null
-  },
-  {
-    "id": "u1-homogeneous-systems",
-    "unit": 1,
-    "title": "Solving systems of homogeneous equations",
-    "status": "core",
-    "sections": [
-      {
-        "heading": "2.10 (3) System of linear homogeneous equations",
-        "scope": "core",
-        "source_refs": [
-          "SYL-R25-U1",
-          "TB-P0052"
-        ],
-        "book_refs": [
-          {
-            "pages": "52",
-            "note": "2.10 (3) System of linear homogeneous equations"
-          }
-        ],
-        "paragraphs": [
-          "Consider the homogeneous linear equations",
-          "\\[\\begin{aligned}a_{11}x_1+a_{12}x_2+\\cdots+a_{1n}x_n&=0\\\\a_{21}x_1+a_{22}x_2+\\cdots+a_{2n}x_n&=0\\\\&\\vdots\\\\a_{m1}x_1+a_{m2}x_2+\\cdots+a_{mn}x_n&=0\\end{aligned}\\]",
-          "Find the rank r of the coefficient matrix A by reducing it to the triangular form by elementary row operations.",
-          "I. If r = n, the equations (iii) have only a trivial zero solution \\(x_1=x_2=\\cdots=x_n=0\\).",
-          "If r < n, the equation (iii) have (n − r) linearly independent solutions. The number of linearly independent solutions is (n − r) means, if arbitrary values are assigned to (n − r) of the variables, the values of the remaining r variables can be uniquely found. Thus the equations (iii) will have an infinite number of solutions.",
-          "II. When m < n (i.e., the number of equations is less than the number of variables), the solution is always other than \\(x_1=x_2=\\cdots=x_n=0\\). The number of solutions is infinite.",
-          "III. When m = n (i.e., the number of equations = the number of variables), the necessary and sufficient condition for solutions other than \\(x_1=x_2=\\cdots=x_n=0\\), is that the determinant of the coefficient matrix is zero. In this case the equations are said to be consistent and such a solution is called non-trivial solution. The determinant is called the eliminant of the equations."
-        ],
-        "accordions": [
-          {
-            "title": "Example 2.36 — Solve the homogeneous equations",
-            "paragraphs": [
-              "(i) \\(x+2y+3z=0,\\ 3x+4y+4z=0,\\ 7x+10y+12z=0\\).",
-              "(ii) \\(4x+2y+z+3w=0,\\ 6x+3y+4z+7w=0,\\ 2x+y+w=0\\).",
-              "Solution: (i) Rank of the coefficient matrix",
-              "\\[\\begin{bmatrix}1&2&3\\\\3&4&4\\\\7&10&12\\end{bmatrix}\\sim\\begin{bmatrix}1&2&3\\\\0&-2&-5\\\\7&10&12\\end{bmatrix}\\quad[\\text{Operating }R_2-3R_1]\\]",
-              "\\[\\sim\\begin{bmatrix}1&2&3\\\\0&-2&-5\\\\0&0&1\\end{bmatrix}\\quad[\\text{Operating }R_3-7R_1-2R_2]\\]",
-              "is 3 which = the number of variables (i.e., r = n). ∴ The equations have only a trivial solution: x = y = z = 0.",
-              "(ii) Rank of the coefficient matrix",
-              "\\[\\begin{bmatrix}4&2&1&3\\\\6&3&4&7\\\\2&1&0&1\\end{bmatrix}\\sim\\begin{bmatrix}4&2&1&3\\\\0&0&\\dfrac52&\\dfrac52\\\\0&0&-\\dfrac12&-\\dfrac12\\end{bmatrix}\\quad\\left[\\text{Operating }R_2-\\dfrac32R_1,\\ R_3-\\dfrac12R_1\\right]\\]",
-              "\\[\\sim\\begin{bmatrix}4&2&1&3\\\\0&0&\\dfrac52&\\dfrac52\\\\0&0&0&0\\end{bmatrix}\\quad\\left[\\text{Operating }R_3+\\dfrac15R_2\\right]\\]",
-              "is 2 which < the number of variable (i.e., r < n). ∴ Number of independent solutions = 4 − 2 = 2. Given system is equivalent to",
-              "\\[4x+2y+z+3w=0,\\qquad z+w=0.\\]",
-              "∴ We have \\(z=-w\\) and \\(y=-2x-w\\), which give an infinite number of non-trivial solutions, x and w being the parameters."
-            ]
-          },
-          {
-            "title": "Example 2.40 — Find λ for consistency and the ratios x : y : z",
-            "paragraphs": [
-              "Find the values of \\(\\lambda\\) for which the equations \\((\\lambda-1)x+(3\\lambda+1)y+2\\lambda z=0,\\ (\\lambda-1)x+(4\\lambda-2)y+(\\lambda+3)z=0,\\ 2x+(3\\lambda+1)y+3(\\lambda-1)z=0\\) are consistent, and find the ratios of x : y : z when λ has the smallest of these values. What happens when λ has the greatest of these values.",
-              "Solution: The given equations will be consistent, if",
-              "\\[\\begin{vmatrix}\\lambda-1&3\\lambda+1&2\\lambda\\\\\\lambda-1&4\\lambda-2&\\lambda+3\\\\2&3\\lambda+1&3(\\lambda-1)\\end{vmatrix}=0.\\]",
-              "Operate \\(R_2-R_1\\): \\[\\begin{vmatrix}\\lambda-1&3\\lambda+1&2\\lambda\\\\0&\\lambda-3&3-\\lambda\\\\2&3\\lambda+1&3(\\lambda-1)\\end{vmatrix}=0.\\]",
-              "Operate \\(C_3+C_2\\): \\[\\begin{vmatrix}\\lambda-1&3\\lambda+1&5\\lambda+1\\\\0&\\lambda-3&0\\\\2&3\\lambda+1&6\\lambda-2\\end{vmatrix}=0.\\]",
-              "Expand by \\(R_2\\): \\[(\\lambda-3)\\begin{vmatrix}\\lambda-1&5\\lambda+1\\\\2&2(3\\lambda-1)\\end{vmatrix}=0\\]",
-              "or, \\(2(\\lambda-3)[(\\lambda-1)(3\\lambda-1)-(5\\lambda+1)]=0\\), or, \\(6\\lambda(\\lambda-3)^2=0\\), or, \\(\\lambda=0\\) or 3.",
-              "(a) When \\(\\lambda=0\\), the equations become \\(-x+y=0\\), \\(-x-2y+3z=0\\), \\(2x+y-3z=0\\).",
-              "Solving (ii) and (iii), we get \\(\\dfrac{x}{6-3}=\\dfrac{y}{6-3}=\\dfrac{z}{-1+4}\\). Hence \\(x=y=z\\).",
-              "(b) When \\(\\lambda=3\\), equations becomes identical."
-            ]
-          }
-        ],
-        "accordion_label": "Worked examples"
-      }
-    ],
-    "source_refs": [
-      "SYL-R25-U1",
-      "TB-P0052",
-      "TB-P0053",
-      "TB-P0056"
-    ],
-    "book_refs": [
-      {
-        "pages": "52–53, 56",
-        "note": "Homogeneous systems and Examples 2.36, 2.40"
       }
     ],
     "class_history": null
@@ -721,6 +642,85 @@
     "class_history": null
   },
   {
+    "id": "u1-homogeneous-systems",
+    "unit": 1,
+    "title": "Solving systems of homogeneous equations",
+    "status": "core",
+    "sections": [
+      {
+        "heading": "2.10 (3) System of linear homogeneous equations",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0052"
+        ],
+        "book_refs": [
+          {
+            "pages": "52",
+            "note": "2.10 (3) System of linear homogeneous equations"
+          }
+        ],
+        "paragraphs": [
+          "Consider the homogeneous linear equations",
+          "\\[\\begin{aligned}a_{11}x_1+a_{12}x_2+\\cdots+a_{1n}x_n&=0\\\\a_{21}x_1+a_{22}x_2+\\cdots+a_{2n}x_n&=0\\\\&\\vdots\\\\a_{m1}x_1+a_{m2}x_2+\\cdots+a_{mn}x_n&=0\\end{aligned}\\]",
+          "Find the rank r of the coefficient matrix A by reducing it to the triangular form by elementary row operations.",
+          "I. If r = n, the equations (iii) have only a trivial zero solution \\(x_1=x_2=\\cdots=x_n=0\\).",
+          "If r < n, the equation (iii) have (n − r) linearly independent solutions. The number of linearly independent solutions is (n − r) means, if arbitrary values are assigned to (n − r) of the variables, the values of the remaining r variables can be uniquely found. Thus the equations (iii) will have an infinite number of solutions.",
+          "II. When m < n (i.e., the number of equations is less than the number of variables), the solution is always other than \\(x_1=x_2=\\cdots=x_n=0\\). The number of solutions is infinite.",
+          "III. When m = n (i.e., the number of equations = the number of variables), the necessary and sufficient condition for solutions other than \\(x_1=x_2=\\cdots=x_n=0\\), is that the determinant of the coefficient matrix is zero. In this case the equations are said to be consistent and such a solution is called non-trivial solution. The determinant is called the eliminant of the equations."
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.36 — Solve the homogeneous equations",
+            "paragraphs": [
+              "(i) \\(x+2y+3z=0,\\ 3x+4y+4z=0,\\ 7x+10y+12z=0\\).",
+              "(ii) \\(4x+2y+z+3w=0,\\ 6x+3y+4z+7w=0,\\ 2x+y+w=0\\).",
+              "Solution: (i) Rank of the coefficient matrix",
+              "\\[\\begin{bmatrix}1&2&3\\\\3&4&4\\\\7&10&12\\end{bmatrix}\\sim\\begin{bmatrix}1&2&3\\\\0&-2&-5\\\\7&10&12\\end{bmatrix}\\quad[\\text{Operating }R_2-3R_1]\\]",
+              "\\[\\sim\\begin{bmatrix}1&2&3\\\\0&-2&-5\\\\0&0&1\\end{bmatrix}\\quad[\\text{Operating }R_3-7R_1-2R_2]\\]",
+              "is 3 which = the number of variables (i.e., r = n). ∴ The equations have only a trivial solution: x = y = z = 0.",
+              "(ii) Rank of the coefficient matrix",
+              "\\[\\begin{bmatrix}4&2&1&3\\\\6&3&4&7\\\\2&1&0&1\\end{bmatrix}\\sim\\begin{bmatrix}4&2&1&3\\\\0&0&\\dfrac52&\\dfrac52\\\\0&0&-\\dfrac12&-\\dfrac12\\end{bmatrix}\\quad\\left[\\text{Operating }R_2-\\dfrac32R_1,\\ R_3-\\dfrac12R_1\\right]\\]",
+              "\\[\\sim\\begin{bmatrix}4&2&1&3\\\\0&0&\\dfrac52&\\dfrac52\\\\0&0&0&0\\end{bmatrix}\\quad\\left[\\text{Operating }R_3+\\dfrac15R_2\\right]\\]",
+              "is 2 which < the number of variable (i.e., r < n). ∴ Number of independent solutions = 4 − 2 = 2. Given system is equivalent to",
+              "\\[4x+2y+z+3w=0,\\qquad z+w=0.\\]",
+              "∴ We have \\(z=-w\\) and \\(y=-2x-w\\), which give an infinite number of non-trivial solutions, x and w being the parameters."
+            ]
+          },
+          {
+            "title": "Example 2.40 — Find λ for consistency and the ratios x : y : z",
+            "paragraphs": [
+              "Find the values of \\(\\lambda\\) for which the equations \\((\\lambda-1)x+(3\\lambda+1)y+2\\lambda z=0,\\ (\\lambda-1)x+(4\\lambda-2)y+(\\lambda+3)z=0,\\ 2x+(3\\lambda+1)y+3(\\lambda-1)z=0\\) are consistent, and find the ratios of x : y : z when λ has the smallest of these values. What happens when λ has the greatest of these values.",
+              "Solution: The given equations will be consistent, if",
+              "\\[\\begin{vmatrix}\\lambda-1&3\\lambda+1&2\\lambda\\\\\\lambda-1&4\\lambda-2&\\lambda+3\\\\2&3\\lambda+1&3(\\lambda-1)\\end{vmatrix}=0.\\]",
+              "Operate \\(R_2-R_1\\): \\[\\begin{vmatrix}\\lambda-1&3\\lambda+1&2\\lambda\\\\0&\\lambda-3&3-\\lambda\\\\2&3\\lambda+1&3(\\lambda-1)\\end{vmatrix}=0.\\]",
+              "Operate \\(C_3+C_2\\): \\[\\begin{vmatrix}\\lambda-1&3\\lambda+1&5\\lambda+1\\\\0&\\lambda-3&0\\\\2&3\\lambda+1&6\\lambda-2\\end{vmatrix}=0.\\]",
+              "Expand by \\(R_2\\): \\[(\\lambda-3)\\begin{vmatrix}\\lambda-1&5\\lambda+1\\\\2&2(3\\lambda-1)\\end{vmatrix}=0\\]",
+              "or, \\(2(\\lambda-3)[(\\lambda-1)(3\\lambda-1)-(5\\lambda+1)]=0\\), or, \\(6\\lambda(\\lambda-3)^2=0\\), or, \\(\\lambda=0\\) or 3.",
+              "(a) When \\(\\lambda=0\\), the equations become \\(-x+y=0\\), \\(-x-2y+3z=0\\), \\(2x+y-3z=0\\).",
+              "Solving (ii) and (iii), we get \\(\\dfrac{x}{6-3}=\\dfrac{y}{6-3}=\\dfrac{z}{-1+4}\\). Hence \\(x=y=z\\).",
+              "(b) When \\(\\lambda=3\\), equations becomes identical."
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0052",
+      "TB-P0053",
+      "TB-P0056"
+    ],
+    "book_refs": [
+      {
+        "pages": "52–53, 56",
+        "note": "Homogeneous systems and Examples 2.36, 2.40"
+      }
+    ],
+    "class_history": null
+  },
+  {
     "id": "u1-gauss-seidel",
     "unit": 1,
     "title": "Gauss Seidel Iteration Methods",
@@ -821,7 +821,8 @@
         "note": "Gauss-Seidel method and Examples 28.22–28.23"
       }
     ],
-    "class_history": null
+    "class_history": null,
+    "intro": "**PankusDesk context.** Gauss–Seidel is an iterative method for solving simultaneous linear equations. Instead of obtaining the solution through one finite elimination process, we begin with approximate values and repeatedly improve them. The unknowns are calculated one after another, and each newly calculated value is used immediately in the next calculation. This is the key idea behind the textbook’s statement that Gauss–Seidel is a modification of Jacobi’s method."
   },
   {
     "id": "u2-eigenvalues",

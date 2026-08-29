@@ -1,27 +1,17 @@
-# MAC Unit I — textbook-faithful rebuild
+# Apply MAC Unit I order + intro delta
 
-This delta replaces the previous summary-style Unit I topic content with the prescribed Grewal wording/sequence, filtered to the R25 Unit I syllabus.
-
-- All retained worked textbook examples are collapsible dropdowns.
-- Chapter-end textbook practice is intentionally not surfaced in this delta; that selection will be reviewed separately.
-- No raw commercial textbook scans are copied into the public workspace.
-
-## Apply
+Unzip this archive in the folder that already contains `Pankusdesk/`.
 
 Dry run:
 
 ```bash
-rsync -avhn mac-unit1-textbook-delta/ Pankusdesk/
+rsync -avhn mac-unit1-order-intro-delta/ Pankusdesk/
 ```
 
 Real sync:
 
 ```bash
-rsync -avh mac-unit1-textbook-delta/ Pankusdesk/
+rsync -avh mac-unit1-order-intro-delta/ Pankusdesk/
 ```
 
-## Verify
-
-```bash
-python3 Pankusdesk/college/1-1/matrices-calculus/kb/tools/verify_kb.py
-```
+This delta only reorders Unit I topics and adds the Gauss–Seidel context introduction.

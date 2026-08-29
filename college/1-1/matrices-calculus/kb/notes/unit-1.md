@@ -616,6 +616,8 @@ Solving (ii) and (iii), we get \(\dfrac{x}{6-3}=\dfrac{y}{6-3}=\dfrac{z}{-1+4}\)
 
 ## Gauss Seidel Iteration Methods
 
+> **PankusDesk context.** Gauss–Seidel is an iterative method for solving simultaneous linear equations. Instead of obtaining the solution through one finite elimination process, we begin with approximate values and repeatedly improve them. The unknowns are calculated one after another, and each newly calculated value is used immediately in the next calculation. This is the key idea behind the textbook’s statement that Gauss–Seidel is a modification of Jacobi’s method.
+
 ### (2) Gauss-Seidel iteration method
 
 This is a modification of the Jacobi’s iteration method. As before, we start with initial approximations x₀, y₀, z₀ (each = 0) for x, y, z respectively. Substituting y = y₀, z = z₀ in the first of the Eqn. (2) on page 956, we get
