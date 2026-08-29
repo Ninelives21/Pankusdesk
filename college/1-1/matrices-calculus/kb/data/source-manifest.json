@@ -1,6 +1,6 @@
 {
-  "kb_version": "0.1.0",
-  "generated": "2026-08-28",
+  "kb_version": "1.1.0",
+  "generated": "2026-08-29",
   "course": {
     "code": "25BS1MT101",
     "name": "Matrices and Calculus",
@@ -8,20 +8,65 @@
     "institution": "VNR VJIET"
   },
   "source_lock": {
-    "rule": "No detailed theory is published without a real supporting source_ref. The official R25 syllabus defines scope but does not by itself supply full study-note theory.",
+    "rule": "No knowledge claim may enter core KB without a source_ref resolved through this manifest/index.",
     "syllabus_authority": "R25-SPEC",
-    "prescribed_textbooks": [
-      "B. S. Grewal, Higher Engineering Mathematics, 36th Edition, Khanna Publishers, 2010",
-      "R. K. Jain and S. R. K. Iyengar, Advanced Engineering Mathematics, 5th Editon, Narosa Publications, 2016"
-    ],
-    "gap_policy": "Until textbook/class/lecture sources are supplied, syllabus atoms remain explicit SOURCE_GAP scaffolds. No model-memory completion.",
-    "copyright_policy": "Commercial textbook pages are not copied into the public workspace; when supplied, only references and approved derived study material should be published."
+    "prescribed_textbook": "B. S. Grewal, Higher Engineering Mathematics, 36th Edition, Khanna Publishers, 2010",
+    "out_of_syllabus_policy": "Use only the portions that map to the current R25 unit. Extra textbook material remains supporting or omitted.",
+    "answer_policy": "Textbook exercise wording is preserved from supplied scans. Appendix answers are shown only as printed final checks; missing or incomplete printed answers are not silently completed.",
+    "copyright_policy": "Raw commercial textbook screenshots are not copied into the public workspace. KB records page/image provenance only."
   },
-  "official_document": {
-    "file": "I-B.Tech-IT-R25-26-11-2025(7).pdf",
-    "sha256": "6cdfdf7fc8adab3e9c346a375e672676e94346ddefc4fd9db9294e8180f42b9a",
-    "document_pages": 56,
-    "course_pages": "9–10"
+  "archives": [
+    {
+      "id": "BOOK-TOC-INDEX",
+      "file": "mac_book_toc_ndex.zip",
+      "type": "user_supplied_prescribed_textbook_images",
+      "description": "Physical textbook contents and end index",
+      "sha256": "7fad516793ff17b893336bc9940e12553bd7f61b7c40050c7173ae6038d8cea6",
+      "member_count": 10,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-U1-SYSTEMS",
+      "file": "mac_book_unit1.zip",
+      "type": "user_supplied_prescribed_textbook_images",
+      "description": "Physical textbook scans: pp.17–22, 46–61 and 1064–1072",
+      "sha256": "ef4e4a929c6100843b5b6d4f3af421c89c453cb4657b295a9b5cc26c61d138f4",
+      "member_count": 62,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-U1-RANK-INVERSE",
+      "file": "mac_book_32-46.zip",
+      "type": "user_supplied_prescribed_textbook_images",
+      "description": "Physical textbook scans: pp.32–46",
+      "sha256": "7729641bcbbe04dd47f778fad57d965d08b3c4ff6f407dd7bd817bdeda615f94",
+      "member_count": 30,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-CH2-END-QUESTIONS",
+      "file": "mac_chapter_1_end_questions.zip",
+      "type": "user_supplied_prescribed_textbook_images",
+      "description": "Physical textbook Chapter 2 end/objective questions, pp.84–88",
+      "sha256": "87304e31121963677ea289099137de50f3957967008901a0ba54401a1b62e3d7",
+      "member_count": 10,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-ANSWER-APPENDIX",
+      "file": "mac_book_answers(1).zip",
+      "type": "user_supplied_prescribed_textbook_images",
+      "description": "Physical textbook Appendix 3, answers to problems",
+      "sha256": "090ae67422aa3212aacd651ce837b193b944e24bd2ef1cd008f16f2ee9d9bd4d",
+      "member_count": 80,
+      "status": "PASS"
+    }
+  ],
+  "accounting": {
+    "unit_1_core_theory_pages": "37–44, 47–58, 1066–1068",
+    "unit_1_practice_pages": "44, 49, 57–58, 85–88, 1072",
+    "answer_appendix_pages_used": "1380–1383, 1440",
+    "excluded_nearby_material": "Partition-method inverse (pp.45–46), Cramer-only exercises, Jacobi-only and relaxation exercises, and Chapter 2 objective questions belonging to Unit II."
   },
   "syllabus_refs": [
     {
@@ -66,11 +111,5 @@
     }
   ],
   "gap_sources": [],
-  "class_sources": [],
-  "accounting": {
-    "r25_unit_count": 5,
-    "r25_atom_count": 43,
-    "supporting_theory_sources_loaded": 0,
-    "class_sources_loaded": 0
-  }
+  "class_sources": []
 }

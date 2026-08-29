@@ -413,7 +413,7 @@ function renderSectionContent(section) {
 	});
 	flushBullets();
 
-	html += renderExplanationAccordions(section.accordions ?? [], section.accordion_recap ?? []);
+	html += renderExplanationAccordions(section.accordions ?? [], section.accordion_recap ?? [], section.accordion_label || 'Understand this diagram');
 
 	const explicitlyEnded = ordinaryFigures
 		.filter(figure => figure.after?.type === 'end')
@@ -459,12 +459,12 @@ function renderTextbookFigureRow(figure) {
 	`;
 }
 
-function renderExplanationAccordions(items, recapItems = []) {
+function renderExplanationAccordions(items, recapItems = [], label = 'Understand this diagram') {
 	if (!items.length && !recapItems.length) return '';
 
 	const accordionHtml = items.length ? `
-		<div class="explanation-accordion" aria-label="Understand this diagram">
-			<div class="explanation-accordion-label">Understand this diagram</div>
+		<div class="explanation-accordion" aria-label="${escapeHtml(label)}">
+			<div class="explanation-accordion-label">${escapeHtml(label)}</div>
 			${items.map((item, index) => `
 				<details class="explanation-accordion-item">
 					<summary>

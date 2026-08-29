@@ -21,6 +21,7 @@ async function initUnitQuestions() {
 		if (!unitBank) throw new Error(`No textbook-question bank is available for Unit ${unitNumber}.`);
 
 		renderPage(page, subject, subjectUrl, unitMeta, unitBank, { ...(bank.source || {}), ...(unitBank.source || {}) });
+		await typesetMath(page);
 		initAccordions(page);
 		revealHashTarget(page);
 	} catch (error) {
@@ -36,7 +37,9 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 	const pyqHref = subject.practice?.pyqs?.href ? new URL(subject.practice.pyqs.href, subjectUrl).href : null;
 	const summary = unitBank.summary || {};
 
-	document.title = `Unit ${unitLabel} Textbook Questions · ${subject.shortName || subject.name} · Panku's Desk`;
+	const pageTitle = unitBank.page_title || 'Chapter-end Questions';
+	const pageDescription = unitBank.page_description || `All official review questions from the prescribed textbook chapter, with answers consolidated from the source-backed Unit ${unitLabel} notes.`;
+	document.title = `Unit ${unitLabel} ${pageTitle} · ${subject.shortName || subject.name} · Panku's Desk`;
 
 	page.innerHTML = `
 		<div class="breadcrumbs">
@@ -48,12 +51,10 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 
 		<section class="practice-hero">
 			<div class="eyebrow">${escapeHtml(subject.name)} · Unit ${escapeHtml(unitLabel)}</div>
-			<h1>Chapter-end Questions</h1>
-			<p>All official review questions from the prescribed textbook chapter, with answers consolidated from the source-backed Unit ${escapeHtml(unitLabel)} notes.</p>
+			<h1>${escapeHtml(pageTitle)}</h1>
+			<p>${escapeHtml(pageDescription)}</p>
 			<div class="practice-stats" aria-label="Question-bank summary">
-				${stat(summary.official_question_count, 'official questions')}
-				${stat(summary.short_answer_count, '2-mark')}
-				${stat(summary.essay_count, '6-mark')}
+				${Array.isArray(summary.stats) ? summary.stats.map(item => stat(item.value, item.label)).join('') : `${stat(summary.official_question_count, 'official questions')}${stat(summary.short_answer_count, '2-mark')}${stat(summary.essay_count, '6-mark')}`}
 			</div>
 			<div class="practice-hero-actions">
 				<a href="${escapeHtml(unitHome)}">← Back to Unit ${escapeHtml(unitLabel)} notes</a>
@@ -81,7 +82,7 @@ function renderGroup(group) {
 			<div class="section-heading-row question-group-heading">
 				<div>
 					<div class="section-title">${escapeHtml(group.title)}</div>
-					<div class="section-note">Click a question to reveal the answer.</div>
+					<div class="section-note">${escapeHtml(group.note || 'Click a question to reveal the answer.')}</div>
 				</div>
 				<span class="question-count">${(group.questions || []).length} questions</span>
 			</div>
@@ -100,7 +101,7 @@ function renderQuestion(question) {
 			<button class="chapter-question-toggle" type="button" aria-expanded="false" aria-controls="${escapeHtml(answerId)}">
 				<span class="chapter-question-number">Q${escapeHtml(question.number)}</span>
 				<span class="chapter-question-copy">
-					<span class="chapter-question-text">${escapeHtml(question.question)}</span>
+					<span class="chapter-question-text">${formatText(question.question)}</span>
 					<span class="chapter-question-meta">Book p. ${escapeHtml(question.book_page)}${question.r25_scope === 'outside-current-r25' ? ' · outside current R25 Unit I scope' : ''}</span>
 				</span>
 				<span class="chapter-question-icon" aria-hidden="true">+</span>
@@ -115,17 +116,17 @@ function renderQuestion(question) {
 
 function renderAnswer(answer) {
 	const pieces = [];
-	for (const paragraph of answer.paragraphs || []) pieces.push(`<p>${escapeHtml(paragraph)}</p>`);
+	for (const paragraph of answer.paragraphs || []) pieces.push(`<p>${formatText(paragraph)}</p>`);
 	if (answer.figures?.length) pieces.push(`<div class="answer-figures">${answer.figures.map(renderAnswerFigure).join('')}</div>`);
-	if (answer.diagram) pieces.push(`<div class="answer-diagram">${escapeHtml(answer.diagram)}</div>`);
-	if (answer.bullets?.length) pieces.push(`<ul>${answer.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`);
+	if (answer.diagram) pieces.push(`<div class="answer-diagram">${formatText(answer.diagram)}</div>`);
+	if (answer.bullets?.length) pieces.push(`<ul>${answer.bullets.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>`);
 	if (answer.table) pieces.push(renderTable(answer.table));
-	for (const paragraph of answer.paragraphs_after || []) pieces.push(`<p>${escapeHtml(paragraph)}</p>`);
-	if (answer.equations?.length) pieces.push(`<div class="answer-equations">${answer.equations.map(eq => `<div>${escapeHtml(eq)}</div>`).join('')}</div>`);
-	if (answer.steps?.length) pieces.push(`<ol class="answer-steps">${answer.steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>`);
-	if (answer.result) pieces.push(`<div class="answer-result"><strong>Result:</strong> ${escapeHtml(answer.result)}</div>`);
-	if (answer.book_check) pieces.push(`<div class="book-check">${escapeHtml(answer.book_check)}</div>`);
-	if (answer.note) pieces.push(`<div class="answer-note">${escapeHtml(answer.note)}</div>`);
+	for (const paragraph of answer.paragraphs_after || []) pieces.push(`<p>${formatText(paragraph)}</p>`);
+	if (answer.equations?.length) pieces.push(`<div class="answer-equations">${answer.equations.map(eq => `<div>${formatText(eq)}</div>`).join('')}</div>`);
+	if (answer.steps?.length) pieces.push(`<ol class="answer-steps">${answer.steps.map(step => `<li>${formatText(step)}</li>`).join('')}</ol>`);
+	if (answer.result) pieces.push(`<div class="answer-result"><strong>Result:</strong> ${formatText(answer.result)}</div>`);
+	if (answer.book_check) pieces.push(`<div class="book-check">${formatText(answer.book_check)}</div>`);
+	if (answer.note) pieces.push(`<div class="answer-note">${formatText(answer.note)}</div>`);
 	return pieces.join('') || '<p>No answer has been added yet.</p>';
 }
 
@@ -151,8 +152,8 @@ function renderTable(table) {
 	return `
 		<div class="answer-table-wrap">
 			<table class="answer-table">
-				${table.headers?.length ? `<thead><tr>${table.headers.map(h => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead>` : ''}
-				<tbody>${(table.rows || []).map(row => `<tr>${row.map(cell => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
+				${table.headers?.length ? `<thead><tr>${table.headers.map(h => `<th>${formatText(h)}</th>`).join('')}</tr></thead>` : ''}
+				<tbody>${(table.rows || []).map(row => `<tr>${row.map(cell => `<td>${formatText(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
 			</table>
 		</div>
 	`;
@@ -216,6 +217,47 @@ async function fetchJson(url) {
 	const response = await fetch(url);
 	if (!response.ok) throw new Error(`${url} returned ${response.status}`);
 	return response.json();
+}
+
+
+function formatText(value) {
+	const input = String(value ?? '');
+	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
+	let result = '';
+	let lastIndex = 0;
+	let match;
+	while ((match = mathPattern.exec(input)) !== null) {
+		result += escapeHtml(input.slice(lastIndex, match.index));
+		result += escapeHtml(match[0]);
+		lastIndex = match.index + match[0].length;
+	}
+	result += escapeHtml(input.slice(lastIndex));
+	return result;
+}
+
+let mathJaxPromise = null;
+async function typesetMath(root) {
+	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
+	await ensureMathJax();
+	if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise([root]);
+}
+
+function ensureMathJax() {
+	if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
+	if (mathJaxPromise) return mathJaxPromise;
+	mathJaxPromise = new Promise((resolve, reject) => {
+		window.MathJax = {
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true },
+			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
+		};
+		const script = document.createElement('script');
+		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+		script.async = true;
+		script.onload = () => resolve(window.MathJax);
+		script.onerror = () => reject(new Error('MathJax could not be loaded.'));
+		document.head.appendChild(script);
+	});
+	return mathJaxPromise;
 }
 
 function toRoman(value) {

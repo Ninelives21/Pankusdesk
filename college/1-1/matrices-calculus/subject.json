@@ -13,7 +13,7 @@
       "number": 1,
       "title": "Matrices",
       "notes": "kb/notes/unit-1.md",
-      "publicationStatus": "scaffold"
+      "publicationStatus": "ready"
     },
     {
       "number": 2,
@@ -52,6 +52,12 @@
         "format": "syllabus"
       },
       {
+        "path": "kb/data/book-index.json",
+        "idField": "source_id",
+        "kind": "Textbook",
+        "format": "book-page"
+      },
+      {
         "path": "kb/data/source-manifest.json",
         "collection": "gap_sources",
         "idField": "id",
@@ -73,6 +79,15 @@
       "description": "VNR previous-year questions for Matrices and Calculus.",
       "href": "pyqs.html",
       "status": "scaffold"
+    },
+    "unitQuestions": {
+      "label": "Textbook Practice",
+      "description": "R25-relevant Grewal exercises and printed answer checks.",
+      "hrefPattern": "unit-{unit}-questions.html",
+      "availableUnits": [
+        1
+      ],
+      "data": "kb/data/textbook-questions.json"
     }
   }
 }

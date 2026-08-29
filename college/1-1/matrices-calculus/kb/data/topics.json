@@ -4,17 +4,119 @@
     "unit": 1,
     "title": "Rank of a matrix by Echelon form",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U1"
+    "intro": "Rank measures how much independent row/column information a matrix contains. Elementary transformations preserve rank, so the practical route is to simplify the matrix until its rank is visible.",
+    "learn": [
+      "Elementary row operations do not change rank.",
+      "In row-echelon/triangular form, the rank is the number of non-zero rows (pivots).",
+      "Choose simple pivots whenever possible; a row interchange is often the quickest first move."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
+    "sections": [
+      {
+        "heading": "Rank and elementary transformations",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0037"
+        ],
+        "paragraphs": [
+          "The rank of a matrix is the largest order of a non-vanishing minor. The text denotes it by \\(\\rho(A)\\).",
+          "The allowed elementary transformations are: interchange two rows, multiply a row by a non-zero constant, or add a constant multiple of one row to another. The corresponding column operations are defined similarly. These transformations preserve rank."
+        ],
+        "book_refs": [
+          {
+            "pages": "37",
+            "note": "Rank and elementary transformations"
+          }
+        ]
+      },
+      {
+        "heading": "Echelon route: reduce, then count pivots",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0037",
+          "TB-P0038",
+          "TB-P0050"
+        ],
+        "paragraphs": [
+          "For the echelon method, use elementary **row** transformations to create zeros below successive pivots. The matrix is reduced to a triangular/echelon pattern without changing its rank.",
+          "Once the reduction is complete, count the non-zero rows. Equivalently, count the pivot positions. That count is the rank."
+        ],
+        "book_refs": [
+          {
+            "pages": "37–38, 50",
+            "note": "Echelon route: reduce, then count pivots"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "A fixed exam routine",
+            "bullets": [
+              "Start in column 1 and obtain a convenient non-zero pivot; prefer \\(1\\) or \\(-1\\) when a row swap can give one.",
+              "Make every entry below that pivot zero.",
+              "Move one row down and one column right; repeat.",
+              "Move any zero rows to the bottom.",
+              "Count the non-zero rows/pivots. That is \\(\\rho(A)\\)."
+            ]
+          }
+        ],
+        "accordion_label": "Exam method"
+      }
+    ],
+    "formulas": [
+      "\\(\\rho(A)=\\) number of pivots in an echelon form of \\(A\\).",
+      "For an \\(m\\times n\\) matrix, \\(0\\le \\rho(A)\\le \\min(m,n)\\)."
+    ],
+    "method": [
+      "Use a row interchange first if it produces an easier pivot.",
+      "Clear entries below the pivot using row replacement operations.",
+      "Advance to the next pivot column and continue until echelon form is reached.",
+      "Count the non-zero rows."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0037",
+      "TB-P0038",
+      "TB-P0050"
+    ],
+    "book_refs": [
+      {
+        "pages": "37–38",
+        "note": "Rank and elementary transformations"
+      },
+      {
+        "pages": "50",
+        "note": "Triangular reduction used for rank/consistency"
+      }
+    ],
+    "cautions": [
+      "Do not divide by a quantity that may be zero when a parameter is present; split into cases instead.",
+      "Row operations preserve rank. If you also use column operations, you are moving toward normal form rather than a row-echelon solution process."
+    ],
+    "practice": [
+      {
+        "book_page": 44,
+        "type": "Problems 2.4",
+        "items": "Q1, Q3–Q5",
+        "anchor": "u1-p24-01"
+      },
+      {
+        "book_page": 85,
+        "type": "Problems 2.12",
+        "items": "Objective Q14, Q16, Q31, Q34, Q41, Q56",
+        "anchor": "u1-obj-14"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What is the fastest way to read rank after echelon reduction?",
+        "answer": "Count the non-zero rows, equivalently the pivots."
+      },
+      {
+        "question": "Does \\(R_i\\to R_i+kR_j\\) change rank?",
+        "answer": "No. It is an elementary row transformation, so rank is preserved."
+      }
+    ],
     "class_history": null
   },
   {
@@ -22,17 +124,109 @@
     "unit": 1,
     "title": "Rank of a matrix by Normal form",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U1"
+    "intro": "Normal form pushes the reduction further than echelon form. Both row and column transformations may be used until the matrix has an identity block and zeros everywhere else.",
+    "learn": [
+      "A non-zero matrix of rank \\(r\\) can be reduced to \\(\\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\).",
+      "The size of the identity block gives the rank immediately.",
+      "For an \\(m\\times n\\) matrix of rank \\(r\\), suitable non-singular matrices \\(P,Q\\) exist such that \\(PAQ\\) is the normal form."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
+    "sections": [
+      {
+        "heading": "Normal form",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0040"
+        ],
+        "paragraphs": [
+          "Every non-zero matrix of rank \\(r\\) can be reduced, by elementary transformations, to a block matrix with \\(I_r\\) in the upper-left corner and zeros elsewhere. This is the normal form.",
+          "Because elementary transformations preserve rank, the order \\(r\\) of the identity block is exactly the rank of the original matrix."
+        ],
+        "book_refs": [
+          {
+            "pages": "40",
+            "note": "Normal form"
+          }
+        ]
+      },
+      {
+        "heading": "How the reduction is organised",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0040",
+          "TB-P0041",
+          "TB-P0042",
+          "TB-P0043"
+        ],
+        "paragraphs": [
+          "Use row operations to create a convenient pivot structure, then use column operations when helpful to clear entries beside the pivots. Continue until only the identity block remains.",
+          "If the question also asks for \\(P\\) and \\(Q\\), track row operations in \\(P\\) and column operations in \\(Q\\) so that the final relation is \\(PAQ=N\\), where \\(N\\) is the normal form."
+        ],
+        "book_refs": [
+          {
+            "pages": "40–43",
+            "note": "How the reduction is organised"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Echelon form vs normal form",
+            "bullets": [
+              "Echelon form: normally row operations only; stop once pivots/non-zero rows reveal the rank.",
+              "Normal form: row and column operations may both be used; continue until the matrix becomes an identity block plus zeros.",
+              "Both give the same rank."
+            ]
+          }
+        ],
+        "accordion_label": "Do not mix the two methods"
+      }
+    ],
+    "formulas": [
+      "\\(A\\sim \\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\Rightarrow \\rho(A)=r\\).",
+      "\\(PAQ=\\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\), with \\(P,Q\\) non-singular."
+    ],
+    "method": [
+      "Create a non-zero pivot and scale it to 1 if convenient.",
+      "Use row operations to clear its column.",
+      "Use column operations to clear its row.",
+      "Repeat on the remaining lower-right block.",
+      "Read rank from the size of the final identity block."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0040",
+      "TB-P0041",
+      "TB-P0042",
+      "TB-P0043"
+    ],
+    "book_refs": [
+      {
+        "pages": "40–43",
+        "note": "Normal form and worked reductions"
+      }
+    ],
+    "cautions": [
+      "Normal form may use both row and column operations. Do not apply column operations to an augmented system when you are solving equations, because that changes the meaning of the unknowns."
+    ],
+    "practice": [
+      {
+        "book_page": 44,
+        "type": "Problems 2.4",
+        "items": "Q2, Q7–Q9",
+        "anchor": "u1-p24-02"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "If the normal form contains \\(I_3\\), what is the rank?",
+        "answer": "3."
+      },
+      {
+        "question": "Can column operations be used in the normal-form method?",
+        "answer": "Yes. Normal-form reduction may use elementary row and column transformations."
+      }
+    ],
     "class_history": null
   },
   {
@@ -40,17 +234,115 @@
     "unit": 1,
     "title": "Inverse of non-singular matrices by Gauss-Jordan method",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U1"
+    "intro": "Gauss-Jordan inversion performs the same row operations on \\(A\\) and the identity matrix. When the left side becomes the identity, the right side has become \\(A^{-1}\\).",
+    "learn": [
+      "Start with the augmented block \\([A\\mid I]\\).",
+      "Every row operation must be applied across the entire augmented row.",
+      "The method works only when \\(A\\) is non-singular; failure to obtain a pivot signals that an inverse does not exist."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
+    "sections": [
+      {
+        "heading": "Working rule",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0039"
+        ],
+        "paragraphs": [
+          "Write \\(A\\) and the identity matrix of the same order side by side. Perform identical elementary row transformations on both blocks.",
+          "As soon as the left block is reduced to \\(I\\), the right block is \\(A^{-1}\\): \\([A\\mid I]\\longrightarrow[I\\mid A^{-1}]\\)."
+        ],
+        "book_refs": [
+          {
+            "pages": "39",
+            "note": "Working rule"
+          }
+        ]
+      },
+      {
+        "heading": "The reliable pivot-by-pivot route",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0039",
+          "TB-P0040"
+        ],
+        "paragraphs": [
+          "A mechanical approach is safer than hunting for clever operations: build pivots from left to right, clear below them, then work back upward to clear above them. Scale the pivots to 1.",
+          "When possible, use a row swap to obtain \\(1\\) or \\(-1\\) as a pivot and postpone fractions. This keeps arithmetic shorter without changing the method."
+        ],
+        "book_refs": [
+          {
+            "pages": "39–40",
+            "note": "The reliable pivot-by-pivot route"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Sure-shot Gauss-Jordan checklist",
+            "bullets": [
+              "Write \\([A\\mid I]\\).",
+              "Choose the first pivot; swap rows if a cleaner pivot is available.",
+              "Clear every entry below it.",
+              "Move diagonally to the next pivot and repeat until the left side is upper triangular.",
+              "Starting from the last pivot, clear entries above each pivot.",
+              "Scale rows so every pivot is 1.",
+              "Stop only when the left side is exactly \\(I\\); the right side is then \\(A^{-1}\\)."
+            ]
+          }
+        ],
+        "accordion_label": "Exam method"
+      }
+    ],
+    "formulas": [
+      "\\([A\\mid I]\\xrightarrow{\\text{same row operations}}[I\\mid A^{-1}]\\).",
+      "\\(AA^{-1}=A^{-1}A=I\\)."
+    ],
+    "method": [
+      "Form \\([A\\mid I]\\).",
+      "Create pivots and clear below them from top-left to bottom-right.",
+      "Clear above the pivots from bottom-right to top-left.",
+      "Normalize the diagonal to 1 and read \\(A^{-1}\\) from the right block."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0039",
+      "TB-P0040"
+    ],
+    "book_refs": [
+      {
+        "pages": "39–40",
+        "note": "Gauss-Jordan rule and Example 2.25"
+      }
+    ],
+    "cautions": [
+      "Never perform a row operation only on the left block. The identity block must undergo the identical operation.",
+      "Avoid unnecessary fractions in the middle of a long calculation; integer combinations can often eliminate entries first."
+    ],
+    "practice": [
+      {
+        "book_page": 44,
+        "type": "Problems 2.4",
+        "items": "Q6, Q8",
+        "anchor": "u1-p24-06"
+      },
+      {
+        "book_page": 49,
+        "type": "Problems 2.6",
+        "items": "Q14",
+        "anchor": "u1-p26-14"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What must the left block become before the right block can be called \\(A^{-1}\\)?",
+        "answer": "Exactly the identity matrix."
+      },
+      {
+        "question": "Why is the same row operation applied to both blocks?",
+        "answer": "Because the accumulated elementary row transformations that turn \\(A\\) into \\(I\\) turn \\(I\\) into \\(A^{-1}\\)."
+      }
+    ],
     "class_history": null
   },
   {
@@ -58,17 +350,103 @@
     "unit": 1,
     "title": "System of linear equations",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U1"
+    "intro": "A linear system is handled efficiently by separating its coefficient matrix from its unknown and constant vectors. This makes matrix inversion and rank tests available immediately.",
+    "learn": [
+      "Write a square system compactly as \\(AX=D\\).",
+      "The coefficient matrix contains only coefficients of the unknowns; the augmented matrix appends the constants column.",
+      "A non-singular square coefficient matrix has the unique solution \\(X=A^{-1}D\\)."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
+    "sections": [
+      {
+        "heading": "Matrix form of a system",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0047"
+        ],
+        "paragraphs": [
+          "For a system in unknown vector \\(X\\), collect the coefficients in \\(A\\) and the right-hand constants in \\(D\\). The equations then become \\(AX=D\\).",
+          "If \\(A\\) is non-singular, multiply by \\(A^{-1}\\) to obtain \\(X=A^{-1}D\\). The rank method is needed when singular or rectangular systems must be tested for consistency."
+        ],
+        "book_refs": [
+          {
+            "pages": "47",
+            "note": "Matrix form of a system"
+          }
+        ]
+      },
+      {
+        "heading": "Coefficient and augmented matrices",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0050"
+        ],
+        "paragraphs": [
+          "For a system of \\(m\\) equations in \\(n\\) unknowns, \\(A\\) is the coefficient matrix. Appending the constants column produces the augmented matrix, written in the text as \\(K\\).",
+          "These two matrices are the objects whose ranks determine whether the system has no solution, one solution or infinitely many solutions."
+        ],
+        "book_refs": [
+          {
+            "pages": "50",
+            "note": "Coefficient and augmented matrices"
+          }
+        ]
+      }
+    ],
+    "formulas": [
+      "\\(AX=D\\).",
+      "If \\(A\\) is non-singular, \\(X=A^{-1}D\\).",
+      "Augmented matrix: \\([A\\mid D]\\)."
+    ],
+    "method": [
+      "Write the unknowns in a fixed order and form \\(A\\), \\(X\\), and \\(D\\).",
+      "If \\(A\\) is non-singular and the question asks for the matrix method, find \\(A^{-1}\\) and compute \\(X=A^{-1}D\\).",
+      "If singularity/consistency is involved, switch to the rank test using \\(A\\) and \\([A\\mid D]\\)."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0047",
+      "TB-P0050"
+    ],
+    "book_refs": [
+      {
+        "pages": "47",
+        "note": "Matrix inversion method"
+      },
+      {
+        "pages": "50",
+        "note": "Coefficient and augmented matrices"
+      }
+    ],
+    "cautions": [
+      "Do not include the constants column inside the coefficient matrix.",
+      "Keep the variable order identical in every equation before writing the matrix."
+    ],
+    "practice": [
+      {
+        "book_page": 49,
+        "type": "Problems 2.6",
+        "items": "Q6–Q11, Q13–Q14",
+        "anchor": "u1-p26-06"
+      },
+      {
+        "book_page": 85,
+        "type": "Problems 2.12",
+        "items": "Objective Q5, Q6, Q11",
+        "anchor": "u1-obj-05"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What does the extra column in an augmented matrix contain?",
+        "answer": "The right-hand-side constants."
+      },
+      {
+        "question": "For a non-singular square \\(A\\), what is the direct matrix solution of \\(AX=D\\)?",
+        "answer": "\\(X=A^{-1}D\\)."
+      }
+    ],
     "class_history": null
   },
   {
@@ -76,17 +454,104 @@
     "unit": 1,
     "title": "Solving systems of homogeneous equations",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U1"
+    "intro": "A homogeneous system has zero on every right-hand side. It is always consistent because the all-zero vector is always a solution; the real question is whether non-trivial solutions also exist.",
+    "learn": [
+      "Homogeneous form: \\(AX=0\\).",
+      "If \\(\\rho(A)=n\\), only the trivial solution exists.",
+      "If \\(\\rho(A)<n\\), there are free variables and infinitely many non-trivial solutions."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
+    "sections": [
+      {
+        "heading": "Rank criterion for homogeneous systems",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0052"
+        ],
+        "paragraphs": [
+          "Reduce the coefficient matrix to triangular/echelon form and determine its rank \\(r\\). If \\(r=n\\), where \\(n\\) is the number of unknowns, the only solution is \\(x_1=x_2=\\cdots=x_n=0\\).",
+          "If \\(r<n\\), then \\(n-r\\) variables may be chosen freely. The remaining variables are determined in terms of them, producing infinitely many solutions including non-trivial ones."
+        ],
+        "book_refs": [
+          {
+            "pages": "52",
+            "note": "Rank criterion for homogeneous systems"
+          }
+        ]
+      },
+      {
+        "heading": "Square homogeneous systems",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0052"
+        ],
+        "paragraphs": [
+          "When the number of equations equals the number of unknowns, a non-trivial solution exists precisely when the determinant of the coefficient matrix is zero. The determinant is therefore the eliminant of the system."
+        ],
+        "book_refs": [
+          {
+            "pages": "52",
+            "note": "Square homogeneous systems"
+          }
+        ]
+      }
+    ],
+    "formulas": [
+      "\\(AX=0\\).",
+      "\\(\\rho(A)=n\\Rightarrow X=0\\) only.",
+      "\\(\\rho(A)<n\\Rightarrow\\) infinitely many solutions with \\(n-r\\) free parameters.",
+      "For square \\(A\\): non-trivial solution \\(\\Longleftrightarrow |A|=0\\)."
+    ],
+    "method": [
+      "Form the coefficient matrix \\(A\\).",
+      "Reduce \\(A\\) to echelon form and find \\(r=\\rho(A)\\).",
+      "Compare \\(r\\) with the number of unknowns \\(n\\).",
+      "If \\(r<n\\), choose \\(n-r\\) free parameters and back-substitute for the pivot variables."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0052",
+      "TB-P0053",
+      "TB-P0054",
+      "TB-P0055",
+      "TB-P0056",
+      "TB-P0057",
+      "TB-P0058"
+    ],
+    "book_refs": [
+      {
+        "pages": "52–58",
+        "note": "Homogeneous systems and exercises"
+      }
+    ],
+    "cautions": [
+      "The trivial solution always exists for a homogeneous system; “non-trivial” means at least one unknown is non-zero."
+    ],
+    "practice": [
+      {
+        "book_page": 57,
+        "type": "Problems 2.7",
+        "items": "Q11, Q14",
+        "anchor": "u1-p27-14"
+      },
+      {
+        "book_page": 86,
+        "type": "Problems 2.12",
+        "items": "Objective Q8, Q28",
+        "anchor": "u1-obj-08"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "Can a homogeneous system ever be inconsistent?",
+        "answer": "No. \\(X=0\\) always satisfies \\(AX=0\\)."
+      },
+      {
+        "question": "A homogeneous system has 4 unknowns and rank 2. How many free parameters are expected?",
+        "answer": "\\(4-2=2\\)."
+      }
+    ],
     "class_history": null
   },
   {
@@ -94,17 +559,124 @@
     "unit": 1,
     "title": "Solving systems of non-homogeneous equations",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U1"
+    "intro": "For a non-homogeneous system, consistency is decided by comparing the rank of the coefficient matrix with the rank of the augmented matrix.",
+    "learn": [
+      "Rouché’s theorem: the system is consistent iff \\(\\rho(A)=\\rho([A\\mid D])\\).",
+      "Equal rank equal to the number of unknowns gives a unique solution.",
+      "Equal rank smaller than the number of unknowns gives infinitely many solutions; unequal ranks give no solution."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
+    "sections": [
+      {
+        "heading": "Rouché’s consistency theorem",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0050"
+        ],
+        "paragraphs": [
+          "Let \\(A\\) be the coefficient matrix and \\(K=[A\\mid D]\\) the augmented matrix. The system is consistent if and only if \\(A\\) and \\(K\\) have the same rank.",
+          "The text tests these ranks after elementary row reduction to triangular form."
+        ],
+        "book_refs": [
+          {
+            "pages": "50",
+            "note": "Rouché’s consistency theorem"
+          }
+        ]
+      },
+      {
+        "heading": "Three possible outcomes",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P0050",
+          "TB-P0051",
+          "TB-P0052"
+        ],
+        "bullets": [
+          "If \\(r\\ne r'\\), the system is inconsistent: no solution.",
+          "If \\(r=r'=n\\), the system is consistent with a unique solution.",
+          "If \\(r=r'<n\\), the system is consistent with infinitely many solutions; \\(n-r\\) unknowns can be taken as free parameters."
+        ],
+        "book_refs": [
+          {
+            "pages": "50–52",
+            "note": "Three possible outcomes"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Parameter questions: a quick decision tree",
+            "bullets": [
+              "Row-reduce the coefficient and augmented parts together.",
+              "Watch for a row of the form \\([0\\;0\\;\\cdots\\;0\\mid c]\\) with \\(c\\ne0\\): this means inconsistency.",
+              "If a parameter can make that contradiction disappear, split into the corresponding parameter cases.",
+              "After consistency is established, compare rank with the number of unknowns to decide unique versus infinite solutions."
+            ]
+          }
+        ],
+        "accordion_label": "Exam method"
+      }
+    ],
+    "formulas": [
+      "\\(\\rho(A)=\\rho([A\\mid D])\\Longleftrightarrow\\) consistent.",
+      "\\(r=r'=n\\Rightarrow\\) unique solution.",
+      "\\(r=r'<n\\Rightarrow\\) infinitely many solutions.",
+      "\\(r\\ne r'\\Rightarrow\\) no solution."
+    ],
+    "method": [
+      "Form the augmented matrix \\([A\\mid D]\\).",
+      "Row-reduce it to echelon/triangular form.",
+      "Read \\(r=\\rho(A)\\) and \\(r'=\\rho([A\\mid D])\\).",
+      "Use the three-case rank test.",
+      "If consistent, solve for pivot variables and introduce free parameters when \\(r<n\\)."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P0050",
+      "TB-P0051",
+      "TB-P0052",
+      "TB-P0053",
+      "TB-P0054",
+      "TB-P0055",
+      "TB-P0056",
+      "TB-P0057",
+      "TB-P0058"
+    ],
+    "book_refs": [
+      {
+        "pages": "50–58",
+        "note": "Consistency theorem, examples and exercises"
+      }
+    ],
+    "cautions": [
+      "A row \\([0\\;0\\;\\cdots\\;0\\mid c]\\) with \\(c\\ne0\\) is the fastest visual signal of inconsistency.",
+      "In parameter problems, do not cancel a parameter expression before checking the case in which it is zero."
+    ],
+    "practice": [
+      {
+        "book_page": 57,
+        "type": "Problems 2.7",
+        "items": "Q1–Q6, Q13, Q16",
+        "anchor": "u1-p27-01"
+      },
+      {
+        "book_page": 88,
+        "type": "Problems 2.12",
+        "items": "Objective Q52, Q60",
+        "anchor": "u1-obj-52"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What does \\(\\rho(A)<\\rho([A\\mid D])\\) mean?",
+        "answer": "The system is inconsistent and has no solution."
+      },
+      {
+        "question": "If both ranks are 2 but there are 4 unknowns, what kind of solution set results?",
+        "answer": "Infinitely many solutions with \\(4-2=2\\) free parameters."
+      }
+    ],
     "class_history": null
   },
   {
@@ -112,17 +684,104 @@
     "unit": 1,
     "title": "Gauss Seidel Iteration Methods",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U1"
+    "intro": "Gauss-Seidel solves a linear system iteratively. The distinctive feature is that each newly computed approximation is used immediately in the next equation of the same iteration.",
+    "learn": [
+      "Rearrange the equations so each unknown is isolated in one equation.",
+      "Choose starting approximations, often zeros unless the problem states otherwise.",
+      "Within each sweep, immediately substitute the newest values already available.",
+      "Continue until successive approximations agree to the required accuracy."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
+    "sections": [
+      {
+        "heading": "Iteration rule and convergence idea",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P1066"
+        ],
+        "paragraphs": [
+          "Gauss-Seidel is presented as a modification of Jacobi iteration. After computing the new value of the first unknown, use that new value immediately while computing the second; use both newest values while computing the third; continue in the same way.",
+          "The text gives a sufficient convergence condition: in each equation, the absolute value of the selected leading/diagonal coefficient should exceed the sum of the absolute values of the remaining coefficients. Reordering equations can sometimes place the largest coefficient on the diagonal."
+        ],
+        "book_refs": [
+          {
+            "pages": "1066",
+            "note": "Iteration rule and convergence idea"
+          }
+        ]
+      },
+      {
+        "heading": "Worked iteration pattern",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P1067"
+        ],
+        "paragraphs": [
+          "For Example 28.22 the equations are rearranged as \\(x=\\dfrac{1}{20}(17-y+2z)\\), \\(y=\\dfrac{1}{20}(-18-3x+z)\\), and \\(z=\\dfrac{1}{20}(25-2x+3y)\\). Starting from \\(x_0=y_0=z_0=0\\), the first sweep gives \\(x_1=0.8500\\), \\(y_1=-1.0275\\), \\(z_1=1.0109\\).",
+          "The second sweep gives approximately \\((1.0025,-0.9998,0.9998)\\), and the third gives \\((1.0000,-1.0000,1.0000)\\). The iterations are stopped when successive values are practically the same."
+        ],
+        "book_refs": [
+          {
+            "pages": "1067",
+            "note": "Worked iteration pattern"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "What makes this Gauss-Seidel rather than Jacobi?",
+            "paragraphs": [
+              "When computing \\(y_1\\), Gauss-Seidel already uses the freshly calculated \\(x_1\\), not the old \\(x_0\\). When computing \\(z_1\\), it uses both \\(x_1\\) and \\(y_1\\). That immediate reuse of new values is the defining operational difference."
+            ]
+          }
+        ],
+        "accordion_label": "Key distinction"
+      }
+    ],
+    "formulas": [
+      "Generic sweep: \\(x_i^{(k+1)}\\) uses the newest available values \\(x_1^{(k+1)},\\ldots,x_{i-1}^{(k+1)}\\) and old values for the variables not yet updated."
+    ],
+    "method": [
+      "Rearrange the equations to isolate one unknown per equation, preferably with a dominant coefficient on the diagonal.",
+      "Choose initial values \\(x_0,y_0,z_0,\\ldots\\).",
+      "Compute the first new unknown.",
+      "Use that new value immediately while computing the next unknown; continue through the sweep.",
+      "Repeat sweeps until the required decimal places stop changing."
+    ],
+    "source_refs": [
+      "SYL-R25-U1",
+      "TB-P1066",
+      "TB-P1067",
+      "TB-P1068"
+    ],
+    "book_refs": [
+      {
+        "pages": "1066–1068",
+        "note": "Gauss-Seidel rule and Examples 28.22–28.23"
+      }
+    ],
+    "cautions": [
+      "Do not accidentally use only old values throughout a sweep; that would be Jacobi iteration, not Gauss-Seidel.",
+      "A convergence condition should be checked or created by sensible equation ordering before committing to long arithmetic."
+    ],
+    "practice": [
+      {
+        "book_page": 1072,
+        "type": "Problems 28.4",
+        "items": "Q2(b), Q3–Q7",
+        "anchor": "u1-p284-02"
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "After computing \\(x_1\\), which value is used while computing \\(y_1\\): \\(x_0\\) or \\(x_1\\)?",
+        "answer": "\\(x_1\\). Gauss-Seidel uses the newest available value immediately."
+      },
+      {
+        "question": "When should the iteration stop?",
+        "answer": "When successive approximations agree to the requested accuracy (or another stated stopping criterion is met)."
+      }
+    ],
     "class_history": null
   },
   {

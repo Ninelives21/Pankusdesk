@@ -1,0 +1,994 @@
+{
+  "schema_version": 3,
+  "subject_code": "25BS1MT101",
+  "source": {
+    "type": "prescribed-textbook",
+    "title": "Higher Engineering Mathematics · B. S. Grewal · 36th Edition",
+    "note": "Question wording is transcribed from the supplied physical-book scans. The answer appendix generally gives final answers only; these are shown as printed checks, not expanded into invented official solutions."
+  },
+  "units": {
+    "1": {
+      "title": "Matrices",
+      "page_title": "R25 Textbook Practice",
+      "page_description": "R25-relevant Grewal exercises selected from the exact sections used in Unit I, plus the matching chapter-end objective questions and printed answer checks.",
+      "summary": {
+        "selected_question_count": 53,
+        "stats": [
+          {
+            "value": 53,
+            "label": "selected questions"
+          },
+          {
+            "value": 25,
+            "label": "matrix & system exercises"
+          },
+          {
+            "value": 6,
+            "label": "Gauss-Seidel"
+          },
+          {
+            "value": 22,
+            "label": "objective checks"
+          }
+        ]
+      },
+      "scope_note": "Only questions that map to the current Unit I syllabus have been selected. Cramer-only exercises, partition-method inverse, Unit-II eigenvalue/quadratic-form objective questions, Jacobi-only questions and relaxation-method questions are deliberately excluded. Where the supplied appendix does not print a complete answer, the gap is left explicit.",
+      "source": {
+        "chapter": "Chapter 2 — Linear Algebra: Determinants, Matrices + §28.4 Gauss-Seidel practice",
+        "review_pages": [
+          44,
+          49,
+          57,
+          58,
+          85,
+          86,
+          87,
+          88,
+          1072
+        ]
+      },
+      "groups": [
+        {
+          "id": "problems-2-4",
+          "title": "Problems 2.4 · Rank, Normal Form and Gauss-Jordan Inverse",
+          "note": "All nine problems on book p.44 are within Unit I scope. The appendix sometimes prints only the final rank/inverse, not the full transformation work.",
+          "questions": [
+            {
+              "id": "u1-p24-01",
+              "number": 1,
+              "book_page": 44,
+              "topic_id": "u1-rank-echelon",
+              "question": "Determine the rank of \\(\\begin{bmatrix}1&3\\\\2&4\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(2\\)."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p24-02",
+              "number": 2,
+              "book_page": 44,
+              "topic_id": "u1-rank-normal",
+              "question": "Reduce each matrix to its normal form and hence find its rank: (i) \\(\\begin{bmatrix}3&2&-1&5\\\\5&1&4&-2\\\\1&-4&11&-19\\end{bmatrix}\\); (ii) \\(\\begin{bmatrix}1&3&6&-1\\\\1&4&5&1\\\\1&5&4&3\\end{bmatrix}\\); (iii) \\(\\begin{bmatrix}1&-2&3&4\\\\-2&4&-1&-3\\\\-1&2&7&6\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: ranks: (i) \\(2\\), (ii) \\(2\\), (iii) \\(2\\).",
+                "note": "The appendix prints the ranks, not the full normal-form transformations."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p24-03",
+              "number": 3,
+              "book_page": 44,
+              "topic_id": "u1-rank-echelon",
+              "question": "Determine the rank of \\(\\begin{bmatrix}1&3&4&3\\\\3&9&12&3\\\\1&3&4&1\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(2\\)."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p24-04",
+              "number": 4,
+              "book_page": 44,
+              "topic_id": "u1-rank-echelon",
+              "question": "Determine the rank of \\(\\begin{bmatrix}2&3&4&5\\\\3&4&5&6\\\\4&5&6&7\\\\9&10&11&12\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "status": "source-gap",
+                "note": "No short final answer for Problem 2.4 Q4 is printed in the supplied answer appendix."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ]
+            },
+            {
+              "id": "u1-p24-05",
+              "number": 5,
+              "book_page": 44,
+              "topic_id": "u1-rank-echelon",
+              "question": "Determine the values of \\(p\\) such that the rank of \\(A=\\begin{bmatrix}1&1&-1&0\\\\4&4&-3&1\\\\p&2&2&2\\\\9&9&p&3\\end{bmatrix}\\) is 3.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: No value of \\(p\\) is possible."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p24-06",
+              "number": 6,
+              "book_page": 44,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "question": "Use Gauss-Jordan method to find the inverse of: (i) \\(\\begin{bmatrix}2&3&4\\\\4&3&1\\\\1&2&4\\end{bmatrix}\\); (ii) \\(\\begin{bmatrix}2&3&1\\\\1&3&3\\\\0&1&2\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: (i) \\(\\begin{bmatrix}-2&4/5&9/5\\\\3&-4/5&-14/5\\\\-1&1/5&6/5\\end{bmatrix}\\); (ii) \\(\\begin{bmatrix}3&-5&6\\\\-2&4&-5\\\\1&-2&3\\end{bmatrix}\\)."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p24-07",
+              "number": 7,
+              "book_page": 44,
+              "topic_id": "u1-rank-normal",
+              "question": "Find non-singular matrices \\(P\\) and \\(Q\\) such that \\(PAQ\\) is in normal form. Hence find the rank of \\(A\\) for the four matrices listed in Problem 2.4 Q7.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: rank \\(=2\\) in each of (i), (ii), (iii) and (iv).",
+                "note": "The appendix prints only the ranks; it does not print the full \\(P,Q\\) matrices."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p24-08",
+              "number": 8,
+              "book_page": 44,
+              "topic_id": "u1-rank-normal",
+              "question": "If \\(A=\\begin{bmatrix}3&-3&4\\\\2&-3&4\\\\0&-1&1\\end{bmatrix}\\), find \\(A^{-1}\\). Also find non-singular matrices \\(P,Q\\) such that \\(PAQ=I\\), and verify that \\(A^{-1}=QP\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(A^{-1}=\\begin{bmatrix}1&-1&0\\\\-2&3&-4\\\\-2&3&-3\\end{bmatrix}\\).",
+                "note": "The supplied appendix prints the inverse; it does not print the full \\(P,Q\\) work."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p24-09",
+              "number": 9,
+              "book_page": 44,
+              "topic_id": "u1-rank-normal",
+              "question": "Reduce each of the three matrices in Problem 2.4 Q9 to normal form and hence find their ranks.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: ranks: (i) \\(3\\), (ii) \\(2\\), (iii) \\(3\\).",
+                "note": "The appendix prints the ranks, not the full reduction."
+              },
+              "question_source_refs": [
+                "TB-P0044"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problems-2-6",
+          "title": "Problems 2.6 · Matrix Solution of Linear Systems",
+          "note": "Selected matrix/inverse problems only; determinant/Cramer-only items are omitted.",
+          "questions": [
+            {
+              "id": "u1-p26-06",
+              "number": 6,
+              "book_page": 49,
+              "topic_id": "u1-linear-systems",
+              "question": "Solve by matrix method: \\(x_1+x_2+x_3=1\\), \\(x_1+2x_2+3x_3=6\\), \\(x_1+3x_2+4x_3=6\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x_1=1,\\ x_2=-5,\\ x_3=5\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p26-07",
+              "number": 7,
+              "book_page": 49,
+              "topic_id": "u1-linear-systems",
+              "question": "Solve by matrix method: \\(x+y+z=3\\), \\(x+2y+3z=4\\), \\(x+4y+9z=6\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=2,\\ y=1,\\ z=0\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p26-08",
+              "number": 8,
+              "book_page": 49,
+              "topic_id": "u1-linear-systems",
+              "question": "Solve by matrix method: \\(x+y+z=6\\), \\(2x+y+3z=13\\), \\(5x+2y+z=12\\), \\(2x-3y-2z=-10\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=1,\\ y=2,\\ z=3\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p26-09",
+              "number": 9,
+              "book_page": 49,
+              "topic_id": "u1-linear-systems",
+              "question": "Solve: \\(2x-y+3z=8\\), \\(x-2y-z=-4\\), \\(3x+y-4z=0\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=y=z=2\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p26-10",
+              "number": 10,
+              "book_page": 49,
+              "topic_id": "u1-linear-systems",
+              "question": "Solve: \\(2x_1+x_2+2x_3+x_4=6\\), \\(4x_1+3x_2+3x_3-3x_4=-1\\), \\(6x_1-6x_2+6x_3+12x_4=36\\), \\(2x_1+2x_2-x_3+x_4=10\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x_1=2,\\ x_2=1,\\ x_3=-1,\\ x_4=3\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p26-11",
+              "number": 11,
+              "book_page": 49,
+              "topic_id": "u1-linear-systems",
+              "question": "By finding \\(A^{-1}\\), solve \\(AX=B\\), where \\(A=\\begin{bmatrix}3&4&5\\\\1&2&0\\\\5&1&1\\end{bmatrix}\\), \\(X=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}\\), \\(B=\\begin{bmatrix}4\\\\-1\\\\5\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=1,\\ y=-1,\\ z=1\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p26-13",
+              "number": 13,
+              "book_page": 49,
+              "topic_id": "u1-linear-systems",
+              "question": "Using the loop-current method, the equations \\(7i_1-4i_2=12\\), \\(-4i_1+12i_2-6i_3=0\\), \\(-6i_2+14i_3=0\\) are obtained. By matrix method, solve for \\(i_1,i_2,i_3\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(i_1=369/175,\\ i_2=24/25,\\ i_3=72/175\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p26-14",
+              "number": 14,
+              "book_page": 49,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "question": "Solve the equations by calculating the inverse by elementary row operations: \\(2x_1+2x_2+2x_3-3x_4=2\\), \\(3x_1+6x_2-2x_3+x_4=8\\), \\(x_1+x_2-3x_3-4x_4=-1\\), \\(2x_1+x_2+5x_3+x_4=5\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x_1=2,\\ x_2=1/5,\\ x_3=0,\\ x_4=4/5\\)."
+              },
+              "question_source_refs": [
+                "TB-P0049"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problems-2-7",
+          "title": "Problems 2.7 · Consistency, Homogeneous and Non-Homogeneous Systems",
+          "note": "Selected problems with clearly matched appendix checks from pp.57–58.",
+          "questions": [
+            {
+              "id": "u1-p27-01",
+              "number": 1,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "Investigate for consistency and, if possible, find the solutions: \\(4x-2y+6z=8\\), \\(x+y-3z=-1\\), \\(15x-3y+9z=21\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: Consistent; \\(x=1,\\ y=3k-2,\\ z=k\\) for all \\(k\\)."
+              },
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p27-02",
+              "number": 2,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "Find the values of \\(a,b\\) for which \\(x+ay+z=3\\), \\(x+2y+2z=b\\), \\(x+by+3z=9\\) are consistent. When will they have a unique solution?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: For \\(a=-1,b=6\\): consistent with infinitely many solutions. For \\(a\\ne-1\\), \\(b\\) may have any value and the solution is unique."
+              },
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p27-03",
+              "number": 3,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "For what values of \\(\\lambda,\\mu\\) do \\(x+y+z=6\\), \\(x+2y+3z=10\\), \\(x+2y+\\lambda z=\\mu\\) have (i) no solution, (ii) a unique solution, (iii) infinitely many solutions?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: (i) \\(\\lambda=3,\\mu\\ne10\\); (ii) \\(\\lambda\\ne3\\); (iii) \\(\\lambda=3,\\mu=10\\)."
+              },
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p27-05",
+              "number": 5,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "For what values of \\(a,b\\) does the system \\(2x+y+3z=2\\), \\(x+y+2z=2\\), \\(5x-y+az=b\\) have (i) no solution, (ii) a unique solution, (iii) infinitely many solutions?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(a=8,b\\ne6\\): no solution; \\(a\\ne8\\), any \\(b\\): unique solution; \\(a=8,b=6\\): infinitely many solutions."
+              },
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ]
+            },
+            {
+              "id": "u1-p27-06",
+              "number": 6,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "Show that if \\(\\lambda\\ne-5\\), the equations \\(3x-y+4z=3\\), \\(x+2y-3z=-2\\), \\(6x+5y+\\lambda z=-3\\) have a unique solution. If \\(\\lambda=-5\\), show that they are consistent. Determine the solutions in each case.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: If \\(\\lambda\\ne-5\\): \\(x=4/7,\\ y=-9/7,\\ z=0\\). If \\(\\lambda=-5\\): \\(x=(4-5k)/7,\\ y=(13k-9)/7,\\ z=k\\), for all \\(k\\)."
+              },
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ]
+            },
+            {
+              "id": "u1-p27-13",
+              "number": 13,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "Investigate for what values of \\(k\\) the equations \\(x+y+z=1\\), \\(2x+y+4z=k\\), \\(4x+y+10z=k^2\\) have infinitely many solutions. Hence find the solutions.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(k=1,2\\).",
+                "note": "The appendix prints the admissible parameter values but not the full parameterised solution."
+              },
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ]
+            },
+            {
+              "id": "u1-p27-14",
+              "number": 14,
+              "book_page": 57,
+              "topic_id": "u1-homogeneous-systems",
+              "question": "Solve completely the homogeneous systems: (i) \\(x+y-2z+3w=0\\), \\(x-2y+z-w=0\\), \\(4x+y-5z+8w=0\\), \\(5x-7y+2z-w=0\\); (ii) \\(3x+4y-z-6w=0\\), \\(2x+3y+2z-3w=0\\), \\(2x+y-14z-9w=0\\), \\(x+3y+13z+3w=0\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: (i) infinitely many non-trivial solutions: \\(x=\\lambda-5\\mu/3,\\ y=\\lambda-4\\mu/3,\\ z=\\lambda,\\ w=\\mu\\). (ii) \\(x=11k_2+6k_1,\\ y=-8k_2-3k_1,\\ z=k_2,\\ w=k_1\\), where \\(k_1,k_2\\) are arbitrary."
+              },
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ]
+            },
+            {
+              "id": "u1-p27-16",
+              "number": 16,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "Examine each listed system in Problem 2.7 Q16 for consistency and, if consistent, solve it. The three systems continue from p.57 onto p.58.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: (i) \\(x=-1,y=-2,z=4\\); (ii) \\(x=1,y=2,z=3\\); (iii) \\(x_1=2,x_2=1,x_3=-1,x_4=3\\)."
+              },
+              "question_source_refs": [
+                "TB-P0057",
+                "TB-P0058"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problems-28-4",
+          "title": "Problems 28.4 · Gauss-Seidel",
+          "note": "Jacobi-only and relaxation questions are omitted; Q2(b) and Q3–Q7 are the direct Gauss-Seidel set.",
+          "questions": [
+            {
+              "id": "u1-p284-02",
+              "number": 2,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "question": "Solve \\(27x+6y-z=85\\), \\(x+y+54z=110\\), \\(6x+15y+2z=72\\) by Gauss-Seidel method [Problem 28.4 Q2(b)].",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=2.426,\\ y=3.573,\\ z=1.926\\)."
+              },
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ]
+            },
+            {
+              "id": "u1-p284-03",
+              "number": 3,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "question": "Solve by Gauss-Seidel method: \\(2x+y+6z=9\\), \\(8x+3y+2z=13\\), \\(x+5y+z=7\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=1,\\ y=1,\\ z=1\\)."
+              },
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ]
+            },
+            {
+              "id": "u1-p284-04",
+              "number": 4,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "question": "Solve by Gauss-Seidel method: \\(28x+4y-z=32\\), \\(x+3y+10z=24\\), \\(2x+17y+4z=35\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=0.998,\\ y=1.723,\\ z=2.024\\)."
+              },
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ]
+            },
+            {
+              "id": "u1-p284-05",
+              "number": 5,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "question": "Solve by Gauss-Seidel method: \\(5x+2y+z=12\\), \\(x+4y+2z=15\\), \\(x+2y+5z=20\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=0.994,\\ y=2.000,\\ z=3.001\\)."
+              },
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ]
+            },
+            {
+              "id": "u1-p284-06",
+              "number": 6,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "question": "Solve by Gauss-Seidel method: \\(1.2x+2.1y+4.2z=9.9\\), \\(5.3x+6.1y+4.7z=21.6\\), \\(9.2x+8.3y+z=15.2\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=-13.223,\\ y=16.766,\\ z=-2.306\\)."
+              },
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ]
+            },
+            {
+              "id": "u1-p284-07",
+              "number": 7,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "question": "Solve by Gauss-Seidel method: \\(\\begin{bmatrix}2&-1&0&0\\\\-1&2&-1&0\\\\0&-1&2&-1\\\\0&0&-1&2\\end{bmatrix}\\begin{bmatrix}x\\\\y\\\\z\\\\u\\end{bmatrix}=\\begin{bmatrix}0\\\\0\\\\0\\\\5\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=1,\\ y=2,\\ z=3,\\ u=4\\)."
+              },
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-objective",
+          "title": "Problems 2.12 · Chapter-end Objective Questions",
+          "note": "Only the objective items that map to Unit I are retained; the same pages also contain many Unit II questions, which are not shown here.",
+          "questions": [
+            {
+              "id": "u1-obj-03",
+              "number": 3,
+              "book_page": 85,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "question": "The inverse of \\(\\operatorname{diag}(-0.5,4,1)\\) is which of the given matrices?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (c): \\(\\operatorname{diag}(-2,0.25,1)\\)."
+              },
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-05",
+              "number": 5,
+              "book_page": 85,
+              "topic_id": "u1-linear-systems",
+              "question": "The system \\(x+2y+z=9\\), \\(2x+y+3z=7\\) can be expressed in which matrix form?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (c)."
+              },
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-06",
+              "number": 6,
+              "book_page": 85,
+              "topic_id": "u1-linear-systems",
+              "question": "If \\(\\begin{bmatrix}5&4\\\\1&1\\end{bmatrix}X=\\begin{bmatrix}1&-2\\\\1&3\\end{bmatrix}\\), then \\(X\\) equals which option?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (a)."
+              },
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-08",
+              "number": 8,
+              "book_page": 85,
+              "topic_id": "u1-homogeneous-systems",
+              "question": "If \\(3x+2y+z=0\\), \\(x+4y+z=0\\), \\(2x+y+4z=0\\) form a system, which statement is correct?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (b): it has only the trivial solution \\(x=y=z=0\\)."
+              },
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-10",
+              "number": 10,
+              "book_page": 86,
+              "topic_id": "u1-rank-echelon",
+              "question": "For the two lower-triangular matrices \\(A\\) and \\(B\\) shown in Objective Q10, which statement about row equivalence is correct?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (a)."
+              },
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-11",
+              "number": 11,
+              "book_page": 86,
+              "topic_id": "u1-linear-systems",
+              "question": "If \\(A\\begin{bmatrix}0&1\\\\2&-1\\end{bmatrix}=\\begin{bmatrix}2&1\\\\-1&0\\end{bmatrix}\\), where \\(A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\), find \\(A\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (d)."
+              },
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-13",
+              "number": 13,
+              "book_page": 86,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "question": "If \\(A\\) is square and \\(AA^{\\prime}=I\\), what is the value of \\(A^{\\prime}A\\)?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (b): \\(I\\)."
+              },
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-14",
+              "number": 14,
+              "book_page": 86,
+              "topic_id": "u1-rank-echelon",
+              "question": "If every minor of order \\(r\\) of a matrix \\(A\\) is zero, then the rank of \\(A\\) is what relative to \\(r\\)?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (d): less than \\(r\\)."
+              },
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-16",
+              "number": 16,
+              "book_page": 86,
+              "topic_id": "u1-rank-echelon",
+              "question": "Find the rank of \\(\\begin{bmatrix}2&-1&3&1\\\\1&4&-2&1\\\\5&2&4&3\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(2\\)."
+              },
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-19",
+              "number": 19,
+              "book_page": 86,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "question": "In Objective Q19, the inverse of \\(\\begin{bmatrix}1&2&-2\\\\-1&3&0\\\\0&-2&1\\end{bmatrix}\\) is written as a matrix containing \\(k\\). Find \\(k\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(2\\)."
+              },
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-28",
+              "number": 28,
+              "book_page": 86,
+              "topic_id": "u1-homogeneous-systems",
+              "question": "Solve \\(x+2y+3z=0\\), \\(3x+4y+4z=0\\), \\(7x+10y+12z=0\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=y=z=0\\)."
+              },
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-31",
+              "number": 31,
+              "book_page": 87,
+              "topic_id": "u1-rank-echelon",
+              "question": "Find the rank of \\(\\begin{bmatrix}1&1&-1\\\\2&-3&4\\\\3&-2&3\\end{bmatrix}\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(2\\)."
+              },
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-34",
+              "number": 34,
+              "book_page": 87,
+              "topic_id": "u1-rank-echelon",
+              "question": "The maximum value of the rank of a \\(4\\times5\\) matrix is ______.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(4\\)."
+              },
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ]
+            },
+            {
+              "id": "u1-obj-41",
+              "number": 41,
+              "book_page": 87,
+              "topic_id": "u1-rank-echelon",
+              "question": "By applying elementary transformations to a matrix, its rank (a) increases, (b) decreases, (c) does not change.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: option (c): does not change."
+              },
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-46",
+              "number": 46,
+              "book_page": 87,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "question": "The matrix \\(\\begin{bmatrix}x&2\\\\1&x-1\\end{bmatrix}\\) is singular for what values of \\(x\\)?",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(x=2,-1\\)."
+              },
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-52",
+              "number": 52,
+              "book_page": 88,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "A system of linear non-homogeneous equations is consistent iff the rank of the coefficient matrix equals the rank of ______.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: Augmented matrix."
+              },
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-56",
+              "number": 56,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "question": "Find \\(p\\) for which \\(A=\\begin{bmatrix}3&p&p\\\\p&3&p\\\\p&p&3\\end{bmatrix}\\) has rank 1.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(p=3\\)."
+              },
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-58",
+              "number": 58,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "question": "If the rank of a matrix \\(A\\) is 2, then the rank of \\(A^{\\prime}\\) is ______.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: \\(2\\)."
+              },
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-60",
+              "number": 60,
+              "book_page": 88,
+              "topic_id": "u1-non-homogeneous-systems",
+              "question": "True or False: the equations \\(x+2y=1\\), \\(7x+14y=12\\) are consistent.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: False."
+              },
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-61",
+              "number": 61,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "question": "True or False: if \\(\\operatorname{rank}(A)=2\\) and \\(\\operatorname{rank}(B)=3\\), then \\(\\operatorname{rank}(AB)=6\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: False."
+              },
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-66",
+              "number": 66,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "question": "True or False: if the rank of a matrix \\(A\\) is 3, then the rank of \\(3A^{T}\\) is 1.",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: False."
+              },
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            },
+            {
+              "id": "u1-obj-70",
+              "number": 70,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "question": "True or False: if \\(A\\) is a non-zero column matrix and \\(B\\) is a non-zero row matrix, then \\(\\operatorname{rank}(AB)=1\\).",
+              "r25_scope": "core",
+              "answer": {
+                "book_check": "Printed appendix answer: True."
+              },
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
