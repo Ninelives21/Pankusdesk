@@ -110,12 +110,28 @@
         "paragraphs": [
           "Two matrices A and B are said to be equivalent if one can be obtained from the other by a sequence of elementary transformations. Two equivalent matrices have the same order and the same rank. The symbol ~ is used for equivalence."
         ]
+      },
+      {
+        "heading": "Rank — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 25 Aug 2026",
+        "source_refs": [
+          "CLASS-U1-2026-08-25"
+        ],
+        "paragraphs": [
+          "Rank gives the number of independent rows."
+        ],
+        "bullets": [
+          "Only row transformations can be used while reducing a matrix to echelon form."
+        ]
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0037",
-      "TB-P0038"
+      "TB-P0038",
+      "CLASS-U1-2026-08-25"
     ],
     "book_refs": [
       {
@@ -123,7 +139,13 @@
         "note": "Rank, elementary transformations and Example 2.24"
       }
     ],
-    "class_history": null
+    "class_history": [
+      {
+        "date": "2026-08-25",
+        "label": "25 Aug 2026 · Rank and normal form",
+        "href": "class-log.html?date=2026-08-25"
+      }
+    ]
   },
   {
     "id": "u1-inverse-gauss-jordan",
@@ -172,12 +194,54 @@
           }
         ],
         "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "Gauss–Jordan method — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 28 Aug 2026",
+        "source_refs": [
+          "CLASS-U1-2026-08-28"
+        ],
+        "paragraphs": [
+          "This method is used to find the inverse of a non-singular matrix.",
+          "Let \\(A\\) be a non-singular matrix of order \\(n\\). Write \\(A\\) side by side with \\(I_n\\). Using only row transformations, reduce the \\(A\\) side to \\(I_n\\); the matrix produced from \\(I_n\\) by the same transformations is \\(A^{-1}\\)."
+        ],
+        "accordions": [
+          {
+            "title": "Class example 1 — Inverse of a 3 × 3 matrix",
+            "paragraphs": [
+              "\\[A=\\begin{bmatrix}-2&1&3\\\\0&-1&1\\\\1&2&0\\end{bmatrix}\\]",
+              "The class solution writes \\([A\\mid I]\\) and applies the same row transformations to both halves until the left side becomes \\(I\\).",
+              "The final result recorded is",
+              "\\[A^{-1}=\\dfrac18\\begin{bmatrix}-2&6&4\\\\1&-3&2\\\\1&5&2\\end{bmatrix}.\\]"
+            ]
+          },
+          {
+            "title": "Class example 2 — Grewal p. 39 example worked again in class",
+            "paragraphs": [
+              "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}\\]",
+              "\\[A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}.\\]"
+            ]
+          },
+          {
+            "title": "Class example 3 — Inverse of a 4 × 4 matrix",
+            "paragraphs": [
+              "\\[A=\\begin{bmatrix}0&1&2&2\\\\1&1&2&3\\\\2&2&2&3\\\\2&3&3&3\\end{bmatrix}\\]",
+              "The class working starts with \\(R_1\\leftrightarrow R_2\\), then successively clears the pivot columns on the left while carrying exactly the same operations on the identity matrix on the right.",
+              "The final inverse is",
+              "\\[A^{-1}=\\begin{bmatrix}-3&3&-3&2\\\\3&-4&4&-2\\\\-3&4&-5&3\\\\2&-2&3&-2\\end{bmatrix}.\\]"
+            ]
+          }
+        ],
+        "accordion_label": "Class examples"
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0039",
-      "TB-P0040"
+      "TB-P0040",
+      "CLASS-U1-2026-08-28"
     ],
     "book_refs": [
       {
@@ -185,7 +249,13 @@
         "note": "Gauss-Jordan rule and Example 2.25"
       }
     ],
-    "class_history": null
+    "class_history": [
+      {
+        "date": "2026-08-28",
+        "label": "28 Aug 2026 · Gauss–Jordan inverse",
+        "href": "class-log.html?date=2026-08-28"
+      }
+    ]
   },
   {
     "id": "u1-rank-normal",
@@ -296,6 +366,55 @@
           }
         ],
         "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "Normal form — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 25 Aug 2026",
+        "source_refs": [
+          "CLASS-U1-2026-08-25"
+        ],
+        "paragraphs": [
+          "Normal form is also called canonical form.",
+          "A matrix in normal form contains an identity block. Matrices of the forms \\([I_r\\ 0]\\), \\(\\begin{bmatrix}I_r\\\\0\\end{bmatrix}\\) and \\(\\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\) are in normal form, where \\(I_r\\) is an identity matrix.",
+          "To reduce a matrix to normal form, both row and column transformations may be used. After reduction, \\(\\rho(A)\\) is given by the order of the identity matrix in the normal form."
+        ],
+        "accordions": [
+          {
+            "title": "Class example 1 — Find the rank using normal form",
+            "paragraphs": [
+              "\\[A=\\begin{bmatrix}2&3&-1&1\\\\1&-1&-2&-4\\\\3&1&3&-2\\\\6&3&0&-7\\end{bmatrix}\\]",
+              "Using \\(R_2\\to2R_2-R_1,\\ R_3\\to2R_3-3R_1,\\ R_4\\to R_4-3R_1\\):",
+              "\\[A\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}\\]",
+              "Using \\(C_2\\to2C_2-3C_1,\\ C_3\\to2C_3+C_1,\\ C_4\\to2C_4-C_1\\):",
+              "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}\\]",
+              "After changing signs/scaling the rows, the class working uses",
+              "\\[\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}.\\]",
+              "Then \\(R_3\\to5R_3-7R_2\\) and \\(R_4\\to5R_4-6R_2\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&0&-66&-28\\\\0&0&-33&-4\\end{bmatrix}\\]",
+              "Using \\(C_3\\to5C_3-3C_2\\) and \\(C_4\\to5C_4-9C_2\\):",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}\\]",
+              "With \\(R_4\\to2R_4-R_3\\), followed by row scaling:",
+              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&14\\\\0&0&0&1\\end{bmatrix}\\]",
+              "Finally, a column transformation eliminates the 14 and the remaining diagonal entries are scaled to 1, giving \\(I_4\\).",
+              "\\[\\therefore\\ \\rho(A)=4.\\]"
+            ]
+          },
+          {
+            "title": "Class example 2 — Reduce to normal form and find the rank",
+            "paragraphs": [
+              "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}\\]",
+              "The class working begins with \\(R_1\\leftrightarrow R_2\\), then eliminates the first-column entries below the leading 1:",
+              "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]",
+              "Column transformations \\(C_3\\to C_3-C_1\\) and \\(C_4\\to C_4-C_1\\) make the first row \\([1,0,0,0]\\). The repeated lower rows are then eliminated and the remaining non-pivot column entries are removed.",
+              "The normal form reached in the notebook is",
+              "\\[\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}.\\]",
+              "\\[\\therefore\\ \\rho(A)=2.\\]"
+            ]
+          }
+        ],
+        "accordion_label": "Class examples"
       }
     ],
     "source_refs": [
@@ -303,7 +422,8 @@
       "TB-P0040",
       "TB-P0041",
       "TB-P0042",
-      "TB-P0043"
+      "TB-P0043",
+      "CLASS-U1-2026-08-25"
     ],
     "book_refs": [
       {
@@ -311,7 +431,13 @@
         "note": "Normal form and Examples 2.26–2.28"
       }
     ],
-    "class_history": null
+    "class_history": [
+      {
+        "date": "2026-08-25",
+        "label": "25 Aug 2026 · Normal form and rank",
+        "href": "class-log.html?date=2026-08-25"
+      }
+    ]
   },
   {
     "id": "u1-linear-systems",
@@ -425,13 +551,29 @@
           }
         ],
         "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "System of linear equations — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 29 Aug 2026",
+        "source_refs": [
+          "CLASS-U1-2026-08-29"
+        ],
+        "paragraphs": [
+          "A set of linear equations in two or more unknowns is called a system of linear equations.",
+          "For \\(m\\) linear equations in \\(n\\) unknowns,",
+          "\\[\\begin{aligned}a_{11}u_1+a_{12}u_2+\\cdots+a_{1n}u_n&=b_1\\\\a_{21}u_1+a_{22}u_2+\\cdots+a_{2n}u_n&=b_2\\\\&\\vdots\\\\a_{m1}u_1+a_{m2}u_2+\\cdots+a_{mn}u_n&=b_m\\end{aligned}\\]",
+          "the system can be written in matrix form as \\(AX=B\\), where \\(A\\) is the \\(m\\times n\\) coefficient matrix, \\(X\\) is the \\(n\\times1\\) column of unknowns and \\(B\\) is the \\(m\\times1\\) column of constants."
+        ]
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0047",
       "TB-P0048",
-      "TB-P0049"
+      "TB-P0049",
+      "CLASS-U1-2026-08-29"
     ],
     "book_refs": [
       {
@@ -439,7 +581,13 @@
         "note": "Solution of linear systems, Examples 2.31–2.32"
       }
     ],
-    "class_history": null
+    "class_history": [
+      {
+        "date": "2026-08-29",
+        "label": "29 Aug 2026 · Systems of linear equations",
+        "href": "class-log.html?date=2026-08-29"
+      }
+    ]
   },
   {
     "id": "u1-non-homogeneous-systems",
@@ -621,6 +769,25 @@
           }
         ],
         "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "Consistency — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 29 Aug 2026",
+        "source_refs": [
+          "CLASS-U1-2026-08-29"
+        ],
+        "paragraphs": [
+          "A system is said to be consistent if it has at least one solution.",
+          "For \\(AX=B\\), the system is consistent if and only if \\(\\rho(A)=\\rho(A|B)\\), where \\((A|B)\\) is the augmented matrix."
+        ],
+        "bullets": [
+          "If \\(\\rho(A)=\\rho(A|B)=n\\) (number of unknowns), the system has a unique solution.",
+          "If \\(\\rho(A)=\\rho(A|B)<n\\), the system has infinitely many solutions; \\(n-r\\) variables may be taken as independent parameters when the common rank is \\(r\\).",
+          "If \\(\\rho(A)\\ne\\rho(A|B)\\), the system has no solution and is inconsistent.",
+          "A system \\(AX=B\\) is non-homogeneous when \\(B\\ne0\\). A non-homogeneous system may or may not be consistent."
+        ]
       }
     ],
     "source_refs": [
@@ -631,7 +798,8 @@
       "TB-P0053",
       "TB-P0054",
       "TB-P0055",
-      "TB-P0056"
+      "TB-P0056",
+      "CLASS-U1-2026-08-29"
     ],
     "book_refs": [
       {
@@ -639,7 +807,13 @@
         "note": "Consistency, Rouché’s theorem and relevant worked examples"
       }
     ],
-    "class_history": null
+    "class_history": [
+      {
+        "date": "2026-08-29",
+        "label": "29 Aug 2026 · Consistency and non-homogeneous systems",
+        "href": "class-log.html?date=2026-08-29"
+      }
+    ]
   },
   {
     "id": "u1-homogeneous-systems",
@@ -704,13 +878,28 @@
           }
         ],
         "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "Homogeneous systems — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 29 Aug 2026",
+        "source_refs": [
+          "CLASS-U1-2026-08-29"
+        ],
+        "bullets": [
+          "A system of the form \\(AX=0\\) is called homogeneous, where 0 is the null vector.",
+          "A homogeneous system is always consistent because it possesses the trivial solution.",
+          "A homogeneous system \\(AX=0\\) has a non-trivial solution if and only if \\(\\rho(A)<n\\). For a square coefficient matrix, this is equivalently \\(\\lvert A\\rvert=0\\)."
+        ]
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0052",
       "TB-P0053",
-      "TB-P0056"
+      "TB-P0056",
+      "CLASS-U1-2026-08-29"
     ],
     "book_refs": [
       {
@@ -718,7 +907,13 @@
         "note": "Homogeneous systems and Examples 2.36, 2.40"
       }
     ],
-    "class_history": null
+    "class_history": [
+      {
+        "date": "2026-08-29",
+        "label": "29 Aug 2026 · Homogeneous systems",
+        "href": "class-log.html?date=2026-08-29"
+      }
+    ]
   },
   {
     "id": "u1-gauss-seidel",

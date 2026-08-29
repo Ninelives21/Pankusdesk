@@ -724,3 +724,18 @@ Fifth iteration is x₁ = 0.9994, x₂ = 1.9997, x₃ = 2.9997, x₄ = −0.0001
 Sixth iteration is x₁ = 0.9999, x₂ = 1.9999, x₃ = 2.9999, x₄ = −0.0001.
 
 Hence the solution is x₁ = 1, x₂ = 2, x₃ = 3, x₄ = 0.
+
+
+## Dated class-note integration
+
+### 25 August 2026 — Rank and normal form
+
+Class emphasis: rank as the number of independent rows; normal/canonical form; both row and column transformations may be used for normal form, while echelon reduction uses row transformations. The normal-form identity block gives the rank. Two normal-form reductions were worked in class.
+
+### 28 August 2026 — Gauss–Jordan inverse
+
+Class emphasis: write the non-singular matrix beside the identity matrix and use the same row transformations on both halves until the left side becomes the identity. Three inverse examples were worked, including the Grewal p. 39 example.
+
+### 29 August 2026 — Systems and consistency
+
+Class emphasis: write a system as \(AX=B\); consistency requires \(\rho(A)=\rho(A|B)\). Equal rank \(=n\) gives a unique solution; equal rank \(<n\) gives infinitely many solutions; unequal ranks give no solution. \(AX=0\) is homogeneous and always has the trivial solution; \(AX=B\) with \(B\ne0\) is non-homogeneous.

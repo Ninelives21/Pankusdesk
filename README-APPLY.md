@@ -1,17 +1,20 @@
-# Apply MAC Unit I order + intro delta
+# MAC Unit I — class-note integration delta
 
-Unzip this archive in the folder that already contains `Pankusdesk/`.
+Adds Priyanka's dated MAC class notes for 25, 28 and 29 August 2026 to the cumulative Unit I page and Semester 1.1 calendar.
+
+- Blue class-note boxes are integrated into the relevant topics.
+- Class-worked examples are dropdowns.
+- Dated class-log records are preserved separately.
+- No chapter-end-question changes are included.
 
 Dry run:
 
 ```bash
-rsync -avhn mac-unit1-order-intro-delta/ Pankusdesk/
+rsync -avhn mac-unit1-classnotes-delta/ Pankusdesk/
 ```
 
 Real sync:
 
 ```bash
-rsync -avh mac-unit1-order-intro-delta/ Pankusdesk/
+rsync -avh mac-unit1-classnotes-delta/ Pankusdesk/
 ```
-
-This delta only reorders Unit I topics and adds the Gauss–Seidel context introduction.

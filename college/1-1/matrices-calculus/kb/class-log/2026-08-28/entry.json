@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-28",
+  "date_label": "28 August 2026",
+  "source_id": "CLASS-U1-2026-08-28",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Matrices"
+  },
+  "title": "Gauss–Jordan method for inverse of a matrix",
+  "summary": "Gauss–Jordan procedure for a non-singular matrix and three worked inverse examples, including Grewal p. 39.",
+  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. Strike-throughs and overwritten intermediate matrix entries are not treated as final values.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-inverse-gauss-jordan",
+      "label": "Inverse of non-singular matrices by Gauss–Jordan method",
+      "href": "unit-1.html#u1-inverse-gauss-jordan"
+    }
+  ],
+  "pages": [
+    {
+      "page": 6,
+      "heading": "Gauss–Jordan method and example 1 — beginning",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "B S GREWAL ; Pg: 39"
+        },
+        {
+          "type": "heading",
+          "text": "Gauss Jordan method"
+        },
+        {
+          "type": "paragraph",
+          "text": "This method is used to find inverse of non-singular matrix."
+        },
+        {
+          "type": "heading",
+          "text": "Procedure"
+        },
+        {
+          "type": "bullet",
+          "text": "Let A be a non-singular matrix of order n. Write the given matrix with the identity matrix of order n."
+        },
+        {
+          "type": "bullet",
+          "text": "Using only row transformations, reduce the A-side to the identity. The same row transformations applied to the identity side produce B, where B = A⁻¹."
+        },
+        {
+          "type": "heading",
+          "text": "Example 1"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}-2&1&3\\\\0&-1&1\\\\1&2&0\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "The augmented-matrix reduction begins with a row interchange and continues on the next notebook page."
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "heading": "Gauss–Jordan example 1 — completion",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "The left side is reduced to the identity matrix."
+        },
+        {
+          "type": "equation",
+          "text": "\\[A^{-1}=\\dfrac18\\begin{bmatrix}-2&6&4\\\\1&-3&2\\\\1&5&2\\end{bmatrix}\\]"
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "heading": "Gauss–Jordan example 2",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Example 2"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "The class repeats the B. S. Grewal p. 39 augmented-matrix example."
+        },
+        {
+          "type": "equation",
+          "text": "\\[A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}\\]"
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "heading": "Gauss–Jordan example 3 — beginning",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Example 3"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}0&1&2&2\\\\1&1&2&3\\\\2&2&2&3\\\\2&3&3&3\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "The class writes A beside I, starts with \\(R_1\\leftrightarrow R_2\\), and continues clearing pivot columns with row operations."
+        },
+        {
+          "type": "line",
+          "text": "Several entries are crossed out and rewritten during the calculation."
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "heading": "Gauss–Jordan example 3 — completion",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "The left side reaches the identity matrix."
+        },
+        {
+          "type": "equation",
+          "text": "\\[A^{-1}=\\begin{bmatrix}-3&3&-3&2\\\\3&-4&4&-2\\\\-3&4&-5&3\\\\2&-2&3&-2\\end{bmatrix}\\]"
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The original five notebook photographs remain in mac_28thAug.zip and are not copied into website assets.",
+    "Example 2 is the same matrix as the prescribed Grewal p. 39 Gauss–Jordan example; the overlap is intentionally retained as class history.",
+    "Example 3 contains strike-throughs in the notebook; crossed-out intermediate values are not promoted into the cumulative notes.",
+    "All three class examples are retained as dropdowns in the blue class-note box on the cumulative Unit I page."
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-29",
+  "date_label": "29 August 2026",
+  "source_id": "CLASS-U1-2026-08-29",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Matrices"
+  },
+  "title": "Systems of linear equations and consistency",
+  "summary": "Matrix form AX=B; rank test for consistency; unique/infinite/no-solution cases; homogeneous and non-homogeneous systems.",
+  "transcription_policy": "Notebook wording is preserved as written as far as it is safely readable; line wrapping and mathematical typography are normalized for the web.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-linear-systems",
+      "label": "System of linear equations",
+      "href": "unit-1.html#u1-linear-systems"
+    },
+    {
+      "topic_id": "u1-non-homogeneous-systems",
+      "label": "Solving systems of non-homogeneous equations",
+      "href": "unit-1.html#u1-non-homogeneous-systems"
+    },
+    {
+      "topic_id": "u1-homogeneous-systems",
+      "label": "Solving systems of homogeneous equations",
+      "href": "unit-1.html#u1-homogeneous-systems"
+    }
+  ],
+  "pages": [
+    {
+      "page": 11,
+      "heading": "System of linear equations and matrix form",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "System of linear equations"
+        },
+        {
+          "type": "line",
+          "text": "System is consistent (at least one sol) if \\(\\rho(A)=\\rho(A|B)\\) — augmented."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(\\rho(A)=\\rho(A|B)=n\\) → unique solution."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(\\rho(A)=\\rho(A|B)<n\\) → infinitely many solutions."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(\\rho(A)\\ne\\rho(A|B)\\) → no solution."
+        },
+        {
+          "type": "paragraph",
+          "text": "Set of linear equations in 2 or more unknowns is called system of linear equations."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\begin{aligned}a_{11}u_1+a_{12}u_2+\\cdots+a_{1n}u_n&=b_1\\\\a_{21}u_1+a_{22}u_2+\\cdots+a_{2n}u_n&=b_2\\\\&\\vdots\\\\a_{m1}u_1+a_{m2}u_2+\\cdots+a_{mn}u_n&=b_m\\end{aligned}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The above system can be written in matrix form as \\(AX=B\\), where A is the coefficient matrix, X is the column of unknowns and B is the column of constants."
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "heading": "Consistency; homogeneous and non-homogeneous systems",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A system is said to be consistent if it has at least 1 sol."
+        },
+        {
+          "type": "paragraph",
+          "text": "Consider the above system \\(AX=B\\). This system is said to be consistent if and only if \\(\\rho(A)=\\rho(A|B)\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "Case (i): \\(\\rho(A)=\\rho(A|B)=n\\) (No. of unknowns) ⇒ unique solution."
+        },
+        {
+          "type": "bullet",
+          "text": "Case (ii): \\(\\rho(A)=\\rho(A|B)<n\\) ⇒ infinite solutions; \\((n-r)\\) may be taken as independent parameters when the common rank is r."
+        },
+        {
+          "type": "bullet",
+          "text": "If \\(\\rho(A)\\ne\\rho(A|B)\\) ⇒ system has no solution and is inconsistent."
+        },
+        {
+          "type": "heading",
+          "text": "NOTE"
+        },
+        {
+          "type": "bullet",
+          "text": "System \\(AX=B\\) is said to be non-homogeneous if \\(B\\ne0\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "A non-homogeneous system may or may not be consistent."
+        },
+        {
+          "type": "bullet",
+          "text": "System of form \\(AX=0\\) is called homogeneous where 0 is null vector."
+        },
+        {
+          "type": "bullet",
+          "text": "A homogeneous system is always consistent as it possesses a trivial solution."
+        },
+        {
+          "type": "bullet",
+          "text": "A homogeneous system with \\(AX=0\\) will have a non-trivial solution iff \\(\\rho(A)<n\\); for a square coefficient matrix, equivalently \\(|A|=0\\)."
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The original two notebook photographs remain in mac_29thAug.zip and are not copied into website assets.",
+    "The dated record is mapped into three cumulative Unit I topics: general systems, non-homogeneous consistency, and homogeneous systems.",
+    "No new class example is present in the supplied 29 August pages."
+  ]
+}

@@ -9,6 +9,7 @@ This subject follows the college Design Lock v2 architecture.
 - **Unit I — Matrices:** source-backed and `ready`
 - **Units II–V:** remain explicit `scaffold` / source-gap units until their prescribed-book or class-note material is added
 - **Unit I textbook practice:** R25-filtered Grewal questions with printed Appendix 3 answer checks where available
+- **Class-note integration:** 25, 28 and 29 August 2026 are preserved as dated records and consolidated into Unit I blue class-note boxes; class examples remain dropdowns
 
 ## Unit I source map
 
@@ -19,6 +20,12 @@ This subject follows the college Design Lock v2 architecture.
 - Printed answer checks: **1380–1383, 1440**
 
 Nearby material that is not part of R25 Unit I is deliberately not promoted into the notes/practice bank (for example partition-method inverse, Cramer-only exercises, Unit-II eigenvalue/quadratic-form questions, Jacobi-only questions, and relaxation methods).
+
+## Class-note source map
+
+- **25 Aug 2026** — rank/normal form and two normal-form examples
+- **28 Aug 2026** — Gauss–Jordan procedure and three inverse examples
+- **29 Aug 2026** — systems, consistency, homogeneous and non-homogeneous equations
 
 ## Primary files
 

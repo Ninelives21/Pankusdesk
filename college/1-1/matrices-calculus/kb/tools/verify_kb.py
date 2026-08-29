@@ -7,7 +7,7 @@ expected=43
 if manifest['course']['code']!='25BS1MT101': errors.append('course code changed')
 if len(syllabus.get('units',[]))!=5: errors.append('R25 unit count != 5')
 if len(coverage)!=expected or len(topics)!=expected: errors.append('R25 atom/topic count mismatch')
-valid={x['source_id'] for x in manifest.get('syllabus_refs',[])}|{x['source_id'] for x in book}
+valid={x['source_id'] for x in manifest.get('syllabus_refs',[])}|{x['source_id'] for x in book}|{x['id'] for x in manifest.get('class_sources',[])}
 ids=set()
 for t in topics:
     if t['id'] in ids: errors.append('duplicate topic '+t['id'])

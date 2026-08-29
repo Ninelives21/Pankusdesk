@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-25",
+  "date_label": "25 August 2026",
+  "source_id": "CLASS-U1-2026-08-25",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Matrices"
+  },
+  "title": "Rank and normal form of a matrix",
+  "summary": "Rank interpretation; normal/canonical form; row and column transformations; two normal-form rank reductions.",
+  "transcription_policy": "Notebook wording is preserved as written as far as it is safely readable. Overwritten matrix entries are not guessed; the clean cumulative unit box keeps the readable transformation sequence and final result.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-rank-echelon",
+      "label": "Rank of a matrix by Echelon form",
+      "href": "unit-1.html#u1-rank-echelon"
+    },
+    {
+      "topic_id": "u1-rank-normal",
+      "label": "Rank of a matrix by Normal form",
+      "href": "unit-1.html#u1-rank-normal"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Rank and normal/canonical form",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "Rank gives no. of independent rows"
+        },
+        {
+          "type": "heading",
+          "text": "Normal form (canonical form)"
+        },
+        {
+          "type": "bullet",
+          "text": "Consists of an identity matrix"
+        },
+        {
+          "type": "bullet",
+          "text": "Row and column operations can be used"
+        },
+        {
+          "type": "bullet",
+          "text": "Only row transformations can be used in echelon"
+        },
+        {
+          "type": "paragraph",
+          "text": "Matrices of the form \\([I_r\\ 0]\\), \\(\\begin{bmatrix}I_r\\\\0\\end{bmatrix}\\), and \\(\\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\) are said to be in normal form where \\(I_r\\) is an identity."
+        },
+        {
+          "type": "paragraph",
+          "text": "NOTE: To reduce a given matrix into normal form, use both row and column transformations. After reducing into normal form, \\(\\rho(A)\\) is given by order of identity matrix in it."
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "Normal-form example 1 — beginning",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Find rank of matrix using Normal form"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}2&3&-1&1\\\\1&-1&-2&-4\\\\3&1&3&-2\\\\6&3&0&-7\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "Row transformations: \\(R_2\\to2R_2-R_1,\\ R_3\\to2R_3-3R_1,\\ R_4\\to R_4-3R_1\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "Column transformations: \\(C_2\\to2C_2-3C_1,\\ C_3\\to2C_3+C_1,\\ C_4\\to2C_4-C_1\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}\\]"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "Normal-form example 1 — completion",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "After sign changes/scaling, the notebook works with"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "Then \\(R_3\\to5R_3-7R_2\\), \\(R_4\\to5R_4-6R_2\\), followed by column transformations."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "The notebook continues to canonical form and finally to \\(I_4\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\rho(A)=4\\]"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "heading": "Normal-form example 2 — beginning",
+      "blocks": [
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "The notebook starts with \\(R_1\\leftrightarrow R_2\\), then eliminates entries below the first pivot."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}\\]"
+        },
+        {
+          "type": "line",
+          "text": "Column transformations are then used as part of the normal-form reduction."
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "heading": "Normal-form example 2 — completion",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "The final normal form recorded is"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\rho(A)=2\\]"
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The original five notebook photographs remain in mac_25thAug.zip and are not copied into website assets.",
+    "Some intermediate matrix entries are overwritten; the dated record does not treat crossed-out values as final.",
+    "The cumulative Unit I page places the useful class material in blue class-note boxes and keeps both class examples as dropdowns."
+  ]
+}
