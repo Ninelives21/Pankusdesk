@@ -1,0 +1,78 @@
+{
+  "code": "25BS1MT101",
+  "name": "Matrices and Calculus",
+  "shortName": "MAC",
+  "regulation": "R25",
+  "semester": "1-1",
+  "credits": 4,
+  "kb": "kb/data/topics.json",
+  "syllabus": "kb/data/syllabus.json",
+  "coverage": "kb/data/coverage-audit.json",
+  "units": [
+    {
+      "number": 1,
+      "title": "Matrices",
+      "notes": "kb/notes/unit-1.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 2,
+      "title": "Eigenvalues, Eigenvectors and Quadratic Forms",
+      "notes": "kb/notes/unit-2.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 3,
+      "title": "Single Variable Calculus and Curve Tracing",
+      "notes": "kb/notes/unit-3.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 4,
+      "title": "Partial Differentiation and Its Applications",
+      "notes": "kb/notes/unit-4.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 5,
+      "title": "Multiple Integrals",
+      "notes": "kb/notes/unit-5.md",
+      "publicationStatus": "scaffold"
+    }
+  ],
+  "pyqStatus": "not-added-yet",
+  "unitRenderer": {
+    "syllabusPage": "r25-syllabus.html",
+    "sources": [
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "syllabus_refs",
+        "idField": "source_id",
+        "kind": "Syllabus",
+        "format": "syllabus"
+      },
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "gap_sources",
+        "idField": "id",
+        "kind": "Approved source",
+        "format": "external"
+      },
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "class_sources",
+        "idField": "id",
+        "kind": "Class notes",
+        "format": "class-log"
+      }
+    ]
+  },
+  "practice": {
+    "pyqs": {
+      "label": "MAC PYQs",
+      "description": "VNR previous-year questions for Matrices and Calculus.",
+      "href": "pyqs.html",
+      "status": "scaffold"
+    }
+  }
+}

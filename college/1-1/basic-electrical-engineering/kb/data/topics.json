@@ -3347,11 +3347,11 @@
         ]
       },
       {
-        "heading": "What 'steady state' means in these notes",
+        "heading": "Steady-state sinusoidal response",
         "scope": "supporting",
         "paragraphs": [
           "Immediately after an excitation is applied, a circuit may contain a natural or transient part as well as the forced response. For a stable circuit, the natural part dies away; the persistent sinusoidal forced response remains.",
-          "This unit is concerned with that sinusoidal steady-state behaviour. Transient analysis itself is outside the R25 Unit II scope."
+          "After transient effects decay, circuit voltages and currents follow the sinusoidal forcing at the source frequency. Steady-state AC analysis works with this established periodic response."
         ],
         "source_refs": [
           "LEC-U2-01",
@@ -3395,7 +3395,7 @@
     ],
     "cautions": [
       "Do not compare a sine angle directly with a cosine angle without first converting them to a common sine/cosine form.",
-      "The natural/transient discussion is explanatory context only; R25 Unit II asks for steady-state AC circuits."
+      "In steady-state AC analysis, transient terms are omitted and only the established sinusoidal response is considered."
     ],
     "practice": [
       {
@@ -4488,7 +4488,7 @@
         "heading": "Series resonance",
         "scope": "supporting",
         "paragraphs": [
-          "The condition X_L = X_C is called series resonance, and the corresponding frequency is the resonant frequency. R25 names series RLC analysis but does not separately list resonance, so this is retained as a useful extension within the RLC topic rather than as a separate syllabus topic."
+          "The condition X_L = X_C is called series resonance, and the corresponding frequency is the resonant frequency. At resonance the inductive and capacitive reactances cancel, leaving zero net reactance in the series circuit."
         ],
         "bullets": [
           "At resonance, 2πfL = 1/(2πfC).",
@@ -4531,7 +4531,7 @@
         "scope": "supporting",
         "paragraphs": [
           "Once the transient part has died away, each sinusoidal steady-state branch quantity can be represented by a complex amplitude at the excitation frequency and solved algebraically with phasors.",
-          "Second-order transient classification is outside the R25 Unit II scope; only the steady-state/forced-response viewpoint is retained here."
+          "Phasor analysis of a series RLC circuit describes the steady-state forced response. Transient classification of the second-order circuit is a separate analysis."
         ],
         "source_refs": [
           "LEC-U2-02",
@@ -4594,7 +4594,7 @@
     ],
     "cautions": [
       "V_L and V_C are 180° opposed on the reactive axis. The supply voltage is based on V_L − V_C, not V_L + V_C.",
-      "Resonance is present in the prescribed chapter but is not separately named as an R25 Unit-II syllabus atom."
+      "At series resonance, X_L = X_C, so the net reactance is zero and the series circuit behaves resistively at the resonant frequency."
     ],
     "practice": [
       {

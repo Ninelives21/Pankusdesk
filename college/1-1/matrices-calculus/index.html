@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<base id="site-base" href="/" />
+		<script>
+			const base = document.getElementById('site-base');
+			if (window.location.hostname.endsWith('github.io')) base.href = '/Pankusdesk/';
+		</script>
+		<title>Matrices and Calculus · Panku's Desk</title>
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/subject.css" />
+		<script src="scripts/new/navbar.js" defer></script>
+		<script src="scripts/new/subject-home.js" defer></script>
+	</head>
+	<body>
+		<div id="navbar-new"></div>
+		<main class="page-shell subject-page"
+			data-subject-json="college/1-1/matrices-calculus/subject.json"
+			data-syllabus-json="college/1-1/matrices-calculus/kb/data/syllabus.json"
+			data-kb-status-json="college/1-1/matrices-calculus/kb/data/kb-status.json">
+			<div class="breadcrumbs"><a href="index.html">Panku's Desk</a><span>›</span><a href="college/1-1/index.html">Semester 1.1</a><span>›</span><span>MAC</span></div>
+			<section class="subject-hero">
+				<div class="subject-hero-copy">
+					<div class="eyebrow">Semester 1.1 · <a href="college/1-1/matrices-calculus/r25-syllabus.html">R25 ↗</a></div>
+					<h1 data-subject-name>Matrices and Calculus</h1>
+					<p class="subtitle"><span data-subject-code>25BS1MT101</span><span class="meta-separator" aria-hidden="true">·</span><span data-subject-credits>4 credits</span></p>
+					<p class="subject-intro">Five cumulative study units organised around the official VNR R25 syllabus. The syllabus map is live now; detailed notes will be published only as real textbook, lecture and class-note sources are added.</p>
+				</div>
+				<div class="subject-status-card" aria-label="Knowledge base status">
+					<div class="status-kicker">Knowledge base</div>
+					<div class="status-line"><span class="status-dot" aria-hidden="true"></span><strong data-kb-label>Source scaffolds</strong></div>
+					<div class="status-stats"><div><strong data-unit-count>5</strong><span>units</span></div><div><strong data-r25-count>43</strong><span>R25 syllabus points</span></div><div><strong data-gap-count>0</strong><span>supplemented topics</span></div></div>
+				</div>
+			</section>
+			<section class="section"><div class="section-heading-row"><div><div class="section-title">Study by unit</div><p class="section-note">Each unit already has its official R25 boundary and stable topic map. Detailed study content will grow cumulatively as sources arrive.</p></div></div><div class="unit-grid" id="subject-unit-grid" data-unit-grid aria-live="polite"><div class="unit-loading">Loading R25 unit map…</div></div></section>
+			<section class="section subject-tools-section"><div class="section-title">Study tools</div><div class="study-tool-grid">
+				<div class="study-tool-card"><div class="tool-label">Methods</div><h2>Step-by-step methods</h2><p>Matrix reductions, Gauss-Jordan, eigenvalue workflows, calculus procedures and integral methods will sit beside the theory once their source-backed unit notes are built.</p><span class="tool-state">Growing with the semester</span></div>
+				<div class="study-tool-card"><div class="tool-label">Revision</div><h2>Formula &amp; theorem sheet</h2><p>A compact revision layer will be generated from the cumulative unit knowledge base rather than maintained as a separate set of notes.</p><span class="tool-state">Coming with published units</span></div>
+				<a class="study-tool-card study-tool-link" data-pyq-link href="college/1-1/matrices-calculus/pyqs.html"><div class="tool-label">Exam practice</div><h2>VNR PYQs</h2><p>Previous-year questions stay together at subject level, with exam/year and unit/topic tags added only when verified.</p><span class="tool-action">Open MAC PYQs →</span></a>
+			</div></section>
+			<section class="section source-policy-panel"><div class="source-policy-copy"><div class="section-title">Source discipline</div><h2>Syllabus mapped; theory not invented</h2><p>The official R25 syllabus defines the five unit boundaries. No detailed textbook-style notes are being generated from memory: each unit remains a visible scaffold until prescribed-textbook, lecture or dated class-note material is supplied and mapped.</p></div><details class="supplement-details"><summary><span>43 syllabus points awaiting theory sources</span><span aria-hidden="true">+</span></summary><ul><li>Official scope is fully indexed.</li><li>Prescribed textbook sources are not loaded yet.</li><li>Lecture/class sources will be integrated cumulatively when supplied.</li></ul></details></section>
+		</main>
+	</body>
+</html>

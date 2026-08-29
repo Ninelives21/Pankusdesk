@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<base id="site-base" href="/" />
+		<script>
+			const base = document.getElementById('site-base');
+			if (window.location.hostname.endsWith('github.io')) base.href = '/Pankusdesk/';
+		</script>
+		<title>R25 Syllabus · Matrices and Calculus · Panku's Desk</title>
+		<link rel="stylesheet" href="styles/new/variables.css" /><link rel="stylesheet" href="styles/new/base.css" /><link rel="stylesheet" href="styles/new/layout.css" /><link rel="stylesheet" href="styles/new/navbar.css" /><link rel="stylesheet" href="styles/new/components.css" /><link rel="stylesheet" href="styles/new/pages/syllabus.css" />
+		<script src="scripts/new/navbar.js" defer></script>
+	</head>
+	<body><div id="navbar-new"></div><main class="page-shell syllabus-page">
+		<div class="breadcrumbs"><a href="index.html">Panku's Desk</a><span>›</span><a href="college/1-1/index.html">Semester 1.1</a><span>›</span><a href="college/1-1/matrices-calculus/index.html">MAC</a><span>›</span><span>R25 syllabus</span></div>
+		<section class="syllabus-hero"><div><div class="eyebrow">VNR VJIET · B.Tech. I Semester · R25</div><h1>Matrices and Calculus</h1><p class="syllabus-code">25BS1MT101</p><p class="syllabus-intro">MAC-only HTML extract of the official R25 Information Technology syllabus. The course wording below is preserved from the supplied VNR specification.</p></div><div class="syllabus-source-card"><span>Official source</span><strong>R25 IT syllabus</strong><p>Original document pages 9–10</p></div></section>
+		<nav class="syllabus-jump" aria-label="Syllabus sections"><a href="#course">Course</a><a href="#outcomes">Outcomes</a><a href="#unit-1">Unit I</a><a href="#unit-2">Unit II</a><a href="#unit-3">Unit III</a><a href="#unit-4">Unit IV</a><a href="#unit-5">Unit V</a><a href="#sources">Books &amp; references</a></nav>
+		<section class="syllabus-section" id="course"><div class="section-kicker">Course details</div><h2>Teaching &amp; evaluation scheme</h2>
+			<div class="scheme-grid"><div class="scheme-card"><span>Teaching</span><div class="scheme-values"><div><strong>3</strong><small>L</small></div><div><strong>1</strong><small>T/P</small></div><div><strong>4</strong><small>C</small></div></div></div><div class="scheme-card wide"><span>Evaluation</span><div class="scheme-values five"><div><strong>30</strong><small>SE</small></div><div><strong>05</strong><small>CA</small></div><div><strong>05</strong><small>ELA</small></div><div><strong>60</strong><small>SEE</small></div><div><strong>100</strong><small>Total</small></div></div></div></div>
+			<div class="syllabus-block"><h3>Course pre-requisites</h3><p>Mathematical Knowledge at Pre-University level</p></div>
+			<div class="syllabus-block"><h3>Course objectives</h3><ul><li>To learn the concept of a rank of the matrix and applying this concept to check the consistency of a system of linear equations</li><li>To learn the concept of eigen values and eigen vectors and to reduce the quadratic form to canonical form</li><li>To know the geometrical approach to the mean value theorems and their application to the mathematical problems</li><li>To find the maxima and minima of function of two and three variables</li><li>To evaluate multiple integrals and their applications</li></ul></div>
+		</section>
+		<section class="syllabus-section" id="outcomes"><div class="section-kicker">Course outcomes</div><h2>After completion of the course, the student should be able to</h2><ol class="outcome-list"><li><strong>CO-1:</strong> Compute the rank of a matrix and analyze the solution of a system of linear equations</li><li><strong>CO-2:</strong> Calculate the Eigenvalues and Eigen vectors and reduce the quadratic form to canonical form using orthogonal transformations</li><li><strong>CO-3:</strong> Solve the applications on the mean value theorems</li><li><strong>CO-4:</strong> Find the extreme values of functions of two and three variables with/ without constraints</li><li><strong>CO-5:</strong> Evaluate the multiple integrals and apply the concept to find areas, volumes</li></ol>
+			<details class="articulation-details"><summary>Course articulation matrix</summary><p class="matrix-note">Mapping levels: 1 = Slight, 2 = Moderate and 3 = Substantial.</p><div class="matrix-wrap"><table class="articulation-table"><thead><tr><th>CO</th><th>PO-1</th><th>PO-2</th><th>PO-3</th><th>PO-4</th><th>PO-5</th><th>PO-6</th><th>PO-7</th><th>PO-8</th><th>PO-9</th><th>PO-10</th><th>PO-11</th><th>PSO-1</th><th>PSO-2</th><th>PSO-3</th></tr></thead><tbody>
+			<tr><th>CO-1</th><td>3</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>–</td><td>2</td><td>1</td><td>2</td><td>2</td><td>1</td><td>–</td></tr>
+			<tr><th>CO-2</th><td>3</td><td>2</td><td>2</td><td>1</td><td>2</td><td>1</td><td>1</td><td>–</td><td>2</td><td>1</td><td>2</td><td>2</td><td>1</td><td>–</td></tr>
+			<tr><th>CO-3</th><td>3</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>–</td><td>2</td><td>1</td><td>2</td><td>2</td><td>1</td><td>–</td></tr>
+			<tr><th>CO-4</th><td>3</td><td>2</td><td>2</td><td>1</td><td>2</td><td>1</td><td>1</td><td>–</td><td>2</td><td>1</td><td>2</td><td>2</td><td>1</td><td>–</td></tr>
+			<tr><th>CO-5</th><td>3</td><td>2</td><td>2</td><td>1</td><td>2</td><td>1</td><td>1</td><td>–</td><td>2</td><td>1</td><td>2</td><td>2</td><td>1</td><td>–</td></tr>
+			</tbody></table></div></details>
+		</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-1">
+				<div class="section-kicker">Unit I</div>
+				<h2>Matrices</h2>
+				<p>Rank of a matrix by Echelon form and Normal form – Inverse of Non-singular matrices by Gauss-Jordan method. System of linear equations: Solving system of Homogeneous and Non-Homogeneous equations, Gauss Seidel Iteration Methods.</p>
+				<a class="study-unit-link" href="college/1-1/matrices-calculus/unit-1.html">Open Unit I notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-2">
+				<div class="section-kicker">Unit II</div>
+				<h2>Eigenvalues, Eigenvectors and Quadratic Forms</h2>
+				<p>Eigenvalues and Eigenvectors: Eigenvalues – Eigenvectors and their properties – Diagonalization of a matrix – Cayley-Hamilton Theorem (without proof) – finding inverse and power of a matrix by Cayley-Hamilton Theorem – Quadratic forms and Nature of the Quadratic Forms – Reduction of Quadratic form to canonical forms by Orthogonal Transformation.</p>
+				<a class="study-unit-link" href="college/1-1/matrices-calculus/unit-2.html">Open Unit II notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-3">
+				<div class="section-kicker">Unit III</div>
+				<h2>Single Variable Calculus and Curve Tracing</h2>
+				<p>Single Variable Calculus: Limits and Continuous function and its properties. Mean value theorems: Rolle’s theorem – Lagrange’s Mean value theorem with their Geometrical Interpretation and applications – Cauchy’s Mean value Theorem – Taylor’s Series (All the theorems without proof). Curve Tracing: Curve tracing in cartesian and polar coordinates</p>
+				<a class="study-unit-link" href="college/1-1/matrices-calculus/unit-3.html">Open Unit III notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-4">
+				<div class="section-kicker">Unit IV</div>
+				<h2>Partial Differentiation and Its Applications</h2>
+				<p>Definitions of Limit and continuity – Partial Differentiation: Euler’s Theorem – Total derivative – Jacobian – Functional dependence & independence. Applications: Maxima and minima of functions of two variables and three variables using method of Lagrange multipliers.</p>
+				<a class="study-unit-link" href="college/1-1/matrices-calculus/unit-4.html">Open Unit IV notes →</a>
+			</section>
+
+			<section class="syllabus-section unit-syllabus" id="unit-5">
+				<div class="section-kicker">Unit V</div>
+				<h2>Multiple Integrals</h2>
+				<p>Evaluation of Double Integrals (Cartesian and polar coordinates) – change of order of integration (only Cartesian form) – Change of variables for double integrals (Cartesian to polar). Evaluation of Triple Integrals – Change of variables for triple integrals (Cartesian to Spherical and Cylindrical polar coordinates). Applications: Areas by double integrals and volumes by triple integrals.</p>
+				<a class="study-unit-link" href="college/1-1/matrices-calculus/unit-5.html">Open Unit V notes →</a>
+			</section>
+		<section class="syllabus-section" id="sources"><div class="section-kicker">Prescribed sources</div><h2>Text books</h2><ol class="source-list"><li><em>Higher Engineering Mathematics</em>, B. S. Grewal, 36th Edition, Khanna Publishers, 2010</li><li><em>Advanced Engineering Mathematics</em>, R. K. Jain and S. R. K. Iyengar, 5th Editon, Narosa Publications, 2016</li></ol><h2 class="sources-subheading">References</h2><ol class="source-list"><li><em>Advanced Engineering Mathematics</em>, Erwin Kreyszig, 13th Edition, John Wiley &amp; Sons, 2006</li><li><em>Thomas’ Calculus</em>, G. B. Thomas, 13th Edition, Pearson, 2014</li><li><em>A Text Book of Engineering Mathematics</em>, N. P. Bali and Manish Goyal, Laxmi Publications, 2008</li><li><em>Higher Engineering Mathematics</em>, H. K. Dass and Er. Rajnish Verma, S. Chand</li></ol></section>
+	</main></body>
+</html>
