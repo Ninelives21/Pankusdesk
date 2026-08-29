@@ -1,26 +1,27 @@
-# MAC Unit I delta
+# MAC Unit I — textbook-faithful rebuild
 
-Apply from the folder that contains both this unzipped delta folder and `Pankusdesk/`.
+This delta replaces the previous summary-style Unit I topic content with the prescribed Grewal wording/sequence, filtered to the R25 Unit I syllabus.
+
+- All retained worked textbook examples are collapsible dropdowns.
+- Chapter-end textbook practice is intentionally not surfaced in this delta; that selection will be reviewed separately.
+- No raw commercial textbook scans are copied into the public workspace.
+
+## Apply
 
 Dry run:
 
 ```bash
-rsync -avhn mac-unit1-delta/ Pankusdesk/
+rsync -avhn mac-unit1-textbook-delta/ Pankusdesk/
 ```
 
 Real sync:
 
 ```bash
-rsync -avh mac-unit1-delta/ Pankusdesk/
+rsync -avh mac-unit1-textbook-delta/ Pankusdesk/
 ```
 
-No `--delete` is required.
+## Verify
 
-## Included
-
-- Source-backed MAC Unit I notes from the supplied R25 syllabus and Grewal scans
-- R25-filtered Grewal Unit I practice + printed answer checks
-- Unit I textbook-practice page
-- Physical-book provenance/index records
-- Generic renderer support required for math-rich practice and reusable accordion labels
-- Updated MAC KB verification/audit files
+```bash
+python3 Pankusdesk/college/1-1/matrices-calculus/kb/tools/verify_kb.py
+```
