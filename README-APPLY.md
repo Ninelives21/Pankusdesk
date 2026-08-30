@@ -1,3 +1,7 @@
-# MAC Unit I · Problems 2.12 delta
+# MAC textbook-question page UX fix
 
-Adds the 22 R25-relevant Problems 2.12 objective questions (pp. 85–88), complete PankusDesk solutions, printed appendix checks, the verified Q10 amber math-mismatch note, and the Unit I in-flow practice link.
+Changes:
+- simplifies the student-facing source/provenance note;
+- adds quick links to every textbook question set;
+- confirms Problems 2.12 (22 objective questions) is present and directly jumpable;
+- keeps detailed scope/page metadata in the data file but out of the main student-facing note.

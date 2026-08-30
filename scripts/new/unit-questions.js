@@ -62,12 +62,32 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 			</div>
 		</section>
 
-		<section class="practice-source-note">
-			<strong>${escapeHtml(source.title || 'Prescribed textbook')}${source.chapter ? ` · ${escapeHtml(source.chapter)}` : ''}${source.review_pages?.length ? ` · ${escapeHtml(formatReviewPages(source.review_pages))}` : ''}</strong>
-			<p>${escapeHtml(unitBank.scope_note || source.note || '')}</p>
+		<section class="practice-source-note" aria-label="Question-bank source note">
+			<div class="practice-source-kicker">Source & solution note</div>
+			<strong>${escapeHtml(source.title || 'Prescribed textbook')}</strong>
+			<p>${escapeHtml(source.note || 'Questions are selected from the prescribed textbook. PankusDesk supplies the worked solutions.')}</p>
 		</section>
 
-		${(unitBank.groups || []).map(group => renderGroup(group)).join('') || '<div class="practice-empty">No chapter-end questions are available for this unit yet.</div>'}
+		${renderQuestionSetJump(unitBank.groups || [])}
+
+		${(unitBank.groups || []).map(group => renderGroup(group)).join('') || '<div class="practice-empty">No textbook questions are available for this unit yet.</div>'}
+	`;
+}
+
+
+function renderQuestionSetJump(groups) {
+	if (!Array.isArray(groups) || groups.length < 2) return '';
+	return `
+		<nav class="question-set-jump" aria-label="Quick links to textbook question sets">
+			<div class="question-set-jump-heading">Quick links to question sets</div>
+			<div class="question-set-jump-links">
+				${groups.map(group => {
+					const label = group.nav_label || String(group.title || '').split('·')[0].trim() || 'Question set';
+					const count = Array.isArray(group.questions) ? group.questions.length : 0;
+					return `<a href="#${escapeHtml(group.id)}"><span>${escapeHtml(label)}</span>${count ? `<small>${count}</small>` : ''}</a>`;
+				}).join('')}
+			</div>
+		</nav>
 	`;
 }
 
