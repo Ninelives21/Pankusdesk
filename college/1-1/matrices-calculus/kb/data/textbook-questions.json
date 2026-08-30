@@ -12,30 +12,34 @@
       "page_title": "Textbook Questions",
       "page_description": "R25-relevant textbook questions from the prescribed Grewal sections, added set by set with complete worked solutions.",
       "summary": {
-        "selected_question_count": 39,
+        "selected_question_count": 61,
         "stats": [
           {
-            "value": 39,
+            "value": 61,
             "label": "questions added"
           },
           {
-            "value": 4,
+            "value": 5,
             "label": "textbook sets"
           },
           {
-            "value": "pp. 44, 49, 57–58, 1072",
+            "value": "pp. 44, 49, 57–58, 85–88, 1072",
             "label": "book pages"
           }
         ]
       },
-      "scope_note": "Published R25-relevant sets so far: Problems 2.4 (Q1–Q9), selected Problems 2.6 (Q6–Q11, Q13–Q14), all Problems 2.7 (Q1–Q16), and Gauss–Seidel Problems 28.4 [Q2(b), Q3–Q7]. Full questions remain visible before opening; clicking + reveals the complete PankusDesk solution and the printed appendix check where available.",
+      "scope_note": "Published R25-relevant sets: Problems 2.4 (Q1–Q9), selected Problems 2.6 (Q6–Q11, Q13–Q14), all Problems 2.7 (Q1–Q16), selected chapter-end objective Problems 2.12 (22 Unit-I questions), and Gauss–Seidel Problems 28.4 [Q2(b), Q3–Q7]. Full questions remain visible before opening; clicking + reveals the complete PankusDesk solution and the printed appendix check where available.",
       "source": {
-        "chapter": "Chapters 2 and 28 · Problems 2.4, 2.6, 2.7 and 28.4",
+        "chapter": "Chapters 2 and 28 · Problems 2.4, 2.6, 2.7, 2.12 and 28.4",
         "review_pages": [
           44,
           49,
           57,
           58,
+          85,
+          86,
+          87,
+          88,
           1072
         ]
       },
@@ -1614,6 +1618,690 @@
                   "content": "\\(2x_1+x_2+2x_3+x_4=6;\\;6x_1-6x_2+6x_3+12x_4=36;\\;4x_1+3x_2+3x_3-3x_4=-1;\\;2x_1+2x_2-x_3+x_4=10.\\)"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "problems-2-12",
+          "title": "Problems 2.12 · Objective Checks for R25 Unit I",
+          "note": "Book pp. 85–88 · 22 selected chapter-end objective questions that directly test Unit I concepts. Each answer includes the reasoning, not just the printed key.",
+          "questions": [
+            {
+              "id": "u1-p212-03",
+              "number": 3,
+              "book_page": 85,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "r25_scope": "core",
+              "question": "The inverse of the matrix \\(\\begin{bmatrix}-0.5&0&0\\\\0&4&0\\\\0&0&1\\end{bmatrix}\\) is (a) \\(\\begin{bmatrix}0.5&0&0\\\\0&-4&0\\\\0&0&1\\end{bmatrix}\\) (b) \\(\\begin{bmatrix}0.5&0&0\\\\0&-4&0\\\\0&0&1\\end{bmatrix}\\) (c) \\(\\begin{bmatrix}-2&0&0\\\\0&0.25&0\\\\0&0&1\\end{bmatrix}\\) (d) \\(\\begin{bmatrix}2&0&0\\\\0&-0.25&0\\\\0&0&-1\\end{bmatrix}\\)",
+              "question_lead": "The inverse of the matrix \\(\\begin{bmatrix}-0.5&0&0\\\\0&4&0\\\\0&0&1\\end{bmatrix}\\) is",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(\\begin{bmatrix}0.5&0&0\\\\0&-4&0\\\\0&0&1\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(\\begin{bmatrix}0.5&0&0\\\\0&-4&0\\\\0&0&1\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(\\begin{bmatrix}-2&0&0\\\\0&0.25&0\\\\0&0&1\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(d)",
+                  "content": "\\(\\begin{bmatrix}2&0&0\\\\0&-0.25&0\\\\0&0&-1\\end{bmatrix}\\)"
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For a diagonal matrix, the inverse is obtained by replacing each non-zero diagonal entry by its reciprocal.",
+                  "\\[(-0.5)^{-1}=-2,\\qquad 4^{-1}=\\frac14=0.25,\\qquad 1^{-1}=1.\\]",
+                  "\\[A^{-1}=\\begin{bmatrix}-2&0&0\\\\0&0.25&0\\\\0&0&1\\end{bmatrix}.\\]"
+                ],
+                "result": "**Option (c).** \\(A^{-1}=\\begin{bmatrix}-2&0&0\\\\0&0.25&0\\\\0&0&1\\end{bmatrix}\\).",
+                "book_check": "Printed appendix answer: **(c)**."
+              }
+            },
+            {
+              "id": "u1-p212-05",
+              "number": 5,
+              "book_page": 85,
+              "topic_id": "u1-linear-systems",
+              "r25_scope": "core",
+              "question": "The system \\(x+2y+z=9,\\;2x+y+3z=7\\) can be expressed as (a) \\(\\begin{bmatrix}1&2&1\\\\2&1&3\\end{bmatrix}=\\begin{bmatrix}9\\\\7\\end{bmatrix}\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}\\) (b) \\(\\begin{bmatrix}1&2&1\\\\2&1&3\\end{bmatrix}=\\begin{bmatrix}9\\\\7\\end{bmatrix}=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}\\) (c) \\(\\begin{bmatrix}1&2&1\\\\2&1&3\\end{bmatrix}\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}=\\begin{bmatrix}9\\\\7\\end{bmatrix}\\) (d) None of the above.",
+              "question_lead": "The system \\(x+2y+z=9,\\;2x+y+3z=7\\) can be expressed as",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(\\begin{bmatrix}1&2&1\\\\2&1&3\\end{bmatrix}=\\begin{bmatrix}9\\\\7\\end{bmatrix}\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(\\begin{bmatrix}1&2&1\\\\2&1&3\\end{bmatrix}=\\begin{bmatrix}9\\\\7\\end{bmatrix}=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(\\begin{bmatrix}1&2&1\\\\2&1&3\\end{bmatrix}\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}=\\begin{bmatrix}9\\\\7\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(d)",
+                  "content": "None of the above."
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "A linear system is written in matrix form as \\(AX=B\\), where \\(A\\) is the coefficient matrix, \\(X\\) is the column of unknowns, and \\(B\\) is the constants column.",
+                  "\\[\\begin{bmatrix}1&2&1\\\\2&1&3\\end{bmatrix}\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}=\\begin{bmatrix}9\\\\7\\end{bmatrix}.\\]"
+                ],
+                "result": "**Option (c).**",
+                "book_check": "Printed appendix answer: **(c)**."
+              }
+            },
+            {
+              "id": "u1-p212-06",
+              "number": 6,
+              "book_page": 85,
+              "topic_id": "u1-linear-systems",
+              "r25_scope": "core",
+              "question": "If \\(\\begin{bmatrix}5&4\\\\1&1\\end{bmatrix}X=\\begin{bmatrix}1&-2\\\\1&3\\end{bmatrix}\\), then \\(X\\) equals (a) \\(\\begin{bmatrix}-3&-14\\\\4&17\\end{bmatrix}\\) (b) \\(\\begin{bmatrix}1&-2\\\\3&1\\end{bmatrix}\\) (c) \\(\\begin{bmatrix}1&3\\\\-2&1\\end{bmatrix}\\) (d) \\(\\begin{bmatrix}3&-14\\\\4&-17\\end{bmatrix}\\)",
+              "question_lead": "If \\(\\begin{bmatrix}5&4\\\\1&1\\end{bmatrix}X=\\begin{bmatrix}1&-2\\\\1&3\\end{bmatrix}\\), then \\(X\\) equals",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(\\begin{bmatrix}-3&-14\\\\4&17\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(\\begin{bmatrix}1&-2\\\\3&1\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(\\begin{bmatrix}1&3\\\\-2&1\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(d)",
+                  "content": "\\(\\begin{bmatrix}3&-14\\\\4&-17\\end{bmatrix}\\)"
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Let \\(A=\\begin{bmatrix}5&4\\\\1&1\\end{bmatrix}\\) and \\(B=\\begin{bmatrix}1&-2\\\\1&3\\end{bmatrix}\\). Then \\(AX=B\\), so \\(X=A^{-1}B\\).",
+                  "\\[\\det A=5(1)-4(1)=1,\\qquad A^{-1}=\\begin{bmatrix}1&-4\\\\-1&5\\end{bmatrix}.\\]",
+                  "\\[X=A^{-1}B=\\begin{bmatrix}1&-4\\\\-1&5\\end{bmatrix}\\begin{bmatrix}1&-2\\\\1&3\\end{bmatrix}=\\begin{bmatrix}-3&-14\\\\4&17\\end{bmatrix}.\\]"
+                ],
+                "result": "**Option (a).** \\(X=\\begin{bmatrix}-3&-14\\\\4&17\\end{bmatrix}\\).",
+                "book_check": "Printed appendix answer: **(a)**."
+              }
+            },
+            {
+              "id": "u1-p212-08",
+              "number": 8,
+              "book_page": 85,
+              "topic_id": "u1-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "For the homogeneous system \\(3x+2y+z=0,\\;x+4y+z=0,\\;2x+y+4z=0\\), which statement is correct? (a) It is inconsistent. (b) It has only the trivial solution \\(x=0,\\;y=0,\\;z=0\\). (c) It can be reduced to a single equation and therefore has no solution. (d) The determinant of the coefficient matrix is zero.",
+              "question_lead": "For the homogeneous system \\(3x+2y+z=0,\\;x+4y+z=0,\\;2x+y+4z=0\\), which statement is correct?",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "It is inconsistent."
+                },
+                {
+                  "label": "(b)",
+                  "content": "It has only the trivial solution \\(x=0,\\;y=0,\\;z=0\\)."
+                },
+                {
+                  "label": "(c)",
+                  "content": "It can be reduced to a single equation and therefore has no solution."
+                },
+                {
+                  "label": "(d)",
+                  "content": "The determinant of the coefficient matrix is zero."
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0085"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The coefficient matrix is \\(A=\\begin{bmatrix}3&2&1\\\\1&4&1\\\\2&1&4\\end{bmatrix}\\).",
+                  "\\[\\det A=3(16-1)-2(4-2)+(1-8)=45-4-7=34\\ne0.\\]",
+                  "A homogeneous system with a non-singular coefficient matrix has only the trivial solution."
+                ],
+                "result": "**Option (b).** \\(x=y=z=0\\).",
+                "book_check": "Printed appendix answer: **(b)**."
+              }
+            },
+            {
+              "id": "u1-p212-10",
+              "number": 10,
+              "book_page": 86,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "Let \\(A=\\begin{bmatrix}1&0&0\\\\\\alpha&1&0\\\\\\beta&\\gamma&1\\end{bmatrix}\\) and \\(B=\\begin{bmatrix}1&0&0\\\\2&1&0\\\\3&4&1\\end{bmatrix}\\). Which statement about row equivalence is correct? (a) \\(A\\) is row equivalent to \\(B\\) only when \\(\\alpha=2,\\beta=3,\\gamma=4\\). (b) \\(A\\) is row equivalent to \\(B\\) only when \\(\\alpha\\ne0,\\beta\\ne0,\\gamma\\ne0\\). (c) \\(A\\) is not row equivalent to \\(B\\). (d) \\(A\\) is row equivalent to \\(B\\) for all values of \\(\\alpha,\\beta,\\gamma\\).",
+              "question_lead": "Let \\(A=\\begin{bmatrix}1&0&0\\\\\\alpha&1&0\\\\\\beta&\\gamma&1\\end{bmatrix}\\) and \\(B=\\begin{bmatrix}1&0&0\\\\2&1&0\\\\3&4&1\\end{bmatrix}\\). Which statement about row equivalence is correct?",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(A\\) is row equivalent to \\(B\\) only when \\(\\alpha=2,\\beta=3,\\gamma=4\\)."
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(A\\) is row equivalent to \\(B\\) only when \\(\\alpha\\ne0,\\beta\\ne0,\\gamma\\ne0\\)."
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(A\\) is not row equivalent to \\(B\\)."
+                },
+                {
+                  "label": "(d)",
+                  "content": "\\(A\\) is row equivalent to \\(B\\) for all values of \\(\\alpha,\\beta,\\gamma\\)."
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Both matrices are lower triangular with all diagonal entries equal to \\(1\\). Therefore",
+                  "\\[\\det A=1,\\qquad \\det B=1.\\]",
+                  "Hence both \\(A\\) and \\(B\\) are non-singular and each is row equivalent to \\(I_3\\). Row equivalence is transitive, so \\(A\\) is row equivalent to \\(B\\) for every choice of \\(\\alpha,\\beta,\\gamma\\)."
+                ],
+                "result": "**Option (d).** \\(A\\) and \\(B\\) are row equivalent for all \\(\\alpha,\\beta,\\gamma\\).",
+                "book_check": "Printed appendix answer: **(a)**."
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "Grewal’s appendix prints option (a). Independent verification shows that both A and B have determinant 1 for every value of \\(\\alpha,\\beta,\\gamma\\), so both are row equivalent to \\(I_3\\), and therefore to each other. PankusDesk retains the verified answer **(d)**."
+              }
+            },
+            {
+              "id": "u1-p212-11",
+              "number": 11,
+              "book_page": 86,
+              "topic_id": "u1-linear-systems",
+              "r25_scope": "core",
+              "question": "If \\(A\\begin{bmatrix}0&1\\\\2&-1\\end{bmatrix}=\\begin{bmatrix}2&1\\\\-1&0\\end{bmatrix}\\), where \\(A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\), then \\(A\\) is (a) \\(\\begin{bmatrix}2&1\\\\2&0\\end{bmatrix}\\) (b) \\(\\begin{bmatrix}0&1\\\\2&-1\\end{bmatrix}\\) (c) \\(\\begin{bmatrix}2&1\\\\-1&0\\end{bmatrix}\\) (d) \\(\\begin{bmatrix}2&1\\\\-\\frac12&-\\frac12\\end{bmatrix}\\)",
+              "question_lead": "If \\(A\\begin{bmatrix}0&1\\\\2&-1\\end{bmatrix}=\\begin{bmatrix}2&1\\\\-1&0\\end{bmatrix}\\), where \\(A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}\\), then \\(A\\) is",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(\\begin{bmatrix}2&1\\\\2&0\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(\\begin{bmatrix}0&1\\\\2&-1\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(\\begin{bmatrix}2&1\\\\-1&0\\end{bmatrix}\\)"
+                },
+                {
+                  "label": "(d)",
+                  "content": "\\(\\begin{bmatrix}2&1\\\\-\\frac12&-\\frac12\\end{bmatrix}\\)"
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Let \\(M=\\begin{bmatrix}0&1\\\\2&-1\\end{bmatrix}\\) and \\(N=\\begin{bmatrix}2&1\\\\-1&0\\end{bmatrix}\\). Since \\(AM=N\\),",
+                  "\\[A=NM^{-1}.\\]",
+                  "\\[\\det M=-2,\\qquad M^{-1}=\\begin{bmatrix}\\frac12&\\frac12\\\\1&0\\end{bmatrix}.\\]",
+                  "\\[A=\\begin{bmatrix}2&1\\\\-1&0\\end{bmatrix}\\begin{bmatrix}\\frac12&\\frac12\\\\1&0\\end{bmatrix}=\\begin{bmatrix}2&1\\\\-\\frac12&-\\frac12\\end{bmatrix}.\\]"
+                ],
+                "result": "**Option (d).** \\(A=\\begin{bmatrix}2&1\\\\-\\frac12&-\\frac12\\end{bmatrix}\\).",
+                "book_check": "Printed appendix answer: **(d)**."
+              }
+            },
+            {
+              "id": "u1-p212-13",
+              "number": 13,
+              "book_page": 86,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "r25_scope": "core",
+              "question": "If \\(A\\) is a square matrix such that \\(AA^{T}=I\\), then \\(A^{T}A\\) equals (a) \\(A^2\\) (b) \\(I\\) (c) \\(A^{-1}\\)",
+              "question_lead": "If \\(A\\) is a square matrix such that \\(AA^{T}=I\\), then \\(A^{T}A\\) equals",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(A^2\\)"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(I\\)"
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(A^{-1}\\)"
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "From \\(AA^T=I\\), \\(A^T\\) is a right inverse of the square matrix \\(A\\). Therefore \\(A\\) is non-singular and \\(A^T=A^{-1}\\).",
+                  "\\[A^TA=A^{-1}A=I.\\]"
+                ],
+                "result": "**Option (b).** \\(A^{T}A=I\\).",
+                "book_check": "Printed appendix answer: **(b)**."
+              }
+            },
+            {
+              "id": "u1-p212-14",
+              "number": 14,
+              "book_page": 86,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "If every minor of order \\(r\\) of a matrix \\(A\\) is zero, then the rank of \\(A\\) is (a) greater than \\(r\\) (b) equal to \\(r\\) (c) less than or equal to \\(r\\) (d) less than \\(r\\)",
+              "question_lead": "If every minor of order \\(r\\) of a matrix \\(A\\) is zero, then the rank of \\(A\\) is",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "greater than \\(r\\)"
+                },
+                {
+                  "label": "(b)",
+                  "content": "equal to \\(r\\)"
+                },
+                {
+                  "label": "(c)",
+                  "content": "less than or equal to \\(r\\)"
+                },
+                {
+                  "label": "(d)",
+                  "content": "less than \\(r\\)"
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The rank is the largest order of a non-zero minor. If every minor of order \\(r\\) is zero, no minor of order \\(r\\) can establish rank \\(r\\), and every higher-order minor must also vanish.",
+                  "Hence \\(\\rho(A)<r\\)."
+                ],
+                "result": "**Option (d).** \\(\\rho(A)<r\\).",
+                "book_check": "Printed appendix answer: **(d)**."
+              }
+            },
+            {
+              "id": "u1-p212-16",
+              "number": 16,
+              "book_page": 86,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "Find the rank of \\(A=\\begin{bmatrix}2&-1&3&1\\\\1&4&-2&1\\\\5&2&4&3\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Row-reduce the matrix:",
+                  "\\[\\begin{bmatrix}2&-1&3&1\\\\1&4&-2&1\\\\5&2&4&3\\end{bmatrix}\\sim\\begin{bmatrix}1&4&-2&1\\\\0&-9&7&-1\\\\0&-18&14&-2\\end{bmatrix}\\]",
+                  "using \\(R_1\\leftrightarrow R_2\\), \\(R_2\\to R_2-2R_1\\), and \\(R_3\\to R_3-5R_1\\).",
+                  "Now \\(R_3\\to R_3-2R_2\\):",
+                  "\\[\\sim\\begin{bmatrix}1&4&-2&1\\\\0&-9&7&-1\\\\0&0&0&0\\end{bmatrix}.\\]",
+                  "There are two non-zero rows in echelon form."
+                ],
+                "result": "**Rank \\(=2\\).**",
+                "book_check": "Printed appendix answer: **2**."
+              }
+            },
+            {
+              "id": "u1-p212-19",
+              "number": 19,
+              "book_page": 86,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "r25_scope": "core",
+              "question": "If the inverse of \\(A=\\begin{bmatrix}1&2&-2\\\\-1&3&0\\\\0&-2&1\\end{bmatrix}\\) is \\(A^{-1}=\\begin{bmatrix}3&2&6\\\\1&1&k\\\\2&2&5\\end{bmatrix}\\), find \\(k\\).",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Use \\(AA^{-1}=I\\). The second row of \\(A\\) and third column of \\(A^{-1}\\) must have dot product zero:",
+                  "\\[(-1)(6)+3k+0(5)=0.\\]",
+                  "\\[-6+3k=0\\quad\\Rightarrow\\quad k=2.\\]",
+                  "With \\(k=2\\), direct multiplication gives \\(AA^{-1}=I_3\\)."
+                ],
+                "result": "**\\(k=2\\).**",
+                "book_check": "Printed appendix answer: **2**."
+              }
+            },
+            {
+              "id": "u1-p212-28",
+              "number": 28,
+              "book_page": 86,
+              "topic_id": "u1-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Solve \\(x+2y+3z=0,\\;3x+4y+4z=0,\\;7x+10y+12z=0\\).",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The coefficient matrix is \\(A=\\begin{bmatrix}1&2&3\\\\3&4&4\\\\7&10&12\\end{bmatrix}\\).",
+                  "\\[\\det A=1(48-40)-2(36-28)+3(30-28)=8-16+6=-2\\ne0.\\]",
+                  "Therefore the homogeneous system has only the trivial solution."
+                ],
+                "result": "**\\(x=0,\\;y=0,\\;z=0\\).**",
+                "book_check": "Printed appendix answer: \\(x=y=z=0\\)."
+              }
+            },
+            {
+              "id": "u1-p212-31",
+              "number": 31,
+              "book_page": 87,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "Find the rank of \\(A=\\begin{bmatrix}1&1&-1\\\\2&-3&4\\\\3&-2&3\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Apply \\(R_2\\to R_2-2R_1\\) and \\(R_3\\to R_3-3R_1\\):",
+                  "\\[A\\sim\\begin{bmatrix}1&1&-1\\\\0&-5&6\\\\0&-5&6\\end{bmatrix}.\\]",
+                  "Then \\(R_3\\to R_3-R_2\\):",
+                  "\\[\\sim\\begin{bmatrix}1&1&-1\\\\0&-5&6\\\\0&0&0\\end{bmatrix}.\\]",
+                  "There are two non-zero rows."
+                ],
+                "result": "**Rank \\(=2\\).**",
+                "book_check": "Printed appendix answer: **2**."
+              }
+            },
+            {
+              "id": "u1-p212-34",
+              "number": 34,
+              "book_page": 87,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "What is the maximum possible rank of a \\(4\\times5\\) matrix?",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For an \\(m\\times n\\) matrix, \\(\\rho(A)\\le\\min(m,n)\\).",
+                  "\\[\\rho(A)_{\\max}=\\min(4,5)=4.\\]"
+                ],
+                "result": "**Maximum rank \\(=4\\).**",
+                "book_check": "Printed appendix answer: **4**."
+              }
+            },
+            {
+              "id": "u1-p212-41",
+              "number": 41,
+              "book_page": 87,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "After applying elementary transformations to a matrix, its rank (a) increases (b) decreases (c) does not change",
+              "question_lead": "After applying elementary transformations to a matrix, its rank",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "increases"
+                },
+                {
+                  "label": "(b)",
+                  "content": "decreases"
+                },
+                {
+                  "label": "(c)",
+                  "content": "does not change"
+                }
+              ],
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Elementary row or column transformations produce an equivalent matrix, and equivalent matrices have the same rank.",
+                  "Therefore elementary transformations do not change rank."
+                ],
+                "result": "**Option (c): the rank does not change.**",
+                "book_check": "Printed appendix answer: **(c)**."
+              }
+            },
+            {
+              "id": "u1-p212-46",
+              "number": 46,
+              "book_page": 87,
+              "topic_id": "u1-inverse-gauss-jordan",
+              "r25_scope": "core",
+              "question": "For which values of \\(x\\) is \\(\\begin{bmatrix}x&2\\\\1&x-1\\end{bmatrix}\\) singular?",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "A square matrix is singular when its determinant is zero.",
+                  "\\[x(x-1)-2=0\\]",
+                  "\\[x^2-x-2=0\\]",
+                  "\\[(x-2)(x+1)=0.\\]"
+                ],
+                "result": "**\\(x=2\\) or \\(x=-1\\).**",
+                "book_check": "Printed appendix answer: \\(x=2,-1\\)."
+              }
+            },
+            {
+              "id": "u1-p212-52",
+              "number": 52,
+              "book_page": 88,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "A system of linear non-homogeneous equations is consistent if and only if the rank of the coefficient matrix is equal to the rank of which matrix?",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For a non-homogeneous system \\(AX=B\\), the Rouché–Capelli consistency condition is",
+                  "\\[\\rho(A)=\\rho([A\\mid B]).\\]",
+                  "Here \\([A\\mid B]\\) is the augmented matrix."
+                ],
+                "result": "**The augmented matrix.**",
+                "book_check": "Printed appendix answer: **Augmented matrix**."
+              }
+            },
+            {
+              "id": "u1-p212-56",
+              "number": 56,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "Find \\(P\\) so that \\(A=\\begin{bmatrix}3&P&P\\\\P&3&P\\\\P&P&3\\end{bmatrix}\\) has rank \\(1\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For rank \\(1\\), all non-zero rows must be scalar multiples of one another. Since all three diagonal entries are \\(3\\), the rows can be identical only when \\(P=3\\).",
+                  "Equivalently, the eigenvalues are \\(3+2P\\) and \\(3-P\\) (twice). Rank \\(1\\) requires the repeated eigenvalue to vanish:",
+                  "\\[3-P=0\\quad\\Rightarrow\\quad P=3.\\]",
+                  "Then \\(A=3\\begin{bmatrix}1&1&1\\\\1&1&1\\\\1&1&1\\end{bmatrix}\\), which indeed has rank \\(1\\)."
+                ],
+                "result": "**\\(P=3\\).**",
+                "book_check": "Printed appendix answer: **3**."
+              }
+            },
+            {
+              "id": "u1-p212-58",
+              "number": 58,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "If \\(\\rho(A)=2\\), find \\(\\rho(A^{T})\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "A matrix and its transpose always have the same rank:",
+                  "\\[\\rho(A^T)=\\rho(A).\\]",
+                  "Therefore \\(\\rho(A^T)=2\\)."
+                ],
+                "result": "**\\(\\rho(A^T)=2\\).**",
+                "book_check": "Printed appendix answer: **2**."
+              }
+            },
+            {
+              "id": "u1-p212-60",
+              "number": 60,
+              "book_page": 88,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "True or False: the equations \\(x+2y=1\\) and \\(7x+14y=12\\) are consistent.",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Multiplying the first equation by \\(7\\) gives",
+                  "\\[7x+14y=7.\\]",
+                  "But the second equation requires \\(7x+14y=12\\). The same left-hand side cannot equal both \\(7\\) and \\(12\\), so the system is inconsistent."
+                ],
+                "result": "**False.**",
+                "book_check": "Printed appendix answer: **False**."
+              }
+            },
+            {
+              "id": "u1-p212-61",
+              "number": 61,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "True or False: if \\(\\rho(A)=2\\) and \\(\\rho(B)=3\\), then \\(\\rho(AB)=6\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For any compatible matrices,",
+                  "\\[\\rho(AB)\\le\\min(\\rho(A),\\rho(B)).\\]",
+                  "Hence \\(\\rho(AB)\\le2\\), so it cannot equal \\(6\\)."
+                ],
+                "result": "**False.**",
+                "book_check": "Printed appendix answer: **False**."
+              }
+            },
+            {
+              "id": "u1-p212-66",
+              "number": 66,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "True or False: if \\(\\rho(A)=3\\), then \\(\\rho(3A^{T})=1\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Transposition does not change rank, and multiplication by a non-zero scalar does not change rank:",
+                  "\\[\\rho(3A^T)=\\rho(A^T)=\\rho(A)=3.\\]",
+                  "Therefore the stated rank \\(1\\) is incorrect."
+                ],
+                "result": "**False.**",
+                "book_check": "Printed appendix answer: **False**."
+              }
+            },
+            {
+              "id": "u1-p212-70",
+              "number": 70,
+              "book_page": 88,
+              "topic_id": "u1-rank-echelon",
+              "r25_scope": "core",
+              "question": "True or False: if \\(A\\) is a non-zero column matrix and \\(B\\) is a non-zero row matrix, then \\(\\rho(AB)=1\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Write \\(A=[a_i]\\) and \\(B=[b_j]\\). Their product is the outer product \\(AB=[a_ib_j]\\).",
+                  "Every column of \\(AB\\) is a scalar multiple of the non-zero column \\(A\\). Since \\(B\\ne0\\), at least one scalar \\(b_j\\) is non-zero, so \\(AB\\ne0\\).",
+                  "Thus the column space is one-dimensional."
+                ],
+                "result": "**True: \\(\\rho(AB)=1\\).**",
+                "book_check": "Printed appendix answer: **True**."
+              }
             }
           ]
         },

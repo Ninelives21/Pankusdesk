@@ -1,3 +1,3 @@
-# MAC Unit I · Problems 28.4 delta
+# MAC Unit I · Problems 2.12 delta
 
-Adds the six R25-relevant Gauss–Seidel questions from Grewal Problems 28.4 (p.1072), with complete iteration tables, verified answer checks and the Unit I inline practice callout.
+Adds the 22 R25-relevant Problems 2.12 objective questions (pp. 85–88), complete PankusDesk solutions, printed appendix checks, the verified Q10 amber math-mismatch note, and the Unit I in-flow practice link.
