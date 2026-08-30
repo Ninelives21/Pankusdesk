@@ -12,30 +12,31 @@
       "page_title": "Textbook Questions",
       "page_description": "R25-relevant textbook questions from the prescribed Grewal sections, added set by set with complete worked solutions.",
       "summary": {
-        "selected_question_count": 33,
+        "selected_question_count": 39,
         "stats": [
           {
-            "value": 33,
+            "value": 39,
             "label": "questions added"
           },
           {
-            "value": 3,
+            "value": 4,
             "label": "textbook sets"
           },
           {
-            "value": "pp. 44, 49, 57–58",
+            "value": "pp. 44, 49, 57–58, 1072",
             "label": "book pages"
           }
         ]
       },
-      "scope_note": "Published R25-relevant sets so far: Problems 2.4 (Q1–Q9), selected Problems 2.6 (Q6–Q11, Q13–Q14), and all Problems 2.7 (Q1–Q16). Full questions remain visible before opening; clicking + reveals the complete PankusDesk solution, followed by the printed appendix check where available.",
+      "scope_note": "Published R25-relevant sets so far: Problems 2.4 (Q1–Q9), selected Problems 2.6 (Q6–Q11, Q13–Q14), all Problems 2.7 (Q1–Q16), and Gauss–Seidel Problems 28.4 [Q2(b), Q3–Q7]. Full questions remain visible before opening; clicking + reveals the complete PankusDesk solution and the printed appendix check where available.",
       "source": {
-        "chapter": "Chapter 2 · Problems 2.4, 2.6 and 2.7",
+        "chapter": "Chapters 2 and 28 · Problems 2.4, 2.6, 2.7 and 28.4",
         "review_pages": [
           44,
           49,
           57,
-          58
+          58,
+          1072
         ]
       },
       "groups": [
@@ -1613,6 +1614,708 @@
                   "content": "\\(2x_1+x_2+2x_3+x_4=6;\\;6x_1-6x_2+6x_3+12x_4=36;\\;4x_1+3x_2+3x_3-3x_4=-1;\\;2x_1+2x_2-x_3+x_4=10.\\)"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "problems-28-4",
+          "title": "Problems 28.4 · Gauss–Seidel Iteration Method",
+          "note": "Book p. 1072 · R25-filtered set: Q2(b), Q3–Q7. Jacobi-only, relaxation-method and unrelated direct-method questions are excluded. Every retained problem has a complete iteration record.",
+          "questions": [
+            {
+              "id": "u1-p284-02b",
+              "number": 2,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "r25_scope": "core",
+              "question": "(b) Solve the system by the Gauss–Seidel method: \\(27x+6y-z=85,\\;x+y+54z=110,\\;6x+15y+2z=72\\).",
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Rearrange the equations so that the strongest coefficients are used successively for \\(x,y,z\\):",
+                  "\\[x=\\frac{85-6y+z}{27},\\qquad y=\\frac{72-6x-2z}{15},\\qquad z=\\frac{110-x-y}{54}.\\]",
+                  "Start with \\(x_0=y_0=z_0=0\\). In Gauss–Seidel, each newly computed value is used immediately in the next equation.",
+                  "First iteration:",
+                  "\\[x_1=\\frac{85}{27}=3.1481,\\]",
+                  "\\[y_1=\\frac{72-6(3.1481)}{15}=3.5407,\\]",
+                  "\\[z_1=\\frac{110-3.1481-3.5407}{54}=1.9132.\\]",
+                  "Continuing the same substitutions gives the complete iteration record below. By the fifth iteration the values have effectively stabilised."
+                ],
+                "result": "\\(x\\approx2.4255,\\;y\\approx3.5730,\\;z\\approx1.9260\\).",
+                "book_check": "Printed appendix answer: \\(x=2.426,\\;y=3.573,\\;z=1.926\\). These are the third-iteration values rounded to three decimals; further iteration converges to the values above.",
+                "table": {
+                  "headers": [
+                    "Iteration",
+                    "\\(x\\)",
+                    "\\(y\\)",
+                    "\\(z\\)"
+                  ],
+                  "rows": [
+                    [
+                      "1",
+                      "3.1481",
+                      "3.5407",
+                      "1.9132"
+                    ],
+                    [
+                      "2",
+                      "2.4322",
+                      "3.5720",
+                      "1.9258"
+                    ],
+                    [
+                      "3",
+                      "2.4257",
+                      "3.5729",
+                      "1.9260"
+                    ],
+                    [
+                      "4",
+                      "2.4255",
+                      "3.5730",
+                      "1.9260"
+                    ],
+                    [
+                      "5",
+                      "2.4255",
+                      "3.5730",
+                      "1.9260"
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "u1-p284-03",
+              "number": 3,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "r25_scope": "core",
+              "question": "Solve by the Gauss–Seidel method: \\(2x+y+6z=9,\\;8x+3y+2z=13,\\;x+5y+z=7\\).",
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For good convergence, use the second equation for \\(x\\), the third for \\(y\\), and the first for \\(z\\):",
+                  "\\[x=\\frac{13-3y-2z}{8},\\qquad y=\\frac{7-x-z}{5},\\qquad z=\\frac{9-2x-y}{6}.\\]",
+                  "Take \\(x_0=y_0=z_0=0\\).",
+                  "First iteration:",
+                  "\\[x_1=\\frac{13}{8}=1.6250,\\]",
+                  "\\[y_1=\\frac{7-1.6250}{5}=1.0750,\\]",
+                  "\\[z_1=\\frac{9-2(1.6250)-1.0750}{6}=0.7792.\\]",
+                  "Continue using each newest value immediately. The full iteration record is:"
+                ],
+                "result": "\\(x=1,\\;y=1,\\;z=1\\).",
+                "book_check": "Printed appendix answer: \\(x=1,\\;y=1,\\;z=1\\).",
+                "table": {
+                  "headers": [
+                    "Iteration",
+                    "\\(x\\)",
+                    "\\(y\\)",
+                    "\\(z\\)"
+                  ],
+                  "rows": [
+                    [
+                      "1",
+                      "1.6250",
+                      "1.0750",
+                      "0.7792"
+                    ],
+                    [
+                      "2",
+                      "1.0271",
+                      "1.0387",
+                      "0.9845"
+                    ],
+                    [
+                      "3",
+                      "0.9893",
+                      "1.0052",
+                      "1.0027"
+                    ],
+                    [
+                      "4",
+                      "0.9974",
+                      "1.0000",
+                      "1.0009"
+                    ],
+                    [
+                      "5",
+                      "0.9998",
+                      "0.9999",
+                      "1.0001"
+                    ],
+                    [
+                      "6",
+                      "1.0000",
+                      "1.0000",
+                      "1.0000"
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "u1-p284-04",
+              "number": 4,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "r25_scope": "core",
+              "question": "Solve by the Gauss–Seidel method: \\(28x+4y-z=32,\\;x+3y+10z=24,\\;2x+17y+4z=35\\).",
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reorder the equations for the updates \\(x,y,z\\):",
+                  "\\[x=\\frac{32-4y+z}{28},\\qquad y=\\frac{35-2x-4z}{17},\\qquad z=\\frac{24-x-3y}{10}.\\]",
+                  "Start with \\(x_0=y_0=z_0=0\\).",
+                  "First iteration:",
+                  "\\[x_1=\\frac{32}{28}=1.1429,\\]",
+                  "\\[y_1=\\frac{35-2(1.1429)}{17}=1.9244,\\]",
+                  "\\[z_1=\\frac{24-1.1429-3(1.9244)}{10}=1.7084.\\]",
+                  "Continuing in the same manner gives:"
+                ],
+                "result": "\\(x\\approx0.9936,\\;y\\approx1.5070,\\;z\\approx1.8485\\).",
+                "book_check": "Printed appendix answer: \\(x=0.998,\\;y=1.723,\\;z=2.024\\). This does not satisfy the printed system; see the amber mismatch note above.",
+                "table": {
+                  "headers": [
+                    "Iteration",
+                    "\\(x\\)",
+                    "\\(y\\)",
+                    "\\(z\\)"
+                  ],
+                  "rows": [
+                    [
+                      "1",
+                      "1.1429",
+                      "1.9244",
+                      "1.7084"
+                    ],
+                    [
+                      "2",
+                      "0.9290",
+                      "1.5476",
+                      "1.8428"
+                    ],
+                    [
+                      "3",
+                      "0.9876",
+                      "1.5090",
+                      "1.8485"
+                    ],
+                    [
+                      "4",
+                      "0.9933",
+                      "1.5070",
+                      "1.8486"
+                    ],
+                    [
+                      "5",
+                      "0.9936",
+                      "1.5070",
+                      "1.8485"
+                    ],
+                    [
+                      "6",
+                      "0.9936",
+                      "1.5070",
+                      "1.8485"
+                    ]
+                  ]
+                }
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "Grewal’s appendix prints \\(x=0.998,\\;y=1.723,\\;z=2.024\\). Substitution into the equations printed on p. 1072 gives left-hand sides \\(32.812,\\;26.407,\\;39.383\\), not \\(32,\\;24,\\;35\\). Gauss–Seidel converges to \\(x\\approx0.993594,\\;y\\approx1.506978,\\;z\\approx1.848547\\), which satisfies all three printed equations. PankusDesk therefore retains the independently verified solution."
+              }
+            },
+            {
+              "id": "u1-p284-05",
+              "number": 5,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "r25_scope": "core",
+              "question": "Solve by the Gauss–Seidel method: \\(5x+2y+z=12,\\;x+4y+2z=15,\\;x+2y+5z=20\\).",
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The system is already well arranged for Gauss–Seidel iteration:",
+                  "\\[x=\\frac{12-2y-z}{5},\\qquad y=\\frac{15-x-2z}{4},\\qquad z=\\frac{20-x-2y}{5}.\\]",
+                  "Start with \\(x_0=y_0=z_0=0\\).",
+                  "First iteration:",
+                  "\\[x_1=\\frac{12}{5}=2.4000,\\]",
+                  "\\[y_1=\\frac{15-2.4000}{4}=3.1500,\\]",
+                  "\\[z_1=\\frac{20-2.4000-2(3.1500)}{5}=2.2600.\\]",
+                  "Continuing gives:"
+                ],
+                "result": "The iterations converge to \\(x=1,\\;y=2,\\;z=3\\).",
+                "book_check": "Printed appendix answer: \\(x=0.994,\\;y=2.000,\\;z=3.001\\), which matches the fifth iteration to three decimals; continuing the iteration converges to \\(1,2,3\\).",
+                "table": {
+                  "headers": [
+                    "Iteration",
+                    "\\(x\\)",
+                    "\\(y\\)",
+                    "\\(z\\)"
+                  ],
+                  "rows": [
+                    [
+                      "1",
+                      "2.4000",
+                      "3.1500",
+                      "2.2600"
+                    ],
+                    [
+                      "2",
+                      "0.6880",
+                      "2.4480",
+                      "2.8832"
+                    ],
+                    [
+                      "3",
+                      "0.8442",
+                      "2.0974",
+                      "2.9922"
+                    ],
+                    [
+                      "4",
+                      "0.9626",
+                      "2.0132",
+                      "3.0022"
+                    ],
+                    [
+                      "5",
+                      "0.9943",
+                      "2.0003",
+                      "3.0010"
+                    ],
+                    [
+                      "6",
+                      "0.9997",
+                      "1.9996",
+                      "3.0002"
+                    ],
+                    [
+                      "7",
+                      "1.0001",
+                      "1.9999",
+                      "3.0000"
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "u1-p284-06",
+              "number": 6,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "r25_scope": "core",
+              "question": "Solve by the Gauss–Seidel method: \\(1.2x+2.1y+4.2z=9.9,\\;5.3x+6.1y+4.7z=21.6,\\;9.2x+8.3y+z=15.2\\).",
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "A convergent ordering is obtained by using the first equation for \\(x\\), the third for \\(y\\), and the second for \\(z\\):",
+                  "\\[x=\\frac{9.9-2.1y-4.2z}{1.2},\\qquad y=\\frac{15.2-9.2x-z}{8.3},\\qquad z=\\frac{21.6-5.3x-6.1y}{4.7}.\\]",
+                  "Take \\(x_0=y_0=z_0=0\\).",
+                  "First iteration:",
+                  "\\[x_1=\\frac{9.9}{1.2}=8.2500,\\]",
+                  "\\[y_1=\\frac{15.2-9.2(8.25)}{8.3}=-7.3133,\\]",
+                  "\\[z_1=\\frac{21.6-5.3(8.25)-6.1(-7.3133)}{4.7}=4.7842.\\]",
+                  "The early iterates move widely, but with this ordering they converge steadily. Every iteration through three-decimal convergence is recorded below:"
+                ],
+                "result": "\\(x\\approx-13.2299,\\;y\\approx16.7664,\\;z\\approx-2.2461\\).",
+                "book_check": "Printed appendix answer: \\(x=-13.223,\\;y=16.766,\\;z=-2.306\\). This does not satisfy the printed system; see the amber mismatch note above.",
+                "table": {
+                  "headers": [
+                    "Iteration",
+                    "\\(x\\)",
+                    "\\(y\\)",
+                    "\\(z\\)"
+                  ],
+                  "rows": [
+                    [
+                      "1",
+                      "8.2500",
+                      "-7.3133",
+                      "4.7842"
+                    ],
+                    [
+                      "2",
+                      "4.3034",
+                      "-3.5151",
+                      "4.3052"
+                    ],
+                    [
+                      "3",
+                      "-0.6666",
+                      "2.0515",
+                      "2.6849"
+                    ],
+                    [
+                      "4",
+                      "-4.7371",
+                      "6.7586",
+                      "1.1658"
+                    ],
+                    [
+                      "5",
+                      "-7.6577",
+                      "10.1789",
+                      "0.0201"
+                    ],
+                    [
+                      "6",
+                      "-9.6334",
+                      "12.5069",
+                      "-0.7734"
+                    ],
+                    [
+                      "7",
+                      "-10.9301",
+                      "14.0398",
+                      "-1.3007"
+                    ],
+                    [
+                      "8",
+                      "-11.7673",
+                      "15.0313",
+                      "-1.6435"
+                    ],
+                    [
+                      "9",
+                      "-12.3026",
+                      "15.6660",
+                      "-1.8635"
+                    ],
+                    [
+                      "10",
+                      "-12.6431",
+                      "16.0699",
+                      "-2.0038"
+                    ],
+                    [
+                      "11",
+                      "-12.8590",
+                      "16.3261",
+                      "-2.0929"
+                    ],
+                    [
+                      "12",
+                      "-12.9956",
+                      "16.4883",
+                      "-2.1493"
+                    ],
+                    [
+                      "13",
+                      "-13.0820",
+                      "16.5908",
+                      "-2.1850"
+                    ],
+                    [
+                      "14",
+                      "-13.1365",
+                      "16.6556",
+                      "-2.2075"
+                    ],
+                    [
+                      "15",
+                      "-13.1710",
+                      "16.6965",
+                      "-2.2217"
+                    ],
+                    [
+                      "16",
+                      "-13.1927",
+                      "16.7223",
+                      "-2.2307"
+                    ],
+                    [
+                      "17",
+                      "-13.2065",
+                      "16.7386",
+                      "-2.2364"
+                    ],
+                    [
+                      "18",
+                      "-13.2151",
+                      "16.7489",
+                      "-2.2400"
+                    ],
+                    [
+                      "19",
+                      "-13.2206",
+                      "16.7553",
+                      "-2.2422"
+                    ],
+                    [
+                      "20",
+                      "-13.2240",
+                      "16.7594",
+                      "-2.2437"
+                    ],
+                    [
+                      "21",
+                      "-13.2262",
+                      "16.7620",
+                      "-2.2446"
+                    ],
+                    [
+                      "22",
+                      "-13.2276",
+                      "16.7637",
+                      "-2.2451"
+                    ],
+                    [
+                      "23",
+                      "-13.2285",
+                      "16.7647",
+                      "-2.2455"
+                    ],
+                    [
+                      "24",
+                      "-13.2290",
+                      "16.7653",
+                      "-2.2457"
+                    ],
+                    [
+                      "25",
+                      "-13.2293",
+                      "16.7657",
+                      "-2.2459"
+                    ],
+                    [
+                      "26",
+                      "-13.2296",
+                      "16.7660",
+                      "-2.2459"
+                    ],
+                    [
+                      "27",
+                      "-13.2297",
+                      "16.7662",
+                      "-2.2460"
+                    ]
+                  ]
+                }
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "Grewal’s appendix prints \\(x=-13.223,\\;y=16.766,\\;z=-2.306\\). Substitution gives left-hand sides approximately \\(9.6558,\\;21.3525,\\;15.2002\\), not the printed right-hand sides \\(9.9,\\;21.6,\\;15.2\\). Gauss–Seidel converges to \\(x\\approx-13.229933,\\;y\\approx16.766444,\\;z\\approx-2.246098\\), which satisfies the printed equations. PankusDesk therefore retains the independently verified solution."
+              }
+            },
+            {
+              "id": "u1-p284-07",
+              "number": 7,
+              "book_page": 1072,
+              "topic_id": "u1-gauss-seidel",
+              "r25_scope": "core",
+              "question": "Solve by the Gauss–Seidel method: \\(\\begin{bmatrix}2&-1&0&0\\\\-1&2&-1&0\\\\0&-1&2&-1\\\\0&0&-1&2\\end{bmatrix}\\begin{bmatrix}x\\\\y\\\\z\\\\u\\end{bmatrix}=\\begin{bmatrix}0\\\\0\\\\0\\\\5\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P1072"
+              ],
+              "answer_source_refs": [
+                "TB-P1440"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The four equations are \\(2x-y=0\\), \\(-x+2y-z=0\\), \\(-y+2z-u=0\\), and \\(-z+2u=5\\). Rearrange them as",
+                  "\\[x=\\frac y2,\\qquad y=\\frac{x+z}{2},\\qquad z=\\frac{y+u}{2},\\qquad u=\\frac{5+z}{2}.\\]",
+                  "Start with \\(x_0=y_0=z_0=u_0=0\\).",
+                  "First iteration:",
+                  "\\[x_1=0,\\qquad y_1=0,\\qquad z_1=0,\\qquad u_1=2.5000.\\]",
+                  "Continue, always using the newest available value. The complete iteration record to three-decimal accuracy is:"
+                ],
+                "result": "\\(x=1,\\;y=2,\\;z=3,\\;u=4\\).",
+                "book_check": "Printed appendix answer: \\(x=1,\\;y=2,\\;z=3,\\;u=4\\).",
+                "table": {
+                  "headers": [
+                    "Iteration",
+                    "\\(x\\)",
+                    "\\(y\\)",
+                    "\\(z\\)",
+                    "\\(u\\)"
+                  ],
+                  "rows": [
+                    [
+                      "1",
+                      "0.0000",
+                      "0.0000",
+                      "0.0000",
+                      "2.5000"
+                    ],
+                    [
+                      "2",
+                      "0.0000",
+                      "0.0000",
+                      "1.2500",
+                      "3.1250"
+                    ],
+                    [
+                      "3",
+                      "0.0000",
+                      "0.6250",
+                      "1.8750",
+                      "3.4375"
+                    ],
+                    [
+                      "4",
+                      "0.3125",
+                      "1.0938",
+                      "2.2656",
+                      "3.6328"
+                    ],
+                    [
+                      "5",
+                      "0.5469",
+                      "1.4062",
+                      "2.5195",
+                      "3.7598"
+                    ],
+                    [
+                      "6",
+                      "0.7031",
+                      "1.6113",
+                      "2.6855",
+                      "3.8428"
+                    ],
+                    [
+                      "7",
+                      "0.8057",
+                      "1.7456",
+                      "2.7942",
+                      "3.8971"
+                    ],
+                    [
+                      "8",
+                      "0.8728",
+                      "1.8335",
+                      "2.8653",
+                      "3.9326"
+                    ],
+                    [
+                      "9",
+                      "0.9167",
+                      "1.8910",
+                      "2.9118",
+                      "3.9559"
+                    ],
+                    [
+                      "10",
+                      "0.9455",
+                      "1.9287",
+                      "2.9423",
+                      "3.9711"
+                    ],
+                    [
+                      "11",
+                      "0.9643",
+                      "1.9533",
+                      "2.9622",
+                      "3.9811"
+                    ],
+                    [
+                      "12",
+                      "0.9767",
+                      "1.9694",
+                      "2.9753",
+                      "3.9876"
+                    ],
+                    [
+                      "13",
+                      "0.9847",
+                      "1.9800",
+                      "2.9838",
+                      "3.9919"
+                    ],
+                    [
+                      "14",
+                      "0.9900",
+                      "1.9869",
+                      "2.9894",
+                      "3.9947"
+                    ],
+                    [
+                      "15",
+                      "0.9935",
+                      "1.9914",
+                      "2.9931",
+                      "3.9965"
+                    ],
+                    [
+                      "16",
+                      "0.9957",
+                      "1.9944",
+                      "2.9955",
+                      "3.9977"
+                    ],
+                    [
+                      "17",
+                      "0.9972",
+                      "1.9963",
+                      "2.9970",
+                      "3.9985"
+                    ],
+                    [
+                      "18",
+                      "0.9982",
+                      "1.9976",
+                      "2.9981",
+                      "3.9990"
+                    ],
+                    [
+                      "19",
+                      "0.9988",
+                      "1.9984",
+                      "2.9987",
+                      "3.9994"
+                    ],
+                    [
+                      "20",
+                      "0.9992",
+                      "1.9990",
+                      "2.9992",
+                      "3.9996"
+                    ],
+                    [
+                      "21",
+                      "0.9995",
+                      "1.9993",
+                      "2.9995",
+                      "3.9997"
+                    ],
+                    [
+                      "22",
+                      "0.9997",
+                      "1.9996",
+                      "2.9996",
+                      "3.9998"
+                    ]
+                  ]
+                }
+              }
             }
           ]
         }
