@@ -31,10 +31,10 @@ for g in unit.get('groups',[]):
         if q.get('topic_id') not in ids: errors.append('unknown question topic '+str(q.get('topic_id')))
         for r in q.get('question_source_refs',[])+q.get('answer_source_refs',[]):
             if r not in valid: errors.append('unresolved question ref '+r)
-if count<40: errors.append('unexpectedly small Unit I practice selection')
+if count<9: errors.append('Unit I staged textbook-question release must contain at least Problems 2.4 (9 questions)')
 if errors:
     print('MAC KB VERIFY: FAIL'); [print(' -',e) for e in errors]; sys.exit(1)
 print('MAC KB VERIFY: PASS')
 print(' - Unit I source-backed and ready')
-print(f' - {count} R25-relevant textbook practice items selected')
+print(f' - {count} textbook practice items currently published (staged release)')
 print(' - Units II–V remain explicit source gaps')

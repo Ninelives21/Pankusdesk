@@ -107,7 +107,7 @@ function renderQuestion(question) {
 				<span class="chapter-question-icon" aria-hidden="true">+</span>
 			</button>
 			<div class="chapter-question-answer" id="${escapeHtml(answerId)}" hidden>
-				<div class="answer-label">${isGap ? 'Source note' : 'Answer'}</div>
+				<div class="answer-label">${isGap ? 'Source note' : 'Solution'}</div>
 				${renderAnswer(question.answer || {})}
 			</div>
 		</article>
