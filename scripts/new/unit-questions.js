@@ -36,6 +36,7 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 	const unitHome = new URL(`unit-${unitMeta.number}.html`, subjectUrl).href;
 	const pyqHref = subject.practice?.pyqs?.href ? new URL(subject.practice.pyqs.href, subjectUrl).href : null;
 	const summary = unitBank.summary || {};
+	const currentPagePath = `${window.location.pathname}${window.location.search}`;
 
 	const pageTitle = unitBank.page_title || 'Chapter-end Questions';
 	const pageDescription = unitBank.page_description || `All official review questions from the prescribed textbook chapter, with answers consolidated from the source-backed Unit ${unitLabel} notes.`;
@@ -68,14 +69,14 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 			<p>${escapeHtml(source.note || 'Questions are selected from the prescribed textbook. PankusDesk supplies the worked solutions.')}</p>
 		</section>
 
-		${renderQuestionSetJump(unitBank.groups || [])}
+		${renderQuestionSetJump(unitBank.groups || [], currentPagePath)}
 
 		${(unitBank.groups || []).map(group => renderGroup(group)).join('') || '<div class="practice-empty">No textbook questions are available for this unit yet.</div>'}
 	`;
 }
 
 
-function renderQuestionSetJump(groups) {
+function renderQuestionSetJump(groups, currentPagePath) {
 	if (!Array.isArray(groups) || groups.length < 2) return '';
 	return `
 		<nav class="question-set-jump" aria-label="Quick links to textbook question sets">
@@ -84,7 +85,7 @@ function renderQuestionSetJump(groups) {
 				${groups.map(group => {
 					const label = group.nav_label || String(group.title || '').split('·')[0].trim() || 'Question set';
 					const count = Array.isArray(group.questions) ? group.questions.length : 0;
-					return `<a href="#${escapeHtml(group.id)}"><span>${escapeHtml(label)}</span>${count ? `<small>${count}</small>` : ''}</a>`;
+					return `<a href="${escapeHtml(currentPagePath)}#${escapeHtml(group.id)}"><span>${escapeHtml(label)}</span>${count ? `<small>${count}</small>` : ''}</a>`;
 				}).join('')}
 			</div>
 		</nav>
