@@ -1,11 +1,11 @@
-# Question-group heading global UI delta
+# Apply this delta
 
-This delta strengthens transitions between grouped textbook/practice question sets globally.
+This delta tones down the global question-set section headers while keeping set title, source/page note, explanatory text and count clearly visible.
 
-Changes:
-- shared dark-primary banner for every question group;
-- larger white group title;
-- explanatory note retained inside the banner;
-- question count shown as a high-contrast pill;
-- mobile refinement;
-- global build standard/checklist updated.
+Dry run:
+
+    rsync -avhn mac-question-group-heading-toned-delta/ Pankusdesk/
+
+Real sync:
+
+    rsync -avh mac-question-group-heading-toned-delta/ Pankusdesk/
