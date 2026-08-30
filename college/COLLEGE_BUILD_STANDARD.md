@@ -30,6 +30,7 @@ This document defines the default build contract for every future college unit, 
 17. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
 18. **Every fully solved problem ends with an explicit final answer.** After the complete working, show the final answer/result as a visually distinct bold line whenever the problem has a determinate result. Keep any printed-textbook answer check or provenance note separate from that final-answer line. This applies globally to textbook questions, worked examples, class examples, PYQs and other solved practice.
 19. **Textbook problem sets stay in textbook position.** When an in-scope prescribed-textbook problem/exercise set appears immediately after a theory section, the cumulative unit page must reference/link that exact set at the same logical point in the teaching flow, in addition to the persistent Textbook Questions navigation link.
+20. **Inline textbook-practice links must be visually prominent.** A prescribed-book problem-set reference embedded in the theory flow is a major study action, not a footnote. Render it as a large, high-contrast callout with a clearly readable heading and an obvious clickable practice row. Use the shared dark-primary practice-callout treatment across subjects so students can immediately distinguish “stop and practise this set” from surrounding theory and class-note content.
 
 ---
 

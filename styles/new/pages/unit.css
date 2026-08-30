@@ -462,8 +462,20 @@
 }
 
 .practice-box {
-	background: var(--surface-subtle);
-	border: 1px solid var(--line);
+	padding: var(--space-9) var(--space-10);
+	background: var(--primary-dark);
+	border: 2px solid var(--primary-dark);
+	box-shadow: var(--shadow-hover);
+}
+
+.practice-box .study-box-title {
+	font-size: clamp(17px, 1.8vw, 20px);
+	letter-spacing: 0.075em;
+	color: var(--text-on-primary);
+}
+
+.practice-box .practice-list {
+	margin-top: var(--space-6);
 }
 
 .practice-list {
@@ -480,6 +492,21 @@
 	font-size: var(--font-size-body);
 	line-height: 1.45;
 	color: var(--text-secondary);
+}
+
+.practice-box .practice-item {
+	padding: var(--space-5) var(--space-6);
+	background: var(--surface);
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-size-body-lg);
+	color: var(--text-strong);
+}
+
+.practice-box .practice-item:is(a):hover,
+.practice-box .practice-item:is(a):focus-visible {
+	background: var(--surface-soft);
+	border-color: var(--primary-2);
 }
 
 .practice-page,
@@ -1270,6 +1297,29 @@ sub {
 .practice-arrow {
 	font-weight: var(--font-weight-heavy);
 	color: var(--primary);
+}
+
+/* Global inline prescribed-book practice callout: intentionally high-contrast. */
+.practice-box .practice-item:is(a) {
+	padding: var(--space-5) var(--space-6);
+	margin: 0;
+	background: var(--surface);
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-size-body-lg);
+	color: var(--text-strong);
+}
+
+.practice-box .practice-item:is(a):hover,
+.practice-box .practice-item:is(a):focus-visible {
+	background: var(--surface-soft);
+	border-color: var(--primary-2);
+	transform: translateX(2px);
+}
+
+.practice-box .practice-arrow {
+	font-size: 1.35em;
+	color: var(--primary-dark);
 }
 
 .class-history {
