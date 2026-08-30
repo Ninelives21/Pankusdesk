@@ -40,6 +40,7 @@ Use this checklist for every college unit. A unit is not `ready` until the appli
 - [ ] Keep equations/derivations in situ.
 - [ ] Keep useful worked-example calculation lines where they teach the method.
 - [ ] Put every example in a dropdown and include the full step-by-step solution; never leave an example as question + final answer only.
+- [ ] Keep the full example question visible while the dropdown is closed; clicking `+` must reveal the solution/working only.
 - [ ] Show every substantive transformation/row operation/substitution/iteration required to reproduce the result.
 - [ ] Correct only grammar/punctuation/obvious typos unless a larger correction is explicitly approved.
 - [ ] Preserve/flag source inconsistencies rather than silently reconciling them.

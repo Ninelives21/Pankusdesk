@@ -14,18 +14,19 @@ This document defines the default build contract for every future college unit, 
 1. **Official syllabus defines scope.** The current regulation/syllabus determines what is core. Textbooks, lectures, class notes and supplementary sources support that scope; they do not redefine it.
 2. **The prescribed textbook is the primary notes source.** For a textbook-led unit, do not reduce the book to a thin summary. Preserve its sequence, terminology, definitions, equations, derivations, explanatory steps and useful worked-example calculation lines as closely as practical. Correct only grammar, punctuation, obvious typographical errors and clearly accidental formatting defects unless the user asks for a conceptual rewrite.
 3. **Every example must be fully worked.** Every textbook example, class example, PankusDesk-added example and solved practice/PYQ example must appear in a dropdown and contain the complete reproducible working, not merely the question and final answer. Show every substantive row operation, algebraic transformation, substitution, iteration or calculation needed to reach the result. If a source omits intermediate working and PankusDesk supplies it, keep the completion faithful to the source result and label any genuinely source-external clarification when needed.
-3. **One cumulative study version.** The unit page is the best current, de-duplicated semester notebook. Do not create parallel “textbook notes”, “lecture notes” and “class notes” pages for the same theory.
-4. **Class chronology is preserved separately.** A dated class log records what happened on a particular date. Useful material is then integrated at the correct conceptual point in the cumulative unit page.
-5. **Class-note material must remain visibly identifiable.** Integrated class-note sections use the dedicated class-note visual treatment and date/source label, but their prose states the content directly; it must not narrate the note-building workflow.
-6. **Explanations are separated from source notes.** PankusDesk-authored plain-language teaching material belongs in the blue explanation accordion (`Understand this diagram` / explanation dropdown), not mixed into textbook or class-note prose as though it came from the source.
-7. **Provenance stays in data.** Student-facing theory teaches the subject. Source IDs, capture filenames, ingestion commentary and build decisions live in metadata/audits, not ordinary theory prose.
-8. **Source discrepancies are never silently repaired.** Preserve the source-backed statement/result and flag the discrepancy explicitly. A clarification accordion may explain the standard relationship, but it must not rewrite the source unnoticed.
-9. **Generic architecture first.** Shared renderers/styles serve all subjects and semesters. Extend the generic schema/renderer before creating subject-specific duplicate code.
-10. **Figures are part of the teaching flow.** Every production figure is placed at the text it explains. No “all figures at the end” dump and no unanchored fallback in a ready unit.
-11. **Technical redraw accuracy outranks appearance.** All NRS work follows `NOTEBOOK_REDRAW_STYLE.md`, including the mandatory semantic-verification gate.
-12. **Mathematics is rendered, not improvised.** Use MathJax/LaTeX in student-facing data. Fractions use `\dfrac`, not `\frac`.
-13. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic, visual, practice, class-log/link and verifier checks pass.
-14. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
+4. **The complete example question stays visible before opening the dropdown.** The example title and the full problem statement (including matrices, equations, given values and subparts) must be visible in the closed state. Opening the `+` reveals the solution only; the hidden portion must begin with the solution/working, never with information needed to know what is being solved.
+5. **One cumulative study version.** The unit page is the best current, de-duplicated semester notebook. Do not create parallel “textbook notes”, “lecture notes” and “class notes” pages for the same theory.
+6. **Class chronology is preserved separately.** A dated class log records what happened on a particular date. Useful material is then integrated at the correct conceptual point in the cumulative unit page.
+7. **Class-note material must remain visibly identifiable.** Integrated class-note sections use the dedicated class-note visual treatment and date/source label, but their prose states the content directly; it must not narrate the note-building workflow.
+8. **Explanations are separated from source notes.** PankusDesk-authored plain-language teaching material belongs in the blue explanation accordion (`Understand this diagram` / explanation dropdown), not mixed into textbook or class-note prose as though it came from the source.
+9. **Provenance stays in data.** Student-facing theory teaches the subject. Source IDs, capture filenames, ingestion commentary and build decisions live in metadata/audits, not ordinary theory prose.
+10. **Source discrepancies are never silently repaired.** Preserve the source-backed statement/result and flag the discrepancy explicitly. A clarification accordion may explain the standard relationship, but it must not rewrite the source unnoticed.
+11. **Generic architecture first.** Shared renderers/styles serve all subjects and semesters. Extend the generic schema/renderer before creating subject-specific duplicate code.
+12. **Figures are part of the teaching flow.** Every production figure is placed at the text it explains. No “all figures at the end” dump and no unanchored fallback in a ready unit.
+13. **Technical redraw accuracy outranks appearance.** All NRS work follows `NOTEBOOK_REDRAW_STYLE.md`, including the mandatory semantic-verification gate.
+14. **Mathematics is rendered, not improvised.** Use MathJax/LaTeX in student-facing data. Fractions use `\dfrac`, not `\frac`.
+15. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic, visual, practice, class-log/link and verifier checks pass.
+16. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
 
 ---
 

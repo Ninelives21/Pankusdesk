@@ -1493,3 +1493,44 @@ sub {
 		padding-right: 13px;
 	}
 }
+
+/* ---------------------------------------------------------------------- */
+/*       WORKED EXAMPLES: QUESTION VISIBLE, SOLUTION IN THE DROPDOWN       */
+/* ---------------------------------------------------------------------- */
+.explanation-accordion--examples .explanation-accordion-item--example summary {
+	align-items: start;
+	padding: 16px;
+}
+
+.example-summary-copy {
+	display: grid;
+	gap: 12px;
+	min-width: 0;
+}
+
+.example-summary-title {
+	display: block;
+	font-weight: var(--font-weight-heavy);
+	color: var(--text-strong);
+}
+
+.example-summary-question {
+	display: grid;
+	gap: 8px;
+	font-weight: var(--font-weight-regular);
+	color: var(--text);
+}
+
+.example-question-paragraph {
+	display: block;
+	line-height: 1.65;
+	overflow-wrap: anywhere;
+}
+
+.explanation-accordion-item--example .explanation-accordion-toggle {
+	margin-top: 2px;
+}
+
+.example-solution-content {
+	padding-top: 8px;
+}

@@ -462,21 +462,11 @@ function renderTextbookFigureRow(figure) {
 function renderExplanationAccordions(items, recapItems = [], label = 'Understand this diagram') {
 	if (!items.length && !recapItems.length) return '';
 
+	const isExampleGroup = /example/i.test(label);
 	const accordionHtml = items.length ? `
-		<div class="explanation-accordion" aria-label="${escapeHtml(label)}">
+		<div class="explanation-accordion${isExampleGroup ? ' explanation-accordion--examples' : ''}" aria-label="${escapeHtml(label)}">
 			<div class="explanation-accordion-label">${escapeHtml(label)}</div>
-			${items.map((item, index) => `
-				<details class="explanation-accordion-item">
-					<summary>
-						<span>${formatText(item.title)}</span>
-						<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
-					</summary>
-					<div class="explanation-accordion-content">
-						${(item.paragraphs ?? []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
-						${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
-					</div>
-				</details>
-			`).join('')}
+			${items.map(item => renderExplanationAccordionItem(item, isExampleGroup)).join('')}
 		</div>
 	` : '';
 
@@ -488,6 +478,69 @@ function renderExplanationAccordions(items, recapItems = [], label = 'Understand
 	` : '';
 
 	return accordionHtml + recapHtml;
+}
+
+function renderExplanationAccordionItem(item, isExampleGroup) {
+	if (!isExampleGroup) {
+		return `
+			<details class="explanation-accordion-item">
+				<summary>
+					<span>${formatText(item.title)}</span>
+					<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="explanation-accordion-content">
+					${(item.paragraphs ?? []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+					${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+				</div>
+			</details>
+		`;
+	}
+
+	const { questionParagraphs, solutionParagraphs } = splitExampleQuestionAndSolution(item);
+	return `
+		<details class="explanation-accordion-item explanation-accordion-item--example">
+			<summary>
+				<span class="example-summary-copy">
+					<span class="example-summary-title">${formatText(item.title)}</span>
+					${questionParagraphs.length ? `<span class="example-summary-question">${questionParagraphs.map(paragraph => `<span class="example-question-paragraph">${formatText(paragraph)}</span>`).join('')}</span>` : ''}
+				</span>
+				<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="explanation-accordion-content example-solution-content">
+				${solutionParagraphs.map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+				${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+			</div>
+		</details>
+	`;
+}
+
+function splitExampleQuestionAndSolution(item) {
+	const paragraphs = item.paragraphs ?? [];
+	const explicitQuestion = item.question_paragraphs ?? item.questionParagraphs ?? [];
+	if (explicitQuestion.length) {
+		return { questionParagraphs: explicitQuestion, solutionParagraphs: paragraphs };
+	}
+
+	const solutionIndex = paragraphs.findIndex(paragraph => /^\s*Solution\b/i.test(String(paragraph)));
+	if (solutionIndex > 0) {
+		return {
+			questionParagraphs: paragraphs.slice(0, solutionIndex),
+			solutionParagraphs: paragraphs.slice(solutionIndex),
+		};
+	}
+
+	if (solutionIndex === 0) {
+		return { questionParagraphs: [], solutionParagraphs: paragraphs };
+	}
+
+	if (paragraphs.length) {
+		return {
+			questionParagraphs: [paragraphs[0]],
+			solutionParagraphs: paragraphs.slice(1),
+		};
+	}
+
+	return { questionParagraphs: [], solutionParagraphs: [] };
 }
 
 function setupExplanationAccordions() {
