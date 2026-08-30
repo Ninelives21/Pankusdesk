@@ -44,7 +44,7 @@ Use this checklist for every college unit. A unit is not `ready` until the appli
 - [ ] For every labelled multi-part question/example/answer, put each subpart on its own line; in solutions, give each subpart its own clearly separated labelled panel rather than one continuous block.
 - [ ] End every fully worked example/question/PYQ solution with an explicit bold final answer/result when one exists.
 - [ ] Show every substantive transformation/row operation/substitution/iteration required to reproduce the result.
-- [ ] Correct only grammar/punctuation/obvious typos unless a larger correction is explicitly approved.
+- [ ] Clean awkward grammar/punctuation/wording when useful, but do not alter mathematical data unless an apparent source error has been independently verified and explicitly noted.
 - [ ] Preserve/flag source inconsistencies rather than silently reconciling them.
 - [ ] Build/update stable topic IDs.
 - [ ] Set `core`, `supporting`, `core-gap-filled` correctly.
@@ -132,15 +132,15 @@ For **every technical redraw**:
 ## K. Prescribed textbook questions
 
 - [ ] Audit all chapter-end questions belonging to the unit.
-- [ ] Preserve official wording.
+- [ ] Preserve the official mathematical content and intent; lightly clean awkward grammar, punctuation and wording when this improves readability without changing the mathematics.
 - [ ] Give every question a stable ID/anchor.
 - [ ] Link theory practice rows to exact anchors.
 - [ ] Render every inline prescribed-book practice reference as the shared large, high-contrast practice callout; it must be immediately distinguishable from theory and class-note boxes.
-- [ ] Give every question/problem set its own shared section header on the questions page; make the transition clear but restrained, and retain the set title, page/source context, explanatory note and question count.
 - [ ] Keep PankusDesk answers distinct from official textbook solutions.
 - [ ] Use source-backed steps/equations/tables/figures only.
 - [ ] Store printed final answers as `book_check` where appropriate.
-- [ ] Flag printed/source discrepancies.
+- [ ] Flag printed/source mathematical discrepancies; if a correction is used in the student-facing problem, record the printed form and the independent verification that justifies the correction.
+- [ ] For every independently verified mathematical mismatch, use the shared amber/gold state: highlight the question-number badge, highlight only the affected subpart label(s) when multipart, and show a matching amber explanation box stating what mismatches and why the retained/corrected solution is mathematically justified. Never use this treatment for grammar/editorial clean-up.
 - [ ] Store/render labelled question subparts structurally so `(i)`, `(ii)`, `(iii)` / `(a)`, `(b)`, `(c)` each begin on a new line.
 - [ ] Render multi-part solutions as separate labelled panels with a visible boundary/background change between parts.
 - [ ] End every fully worked solution with a visually distinct **bold final answer/result** when a determinate result exists; keep the printed-book check separate.

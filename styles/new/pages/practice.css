@@ -497,3 +497,54 @@
 		align-self: flex-start;
 	}
 }
+
+/* ====================================================================== */
+/*                 VERIFIED MATHEMATICAL SOURCE MISMATCH                  */
+/* ====================================================================== */
+/* Amber/gold is a semantic state reserved for independently verified
+ * mathematical mismatches in a source. Do not use it for grammar, spelling,
+ * punctuation, wording clean-up, or ordinary editorial notes. */
+
+.chapter-question.has-math-mismatch .chapter-question-number {
+	background: var(--math-mismatch);
+	color: var(--math-mismatch-text);
+	box-shadow: inset 0 0 0 1px var(--math-mismatch-border);
+}
+
+.chapter-question-part-label.is-math-mismatch {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	min-width: 2.25rem;
+	padding: 3px 7px;
+	border: 1px solid var(--math-mismatch-border);
+	border-radius: var(--radius-pill);
+	background: var(--math-mismatch);
+	color: var(--math-mismatch-text);
+}
+
+.math-mismatch-note {
+	margin-top: var(--space-5);
+	padding: var(--space-5) var(--space-6);
+	border: 1px solid var(--math-mismatch-border);
+	border-left: 4px solid var(--math-mismatch-strong);
+	border-radius: var(--radius-sm);
+	background: var(--math-mismatch-soft);
+	color: var(--math-mismatch-text);
+}
+
+.math-mismatch-note-label {
+	margin-bottom: var(--space-2);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .55px;
+	text-transform: uppercase;
+	color: var(--math-mismatch-strong);
+}
+
+.math-mismatch-note-text {
+	font-size: 14px;
+	line-height: 1.65;
+}
+

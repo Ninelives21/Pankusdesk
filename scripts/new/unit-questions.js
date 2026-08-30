@@ -96,35 +96,37 @@ function renderGroup(group) {
 function renderQuestion(question) {
 	const answerId = `answer-${question.id}`;
 	const isGap = question.answer?.status === 'source-gap';
+	const mismatch = normalizeMathMismatch(question.math_mismatch);
 	return `
-		<article class="chapter-question ${isGap ? 'question-source-gap' : ''}" id="question-${escapeHtml(question.id)}">
+		<article class="chapter-question ${isGap ? 'question-source-gap' : ''} ${mismatch ? 'has-math-mismatch' : ''}" id="question-${escapeHtml(question.id)}">
 			<button class="chapter-question-toggle" type="button" aria-expanded="false" aria-controls="${escapeHtml(answerId)}">
 				<span class="chapter-question-number">Q${escapeHtml(question.number)}</span>
 				<span class="chapter-question-copy">
-					<span class="chapter-question-text">${renderQuestionPrompt(question)}</span>
+					<span class="chapter-question-text">${renderQuestionPrompt(question, mismatch)}</span>
 					<span class="chapter-question-meta">Book p. ${escapeHtml(question.book_page)}${question.r25_scope === 'outside-current-r25' ? ' · outside current R25 Unit I scope' : ''}</span>
 				</span>
 				<span class="chapter-question-icon" aria-hidden="true">+</span>
 			</button>
 			<div class="chapter-question-answer" id="${escapeHtml(answerId)}" hidden>
 				<div class="answer-label">${isGap ? 'Source note' : 'Solution'}</div>
-				${renderAnswer(question.answer || {})}
+				${renderAnswer(question.answer || {}, mismatch)}
 			</div>
 		</article>
 	`;
 }
 
-function renderQuestionPrompt(question) {
+function renderQuestionPrompt(question, mismatch) {
 	const parts = Array.isArray(question.question_parts) ? question.question_parts : [];
 	if (!parts.length) return formatText(question.question);
 
 	const lead = question.question_lead || question.question || '';
+	const affectedParts = new Set(mismatch?.affected_parts || []);
 	return `
 		${lead ? `<span class="chapter-question-lead">${formatText(lead)}</span>` : ''}
 		<span class="chapter-question-parts">
 			${parts.map(part => `
 				<span class="chapter-question-part">
-					<span class="chapter-question-part-label">${escapeHtml(part.label || '')}</span>
+					<span class="chapter-question-part-label ${affectedParts.has(part.label) ? 'is-math-mismatch' : ''}">${escapeHtml(part.label || '')}</span>
 					<span class="chapter-question-part-content">${formatText(part.content || '')}</span>
 				</span>
 			`).join('')}
@@ -132,11 +134,11 @@ function renderQuestionPrompt(question) {
 	`;
 }
 
-function renderAnswer(answer) {
+function renderAnswer(answer, mismatch) {
 	const pieces = [];
 	for (const paragraph of answer.paragraphs || []) pieces.push(`<p>${formatText(paragraph)}</p>`);
 	if (answer.parts?.length) pieces.push(`<div class="answer-part-list">${answer.parts.map(renderAnswerPart).join('')}</div>`);
-	pieces.push(renderAnswerBody(answer));
+	pieces.push(renderAnswerBody(answer, mismatch));
 	return pieces.join('') || '<p>No answer has been added yet.</p>';
 }
 
@@ -150,7 +152,7 @@ function renderAnswerPart(part, index) {
 	`;
 }
 
-function renderAnswerBody(answer) {
+function renderAnswerBody(answer, mismatch = null) {
 	const pieces = [];
 	if (answer.figures?.length) pieces.push(`<div class="answer-figures">${answer.figures.map(renderAnswerFigure).join('')}</div>`);
 	if (answer.diagram) pieces.push(`<div class="answer-diagram">${formatText(answer.diagram)}</div>`);
@@ -160,9 +162,28 @@ function renderAnswerBody(answer) {
 	if (answer.equations?.length) pieces.push(`<div class="answer-equations">${answer.equations.map(eq => `<div>${formatText(eq)}</div>`).join('')}</div>`);
 	if (answer.steps?.length) pieces.push(`<ol class="answer-steps">${answer.steps.map(step => `<li>${formatText(step)}</li>`).join('')}</ol>`);
 	if (answer.result) pieces.push(`<div class="answer-result"><strong class="answer-result-label">Final answer:</strong> <strong class="answer-result-value">${formatText(answer.result)}</strong></div>`);
+	if (mismatch) pieces.push(renderMathMismatch(mismatch));
 	if (answer.book_check) pieces.push(`<div class="book-check">${formatText(answer.book_check)}</div>`);
 	if (answer.note) pieces.push(`<div class="answer-note">${formatText(answer.note)}</div>`);
 	return pieces.join('');
+}
+
+function normalizeMathMismatch(value) {
+	if (!value || typeof value !== 'object' || !String(value.message || '').trim()) return null;
+	return {
+		label: String(value.label || 'Math mismatch'),
+		message: String(value.message),
+		affected_parts: Array.isArray(value.affected_parts) ? value.affected_parts.map(String) : [],
+	};
+}
+
+function renderMathMismatch(mismatch) {
+	return `
+		<aside class="math-mismatch-note" role="note" aria-label="${escapeHtml(mismatch.label)}">
+			<div class="math-mismatch-note-label">${escapeHtml(mismatch.label)}</div>
+			<div class="math-mismatch-note-text">${formatText(mismatch.message)}</div>
+		</aside>
+	`;
 }
 
 function renderAnswerFigure(figure) {

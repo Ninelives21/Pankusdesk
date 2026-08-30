@@ -310,6 +310,9 @@
               }
             }
           }
+        },
+        "math_mismatch": {
+          "$ref": "#/$defs/mathMismatch"
         }
       }
     },
@@ -366,6 +369,33 @@
         "source": {
           "type": "object",
           "additionalProperties": true
+        }
+      }
+    },
+    "mathMismatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Student-facing explanation of a verified mathematical source mismatch and why the retained/corrected solution is justified."
+        },
+        "affected_parts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "description": "Optional labelled subparts, e.g. (ii), whose part labels should receive the mismatch highlight."
         }
       }
     }

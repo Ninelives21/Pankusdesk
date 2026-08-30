@@ -21,7 +21,7 @@ This document defines the default build contract for every future college unit, 
 8. **Class-note material must remain visibly identifiable.** Integrated class-note sections use the dedicated class-note visual treatment and date/source label, but their prose states the content directly; it must not narrate the note-building workflow.
 9. **Explanations are separated from source notes.** PankusDesk-authored plain-language teaching material belongs in the blue explanation accordion (`Understand this diagram` / explanation dropdown), not mixed into textbook or class-note prose as though it came from the source.
 10. **Provenance stays in data.** Student-facing theory teaches the subject. Source IDs, capture filenames, ingestion commentary and build decisions live in metadata/audits, not ordinary theory prose.
-11. **Source discrepancies are never silently repaired.** Preserve the source-backed statement/result and flag the discrepancy explicitly. A clarification accordion may explain the standard relationship, but it must not rewrite the source unnoticed.
+11. **Source discrepancies are never silently repaired.** Awkward grammar and wording may be cleaned for readability, but mathematical data (numbers, signs, equations, matrices, conditions) must be checked against the source. If a mathematical source error is independently verified, PankusDesk may present the corrected/intended mathematics for study, but must explicitly note what the source printed and why the correction is justified. A verified **mathematical mismatch** uses the shared amber/gold semantic treatment: highlight the question-number badge (and the affected subpart label when applicable) and show a matching pale-amber note explaining the mismatch and the independent verification. Amber/gold is reserved for mathematical mismatches only; never use it for grammar, spelling, punctuation, wording clean-up or ordinary editorial notes.
 12. **Generic architecture first.** Shared renderers/styles serve all subjects and semesters. Extend the generic schema/renderer before creating subject-specific duplicate code.
 13. **Figures are part of the teaching flow.** Every production figure is placed at the text it explains. No “all figures at the end” dump and no unanchored fallback in a ready unit.
 14. **Technical redraw accuracy outranks appearance.** All NRS work follows `NOTEBOOK_REDRAW_STYLE.md`, including the mandatory semantic-verification gate.
@@ -31,7 +31,6 @@ This document defines the default build contract for every future college unit, 
 18. **Every fully solved problem ends with an explicit final answer.** After the complete working, show the final answer/result as a visually distinct bold line whenever the problem has a determinate result. Keep any printed-textbook answer check or provenance note separate from that final-answer line. This applies globally to textbook questions, worked examples, class examples, PYQs and other solved practice.
 19. **Textbook problem sets stay in textbook position.** When an in-scope prescribed-textbook problem/exercise set appears immediately after a theory section, the cumulative unit page must reference/link that exact set at the same logical point in the teaching flow, in addition to the persistent Textbook Questions navigation link.
 20. **Inline textbook-practice links must be visually prominent.** A prescribed-book problem-set reference embedded in the theory flow is a major study action, not a footnote. Render it as a large, high-contrast callout with a clearly readable heading and an obvious clickable practice row. Use the shared dark-primary practice-callout treatment across subjects so students can immediately distinguish “stop and practise this set” from surrounding theory and class-note content.
-21. **Question-set transitions must be clear but restrained.** On textbook-question and other grouped practice pages, every new problem/exercise set must begin with a shared section header that is visibly distinct from the question cards without overpowering the page. Keep the set title, book/page context, explanatory note and question count visible. Use the shared muted-blue/tinted treatment with a stronger left accent, compact spacing and moderate typography across subjects.
 
 ---
 
@@ -415,7 +414,8 @@ Never label a generated question as textbook/PYQ material.
 
 ### 13.1 Textbook question rules
 
-1. Preserve official question wording.
+1. Preserve the mathematical content and intent of the official question, but lightly clean awkward grammar, punctuation and wording when that improves readability without changing the mathematics.
+2. When the source and verified mathematics conflict, store the discrepancy structurally (for example `math_mismatch`) rather than burying it in ordinary notes. Render the question badge in amber/gold; for multipart questions also highlight only the affected part label(s); render the verification explanation in the matching amber note box. Do not apply this state to language/editorial clean-up.
 2. Use stable unit-scoped IDs/anchors.
 3. Link theory practice rows to exact anchors.
 4. PankusDesk answers are not “official textbook solutions” unless official solutions were supplied.

@@ -264,7 +264,11 @@
                 ],
                 "result": "\\(p=2\\) or \\(p=-6\\).",
                 "book_check": "Printed appendix answer: “No value of \\(p\\) is possible.”",
-                "note": "Source discrepancy: direct calculation from the printed matrix gives \\(\\det A=-(p-2)(p+6)\\), and the displayed third-order minors are non-zero at \\(p=2\\) and \\(p=-6\\). Thus the supplied appendix answer is inconsistent with the printed question."
+                "note": "Independent verification: \\(\\det A=-(p-2)(p+6)\\). At both \\(p=2\\) and \\(p=-6\\), the matrix has rank exactly 3. Therefore the printed appendix answer “No value of \\(p\\) is possible” is incorrect for the matrix printed in the question."
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "Grewal’s appendix prints “No value of \\(p\\) is possible.” Independent verification gives \\(\\det A=-(p-2)(p+6)\\), and the matrix has rank exactly \\(3\\) at both \\(p=2\\) and \\(p=-6\\). PankusDesk therefore retains the verified answer \\(p=2\\) or \\(p=-6\\)."
               }
             },
             {
@@ -797,7 +801,12 @@
                   "Hence \\(x=1,\\;y=2,\\;z=3\\)."
                 ],
                 "result": "\\(x=1,\\;y=2,\\;z=3\\).",
-                "book_check": "Printed appendix answer: \\(x=1,\\;y=2,\\;z=3\\)."
+                "book_check": "Source check: the supplied p.49 scan prints the fourth right-hand side as “−0”. The first three equations give the unique solution \\(x=1,\\;y=2,\\;z=3\\), for which the fourth left-hand side is \\(-10\\); the Grewal appendix also prints \\(x=1,\\;y=2,\\;z=3\\). PankusDesk therefore treats “−0” as a typesetting error for “−10” and solves the intended system shown above.",
+                "note": "Verified independently: with the printed “−0” the four-equation system is inconsistent; with “−10” the fourth equation is satisfied by the unique solution from the first three equations."
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "Grewal p. 49 prints the fourth right-hand side as “\\(-0\\)”. The first three equations have the unique solution \\(x=1,\\ y=2,\\ z=3\\), Grewal’s appendix prints the same answer, and that solution makes the fourth left-hand side \\(-10\\), not \\(0\\). PankusDesk treats “\\(-0\\)” as a textbook typo for “\\(-10\\)” and solves the intended system."
               }
             },
             {
@@ -941,7 +950,11 @@
                   "Substitution in all three original equations confirms these values."
                 ],
                 "result": "\\(i_1=\\dfrac{396}{175},\\;i_2=\\dfrac{24}{25},\\;i_3=\\dfrac{72}{175}\\).",
-                "book_check": "Printed appendix answer: \\(i_1=\\dfrac{369}{175},\\;i_2=\\dfrac{24}{25},\\;i_3=\\dfrac{72}{175}\\). The printed \\(i_1\\) appears to be a typo: substituting \\(369/175\\) into \\(7i_1-4i_2=12\\) does not satisfy the equation; the worked system gives \\(396/175\\)."
+                "book_check": "Printed appendix answer: \\(i_1=\\dfrac{369}{175},\\;i_2=\\dfrac{24}{25},\\;i_3=\\dfrac{72}{175}\\). Independent substitution shows the first numerator is a typo: \\(i_1=\\dfrac{396}{175}\\) satisfies all three printed equations, whereas \\(369/175\\) does not."
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "Grewal’s appendix prints \\(i_1=369/175\\). Exact elimination gives \\(i_1=396/175\\), and substitution confirms \\(396/175\\) satisfies all three printed equations whereas \\(369/175\\) does not. PankusDesk therefore retains the verified value \\(i_1=396/175\\)."
               }
             },
             {
@@ -1183,7 +1196,7 @@
               ],
               "answer": {
                 "result": "For the equations printed on p.57: (i) no solution when \\(a=5,b\\ne-2\\); (ii) unique solution when \\(a\\ne5\\) (any \\(b\\)); (iii) infinitely many solutions when \\(a=5,b=-2\\).",
-                "book_check": "The supplied appendix prints \\(a=8,b\\ne6\\) / \\(a\\ne8\\) / \\(a=8,b=6\\). That does not match the equations visible on the supplied p.57 scan; the row reduction above follows the printed question exactly.",
+                "book_check": "Independent row reduction of the equations printed on p.57 gives: unique solution for \\(a\\ne5\\); infinitely many solutions for \\(a=5,b=-2\\); no solution for \\(a=5,b\\ne-2\\). The appendix values \\(a=8,b=6\\) do not correspond to the printed system.",
                 "paragraphs": [
                   "Start with the augmented matrix and interchange the first two rows:",
                   "\\[\\left[\\begin{array}{ccc|c}1&1&2&2\\\\2&1&3&2\\\\6&-1&a&b\\end{array}\\right].\\]",
@@ -1195,6 +1208,10 @@
                   "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&2&2\\\\0&1&1&2\\\\0&0&a-5&b+2\\end{array}\\right].\\]",
                   "Therefore: if \\(a\\ne5\\), there is a third pivot and hence a unique solution for any \\(b\\). If \\(a=5,b=-2\\), the last row is zero and there are infinitely many solutions. If \\(a=5,b\\ne-2\\), the last row is \\([0\\;0\\;0\\mid b+2]\\) and the system is inconsistent."
                 ]
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "Grewal’s appendix values \\(a=8,\\ b=6\\) do not match the system printed on p. 57. Row reduction gives the last row \\([0\\ 0\\ a-5\\mid b+2]\\), so the printed system has infinitely many solutions at \\(a=5,\\ b=-2\\), no solution at \\(a=5,\\ b\\ne-2\\), and a unique solution for \\(a\\ne5\\). PankusDesk retains this independently verified classification."
               }
             },
             {
@@ -1364,7 +1381,7 @@
               ],
               "answer": {
                 "result": "Non-trivial solutions occur for \\(k=0\\) or \\(k=3\\). For \\(k=0\\): \\(x=y=z=t\\). For \\(k=3\\): \\(x=-5s-3t,y=s,z=t\\).",
-                "book_check": "The supplied appendix line numbered 11 states only that \\(k=3\\) is the only real value for which \\(x=y=z\\); it does not match the determinant of the system visible in the supplied p.57 scan. The solution above follows the printed question.",
+                "book_check": "Independent determinant check gives \\(-6k(k-3)^2=0\\), so non-trivial solutions occur for \\(k=0\\) or \\(k=3\\). The supplied appendix line numbered 11 does not correspond to the printed question and should not be used as its answer.",
                 "paragraphs": [
                   "A non-trivial solution exists only when the determinant of the coefficient matrix is zero:",
                   "\\[\\begin{vmatrix}k-1&4k-2&k+3\\\\k-1&3k+1&2k\\\\2&3k+1&3(k-1)\\end{vmatrix}=0.\\]",
@@ -1374,6 +1391,10 @@
                   "For \\(k=0\\), the system becomes \\(-x-2y+3z=0,\\;-x+y=0,\\;2x+y-3z=0\\). From the second equation \\(y=x\\); the first then gives \\(z=x\\). Thus \\(x=y=z=t\\), \\(t\\ne0\\) for a non-trivial solution.",
                   "For \\(k=3\\), all three equations reduce to \\(2x+10y+6z=0\\), i.e. \\(x+5y+3z=0\\). Let \\(y=s,z=t\\); then \\(x=-5s-3t\\). This gives a two-parameter family of non-trivial solutions."
                 ]
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "The supplied appendix line numbered 11 does not correspond to this printed homogeneous system. The coefficient determinant factors as \\(-6k(k-3)^2\\), so non-trivial solutions occur for \\(k=0\\) or \\(k=3\\). PankusDesk uses this independently verified result rather than the mismatched appendix line."
               }
             },
             {
@@ -1391,7 +1412,7 @@
               ],
               "answer": {
                 "result": "The system can be consistent only when \\(a+c=2b\\).",
-                "book_check": "The supplied appendix line numbered 12 contains a different \\(\\lambda\\)-based answer and does not correspond to this supplied question; therefore no printed-answer check is applied here.",
+                "book_check": "Independent verification: the coefficient rows satisfy \\(R_1-2R_2+R_3=0\\), so consistency requires the same relation on the constants, \\(a-2b+c=0\\), i.e. \\(a+c=2b\\). The supplied appendix line numbered 12 is for a different problem and does not correspond to the printed question.",
                 "paragraphs": [
                   "The coefficient rows satisfy the linear relation",
                   "\\[(3,4,5)-2(4,5,6)+(5,6,7)=(0,0,0).\\]",
@@ -1401,6 +1422,10 @@
                   "\\[a-2b+c=0.\\]",
                   "Hence the necessary consistency condition is \\(a+c=2b\\)."
                 ]
+              },
+              "math_mismatch": {
+                "label": "Math mismatch",
+                "message": "The supplied appendix line numbered 12 belongs to a different problem and does not correspond to this printed system. The coefficient rows satisfy \\(R_1-2R_2+R_3=0\\), so consistency requires \\(a-2b+c=0\\), i.e. \\(a+c=2b\\). PankusDesk retains this independently verified condition."
               }
             },
             {
