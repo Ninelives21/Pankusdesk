@@ -136,6 +136,7 @@ For **every technical redraw**:
 - [ ] Give every question a stable ID/anchor.
 - [ ] Link theory practice rows to exact anchors.
 - [ ] Render every inline prescribed-book practice reference as the shared large, high-contrast practice callout; it must be immediately distinguishable from theory and class-note boxes.
+- [ ] Give every question/problem set its own strong shared section banner on the questions page; retain the set title, page/source context, explanatory note and question count so the transition is both visually obvious and informative.
 - [ ] Keep PankusDesk answers distinct from official textbook solutions.
 - [ ] Use source-backed steps/equations/tables/figures only.
 - [ ] Store printed final answers as `book_check` where appropriate.
