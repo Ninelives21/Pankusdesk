@@ -1,13 +1,12 @@
-# MAC Unit I · Problems 2.4 textbook questions
+# MAC multi-part question/solution layout fix
 
-This delta publishes the first staged Unit I **Textbook Questions** set:
+This delta implements the global PankusDesk rule that labelled subparts are never run together inline.
 
-- Grewal Problems 2.4, book p. 44: Q1–Q9
-- full question visible before opening
-- `+` opens the complete PankusDesk solution
-- printed Appendix 3 answer check shown where available
-- Unit I **Textbook Questions** link enabled before MAC PYQs
+Changes:
+- `scripts/new/unit-questions.js`: structured rendering of question subparts and solution subparts.
+- `styles/new/pages/practice.css`: stacked question parts and clearly separated alternating solution panels.
+- `college/1-1/matrices-calculus/kb/data/textbook-questions.json`: Problems 2.4 Q2, Q6, Q7 and Q9 structured into explicit subparts.
+- `college/schemas/textbook-questions.schema.json`: schema support for structured question/answer parts.
+- `college/COLLEGE_BUILD_STANDARD.md` and `college/UNIT_BUILD_CHECKLIST.md`: global rule recorded for all subjects/practice layers.
 
-The Q5 source discrepancy is explicitly noted: the printed matrix gives `p = 2` or `p = -6` for rank 3, while the supplied appendix prints “No value of p is possible.”
-
-Apply from the folder that contains both this delta folder and `Pankusdesk/`.
+Apply from the parent folder containing both this delta and `Pankusdesk/`.

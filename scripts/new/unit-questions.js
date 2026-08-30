@@ -101,7 +101,7 @@ function renderQuestion(question) {
 			<button class="chapter-question-toggle" type="button" aria-expanded="false" aria-controls="${escapeHtml(answerId)}">
 				<span class="chapter-question-number">Q${escapeHtml(question.number)}</span>
 				<span class="chapter-question-copy">
-					<span class="chapter-question-text">${formatText(question.question)}</span>
+					<span class="chapter-question-text">${renderQuestionPrompt(question)}</span>
 					<span class="chapter-question-meta">Book p. ${escapeHtml(question.book_page)}${question.r25_scope === 'outside-current-r25' ? ' · outside current R25 Unit I scope' : ''}</span>
 				</span>
 				<span class="chapter-question-icon" aria-hidden="true">+</span>
@@ -114,9 +114,44 @@ function renderQuestion(question) {
 	`;
 }
 
+function renderQuestionPrompt(question) {
+	const parts = Array.isArray(question.question_parts) ? question.question_parts : [];
+	if (!parts.length) return formatText(question.question);
+
+	const lead = question.question_lead || question.question || '';
+	return `
+		${lead ? `<span class="chapter-question-lead">${formatText(lead)}</span>` : ''}
+		<span class="chapter-question-parts">
+			${parts.map(part => `
+				<span class="chapter-question-part">
+					<span class="chapter-question-part-label">${escapeHtml(part.label || '')}</span>
+					<span class="chapter-question-part-content">${formatText(part.content || '')}</span>
+				</span>
+			`).join('')}
+		</span>
+	`;
+}
+
 function renderAnswer(answer) {
 	const pieces = [];
 	for (const paragraph of answer.paragraphs || []) pieces.push(`<p>${formatText(paragraph)}</p>`);
+	if (answer.parts?.length) pieces.push(`<div class="answer-part-list">${answer.parts.map(renderAnswerPart).join('')}</div>`);
+	pieces.push(renderAnswerBody(answer));
+	return pieces.join('') || '<p>No answer has been added yet.</p>';
+}
+
+function renderAnswerPart(part, index) {
+	return `
+		<section class="answer-part" aria-label="Solution ${escapeHtml(part.label || String(index + 1))}">
+			<div class="answer-part-heading">Part ${escapeHtml(part.label || String(index + 1))}</div>
+			${(part.paragraphs || []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+			${renderAnswerBody(part)}
+		</section>
+	`;
+}
+
+function renderAnswerBody(answer) {
+	const pieces = [];
 	if (answer.figures?.length) pieces.push(`<div class="answer-figures">${answer.figures.map(renderAnswerFigure).join('')}</div>`);
 	if (answer.diagram) pieces.push(`<div class="answer-diagram">${formatText(answer.diagram)}</div>`);
 	if (answer.bullets?.length) pieces.push(`<ul>${answer.bullets.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>`);
@@ -127,7 +162,7 @@ function renderAnswer(answer) {
 	if (answer.result) pieces.push(`<div class="answer-result"><strong>Result:</strong> ${formatText(answer.result)}</div>`);
 	if (answer.book_check) pieces.push(`<div class="book-check">${formatText(answer.book_check)}</div>`);
 	if (answer.note) pieces.push(`<div class="answer-note">${formatText(answer.note)}</div>`);
-	return pieces.join('') || '<p>No answer has been added yet.</p>';
+	return pieces.join('');
 }
 
 function renderAnswerFigure(figure) {

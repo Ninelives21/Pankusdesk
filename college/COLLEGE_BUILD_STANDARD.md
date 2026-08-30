@@ -15,18 +15,19 @@ This document defines the default build contract for every future college unit, 
 2. **The prescribed textbook is the primary notes source.** For a textbook-led unit, do not reduce the book to a thin summary. Preserve its sequence, terminology, definitions, equations, derivations, explanatory steps and useful worked-example calculation lines as closely as practical. Correct only grammar, punctuation, obvious typographical errors and clearly accidental formatting defects unless the user asks for a conceptual rewrite.
 3. **Every example must be fully worked.** Every textbook example, class example, PankusDesk-added example and solved practice/PYQ example must appear in a dropdown and contain the complete reproducible working, not merely the question and final answer. Show every substantive row operation, algebraic transformation, substitution, iteration or calculation needed to reach the result. If a source omits intermediate working and PankusDesk supplies it, keep the completion faithful to the source result and label any genuinely source-external clarification when needed.
 4. **The complete example question stays visible before opening the dropdown.** The example title and the full problem statement (including matrices, equations, given values and subparts) must be visible in the closed state. Opening the `+` reveals the solution only; the hidden portion must begin with the solution/working, never with information needed to know what is being solved.
-5. **One cumulative study version.** The unit page is the best current, de-duplicated semester notebook. Do not create parallel “textbook notes”, “lecture notes” and “class notes” pages for the same theory.
-6. **Class chronology is preserved separately.** A dated class log records what happened on a particular date. Useful material is then integrated at the correct conceptual point in the cumulative unit page.
-7. **Class-note material must remain visibly identifiable.** Integrated class-note sections use the dedicated class-note visual treatment and date/source label, but their prose states the content directly; it must not narrate the note-building workflow.
-8. **Explanations are separated from source notes.** PankusDesk-authored plain-language teaching material belongs in the blue explanation accordion (`Understand this diagram` / explanation dropdown), not mixed into textbook or class-note prose as though it came from the source.
-9. **Provenance stays in data.** Student-facing theory teaches the subject. Source IDs, capture filenames, ingestion commentary and build decisions live in metadata/audits, not ordinary theory prose.
-10. **Source discrepancies are never silently repaired.** Preserve the source-backed statement/result and flag the discrepancy explicitly. A clarification accordion may explain the standard relationship, but it must not rewrite the source unnoticed.
-11. **Generic architecture first.** Shared renderers/styles serve all subjects and semesters. Extend the generic schema/renderer before creating subject-specific duplicate code.
-12. **Figures are part of the teaching flow.** Every production figure is placed at the text it explains. No “all figures at the end” dump and no unanchored fallback in a ready unit.
-13. **Technical redraw accuracy outranks appearance.** All NRS work follows `NOTEBOOK_REDRAW_STYLE.md`, including the mandatory semantic-verification gate.
-14. **Mathematics is rendered, not improvised.** Use MathJax/LaTeX in student-facing data. Fractions use `\dfrac`, not `\frac`.
-15. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic, visual, practice, class-log/link and verifier checks pass.
-16. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
+5. **Multi-part questions and answers are visually separated.** Whenever a question, example, answer, solution, PYQ or self-check contains labelled subparts such as `(i)`, `(ii)`, `(iii)` or `(a)`, `(b)`, `(c)`, render each subpart on its own line rather than running the parts together inline. In a revealed solution, each subpart must also appear as a clearly separate solution block with its own part label and visual boundary; use the shared alternating panel treatment unless a subject requires a stronger semantic distinction. This is a global presentation rule across all subjects and practice layers.
+6. **One cumulative study version.** The unit page is the best current, de-duplicated semester notebook. Do not create parallel “textbook notes”, “lecture notes” and “class notes” pages for the same theory.
+7. **Class chronology is preserved separately.** A dated class log records what happened on a particular date. Useful material is then integrated at the correct conceptual point in the cumulative unit page.
+8. **Class-note material must remain visibly identifiable.** Integrated class-note sections use the dedicated class-note visual treatment and date/source label, but their prose states the content directly; it must not narrate the note-building workflow.
+9. **Explanations are separated from source notes.** PankusDesk-authored plain-language teaching material belongs in the blue explanation accordion (`Understand this diagram` / explanation dropdown), not mixed into textbook or class-note prose as though it came from the source.
+10. **Provenance stays in data.** Student-facing theory teaches the subject. Source IDs, capture filenames, ingestion commentary and build decisions live in metadata/audits, not ordinary theory prose.
+11. **Source discrepancies are never silently repaired.** Preserve the source-backed statement/result and flag the discrepancy explicitly. A clarification accordion may explain the standard relationship, but it must not rewrite the source unnoticed.
+12. **Generic architecture first.** Shared renderers/styles serve all subjects and semesters. Extend the generic schema/renderer before creating subject-specific duplicate code.
+13. **Figures are part of the teaching flow.** Every production figure is placed at the text it explains. No “all figures at the end” dump and no unanchored fallback in a ready unit.
+14. **Technical redraw accuracy outranks appearance.** All NRS work follows `NOTEBOOK_REDRAW_STYLE.md`, including the mandatory semantic-verification gate.
+15. **Mathematics is rendered, not improvised.** Use MathJax/LaTeX in student-facing data. Fractions use `\dfrac`, not `\frac`.
+16. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic, visual, practice, class-log/link and verifier checks pass.
+17. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
 
 ---
 
@@ -416,7 +417,9 @@ Never label a generated question as textbook/PYQ material.
 4. PankusDesk answers are not “official textbook solutions” unless official solutions were supplied.
 5. A book final answer may be stored as a check, not falsely cited as the derivation source.
 6. Preserve/flag printed discrepancies.
-7. If sources cannot support an answer, keep `status: "source-gap"` instead of filling from memory.
+7. For any labelled multi-part question, store/render the subparts structurally so every part appears on its own line in the closed question view.
+8. For any multi-part solution or answer, render each part as a clearly separate labelled panel rather than one uninterrupted stream of working.
+9. If sources cannot support an answer, keep `status: "source-gap"` instead of filling from memory.
 
 ### 13.2 PYQ rules
 
