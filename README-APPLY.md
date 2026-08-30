@@ -1,11 +1,3 @@
-# Apply this delta
+# MAC Unit I · Problems 2.7 delta
 
-This delta tones down the global question-set section headers while keeping set title, source/page note, explanatory text and count clearly visible.
-
-Dry run:
-
-    rsync -avhn mac-question-group-heading-toned-delta/ Pankusdesk/
-
-Real sync:
-
-    rsync -avh mac-question-group-heading-toned-delta/ Pankusdesk/
+Adds Grewal Problems 2.7 Q1–Q16 (pp. 57–58) with complete worked solutions and updates the Unit I textbook-practice callout.

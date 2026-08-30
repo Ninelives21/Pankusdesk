@@ -12,28 +12,30 @@
       "page_title": "Textbook Questions",
       "page_description": "R25-relevant textbook questions from the prescribed Grewal sections, added set by set with complete worked solutions.",
       "summary": {
-        "selected_question_count": 17,
+        "selected_question_count": 33,
         "stats": [
           {
-            "value": 17,
+            "value": 33,
             "label": "questions added"
           },
           {
-            "value": 2,
+            "value": 3,
             "label": "textbook sets"
           },
           {
-            "value": "pp. 44, 49",
+            "value": "pp. 44, 49, 57–58",
             "label": "book pages"
           }
         ]
       },
-      "scope_note": "Published R25-relevant sets so far: Problems 2.4 (Q1–Q9) and selected Problems 2.6 (Q6–Q11, Q13–Q14). Full questions remain visible before opening; clicking + reveals the complete PankusDesk solution, followed by the printed appendix check where available.",
+      "scope_note": "Published R25-relevant sets so far: Problems 2.4 (Q1–Q9), selected Problems 2.6 (Q6–Q11, Q13–Q14), and all Problems 2.7 (Q1–Q16). Full questions remain visible before opening; clicking + reveals the complete PankusDesk solution, followed by the printed appendix check where available.",
       "source": {
-        "chapter": "Chapter 2 · Problems 2.4 and 2.6",
+        "chapter": "Chapter 2 · Problems 2.4, 2.6 and 2.7",
         "review_pages": [
           44,
-          49
+          49,
+          57,
+          58
         ]
       },
       "groups": [
@@ -993,6 +995,599 @@
                 "result": "\\(x_1=2,\\;x_2=\\dfrac15,\\;x_3=0,\\;x_4=\\dfrac45\\).",
                 "book_check": "Printed appendix answer: \\(x_1=2,\\;x_2=\\dfrac15,\\;x_3=0,\\;x_4=\\dfrac45\\)."
               }
+            }
+          ]
+        },
+        {
+          "id": "problems-2-7",
+          "title": "Problems 2.7 · Consistency and Homogeneous / Non-homogeneous Systems",
+          "note": "Book pp. 57–58 · All Q1–Q16 are within R25 Unit I scope. Proof, parameter and multi-part questions are retained; complete PankusDesk solutions are supplied even where the appendix has no usable final answer.",
+          "questions": [
+            {
+              "id": "u1-p27-01",
+              "number": 1,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Investigate for consistency of the equations \\(4x-2y+6z=8,\\;x+y-3z=-1,\\;15x-3y+9z=21\\), and if possible find the solution.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ],
+              "answer": {
+                "result": "The system is consistent and \\(x=1,\\;y=3k-2,\\;z=k\\), where \\(k\\) is arbitrary.",
+                "book_check": "Printed appendix answer: Consistent; \\(x=1,\\;y=3k-2,\\;z=k\\) for all \\(k\\).",
+                "paragraphs": [
+                  "Write the augmented matrix:",
+                  "\\[\\left[\\begin{array}{ccc|c}4&-2&6&8\\\\1&1&-3&-1\\\\15&-3&9&21\\end{array}\\right].\\]",
+                  "Interchange \\(R_1\\) and \\(R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&-3&-1\\\\4&-2&6&8\\\\15&-3&9&21\\end{array}\\right].\\]",
+                  "Apply \\(R_2\\to R_2-4R_1\\) and \\(R_3\\to R_3-15R_1\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&-3&-1\\\\0&-6&18&12\\\\0&-18&54&36\\end{array}\\right].\\]",
+                  "Apply \\(R_2\\to-\\dfrac16R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&-3&-1\\\\0&1&-3&-2\\\\0&-18&54&36\\end{array}\\right].\\]",
+                  "Now \\(R_3\\to R_3+18R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&-3&-1\\\\0&1&-3&-2\\\\0&0&0&0\\end{array}\\right].\\]",
+                  "The coefficient and augmented matrices have the same rank, \\(2<3\\), so the system is consistent with infinitely many solutions.",
+                  "Let \\(z=k\\). The second row gives \\(y-3z=-2\\), so \\(y=3k-2\\). The first row then gives \\(x=1\\)."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-02",
+              "number": 2,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Find the values of \\(a,b\\) for which the equations \\(x+ay+z=3,\\;x+2y+2z=b,\\;x+5y+3z=9\\) are consistent. When will these equations have a unique solution?",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ],
+              "answer": {
+                "result": "Consistent for \\(a\\ne-1\\) with any \\(b\\), and also for \\(a=-1,b=6\\). The solution is unique when \\(a\\ne-1\\); for \\(a=-1,b=6\\) there are infinitely many solutions.",
+                "book_check": "Printed appendix answer: for \\(a=-1,b=6\\), the equations are consistent and have infinitely many solutions; for \\(a\\ne-1\\), \\(b\\) may have any value and the solution is unique.",
+                "paragraphs": [
+                  "The coefficient matrix is",
+                  "\\[A=\\begin{bmatrix}1&a&1\\\\1&2&2\\\\1&5&3\\end{bmatrix}.\\]",
+                  "Its determinant is",
+                  "\\[|A|=-(a+1).\\]",
+                  "Therefore, if \\(a\\ne-1\\), then \\(|A|\\ne0\\), so the system has a unique solution for every value of \\(b\\).",
+                  "For \\(a=-1\\), row-reduce the augmented matrix:",
+                  "\\[\\left[\\begin{array}{ccc|c}1&-1&1&3\\\\1&2&2&b\\\\1&5&3&9\\end{array}\\right]\\xrightarrow{R_2-R_1,\\;R_3-R_1}\\left[\\begin{array}{ccc|c}1&-1&1&3\\\\0&3&1&b-3\\\\0&6&2&6\\end{array}\\right].\\]",
+                  "Apply \\(R_3\\to R_3-2R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&-1&1&3\\\\0&3&1&b-3\\\\0&0&0&12-2b\\end{array}\\right].\\]",
+                  "Consistency requires \\(12-2b=0\\), hence \\(b=6\\). For \\(a=-1,b=6\\), the rank is \\(2<3\\), so there are infinitely many solutions."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-03",
+              "number": 3,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Investigate for what values of \\(\\lambda\\) and \\(\\mu\\) the simultaneous equations \\(x+y+z=6,\\;x+2y+3z=10,\\;x+2y+\\lambda z=\\mu\\) have (i) no solution, (ii) a unique solution, (iii) infinitely many solutions.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ],
+              "answer": {
+                "result": "(i) No solution: \\(\\lambda=3,\\;\\mu\\ne10\\). (ii) Unique solution: \\(\\lambda\\ne3\\). (iii) Infinitely many solutions: \\(\\lambda=3,\\;\\mu=10\\).",
+                "book_check": "Printed appendix answer: (i) \\(\\lambda=3,\\mu\\ne10\\); (ii) \\(\\lambda\\ne3\\); (iii) \\(\\lambda=3,\\mu=10\\).",
+                "paragraphs": [
+                  "Write the augmented matrix and eliminate the first column:",
+                  "\\[\\left[\\begin{array}{ccc|c}1&1&1&6\\\\1&2&3&10\\\\1&2&\\lambda&\\mu\\end{array}\\right]\\xrightarrow{R_2-R_1,\\;R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&4\\\\0&1&\\lambda-1&\\mu-6\\end{array}\\right].\\]",
+                  "Apply \\(R_3\\to R_3-R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&4\\\\0&0&\\lambda-3&\\mu-10\\end{array}\\right].\\]",
+                  "If \\(\\lambda\\ne3\\), the third pivot is non-zero; therefore the coefficient matrix has rank 3 and the system has a unique solution for any \\(\\mu\\).",
+                  "If \\(\\lambda=3\\), the last row becomes \\([0\\;0\\;0\\mid\\mu-10]\\). Thus \\(\\mu\\ne10\\) gives a contradiction and no solution, whereas \\(\\mu=10\\) gives a zero row and infinitely many solutions."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-04",
+              "number": 4,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Test for consistency and solve: (i) \\(x+2y+z=3,\\;2x+3y+2z=5,\\;3x-5y+5z=2,\\;3x+9y-z=4\\); (ii) \\(2x+6y+11=0,\\;6x+20y-6z+3=0,\\;6y-18z+1=0\\); (iii) \\(3x+3y+2z=1,\\;x+2y=4,\\;10y+3z=-2,\\;2x-3y-z=5\\).",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ],
+              "answer": {
+                "result": "(i) Consistent: \\(x=-1,y=1,z=2\\). (ii) Inconsistent. (iii) Consistent: \\(x=2,y=1,z=-4\\).",
+                "book_check": "Printed appendix answer: (i) Consistent; \\(x=-1,y=1,z=2\\). (ii) Equations are inconsistent. (iii) Consistent; \\(x=2,y=1,z=-4\\).",
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "Use the augmented matrix:",
+                      "\\[\\left[\\begin{array}{ccc|c}1&2&1&3\\\\2&3&2&5\\\\3&-5&5&2\\\\3&9&-1&4\\end{array}\\right].\\]",
+                      "Apply \\(R_2\\to R_2-2R_1\\), \\(R_3\\to R_3-3R_1\\), \\(R_4\\to R_4-3R_1\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&1&3\\\\0&-1&0&-1\\\\0&-11&2&-7\\\\0&3&-4&-5\\end{array}\\right].\\]",
+                      "Make the second pivot 1: \\(R_2\\to-R_2\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&1&3\\\\0&1&0&1\\\\0&-11&2&-7\\\\0&3&-4&-5\\end{array}\\right].\\]",
+                      "Apply \\(R_3\\to R_3+11R_2\\) and \\(R_4\\to R_4-3R_2\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&1&3\\\\0&1&0&1\\\\0&0&2&4\\\\0&0&-4&-8\\end{array}\\right].\\]",
+                      "Apply \\(R_3\\to\\frac12R_3\\) and \\(R_4\\to R_4+4R_3\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&1&3\\\\0&1&0&1\\\\0&0&1&2\\\\0&0&0&0\\end{array}\\right].\\]",
+                      "The system is consistent. Clear the entries in row 1: \\(R_1\\to R_1-2R_2-R_3\\), giving \\(x=-1,y=1,z=2\\)."
+                    ]
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "Rewrite the equations as \\(2x+6y=-11\\), \\(6x+20y-6z=-3\\), \\(6y-18z=-1\\).",
+                      "The augmented matrix is",
+                      "\\[\\left[\\begin{array}{ccc|c}2&6&0&-11\\\\6&20&-6&-3\\\\0&6&-18&-1\\end{array}\\right].\\]",
+                      "Apply \\(R_2\\to R_2-3R_1\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}2&6&0&-11\\\\0&2&-6&30\\\\0&6&-18&-1\\end{array}\\right].\\]",
+                      "Apply \\(R_3\\to R_3-3R_2\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}2&6&0&-11\\\\0&2&-6&30\\\\0&0&0&-91\\end{array}\\right].\\]",
+                      "The last row represents \\(0=-91\\), so the system is inconsistent."
+                    ]
+                  },
+                  {
+                    "label": "(iii)",
+                    "paragraphs": [
+                      "Interchange the first two equations and write the augmented matrix:",
+                      "\\[\\left[\\begin{array}{ccc|c}1&2&0&4\\\\3&3&2&1\\\\0&10&3&-2\\\\2&-3&-1&5\\end{array}\\right].\\]",
+                      "Apply \\(R_2\\to R_2-3R_1\\) and \\(R_4\\to R_4-2R_1\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&0&4\\\\0&-3&2&-11\\\\0&10&3&-2\\\\0&-7&-1&-3\\end{array}\\right].\\]",
+                      "Eliminate \\(y\\) from rows 3 and 4 using \\(R_3\\to3R_3+10R_2\\) and \\(R_4\\to3R_4-7R_2\\):",
+                      "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&0&4\\\\0&-3&2&-11\\\\0&0&29&-116\\\\0&0&-17&68\\end{array}\\right].\\]",
+                      "Both last rows give \\(z=-4\\), so there is no contradiction. From row 2, \\(-3y+2(-4)=-11\\), hence \\(y=1\\). From row 1, \\(x+2=4\\), hence \\(x=2\\).",
+                      "Thus the system is consistent and \\(x=2,y=1,z=-4\\)."
+                    ]
+                  }
+                ]
+              },
+              "question_lead": "Test for consistency and solve:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(x+2y+z=3,\\;2x+3y+2z=5,\\;3x-5y+5z=2,\\;3x+9y-z=4\\)."
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(2x+6y+11=0,\\;6x+20y-6z+3=0,\\;6y-18z+1=0\\)."
+                },
+                {
+                  "label": "(iii)",
+                  "content": "\\(3x+3y+2z=1,\\;x+2y=4,\\;10y+3z=-2,\\;2x-3y-z=5\\)."
+                }
+              ]
+            },
+            {
+              "id": "u1-p27-05",
+              "number": 5,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Investigate for what values of \\(a\\) and \\(b\\) the system \\(2x+y+3z=2,\\;x+y+2z=2,\\;6x-y+az=b\\) has (i) no solution, (ii) a unique solution, (iii) infinitely many solutions.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1380"
+              ],
+              "answer": {
+                "result": "For the equations printed on p.57: (i) no solution when \\(a=5,b\\ne-2\\); (ii) unique solution when \\(a\\ne5\\) (any \\(b\\)); (iii) infinitely many solutions when \\(a=5,b=-2\\).",
+                "book_check": "The supplied appendix prints \\(a=8,b\\ne6\\) / \\(a\\ne8\\) / \\(a=8,b=6\\). That does not match the equations visible on the supplied p.57 scan; the row reduction above follows the printed question exactly.",
+                "paragraphs": [
+                  "Start with the augmented matrix and interchange the first two rows:",
+                  "\\[\\left[\\begin{array}{ccc|c}1&1&2&2\\\\2&1&3&2\\\\6&-1&a&b\\end{array}\\right].\\]",
+                  "Apply \\(R_2\\to R_2-2R_1\\) and \\(R_3\\to R_3-6R_1\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&2&2\\\\0&-1&-1&-2\\\\0&-7&a-12&b-12\\end{array}\\right].\\]",
+                  "Apply \\(R_2\\to-R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&2&2\\\\0&1&1&2\\\\0&-7&a-12&b-12\\end{array}\\right].\\]",
+                  "Now apply \\(R_3\\to R_3+7R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&2&2\\\\0&1&1&2\\\\0&0&a-5&b+2\\end{array}\\right].\\]",
+                  "Therefore: if \\(a\\ne5\\), there is a third pivot and hence a unique solution for any \\(b\\). If \\(a=5,b=-2\\), the last row is zero and there are infinitely many solutions. If \\(a=5,b\\ne-2\\), the last row is \\([0\\;0\\;0\\mid b+2]\\) and the system is inconsistent."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-06",
+              "number": 6,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Show that if \\(\\lambda\\ne-5\\), the system \\(3x-y+4z=3,\\;x+2y-3z=-2,\\;6x+5y+\\lambda z=-3\\) has a unique solution. If \\(\\lambda=-5\\), show that the equations are consistent. Determine the solutions in each case.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "If \\(\\lambda\\ne-5\\): \\(x=4/7,y=-9/7,z=0\\). If \\(\\lambda=-5\\): \\(x=(4-5k)/7,y=(13k-9)/7,z=k\\), \\(k\\) arbitrary.",
+                "book_check": "Printed appendix answer agrees: for \\(\\lambda\\ne-5\\), \\(x=4/7,y=-9/7,z=0\\); for \\(\\lambda=-5\\), \\(x=(4-5k)/7,y=(13k-9)/7,z=k\\).",
+                "paragraphs": [
+                  "Interchange the first two rows and row-reduce:",
+                  "\\[\\left[\\begin{array}{ccc|c}1&2&-3&-2\\\\3&-1&4&3\\\\6&5&\\lambda&-3\\end{array}\\right].\\]",
+                  "Apply \\(R_2\\to R_2-3R_1\\), \\(R_3\\to R_3-6R_1\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&-3&-2\\\\0&-7&13&9\\\\0&-7&\\lambda+18&9\\end{array}\\right].\\]",
+                  "Apply \\(R_3\\to R_3-R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&-3&-2\\\\0&-7&13&9\\\\0&0&\\lambda+5&0\\end{array}\\right].\\]",
+                  "If \\(\\lambda\\ne-5\\), then \\(z=0\\). Row 2 gives \\(-7y=9\\), so \\(y=-9/7\\). Row 1 gives \\(x+2(-9/7)=-2\\), hence \\(x=4/7\\).",
+                  "If \\(\\lambda=-5\\), the last row is zero. Put \\(z=k\\). Row 2 gives \\(y=(13k-9)/7\\). Row 1 gives \\(x=(4-5k)/7\\). Thus the system is consistent with infinitely many solutions."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-07",
+              "number": 7,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Show that the equations \\(3x+4y+5z=a,\\;4x+5y+6z=b,\\;5x+6y+7z=c\\) do not have a solution unless \\(a+c=2b\\), i.e. \\(a,b,c\\) are in A.P.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "The necessary consistency condition is \\(a+c=2b\\); equivalently, \\(a,b,c\\) are in arithmetic progression.",
+                "book_check": "No separate printed final answer is shown for this proof-type question on the supplied appendix scan.",
+                "paragraphs": [
+                  "Write the augmented matrix:",
+                  "\\[\\left[\\begin{array}{ccc|c}3&4&5&a\\\\4&5&6&b\\\\5&6&7&c\\end{array}\\right].\\]",
+                  "The coefficient rows satisfy \\(R_1-2R_2+R_3=0\\), because",
+                  "\\[(3,4,5)-2(4,5,6)+(5,6,7)=(0,0,0).\\]",
+                  "Apply the same combination to the augmented column. Consistency therefore requires",
+                  "\\[a-2b+c=0.\\]",
+                  "Hence \\(a+c=2b\\). If this condition fails, row reduction produces a row \\([0\\;0\\;0\\mid a-2b+c]\\) with non-zero right side, so no solution exists."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-08",
+              "number": 8,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Prove that the equations \\(5x+3y+2z=12,\\;2x+4y+5z=2,\\;39x+43y+45z=c\\) are incompatible unless \\(c=74\\); and in that case the equations are satisfied by \\(x=2+t,\\;y=2-3t,\\;z=-2+2t\\), where \\(t\\) is arbitrary.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "The system is compatible only for \\(c=74\\); then \\(x=2+t,y=2-3t,z=-2+2t\\), \\(t\\) arbitrary.",
+                "book_check": "No separate printed final answer is shown for this proof-type question on the supplied appendix scan.",
+                "paragraphs": [
+                  "Observe that the third coefficient row is a linear combination of the first two:",
+                  "\\[5(5,3,2)+7(2,4,5)=(39,43,45).\\]",
+                  "Therefore, for consistency, the right-hand side of the third equation must also equal the same combination:",
+                  "\\[c=5(12)+7(2)=60+14=74.\\]",
+                  "If \\(c\\ne74\\), row reduction gives a contradictory zero-coefficient row, so the system is incompatible.",
+                  "For \\(c=74\\), the third equation is dependent on the first two. Solve the first two equations. Let \\(z=s\\). Then",
+                  "\\[5x+3y=12-2s,\\qquad 2x+4y=2-5s.\\]",
+                  "Eliminate \\(x\\): multiply the first by 2 and the second by 5:",
+                  "\\[10x+6y=24-4s,\\qquad10x+20y=10-25s.\\]",
+                  "Subtracting gives \\(14y=-14-21s\\), so \\(y=-1-\\frac32s\\). Substitution gives \\(x=3+\\frac12s\\).",
+                  "To write the family in the form used in the question, put \\(s=-2+2t\\). Then",
+                  "\\[x=2+t,\\qquad y=2-3t,\\qquad z=-2+2t.\\]",
+                  "Substitution in the third equation gives \\(74\\), as required."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-09",
+              "number": 9,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Find the values of \\(\\lambda\\) for which the equations \\((2-\\lambda)x+2y+3=0,\\;2x+(4-\\lambda)y+7=0,\\;2x+5y+(6-\\lambda)=0\\) are consistent, and find the values of \\(x,y\\) corresponding to each value of \\(\\lambda\\).",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "\\(\\lambda=-1\\Rightarrow(x,y)=(-1/11,-15/11);\\;\\lambda=1\\Rightarrow(x,y)=(-5,1);\\;\\lambda=12\\Rightarrow(x,y)=(1/2,1).\\)",
+                "book_check": "Printed appendix answer: \\(\\lambda=-1,1,12\\), with \\(x=-1/11,y=-15/11\\); \\(x=-5,y=1\\); \\(x=1/2,y=1\\), respectively.",
+                "paragraphs": [
+                  "Write the system in augmented form, with right-hand sides \\(-3,-7,\\lambda-6\\):",
+                  "\\[\\left[\\begin{array}{cc|c}2-\\lambda&2&-3\\\\2&4-\\lambda&-7\\\\2&5&\\lambda-6\\end{array}\\right].\\]",
+                  "For three equations in two unknowns to be consistent, the three rows of the augmented \\(3\\times3\\) matrix must be linearly dependent. Hence its determinant must vanish:",
+                  "\\[\\begin{vmatrix}2-\\lambda&2&-3\\\\2&4-\\lambda&-7\\\\2&5&\\lambda-6\\end{vmatrix}=0.\\]",
+                  "Expanding and factorising gives",
+                  "\\[(\\lambda-12)(\\lambda-1)(\\lambda+1)=0.\\]",
+                  "Therefore \\(\\lambda=-1,1,12\\).",
+                  "For \\(\\lambda=-1\\), the first two equations are \\(3x+2y=-3\\), \\(2x+5y=-7\\). Solving gives \\(x=-1/11,y=-15/11\\).",
+                  "For \\(\\lambda=1\\), the first two equations are \\(x+2y=-3\\), \\(2x+3y=-7\\). Solving gives \\(x=-5,y=1\\).",
+                  "For \\(\\lambda=12\\), the first two equations are \\(-10x+2y=-3\\), \\(2x-8y=-7\\). Solving gives \\(x=1/2,y=1\\).",
+                  "In each case the third equation is also satisfied."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-10",
+              "number": 10,
+              "book_page": 57,
+              "topic_id": "u1-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Show that there are three real values of \\(\\lambda\\) for which the equations \\((a-\\lambda)x+by+cz=0,\\;bx+(c-\\lambda)y+az=0,\\;cx+ay+(b-\\lambda)z=0\\) are simultaneously true, and that the product of these values of \\(\\lambda\\) is \\(D=\\begin{vmatrix}a&b&c\\\\b&c&a\\\\c&a&b\\end{vmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "The three real values are \\(a+b+c\\) and \\(\\pm\\sqrt{a^2+b^2+c^2-ab-bc-ca}\\); their product is \\(D\\).",
+                "book_check": "No separate printed final answer is shown for this proof-type question on the supplied appendix scan.",
+                "paragraphs": [
+                  "A non-trivial simultaneous solution exists when the determinant of the coefficient matrix is zero:",
+                  "\\[\\begin{vmatrix}a-\\lambda&b&c\\\\b&c-\\lambda&a\\\\c&a&b-\\lambda\\end{vmatrix}=0.\\]",
+                  "On expansion and factorisation,",
+                  "\\[(a+b+c-\\lambda)\\left(\\lambda^2-a^2-b^2-c^2+ab+bc+ca\\right)=0.\\]",
+                  "Let",
+                  "\\[S=a^2+b^2+c^2-ab-bc-ca=\\frac12\\big[(a-b)^2+(b-c)^2+(c-a)^2\\big]\\ge0.\\]",
+                  "Hence the three real roots (counting multiplicity) are",
+                  "\\[\\lambda_1=a+b+c,\\qquad \\lambda_2=\\sqrt S,\\qquad \\lambda_3=-\\sqrt S.\\]",
+                  "Their product is",
+                  "\\[\\lambda_1\\lambda_2\\lambda_3=-(a+b+c)S.\\]",
+                  "Now evaluate the determinant \\(D\\):",
+                  "\\[D=\\begin{vmatrix}a&b&c\\\\b&c&a\\\\c&a&b\\end{vmatrix}=-(a+b+c)(a^2+b^2+c^2-ab-bc-ca)=-(a+b+c)S.\\]",
+                  "Therefore \\(\\lambda_1\\lambda_2\\lambda_3=D\\)."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-11",
+              "number": 11,
+              "book_page": 57,
+              "topic_id": "u1-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Determine the values of \\(k\\) for which the homogeneous system \\((k-1)x+(4k-2)y+(k+3)z=0,\\;(k-1)x+(3k+1)y+2kz=0,\\;2x+(3k+1)y+3(k-1)z=0\\) has non-trivial solutions, and find them.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "Non-trivial solutions occur for \\(k=0\\) or \\(k=3\\). For \\(k=0\\): \\(x=y=z=t\\). For \\(k=3\\): \\(x=-5s-3t,y=s,z=t\\).",
+                "book_check": "The supplied appendix line numbered 11 states only that \\(k=3\\) is the only real value for which \\(x=y=z\\); it does not match the determinant of the system visible in the supplied p.57 scan. The solution above follows the printed question.",
+                "paragraphs": [
+                  "A non-trivial solution exists only when the determinant of the coefficient matrix is zero:",
+                  "\\[\\begin{vmatrix}k-1&4k-2&k+3\\\\k-1&3k+1&2k\\\\2&3k+1&3(k-1)\\end{vmatrix}=0.\\]",
+                  "Expanding and factorising gives",
+                  "\\[-6k(k-3)^2=0.\\]",
+                  "Hence \\(k=0\\) or \\(k=3\\).",
+                  "For \\(k=0\\), the system becomes \\(-x-2y+3z=0,\\;-x+y=0,\\;2x+y-3z=0\\). From the second equation \\(y=x\\); the first then gives \\(z=x\\). Thus \\(x=y=z=t\\), \\(t\\ne0\\) for a non-trivial solution.",
+                  "For \\(k=3\\), all three equations reduce to \\(2x+10y+6z=0\\), i.e. \\(x+5y+3z=0\\). Let \\(y=s,z=t\\); then \\(x=-5s-3t\\). This gives a two-parameter family of non-trivial solutions."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-12",
+              "number": 12,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Show that the system \\(3x+4y+5z=a,\\;4x+5y+6z=b,\\;5x+6y+7z=c\\) will be consistent only when \\(a+c=2b\\).",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "The system can be consistent only when \\(a+c=2b\\).",
+                "book_check": "The supplied appendix line numbered 12 contains a different \\(\\lambda\\)-based answer and does not correspond to this supplied question; therefore no printed-answer check is applied here.",
+                "paragraphs": [
+                  "The coefficient rows satisfy the linear relation",
+                  "\\[(3,4,5)-2(4,5,6)+(5,6,7)=(0,0,0).\\]",
+                  "Apply the same row combination to the augmented column. Row reduction therefore produces",
+                  "\\[[0\\;0\\;0\\mid a-2b+c].\\]",
+                  "For the augmented rank to equal the coefficient rank, the last entry must be zero:",
+                  "\\[a-2b+c=0.\\]",
+                  "Hence the necessary consistency condition is \\(a+c=2b\\)."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-13",
+              "number": 13,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Investigate for what values of \\(k\\) the equations \\(x+y+z=1,\\;2x+y+4z=k,\\;4x+y+10z=k^2\\) have an infinite number of solutions. Hence find the solutions.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "\\(k=1\\): \\(x=-3t,y=1+2t,z=t\\). \\(k=2\\): \\(x=1-3t,y=2t,z=t\\), where \\(t\\) is arbitrary.",
+                "book_check": "Printed appendix answer confirms the parameter values \\(k=1,2\\).",
+                "paragraphs": [
+                  "Write the augmented matrix:",
+                  "\\[\\left[\\begin{array}{ccc|c}1&1&1&1\\\\2&1&4&k\\\\4&1&10&k^2\\end{array}\\right].\\]",
+                  "Apply \\(R_2\\to R_2-2R_1\\) and \\(R_3\\to R_3-4R_1\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&1&1\\\\0&-1&2&k-2\\\\0&-3&6&k^2-4\\end{array}\\right].\\]",
+                  "Apply \\(R_3\\to R_3-3R_2\\):",
+                  "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&1&1\\\\0&-1&2&k-2\\\\0&0&0&k^2-3k+2\\end{array}\\right].\\]",
+                  "For infinitely many solutions, the last row must be zero and the rank must remain less than 3. Thus",
+                  "\\[(k-1)(k-2)=0,\\]",
+                  "so \\(k=1\\) or \\(k=2\\).",
+                  "For \\(k=1\\), row 2 gives \\(-y+2z=-1\\), so \\(y=1+2z\\). Let \\(z=t\\); row 1 gives \\(x=-3t\\).",
+                  "For \\(k=2\\), row 2 gives \\(y=2z\\). Let \\(z=t\\); row 1 gives \\(x=1-3t\\)."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-14",
+              "number": 14,
+              "book_page": 57,
+              "topic_id": "u1-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Solve completely the systems: (i) \\(x+y-2z+3w=0;\\;x-2y+z-w=0;\\;4x+y-5z+8w=0;\\;5x-7y+2z-w=0\\). (ii) \\(3x+4y-z-6w=0;\\;2x+3y+2z-3w=0;\\;2x+y-14z-9w=0;\\;x+3y+13z+3w=0\\).",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "(i) \\(x=\\lambda-5\\mu/3,y=\\lambda-4\\mu/3,z=\\lambda,w=\\mu\\). (ii) \\(x=11k_2+6k_1,y=-8k_2-3k_1,z=k_2,w=k_1\\).",
+                "book_check": "Printed appendix answer agrees with both two-parameter solution families.",
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "The coefficient matrix is",
+                      "\\[A=\\begin{bmatrix}1&1&-2&3\\\\1&-2&1&-1\\\\4&1&-5&8\\\\5&-7&2&-1\\end{bmatrix}.\\]",
+                      "Apply \\(R_2\\to R_2-R_1\\), \\(R_3\\to R_3-4R_1\\), \\(R_4\\to R_4-5R_1\\):",
+                      "\\[\\sim\\begin{bmatrix}1&1&-2&3\\\\0&-3&3&-4\\\\0&-3&3&-4\\\\0&-12&12&-16\\end{bmatrix}.\\]",
+                      "Apply \\(R_3\\to R_3-R_2\\), \\(R_4\\to R_4-4R_2\\):",
+                      "\\[\\sim\\begin{bmatrix}1&1&-2&3\\\\0&-3&3&-4\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}.\\]",
+                      "There are two pivots and four unknowns, so two parameters are free. Let \\(z=\\lambda,w=\\mu\\). Row 2 gives \\(-3y+3\\lambda-4\\mu=0\\), hence \\(y=\\lambda-\\frac43\\mu\\).",
+                      "Row 1 gives \\(x+y-2\\lambda+3\\mu=0\\), so \\(x=\\lambda-\\frac53\\mu\\)."
+                    ]
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "The coefficient matrix is",
+                      "\\[A=\\begin{bmatrix}3&4&-1&-6\\\\2&3&2&-3\\\\2&1&-14&-9\\\\1&3&13&3\\end{bmatrix}.\\]",
+                      "A row reduction gives",
+                      "\\[A\\sim\\begin{bmatrix}1&0&-11&-6\\\\0&1&8&3\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}.\\]",
+                      "Thus \\(x-11z-6w=0\\) and \\(y+8z+3w=0\\). Let \\(z=k_2,w=k_1\\).",
+                      "Hence \\(x=11k_2+6k_1\\), \\(y=-8k_2-3k_1\\), \\(z=k_2\\), \\(w=k_1\\)."
+                    ]
+                  }
+                ]
+              },
+              "question_lead": "Solve completely the following systems of homogeneous equations:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(x+y-2z+3w=0;\\;x-2y+z-w=0;\\;4x+y-5z+8w=0;\\;5x-7y+2z-w=0.\\)"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(3x+4y-z-6w=0;\\;2x+3y+2z-3w=0;\\;2x+y-14z-9w=0;\\;x+3y+13z+3w=0.\\)"
+                }
+              ]
+            },
+            {
+              "id": "u1-p27-15",
+              "number": 15,
+              "book_page": 57,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Show that the system \\(3x+4y+5z=\\alpha,\\;4x+5y+6z=\\beta,\\;5x+6y+7z=\\gamma\\) is consistent only when \\(\\alpha,\\beta,\\gamma\\) are in arithmetic progression.",
+              "question_source_refs": [
+                "TB-P0057"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "The system can be consistent only when \\(\\alpha+\\gamma=2\\beta\\), i.e. \\(\\alpha,\\beta,\\gamma\\) are in A.P.",
+                "book_check": "No separate printed final answer is shown for this proof-type question on the supplied appendix scan.",
+                "paragraphs": [
+                  "The coefficient rows satisfy",
+                  "\\[(3,4,5)-2(4,5,6)+(5,6,7)=(0,0,0).\\]",
+                  "Applying the same row combination to the augmented constants gives the necessary condition",
+                  "\\[\\alpha-2\\beta+\\gamma=0.\\]",
+                  "Therefore",
+                  "\\[\\alpha+\\gamma=2\\beta,\\]",
+                  "which is precisely the condition that \\(\\alpha,\\beta,\\gamma\\) are in arithmetic progression. If this fails, the augmented matrix has a contradictory row and the system is inconsistent."
+                ]
+              }
+            },
+            {
+              "id": "u1-p27-16",
+              "number": 16,
+              "book_page": 58,
+              "topic_id": "u1-non-homogeneous-systems",
+              "r25_scope": "core",
+              "question": "Examine the following systems for consistency and, if consistent, solve them. (i) \\(x+2y+z=-1;\\;6x+y+z=-4;\\;2x-3y-z=0;\\;-x-7y-2z=7;\\;x-y=1\\). (ii) \\(x+y+z=6;\\;2x+y+3z=13;\\;5x+2y+z=12;\\;2x-3y-2z=-10\\). (iii) \\(2x_1+x_2+2x_3+x_4=6;\\;6x_1-6x_2+6x_3+12x_4=36;\\;4x_1+3x_2+3x_3-3x_4=-1;\\;2x_1+2x_2-x_3+x_4=10\\).",
+              "question_source_refs": [
+                "TB-P0058"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "result": "All three are consistent. (i) \\(x=-1,y=-2,z=4\\). (ii) \\(x=1,y=2,z=3\\). (iii) \\(x_1=2,x_2=1,x_3=-1,x_4=3\\).",
+                "book_check": "Printed appendix answer: (i) \\(x=-1,y=-2,z=4\\); (ii) \\(x=1,y=2,z=3\\); (iii) \\(x_1=2,x_2=1,x_3=-1,x_4=3\\).",
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "From \\(x-y=1\\), write \\(x=1+y\\).",
+                      "Substitute in \\(x+2y+z=-1\\): \\(1+3y+z=-1\\), hence \\(z=-2-3y\\).",
+                      "Substitute these in \\(2x-3y-z=0\\):",
+                      "\\[2(1+y)-3y-(-2-3y)=0\\Rightarrow4+2y=0,\\]",
+                      "so \\(y=-2\\). Hence \\(x=-1\\) and \\(z=4\\).",
+                      "Check the remaining equations: \\(6(-1)+(-2)+4=-4\\) and \\(-(-1)-7(-2)-2(4)=7\\). Thus all five equations are consistent."
+                    ]
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "Subtract twice the first equation from the second:",
+                      "\\[-y+z=1.\\]",
+                      "Subtract five times the first equation from the third:",
+                      "\\[-3y-4z=-18\\quad\\Rightarrow\\quad3y+4z=18.\\]",
+                      "From \\(-y+z=1\\), \\(z=y+1\\). Therefore \\(3y+4(y+1)=18\\), giving \\(y=2\\), \\(z=3\\).",
+                      "The first equation then gives \\(x=1\\). Check the fourth: \\(2(1)-3(2)-2(3)=-10\\), so the system is consistent."
+                    ]
+                  },
+                  {
+                    "label": "(iii)",
+                    "paragraphs": [
+                      "For convenient elimination, interchange the second and third equations and write",
+                      "\\[\\left[\\begin{array}{cccc|c}2&1&2&1&6\\\\4&3&3&-3&-1\\\\6&-6&6&12&36\\\\2&2&-1&1&10\\end{array}\\right].\\]",
+                      "Apply \\(R_2\\to R_2-2R_1\\), \\(R_3\\to R_3-3R_1\\), \\(R_4\\to R_4-R_1\\):",
+                      "\\[\\sim\\left[\\begin{array}{cccc|c}2&1&2&1&6\\\\0&1&-1&-5&-13\\\\0&-9&0&9&18\\\\0&1&-3&0&4\\end{array}\\right].\\]",
+                      "Use the second pivot: \\(R_3\\to R_3+9R_2\\), \\(R_4\\to R_4-R_2\\):",
+                      "\\[\\sim\\left[\\begin{array}{cccc|c}2&1&2&1&6\\\\0&1&-1&-5&-13\\\\0&0&-9&-36&-99\\\\0&0&-2&5&17\\end{array}\\right].\\]",
+                      "Apply \\(R_3\\to-\\frac19R_3\\):",
+                      "\\[\\sim\\left[\\begin{array}{cccc|c}2&1&2&1&6\\\\0&1&-1&-5&-13\\\\0&0&1&4&11\\\\0&0&-2&5&17\\end{array}\\right].\\]",
+                      "Apply \\(R_4\\to R_4+2R_3\\):",
+                      "\\[\\sim\\left[\\begin{array}{cccc|c}2&1&2&1&6\\\\0&1&-1&-5&-13\\\\0&0&1&4&11\\\\0&0&0&13&39\\end{array}\\right].\\]",
+                      "Thus \\(x_4=3\\). Row 3 gives \\(x_3+12=11\\), so \\(x_3=-1\\). Row 2 gives \\(x_2+1-15=-13\\), so \\(x_2=1\\). Row 1 gives \\(2x_1+1-2+3=6\\), hence \\(x_1=2\\)."
+                    ]
+                  }
+                ]
+              },
+              "question_lead": "Examine for consistency and, if consistent, solve:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(x+2y+z=-1;\\;6x+y+z=-4;\\;2x-3y-z=0;\\;-x-7y-2z=7;\\;x-y=1.\\)"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(x+y+z=6;\\;2x+y+3z=13;\\;5x+2y+z=12;\\;2x-3y-2z=-10.\\)"
+                },
+                {
+                  "label": "(iii)",
+                  "content": "\\(2x_1+x_2+2x_3+x_4=6;\\;6x_1-6x_2+6x_3+12x_4=36;\\;4x_1+3x_2+3x_3-3x_4=-1;\\;2x_1+2x_2-x_3+x_4=10.\\)"
+                }
+              ]
             }
           ]
         }
