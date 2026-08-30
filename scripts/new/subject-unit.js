@@ -314,7 +314,7 @@ function renderTopic(topic, index, context, sourceCollections) {
 			${renderTopicIntro(topic.intro)}
 			${renderQuickRecall(topic.learn ?? [])}
 			${renderSelfChecks(topic.self_checks ?? topic.questions ?? [], topic.id)}
-			${renderSections(topic.sections ?? [])}
+			${renderSections(topic.sections ?? [], context)}
 			${renderFormulas(topic.formulas ?? [])}
 			${renderMethod(topic.method ?? [])}
 			${renderCautions(topic.cautions ?? [])}
@@ -340,12 +340,12 @@ function renderQuickRecall(items) {
 	`;
 }
 
-function renderSections(sections) {
+function renderSections(sections, context) {
 	if (!sections.length) return '';
-	return `<div class="topic-sections">${sections.map(renderSection).join('')}</div>`;
+	return `<div class="topic-sections">${sections.map(section => renderSection(section, context)).join('')}</div>`;
 }
 
-function renderSection(section) {
+function renderSection(section, context) {
 	const isClassNote = section.kind === 'class-note';
 	const className = isClassNote ? 'note-section class-note-section' : 'note-section';
 	const sourceLabel = isClassNote
@@ -356,12 +356,12 @@ function renderSection(section) {
 		<section class="${className}">
 			${sourceLabel}
 			<div class="note-section-heading"><h3>${formatText(section.heading)}</h3></div>
-			${renderSectionContent(section)}
+			${renderSectionContent(section, context)}
 		</section>
 	`;
 }
 
-function renderSectionContent(section) {
+function renderSectionContent(section, context) {
 	const figures = section.figures ?? [];
 	const sideFigures = figures.filter(figure => figure.grid && Number.isInteger(Number(figure.grid.start)));
 	const ordinaryFigures = figures.filter(figure => !figure.grid);
@@ -430,6 +430,9 @@ function renderSectionContent(section) {
 		.filter(figure => !anchored.has(figure.src))
 		.map(renderTextbookFigureRow)
 		.join('');
+
+	// Keep prescribed-textbook problem sets at the same logical point as the book.
+	html += renderPractice(section.practice ?? [], context);
 
 	return html;
 }
@@ -509,6 +512,7 @@ function renderExplanationAccordionItem(item, isExampleGroup) {
 			<div class="explanation-accordion-content example-solution-content">
 				${solutionParagraphs.map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
 				${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+				${item.final_answer ? `<div class="example-final-answer"><strong>Final answer:</strong> <strong>${formatText(item.final_answer)}</strong></div>` : ''}
 			</div>
 		</details>
 	`;
@@ -696,9 +700,11 @@ function renderPractice(practice, context) {
 			<div class="study-box-title">Practice from the prescribed book</div>
 			<div class="practice-list">
 				${practice.map(item => {
-					const href = questionLink && item.anchor
-						? `${questionLink.href}#question-${encodeURIComponent(item.anchor)}`
-						: questionLink?.href || null;
+					const href = questionLink && item.group_anchor
+						? `${questionLink.href}#${encodeURIComponent(item.group_anchor)}`
+						: questionLink && item.anchor
+							? `${questionLink.href}#question-${encodeURIComponent(item.anchor)}`
+							: questionLink?.href || null;
 					const content = `
 						<span class="practice-page">p. ${escapeHtml(item.book_page)}</span>
 						<span class="practice-type">${escapeHtml(item.type)}</span>

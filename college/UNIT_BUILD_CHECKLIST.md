@@ -42,6 +42,7 @@ Use this checklist for every college unit. A unit is not `ready` until the appli
 - [ ] Put every example in a dropdown and include the full step-by-step solution; never leave an example as question + final answer only.
 - [ ] Keep the full example question visible while the dropdown is closed; clicking `+` must reveal the solution/working only.
 - [ ] For every labelled multi-part question/example/answer, put each subpart on its own line; in solutions, give each subpart its own clearly separated labelled panel rather than one continuous block.
+- [ ] End every fully worked example/question/PYQ solution with an explicit bold final answer/result when one exists.
 - [ ] Show every substantive transformation/row operation/substitution/iteration required to reproduce the result.
 - [ ] Correct only grammar/punctuation/obvious typos unless a larger correction is explicitly approved.
 - [ ] Preserve/flag source inconsistencies rather than silently reconciling them.
@@ -140,6 +141,8 @@ For **every technical redraw**:
 - [ ] Flag printed/source discrepancies.
 - [ ] Store/render labelled question subparts structurally so `(i)`, `(ii)`, `(iii)` / `(a)`, `(b)`, `(c)` each begin on a new line.
 - [ ] Render multi-part solutions as separate labelled panels with a visible boundary/background change between parts.
+- [ ] End every fully worked solution with a visually distinct **bold final answer/result** when a determinate result exists; keep the printed-book check separate.
+- [ ] Reference each in-scope textbook problem/exercise set on the theory page at the same logical point where it appears in the book, linking to the exact question-group anchor.
 - [ ] Use `status: source-gap` when sources cannot support an answer.
 
 ## L. PYQs

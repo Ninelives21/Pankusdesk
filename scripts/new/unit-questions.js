@@ -159,7 +159,7 @@ function renderAnswerBody(answer) {
 	for (const paragraph of answer.paragraphs_after || []) pieces.push(`<p>${formatText(paragraph)}</p>`);
 	if (answer.equations?.length) pieces.push(`<div class="answer-equations">${answer.equations.map(eq => `<div>${formatText(eq)}</div>`).join('')}</div>`);
 	if (answer.steps?.length) pieces.push(`<ol class="answer-steps">${answer.steps.map(step => `<li>${formatText(step)}</li>`).join('')}</ol>`);
-	if (answer.result) pieces.push(`<div class="answer-result"><strong>Result:</strong> ${formatText(answer.result)}</div>`);
+	if (answer.result) pieces.push(`<div class="answer-result"><strong class="answer-result-label">Final answer:</strong> <strong class="answer-result-value">${formatText(answer.result)}</strong></div>`);
 	if (answer.book_check) pieces.push(`<div class="book-check">${formatText(answer.book_check)}</div>`);
 	if (answer.note) pieces.push(`<div class="answer-note">${formatText(answer.note)}</div>`);
 	return pieces.join('');

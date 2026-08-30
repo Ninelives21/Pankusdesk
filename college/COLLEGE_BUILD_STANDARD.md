@@ -28,6 +28,8 @@ This document defines the default build contract for every future college unit, 
 15. **Mathematics is rendered, not improvised.** Use MathJax/LaTeX in student-facing data. Fractions use `\dfrac`, not `\frac`.
 16. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic, visual, practice, class-log/link and verifier checks pass.
 17. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
+18. **Every fully solved problem ends with an explicit final answer.** After the complete working, show the final answer/result as a visually distinct bold line whenever the problem has a determinate result. Keep any printed-textbook answer check or provenance note separate from that final-answer line. This applies globally to textbook questions, worked examples, class examples, PYQs and other solved practice.
+19. **Textbook problem sets stay in textbook position.** When an in-scope prescribed-textbook problem/exercise set appears immediately after a theory section, the cumulative unit page must reference/link that exact set at the same logical point in the teaching flow, in addition to the persistent Textbook Questions navigation link.
 
 ---
 
@@ -419,7 +421,9 @@ Never label a generated question as textbook/PYQ material.
 6. Preserve/flag printed discrepancies.
 7. For any labelled multi-part question, store/render the subparts structurally so every part appears on its own line in the closed question view.
 8. For any multi-part solution or answer, render each part as a clearly separate labelled panel rather than one uninterrupted stream of working.
-9. If sources cannot support an answer, keep `status: "source-gap"` instead of filling from memory.
+9. End every fully worked solution with a clearly separated **bold final answer/result** whenever a determinate final result exists; keep `book_check` or other source metadata separate.
+10. Reference each in-scope textbook problem/exercise set on the theory page at the same logical point where the book places it, linking to the exact question-group anchor.
+11. If sources cannot support an answer, keep `status: "source-gap"` instead of filling from memory.
 
 ### 13.2 PYQ rules
 

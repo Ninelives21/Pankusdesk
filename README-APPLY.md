@@ -1,12 +1,20 @@
-# MAC multi-part question/solution layout fix
+# MAC Unit I — Final Answer + Textbook Problem-Set Reference
 
-This delta implements the global PankusDesk rule that labelled subparts are never run together inline.
+This delta makes two global PankusDesk improvements and applies them to MAC Unit I:
 
-Changes:
-- `scripts/new/unit-questions.js`: structured rendering of question subparts and solution subparts.
-- `styles/new/pages/practice.css`: stacked question parts and clearly separated alternating solution panels.
-- `college/1-1/matrices-calculus/kb/data/textbook-questions.json`: Problems 2.4 Q2, Q6, Q7 and Q9 structured into explicit subparts.
-- `college/schemas/textbook-questions.schema.json`: schema support for structured question/answer parts.
-- `college/COLLEGE_BUILD_STANDARD.md` and `college/UNIT_BUILD_CHECKLIST.md`: global rule recorded for all subjects/practice layers.
+1. Fully worked solutions end with a visually distinct **bold final answer/result** whenever a determinate result exists.
+2. In-scope prescribed-textbook problem sets are linked from the theory page at the same logical point where they appear in the textbook. Problems 2.4 (p. 44, Q1–Q9) now appears immediately after the Grewal Normal Form section, before the supporting class-note section.
 
-Apply from the parent folder containing both this delta and `Pankusdesk/`.
+It also extends the shared schemas/renderers so the rules apply across subjects going forward.
+
+## Apply
+
+Dry run:
+
+    rsync -avhn mac-finalanswer-problemref-delta/ Pankusdesk/
+
+Real sync:
+
+    rsync -avh mac-finalanswer-problemref-delta/ Pankusdesk/
+
+No `--delete` is used.

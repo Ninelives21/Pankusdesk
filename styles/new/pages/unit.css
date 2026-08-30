@@ -1534,3 +1534,18 @@ sub {
 .example-solution-content {
 	padding-top: 8px;
 }
+
+
+/* Final result for fully worked examples: global PankusDesk convention. */
+.example-final-answer {
+	margin-top: var(--space-5);
+	padding: var(--space-4) var(--space-5);
+	border-left: 3px solid var(--primary);
+	background: var(--primary-soft);
+	color: var(--text-strong);
+	font-weight: var(--font-weight-heavy);
+}
+
+.example-final-answer mjx-container {
+	font-weight: 700;
+}
