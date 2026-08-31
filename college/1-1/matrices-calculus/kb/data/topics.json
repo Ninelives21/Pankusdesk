@@ -1105,18 +1105,136 @@
     "intro": "**PankusDesk context.** Gauss–Seidel is an iterative method for solving simultaneous linear equations. Instead of obtaining the solution through one finite elimination process, we begin with approximate values and repeatedly improve them. The unknowns are calculated one after another, and each newly calculated value is used immediately in the next calculation. This is the key idea behind the textbook’s statement that Gauss–Seidel is a modification of Jacobi’s method."
   },
   {
+    "id": "u2-orthogonal-transformations",
+    "unit": 2,
+    "title": "Orthogonal transformations",
+    "status": "supporting",
+    "intro": "Grewal introduces the orthogonal-transformation idea before eigenvalues. R25 later requires reduction of a quadratic form by an orthogonal transformation, so only that relevant part of §2.11 is retained here; the surrounding general linear-transformation material is omitted.",
+    "learn": [
+      "For an orthogonal matrix, transpose and inverse are the same: \\(A^{-1}=A^{T}\\).",
+      "A square matrix is orthogonal when \\(AA^{T}=A^{T}A=I\\).",
+      "The determinant of an orthogonal matrix is \\(\\pm1\\)."
+    ],
+    "sections": [
+      {
+        "heading": "2.11 (2) Orthogonal transformation",
+        "scope": "supporting",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0058",
+          "TB-P0059"
+        ],
+        "book_refs": [
+          {
+            "pages": "58–59",
+            "note": "Orthogonal transformation, orthogonal matrix and observations"
+          }
+        ],
+        "paragraphs": [
+          "The linear transformation \\(Y=AX\\) is said to be orthogonal if it transforms \\(y_1^2+y_2^2+\\cdots+y_n^2\\) into \\(x_1^2+x_2^2+\\cdots+x_n^2\\). The matrix of an orthogonal transformation is called an orthogonal matrix.",
+          "Since \\(X^{T}X=x_1^2+x_2^2+\\cdots+x_n^2\\) and \\(Y^{T}Y=y_1^2+y_2^2+\\cdots+y_n^2\\), for \\(Y=AX\\) we have",
+          "\\[Y^{T}Y=(AX)^{T}(AX)=X^{T}A^{T}AX.\\]",
+          "For the transformation to preserve the sum of squares, \\(A^{T}A=I\\). Therefore \\(A^{T}=A^{-1}\\), and hence a square matrix \\(A\\) is orthogonal if \\(AA^{T}=A^{T}A=I\\)."
+        ],
+        "bullets": [
+          "Obs. 1. If \\(A\\) is orthogonal, then \\(A^{T}\\) and \\(A^{-1}\\) are also orthogonal.",
+          "Obs. 2. If \\(A\\) is orthogonal, then \\(|A|=\\pm1\\)."
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.42 — Prove that the following matrix is orthogonal.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}-2/3&1/3&2/3\\\\2/3&2/3&1/3\\\\1/3&-2/3&2/3\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. To prove that \\(A\\) is orthogonal, compute \\(AA^{T}\\).",
+              "\\[A^{T}=\\begin{bmatrix}-2/3&2/3&1/3\\\\1/3&2/3&-2/3\\\\2/3&1/3&2/3\\end{bmatrix}.\\]",
+              "\\[AA^{T}=\\begin{bmatrix}4/9+1/9+4/9&-4/9+2/9+2/9&-2/9-2/9+4/9\\\\-4/9+2/9+2/9&4/9+4/9+1/9&2/9-4/9+2/9\\\\-2/9-2/9+4/9&2/9-4/9+2/9&1/9+4/9+4/9\\end{bmatrix}=I.\\]",
+              "Hence \\(AA^{T}=I\\), so the matrix is orthogonal."
+            ],
+            "final_answer": "The given matrix is orthogonal."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "formulas": [
+      "\\[AA^{T}=A^{T}A=I,\\qquad A^{-1}=A^{T}.\\]",
+      "\\[|A|=\\pm1.\\]"
+    ],
+    "method": [
+      "Form the transpose \\(A^{T}\\).",
+      "Multiply \\(AA^{T}\\) (or \\(A^{T}A\\).)",
+      "If the result is the identity matrix, \\(A\\) is orthogonal."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0058",
+      "TB-P0059"
+    ],
+    "book_refs": [
+      {
+        "pages": "58–59",
+        "note": "Orthogonal transformation prerequisite"
+      }
+    ],
+    "cautions": [],
+    "practice": null,
+    "self_checks": [],
+    "class_history": null
+  },
+  {
     "id": "u2-eigenvalues",
     "unit": 2,
     "title": "Eigenvalues",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U2"
+    "intro": "The core Unit II sequence begins at Grewal §2.13. Eigenvalues are obtained from the characteristic equation of a square matrix.",
+    "learn": [
+      "Form \\(A-\\lambda I\\).",
+      "Set \\(|A-\\lambda I|=0\\); this is the characteristic equation.",
+      "Its roots are the eigenvalues (also called latent or characteristic roots)."
     ],
-    "book_refs": [],
+    "sections": [
+      {
+        "heading": "2.13 (1) Eigen Values",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0061"
+        ],
+        "book_refs": [
+          {
+            "pages": "61",
+            "note": "Definition of characteristic equation and eigenvalues"
+          }
+        ],
+        "paragraphs": [
+          "If \\(A\\) is any square matrix of order \\(n\\), form the matrix \\(A-\\lambda I\\), where \\(I\\) is the \\(n\\)th-order unit matrix. The determinant of this matrix equated to zero,",
+          "\\[|A-\\lambda I|=0,\\]",
+          "is called the characteristic equation of \\(A\\). On expanding the determinant, it takes the form",
+          "\\[(-1)^n\\lambda^n+k_1\\lambda^{n-1}+k_2\\lambda^{n-2}+\\cdots+k_n=0.\\]",
+          "The roots of this equation are called the eigenvalues, latent roots or characteristic roots of the matrix \\(A\\)."
+        ]
+      }
+    ],
+    "formulas": [
+      "\\[|A-\\lambda I|=0.\\]"
+    ],
+    "method": [
+      "Write \\(A-\\lambda I\\).",
+      "Expand \\(|A-\\lambda I|\\) and obtain the characteristic polynomial.",
+      "Solve the characteristic equation for \\(\\lambda\\)."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0061"
+    ],
+    "book_refs": [
+      {
+        "pages": "61",
+        "note": "Eigenvalues and characteristic equation"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
@@ -1127,32 +1245,171 @@
     "unit": 2,
     "title": "Eigenvectors and their properties",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U2"
+    "intro": "For each eigenvalue, Grewal obtains the corresponding non-zero vector from the homogeneous system \\((A-\\lambda I)X=0\\), and then records the principal properties of eigenvalues.",
+    "learn": [
+      "An eigenvector corresponding to \\(\\lambda\\) is a non-zero solution of \\((A-\\lambda I)X=0\\).",
+      "Eigenvectors are not unique: any non-zero scalar multiple is also an eigenvector.",
+      "Distinct eigenvalues give linearly independent eigenvectors.",
+      "The sum and product of eigenvalues equal the trace and determinant respectively."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
-    "class_history": null
-  },
-  {
-    "id": "u2-diagonalization",
-    "unit": 2,
-    "title": "Diagonalization of a matrix",
-    "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U2"
+    "sections": [
+      {
+        "heading": "2.13 (2) Eigen vectors",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0061",
+          "TB-P0062"
+        ],
+        "book_refs": [
+          {
+            "pages": "61–62",
+            "note": "Definition and observations on eigenvectors"
+          }
+        ],
+        "paragraphs": [
+          "Let the linear transformation be \\(Y=AX\\). If a non-zero vector \\(X\\) transforms into a scalar multiple \\(\\lambda X\\) of itself, then",
+          "\\[\\lambda X=AX,\\qquad AX-\\lambda IX=0,\\qquad (A-\\lambda I)X=0.\\]",
+          "This is a homogeneous system. It has a non-trivial solution only when the coefficient matrix is singular, i.e. only when \\(|A-\\lambda I|=0\\). For each root \\(\\lambda\\), a corresponding non-zero solution \\(X\\) is called an eigenvector or latent vector."
+        ],
+        "bullets": [
+          "Obs. 1. Corresponding to \\(n\\) distinct eigenvalues, we get \\(n\\) independent eigenvectors. When eigenvalues are repeated, it may or may not be possible to obtain linearly independent eigenvectors for the repeated roots.",
+          "Obs. 2. If \\(X\\) is an eigenvector for \\(\\lambda\\), then \\(cX\\) is also an eigenvector for any non-zero scalar \\(c\\). Thus an eigenvector corresponding to an eigenvalue is not unique."
+        ]
+      },
+      {
+        "heading": "Worked examples on eigenvalues and eigenvectors",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0062",
+          "TB-P0063",
+          "TB-P0064",
+          "TB-P0065"
+        ],
+        "book_refs": [
+          {
+            "pages": "62–65",
+            "note": "Examples 2.45–2.47"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.45 — Determine the eigenvalues and eigenvectors of the matrix.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}4&6&6\\\\1&3&2\\\\-1&-4&-3\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. Step 1: The characteristic equation is \\(|A-\\lambda I|=0\\).",
+              "\\[\\begin{vmatrix}4-\\lambda&6&6\\\\1&3-\\lambda&2\\\\-1&-4&-3-\\lambda\\end{vmatrix}=0.\\]",
+              "For the cubic \\(\\lambda^3-S_1\\lambda^2+S_2\\lambda-|A|=0\\), \\(S_1=4+3-3=4\\), \\(S_2=-1\\), and \\(|A|=-4\\). Hence",
+              "\\[\\lambda^3-4\\lambda^2-\\lambda+4=0.\\]",
+              "Step 2: Since \\(\\lambda=1\\) is a root, factor the polynomial:",
+              "\\[(\\lambda-1)(\\lambda^2-3\\lambda-4)=(\\lambda-1)(\\lambda+1)(\\lambda-4)=0.\\]",
+              "Thus the eigenvalues are \\(\\lambda=-1,1,4\\).",
+              "Step 3: Use \\((A-\\lambda I)X=0\\), where \\(X=[x\\ y\\ z]^T\\).",
+              "For \\(\\lambda=-1\\), use \\(5x+6y+6z=0\\) and \\(x+4y+2z=0\\). Solving gives \\(x:y:z=-6:-2:7\\), so one eigenvector is",
+              "\\[X_1=\\begin{bmatrix}-6\\\\-2\\\\7\\end{bmatrix}.\\]",
+              "For \\(\\lambda=1\\), the independent equations may be taken as \\(x+2y+2z=0\\) and \\(-x-4y-4z=0\\). These give \\(x=0,\\ y=-z\\), so take",
+              "\\[X_2=\\begin{bmatrix}0\\\\1\\\\-1\\end{bmatrix}.\\]",
+              "For \\(\\lambda=4\\), the equations include \\(y+z=0\\) and \\(x-y+2z=0\\). With \\(z=1\\), \\(y=-1\\) and \\(x=-3\\), giving",
+              "\\[X_3=\\begin{bmatrix}-3\\\\-1\\\\1\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(\\lambda=-1,1,4\\), with eigenvectors proportional to \\((-6,-2,7)^T,(0,1,-1)^T,(-3,-1,1)^T\\)."
+          },
+          {
+            "title": "Example 2.46 — Find the eigenvalues and eigenvectors of the matrix.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&1&1\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. The characteristic equation is",
+              "\\[\\begin{vmatrix}1-\\lambda&1&3\\\\1&5-\\lambda&1\\\\3&1&1-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-7\\lambda^2+36=0.\\]",
+              "Since \\(\\lambda=-2\\) is a root,",
+              "\\[(\\lambda+2)(\\lambda^2-9\\lambda+18)=(\\lambda+2)(\\lambda-3)(\\lambda-6)=0.\\]",
+              "Hence the eigenvalues are \\(-2,3,6\\).",
+              "For \\(\\lambda=-2\\), the equations are \\(3x+y+3z=0\\), \\(x+7y+z=0\\), and \\(3x+y+3z=0\\). Solving gives \\(x:y:z=-1:0:1\\).",
+              "\\[X_1=\\begin{bmatrix}-1\\\\0\\\\1\\end{bmatrix}.\\]",
+              "For \\(\\lambda=3\\), the equations include \\(-2x+y+3z=0\\) and \\(x+2y+z=0\\). Taking \\(z=1\\) gives \\(y=-1,x=1\\).",
+              "\\[X_2=\\begin{bmatrix}1\\\\-1\\\\1\\end{bmatrix}.\\]",
+              "For \\(\\lambda=6\\), the equations include \\(-5x+y+3z=0\\) and \\(x-y+z=0\\). Taking \\(z=1\\) gives \\(x=1,y=2\\).",
+              "\\[X_3=\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(\\lambda=-2,3,6\\), with eigenvectors proportional to \\((-1,0,1)^T,(1,-1,1)^T,(1,2,1)^T\\)."
+          },
+          {
+            "title": "Example 2.47 — Find the eigenvalues and eigenvectors of the matrix.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}3&1&4\\\\0&2&6\\\\0&0&5\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. Since the matrix is triangular, its eigenvalues are the diagonal elements. Equivalently,",
+              "\\[|A-\\lambda I|=(3-\\lambda)(2-\\lambda)(5-\\lambda)=0.\\]",
+              "Thus the eigenvalues are \\(2,3,5\\).",
+              "For \\(\\lambda=2\\), \\(z=0\\) and \\(x+y=0\\); take \\(x=1,y=-1\\):",
+              "\\[X_1=\\begin{bmatrix}1\\\\-1\\\\0\\end{bmatrix}.\\]",
+              "For \\(\\lambda=3\\), the equations force \\(y=z=0\\); take \\(x=1\\):",
+              "\\[X_2=\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}.\\]",
+              "For \\(\\lambda=5\\), \\(-3y+6z=0\\) gives \\(y=2z\\), and \\(-2x+y+4z=0\\) then gives \\(x=3z\\). Taking \\(z=1\\):",
+              "\\[X_3=\\begin{bmatrix}3\\\\2\\\\1\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(\\lambda=2,3,5\\), with eigenvectors proportional to \\((1,-1,0)^T,(1,0,0)^T,(3,2,1)^T\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "2.14 Properties of Eigen Values",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0065",
+          "TB-P0066"
+        ],
+        "book_refs": [
+          {
+            "pages": "65–66",
+            "note": "Properties I–VIII of eigenvalues"
+          }
+        ],
+        "bullets": [
+          "I. A square matrix \\(A\\) and its transpose \\(A^{T}\\) have the same eigenvalues, since \\(|A^{T}-\\lambda I|=|(A-\\lambda I)^{T}|=|A-\\lambda I|\\).",
+          "II. The eigenvalues of a triangular matrix are its diagonal elements. Hence the eigenvalues of a diagonal matrix are just its diagonal elements.",
+          "III. The eigenvalues of an idempotent matrix are either 0 or 1. If \\(A^2=A\\) and \\(AX=\\lambda X\\), then \\(\\lambda^2X=\\lambda X\\), so \\(\\lambda(\\lambda-1)=0\\).",
+          "IV. The sum of the eigenvalues of a matrix is its trace, i.e. the sum of the principal diagonal elements.",
+          "V. The product of the eigenvalues of a matrix \\(A\\) is equal to \\(|A|\\).",
+          "VI. If \\(\\lambda\\) is an eigenvalue of a non-singular matrix \\(A\\), then \\(1/\\lambda\\) is an eigenvalue of \\(A^{-1}\\).",
+          "VII. If \\(\\lambda\\) is an eigenvalue of an orthogonal matrix \\(A\\), then \\(1/\\lambda\\) is also an eigenvalue of \\(A\\), because \\(A^{-1}=A^{T}\\) and \\(A\\) and \\(A^{T}\\) have the same eigenvalues.",
+          "VIII. If \\(\\lambda_1,\\lambda_2,\\ldots,\\lambda_n\\) are the eigenvalues of \\(A\\), then \\(A^m\\) has eigenvalues \\(\\lambda_1^m,\\lambda_2^m,\\ldots,\\lambda_n^m\\) for a positive integer \\(m\\); the corresponding eigenvectors remain the same."
+        ]
+      }
     ],
-    "book_refs": [],
+    "formulas": [
+      "\\[(A-\\lambda I)X=0,\\qquad X\\ne0.\\]",
+      "\\[\\sum_i\\lambda_i=\\operatorname{tr}(A),\\qquad \\prod_i\\lambda_i=|A|.\\]",
+      "\\[\\lambda(A^{-1})=1/\\lambda(A),\\qquad \\lambda(A^m)=\\lambda(A)^m.\\]"
+    ],
+    "method": [
+      "Find the eigenvalues from \\(|A-\\lambda I|=0\\).",
+      "For each eigenvalue substitute \\(\\lambda\\) into \\((A-\\lambda I)X=0\\).",
+      "Solve the resulting homogeneous equations for a non-zero vector.",
+      "Any non-zero scalar multiple of that vector is also a valid eigenvector."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0061",
+      "TB-P0062",
+      "TB-P0063",
+      "TB-P0064",
+      "TB-P0065",
+      "TB-P0066"
+    ],
+    "book_refs": [
+      {
+        "pages": "61–66",
+        "note": "Eigenvectors, Examples 2.45–2.47 and properties of eigenvalues"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
@@ -1163,14 +1420,54 @@
     "unit": 2,
     "title": "Cayley-Hamilton Theorem (without proof)",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U2"
+    "intro": "R25 explicitly prescribes the Cayley–Hamilton theorem without proof. Grewal’s theorem statement is retained, but the proof printed across pp. 66–67 is intentionally not reproduced as syllabus theory.",
+    "learn": [
+      "Every square matrix satisfies its own characteristic equation.",
+      "Obtain the matrix identity by replacing \\(\\lambda\\) with \\(A\\) and the scalar constant with that constant times \\(I\\)."
     ],
-    "book_refs": [],
+    "sections": [
+      {
+        "heading": "2.15 Cayley-Hamilton Theorem",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0066",
+          "TB-P0067"
+        ],
+        "book_refs": [
+          {
+            "pages": "66–67",
+            "note": "Theorem statement; proof omitted because R25 says without proof"
+          }
+        ],
+        "paragraphs": [
+          "Every square matrix satisfies its own characteristic equation. If the characteristic equation for an \\(n\\)th-order square matrix \\(A\\) is",
+          "\\[|A-\\lambda I|=(-1)^n\\lambda^n+k_1\\lambda^{n-1}+\\cdots+k_n=0,\\]",
+          "then the corresponding matrix equation is",
+          "\\[(-1)^nA^n+k_1A^{n-1}+\\cdots+k_nI=0.\\]",
+          "For this R25 course, the theorem is used directly; its proof is outside the required scope."
+        ]
+      }
+    ],
+    "formulas": [
+      "\\[p(\\lambda)=0\\quad\\Longrightarrow\\quad p(A)=0.\\]"
+    ],
+    "method": [
+      "Find the characteristic equation of \\(A\\).",
+      "Replace \\(\\lambda^r\\) by \\(A^r\\) and the scalar constant by that constant times \\(I\\).",
+      "Use the resulting identity to verify the theorem or simplify later expressions."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0066",
+      "TB-P0067"
+    ],
+    "book_refs": [
+      {
+        "pages": "66–67",
+        "note": "Cayley-Hamilton theorem statement"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
@@ -1181,14 +1478,114 @@
     "unit": 2,
     "title": "Finding inverse of a matrix by Cayley-Hamilton Theorem",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U2"
+    "intro": "Grewal obtains the inverse directly from the Cayley–Hamilton identity by multiplying by \\(A^{-1}\\).",
+    "learn": [
+      "The constant term of the characteristic equation must be non-zero for \\(A^{-1}\\) to exist.",
+      "After applying Cayley–Hamilton, isolate \\(A^{-1}\\)."
     ],
-    "book_refs": [],
+    "sections": [
+      {
+        "heading": "Another method of finding the inverse",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0067"
+        ],
+        "book_refs": [
+          {
+            "pages": "67",
+            "note": "Inverse formula derived from Cayley-Hamilton"
+          }
+        ],
+        "paragraphs": [
+          "From",
+          "\\[(-1)^nA^n+k_1A^{n-1}+\\cdots+k_{n-1}A+k_nI=0,\\]",
+          "multiply by \\(A^{-1}\\) to get",
+          "\\[(-1)^nA^{n-1}+k_1A^{n-2}+\\cdots+k_{n-1}I+k_nA^{-1}=0.\\]",
+          "Hence",
+          "\\[A^{-1}=-\\dfrac1{k_n}\\left[(-1)^nA^{n-1}+k_1A^{n-2}+\\cdots+k_{n-1}I\\right].\\]",
+          "Thus the inverse is obtained in terms of powers of \\(A\\)."
+        ]
+      },
+      {
+        "heading": "Worked inverse examples",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0067",
+          "TB-P0068"
+        ],
+        "book_refs": [
+          {
+            "pages": "67–68",
+            "note": "Examples 2.48–2.49"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.48 — Verify Cayley–Hamilton theorem, find the inverse, and reduce the given polynomial.",
+            "question_paragraphs": [
+              "For \\(A=\\begin{bmatrix}1&4\\\\2&3\\end{bmatrix}\\), verify Cayley–Hamilton theorem and find \\(A^{-1}\\). Also express \\(A^5-4A^4-7A^3+11A^2-A-10I\\) as a linear polynomial in \\(A\\)."
+            ],
+            "paragraphs": [
+              "Solution. The characteristic equation is",
+              "\\[\\begin{vmatrix}1-\\lambda&4\\\\2&3-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^2-4\\lambda-5=0.\\]",
+              "By Cayley–Hamilton,",
+              "\\[A^2-4A-5I=0.\\]",
+              "Now \\(A^2=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix}\\), so",
+              "\\[A^2-4A-5I=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix}-\\begin{bmatrix}4&16\\\\8&12\\end{bmatrix}-\\begin{bmatrix}5&0\\\\0&5\\end{bmatrix}=0.\\]",
+              "This verifies the theorem.",
+              "Multiply \\(A^2-4A-5I=0\\) by \\(A^{-1}\\):",
+              "\\[A-4I-5A^{-1}=0,\\qquad A^{-1}=\\dfrac15(A-4I).\\]",
+              "\\[A^{-1}=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}.\\]",
+              "For the polynomial, divide \\(\\lambda^5-4\\lambda^4-7\\lambda^3+11\\lambda^2-\\lambda-10\\) by \\(\\lambda^2-4\\lambda-5\\). The remainder is \\(\\lambda+5\\). Therefore, using the characteristic equation,",
+              "\\[A^5-4A^4-7A^3+11A^2-A-10I=A+5I.\\]"
+            ],
+            "final_answer": "\\(A^{-1}=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}\\), and the polynomial reduces to \\(A+5I\\)."
+          },
+          {
+            "title": "Example 2.49 — Find the characteristic equation and hence the inverse.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. The characteristic equation is",
+              "\\[\\begin{vmatrix}1-\\lambda&1&3\\\\1&3-\\lambda&-3\\\\-2&-4&-4-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-20\\lambda+8=0.\\]",
+              "By Cayley–Hamilton,",
+              "\\[A^3-20A+8I=0.\\]",
+              "Multiplying by \\(A^{-1}\\),",
+              "\\[A^2-20I+8A^{-1}=0,\\qquad A^{-1}=\\dfrac52I-\\dfrac18A^2.\\]",
+              "Now",
+              "\\[A^2=\\begin{bmatrix}-4&-8&-12\\\\10&22&6\\\\2&2&22\\end{bmatrix}.\\]",
+              "Therefore",
+              "\\[A^{-1}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(A^{-1}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "formulas": [
+      "\\[A^{-1}=-\\dfrac1{k_n}\\left[(-1)^nA^{n-1}+k_1A^{n-2}+\\cdots+k_{n-1}I\\right].\\]"
+    ],
+    "method": [
+      "Find the characteristic equation.",
+      "Apply Cayley–Hamilton to obtain a matrix identity.",
+      "Multiply the identity by \\(A^{-1}\\).",
+      "Rearrange to isolate \\(A^{-1}\\) and evaluate the required lower powers of \\(A\\)."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0067",
+      "TB-P0068"
+    ],
+    "book_refs": [
+      {
+        "pages": "67–68",
+        "note": "Inverse from Cayley-Hamilton and Examples 2.48–2.49"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
@@ -1199,15 +1596,324 @@
     "unit": 2,
     "title": "Finding power of a matrix by Cayley-Hamilton Theorem",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "intro": "Higher powers and polynomial expressions in a matrix are reduced by repeatedly using the Cayley–Hamilton identity, or by reducing the corresponding scalar polynomial modulo the characteristic polynomial.",
+    "learn": [
+      "Use the characteristic equation to express a high power in terms of lower powers.",
+      "Group a polynomial expression so that multiples of the characteristic polynomial vanish."
+    ],
+    "sections": [
+      {
+        "heading": "Reducing powers and polynomial expressions",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0067",
+          "TB-P0068"
+        ],
+        "book_refs": [
+          {
+            "pages": "67–68",
+            "note": "Polynomial reduction in Examples 2.48 and 2.50"
+          }
+        ],
+        "paragraphs": [
+          "Once Cayley–Hamilton gives a relation among \\(I,A,A^2,\\ldots,A^n\\), use it recursively to replace higher powers by lower powers. For a polynomial in \\(A\\), the same result can be obtained by dividing the scalar polynomial by the characteristic polynomial and retaining the remainder."
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.50 — Find the characteristic equation, compute the inverse, and evaluate the matrix polynomial.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}2&1&1\\\\0&1&0\\\\1&1&2\\end{bmatrix}.\\]",
+              "Find the characteristic equation and hence compute \\(A^{-1}\\). Also find the matrix represented by \\(A^8-5A^7+7A^6-3A^5+A^4-5A^3+8A^2-2A+I\\)."
+            ],
+            "paragraphs": [
+              "Solution. The characteristic equation is",
+              "\\[\\begin{vmatrix}2-\\lambda&1&1\\\\0&1-\\lambda&0\\\\1&1&2-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-5\\lambda^2+7\\lambda-3=0.\\]",
+              "By Cayley–Hamilton,",
+              "\\[A^3-5A^2+7A-3I=0.\\]",
+              "Multiplying by \\(A^{-1}\\),",
+              "\\[A^2-5A+7I-3A^{-1}=0,\\qquad A^{-1}=\\dfrac13(A^2-5A+7I).\\]",
+              "Compute",
+              "\\[A^2=\\begin{bmatrix}5&4&4\\\\0&1&0\\\\4&4&5\\end{bmatrix},\\]",
+              "so",
+              "\\[A^2-5A+7I=\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix},\\qquad A^{-1}=\\dfrac13\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix}.\\]",
+              "For the polynomial, group the characteristic-expression factors:",
+              "\\[A^8-5A^7+7A^6-3A^5+A^4-5A^3+8A^2-2A+I\\]",
+              "\\[=A^5(A^3-5A^2+7A-3I)+A(A^3-5A^2+7A-3I)+A^2+A+I.\\]",
+              "The two bracketed factors are zero by Cayley–Hamilton. Hence the expression is \\(A^2+A+I\\):",
+              "\\[A^2+A+I=\\begin{bmatrix}8&5&5\\\\0&3&0\\\\5&5&8\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(A^{-1}=\\dfrac13\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix}\\), and the polynomial equals \\(\\begin{bmatrix}8&5&5\\\\0&3&0\\\\5&5&8\\end{bmatrix}\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "formulas": [
+      "If \\(p(A)=0\\), any matrix polynomial can be reduced to the remainder on division by \\(p(\\lambda)\\)."
+    ],
+    "method": [
+      "Find and apply the characteristic equation.",
+      "Express the required high power recursively, or divide the corresponding scalar polynomial by the characteristic polynomial.",
+      "Replace the high-degree expression by its lower-degree remainder in \\(A\\)."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0067",
+      "TB-P0068"
+    ],
+    "book_refs": [
+      {
+        "pages": "67–68",
+        "note": "Cayley-Hamilton applications to powers and polynomial expressions"
+      }
+    ],
+    "cautions": [],
+    "practice": null,
+    "self_checks": [],
+    "class_history": null
+  },
+  {
+    "id": "u2-eigenvalue-worked-examples",
+    "unit": 2,
+    "title": "Additional eigenvalue and eigenvector examples",
+    "status": "supporting",
+    "intro": "Grewal places two further fully worked eigenvalue/eigenvector examples after the Cayley–Hamilton applications and before Problems 2.9. They are retained at that same point in the book sequence.",
+    "learn": [
+      "These examples repeat the complete workflow: characteristic equation, eigenvalues, then one eigenvector for each eigenvalue."
+    ],
+    "sections": [
+      {
+        "heading": "Examples 2.51–2.52",
+        "scope": "supporting",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0068",
+          "TB-P0069",
+          "TB-P0070",
+          "TB-P0071"
+        ],
+        "book_refs": [
+          {
+            "pages": "68–71",
+            "note": "Additional eigenvalue/eigenvector worked examples"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.51 — Find the eigenvalues and eigenvectors of the matrix.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}14&-10\\\\5&-1\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. Step 1: The characteristic equation is",
+              "\\[\\begin{vmatrix}14-\\lambda&-10\\\\5&-1-\\lambda\\end{vmatrix}=0.\\]",
+              "\\[(14-\\lambda)(-1-\\lambda)+50=0,\\qquad \\lambda^2-13\\lambda+36=0.\\]",
+              "\\[(\\lambda-9)(\\lambda-4)=0.\\]",
+              "Hence the eigenvalues are \\(9\\) and \\(4\\).",
+              "Step 2: Use \\((A-\\lambda I)X=0\\), with \\(X=[x\\ y]^T\\).",
+              "For \\(\\lambda=9\\),",
+              "\\[\\begin{bmatrix}5&-10\\\\5&-10\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=0,\\qquad x-2y=0.\\]",
+              "Taking \\(y=1\\) gives \\(x=2\\), so",
+              "\\[X_1=\\begin{bmatrix}2\\\\1\\end{bmatrix}.\\]",
+              "For \\(\\lambda=4\\),",
+              "\\[\\begin{bmatrix}10&-10\\\\5&-5\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=0,\\qquad x-y=0.\\]",
+              "Taking \\(y=1\\) gives \\(x=1\\), so",
+              "\\[X_2=\\begin{bmatrix}1\\\\1\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(\\lambda=9,4\\), with eigenvectors proportional to \\((2,1)^T\\) and \\((1,1)^T\\)."
+          },
+          {
+            "title": "Example 2.52 — Find the eigenvalues and eigenvectors of the matrix.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}1&0&-1\\\\1&2&1\\\\2&2&3\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. Step 1: The characteristic equation is \\(|A-\\lambda I|=0\\). For a cubic,",
+              "\\[\\lambda^3-S_1\\lambda^2+S_2\\lambda-|A|=0.\\]",
+              "Here \\(S_1=1+2+3=6\\), \\(S_2=11\\), and \\(|A|=6\\). Hence",
+              "\\[\\lambda^3-6\\lambda^2+11\\lambda-6=0.\\]",
+              "Since \\(\\lambda=1\\) is a root,",
+              "\\[(\\lambda-1)(\\lambda^2-5\\lambda+6)=(\\lambda-1)(\\lambda-2)(\\lambda-3)=0.\\]",
+              "Thus the eigenvalues are \\(1,2,3\\).",
+              "For \\(\\lambda=1\\), the first row of \\((A-I)X=0\\) gives \\(-z=0\\), and the second gives \\(x+y=0\\). Taking \\(y=1\\):",
+              "\\[X_1=\\begin{bmatrix}-1\\\\1\\\\0\\end{bmatrix}.\\]",
+              "For \\(\\lambda=2\\), \\(-x-z=0\\) gives \\(x=-z\\), and \\(2x+2y+z=0\\). Taking \\(z=2\\) gives \\(x=-2,y=1\\):",
+              "\\[X_2=\\begin{bmatrix}-2\\\\1\\\\2\\end{bmatrix}.\\]",
+              "For \\(\\lambda=3\\), \\(-2x-z=0\\) gives \\(z=-2x\\), and \\(x-y+z=0\\) gives \\(y=-x\\). Taking \\(x=1\\):",
+              "\\[X_3=\\begin{bmatrix}1\\\\-1\\\\-2\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(\\lambda=1,2,3\\), with eigenvectors proportional to \\((-1,1,0)^T,(-2,1,2)^T,(1,-1,-2)^T\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U2"
+      "SYL-R25-U2",
+      "TB-P0068",
+      "TB-P0069",
+      "TB-P0070",
+      "TB-P0071"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "68–71",
+        "note": "Examples 2.51–2.52"
+      }
+    ],
     "cautions": [],
+    "practice": null,
+    "self_checks": [],
+    "class_history": null
+  },
+  {
+    "id": "u2-diagonalization",
+    "unit": 2,
+    "title": "Diagonalization of a matrix",
+    "status": "core",
+    "intro": "Grewal calls this “Reduction to Diagonal Form.” A matrix is diagonalizable when enough linearly independent eigenvectors can be assembled as the columns of a non-singular modal matrix.",
+    "learn": [
+      "If \\(A\\) has \\(n\\) linearly independent eigenvectors, there is a non-singular \\(P\\) such that \\(P^{-1}AP=D\\) is diagonal.",
+      "The columns of \\(P\\) are eigenvectors; the diagonal entries of \\(D\\) are the corresponding eigenvalues.",
+      "For powers, \\(A^n=PD^nP^{-1}\\)."
+    ],
+    "sections": [
+      {
+        "heading": "2.16 (1) Reduction to diagonal form",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0074"
+        ],
+        "book_refs": [
+          {
+            "pages": "74",
+            "note": "Diagonalization theorem, modal/spectral matrix and similarity"
+          }
+        ],
+        "paragraphs": [
+          "If a square matrix \\(A\\) of order \\(n\\) has \\(n\\) linearly independent eigenvectors, then a matrix \\(P\\) can be found such that \\(P^{-1}AP\\) is a diagonal matrix.",
+          "For order 3, let \\(X_1,X_2,X_3\\) be eigenvectors corresponding to \\(\\lambda_1,\\lambda_2,\\lambda_3\\), and put \\(P=[X_1\\ X_2\\ X_3]\\). Then",
+          "\\[AP=[AX_1\\ AX_2\\ AX_3]=[\\lambda_1X_1\\ \\lambda_2X_2\\ \\lambda_3X_3]=PD,\\]",
+          "where \\(D=\\operatorname{diag}(\\lambda_1,\\lambda_2,\\lambda_3)\\). Therefore",
+          "\\[P^{-1}AP=D.\\]"
+        ],
+        "bullets": [
+          "The matrix \\(P\\) which diagonalizes \\(A\\) is called the modal matrix of \\(A\\), and the resulting diagonal matrix \\(D\\) is called the spectral matrix.",
+          "The diagonal matrix has the eigenvalues of \\(A\\) as its diagonal elements.",
+          "The columns of the modal matrix \\(P\\) are eigenvectors of \\(A\\).",
+          "A matrix \\(\\hat A=P^{-1}AP\\) is similar to \\(A\\); similar matrices have the same eigenvalues."
+        ]
+      },
+      {
+        "heading": "Powers of a matrix by diagonalization",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0074"
+        ],
+        "book_refs": [
+          {
+            "pages": "74",
+            "note": "Powers of a matrix and working procedure"
+          }
+        ],
+        "paragraphs": [
+          "If \\(D=P^{-1}AP\\), then \\(D^n=P^{-1}A^nP\\). Hence",
+          "\\[A^n=PD^nP^{-1},\\qquad D^n=\\operatorname{diag}(\\lambda_1^n,\\lambda_2^n,\\lambda_3^n).\\]"
+        ],
+        "bullets": [
+          "Working procedure: 1. Find the eigenvalues of \\(A\\).",
+          "2. Find the corresponding eigenvectors and write the modal matrix \\(P\\).",
+          "3. Find \\(D=P^{-1}AP\\).",
+          "4. Obtain \\(A^n=PD^nP^{-1}\\)."
+        ]
+      },
+      {
+        "heading": "Worked examples",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0075",
+          "TB-P0076"
+        ],
+        "book_refs": [
+          {
+            "pages": "75–76",
+            "note": "Examples 2.53–2.54"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.53 — Reduce the matrix to diagonal form.",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}-1&2&-2\\\\1&2&1\\\\-1&-1&0\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. The characteristic equation is",
+              "\\[\\begin{vmatrix}-1-\\lambda&2&-2\\\\1&2-\\lambda&1\\\\-1&-1&-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-\\lambda^2-5\\lambda+5=0.\\]",
+              "Hence the eigenvalues are \\(\\lambda_1=1,\\lambda_2=\\sqrt5,\\lambda_3=-\\sqrt5\\).",
+              "For \\(\\lambda=1\\), solving \\(2x-2y+2z=0\\) and \\(x+y+z=0\\) gives \\(x:y:z=1:0:-1\\). Thus take \\(X_1=(1,0,-1)^T\\).",
+              "For \\(\\lambda=\\sqrt5\\), solving the second and third equations gives an eigenvector \\(X_2=(\\sqrt5-1,1,-1)^T\\).",
+              "For \\(\\lambda=-\\sqrt5\\), an eigenvector is \\(X_3=(\\sqrt5+1,-1,1)^T\\).",
+              "Using these three eigenvectors as columns gives the mathematically consistent modal matrix",
+              "\\[P=\\begin{bmatrix}1&\\sqrt5-1&\\sqrt5+1\\\\0&1&-1\\\\-1&-1&1\\end{bmatrix}.\\]",
+              "The diagonal matrix is",
+              "\\[D=\\begin{bmatrix}1&0&0\\\\0&\\sqrt5&0\\\\0&0&-\\sqrt5\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(P^{-1}AP=D=\\operatorname{diag}(1,\\sqrt5,-\\sqrt5)\\)."
+          },
+          {
+            "title": "Example 2.54 — Find the modal matrix and hence calculate \\(A^4\\).",
+            "question_paragraphs": [
+              "\\[A=\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&1&1\\end{bmatrix}.\\]"
+            ],
+            "paragraphs": [
+              "Solution. The eigenvalues are \\(-2,3,6\\), with corresponding eigenvectors \\((-1,0,1)^T,(1,-1,1)^T,(1,2,1)^T\\). Hence",
+              "\\[P=\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}.\\]",
+              "Its determinant is \\(|P|=6\\), and",
+              "\\[P^{-1}=\\dfrac16\\begin{bmatrix}-3&0&3\\\\2&-2&2\\\\1&2&1\\end{bmatrix}.\\]",
+              "Therefore",
+              "\\[D=P^{-1}AP=\\begin{bmatrix}-2&0&0\\\\0&3&0\\\\0&0&6\\end{bmatrix},\\qquad D^4=\\begin{bmatrix}16&0&0\\\\0&81&0\\\\0&0&1296\\end{bmatrix}.\\]",
+              "Now use \\(A^4=PD^4P^{-1}\\):",
+              "\\[A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(P=\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}\\), and \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "formulas": [
+      "\\[P^{-1}AP=D.\\]",
+      "\\[A^n=PD^nP^{-1}.\\]"
+    ],
+    "method": [
+      "Find all eigenvalues.",
+      "Find a linearly independent eigenvector for each eigenvalue.",
+      "Place the eigenvectors as columns of \\(P\\).",
+      "Form \\(D=P^{-1}AP\\); its diagonal entries are the matching eigenvalues.",
+      "For a power, compute \\(D^n\\) and then \\(A^n=PD^nP^{-1}\\)."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0074",
+      "TB-P0075",
+      "TB-P0076"
+    ],
+    "book_refs": [
+      {
+        "pages": "74–76",
+        "note": "Reduction to diagonal form and Examples 2.53–2.54"
+      }
+    ],
+    "cautions": [
+      "Verified textbook mismatch — Grewal p. 75, Example 2.53: the printed modal matrix shows +1 as the lower-left entry, but the eigenvector derived immediately above is (1, 0, −1). The page here uses −1, which makes that column the stated eigenvector.",
+      "Verified textbook mismatch — Grewal p. 76, Example 2.54: the printed final matrix for A⁴ has entries 485 and 1051. Direct multiplication and the displayed P, D and P⁻¹ give A⁴ = [[251, 405, 235], [405, 891, 405], [235, 405, 251]], which is used here."
+    ],
     "practice": null,
     "self_checks": [],
     "class_history": null
@@ -1217,32 +1923,54 @@
     "unit": 2,
     "title": "Quadratic forms",
     "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U2"
+    "intro": "Grewal begins §2.17 by expressing a quadratic form as \\(X^{T}AX\\), where the associated matrix \\(A\\) is symmetric.",
+    "learn": [
+      "A homogeneous expression of second degree is a quadratic form.",
+      "For \\(Q=ax^2+by^2+cz^2+2fyz+2gzx+2hxy\\), the associated symmetric matrix is \\(A=\\begin{bmatrix}a&h&g\\\\h&b&f\\\\g&f&c\\end{bmatrix}\\)."
     ],
-    "book_refs": [],
-    "cautions": [],
-    "practice": null,
-    "self_checks": [],
-    "class_history": null
-  },
-  {
-    "id": "u2-nature-quadratic-forms",
-    "unit": 2,
-    "title": "Nature of the Quadratic Forms",
-    "status": "core",
-    "learn": [],
-    "sections": [],
-    "formulas": [],
-    "method": [],
-    "source_refs": [
-      "SYL-R25-U2"
+    "sections": [
+      {
+        "heading": "2.17 Quadratic form and its matrix",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0077"
+        ],
+        "book_refs": [
+          {
+            "pages": "77",
+            "note": "Definition and matrix representation of a quadratic form"
+          }
+        ],
+        "paragraphs": [
+          "A homogeneous expression of the second degree in any number of variables is called a quadratic form.",
+          "For",
+          "\\[A=\\begin{bmatrix}a&h&g\\\\h&b&f\\\\g&f&c\\end{bmatrix},\\qquad X=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix},\\]",
+          "we have",
+          "\\[X^{T}AX=ax^2+by^2+cz^2+2fyz+2gzx+2hxy.\\]",
+          "Thus the symmetric matrix corresponding to \\(ax^2+by^2+cz^2+2fyz+2gzx+2hxy\\) is",
+          "\\[\\begin{bmatrix}a&h&g\\\\h&b&f\\\\g&f&c\\end{bmatrix}.\\]"
+        ]
+      }
     ],
-    "book_refs": [],
+    "formulas": [
+      "\\[Q=X^{T}AX.\\]",
+      "\\[A=\\begin{bmatrix}a&h&g\\\\h&b&f\\\\g&f&c\\end{bmatrix}\\quad\\text{for }Q=ax^2+by^2+cz^2+2fyz+2gzx+2hxy.\\]"
+    ],
+    "method": [
+      "Write the coefficients of the square terms on the diagonal.",
+      "Place half the coefficient of each cross term in the two symmetric off-diagonal positions."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0077"
+    ],
+    "book_refs": [
+      {
+        "pages": "77",
+        "note": "Quadratic-form definition and matrix representation"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
@@ -1253,14 +1981,261 @@
     "unit": 2,
     "title": "Reduction of Quadratic form to canonical forms by Orthogonal Transformation",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "intro": "For a real symmetric quadratic-form matrix, Grewal uses normalized eigenvectors to form an orthogonal transformation matrix and reduce the form to a sum of squares.",
+    "learn": [
+      "Find the eigenvalues and normalized eigenvectors of the symmetric matrix \\(A\\).",
+      "Use normalized eigenvectors as columns of an orthogonal matrix \\(P\\).",
+      "The canonical form has the eigenvalues as coefficients of the squared transformed variables."
+    ],
+    "sections": [
+      {
+        "heading": "2.17 Reduction of quadratic form to canonical form",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0077"
+        ],
+        "book_refs": [
+          {
+            "pages": "77",
+            "note": "Canonical form by orthogonal transformation"
+          }
+        ],
+        "paragraphs": [
+          "Let \\(\\lambda_1,\\lambda_2,\\lambda_3\\) be the eigenvalues of the symmetric matrix \\(A\\), and let \\(X_1,X_2,X_3\\) be corresponding eigenvectors in normalized form. Put these normalized eigenvectors as the columns of \\(P\\). Then \\(P\\) is orthogonal and",
+          "\\[P^{-1}AP=\\begin{bmatrix}\\lambda_1&0&0\\\\0&\\lambda_2&0\\\\0&0&\\lambda_3\\end{bmatrix}.\\]",
+          "Hence the quadratic form is reduced to the canonical form (also called the sum-of-squares form or principal-axes form)",
+          "\\[\\lambda_1u^2+\\lambda_2v^2+\\lambda_3w^2.\\]",
+          "The diagonal matrix and \\(A\\) are congruent matrices, and this reduction is called a congruent or orthogonal transformation."
+        ]
+      },
+      {
+        "heading": "Worked example",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0077",
+          "TB-P0078"
+        ],
+        "book_refs": [
+          {
+            "pages": "77–78",
+            "note": "Example 2.56"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.56 — Reduce the quadratic form to canonical form and specify the matrix of transformation.",
+            "question_paragraphs": [
+              "Reduce \\(3x^2+5y^2+3z^2-2yz+2zx-2xy\\) to canonical form and specify the matrix of transformation."
+            ],
+            "paragraphs": [
+              "Solution. The symmetric matrix of the quadratic form is",
+              "\\[A=\\begin{bmatrix}3&-1&1\\\\-1&5&-1\\\\1&-1&3\\end{bmatrix}.\\]",
+              "Its characteristic equation is",
+              "\\[\\begin{vmatrix}3-\\lambda&-1&1\\\\-1&5-\\lambda&-1\\\\1&-1&3-\\lambda\\end{vmatrix}=0,\\]",
+              "which gives the eigenvalues \\(2,3,6\\). Therefore the canonical form is",
+              "\\[2u^2+3v^2+6w^2.\\]",
+              "To find the transformation, solve \\((A-\\lambda I)X=0\\).",
+              "For \\(\\lambda=2\\), an eigenvector is \\((1,0,-1)^T\\); its normalized form is \\(\\left(1/\\sqrt2,0,-1/\\sqrt2\\right)^T\\).",
+              "For \\(\\lambda=3\\), an eigenvector is \\((1,1,1)^T\\); its normalized form is \\(\\left(1/\\sqrt3,1/\\sqrt3,1/\\sqrt3\\right)^T\\).",
+              "For \\(\\lambda=6\\), an eigenvector is \\((1,-2,1)^T\\); its normalized form is \\(\\left(1/\\sqrt6,-2/\\sqrt6,1/\\sqrt6\\right)^T\\).",
+              "Thus the orthogonal transformation matrix is",
+              "\\[P=\\begin{bmatrix}1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\\\0&1/\\sqrt3&-2/\\sqrt6\\\\-1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "Canonical form: \\(2u^2+3v^2+6w^2\\), with the displayed orthogonal matrix \\(P\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "formulas": [
+      "\\[P^{T}AP=P^{-1}AP=D,\\qquad Q=\\lambda_1u^2+\\lambda_2v^2+\\lambda_3w^2.\\]"
+    ],
+    "method": [
+      "Write the symmetric matrix \\(A\\) of the quadratic form.",
+      "Find its eigenvalues and eigenvectors.",
+      "Normalize the eigenvectors and use them as columns of \\(P\\).",
+      "Read the canonical form from the diagonal matrix \\(P^{T}AP\\)."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0077",
+      "TB-P0078"
+    ],
+    "book_refs": [
+      {
+        "pages": "77–78",
+        "note": "Reduction to canonical form and Example 2.56"
+      }
+    ],
+    "cautions": [],
+    "practice": null,
+    "self_checks": [],
+    "class_history": null
+  },
+  {
+    "id": "u2-nature-quadratic-forms",
+    "unit": 2,
+    "title": "Nature of the Quadratic Forms",
+    "status": "core",
+    "intro": "After reduction to canonical form, Grewal classifies the quadratic form by its positive and negative square terms, equivalently by the signs of the eigenvalues of its symmetric matrix.",
+    "learn": [
+      "Index = number of positive terms in the canonical form.",
+      "Signature = number of positive terms minus number of negative terms.",
+      "The signs of the eigenvalues determine whether the form is positive definite, negative definite, semidefinite or indefinite."
+    ],
+    "sections": [
+      {
+        "heading": "2.18 Nature of a Quadratic Form",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0078"
+        ],
+        "book_refs": [
+          {
+            "pages": "78",
+            "note": "Index, signature and classification of quadratic forms"
+          }
+        ],
+        "paragraphs": [
+          "Let \\(Q=X^{T}AX\\) be a quadratic form in \\(n\\) variables. The number of positive terms in its canonical form is called the index. The signature is the difference between the number of positive and negative terms in the canonical form."
+        ],
+        "bullets": [
+          "If the rank of \\(A\\) is \\(r\\) and the index is \\(s\\), the form is positive definite if \\(r=n\\) and \\(s=n\\).",
+          "It is negative definite if \\(r=n\\) and \\(s=0\\).",
+          "It is positive semidefinite if \\(r<n\\) and \\(s=r\\).",
+          "It is negative semidefinite if \\(r<n\\) and \\(s=0\\).",
+          "It is indefinite in all other cases.",
+          "Equivalently: positive definite if all eigenvalues of \\(A\\) are positive; negative definite if all are negative; positive semidefinite if all are non-negative with at least one zero; negative semidefinite if all are non-positive with at least one zero; indefinite if some eigenvalues are positive and others negative."
+        ]
+      },
+      {
+        "heading": "Worked example",
+        "scope": "core",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0078",
+          "TB-P0079"
+        ],
+        "book_refs": [
+          {
+            "pages": "78–79",
+            "note": "Example 2.57"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.57 — Reduce the quadratic form by orthogonal reduction and discuss its nature.",
+            "question_paragraphs": [
+              "Reduce \\(2x_1x_2+2x_1x_3-2x_2x_3\\) to a canonical form by an orthogonal reduction and discuss its nature. Also find the modal matrix."
+            ],
+            "paragraphs": [
+              "Solution. The matrix of the quadratic form is",
+              "\\[A=\\begin{bmatrix}0&1&1\\\\1&0&-1\\\\1&-1&0\\end{bmatrix}.\\]",
+              "The characteristic equation is",
+              "\\[\\begin{vmatrix}-\\lambda&1&1\\\\1&-\\lambda&-1\\\\1&-1&-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-3\\lambda+2=0.\\]",
+              "Thus the eigenvalues are \\(1,1,-2\\), so the canonical form is",
+              "\\[u^2+v^2-2w^2.\\]",
+              "Since some eigenvalues are positive and one is negative, the quadratic form is indefinite.",
+              "For \\(\\lambda=-2\\), solving gives an eigenvector \\((-1,1,1)^T\\), whose normalized form is \\((-1/\\sqrt3,1/\\sqrt3,1/\\sqrt3)^T\\).",
+              "For \\(\\lambda=1\\), one eigenvector is \\((1,0,1)^T\\), whose normalized form is \\((1/\\sqrt2,0,1/\\sqrt2)^T\\).",
+              "Because \\(\\lambda=1\\) is repeated, choose another eigenvector \\(X_3=(l,m,n)^T\\) orthogonal to the first two. Orthogonality gives \\(-l+m+n=0\\) and \\(l+n=0\\), hence \\(l:m:n=1:2:-1\\). Thus \\(X_3=(1,2,-1)^T\\), normalized to \\((1/\\sqrt6,2/\\sqrt6,-1/\\sqrt6)^T\\).",
+              "Hence the modal matrix is",
+              "\\[P=\\begin{bmatrix}-1/\\sqrt3&1/\\sqrt2&1/\\sqrt6\\\\1/\\sqrt3&0&2/\\sqrt6\\\\1/\\sqrt3&1/\\sqrt2&-1/\\sqrt6\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "Canonical form \\(u^2+v^2-2w^2\\); the quadratic form is indefinite, with the displayed orthogonal modal matrix."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
+    "formulas": [
+      "\\[\\text{index}=\\#(\\text{positive canonical terms}),\\qquad \\text{signature}=\\#(+)-\\#(-).\\]"
+    ],
+    "method": [
+      "Reduce the form to canonical form or determine the signs of all eigenvalues.",
+      "Count positive, negative and zero eigenvalues/terms.",
+      "Use the definition to classify the form and, when required, state its index and signature."
+    ],
+    "source_refs": [
+      "SYL-R25-U2",
+      "TB-P0078",
+      "TB-P0079"
+    ],
+    "book_refs": [
+      {
+        "pages": "78–79",
+        "note": "Nature of quadratic forms and Example 2.57"
+      }
+    ],
+    "cautions": [],
+    "practice": null,
+    "self_checks": [],
+    "class_history": null
+  },
+  {
+    "id": "u2-cayley-hamilton-recap",
+    "unit": 2,
+    "title": "Cayley-Hamilton recap example",
+    "status": "supporting",
+    "intro": "Grewal places one final Cayley–Hamilton simplification example after §2.18 and immediately before Problems 2.10. It is retained here at the same printed position in the Unit II flow.",
+    "learn": [
+      "A characteristic equation can reduce every higher power of the same matrix to a linear combination of lower powers."
+    ],
+    "sections": [
+      {
+        "heading": "Example 2.58",
+        "scope": "supporting",
+        "source_refs": [
+          "SYL-R25-U2",
+          "TB-P0079"
+        ],
+        "book_refs": [
+          {
+            "pages": "79",
+            "note": "Final Cayley-Hamilton simplification example"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Example 2.58 — Use the characteristic equation to simplify the matrix expression.",
+            "question_paragraphs": [
+              "For \\(A=\\begin{bmatrix}1&4\\\\2&3\\end{bmatrix}\\), find the characteristic equation and use it to simplify \\(A^5+5A^4-6A^3+2A^2-4A+7I\\)."
+            ],
+            "paragraphs": [
+              "Solution. Step 1: The characteristic equation is",
+              "\\[\\begin{vmatrix}1-\\lambda&4\\\\2&3-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^2-4\\lambda-5=0.\\]",
+              "Step 2: By Cayley–Hamilton,",
+              "\\[A^2-4A-5I=0,\\qquad A^2=4A+5I.\\]",
+              "Step 3: Verification: \\(A^2=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix}\\), so \\(A^2-4A-5I=0\\).",
+              "Step 4: Repeatedly use \\(A^2=4A+5I\\):",
+              "\\[A^3=4A^2+5A=21A+20I,\\]",
+              "\\[A^4=21A^2+20A=104A+105I,\\]",
+              "\\[A^5=104A^2+105A=521A+520I.\\]",
+              "Therefore",
+              "\\[A^5+5A^4-6A^3+2A^2-4A+7I=919A+942I.\\]",
+              "\\[=919\\begin{bmatrix}1&4\\\\2&3\\end{bmatrix}+942I=\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}.\\]"
+            ],
+            "final_answer": "\\(\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U2"
+      "SYL-R25-U2",
+      "TB-P0079"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "79",
+        "note": "Example 2.58"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
