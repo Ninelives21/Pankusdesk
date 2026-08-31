@@ -342,6 +342,17 @@ Hence resistance is a passive element which consumes energy and cannot store or 
 
 *Figure: Fig. 1.6 · Circular conductor*
 
+> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
+
+### Resistance — class-note view
+
+Resistance parameter: the property of a circuit element which opposes the flow of current. It is represented by \(R\) and its unit is the ohm \(\Omega\).
+
+\[R=\rho\dfrac{l}{A}\]
+
+Here \(\rho\) is resistivity, \(l\) is conductor length and \(A\) is cross-sectional area.
+
+
 ### (b) Inductance
 Inductance is the property of a circuit element that is related to magnetic flux. A current-carrying conductor produces magnetic flux in concentric form around it. The direction of the flux is given by the Right-Hand Thumb Rule, as illustrated in Figure 1.7.
 
@@ -398,6 +409,35 @@ The textbook summarizes the important points related to an inductor as follows.
 
 *Figure: Fig. 1.9 · Induced emf in a coil opposes change in current*
 
+> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
+
+### Inductance — class-note view
+
+Inductance \(L\) was described as the property of a circuit element that opposes change in current. Its unit is the henry (H).
+
+The inductance of a coil is the ratio of flux linkage to the current flowing through the coil:
+
+\[L=\dfrac{N\phi}{i}\]
+
+Here \(\phi\) is flux in webers, \(N\) is the number of turns and \(i\) is current in amperes.
+
+\[v=L\dfrac{di}{dt}\]
+
+\[i=\dfrac{1}{L}\int v\,dt\]
+
+If the current through an ideal inductor is constant, \(di/dt=0\), so the inductor behaves as a short circuit to DC.
+
+**Understand this diagram — In simple words — what these equations mean**
+
+Current through a coil produces magnetic flux. With \(N\) turns, the coil has flux linkage \(N\phi\). The relation \(L=\dfrac{N\phi}{i}\) tells us how much flux linkage the coil develops per ampere of current.
+
+The relation \(v=L\dfrac{di}{dt}\) says that an inductor develops voltage when its current is changing. A faster change in current gives a larger voltage; a larger inductance \(L\) also gives a larger voltage for the same rate of change.
+
+If the current is steady, \(\dfrac{di}{dt}=0\), so the ideal inductor has zero voltage across it. That is why, after DC has reached steady state, an ideal inductor behaves like a short circuit.
+
+The integral form \(i=\dfrac{1}{L}\int v\,dt\) expresses the same relationship from the other direction: the current reached by the inductor depends on the voltage applied over time.
+
+
 ### (c) Capacitance
 When a conductor is formed into a coil, it exhibits inductance. Similarly, when a conductor is made into two plates and these plates are separated by a thin insulating material called a dielectric, a capacitor is formed, as shown in Figure 1.10.
 
@@ -432,6 +472,25 @@ As the capacitor stores energy and does not consume energy, the textbook calls i
 
 *Figure: Fig. 1.10 · Capacitor*
 
+> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
+
+### Capacitance — class-note view
+
+Capacitance is represented by \(C\) and its unit is the farad (F). A capacitor consists of two conducting surfaces separated by an insulating dielectric; the conducting surfaces are electrodes and the insulating substance is the dielectric.
+
+\[q\propto v\]
+
+\[q=Cv\]
+
+\[\dfrac{dq}{dt}=C\dfrac{dv}{dt}\]
+
+\[i=C\dfrac{dv}{dt}\]
+
+\[v=\dfrac{1}{C}\int i\,dt\]
+
+If the voltage across an ideal capacitor is constant, \(dv/dt=0\), so \(i=0\); the capacitor behaves as an open circuit to DC.
+
+
 > **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
 
 ### R, L and C classification
@@ -449,6 +508,11 @@ As the capacitor stores energy and does not consume energy, the textbook calls i
 - Capacitor: \(Q=CV\)
 - Capacitor current: \(i=C\dfrac{dV}{dt}\)
 - Capacitor energy: \(W=\dfrac12CV^2\)
+- Class-note resistance relation: \(R=\rho\dfrac{l}{A}\)
+- Class-note inductor voltage: \(v=L\dfrac{di}{dt}\)
+- Class-note inductor integral form: \(i=\dfrac{1}{L}\int v\,dt\)
+- Class-note capacitor integral form: \(v=\dfrac{1}{C}\int i\,dt\)
+
 
 ### Check yourself
 
@@ -562,6 +626,37 @@ The symbols of dependent voltage and current sources are shown in Figure 1.13. S
 
 *Figure: Fig. 1.13 · Symbols of dependent voltage and current sources*
 
+> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
+
+### Dependent sources — class-note view
+
+If the voltage or current of a source depends on some other voltage or current in the network, it is called a dependent or controlled source. A dependent source is represented by a diamond symbol.
+
+Notation mapping used on this page: \(V_c\) and \(I_c\) denote the controlling voltage and current; \(V\) and \(I\) denote the dependent-source output. The equivalent symbols used in the four detailed equations below are \(V_c\leftrightarrow V_1\), \(I_c\leftrightarrow i_1\), \(V\leftrightarrow V_2\) and \(I\leftrightarrow i_2\).
+
+| Type | Class-note relation | Controlled by | Dependent source delivers | Constant |
+|---|---|---|---|---|
+| VCCS | \(I=G_mV_c\) | \(V_c\): controlling voltage | \(I\): output current | \(G_m\): A/V (mho or siemens) |
+| CCCS | \(I=A_iI_c\) | \(I_c\): controlling current | \(I\): output current | \(A_i\): current gain, no units |
+| CCVS | \(V=R_mI_c\) | \(I_c\): controlling current | \(V\): output voltage | \(R_m\): V/A = \(\Omega\) |
+| VCVS | \(V=A_vV_c\) | \(V_c\): controlling voltage | \(V\): output voltage | \(A_v\): voltage gain, no units |
+
+**Understand this diagram — Understanding the four dependent sources**
+
+Read each name as “what controls it” followed by “what the source produces”. For example, Voltage-Controlled Current Source means a voltage measured somewhere else in the circuit controls the current produced by this dependent source.
+
+The controlling quantity is not the output of the diamond source itself. It is a voltage or current elsewhere in the network that the dependent source responds to.
+
+For a voltage-output dependent source (VCVS or CCVS), the diamond symbol has voltage polarity \(+/-\). For a current-output dependent source (VCCS or CCCS), the diamond contains a current arrow.
+
+The constant tells how strongly the output responds to the control quantity. \(A_v\) and \(A_i\) are dimensionless gains; \(G_m\) converts control voltage into output current; \(R_m\) converts control current into output voltage.
+
+- VCCS: voltage controls current — \(I=G_mV_c\).
+- CCCS: current controls current — \(I=A_iI_c\).
+- CCVS: current controls voltage — \(V=R_mI_c\).
+- VCVS: voltage controls voltage — \(V=A_vV_c\).
+
+
 ### (a) Voltage-Controlled Voltage Source (VCVS)
 In this case, the source voltage \(V_2\) is set by a control voltage \(V_1\).
 
@@ -672,6 +767,10 @@ Since \(I_p=\dfrac{V}{R_p}\), increasing terminal voltage diverts more current i
 - CCVS: \(V_2=R_mi_1\)
 - VCCS: \(i_2=G_mV_1\)
 - CCCS: \(i_2=\alpha i_1\)
+- Class-note VCCS: \(I=G_mV_c\)
+- Class-note CCCS: \(I=A_iI_c\)
+- Class-note CCVS: \(V=R_mI_c\)
+- Class-note VCVS: \(V=A_vV_c\)
 - Practical voltage source: \(V_L=V_s-IR_s\)
 - Class-note practical current source: \(I=I_s-\dfrac{V}{R}\)
 

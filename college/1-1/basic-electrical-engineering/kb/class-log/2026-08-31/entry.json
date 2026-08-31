@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-31",
+  "date_label": "31 August 2026",
+  "source_id": "CLASS-U1-2026-08-31",
+  "subject": {
+    "code": "25ES1EE101",
+    "name": "Basic Electrical Engineering",
+    "shortName": "BEE"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Introduction to Electrical Energy and DC Circuits"
+  },
+  "title": "Dependent sources and passive circuit elements — R, L and C",
+  "summary": "Dependent/controlled sources (VCCS, CCCS, CCVS, VCVS) and their equations; resistance, inductance and capacitance definitions, units and basic voltage-current relations.",
+  "transcription_policy": "Notebook wording is preserved as far as it is safely readable. Crossed-out corrections are normalized to the final written reading; symbols and equations are transcribed into MathJax without adding unrecorded notebook content.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-sources",
+      "label": "Electrical energy sources: voltage, current, independent and dependent sources",
+      "href": "unit-1.html#u1-sources"
+    },
+    {
+      "topic_id": "u1-rlc",
+      "label": "Circuit elements: resistance, inductance and capacitance",
+      "href": "unit-1.html#u1-rlc"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Dependent / controlled sources",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Dependent sources"
+        },
+        {
+          "type": "line",
+          "text": "Dependent on voltage and current."
+        },
+        {
+          "type": "bullet",
+          "text": "VCCS — Voltage-Controlled Current Source"
+        },
+        {
+          "type": "bullet",
+          "text": "CCCS — Current-Controlled Current Source"
+        },
+        {
+          "type": "bullet",
+          "text": "CCVS — Current-Controlled Voltage Source"
+        },
+        {
+          "type": "bullet",
+          "text": "VCVS — Voltage-Controlled Voltage Source"
+        },
+        {
+          "type": "paragraph",
+          "text": "If the voltage/current of a source depends upon some other voltage/current in the network, it is called a dependent/controlled source."
+        },
+        {
+          "type": "line",
+          "text": "Represented by a diamond symbol."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{VCCS: } I=G_mV_c\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{CCCS: } I=A_iI_c\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{CCVS: } V=R_mI_c\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{VCVS: } V=A_vV_c\\]"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "Passive elements — resistance and inductance",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Types of elements — Passive elements"
+        },
+        {
+          "type": "subheading",
+          "text": "1) Resistance parameter"
+        },
+        {
+          "type": "paragraph",
+          "text": "The property of a circuit element which opposes flow of current (R)."
+        },
+        {
+          "type": "line",
+          "text": "Unit: ohms (\\(\\Omega\\))"
+        },
+        {
+          "type": "equation",
+          "text": "\\[R=\\rho\\dfrac{l}{A}\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "2) Inductance parameter"
+        },
+        {
+          "type": "paragraph",
+          "text": "The property of a circuit element to oppose the change in current (L)."
+        },
+        {
+          "type": "line",
+          "text": "Unit: henry (H)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The inductance of a coil is defined as the ratio of flux linkage to the current flowing through the coil."
+        },
+        {
+          "type": "equation",
+          "text": "\\[L=\\dfrac{N\\phi}{i}\\]"
+        },
+        {
+          "type": "line",
+          "text": "\\(\\phi\\) = flux in weber; \\(N\\) = number of turns; \\(i\\) = current in amperes."
+        },
+        {
+          "type": "equation",
+          "text": "\\[L\\dfrac{di}{dt}=v\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[i=\\dfrac{1}{L}\\int v\\,dt\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "If the current across the inductor is constant, the inductor acts as a short circuit to DC."
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "Capacitance parameter",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "3) Capacitance parameter"
+        },
+        {
+          "type": "line",
+          "text": "Unit: farad (F)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Any two conducting surfaces separated by an insulating dielectric exhibit the property of capacitance. Conducting surfaces are known as electrodes. Insulating substance is known as dielectric."
+        },
+        {
+          "type": "equation",
+          "text": "\\[q\\propto v\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[q=Cv\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{dq}{dt}=C\\dfrac{dv}{dt}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[i=C\\dfrac{dv}{dt}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[v=\\dfrac{1}{C}\\int i\\,dt\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "If the voltage across a capacitor is constant, capacitor acts as an open circuit to DC, i.e. \\(i=0\\)."
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The three notebook photographs supplied for 31 August remain intake/source material and are not copied into normal website assets.",
+    "The source-symbol sketches on the dependent-source page map to the prescribed-textbook dependent-source figures already present in Unit I, so no duplicate NRS redraw is added here.",
+    "The cumulative Unit I page places the resistance, inductance and capacitance class material beside the corresponding textbook sections rather than reproducing the notebook page as one block.",
+    "Class notation for dependent sources is retained and explicitly mapped to the prescribed textbook notation in the cumulative notes."
+  ]
+}

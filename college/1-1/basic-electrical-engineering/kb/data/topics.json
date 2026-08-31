@@ -564,6 +564,11 @@
         "date": "2026-08-24",
         "label": "24 Aug 2026 · Types of elements",
         "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
+      },
+      {
+        "date": "2026-08-31",
+        "label": "31 Aug 2026 · Passive elements; R, L and C relations",
+        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-31"
       }
     ],
     "intro": "Resistance, inductance and capacitance are the three basic circuit parameters. Their equations and energy relations are developed alongside the corresponding explanations.",
@@ -647,6 +652,20 @@
             "pages": "5",
             "images": "05.png"
           }
+        ]
+      },
+      {
+        "heading": "Resistance — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 31 Aug 2026",
+        "paragraphs": [
+          "Resistance parameter: the property of a circuit element which opposes the flow of current. It is represented by \\(R\\) and its unit is the ohm \\(\\Omega\\).",
+          "\\[R=\\rho\\dfrac{l}{A}\\]",
+          "Here \\(\\rho\\) is resistivity, \\(l\\) is conductor length and \\(A\\) is cross-sectional area."
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-31"
         ]
       },
       {
@@ -738,6 +757,35 @@
         ]
       },
       {
+        "heading": "Inductance — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 31 Aug 2026",
+        "paragraphs": [
+          "Inductance \\(L\\) was described as the property of a circuit element that opposes change in current. Its unit is the henry (H).",
+          "The inductance of a coil is the ratio of flux linkage to the current flowing through the coil:",
+          "\\[L=\\dfrac{N\\phi}{i}\\]",
+          "Here \\(\\phi\\) is flux in webers, \\(N\\) is the number of turns and \\(i\\) is current in amperes.",
+          "\\[v=L\\dfrac{di}{dt}\\]",
+          "\\[i=\\dfrac{1}{L}\\int v\\,dt\\]",
+          "If the current through an ideal inductor is constant, \\(di/dt=0\\), so the inductor behaves as a short circuit to DC."
+        ],
+        "accordions": [
+          {
+            "title": "In simple words — what these equations mean",
+            "paragraphs": [
+              "Current through a coil produces magnetic flux. With \\(N\\) turns, the coil has flux linkage \\(N\\phi\\). The relation \\(L=\\dfrac{N\\phi}{i}\\) tells us how much flux linkage the coil develops per ampere of current.",
+              "The relation \\(v=L\\dfrac{di}{dt}\\) says that an inductor develops voltage when its current is changing. A faster change in current gives a larger voltage; a larger inductance \\(L\\) also gives a larger voltage for the same rate of change.",
+              "If the current is steady, \\(\\dfrac{di}{dt}=0\\), so the ideal inductor has zero voltage across it. That is why, after DC has reached steady state, an ideal inductor behaves like a short circuit.",
+              "The integral form \\(i=\\dfrac{1}{L}\\int v\\,dt\\) expresses the same relationship from the other direction: the current reached by the inductor depends on the voltage applied over time."
+            ]
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-31"
+        ]
+      },
+      {
         "heading": "(c) Capacitance",
         "scope": "core",
         "paragraphs": [
@@ -790,6 +838,24 @@
         ]
       },
       {
+        "heading": "Capacitance — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 31 Aug 2026",
+        "paragraphs": [
+          "Capacitance is represented by \\(C\\) and its unit is the farad (F). A capacitor consists of two conducting surfaces separated by an insulating dielectric; the conducting surfaces are electrodes and the insulating substance is the dielectric.",
+          "\\[q\\propto v\\]",
+          "\\[q=Cv\\]",
+          "\\[\\dfrac{dq}{dt}=C\\dfrac{dv}{dt}\\]",
+          "\\[i=C\\dfrac{dv}{dt}\\]",
+          "\\[v=\\dfrac{1}{C}\\int i\\,dt\\]",
+          "If the voltage across an ideal capacitor is constant, \\(dv/dt=0\\), so \\(i=0\\); the capacitor behaves as an open circuit to DC."
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-31"
+        ]
+      },
+      {
         "heading": "R, L and C classification",
         "scope": "supporting",
         "kind": "class-note",
@@ -811,7 +877,11 @@
       "Inductor energy: \\(W=\\dfrac12LI^2\\)",
       "Capacitor: \\(Q=CV\\)",
       "Capacitor current: \\(i=C\\dfrac{dV}{dt}\\)",
-      "Capacitor energy: \\(W=\\dfrac12CV^2\\)"
+      "Capacitor energy: \\(W=\\dfrac12CV^2\\)",
+      "Class-note resistance relation: \\(R=\\rho\\dfrac{l}{A}\\)",
+      "Class-note inductor voltage: \\(v=L\\dfrac{di}{dt}\\)",
+      "Class-note inductor integral form: \\(i=\\dfrac{1}{L}\\int v\\,dt\\)",
+      "Class-note capacitor integral form: \\(v=\\dfrac{1}{C}\\int i\\,dt\\)"
     ],
     "method": [],
     "source_refs": [
@@ -820,7 +890,8 @@
       "TB-P006",
       "TB-P007",
       "TB-P008",
-      "CLASS-U1-2026-08-24"
+      "CLASS-U1-2026-08-24",
+      "CLASS-U1-2026-08-31"
     ],
     "book_refs": [
       {
@@ -880,6 +951,11 @@
         "date": "2026-08-27",
         "label": "27 Aug 2026 · Ideal and practical voltage/current sources",
         "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-27"
+      },
+      {
+        "date": "2026-08-31",
+        "label": "31 Aug 2026 · Dependent / controlled sources",
+        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-31"
       }
     ],
     "intro": "Electrical energy sources are classified as voltage sources and current sources, and also as independent and dependent sources.",
@@ -1177,6 +1253,78 @@
         ]
       },
       {
+        "heading": "Dependent sources — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 31 Aug 2026",
+        "paragraphs": [
+          "If the voltage or current of a source depends on some other voltage or current in the network, it is called a dependent or controlled source. A dependent source is represented by a diamond symbol.",
+          "Notation mapping used on this page: \\(V_c\\) and \\(I_c\\) denote the controlling voltage and current; \\(V\\) and \\(I\\) denote the dependent-source output. The equivalent symbols used in the four detailed equations below are \\(V_c\\leftrightarrow V_1\\), \\(I_c\\leftrightarrow i_1\\), \\(V\\leftrightarrow V_2\\) and \\(I\\leftrightarrow i_2\\)."
+        ],
+        "tables": [
+          {
+            "caption": "Four dependent sources — class notation and equation terms",
+            "headers": [
+              "Type",
+              "Class-note relation",
+              "Controlled by",
+              "Dependent source delivers",
+              "Constant"
+            ],
+            "rows": [
+              [
+                "VCCS",
+                "\\(I=G_mV_c\\)",
+                "\\(V_c\\): controlling voltage",
+                "\\(I\\): output current",
+                "\\(G_m\\): current-per-voltage constant, A/V (mho or siemens)"
+              ],
+              [
+                "CCCS",
+                "\\(I=A_iI_c\\)",
+                "\\(I_c\\): controlling current",
+                "\\(I\\): output current",
+                "\\(A_i\\): current gain, no units"
+              ],
+              [
+                "CCVS",
+                "\\(V=R_mI_c\\)",
+                "\\(I_c\\): controlling current",
+                "\\(V\\): output voltage",
+                "\\(R_m\\): voltage-per-current constant, V/A = \\(\\Omega\\)"
+              ],
+              [
+                "VCVS",
+                "\\(V=A_vV_c\\)",
+                "\\(V_c\\): controlling voltage",
+                "\\(V\\): output voltage",
+                "\\(A_v\\): voltage gain, no units"
+              ]
+            ]
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Understanding the four dependent sources",
+            "paragraphs": [
+              "Read each name as “what controls it” followed by “what the source produces”. For example, Voltage-Controlled Current Source means a voltage measured somewhere else in the circuit controls the current produced by this dependent source.",
+              "The controlling quantity is not the output of the diamond source itself. It is a voltage or current elsewhere in the network that the dependent source responds to.",
+              "For a voltage-output dependent source (VCVS or CCVS), the diamond symbol has voltage polarity \\(+/-\\). For a current-output dependent source (VCCS or CCCS), the diamond contains a current arrow.",
+              "The constant tells how strongly the output responds to the control quantity. \\(A_v\\) and \\(A_i\\) are dimensionless gains; \\(G_m\\) converts control voltage into output current; \\(R_m\\) converts control current into output voltage."
+            ],
+            "bullets": [
+              "VCCS: voltage controls current — \\(I=G_mV_c\\).",
+              "CCCS: current controls current — \\(I=A_iI_c\\).",
+              "CCVS: current controls voltage — \\(V=R_mI_c\\).",
+              "VCVS: voltage controls voltage — \\(V=A_vV_c\\)."
+            ]
+          }
+        ],
+        "source_refs": [
+          "CLASS-U1-2026-08-31"
+        ]
+      },
+      {
         "heading": "(a) Voltage-Controlled Voltage Source (VCVS)",
         "scope": "core",
         "paragraphs": [
@@ -1374,12 +1522,12 @@
             "title": "Ideal and Practical Voltage",
             "paragraphs": [
               "Think of a voltage source as something whose job is to provide a certain electrical “push” between its two terminals. A battery is the easiest example.",
-              "An ideal voltage source is an imaginary perfect battery. If it is a \\(10\\,\text{V}\\) source, it would remain exactly \\(10\\,\text{V}\\) no matter how much current the connected circuit draws.",
+              "An ideal voltage source is an imaginary perfect battery. If it is a \\(10\\,\\text{V}\\) source, it would remain exactly \\(10\\,\\text{V}\\) no matter how much current the connected circuit draws.",
               "A practical voltage source is what a real battery or power supply is like. A real source has some unavoidable internal resistance, so it can be pictured as an ideal voltage source with a small resistor hidden in series inside it.",
               "When no current flows, there is no voltage drop across that internal resistance, so the terminal voltage is essentially the source voltage: \\(V=V_s\\). When current \\(I\\) flows, some voltage is lost inside the source as \\(IR\\).",
               "\\[V=V_s-IR\\]",
               "In words: voltage available outside = voltage produced inside − voltage lost inside the source.",
-              "For example, if \\(V_s=10\\,\text{V}\\), \\(R=1\\,\\Omega\\), and \\(I=2\\,\text{A}\\), the internal drop is \\(IR=2\\,\text{V}\\), so the terminal voltage is \\(8\\,\text{V}\\).",
+              "For example, if \\(V_s=10\\,\\text{V}\\), \\(R=1\\,\\Omega\\), and \\(I=2\\,\\text{A}\\), the internal drop is \\(IR=2\\,\\text{V}\\), so the terminal voltage is \\(8\\,\\text{V}\\).",
               "This is why the practical-source graph slopes downward: as current increases, the internal drop \\(IR\\) increases and the terminal voltage falls. If the internal resistance were zero, no voltage would be lost and the source would behave ideally."
             ],
             "bullets": [
@@ -1455,13 +1603,13 @@
             "title": "Ideal and Practical Current",
             "paragraphs": [
               "Think of a current source as a device whose job is to make a certain amount of current flow. An ideal current source keeps that current fixed and lets the voltage across its terminals change to whatever value the connected load requires.",
-              "For example, an ideal \\(2\\,\text{A}\\) source connected to \\(5\\,\\Omega\\) needs \\(10\\,\text{V}\\) across the load. If the load becomes \\(10\\,\\Omega\\), the current is still \\(2\\,\text{A}\\), so the required voltage becomes \\(20\\,\text{V}\\).",
+              "For example, an ideal \\(2\\,\\text{A}\\) source connected to \\(5\\,\\Omega\\) needs \\(10\\,\\text{V}\\) across the load. If the load becomes \\(10\\,\\Omega\\), the current is still \\(2\\,\\text{A}\\), so the required voltage becomes \\(20\\,\\text{V}\\).",
               "A practical current source cannot maintain exactly the same current under every condition. It is modelled as an ideal current source with a large internal resistance in parallel.",
               "The parallel resistance acts like an internal bypass: some source current can flow through it instead of going to the load.",
               "\\[I_s=I_L+I_p\\]",
               "\\[I_L=I_s-I_p\\]",
               "Because the same terminal voltage appears across the internal parallel resistance, \\(I_p=\\dfrac{V}{R_p}\\). As terminal voltage rises, more current is diverted internally and the load current falls slightly.",
-              "For an ideal current source, the internal parallel resistance is treated as infinite. Then \\(I_p=\\dfrac{V}{R_p}\to0\\), so none of the source current is lost through the internal bypass."
+              "For an ideal current source, the internal parallel resistance is treated as infinite. Then \\(I_p=\\dfrac{V}{R_p}\\to0\\), so none of the source current is lost through the internal bypass."
             ],
             "bullets": [
               "Ideal current source → current stays fixed; internal parallel resistance is \\(\\infty\\).",
@@ -1483,7 +1631,11 @@
       "VCCS: \\(i_2=G_mV_1\\)",
       "CCCS: \\(i_2=\\alpha i_1\\)",
       "Practical voltage source: \\(V_L=V_s-IR_s\\)",
-      "Class-note practical current source: \\(I=I_s-\\dfrac{V}{R}\\)"
+      "Class-note practical current source: \\(I=I_s-\\dfrac{V}{R}\\)",
+      "Class-note VCCS: \\(I=G_mV_c\\)",
+      "Class-note CCCS: \\(I=A_iI_c\\)",
+      "Class-note CCVS: \\(V=R_mI_c\\)",
+      "Class-note VCVS: \\(V=A_vV_c\\)"
     ],
     "method": [],
     "source_refs": [
@@ -1495,7 +1647,8 @@
       "TB-P012",
       "TB-P013",
       "CLASS-U1-2026-08-24",
-      "CLASS-U1-2026-08-27"
+      "CLASS-U1-2026-08-27",
+      "CLASS-U1-2026-08-31"
     ],
     "book_refs": [
       {

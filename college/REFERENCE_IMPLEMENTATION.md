@@ -13,7 +13,7 @@ Unit I now demonstrates the complete intended workflow:
 
 **official syllabus → prescribed textbook as core notes → source accounting → cumulative JSON → exact figure placement → class-note integration → NRS redraws → explanation accordions → textbook practice → dated class logs → calendar → verification**
 
-It includes two dated class integrations (24 Aug and 27 Aug), class-note redraws, source-backed textbook questions, CSS-Grid figure placement, and the plain-language explanation layer.
+It includes three dated class integrations (24 Aug, 27 Aug and 31 Aug), class-note redraws where needed, source-backed textbook questions, CSS-Grid figure placement, semantic study tables, and the plain-language explanation layer.
 
 ---
 
@@ -245,6 +245,23 @@ Canonical explanation titles currently include:
 
 These demonstrate the rule that explanation prose is separate from source notes.
 
+### 31 Aug 2026
+
+`kb/class-log/2026-08-31/entry.json`  
+`kb/class-log/2026-08-31/raw.md`  
+`kb/audits/unit-1-2026-08-31-class-integration.md`
+
+Demonstrates later-semester consolidation after the basic Unit I page is already mature:
+
+- one class date maps into more than one cumulative topic (`u1-sources` and `u1-rlc`);
+- dependent-source notation is integrated beside the existing textbook dependent-source section, not appended as a duplicate lecture block;
+- a semantic study table defines every equation term and maps two notation systems used on the same page;
+- the blue **Understanding the four dependent sources** accordion adds intuition without rewriting source prose;
+- resistance, inductance and capacitance class material is split and placed beside the corresponding R/L/C textbook sections;
+- the previously planned **In simple words — what these equations mean** inductance accordion is used as a teaching bridge;
+- no duplicate class redraw is created where the existing prescribed-textbook figures already carry the needed technical symbols;
+- source-form differences are recorded in the backend audit instead of being silently reconciled in source prose.
+
 ---
 
 ## 7. Calendar/class-log reference
@@ -266,7 +283,7 @@ The reference link chain is:
 
 **calendar date → subject class-log shell with `?date=` → dated `entry.json` → mapped cumulative topic(s)**
 
-The 24 Aug and 27 Aug BEE entries are the working examples.
+The 24 Aug, 27 Aug and 31 Aug BEE entries are the working examples.
 
 ---
 
@@ -357,7 +374,7 @@ Do not hard-code into another subject:
 - BEE gap sources;
 - BEE textbook-question grouping;
 - BEE lecture/capture counts;
-- dates 24/27 Aug;
+- dates 24/27/31 Aug;
 - number of class redraws;
 - exact explanation titles.
 
