@@ -812,6 +812,74 @@ sub {
 
 
 /* ---------------------------------------------------------------------- */
+/*                           STUDY COMPARISON TABLES                       */
+/* ---------------------------------------------------------------------- */
+
+.study-table-wrap {
+	margin: var(--space-5) 0 var(--space-6);
+	overflow-x: auto;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	background: var(--surface);
+	box-shadow: var(--shadow-small);
+}
+
+.study-table {
+	width: 100%;
+	min-width: 540px;
+	border-collapse: collapse;
+	font-size: 16px;
+	line-height: 1.55;
+	color: var(--text-strong);
+}
+
+.study-table caption {
+	padding: var(--space-4) var(--space-6);
+	text-align: left;
+	font-weight: var(--font-weight-semibold);
+	color: var(--text-strong);
+}
+
+.study-table th,
+.study-table td {
+	padding: 13px 16px;
+	text-align: left;
+	vertical-align: top;
+	border-right: 1px solid var(--line-soft);
+	border-bottom: 1px solid var(--line-soft);
+}
+
+.study-table th:last-child,
+.study-table td:last-child {
+	border-right: 0;
+}
+
+.study-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.study-table th {
+	background: var(--primary-soft);
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary-dark);
+}
+
+.study-table tbody tr:nth-child(even) td {
+	background: var(--surface-subtle);
+}
+
+@media (max-width: 720px) {
+	.study-table {
+		font-size: 15px;
+	}
+
+	.study-table th,
+	.study-table td {
+		padding: 11px 13px;
+	}
+}
+
+/* ---------------------------------------------------------------------- */
 /*                    SELF-CHECK QUESTION ACCORDIONS                      */
 /* ---------------------------------------------------------------------- */
 

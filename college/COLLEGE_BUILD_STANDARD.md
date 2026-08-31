@@ -180,9 +180,13 @@ An ordinary section is part of the cumulative textbook-led theory and normally h
 - `heading`
 - `scope`
 - `paragraphs` and/or `bullets`
+- optional semantic `tables` when a source-backed comparison or correspondence is clearer in rows and columns
 - `source_refs`
 - optional `book_refs`
 - optional figures
+
+
+Use `tables` for genuine comparisons/correspondences, not to fake page layout. Keep the source terminology and sequence intact; do not invent new categories merely to make a table look fuller.
 
 ### 7.2 Integrated class-note section
 

@@ -160,7 +160,11 @@ The unit of power is the watt (W).
 ### Analogy between electrical, magnetic and mechanical systems
 An electric circuit has a close analogy with a magnetic circuit. In a magnetic circuit, a Magnetomotive Force (MMF) is used to pass magnetic flux \(\phi\) through an iron core that has a finite reluctance \(S\), which opposes the flux. Similarly, in a mechanical system, the driving torque \(T\) is responsible for keeping the system at a speed \(N\) against friction.
 
-Hence EMF, MMF and torque are analogous. Current, flux and speed are similar quantities in the analogy. Resistance, reluctance and friction are also of the same kind.
+| Electrical system | Magnetic system | Mechanical system |
+| --- | --- | --- |
+| EMF | MMF | Torque |
+| Current | Flux | Speed |
+| Resistance | Reluctance | Friction |
 
 *Figure: Fig. 1.4 · Analogy between electrical, magnetic and mechanical systems*
 

@@ -70,6 +70,8 @@ Use this checklist for every college unit. A unit is not `ready` until the appli
 - [ ] Give each explanation dropdown a meaningful title.
 - [ ] Keep explanation language simple enough to teach the confusing step.
 - [ ] Use `accordion_recap` only when it adds real revision value.
+- [ ] When a source-backed comparison/correspondence is clearer in rows and columns, use a semantic `tables` block rather than prose spacing or a screenshot.
+- [ ] Keep table terminology/source order faithful; do not invent extra comparison categories just to fill the table.
 
 ## G. Figures — selection and asset role
 

@@ -78,6 +78,7 @@ The generic unit renderer demonstrates:
 - visible `source_label` for dated class material;
 - section explanation accordions via `accordions`;
 - optional `accordion_recap`;
+- semantic comparison tables via section-level `tables`;
 - MathJax rendering;
 - textbook/class figure captions and descriptive alt text;
 - full-width figure rows;
@@ -116,6 +117,27 @@ The generic unit renderer demonstrates:
 ```
 
 The renderer places these in the visually separate **Understand this diagram** teaching box.
+
+#### Semantic comparison table
+
+Use a section-level table when the source itself presents corresponding quantities or a compact comparison is clearer than prose. The Unit I electrical–magnetic–mechanical analogy is the reference pattern.
+
+```json
+{
+  "tables": [
+    {
+      "headers": ["Electrical system", "Magnetic system", "Mechanical system"],
+      "rows": [
+        ["EMF", "MMF", "Torque"],
+        ["Current", "Flux", "Speed"],
+        ["Resistance", "Reluctance", "Friction"]
+      ]
+    }
+  ]
+}
+```
+
+The renderer emits a real HTML table with column headers and responsive horizontal scrolling on narrow screens. Do not use tables as a substitute for CSS layout.
 
 #### Side-by-side figure Grid
 

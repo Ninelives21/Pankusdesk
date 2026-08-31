@@ -413,6 +413,7 @@ function renderSectionContent(section, context) {
 	});
 	flushBullets();
 
+	html += renderStudyTables(section.tables ?? []);
 	html += renderExplanationAccordions(section.accordions ?? [], section.accordion_recap ?? [], section.accordion_label || 'Understand this diagram');
 
 	const explicitlyEnded = ordinaryFigures
@@ -460,6 +461,30 @@ function renderTextbookFigureRow(figure) {
 			<div class="textbook-grid-visual">${renderTextbookFigure(figure)}</div>
 		</div>
 	`;
+}
+
+function renderStudyTables(tables) {
+	if (!tables.length) return '';
+
+	return tables.map(table => {
+		const headers = table.headers ?? [];
+		const rows = table.rows ?? [];
+		if (!headers.length || !rows.length) return '';
+
+		return `
+			<div class="study-table-wrap">
+				<table class="study-table">
+					${table.caption ? `<caption>${formatText(table.caption)}</caption>` : ''}
+					<thead>
+						<tr>${headers.map(header => `<th scope="col">${formatText(header)}</th>`).join('')}</tr>
+					</thead>
+					<tbody>
+						${rows.map(row => `<tr>${row.map(cell => `<td>${formatText(cell)}</td>`).join('')}</tr>`).join('')}
+					</tbody>
+				</table>
+			</div>
+		`;
+	}).join('');
 }
 
 function renderExplanationAccordions(items, recapItems = [], label = 'Understand this diagram') {

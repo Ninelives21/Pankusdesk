@@ -106,6 +106,21 @@ def visible_topic_strings(topic: dict):
             for i, value in enumerate(section.get(key, []) or []):
                 if isinstance(value, str):
                     yield f"sections[{si}].{key}[{i}]", value
+        for ti, table in enumerate(section.get("tables", []) or []):
+            if not isinstance(table, dict):
+                continue
+            if isinstance(table.get("caption"), str):
+                yield f"sections[{si}].tables[{ti}].caption", table["caption"]
+            for hi, value in enumerate(table.get("headers", []) or []):
+                if isinstance(value, str):
+                    yield f"sections[{si}].tables[{ti}].headers[{hi}]", value
+            for ri, row in enumerate(table.get("rows", []) or []):
+                if not isinstance(row, list):
+                    continue
+                for ci, value in enumerate(row):
+                    if isinstance(value, str):
+                        yield f"sections[{si}].tables[{ti}].rows[{ri}][{ci}]", value
+
         for ai, item in enumerate(section.get("accordions", []) or []):
             if not isinstance(item, dict):
                 continue
@@ -121,6 +136,29 @@ def visible_topic_strings(topic: dict):
             for key in ("question", "answer"):
                 if isinstance(item.get(key), str):
                     yield f"self_checks[{qi}].{key}", item[key]
+
+
+def check_study_table(item, context: str):
+    if not isinstance(item, dict):
+        errors.append(f"{context}: table is not an object")
+        return
+    headers = item.get("headers")
+    rows = item.get("rows")
+    if not isinstance(headers, list) or not headers or any(not isinstance(v, str) or not v.strip() for v in headers):
+        errors.append(f"{context}: table needs non-empty string headers")
+        return
+    if not isinstance(rows, list) or not rows:
+        errors.append(f"{context}: table needs at least one row")
+        return
+    width = len(headers)
+    for ri, row in enumerate(rows):
+        if not isinstance(row, list):
+            errors.append(f"{context}: row {ri} is not an array")
+            continue
+        if len(row) != width:
+            errors.append(f"{context}: row {ri} has {len(row)} cells; expected {width}")
+        if any(not isinstance(v, str) for v in row):
+            errors.append(f"{context}: row {ri} contains a non-string cell")
 
 
 def collect_topic_figures(topic: dict):
@@ -463,6 +501,9 @@ def verify_subject(subject_dir: Path):
                     if isinstance(fig, dict) and fig.get("kind") != "class-note":
                         errors.append(f"{scontext} figure {fi}: class-note cumulative figure needs kind='class-note'")
 
+            for ti, table in enumerate(section.get("tables", []) or []):
+                check_study_table(table, f"{scontext} table {ti}")
+
             for ai, accordion in enumerate(section.get("accordions", []) or []):
                 check_accordion(accordion, f"{scontext} accordion {ai}")
 
@@ -586,7 +627,7 @@ def main() -> int:
     print(" - ready units have detailed topic data and shells")
     print(" - topic/section provenance present and configured refs resolved")
     print(" - class-note labels/source refs checked")
-    print(" - explanation accordions checked")
+    print(" - semantic study tables and explanation accordions checked")
     print(" - figure assets/alt text/explicit anchors/Grid placement checked")
     print(" - textbook practice anchors checked where configured")
     print(" - class-log mappings/assets/calendar links checked")
