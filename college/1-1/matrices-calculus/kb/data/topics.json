@@ -1147,12 +1147,37 @@
               "\\[A=\\begin{bmatrix}-2/3&1/3&2/3\\\\2/3&2/3&1/3\\\\1/3&-2/3&2/3\\end{bmatrix}.\\]"
             ],
             "paragraphs": [
-              "Solution. To prove that \\(A\\) is orthogonal, compute \\(AA^{T}\\).",
+              "Solution. Since a square matrix is orthogonal when \\(AA^{T}=I\\), first form the transpose.",
               "\\[A^{T}=\\begin{bmatrix}-2/3&2/3&1/3\\\\1/3&2/3&-2/3\\\\2/3&1/3&2/3\\end{bmatrix}.\\]",
-              "\\[AA^{T}=\\begin{bmatrix}4/9+1/9+4/9&-4/9+2/9+2/9&-2/9-2/9+4/9\\\\-4/9+2/9+2/9&4/9+4/9+1/9&2/9-4/9+2/9\\\\-2/9-2/9+4/9&2/9-4/9+2/9&1/9+4/9+4/9\\end{bmatrix}=I.\\]",
-              "Hence \\(AA^{T}=I\\), so the matrix is orthogonal."
+              "Now multiply \\(A\\) and \\(A^{T}\\):",
+              "\\[AA^{T}=\\begin{bmatrix}4/9+1/9+4/9&-4/9+2/9+2/9&-2/9-2/9+4/9\\\\-4/9+2/9+2/9&4/9+4/9+1/9&2/9-4/9+2/9\\\\-2/9-2/9+4/9&2/9-4/9+2/9&1/9+4/9+4/9\\end{bmatrix}.\\]",
+              "Each diagonal entry is \\(1\\) and each off-diagonal entry is \\(0\\). Therefore",
+              "\\[AA^{T}=\\begin{bmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}=I.\\]",
+              "Hence the given matrix is orthogonal."
             ],
             "final_answer": "The given matrix is orthogonal."
+          },
+          {
+            "title": "Example 2.43 — If the matrix is orthogonal, find \\(a,b,c\\) and \\(A^{-1}\\).",
+            "question_paragraphs": [
+              "\\[A=\\dfrac13\\begin{bmatrix}1&2&a\\\\2&1&b\\\\2&-2&c\\end{bmatrix}\\] is orthogonal. Find \\(a,b,c\\) and \\(A^{-1}\\)."
+            ],
+            "paragraphs": [
+              "Solution. Since \\(A\\) is orthogonal, \\(AA^{T}=I\\). Therefore",
+              "\\[\\dfrac19\\begin{bmatrix}1&2&a\\\\2&1&b\\\\2&-2&c\\end{bmatrix}\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\a&b&c\\end{bmatrix}=I.\\]",
+              "Carrying out the multiplication gives",
+              "\\[\\dfrac19\\begin{bmatrix}5+a^2&4+ab&-2+ac\\\\4+ab&5+b^2&2+bc\\\\-2+ac&2+bc&8+c^2\\end{bmatrix}=\\begin{bmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}.\\]",
+              "Equating diagonal entries gives \\(a^2=4,\\ b^2=4,\\ c^2=1\\). The off-diagonal entries must also vanish, so",
+              "\\[ab=-4,\\qquad ac=2,\\qquad bc=-2.\\]",
+              "These conditions give the two possible triples",
+              "\\[(a,b,c)=(2,-2,1)\\quad\\text{or}\\quad(-2,2,-1),\\]",
+              "i.e. \\((a,b,c)=\\pm(2,-2,1)\\). Choosing the first branch, which is the branch used by the textbook's displayed inverse,",
+              "\\[A=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}.\\]",
+              "For an orthogonal matrix, \\(A^{-1}=A^{T}\\). Here this chosen matrix is symmetric, hence",
+              "\\[A^{-1}=A^{T}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}.\\]",
+              "If the second sign branch is chosen, its transpose is the corresponding inverse in exactly the same way."
+            ],
+            "final_answer": "\\((a,b,c)=\\pm(2,-2,1)\\). For the textbook branch \\((2,-2,1)\\), \\(A^{-1}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}\\)."
           }
         ],
         "accordion_label": "Worked examples"
@@ -1178,7 +1203,9 @@
         "note": "Orthogonal transformation prerequisite"
       }
     ],
-    "cautions": [],
+    "cautions": [
+      "Verified textbook mismatch — Grewal p. 59, Example 2.43: the printed line concludes \\(a=2,b=2,c=1\\) after using only the diagonal equations. But orthogonality also requires \\(ab=-4, ac=2, bc=-2\\). The full system gives \\((a,b,c)=\\pm(2,-2,1)\\). The textbook's displayed inverse is consistent with the branch \\((2,-2,1)\\), not with \\(b=2\\)."
+    ],
     "practice": null,
     "self_checks": [],
     "class_history": null
@@ -1300,19 +1327,27 @@
               "\\[A=\\begin{bmatrix}4&6&6\\\\1&3&2\\\\-1&-4&-3\\end{bmatrix}.\\]"
             ],
             "paragraphs": [
-              "Solution. Step 1: The characteristic equation is \\(|A-\\lambda I|=0\\).",
+              "Solution. Step 1: Form the characteristic equation \\(|A-\\lambda I|=0\\):",
               "\\[\\begin{vmatrix}4-\\lambda&6&6\\\\1&3-\\lambda&2\\\\-1&-4&-3-\\lambda\\end{vmatrix}=0.\\]",
-              "For the cubic \\(\\lambda^3-S_1\\lambda^2+S_2\\lambda-|A|=0\\), \\(S_1=4+3-3=4\\), \\(S_2=-1\\), and \\(|A|=-4\\). Hence",
+              "For the cubic \\(\\lambda^3-S_1\\lambda^2+S_2\\lambda-|A|=0\\),",
+              "\\[S_1=4+3-3=4,\\qquad S_2=-1,\\qquad |A|=-4.\\]",
+              "Hence",
               "\\[\\lambda^3-4\\lambda^2-\\lambda+4=0.\\]",
-              "Step 2: Since \\(\\lambda=1\\) is a root, factor the polynomial:",
+              "Step 2: Since \\(\\lambda=1\\) is a root,",
               "\\[(\\lambda-1)(\\lambda^2-3\\lambda-4)=(\\lambda-1)(\\lambda+1)(\\lambda-4)=0.\\]",
               "Thus the eigenvalues are \\(\\lambda=-1,1,4\\).",
-              "Step 3: Use \\((A-\\lambda I)X=0\\), where \\(X=[x\\ y\\ z]^T\\).",
-              "For \\(\\lambda=-1\\), use \\(5x+6y+6z=0\\) and \\(x+4y+2z=0\\). Solving gives \\(x:y:z=-6:-2:7\\), so one eigenvector is",
+              "Step 3: For each eigenvalue solve \\((A-\\lambda I)X=0\\), where \\(X=[x\\ y\\ z]^T\\).",
+              "For \\(\\lambda=-1\\):",
+              "\\[5x+6y+6z=0,\\qquad x+4y+2z=0.\\]",
+              "Solving the two independent equations gives \\(x:y:z=-6:-2:7\\). Hence one eigenvector is",
               "\\[X_1=\\begin{bmatrix}-6\\\\-2\\\\7\\end{bmatrix}.\\]",
-              "For \\(\\lambda=1\\), the independent equations may be taken as \\(x+2y+2z=0\\) and \\(-x-4y-4z=0\\). These give \\(x=0,\\ y=-z\\), so take",
+              "For \\(\\lambda=1\\), take the independent equations",
+              "\\[x+2y+2z=0,\\qquad -x-4y-4z=0.\\]",
+              "They give \\(y=-z\\) and then \\(x=0\\). Taking \\(y=1\\),",
               "\\[X_2=\\begin{bmatrix}0\\\\1\\\\-1\\end{bmatrix}.\\]",
-              "For \\(\\lambda=4\\), the equations include \\(y+z=0\\) and \\(x-y+2z=0\\). With \\(z=1\\), \\(y=-1\\) and \\(x=-3\\), giving",
+              "For \\(\\lambda=4\\), the equations include",
+              "\\[y+z=0,\\qquad x-y+2z=0.\\]",
+              "Taking \\(z=1\\) gives \\(y=-1\\) and \\(x=-3\\), so",
               "\\[X_3=\\begin{bmatrix}-3\\\\-1\\\\1\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(\\lambda=-1,1,4\\), with eigenvectors proportional to \\((-6,-2,7)^T,(0,1,-1)^T,(-3,-1,1)^T\\)."
@@ -1324,15 +1359,23 @@
             ],
             "paragraphs": [
               "Solution. The characteristic equation is",
-              "\\[\\begin{vmatrix}1-\\lambda&1&3\\\\1&5-\\lambda&1\\\\3&1&1-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-7\\lambda^2+36=0.\\]",
-              "Since \\(\\lambda=-2\\) is a root,",
+              "\\[\\begin{vmatrix}1-\\lambda&1&3\\\\1&5-\\lambda&1\\\\3&1&1-\\lambda\\end{vmatrix}=0,\\]",
+              "which simplifies to",
+              "\\[\\lambda^3-7\\lambda^2+36=0.\\]",
+              "Since \\(\\lambda=-2\\) satisfies the equation,",
               "\\[(\\lambda+2)(\\lambda^2-9\\lambda+18)=(\\lambda+2)(\\lambda-3)(\\lambda-6)=0.\\]",
-              "Hence the eigenvalues are \\(-2,3,6\\).",
-              "For \\(\\lambda=-2\\), the equations are \\(3x+y+3z=0\\), \\(x+7y+z=0\\), and \\(3x+y+3z=0\\). Solving gives \\(x:y:z=-1:0:1\\).",
+              "Hence the eigenvalues are \\(-2,3,6\\). Now solve \\((A-\\lambda I)X=0\\).",
+              "For \\(\\lambda=-2\\):",
+              "\\[3x+y+3z=0,\\qquad x+7y+z=0.\\]",
+              "Subtracting three times the second equation from the first gives \\(y=0\\); then \\(x=-z\\). Taking \\(z=1\\),",
               "\\[X_1=\\begin{bmatrix}-1\\\\0\\\\1\\end{bmatrix}.\\]",
-              "For \\(\\lambda=3\\), the equations include \\(-2x+y+3z=0\\) and \\(x+2y+z=0\\). Taking \\(z=1\\) gives \\(y=-1,x=1\\).",
+              "For \\(\\lambda=3\\):",
+              "\\[-2x+y+3z=0,\\qquad x+2y+z=0.\\]",
+              "Taking \\(z=1\\) and solving gives \\(y=-1\\), \\(x=1\\). Thus",
               "\\[X_2=\\begin{bmatrix}1\\\\-1\\\\1\\end{bmatrix}.\\]",
-              "For \\(\\lambda=6\\), the equations include \\(-5x+y+3z=0\\) and \\(x-y+z=0\\). Taking \\(z=1\\) gives \\(x=1,y=2\\).",
+              "For \\(\\lambda=6\\):",
+              "\\[-5x+y+3z=0,\\qquad x-y+z=0.\\]",
+              "From the second equation \\(x=y-z\\). Substitution in the first gives \\(y=2z\\), hence \\(x=z\\). Taking \\(z=1\\),",
               "\\[X_3=\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(\\lambda=-2,3,6\\), with eigenvectors proportional to \\((-1,0,1)^T,(1,-1,1)^T,(1,2,1)^T\\)."
@@ -1343,14 +1386,16 @@
               "\\[A=\\begin{bmatrix}3&1&4\\\\0&2&6\\\\0&0&5\\end{bmatrix}.\\]"
             ],
             "paragraphs": [
-              "Solution. Since the matrix is triangular, its eigenvalues are the diagonal elements. Equivalently,",
+              "Solution. Since \\(A\\) is triangular, its eigenvalues are its diagonal elements. Equivalently,",
               "\\[|A-\\lambda I|=(3-\\lambda)(2-\\lambda)(5-\\lambda)=0.\\]",
               "Thus the eigenvalues are \\(2,3,5\\).",
-              "For \\(\\lambda=2\\), \\(z=0\\) and \\(x+y=0\\); take \\(x=1,y=-1\\):",
+              "For \\(\\lambda=2\\), \\((A-2I)X=0\\) gives \\(6z=0\\), hence \\(z=0\\), and then \\(x+y=0\\). Taking \\(x=1\\),",
               "\\[X_1=\\begin{bmatrix}1\\\\-1\\\\0\\end{bmatrix}.\\]",
-              "For \\(\\lambda=3\\), the equations force \\(y=z=0\\); take \\(x=1\\):",
+              "For \\(\\lambda=3\\), the equations give \\(2z=0\\) and \\(-y+6z=0\\), so \\(y=z=0\\). Taking \\(x=1\\),",
               "\\[X_2=\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}.\\]",
-              "For \\(\\lambda=5\\), \\(-3y+6z=0\\) gives \\(y=2z\\), and \\(-2x+y+4z=0\\) then gives \\(x=3z\\). Taking \\(z=1\\):",
+              "For \\(\\lambda=5\\),",
+              "\\[-3y+6z=0\\Rightarrow y=2z,\\qquad -2x+y+4z=0\\Rightarrow x=3z.\\]",
+              "Taking \\(z=1\\),",
               "\\[X_3=\\begin{bmatrix}3\\\\2\\\\1\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(\\lambda=2,3,5\\), with eigenvectors proportional to \\((1,-1,0)^T,(1,0,0)^T,(3,2,1)^T\\)."
@@ -1530,18 +1575,23 @@
             "paragraphs": [
               "Solution. The characteristic equation is",
               "\\[\\begin{vmatrix}1-\\lambda&4\\\\2&3-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^2-4\\lambda-5=0.\\]",
-              "By Cayley–Hamilton,",
+              "By Cayley–Hamilton, the matrix must satisfy its characteristic equation:",
               "\\[A^2-4A-5I=0.\\]",
-              "Now \\(A^2=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix}\\), so",
+              "Now",
+              "\\[A^2=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix},\\]",
+              "and hence",
               "\\[A^2-4A-5I=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix}-\\begin{bmatrix}4&16\\\\8&12\\end{bmatrix}-\\begin{bmatrix}5&0\\\\0&5\\end{bmatrix}=0.\\]",
-              "This verifies the theorem.",
-              "Multiply \\(A^2-4A-5I=0\\) by \\(A^{-1}\\):",
-              "\\[A-4I-5A^{-1}=0,\\qquad A^{-1}=\\dfrac15(A-4I).\\]",
-              "\\[A^{-1}=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}.\\]",
-              "For the polynomial, divide \\(\\lambda^5-4\\lambda^4-7\\lambda^3+11\\lambda^2-\\lambda-10\\) by \\(\\lambda^2-4\\lambda-5\\). The remainder is \\(\\lambda+5\\). Therefore, using the characteristic equation,",
+              "This verifies the theorem for the given matrix.",
+              "To find the inverse, multiply \\(A^2-4A-5I=0\\) by \\(A^{-1}\\):",
+              "\\[A-4I-5A^{-1}=0.\\]",
+              "Therefore",
+              "\\[A^{-1}=\\dfrac15(A-4I)=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}.\\]",
+              "For the polynomial, divide \\(\\lambda^5-4\\lambda^4-7\\lambda^3+11\\lambda^2-\\lambda-10\\) by \\(\\lambda^2-4\\lambda-5\\):",
+              "\\[\\lambda^5-4\\lambda^4-7\\lambda^3+11\\lambda^2-\\lambda-10=(\\lambda^2-4\\lambda-5)(\\lambda^3-2\\lambda+3)+(\\lambda+5).\\]",
+              "The first factor vanishes when \\(\\lambda\\) is replaced by \\(A\\), so",
               "\\[A^5-4A^4-7A^3+11A^2-A-10I=A+5I.\\]"
             ],
-            "final_answer": "\\(A^{-1}=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}\\), and the polynomial reduces to \\(A+5I\\)."
+            "final_answer": "\\(A^{-1}=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}\\), and \\(A^5-4A^4-7A^3+11A^2-A-10I=A+5I\\)."
           },
           {
             "title": "Example 2.49 — Find the characteristic equation and hence the inverse.",
@@ -1550,15 +1600,19 @@
             ],
             "paragraphs": [
               "Solution. The characteristic equation is",
-              "\\[\\begin{vmatrix}1-\\lambda&1&3\\\\1&3-\\lambda&-3\\\\-2&-4&-4-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-20\\lambda+8=0.\\]",
+              "\\[\\begin{vmatrix}1-\\lambda&1&3\\\\1&3-\\lambda&-3\\\\-2&-4&-4-\\lambda\\end{vmatrix}=0,\\]",
+              "which gives",
+              "\\[\\lambda^3-20\\lambda+8=0.\\]",
               "By Cayley–Hamilton,",
               "\\[A^3-20A+8I=0.\\]",
               "Multiplying by \\(A^{-1}\\),",
-              "\\[A^2-20I+8A^{-1}=0,\\qquad A^{-1}=\\dfrac52I-\\dfrac18A^2.\\]",
+              "\\[A^2-20I+8A^{-1}=0,\\]",
+              "so",
+              "\\[A^{-1}=\\dfrac52I-\\dfrac18A^2.\\]",
               "Now",
               "\\[A^2=\\begin{bmatrix}-4&-8&-12\\\\10&22&6\\\\2&2&22\\end{bmatrix}.\\]",
               "Therefore",
-              "\\[A^{-1}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}.\\]"
+              "\\[A^{-1}=\\dfrac52I-\\dfrac18\\begin{bmatrix}-4&-8&-12\\\\10&22&6\\\\2&2&22\\end{bmatrix}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(A^{-1}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}\\)."
           }
@@ -1628,18 +1682,23 @@
             ],
             "paragraphs": [
               "Solution. The characteristic equation is",
-              "\\[\\begin{vmatrix}2-\\lambda&1&1\\\\0&1-\\lambda&0\\\\1&1&2-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-5\\lambda^2+7\\lambda-3=0.\\]",
+              "\\[\\begin{vmatrix}2-\\lambda&1&1\\\\0&1-\\lambda&0\\\\1&1&2-\\lambda\\end{vmatrix}=0,\\]",
+              "hence",
+              "\\[\\lambda^3-5\\lambda^2+7\\lambda-3=0.\\]",
               "By Cayley–Hamilton,",
               "\\[A^3-5A^2+7A-3I=0.\\]",
               "Multiplying by \\(A^{-1}\\),",
-              "\\[A^2-5A+7I-3A^{-1}=0,\\qquad A^{-1}=\\dfrac13(A^2-5A+7I).\\]",
-              "Compute",
-              "\\[A^2=\\begin{bmatrix}5&4&4\\\\0&1&0\\\\4&4&5\\end{bmatrix},\\]",
+              "\\[A^2-5A+7I-3A^{-1}=0,\\]",
               "so",
-              "\\[A^2-5A+7I=\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix},\\qquad A^{-1}=\\dfrac13\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix}.\\]",
+              "\\[A^{-1}=\\dfrac13(A^2-5A+7I).\\]",
+              "Compute",
+              "\\[A^2=\\begin{bmatrix}5&4&4\\\\0&1&0\\\\4&4&5\\end{bmatrix}.\\]",
+              "Thus",
+              "\\[A^2-5A+7I=\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix},\\]",
+              "and",
+              "\\[A^{-1}=\\dfrac13\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix}.\\]",
               "For the polynomial, group the characteristic-expression factors:",
-              "\\[A^8-5A^7+7A^6-3A^5+A^4-5A^3+8A^2-2A+I\\]",
-              "\\[=A^5(A^3-5A^2+7A-3I)+A(A^3-5A^2+7A-3I)+A^2+A+I.\\]",
+              "\\[\\begin{aligned}A^8-5A^7+7A^6-3A^5+A^4-5A^3+8A^2-2A+I\\;&=A^5(A^3-5A^2+7A-3I)\\\\&\\quad+A(A^3-5A^2+7A-3I)+A^2+A+I.\\end{aligned}\\]",
               "The two bracketed factors are zero by Cayley–Hamilton. Hence the expression is \\(A^2+A+I\\):",
               "\\[A^2+A+I=\\begin{bmatrix}8&5&5\\\\0&3&0\\\\5&5&8\\end{bmatrix}.\\]"
             ],
@@ -1708,17 +1767,19 @@
             "paragraphs": [
               "Solution. Step 1: The characteristic equation is",
               "\\[\\begin{vmatrix}14-\\lambda&-10\\\\5&-1-\\lambda\\end{vmatrix}=0.\\]",
-              "\\[(14-\\lambda)(-1-\\lambda)+50=0,\\qquad \\lambda^2-13\\lambda+36=0.\\]",
+              "Therefore",
+              "\\[(14-\\lambda)(-1-\\lambda)+50=0,\\qquad \\lambda^2-13\\lambda+36=0,\\]",
+              "and",
               "\\[(\\lambda-9)(\\lambda-4)=0.\\]",
-              "Hence the eigenvalues are \\(9\\) and \\(4\\).",
-              "Step 2: Use \\((A-\\lambda I)X=0\\), with \\(X=[x\\ y]^T\\).",
-              "For \\(\\lambda=9\\),",
+              "Thus the eigenvalues are \\(9\\) and \\(4\\).",
+              "Step 2: Solve \\((A-\\lambda I)X=0\\), with \\(X=[x\\ y]^T\\).",
+              "For \\(\\lambda=9\\):",
               "\\[\\begin{bmatrix}5&-10\\\\5&-10\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=0,\\qquad x-2y=0.\\]",
               "Taking \\(y=1\\) gives \\(x=2\\), so",
               "\\[X_1=\\begin{bmatrix}2\\\\1\\end{bmatrix}.\\]",
-              "For \\(\\lambda=4\\),",
+              "For \\(\\lambda=4\\):",
               "\\[\\begin{bmatrix}10&-10\\\\5&-5\\end{bmatrix}\\begin{bmatrix}x\\\\y\\end{bmatrix}=0,\\qquad x-y=0.\\]",
-              "Taking \\(y=1\\) gives \\(x=1\\), so",
+              "Taking \\(y=1\\) gives \\(x=1\\), hence",
               "\\[X_2=\\begin{bmatrix}1\\\\1\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(\\lambda=9,4\\), with eigenvectors proportional to \\((2,1)^T\\) and \\((1,1)^T\\)."
@@ -1731,16 +1792,19 @@
             "paragraphs": [
               "Solution. Step 1: The characteristic equation is \\(|A-\\lambda I|=0\\). For a cubic,",
               "\\[\\lambda^3-S_1\\lambda^2+S_2\\lambda-|A|=0.\\]",
-              "Here \\(S_1=1+2+3=6\\), \\(S_2=11\\), and \\(|A|=6\\). Hence",
+              "Here",
+              "\\[S_1=1+2+3=6,\\qquad S_2=11,\\qquad |A|=6.\\]",
+              "Hence",
               "\\[\\lambda^3-6\\lambda^2+11\\lambda-6=0.\\]",
-              "Since \\(\\lambda=1\\) is a root,",
+              "Step 2: Since \\(\\lambda=1\\) is a root,",
               "\\[(\\lambda-1)(\\lambda^2-5\\lambda+6)=(\\lambda-1)(\\lambda-2)(\\lambda-3)=0.\\]",
               "Thus the eigenvalues are \\(1,2,3\\).",
-              "For \\(\\lambda=1\\), the first row of \\((A-I)X=0\\) gives \\(-z=0\\), and the second gives \\(x+y=0\\). Taking \\(y=1\\):",
+              "Step 3: Solve \\((A-\\lambda I)X=0\\), where \\(X=[x\\ y\\ z]^T\\).",
+              "For \\(\\lambda=1\\), the first equation gives \\(z=0\\), and the second gives \\(x+y=0\\). Taking \\(y=1\\),",
               "\\[X_1=\\begin{bmatrix}-1\\\\1\\\\0\\end{bmatrix}.\\]",
-              "For \\(\\lambda=2\\), \\(-x-z=0\\) gives \\(x=-z\\), and \\(2x+2y+z=0\\). Taking \\(z=2\\) gives \\(x=-2,y=1\\):",
+              "For \\(\\lambda=2\\), the first equation gives \\(x=-z\\). The third equation gives \\(2x+2y+z=0\\). Taking \\(z=2\\) gives \\(x=-2\\) and \\(y=1\\), so",
               "\\[X_2=\\begin{bmatrix}-2\\\\1\\\\2\\end{bmatrix}.\\]",
-              "For \\(\\lambda=3\\), \\(-2x-z=0\\) gives \\(z=-2x\\), and \\(x-y+z=0\\) gives \\(y=-x\\). Taking \\(x=1\\):",
+              "For \\(\\lambda=3\\), the first equation gives \\(z=-2x\\), and the second gives \\(x-y+z=0\\), hence \\(y=-x\\). Taking \\(x=1\\),",
               "\\[X_3=\\begin{bmatrix}1\\\\-1\\\\-2\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(\\lambda=1,2,3\\), with eigenvectors proportional to \\((-1,1,0)^T,(-2,1,2)^T,(1,-1,-2)^T\\)."
@@ -1854,31 +1918,47 @@
             ],
             "paragraphs": [
               "Solution. The characteristic equation is",
-              "\\[\\begin{vmatrix}-1-\\lambda&2&-2\\\\1&2-\\lambda&1\\\\-1&-1&-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-\\lambda^2-5\\lambda+5=0.\\]",
-              "Hence the eigenvalues are \\(\\lambda_1=1,\\lambda_2=\\sqrt5,\\lambda_3=-\\sqrt5\\).",
-              "For \\(\\lambda=1\\), solving \\(2x-2y+2z=0\\) and \\(x+y+z=0\\) gives \\(x:y:z=1:0:-1\\). Thus take \\(X_1=(1,0,-1)^T\\).",
-              "For \\(\\lambda=\\sqrt5\\), solving the second and third equations gives an eigenvector \\(X_2=(\\sqrt5-1,1,-1)^T\\).",
-              "For \\(\\lambda=-\\sqrt5\\), an eigenvector is \\(X_3=(\\sqrt5+1,-1,1)^T\\).",
-              "Using these three eigenvectors as columns gives the mathematically consistent modal matrix",
+              "\\[\\begin{vmatrix}-1-\\lambda&2&-2\\\\1&2-\\lambda&1\\\\-1&-1&-\\lambda\\end{vmatrix}=0,\\]",
+              "so",
+              "\\[\\lambda^3-\\lambda^2-5\\lambda+5=0=(\\lambda-1)(\\lambda^2-5).\\]",
+              "Hence the eigenvalues are \\(1,\\sqrt5,-\\sqrt5\\).",
+              "For \\(\\lambda=1\\),",
+              "\\[-2x+2y-2z=0,\\qquad x+y+z=0.\\]",
+              "Solving gives \\(x:y:z=1:0:-1\\), so take",
+              "\\[X_1=\\begin{bmatrix}1\\\\0\\\\-1\\end{bmatrix}.\\]",
+              "For \\(\\lambda=\\sqrt5\\), the equations include",
+              "\\[x+(2-\\sqrt5)y+z=0,\\qquad -x-y-\\sqrt5 z=0.\\]",
+              "Solving gives \\(x:y:z=(\\sqrt5-1):1:-1\\), hence",
+              "\\[X_2=\\begin{bmatrix}\\sqrt5-1\\\\1\\\\-1\\end{bmatrix}.\\]",
+              "Similarly, for \\(\\lambda=-\\sqrt5\\), one eigenvector is",
+              "\\[X_3=\\begin{bmatrix}\\sqrt5+1\\\\-1\\\\1\\end{bmatrix}.\\]",
+              "Writing the verified eigenvectors as columns gives the modal matrix",
               "\\[P=\\begin{bmatrix}1&\\sqrt5-1&\\sqrt5+1\\\\0&1&-1\\\\-1&-1&1\\end{bmatrix}.\\]",
-              "The diagonal matrix is",
-              "\\[D=\\begin{bmatrix}1&0&0\\\\0&\\sqrt5&0\\\\0&0&-\\sqrt5\\end{bmatrix}.\\]"
+              "Therefore",
+              "\\[P^{-1}AP=D=\\begin{bmatrix}1&0&0\\\\0&\\sqrt5&0\\\\0&0&-\\sqrt5\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(P^{-1}AP=D=\\operatorname{diag}(1,\\sqrt5,-\\sqrt5)\\)."
+            "final_answer": "\\(P^{-1}AP=\\operatorname{diag}(1,\\sqrt5,-\\sqrt5)\\), with \\(P=\\begin{bmatrix}1&\\sqrt5-1&\\sqrt5+1\\\\0&1&-1\\\\-1&-1&1\\end{bmatrix}\\)."
           },
           {
             "title": "Example 2.54 — Find the modal matrix and hence calculate \\(A^4\\).",
             "question_paragraphs": [
-              "\\[A=\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&1&1\\end{bmatrix}.\\]"
+              "Find the matrix \\(P\\) which transforms \\(A=\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&1&1\\end{bmatrix}\\) to diagonal form. Hence calculate \\(A^4\\)."
             ],
             "paragraphs": [
-              "Solution. The eigenvalues are \\(-2,3,6\\), with corresponding eigenvectors \\((-1,0,1)^T,(1,-1,1)^T,(1,2,1)^T\\). Hence",
+              "Solution. From Example 2.46, the eigenvalues are \\(-2,3,6\\), with corresponding eigenvectors \\((-1,0,1)^T,(1,-1,1)^T,(1,2,1)^T\\).",
+              "Using these as columns,",
               "\\[P=\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}.\\]",
-              "Its determinant is \\(|P|=6\\), and",
+              "Its determinant is \\(|P|=6\\), and the inverse is",
               "\\[P^{-1}=\\dfrac16\\begin{bmatrix}-3&0&3\\\\2&-2&2\\\\1&2&1\\end{bmatrix}.\\]",
+              "Hence",
+              "\\[D=P^{-1}AP=\\begin{bmatrix}-2&0&0\\\\0&3&0\\\\0&0&6\\end{bmatrix}.\\]",
               "Therefore",
-              "\\[D=P^{-1}AP=\\begin{bmatrix}-2&0&0\\\\0&3&0\\\\0&0&6\\end{bmatrix},\\qquad D^4=\\begin{bmatrix}16&0&0\\\\0&81&0\\\\0&0&1296\\end{bmatrix}.\\]",
-              "Now use \\(A^4=PD^4P^{-1}\\):",
+              "\\[D^4=\\begin{bmatrix}16&0&0\\\\0&81&0\\\\0&0&1296\\end{bmatrix}.\\]",
+              "Since \\(A=PDP^{-1}\\),",
+              "\\[A^4=PD^4P^{-1}.\\]",
+              "Substituting the matrices,",
+              "\\[A^4=\\dfrac16\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}\\begin{bmatrix}16&0&0\\\\0&81&0\\\\0&0&1296\\end{bmatrix}\\begin{bmatrix}-3&0&3\\\\2&-2&2\\\\1&2&1\\end{bmatrix}.\\]",
+              "Carrying out the multiplication gives the independently verified result",
               "\\[A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(P=\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}\\), and \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\)."
@@ -2034,16 +2114,23 @@
               "\\[A=\\begin{bmatrix}3&-1&1\\\\-1&5&-1\\\\1&-1&3\\end{bmatrix}.\\]",
               "Its characteristic equation is",
               "\\[\\begin{vmatrix}3-\\lambda&-1&1\\\\-1&5-\\lambda&-1\\\\1&-1&3-\\lambda\\end{vmatrix}=0,\\]",
-              "which gives the eigenvalues \\(2,3,6\\). Therefore the canonical form is",
+              "which simplifies to",
+              "\\[\\lambda^3-11\\lambda^2+36\\lambda-36=(\\lambda-2)(\\lambda-3)(\\lambda-6)=0.\\]",
+              "Thus the eigenvalues are \\(2,3,6\\), so the canonical form is",
               "\\[2u^2+3v^2+6w^2.\\]",
-              "To find the transformation, solve \\((A-\\lambda I)X=0\\).",
-              "For \\(\\lambda=2\\), an eigenvector is \\((1,0,-1)^T\\); its normalized form is \\(\\left(1/\\sqrt2,0,-1/\\sqrt2\\right)^T\\).",
-              "For \\(\\lambda=3\\), an eigenvector is \\((1,1,1)^T\\); its normalized form is \\(\\left(1/\\sqrt3,1/\\sqrt3,1/\\sqrt3\\right)^T\\).",
-              "For \\(\\lambda=6\\), an eigenvector is \\((1,-2,1)^T\\); its normalized form is \\(\\left(1/\\sqrt6,-2/\\sqrt6,1/\\sqrt6\\right)^T\\).",
-              "Thus the orthogonal transformation matrix is",
-              "\\[P=\\begin{bmatrix}1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\\\0&1/\\sqrt3&-2/\\sqrt6\\\\-1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\end{bmatrix}.\\]"
+              "To find the orthogonal transformation, solve \\((A-\\lambda I)X=0\\).",
+              "For \\(\\lambda=2\\), the equations reduce to \\(x-y+z=0\\) and \\(-x+3y-z=0\\), giving \\(y=0\\) and \\(x=-z\\). Take \\(X_1=(1,0,-1)^T\\). Its normalized form is",
+              "\\[\\widehat X_1=\\begin{bmatrix}1/\\sqrt2\\\\0\\\\-1/\\sqrt2\\end{bmatrix}.\\]",
+              "For \\(\\lambda=3\\), one eigenvector is \\(X_2=(1,1,1)^T\\), whose normalized form is",
+              "\\[\\widehat X_2=\\begin{bmatrix}1/\\sqrt3\\\\1/\\sqrt3\\\\1/\\sqrt3\\end{bmatrix}.\\]",
+              "For \\(\\lambda=6\\), one eigenvector is \\(X_3=(1,-2,1)^T\\), whose normalized form is",
+              "\\[\\widehat X_3=\\begin{bmatrix}1/\\sqrt6\\\\-2/\\sqrt6\\\\1/\\sqrt6\\end{bmatrix}.\\]",
+              "Using the normalized eigenvectors as columns gives the orthogonal matrix",
+              "\\[P=\\begin{bmatrix}1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\\\0&1/\\sqrt3&-2/\\sqrt6\\\\-1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\end{bmatrix}.\\]",
+              "A direct check gives \\(P^{T}P=I\\) and",
+              "\\[P^{T}AP=\\operatorname{diag}(2,3,6).\\]"
             ],
-            "final_answer": "Canonical form: \\(2u^2+3v^2+6w^2\\), with the displayed orthogonal matrix \\(P\\)."
+            "final_answer": "Canonical form \\(2u^2+3v^2+6w^2\\), with \\(P=\\begin{bmatrix}1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\\\0&1/\\sqrt3&-2/\\sqrt6\\\\-1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\end{bmatrix}\\)."
           }
         ],
         "accordion_label": "Worked examples"
@@ -2132,20 +2219,30 @@
               "Reduce \\(2x_1x_2+2x_1x_3-2x_2x_3\\) to a canonical form by an orthogonal reduction and discuss its nature. Also find the modal matrix."
             ],
             "paragraphs": [
-              "Solution. The matrix of the quadratic form is",
+              "Solution. The symmetric matrix of the quadratic form is",
               "\\[A=\\begin{bmatrix}0&1&1\\\\1&0&-1\\\\1&-1&0\\end{bmatrix}.\\]",
-              "The characteristic equation is",
+              "Its characteristic equation is",
               "\\[\\begin{vmatrix}-\\lambda&1&1\\\\1&-\\lambda&-1\\\\1&-1&-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^3-3\\lambda+2=0.\\]",
-              "Thus the eigenvalues are \\(1,1,-2\\), so the canonical form is",
+              "Thus",
+              "\\[(\\lambda-1)^2(\\lambda+2)=0,\\]",
+              "so the eigenvalues are \\(1,1,-2\\). Hence a canonical form is",
               "\\[u^2+v^2-2w^2.\\]",
-              "Since some eigenvalues are positive and one is negative, the quadratic form is indefinite.",
-              "For \\(\\lambda=-2\\), solving gives an eigenvector \\((-1,1,1)^T\\), whose normalized form is \\((-1/\\sqrt3,1/\\sqrt3,1/\\sqrt3)^T\\).",
-              "For \\(\\lambda=1\\), one eigenvector is \\((1,0,1)^T\\), whose normalized form is \\((1/\\sqrt2,0,1/\\sqrt2)^T\\).",
-              "Because \\(\\lambda=1\\) is repeated, choose another eigenvector \\(X_3=(l,m,n)^T\\) orthogonal to the first two. Orthogonality gives \\(-l+m+n=0\\) and \\(l+n=0\\), hence \\(l:m:n=1:2:-1\\). Thus \\(X_3=(1,2,-1)^T\\), normalized to \\((1/\\sqrt6,2/\\sqrt6,-1/\\sqrt6)^T\\).",
-              "Hence the modal matrix is",
-              "\\[P=\\begin{bmatrix}-1/\\sqrt3&1/\\sqrt2&1/\\sqrt6\\\\1/\\sqrt3&0&2/\\sqrt6\\\\1/\\sqrt3&1/\\sqrt2&-1/\\sqrt6\\end{bmatrix}.\\]"
+              "Because some eigenvalues are positive and one is negative, the quadratic form is indefinite.",
+              "To find the modal matrix, first take \\(\\lambda=-2\\). Solving \\((A+2I)X=0\\) gives \\(x:y:z=-1:1:1\\). Hence",
+              "\\[X_1=\\begin{bmatrix}-1\\\\1\\\\1\\end{bmatrix},\\qquad \\widehat X_1=\\begin{bmatrix}-1/\\sqrt3\\\\1/\\sqrt3\\\\1/\\sqrt3\\end{bmatrix}.\\]",
+              "For the repeated eigenvalue \\(\\lambda=1\\), the equations reduce to \\(-x+y+z=0\\), \\(x-y-z=0\\). One eigenvector is",
+              "\\[X_2=\\begin{bmatrix}1\\\\0\\\\1\\end{bmatrix},\\qquad \\widehat X_2=\\begin{bmatrix}1/\\sqrt2\\\\0\\\\1/\\sqrt2\\end{bmatrix}.\\]",
+              "Choose a second eigenvector \\(X_3=(l,m,n)^T\\) in the same eigenspace and orthogonal to both \\(X_1\\) and \\(X_2\\). Orthogonality gives",
+              "\\[-l+m+n=0,\\qquad l+n=0.\\]",
+              "Thus \\(l:m:n=1:2:-1\\), so",
+              "\\[X_3=\\begin{bmatrix}1\\\\2\\\\-1\\end{bmatrix},\\qquad \\widehat X_3=\\begin{bmatrix}1/\\sqrt6\\\\2/\\sqrt6\\\\-1/\\sqrt6\\end{bmatrix}.\\]",
+              "Following the textbook's displayed column order \\((-2,1,1)\\), the modal matrix is",
+              "\\[P=\\begin{bmatrix}-1/\\sqrt3&1/\\sqrt2&1/\\sqrt6\\\\1/\\sqrt3&0&2/\\sqrt6\\\\1/\\sqrt3&1/\\sqrt2&-1/\\sqrt6\\end{bmatrix}.\\]",
+              "The vectors are orthonormal, so \\(P^{T}P=I\\). With this displayed column order,",
+              "\\[P^{T}AP=\\operatorname{diag}(-2,1,1),\\]",
+              "which gives \\(-2u^2+v^2+w^2\\). This is the same canonical form as \\(u^2+v^2-2w^2\\) after merely renaming the transformed variables."
             ],
-            "final_answer": "Canonical form \\(u^2+v^2-2w^2\\); the quadratic form is indefinite, with the displayed orthogonal modal matrix."
+            "final_answer": "Canonical form \\(u^2+v^2-2w^2\\) (equivalently \\(-2u^2+v^2+w^2\\) with the displayed \\(P\\)); the form is indefinite."
           }
         ],
         "accordion_label": "Worked examples"
@@ -2209,14 +2306,17 @@
               "\\[\\begin{vmatrix}1-\\lambda&4\\\\2&3-\\lambda\\end{vmatrix}=0,\\qquad \\lambda^2-4\\lambda-5=0.\\]",
               "Step 2: By Cayley–Hamilton,",
               "\\[A^2-4A-5I=0,\\qquad A^2=4A+5I.\\]",
-              "Step 3: Verification: \\(A^2=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix}\\), so \\(A^2-4A-5I=0\\).",
+              "Step 3: Verify the identity directly:",
+              "\\[A^2=\\begin{bmatrix}9&16\\\\8&17\\end{bmatrix},\\]",
+              "so \\(A^2-4A-5I=0\\).",
               "Step 4: Repeatedly use \\(A^2=4A+5I\\):",
               "\\[A^3=4A^2+5A=21A+20I,\\]",
               "\\[A^4=21A^2+20A=104A+105I,\\]",
               "\\[A^5=104A^2+105A=521A+520I.\\]",
               "Therefore",
-              "\\[A^5+5A^4-6A^3+2A^2-4A+7I=919A+942I.\\]",
-              "\\[=919\\begin{bmatrix}1&4\\\\2&3\\end{bmatrix}+942I=\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}.\\]"
+              "\\[\\begin{aligned}A^5+5A^4-6A^3+2A^2-4A+7I\\;&=(521A+520I)+5(104A+105I)\\\\&\\quad-6(21A+20I)+2(4A+5I)-4A+7I\\\\&=919A+942I.\\end{aligned}\\]",
+              "Finally,",
+              "\\[919A+942I=919\\begin{bmatrix}1&4\\\\2&3\\end{bmatrix}+942I=\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}.\\]"
             ],
             "final_answer": "\\(\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}\\)."
           }
