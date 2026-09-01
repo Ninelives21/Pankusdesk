@@ -490,7 +490,7 @@ function renderStudyTables(tables) {
 
 function renderStudyTableCell(cell) {
 	if (cell && typeof cell === 'object' && cell.type === 'image') {
-		const src = escapeHtml(resolveSiteUrl(cell.src));
+		const src = escapeHtml(cell.src);
 		const alt = escapeHtml(cell.alt || '');
 		const width = Number(cell.width) || 160;
 		const height = Number(cell.height) || width;
