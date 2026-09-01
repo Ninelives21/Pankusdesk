@@ -479,12 +479,25 @@ function renderStudyTables(tables) {
 						<tr>${headers.map(header => `<th scope="col">${formatText(header)}</th>`).join('')}</tr>
 					</thead>
 					<tbody>
-						${rows.map(row => `<tr>${row.map(cell => `<td>${formatText(cell)}</td>`).join('')}</tr>`).join('')}
+						${rows.map(row => `<tr>${row.map(cell => `<td>${renderStudyTableCell(cell)}</td>`).join('')}</tr>`).join('')}
 					</tbody>
 				</table>
 			</div>
 		`;
 	}).join('');
+}
+
+
+function renderStudyTableCell(cell) {
+	if (cell && typeof cell === 'object' && cell.type === 'image') {
+		const src = escapeHtml(resolveSiteUrl(cell.src));
+		const alt = escapeHtml(cell.alt || '');
+		const width = Number(cell.width) || 160;
+		const height = Number(cell.height) || width;
+		const sizeClass = cell.size ? ` study-table-image--${escapeHtml(cell.size)}` : '';
+		return `<img class="study-table-image${sizeClass}" src="${src}" alt="${alt}" width="${width}" height="${height}" loading="lazy">`;
+	}
+	return formatText(cell);
 }
 
 function renderExplanationAccordions(items, recapItems = [], label = 'Understand this diagram') {

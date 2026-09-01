@@ -157,8 +157,24 @@ def check_study_table(item, context: str):
             continue
         if len(row) != width:
             errors.append(f"{context}: row {ri} has {len(row)} cells; expected {width}")
-        if any(not isinstance(v, str) for v in row):
-            errors.append(f"{context}: row {ri} contains a non-string cell")
+        for ci, value in enumerate(row):
+            if isinstance(value, str):
+                continue
+            if isinstance(value, dict) and value.get("type") == "image":
+                src = value.get("src")
+                alt = value.get("alt")
+                if not isinstance(src, str) or not src.strip():
+                    errors.append(f"{context}: row {ri} cell {ci} image missing src")
+                else:
+                    path = resolve_repo_asset(src)
+                    if path is not None and not path.exists():
+                        errors.append(f"{context}: row {ri} cell {ci} missing image asset {src}")
+                if not isinstance(alt, str) or len(alt.strip()) < 8:
+                    errors.append(f"{context}: row {ri} cell {ci} image needs descriptive alt text")
+                elif BAD_ALT_RE.fullmatch(alt.strip()):
+                    errors.append(f"{context}: row {ri} cell {ci} image alt text is generic/non-descriptive: {alt!r}")
+                continue
+            errors.append(f"{context}: row {ri} cell {ci} must be a string or image cell")
 
 
 def collect_topic_figures(topic: dict):

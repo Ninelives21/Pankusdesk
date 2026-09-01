@@ -23,17 +23,25 @@ Represented by a diamond symbol.
 
 \[I=G_mV_c\]
 
+![Class-note redraw · VCCS dependent-source symbol](../../../assets/class/2026-08-31/figures/c1.png)
+
 2. CCCS
 
 \[I=A_iI_c\]
+
+![Class-note redraw · CCCS dependent-source symbol](../../../assets/class/2026-08-31/figures/c2.png)
 
 3. CCVS
 
 \[V=R_mI_c\]
 
+![Class-note redraw · CCVS dependent-source symbol](../../../assets/class/2026-08-31/figures/c3.png)
+
 4. VCVS
 
 \[V=A_vV_c\]
+
+![Class-note redraw · VCVS dependent-source symbol](../../../assets/class/2026-08-31/figures/c4.png)
 
 ## Page 2 — Passive elements: resistance and inductance
 
@@ -72,6 +80,8 @@ If the current across the inductor is constant, the inductor acts as a short cir
 ### 3) Capacitance parameter
 
 Unit: farad (F)
+
+![Class-note redraw · Capacitor symbol](../../../assets/class/2026-08-31/figures/c5.png)
 
 Any two conducting surfaces separated by an insulating dielectric exhibit the property of capacitance. Conducting surfaces are known as electrodes. Insulating substance is known as dielectric.
 

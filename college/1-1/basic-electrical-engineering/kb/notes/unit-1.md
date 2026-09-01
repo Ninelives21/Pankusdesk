@@ -476,6 +476,8 @@ As the capacitor stores energy and does not consume energy, the textbook calls i
 
 ### Capacitance — class-note view
 
+![Capacitor symbol from Priyanka’s 31 August class notes, with two straight plates and + on the left, − on the right.](../assets/class/2026-08-31/figures/c5.png)
+
 Capacitance is represented by \(C\) and its unit is the farad (F). A capacitor consists of two conducting surfaces separated by an insulating dielectric; the conducting surfaces are electrodes and the insulating substance is the dielectric.
 
 \[q\propto v\]
@@ -634,12 +636,12 @@ If the voltage or current of a source depends on some other voltage or current i
 
 Notation mapping used on this page: \(V_c\) and \(I_c\) denote the controlling voltage and current; \(V\) and \(I\) denote the dependent-source output. The equivalent symbols used in the four detailed equations below are \(V_c\leftrightarrow V_1\), \(I_c\leftrightarrow i_1\), \(V\leftrightarrow V_2\) and \(I\leftrightarrow i_2\).
 
-| Type | Class-note relation | Controlled by | Dependent source delivers | Constant |
-|---|---|---|---|---|
-| VCCS | \(I=G_mV_c\) | \(V_c\): controlling voltage | \(I\): output current | \(G_m\): A/V (mho or siemens) |
-| CCCS | \(I=A_iI_c\) | \(I_c\): controlling current | \(I\): output current | \(A_i\): current gain, no units |
-| CCVS | \(V=R_mI_c\) | \(I_c\): controlling current | \(V\): output voltage | \(R_m\): V/A = \(\Omega\) |
-| VCVS | \(V=A_vV_c\) | \(V_c\): controlling voltage | \(V\): output voltage | \(A_v\): voltage gain, no units |
+| Type | Symbol | Class-note relation | Controlled by | Dependent source delivers | Constant |
+|---|---|---|---|---|---|
+| VCCS | ![VCCS dependent-current-source symbol: diamond with upward arrow.](../assets/class/2026-08-31/figures/c1.png) | \(I=G_mV_c\) | \(V_c\): controlling voltage | \(I\): output current | \(G_m\): A/V (mho or siemens) |
+| CCCS | ![CCCS dependent-current-source symbol: diamond with upward arrow.](../assets/class/2026-08-31/figures/c2.png) | \(I=A_iI_c\) | \(I_c\): controlling current | \(I\): output current | \(A_i\): current gain, no units |
+| CCVS | ![CCVS dependent-voltage-source symbol: diamond with plus above minus.](../assets/class/2026-08-31/figures/c3.png) | \(V=R_mI_c\) | \(I_c\): controlling current | \(V\): output voltage | \(R_m\): V/A = \(\Omega\) |
+| VCVS | ![VCVS dependent-voltage-source symbol: diamond with plus above minus.](../assets/class/2026-08-31/figures/c4.png) | \(V=A_vV_c\) | \(V_c\): controlling voltage | \(V\): output voltage | \(A_v\): voltage gain, no units |
 
 **Understand this diagram — Understanding the four dependent sources**
 

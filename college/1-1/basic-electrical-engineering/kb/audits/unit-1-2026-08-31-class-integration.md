@@ -8,7 +8,9 @@
 - Added visible equation-term definitions and a blue explanation dropdown for the four dependent sources.
 - R/L/C material placed beside Resistance, Inductance and Capacitance respectively, not dumped as a single class-note block.
 - Added the previously discussed inductance plain-language dropdown.
-- No new technical redraw was created: source symbols duplicate textbook figures already present, and NRS semantic confirmation was not required for this text-only integration.
+- Added five NRS redraw assets from the 31 Aug notebook: VCCS, CCCS, CCVS, VCVS and the capacitor symbol.
+- The four dependent-source redraws are embedded directly in the class-note comparison table as a dedicated Symbol column; the capacitor redraw is placed in the Capacitance class-note section and in the dated class log.
+- The dependent-source symbol semantics were confirmed before redraw: VCCS/CCCS use a diamond with an upward arrow; CCVS/VCVS use a diamond with + above −; the capacitor uses two straight plates with + above the left plate and − above the right plate.
 - Raw notebook photographs remain intake/source material and are not copied into website assets.
 - Source differences in R/L/C notation/classification are explicitly flagged rather than silently reconciled.
 
