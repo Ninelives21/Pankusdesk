@@ -538,11 +538,15 @@ function renderExplanationAccordionItem(item, isExampleGroup) {
 	}
 
 	const { questionParagraphs, solutionParagraphs } = splitExampleQuestionAndSolution(item);
+	const mismatch = normalizeExampleMathMismatch(item.math_mismatch);
 	return `
-		<details class="explanation-accordion-item explanation-accordion-item--example">
+		<details class="explanation-accordion-item explanation-accordion-item--example${mismatch ? ' has-math-mismatch' : ''}">
 			<summary>
 				<span class="example-summary-copy">
-					<span class="example-summary-title">${formatText(item.title)}</span>
+					<span class="example-summary-heading-row">
+						<span class="example-summary-title">${formatText(item.title)}</span>
+						${mismatch ? `<span class="example-math-mismatch-badge">${escapeHtml(mismatch.label)}</span>` : ''}
+					</span>
 					${questionParagraphs.length ? `<span class="example-summary-question">${questionParagraphs.map(paragraph => `<span class="example-question-paragraph">${formatText(paragraph)}</span>`).join('')}</span>` : ''}
 				</span>
 				<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
@@ -550,9 +554,27 @@ function renderExplanationAccordionItem(item, isExampleGroup) {
 			<div class="explanation-accordion-content example-solution-content">
 				${solutionParagraphs.map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
 				${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+				${mismatch ? renderExampleMathMismatch(mismatch) : ''}
 				${item.final_answer ? `<div class="example-final-answer"><strong>Final answer:</strong> <strong>${formatText(item.final_answer)}</strong></div>` : ''}
 			</div>
 		</details>
+	`;
+}
+
+function normalizeExampleMathMismatch(value) {
+	if (!value || typeof value !== 'object' || !String(value.message || '').trim()) return null;
+	return {
+		label: String(value.label || 'Math mismatch'),
+		message: String(value.message),
+	};
+}
+
+function renderExampleMathMismatch(mismatch) {
+	return `
+		<aside class="example-math-mismatch-note" role="note" aria-label="${escapeHtml(mismatch.label)}">
+			<div class="example-math-mismatch-note-label">${escapeHtml(mismatch.label)}</div>
+			<div class="example-math-mismatch-note-text">${formatText(mismatch.message)}</div>
+		</aside>
 	`;
 }
 

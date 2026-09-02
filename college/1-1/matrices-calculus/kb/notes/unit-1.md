@@ -739,3 +739,7 @@ Class emphasis: write the non-singular matrix beside the identity matrix and use
 ### 29 August 2026 — Systems and consistency
 
 Class emphasis: write a system as \(AX=B\); consistency requires \(\rho(A)=\rho(A|B)\). Equal rank \(=n\) gives a unique solution; equal rank \(<n\) gives infinitely many solutions; unequal ranks give no solution. \(AX=0\) is homogeneous and always has the trivial solution; \(AX=B\) with \(B\ne0\) is non-homogeneous.
+
+### 1 September 2026 — Gauss elimination / row-rank consistency
+
+Class emphasis: the row-reduction consistency procedure is called the **Gauss-elimination method (Row-rank method)**. Form the augmented matrix, reduce to echelon/upper-triangular form, compare \(\rho(A)\) and \(\rho(A|B)\), and use back-substitution for a unique solution. Four non-homogeneous consistency/parameter examples and two homogeneous rank examples were worked. One notebook rank comparison and one row-operation entry contain visible slips; the cumulative topic boxes retain the class meaning but use independently verified arithmetic. The final homogeneous parameter example stops mid-working in the supplied notebook; the cumulative box labels its completed result as an independent verification.

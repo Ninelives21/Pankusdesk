@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-01",
+  "date_label": "1 September 2026",
+  "source_id": "CLASS-U1-2026-09-01",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Matrices"
+  },
+  "title": "Gauss-elimination (row-rank) method and consistency",
+  "summary": "Gauss-elimination/row-rank procedure; echelon reduction and back-substitution; unique, infinite and inconsistent systems; homogeneous rank tests; parameter cases.",
+  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. The dated record keeps two visible arithmetic/notational slips rather than silently correcting them; the cumulative Unit I boxes use independently verified mathematics. The supplied page 18 ends mid-solution, so the dated record does not invent the missing classroom continuation.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-linear-systems",
+      "label": "System of linear equations",
+      "href": "unit-1.html#u1-linear-systems"
+    },
+    {
+      "topic_id": "u1-non-homogeneous-systems",
+      "label": "Solving systems of non-homogeneous equations",
+      "href": "unit-1.html#u1-non-homogeneous-systems"
+    },
+    {
+      "topic_id": "u1-homogeneous-systems",
+      "label": "Solving systems of homogeneous equations",
+      "href": "unit-1.html#u1-homogeneous-systems"
+    }
+  ],
+  "pages": [
+    {
+      "page": 13,
+      "heading": "Gauss-elimination method (Row-rank method) and Example 1",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Gauss-elimination method (Row-rank method)"
+        },
+        {
+          "type": "heading",
+          "text": "Procedure"
+        },
+        {
+          "type": "paragraph",
+          "text": "It is used to test if the given system is consistent or not and solve if it is consistent."
+        },
+        {
+          "type": "paragraph",
+          "text": "In this method, the unknowns are eliminated successively and it is reduced to echelon form with row transformations, from which unknowns are calculated by back-substitution method."
+        },
+        {
+          "type": "heading",
+          "text": "1. Using Gauss-elimination method, solve"
+        },
+        {
+          "type": "equation",
+          "text": "\\[x+2y+z=8,\\qquad 2x+3y+4z=20,\\qquad 4x+3y+2z=16.\\]"
+        },
+        {
+          "type": "line",
+          "text": "The above system can be written as AX=B."
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}1&2&1\\\\2&3&4\\\\4&3&2\\end{bmatrix},\\quad B=\\begin{bmatrix}8\\\\20\\\\16\\end{bmatrix},\\quad X=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Consider the augmented matrix \\((A|B)\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\left[\\begin{array}{ccc|c}1&2&1&8\\\\2&3&4&20\\\\4&3&2&16\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-4R_1}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&-5&-2&-16\\end{array}\\right]\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\xrightarrow{R_3-5R_2}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&0&-12&-36\\end{array}\\right].\\]"
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "heading": "Example 1 completion and Example 2",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "The notebook records \\(\\rho(A)=\\rho(A|B)=3=n\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[-12z=-36\\Rightarrow z=3,\\qquad -y+2z=4\\Rightarrow y=2,\\qquad x+2y+z=8\\Rightarrow x=1.\\]"
+        },
+        {
+          "type": "heading",
+          "text": "2. Test for consistency and solve if it is consistent"
+        },
+        {
+          "type": "equation",
+          "text": "\\[x+y+z=6,\\qquad x+2y+3z=14,\\qquad x+4y+7z=30.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\left[\\begin{array}{ccc|c}1&1&1&6\\\\1&2&3&14\\\\1&4&7&30\\end{array}\\right]\\xrightarrow{R_2-R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&3&6&24\\end{array}\\right]\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\xrightarrow{R_3-3R_2}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&0&0&0\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "The notebook writes \\(\\rho(A)=\\rho(A|B)=2<4\\) and concludes that the system is consistent and has infinitely many solutions."
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "heading": "Example 2 completion and Example 3",
+      "blocks": [
+        {
+          "type": "equation",
+          "text": "\\[y+2z=8,\\qquad x+y+z=6.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Let \\(z=k\\). Then \\(y=8-2k\\) and \\(x=k-2\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[X=\\begin{bmatrix}k-2\\\\8-2k\\\\k\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "heading",
+          "text": "3. Test for consistency and solve"
+        },
+        {
+          "type": "equation",
+          "text": "\\[x+y+z=4,\\qquad 2x+5y-2z=3,\\qquad x+7y-7z=5.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\left[\\begin{array}{ccc|c}1&1&1&4\\\\2&5&-2&3\\\\1&7&-7&5\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&6&-8&1\\end{array}\\right]\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\xrightarrow{R_3-2R_2}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&0&0&11\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "The notebook concludes \\(\\rho(A)\\ne\\rho(A|B)\\), therefore the system is inconsistent."
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "heading": "Homogeneous Example 4 and parameter Example 5 — beginning",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "4. Solve"
+        },
+        {
+          "type": "equation",
+          "text": "\\[x_1+2x_2+x_3=0,\\qquad 2x_1+2x_2+3x_3=0,\\qquad 3x_1+2x_2+x_3=0.\\]"
+        },
+        {
+          "type": "line",
+          "text": "The notebook notes: \\(\\rho(A)=n\\Rightarrow\\) unique/trivial solution; \\(\\rho(A)<n\\Rightarrow\\) many solutions."
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}1&2&1\\\\2&2&3\\\\3&2&1\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "After the written operations \\(R_2\\to R_2-2R_1\\), \\(R_3\\to R_3-3R_1\\), the notebook displays \\(\\begin{bmatrix}1&2&1\\\\0&-3&1\\\\0&-4&-2\\end{bmatrix}\\), then reaches a third pivot and concludes \\(\\rho(A)=n\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[X=\\begin{bmatrix}0\\\\0\\\\0\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "heading",
+          "text": "5. Find the values of λ and μ so that the system will have (i) unique solution, (ii) many solutions, (iii) no solution"
+        },
+        {
+          "type": "equation",
+          "text": "\\[2x+3y+5z=9,\\qquad 7x+3y-2z=8,\\qquad 2x+3y+\\lambda z=\\mu.\\]"
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "heading": "Parameter Example 5 — completion",
+      "blocks": [
+        {
+          "type": "equation",
+          "text": "\\[\\left[\\begin{array}{ccc|c}2&3&5&9\\\\7&3&-2&8\\\\2&3&\\lambda&\\mu\\end{array}\\right]\\sim\\left[\\begin{array}{ccc|c}2&3&5&9\\\\0&-15&-39&-47\\\\0&0&\\lambda-5&\\mu-9\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "(i) If \\(\\rho(A)=\\rho(A|B)=3\\), the system has a unique solution: \\(\\lambda\\ne5\\), \\(\\mu\\in\\mathbb R\\)."
+        },
+        {
+          "type": "line",
+          "text": "(ii) If \\(\\rho(A)=\\rho(A|B)<3\\), the system has many solutions: \\(\\lambda=5\\), \\(\\mu=9\\)."
+        },
+        {
+          "type": "line",
+          "text": "(iii) If \\(\\rho(A)\\ne\\rho(A|B)\\), the system has no solution: the notebook's concluding line gives \\(\\lambda=5\\), \\(\\mu\\ne9\\)."
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "heading": "Homogeneous parameter Example 6 — partial class working",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "6. Find the values of λ for which the following system has non-trivial solution and solve in each case"
+        },
+        {
+          "type": "equation",
+          "text": "\\[3x_1+x_2-\\lambda x_3=0,\\qquad 4x_1-2x_2-3x_3=0,\\qquad 2\\lambda x_1+4x_2+\\lambda x_3=0.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}3&1&-\\lambda\\\\4&-2&-3\\\\2\\lambda&4&\\lambda\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "The notebook begins a row reduction. One readable intermediate row is \\([0,-10,4\\lambda-9]\\)."
+        },
+        {
+          "type": "line",
+          "text": "The supplied page ends during this working; no final values of \\(\\lambda\\) or solution ratios are written on the supplied page."
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The original six notebook photographs remain in mac_1stSept.zip and are not copied into website assets.",
+    "Notebook p.14 writes ρ(A)=ρ(A|B)=2<4 for Example 2. There are three unknowns, so the verified comparison is 2<3; the infinite-solution conclusion is unchanged.",
+    "Notebook p.16 has an arithmetic slip in Example 4: R2−2R1 gives [0,−2,1], not [0,−3,1]. Independent reduction still gives rank 3, so the recorded trivial-solution conclusion is correct.",
+    "Example 5 is the same parameter problem as Grewal Example 2.34 on pp.51–52; the class presents it by row-rank elimination.",
+    "Notebook p.18 stops mid-solution. The cumulative Unit I page includes a clearly labelled independent verification/completion rather than attributing unwritten steps to the class."
+  ]
+}

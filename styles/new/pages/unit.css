@@ -1668,6 +1668,68 @@ sub {
 }
 
 
+/* Verified mathematical source mismatches inside worked examples.
+ * Amber/gold is reserved for mathematical disagreement, matching the
+ * textbook-question mismatch treatment. */
+.explanation-accordion-item--example.has-math-mismatch {
+	border-color: var(--math-mismatch-border);
+}
+
+.explanation-accordion-item--example.has-math-mismatch > summary {
+	background: color-mix(in srgb, var(--math-mismatch-soft) 52%, var(--surface));
+}
+
+.example-summary-heading-row {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	flex-wrap: wrap;
+}
+
+.example-math-mismatch-badge {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	padding: 3px 8px;
+	border: 1px solid var(--math-mismatch-border);
+	border-radius: var(--radius-pill);
+	background: var(--math-mismatch);
+	color: var(--math-mismatch-text);
+	font-size: 11px;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .45px;
+	line-height: 1.35;
+	text-transform: uppercase;
+}
+
+.example-math-mismatch-note {
+	margin-top: var(--space-5);
+	padding: var(--space-5) var(--space-6);
+	border: 1px solid var(--math-mismatch-border);
+	border-left: 4px solid var(--math-mismatch-strong);
+	border-radius: var(--radius-sm);
+	background: var(--math-mismatch-soft);
+	color: var(--math-mismatch-text);
+}
+
+.example-math-mismatch-note-label {
+	margin-bottom: var(--space-2);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .55px;
+	text-transform: uppercase;
+	color: var(--math-mismatch-strong);
+}
+
+.example-math-mismatch-note-text {
+	font-size: 14px;
+	line-height: 1.65;
+}
+
+.example-math-mismatch-note mjx-container {
+	color: inherit;
+}
+
 /* Final result for fully worked examples: global PankusDesk convention. */
 .example-final-answer {
 	margin-top: var(--space-5);

@@ -265,6 +265,23 @@
         "final_answer": {
           "type": "string",
           "minLength": 1
+        },
+        "math_mismatch": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "message"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
         }
       },
       "anyOf": [

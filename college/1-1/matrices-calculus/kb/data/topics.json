@@ -625,6 +625,20 @@
           "\\[\\begin{aligned}a_{11}u_1+a_{12}u_2+\\cdots+a_{1n}u_n&=b_1\\\\a_{21}u_1+a_{22}u_2+\\cdots+a_{2n}u_n&=b_2\\\\&\\vdots\\\\a_{m1}u_1+a_{m2}u_2+\\cdots+a_{mn}u_n&=b_m\\end{aligned}\\]",
           "the system can be written in matrix form as \\(AX=B\\), where \\(A\\) is the \\(m\\times n\\) coefficient matrix, \\(X\\) is the \\(n\\times1\\) column of unknowns and \\(B\\) is the \\(m\\times1\\) column of constants."
         ]
+      },
+      {
+        "heading": "Gauss-elimination terminology — class-note view",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 1 Sep 2026",
+        "source_refs": [
+          "CLASS-U1-2026-09-01"
+        ],
+        "paragraphs": [
+          "The class calls the row-reduction procedure the **Gauss-elimination method (Row-rank method)**.",
+          "Its purpose here is to test whether a linear system is consistent and, when it is consistent, solve it. The augmented matrix is reduced to echelon/upper-triangular form by elementary row transformations; a unique system is then finished by back-substitution.",
+          "This terminology maps to Grewal §2.10, especially the consistency procedure on pp. 50–52; it is not a separate R25 syllabus atom."
+        ]
       }
     ],
     "source_refs": [
@@ -632,7 +646,8 @@
       "TB-P0047",
       "TB-P0048",
       "TB-P0049",
-      "CLASS-U1-2026-08-29"
+      "CLASS-U1-2026-08-29",
+      "CLASS-U1-2026-09-01"
     ],
     "book_refs": [
       {
@@ -645,6 +660,11 @@
         "date": "2026-08-29",
         "label": "29 Aug 2026 · Systems of linear equations",
         "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
+      },
+      {
+        "date": "2026-09-01",
+        "label": "1 Sep 2026 · Gauss elimination / row-rank consistency",
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-09-01"
       }
     ]
   },
@@ -847,6 +867,75 @@
           "If \\(\\rho(A)\\ne\\rho(A|B)\\), the system has no solution and is inconsistent.",
           "A system \\(AX=B\\) is non-homogeneous when \\(B\\ne0\\). A non-homogeneous system may or may not be consistent."
         ]
+      },
+      {
+        "heading": "Gauss-elimination / Row-rank method — class examples",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 1 Sep 2026",
+        "source_refs": [
+          "CLASS-U1-2026-09-01"
+        ],
+        "paragraphs": [
+          "Class procedure: form the augmented matrix \\((A|B)\\), eliminate entries successively by row transformations, read the ranks from the echelon form, and use back-substitution when the common rank equals the number of unknowns.",
+          "The three consistency outcomes are the same as Grewal’s §2.10 procedure: unequal ranks → no solution; equal ranks equal to \\(n\\) → unique solution; equal ranks below \\(n\\) → infinitely many solutions."
+        ],
+        "accordions": [
+          {
+            "title": "Class Example 1 — Gauss elimination: unique solution",
+            "question_paragraphs": [
+              "Solve \\(x+2y+z=8,\\ 2x+3y+4z=20,\\ 4x+3y+2z=16\\) by Gauss-elimination method."
+            ],
+            "paragraphs": [
+              "Verified solution from the class row operations:",
+              "\\[\\left[\\begin{array}{ccc|c}1&2&1&8\\\\2&3&4&20\\\\4&3&2&16\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-4R_1}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&-5&-2&-16\\end{array}\\right]\\]",
+              "\\[\\xrightarrow{R_3-5R_2}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&0&-12&-36\\end{array}\\right].\\]",
+              "Thus \\(\\rho(A)=\\rho(A|B)=3=n\\), so the solution is unique. Back-substitution gives \\(z=3\\), then \\(y=2\\), then \\(x=1\\)."
+            ],
+            "final_answer": "\\(x=1,\\ y=2,\\ z=3\\)."
+          },
+          {
+            "title": "Class Example 2 — Consistent system with infinitely many solutions",
+            "question_paragraphs": [
+              "Test for consistency and solve if consistent: \\(x+y+z=6,\\ x+2y+3z=14,\\ x+4y+7z=30\\)."
+            ],
+            "paragraphs": [
+              "Verified row reduction:",
+              "\\[\\left[\\begin{array}{ccc|c}1&1&1&6\\\\1&2&3&14\\\\1&4&7&30\\end{array}\\right]\\xrightarrow{R_2-R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&3&6&24\\end{array}\\right]\\]",
+              "\\[\\xrightarrow{R_3-3R_2}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&0&0&0\\end{array}\\right].\\]",
+              "Hence \\(\\rho(A)=\\rho(A|B)=2<3\\), so there are infinitely many solutions. Let \\(z=k\\). Then \\(y=8-2k\\) and \\(x=k-2\\).",
+              "Verification note: the notebook writes \\(2<4\\); there are three unknowns, so the correct comparison is \\(2<3\\). The class conclusion is unchanged."
+            ],
+            "final_answer": "\\((x,y,z)=(k-2,\\ 8-2k,\\ k)\\), \\(k\\in\\mathbb R\\)."
+          },
+          {
+            "title": "Class Example 3 — Inconsistent system",
+            "question_paragraphs": [
+              "Test for consistency and solve: \\(x+y+z=4,\\ 2x+5y-2z=3,\\ x+7y-7z=5\\)."
+            ],
+            "paragraphs": [
+              "Verified row reduction:",
+              "\\[\\left[\\begin{array}{ccc|c}1&1&1&4\\\\2&5&-2&3\\\\1&7&-7&5\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&6&-8&1\\end{array}\\right]\\]",
+              "\\[\\xrightarrow{R_3-2R_2}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&0&0&11\\end{array}\\right].\\]",
+              "The coefficient matrix has rank 2, while the augmented matrix has rank 3. Therefore the system is inconsistent."
+            ],
+            "final_answer": "No solution."
+          },
+          {
+            "title": "Class Example 5 — Parameters λ and μ for unique, infinite or no solution",
+            "question_paragraphs": [
+              "For \\(2x+3y+5z=9,\\ 7x+3y-2z=8,\\ 2x+3y+\\lambda z=\\mu\\), find \\(\\lambda,\\mu\\) conditions for (i) a unique solution, (ii) many solutions, and (iii) no solution."
+            ],
+            "paragraphs": [
+              "This is the same parameter problem as Grewal Example 2.34 on pp. 51–52; the class solves it by row-rank elimination.",
+              "\\[\\left[\\begin{array}{ccc|c}2&3&5&9\\\\7&3&-2&8\\\\2&3&\\lambda&\\mu\\end{array}\\right]\\xrightarrow{2R_2-7R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}2&3&5&9\\\\0&-15&-39&-47\\\\0&0&\\lambda-5&\\mu-9\\end{array}\\right].\\]",
+              "If \\(\\lambda\\ne5\\), the coefficient matrix has rank 3, so the system has a unique solution for any real \\(\\mu\\).",
+              "If \\(\\lambda=5\\), the coefficient rank drops to 2. When \\(\\mu=9\\), the augmented rank also equals 2, giving infinitely many solutions. When \\(\\mu\\ne9\\), the augmented rank is 3, giving no solution."
+            ],
+            "final_answer": "Unique: \\(\\lambda\\ne5,\\ \\mu\\in\\mathbb R\\). Infinite: \\(\\lambda=5,\\ \\mu=9\\). No solution: \\(\\lambda=5,\\ \\mu\\ne9\\)."
+          }
+        ],
+        "accordion_label": "Class examples · 1 Sep 2026"
       }
     ],
     "source_refs": [
@@ -858,7 +947,8 @@
       "TB-P0054",
       "TB-P0055",
       "TB-P0056",
-      "CLASS-U1-2026-08-29"
+      "CLASS-U1-2026-08-29",
+      "CLASS-U1-2026-09-01"
     ],
     "book_refs": [
       {
@@ -871,6 +961,11 @@
         "date": "2026-08-29",
         "label": "29 Aug 2026 · Consistency and non-homogeneous systems",
         "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
+      },
+      {
+        "date": "2026-09-01",
+        "label": "1 Sep 2026 · Gauss elimination / row-rank consistency",
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-09-01"
       }
     ]
   },
@@ -965,6 +1060,51 @@
           "A homogeneous system is always consistent because it possesses the trivial solution.",
           "A homogeneous system \\(AX=0\\) has a non-trivial solution if and only if \\(\\rho(A)<n\\). For a square coefficient matrix, this is equivalently \\(\\lvert A\\rvert=0\\)."
         ]
+      },
+      {
+        "heading": "Homogeneous systems by Row-rank method — class examples",
+        "scope": "supporting",
+        "kind": "class-note",
+        "source_label": "Priyanka’s class notes · 1 Sep 2026",
+        "source_refs": [
+          "CLASS-U1-2026-09-01"
+        ],
+        "paragraphs": [
+          "For a homogeneous system \\(AX=0\\), the class uses the coefficient-matrix rank directly: \\(\\rho(A)=n\\) gives only the trivial solution, while \\(\\rho(A)<n\\) permits non-trivial solutions. For a square system, \\(\\rho(A)<n\\) is equivalent to \\(|A|=0\\)."
+        ],
+        "accordions": [
+          {
+            "title": "Class Example 4 — Homogeneous system with only the trivial solution",
+            "question_paragraphs": [
+              "Solve \\(x_1+2x_2+x_3=0,\\ 2x_1+2x_2+3x_3=0,\\ 3x_1+2x_2+x_3=0\\)."
+            ],
+            "paragraphs": [
+              "Independent verification of the row reduction:",
+              "\\[\\begin{bmatrix}1&2&1\\\\2&2&3\\\\3&2&1\\end{bmatrix}\\xrightarrow{R_2-2R_1,\\ R_3-3R_1}\\begin{bmatrix}1&2&1\\\\0&-2&1\\\\0&-4&-2\\end{bmatrix}\\xrightarrow{R_3-2R_2}\\begin{bmatrix}1&2&1\\\\0&-2&1\\\\0&0&-4\\end{bmatrix}.\\]",
+              "There are three pivots, so \\(\\rho(A)=3=n\\). Hence only the trivial solution exists.",
+              "Verification note: the notebook displays \\(-3\\) in the second-row pivot after writing \\(R_2\\to R_2-2R_1\\); the correct value is \\(-2\\). The final rank/trivial-solution conclusion remains correct."
+            ],
+            "final_answer": "\\(x_1=x_2=x_3=0\\)."
+          },
+          {
+            "title": "Class Example 6 — Values of λ for a non-trivial homogeneous solution",
+            "question_paragraphs": [
+              "Find the values of \\(\\lambda\\) for which \\(3x_1+x_2-\\lambda x_3=0,\\ 4x_1-2x_2-3x_3=0,\\ 2\\lambda x_1+4x_2+\\lambda x_3=0\\) has a non-trivial solution, and solve in each case."
+            ],
+            "paragraphs": [
+              "The supplied notebook page stops during the row reduction. The completion below is an independent PankusDesk verification, not an unwritten class step.",
+              "For a square homogeneous system, a non-trivial solution requires \\(|A|=0\\), where",
+              "\\[A=\\begin{bmatrix}3&1&-\\lambda\\\\4&-2&-3\\\\2\\lambda&4&\\lambda\\end{bmatrix}.\\]",
+              "Direct expansion gives",
+              "\\[|A|=-4(\\lambda-1)(\\lambda+9).\\]",
+              "Therefore \\(\\lambda=1\\) or \\(\\lambda=-9\\).",
+              "For \\(\\lambda=1\\), row reduction gives a one-dimensional nullspace generated by \\((1,-1,2)^T\\). Thus \\((x_1,x_2,x_3)=t(1,-1,2)\\).",
+              "For \\(\\lambda=-9\\), a nullspace generator is \\((-3,-9,2)^T\\). Thus \\((x_1,x_2,x_3)=t(-3,-9,2)\\)."
+            ],
+            "final_answer": "\\(\\lambda=1\\): \\((x_1,x_2,x_3)=t(1,-1,2)\\). \\(\\lambda=-9\\): \\((x_1,x_2,x_3)=t(-3,-9,2)\\), \\(t\\ne0\\) for a non-trivial solution."
+          }
+        ],
+        "accordion_label": "Class examples · 1 Sep 2026"
       }
     ],
     "source_refs": [
@@ -972,7 +1112,8 @@
       "TB-P0052",
       "TB-P0053",
       "TB-P0056",
-      "CLASS-U1-2026-08-29"
+      "CLASS-U1-2026-08-29",
+      "CLASS-U1-2026-09-01"
     ],
     "book_refs": [
       {
@@ -985,6 +1126,11 @@
         "date": "2026-08-29",
         "label": "29 Aug 2026 · Homogeneous systems",
         "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
+      },
+      {
+        "date": "2026-09-01",
+        "label": "1 Sep 2026 · Gauss elimination / row-rank consistency",
+        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-09-01"
       }
     ]
   },
@@ -1177,7 +1323,11 @@
               "\\[A^{-1}=A^{T}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}.\\]",
               "If the second sign branch is chosen, its transpose is the corresponding inverse in exactly the same way."
             ],
-            "final_answer": "\\((a,b,c)=\\pm(2,-2,1)\\). For the textbook branch \\((2,-2,1)\\), \\(A^{-1}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}\\)."
+            "final_answer": "\\((a,b,c)=\\pm(2,-2,1)\\). For the textbook branch \\((2,-2,1)\\), \\(A^{-1}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}\\).",
+            "math_mismatch": {
+              "label": "Math mismatch",
+              "message": "Grewal p. 59 prints \\(a=2,\\ b=2,\\ c=1\\) after using only the diagonal equations. Independent verification of the full orthogonality condition \\(AA^T=I\\) also requires \\(ab=-4,\\ ac=2,\\ bc=-2\\), giving \\((a,b,c)=\\pm(2,-2,1)\\). The textbook's displayed inverse is consistent with the branch \\((2,-2,1)\\), not with \\(b=2\\)."
+            }
           }
         ],
         "accordion_label": "Worked examples"
@@ -1203,9 +1353,7 @@
         "note": "Orthogonal transformation prerequisite"
       }
     ],
-    "cautions": [
-      "Verified textbook mismatch — Grewal p. 59, Example 2.43: the printed line concludes \\(a=2,b=2,c=1\\) after using only the diagonal equations. But orthogonality also requires \\(ab=-4, ac=2, bc=-2\\). The full system gives \\((a,b,c)=\\pm(2,-2,1)\\). The textbook's displayed inverse is consistent with the branch \\((2,-2,1)\\), not with \\(b=2\\)."
-    ],
+    "cautions": [],
     "practice": null,
     "self_checks": [],
     "class_history": null
@@ -1937,7 +2085,11 @@
               "Therefore",
               "\\[P^{-1}AP=D=\\begin{bmatrix}1&0&0\\\\0&\\sqrt5&0\\\\0&0&-\\sqrt5\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(P^{-1}AP=\\operatorname{diag}(1,\\sqrt5,-\\sqrt5)\\), with \\(P=\\begin{bmatrix}1&\\sqrt5-1&\\sqrt5+1\\\\0&1&-1\\\\-1&-1&1\\end{bmatrix}\\)."
+            "final_answer": "\\(P^{-1}AP=\\operatorname{diag}(1,\\sqrt5,-\\sqrt5)\\), with \\(P=\\begin{bmatrix}1&\\sqrt5-1&\\sqrt5+1\\\\0&1&-1\\\\-1&-1&1\\end{bmatrix}\\).",
+            "math_mismatch": {
+              "label": "Math mismatch",
+              "message": "Grewal p. 75 correctly derives the eigenvector \\(X_1=(1,0,-1)^T\\) for \\(\\lambda=1\\), but the printed modal matrix shows \\(+1\\) in its lower-left entry. Independent substitution confirms the entry must be \\(-1\\). PankusDesk therefore uses the verified modal matrix with first column \\((1,0,-1)^T\\)."
+            }
           },
           {
             "title": "Example 2.54 — Find the modal matrix and hence calculate \\(A^4\\).",
@@ -1961,7 +2113,11 @@
               "Carrying out the multiplication gives the independently verified result",
               "\\[A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(P=\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}\\), and \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\)."
+            "final_answer": "\\(P=\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}\\), and \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\).",
+            "math_mismatch": {
+              "label": "Math mismatch",
+              "message": "Grewal p. 76 prints an incorrect product for \\(A^4\\). Independent multiplication (and the diagonalisation check \\(A^4=PD^4P^{-1}\\)) gives \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\). PankusDesk retains this verified result and flags the printed mismatch explicitly."
+            }
           }
         ],
         "accordion_label": "Worked examples"
@@ -1990,10 +2146,7 @@
         "note": "Reduction to diagonal form and Examples 2.53–2.54"
       }
     ],
-    "cautions": [
-      "Verified textbook mismatch — Grewal p. 75, Example 2.53: the printed modal matrix shows +1 as the lower-left entry, but the eigenvector derived immediately above is (1, 0, −1). The page here uses −1, which makes that column the stated eigenvector.",
-      "Verified textbook mismatch — Grewal p. 76, Example 2.54: the printed final matrix for A⁴ has entries 485 and 1051. Direct multiplication and the displayed P, D and P⁻¹ give A⁴ = [[251, 405, 235], [405, 891, 405], [235, 405, 251]], which is used here."
-    ],
+    "cautions": [],
     "practice": null,
     "self_checks": [],
     "class_history": null
