@@ -37,6 +37,7 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 	const pyqHref = subject.practice?.pyqs?.href ? new URL(subject.practice.pyqs.href, subjectUrl).href : null;
 	const summary = unitBank.summary || {};
 	const currentPagePath = `${window.location.pathname}${window.location.search}`;
+	const resourceNav = window.PankuUnitResourceNav?.render?.({ subject, subjectUrl, unitNumber: unitMeta.number, active: 'questions' }) || '';
 
 	const pageTitle = unitBank.page_title || 'Chapter-end Questions';
 	const pageDescription = unitBank.page_description || `All official review questions from the prescribed textbook chapter, with answers consolidated from the source-backed Unit ${unitLabel} notes.`;
@@ -58,10 +59,12 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 				${Array.isArray(summary.stats) ? summary.stats.map(item => stat(item.value, item.label)).join('') : `${stat(summary.official_question_count, 'official questions')}${stat(summary.short_answer_count, '2-mark')}${stat(summary.essay_count, '6-mark')}`}
 			</div>
 			<div class="practice-hero-actions">
-				<a href="${escapeHtml(unitHome)}">← Back to Unit ${escapeHtml(unitLabel)} notes</a>
+				<a href="${escapeHtml(unitHome)}">← Back to Unit ${escapeHtml(unitLabel)} text</a>
 				${pyqHref ? `<a href="${escapeHtml(pyqHref)}">Browse ${escapeHtml(subject.practice.pyqs.label || 'PYQs')} →</a>` : ''}
 			</div>
 		</section>
+
+		${resourceNav}
 
 		<section class="practice-source-note" aria-label="Question-bank source note">
 			<div class="practice-source-kicker">Source & solution note</div>

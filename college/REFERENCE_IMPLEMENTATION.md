@@ -1,7 +1,7 @@
 # College Reference Implementation — Design Lock v2
 
 **Canonical implementation:** Semester 1.1 → Basic Electrical Engineering → Unit I  
-**State:** Unit I complete as of Design Lock v2 (28 Aug 2026)
+**State:** Unit I refactored to Text · Questions · Class Notes on 2 Sep 2026
 
 This file is the worked architectural reference for future units. Copy the **pattern**, not BEE-specific content or counts.
 
@@ -11,9 +11,9 @@ This file is the worked architectural reference for future units. Copy the **pat
 
 Unit I now demonstrates the complete intended workflow:
 
-**official syllabus → prescribed textbook as core notes → source accounting → cumulative JSON → exact figure placement → class-note integration → NRS redraws → explanation accordions → textbook practice → dated class logs → calendar → verification**
+**official syllabus → prescribed textbook-led Text page → exact figure placement → Textbook Questions → dated Unit Class Notes → NRS redraws → calendar anchors → verification**
 
-It includes three dated class integrations (24 Aug, 27 Aug and 31 Aug), class-note redraws where needed, source-backed textbook questions, CSS-Grid figure placement, semantic study tables, and the plain-language explanation layer.
+It includes four dated class records (24 Aug, 27 Aug, 31 Aug and 1 Sep), NRS redraws where needed, a separate chronological Unit I Class Notes page, source-backed textbook questions, CSS-Grid figure placement, semantic study tables, and the plain-language explanation layer.
 
 ---
 
@@ -48,8 +48,8 @@ Unit I demonstrates:
 - topic + section provenance;
 - physical-book references;
 - stable practice anchors;
-- class-history links;
-- integrated class-note sections;
+- no embedded class-note sections in the Text data;
+- unit-level Text / Questions / Class Notes navigation;
 - explanation accordions;
 - explicit figure placement using `after` or `grid` metadata.
 
@@ -74,8 +74,7 @@ The generic unit renderer demonstrates:
 - Quick recall;
 - Check yourself accordions;
 - detailed theory sections;
-- class-note sections via `kind: "class-note"`;
-- visible `source_label` for dated class material;
+- textbook-led detailed sections only; dated class material is rendered by the separate Unit Class Notes renderer;
 - section explanation accordions via `accordions`;
 - optional `accordion_recap`;
 - semantic comparison tables via section-level `tables`;
@@ -90,17 +89,20 @@ The generic unit renderer demonstrates:
 
 ### Important renderer data shapes
 
-#### Class-note section
+#### Unit Class Notes configuration
 
 ```json
 {
-  "heading": "Practical voltage source — class-note view",
-  "scope": "supporting",
-  "kind": "class-note",
-  "source_label": "Priyanka’s class notes · 27 Aug 2026",
-  "source_refs": ["CLASS-U1-2026-08-27"]
+  "classNotes": {
+    "hrefPattern": "unit-{unit}-class-notes.html",
+    "availableUnits": [1],
+    "sourceManifest": "kb/data/source-manifest.json",
+    "collection": "class_sources"
+  }
 }
 ```
+
+The unit class-notes renderer loads dated entries from the configured class-source collection and builds a date-based left navigation.
 
 #### Explanation accordion
 
@@ -211,14 +213,14 @@ Class-derived figures:
 
 ---
 
-## 6. Class-note integration reference
+## 6. Class-notes page reference
 
 ### 24 Aug 2026
 
 `kb/class-log/2026-08-24/entry.json`  
 `kb/class-log/2026-08-24/raw.md`
 
-Demonstrates class material integrated across circuit concept, basic quantities, network-element classification and source material.
+Demonstrates a dated class record preserved on the Unit I Class Notes page without being embedded into textbook theory.
 
 ### 27 Aug 2026
 
@@ -233,9 +235,9 @@ Demonstrates the mature class workflow:
 - 7 NRS redraws produced and integrated;
 - two adjacent ideal-voltage sketches combined into one approved conceptual redraw;
 - class figures placed in `assets/class/2026-08-27/figures/`;
-- cumulative theory gains dated class-note panels at the relevant source concepts;
+- the dated lesson remains on the Unit I Class Notes page; textbook theory remains source-clean;
 - malformed image-generation text is not allowed onto the site; correct mathematics is rendered separately in MathJax when necessary;
-- explanation accordions added where class notation needs a teaching bridge.
+- class-note wording may be lightly cleaned for study without changing the source meaning.
 
 Canonical explanation titles currently include:
 
@@ -264,6 +266,15 @@ Demonstrates later-semester consolidation after the basic Unit I page is already
 
 ---
 
+### 1 Sep 2026
+
+`kb/class-log/2026-09-01/entry.json`  
+`kb/class-log/2026-09-01/raw.md`
+
+Demonstrates the new chronological class-notes model: an updated network-element tree, R/L/C energy additions, and the nodes/branches/closed-loops example. Repeated 31 August base text is not duplicated; only the genuinely new 1 September additions are recorded.
+
+---
+
 ## 7. Calendar/class-log reference
 
 Semester calendar index:
@@ -274,16 +285,16 @@ Generic calendar renderer:
 
 `scripts/new/calendar.js`
 
-Subject class-log shell/renderer:
+Unit I class-notes shell/renderer:
 
-`college/1-1/basic-electrical-engineering/class-log.html`  
-`scripts/new/class-log.js`
+`college/1-1/basic-electrical-engineering/unit-1-class-notes.html`  
+`scripts/new/unit-class-notes.js`
 
 The reference link chain is:
 
-**calendar date → subject class-log shell with `?date=` → dated `entry.json` → mapped cumulative topic(s)**
+**calendar date → Unit I Class Notes date anchor → dated `entry.json`**
 
-The 24 Aug, 27 Aug and 31 Aug BEE entries are the working examples.
+The Text page is textbook-led and does not embed Priyanka's class-note sections. The 24 Aug, 27 Aug, 31 Aug and 1 Sep BEE entries are the working examples.
 
 ---
 

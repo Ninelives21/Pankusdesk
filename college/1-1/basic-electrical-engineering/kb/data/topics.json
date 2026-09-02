@@ -18,7 +18,7 @@
         "anchor": "u1-es-01"
       }
     ],
-    "class_history": null,
+    "class_history": [],
     "intro": "Electrical energy has become an essential part of modern life and is used throughout domestic, commercial and industrial activity. This section introduces its importance and the basic stages of an electrical power system.",
     "learn": [
       "Electrical energy is convenient, easily controllable and flexible, inexpensive, clean at the point of use, and easily transmittable.",
@@ -179,18 +179,12 @@
         "anchor": "u1-sa-03"
       }
     ],
-    "class_history": [
-      {
-        "date": "2026-08-24",
-        "label": "24 Aug 2026 · Circuit concept and basic quantities",
-        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
-      }
-    ],
+    "class_history": [],
     "intro": "An electric circuit, an electric network and the basic electrical quantities used to describe them are introduced here.",
     "learn": [
       "An electric circuit consists of a source or EMF, a load, a controlling switch and connecting wires.",
       "An electric network is the interconnection of two or more circuit elements.",
-      "Charge, current, voltage, energy, power and common classifications of network elements are also included."
+      "Charge, current, voltage, energy and power are introduced with their basic relations and units."
     ],
     "sections": [
       {
@@ -226,20 +220,6 @@
         ]
       },
       {
-        "heading": "Circuit concept",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 24 Aug 2026",
-        "paragraphs": [
-          "An electric circuit consists of a closed path interconnecting active and passive elements. The components are called circuit elements.",
-          "A closed path followed by direct current (DC) is called a DC circuit. A closed path followed by alternating current (AC) is called an AC circuit.",
-          "The source supplies electrical energy to the load, which converts that energy into heat or other forms. In a DC circuit, loads may be connected in series, parallel or series-parallel."
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-24"
-        ]
-      },
-      {
         "heading": "Electric Network",
         "scope": "core",
         "paragraphs": [
@@ -253,60 +233,6 @@
             "pages": "4",
             "images": "04.png"
           }
-        ]
-      },
-      {
-        "heading": "Charge and current",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 24 Aug 2026",
-        "paragraphs": [
-          "Charge is the characteristic property of an elementary particle of matter. A proton has positive charge, an electron has negative charge and a neutron is neutral. The unit of charge is the coulomb (C).",
-          "For a steady current,",
-          "\\[I=\\dfrac{Q}{T}\\]",
-          "where \\(Q\\) is charge and \\(T\\) is time.",
-          "For a time-varying current,",
-          "\\[i=\\dfrac{dq}{dt}\\]",
-          "Current is the rate of change of charge passing through the cross-sectional area of a conductor. Its unit is the ampere (A)."
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-24"
-        ]
-      },
-      {
-        "heading": "Voltage / absolute potential and potential difference",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 24 Aug 2026",
-        "paragraphs": [
-          "Voltage or absolute potential is the amount of work required to move a unit positive test charge from infinity to a point in the field.",
-          "Potential difference is the amount of work required to move a unit positive test charge from one point to another in the field.",
-          "For steady voltage,",
-          "\\[V=\\dfrac{W}{Q}\\]",
-          "For time-varying voltage,",
-          "\\[dV=\\dfrac{dW}{dQ}\\]",
-          "The unit of voltage or potential difference is the volt (V)."
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-24"
-        ]
-      },
-      {
-        "heading": "Energy and power",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 24 Aug 2026",
-        "paragraphs": [
-          "Energy is the capacity to do work. Energy may exist in forms such as electrical, mechanical and thermal energy. Its unit is the joule (J).",
-          "Power is the rate at which electrical energy is converted into other forms of energy and is the product of voltage and current.",
-          "Average power:",
-          "\\[P=\\dfrac{W}{t}=VI\\]",
-          "Instantaneous power:",
-          "\\[P=\\dfrac{dW}{dt}=VI\\]",
-          "The unit of power is the watt (W)."
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-24"
         ]
       },
       {
@@ -364,141 +290,12 @@
             ]
           }
         ]
-      },
-      {
-        "heading": "Types of network elements",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 24 Aug 2026",
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-24/figures/c2.png",
-            "alt": "Handwritten-style classification tree of network elements into active voltage and current sources and passive R, L and C elements, plus linear or non-linear, unilateral or bilateral, time-variant or time-invariant, and lumped or distributed classifications.",
-            "caption": "Class-note redraw · Classification of network elements",
-            "width": 1448,
-            "height": 1086,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 0
-            },
-            "size": "large"
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-24",
-          "TB-P005",
-          "TB-P006",
-          "TB-P007",
-          "TB-P008",
-          "TB-P009",
-          "TB-P010",
-          "TB-P011",
-          "TB-P012",
-          "TB-P013"
-        ],
-        "paragraphs": [
-          "A network element is any individual electrical component that forms part of an electrical network. The same element can be classified in different ways depending on the property being considered."
-        ],
-        "accordions": [
-          {
-            "title": "Active and passive elements",
-            "paragraphs": [
-              "Active elements supply electrical energy to a circuit and are therefore called sources.",
-              "Passive elements do not generate electrical energy. They either dissipate the supplied energy or store it temporarily. In this classification, the basic passive elements are:"
-            ],
-            "bullets": [
-              "\\(R\\) — resistor: opposes current and dissipates electrical energy mainly as heat.",
-              "\\(L\\) — inductor: stores energy in a magnetic field and can later return it to the circuit.",
-              "\\(C\\) — capacitor: stores energy in an electric field and can later return it to the circuit."
-            ]
-          },
-          {
-            "title": "What are voltage and current sources?",
-            "paragraphs": [
-              "An electrical source supplies electrical energy to a circuit. Sources are broadly classified as voltage sources and current sources.",
-              "Voltage is the electrical potential difference between two points. It represents energy transferred per unit charge:",
-              "\\[V=\\dfrac{W}{Q}\\]",
-              "A voltage source maintains a specified voltage across its terminals. The current supplied can change when the connected load changes.",
-              "For example, if an ideal \\(10\\,\\text{V}\\) source is connected to a \\(5\\,\\Omega\\) resistor,",
-              "\\[I=\\dfrac{V}{R}=\\dfrac{10}{5}=2\\,\\text{A}\\]",
-              "If the load becomes \\(10\\,\\Omega\\), the current becomes \\(1\\,\\text{A}\\), while the ideal source still maintains \\(10\\,\\text{V}\\).",
-              "A current source maintains a specified current through the circuit. The voltage across it can change when the load changes.",
-              "For example, for an ideal \\(2\\,\\text{A}\\) current source connected to a \\(5\\,\\Omega\\) load,",
-              "\\[V=IR=2\\times5=10\\,\\text{V}\\]"
-            ],
-            "bullets": [
-              "Voltage source → voltage is maintained; current may change with the load.",
-              "Current source → current is maintained; voltage may change with the load."
-            ]
-          },
-          {
-            "title": "Independent and dependent sources",
-            "paragraphs": [
-              "Both voltage sources and current sources may be independent or dependent.",
-              "An independent source has a specified value that does not depend on another voltage or current elsewhere in the circuit.",
-              "A dependent source, also called a controlled source, has a value determined by another voltage or current in the circuit. Dependent sources are usually represented by diamond-shaped symbols."
-            ],
-            "bullets": [
-              "VCVS — Voltage-Controlled Voltage Source.",
-              "CCVS — Current-Controlled Voltage Source.",
-              "VCCS — Voltage-Controlled Current Source.",
-              "CCCS — Current-Controlled Current Source."
-            ]
-          },
-          {
-            "title": "Linear and non-linear elements",
-            "paragraphs": [
-              "A linear element has a proportional relationship between voltage and current. If its parameter remains constant, increasing the voltage by a certain factor increases the current by the same factor.",
-              "For a resistor of constant resistance,",
-              "\\[V=IR\\]",
-              "so its \\(V\\)-\\(I\\) characteristic is a straight line through the origin.",
-              "A non-linear element does not have a proportional \\(V\\)-\\(I\\) relationship. Its behaviour changes with the applied voltage or current; a diode is a common example.",
-              "This distinction is important because the Superposition theorem is applied to linear circuits."
-            ]
-          },
-          {
-            "title": "Bilateral and unilateral elements",
-            "paragraphs": [
-              "A bilateral element behaves essentially the same way when the direction of current or voltage is reversed. Ideal resistors, inductors and capacitors are generally treated as bilateral elements.",
-              "A unilateral element behaves differently in the two directions. A diode is the standard example: it conducts readily in one direction but strongly restricts current in the reverse direction."
-            ],
-            "bullets": [
-              "Bilateral → reversing direction does not fundamentally change its behaviour.",
-              "Unilateral → behaviour depends on direction."
-            ]
-          },
-          {
-            "title": "Time-invariant and time-variant elements",
-            "paragraphs": [
-              "A time-invariant element has a parameter whose value does not change simply because time passes. For example, an ideal \\(10\\,\\Omega\\) resistor remains \\(10\\,\\Omega\\).",
-              "A time-variant element has a parameter that changes with time. For example,",
-              "\\[R=R(t)\\]"
-            ]
-          },
-          {
-            "title": "Lumped and distributed elements",
-            "paragraphs": [
-              "In a lumped element, the electrical property is treated as concentrated in one physical component. Ordinary resistors, inductors and capacitors used in basic circuit analysis are treated as lumped elements.",
-              "In a distributed element, resistance, inductance and capacitance are spread continuously along its physical length. A transmission line is a common example."
-            ]
-          }
-        ],
-        "accordion_recap": [
-          "Active / passive → does it supply energy or does it use/store energy?",
-          "Voltage / current source → which quantity does the source maintain?",
-          "Linear / non-linear → is the \\(V\\)-\\(I\\) relationship proportional?",
-          "Bilateral / unilateral → does reversing direction change its behaviour?",
-          "Time-invariant / time-variant → does its parameter change with time?",
-          "Lumped / distributed → is the electrical property concentrated or spread along its length?"
-        ]
       }
     ],
     "formulas": [
       "Steady current: \\(I=\\dfrac{Q}{T}\\)",
       "Time-varying current: \\(i=\\dfrac{dq}{dt}\\)",
       "Steady potential difference: \\(V=\\dfrac{W}{Q}\\)",
-      "Class-note time-varying voltage: \\(dV=\\dfrac{dW}{dQ}\\)",
       "Average power: \\(P=\\dfrac{W}{t}=VI\\)",
       "Instantaneous power: \\(P=\\dfrac{dW}{dt}=VI\\)"
     ],
@@ -506,7 +303,6 @@
     "source_refs": [
       "SYL-R25-U1",
       "TB-P004",
-      "CLASS-U1-2026-08-24",
       "TB-P005",
       "TB-P006",
       "TB-P007",
@@ -533,10 +329,6 @@
       {
         "question": "What is an electric network?",
         "answer": "The interconnection of two or more circuit elements."
-      },
-      {
-        "question": "What relation for time-varying current was written in class?",
-        "answer": "\\(i=\\dfrac{dq}{dt}\\)."
       }
     ]
   },
@@ -559,18 +351,7 @@
         "anchor": "u1-es-03"
       }
     ],
-    "class_history": [
-      {
-        "date": "2026-08-24",
-        "label": "24 Aug 2026 · Types of elements",
-        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
-      },
-      {
-        "date": "2026-08-31",
-        "label": "31 Aug 2026 · Passive elements; R, L and C relations",
-        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-31"
-      }
-    ],
+    "class_history": [],
     "intro": "Resistance, inductance and capacitance are the three basic circuit parameters. Their equations and energy relations are developed alongside the corresponding explanations.",
     "learn": [
       "Resistance opposes current and dissipates energy as heat.",
@@ -652,20 +433,6 @@
             "pages": "5",
             "images": "05.png"
           }
-        ]
-      },
-      {
-        "heading": "Resistance — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 31 Aug 2026",
-        "paragraphs": [
-          "Resistance parameter: the property of a circuit element which opposes the flow of current. It is represented by \\(R\\) and its unit is the ohm \\(\\Omega\\).",
-          "\\[R=\\rho\\dfrac{l}{A}\\]",
-          "Here \\(\\rho\\) is resistivity, \\(l\\) is conductor length and \\(A\\) is cross-sectional area."
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-31"
         ]
       },
       {
@@ -757,35 +524,6 @@
         ]
       },
       {
-        "heading": "Inductance — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 31 Aug 2026",
-        "paragraphs": [
-          "Inductance \\(L\\) was described as the property of a circuit element that opposes change in current. Its unit is the henry (H).",
-          "The inductance of a coil is the ratio of flux linkage to the current flowing through the coil:",
-          "\\[L=\\dfrac{N\\phi}{i}\\]",
-          "Here \\(\\phi\\) is flux in webers, \\(N\\) is the number of turns and \\(i\\) is current in amperes.",
-          "\\[v=L\\dfrac{di}{dt}\\]",
-          "\\[i=\\dfrac{1}{L}\\int v\\,dt\\]",
-          "If the current through an ideal inductor is constant, \\(di/dt=0\\), so the inductor behaves as a short circuit to DC."
-        ],
-        "accordions": [
-          {
-            "title": "In simple words — what these equations mean",
-            "paragraphs": [
-              "Current through a coil produces magnetic flux. With \\(N\\) turns, the coil has flux linkage \\(N\\phi\\). The relation \\(L=\\dfrac{N\\phi}{i}\\) tells us how much flux linkage the coil develops per ampere of current.",
-              "The relation \\(v=L\\dfrac{di}{dt}\\) says that an inductor develops voltage when its current is changing. A faster change in current gives a larger voltage; a larger inductance \\(L\\) also gives a larger voltage for the same rate of change.",
-              "If the current is steady, \\(\\dfrac{di}{dt}=0\\), so the ideal inductor has zero voltage across it. That is why, after DC has reached steady state, an ideal inductor behaves like a short circuit.",
-              "The integral form \\(i=\\dfrac{1}{L}\\int v\\,dt\\) expresses the same relationship from the other direction: the current reached by the inductor depends on the voltage applied over time."
-            ]
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-31"
-        ]
-      },
-      {
         "heading": "(c) Capacitance",
         "scope": "core",
         "paragraphs": [
@@ -836,51 +574,6 @@
             "images": "07.png–08.png"
           }
         ]
-      },
-      {
-        "heading": "Capacitance — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 31 Aug 2026",
-        "paragraphs": [
-          "Capacitance is represented by \\(C\\) and its unit is the farad (F). A capacitor consists of two conducting surfaces separated by an insulating dielectric; the conducting surfaces are electrodes and the insulating substance is the dielectric.",
-          "\\[q\\propto v\\]",
-          "\\[q=Cv\\]",
-          "\\[\\dfrac{dq}{dt}=C\\dfrac{dv}{dt}\\]",
-          "\\[i=C\\dfrac{dv}{dt}\\]",
-          "\\[v=\\dfrac{1}{C}\\int i\\,dt\\]",
-          "If the voltage across an ideal capacitor is constant, \\(dv/dt=0\\), so \\(i=0\\); the capacitor behaves as an open circuit to DC."
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-31"
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c5.png",
-            "alt": "Capacitor symbol from Priyanka’s 31 August class notes, showing two straight parallel plates with plus on the left plate and minus on the right plate.",
-            "caption": "Class-note redraw · Capacitor symbol",
-            "width": 1448,
-            "height": 1086,
-            "size": "small",
-            "after": {
-              "type": "paragraph",
-              "index": 0
-            },
-            "kind": "class-note"
-          }
-        ]
-      },
-      {
-        "heading": "R, L and C classification",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 24 Aug 2026",
-        "paragraphs": [
-          "\\(R\\) (resistor), \\(L\\) (inductor) and \\(C\\) (capacitor) are classified as passive elements."
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-24"
-        ]
       }
     ],
     "formulas": [
@@ -892,11 +585,7 @@
       "Inductor energy: \\(W=\\dfrac12LI^2\\)",
       "Capacitor: \\(Q=CV\\)",
       "Capacitor current: \\(i=C\\dfrac{dV}{dt}\\)",
-      "Capacitor energy: \\(W=\\dfrac12CV^2\\)",
-      "Class-note resistance relation: \\(R=\\rho\\dfrac{l}{A}\\)",
-      "Class-note inductor voltage: \\(v=L\\dfrac{di}{dt}\\)",
-      "Class-note inductor integral form: \\(i=\\dfrac{1}{L}\\int v\\,dt\\)",
-      "Class-note capacitor integral form: \\(v=\\dfrac{1}{C}\\int i\\,dt\\)"
+      "Capacitor energy: \\(W=\\dfrac12CV^2\\)"
     ],
     "method": [],
     "source_refs": [
@@ -904,9 +593,7 @@
       "TB-P005",
       "TB-P006",
       "TB-P007",
-      "TB-P008",
-      "CLASS-U1-2026-08-24",
-      "CLASS-U1-2026-08-31"
+      "TB-P008"
     ],
     "book_refs": [
       {
@@ -924,10 +611,6 @@
       {
         "question": "What happens to an ideal inductor and capacitor under steady DC?",
         "answer": "The ideal inductor behaves as a short circuit and the ideal capacitor behaves as an open circuit."
-      },
-      {
-        "question": "Which three basic elements are grouped under passive elements in the network-element classification?",
-        "answer": "The resistor \\(R\\), inductor \\(L\\) and capacitor \\(C\\)."
       }
     ]
   },
@@ -956,23 +639,7 @@
         "anchor": "u1-es-04"
       }
     ],
-    "class_history": [
-      {
-        "date": "2026-08-24",
-        "label": "24 Aug 2026 · Source classification",
-        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-24"
-      },
-      {
-        "date": "2026-08-27",
-        "label": "27 Aug 2026 · Ideal and practical voltage/current sources",
-        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-27"
-      },
-      {
-        "date": "2026-08-31",
-        "label": "31 Aug 2026 · Dependent / controlled sources",
-        "href": "college/1-1/basic-electrical-engineering/class-log.html?date=2026-08-31"
-      }
-    ],
+    "class_history": [],
     "intro": "Electrical energy sources are classified as voltage sources and current sources, and also as independent and dependent sources.",
     "learn": [
       "Voltage sources supply different currents at a given voltage; current sources supply different voltages at a constant current.",
@@ -997,63 +664,6 @@
             "pages": "8",
             "images": "08.png"
           }
-        ]
-      },
-      {
-        "heading": "Energy-source classification and source symbols",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 27 Aug 2026",
-        "paragraphs": [
-          "Energy sources are classified as independent and dependent. Independent sources may be voltage sources or current sources; each may be ideal or practical. Dependent sources are VCCS, CCCS, CCVS and VCVS.",
-          "For voltage sources, a DC source may be represented by a cell/battery symbol or by a circular source symbol with marked \\(+\\) and \\(-\\) polarity. A circular source symbol with a sine wave represents an AC source."
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c1.png",
-            "alt": "Notebook-style classification tree of energy sources into independent voltage/current sources with ideal and practical forms, and dependent VCCS, CCCS, CCVS and VCVS sources.",
-            "caption": "Class-note redraw · Classification of energy sources",
-            "width": 1448,
-            "height": 1086,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 0
-            },
-            "size": "large"
-          },
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c2.png",
-            "alt": "Notebook-style symbols for DC voltage sources using a cell and a circular source with plus/minus polarity, plus the circular sine-wave symbol for an AC source.",
-            "caption": "Class-note redraw · DC and AC voltage-source symbols",
-            "width": 1448,
-            "height": 1086,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "medium"
-          }
-        ],
-        "accordions": [
-          {
-            "title": "How to read the energy-source classification",
-            "paragraphs": [
-              "Independent does not mean “constant”. It means the source value is specified by the source itself rather than being controlled by another voltage or current elsewhere in the circuit. The specified value may be fixed or may vary with time.",
-              "Dependent (controlled) sources take their value from another circuit voltage or current."
-            ],
-            "bullets": [
-              "VCVS — voltage-controlled voltage source.",
-              "CCVS — current-controlled voltage source.",
-              "VCCS — voltage-controlled current source.",
-              "CCCS — current-controlled current source.",
-              "In each abbreviation, the first pair tells what controls the source (VC or CC); the last pair tells what the source produces (VS or CS)."
-            ]
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-27"
         ]
       },
       {
@@ -1106,61 +716,6 @@
         ]
       },
       {
-        "heading": "Ideal voltage source — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 27 Aug 2026",
-        "paragraphs": [
-          "An independent voltage source maintains a voltage—fixed or varying with time—that is not affected by another circuit quantity.",
-          "For an ideal voltage source, \\(V_s\\) is completely independent of source current \\(I_s\\). Its V–I characteristic therefore shows voltage remaining constant as current changes."
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c3.png",
-            "alt": "Notebook-style ideal voltage-source two-terminal element with source voltage V_s, current I_s and terminal-voltage label V, alongside a constant-voltage V–I characteristic.",
-            "caption": "Class-note redraw · Ideal voltage source and V–I characteristic",
-            "width": 1447,
-            "height": 1087,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "large"
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-27"
-        ]
-      },
-      {
-        "heading": "Voltage source and constant-voltage characteristic",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 24 Aug 2026",
-        "paragraphs": [
-          "A voltage source supplies a resistor. Its \\(V\\)-\\(I\\) characteristic shows the source voltage \\(V_s\\) remaining constant as current changes."
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-24/figures/c1.png",
-            "alt": "Handwritten-style class-note redraw of a voltage source connected to a resistor, alongside a voltage-current graph showing constant source voltage V_s while current changes.",
-            "caption": "Class-note redraw · Voltage source and constant-voltage characteristic",
-            "width": 1672,
-            "height": 941,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 0
-            },
-            "size": "medium"
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-24"
-        ]
-      },
-      {
         "heading": "(b) Independent Current Source",
         "scope": "core",
         "paragraphs": [
@@ -1190,48 +745,6 @@
             "pages": "9",
             "images": "09.png"
           }
-        ]
-      },
-      {
-        "heading": "Ideal current source — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 27 Aug 2026",
-        "paragraphs": [
-          "An ideal current source is a two-terminal element in which source current \\(I_s\\) is completely independent of the voltage across its terminals.",
-          "The current-source symbol may be labelled with a fixed value such as \\(I_1\\) or a time-varying value \\(I(t)\\). The arrow shows the chosen source-current direction.",
-          "For an ideal current source, current remains constant as terminal voltage changes."
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c5.png",
-            "alt": "Notebook-style strip of three equivalent ideal current-source representations labelled I_1 or I(t), with arrows showing current direction and a brace marked SAME.",
-            "caption": "Class-note redraw · Ideal current-source symbols",
-            "width": 1448,
-            "height": 1086,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "medium"
-          },
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c6.png",
-            "alt": "Notebook-style ideal current source with source current I_s and terminal voltage V, alongside a graph of constant I_s versus output voltage V_o.",
-            "caption": "Class-note redraw · Ideal current source and I–V characteristic",
-            "width": 1448,
-            "height": 1086,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 2
-            },
-            "size": "large"
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-27"
         ]
       },
       {
@@ -1265,111 +778,6 @@
             "pages": "9–10",
             "images": "09.png–10.png"
           }
-        ]
-      },
-      {
-        "heading": "Dependent sources — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 31 Aug 2026",
-        "paragraphs": [
-          "If the voltage or current of a source depends on some other voltage or current in the network, it is called a dependent or controlled source. A dependent source is represented by a diamond symbol.",
-          "Notation mapping used on this page: \\(V_c\\) and \\(I_c\\) denote the controlling voltage and current; \\(V\\) and \\(I\\) denote the dependent-source output. The equivalent symbols used in the four detailed equations below are \\(V_c\\leftrightarrow V_1\\), \\(I_c\\leftrightarrow i_1\\), \\(V\\leftrightarrow V_2\\) and \\(I\\leftrightarrow i_2\\)."
-        ],
-        "tables": [
-          {
-            "caption": "Four dependent sources — class notation and equation terms",
-            "headers": [
-              "Type",
-              "Symbol",
-              "Class-note relation",
-              "Controlled by",
-              "Dependent source delivers",
-              "Constant"
-            ],
-            "rows": [
-              [
-                "VCCS",
-                {
-                  "type": "image",
-                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c1.png",
-                  "alt": "VCCS dependent-current-source symbol: diamond with upward arrow.",
-                  "width": 1254,
-                  "height": 1254,
-                  "size": "symbol"
-                },
-                "\\(I=G_mV_c\\)",
-                "\\(V_c\\): controlling voltage",
-                "\\(I\\): output current",
-                "\\(G_m\\): current-per-voltage constant, A/V (mho or siemens)"
-              ],
-              [
-                "CCCS",
-                {
-                  "type": "image",
-                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c2.png",
-                  "alt": "CCCS dependent-current-source symbol: diamond with upward arrow.",
-                  "width": 1254,
-                  "height": 1254,
-                  "size": "symbol"
-                },
-                "\\(I=A_iI_c\\)",
-                "\\(I_c\\): controlling current",
-                "\\(I\\): output current",
-                "\\(A_i\\): current gain, no units"
-              ],
-              [
-                "CCVS",
-                {
-                  "type": "image",
-                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c3.png",
-                  "alt": "CCVS dependent-voltage-source symbol: diamond with plus above minus.",
-                  "width": 1254,
-                  "height": 1254,
-                  "size": "symbol"
-                },
-                "\\(V=R_mI_c\\)",
-                "\\(I_c\\): controlling current",
-                "\\(V\\): output voltage",
-                "\\(R_m\\): voltage-per-current constant, V/A = \\(\\Omega\\)"
-              ],
-              [
-                "VCVS",
-                {
-                  "type": "image",
-                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c4.png",
-                  "alt": "VCVS dependent-voltage-source symbol: diamond with plus above minus.",
-                  "width": 1254,
-                  "height": 1254,
-                  "size": "symbol"
-                },
-                "\\(V=A_vV_c\\)",
-                "\\(V_c\\): controlling voltage",
-                "\\(V\\): output voltage",
-                "\\(A_v\\): voltage gain, no units"
-              ]
-            ]
-          }
-        ],
-        "accordions": [
-          {
-            "title": "Understanding the four dependent sources",
-            "paragraphs": [
-              "Read each name as “what controls it” followed by “what the source produces”. For example, Voltage-Controlled Current Source means a voltage measured somewhere else in the circuit controls the current produced by this dependent source.",
-              "The controlling quantity is not the output of the diamond source itself. It is a voltage or current elsewhere in the network that the dependent source responds to.",
-              "For a voltage-output dependent source (VCVS or CCVS), the diamond symbol has voltage polarity \\(+/-\\). For a current-output dependent source (VCCS or CCCS), the diamond contains a current arrow.",
-              "The constant tells how strongly the output responds to the control quantity. \\(A_v\\) and \\(A_i\\) are dimensionless gains; \\(G_m\\) converts control voltage into output current; \\(R_m\\) converts control current into output voltage."
-            ],
-            "bullets": [
-              "VCCS: voltage controls current — \\(I=G_mV_c\\).",
-              "CCCS: current controls current — \\(I=A_iI_c\\).",
-              "CCVS: current controls voltage — \\(V=R_mI_c\\).",
-              "VCVS: voltage controls voltage — \\(V=A_vV_c\\)."
-            ]
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-31"
         ]
       },
       {
@@ -1541,54 +949,6 @@
         ]
       },
       {
-        "heading": "Practical voltage source — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 27 Aug 2026",
-        "paragraphs": [
-          "A practical voltage source is represented as an ideal voltage source in series with source resistance. The terminal voltage falls as load current increases because of the voltage drop in the source resistance.",
-          "\\[V=V_s-IR\\]",
-          "If the source resistance is zero, the ideal voltage-source condition is obtained."
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c4.png",
-            "alt": "Notebook-style practical voltage source shown as source V_s in series with internal resistance R, together with its downward-sloping V–I characteristic and relation V equals V_s minus IR.",
-            "caption": "Class-note redraw · Practical voltage source and V–I characteristic",
-            "width": 1621,
-            "height": 970,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "large"
-          }
-        ],
-        "accordions": [
-          {
-            "title": "Ideal and Practical Voltage",
-            "paragraphs": [
-              "Think of a voltage source as something whose job is to provide a certain electrical “push” between its two terminals. A battery is the easiest example.",
-              "An ideal voltage source is an imaginary perfect battery. If it is a \\(10\\,\\text{V}\\) source, it would remain exactly \\(10\\,\\text{V}\\) no matter how much current the connected circuit draws.",
-              "A practical voltage source is what a real battery or power supply is like. A real source has some unavoidable internal resistance, so it can be pictured as an ideal voltage source with a small resistor hidden in series inside it.",
-              "When no current flows, there is no voltage drop across that internal resistance, so the terminal voltage is essentially the source voltage: \\(V=V_s\\). When current \\(I\\) flows, some voltage is lost inside the source as \\(IR\\).",
-              "\\[V=V_s-IR\\]",
-              "In words: voltage available outside = voltage produced inside − voltage lost inside the source.",
-              "For example, if \\(V_s=10\\,\\text{V}\\), \\(R=1\\,\\Omega\\), and \\(I=2\\,\\text{A}\\), the internal drop is \\(IR=2\\,\\text{V}\\), so the terminal voltage is \\(8\\,\\text{V}\\).",
-              "This is why the practical-source graph slopes downward: as current increases, the internal drop \\(IR\\) increases and the terminal voltage falls. If the internal resistance were zero, no voltage would be lost and the source would behave ideally."
-            ],
-            "bullets": [
-              "Ideal voltage source → voltage stays fixed; internal resistance is \\(0\\).",
-              "Practical voltage source → terminal voltage falls somewhat as current increases; internal resistance is small but non-zero."
-            ]
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-27"
-        ]
-      },
-      {
         "heading": "Practical Current Sources",
         "scope": "core",
         "paragraphs": [
@@ -1620,55 +980,6 @@
             "images": "12.png–13.png"
           }
         ]
-      },
-      {
-        "heading": "Practical current source — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 27 Aug 2026",
-        "paragraphs": [
-          "A practical current source is represented as an ideal current source in parallel with a source/internal resistance. Some source current is drawn through this parallel resistance, so the current delivered to the load is reduced.",
-          "\\[I=I_s-\\dfrac{V}{R}\\]",
-          "As the source resistance approaches infinity, the ideal current-source condition is approached."
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-27/figures/c7.png",
-            "alt": "Notebook-style practical current-source circuit with ideal source I_s in parallel with source resistance R_s, alongside an I–V characteristic showing practical current decreasing as output voltage V_o increases.",
-            "caption": "Class-note redraw · Practical current source and I–V characteristic",
-            "width": 1537,
-            "height": 755,
-            "kind": "class-note",
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "large"
-          }
-        ],
-        "accordions": [
-          {
-            "title": "Ideal and Practical Current",
-            "paragraphs": [
-              "Think of a current source as a device whose job is to make a certain amount of current flow. An ideal current source keeps that current fixed and lets the voltage across its terminals change to whatever value the connected load requires.",
-              "For example, an ideal \\(2\\,\\text{A}\\) source connected to \\(5\\,\\Omega\\) needs \\(10\\,\\text{V}\\) across the load. If the load becomes \\(10\\,\\Omega\\), the current is still \\(2\\,\\text{A}\\), so the required voltage becomes \\(20\\,\\text{V}\\).",
-              "A practical current source cannot maintain exactly the same current under every condition. It is modelled as an ideal current source with a large internal resistance in parallel.",
-              "The parallel resistance acts like an internal bypass: some source current can flow through it instead of going to the load.",
-              "\\[I_s=I_L+I_p\\]",
-              "\\[I_L=I_s-I_p\\]",
-              "Because the same terminal voltage appears across the internal parallel resistance, \\(I_p=\\dfrac{V}{R_p}\\). As terminal voltage rises, more current is diverted internally and the load current falls slightly.",
-              "For an ideal current source, the internal parallel resistance is treated as infinite. Then \\(I_p=\\dfrac{V}{R_p}\\to0\\), so none of the source current is lost through the internal bypass."
-            ],
-            "bullets": [
-              "Ideal current source → current stays fixed; internal parallel resistance is \\(\\infty\\).",
-              "Practical current source → some current is diverted internally; internal parallel resistance is large but finite.",
-              "Memory aid: practical voltage source → unwanted voltage drop in series; practical current source → unwanted current diversion in parallel."
-            ]
-          }
-        ],
-        "source_refs": [
-          "CLASS-U1-2026-08-27"
-        ]
       }
     ],
     "formulas": [
@@ -1678,12 +989,7 @@
       "CCVS: \\(V_2=R_mi_1\\)",
       "VCCS: \\(i_2=G_mV_1\\)",
       "CCCS: \\(i_2=\\alpha i_1\\)",
-      "Practical voltage source: \\(V_L=V_s-IR_s\\)",
-      "Class-note practical current source: \\(I=I_s-\\dfrac{V}{R}\\)",
-      "Class-note VCCS: \\(I=G_mV_c\\)",
-      "Class-note CCCS: \\(I=A_iI_c\\)",
-      "Class-note CCVS: \\(V=R_mI_c\\)",
-      "Class-note VCVS: \\(V=A_vV_c\\)"
+      "Practical voltage source: \\(V_L=V_s-IR_s\\)"
     ],
     "method": [],
     "source_refs": [
@@ -1693,10 +999,7 @@
       "TB-P010",
       "TB-P011",
       "TB-P012",
-      "TB-P013",
-      "CLASS-U1-2026-08-24",
-      "CLASS-U1-2026-08-27",
-      "CLASS-U1-2026-08-31"
+      "TB-P013"
     ],
     "book_refs": [
       {
@@ -1744,7 +1047,7 @@
         "anchor": "u1-es-05"
       }
     ],
-    "class_history": null,
+    "class_history": [],
     "intro": "Source transformation replaces a practical voltage source by an equivalent practical current source, or vice versa, without changing the voltage and current delivered to the external load.",
     "learn": [
       "A practical voltage source and a practical current source are equivalent when they produce identical load voltage and load current.",
@@ -1953,7 +1256,7 @@
         "anchor": "u1-es-06"
       }
     ],
-    "class_history": null,
+    "class_history": [],
     "intro": "Kirchhoff’s Current Law and Kirchhoff’s Voltage Law are followed by Exercises 1.5.1–1.5.14 with the intermediate calculation steps retained.",
     "learn": [
       "KCL: the algebraic sum of currents at a node is zero.",
@@ -2505,7 +1808,7 @@
     "title": "Series, parallel and series-parallel reduction",
     "status": "core",
     "practice": null,
-    "class_history": null,
+    "class_history": [],
     "intro": "The three series-parallel examples are worked through using the successive reduction calculations shown in the figures.",
     "learn": [
       "Combine unmistakable series and parallel groups step by step.",
@@ -2652,7 +1955,7 @@
         "anchor": "u1-es-08"
       }
     ],
-    "class_history": null,
+    "class_history": [],
     "intro": "The Delta–Star and Star–Delta derivations are retained before the four worked exercises.",
     "learn": [
       "Delta-to-star: each star arm equals the product of the two adjacent delta resistances divided by the sum of all three delta resistances.",
@@ -2923,7 +2226,7 @@
         "anchor": "u1-es-09"
       }
     ],
-    "class_history": null,
+    "class_history": [],
     "intro": "The theorem, definitions of linear and bilateral networks, and all three source-by-source calculations in Exercise 1.8.1 are included.",
     "learn": [
       "Analyze one independent source at a time.",
@@ -3128,7 +2431,7 @@
     "title": "Thevenin’s theorem",
     "status": "core",
     "practice": null,
-    "class_history": null,
+    "class_history": [],
     "intro": "The theorem, its four steps and all four examples are included with their intermediate equations.",
     "learn": [
       "Replace a linear bilateral two-terminal network by \\(V_{th}\\) in series with \\(R_{th}\\).",

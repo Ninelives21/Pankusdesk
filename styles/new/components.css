@@ -51,3 +51,30 @@
 	font-size: var(--font-size-panel-title);
 	color: var(--text-strong);
 }
+
+/* Unit-level three-page navigation: Text · Questions · Class Notes */
+.unit-resource-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem;
+	margin: 1rem 0 1.5rem;
+	padding: .45rem;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: var(--surface);
+	width: fit-content;
+	max-width: 100%;
+}
+.unit-resource-link {
+	padding: .65rem .9rem;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 750;
+	color: var(--text-secondary);
+	white-space: nowrap;
+}
+.unit-resource-link:hover { background: rgba(225, 239, 252, .7); color: var(--text); }
+.unit-resource-link.is-active {
+	background: rgba(214, 234, 250, .95);
+	color: var(--primary);
+}

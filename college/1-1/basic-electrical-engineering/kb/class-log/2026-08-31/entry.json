@@ -14,7 +14,7 @@
   },
   "title": "Dependent sources and passive circuit elements — R, L and C",
   "summary": "Dependent/controlled sources (VCCS, CCCS, CCVS, VCVS) and their equations; resistance, inductance and capacitance definitions, units and basic voltage-current relations.",
-  "transcription_policy": "Notebook wording is preserved as far as it is safely readable. Crossed-out corrections are normalized to the final written reading; symbols and equations are transcribed into MathJax without adding unrecorded notebook content.",
+  "transcription_policy": "Notebook order and meaning are preserved; grammar, punctuation and awkward English are lightly cleaned for study. Crossed-out corrections are normalized to the final readable wording, and no new theory is added unless explicitly marked as a short clarification.",
   "mapped_topics": [
     {
       "topic_id": "u1-sources",
@@ -58,7 +58,7 @@
         },
         {
           "type": "paragraph",
-          "text": "If the voltage/current of a source depends upon some other voltage/current in the network, it is called a dependent/controlled source."
+          "text": "If the voltage or current of a source depends on another voltage or current elsewhere in the network, it is called a dependent or controlled source."
         },
         {
           "type": "line",
@@ -74,7 +74,8 @@
           "alt": "Notebook-style dependent current-source symbol for VCCS: a vertical diamond source with an upward current arrow inside.",
           "caption": "Class-note redraw · VCCS dependent-source symbol",
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "size": "symbol"
         },
         {
           "type": "equation",
@@ -86,7 +87,8 @@
           "alt": "Notebook-style dependent current-source symbol for CCCS: a vertical diamond source with an upward current arrow inside.",
           "caption": "Class-note redraw · CCCS dependent-source symbol",
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "size": "symbol"
         },
         {
           "type": "equation",
@@ -98,7 +100,8 @@
           "alt": "Notebook-style dependent voltage-source symbol for CCVS: a vertical diamond source with plus polarity above minus polarity inside.",
           "caption": "Class-note redraw · CCVS dependent-source symbol",
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "size": "symbol"
         },
         {
           "type": "equation",
@@ -110,7 +113,8 @@
           "alt": "Notebook-style dependent voltage-source symbol for VCVS: a vertical diamond source with plus polarity above minus polarity inside.",
           "caption": "Class-note redraw · VCVS dependent-source symbol",
           "width": 1254,
-          "height": 1254
+          "height": 1254,
+          "size": "symbol"
         }
       ]
     },
@@ -128,11 +132,20 @@
         },
         {
           "type": "paragraph",
-          "text": "The property of a circuit element which opposes flow of current (R)."
+          "text": "Resistance is the property of a circuit element that opposes the flow of current. It is represented by \\(R\\)."
         },
         {
           "type": "line",
           "text": "Unit: ohms (\\(\\Omega\\))"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-01/figures/c2.png",
+          "alt": "Notebook-style resistor symbol: a short horizontal lead, zig-zag resistor element and short horizontal lead.",
+          "caption": "Class-note redraw · Resistor symbol",
+          "width": 1448,
+          "height": 1086,
+          "size": "small"
         },
         {
           "type": "equation",
@@ -144,11 +157,20 @@
         },
         {
           "type": "paragraph",
-          "text": "The property of a circuit element to oppose the change in current (L)."
+          "text": "Inductance is the property of a circuit element that opposes a change in current. It is represented by \\(L\\)."
         },
         {
           "type": "line",
           "text": "Unit: henry (H)"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-01/figures/c3.png",
+          "alt": "Notebook-style inductor symbol: a short horizontal lead, a compact series of coil loops and a short horizontal lead.",
+          "caption": "Class-note redraw · Inductor symbol",
+          "width": 1448,
+          "height": 1086,
+          "size": "small"
         },
         {
           "type": "paragraph",
@@ -172,7 +194,7 @@
         },
         {
           "type": "paragraph",
-          "text": "If the current across the inductor is constant, the inductor acts as a short circuit to DC."
+          "text": "If the current through an ideal inductor is constant, \\(di/dt=0\\), so it acts as a short circuit to DC."
         }
       ]
     },
@@ -194,11 +216,12 @@
           "alt": "Notebook-style capacitor symbol with two straight parallel plates, horizontal leads, plus above the left plate and minus above the right plate.",
           "caption": "Class-note redraw · Capacitor symbol",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "size": "small"
         },
         {
           "type": "paragraph",
-          "text": "Any two conducting surfaces separated by an insulating dielectric exhibit the property of capacitance. Conducting surfaces are known as electrodes. Insulating substance is known as dielectric."
+          "text": "Any two conducting surfaces separated by an insulating dielectric exhibit capacitance. The conducting surfaces are called electrodes, and the insulating substance is called the dielectric."
         },
         {
           "type": "equation",
@@ -222,15 +245,14 @@
         },
         {
           "type": "paragraph",
-          "text": "If the voltage across a capacitor is constant, capacitor acts as an open circuit to DC, i.e. \\(i=0\\)."
+          "text": "If the voltage across an ideal capacitor is constant, \\(dv/dt=0\\), so \\(i=0\\); the capacitor acts as an open circuit to DC."
         }
       ]
     }
   ],
   "source_notes": [
-    "The three notebook photographs supplied for 31 August remain intake/source material and are not copied into normal website assets.",
-    "The four dependent-source symbols and the capacitor symbol are represented by compact NRS redraws derived from the 31 August notebook sketches and stored with the dated class assets.",
-    "The cumulative Unit I page places the resistance, inductance and capacitance class material beside the corresponding textbook sections rather than reproducing the notebook page as one block.",
-    "Class notation for dependent sources is retained and explicitly mapped to the prescribed textbook notation in the cumulative notes."
+    "The dated 31 August record keeps the dependent-source and R/L/C material together in notebook order.",
+    "The four dependent-source symbols and capacitor symbol are NRS redraws from the 31 August sketches. Standalone resistor and inductor symbols were later redrawn for the dedicated class-notes page without changing their meaning.",
+    "The cumulative Unit I Text page no longer embeds class-note material; class notes are kept on the dedicated chronological Class Notes page."
   ]
 }

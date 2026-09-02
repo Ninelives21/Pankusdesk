@@ -1,7 +1,7 @@
 # PankusDesk College Build Standard — Design Lock v2
 
 **Status:** Normative project contract  
-**Design lock:** v2 · 28 Aug 2026  
+**Design lock:** v2 · amended 2 Sep 2026 for the three-page unit split  
 **Canonical reference implementation:** Semester 1.1 → Basic Electrical Engineering → Unit I  
 **Reference workspace:** the latest Unit-I-complete workspace supplied with this design-lock update.
 
@@ -16,9 +16,9 @@ This document defines the default build contract for every future college unit, 
 3. **Every example must be fully worked.** Every textbook example, class example, PankusDesk-added example and solved practice/PYQ example must appear in a dropdown and contain the complete reproducible working, not merely the question and final answer. Show every substantive row operation, algebraic transformation, substitution, iteration or calculation needed to reach the result. If a source omits intermediate working and PankusDesk supplies it, keep the completion faithful to the source result and label any genuinely source-external clarification when needed.
 4. **The complete example question stays visible before opening the dropdown.** The example title and the full problem statement (including matrices, equations, given values and subparts) must be visible in the closed state. Opening the `+` reveals the solution only; the hidden portion must begin with the solution/working, never with information needed to know what is being solved.
 5. **Multi-part questions and answers are visually separated.** Whenever a question, example, answer, solution, PYQ or self-check contains labelled subparts such as `(i)`, `(ii)`, `(iii)` or `(a)`, `(b)`, `(c)`, render each subpart on its own line rather than running the parts together inline. In a revealed solution, each subpart must also appear as a clearly separate solution block with its own part label and visual boundary; use the shared alternating panel treatment unless a subject requires a stronger semantic distinction. This is a global presentation rule across all subjects and practice layers.
-6. **One cumulative study version.** The unit page is the best current, de-duplicated semester notebook. Do not create parallel “textbook notes”, “lecture notes” and “class notes” pages for the same theory.
-7. **Class chronology is preserved separately.** A dated class log records what happened on a particular date. Useful material is then integrated at the correct conceptual point in the cumulative unit page.
-8. **Class-note material must remain visibly identifiable.** Integrated class-note sections use the dedicated class-note visual treatment and date/source label, but their prose states the content directly; it must not narrate the note-building workflow.
+6. **Each unit has three study pages.** Use a textbook-led **Text** page, a **Textbook Questions** page, and a chronological **Class Notes** page. Do not mix class-note prose into the textbook-led Text page.
+7. **Class chronology is preserved on the unit Class Notes page.** Dated entries remain separate and are reached directly from the calendar by date anchor.
+8. **Class-note material stays in the class-note layer.** Its grammar may be cleaned for readability, but its equations, examples, diagrams, notation and teacher emphasis remain source-faithful and are not silently rewritten into textbook theory.
 9. **Explanations are separated from source notes.** PankusDesk-authored plain-language teaching material belongs in the blue explanation accordion (`Understand this diagram` / explanation dropdown), not mixed into textbook or class-note prose as though it came from the source.
 10. **Provenance stays in data.** Student-facing theory teaches the subject. Source IDs, capture filenames, ingestion commentary and build decisions live in metadata/audits, not ordinary theory prose.
 11. **Source discrepancies are never silently repaired.** Awkward grammar and wording may be cleaned for readability, but mathematical data (numbers, signs, equations, matrices, conditions) must be checked against the source. If a mathematical source error is independently verified, PankusDesk may present the corrected/intended mathematics for study, but must explicitly note what the source printed and why the correction is justified. A verified **mathematical mismatch** uses the shared amber/gold semantic treatment: highlight the question-number badge (and the affected subpart label when applicable) and show a matching pale-amber note explaining the mismatch and the independent verification. Amber/gold is reserved for mathematical mismatches only; never use it for grammar, spelling, punctuation, wording clean-up or ordinary editorial notes.
@@ -40,9 +40,9 @@ Keep these concerns distinct:
 
 1. **Source material** — official syllabus, prescribed textbook, supplied lectures, handwritten class notes, supplementary documents, approved gap sources.
 2. **Archival/provenance record** — source manifests, page/lecture indexes, class-log source IDs, coverage audits, anomaly notes.
-3. **Cumulative knowledge** — `kb/data/topics.json`, the canonical rendered study content.
-4. **Chronological class record** — `kb/class-log/YYYY-MM-DD/entry.json` plus optional `raw.md`.
-5. **Student-facing shells/renderers** — unit, questions, class-log, syllabus, calendar and PYQ pages rendered from shared code.
+3. **Textbook-led cumulative knowledge** — `kb/data/topics.json`, the canonical rendered Text page; class-note material is not mixed into this layer.
+4. **Chronological class record** — `kb/class-log/YYYY-MM-DD/entry.json` plus optional `raw.md`, rendered together on the unit Class Notes page.
+5. **Student-facing shells/renderers** — unit Text, Textbook Questions, Unit Class Notes, syllabus, calendar and PYQ pages rendered from shared code.
 
 The layers may link to one another, but they must not collapse into one another.
 
@@ -157,7 +157,7 @@ The **class-note source label itself is allowed and intentional**; source-manage
 
 ### 5.3 De-duplication rule
 
-If textbook, lecture and class notes overlap, teach the concept once in the best location and attach all appropriate provenance. An integrated class-note panel may remain when it represents lecturer-specific wording, notation, emphasis or a useful visual; it must not simply duplicate the surrounding textbook paragraph.
+If textbook, lecture and class notes overlap, keep the Text page textbook-led and keep the class lesson on the dated Class Notes page. Do not reconcile overlap by merging source voices into one paragraph.
 
 ---
 
@@ -188,27 +188,20 @@ An ordinary section is part of the cumulative textbook-led theory and normally h
 
 Use `tables` for genuine comparisons/correspondences, not to fake page layout. Keep the source terminology and sequence intact; do not invent new categories merely to make a table look fuller.
 
-### 7.2 Integrated class-note section
+### 7.2 Dedicated Unit Class Notes page
 
-Use:
+The student-facing class record is rendered chronologically from `kb/class-log/YYYY-MM-DD/entry.json` on:
 
-```json
-{
-  "kind": "class-note",
-  "source_label": "Priyanka’s class notes · 27 Aug 2026"
-}
-```
-
-The renderer gives this a visibly separate class-note treatment. Use it when class material adds real value at that point in the topic.
+`unit-N-class-notes.html#YYYY-MM-DD`
 
 Rules:
 
-- place it beside the concept it belongs to;
-- keep the date/source label visible;
-- write content directly, without “Priyanka’s notes…” narration;
-- include the class source ID in `source_refs`;
-- class-derived figures in cumulative topics use `kind: "class-note"`;
-- do not dump a whole day's notes at the end of the unit.
+- keep dates in chronological order with a date-based left navigation;
+- keep a very brief description beside each date in the nav;
+- lightly correct grammar, punctuation and awkward English without changing technical meaning;
+- place NRS redraws with the dated material they explain;
+- if a later date adds side notes onto an earlier notebook page, record the new additions without reproducing the earlier lesson in full;
+- keep class-note source IDs in the dated entry/source manifest, not in textbook theory topics.
 
 ### 7.3 Ambiguous handwriting
 
@@ -352,7 +345,7 @@ Never use a textbook/reference image to override the actual class-note source. R
 
 Permanent workflow:
 
-**raw intake → faithful dated record → topic mapping → NRS derivation where useful → cumulative integration → calendar link**
+**raw intake → faithful dated record → light grammar cleanup → NRS derivation where useful → dedicated Unit Class Notes page → calendar link**
 
 ### 11.1 Dated record
 
@@ -372,22 +365,23 @@ The semester index is:
 
 `college/<semester>/data/class-log.json`
 
-A dated class entry links to the generic subject shell:
+A dated class entry links to its anchor on the unit Class Notes page:
 
-`class-log.html?date=YYYY-MM-DD`
+`unit-N-class-notes.html#YYYY-MM-DD`
 
-The calendar, dated log and cumulative topic must resolve bidirectionally where mappings exist.
+The calendar, dated entry and Unit Class Notes page must resolve consistently. Legacy `class-log.html?date=` shells may remain for backward compatibility, but new calendar links use the unit page.
 
 ### 11.3 Integration policy
 
 For each class item:
 
-- already covered adequately → do not duplicate;
-- useful new detail → integrate into the existing topic;
-- lecturer-specific notation/emphasis → keep in a class-note section;
+- keep the dated lesson on the dedicated Unit Class Notes page, even when it overlaps the textbook;
+- do not inject class-note prose or figures into the Text page;
+- if a later date repeats an older notebook page with only side-note additions, record only the new dated additions instead of duplicating the older lesson;
+- lightly fix grammar and awkward English without changing equations, examples or technical meaning;
 - confusing sketch → redraw in NRS after semantic confirmation;
 - two adjacent sketches that clearly form one concept may be combined in one class redraw when explicitly understood/approved;
-- contradiction → preserve in class log and flag; do not silently reconcile;
+- contradiction → preserve it in the class-note/source layer; do not silently rewrite the textbook layer;
 - assignment/question → route to the appropriate practice layer.
 
 ### 11.4 Raw source handling
@@ -443,7 +437,9 @@ Current generic college renderers include:
 
 - `scripts/new/subject-unit.js`
 - `scripts/new/unit-questions.js`
-- `scripts/new/class-log.js`
+- `scripts/new/class-log.js` (legacy/direct dated shell)
+- `scripts/new/unit-class-notes.js`
+- `scripts/new/unit-resource-nav.js`
 - `scripts/new/calendar.js`
 - shared semester/subject/navigation renderers
 
@@ -454,8 +450,8 @@ Unit I demonstrates that the generic unit renderer supports:
 - Quick recall;
 - Check yourself accordions;
 - textbook practice links;
-- class-history links;
-- integrated class-note panels;
+- unit-level Text / Questions / Class Notes navigation;
+- chronological dated class-note rendering;
 - blue explanation accordions;
 - MathJax;
 - explicitly anchored figures;
@@ -469,7 +465,7 @@ Do not fork subject-specific renderers just to avoid extending generic data stru
 
 ## 15. Lightweight shells
 
-Unit, class-log and question HTML files remain small shells that declare the subject/unit context and load shared renderers/styles. Do not copy full theory HTML into every shell.
+Unit Text, Textbook Questions and Unit Class Notes HTML files remain small shells that declare the subject/unit context and load shared renderers/styles. Legacy single-date class-log shells may remain for backward compatibility.
 
 ---
 
@@ -479,7 +475,7 @@ Every topic and detailed section has non-empty `source_refs`. References must re
 
 `book_refs` may hold printed page/capture bookkeeping internally. Internal capture filenames are not normal student-facing content.
 
-Class-note sections must include their corresponding `CLASS-...` source reference.
+Class-note source IDs resolve through the dated class-log/source-manifest layer; ready-unit Text topics should not contain `kind: "class-note"` sections.
 
 ---
 
@@ -497,10 +493,10 @@ Design Lock v2 generic verification covers, among other things:
 - configured source-reference resolution;
 - figure assets, alt text and explicit placement;
 - figure Grid ranges;
-- class-note labels/source references;
+- configured Unit Class Notes shells and dated class-log/source references;
 - explanation-accordion structure;
 - textbook practice anchors;
-- class-log mappings/assets/calendar links;
+- dated class-note assets, Unit Class Notes anchors and calendar links;
 - absence of raw notebook binaries in website class assets;
 - no `\frac` in ready-unit topic content;
 - no student-facing source/build meta-commentary.
@@ -535,7 +531,7 @@ Stop and report rather than guessing when:
 4. Atomise syllabus and audit source coverage.
 5. Resolve/approve gaps.
 6. Build textbook-faithful cumulative topics.
-7. Integrate supplied lecture/class material without duplication.
+7. Keep supplied class material in dated Unit Class Notes entries; keep textbook theory source-clean.
 8. Add NRS visuals only after semantic verification.
 9. Place every figure at the corresponding text using explicit anchor/Grid metadata.
 10. Add explanation accordions where a source is too terse to learn from easily.

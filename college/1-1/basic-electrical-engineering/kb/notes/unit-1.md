@@ -1,10 +1,10 @@
 # Unit 1 — Introduction to Electrical Energy and DC Circuits
 
-> **Source policy for this page:** the prescribed textbook is the main note text. The body keeps its sequence, equations, derivations and worked calculations; only grammar/obvious typographical errors are cleaned up. Priyanka’s class notes are inserted in explicitly labelled panels. “Quick recall”, “Check yourself”, navigation, formula summaries and reference boxes are PankusDesk study aids.
+> **Source policy for this page:** the prescribed textbook is the primary Text source. The body preserves textbook sequence, definitions, equations, derivations and useful worked calculations as closely as practical while cleaning grammar/obvious typographical errors. Priyanka’s dated notes are maintained separately on `unit-1-class-notes.html` and are not merged into this Text layer.
 
 ## 1. Electrical energy in modern life and engineering
 
-**Status:** Core R25
+**Status:** core
 
 Electrical energy has become an essential part of modern life and is used throughout domestic, commercial and industrial activity. This section introduces its importance and the basic stages of an electrical power system.
 
@@ -15,9 +15,10 @@ Electrical energy has become an essential part of modern life and is used throug
 - Electrical machines perform electromechanical energy conversion: a generator converts mechanical energy into electrical energy, while a motor converts electrical energy into mechanical energy.
 
 ### 1.1 Introduction
+
 Electricity is one of the most important blessings that science has given to mankind. It has become a part of modern life so much that one cannot think of a world without it. Electrical energy is the primary source of readily usable energy in the world and it drives almost all present-day activities. It has played a vital role in building the present-day civilization. Modern society is so dependent upon the use of electrical energy that it has become a part and parcel of our life.
 
-The textbook gives the following reasons that make electrical energy superior to other forms of energy.
+The following reasons make electrical energy superior to many other forms of energy.
 
 - Convenient: Electrical energy is a very convenient form of energy. It can be easily converted into other forms of energy such as light, heat and mechanical rotation.
 - Easily controllable and more flexible: Electrically operated machines provide simple control and ease of operation. For instance, an electric motor can be started or stopped by the flick of a switch.
@@ -26,6 +27,7 @@ The textbook gives the following reasons that make electrical energy superior to
 - Easily transmittable: Electrical energy can be transmitted conveniently and efficiently from one place to another.
 
 ### 1.1.1 The role of electrical energy in modern life
+
 Electricity is an essential part of modern life and is a major contributor to the global economy. Modern society is so dependent upon electrical energy that it has become part of our life. Per-capita electrical-energy consumption is one of the main metrics used for assessing economic growth and quality of life. The greater the per-capita consumption of electrical energy in a country, the higher is the standard of living of its people.
 
 People use electricity for lighting, heating, cooling and refrigeration and for operating appliances, computers, electronics, machinery and public transportation systems. Present-day advances in science and technology have made it possible to convert electrical energy into any desired form. This has given electrical energy a place of pride in the modern world.
@@ -39,18 +41,20 @@ Another major application of electrical energy in modern life is Electric Vehicl
 The use of renewable-energy systems is growing rapidly. Electrical energy generated from renewable sources such as solar, wind and hydel power is widely accepted because the corresponding conversion mechanisms can reduce environmental degradation. Renewable-energy systems are expected to form an important part of the future energy scenario.
 
 ### 1.1.2 Electrical energy vs Computer Science Engineering
-Computer Science and Engineering is described in the textbook as a subfield associated with electronics, communication and instrumentation, which developed from electrical engineering. The engineering era began with Civil Engineering, which largely deals with static systems such as bridges and buildings. Rotational energy made Mechanical Engineering revolutionary, and the invention of the generator gave birth to Electrical Engineering.
+
+Computer Science and Engineering is a subfield associated with electronics, communication and instrumentation, which developed from electrical engineering. The engineering era began with Civil Engineering, which largely deals with static systems such as bridges and buildings. Rotational energy made Mechanical Engineering revolutionary, and the invention of the generator gave birth to Electrical Engineering.
 
 Electrical Engineering, in association with other engineering disciplines, formed the basis for the growth and promotion of Computer Science and Engineering. It is the primary responsibility of a computer-science professional to appreciate the electrical energy that makes a computer system functional. The study of electrical engineering helps in developing the logical ability needed by computer-science engineers and can support the delivery of efficient codes and programs.
 
 ### 1.2 Overview of electrical-energy generation, transmission and utilization
+
 Energy is available in nature in different forms such as heat, wind, solar, light, chemical and mechanical energy. According to the law of conservation of energy, energy can neither be generated nor destroyed; it can be converted from one form to another. Generation of electrical power therefore means converting existing forms of energy into electrical form. This process must continue continuously to meet consumer demand at all times. The input can be any form of energy, while the output is electrical energy, as conceptualized in Figure 1.1.
 
 An efficient, convenient and conventional way of generating electrical energy is by conversion of mechanical energy into electrical energy. The device that supplies the required mechanical energy is called a prime mover. Since steam turbines and hydraulic turbines are commonly used prime movers, the location of generating units is constrained by the availability of resources such as coal and water at an elevated point.
 
 The generating station is generally not located where the electrical power is required. Hence the generated electrical power must be transmitted to the load centres using a conductor system called the transmission system. After receiving the power at load centres, it is distributed to various consumers and utilized. The entire system consisting of electrical power generation, transmission, distribution and finally utilization is called an electrical power system.
 
-As Figure 1.2 shows, the power system starts with mechanical power and converts it into electrical form. The electrical power generated is transmitted to the load centre using the transmission network and is then utilized for different purposes. Other than lighting and heating loads, most loads involve motion or mechanical power at their output and therefore convert electrical power into mechanical power. These are called motive loads. The textbook states that motive loads constitute about 80% of the existing loads. Thus, a power system largely ends with mechanical energy, making electromechanical energy conversion very important.
+As Figure 1.2 shows, the power system starts with mechanical power and converts it into electrical form. The electrical power generated is transmitted to the load centre using the transmission network and is then utilized for different purposes. Other than lighting and heating loads, most loads involve motion or mechanical power at their output and therefore convert electrical power into mechanical power. These are called motive loads. Motive loads constitute about 80% of the existing loads. Thus, a power system largely ends with mechanical energy, making electromechanical energy conversion very important.
 
 Electrical machines are responsible for electromechanical energy conversion in an electric power system. A machine that converts mechanical energy into electrical energy is called an electric generator. A machine that converts electrical energy into mechanical energy is called an electric motor.
 
@@ -60,7 +64,7 @@ Electrical machines are responsible for electromechanical energy conversion in a
 
 ### Check yourself
 
-- **Why does the textbook call electrical energy superior to many other forms of energy?**  
+- **Why is electrical energy considered superior to many other forms of energy?**  
   Because it is convenient, easily controllable and flexible, inexpensive, clean at the point of use, and easily transmittable.
 - **What are the four main stages of an electrical power system?**  
   Electrical power generation, transmission, distribution and utilization.
@@ -73,7 +77,7 @@ Electrical machines are responsible for electromechanical energy conversion in a
 
 ## 2. Electric circuit, electric network and basic electrical quantities
 
-**Status:** Core R25
+**Status:** core
 
 An electric circuit, an electric network and the basic electrical quantities used to describe them are introduced here.
 
@@ -81,83 +85,22 @@ An electric circuit, an electric network and the basic electrical quantities use
 
 - An electric circuit consists of a source or EMF, a load, a controlling switch and connecting wires.
 - An electric network is the interconnection of two or more circuit elements.
-- Charge, current, voltage, energy, power and common classifications of network elements are also included.
+- Charge, current, voltage, energy and power are introduced with their basic relations and units.
 
 ### 1.3 Electric Circuit
+
 An electric circuit is a simple arrangement that consists of a source or Electromotive Force (battery or generator), a load such as a lamp, fan, heater or motor which consumes electrical energy, a controlling switch and connecting wires. The purpose of a circuit is to transfer electrical energy to the load. The schematic of a circuit is shown in Figure 1.3.
 
 Electric current is circulated in the circuit by the EMF or source against the resistance \(R\). The current \(I\) is always proportional to the voltage \(V\).
 
 *Figure: Fig. 1.3 · Basic circuit schematic*
 
-> **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
-
-### Circuit concept
-
-An electric circuit consists of a closed path interconnecting active and passive elements. The components are called circuit elements.
-
-A closed path followed by direct current (DC) is called a DC circuit. A closed path followed by alternating current (AC) is called an AC circuit.
-
-The source supplies electrical energy to the load, which converts that energy into heat or other forms. In a DC circuit, loads may be connected in series, parallel or series-parallel.
-
 ### Electric Network
+
 The interconnection of two or more circuit elements is called an electric network. In circuits, current should pass through all the elements, whereas in networks it need not do so. A circuit can be a network, but a network need not be a circuit.
 
-> **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
-
-### Charge and current
-
-Charge is the characteristic property of an elementary particle of matter. A proton has positive charge, an electron has negative charge and a neutron is neutral. The unit of charge is the coulomb (C).
-
-For a steady current,
-
-\[I=\dfrac{Q}{T}\]
-
-where \(Q\) is charge and \(T\) is time.
-
-For a time-varying current, the notebook gives
-
-\[i=\dfrac{dq}{dt}\]
-
-Current is the rate of change of charge passing through the cross-sectional area of a conductor. Its unit is the ampere (A).
-
-> **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
-
-### Voltage / absolute potential and potential difference
-
-Voltage or absolute potential was defined in class as the amount of work required to move a unit positive test charge from infinity to a point in the field.
-
-Potential difference is the amount of work required to move a unit positive test charge from one point to another in the field.
-
-For steady voltage, the notebook gives
-
-\[V=\dfrac{W}{Q}\]
-
-For time-varying voltage,
-
-\[dV=\dfrac{dW}{dQ}\]
-
-The unit of voltage or potential difference is the volt (V).
-
-> **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
-
-### Energy and power
-
-Energy is the capacity to do work. Energy may exist in forms such as electrical, mechanical and thermal energy. Its unit is the joule (J).
-
-Power is the rate at which electrical energy is converted into other forms of energy and is the product of voltage and current.
-
-Average power:
-
-\[P=\dfrac{W}{t}=VI\]
-
-Instantaneous power:
-
-\[P=\dfrac{dW}{dt}=VI\]
-
-The unit of power is the watt (W).
-
 ### Analogy between electrical, magnetic and mechanical systems
+
 An electric circuit has a close analogy with a magnetic circuit. In a magnetic circuit, a Magnetomotive Force (MMF) is used to pass magnetic flux \(\phi\) through an iron core that has a finite reluctance \(S\), which opposes the flux. Similarly, in a mechanical system, the driving torque \(T\) is responsible for keeping the system at a speed \(N\) against friction.
 
 | Electrical system | Magnetic system | Mechanical system |
@@ -168,128 +111,20 @@ An electric circuit has a close analogy with a magnetic circuit. In a magnetic c
 
 *Figure: Fig. 1.4 · Analogy between electrical, magnetic and mechanical systems*
 
-> **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
-
-### Types of network elements
-
-A network element is any individual electrical component that forms part of an electrical network. The same element can be classified in different ways depending on the property being considered.
-
-*Figure: Class-note redraw · Classification of network elements*
-
-#### Explanation dropdowns
-
-**Active and passive elements**
-
-Active elements supply electrical energy to a circuit and are therefore called sources.
-
-Passive elements do not generate electrical energy. They either dissipate the supplied energy or store it temporarily. In this classification, the basic passive elements are:
-
-- \(R\) — resistor: opposes current and dissipates electrical energy mainly as heat.
-- \(L\) — inductor: stores energy in a magnetic field and can later return it to the circuit.
-- \(C\) — capacitor: stores energy in an electric field and can later return it to the circuit.
-
-**What are voltage and current sources?**
-
-An electrical source supplies electrical energy to a circuit. Sources are broadly classified as voltage sources and current sources.
-
-Voltage is the electrical potential difference between two points. It represents energy transferred per unit charge:
-
-\[V=\dfrac{W}{Q}\]
-
-A voltage source maintains a specified voltage across its terminals. The current supplied can change when the connected load changes.
-
-For example, if an ideal \(10\,\text{V}\) source is connected to a \(5\,\Omega\) resistor,
-
-\[I=\dfrac{V}{R}=\dfrac{10}{5}=2\,\text{A}\]
-
-If the load becomes \(10\,\Omega\), the current becomes \(1\,\text{A}\), while the ideal source still maintains \(10\,\text{V}\).
-
-A current source maintains a specified current through the circuit. The voltage across it can change when the load changes.
-
-For example, for an ideal \(2\,\text{A}\) current source connected to a \(5\,\Omega\) load,
-
-\[V=IR=2\times5=10\,\text{V}\]
-
-- Voltage source → voltage is maintained; current may change with the load.
-- Current source → current is maintained; voltage may change with the load.
-
-**Independent and dependent sources**
-
-Both voltage sources and current sources may be independent or dependent.
-
-An independent source has a specified value that does not depend on another voltage or current elsewhere in the circuit.
-
-A dependent source, also called a controlled source, has a value determined by another voltage or current in the circuit. Dependent sources are usually represented by diamond-shaped symbols.
-
-- VCVS — Voltage-Controlled Voltage Source.
-- CCVS — Current-Controlled Voltage Source.
-- VCCS — Voltage-Controlled Current Source.
-- CCCS — Current-Controlled Current Source.
-
-**Linear and non-linear elements**
-
-A linear element has a proportional relationship between voltage and current. If its parameter remains constant, increasing the voltage by a certain factor increases the current by the same factor.
-
-For a resistor of constant resistance,
-
-\[V=IR\]
-
-so its \(V\)-\(I\) characteristic is a straight line through the origin.
-
-A non-linear element does not have a proportional \(V\)-\(I\) relationship. Its behaviour changes with the applied voltage or current; a diode is a common example.
-
-This distinction is important because the Superposition theorem is applied to linear circuits.
-
-**Bilateral and unilateral elements**
-
-A bilateral element behaves essentially the same way when the direction of current or voltage is reversed. Ideal resistors, inductors and capacitors are generally treated as bilateral elements.
-
-A unilateral element behaves differently in the two directions. A diode is the standard example: it conducts readily in one direction but strongly restricts current in the reverse direction.
-
-- Bilateral → reversing direction does not fundamentally change its behaviour.
-- Unilateral → behaviour depends on direction.
-
-**Time-invariant and time-variant elements**
-
-A time-invariant element has a parameter whose value does not change simply because time passes. For example, an ideal \(10\,\Omega\) resistor remains \(10\,\Omega\).
-
-A time-variant element has a parameter that changes with time. For example,
-
-\[R=R(t)\]
-
-**Lumped and distributed elements**
-
-In a lumped element, the electrical property is treated as concentrated in one physical component. Ordinary resistors, inductors and capacitors used in basic circuit analysis are treated as lumped elements.
-
-In a distributed element, resistance, inductance and capacitance are spread continuously along its physical length. A transmission line is a common example.
-
-**Quick way to read the diagram**
-
-- Active / passive → does it supply energy or does it use/store energy?
-- Voltage / current source → which quantity does the source maintain?
-- Linear / non-linear → is the \(V\)-\(I\) relationship proportional?
-- Bilateral / unilateral → does reversing direction change its behaviour?
-- Time-invariant / time-variant → does its parameter change with time?
-- Lumped / distributed → is the electrical property concentrated or spread along its length?
-
 ### Key formulas
 
 - Steady current: \(I=\dfrac{Q}{T}\)
 - Time-varying current: \(i=\dfrac{dq}{dt}\)
 - Steady potential difference: \(V=\dfrac{W}{Q}\)
-- Class-note time-varying voltage: \(dV=\dfrac{dW}{dQ}\)
 - Average power: \(P=\dfrac{W}{t}=VI\)
 - Instantaneous power: \(P=\dfrac{dW}{dt}=VI\)
 
-### Important note
 ### Check yourself
 
-- **What are the four basic parts of the circuit described by the textbook?**  
+- **What are the four basic parts of an electric circuit?**  
   A source or EMF, a load, a controlling switch and connecting wires.
-- **What does the textbook call an electric network?**  
+- **What is an electric network?**  
   The interconnection of two or more circuit elements.
-- **What relation for time-varying current was written in class?**  
-  \(i=\dfrac{dq}{dt}\).
 
 ### Physical-book reference
 
@@ -299,7 +134,7 @@ In a distributed element, resistance, inductance and capacitance are spread cont
 
 ## 3. Circuit elements: resistance, inductance and capacitance
 
-**Status:** Core R25
+**Status:** core
 
 Resistance, inductance and capacitance are the three basic circuit parameters. Their equations and energy relations are developed alongside the corresponding explanations.
 
@@ -311,9 +146,11 @@ Resistance, inductance and capacitance are the three basic circuit parameters. T
 - The equations and energy derivations appear in the body with the corresponding explanations; the Key formulas box repeats them for revision.
 
 ### 1.3.1 Circuit Elements
+
 A circuit element can be represented by any one, or by a combination, of three basic parameters: (1) resistance, (2) inductance and (3) capacitance.
 
 ### (a) Resistance
+
 Electrical resistance is the property of a material by which it opposes the flow of electrons or current through it. When electrons flow through a conducting material, they collide with other atoms and lose their energy and hence their potential. The voltage drop \(V\) in a conducting material is proportional to the flow of current \(I\) at a given temperature.
 
 \[\text{Voltage drop }(V)\propto I\]
@@ -342,18 +179,8 @@ Hence resistance is a passive element which consumes energy and cannot store or 
 
 *Figure: Fig. 1.6 · Circular conductor*
 
-> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
-
-### Resistance — class-note view
-
-Resistance parameter: the property of a circuit element which opposes the flow of current. It is represented by \(R\) and its unit is the ohm \(\Omega\).
-
-\[R=\rho\dfrac{l}{A}\]
-
-Here \(\rho\) is resistivity, \(l\) is conductor length and \(A\) is cross-sectional area.
-
-
 ### (b) Inductance
+
 Inductance is the property of a circuit element that is related to magnetic flux. A current-carrying conductor produces magnetic flux in concentric form around it. The direction of the flux is given by the Right-Hand Thumb Rule, as illustrated in Figure 1.7.
 
 When a conductor of negligible resistance is made into a coil, all the flux lines gather and produce a resultant flux whose axis is called the coil axis. When this flux \(\phi\) links with a coil having \(N\) turns, the coil gets flux linkages \(\varphi\). The flux linkages are given by
@@ -366,7 +193,7 @@ According to Faraday’s laws of electromagnetic induction, whenever the flux li
 
 \[e\propto\dfrac{d\varphi}{dt}\]
 
-The textbook next states
+The next relation is
 
 \[\varphi\propto\phi\qquad\text{and}\qquad\phi\propto i\]
 
@@ -390,13 +217,13 @@ The electrical energy absorbed by an inductor is given by
 
 \[W=\int_{0}^{t}P\,dt=\int_{0}^{t}ei\,dt=\int_{0}^{t}L\dfrac{di}{dt}\,i\,dt=\int_{0}^{I}Li\,di=\dfrac{1}{2}LI^2\]
 
-Since the coil is made with a conductor having negligible resistance and is assumed to be ideal, it does not consume any energy. It stores the electrical energy absorbed by it in the form of a magnetic field. Hence, the textbook calls the inductor an active element.
+Since the coil is made with a conductor having negligible resistance and is assumed to be ideal, it does not consume any energy. It stores the electrical energy absorbed by it in the form of a magnetic field. Hence, the inductor is called an active element.
 
 Therefore, the energy stored by an inductor is
 
 \[W=\dfrac{1}{2}LI^2\ \text{joules}\]
 
-The textbook summarizes the important points related to an inductor as follows.
+The important points related to an inductor are summarized as follows.
 
 - The induced emf across an inductor is zero if \(\dfrac{di}{dt}=0\). Hence a pure inductor behaves as a short circuit to direct current (DC).
 - The current in an inductor cannot change instantaneously, because the induced emf would become infinite and would not allow the current to change instantaneously.
@@ -409,36 +236,8 @@ The textbook summarizes the important points related to an inductor as follows.
 
 *Figure: Fig. 1.9 · Induced emf in a coil opposes change in current*
 
-> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
-
-### Inductance — class-note view
-
-Inductance \(L\) was described as the property of a circuit element that opposes change in current. Its unit is the henry (H).
-
-The inductance of a coil is the ratio of flux linkage to the current flowing through the coil:
-
-\[L=\dfrac{N\phi}{i}\]
-
-Here \(\phi\) is flux in webers, \(N\) is the number of turns and \(i\) is current in amperes.
-
-\[v=L\dfrac{di}{dt}\]
-
-\[i=\dfrac{1}{L}\int v\,dt\]
-
-If the current through an ideal inductor is constant, \(di/dt=0\), so the inductor behaves as a short circuit to DC.
-
-**Understand this diagram — In simple words — what these equations mean**
-
-Current through a coil produces magnetic flux. With \(N\) turns, the coil has flux linkage \(N\phi\). The relation \(L=\dfrac{N\phi}{i}\) tells us how much flux linkage the coil develops per ampere of current.
-
-The relation \(v=L\dfrac{di}{dt}\) says that an inductor develops voltage when its current is changing. A faster change in current gives a larger voltage; a larger inductance \(L\) also gives a larger voltage for the same rate of change.
-
-If the current is steady, \(\dfrac{di}{dt}=0\), so the ideal inductor has zero voltage across it. That is why, after DC has reached steady state, an ideal inductor behaves like a short circuit.
-
-The integral form \(i=\dfrac{1}{L}\int v\,dt\) expresses the same relationship from the other direction: the current reached by the inductor depends on the voltage applied over time.
-
-
 ### (c) Capacitance
+
 When a conductor is formed into a coil, it exhibits inductance. Similarly, when a conductor is made into two plates and these plates are separated by a thin insulating material called a dielectric, a capacitor is formed, as shown in Figure 1.10.
 
 When a capacitor is connected across a source or battery, it becomes charged; charges of opposite polarity are transferred to the plates. Thus, an electrostatic field is established between the plates. The charge \(Q\) accumulated on the plates is proportional to the voltage \(V\).
@@ -463,7 +262,7 @@ Energy stored in the capacitor is
 
 \[W=\dfrac{1}{2}CV^2\ \text{joules}\]
 
-As the capacitor stores energy and does not consume energy, the textbook calls it an active element. The textbook summarizes the important points related to a capacitor as follows.
+As the capacitor stores energy and does not consume energy, it is called an active element. The important points related to a capacitor are summarized as follows.
 
 - The current in a capacitor is zero if the voltage across it is constant, \(\dfrac{dV}{dt}=0\). Hence it acts as an open circuit for direct current (DC).
 - The voltage across a capacitor cannot change instantaneously because an instantaneous change would require an infinite current.
@@ -471,33 +270,6 @@ As the capacitor stores energy and does not consume energy, the textbook calls i
 - A pure capacitor does not consume energy; it stores energy.
 
 *Figure: Fig. 1.10 · Capacitor*
-
-> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
-
-### Capacitance — class-note view
-
-![Capacitor symbol from Priyanka’s 31 August class notes, with two straight plates and + on the left, − on the right.](../assets/class/2026-08-31/figures/c5.png)
-
-Capacitance is represented by \(C\) and its unit is the farad (F). A capacitor consists of two conducting surfaces separated by an insulating dielectric; the conducting surfaces are electrodes and the insulating substance is the dielectric.
-
-\[q\propto v\]
-
-\[q=Cv\]
-
-\[\dfrac{dq}{dt}=C\dfrac{dv}{dt}\]
-
-\[i=C\dfrac{dv}{dt}\]
-
-\[v=\dfrac{1}{C}\int i\,dt\]
-
-If the voltage across an ideal capacitor is constant, \(dv/dt=0\), so \(i=0\); the capacitor behaves as an open circuit to DC.
-
-
-> **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
-
-### R, L and C classification
-
-\(R\) (resistor), \(L\) (inductor) and \(C\) (capacitor) are classified as passive elements.
 
 ### Key formulas
 
@@ -510,20 +282,13 @@ If the voltage across an ideal capacitor is constant, \(dv/dt=0\), so \(i=0\); t
 - Capacitor: \(Q=CV\)
 - Capacitor current: \(i=C\dfrac{dV}{dt}\)
 - Capacitor energy: \(W=\dfrac12CV^2\)
-- Class-note resistance relation: \(R=\rho\dfrac{l}{A}\)
-- Class-note inductor voltage: \(v=L\dfrac{di}{dt}\)
-- Class-note inductor integral form: \(i=\dfrac{1}{L}\int v\,dt\)
-- Class-note capacitor integral form: \(v=\dfrac{1}{C}\int i\,dt\)
-
 
 ### Check yourself
 
-- **How does the textbook define inductance?**  
+- **How is inductance defined?**  
   Inductance is the property of a coil by which changes in current are opposed.
 - **What happens to an ideal inductor and capacitor under steady DC?**  
   The ideal inductor behaves as a short circuit and the ideal capacitor behaves as an open circuit.
-- **Which three basic elements are grouped under passive elements in the network-element classification?**  
-  The resistor \(R\), inductor \(L\) and capacitor \(C\).
 
 ### Physical-book reference
 
@@ -533,7 +298,7 @@ If the voltage across an ideal capacitor is constant, \(dv/dt=0\), so \(i=0\); t
 
 ## 4. Electrical energy sources: voltage, current, independent and dependent sources
 
-**Status:** Core R25
+**Status:** core
 
 Electrical energy sources are classified as voltage sources and current sources, and also as independent and dependent sources.
 
@@ -546,120 +311,41 @@ Electrical energy sources are classified as voltage sources and current sources,
 - Ideal current source → current stays fixed; practical current source → internal parallel resistance diverts some current, so delivered current falls as terminal voltage rises.
 
 ### 1.3.2 Electrical Energy Sources
+
 The purpose of an electrical energy source is to supply electrical energy or power to a load. These sources are broadly classified into voltage sources and current sources. Voltage sources supply different values of current at a given voltage, whereas current sources supply different values of voltage at a constant current.
 
 The other classification of electrical energy sources is: (1) independent sources and (2) dependent sources.
 
-> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
-
-### Energy-source classification and source symbols
-
-Energy sources are classified as independent and dependent. Independent sources may be voltage sources or current sources; each may be ideal or practical. Dependent sources are VCCS, CCCS, CCVS and VCVS.
-
-*Figure: Class-note redraw · Classification of energy sources*
-
-For voltage sources, a DC source may be represented by a cell/battery symbol or by a circular source symbol with marked \(+\) and \(-\) polarity. A circular source symbol with a sine wave represents an AC source.
-
-*Figure: Class-note redraw · DC and AC voltage-source symbols*
-
-**Understand this diagram — How to read the energy-source classification**
-
-Independent does not mean “constant”. It means the source value is specified by the source itself rather than being controlled by another voltage or current elsewhere in the circuit. The specified value may be fixed or may vary with time. Dependent sources take their value from another circuit voltage or current.
-
-- VCVS — voltage-controlled voltage source.
-- CCVS — current-controlled voltage source.
-- VCCS — voltage-controlled current source.
-- CCCS — current-controlled current source.
-- The first pair tells what controls the source (VC or CC); the last pair tells what the source produces (VS or CS).
-
 ### 1. Independent Sources
+
 An independent source can be an independent voltage source or an independent current source.
 
 ### (a) Independent Voltage Source
+
 An independent voltage source is characterized by a terminal voltage which is completely independent of the current supplied by it. The magnitude of voltage does not change with any variation in the connected load network.
 
 \[V=\text{constant}\]
 
 *Figure: Fig. 1.11 · Independent voltage source and V–I characteristic*
 
-> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
-
-### Ideal voltage source — class-note view
-
-An independent voltage source maintains a voltage—fixed or varying with time—that is not affected by another circuit quantity.
-
-For an ideal voltage source, \(V_s\) is completely independent of source current \(I_s\). Its V–I characteristic therefore shows voltage remaining constant as current changes.
-
-*Figure: Class-note redraw · Ideal voltage source and V–I characteristic*
-
-> **PRIYANKA’S CLASS NOTES · 24 AUG 2026**
-
-### Voltage source and constant-voltage characteristic
-
-A voltage source supplies a resistor. Its \(V\)-\(I\) characteristic shows the source voltage \(V_s\) remaining constant as current changes.
-
-*Figure: Class-note redraw · Voltage source and constant-voltage characteristic*
-
 ### (b) Independent Current Source
+
 In an independent current source, the current supplied is completely independent of the voltage across it. The strength of current does not change with variation in the load network.
 
 \[I=\text{constant}\]
 
 *Figure: Fig. 1.12 · Independent current source and V–I characteristic*
 
-> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
-
-### Ideal current source — class-note view
-
-An ideal current source is a two-terminal element in which source current \(I_s\) is completely independent of the voltage across its terminals.
-
-The current-source symbol may be labelled with a fixed value such as \(I_1\) or a time-varying value \(I(t)\). The arrow shows the chosen source-current direction.
-
-*Figure: Class-note redraw · Ideal current-source symbols*
-
-For an ideal current source, current remains constant as terminal voltage changes.
-
-*Figure: Class-note redraw · Ideal current source and I–V characteristic*
-
 ### 2. Dependent Sources
+
 In dependent sources, the voltage of a voltage source or the current of a current source is controlled by a voltage or current that exists at some other location or point of the circuit. These sources are also called controlled sources.
 
 The symbols of dependent voltage and current sources are shown in Figure 1.13. Since the control of a dependent source is achieved by a voltage or a current, there are four possible dependent sources: (a) Voltage-Controlled Voltage Source (VCVS), (b) Current-Controlled Voltage Source (CCVS), (c) Voltage-Controlled Current Source (VCCS) and (d) Current-Controlled Current Source (CCCS).
 
 *Figure: Fig. 1.13 · Symbols of dependent voltage and current sources*
 
-> **PRIYANKA’S CLASS NOTES · 31 AUG 2026**
-
-### Dependent sources — class-note view
-
-If the voltage or current of a source depends on some other voltage or current in the network, it is called a dependent or controlled source. A dependent source is represented by a diamond symbol.
-
-Notation mapping used on this page: \(V_c\) and \(I_c\) denote the controlling voltage and current; \(V\) and \(I\) denote the dependent-source output. The equivalent symbols used in the four detailed equations below are \(V_c\leftrightarrow V_1\), \(I_c\leftrightarrow i_1\), \(V\leftrightarrow V_2\) and \(I\leftrightarrow i_2\).
-
-| Type | Symbol | Class-note relation | Controlled by | Dependent source delivers | Constant |
-|---|---|---|---|---|---|
-| VCCS | ![VCCS dependent-current-source symbol: diamond with upward arrow.](../assets/class/2026-08-31/figures/c1.png) | \(I=G_mV_c\) | \(V_c\): controlling voltage | \(I\): output current | \(G_m\): A/V (mho or siemens) |
-| CCCS | ![CCCS dependent-current-source symbol: diamond with upward arrow.](../assets/class/2026-08-31/figures/c2.png) | \(I=A_iI_c\) | \(I_c\): controlling current | \(I\): output current | \(A_i\): current gain, no units |
-| CCVS | ![CCVS dependent-voltage-source symbol: diamond with plus above minus.](../assets/class/2026-08-31/figures/c3.png) | \(V=R_mI_c\) | \(I_c\): controlling current | \(V\): output voltage | \(R_m\): V/A = \(\Omega\) |
-| VCVS | ![VCVS dependent-voltage-source symbol: diamond with plus above minus.](../assets/class/2026-08-31/figures/c4.png) | \(V=A_vV_c\) | \(V_c\): controlling voltage | \(V\): output voltage | \(A_v\): voltage gain, no units |
-
-**Understand this diagram — Understanding the four dependent sources**
-
-Read each name as “what controls it” followed by “what the source produces”. For example, Voltage-Controlled Current Source means a voltage measured somewhere else in the circuit controls the current produced by this dependent source.
-
-The controlling quantity is not the output of the diamond source itself. It is a voltage or current elsewhere in the network that the dependent source responds to.
-
-For a voltage-output dependent source (VCVS or CCVS), the diamond symbol has voltage polarity \(+/-\). For a current-output dependent source (VCCS or CCCS), the diamond contains a current arrow.
-
-The constant tells how strongly the output responds to the control quantity. \(A_v\) and \(A_i\) are dimensionless gains; \(G_m\) converts control voltage into output current; \(R_m\) converts control current into output voltage.
-
-- VCCS: voltage controls current — \(I=G_mV_c\).
-- CCCS: current controls current — \(I=A_iI_c\).
-- CCVS: current controls voltage — \(V=R_mI_c\).
-- VCVS: voltage controls voltage — \(V=A_vV_c\).
-
-
 ### (a) Voltage-Controlled Voltage Source (VCVS)
+
 In this case, the source voltage \(V_2\) is set by a control voltage \(V_1\).
 
 \[V_2=\mu V_1\]
@@ -669,6 +355,7 @@ Here \(\mu\) is a constant having no units. For such a controlled source, the vo
 *Figure: Fig. 1.14 · Voltage-controlled voltage source*
 
 ### (b) Current-Controlled Voltage Source (CCVS)
+
 Here, the control signal that sets the voltage is current \(i_1\). The source voltage is given by
 
 \[V_2=R_m i_1\]
@@ -678,6 +365,7 @@ where \(R_m\) is a constant whose unit is ohm, or volt per ampere. The volt-curr
 *Figure: Fig. 1.15 · Current-controlled voltage source*
 
 ### (c) Voltage-Controlled Current Source (VCCS)
+
 Here, the control signal which controls the source current is a voltage \(V_1\). The source current is given by
 
 \[i_2=G_mV_1\]
@@ -687,6 +375,7 @@ where \(G_m\) is a constant whose unit is mho, or ampere per volt. Figure 1.16 s
 *Figure: Fig. 1.16 · Voltage-controlled current source*
 
 ### (d) Current-Controlled Current Source (CCCS)
+
 The current signal \(i_1\) controls the current of the current source. The source current \(i_2\) is given by
 
 \[i_2=\alpha i_1\]
@@ -696,6 +385,7 @@ where \(\alpha\) is a constant having no units. The volt-current characteristics
 *Figure: Fig. 1.17 · Current-controlled current source*
 
 ### Practical Voltage Sources
+
 In practice, no voltage source is ideal. As the current supplied by the source increases, its terminal voltage decreases. This is because of its internal resistance \(R_s\).
 
 The terminal voltage \(V_L\) is given by
@@ -706,60 +396,13 @@ When \(I\) becomes zero under no-load conditions, \(V_L\) becomes equal to \(V_s
 
 *Figure: Fig. 1.18 · V–I characteristic of a practical voltage source*
 
-> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
-
-### Practical voltage source — class-note view
-
-A practical voltage source is represented as an ideal voltage source in series with source resistance. The terminal voltage falls as load current increases because of the voltage drop in the source resistance.
-
-\[V=V_s-IR\]
-
-*Figure: Class-note redraw · Practical voltage source and V–I characteristic*
-
-If the source resistance is zero, the ideal voltage-source condition is obtained.
-
-**Understand this diagram — Ideal and Practical Voltage**
-
-Think of a voltage source as something whose job is to provide a certain electrical “push” between its two terminals. A battery is the easiest example. An ideal voltage source is an imaginary perfect battery: if it is a \(10\,\text{V}\) source, it would remain exactly \(10\,\text{V}\) no matter how much current the connected circuit draws.
-
-A practical voltage source has some unavoidable internal resistance, so it can be pictured as an ideal voltage source with a small resistor hidden in series inside it. When no current flows, there is no voltage drop across that resistance, so \(V=V_s\). When current flows, some voltage is lost inside the source:
-
-\[V=V_s-IR\]
-
-As current increases, \(IR\) increases and terminal voltage falls. An ideal voltage source is the limiting case with internal resistance \(0\).
-
 ### Practical Current Sources
+
 Ideal current sources are not found in practice. As the voltage demanded by the load increases with an increase in load resistance, the source current starts reducing. Hence a practical current source is represented by an ideal current source in parallel with an internal resistance \(R_p\).
 
 As the load resistance increases, the current through \(R_p\) increases and the load current slightly decreases, as shown in Figure 1.19.
 
 *Figure: Fig. 1.19 · V–I characteristic of a practical current source*
-
-> **PRIYANKA’S CLASS NOTES · 27 AUG 2026**
-
-### Practical current source — class-note view
-
-A practical current source is represented as an ideal current source in parallel with a source/internal resistance. Some source current is drawn through this parallel resistance, so the current delivered to the load is reduced.
-
-\[I=I_s-\dfrac{V}{R}\]
-
-*Figure: Class-note redraw · Practical current source and I–V characteristic*
-
-As the source resistance approaches infinity, the ideal current-source condition is approached.
-
-**Understand this diagram — Ideal and Practical Current**
-
-Think of a current source as a device whose job is to make a certain amount of current flow. An ideal current source keeps that current fixed and lets the voltage across its terminals change to whatever value the connected load requires.
-
-A practical current source is modelled as an ideal current source with a large internal resistance in parallel. The parallel resistance acts like an internal bypass, so some source current can flow through it instead of going to the load:
-
-\[I_s=I_L+I_p\]
-
-\[I_L=I_s-I_p\]
-
-Since \(I_p=\dfrac{V}{R_p}\), increasing terminal voltage diverts more current internally and the load current falls slightly. For an ideal current source, \(R_p\to\infty\), so \(I_p\to0\) and no source current is lost through the internal bypass.
-
-**Memory aid:** practical voltage source → unwanted voltage drop in series; practical current source → unwanted current diversion in parallel.
 
 ### Key formulas
 
@@ -769,16 +412,11 @@ Since \(I_p=\dfrac{V}{R_p}\), increasing terminal voltage diverts more current i
 - CCVS: \(V_2=R_mi_1\)
 - VCCS: \(i_2=G_mV_1\)
 - CCCS: \(i_2=\alpha i_1\)
-- Class-note VCCS: \(I=G_mV_c\)
-- Class-note CCCS: \(I=A_iI_c\)
-- Class-note CCVS: \(V=R_mI_c\)
-- Class-note VCVS: \(V=A_vV_c\)
 - Practical voltage source: \(V_L=V_s-IR_s\)
-- Class-note practical current source: \(I=I_s-\dfrac{V}{R}\)
 
 ### Check yourself
 
-- **How does the textbook distinguish a voltage source from a current source?**  
+- **How is a voltage source distinguished from a current source?**  
   A voltage source supplies different values of current at a given voltage; a current source supplies different values of voltage at a constant current.
 - **What are the four controlled-source types?**  
   VCVS, CCVS, VCCS and CCCS.
@@ -786,11 +424,6 @@ Since \(I_p=\dfrac{V}{R_p}\), increasing terminal voltage diverts more current i
   An ideal voltage source keeps its terminal voltage fixed and has zero internal resistance; a practical source has internal series resistance, so its terminal voltage falls as current increases.
 - **Why is the internal resistance of an ideal current source taken as infinite?**  
   The internal resistance is in parallel. Infinite resistance means no source current is diverted through that internal path, so all the prescribed current is delivered to the external circuit.
-
-### Class history
-
-- 24 Aug 2026 · Source classification
-- 27 Aug 2026 · Ideal and practical voltage/current sources
 
 ### Physical-book reference
 
@@ -800,7 +433,7 @@ Since \(I_p=\dfrac{V}{R_p}\), increasing terminal voltage diverts more current i
 
 ## 5. Source transformation
 
-**Status:** Supporting prescribed-textbook topic
+**Status:** supporting
 
 Source transformation replaces a practical voltage source by an equivalent practical current source, or vice versa, without changing the voltage and current delivered to the external load.
 
@@ -810,6 +443,7 @@ Source transformation replaces a practical voltage source by an equivalent pract
 - The source values satisfy \(V_s=I_sR\), and the internal resistance has the same value in the two forms.
 
 ### 1.4 Source Transformation
+
 A practical voltage source can be converted into an equivalent practical current source, and a practical current source can be converted into its equivalent practical voltage source, so that identical values of load voltage and load current are maintained.
 
 Consider the practical voltage source in Figure 1.20 feeding a load current \(I_L\) at voltage \(V_L\). The load current is
@@ -869,6 +503,7 @@ with an internal resistance \(R_p=R_s\) connected in parallel, as shown in Figur
 *Figure: Fig. 1.22 · Conversion of a voltage source into a current source*
 
 ### Current source to voltage source
+
 Similarly, a current source of current \(I_s\) and internal resistance \(R_p\) can be replaced by a practical voltage source whose voltage and series resistance are
 
 \[V_s=I_sR_p\qquad\text{and}\qquad R_s=R_p\]
@@ -878,6 +513,7 @@ as shown in Figure 1.23.
 *Figure: Fig. 1.23 · Conversion of a current source into a voltage source*
 
 ### Exercise 1.4.1
+
 Determine the equivalent voltage source for the given current source. The textbook keeps the same resistance and calculates the source voltage as
 
 \[R_s=R_p=5\ \Omega\]
@@ -885,6 +521,7 @@ Determine the equivalent voltage source for the given current source. The textbo
 \[V_s=I_sR_p=5\times5=25\ \text{V}\]
 
 ### Exercise 1.4.2
+
 Find the equivalent current source for the given voltage source. The resistance remains
 
 \[R_p=R_s=30\ \Omega\]
@@ -897,10 +534,6 @@ and the current source value is
 
 - Voltage-to-current source: \(I_s=\dfrac{V_s}{R_s}\), \(R_p=R_s\)
 - Current-to-voltage source: \(V_s=I_sR_p\), \(R_s=R_p\)
-
-### Important note
-
-- Supporting topic: source transformation is not separately named in the Unit I syllabus line, but it appears in the book immediately before Kirchhoff’s laws and is used in later worked examples.
 
 ### Check yourself
 
@@ -915,7 +548,7 @@ and the current source value is
 
 ## 6. Kirchhoff’s laws
 
-**Status:** Core R25
+**Status:** core
 
 Kirchhoff’s Current Law and Kirchhoff’s Voltage Law are followed by Exercises 1.5.1–1.5.14 with the intermediate calculation steps retained.
 
@@ -923,12 +556,14 @@ Kirchhoff’s Current Law and Kirchhoff’s Voltage Law are followed by Exercise
 
 - KCL: the algebraic sum of currents at a node is zero.
 - KVL: the algebraic sum of voltages around a closed loop is zero.
-- The textbook applies KCL/KVL with Ohm’s law to fourteen worked exercises.
+- KCL and KVL are applied with Ohm’s law to fourteen worked exercises.
 
 ### 1.5 Kirchhoff’s Laws
+
 Kirchhoff’s laws, in association with Ohm’s law, become a powerful tool to solve and analyze any complex electric network. These laws are (a) Kirchhoff’s Current Law (KCL) and (b) Kirchhoff’s Voltage Law (KVL).
 
 ### (a) Kirchhoff’s Current Law (KCL)
+
 Kirchhoff’s Current Law states that the algebraic sum of the currents at a given node is zero.
 
 \[\sum_{n=1}^{N}i_n=0\]
@@ -948,6 +583,7 @@ Thus, the sum of the currents entering a node is equal to the sum of the current
 *Figure: Fig. 1.26 · Representation of KCL*
 
 ### (b) Kirchhoff’s Voltage Law (KVL)
+
 Kirchhoff’s Voltage Law states that the algebraic sum of all voltages around a closed path or loop is zero.
 
 \[\sum_{m=1}^{N}V_m=0\]
@@ -967,6 +603,7 @@ Therefore: \(\sum \text{voltage rises or sources}=\sum \text{voltage drops}\).
 *Figure: Fig. 1.27 · Representation of KVL*
 
 ### Exercise 1.5.1 — KVL
+
 Find \(V_1\) and \(V_2\). Assume the current \(i\) in a particular direction. Let \(V_1\) and the drop across the 2-ohm resistor be the voltage drops for that current direction. Applying KVL,
 
 \[10-4i+8-2i=0\]
@@ -988,6 +625,7 @@ With the labelled polarity of \(V_2\) in the figure,
 \[V_2=-V_3=-6\ \text{V}\]
 
 ### Exercise 1.5.2 — dependent voltage source
+
 Find \(V_x\) and \(V_o\). Assume the current direction as shown. Let \(V_x\) and \(V_y\) be the voltage drops in the 10-ohm and 5-ohm resistances. Applying KVL,
 
 \[35-10i-2V_x-V_y=0\]
@@ -1007,6 +645,7 @@ The source \(2V_x\) is a dependent voltage source whose voltage is a function of
 \[V_o=-V_y=-(5\times1)=-5\ \text{V}\]
 
 ### Exercise 1.5.3 — KCL with a dependent source
+
 Find \(V_o\) and \(i_o\). Assume the current through the 8-ohm resistance in the direction required by the given polarity of \(V_o\). Since the 8-ohm and 2-ohm resistances are connected in parallel, the textbook writes
 
 \[2i_o=V_o\qquad\text{or}\qquad i_o=\dfrac{V_o}{2}\tag{1}\]
@@ -1032,6 +671,7 @@ The textbook then prints
 \[i_o=\dfrac{V_o}{2}=\dfrac82=4\ \text{A}\]
 
 ### Exercise 1.5.4 — KCL
+
 Obtain currents \(i_1\), \(i_2\) and \(i_3\). Applying KCL at node \(a\),
 
 \[8-i_1-12=0\]
@@ -1053,6 +693,7 @@ Applying KCL at node \(b\),
 \[i_2=1\ \text{mA}\]
 
 ### Exercise 1.5.5 — KVL
+
 Find \(V_1\) and \(V_2\). In loop \(abeda\),
 
 \[V_1-1-5=0\]
@@ -1066,6 +707,7 @@ In loop \(adefa\),
 \[V_2=3\ \text{V}\]
 
 ### Exercise 1.5.6 — KVL
+
 Calculate \(V\) and \(i_2\). Assume currents \(i_1\) and \(i_2\) and identify nodes \(a,b,c,d\). In loop \(abca\),
 
 \[12-12i_1-2=0\]
@@ -1085,6 +727,7 @@ In loop \(acda\),
 \[i_2=\dfrac{-6}{3}=-2\ \text{A}\]
 
 ### Exercise 1.5.7 — KVL
+
 Find \(V_1\), \(V_2\) and \(V_3\) using KVL. Identify nodes \(a,b,c,d,e,f\). In loop \(abedefa\),
 
 \[24-V_1-10-12=0\]
@@ -1106,6 +749,7 @@ In loop \(fedef\),
 \[V_3=10\ \text{V}\]
 
 ### Exercise 1.5.8 — KVL
+
 Find \(V_{ab}\) and \(I\). Applying KVL,
 
 \[30-3i+10-5i-8=0\]
@@ -1123,6 +767,7 @@ The voltage \(V_{ab}\) is the potential of point \(a\) with respect to point \(b
 \[V_{ab}=+8+20=28\ \text{V}\]
 
 ### Exercise 1.5.9 — KCL
+
 Determine the voltage drop across the 10-ohm resistance. The points \(A\) and \(B\) across the 10-A current source are extended to points of the same potential. Let \(V\) be the voltage across the 10-ohm resistance.
 
 \[V=i_2\times10\]
@@ -1138,6 +783,7 @@ Applying KCL at node \(A\),
 \[V=71.4\ \text{V}\]
 
 ### Exercise 1.5.10 — Kirchhoff’s laws
+
 Find the currents flowing through the different resistances. Identify nodes \(a,b,c,d\) and assume current directions through the branches. Applying KVL to loop \(abca\),
 
 \[-2i_2-i_3+(i_1-i_2)=0\]
@@ -1207,6 +853,7 @@ The branch currents printed by the textbook are
 \[i_1=9.69\ \text{A},\qquad i_2=\dfrac{396}{130}\ \text{A},\qquad i_3=0.553\ \text{A}\]
 
 ### Exercise 1.5.11 — dependent source
+
 Find \(V_x\). Assume current \(i\) in the circuit and apply KVL:
 
 \[15-i-2V_x-5i-2i=0\]
@@ -1222,6 +869,7 @@ Writing \(i=V_x/5\),
 \[V_x=\dfrac{15}{3.6}=4.16\ \text{V}\]
 
 ### Exercise 1.5.12 — KCL and KVL together
+
 Find the voltage across all resistances and the branch currents. Identify nodes \(a,b,c,d\) and assume the branch currents as shown. Applying KCL at node \(c\),
 
 \[i_1=i_2+i_3\qquad\text{or}\qquad i_3=i_1-i_2\]
@@ -1265,6 +913,7 @@ The voltage drops are
 \[V_3=4i_3=4\times1.25=5\ \text{V}\]
 
 ### Exercise 1.5.13 — potential difference
+
 Find the voltage between points \(A\) and \(B\). Assume currents \(i_1\) and \(i_2\). No current flows through the 12-V source branch because there is no closed or return path for current entering that branch. Identify the polarity of voltage drops across the resistances for the assumed current directions.
 
 \[i_1=\dfrac{6}{6+4}=0.6\ \text{A}\]
@@ -1288,6 +937,7 @@ Therefore,
 Thus the potential difference between \(A\) and \(B\) has magnitude \(13\ \text{V}\), with sign depending on the stated reference direction.
 
 ### Exercise 1.5.14 — power absorbed
+
 Find the power absorbed by each element. Identify nodes \(x\) and \(y\). By observation, all elements are connected in parallel between \(x\) and \(y\). Therefore the resistor voltages are equal and the textbook writes
 
 \[1000i_1=4000i_2\]
@@ -1329,12 +979,6 @@ For the 1-k\(\Omega\) resistance,
 3. Use the element relations shown in the circuit, including controlled-source relations.
 4. Solve the simultaneous equations, then interpret a negative result as indicating the actual direction/polarity is opposite to the assumed one.
 
-### Important note
-
-- Exercise 1.5.3 is retained as printed. Its intermediate arithmetic and printed final value are not silently corrected here.
-- Exercise 1.5.10 is retained as printed, including the signs shown in the textbook elimination steps.
-- Exercise 1.5.14 prints \(i_2=1.175\,\text{A}\), but its following power calculation uses \(1.175\times10^{-3}\,\text{A}\). Both printed lines are preserved and this discrepancy is explicitly flagged rather than silently repaired.
-
 ### Check yourself
 
 - **State Kirchhoff’s Current Law.**  
@@ -1350,20 +994,22 @@ For the 1-k\(\Omega\) resistance,
 
 ## 7. Series, parallel and series-parallel reduction
 
-**Status:** Core R25
+**Status:** core
 
 The three series-parallel examples are worked through using the successive reduction calculations shown in the figures.
 
 ### Quick recall
 
 - Combine unmistakable series and parallel groups step by step.
-- Redraw or mentally simplify after each reduction; the textbook examples use repeated reductions.
+- Redraw or mentally simplify after each reduction; the examples use repeated reductions.
 - Same-potential nodes may be treated as the same node.
 
 ### 1.6 Problems on Series-Parallel Connections
+
 The textbook introduces this section through worked reductions. Each example identifies nodes, reduces obvious series/parallel groups, redraws the network and continues until the required equivalent resistance or source current is obtained.
 
 ### Exercise 1.6.1 — find the current delivered by the source
+
 Identify nodes \(A\), \(B\) and \(C\). Between \(A\) and \(B\), the two 2-ohm resistances in the upper path are in series, giving \(4\ \Omega\). Between \(B\) and \(C\), the 2-ohm and 1-ohm resistances are in series, giving \(3\ \Omega\).
 
 The reduction figures then show \(4\ \Omega\parallel4\ \Omega=2\ \Omega\) between \(A\) and \(B\), and between \(B\) and \(C\),
@@ -1383,6 +1029,7 @@ Therefore the current supplied by the 30-V source is
 \[I=\dfrac{30}{1.05}=28.57\ \text{A}\]
 
 ### Exercise 1.6.2 — resistance between x and y
+
 Identify nodes \(A,B,C,D,E\). Between \(E\) and \(D\), the 5-k\(\Omega\) and 4.7-k\(\Omega\) resistances are in parallel:
 
 \[5\ \mathrm{k}\Omega\parallel4.7\ \mathrm{k}\Omega=\dfrac{5\times4.7}{5+4.7}=2.42\ \mathrm{k}\Omega\]
@@ -1400,6 +1047,7 @@ When a 6-V battery is connected between \(x\) and \(y\), the current driven is
 \[I=\dfrac{6}{1.698\times10^3}=3.53\ \text{mA}\]
 
 ### Exercise 1.6.3 — same-potential nodes
+
 Find the resistance between \(a\) and \(b\). The textbook notes that nodes \(A\) and \(B\) are at the same potential; therefore they are one and the same node. The reduction figure then gives the upper pair as
 
 \[3\ \Omega\parallel6\ \Omega=2\ \Omega\]
@@ -1424,10 +1072,6 @@ These two reduced resistances are in series, so
 3. Reduce obvious parallel groups.
 4. Redraw and repeat until only one equivalent resistance remains.
 
-### Important note
-
-- Some intermediate arithmetic in these examples is presented graphically in the textbook reduction figures; those figure-labelled reductions have been written as LaTeX equations here so the calculation is not lost.
-
 ### Check yourself
 
 - **What is the safest way to identify series and parallel groups in a complicated drawing?**  
@@ -1441,7 +1085,7 @@ These two reduced resistances are in series, so
 
 ## 8. Star/Delta transformations
 
-**Status:** Core R25
+**Status:** core
 
 The Delta–Star and Star–Delta derivations are retained before the four worked exercises.
 
@@ -1451,6 +1095,7 @@ The Delta–Star and Star–Delta derivations are retained before the four worke
 - Star-to-delta: each delta branch equals the sum of pairwise products of star arms divided by the opposite star arm.
 
 ### 1.7 Star/Delta Transformations
+
 Star-Delta transformations are useful for solving networks that cannot be easily solved by regular series-parallel circuit-reduction techniques. Figure 1.45 shows the star and delta forms.
 
 For the star connection, the resistances measured between the terminal pairs are
@@ -1478,6 +1123,7 @@ Similarly,
 *Figure: Fig. 1.45 · Star and Delta networks*
 
 ### Delta → Star derivation
+
 To convert a delta network into an equivalent star network, equate the resistances measured between the same terminal pairs. The textbook obtains
 
 \[R_a+R_b=\dfrac{R_{ab}R_{bc}+R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{1}\]
@@ -1503,6 +1149,7 @@ Similarly,
 \[R_c=\dfrac{R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\tag{7}\]
 
 ### Star → Delta derivation
+
 To obtain the reverse transformation, multiply equations (5) and (6):
 
 \[R_aR_b=\dfrac{R_{ab}^2R_{bc}R_{ca}}{(R_{ab}+R_{bc}+R_{ca})^2}\]
@@ -1542,6 +1189,7 @@ If all star arms have equal resistance \(R_{star}\), then each equivalent delta 
 Thus, when transforming from delta to star the resistance in each corresponding branch decreases; when transforming from star to delta it increases.
 
 ### Exercise 1.7.1 — Delta to Star
+
 Convert the delta network of Figure 1.46 to the equivalent star network. The textbook calculates
 
 \[R_a=\dfrac{25\times10}{25+15+10}=\dfrac{250}{50}=5\ \Omega\]
@@ -1551,6 +1199,7 @@ Convert the delta network of Figure 1.46 to the equivalent star network. The tex
 \[R_c=\dfrac{10\times15}{25+15+10}=\dfrac{150}{50}=3\ \Omega\]
 
 ### Exercise 1.7.2 — Star to Delta and source current
+
 Convert the star network between points \(a,b,c\) into a delta network. The three delta resistances are
 
 \[R_{ac}=\dfrac{5\times10+10\times20+20\times5}{20}=\dfrac{350}{20}=17.5\ \Omega\]
@@ -1566,6 +1215,7 @@ The current supplied is then
 \[I=\dfrac{120}{9.63}=12.46\ \text{A}\]
 
 ### Exercise 1.7.3 — Delta to Star followed by reduction
+
 For the delta between points \(a,b,c\),
 
 \[R_a=\dfrac{3\times2}{3+2+1}=\dfrac66=1\ \Omega\]
@@ -1579,6 +1229,7 @@ After substituting these values, the textbook reduction figures show the series 
 \[I=\dfrac{12}{3.44}=3.49\ \text{A}\]
 
 ### Exercise 1.7.4 — two Delta networks
+
 First, the 2-ohm and 1-ohm resistors are in series, and the 3-ohm and 5-ohm resistors are in series. The circuit is redrawn. The delta connections between \(a,b,c\) and \(d,c,f\) are then changed to equivalent star networks.
 
 The transformed branch values shown by the textbook reduction figure are approximately
@@ -1612,10 +1263,6 @@ The source current is
 2. Transform that three-terminal part without changing the resistance measured between its external terminals.
 3. Continue ordinary series/parallel reduction after the transformation.
 
-### Important note
-
-- In Exercises 1.7.2–1.7.4, several intermediate numerical reductions are conveyed mainly through successive textbook circuit figures. Where a value is shown in a reduction figure, it is retained as such rather than inventing a different derivation.
-
 ### Check yourself
 
 - **When is a Star/Delta transformation useful?**  
@@ -1631,7 +1278,7 @@ The source current is
 
 ## 9. Superposition theorem
 
-**Status:** Core R25
+**Status:** core
 
 The theorem, definitions of linear and bilateral networks, and all three source-by-source calculations in Exercise 1.8.1 are included.
 
@@ -1642,6 +1289,7 @@ The theorem, definitions of linear and bilateral networks, and all three source-
 - Add the individual responses algebraically.
 
 ### 1.8 Superposition Theorem
+
 The Superposition Theorem states that in any linear, bilateral network containing two or more sources, the response in any element is equal to the algebraic sum of the responses caused by the individual sources acting alone, while the other sources are non-operative.
 
 When considering the response of an individual source, the other ideal voltage sources are replaced by short circuits and the other ideal current sources are replaced by open circuits. This theorem is valid only for linear systems.
@@ -1651,6 +1299,7 @@ A linear network is a network whose parameters do not change with voltage and cu
 The textbook illustrates the theorem through Exercise 1.8.1.
 
 ### Exercise 1.8.1 — response due to 10-V source alone
+
 Find the voltage across the 2-ohm resistor. First find the current through that resistor. To find the response caused by the 10-V source alone, the other sources are made non-operative as shown in Figure 1.50(a). The 2-ohm and 5-ohm resistors are in series and this combination is in parallel with 20 ohms. Hence
 
 \[R_1=\dfrac{20(2+5)}{20+2+5}=5.18\ \Omega\]
@@ -1672,6 +1321,7 @@ By current division, the current through the 2-ohm resistor from \(A\) to \(B\) 
 *Figure: Fig. 1.50(a) · First source acting alone*
 
 ### Exercise 1.8.1 — response due to 2-A source alone
+
 For the 2-A source acting alone, the two voltage sources are replaced by short circuits, as shown in Figure 1.50(b). The 10-ohm resistor is in parallel with the 20-ohm resistor, and this combination is in series with the 2-ohm resistor. Thus
 
 \[R_{eq}=2+\dfrac{20\times10}{20+10}=8.66\ \Omega\]
@@ -1687,6 +1337,7 @@ Since the chosen positive direction is \(A\) to \(B\),
 *Figure: Fig. 1.50(b) · Second source acting alone*
 
 ### Exercise 1.8.1 — response due to 20-V source alone and total response
+
 For the 20-V source acting alone, the textbook sentence describing which other sources are opened/shorted is internally inconsistent with its own Figure 1.50(c). The figure is preserved as the source reference, and the numerical reduction printed by the book is retained below.
 
 \[R_{eq}=\dfrac{10\times20}{10+20}+2+5=13.66\ \Omega\]
@@ -1729,14 +1380,9 @@ The negative net current indicates that the actual current flows from \(B\) to \
 4. Repeat for every independent source.
 5. Add all individual responses algebraically.
 
-### Important note
-
-- Exercise 1.8.1 is retained as printed. The textbook gives \(20/13.66=1.464\,\text{A}\) and then prints \(i_3=-1.434\,\text{A}\); both values are shown rather than silently changing the source.
-- The sentence on p. 50 describing deactivation for the 20-V-only case conflicts with Figure 1.50(c) and with the theorem statement. The discrepancy is flagged; it is not silently rewritten.
-
 ### Check yourself
 
-- **How does the textbook make the other sources non-operative when one source acts alone?**  
+- **How are the other independent sources made non-operative when one source acts alone?**  
   Other ideal voltage sources are replaced by short circuits and other ideal current sources are replaced by open circuits.
 - **Why must the individual responses be added algebraically?**  
   Because each contribution has a sign determined by the fixed reference direction or polarity.
@@ -1749,7 +1395,7 @@ The negative net current indicates that the actual current flows from \(B\) to \
 
 ## 10. Thevenin’s theorem
 
-**Status:** Core R25
+**Status:** core
 
 The theorem, its four steps and all four examples are included with their intermediate equations.
 
@@ -1757,9 +1403,10 @@ The theorem, its four steps and all four examples are included with their interm
 
 - Replace a linear bilateral two-terminal network by \(V_{th}\) in series with \(R_{th}\).
 - \(V_{th}\) is the open-circuit voltage at the load terminals.
-- \(R_{th}\) is the resistance seen from the load terminals after independent voltage/current sources are deactivated as the textbook instructs.
+- \(R_{th}\) is the resistance seen from the load terminals after the independent voltage and current sources are deactivated.
 
 ### 1.9 Thevenin’s Theorem
+
 It is common to find the current in a particular resistance, generally called the load resistance \(R_L\), while the remaining circuit stays unchanged. To avoid simplifying the whole circuit for every value of \(R_L\), Thevenin’s theorem is useful. It replaces the remaining circuit by an equivalent circuit called the Thevenin equivalent circuit.
 
 Thevenin’s theorem states that a linear, bilateral two-terminal circuit can be replaced by an equivalent circuit consisting of a voltage source \(V_{th}\) in series with a resistance \(R_{th}\), where \(V_{th}\) is the open-circuit voltage between the load terminals and \(R_{th}\) is the resistance between the load terminals. Figure 1.51 depicts this replacement.
@@ -1767,6 +1414,7 @@ Thevenin’s theorem states that a linear, bilateral two-terminal circuit can be
 *Figure: Fig. 1.51 · Thevenin equivalent circuit concept*
 
 ### Step 1 — finding Thevenin resistance \(R_{th}\)
+
 Remove the load resistance between terminals \(a\) and \(b\). Replace voltage sources with short circuits and current sources with open circuits. Find the resultant resistance between terminals \(a\) and \(b\); this is the Thevenin resistance \(R_{th}\). Figure 1.52 illustrates the procedure for the textbook’s generic circuit.
 
 For that generic figure, the textbook prints the following expression on p. 52:
@@ -1776,6 +1424,7 @@ For that generic figure, the textbook prints the following expression on p. 52:
 *Figure: Fig. 1.52 · Finding Thevenin equivalent resistance*
 
 ### Step 2 — finding Thevenin voltage \(V_{th}\)
+
 Remove the load resistance between terminals \(a\) and \(b\). Obtain the open-circuit voltage between \(a\) and \(b\). This open-circuit voltage is the Thevenin voltage \(V_{th}\). For the generic circuit in Figure 1.53, the textbook writes
 
 \[I_1=\dfrac{V_s}{R_1+R_2}\]
@@ -1789,6 +1438,7 @@ Remove the load resistance between terminals \(a\) and \(b\). Obtain the open-ci
 *Figure: Fig. 1.53 · Finding Thevenin voltage*
 
 ### Steps 3 and 4 — obtain the equivalent and reconnect the load
+
 Obtain the Thevenin equivalent circuit as shown in Figure 1.54. This circuit remains the same irrespective of changes in load resistance.
 
 Reconnect the load resistance \(R_L\), as shown in Figure 1.55, and find the load current.
@@ -1800,6 +1450,7 @@ Reconnect the load resistance \(R_L\), as shown in Figure 1.55, and find the loa
 *Figure: Fig. 1.55 · Thevenin equivalent circuit including load*
 
 ### Example 1.9.1 — current through 4 Ω
+
 To find the Thevenin resistance, remove the 4-ohm load and short-circuit the 20-V voltage source. The resistance seen between \(a\) and \(b\) is
 
 \[R_{th}=R_{ab}=\dfrac{5\times15}{5+15}+2+3=8.75\ \Omega\]
@@ -1821,6 +1472,7 @@ Reconnect \(R_L=4\ \Omega\). The load current is
 \[I_L=\dfrac{15}{8.75+4}=1.17\ \text{A}\]
 
 ### Example 1.9.2 — Thevenin equivalent and two load values
+
 Remove the load and short the voltage sources to find \(R_{th}\):
 
 \[R_{th}=R_{ab}=\dfrac{(8+2)\times20}{(8+2)+20}=\dfrac{200}{30}=6.66\ \Omega\]
@@ -1842,6 +1494,7 @@ For \(R=8\ \Omega\),
 \[I_L=\dfrac{16}{6.66+8}=1.09\ \text{A}\]
 
 ### Example 1.9.3 — current through a 2 Ω load
+
 Remove the 2-ohm load and short the source to find \(R_{th}\). The two reduced branches are
 
 \[\dfrac{4\times6}{4+6}=2.4\ \Omega\]
@@ -1879,6 +1532,7 @@ With the 2-ohm load reconnected,
 \[I_L=\dfrac{0.3}{4.275+2}=\dfrac{0.3}{6.275}=0.0478\ \text{A}\]
 
 ### Example 1.9.4 — two values of \(R_L\)
+
 The given 2-A current source in parallel with 12 ohms is first converted into its equivalent voltage source. The equivalent source voltage shown is \(24\ \text{V}\) with the same 12-ohm resistance. This source is inserted into the original circuit.
 
 To find \(V_{th}\), remove \(R_L\). The loop current is
@@ -1913,20 +1567,15 @@ For \(R_L=16\ \Omega\),
 ### Problem-solving method
 
 1. Remove the load.
-2. Deactivate independent sources as the textbook instructs and calculate \(R_{th}\) from the load terminals.
+2. Deactivate the independent sources and calculate \(R_{th}\) from the load terminals.
 3. Restore the sources with the load still removed and calculate the open-circuit voltage \(V_{th}\).
 4. Replace the original network by \(V_{th}\) in series with \(R_{th}\), reconnect \(R_L\), and calculate \(I_L\).
 
-### Important note
-
-- The generic \(R_{th}\) expression printed on textbook p. 52 is retained as printed. It appears inconsistent with the labels in the adjacent generic circuit, so it is not silently “corrected” in these source-faithful notes.
-- Example 1.9.3 contains a textbook label that says “voltage drop across 4 ohms” while the calculation shown is \(1.5\times3=4.5\,\text{V}\). The printed calculation and its source discrepancy are retained.
-
 ### Check yourself
 
-- **What is \(V_{th}\) according to the textbook?**  
+- **What is \(V_{th}\)?**  
   The open-circuit voltage between the load terminals.
-- **What is the textbook procedure for \(R_{th}\) in its examples?**  
+- **What is the procedure for finding \(R_{th}\)?**  
   Remove the load, short-circuit voltage sources, open-circuit current sources, and find the resistance seen between the load terminals.
 - **After the Thevenin equivalent is found, how is the load current calculated?**  
   \(I_L=\dfrac{V_{th}}{R_{th}+R_L}\).

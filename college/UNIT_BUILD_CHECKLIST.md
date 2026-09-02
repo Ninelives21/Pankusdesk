@@ -48,7 +48,7 @@ Use this checklist for every college unit. A unit is not `ready` until the appli
 - [ ] Preserve/flag source inconsistencies rather than silently reconciling them.
 - [ ] Build/update stable topic IDs.
 - [ ] Set `core`, `supporting`, `core-gap-filled` correctly.
-- [ ] De-duplicate overlapping textbook/lecture/class material.
+- [ ] Keep class-note material out of the Text page; class notes belong on the dedicated dated Unit Class Notes page.
 - [ ] Write theory directly; remove source/workflow narration from student-facing prose.
 - [ ] Add topic + section `source_refs`.
 - [ ] Add `book_refs` where useful for internal/page reference.
@@ -125,9 +125,9 @@ For **every technical redraw**:
 - [ ] Add/update the class source in provenance/source manifest.
 - [ ] Add the date to `college/<semester>/data/class-log.json`.
 - [ ] Verify calendar → dated log link.
-- [ ] Integrate useful material into the correct point in the cumulative topic.
-- [ ] Use visibly labelled class-note sections, not source-management prose.
-- [ ] Add quiet `class_history` links where useful.
+- [ ] Render the dated entry on `unit-N-class-notes.html#YYYY-MM-DD`; do not merge it into textbook theory.
+- [ ] Lightly clean grammar/awkward English while preserving notebook meaning and equations.
+- [ ] If a later date adds side notes onto an older page, capture only the genuinely new dated additions rather than duplicating the old lesson.
 - [ ] Combine adjacent class sketches only when they clearly form one concept and the interpretation is confirmed.
 - [ ] Preserve contradictions; do not silently reconcile them.
 
@@ -159,13 +159,13 @@ For **every technical redraw**:
 
 - [ ] Reuse `scripts/new/subject-unit.js`.
 - [ ] Reuse `scripts/new/unit-questions.js`.
-- [ ] Reuse `scripts/new/class-log.js`.
+- [ ] Reuse `scripts/new/unit-class-notes.js` for the unit-wide chronological Class Notes page; retain `class-log.js` only for legacy/direct dated shells where needed.
 - [ ] Reuse `scripts/new/calendar.js` and semester data architecture.
-- [ ] Keep unit/question/class-log HTML as lightweight shells.
+- [ ] Keep Text / Questions / Unit Class Notes HTML as lightweight shells.
 - [ ] Do not create a subject-specific duplicate renderer without an approved architectural reason.
 - [ ] Preserve topic-nav independent scroll and active tracking.
 - [ ] Preserve Quick recall / Check yourself / practice navigation.
-- [ ] Preserve visibly separate class-note and explanation treatments.
+- [ ] Preserve source separation: textbook-led Text, textbook Questions, and chronological Class Notes.
 - [ ] Verify desktop/tablet/mobile behaviour.
 
 ## N. Verification
@@ -177,10 +177,10 @@ For **every technical redraw**:
 - [ ] Run `python3 scripts/tools/verify_college.py`.
 - [ ] Confirm configured source references resolve.
 - [ ] Confirm ready-unit figures exist, have useful alt text and explicit placement.
-- [ ] Confirm class-note sections have source labels + class source refs.
+- [ ] Confirm ready-unit Text data contains no `kind: class-note` sections and each configured Unit Class Notes shell exists.
 - [ ] Confirm explanation accordions are structurally valid.
 - [ ] Confirm practice anchors resolve.
-- [ ] Confirm class-log mappings and calendar links resolve.
+- [ ] Confirm dated class entries, Unit Class Notes anchors and calendar links resolve.
 - [ ] Confirm no raw notebook binaries are inside website class `raw` folders.
 - [ ] Confirm no `\frac` remains in ready-unit topic content.
 - [ ] Confirm student-facing theory/accordion prose contains no build/source meta-commentary.

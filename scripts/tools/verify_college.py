@@ -26,7 +26,7 @@ ALLOWED_TOPIC_STATUS = {"core", "supporting", "core-gap-filled"}
 ALLOWED_PUBLICATION = {"ready", "scaffold"}
 ALLOWED_FIGURE_ANCHORS = {"before-paragraph", "paragraph", "bullet", "end"}
 ALLOWED_GRID_SIDE = {"left", "right"}
-ALLOWED_FIGURE_SIZE = {"small", "medium", "large"}
+ALLOWED_FIGURE_SIZE = {"symbol", "small", "medium", "large"}
 DESIGN_LOCK_FILES = [
     REPO / "college" / "COLLEGE_BUILD_STANDARD.md",
     REPO / "college" / "REFERENCE_IMPLEMENTATION.md",
@@ -558,6 +558,12 @@ def verify_subject(subject_dir: Path):
         if not shell.exists():
             errors.append(f"{label}: Unit {n} marked as having textbook questions but shell is missing: {rel(shell)}")
 
+    ccfg = subject.get("classNotes") or {}
+    for n in ccfg.get("availableUnits", []) or []:
+        shell = subject_dir / str(ccfg.get("hrefPattern", "unit-{unit}-class-notes.html")).replace("{unit}", str(n))
+        if not shell.exists():
+            errors.append(f"{label}: Unit {n} marked as having class notes but shell is missing: {rel(shell)}")
+
     check_class_logs(subject_dir, topic_ids, source_ids)
 
 
@@ -579,11 +585,13 @@ def verify_calendar_indexes():
                     continue
                 qs = parse_qs(parsed.query)
                 qdate = (qs.get("date") or [None])[0]
-                if qdate and qdate != date:
-                    errors.append(f"{rel(index_path)} {date}: link query date {qdate} does not match calendar key")
+                hdate = parsed.fragment if re.fullmatch(r"\d{4}-\d{2}-\d{2}", parsed.fragment or "") else None
+                linked_date = qdate or hdate
+                if linked_date and linked_date != date:
+                    errors.append(f"{rel(index_path)} {date}: linked class-note date {linked_date} does not match calendar key")
                 subject_dir = shell.parent
-                if qdate:
-                    dated = subject_dir / "kb" / "class-log" / qdate / "entry.json"
+                if linked_date:
+                    dated = subject_dir / "kb" / "class-log" / linked_date / "entry.json"
                     if not dated.exists():
                         errors.append(f"{rel(index_path)} {date}: dated entry missing for link {link}")
 

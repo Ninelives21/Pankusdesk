@@ -111,8 +111,11 @@ function renderScaffold(context) {
 	const body = document.getElementById('unit-page-body');
 	if (!body) return;
 
+	const resourceNav = window.PankuUnitResourceNav?.render?.({ subject: context.subject, subjectUrl: context.subjectUrl, unitNumber: context.unitMeta.number, active: 'text' }) || '';
+
 	body.innerHTML = `
 		${renderUnitHero(context, [])}
+		${resourceNav}
 		<section class="unit-template-card">
 			<div class="note-kicker">Official ${escapeHtml(subject.regulation)} scope</div>
 			<h2>${escapeHtml(unitMeta.title)}</h2>
@@ -132,8 +135,11 @@ function renderReadyUnit(context, unitTopics, sourceCollections) {
 	const body = document.getElementById('unit-page-body');
 	if (!body) return;
 
+	const resourceNav = window.PankuUnitResourceNav?.render?.({ subject: context.subject, subjectUrl: context.subjectUrl, unitNumber: context.unitMeta.number, active: 'text' }) || '';
+
 	body.innerHTML = `
 		${renderUnitHero(context, unitTopics)}
+		${resourceNav}
 		${renderSyllabusBoundary(context)}
 		<div class="unit-layout section">
 			<aside class="unit-toc" aria-label="Unit ${escapeHtml(context.unitLabel)} topic navigation">
@@ -171,7 +177,7 @@ function renderUnitHero(context, unitTopics) {
 				<h1>Unit ${escapeHtml(unitLabel)}</h1>
 				<p class="unit-subtitle">${escapeHtml(unitMeta.title)}</p>
 				<p class="unit-description">${isReady
-					? 'Complete study notes for the unit, organised for day-to-day revision and problem solving.'
+					? 'Textbook-led theory for the unit, kept separate from Priyanka’s dated class notes and the question bank.'
 					: 'This destination is in place now; the full consolidated study notes will be populated here next.'}</p>
 			</div>
 
