@@ -1,49 +1,115 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/class-log.schema.json",
-  "$comment": "Design Lock v2: faithful dated class record with mapped cumulative topics and derived class figures.",
+  "$comment": "Design Lock v2: faithful dated class record with mapped cumulative topics, derived class figures, and optional explanation accordions for consolidated class-note diagrams.",
   "title": "PankusDesk Dated Class Log Entry — Design Lock v2",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schema_version", "date", "source_id", "subject", "unit", "title", "summary", "transcription_policy", "mapped_topics", "pages"],
+  "required": [
+    "schema_version",
+    "date",
+    "source_id",
+    "subject",
+    "unit",
+    "title",
+    "summary",
+    "transcription_policy",
+    "mapped_topics",
+    "pages"
+  ],
   "properties": {
-    "schema_version": {"type": "integer", "minimum": 1},
-    "date": {"type": "string", "format": "date"},
-    "date_label": {"type": "string"},
-    "source_id": {"type": "string", "minLength": 1},
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_label": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
     "subject": {
       "type": "object",
       "additionalProperties": true,
-      "required": ["code", "name", "shortName"],
+      "required": [
+        "code",
+        "name",
+        "shortName"
+      ],
       "properties": {
-        "code": {"type": "string", "minLength": 1},
-        "name": {"type": "string", "minLength": 1},
-        "shortName": {"type": "string", "minLength": 1}
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shortName": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "unit": {
       "type": "object",
       "additionalProperties": true,
-      "required": ["number", "title"],
+      "required": [
+        "number",
+        "title"
+      ],
       "properties": {
-        "number": {"type": "integer", "minimum": 1},
-        "title": {"type": "string", "minLength": 1}
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
-    "title": {"type": "string", "minLength": 1},
-    "summary": {"type": "string", "minLength": 1},
-    "transcription_policy": {"type": "string", "minLength": 1},
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "transcription_policy": {
+      "type": "string",
+      "minLength": 1
+    },
     "mapped_topics": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": true,
-        "required": ["topic_id", "label", "href"],
+        "required": [
+          "topic_id",
+          "label",
+          "href"
+        ],
         "properties": {
-          "topic_id": {"type": "string", "minLength": 1},
-          "label": {"type": "string", "minLength": 1},
-          "href": {"type": "string", "minLength": 1}
+          "topic_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     },
@@ -53,50 +119,160 @@
       "items": {
         "type": "object",
         "additionalProperties": true,
-        "required": ["page", "blocks"],
+        "required": [
+          "page",
+          "blocks"
+        ],
         "properties": {
-          "page": {"type": "integer", "minimum": 1},
-          "heading": {"type": "string"},
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "heading": {
+            "type": "string"
+          },
           "blocks": {
             "type": "array",
-            "items": {"$ref": "#/$defs/block"}
+            "items": {
+              "$ref": "#/$defs/block"
+            }
           }
         }
       }
     },
     "source_notes": {
       "type": "array",
-      "items": {"type": "string"}
+      "items": {
+        "type": "string"
+      }
     }
   },
   "$defs": {
     "figure": {
       "type": "object",
       "additionalProperties": true,
-      "required": ["type", "src", "alt"],
+      "required": [
+        "type",
+        "src",
+        "alt"
+      ],
       "properties": {
-        "type": {"const": "figure"},
-        "src": {"type": "string", "minLength": 1},
-        "alt": {"type": "string", "minLength": 8},
-        "caption": {"type": "string"},
-        "width": {"type": "integer", "minimum": 1},
-        "height": {"type": "integer", "minimum": 1}
+        "type": {
+          "const": "figure"
+        },
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 8
+        },
+        "caption": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
       }
     },
     "textBlock": {
       "type": "object",
       "additionalProperties": true,
-      "required": ["type", "text"],
+      "required": [
+        "type",
+        "text"
+      ],
       "properties": {
-        "type": {"enum": ["line", "heading", "subheading", "paragraph", "bullet", "equation"]},
-        "text": {"type": "string"}
+        "type": {
+          "enum": [
+            "line",
+            "heading",
+            "subheading",
+            "paragraph",
+            "bullet",
+            "equation"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
       }
     },
     "block": {
       "oneOf": [
-        {"$ref": "#/$defs/figure"},
-        {"$ref": "#/$defs/textBlock"}
+        {
+          "$ref": "#/$defs/figure"
+        },
+        {
+          "$ref": "#/$defs/textBlock"
+        },
+        {
+          "$ref": "#/$defs/accordions"
+        }
       ]
+    },
+    "accordions": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "type",
+        "items"
+      ],
+      "properties": {
+        "type": {
+          "const": "accordions"
+        },
+        "label": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "paragraphs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "bullets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "anyOf": [
+              {
+                "required": [
+                  "paragraphs"
+                ]
+              },
+              {
+                "required": [
+                  "bullets"
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
   }
 }

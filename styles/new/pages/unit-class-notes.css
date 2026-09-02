@@ -112,3 +112,55 @@
 	.class-notes-toc { position: static; max-height: none; }
 	.class-notes-toc nav { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
 }
+
+
+.class-notes-accordion {
+	margin-top: 1.35rem;
+	display: grid;
+	gap: .55rem;
+}
+.class-notes-accordion-label {
+	margin-bottom: .15rem;
+	font-size: .78rem;
+	font-weight: 800;
+	letter-spacing: .07em;
+	text-transform: uppercase;
+	color: var(--primary);
+}
+.class-notes-accordion-item {
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: var(--surface);
+	overflow: hidden;
+}
+.class-notes-accordion-item summary {
+	list-style: none;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 1rem;
+	padding: .9rem 1rem;
+	font-weight: 700;
+	line-height: 1.4;
+	color: var(--text-strong);
+}
+.class-notes-accordion-item summary::-webkit-details-marker { display: none; }
+.class-notes-accordion-item summary:hover,
+.class-notes-accordion-item summary:focus-visible { background: rgba(225, 239, 252, .55); }
+.class-notes-accordion-item summary:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+.class-notes-accordion-toggle {
+	font-size: 1.35rem;
+	font-weight: 400;
+	line-height: 1;
+	color: var(--primary);
+	transition: transform 160ms ease;
+}
+.class-notes-accordion-item[open] .class-notes-accordion-toggle { transform: rotate(45deg); }
+.class-notes-accordion-content {
+	padding: .15rem 1rem 1rem;
+	border-top: 1px solid var(--line);
+}
+.class-notes-accordion-content p { margin: .7rem 0 0; line-height: 1.68; }
+.class-notes-accordion-content ul { margin: .7rem 0 0 1.15rem; }
+.class-notes-accordion-content li { margin: .35rem 0; line-height: 1.58; }

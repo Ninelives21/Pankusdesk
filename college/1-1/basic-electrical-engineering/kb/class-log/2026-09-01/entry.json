@@ -12,169 +12,19 @@
     "number": 1,
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
-  "title": "Network-element classifications; R/L/C energy; nodes, branches and loops",
-  "summary": "Expanded network-element classification; active/passive, unilateral/bilateral, linear/non-linear, lumped/distributed and time-variant/time-invariant elements; added R/L/C energy notes; nodes, branches and closed loops.",
+  "title": "Nodes, branches and closed loops",
+  "summary": "Definitions of node, principal node, branch and closed loop, followed by the class circuit used to identify nodes, branches and the three marked loops.",
   "transcription_policy": "Notebook order and meaning are preserved; grammar, punctuation and awkward English are lightly cleaned for study. Crossed-out corrections are normalized to the final readable wording, and no new theory is added unless explicitly marked as a short clarification.",
   "mapped_topics": [
     {
       "topic_id": "u1-circuit-concept",
       "label": "Circuit concept and network terminology",
       "href": "unit-1.html#u1-circuit-concept"
-    },
-    {
-      "topic_id": "u1-rlc",
-      "label": "Circuit elements: resistance, inductance and capacitance",
-      "href": "unit-1.html#u1-rlc"
     }
   ],
   "pages": [
     {
       "page": 1,
-      "heading": "Network-element classifications",
-      "blocks": [
-        {
-          "type": "heading",
-          "text": "Types of elements"
-        },
-        {
-          "type": "figure",
-          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-01/figures/c1.png",
-          "alt": "Notebook-style classification tree of network elements. Active source elements split into voltage and current sources, each independent or dependent; passive sink elements are resistor R, inductor L and capacitor C. A second tree classifies network elements as linear or non-linear, unilateral or bilateral, active or passive, time-variant or time-invariant, and lumped or distributed.",
-          "caption": "Class-note redraw · Updated classification of network elements",
-          "width": 1122,
-          "height": 1402,
-          "size": "large"
-        },
-        {
-          "type": "subheading",
-          "text": "Active and passive elements"
-        },
-        {
-          "type": "paragraph",
-          "text": "Elements that can deliver energy are called active elements; in this class-note classification they are sources of energy. Examples: voltage sources and current sources."
-        },
-        {
-          "type": "paragraph",
-          "text": "Elements that consume energy by absorbing or storing it are called passive elements. Examples: resistor, inductor and capacitor."
-        },
-        {
-          "type": "subheading",
-          "text": "Unilateral and bilateral elements"
-        },
-        {
-          "type": "paragraph",
-          "text": "A unilateral element has a different voltage-current relationship in the two directions. A semiconductor diode is the example given in class: it conducts readily in one direction and offers very high resistance in the opposite direction."
-        },
-        {
-          "type": "paragraph",
-          "text": "A bilateral element has the same voltage-current relationship in either direction."
-        },
-        {
-          "type": "subheading",
-          "text": "Linear and non-linear elements"
-        },
-        {
-          "type": "paragraph",
-          "text": "A circuit element is linear when its voltage-current relationship is linear. The class notes list the element relations:"
-        },
-        {
-          "type": "equation",
-          "text": "\\[V=IR\\qquad V=L\\dfrac{di}{dt}\\qquad V=\\dfrac{1}{C}\\int i\\,dt\\]"
-        },
-        {
-          "type": "line",
-          "text": "Example: R, L and C elements."
-        },
-        {
-          "type": "paragraph",
-          "text": "If an element does not satisfy a linear relationship, it is called a non-linear element. Examples given in class: diodes and thermistors."
-        },
-        {
-          "type": "subheading",
-          "text": "Lumped and distributed elements"
-        },
-        {
-          "type": "paragraph",
-          "text": "Elements that are physically separable are called lumped elements. Examples: resistor, inductor and capacitor."
-        },
-        {
-          "type": "paragraph",
-          "text": "Elements whose parameters are physically distributed along the element are called distributed elements. A transmission line is the example given in class; its resistance, inductance and capacitance are distributed along the line."
-        },
-        {
-          "type": "subheading",
-          "text": "Time-invariant and time-variant elements"
-        },
-        {
-          "type": "paragraph",
-          "text": "If the parameters of network elements do not vary with time, the elements are time-invariant. If the parameters vary with time, they are time-variant."
-        },
-        {
-          "type": "line",
-          "text": "Class emphasis: normally, networks are considered with linear, time-invariant and lumped elements."
-        }
-      ]
-    },
-    {
-      "page": 2,
-      "heading": "Additions to the R, L and C notes",
-      "blocks": [
-        {
-          "type": "subheading",
-          "text": "Resistance — power and energy"
-        },
-        {
-          "type": "paragraph",
-          "text": "A resistor consumes electrical energy; it cannot store or deliver energy."
-        },
-        {
-          "type": "equation",
-          "text": "\\[P=VI=I^2R=\\dfrac{V^2}{R}\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[W=\\int_0^t P\\,dt\\]"
-        },
-        {
-          "type": "line",
-          "text": "For constant voltage and current, \\(W=VIt=Pt\\)."
-        },
-        {
-          "type": "subheading",
-          "text": "Inductor — stored energy"
-        },
-        {
-          "type": "equation",
-          "text": "\\[W=\\int_0^t P\\,dt=\\int_0^t vi\\,dt=\\int_0^I Li\\,di=\\dfrac{1}{2}LI^2\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "An ideal inductor stores energy when the current through it changes. It does not consume energy; it stores energy."
-        },
-        {
-          "type": "subheading",
-          "text": "Capacitor — stored energy"
-        },
-        {
-          "type": "equation",
-          "text": "\\[p=vi\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[W=\\int_0^t P\\,dt=\\int_0^t vi\\,dt=\\int_0^V Cv\\,dv=\\dfrac{1}{2}CV^2\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "A capacitor stores energy when the voltage across it changes. A pure capacitor does not consume energy; it stores energy."
-        },
-        {
-          "type": "line",
-          "text": "Unit of stored energy: joule (J)."
-        }
-      ]
-    },
-    {
-      "page": 3,
       "heading": "Nodes, branches and closed loops",
       "blocks": [
         {
@@ -212,18 +62,19 @@
         },
         {
           "type": "paragraph",
-          "text": "How to read the drawing: nodes are 1, 2, 3 and 4. The six branches are 12, 23, 14, 24, 34 and 13, and each node connects three branches."
+          "text": "In the example, nodes are 1, 2, 3 and 4. The six branches are 12, 23, 14, 24, 34 and 13; three branches meet at each node."
         },
         {
           "type": "paragraph",
-          "text": "The marked loops are X: 1→2→4→1, Y: 2→3→4→2 and Z: 1→3→2→1. Branch 24 contains \\(R_3\\) and \\(C_1\\) in series; branch 13 contains \\(V_2\\), \\(R_5\\) and \\(L_2\\) in series."
+          "text": "The marked closed loops are X: 1→2→4→1, Y: 2→3→4→2 and Z: 1→3→2→1. Branch 24 contains \\(R_3\\) and \\(C_1\\) in series, while branch 13 contains \\(V_2\\), \\(R_5\\) and \\(L_2\\) in series."
         }
       ]
     }
   ],
   "source_notes": [
-    "The 1 September source pack contains both genuinely new pages and earlier 31 August pages with later annotations. The dated entry records only the new 1 September additions instead of duplicating the full earlier lesson.",
-    "The updated network-element tree and the nodes/branches/loops circuit are NRS redraws stored under the 1 September class assets.",
-    "The short explanation under the nodes/branches/loops drawing is a requested study clarification based on the same circuit topology; it does not add a new circuit or alter the teacher’s labels."
+    "The genuinely new 1 September page is the nodes, branches and closed-loops lesson shown here.",
+    "The network-classification continuation from the same source pack is consolidated under 24 August, where that diagram was first taught.",
+    "Later power/energy annotations written onto the earlier R/L/C notebook pages are consolidated under 31 August rather than duplicated here.",
+    "The short explanation under the circuit redraw is a requested study clarification of the same labelled topology; it does not add or alter any circuit element."
   ]
 }

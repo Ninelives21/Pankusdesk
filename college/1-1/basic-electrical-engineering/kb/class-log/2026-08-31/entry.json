@@ -13,7 +13,7 @@
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
   "title": "Dependent sources and passive circuit elements — R, L and C",
-  "summary": "Dependent/controlled sources (VCCS, CCCS, CCVS, VCVS) and their equations; resistance, inductance and capacitance definitions, units and basic voltage-current relations.",
+  "summary": "Dependent/controlled sources (VCCS, CCCS, CCVS, VCVS); resistance, inductance and capacitance definitions, units, voltage-current relations, DC behaviour and energy relations.",
   "transcription_policy": "Notebook order and meaning are preserved; grammar, punctuation and awkward English are lightly cleaned for study. Crossed-out corrections are normalized to the final readable wording, and no new theory is added unless explicitly marked as a short clarification.",
   "mapped_topics": [
     {
@@ -152,6 +152,22 @@
           "text": "\\[R=\\rho\\dfrac{l}{A}\\]"
         },
         {
+          "type": "paragraph",
+          "text": "Energy is consumed by a resistor; it cannot store or deliver energy."
+        },
+        {
+          "type": "equation",
+          "text": "\\[P=VI=I^2R=\\dfrac{V^2}{R}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[W=\\int_0^t P\\,dt\\]"
+        },
+        {
+          "type": "line",
+          "text": "For constant power, \\(W=Pt\\); for constant voltage and current, \\(W=VIt\\)."
+        },
+        {
           "type": "subheading",
           "text": "2) Inductance parameter"
         },
@@ -195,6 +211,18 @@
         {
           "type": "paragraph",
           "text": "If the current through an ideal inductor is constant, \\(di/dt=0\\), so it acts as a short circuit to DC."
+        },
+        {
+          "type": "subheading",
+          "text": "Inductor — stored energy"
+        },
+        {
+          "type": "equation",
+          "text": "\\[W=\\int_0^t P\\,dt=\\int_0^t vi\\,dt=\\int_0^I Li\\,di=\\dfrac{1}{2}LI^2\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "An ideal inductor stores energy when the current through it changes. It does not consume energy; it stores energy."
         }
       ]
     },
@@ -246,6 +274,26 @@
         {
           "type": "paragraph",
           "text": "If the voltage across an ideal capacitor is constant, \\(dv/dt=0\\), so \\(i=0\\); the capacitor acts as an open circuit to DC."
+        },
+        {
+          "type": "subheading",
+          "text": "Capacitor — stored energy"
+        },
+        {
+          "type": "equation",
+          "text": "\\[p=vi\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[W=\\int_0^t P\\,dt=\\int_0^t vi\\,dt=\\int_0^V Cv\\,dv=\\dfrac{1}{2}CV^2\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "A capacitor stores energy when the voltage across it changes. A pure capacitor does not consume energy; it stores energy."
+        },
+        {
+          "type": "line",
+          "text": "Unit of stored energy: joule (J)."
         }
       ]
     }
@@ -253,6 +301,7 @@
   "source_notes": [
     "The dated 31 August record keeps the dependent-source and R/L/C material together in notebook order.",
     "The four dependent-source symbols and capacitor symbol are NRS redraws from the 31 August sketches. Standalone resistor and inductor symbols were later redrawn for the dedicated class-notes page without changing their meaning.",
-    "The cumulative Unit I Text page no longer embeds class-note material; class notes are kept on the dedicated chronological Class Notes page."
+    "Power/energy side notes added to these same R/L/C notebook pages in the following class have been assimilated here rather than repeated under 1 September.",
+    "The cumulative Unit I Text page no longer embeds class-note material; class notes are kept on the dedicated Class Notes page."
   ]
 }

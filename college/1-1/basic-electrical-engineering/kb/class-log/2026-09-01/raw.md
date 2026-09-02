@@ -2,19 +2,14 @@
 
 ## Intake note
 
-The supplied 1 September pack contains a new network-element classification update, nodes/branches/loops notes, and later side-note additions written onto the earlier R/L/C pages. Repeated 31 August base text is intentionally not duplicated in the student-facing dated entry.
+The supplied 1 September pack contains one genuinely new notebook page on nodes, branches and closed loops, plus continuation material written onto topics first taught on earlier dates. To avoid visible duplication on the Class Notes page, those continuations are consolidated with their original lessons.
 
-## New material captured
+## Consolidation map
 
-- Updated network-element classification tree, adding Active / Passive as a classification branch.
-- Active and passive element definitions and examples.
-- Unilateral/bilateral and linear/non-linear definitions and examples.
-- Lumped/distributed and time-variant/time-invariant definitions.
-- Resistor power/energy notes.
-- Inductor stored-energy relation and storage note.
-- Capacitor stored-energy relation and storage note.
-- Node, branch and closed-loop definitions and the worked network diagram.
+- Network-element classification continuation and definitions → consolidated under **24 Aug 2026 · Types of network elements**.
+- Resistor, inductor and capacitor power/energy side notes written onto the earlier R/L/C pages → consolidated under **31 Aug 2026 · R, L and C**.
+- Nodes, branches and closed loops → retained as the **1 Sep 2026** dated entry.
 
 ## Source policy
 
-Original notebook photographs remain intake material. The web entry lightly cleans grammar and awkward English while preserving the notebook meaning, equations, examples and order.
+Original notebook photographs remain intake material. The web notes lightly clean grammar and awkward English while preserving the notebook meaning, equations, examples and diagrams.

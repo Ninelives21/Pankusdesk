@@ -12,8 +12,8 @@
     "number": 1,
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
-  "title": "Circuit concept and basic electrical quantities",
-  "summary": "Circuit concept; charge, current, voltage, potential difference, energy and power; classification of network elements and sources.",
+  "title": "Circuit concept, basic quantities and network-element classification",
+  "summary": "Circuit concept; charge, current, voltage, potential difference, energy and power; consolidated classification of network elements and sources.",
   "transcription_policy": "Notebook order and meaning are preserved; grammar, punctuation and awkward English are lightly cleaned for study. Crossed-out corrections are normalized to the final readable wording, and no new theory is added unless explicitly marked as a short clarification.",
   "mapped_topics": [
     {
@@ -209,7 +209,7 @@
     },
     {
       "page": 4,
-      "heading": "Types of elements",
+      "heading": "Types of network elements",
       "blocks": [
         {
           "type": "heading",
@@ -245,7 +245,11 @@
         },
         {
           "type": "bullet",
-          "text": "unilateral and Bilateral"
+          "text": "Unilateral and Bilateral"
+        },
+        {
+          "type": "bullet",
+          "text": "Active and Passive elements"
         },
         {
           "type": "bullet",
@@ -257,18 +261,92 @@
         },
         {
           "type": "figure",
-          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-24/figures/c2.png",
-          "alt": "Handwritten-style classification tree of network elements into active sources and passive R, L and C elements, plus linear or non-linear, unilateral or bilateral, time-variant or time-invariant, and lumped or distributed classifications.",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-01/figures/c1.png",
+          "alt": "Notebook-style classification tree of network elements. Active source elements split into voltage and current sources, each independent or dependent; passive sink elements are resistor R, inductor L and capacitor C. A second tree classifies network elements as linear or non-linear, unilateral or bilateral, active or passive, time-variant or time-invariant, and lumped or distributed.",
           "caption": "Class-note redraw · Classification of network elements",
-          "width": 1448,
-          "height": 1086
+          "width": 1122,
+          "height": 1402,
+          "size": "large"
+        },
+        {
+          "type": "accordions",
+          "label": "Understand this diagram",
+          "items": [
+            {
+              "title": "Active and passive elements",
+              "paragraphs": [
+                "Elements that can deliver energy are called active elements; in the class notes they are treated as sources of energy. Examples are voltage sources and current sources.",
+                "Passive elements absorb or store supplied energy. The class notes group the resistor, inductor and capacitor as passive elements."
+              ],
+              "bullets": [
+                "Resistor → consumes electrical energy; it cannot store or deliver energy.",
+                "Ideal inductor → stores energy in its magnetic field.",
+                "Ideal capacitor → stores energy in its electric field."
+              ]
+            },
+            {
+              "title": "What are voltage and current sources?",
+              "paragraphs": [
+                "A voltage source maintains its specified voltage while the current supplied depends on the connected circuit.",
+                "A current source maintains its specified current while the voltage across it depends on the connected circuit.",
+                "The ideal and practical source models were developed further in class on 27 August."
+              ]
+            },
+            {
+              "title": "Independent and dependent sources",
+              "paragraphs": [
+                "An independent source has a value that is not determined by another voltage or current in the network.",
+                "If the voltage or current of a source depends on another voltage or current elsewhere in the network, it is called a dependent or controlled source. Dependent sources are represented by a diamond symbol."
+              ],
+              "bullets": [
+                "VCCS — Voltage-Controlled Current Source",
+                "CCCS — Current-Controlled Current Source",
+                "CCVS — Current-Controlled Voltage Source",
+                "VCVS — Voltage-Controlled Voltage Source"
+              ]
+            },
+            {
+              "title": "Linear and non-linear elements",
+              "paragraphs": [
+                "A circuit element is linear when its voltage-current relationship is linear. The class notes list the ideal element relations:",
+                "\\[V=IR\\qquad V=L\\dfrac{di}{dt}\\qquad V=\\dfrac{1}{C}\\int i\\,dt\\]",
+                "Examples given in class: R, L and C elements.",
+                "If an element does not satisfy a linear voltage-current relationship, it is called a non-linear element. Examples given in class are diodes and thermistors."
+              ]
+            },
+            {
+              "title": "Bilateral and unilateral elements",
+              "paragraphs": [
+                "A bilateral element has the same voltage-current relationship in either direction.",
+                "A unilateral element has a different voltage-current relationship in the two directions. A semiconductor diode is the class example: it conducts readily in one direction and offers very high resistance in the opposite direction."
+              ],
+              "bullets": [
+                "Bilateral → same V–I characteristic in either direction.",
+                "Unilateral → V–I characteristic depends on direction."
+              ]
+            },
+            {
+              "title": "Time-invariant and time-variant elements",
+              "paragraphs": [
+                "If the parameters of a network element do not vary with time, it is time-invariant. If its parameters vary with time, it is time-variant.",
+                "Class emphasis: normally, networks are considered with linear, time-invariant and lumped elements."
+              ]
+            },
+            {
+              "title": "Lumped and distributed elements",
+              "paragraphs": [
+                "Elements that are physically separable are called lumped elements. Examples: resistor, inductor and capacitor.",
+                "In a distributed element, the electrical parameters are distributed along its physical length. A transmission line is the example given in class; its resistance, inductance and capacitance are distributed along the line."
+              ]
+            }
+          ]
         }
       ]
     }
   ],
   "source_notes": [
-    "The dated class log preserves the notebook wording as a verbatim transcription. The original notebook photographs remain in the supplied 2026-08-24 source archive and are not copied into website assets.",
-    "The two clean redraws preserve the useful diagrams but are not substitutes for the verbatim notebook record.",
-    "The class notes group R, L and C under passive elements. The prescribed textbook uses different terminology on pp. 7–8 for ideal inductors and capacitors; this source difference is flagged on the cumulative Unit I page rather than silently reconciled."
+    "The network-element tree was first introduced on 24 August and completed in the later class continuation. The student-facing class-notes page keeps one consolidated version here instead of repeating the same diagram on 1 September.",
+    "The explanation dropdowns consolidate Priyanka’s class-note wording across the Unit-I source dates, with grammar and awkward English lightly cleaned. The bilateral/unilateral wording is clarified without changing the intended electrical meaning.",
+    "Detailed ideal/practical source models remain under 27 August; detailed dependent-source equations remain under 31 August."
   ]
 }

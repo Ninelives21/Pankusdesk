@@ -70,7 +70,7 @@ function renderPage(page, subject, subjectUrl, unitMeta, entries) {
 			<div class="eyebrow">${escapeHtml(subject.name)} · Unit ${escapeHtml(unitLabel)}</div>
 			<h1>Priyanka's Class Notes</h1>
 			<p>${escapeHtml(unitMeta.title)}</p>
-			<p class="class-notes-policy">Notebook order and meaning are preserved; grammar and awkward English are lightly cleaned for study. Redraws reproduce the teacher's diagrams without adding new theory.</p>
+			<p class="class-notes-policy">Notebook meaning is preserved and awkward English is lightly cleaned for study. When a later class only continues an earlier page, the new material is assimilated into that earlier lesson so the same topic is not repeated.</p>
 		</section>
 
 		${resourceNav}
@@ -139,12 +139,36 @@ function renderBlocks(blocks) {
 			case 'subheading': html += `<h5>${formatText(block.text)}</h5>`; break;
 			case 'equation': html += `<div class="class-notes-equation">${formatText(block.text)}</div>`; break;
 			case 'figure': html += renderClassFigure(block); break;
+			case 'accordions': html += renderClassAccordions(block); break;
 			case 'line': html += `<p class="class-notes-line">${formatText(block.text)}</p>`; break;
 			default: html += `<p>${formatText(block.text || '')}</p>`;
 		}
 	}
 	flush();
 	return html;
+}
+
+function renderClassAccordions(group) {
+	const items = Array.isArray(group?.items) ? group.items : [];
+	if (!items.length) return '';
+	const label = group.label || 'Understand this diagram';
+	return `
+		<div class="class-notes-accordion" aria-label="${escapeHtml(label)}">
+			<div class="class-notes-accordion-label">${escapeHtml(label)}</div>
+			${items.map(item => `
+				<details class="class-notes-accordion-item">
+					<summary>
+						<span>${formatText(item.title || '')}</span>
+						<span class="class-notes-accordion-toggle" aria-hidden="true">+</span>
+					</summary>
+					<div class="class-notes-accordion-content">
+						${(item.paragraphs || []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+						${(item.bullets || []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+					</div>
+				</details>
+			`).join('')}
+		</div>
+	`;
 }
 
 function renderClassFigure(figure) {

@@ -362,8 +362,20 @@ def iter_class_text(entry: dict):
         if not isinstance(page, dict):
             continue
         for bi, block in enumerate(page.get("blocks", []) or []):
-            if isinstance(block, dict) and isinstance(block.get("text"), str):
+            if not isinstance(block, dict):
+                continue
+            if isinstance(block.get("text"), str):
                 yield f"pages[{pi}].blocks[{bi}]", block["text"]
+            if block.get("type") == "accordions":
+                for ai, item in enumerate(block.get("items", []) or []):
+                    if not isinstance(item, dict):
+                        continue
+                    if isinstance(item.get("title"), str):
+                        yield f"pages[{pi}].blocks[{bi}].items[{ai}].title", item["title"]
+                    for key in ("paragraphs", "bullets"):
+                        for ti, text in enumerate(item.get(key, []) or []):
+                            if isinstance(text, str):
+                                yield f"pages[{pi}].blocks[{bi}].items[{ai}].{key}[{ti}]", text
 
 
 def check_class_logs(subject_dir: Path, topic_ids: set[str], source_ids: set[str]):

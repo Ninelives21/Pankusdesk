@@ -2,52 +2,50 @@
 
 ## New student-facing contract
 
-Unit I now has three separate study destinations:
+Unit I has three separate study destinations:
 
 1. `unit-1.html` — textbook-led Text/theory.
 2. `unit-1-questions.html` — prescribed textbook questions.
-3. `unit-1-class-notes.html` — Priyanka's chronological class notes with date-based left navigation.
+3. `unit-1-class-notes.html` — Priyanka's class notes with date-based left navigation.
 
 The shared `unit-resource-nav.js` renderer exposes these destinations consistently.
 
 ## Theory purge
 
-All Unit-I `kind: "class-note"` sections, `CLASS-U1-*` topic-level source references, class-history rows, and `Class-note ...` formula-summary entries were removed from `kb/data/topics.json`.
+All Unit-I `kind: "class-note"` sections, `CLASS-U1-*` topic-level source references, class-history rows, and class-note-only formula-summary entries were removed from `kb/data/topics.json`. The Unit-I Text page is therefore no longer a mixed textbook/class-note page.
 
-The remaining Unit-I visible topic/section source references resolve only to the prescribed textbook and official syllabus. The human-readable `kb/notes/unit-1.md` companion was regenerated from the cleaned theory data so it no longer carries embedded class-note panels.
+## Class-note de-duplication rule
 
-## Chronological class notes
+The class-notes page is date-navigated, but continuation material is assimilated into the date on which that lesson was first introduced instead of being repeated as a second near-duplicate lesson. Provenance is retained in each dated entry's `source_notes`.
 
-The dedicated Unit-I Class Notes page renders dated entries from the `class_sources` collection in `kb/data/source-manifest.json`.
+Final Unit-I class-note organization:
 
-Working dates after this refactor:
+- **24 Aug 2026** — circuit concept, basic quantities, and one consolidated network-element classification section. The updated NRS tree replaces the older incomplete tree. Explanation dropdowns consolidate the later definitions for active/passive, voltage/current sources, independent/dependent sources, linear/non-linear, bilateral/unilateral, time-invariant/time-variant, and lumped/distributed elements.
+- **27 Aug 2026** — detailed ideal/practical voltage and current source models and characteristics.
+- **31 Aug 2026** — dependent sources and R/L/C. Later power/energy annotations written onto those same notebook pages are assimilated into this entry.
+- **1 Sep 2026** — only the genuinely new nodes, branches and closed-loops lesson.
 
-- 24 Aug 2026 — circuit concept & basic quantities.
-- 27 Aug 2026 — ideal/practical voltage and current sources.
-- 31 Aug 2026 — dependent sources; R, L and C.
-- 1 Sep 2026 — expanded network-element classifications; R/L/C energy additions; nodes, branches and closed loops.
-
-The 1 September source pack contains older pages with later annotations. The 1 September dated entry records only the genuinely new additions rather than duplicating the full 31 August lesson.
-
-## 1 September redraws
+## Redraw use
 
 `assets/class/2026-09-01/figures/`
 
-- `c1.png` — updated network-element classification tree.
-- `c2.png` — standalone resistor symbol.
-- `c3.png` — standalone inductor symbol.
-- `c4.png` — nodes, branches and loops circuit.
+- `c1.png` — updated network-element classification tree; displayed under 24 Aug as the consolidated replacement diagram.
+- `c2.png` — standalone resistor symbol; displayed with the 31 Aug resistance notes.
+- `c3.png` — standalone inductor symbol; displayed with the 31 Aug inductance notes.
+- `c4.png` — nodes, branches and loops circuit; displayed under 1 Sep.
 
-The standalone resistor/inductor symbols are used with the R/L class-note material; the updated classification and network circuit belong to the 1 September dated entry.
+Existing 31 Aug dependent-source and capacitor NRS assets remain in their original asset folder.
 
 ## Calendar
 
-BEE calendar entries now link directly to date anchors on `unit-1-class-notes.html`. A BEE entry was added for 1 September alongside the existing Matrices & Calculus entry.
+BEE calendar links continue to target date anchors on `unit-1-class-notes.html`. The 1 Sep calendar description now names only nodes, branches and closed loops; consolidated continuation material remains discoverable under 24 Aug and 31 Aug.
 
 ## Verification expectations
 
-- Unit-I theory contains no embedded class-note sections.
-- Unit-I class-note shell exists and all dated entries resolve.
-- Calendar date anchors resolve to real dated class entries.
+- Unit-I Text contains no embedded class-note sections.
+- The 24 Aug class-note entry references the updated classification tree exactly once.
+- The 1 Sep entry references only the nodes/branches/loops redraw.
+- 31 Aug includes the later R/L/C energy annotations.
+- Calendar date anchors resolve to real dated entries.
 - All referenced class redraw assets exist.
 - Subject and generic college verifiers pass.
