@@ -211,12 +211,21 @@ function renderCurrentSemester(context) {
 
 		subjectList.innerHTML =
 			theory
-				.map(
-					course =>
-						`<span>${escapeHtml(
-							course.name,
-						)}</span>`,
-				)
+				.map(course => {
+					const name =
+						escapeHtml(course.name);
+
+					if (course.page) {
+						return `
+							<a
+								class="subject-list-link"
+								href="${escapeHtml(course.page)}"
+							>${name}</a>
+						`;
+					}
+
+					return `<span>${name}</span>`;
+				})
 				.join('');
 
 		if (practicalCount) {
