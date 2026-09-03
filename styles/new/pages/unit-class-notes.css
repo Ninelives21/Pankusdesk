@@ -21,7 +21,8 @@
 	position: sticky;
 	top: 1rem;
 	max-height: calc(100vh - 2rem);
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	padding: 1rem;
 	border: 1px solid var(--line);
 	border-radius: 18px;
@@ -79,7 +80,12 @@
 .class-notes-copy ul { margin: .55rem 0 .9rem 1.2rem; }
 .class-notes-copy li { margin: .35rem 0; line-height: 1.6; }
 .class-notes-line { font-weight: 600; }
-.class-notes-equation { margin: .85rem 0; overflow-x: auto; }
+.class-notes-equation {
+	margin: .85rem 0;
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
 
 .class-note-visual {
 	margin: 1rem auto 1.15rem;

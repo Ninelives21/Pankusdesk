@@ -167,6 +167,8 @@ For **every technical redraw**:
 - [ ] Preserve Quick recall / Check yourself / practice navigation.
 - [ ] Preserve source separation: textbook-led Text, textbook Questions, and chronological Class Notes.
 - [ ] Verify desktop/tablet/mobile behaviour.
+- [ ] Confirm ordinary theory/class-note content has no nested vertical scrollbars; equations and examples must grow with the page.
+- [ ] For genuinely wide maths/tables, allow horizontal overflow only when needed and explicitly suppress the vertical overflow axis so stray MathJax scrollbars do not appear.
 
 ## N. Verification
 
