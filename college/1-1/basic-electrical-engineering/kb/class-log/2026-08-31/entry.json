@@ -160,6 +160,24 @@
                 "CCVS: current controls voltage — \\(V=R_mI_c\\).",
                 "VCVS: voltage controls voltage — \\(V=A_vV_c\\)."
               ]
+            },
+            {
+              "title": "What each term in the equations means",
+              "paragraphs": [
+                "The symbols in the four relations separate the controlling quantity from the output of the dependent source. The subscript \\(c\\) means “controlling”.",
+                "The gain or transfer constant tells how much output is produced for a given control quantity. Its units depend on whether the input and output are voltages or currents."
+              ],
+              "bullets": [
+                "\\(V_c\\) — controlling voltage elsewhere in the circuit.",
+                "\\(I_c\\) — controlling current elsewhere in the circuit.",
+                "\\(V\\) — output voltage produced by the dependent voltage source.",
+                "\\(I\\) — output current produced by the dependent current source.",
+                "\\(G_m\\) — transconductance: output current per unit controlling voltage. Unit: A/V = siemens (S), also called mho.",
+                "\\(A_i\\) — current gain: output current divided by controlling current. It has no units.",
+                "\\(R_m\\) — transresistance: output voltage per unit controlling current. Unit: V/A = \\(\\Omega\\).",
+                "\\(A_v\\) — voltage gain: output voltage divided by controlling voltage. It has no units.",
+                "The subscript \\(m\\) in \\(G_m\\) and \\(R_m\\) is part of the parameter symbol here; it is not the metric prefix “milli”."
+              ]
             }
           ]
         }
