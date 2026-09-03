@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-03",
+  "date_label": "3 September 2026",
+  "source_id": "CLASS-U1-2026-09-03",
+  "subject": {
+    "code": "25ES1EE101",
+    "name": "Basic Electrical Engineering",
+    "shortName": "BEE"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Introduction to Electrical Energy and DC Circuits"
+  },
+  "title": "Kirchhoff’s laws — KVL, mesh currents and KCL",
+  "summary": "Kirchhoff’s Voltage Law with a single-loop example; two-mesh KVL equations; Kirchhoff’s Current Law and two node-voltage examples.",
+  "transcription_policy": "Notebook order and meaning are preserved; grammar and awkward English are lightly cleaned. Worked equations are kept source-faithful. Where the handwritten arithmetic conflicts with its own setup equations, the discrepancy is called out explicitly rather than silently corrected.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-kirchhoff",
+      "label": "Kirchhoff’s laws",
+      "href": "unit-1.html#u1-kirchhoff"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Kirchhoff’s Voltage Law (KVL)",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Kirchhoff’s Voltage Law"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kirchhoff’s Voltage Law states that the algebraic sum of all voltages around a closed loop is zero."
+        },
+        {
+          "type": "line",
+          "text": "Equivalent class wording: in a closed loop, the sum of voltage sources equals the sum of voltage drops across the resistors."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sum V=0\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Example 1 — apply KVL and find the voltage across each element"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-03/figures/c1.png",
+          "alt": "Notebook-style single closed loop for KVL with a 10 V source and series resistances 1 megaohm, 3.1 megaohms, 400 kiloohms and 500 kiloohms, carrying loop current I.",
+          "caption": "Class-note redraw · KVL single-loop example",
+          "width": 1400,
+          "height": 900,
+          "size": "large"
+        },
+        {
+          "type": "equation",
+          "text": "\\[10-I(10^6)-I(3.1\\times10^6)-I(400\\times10^3)-I(500\\times10^3)=0\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I=2\\,\\mu\\text{A}\\]"
+        },
+        {
+          "type": "bullet",
+          "text": "Across \\(1\\,\\text{M}\\Omega\\): \\(V=I(10^6)=2\\,\\text{V}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "Across \\(3.1\\,\\text{M}\\Omega\\): \\(V=I(3.1\\times10^6)=6.2\\,\\text{V}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "Across \\(400\\,\\text{k}\\Omega\\): \\(V=I(400\\times10^3)=0.8\\,\\text{V}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "Across \\(500\\,\\text{k}\\Omega\\): \\(V=I(500\\times10^3)=1\\,\\text{V}\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Problem 2 — find the mesh currents \\(I_1\\) and \\(I_2\\)"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-03/figures/c2.png",
+          "alt": "Notebook-style two-mesh circuit with a 5 V source in the left mesh, a 10 V source in the right mesh, top resistors 2 ohms and 4 ohms, a shared 2 ohm resistor, and a 6 ohm resistor in the right branch; mesh currents I1 and I2 are clockwise.",
+          "caption": "Class-note redraw · Two-mesh KVL example",
+          "width": 1400,
+          "height": 900,
+          "size": "large"
+        },
+        {
+          "type": "line",
+          "text": "Applying KVL to loop 1:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[5-2I_1-2(I_1-I_2)=0\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[-4I_1+2I_2=-5\\qquad (1)\\]"
+        },
+        {
+          "type": "line",
+          "text": "Applying KVL to loop 2:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[-4I_2-6I_2+10-2(I_2-I_1)=0\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[2I_1-12I_2=-10\\qquad (2)\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Arithmetic check"
+        },
+        {
+          "type": "paragraph",
+          "text": "The handwritten final numerical labels are inconsistent with the two boxed equations above. Solving equations (1) and (2) gives \\(I_1=20/11\\,\\text{A}\\approx1.82\\,\\text{A}\\) and \\(I_2=25/22\\,\\text{A}\\approx1.14\\,\\text{A}\\)."
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "Kirchhoff’s Current Law (KCL)",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Kirchhoff’s Current Law"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kirchhoff’s Current Law states that the algebraic sum of currents meeting at a node or junction is zero."
+        },
+        {
+          "type": "line",
+          "text": "Equivalently, the sum of currents entering a node is equal to the sum of currents leaving the node."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sum I=0\\]"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-03/figures/c3.png",
+          "alt": "Notebook-style KCL node with five labelled branch currents: i1, i2 and i3 directed into the node and i4 and i5 directed away from it.",
+          "caption": "Class-note redraw · KCL at a node",
+          "width": 1400,
+          "height": 900,
+          "size": "large"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "KCL worked examples",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Example — find the current through \\(3.3\\,\\text{k}\\Omega\\)"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-03/figures/c4.png",
+          "alt": "Notebook-style node-voltage circuit with a 15 V source on the left, a 20 V source on the right, 1 kiloohm and 2.2 kiloohm resistors feeding a central node V, and a 3.3 kiloohm resistor from the node to the common return.",
+          "caption": "Class-note redraw · KCL node-voltage example",
+          "width": 1400,
+          "height": 900,
+          "size": "large"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{15-V}{1}+\\dfrac{20-V}{2.2}=\\dfrac{V}{3.3}\\]"
+        },
+        {
+          "type": "line",
+          "text": "Notebook result: \\(V\\approx13.75\\,\\text{V}\\), hence \\(I_{3.3\\text{k}\\Omega}\\approx4.1\\,\\text{mA}\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Arithmetic check"
+        },
+        {
+          "type": "paragraph",
+          "text": "Using the nodal equation exactly as written gives \\(V\\approx13.71\\,\\text{V}\\) and \\(I_{3.3\\text{k}\\Omega}\\approx4.15\\,\\text{mA}\\). The notebook values are the same to the intended one-decimal-milliamp approximation, but its intermediate arithmetic is rough."
+        },
+        {
+          "type": "subheading",
+          "text": "Practice 2 — another KCL node-voltage setup"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-03/figures/c5.png",
+          "alt": "Notebook-style KCL practice circuit with a 15 V source and 1 kiloohm resistor feeding node V, with 3.3 kiloohm and 2.2 kiloohm branches from the node to the common return.",
+          "caption": "Class-note redraw · KCL practice circuit",
+          "width": 1400,
+          "height": 900,
+          "size": "large"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{15-V}{1}=\\dfrac{V}{3.3}+\\dfrac{V}{2.2}\\]"
+        },
+        {
+          "type": "line",
+          "text": "The handwritten working then simplifies this equation and ends with a value for \\(V\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Arithmetic check"
+        },
+        {
+          "type": "paragraph",
+          "text": "Solving the starting equation exactly gives \\(V\\approx8.53\\,\\text{V}\\). The notebook’s final \\(90/11\\) line comes from an approximate simplification and does not follow exactly from the preceding \\(6.6\\) equation."
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The three supplied notebook photographs are preserved as source intake; the website uses clean redraws of their circuit diagrams.",
+    "The class-note Text page remains textbook-only; this dated material is kept on Priyanka’s Class Notes page.",
+    "Arithmetic discrepancies are flagged explicitly so the source record is not silently altered."
+  ]
+}
