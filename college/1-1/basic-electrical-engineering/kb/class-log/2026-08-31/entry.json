@@ -65,56 +65,103 @@
           "text": "Represented by a diamond symbol."
         },
         {
-          "type": "equation",
-          "text": "\\[\\text{VCCS: } I=G_mV_c\\]"
+          "type": "paragraph",
+          "text": "Notation used in the summary table: \\(V_c\\) and \\(I_c\\) are the controlling voltage and current; \\(V\\) and \\(I\\) are the dependent-source output."
         },
         {
-          "type": "figure",
-          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c1.png",
-          "alt": "Notebook-style dependent current-source symbol for VCCS: a vertical diamond source with an upward current arrow inside.",
-          "caption": "Class-note redraw · VCCS dependent-source symbol",
-          "width": 1254,
-          "height": 1254,
-          "size": "symbol"
+          "type": "table",
+          "caption": "Four dependent sources — class notation and equation terms",
+          "headers": [
+            "Type",
+            "Symbol",
+            "Class-note relation",
+            "Controlled by",
+            "Dependent source delivers",
+            "Constant"
+          ],
+          "rows": [
+            [
+              "VCCS",
+              {
+                "type": "image",
+                "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c1.png",
+                "alt": "VCCS dependent-current-source symbol: diamond with upward arrow.",
+                "width": 1254,
+                "height": 1254,
+                "size": "symbol"
+              },
+              "\\(I=G_mV_c\\)",
+              "\\(V_c\\): controlling voltage",
+              "\\(I\\): output current",
+              "\\(G_m\\): current-per-voltage constant, A/V (mho or siemens)"
+            ],
+            [
+              "CCCS",
+              {
+                "type": "image",
+                "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c2.png",
+                "alt": "CCCS dependent-current-source symbol: diamond with upward arrow.",
+                "width": 1254,
+                "height": 1254,
+                "size": "symbol"
+              },
+              "\\(I=A_iI_c\\)",
+              "\\(I_c\\): controlling current",
+              "\\(I\\): output current",
+              "\\(A_i\\): current gain, no units"
+            ],
+            [
+              "CCVS",
+              {
+                "type": "image",
+                "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c3.png",
+                "alt": "CCVS dependent-voltage-source symbol: diamond with plus above minus.",
+                "width": 1254,
+                "height": 1254,
+                "size": "symbol"
+              },
+              "\\(V=R_mI_c\\)",
+              "\\(I_c\\): controlling current",
+              "\\(V\\): output voltage",
+              "\\(R_m\\): voltage-per-current constant, V/A = \\(\\Omega\\)"
+            ],
+            [
+              "VCVS",
+              {
+                "type": "image",
+                "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c4.png",
+                "alt": "VCVS dependent-voltage-source symbol: diamond with plus above minus.",
+                "width": 1254,
+                "height": 1254,
+                "size": "symbol"
+              },
+              "\\(V=A_vV_c\\)",
+              "\\(V_c\\): controlling voltage",
+              "\\(V\\): output voltage",
+              "\\(A_v\\): voltage gain, no units"
+            ]
+          ]
         },
         {
-          "type": "equation",
-          "text": "\\[\\text{CCCS: } I=A_iI_c\\]"
-        },
-        {
-          "type": "figure",
-          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c2.png",
-          "alt": "Notebook-style dependent current-source symbol for CCCS: a vertical diamond source with an upward current arrow inside.",
-          "caption": "Class-note redraw · CCCS dependent-source symbol",
-          "width": 1254,
-          "height": 1254,
-          "size": "symbol"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\text{CCVS: } V=R_mI_c\\]"
-        },
-        {
-          "type": "figure",
-          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c3.png",
-          "alt": "Notebook-style dependent voltage-source symbol for CCVS: a vertical diamond source with plus polarity above minus polarity inside.",
-          "caption": "Class-note redraw · CCVS dependent-source symbol",
-          "width": 1254,
-          "height": 1254,
-          "size": "symbol"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\text{VCVS: } V=A_vV_c\\]"
-        },
-        {
-          "type": "figure",
-          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-08-31/figures/c4.png",
-          "alt": "Notebook-style dependent voltage-source symbol for VCVS: a vertical diamond source with plus polarity above minus polarity inside.",
-          "caption": "Class-note redraw · VCVS dependent-source symbol",
-          "width": 1254,
-          "height": 1254,
-          "size": "symbol"
+          "type": "accordions",
+          "label": "Understand this table",
+          "items": [
+            {
+              "title": "Understanding the four dependent sources",
+              "paragraphs": [
+                "Read each name as “what controls it” followed by “what the source produces”. For example, Voltage-Controlled Current Source means a voltage elsewhere in the circuit controls the current produced by this dependent source.",
+                "The controlling quantity is not the output of the diamond source itself. It is a voltage or current elsewhere in the network that the dependent source responds to.",
+                "For a voltage-output dependent source (VCVS or CCVS), the diamond symbol has voltage polarity \\(+/-\\). For a current-output dependent source (VCCS or CCCS), the diamond contains a current arrow.",
+                "The constant tells how strongly the output responds to the control quantity. \\(A_v\\) and \\(A_i\\) are dimensionless gains; \\(G_m\\) converts control voltage into output current; \\(R_m\\) converts control current into output voltage."
+              ],
+              "bullets": [
+                "VCCS: voltage controls current — \\(I=G_mV_c\\).",
+                "CCCS: current controls current — \\(I=A_iI_c\\).",
+                "CCVS: current controls voltage — \\(V=R_mI_c\\).",
+                "VCVS: voltage controls voltage — \\(V=A_vV_c\\)."
+              ]
+            }
+          ]
         }
       ]
     },
@@ -302,6 +349,7 @@
     "The dated 31 August record keeps the dependent-source and R/L/C material together in notebook order.",
     "The four dependent-source symbols and capacitor symbol are NRS redraws from the 31 August sketches. Standalone resistor and inductor symbols were later redrawn for the dedicated class-notes page without changing their meaning.",
     "Power/energy side notes added to these same R/L/C notebook pages in the following class have been assimilated here rather than repeated under 1 September.",
-    "The cumulative Unit I Text page no longer embeds class-note material; class notes are kept on the dedicated Class Notes page."
+    "The cumulative Unit I Text page no longer embeds class-note material; class notes are kept on the dedicated Class Notes page.",
+    "The four dependent-source equations and NRS diamond symbols are presented together in the previously established summary table; this restores the earlier accepted study layout without adding new theory."
   ]
 }

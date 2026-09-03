@@ -103,6 +103,77 @@
 .class-note-visual--medium { max-width: 650px; }
 .class-note-visual--large { max-width: 900px; }
 
+
+.class-notes-table-wrap {
+	margin: 1rem 0 1.25rem;
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: var(--surface);
+}
+
+.class-notes-table {
+	width: 100%;
+	min-width: 760px;
+	border-collapse: collapse;
+	table-layout: fixed;
+	font-size: .9rem;
+	line-height: 1.45;
+	color: var(--text-strong);
+}
+
+.class-notes-table caption {
+	padding: .9rem 1rem;
+	text-align: left;
+	font-weight: 750;
+	font-size: 1rem;
+	color: var(--text-strong);
+}
+
+.class-notes-table th,
+.class-notes-table td {
+	padding: .72rem .75rem;
+	vertical-align: middle;
+	text-align: left;
+	border-right: 1px solid var(--line-soft);
+	border-bottom: 1px solid var(--line-soft);
+	overflow-wrap: anywhere;
+}
+
+.class-notes-table th:last-child,
+.class-notes-table td:last-child { border-right: 0; }
+.class-notes-table tbody tr:last-child td { border-bottom: 0; }
+.class-notes-table th {
+	background: var(--primary-soft);
+	font-weight: 800;
+	color: var(--primary-dark);
+}
+.class-notes-table tbody tr:nth-child(even) td { background: var(--surface-subtle); }
+.class-notes-table th:nth-child(1), .class-notes-table td:nth-child(1) { width: 8%; }
+.class-notes-table th:nth-child(2), .class-notes-table td:nth-child(2) { width: 10%; text-align: center; }
+.class-notes-table th:nth-child(3), .class-notes-table td:nth-child(3) { width: 17%; }
+.class-notes-table th:nth-child(4), .class-notes-table td:nth-child(4) { width: 18%; }
+.class-notes-table th:nth-child(5), .class-notes-table td:nth-child(5) { width: 19%; }
+.class-notes-table th:nth-child(6), .class-notes-table td:nth-child(6) { width: 28%; }
+
+.class-notes-table-image {
+	display: block;
+	width: 64px;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 6px;
+}
+.class-notes-table-image--symbol { width: 58px; }
+
+@media (max-width: 720px) {
+	.class-notes-table { font-size: .84rem; }
+	.class-notes-table th,
+	.class-notes-table td { padding: .62rem .65rem; }
+}
+
 .class-notes-error {
 	margin: 2rem auto;
 	padding: 1.25rem;

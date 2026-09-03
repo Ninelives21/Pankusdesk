@@ -139,6 +139,7 @@ function renderBlocks(blocks) {
 			case 'subheading': html += `<h5>${formatText(block.text)}</h5>`; break;
 			case 'equation': html += `<div class="class-notes-equation">${formatText(block.text)}</div>`; break;
 			case 'figure': html += renderClassFigure(block); break;
+			case 'table': html += renderClassTable(block); break;
 			case 'accordions': html += renderClassAccordions(block); break;
 			case 'line': html += `<p class="class-notes-line">${formatText(block.text)}</p>`; break;
 			default: html += `<p>${formatText(block.text || '')}</p>`;
@@ -146,6 +147,37 @@ function renderBlocks(blocks) {
 	}
 	flush();
 	return html;
+}
+
+function renderClassTable(table) {
+	const headers = Array.isArray(table?.headers) ? table.headers : [];
+	const rows = Array.isArray(table?.rows) ? table.rows : [];
+	if (!headers.length || !rows.length) return '';
+	return `
+		<div class="class-notes-table-wrap">
+			<table class="class-notes-table">
+				${table.caption ? `<caption>${formatText(table.caption)}</caption>` : ''}
+				<thead>
+					<tr>${headers.map(header => `<th scope="col">${formatText(header)}</th>`).join('')}</tr>
+				</thead>
+				<tbody>
+					${rows.map(row => `<tr>${row.map(cell => `<td>${renderClassTableCell(cell)}</td>`).join('')}</tr>`).join('')}
+				</tbody>
+			</table>
+		</div>
+	`;
+}
+
+function renderClassTableCell(cell) {
+	if (cell && typeof cell === 'object' && cell.type === 'image') {
+		const src = escapeHtml(cell.src || '');
+		const alt = escapeHtml(cell.alt || '');
+		const width = Number(cell.width) || 120;
+		const height = Number(cell.height) || width;
+		const sizeClass = cell.size === 'symbol' ? ' class-notes-table-image--symbol' : '';
+		return `<img class="class-notes-table-image${sizeClass}" src="${src}" alt="${alt}" width="${width}" height="${height}" loading="lazy" decoding="async">`;
+	}
+	return formatText(cell);
 }
 
 function renderClassAccordions(group) {
