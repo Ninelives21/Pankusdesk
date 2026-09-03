@@ -2,7 +2,7 @@
 
 ## Source policy
 
-This is the dated notebook record. Wording and the order of the class work are preserved as far as they are safely readable; line wrapping is normalized. The notebook contains strike-throughs and rewritten entries in the long augmented-matrix calculations. Crossed-out values are not treated as final values. The original photographs remain in `mac_28thAug.zip`.
+This is the dated notebook record. Wording and the order of the class work are preserved as far as they are safely readable; line wrapping is normalized. The notebook contains strike-throughs and rewritten entries in the long augmented-matrix calculations. Crossed-out values are not treated as final values. The original photographs remain in `mac_28thAug(1).zip`.
 
 ## Notebook page 6
 

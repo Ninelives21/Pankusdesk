@@ -2,7 +2,7 @@
 
 ## Source policy
 
-This is the dated notebook record. Wording is preserved as written as far as it is safely readable; line wrapping is normalized. The original notebook photographs remain in `mac_29thAug.zip` and are not copied into website assets.
+This is the dated notebook record. Wording is preserved as written as far as it is safely readable; line wrapping is normalized. The original notebook photographs remain in `mac_29thAug(1).zip` and are not copied into website assets.
 
 ## Notebook page 11
 

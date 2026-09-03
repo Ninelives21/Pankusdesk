@@ -724,22 +724,3 @@ Fifth iteration is x₁ = 0.9994, x₂ = 1.9997, x₃ = 2.9997, x₄ = −0.0001
 Sixth iteration is x₁ = 0.9999, x₂ = 1.9999, x₃ = 2.9999, x₄ = −0.0001.
 
 Hence the solution is x₁ = 1, x₂ = 2, x₃ = 3, x₄ = 0.
-
-
-## Dated class-note integration
-
-### 25 August 2026 — Rank and normal form
-
-Class emphasis: rank as the number of independent rows; normal/canonical form; both row and column transformations may be used for normal form, while echelon reduction uses row transformations. The normal-form identity block gives the rank. Two normal-form reductions were worked in class.
-
-### 28 August 2026 — Gauss–Jordan inverse
-
-Class emphasis: write the non-singular matrix beside the identity matrix and use the same row transformations on both halves until the left side becomes the identity. Three inverse examples were worked, including the Grewal p. 39 example.
-
-### 29 August 2026 — Systems and consistency
-
-Class emphasis: write a system as \(AX=B\); consistency requires \(\rho(A)=\rho(A|B)\). Equal rank \(=n\) gives a unique solution; equal rank \(<n\) gives infinitely many solutions; unequal ranks give no solution. \(AX=0\) is homogeneous and always has the trivial solution; \(AX=B\) with \(B\ne0\) is non-homogeneous.
-
-### 1 September 2026 — Gauss elimination / row-rank consistency
-
-Class emphasis: the row-reduction consistency procedure is called the **Gauss-elimination method (Row-rank method)**. Form the augmented matrix, reduce to echelon/upper-triangular form, compare \(\rho(A)\) and \(\rho(A|B)\), and use back-substitution for a unique solution. Four non-homogeneous consistency/parameter examples and two homogeneous rank examples were worked. One notebook rank comparison and one row-operation entry contain visible slips; the cumulative topic boxes retain the class meaning but use independently verified arithmetic. The final homogeneous parameter example stops mid-working in the supplied notebook; the cumulative box labels its completed result as an independent verification.

@@ -14,7 +14,7 @@
   },
   "title": "Gauss-elimination (row-rank) method and consistency",
   "summary": "Gauss-elimination/row-rank procedure; echelon reduction and back-substitution; unique, infinite and inconsistent systems; homogeneous rank tests; parameter cases.",
-  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. The dated record keeps two visible arithmetic/notational slips rather than silently correcting them; the cumulative Unit I boxes use independently verified mathematics. The supplied page 18 ends mid-solution, so the dated record does not invent the missing classroom continuation.",
+  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. Two visible notebook slips are retained in context and followed by explicit verification notes. The supplied page 18 ends mid-solution; its independently verified completion is labelled as such and is not attributed to the classroom notes.",
   "mapped_topics": [
     {
       "topic_id": "u1-linear-systems",
@@ -114,6 +114,14 @@
         {
           "type": "line",
           "text": "The notebook writes \\(\\rho(A)=\\rho(A|B)=2<4\\) and concludes that the system is consistent and has infinitely many solutions."
+        },
+        {
+          "type": "subheading",
+          "text": "Verification note"
+        },
+        {
+          "type": "paragraph",
+          "text": "Verification: there are three unknowns, so the correct comparison is \\(\\rho(A)=\\rho(A|B)=2<3\\), not \\(2<4\\). The conclusion of infinitely many solutions is unchanged."
         }
       ]
     },
@@ -184,6 +192,14 @@
           "text": "\\[X=\\begin{bmatrix}0\\\\0\\\\0\\end{bmatrix}.\\]"
         },
         {
+          "type": "subheading",
+          "text": "Verification note"
+        },
+        {
+          "type": "paragraph",
+          "text": "For Example 4, \\(R_2\\to R_2-2R_1\\) gives the row \\([0,-2,1]\\), not \\([0,-3,1]\\). Independent reduction still gives \\(\\rho(A)=3=n\\), so the final trivial solution remains correct."
+        },
+        {
           "type": "heading",
           "text": "5. Find the values of λ and μ so that the system will have (i) unique solution, (ii) many solutions, (iii) no solution"
         },
@@ -238,15 +254,27 @@
         {
           "type": "line",
           "text": "The supplied page ends during this working; no final values of \\(\\lambda\\) or solution ratios are written on the supplied page."
+        },
+        {
+          "type": "subheading",
+          "text": "Independent verification — continuation not written on the supplied page"
+        },
+        {
+          "type": "equation",
+          "text": "\\[|A|=-4(\\lambda-1)(\\lambda+9)=0\\Rightarrow \\lambda=1\\text{ or }-9.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "For \\(\\lambda=1\\), one non-trivial solution family is \\(X=t(1,-1,2)^T\\). For \\(\\lambda=-9\\), one non-trivial solution family is \\(X=t(-3,-9,2)^T\\)."
         }
       ]
     }
   ],
   "source_notes": [
-    "The original six notebook photographs remain in mac_1stSept.zip and are not copied into website assets.",
+    "The original six notebook photographs remain in the supplied 1 September archive and are not copied into website assets.",
     "Notebook p.14 writes ρ(A)=ρ(A|B)=2<4 for Example 2. There are three unknowns, so the verified comparison is 2<3; the infinite-solution conclusion is unchanged.",
     "Notebook p.16 has an arithmetic slip in Example 4: R2−2R1 gives [0,−2,1], not [0,−3,1]. Independent reduction still gives rank 3, so the recorded trivial-solution conclusion is correct.",
     "Example 5 is the same parameter problem as Grewal Example 2.34 on pp.51–52; the class presents it by row-rank elimination.",
-    "Notebook p.18 stops mid-solution. The cumulative Unit I page includes a clearly labelled independent verification/completion rather than attributing unwritten steps to the class."
+    "Notebook p.18 stops mid-solution. The dedicated class-notes page labels the determinant factorisation and final solution families as independent verification rather than classroom transcription."
   ]
 }

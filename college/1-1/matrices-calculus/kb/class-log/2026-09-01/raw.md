@@ -2,7 +2,7 @@
 
 ## Source policy
 
-This is the dated notebook record. Wording and class-work order are preserved as far as safely readable; mathematical typography and line wrapping are normalized. Two visible slips are retained and documented rather than silently corrected: on notebook p.14 the common rank 2 is compared with 4 even though there are three unknowns, and on p.16 the written row operation \(R_2-2R_1\) is followed by an incorrect \(-3\) entry where \(-2\) is required. The supplied p.18 ends during the final example, so the dated record does not invent the missing classroom continuation. The original photographs remain in `mac_1stSept.zip`.
+This is the dated notebook record. Wording and class-work order are preserved as far as safely readable; mathematical typography and line wrapping are normalized. Two visible slips are retained and documented rather than silently corrected: on notebook p.14 the common rank 2 is compared with 4 even though there are three unknowns, and on p.16 the written row operation \(R_2-2R_1\) is followed by an incorrect \(-3\) entry where \(-2\) is required. The supplied p.18 ends during the final example, so the dated record does not invent the missing classroom continuation. The original photographs remain in `mac_1stSept(1).zip`.
 
 ## Notebook page 13
 

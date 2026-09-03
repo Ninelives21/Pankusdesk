@@ -110,40 +110,17 @@
         "paragraphs": [
           "Two matrices A and B are said to be equivalent if one can be obtained from the other by a sequence of elementary transformations. Two equivalent matrices have the same order and the same rank. The symbol ~ is used for equivalence."
         ]
-      },
-      {
-        "heading": "Rank — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 25 Aug 2026",
-        "source_refs": [
-          "CLASS-U1-2026-08-25"
-        ],
-        "paragraphs": [
-          "Rank gives the number of independent rows."
-        ],
-        "bullets": [
-          "Only row transformations can be used while reducing a matrix to echelon form."
-        ]
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0037",
-      "TB-P0038",
-      "CLASS-U1-2026-08-25"
+      "TB-P0038"
     ],
     "book_refs": [
       {
         "pages": "37–38",
         "note": "Rank, elementary transformations and Example 2.24"
-      }
-    ],
-    "class_history": [
-      {
-        "date": "2026-08-25",
-        "label": "25 Aug 2026 · Rank and normal form",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-25"
       }
     ]
   },
@@ -194,99 +171,17 @@
           }
         ],
         "accordion_label": "Worked examples"
-      },
-      {
-        "heading": "Gauss–Jordan method — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 28 Aug 2026",
-        "source_refs": [
-          "CLASS-U1-2026-08-28"
-        ],
-        "paragraphs": [
-          "This method is used to find the inverse of a non-singular matrix.",
-          "Let \\(A\\) be a non-singular matrix of order \\(n\\). Write \\(A\\) side by side with \\(I_n\\). Using only row transformations, reduce the \\(A\\) side to \\(I_n\\); the matrix produced from \\(I_n\\) by the same transformations is \\(A^{-1}\\)."
-        ],
-        "accordions": [
-          {
-            "title": "Class example 1 — Inverse of a 3 × 3 matrix",
-            "paragraphs": [
-              "\\[A=\\begin{bmatrix}-2&1&3\\\\0&-1&1\\\\1&2&0\\end{bmatrix}.\\]",
-              "Write \\([A\\mid I]\\):",
-              "\\[\\left[\\begin{array}{ccc|ccc}-2&1&3&1&0&0\\\\0&-1&1&0&1&0\\\\1&2&0&0&0&1\\end{array}\\right].\\]",
-              "Interchange \\(R_1\\) and \\(R_3\\): \\(R_1\\leftrightarrow R_3\\).",
-              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&2&0&0&0&1\\\\0&-1&1&0&1&0\\\\-2&1&3&1&0&0\\end{array}\\right].\\]",
-              "Clear the first-column entry below the pivot: \\(R_3\to R_3+2R_1\\).",
-              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&2&0&0&0&1\\\\0&-1&1&0&1&0\\\\0&5&3&1&0&2\\end{array}\\right].\\]",
-              "Clear the second-column entries above and below the pivot using \\(R_1\to R_1+2R_2\\) and \\(R_3\to R_3+5R_2\\):",
-              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&2&0&2&1\\\\0&-1&1&0&1&0\\\\0&0&8&1&5&2\\end{array}\\right].\\]",
-              "Make the second and third pivots equal to 1: \\(R_2\to-R_2\\), \\(R_3\to\\dfrac18R_3\\).",
-              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&2&0&2&1\\\\0&1&-1&0&-1&0\\\\0&0&1&\\dfrac18&\\dfrac58&\\dfrac14\\end{array}\\right].\\]",
-              "Clear the entries above the third pivot using \\(R_1\to R_1-2R_3\\) and \\(R_2\to R_2+R_3\\):",
-              "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&0&-\\dfrac14&\\dfrac34&\\dfrac12\\\\0&1&0&\\dfrac18&-\\dfrac38&\\dfrac14\\\\0&0&1&\\dfrac18&\\dfrac58&\\dfrac14\\end{array}\\right].\\]",
-              "The left side is now \\(I\\), so the right side is \\(A^{-1}\\):",
-              "\\[A^{-1}=\\begin{bmatrix}-\\dfrac14&\\dfrac34&\\dfrac12\\\\\\dfrac18&-\\dfrac38&\\dfrac14\\\\\\dfrac18&\\dfrac58&\\dfrac14\\end{bmatrix}=\\dfrac18\\begin{bmatrix}-2&6&4\\\\1&-3&2\\\\1&5&2\\end{bmatrix}.\\]"
-            ]
-          },
-          {
-            "title": "Class example 2 — Grewal p. 39 example worked again in class",
-            "paragraphs": [
-              "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}\\]",
-              "Solution: Writing the same matrix side by side with the unit matrix of order 3, we have",
-              "\\[\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\1&3&-3&0&1&0\\\\-2&-4&-4&0&0&1\\end{array}\\right]\\quad[\\text{Operate }R_2-R_1\\text{ and }R_3+2R_1]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&2&-6&-1&1&0\\\\0&-2&2&2&0&1\\end{array}\\right]\\quad[\\text{Operate }\\dfrac12R_2\\text{ and }\\dfrac12R_3]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&1&3&1&0&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&-1&1&1&0&\\dfrac12\\end{array}\\right]\\quad[\\text{Operate }R_1-R_2\\text{ and }R_3+R_2]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&6&\\dfrac32&-\\dfrac12&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&0&-2&\\dfrac12&\\dfrac12&\\dfrac12\\end{array}\\right]\\]",
-              "\\[\\left[\\text{Operate }R_1+3R_3,\\ R_2-\\dfrac32R_3\\text{ and }\\left(-\\dfrac12\\right)R_3\\right]\\]",
-              "\\[\\sim\\left[\\begin{array}{ccc:ccc}1&0&0&3&1&\\dfrac32\\\\0&1&0&-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\0&0&1&-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{array}\\right]\\]",
-              "Hence the inverse of the given matrix is",
-              "\\[A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}.\\]"
-            ]
-          },
-          {
-            "title": "Class example 3 — Inverse of a 4 × 4 matrix",
-            "paragraphs": [
-              "\\[A=\\begin{bmatrix}0&1&2&2\\\\1&1&2&3\\\\2&2&2&3\\\\2&3&3&3\\end{bmatrix}.\\]",
-              "Write the augmented matrix \\([A\\mid I]\\):",
-              "\\[\\left[\\begin{array}{cccc|cccc}0&1&2&2&1&0&0&0\\\\1&1&2&3&0&1&0&0\\\\2&2&2&3&0&0&1&0\\\\2&3&3&3&0&0&0&1\\end{array}\\right].\\]",
-              "Put a 1 in the first pivot position by interchanging \\(R_1\\) and \\(R_2\\):",
-              "\\[R_1\\leftrightarrow R_2\\]",
-              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&1&2&3&0&1&0&0\\\\0&1&2&2&1&0&0&0\\\\2&2&2&3&0&0&1&0\\\\2&3&3&3&0&0&0&1\\end{array}\\right].\\]",
-              "Clear the first column below the pivot: \\(R_3\to R_3-2R_1\\), \\(R_4\to R_4-2R_1\\).",
-              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&1&2&3&0&1&0&0\\\\0&1&2&2&1&0&0&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&1&-1&-3&0&-2&0&1\\end{array}\\right].\\]",
-              "Use the second pivot to clear the other second-column entries needed at this stage: \\(R_1\to R_1-R_2\\), \\(R_4\to R_4-R_2\\).",
-              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&1&-1&1&0&0\\\\0&1&2&2&1&0&0&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&0&-3&-5&-1&-2&0&1\\end{array}\\right].\\]",
-              "Eliminate the third-column entries in rows 2 and 4 without introducing fractions: \\(R_2\to R_2+R_3\\), \\(R_4\to2R_4-3R_3\\).",
-              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&1&-1&1&0&0\\\\0&1&0&-1&1&-2&1&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&0&0&-1&-2&2&-3&2\\end{array}\\right].\\]",
-              "Now use the fourth pivot to clear the fourth column above it: \\(R_1\to R_1+R_4\\), \\(R_2\to R_2-R_4\\), \\(R_3\to R_3-3R_4\\).",
-              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&0&-3&3&-3&2\\\\0&1&0&0&3&-4&4&-2\\\\0&0&-2&0&6&-8&10&-6\\\\0&0&0&-1&-2&2&-3&2\\end{array}\\right].\\]",
-              "Finally make the remaining pivots equal to 1: \\(R_3\to-\\dfrac12R_3\\), \\(R_4\to-R_4\\).",
-              "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&0&-3&3&-3&2\\\\0&1&0&0&3&-4&4&-2\\\\0&0&1&0&-3&4&-5&3\\\\0&0&0&1&2&-2&3&-2\\end{array}\\right].\\]",
-              "The left side is \\(I_4\\). Hence",
-              "\\[A^{-1}=\\begin{bmatrix}-3&3&-3&2\\\\3&-4&4&-2\\\\-3&4&-5&3\\\\2&-2&3&-2\\end{bmatrix}.\\]"
-            ]
-          }
-        ],
-        "accordion_label": "Class examples"
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0039",
-      "TB-P0040",
-      "CLASS-U1-2026-08-28"
+      "TB-P0040"
     ],
     "book_refs": [
       {
         "pages": "39–40",
         "note": "Gauss-Jordan rule and Example 2.25"
-      }
-    ],
-    "class_history": [
-      {
-        "date": "2026-08-28",
-        "label": "28 Aug 2026 · Gauss–Jordan inverse",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-28"
       }
     ]
   },
@@ -407,65 +302,6 @@
             "group_anchor": "problems-2-4"
           }
         ]
-      },
-      {
-        "heading": "Normal form — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 25 Aug 2026",
-        "source_refs": [
-          "CLASS-U1-2026-08-25"
-        ],
-        "paragraphs": [
-          "Normal form is also called canonical form.",
-          "A matrix in normal form contains an identity block. Matrices of the forms \\([I_r\\ 0]\\), \\(\\begin{bmatrix}I_r\\\\0\\end{bmatrix}\\) and \\(\\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\) are in normal form, where \\(I_r\\) is an identity matrix.",
-          "To reduce a matrix to normal form, both row and column transformations may be used. After reduction, \\(\\rho(A)\\) is given by the order of the identity matrix in the normal form."
-        ],
-        "accordions": [
-          {
-            "title": "Class example 1 — Find the rank using normal form",
-            "paragraphs": [
-              "\\[A=\\begin{bmatrix}2&3&-1&1\\\\1&-1&-2&-4\\\\3&1&3&-2\\\\6&3&0&-7\\end{bmatrix}\\]",
-              "Apply the row transformations \\(R_2\to2R_2-R_1,\\ R_3\to2R_3-3R_1,\\ R_4\to R_4-3R_1\\):",
-              "\\[A\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}.\\]",
-              "Now apply the column transformations \\(C_2\to2C_2-3C_1,\\ C_3\to2C_3+C_1,\\ C_4\to2C_4-C_1\\):",
-              "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}.\\]",
-              "Scale the rows using \\(R_1\to\\dfrac12R_1,\\ R_2\to-\\dfrac12R_2,\\ R_3\to-\\dfrac12R_3,\\ R_4\to-\\dfrac12R_4\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}.\\]",
-              "Eliminate the second-column entries below the pivot using \\(R_3\to5R_3-7R_2\\) and \\(R_4\to5R_4-6R_2\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&0&-66&-28\\\\0&0&-33&-4\\end{bmatrix}.\\]",
-              "Next use \\(C_3\to5C_3-3C_2\\) and \\(C_4\to5C_4-9C_2\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}.\\]",
-              "Now eliminate the remaining entry in the third column of \\(R_4\\): \\(R_4\to2R_4-R_3\\).",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&0&100\\end{bmatrix}.\\]",
-              "Scale \\(R_2\to\\dfrac15R_2,\\ R_3\to-\\dfrac1{10}R_3,\\ R_4\to\\dfrac1{100}R_4\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&14\\\\0&0&0&1\\end{bmatrix}.\\]",
-              "Remove the 14 by the column transformation \\(C_4\to33C_4-14C_3\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&0\\\\0&0&0&33\\end{bmatrix}.\\]",
-              "Finally scale \\(R_3\to\\dfrac1{33}R_3\\) and \\(R_4\to\\dfrac1{33}R_4\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&1&0\\\\0&0&0&1\\end{bmatrix}=I_4.\\]",
-              "The normal form is \\(I_4\\). Therefore \\[\\rho(A)=4.\\]"
-            ]
-          },
-          {
-            "title": "Class example 2 — Reduce to normal form and find the rank",
-            "paragraphs": [
-              "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}\\]",
-              "First interchange the first two rows: \\(R_1\\leftrightarrow R_2\\).",
-              "\\[A\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]",
-              "Clear the first-column entries below the pivot using \\(R_3\to R_3-3R_1\\) and \\(R_4\to R_4-R_1\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]",
-              "Now apply \\(C_3\to C_3-C_1\\) and \\(C_4\to C_4-C_1\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]",
-              "The last three rows are identical. Eliminate the repetitions with \\(R_3\to R_3-R_2\\) and \\(R_4\to R_4-R_2\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}.\\]",
-              "Finally clear the non-pivot entries in row 2 using \\(C_3\to C_3+3C_2\\) and \\(C_4\to C_4+C_2\\):",
-              "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}.\\]",
-              "Hence the order of the identity block is 2, so \\[\\rho(A)=2.\\]"
-            ]
-          }
-        ],
-        "accordion_label": "Class examples"
       }
     ],
     "source_refs": [
@@ -473,20 +309,12 @@
       "TB-P0040",
       "TB-P0041",
       "TB-P0042",
-      "TB-P0043",
-      "CLASS-U1-2026-08-25"
+      "TB-P0043"
     ],
     "book_refs": [
       {
         "pages": "40–43",
         "note": "Normal form and Examples 2.26–2.28"
-      }
-    ],
-    "class_history": [
-      {
-        "date": "2026-08-25",
-        "label": "25 Aug 2026 · Normal form and rank",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-25"
       }
     ]
   },
@@ -610,61 +438,18 @@
             "group_anchor": "problems-2-6"
           }
         ]
-      },
-      {
-        "heading": "System of linear equations — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 29 Aug 2026",
-        "source_refs": [
-          "CLASS-U1-2026-08-29"
-        ],
-        "paragraphs": [
-          "A set of linear equations in two or more unknowns is called a system of linear equations.",
-          "For \\(m\\) linear equations in \\(n\\) unknowns,",
-          "\\[\\begin{aligned}a_{11}u_1+a_{12}u_2+\\cdots+a_{1n}u_n&=b_1\\\\a_{21}u_1+a_{22}u_2+\\cdots+a_{2n}u_n&=b_2\\\\&\\vdots\\\\a_{m1}u_1+a_{m2}u_2+\\cdots+a_{mn}u_n&=b_m\\end{aligned}\\]",
-          "the system can be written in matrix form as \\(AX=B\\), where \\(A\\) is the \\(m\\times n\\) coefficient matrix, \\(X\\) is the \\(n\\times1\\) column of unknowns and \\(B\\) is the \\(m\\times1\\) column of constants."
-        ]
-      },
-      {
-        "heading": "Gauss-elimination terminology — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 1 Sep 2026",
-        "source_refs": [
-          "CLASS-U1-2026-09-01"
-        ],
-        "paragraphs": [
-          "The class calls the row-reduction procedure the **Gauss-elimination method (Row-rank method)**.",
-          "Its purpose here is to test whether a linear system is consistent and, when it is consistent, solve it. The augmented matrix is reduced to echelon/upper-triangular form by elementary row transformations; a unique system is then finished by back-substitution.",
-          "This terminology maps to Grewal §2.10, especially the consistency procedure on pp. 50–52; it is not a separate R25 syllabus atom."
-        ]
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0047",
       "TB-P0048",
-      "TB-P0049",
-      "CLASS-U1-2026-08-29",
-      "CLASS-U1-2026-09-01"
+      "TB-P0049"
     ],
     "book_refs": [
       {
         "pages": "47–49",
         "note": "Solution of linear systems, Examples 2.31–2.32"
-      }
-    ],
-    "class_history": [
-      {
-        "date": "2026-08-29",
-        "label": "29 Aug 2026 · Systems of linear equations",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
-      },
-      {
-        "date": "2026-09-01",
-        "label": "1 Sep 2026 · Gauss elimination / row-rank consistency",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-09-01"
       }
     ]
   },
@@ -848,94 +633,6 @@
           }
         ],
         "accordion_label": "Worked examples"
-      },
-      {
-        "heading": "Consistency — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 29 Aug 2026",
-        "source_refs": [
-          "CLASS-U1-2026-08-29"
-        ],
-        "paragraphs": [
-          "A system is said to be consistent if it has at least one solution.",
-          "For \\(AX=B\\), the system is consistent if and only if \\(\\rho(A)=\\rho(A|B)\\), where \\((A|B)\\) is the augmented matrix."
-        ],
-        "bullets": [
-          "If \\(\\rho(A)=\\rho(A|B)=n\\) (number of unknowns), the system has a unique solution.",
-          "If \\(\\rho(A)=\\rho(A|B)<n\\), the system has infinitely many solutions; \\(n-r\\) variables may be taken as independent parameters when the common rank is \\(r\\).",
-          "If \\(\\rho(A)\\ne\\rho(A|B)\\), the system has no solution and is inconsistent.",
-          "A system \\(AX=B\\) is non-homogeneous when \\(B\\ne0\\). A non-homogeneous system may or may not be consistent."
-        ]
-      },
-      {
-        "heading": "Gauss-elimination / Row-rank method — class examples",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 1 Sep 2026",
-        "source_refs": [
-          "CLASS-U1-2026-09-01"
-        ],
-        "paragraphs": [
-          "Class procedure: form the augmented matrix \\((A|B)\\), eliminate entries successively by row transformations, read the ranks from the echelon form, and use back-substitution when the common rank equals the number of unknowns.",
-          "The three consistency outcomes are the same as Grewal’s §2.10 procedure: unequal ranks → no solution; equal ranks equal to \\(n\\) → unique solution; equal ranks below \\(n\\) → infinitely many solutions."
-        ],
-        "accordions": [
-          {
-            "title": "Class Example 1 — Gauss elimination: unique solution",
-            "question_paragraphs": [
-              "Solve \\(x+2y+z=8,\\ 2x+3y+4z=20,\\ 4x+3y+2z=16\\) by Gauss-elimination method."
-            ],
-            "paragraphs": [
-              "Verified solution from the class row operations:",
-              "\\[\\left[\\begin{array}{ccc|c}1&2&1&8\\\\2&3&4&20\\\\4&3&2&16\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-4R_1}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&-5&-2&-16\\end{array}\\right]\\]",
-              "\\[\\xrightarrow{R_3-5R_2}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&0&-12&-36\\end{array}\\right].\\]",
-              "Thus \\(\\rho(A)=\\rho(A|B)=3=n\\), so the solution is unique. Back-substitution gives \\(z=3\\), then \\(y=2\\), then \\(x=1\\)."
-            ],
-            "final_answer": "\\(x=1,\\ y=2,\\ z=3\\)."
-          },
-          {
-            "title": "Class Example 2 — Consistent system with infinitely many solutions",
-            "question_paragraphs": [
-              "Test for consistency and solve if consistent: \\(x+y+z=6,\\ x+2y+3z=14,\\ x+4y+7z=30\\)."
-            ],
-            "paragraphs": [
-              "Verified row reduction:",
-              "\\[\\left[\\begin{array}{ccc|c}1&1&1&6\\\\1&2&3&14\\\\1&4&7&30\\end{array}\\right]\\xrightarrow{R_2-R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&3&6&24\\end{array}\\right]\\]",
-              "\\[\\xrightarrow{R_3-3R_2}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&0&0&0\\end{array}\\right].\\]",
-              "Hence \\(\\rho(A)=\\rho(A|B)=2<3\\), so there are infinitely many solutions. Let \\(z=k\\). Then \\(y=8-2k\\) and \\(x=k-2\\).",
-              "Verification note: the notebook writes \\(2<4\\); there are three unknowns, so the correct comparison is \\(2<3\\). The class conclusion is unchanged."
-            ],
-            "final_answer": "\\((x,y,z)=(k-2,\\ 8-2k,\\ k)\\), \\(k\\in\\mathbb R\\)."
-          },
-          {
-            "title": "Class Example 3 — Inconsistent system",
-            "question_paragraphs": [
-              "Test for consistency and solve: \\(x+y+z=4,\\ 2x+5y-2z=3,\\ x+7y-7z=5\\)."
-            ],
-            "paragraphs": [
-              "Verified row reduction:",
-              "\\[\\left[\\begin{array}{ccc|c}1&1&1&4\\\\2&5&-2&3\\\\1&7&-7&5\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&6&-8&1\\end{array}\\right]\\]",
-              "\\[\\xrightarrow{R_3-2R_2}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&0&0&11\\end{array}\\right].\\]",
-              "The coefficient matrix has rank 2, while the augmented matrix has rank 3. Therefore the system is inconsistent."
-            ],
-            "final_answer": "No solution."
-          },
-          {
-            "title": "Class Example 5 — Parameters λ and μ for unique, infinite or no solution",
-            "question_paragraphs": [
-              "For \\(2x+3y+5z=9,\\ 7x+3y-2z=8,\\ 2x+3y+\\lambda z=\\mu\\), find \\(\\lambda,\\mu\\) conditions for (i) a unique solution, (ii) many solutions, and (iii) no solution."
-            ],
-            "paragraphs": [
-              "This is the same parameter problem as Grewal Example 2.34 on pp. 51–52; the class solves it by row-rank elimination.",
-              "\\[\\left[\\begin{array}{ccc|c}2&3&5&9\\\\7&3&-2&8\\\\2&3&\\lambda&\\mu\\end{array}\\right]\\xrightarrow{2R_2-7R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}2&3&5&9\\\\0&-15&-39&-47\\\\0&0&\\lambda-5&\\mu-9\\end{array}\\right].\\]",
-              "If \\(\\lambda\\ne5\\), the coefficient matrix has rank 3, so the system has a unique solution for any real \\(\\mu\\).",
-              "If \\(\\lambda=5\\), the coefficient rank drops to 2. When \\(\\mu=9\\), the augmented rank also equals 2, giving infinitely many solutions. When \\(\\mu\\ne9\\), the augmented rank is 3, giving no solution."
-            ],
-            "final_answer": "Unique: \\(\\lambda\\ne5,\\ \\mu\\in\\mathbb R\\). Infinite: \\(\\lambda=5,\\ \\mu=9\\). No solution: \\(\\lambda=5,\\ \\mu\\ne9\\)."
-          }
-        ],
-        "accordion_label": "Class examples · 1 Sep 2026"
       }
     ],
     "source_refs": [
@@ -946,26 +643,12 @@
       "TB-P0053",
       "TB-P0054",
       "TB-P0055",
-      "TB-P0056",
-      "CLASS-U1-2026-08-29",
-      "CLASS-U1-2026-09-01"
+      "TB-P0056"
     ],
     "book_refs": [
       {
         "pages": "50–56",
         "note": "Consistency, Rouché’s theorem and relevant worked examples"
-      }
-    ],
-    "class_history": [
-      {
-        "date": "2026-08-29",
-        "label": "29 Aug 2026 · Consistency and non-homogeneous systems",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
-      },
-      {
-        "date": "2026-09-01",
-        "label": "1 Sep 2026 · Gauss elimination / row-rank consistency",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-09-01"
       }
     ]
   },
@@ -1046,91 +729,18 @@
             "group_anchor": "problems-2-12"
           }
         ]
-      },
-      {
-        "heading": "Homogeneous systems — class-note view",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 29 Aug 2026",
-        "source_refs": [
-          "CLASS-U1-2026-08-29"
-        ],
-        "bullets": [
-          "A system of the form \\(AX=0\\) is called homogeneous, where 0 is the null vector.",
-          "A homogeneous system is always consistent because it possesses the trivial solution.",
-          "A homogeneous system \\(AX=0\\) has a non-trivial solution if and only if \\(\\rho(A)<n\\). For a square coefficient matrix, this is equivalently \\(\\lvert A\\rvert=0\\)."
-        ]
-      },
-      {
-        "heading": "Homogeneous systems by Row-rank method — class examples",
-        "scope": "supporting",
-        "kind": "class-note",
-        "source_label": "Priyanka’s class notes · 1 Sep 2026",
-        "source_refs": [
-          "CLASS-U1-2026-09-01"
-        ],
-        "paragraphs": [
-          "For a homogeneous system \\(AX=0\\), the class uses the coefficient-matrix rank directly: \\(\\rho(A)=n\\) gives only the trivial solution, while \\(\\rho(A)<n\\) permits non-trivial solutions. For a square system, \\(\\rho(A)<n\\) is equivalent to \\(|A|=0\\)."
-        ],
-        "accordions": [
-          {
-            "title": "Class Example 4 — Homogeneous system with only the trivial solution",
-            "question_paragraphs": [
-              "Solve \\(x_1+2x_2+x_3=0,\\ 2x_1+2x_2+3x_3=0,\\ 3x_1+2x_2+x_3=0\\)."
-            ],
-            "paragraphs": [
-              "Independent verification of the row reduction:",
-              "\\[\\begin{bmatrix}1&2&1\\\\2&2&3\\\\3&2&1\\end{bmatrix}\\xrightarrow{R_2-2R_1,\\ R_3-3R_1}\\begin{bmatrix}1&2&1\\\\0&-2&1\\\\0&-4&-2\\end{bmatrix}\\xrightarrow{R_3-2R_2}\\begin{bmatrix}1&2&1\\\\0&-2&1\\\\0&0&-4\\end{bmatrix}.\\]",
-              "There are three pivots, so \\(\\rho(A)=3=n\\). Hence only the trivial solution exists.",
-              "Verification note: the notebook displays \\(-3\\) in the second-row pivot after writing \\(R_2\\to R_2-2R_1\\); the correct value is \\(-2\\). The final rank/trivial-solution conclusion remains correct."
-            ],
-            "final_answer": "\\(x_1=x_2=x_3=0\\)."
-          },
-          {
-            "title": "Class Example 6 — Values of λ for a non-trivial homogeneous solution",
-            "question_paragraphs": [
-              "Find the values of \\(\\lambda\\) for which \\(3x_1+x_2-\\lambda x_3=0,\\ 4x_1-2x_2-3x_3=0,\\ 2\\lambda x_1+4x_2+\\lambda x_3=0\\) has a non-trivial solution, and solve in each case."
-            ],
-            "paragraphs": [
-              "The supplied notebook page stops during the row reduction. The completion below is an independent PankusDesk verification, not an unwritten class step.",
-              "For a square homogeneous system, a non-trivial solution requires \\(|A|=0\\), where",
-              "\\[A=\\begin{bmatrix}3&1&-\\lambda\\\\4&-2&-3\\\\2\\lambda&4&\\lambda\\end{bmatrix}.\\]",
-              "Direct expansion gives",
-              "\\[|A|=-4(\\lambda-1)(\\lambda+9).\\]",
-              "Therefore \\(\\lambda=1\\) or \\(\\lambda=-9\\).",
-              "For \\(\\lambda=1\\), row reduction gives a one-dimensional nullspace generated by \\((1,-1,2)^T\\). Thus \\((x_1,x_2,x_3)=t(1,-1,2)\\).",
-              "For \\(\\lambda=-9\\), a nullspace generator is \\((-3,-9,2)^T\\). Thus \\((x_1,x_2,x_3)=t(-3,-9,2)\\)."
-            ],
-            "final_answer": "\\(\\lambda=1\\): \\((x_1,x_2,x_3)=t(1,-1,2)\\). \\(\\lambda=-9\\): \\((x_1,x_2,x_3)=t(-3,-9,2)\\), \\(t\\ne0\\) for a non-trivial solution."
-          }
-        ],
-        "accordion_label": "Class examples · 1 Sep 2026"
       }
     ],
     "source_refs": [
       "SYL-R25-U1",
       "TB-P0052",
       "TB-P0053",
-      "TB-P0056",
-      "CLASS-U1-2026-08-29",
-      "CLASS-U1-2026-09-01"
+      "TB-P0056"
     ],
     "book_refs": [
       {
         "pages": "52–53, 56",
         "note": "Homogeneous systems and Examples 2.36, 2.40"
-      }
-    ],
-    "class_history": [
-      {
-        "date": "2026-08-29",
-        "label": "29 Aug 2026 · Homogeneous systems",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-08-29"
-      },
-      {
-        "date": "2026-09-01",
-        "label": "1 Sep 2026 · Gauss elimination / row-rank consistency",
-        "href": "college/1-1/matrices-calculus/class-log.html?date=2026-09-01"
       }
     ]
   },
@@ -1247,7 +857,6 @@
         "note": "Gauss-Seidel method and Examples 28.22–28.23"
       }
     ],
-    "class_history": null,
     "intro": "**PankusDesk context.** Gauss–Seidel is an iterative method for solving simultaneous linear equations. Instead of obtaining the solution through one finite elimination process, we begin with approximate values and repeatedly improve them. The unknowns are calculated one after another, and each newly calculated value is used immediately in the next calculation. This is the key idea behind the textbook’s statement that Gauss–Seidel is a modification of Jacobi’s method."
   },
   {

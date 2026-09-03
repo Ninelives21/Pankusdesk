@@ -2,7 +2,7 @@
 
 ## Source policy
 
-This is the dated notebook record. Wording is preserved as written as far as it is safely readable; line wrapping is normalized. Several matrix entries in the worked reductions are overwritten in the notebook. The record keeps the safely readable sequence and explicitly notes where a later step is clearer than an overwritten intermediate value. The original notebook photographs remain in the supplied `mac_25thAug.zip` source archive and are not copied into website assets.
+This is the dated notebook record. Wording is preserved as written as far as it is safely readable; line wrapping is normalized. Several matrix entries in the worked reductions are overwritten in the notebook. The record keeps the safely readable sequence and explicitly notes where a later step is clearer than an overwritten intermediate value. The original notebook photographs remain in the supplied `mac_25thAug(1).zip` source archive and are not copied into website assets.
 
 ## Notebook page 1
 

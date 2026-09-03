@@ -14,7 +14,7 @@
   },
   "title": "Gauss–Jordan method for inverse of a matrix",
   "summary": "Gauss–Jordan procedure for a non-singular matrix and three worked inverse examples, including Grewal p. 39.",
-  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. Strike-throughs and overwritten intermediate matrix entries are not treated as final values.",
+  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. Strike-throughs and overwritten intermediate matrix entries are not treated as final values; final inverse matrices were independently checked.",
   "mapped_topics": [
     {
       "topic_id": "u1-inverse-gauss-jordan",
@@ -29,15 +29,15 @@
       "blocks": [
         {
           "type": "line",
-          "text": "B S GREWAL ; Pg: 39"
+          "text": "B. S. Grewal · p. 39"
         },
         {
           "type": "heading",
-          "text": "Gauss Jordan method"
+          "text": "Gauss–Jordan method"
         },
         {
           "type": "paragraph",
-          "text": "This method is used to find inverse of non-singular matrix."
+          "text": "This method is used to find the inverse of a non-singular matrix."
         },
         {
           "type": "heading",
@@ -45,11 +45,11 @@
         },
         {
           "type": "bullet",
-          "text": "Let A be a non-singular matrix of order n. Write the given matrix with the identity matrix of order n."
+          "text": "Let \\(A\\) be a non-singular matrix of order \\(n\\). Write \\(A\\) beside \\(I_n\\)."
         },
         {
           "type": "bullet",
-          "text": "Using only row transformations, reduce the A-side to the identity. The same row transformations applied to the identity side produce B, where B = A⁻¹."
+          "text": "Using only row transformations, reduce the \\(A\\)-side to \\(I_n\\). The matrix produced on the identity side is \\(A^{-1}\\)."
         },
         {
           "type": "heading",
@@ -57,11 +57,19 @@
         },
         {
           "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}-2&1&3\\\\0&-1&1\\\\1&2&0\\end{bmatrix}\\]"
+          "text": "\\[A=\\begin{bmatrix}-2&1&3\\\\0&-1&1\\\\1&2&0\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\left[\\begin{array}{ccc|ccc}-2&1&3&1&0&0\\\\0&-1&1&0&1&0\\\\1&2&0&0&0&1\\end{array}\\right].\\]"
         },
         {
           "type": "line",
-          "text": "The augmented-matrix reduction begins with a row interchange and continues on the next notebook page."
+          "text": "Interchange \\(R_1\\leftrightarrow R_3\\), then clear the first column with \\(R_3\\to R_3+2R_1\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&2&0&0&0&1\\\\0&-1&1&0&1&0\\\\0&5&3&1&0&2\\end{array}\\right].\\]"
         }
       ]
     },
@@ -71,11 +79,31 @@
       "blocks": [
         {
           "type": "line",
-          "text": "The left side is reduced to the identity matrix."
+          "text": "Use \\(R_1\\to R_1+2R_2\\) and \\(R_3\\to R_3+5R_2\\)."
         },
         {
           "type": "equation",
-          "text": "\\[A^{-1}=\\dfrac18\\begin{bmatrix}-2&6&4\\\\1&-3&2\\\\1&5&2\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&2&0&2&1\\\\0&-1&1&0&1&0\\\\0&0&8&1&5&2\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "Make the second and third pivots 1: \\(R_2\\to-R_2\\), \\(R_3\\to\\dfrac18R_3\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&2&0&2&1\\\\0&1&-1&0&-1&0\\\\0&0&1&\\dfrac18&\\dfrac58&\\dfrac14\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "Clear above the third pivot with \\(R_1\\to R_1-2R_3\\) and \\(R_2\\to R_2+R_3\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&0&-\\dfrac14&\\dfrac34&\\dfrac12\\\\0&1&0&\\dfrac18&-\\dfrac38&\\dfrac14\\\\0&0&1&\\dfrac18&\\dfrac58&\\dfrac14\\end{array}\\right].\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\boxed{A^{-1}=\\dfrac18\\begin{bmatrix}-2&6&4\\\\1&-3&2\\\\1&5&2\\end{bmatrix}}.\\]"
         }
       ]
     },
@@ -85,19 +113,43 @@
       "blocks": [
         {
           "type": "heading",
-          "text": "Example 2"
+          "text": "Example 2 — Grewal p. 39 example worked again in class"
         },
         {
           "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}\\]"
+          "text": "\\[A=\\begin{bmatrix}1&1&3\\\\1&3&-3\\\\-2&-4&-4\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\left[\\begin{array}{ccc|ccc}1&1&3&1&0&0\\\\1&3&-3&0&1&0\\\\-2&-4&-4&0&0&1\\end{array}\\right]\\xrightarrow{R_2-R_1,\\ R_3+2R_1}\\left[\\begin{array}{ccc|ccc}1&1&3&1&0&0\\\\0&2&-6&-1&1&0\\\\0&-2&2&2&0&1\\end{array}\\right].\\]"
         },
         {
           "type": "line",
-          "text": "The class repeats the B. S. Grewal p. 39 augmented-matrix example."
+          "text": "Scale \\(R_2\\) and \\(R_3\\) by \\(\\dfrac12\\), then use \\(R_1\\to R_1-R_2\\) and \\(R_3\\to R_3+R_2\\)."
         },
         {
           "type": "equation",
-          "text": "\\[A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&6&\\dfrac32&-\\dfrac12&0\\\\0&1&-3&-\\dfrac12&\\dfrac12&0\\\\0&0&-2&\\dfrac12&\\dfrac12&\\dfrac12\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "Using the current third row, apply \\(R_1\\to R_1+3R_3\\), \\(R_2\\to R_2-\\dfrac32R_3\\), and \\(R_3\\to-\\dfrac12R_3\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{ccc|ccc}1&0&0&3&1&\\dfrac32\\\\0&1&0&-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\0&0&1&-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{array}\\right].\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\boxed{A^{-1}=\\begin{bmatrix}3&1&\\dfrac32\\\\-\\dfrac54&-\\dfrac14&-\\dfrac34\\\\-\\dfrac14&-\\dfrac14&-\\dfrac14\\end{bmatrix}}.\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Verification note"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the same matrix as the textbook worked example; the full class row-operation chain above was independently recomputed and gives the same inverse."
         }
       ]
     },
@@ -111,15 +163,27 @@
         },
         {
           "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}0&1&2&2\\\\1&1&2&3\\\\2&2&2&3\\\\2&3&3&3\\end{bmatrix}\\]"
+          "text": "\\[A=\\begin{bmatrix}0&1&2&2\\\\1&1&2&3\\\\2&2&2&3\\\\2&3&3&3\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\left[\\begin{array}{cccc|cccc}0&1&2&2&1&0&0&0\\\\1&1&2&3&0&1&0&0\\\\2&2&2&3&0&0&1&0\\\\2&3&3&3&0&0&0&1\\end{array}\\right].\\]"
         },
         {
           "type": "line",
-          "text": "The class writes A beside I, starts with \\(R_1\\leftrightarrow R_2\\), and continues clearing pivot columns with row operations."
+          "text": "Interchange \\(R_1\\leftrightarrow R_2\\), then use \\(R_3\\to R_3-2R_1\\), \\(R_4\\to R_4-2R_1\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&1&2&3&0&1&0&0\\\\0&1&2&2&1&0&0&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&1&-1&-3&0&-2&0&1\\end{array}\\right].\\]"
         },
         {
           "type": "line",
-          "text": "Several entries are crossed out and rewritten during the calculation."
+          "text": "Clear the remaining second-column entries with \\(R_1\\to R_1-R_2\\), \\(R_4\\to R_4-R_2\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&1&-1&1&0&0\\\\0&1&2&2&1&0&0&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&0&-3&-5&-1&-2&0&1\\end{array}\\right].\\]"
         }
       ]
     },
@@ -129,19 +193,47 @@
       "blocks": [
         {
           "type": "line",
-          "text": "The left side reaches the identity matrix."
+          "text": "Eliminate third-column entries using \\(R_2\\to R_2+R_3\\) and \\(R_4\\to2R_4-3R_3\\)."
         },
         {
           "type": "equation",
-          "text": "\\[A^{-1}=\\begin{bmatrix}-3&3&-3&2\\\\3&-4&4&-2\\\\-3&4&-5&3\\\\2&-2&3&-2\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&1&-1&1&0&0\\\\0&1&0&-1&1&-2&1&0\\\\0&0&-2&-3&0&-2&1&0\\\\0&0&0&-1&-2&2&-3&2\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "Use the fourth pivot to clear the fourth column above it: \\(R_1\\to R_1+R_4\\), \\(R_2\\to R_2-R_4\\), \\(R_3\\to R_3-3R_4\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&0&-3&3&-3&2\\\\0&1&0&0&3&-4&4&-2\\\\0&0&-2&0&6&-8&10&-6\\\\0&0&0&-1&-2&2&-3&2\\end{array}\\right].\\]"
+        },
+        {
+          "type": "line",
+          "text": "Finally use \\(R_3\\to-\\dfrac12R_3\\) and \\(R_4\\to-R_4\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\left[\\begin{array}{cccc|cccc}1&0&0&0&-3&3&-3&2\\\\0&1&0&0&3&-4&4&-2\\\\0&0&1&0&-3&4&-5&3\\\\0&0&0&1&2&-2&3&-2\\end{array}\\right].\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\boxed{A^{-1}=\\begin{bmatrix}-3&3&-3&2\\\\3&-4&4&-2\\\\-3&4&-5&3\\\\2&-2&3&-2\\end{bmatrix}}.\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Verification note"
+        },
+        {
+          "type": "paragraph",
+          "text": "The full row-reduction sequence and final inverse were independently checked. Multiplying \\(AA^{-1}\\) gives \\(I_4\\)."
         }
       ]
     }
   ],
   "source_notes": [
-    "The original five notebook photographs remain in mac_28thAug.zip and are not copied into website assets.",
-    "Example 2 is the same matrix as the prescribed Grewal p. 39 Gauss–Jordan example; the overlap is intentionally retained as class history.",
-    "Example 3 contains strike-throughs in the notebook; crossed-out intermediate values are not promoted into the cumulative notes.",
-    "All three class examples are retained as dropdowns in the blue class-note box on the cumulative Unit I page."
+    "The original five notebook photographs remain in the supplied 28 August archive and are not copied into website assets.",
+    "Example 2 is the same matrix as the prescribed Grewal p. 39 Gauss–Jordan example; the overlap is retained here as class history rather than duplicated into textbook theory.",
+    "Strike-throughs and overwritten intermediate notebook entries are not treated as final values.",
+    "The complete verified row-operation chains that were formerly embedded in blue theory-page class-note sections have been moved to this dated page so no worked detail is lost."
   ]
 }

@@ -14,7 +14,7 @@
   },
   "title": "Rank and normal form of a matrix",
   "summary": "Rank interpretation; normal/canonical form; row and column transformations; two normal-form rank reductions.",
-  "transcription_policy": "Notebook wording is preserved as written as far as it is safely readable. Overwritten matrix entries are not guessed; the clean cumulative unit box keeps the readable transformation sequence and final result.",
+  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. Overwritten matrix entries are not guessed; mathematical typography is normalized for the web.",
   "mapped_topics": [
     {
       "topic_id": "u1-rank-echelon",
@@ -76,19 +76,19 @@
         },
         {
           "type": "line",
-          "text": "Row transformations: \\(R_2\\to2R_2-R_1,\\ R_3\\to2R_3-3R_1,\\ R_4\\to R_4-3R_1\\)."
+          "text": "Apply \\(R_2\\to2R_2-R_1,\\ R_3\\to2R_3-3R_1,\\ R_4\\to R_4-3R_1\\)."
         },
         {
           "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}.\\]"
         },
         {
           "type": "line",
-          "text": "Column transformations: \\(C_2\\to2C_2-3C_1,\\ C_3\\to2C_3+C_1,\\ C_4\\to2C_4-C_1\\)."
+          "text": "Now use the column transformations \\(C_2\\to2C_2-3C_1,\\ C_3\\to2C_3+C_1,\\ C_4\\to2C_4-C_1\\)."
         },
         {
           "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}.\\]"
         }
       ]
     },
@@ -98,27 +98,63 @@
       "blocks": [
         {
           "type": "line",
-          "text": "After sign changes/scaling, the notebook works with"
+          "text": "Scale the rows: \\(R_1\\to\\dfrac12R_1,\\ R_2\\to-\\dfrac12R_2,\\ R_3\\to-\\dfrac12R_3,\\ R_4\\to-\\dfrac12R_4\\)."
         },
         {
           "type": "equation",
-          "text": "\\[\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}.\\]"
         },
         {
           "type": "line",
-          "text": "Then \\(R_3\\to5R_3-7R_2\\), \\(R_4\\to5R_4-6R_2\\), followed by column transformations."
+          "text": "Eliminate below the second pivot using \\(R_3\\to5R_3-7R_2\\) and \\(R_4\\to5R_4-6R_2\\)."
         },
         {
           "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&0&-66&-28\\\\0&0&-33&-4\\end{bmatrix}.\\]"
         },
         {
           "type": "line",
-          "text": "The notebook continues to canonical form and finally to \\(I_4\\)."
+          "text": "Use \\(C_3\\to5C_3-3C_2\\) and \\(C_4\\to5C_4-9C_2\\)."
         },
         {
           "type": "equation",
-          "text": "\\[\\rho(A)=4\\]"
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Then \\(R_4\\to2R_4-R_3\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&0&100\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Scale \\(R_2\\to\\dfrac15R_2,\\ R_3\\to-\\dfrac1{10}R_3,\\ R_4\\to\\dfrac1{100}R_4\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&14\\\\0&0&0&1\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Remove the 14 using \\(C_4\\to33C_4-14C_3\\), then scale the last two pivots."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&0\\\\0&0&0&33\\end{bmatrix}\\sim I_4.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\boxed{\\rho(A)=4}.\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Verification note"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each displayed row/column transformation above was independently recomputed; the final rank \\(4\\) is correct."
         }
       ]
     },
@@ -127,20 +163,36 @@
       "heading": "Normal-form example 2 — beginning",
       "blocks": [
         {
-          "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}\\]"
-        },
-        {
-          "type": "line",
-          "text": "The notebook starts with \\(R_1\\leftrightarrow R_2\\), then eliminates entries below the first pivot."
+          "type": "heading",
+          "text": "Example 2 — Reduce to normal form and find the rank"
         },
         {
           "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}\\]"
+          "text": "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]"
         },
         {
           "type": "line",
-          "text": "Column transformations are then used as part of the normal-form reduction."
+          "text": "First interchange \\(R_1\\leftrightarrow R_2\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Clear the first-column entries with \\(R_3\\to R_3-3R_1\\) and \\(R_4\\to R_4-R_1\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Use \\(C_3\\to C_3-C_1\\) and \\(C_4\\to C_4-C_1\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]"
         }
       ]
     },
@@ -150,22 +202,39 @@
       "blocks": [
         {
           "type": "line",
-          "text": "The final normal form recorded is"
+          "text": "The last three rows are identical. Use \\(R_3\\to R_3-R_2\\) and \\(R_4\\to R_4-R_2\\)."
         },
         {
           "type": "equation",
-          "text": "\\[\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}\\]"
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "line",
+          "text": "Finally apply \\(C_3\\to C_3+3C_2\\) and \\(C_4\\to C_4+C_2\\)."
         },
         {
           "type": "equation",
-          "text": "\\[\\rho(A)=2\\]"
+          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\boxed{\\rho(A)=2}.\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Verification note"
+        },
+        {
+          "type": "paragraph",
+          "text": "The normal-form reduction and final rank \\(2\\) were independently checked."
         }
       ]
     }
   ],
   "source_notes": [
-    "The original five notebook photographs remain in mac_25thAug.zip and are not copied into website assets.",
-    "Some intermediate matrix entries are overwritten; the dated record does not treat crossed-out values as final.",
-    "The cumulative Unit I page places the useful class material in blue class-note boxes and keeps both class examples as dropdowns."
+    "The original five notebook photographs remain in the supplied 25 August archive and are not copied into website assets.",
+    "The small theory notes from notebook p.1 are retained, including the distinction that normal-form reduction can use row and column transformations while echelon reduction uses row transformations.",
+    "Some handwritten intermediate entries are overwritten; the displayed worked sequences use only readable operations and were independently verified.",
+    "The two full worked reductions were moved here from the former blue theory-page class-note sections so no class detail is lost in the refactor."
   ]
 }
