@@ -119,7 +119,9 @@ For **every technical redraw**:
 
 - [ ] Create/maintain `kb/class-log/YYYY-MM-DD/entry.json`.
 - [ ] Keep `raw.md` where the workflow retains it.
-- [ ] Preserve page sequence and notebook meaning faithfully.
+- [ ] Preserve source page sequence in provenance, but do **not** let physical notebook page breaks dictate the student-facing layout.
+- [ ] Group dated class material into logical lessons/topics; never expose artificial `Example — beginning`, `completion`, or `continued on next page` sections when they belong to one worked problem.
+- [ ] Render every worked class example as one complete shared-study accordion: full question visible when closed, complete solution and bold final answer inside.
 - [ ] Record user-confirmed ambiguous readings where useful.
 - [ ] Map the dated entry to stable topic IDs.
 - [ ] Add/update the class source in provenance/source manifest.

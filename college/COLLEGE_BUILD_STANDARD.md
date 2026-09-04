@@ -198,6 +198,8 @@ The student-facing class record is rendered chronologically from `kb/class-log/Y
 Rules:
 
 - keep dates in chronological order with a date-based left navigation;
+- physical notebook page boundaries are provenance, not student-facing layout: group material by logical lesson/topic rather than showing artificial `beginning`/`completion` page fragments;
+- a worked class example must appear once as one complete shared-study accordion, even when the handwritten solution spans multiple notebook pages; keep the full question visible in the closed state and the complete solution inside;
 - keep a very brief description beside each date in the nav;
 - lightly correct grammar, punctuation and awkward English without changing technical meaning;
 - place NRS redraws with the dated material they explain;

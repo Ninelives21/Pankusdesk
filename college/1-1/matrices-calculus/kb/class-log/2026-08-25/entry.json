@@ -14,7 +14,7 @@
   },
   "title": "Rank and normal form of a matrix",
   "summary": "Rank interpretation; normal/canonical form; row and column transformations; two normal-form rank reductions.",
-  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. Overwritten matrix entries are not guessed; mathematical typography is normalized for the web.",
+  "transcription_policy": "Notebook meaning and class-work order are preserved, but physical notebook page breaks are not used as student-facing section breaks. Each worked example is presented once as a complete accordion: full question visible, complete solution inside. Overwritten matrix entries are not guessed; mathematical typography is normalized for the web.",
   "mapped_topics": [
     {
       "topic_id": "u1-rank-echelon",
@@ -29,12 +29,12 @@
   ],
   "pages": [
     {
-      "page": 1,
+      "page": "1–5",
       "heading": "Rank and normal/canonical form",
       "blocks": [
         {
           "type": "line",
-          "text": "Rank gives no. of independent rows"
+          "text": "Rank gives the number of independent rows."
         },
         {
           "type": "heading",
@@ -42,191 +42,77 @@
         },
         {
           "type": "bullet",
-          "text": "Consists of an identity matrix"
+          "text": "A normal form contains an identity block."
         },
         {
           "type": "bullet",
-          "text": "Row and column operations can be used"
+          "text": "Both row and column transformations may be used to reduce a matrix to normal form."
         },
         {
           "type": "bullet",
-          "text": "Only row transformations can be used in echelon"
+          "text": "For echelon form, use row transformations only."
         },
         {
           "type": "paragraph",
-          "text": "Matrices of the form \\([I_r\\ 0]\\), \\(\\begin{bmatrix}I_r\\\\0\\end{bmatrix}\\), and \\(\\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\) are said to be in normal form where \\(I_r\\) is an identity."
+          "text": "Matrices of the form \\([I_r\\ 0]\\), \\(\\begin{bmatrix}I_r\\\\0\\end{bmatrix}\\), and \\(\\begin{bmatrix}I_r&0\\\\0&0\\end{bmatrix}\\) are in normal form, where \\(I_r\\) is an identity matrix."
         },
         {
           "type": "paragraph",
-          "text": "NOTE: To reduce a given matrix into normal form, use both row and column transformations. After reducing into normal form, \\(\\rho(A)\\) is given by order of identity matrix in it."
-        }
-      ]
-    },
-    {
-      "page": 2,
-      "heading": "Normal-form example 1 — beginning",
-      "blocks": [
-        {
-          "type": "heading",
-          "text": "Find rank of matrix using Normal form"
+          "text": "After reducing a matrix to normal form, \\(\\rho(A)\\) is the order of the identity block."
         },
         {
-          "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}2&3&-1&1\\\\1&-1&-2&-4\\\\3&1&3&-2\\\\6&3&0&-7\\end{bmatrix}\\]"
-        },
-        {
-          "type": "line",
-          "text": "Apply \\(R_2\\to2R_2-R_1,\\ R_3\\to2R_3-3R_1,\\ R_4\\to R_4-3R_1\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Now use the column transformations \\(C_2\\to2C_2-3C_1,\\ C_3\\to2C_3+C_1,\\ C_4\\to2C_4-C_1\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}.\\]"
-        }
-      ]
-    },
-    {
-      "page": 3,
-      "heading": "Normal-form example 1 — completion",
-      "blocks": [
-        {
-          "type": "line",
-          "text": "Scale the rows: \\(R_1\\to\\dfrac12R_1,\\ R_2\\to-\\dfrac12R_2,\\ R_3\\to-\\dfrac12R_3,\\ R_4\\to-\\dfrac12R_4\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Eliminate below the second pivot using \\(R_3\\to5R_3-7R_2\\) and \\(R_4\\to5R_4-6R_2\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&0&-66&-28\\\\0&0&-33&-4\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Use \\(C_3\\to5C_3-3C_2\\) and \\(C_4\\to5C_4-9C_2\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Then \\(R_4\\to2R_4-R_3\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&0&100\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Scale \\(R_2\\to\\dfrac15R_2,\\ R_3\\to-\\dfrac1{10}R_3,\\ R_4\\to\\dfrac1{100}R_4\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&14\\\\0&0&0&1\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Remove the 14 using \\(C_4\\to33C_4-14C_3\\), then scale the last two pivots."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&0\\\\0&0&0&33\\end{bmatrix}\\sim I_4.\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\boxed{\\rho(A)=4}.\\]"
-        },
-        {
-          "type": "subheading",
-          "text": "Verification note"
-        },
-        {
-          "type": "paragraph",
-          "text": "Each displayed row/column transformation above was independently recomputed; the final rank \\(4\\) is correct."
-        }
-      ]
-    },
-    {
-      "page": 4,
-      "heading": "Normal-form example 2 — beginning",
-      "blocks": [
-        {
-          "type": "heading",
-          "text": "Example 2 — Reduce to normal form and find the rank"
-        },
-        {
-          "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "First interchange \\(R_1\\leftrightarrow R_2\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Clear the first-column entries with \\(R_3\\to R_3-3R_1\\) and \\(R_4\\to R_4-R_1\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Use \\(C_3\\to C_3-C_1\\) and \\(C_4\\to C_4-C_1\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]"
-        }
-      ]
-    },
-    {
-      "page": 5,
-      "heading": "Normal-form example 2 — completion",
-      "blocks": [
-        {
-          "type": "line",
-          "text": "The last three rows are identical. Use \\(R_3\\to R_3-R_2\\) and \\(R_4\\to R_4-R_2\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Finally apply \\(C_3\\to C_3+3C_2\\) and \\(C_4\\to C_4+C_2\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\boxed{\\rho(A)=2}.\\]"
-        },
-        {
-          "type": "subheading",
-          "text": "Verification note"
-        },
-        {
-          "type": "paragraph",
-          "text": "The normal-form reduction and final rank \\(2\\) were independently checked."
+          "type": "accordions",
+          "label": "Class examples",
+          "items": [
+            {
+              "title": "Example 1 — Find the rank using normal form",
+              "question_paragraphs": [
+                "Find the rank of the matrix using normal form:",
+                "\\[A=\\begin{bmatrix}2&3&-1&1\\\\1&-1&-2&-4\\\\3&1&3&-2\\\\6&3&0&-7\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "Apply \\(R_2\\to2R_2-R_1,\\ R_3\\to2R_3-3R_1,\\ R_4\\to R_4-3R_1\\):",
+                "\\[A\\sim\\begin{bmatrix}2&3&-1&1\\\\0&-5&-3&-9\\\\0&-7&9&-7\\\\0&-6&3&-10\\end{bmatrix}.\\]",
+                "Use \\(C_2\\to2C_2-3C_1,\\ C_3\\to2C_3+C_1,\\ C_4\\to2C_4-C_1\\):",
+                "\\[\\sim\\begin{bmatrix}2&0&0&0\\\\0&-10&-6&-18\\\\0&-14&18&-14\\\\0&-12&6&-20\\end{bmatrix}.\\]",
+                "Scale the rows: \\(R_1\\to\\dfrac12R_1,\\ R_2\\to-\\dfrac12R_2,\\ R_3\\to-\\dfrac12R_3,\\ R_4\\to-\\dfrac12R_4\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&7&-9&7\\\\0&6&-3&10\\end{bmatrix}.\\]",
+                "Eliminate below the second pivot using \\(R_3\\to5R_3-7R_2\\) and \\(R_4\\to5R_4-6R_2\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&3&9\\\\0&0&-66&-28\\\\0&0&-33&-4\\end{bmatrix}.\\]",
+                "Use \\(C_3\\to5C_3-3C_2\\) and \\(C_4\\to5C_4-9C_2\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&-165&-20\\end{bmatrix}.\\]",
+                "Then \\(R_4\\to2R_4-R_3\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&5&0&0\\\\0&0&-330&-140\\\\0&0&0&100\\end{bmatrix}.\\]",
+                "Scale \\(R_2\\to\\dfrac15R_2,\\ R_3\\to-\\dfrac1{10}R_3,\\ R_4\\to\\dfrac1{100}R_4\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&14\\\\0&0&0&1\\end{bmatrix}.\\]",
+                "Remove the 14 using \\(C_4\\to33C_4-14C_3\\), then scale the last two pivots:",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&33&0\\\\0&0&0&33\\end{bmatrix}\\sim I_4.\\]",
+                "The identity block is of order 4."
+              ],
+              "final_answer": "\\(\\rho(A)=4\\)."
+            },
+            {
+              "title": "Example 2 — Reduce to normal form and find the rank",
+              "question_paragraphs": [
+                "Reduce the matrix to normal form and find its rank:",
+                "\\[A=\\begin{bmatrix}0&1&-3&-1\\\\1&0&1&1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "Interchange \\(R_1\\leftrightarrow R_2\\):",
+                "\\[A\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\3&1&0&2\\\\1&1&-2&0\\end{bmatrix}.\\]",
+                "Clear the first-column entries using \\(R_3\\to R_3-3R_1\\) and \\(R_4\\to R_4-R_1\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&1&1\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]",
+                "Use \\(C_3\\to C_3-C_1\\) and \\(C_4\\to C_4-C_1\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&1&-3&-1\\\\0&1&-3&-1\\end{bmatrix}.\\]",
+                "The last three rows are identical. Use \\(R_3\\to R_3-R_2\\) and \\(R_4\\to R_4-R_2\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&-3&-1\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}.\\]",
+                "Finally apply \\(C_3\\to C_3+3C_2\\) and \\(C_4\\to C_4+C_2\\):",
+                "\\[\\sim\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&0\\\\0&0&0&0\\end{bmatrix}=\\begin{bmatrix}I_2&0\\\\0&0\\end{bmatrix}.\\]",
+                "The identity block is of order 2."
+              ],
+              "final_answer": "\\(\\rho(A)=2\\)."
+            }
+          ]
         }
       ]
     }

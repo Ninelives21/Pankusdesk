@@ -14,7 +14,7 @@
   },
   "title": "Gauss-elimination (row-rank) method and consistency",
   "summary": "Gauss-elimination/row-rank procedure; echelon reduction and back-substitution; unique, infinite and inconsistent systems; homogeneous rank tests; parameter cases.",
-  "transcription_policy": "Notebook wording and class-work order are preserved as far as safely readable. Two visible notebook slips are retained in context and followed by explicit verification notes. The supplied page 18 ends mid-solution; its independently verified completion is labelled as such and is not attributed to the classroom notes.",
+  "transcription_policy": "Notebook meaning and class-work order are preserved, but physical notebook page breaks are treated as provenance only. Student-facing notes group each complete worked example into one accordion so an example is never split into 'beginning' and 'completion' sections. Visible notebook slips are corrected only in clearly labelled verification text; incomplete class work is completed by PankusDesk and labelled as such.",
   "mapped_topics": [
     {
       "topic_id": "u1-linear-systems",
@@ -34,238 +34,133 @@
   ],
   "pages": [
     {
-      "page": 13,
-      "heading": "Gauss-elimination method (Row-rank method) and Example 1",
+      "page": "13–18",
+      "heading": "Gauss-elimination method (Row-rank method)",
       "blocks": [
         {
-          "type": "heading",
-          "text": "Gauss-elimination method (Row-rank method)"
-        },
-        {
-          "type": "heading",
-          "text": "Procedure"
+          "type": "paragraph",
+          "text": "It is used to test whether a system is consistent and to solve it when it is consistent."
         },
         {
           "type": "paragraph",
-          "text": "It is used to test if the given system is consistent or not and solve if it is consistent."
+          "text": "The unknowns are eliminated successively using row transformations until the augmented matrix is in echelon form. The unknowns are then obtained by back-substitution."
         },
         {
-          "type": "paragraph",
-          "text": "In this method, the unknowns are eliminated successively and it is reduced to echelon form with row transformations, from which unknowns are calculated by back-substitution method."
-        },
-        {
-          "type": "heading",
-          "text": "1. Using Gauss-elimination method, solve"
-        },
-        {
-          "type": "equation",
-          "text": "\\[x+2y+z=8,\\qquad 2x+3y+4z=20,\\qquad 4x+3y+2z=16.\\]"
-        },
-        {
-          "type": "line",
-          "text": "The above system can be written as AX=B."
-        },
-        {
-          "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}1&2&1\\\\2&3&4\\\\4&3&2\\end{bmatrix},\\quad B=\\begin{bmatrix}8\\\\20\\\\16\\end{bmatrix},\\quad X=\\begin{bmatrix}x\\\\y\\\\z\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Consider the augmented matrix \\((A|B)\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\left[\\begin{array}{ccc|c}1&2&1&8\\\\2&3&4&20\\\\4&3&2&16\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-4R_1}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&-5&-2&-16\\end{array}\\right]\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\xrightarrow{R_3-5R_2}\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&0&-12&-36\\end{array}\\right].\\]"
-        }
-      ]
-    },
-    {
-      "page": 14,
-      "heading": "Example 1 completion and Example 2",
-      "blocks": [
-        {
-          "type": "line",
-          "text": "The notebook records \\(\\rho(A)=\\rho(A|B)=3=n\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[-12z=-36\\Rightarrow z=3,\\qquad -y+2z=4\\Rightarrow y=2,\\qquad x+2y+z=8\\Rightarrow x=1.\\]"
-        },
-        {
-          "type": "heading",
-          "text": "2. Test for consistency and solve if it is consistent"
-        },
-        {
-          "type": "equation",
-          "text": "\\[x+y+z=6,\\qquad x+2y+3z=14,\\qquad x+4y+7z=30.\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\left[\\begin{array}{ccc|c}1&1&1&6\\\\1&2&3&14\\\\1&4&7&30\\end{array}\\right]\\xrightarrow{R_2-R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&3&6&24\\end{array}\\right]\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\xrightarrow{R_3-3R_2}\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&0&0&0\\end{array}\\right].\\]"
-        },
-        {
-          "type": "line",
-          "text": "The notebook writes \\(\\rho(A)=\\rho(A|B)=2<4\\) and concludes that the system is consistent and has infinitely many solutions."
-        },
-        {
-          "type": "subheading",
-          "text": "Verification note"
-        },
-        {
-          "type": "paragraph",
-          "text": "Verification: there are three unknowns, so the correct comparison is \\(\\rho(A)=\\rho(A|B)=2<3\\), not \\(2<4\\). The conclusion of infinitely many solutions is unchanged."
-        }
-      ]
-    },
-    {
-      "page": 15,
-      "heading": "Example 2 completion and Example 3",
-      "blocks": [
-        {
-          "type": "equation",
-          "text": "\\[y+2z=8,\\qquad x+y+z=6.\\]"
-        },
-        {
-          "type": "line",
-          "text": "Let \\(z=k\\). Then \\(y=8-2k\\) and \\(x=k-2\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[X=\\begin{bmatrix}k-2\\\\8-2k\\\\k\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "heading",
-          "text": "3. Test for consistency and solve"
-        },
-        {
-          "type": "equation",
-          "text": "\\[x+y+z=4,\\qquad 2x+5y-2z=3,\\qquad x+7y-7z=5.\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\left[\\begin{array}{ccc|c}1&1&1&4\\\\2&5&-2&3\\\\1&7&-7&5\\end{array}\\right]\\xrightarrow{R_2-2R_1,\\ R_3-R_1}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&6&-8&1\\end{array}\\right]\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\xrightarrow{R_3-2R_2}\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&0&0&11\\end{array}\\right].\\]"
-        },
-        {
-          "type": "line",
-          "text": "The notebook concludes \\(\\rho(A)\\ne\\rho(A|B)\\), therefore the system is inconsistent."
-        }
-      ]
-    },
-    {
-      "page": 16,
-      "heading": "Homogeneous Example 4 and parameter Example 5 — beginning",
-      "blocks": [
-        {
-          "type": "heading",
-          "text": "4. Solve"
-        },
-        {
-          "type": "equation",
-          "text": "\\[x_1+2x_2+x_3=0,\\qquad 2x_1+2x_2+3x_3=0,\\qquad 3x_1+2x_2+x_3=0.\\]"
-        },
-        {
-          "type": "line",
-          "text": "The notebook notes: \\(\\rho(A)=n\\Rightarrow\\) unique/trivial solution; \\(\\rho(A)<n\\Rightarrow\\) many solutions."
-        },
-        {
-          "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}1&2&1\\\\2&2&3\\\\3&2&1\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "After the written operations \\(R_2\\to R_2-2R_1\\), \\(R_3\\to R_3-3R_1\\), the notebook displays \\(\\begin{bmatrix}1&2&1\\\\0&-3&1\\\\0&-4&-2\\end{bmatrix}\\), then reaches a third pivot and concludes \\(\\rho(A)=n\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[X=\\begin{bmatrix}0\\\\0\\\\0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "subheading",
-          "text": "Verification note"
-        },
-        {
-          "type": "paragraph",
-          "text": "For Example 4, \\(R_2\\to R_2-2R_1\\) gives the row \\([0,-2,1]\\), not \\([0,-3,1]\\). Independent reduction still gives \\(\\rho(A)=3=n\\), so the final trivial solution remains correct."
-        },
-        {
-          "type": "heading",
-          "text": "5. Find the values of λ and μ so that the system will have (i) unique solution, (ii) many solutions, (iii) no solution"
-        },
-        {
-          "type": "equation",
-          "text": "\\[2x+3y+5z=9,\\qquad 7x+3y-2z=8,\\qquad 2x+3y+\\lambda z=\\mu.\\]"
-        }
-      ]
-    },
-    {
-      "page": 17,
-      "heading": "Parameter Example 5 — completion",
-      "blocks": [
-        {
-          "type": "equation",
-          "text": "\\[\\left[\\begin{array}{ccc|c}2&3&5&9\\\\7&3&-2&8\\\\2&3&\\lambda&\\mu\\end{array}\\right]\\sim\\left[\\begin{array}{ccc|c}2&3&5&9\\\\0&-15&-39&-47\\\\0&0&\\lambda-5&\\mu-9\\end{array}\\right].\\]"
-        },
-        {
-          "type": "line",
-          "text": "(i) If \\(\\rho(A)=\\rho(A|B)=3\\), the system has a unique solution: \\(\\lambda\\ne5\\), \\(\\mu\\in\\mathbb R\\)."
-        },
-        {
-          "type": "line",
-          "text": "(ii) If \\(\\rho(A)=\\rho(A|B)<3\\), the system has many solutions: \\(\\lambda=5\\), \\(\\mu=9\\)."
-        },
-        {
-          "type": "line",
-          "text": "(iii) If \\(\\rho(A)\\ne\\rho(A|B)\\), the system has no solution: the notebook's concluding line gives \\(\\lambda=5\\), \\(\\mu\\ne9\\)."
-        }
-      ]
-    },
-    {
-      "page": 18,
-      "heading": "Homogeneous parameter Example 6 — partial class working",
-      "blocks": [
-        {
-          "type": "heading",
-          "text": "6. Find the values of λ for which the following system has non-trivial solution and solve in each case"
-        },
-        {
-          "type": "equation",
-          "text": "\\[3x_1+x_2-\\lambda x_3=0,\\qquad 4x_1-2x_2-3x_3=0,\\qquad 2\\lambda x_1+4x_2+\\lambda x_3=0.\\]"
-        },
-        {
-          "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}3&1&-\\lambda\\\\4&-2&-3\\\\2\\lambda&4&\\lambda\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "line",
-          "text": "The notebook begins a row reduction. One readable intermediate row is \\([0,-10,4\\lambda-9]\\)."
-        },
-        {
-          "type": "line",
-          "text": "The supplied page ends during this working; no final values of \\(\\lambda\\) or solution ratios are written on the supplied page."
-        },
-        {
-          "type": "subheading",
-          "text": "Independent verification — continuation not written on the supplied page"
-        },
-        {
-          "type": "equation",
-          "text": "\\[|A|=-4(\\lambda-1)(\\lambda+9)=0\\Rightarrow \\lambda=1\\text{ or }-9.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "For \\(\\lambda=1\\), one non-trivial solution family is \\(X=t(1,-1,2)^T\\). For \\(\\lambda=-9\\), one non-trivial solution family is \\(X=t(-3,-9,2)^T\\)."
+          "type": "accordions",
+          "label": "Class examples",
+          "items": [
+            {
+              "title": "Example 1 — Solve by Gauss-elimination method",
+              "question_paragraphs": [
+                "Solve using Gauss-elimination:",
+                "\\[x+2y+z=8,\\qquad 2x+3y+4z=20,\\qquad 4x+3y+2z=16.\\]"
+              ],
+              "paragraphs": [
+                "Write the system as \\(AX=B\\), with",
+                "\\[A=\\begin{bmatrix}1&2&1\\\\2&3&4\\\\4&3&2\\end{bmatrix},\\quad B=\\begin{bmatrix}8\\\\20\\\\16\\end{bmatrix}.\\]",
+                "Form the augmented matrix and apply \\(R_2\\to R_2-2R_1\\), \\(R_3\\to R_3-4R_1\\):",
+                "\\[\\left[\\begin{array}{ccc|c}1&2&1&8\\\\2&3&4&20\\\\4&3&2&16\\end{array}\\right]\\sim\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&-5&-2&-16\\end{array}\\right].\\]",
+                "Then use \\(R_3\\to R_3-5R_2\\):",
+                "\\[\\sim\\left[\\begin{array}{ccc|c}1&2&1&8\\\\0&-1&2&4\\\\0&0&-12&-36\\end{array}\\right].\\]",
+                "Here \\(\\rho(A)=\\rho(A|B)=3=n\\), so the system has a unique solution.",
+                "Back-substitution gives \\(-12z=-36\\Rightarrow z=3\\), then \\(-y+2z=4\\Rightarrow y=2\\), and finally \\(x+2y+z=8\\Rightarrow x=1\\)."
+              ],
+              "final_answer": "\\(x=1,\\ y=2,\\ z=3\\)."
+            },
+            {
+              "title": "Example 2 — Test for consistency and solve if consistent",
+              "question_paragraphs": [
+                "Test the system for consistency and solve if it is consistent:",
+                "\\[x+y+z=6,\\qquad x+2y+3z=14,\\qquad x+4y+7z=30.\\]"
+              ],
+              "paragraphs": [
+                "Form the augmented matrix:",
+                "\\[\\left[\\begin{array}{ccc|c}1&1&1&6\\\\1&2&3&14\\\\1&4&7&30\\end{array}\\right].\\]",
+                "Apply \\(R_2\\to R_2-R_1\\), \\(R_3\\to R_3-R_1\\):",
+                "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&3&6&24\\end{array}\\right].\\]",
+                "Then use \\(R_3\\to R_3-3R_2\\):",
+                "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&1&6\\\\0&1&2&8\\\\0&0&0&0\\end{array}\\right].\\]",
+                "Therefore \\(\\rho(A)=\\rho(A|B)=2<3\\). The system is consistent and has infinitely many solutions.",
+                "From \\(y+2z=8\\) and \\(x+y+z=6\\), let \\(z=k\\). Then \\(y=8-2k\\) and \\(x=k-2\\)."
+              ],
+              "math_mismatch": {
+                "label": "Class-note notation slip",
+                "message": "The notebook writes \\(\\rho(A)=\\rho(A|B)=2<4\\). There are three unknowns, so the correct comparison is \\(2<3\\). The conclusion of infinitely many solutions is unchanged."
+              },
+              "final_answer": "\\(X=\\begin{bmatrix}k-2\\\\8-2k\\\\k\\end{bmatrix},\\ k\\in\\mathbb R\\)."
+            },
+            {
+              "title": "Example 3 — Test for consistency",
+              "question_paragraphs": [
+                "Test for consistency and solve if possible:",
+                "\\[x+y+z=4,\\qquad 2x+5y-2z=3,\\qquad x+7y-7z=5.\\]"
+              ],
+              "paragraphs": [
+                "Form the augmented matrix:",
+                "\\[\\left[\\begin{array}{ccc|c}1&1&1&4\\\\2&5&-2&3\\\\1&7&-7&5\\end{array}\\right].\\]",
+                "Apply \\(R_2\\to R_2-2R_1\\), \\(R_3\\to R_3-R_1\\):",
+                "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&6&-8&1\\end{array}\\right].\\]",
+                "Then use \\(R_3\\to R_3-2R_2\\):",
+                "\\[\\sim\\left[\\begin{array}{ccc|c}1&1&1&4\\\\0&3&-4&-5\\\\0&0&0&11\\end{array}\\right].\\]",
+                "The last row represents \\(0=11\\), so \\(\\rho(A)\\ne\\rho(A|B)\\)."
+              ],
+              "final_answer": "The system is inconsistent; it has no solution."
+            },
+            {
+              "title": "Example 4 — Solve the homogeneous system",
+              "question_paragraphs": [
+                "Solve:",
+                "\\[x_1+2x_2+x_3=0,\\qquad 2x_1+2x_2+3x_3=0,\\qquad 3x_1+2x_2+x_3=0.\\]"
+              ],
+              "paragraphs": [
+                "The coefficient matrix is",
+                "\\[A=\\begin{bmatrix}1&2&1\\\\2&2&3\\\\3&2&1\\end{bmatrix}.\\]",
+                "Apply \\(R_2\\to R_2-2R_1\\) and \\(R_3\\to R_3-3R_1\\):",
+                "\\[A\\sim\\begin{bmatrix}1&2&1\\\\0&-2&1\\\\0&-4&-2\\end{bmatrix}.\\]",
+                "Now use \\(R_3\\to R_3-2R_2\\):",
+                "\\[\\sim\\begin{bmatrix}1&2&1\\\\0&-2&1\\\\0&0&-4\\end{bmatrix}.\\]",
+                "There are three pivots, so \\(\\rho(A)=3=n\\). A homogeneous system with full rank has only the trivial solution."
+              ],
+              "math_mismatch": {
+                "label": "Class-note arithmetic slip",
+                "message": "The notebook displays \\([0,-3,1]\\) after \\(R_2\\to R_2-2R_1\\). The correct row is \\([0,-2,1]\\). Continuing with the corrected row still gives rank 3, so the notebook's final conclusion is unchanged."
+              },
+              "final_answer": "\\(X=\\begin{bmatrix}0\\\\0\\\\0\\end{bmatrix}\\)."
+            },
+            {
+              "title": "Example 5 — Find parameter values for unique, many, or no solutions",
+              "question_paragraphs": [
+                "Find \\(\\lambda\\) and \\(\\mu\\) so that the system has (i) a unique solution, (ii) many solutions, or (iii) no solution:",
+                "\\[2x+3y+5z=9,\\qquad 7x+3y-2z=8,\\qquad 2x+3y+\\lambda z=\\mu.\\]"
+              ],
+              "paragraphs": [
+                "The augmented matrix reduces to",
+                "\\[\\left[\\begin{array}{ccc|c}2&3&5&9\\\\7&3&-2&8\\\\2&3&\\lambda&\\mu\\end{array}\\right]\\sim\\left[\\begin{array}{ccc|c}2&3&5&9\\\\0&-15&-39&-47\\\\0&0&\\lambda-5&\\mu-9\\end{array}\\right].\\]",
+                "(i) For a unique solution, the third pivot must be non-zero: \\(\\lambda-5\\ne0\\). Hence \\(\\lambda\\ne5\\); \\(\\mu\\) may be any real number.",
+                "(ii) For infinitely many solutions, the last row must become all zeros: \\(\\lambda=5\\) and \\(\\mu=9\\).",
+                "(iii) For no solution, the coefficient part of the last row must be zero while the augmented entry is non-zero: \\(\\lambda=5\\), \\(\\mu\\ne9\\)."
+              ],
+              "final_answer": "Unique: \\(\\lambda\\ne5\\). Many: \\(\\lambda=5,\\mu=9\\). None: \\(\\lambda=5,\\mu\\ne9\\)."
+            },
+            {
+              "title": "Example 6 — Find λ for non-trivial solutions",
+              "question_paragraphs": [
+                "Find the values of \\(\\lambda\\) for which the homogeneous system has a non-trivial solution, and solve in each case:",
+                "\\[3x_1+x_2-\\lambda x_3=0,\\qquad 4x_1-2x_2-3x_3=0,\\qquad 2\\lambda x_1+4x_2+\\lambda x_3=0.\\]"
+              ],
+              "paragraphs": [
+                "For a homogeneous system to have a non-trivial solution, the coefficient matrix must be singular:",
+                "\\[A=\\begin{bmatrix}3&1&-\\lambda\\\\4&-2&-3\\\\2\\lambda&4&\\lambda\\end{bmatrix},\\qquad |A|=0.\\]",
+                "Expanding and factoring gives",
+                "\\[|A|=-4(\\lambda-1)(\\lambda+9)=0.\\]",
+                "Hence \\(\\lambda=1\\) or \\(\\lambda=-9\\).",
+                "For \\(\\lambda=1\\), solving the homogeneous equations gives \\(x_1:x_2:x_3=1:-1:2\\).",
+                "For \\(\\lambda=-9\\), solving gives \\(x_1:x_2:x_3=-3:-9:2\\).",
+                "The supplied class page stops during the row reduction; the determinant factorisation and final solution families here are PankusDesk's independent completion."
+              ],
+              "final_answer": "\\(\\lambda=1:\\ X=t(1,-1,2)^T;\\qquad \\lambda=-9:\\ X=t(-3,-9,2)^T\\), \\(t\\in\\mathbb R\\)."
+            }
+          ]
         }
       ]
     }

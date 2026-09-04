@@ -1,21 +1,17 @@
-# Apply this delta
+# MAC class-notes accordion cleanup
 
-From the folder that contains both `mac-shared-study-ui-delta/` and `Pankusdesk/`:
+This delta removes notebook-page-fragment presentation from Unit I class notes and groups each worked class problem into one complete shared-study accordion.
 
-```bash
-rsync -avhn mac-shared-study-ui-delta/ Pankusdesk/
-```
+Key changes:
+- 25 Aug: two normal-form examples are each single complete accordions.
+- 28 Aug: three Gauss–Jordan examples are each single complete accordions.
+- 1 Sep: six Gauss-elimination/consistency examples are no longer split into beginning/completion page fragments.
+- 2 Sep: three further row-rank examples are complete accordions.
+- 4 Sep: headings no longer imply that Example 1 is physically split across notebook pages.
+- Global College Build Standard/Checklist now state that notebook page boundaries are provenance only; student-facing class notes are organized by logical lesson/example.
 
-Then:
+Apply from the folder that contains both this delta and `Pankusdesk`:
 
-```bash
-rsync -avh mac-shared-study-ui-delta/ Pankusdesk/
-```
+    rsync -avhn mac-classnotes-accordion-cleanup-delta/ Pankusdesk/
 
-Verification from inside `Pankusdesk/`:
-
-```bash
-python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py
-python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py
-python3 scripts/tools/verify_college.py
-```
+    rsync -avh mac-classnotes-accordion-cleanup-delta/ Pankusdesk/
