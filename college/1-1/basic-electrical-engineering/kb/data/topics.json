@@ -1393,13 +1393,16 @@
         "heading": "Exercise 1.5.1 — KVL",
         "scope": "core",
         "paragraphs": [
-          "Find \\(V_1\\) and \\(V_2\\). Assume the current \\(i\\) in a particular direction. Let \\(V_1\\) and the drop across the 2-ohm resistor be the voltage drops for that current direction. Applying KVL,",
+          "Find the values of \\(V_1\\) and \\(V_2\\) in the network given in Figure 1.28.",
+          "The textbook question figure shows a \\(3\\ \\text{V}\\) source on the right, but the solution figure changes this source to \\(8\\ \\text{V}\\). The worked solution below follows the textbook solution exactly as printed.",
+          "Assume the current \\(i\\) in a particular direction. Let \\(V_1\\) and \\(V_2\\) be the voltage drops in the 4-ohm and 2-ohm resistances respectively for the assumed current direction. Applying KVL,",
           "\\[10-4i+8-2i=0\\]",
           "\\[18-6i=0\\]",
           "\\[6i=18\\]",
           "\\[i=\\dfrac{18}{6}=3\\ \\text{A}\\]",
+          "Therefore,",
           "\\[V_1=4i=4\\times3=12\\ \\text{V}\\]",
-          "The drop across the 2-ohm resistor is",
+          "For the 2-ohm resistance, the textbook first evaluates the drop magnitude as",
           "\\[V_3=2i=2\\times3=6\\ \\text{V}\\]",
           "With the labelled polarity of \\(V_2\\) in the figure,",
           "\\[V_2=-V_3=-6\\ \\text{V}\\]"
@@ -1412,6 +1415,34 @@
           {
             "pages": "17–18",
             "images": "17.png–18.png"
+          }
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-28.png",
+            "alt": "Exercise 1.5.1 circuit with a 10 V source on the left, a 3 V source on the right, a 4 ohm resistor on the top branch and a 2 ohm resistor on the bottom branch, with V1 and V2 polarities marked positive on the left and negative on the right.",
+            "caption": "Fig. 1.28 · Circuit for Exercise 1.5.1",
+            "page": 17,
+            "width": 1260,
+            "height": 800,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            },
+            "size": "large"
+          },
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-28a.png",
+            "alt": "Textbook solution circuit for Exercise 1.5.1, identical in topology to Figure 1.28 but showing 8 V for the right-hand source instead of 3 V; the 10 V source, 4 ohm resistor, 2 ohm resistor and V1 and V2 polarities are unchanged.",
+            "caption": "Fig. 1.28(a) · Textbook solution figure",
+            "page": 18,
+            "width": 1260,
+            "height": 800,
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            },
+            "size": "large"
           }
         ]
       },
