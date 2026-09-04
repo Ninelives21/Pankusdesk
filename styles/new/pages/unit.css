@@ -1745,15 +1745,15 @@ sub {
 }
 
 
-/* Global rule: when textbook content and worked solution disagree,
- * highlight the affected exercise heading and the discrepancy note in amber. */
+/* Global source-discrepancy state. Match the established MAC treatment:
+ * a solid golden question/example badge plus a matching amber explanation box. */
 .note-section.has-discrepancy .note-section-heading h3 {
 	padding: 0.22rem 0.72rem;
 	border-radius: 999px;
 	border: 1px solid var(--math-mismatch-border);
-	background: var(--math-mismatch-soft);
-	color: var(--math-mismatch-strong);
-	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--math-mismatch) 22%, transparent);
+	background: var(--math-mismatch);
+	color: var(--math-mismatch-text);
+	box-shadow: inset 0 0 0 1px var(--math-mismatch-border);
 }
 
 .section-discrepancy-note {
