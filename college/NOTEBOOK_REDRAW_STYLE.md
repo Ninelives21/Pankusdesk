@@ -409,3 +409,7 @@ Before accepting any redraw:
 ## 21. Short reusable production instruction
 
 > Redraw this in Notebook Redraw Style (NRS v1.1). The supplied source is authoritative. Before generating, identify and verify every meaning-bearing technical detail—what is a circuit/graph, axes, arrow directions, polarity, dot/cross convention, connectivity, source orientation, spatial relationships, labels/subscripts and meaningful counts. Ask if any material detail is ambiguous. Then redraw faithfully on a compact ruled notebook page with tidy blue-ink lines and one consistent handwriting style for all visible text. Do not add, infer, correct or replace academic content unless explicitly approved. After generation, inspect the actual image against the semantic audit and reject any technically incorrect output.
+
+## Cross-subject implementation lock
+
+Notebook redraws are a common College component, not a subject skin. The visual language defined here applies unchanged to BEE, MAC and future subjects/semesters. Baseline figure rendering must flow through the shared study UI (`PankuStudyUI.renderFigure()` / `styles/new/study-ui.css`); subject-specific code may control placement and dimensions only. Do not introduce a MAC-specific, BEE-specific or semester-specific redraw style.

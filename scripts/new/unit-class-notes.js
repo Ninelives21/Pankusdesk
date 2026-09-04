@@ -29,6 +29,7 @@ async function initUnitClassNotes() {
 		})));
 
 		renderPage(page, subject, subjectUrl, unitMeta, entries);
+		window.PankuStudyUI?.initAccordions?.(page);
 		setupDateNavigation(page);
 		try {
 			await typesetMath(page);
@@ -141,6 +142,7 @@ function renderBlocks(blocks) {
 			case 'figure': html += renderClassFigure(block); break;
 			case 'table': html += renderClassTable(block); break;
 			case 'accordions': html += renderClassAccordions(block); break;
+			case 'pankusdesk-tip': html += (window.PankuStudyUI?.renderTip?.(block) || ''); break;
 			case 'line': html += `<p class="class-notes-line">${formatText(block.text)}</p>`; break;
 			default: html += `<p>${formatText(block.text || '')}</p>`;
 		}
@@ -181,65 +183,17 @@ function renderClassTableCell(cell) {
 }
 
 function renderClassAccordions(group) {
-	const items = Array.isArray(group?.items) ? group.items : [];
-	if (!items.length) return '';
-	const label = group.label || 'Worked examples';
-	return `
-		<div class="class-notes-accordion" aria-label="${escapeHtml(label)}">
-			<div class="class-notes-accordion-label">${escapeHtml(label)}</div>
-			${items.map(item => {
-				const questions = Array.isArray(item.question_paragraphs) ? item.question_paragraphs : [];
-				if (questions.length) {
-					return `
-						<div class="class-notes-example-card">
-							<div class="class-notes-example-question">
-								<h5>${formatText(item.title || '')}</h5>
-								${questions.map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
-							</div>
-							<details class="class-notes-accordion-item class-notes-solution-details">
-								<summary>
-									<span>Solution</span>
-									<span class="class-notes-accordion-toggle" aria-hidden="true">+</span>
-								</summary>
-								<div class="class-notes-accordion-content">
-									${(item.paragraphs || []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
-									${(item.bullets || []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
-									${item.final_answer ? `<div class="class-notes-final-answer"><strong>Final answer:</strong> ${formatText(item.final_answer)}</div>` : ''}
-								</div>
-							</details>
-						</div>
-					`;
-				}
-				return `
-					<details class="class-notes-accordion-item">
-						<summary>
-							<span>${formatText(item.title || '')}</span>
-							<span class="class-notes-accordion-toggle" aria-hidden="true">+</span>
-						</summary>
-						<div class="class-notes-accordion-content">
-							${(item.paragraphs || []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
-							${(item.bullets || []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
-							${item.final_answer ? `<div class="class-notes-final-answer"><strong>Final answer:</strong> ${formatText(item.final_answer)}</div>` : ''}
-						</div>
-					</details>
-				`;
-			}).join('')}
-		</div>
-	`;
+	return window.PankuStudyUI?.renderAccordionGroup?.({
+		items: Array.isArray(group?.items) ? group.items : [],
+		label: group?.label || 'Worked examples',
+		isExampleGroup: /example|question/i.test(group?.label || '') || (group?.items || []).some(item => (item.question_paragraphs || []).length),
+	}) || '';
 }
 
 function renderClassFigure(figure) {
 	if (!figure?.src || !figure?.alt) return '';
-	const width = Number(figure.width);
-	const height = Number(figure.height);
-	const dimensions = Number.isFinite(width) && Number.isFinite(height) ? ` width="${width}" height="${height}"` : '';
-	const size = ['symbol','small','medium','large'].includes(figure.size) ? ` class-note-visual--${figure.size}` : 'class-note-visual--medium';
-	return `
-		<figure class="class-note-visual ${size}">
-			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
-			${figure.caption ? `<figcaption>${escapeHtml(figure.caption)}</figcaption>` : ''}
-		</figure>
-	`;
+	const size = ['symbol','small','medium','large'].includes(figure.size) ? `class-note-visual--${figure.size}` : 'class-note-visual--medium';
+	return window.PankuStudyUI?.renderFigure?.(figure, { className: 'study-figure class-note-visual', extraClass: size }) || '';
 }
 
 function setupDateNavigation(page) {
@@ -308,45 +262,8 @@ function formatIsoDate(value) {
 	return `${Number(day)} ${months[Number(month) - 1] || month} ${year}`;
 }
 
-function formatText(value) {
-	const input = String(value ?? '');
-	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
-	let result = '';
-	let lastIndex = 0;
-	let match;
-	while ((match = mathPattern.exec(input)) !== null) {
-		result += formatPlainText(input.slice(lastIndex, match.index));
-		result += escapeHtml(match[0]);
-		lastIndex = match.index + match[0].length;
-	}
-	result += formatPlainText(input.slice(lastIndex));
-	return result;
-}
-
-function formatPlainText(value) {
-	return escapeHtml(value).replace(/\b([A-Za-z][A-Za-z0-9]*)_\{?([A-Za-z0-9]+)\}?/g, '$1<sub>$2</sub>');
-}
-
-let mathJaxPromise = null;
-async function typesetMath(root) {
-	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
-	await ensureMathJax();
-	if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise([root]);
-}
-function ensureMathJax() {
-	if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
-	if (mathJaxPromise) return mathJaxPromise;
-	mathJaxPromise = new Promise((resolve, reject) => {
-		window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] } };
-		const script = document.createElement('script');
-		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-		script.async = true;
-		script.onload = () => resolve(window.MathJax);
-		script.onerror = () => reject(new Error('MathJax could not be loaded.'));
-		document.head.appendChild(script);
-	});
-	return mathJaxPromise;
-}
+function formatText(value) { return window.PankuStudyUI?.formatText?.(value) ?? escapeHtml(value); }
+async function typesetMath(root) { return window.PankuStudyUI?.typesetMath?.(root); }
 
 function toRoman(value) {
 	const numerals = [[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];

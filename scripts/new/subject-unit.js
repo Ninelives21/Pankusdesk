@@ -530,64 +530,17 @@ function renderStudyTableCell(cell) {
 
 function renderExplanationAccordions(items, recapItems = [], label = 'Understand this diagram') {
 	if (!items.length && !recapItems.length) return '';
-
-	const isExampleGroup = /example/i.test(label);
-	const accordionHtml = items.length ? `
-		<div class="explanation-accordion${isExampleGroup ? ' explanation-accordion--examples' : ''}" aria-label="${escapeHtml(label)}">
-			<div class="explanation-accordion-label">${escapeHtml(label)}</div>
-			${items.map(item => renderExplanationAccordionItem(item, isExampleGroup)).join('')}
-		</div>
-	` : '';
-
+	const accordionHtml = items.length ? (window.PankuStudyUI?.renderAccordionGroup?.({
+		items,
+		label,
+		isExampleGroup: /example/i.test(label),
+	}) || '') : '';
 	const recapHtml = recapItems.length ? `
 		<div class="diagram-quick-recall">
 			<div class="diagram-quick-recall-title">Quick way to read the diagram</div>
 			<ul>${recapItems.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>
-		</div>
-	` : '';
-
+		</div>` : '';
 	return accordionHtml + recapHtml;
-}
-
-function renderExplanationAccordionItem(item, isExampleGroup) {
-	if (!isExampleGroup) {
-		return `
-			<details class="explanation-accordion-item">
-				<summary>
-					<span>${formatText(item.title)}</span>
-					<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
-				</summary>
-				<div class="explanation-accordion-content">
-					${(item.paragraphs ?? []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
-					${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
-				</div>
-			</details>
-		`;
-	}
-
-	const { questionParagraphs, solutionParagraphs } = splitExampleQuestionAndSolution(item);
-	const mismatch = normalizeExampleDiscrepancy(item.discrepancy ?? item.math_mismatch);
-	return `
-		<details class="explanation-accordion-item explanation-accordion-item--example${mismatch ? ' has-math-mismatch' : ''}">
-			<summary>
-				<span class="example-summary-copy">
-					<span class="example-summary-heading-row">
-						<span class="example-summary-title">${formatText(item.title)}</span>
-						${mismatch ? `<span class="example-math-mismatch-badge">${escapeHtml(mismatch.label)}</span>` : ''}
-					</span>
-					${questionParagraphs.length ? `<span class="example-summary-question">${questionParagraphs.map(paragraph => `<span class="example-question-paragraph">${formatText(paragraph)}</span>`).join('')}</span>` : ''}
-				</span>
-				<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
-			</summary>
-			<div class="explanation-accordion-content example-solution-content">
-				${renderExampleFigures(item.figures ?? [])}
-				${solutionParagraphs.map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
-				${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
-				${mismatch ? renderExampleMathMismatch(mismatch) : ''}
-				${item.final_answer ? `<div class="example-final-answer"><strong>Final answer:</strong> <strong>${formatText(item.final_answer)}</strong></div>` : ''}
-			</div>
-		</details>
-	`;
 }
 
 function normalizeExampleDiscrepancy(value) {
@@ -641,38 +594,12 @@ function splitExampleQuestionAndSolution(item) {
 	return { questionParagraphs: [], solutionParagraphs: [] };
 }
 
-function setupExplanationAccordions() {
-	const groups = Array.from(document.querySelectorAll('.explanation-accordion'));
-	groups.forEach(group => {
-		const detailsItems = Array.from(group.querySelectorAll('.explanation-accordion-item'));
-		detailsItems.forEach(details => {
-			details.addEventListener('toggle', () => {
-				if (!details.open) return;
-				detailsItems.forEach(other => {
-					if (other !== details) other.open = false;
-				});
-			});
-		});
-	});
-}
+function setupExplanationAccordions() { window.PankuStudyUI?.initAccordions?.(document); }
 
 function renderTextbookFigure(figure) {
 	if (!figure?.src || !figure?.alt) return '';
-	const width = Number(figure.width);
-	const height = Number(figure.height);
-	const dimensions = Number.isFinite(width) && Number.isFinite(height)
-		? ` width="${width}" height="${height}"`
-		: '';
-	const caption = figure.caption ? `<span>${escapeHtml(figure.caption)}</span>` : '';
-	const page = figure.page ? `<span class="textbook-figure-page">Book p. ${escapeHtml(figure.page)}</span>` : '';
-	const kindClass = figure.kind === 'class-note' ? ' class-note-figure' : '';
-
-	return `
-		<figure class="textbook-figure${kindClass}">
-			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
-			${caption || page ? `<figcaption>${caption}${page}</figcaption>` : ''}
-		</figure>
-	`;
+	const kindClass = figure.kind === 'class-note' ? 'class-note-figure' : '';
+	return window.PankuStudyUI?.renderFigure?.(figure, { className: 'study-figure textbook-figure', extraClass: kindClass }) || '';
 }
 
 function renderSelfChecks(checks, topicId) {
@@ -1038,62 +965,8 @@ function formatIsoDate(value) {
 	return `${Number(day)} ${months[Number(month) - 1] || month} ${year}`;
 }
 
-function formatText(value) {
-	const input = String(value ?? '');
-	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
-	let result = '';
-	let lastIndex = 0;
-	let match;
-
-	while ((match = mathPattern.exec(input)) !== null) {
-		result += formatPlainText(input.slice(lastIndex, match.index));
-		result += escapeHtml(match[0]);
-		lastIndex = match.index + match[0].length;
-	}
-
-	result += formatPlainText(input.slice(lastIndex));
-	return result;
-}
-
-function formatPlainText(value) {
-	return escapeHtml(value)
-		.replace(/\b([A-Za-z][A-Za-z0-9]*)_\{?([A-Za-z0-9]+)\}?/g, '$1<sub>$2</sub>');
-}
-
-let mathJaxPromise = null;
-
-async function typesetMath(root) {
-	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
-	await ensureMathJax();
-	if (window.MathJax?.typesetPromise) {
-		await window.MathJax.typesetPromise([root]);
-	}
-}
-
-function ensureMathJax() {
-	if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
-	if (mathJaxPromise) return mathJaxPromise;
-
-	mathJaxPromise = new Promise((resolve, reject) => {
-		window.MathJax = {
-			tex: {
-				inlineMath: [['\\\(', '\\\)']],
-				displayMath: [['\\\[', '\\\]']],
-				processEscapes: true,
-			},
-			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
-		};
-
-		const script = document.createElement('script');
-		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-		script.async = true;
-		script.onload = () => resolve(window.MathJax);
-		script.onerror = () => reject(new Error('MathJax could not be loaded.'));
-		document.head.appendChild(script);
-	});
-
-	return mathJaxPromise;
-}
+function formatText(value) { return window.PankuStudyUI?.formatText?.(value) ?? escapeHtml(value); }
+async function typesetMath(root) { return window.PankuStudyUI?.typesetMath?.(root); }
 
 function toRoman(value) {
 	const numerals = [

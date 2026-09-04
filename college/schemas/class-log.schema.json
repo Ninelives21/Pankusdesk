@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/class-log.schema.json",
   "$comment": "Design Lock v2: faithful dated class record with mapped cumulative topics, derived class figures, and optional explanation accordions for consolidated class-note diagrams.",
-  "title": "PankusDesk Dated Class Log Entry — Design Lock v2",
+  "title": "PankusDesk Dated Class Log Entry \u2014 Design Lock v2",
   "type": "object",
   "additionalProperties": true,
   "required": [
@@ -214,6 +214,9 @@
         },
         {
           "$ref": "#/$defs/accordions"
+        },
+        {
+          "$ref": "#/$defs/pankusdeskTip"
         }
       ]
     },
@@ -280,6 +283,41 @@
               }
             ]
           }
+        }
+      }
+    },
+    "pankusdeskTip": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "type",
+        "title"
+      ],
+      "properties": {
+        "type": {
+          "const": "pankusdesk-tip"
+        },
+        "label": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "type": "string"
         }
       }
     }

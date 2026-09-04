@@ -36,6 +36,8 @@ DESIGN_LOCK_FILES = [
     REPO / "college" / "schemas" / "topics.schema.json",
     REPO / "college" / "schemas" / "textbook-questions.schema.json",
     REPO / "college" / "schemas" / "class-log.schema.json",
+    REPO / "scripts" / "new" / "study-ui.js",
+    REPO / "styles" / "new" / "study-ui.css",
 ]
 
 META_PATTERNS = [
@@ -366,6 +368,15 @@ def iter_class_text(entry: dict):
                 continue
             if isinstance(block.get("text"), str):
                 yield f"pages[{pi}].blocks[{bi}]", block["text"]
+            if block.get("type") == "pankusdesk-tip":
+                if isinstance(block.get("title"), str):
+                    yield f"pages[{pi}].blocks[{bi}].title", block["title"]
+                for key in ("paragraphs", "bullets"):
+                    for ti, text in enumerate(block.get(key, []) or []):
+                        if isinstance(text, str):
+                            yield f"pages[{pi}].blocks[{bi}].{key}[{ti}]", text
+                if isinstance(block.get("example"), str):
+                    yield f"pages[{pi}].blocks[{bi}].example", block["example"]
             if block.get("type") == "accordions":
                 for ai, item in enumerate(block.get("items", []) or []):
                     if not isinstance(item, dict):
@@ -610,6 +621,21 @@ def verify_calendar_indexes():
                         errors.append(f"{rel(index_path)} {date}: dated entry missing for link {link}")
 
 
+def verify_shared_study_ui_shells():
+    renderer_names = {"subject-unit.js", "unit-class-notes.js", "unit-questions.js", "class-log.js"}
+    for shell in REPO.glob("college/**/*.html"):
+        try:
+            text = shell.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
+        if not any(f"scripts/new/{name}" in text for name in renderer_names):
+            continue
+        if "styles/new/study-ui.css" not in text:
+            errors.append(f"{rel(shell)}: shared study UI stylesheet is not loaded")
+        if "scripts/new/study-ui.js" not in text:
+            errors.append(f"{rel(shell)}: shared study UI renderer is not loaded")
+
+
 def verify_design_lock_files():
     for path in DESIGN_LOCK_FILES:
         if not path.exists():
@@ -638,6 +664,7 @@ def main() -> int:
     ns = parser.parse_args()
 
     verify_design_lock_files()
+    verify_shared_study_ui_shells()
 
     subjects = discover_subjects(ns.subjects)
     if not subjects:
@@ -662,6 +689,7 @@ def main() -> int:
     print("COLLEGE VERIFY: PASS")
     print(f" - {len(subjects)} subject configuration(s) checked")
     print(" - Design Lock v2 contract files present/parseable")
+    print(" - shared study UI loaded by all study-content shells")
     print(" - ready units have detailed topic data and shells")
     print(" - topic/section provenance present and configured refs resolved")
     print(" - class-note labels/source refs checked")

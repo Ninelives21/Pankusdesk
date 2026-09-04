@@ -1,0 +1,132 @@
+/* Shared PankusDesk study UI — design-locked across subjects and semesters. */
+.study-accordion {
+	margin-top: var(--space-6, 1.5rem);
+	display: grid;
+	gap: var(--space-2, .5rem);
+}
+.study-accordion-label {
+	margin-bottom: var(--space-2, .5rem);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy, 800);
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	color: var(--notes-text, var(--primary));
+}
+.study-accordion-item {
+	border: 1px solid var(--notes-border, var(--line));
+	border-radius: var(--radius-sm, 14px);
+	background: var(--surface, #fff);
+	overflow: hidden;
+}
+.study-accordion-item summary {
+	list-style: none;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: minmax(0,1fr) auto;
+	align-items: center;
+	gap: var(--space-4, 1rem);
+	padding: 14px 16px;
+	font-size: 16px;
+	font-weight: var(--font-weight-semibold, 700);
+	line-height: 1.45;
+	color: var(--text-strong);
+}
+.study-accordion-item summary::-webkit-details-marker { display: none; }
+.study-accordion-item summary:hover,
+.study-accordion-item summary:focus-visible { background: var(--notes-soft, rgba(225,239,252,.55)); }
+.study-accordion-item summary:focus-visible { outline: 2px solid var(--notes, var(--primary)); outline-offset: -2px; }
+.study-accordion-toggle {
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 1;
+	color: var(--notes-text, var(--primary));
+	transition: transform 160ms ease;
+}
+.study-accordion-item[open] .study-accordion-toggle { transform: rotate(45deg); }
+.study-accordion-content { padding: 4px 16px 16px; border-top: 1px solid var(--line-soft, var(--line)); }
+.study-accordion-content p { margin: 12px 0 0; line-height: 1.72; }
+.study-accordion-content ul { margin: 12px 0 0; padding-left: 1.25rem; }
+.study-accordion-content li + li { margin-top: 7px; }
+
+/* Global worked-example rule: title + full question are visible in the closed accordion. */
+.study-accordion-item--example summary { align-items: start; padding: 16px; }
+.study-example-summary-copy { display: grid; gap: 12px; min-width: 0; }
+.study-example-title-row { display: flex; align-items: center; gap: var(--space-3, .75rem); flex-wrap: wrap; }
+.study-example-title { display: block; font-weight: var(--font-weight-heavy, 800); color: var(--text-strong); }
+.study-example-question { display: grid; gap: 8px; font-weight: var(--font-weight-regular, 400); color: var(--text); }
+.study-example-question > span { display: block; line-height: 1.65; overflow-wrap: anywhere; }
+.study-example-solution { padding-top: 8px; }
+.study-solution-label {
+	margin: 8px 0 2px;
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy, 800);
+	letter-spacing: .07em;
+	text-transform: uppercase;
+	color: var(--notes-text, var(--primary));
+}
+.study-final-answer {
+	margin-top: 1rem;
+	padding: .85rem 1rem;
+	border-top: 1px solid var(--line-soft, var(--line));
+	font-size: 1.02rem;
+	font-weight: 700;
+}
+.study-final-answer strong { color: var(--primary); }
+
+.study-mismatch-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 3px 8px;
+	border: 1px solid var(--math-mismatch-border);
+	border-radius: var(--radius-pill, 999px);
+	background: var(--math-mismatch-soft);
+	color: var(--math-mismatch-text);
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+}
+.study-accordion-item.has-math-mismatch { border-color: var(--math-mismatch-border); }
+.study-accordion-item.has-math-mismatch > summary { background: color-mix(in srgb, var(--math-mismatch-soft) 52%, var(--surface)); }
+.study-mismatch-note {
+	margin-top: 1rem;
+	padding: .85rem 1rem;
+	border: 1px solid var(--math-mismatch-border);
+	border-radius: var(--radius-sm, 12px);
+	background: var(--math-mismatch-soft);
+	color: var(--text);
+}
+.study-mismatch-note-label { font-weight: 800; color: var(--math-mismatch-text); margin-bottom: .35rem; }
+.study-mismatch-note-text { line-height: 1.65; }
+
+/* PankusDesk explanatory material: visually distinct from source/class transcription. */
+.study-tip {
+	margin: 1rem 0 1.25rem;
+	padding: 1rem 1.1rem;
+	border: 1px solid var(--notes-border, #b9d4ee);
+	border-left: 5px solid var(--notes, var(--primary));
+	border-radius: var(--radius-sm, 14px);
+	background: color-mix(in srgb, var(--notes-soft, #e9f3fc) 72%, white);
+}
+.study-tip-label {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: var(--notes-text, var(--primary));
+}
+.study-tip h5 { margin: .35rem 0 .5rem; font-size: 1.05rem; color: var(--text-strong); }
+.study-tip p { margin: .45rem 0; line-height: 1.68; }
+.study-tip ul { margin: .55rem 0 0 1.2rem; }
+.study-tip li { margin: .3rem 0; line-height: 1.55; }
+.study-tip-example { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--notes-border, #b9d4ee); font-weight: 650; }
+
+/* Shared figure baseline; page renderers may add layout-only wrapper classes. */
+.study-figure { margin: 1rem auto; text-align: center; }
+.study-figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.study-figure figcaption { margin-top: .45rem; display: flex; gap: .65rem; justify-content: center; flex-wrap: wrap; color: var(--muted); font-size: .85rem; }
+
+@media (max-width: 720px) {
+	.study-accordion-item summary,
+	.study-accordion-content { padding-left: 13px; padding-right: 13px; }
+}

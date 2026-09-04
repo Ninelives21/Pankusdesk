@@ -1,19 +1,21 @@
-# MAC Unit I — 4 September class notes delta
+# Apply this delta
 
-Integrates Priyanka's 4 September 2026 Gauss–Seidel class notes into the dedicated Unit I class-notes page and Semester 1.1 calendar.
-
-Includes:
-- Gauss–Seidel procedure and diagonal-dominance notes;
-- one completed class example and two previously unsolved class questions, all fully solved;
-- question-visible / solution-dropdown / bold-final-answer support for generic class-note accordions;
-- dated class source and calendar entry.
-
-Apply from the folder that contains both this delta folder and `Pankusdesk`:
+From the folder that contains both `mac-shared-study-ui-delta/` and `Pankusdesk/`:
 
 ```bash
-rsync -avhn mac-unit1-classnotes-2026-09-04-delta/ Pankusdesk/
+rsync -avhn mac-shared-study-ui-delta/ Pankusdesk/
 ```
 
+Then:
+
 ```bash
-rsync -avh mac-unit1-classnotes-2026-09-04-delta/ Pankusdesk/
+rsync -avh mac-shared-study-ui-delta/ Pankusdesk/
+```
+
+Verification from inside `Pankusdesk/`:
+
+```bash
+python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py
+python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py
+python3 scripts/tools/verify_college.py
 ```

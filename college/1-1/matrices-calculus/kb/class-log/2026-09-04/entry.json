@@ -128,6 +128,22 @@
           "text": "Continue Step 3 until two successive approximations agree to the specified number of decimal places."
         },
         {
+          "type": "pankusdesk-tip",
+          "label": "PankusDesk tip",
+          "title": "When do I stop iterating?",
+          "paragraphs": [
+            "There is no fixed number of Gauss–Seidel iterations. Compare each new approximation with the previous one and continue until all unknowns have stabilised to the required accuracy.",
+            "If the question specifies an accuracy, use that. If it asks for 2 decimal places, stop when two successive approximations give the same values to 2 d.p.; similarly for 4 d.p. or any stated tolerance.",
+            "If no accuracy is stated, use 3 decimal places as the working convention for these problems. Stop only when every unknown agrees to 3 d.p. in two successive iterations."
+          ],
+          "bullets": [
+            "Do not decide the number of iterations in advance.",
+            "Check all unknowns, not just one of them.",
+            "A system may settle in 3 iterations, or may need 5, 6 or more."
+          ],
+          "example": "For example, \\((2.0002,1.0001,-0.9999)\\) and \\((2.0000,1.0000,-1.0000)\\) are identical to 3 decimal places, so the iteration can stop."
+        },
+        {
           "type": "accordions",
           "label": "Class examples",
           "items": [

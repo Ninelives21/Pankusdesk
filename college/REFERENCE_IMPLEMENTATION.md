@@ -403,3 +403,14 @@ When uncertain:
 4. Extend generic data/renderer capability only when the new subject genuinely needs it.
 5. Update the design-lock documents + schemas + generic verifier together if the architecture changes.
 6. Never reconstruct a design decision from stale chat memory when the workspace can answer it.
+
+## Shared study UI reference
+
+The canonical common presentation layer is:
+
+```text
+scripts/new/study-ui.js
+styles/new/study-ui.css
+```
+
+All college subjects and semesters consume this layer for accordions, example question/solution structure, MathJax/LaTeX handling, study-tip boxes and baseline figures. Subject renderers are data/layout adapters only; they must not fork these common behaviours.

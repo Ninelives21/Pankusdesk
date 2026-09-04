@@ -18,6 +18,7 @@ async function initClassLog() {
 		const entryUrl = new URL(`kb/class-log/${date}/entry.json`, subjectUrl);
 		const entry = await fetchJson(entryUrl.href);
 		renderPage(page, subject, subjectUrl, entry);
+		window.PankuStudyUI?.initAccordions?.(page);
 		try {
 			await typesetMath(page);
 		} catch (mathError) {
@@ -127,6 +128,8 @@ function renderBlocks(blocks) {
 			case 'subheading': html += `<h5>${formatText(block.text)}</h5>`; break;
 			case 'equation': html += `<div class="verbatim-equation">${formatText(block.text)}</div>`; break;
 			case 'figure': html += renderClassFigure(block); break;
+			case 'accordions': html += (window.PankuStudyUI?.renderAccordionGroup?.({items:block.items || [], label:block.label || 'Worked examples', isExampleGroup:/example|question/i.test(block.label || '') || (block.items || []).some(item => (item.question_paragraphs || []).length)}) || ''); break;
+			case 'pankusdesk-tip': html += (window.PankuStudyUI?.renderTip?.(block) || ''); break;
 			case 'line': html += `<p class="verbatim-line">${formatText(block.text)}</p>`; break;
 			default: html += `<p>${formatText(block.text || '')}</p>`;
 		}
@@ -136,64 +139,11 @@ function renderBlocks(blocks) {
 }
 
 function renderClassFigure(figure) {
-	if (!figure?.src || !figure?.alt) return '';
-	const width = Number(figure.width);
-	const height = Number(figure.height);
-	const dimensions = Number.isFinite(width) && Number.isFinite(height) ? ` width="${width}" height="${height}"` : '';
-	return `
-		<figure class="class-note-visual">
-			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
-			${figure.caption ? `<figcaption>${escapeHtml(figure.caption)}</figcaption>` : ''}
-		</figure>
-	`;
+	return window.PankuStudyUI?.renderFigure?.(figure, { className: 'study-figure class-log-figure' }) || '';
 }
 
-async function fetchJson(url) {
-	const response = await fetch(url);
-	if (!response.ok) throw new Error(`${url} returned ${response.status}`);
-	return response.json();
-}
-
-function formatText(value) {
-	const input = String(value ?? '');
-	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
-	let result = '';
-	let lastIndex = 0;
-	let match;
-
-	while ((match = mathPattern.exec(input)) !== null) {
-		result += formatPlainText(input.slice(lastIndex, match.index));
-		result += escapeHtml(match[0]);
-		lastIndex = match.index + match[0].length;
-	}
-	result += formatPlainText(input.slice(lastIndex));
-	return result;
-}
-
-function formatPlainText(value) {
-	return escapeHtml(value).replace(/\b([A-Za-z][A-Za-z0-9]*)_\{?([A-Za-z0-9]+)\}?/g, '$1<sub>$2</sub>');
-}
-
-let mathJaxPromise = null;
-async function typesetMath(root) {
-	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
-	await ensureMathJax();
-	if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise([root]);
-}
-function ensureMathJax() {
-	if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
-	if (mathJaxPromise) return mathJaxPromise;
-	mathJaxPromise = new Promise((resolve, reject) => {
-		window.MathJax = { tex: { inlineMath: [['\\\(', '\\\)']], displayMath: [['\\\[', '\\\]']], processEscapes: true }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] } };
-		const script = document.createElement('script');
-		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-		script.async = true;
-		script.onload = () => resolve(window.MathJax);
-		script.onerror = () => reject(new Error('MathJax could not be loaded.'));
-		document.head.appendChild(script);
-	});
-	return mathJaxPromise;
-}
+function formatText(value) { return window.PankuStudyUI?.formatText?.(value) ?? escapeHtml(value); }
+async function typesetMath(root) { return window.PankuStudyUI?.typesetMath?.(root); }
 
 function toRoman(value) {
 	const numerals = [[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];

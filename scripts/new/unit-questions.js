@@ -211,21 +211,7 @@ function renderMathMismatch(mismatch) {
 }
 
 function renderAnswerFigure(figure) {
-	if (!figure?.src || !figure?.alt) return '';
-	const width = Number(figure.width);
-	const height = Number(figure.height);
-	const dimensions = Number.isFinite(width) && Number.isFinite(height)
-		? ` width="${width}" height="${height}"`
-		: '';
-	const caption = figure.caption ? `<span>${escapeHtml(figure.caption)}</span>` : '';
-	const page = figure.page ? `<span class="answer-figure-page">Book p. ${escapeHtml(figure.page)}</span>` : '';
-
-	return `
-		<figure class="answer-figure">
-			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
-			${caption || page ? `<figcaption>${caption}${page}</figcaption>` : ''}
-		</figure>
-	`;
+	return window.PankuStudyUI?.renderFigure?.(figure, { className: 'study-figure answer-figure' }) || '';
 }
 
 function renderTable(table) {
@@ -300,45 +286,8 @@ async function fetchJson(url) {
 }
 
 
-function formatText(value) {
-	const input = String(value ?? '');
-	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
-	let result = '';
-	let lastIndex = 0;
-	let match;
-	while ((match = mathPattern.exec(input)) !== null) {
-		result += escapeHtml(input.slice(lastIndex, match.index));
-		result += escapeHtml(match[0]);
-		lastIndex = match.index + match[0].length;
-	}
-	result += escapeHtml(input.slice(lastIndex));
-	return result;
-}
-
-let mathJaxPromise = null;
-async function typesetMath(root) {
-	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
-	await ensureMathJax();
-	if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise([root]);
-}
-
-function ensureMathJax() {
-	if (window.MathJax?.typesetPromise) return Promise.resolve(window.MathJax);
-	if (mathJaxPromise) return mathJaxPromise;
-	mathJaxPromise = new Promise((resolve, reject) => {
-		window.MathJax = {
-			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true },
-			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
-		};
-		const script = document.createElement('script');
-		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-		script.async = true;
-		script.onload = () => resolve(window.MathJax);
-		script.onerror = () => reject(new Error('MathJax could not be loaded.'));
-		document.head.appendChild(script);
-	});
-	return mathJaxPromise;
-}
+function formatText(value) { return window.PankuStudyUI?.formatText?.(value) ?? escapeHtml(value); }
+async function typesetMath(root) { return window.PankuStudyUI?.typesetMath?.(root); }
 
 function toRoman(value) {
 	const numerals = [[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];

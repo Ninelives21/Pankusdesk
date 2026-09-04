@@ -212,3 +212,13 @@ Set `publicationStatus: "ready"` only when:
 - [ ] Never use `--delete` for a normal delta.
 - [ ] Do not guess the user's Pankusdesk path.
 - [ ] Provide `git status` and verifier command(s).
+
+## Q. Shared study UI design lock
+
+- [ ] Load `styles/new/study-ui.css` and `scripts/new/study-ui.js` on every unit/textbook-question/unit-class-notes/direct-class-log shell that renders shared study content.
+- [ ] Use the shared accordion renderer; do not implement subject-specific accordion markup or a separate clickable `Solution` row.
+- [ ] For examples, show title + complete question while closed; opening the same card begins with the non-clickable `Solution` label and full working.
+- [ ] Route LaTeX escaping/typesetting through `PankuStudyUI`; do not add another subject-specific MathJax loader.
+- [ ] Route baseline study figures/drawings through the shared figure renderer; subject CSS may alter placement/size only.
+- [ ] Put model-added explanatory notes in the shared `PankusDesk tip` box so they are visibly distinct from textbook/class-source material.
+- [ ] Treat the shared accordion, LaTeX, drawing and tip look-and-feel as cross-subject/cross-semester design-locked components.
