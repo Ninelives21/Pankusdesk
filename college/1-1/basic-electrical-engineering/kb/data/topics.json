@@ -1187,21 +1187,6 @@
             "pages": "15",
             "images": "15.png"
           }
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-24.png",
-            "alt": "Redrawn source-transformation figure showing a 5 A current source in parallel with a 5 ohm resistor between terminals a and b, converted into an equivalent 25 V voltage source in series with a 5 ohm resistor between the same terminals.",
-            "caption": "Fig. 1.24 · Conversion of a current source into a voltage source",
-            "page": 15,
-            "width": 1575,
-            "height": 420,
-            "after": {
-              "type": "before-paragraph",
-              "index": 0
-            },
-            "size": "large"
-          }
         ]
       },
       {
@@ -1220,21 +1205,6 @@
           {
             "pages": "16",
             "images": "16.png"
-          }
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-25.png",
-            "alt": "Redrawn source-transformation figure showing a 50 V voltage source in series with a 30 ohm resistor between terminals a and b, converted into an equivalent 1.66 A current source in parallel with a 30 ohm resistor between the same terminals.",
-            "caption": "Fig. 1.25 · Conversion of a voltage source into a current source",
-            "page": 16,
-            "width": 1879,
-            "height": 837,
-            "after": {
-              "type": "before-paragraph",
-              "index": 0
-            },
-            "size": "large"
           }
         ]
       }
@@ -1393,16 +1363,15 @@
         "heading": "Exercise 1.5.1 — KVL",
         "scope": "core",
         "paragraphs": [
-          "Find the values of \\(V_1\\) and \\(V_2\\) in the network given in Figure 1.28.",
-          "The textbook question figure shows a \\(3\\ \\text{V}\\) source on the right, but the solution figure changes this source to \\(8\\ \\text{V}\\). The worked solution below follows the textbook solution exactly as printed.",
-          "Assume the current \\(i\\) in a particular direction. Let \\(V_1\\) and \\(V_2\\) be the voltage drops in the 4-ohm and 2-ohm resistances respectively for the assumed current direction. Applying KVL,",
+          "Find \\(V_1\\) and \\(V_2\\).",
+          "Assume the current \\(i\\) in a particular direction. Let \\(V_1\\) and \\(V_2\\) be the voltage drops in the 4-ohm and 2-ohm resistances respectively for that current direction. Applying KVL,",
           "\\[10-4i+8-2i=0\\]",
           "\\[18-6i=0\\]",
           "\\[6i=18\\]",
           "\\[i=\\dfrac{18}{6}=3\\ \\text{A}\\]",
           "Therefore,",
           "\\[V_1=4i=4\\times3=12\\ \\text{V}\\]",
-          "For the 2-ohm resistance, the textbook first evaluates the drop magnitude as",
+          "The drop across the 2-ohm resistance is",
           "\\[V_3=2i=2\\times3=6\\ \\text{V}\\]",
           "With the labelled polarity of \\(V_2\\) in the figure,",
           "\\[V_2=-V_3=-6\\ \\text{V}\\]"
@@ -1417,6 +1386,10 @@
             "images": "17.png–18.png"
           }
         ],
+        "discrepancy": {
+          "label": "Textbook discrepancy — Exercise 1.5.1",
+          "message": "The question figure (Fig. 1.28) shows a 3 V source on the right, but the textbook solution figure (Fig. 1.28(a)) changes that same source to 8 V. The worked solution here follows the textbook solution exactly as printed, so the numerical answer corresponds to the 8 V solution figure, not to the 3 V question figure."
+        },
         "figures": [
           {
             "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-28.png",

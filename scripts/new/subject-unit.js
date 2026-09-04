@@ -353,7 +353,11 @@ function renderSections(sections, context) {
 
 function renderSection(section, context) {
 	const isClassNote = section.kind === 'class-note';
-	const className = isClassNote ? 'note-section class-note-section' : 'note-section';
+	const discrepancy = normalizeSectionDiscrepancy(section.discrepancy);
+	const className = [
+		isClassNote ? 'note-section class-note-section' : 'note-section',
+		discrepancy ? 'has-discrepancy' : '',
+	].filter(Boolean).join(' ');
 	const sourceLabel = isClassNote
 		? `<div class="class-note-source-label">${escapeHtml(section.source_label || 'Priyanka\'s class notes')}</div>`
 		: '';
@@ -362,8 +366,26 @@ function renderSection(section, context) {
 		<section class="${className}">
 			${sourceLabel}
 			<div class="note-section-heading"><h3>${formatText(section.heading)}</h3></div>
+			${discrepancy ? renderSectionDiscrepancy(discrepancy) : ''}
 			${renderSectionContent(section, context)}
 		</section>
+	`;
+}
+
+function normalizeSectionDiscrepancy(value) {
+	if (!value || typeof value !== 'object' || !String(value.message || '').trim()) return null;
+	return {
+		label: String(value.label || 'Textbook discrepancy'),
+		message: String(value.message),
+	};
+}
+
+function renderSectionDiscrepancy(discrepancy) {
+	return `
+		<aside class="section-discrepancy-note" role="note" aria-label="${escapeHtml(discrepancy.label)}">
+			<div class="section-discrepancy-note-label">${escapeHtml(discrepancy.label)}</div>
+			<div class="section-discrepancy-note-text">${formatText(discrepancy.message)}</div>
+		</aside>
 	`;
 }
 
