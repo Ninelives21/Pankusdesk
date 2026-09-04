@@ -183,22 +183,47 @@ function renderClassTableCell(cell) {
 function renderClassAccordions(group) {
 	const items = Array.isArray(group?.items) ? group.items : [];
 	if (!items.length) return '';
-	const label = group.label || 'Understand this diagram';
+	const label = group.label || 'Worked examples';
 	return `
 		<div class="class-notes-accordion" aria-label="${escapeHtml(label)}">
 			<div class="class-notes-accordion-label">${escapeHtml(label)}</div>
-			${items.map(item => `
-				<details class="class-notes-accordion-item">
-					<summary>
-						<span>${formatText(item.title || '')}</span>
-						<span class="class-notes-accordion-toggle" aria-hidden="true">+</span>
-					</summary>
-					<div class="class-notes-accordion-content">
-						${(item.paragraphs || []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
-						${(item.bullets || []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
-					</div>
-				</details>
-			`).join('')}
+			${items.map(item => {
+				const questions = Array.isArray(item.question_paragraphs) ? item.question_paragraphs : [];
+				if (questions.length) {
+					return `
+						<div class="class-notes-example-card">
+							<div class="class-notes-example-question">
+								<h5>${formatText(item.title || '')}</h5>
+								${questions.map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+							</div>
+							<details class="class-notes-accordion-item class-notes-solution-details">
+								<summary>
+									<span>Solution</span>
+									<span class="class-notes-accordion-toggle" aria-hidden="true">+</span>
+								</summary>
+								<div class="class-notes-accordion-content">
+									${(item.paragraphs || []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+									${(item.bullets || []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+									${item.final_answer ? `<div class="class-notes-final-answer"><strong>Final answer:</strong> ${formatText(item.final_answer)}</div>` : ''}
+								</div>
+							</details>
+						</div>
+					`;
+				}
+				return `
+					<details class="class-notes-accordion-item">
+						<summary>
+							<span>${formatText(item.title || '')}</span>
+							<span class="class-notes-accordion-toggle" aria-hidden="true">+</span>
+						</summary>
+						<div class="class-notes-accordion-content">
+							${(item.paragraphs || []).map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
+							${(item.bullets || []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
+							${item.final_answer ? `<div class="class-notes-final-answer"><strong>Final answer:</strong> ${formatText(item.final_answer)}</div>` : ''}
+						</div>
+					</details>
+				`;
+			}).join('')}
 		</div>
 	`;
 }

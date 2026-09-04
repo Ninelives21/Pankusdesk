@@ -241,3 +241,25 @@
 .class-notes-accordion-content p { margin: .7rem 0 0; line-height: 1.68; }
 .class-notes-accordion-content ul { margin: .7rem 0 0 1.15rem; }
 .class-notes-accordion-content li { margin: .35rem 0; line-height: 1.58; }
+
+/* Worked class examples: full question visible; solution only in the dropdown. */
+.class-notes-example-card {
+	margin-top: .8rem;
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	overflow: hidden;
+	background: var(--surface);
+}
+.class-notes-example-question { padding: 1rem 1.15rem .9rem; }
+.class-notes-example-question h5 { margin: 0 0 .55rem; font-size: 1.02rem; color: var(--text-primary); }
+.class-notes-example-question p { margin: .45rem 0; line-height: 1.65; }
+.class-notes-example-card .class-notes-solution-details { margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+.class-notes-example-card .class-notes-solution-details summary { background: var(--surface-subtle); }
+.class-notes-final-answer {
+	margin-top: 1rem;
+	padding: .8rem 1rem;
+	border-top: 1px solid var(--line);
+	font-size: 1.02rem;
+	font-weight: 700;
+}
+.class-notes-final-answer strong { color: var(--primary); }

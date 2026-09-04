@@ -372,10 +372,12 @@ def iter_class_text(entry: dict):
                         continue
                     if isinstance(item.get("title"), str):
                         yield f"pages[{pi}].blocks[{bi}].items[{ai}].title", item["title"]
-                    for key in ("paragraphs", "bullets"):
+                    for key in ("question_paragraphs", "paragraphs", "bullets"):
                         for ti, text in enumerate(item.get(key, []) or []):
                             if isinstance(text, str):
                                 yield f"pages[{pi}].blocks[{bi}].items[{ai}].{key}[{ti}]", text
+                    if isinstance(item.get("final_answer"), str):
+                        yield f"pages[{pi}].blocks[{bi}].items[{ai}].final_answer", item["final_answer"]
 
 
 def check_class_logs(subject_dir: Path, topic_ids: set[str], source_ids: set[str]):

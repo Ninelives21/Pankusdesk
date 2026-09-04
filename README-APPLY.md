@@ -1,23 +1,19 @@
-# MAC textbook-question quick-link fix
+# MAC Unit I — 4 September class notes delta
 
-This delta fixes the Unit I Textbook Questions quick links and stacks them vertically.
+Integrates Priyanka's 4 September 2026 Gauss–Seidel class notes into the dedicated Unit I class-notes page and Semester 1.1 calendar.
 
-## What changed
+Includes:
+- Gauss–Seidel procedure and diagonal-dominance notes;
+- one completed class example and two previously unsolved class questions, all fully solved;
+- question-visible / solution-dropdown / bold-final-answer support for generic class-note accordions;
+- dated class source and calendar entry.
 
-- Quick-link URLs now explicitly target the current question-page path before adding the fragment ID. This avoids `<base href="/">` resolving a bare `#fragment` against the site root.
-- Quick links are displayed one per row instead of wrapping horizontally.
-- No textbook-question data or solutions are changed.
-
-## Apply
-
-Dry run:
+Apply from the folder that contains both this delta folder and `Pankusdesk`:
 
 ```bash
-rsync -avhn mac-question-links-fix-delta/ Pankusdesk/
+rsync -avhn mac-unit1-classnotes-2026-09-04-delta/ Pankusdesk/
 ```
 
-Real sync:
-
 ```bash
-rsync -avh mac-question-links-fix-delta/ Pankusdesk/
+rsync -avh mac-unit1-classnotes-2026-09-04-delta/ Pankusdesk/
 ```
