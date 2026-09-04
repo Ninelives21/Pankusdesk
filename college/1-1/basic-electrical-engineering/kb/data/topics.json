@@ -1439,32 +1439,50 @@
               "\\[V_2=-V_3=-6\\ \text{V}\\]"
             ],
             "final_answer": "\\(V_1=12\\ \\text{V}\\), \\(V_2=-6\\ \\text{V}\\)."
-          }
-        ],
-        "source_refs": [
-          "TB-P018",
-          "TB-P019"
-        ],
-        "book_refs": [
+          },
           {
-            "pages": "18–19",
-            "images": "18.png–19.png"
+            "title": "Exercise 1.5.2",
+            "question_paragraphs": [
+              "Find the values of \\(V_x\\) and \\(V_o\\) in the circuit shown in Figure 1.29."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-29.png",
+                "alt": "Exercise 1.5.2 circuit showing a 35 V independent voltage source, a 10 ohm resistor with voltage Vx marked positive on the left and negative on the right, a dependent voltage source of 2Vx with positive polarity at the top, and a 5 ohm resistor with output voltage Vo marked positive on the left and negative on the right.",
+                "caption": "Fig. 1.29 · Circuit for Exercise 1.5.2",
+                "page": 18,
+                "width": 864,
+                "height": 620,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-29a.png",
+                "alt": "Textbook solution circuit for Exercise 1.5.2 with current I directed to the right through the top branch, Vx across the 10 ohm resistor, Vy across the 5 ohm resistor with negative polarity on the left and positive on the right, Vo across the same 5 ohm resistor with the opposite polarity, and the dependent source labelled 2Vx.",
+                "caption": "Fig. 1.29(a) · Current and voltage references used in the solution",
+                "page": 19,
+                "width": 936,
+                "height": 620,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Assume the current direction in the circuit as shown. Let \\(V_x\\) and \\(V_y\\) be the voltage drops in the 10 ohm and 5 ohm resistances respectively for the given current direction.",
+              "Applying KVL,",
+              "\\[35-10i-2V_x-V_y=0\\]",
+              "\\(2V_x\\) is a dependent voltage source whose voltage is a function of the voltage drop across the 10 ohm resistance.",
+              "Since \\(V_x=10i\\) and \\(V_y=5i\\),",
+              "\\[35-10i-2(10i)-V_y=0\\]",
+              "\\[35-10i-20i-V_y=0\\]",
+              "\\[35-30i-5i=0\\]",
+              "\\[35-35i=0\\]",
+              "\\[i=\\dfrac{35}{35}=1\\ \\text{A}\\]",
+              "Then,",
+              "\\[V_x=10i=10\\times1=10\\ \\text{V}\\]",
+              "\\[V_o=-V_y=-(5\\times1)=-5\\ \\text{V}\\]"
+            ],
+            "final_answer": "\\(V_x=10\\ \\text{V}\\), \\(V_o=-5\\ \\text{V}\\)."
           }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.2 — dependent voltage source",
-        "scope": "core",
-        "paragraphs": [
-          "Find \\(V_x\\) and \\(V_o\\). Assume the current direction as shown. Let \\(V_x\\) and \\(V_y\\) be the voltage drops in the 10-ohm and 5-ohm resistances. Applying KVL,",
-          "\\[35-10i-2V_x-V_y=0\\]",
-          "The source \\(2V_x\\) is a dependent voltage source whose voltage is a function of the voltage drop across the 10-ohm resistance. Since \\(V_x=10i\\) and \\(V_y=5i\\),",
-          "\\[35-10i-2(10i)-V_y=0\\]",
-          "\\[35-10i-20i-5i=0\\]",
-          "\\[35-35i=0\\]",
-          "\\[i=\\dfrac{35}{35}=1\\ \\text{A}\\]",
-          "\\[V_x=10i=10\\times1=10\\ \\text{V}\\]",
-          "\\[V_o=-V_y=-(5\\times1)=-5\\ \\text{V}\\]"
         ],
         "source_refs": [
           "TB-P018",
