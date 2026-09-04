@@ -566,7 +566,7 @@ function renderExplanationAccordionItem(item, isExampleGroup) {
 	}
 
 	const { questionParagraphs, solutionParagraphs } = splitExampleQuestionAndSolution(item);
-	const mismatch = normalizeExampleMathMismatch(item.math_mismatch);
+	const mismatch = normalizeExampleDiscrepancy(item.discrepancy ?? item.math_mismatch);
 	return `
 		<details class="explanation-accordion-item explanation-accordion-item--example${mismatch ? ' has-math-mismatch' : ''}">
 			<summary>
@@ -580,6 +580,7 @@ function renderExplanationAccordionItem(item, isExampleGroup) {
 				<span class="explanation-accordion-toggle" aria-hidden="true">+</span>
 			</summary>
 			<div class="explanation-accordion-content example-solution-content">
+				${renderExampleFigures(item.figures ?? [])}
 				${solutionParagraphs.map(paragraph => `<p>${formatText(paragraph)}</p>`).join('')}
 				${(item.bullets ?? []).length ? `<ul>${item.bullets.map(bullet => `<li>${formatText(bullet)}</li>`).join('')}</ul>` : ''}
 				${mismatch ? renderExampleMathMismatch(mismatch) : ''}
@@ -589,10 +590,10 @@ function renderExplanationAccordionItem(item, isExampleGroup) {
 	`;
 }
 
-function normalizeExampleMathMismatch(value) {
+function normalizeExampleDiscrepancy(value) {
 	if (!value || typeof value !== 'object' || !String(value.message || '').trim()) return null;
 	return {
-		label: String(value.label || 'Math mismatch'),
+		label: String(value.label || 'Textbook discrepancy'),
 		message: String(value.message),
 	};
 }
@@ -604,6 +605,11 @@ function renderExampleMathMismatch(mismatch) {
 			<div class="example-math-mismatch-note-text">${formatText(mismatch.message)}</div>
 		</aside>
 	`;
+}
+
+function renderExampleFigures(figures) {
+	if (!figures.length) return '';
+	return figures.map(renderTextbookFigureRow).join('');
 }
 
 function splitExampleQuestionAndSolution(item) {

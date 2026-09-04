@@ -1172,39 +1172,71 @@
         ]
       },
       {
-        "heading": "Exercise 1.4.1",
+        "heading": "Worked examples",
         "scope": "core",
-        "paragraphs": [
-          "Determine the equivalent voltage source for the given current source. The textbook keeps the same resistance and calculates the source voltage as",
-          "\\[R_s=R_p=5\\ \\Omega\\]",
-          "\\[V_s=I_sR_p=5\\times5=25\\ \\text{V}\\]"
-        ],
-        "source_refs": [
-          "TB-P015"
-        ],
-        "book_refs": [
+        "accordion_label": "Worked examples",
+        "accordions": [
           {
-            "pages": "15",
-            "images": "15.png"
+            "title": "Exercise 1.4.1",
+            "question_paragraphs": [
+              "Determine the equivalent voltage source for the given current source."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-24.png",
+                "alt": "Exercise 1.4.1 showing a 5 A practical current source in parallel with a 5 ohm resistor across terminals a and b, transformed into an equivalent 25 V practical voltage source in series with a 5 ohm resistor across the same terminals.",
+                "caption": "Fig. 1.24 · Conversion of a Current Source into a Voltage Source",
+                "page": 15,
+                "width": 1575,
+                "height": 420,
+                "size": "large"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "For current-source to voltage-source transformation, the resistance keeps the same numerical value.",
+              "\\[R_s=R_p=5\\ \\Omega\\]",
+              "The equivalent voltage source value is",
+              "\\[V_s=I_sR_p=5\\times5=25\\ \\text{V}\\]",
+              "Therefore the equivalent practical voltage source is a \\(25\\ \\text{V}\\) source in series with \\(5\\ \\Omega\\)."
+            ],
+            "final_answer": "Equivalent voltage source: \\(V_s=25\\ \\text{V}\\), \\(R_s=5\\ \\Omega\\)."
+          },
+          {
+            "title": "Exercise 1.4.2",
+            "question_paragraphs": [
+              "Find the equivalent current source for the given voltage source."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-25.png",
+                "alt": "Exercise 1.4.2 showing a 50 V practical voltage source in series with a 30 ohm resistor across terminals a and b, transformed into an equivalent practical current source of 1.66 A in parallel with a 30 ohm resistor across the same terminals.",
+                "caption": "Fig. 1.25 · Conversion of a Voltage Source into a Current Source",
+                "page": 16,
+                "width": 1879,
+                "height": 837,
+                "size": "large"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "For voltage-source to current-source transformation, the resistance keeps the same numerical value.",
+              "\\[R_p=R_s=30\\ \\Omega\\]",
+              "The equivalent current source value is",
+              "\\[I_s=\\dfrac{V_s}{R_s}=\\dfrac{50}{30}=1.66\\ \\text{A}\\]",
+              "Therefore the equivalent practical current source is a \\(1.66\\ \\text{A}\\) source in parallel with \\(30\\ \\Omega\\)."
+            ],
+            "final_answer": "Equivalent current source: \\(I_s=1.66\\ \\text{A}\\), \\(R_p=30\\ \\Omega\\)."
           }
-        ]
-      },
-      {
-        "heading": "Exercise 1.4.2",
-        "scope": "core",
-        "paragraphs": [
-          "Find the equivalent current source for the given voltage source. The resistance remains",
-          "\\[R_p=R_s=30\\ \\Omega\\]",
-          "and the current source value is",
-          "\\[I_s=\\dfrac{V_s}{R_s}=\\dfrac{50}{30}=1.66\\ \\text{A}\\]"
         ],
         "source_refs": [
+          "TB-P015",
           "TB-P016"
         ],
         "book_refs": [
           {
-            "pages": "16",
-            "images": "16.png"
+            "pages": "15–16",
+            "images": "15.png–16.png"
           }
         ]
       }
@@ -1360,62 +1392,63 @@
         ]
       },
       {
-        "heading": "Exercise 1.5.1 — KVL",
+        "heading": "Worked examples",
         "scope": "core",
-        "paragraphs": [
-          "Find \\(V_1\\) and \\(V_2\\).",
-          "Assume the current \\(i\\) in a particular direction. Let \\(V_1\\) and \\(V_2\\) be the voltage drops in the 4-ohm and 2-ohm resistances respectively for that current direction. Applying KVL,",
-          "\\[10-4i+8-2i=0\\]",
-          "\\[18-6i=0\\]",
-          "\\[6i=18\\]",
-          "\\[i=\\dfrac{18}{6}=3\\ \\text{A}\\]",
-          "Therefore,",
-          "\\[V_1=4i=4\\times3=12\\ \\text{V}\\]",
-          "The drop across the 2-ohm resistance is",
-          "\\[V_3=2i=2\\times3=6\\ \\text{V}\\]",
-          "With the labelled polarity of \\(V_2\\) in the figure,",
-          "\\[V_2=-V_3=-6\\ \\text{V}\\]"
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 1.5.1",
+            "question_paragraphs": [
+              "Find the values of \\(V_1\\) and \\(V_2\\) in the network given in Figure 1.28."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-28.png",
+                "alt": "Exercise 1.5.1 question figure showing a single loop with a 10 V source on the left, a 3 V source on the right, a 4 ohm resistor on the top branch labelled V1 with polarity plus on the left and minus on the right, and a 2 ohm resistor on the bottom branch labelled V2 with polarity plus on the left and minus on the right.",
+                "caption": "Fig. 1.28 · Given network for Exercise 1.5.1",
+                "page": 18,
+                "width": 1260,
+                "height": 800,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-28a.png",
+                "alt": "Textbook solution figure for Exercise 1.5.1 showing the same single-loop circuit, but with the right-hand source redrawn as 8 V instead of the 3 V shown in the question figure.",
+                "caption": "Fig. 1.28(a) · Textbook solution diagram",
+                "page": 19,
+                "width": 1260,
+                "height": 800,
+                "size": "medium"
+              }
+            ],
+            "discrepancy": {
+              "label": "Textbook discrepancy",
+              "message": "Exercise 1.5.1 contains a source mismatch in the prescribed textbook. The question figure (Fig. 1.28) shows the right-hand source as 3 V, but the printed solution figure (Fig. 1.28(a)) redraws that same source as 8 V. The worked steps below are preserved as printed and therefore follow the 8 V solution figure."
+            },
+            "paragraphs": [
+              "Solution:",
+              "Assume the current \\(i\\) in a particular direction. Let \\(V_1\\) and \\(V_2\\) be the voltage drops in the 4 ohm and 2 ohm resistances respectively for the given current direction.",
+              "Applying KVL,",
+              "\\[10-4i+8-2i=0\\]",
+              "\\[18-6i=0\\]",
+              "\\[6i=18\\]",
+              "\\[i=\\dfrac{18}{6}=3\\ \text{A}\\]",
+              "Or",
+              "\\[V_1=4\\times i=4\\times3=12\\ \text{V}\\]",
+              "\\[V_3=2\\times i=2\\times3=6\\ \text{V}\\]",
+              "\\[V_2=-V_3=-6\\ \text{V}\\]"
+            ],
+            "final_answer": "\\(V_1=12\\ \\text{V}\\), \\(V_2=-6\\ \\text{V}\\)."
+          }
         ],
         "source_refs": [
-          "TB-P017",
-          "TB-P018"
+          "TB-P018",
+          "TB-P019"
         ],
         "book_refs": [
           {
-            "pages": "17–18",
-            "images": "17.png–18.png"
-          }
-        ],
-        "discrepancy": {
-          "label": "Textbook discrepancy — Exercise 1.5.1",
-          "message": "The question figure (Fig. 1.28) shows a 3 V source on the right, but the textbook solution figure (Fig. 1.28(a)) changes that same source to 8 V. The worked solution here follows the textbook solution exactly as printed, so the numerical answer corresponds to the 8 V solution figure, not to the 3 V question figure."
-        },
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-28.png",
-            "alt": "Exercise 1.5.1 circuit with a 10 V source on the left, a 3 V source on the right, a 4 ohm resistor on the top branch and a 2 ohm resistor on the bottom branch, with V1 and V2 polarities marked positive on the left and negative on the right.",
-            "caption": "Fig. 1.28 · Circuit for Exercise 1.5.1",
-            "page": 17,
-            "width": 1260,
-            "height": 800,
-            "after": {
-              "type": "paragraph",
-              "index": 0
-            },
-            "size": "large"
-          },
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-28a.png",
-            "alt": "Textbook solution circuit for Exercise 1.5.1, identical in topology to Figure 1.28 but showing 8 V for the right-hand source instead of 3 V; the 10 V source, 4 ohm resistor, 2 ohm resistor and V1 and V2 polarities are unchanged.",
-            "caption": "Fig. 1.28(a) · Textbook solution figure",
-            "page": 18,
-            "width": 1260,
-            "height": 800,
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "large"
+            "pages": "18–19",
+            "images": "18.png–19.png"
           }
         ]
       },
