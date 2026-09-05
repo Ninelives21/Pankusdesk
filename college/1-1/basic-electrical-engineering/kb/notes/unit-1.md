@@ -1030,6 +1030,18 @@ The textbook introduces this section through worked reductions. Each example ide
 
 ### Exercise 1.6.1 — find the current delivered by the source
 
+*Figure: Fig. 1.42 · Original circuit for Exercise 1.6.1*
+
+*Figure: Fig. 1.42(a) · First series reductions*
+
+*Figure: Fig. 1.42(b) · Parallel reductions to 2 ohms and 1.2 ohms*
+
+*Figure: Fig. 1.42(c) · Network after the B-to-C reduction*
+
+*Figure: Fig. 1.42(d) · Two remaining parallel branches*
+
+*Figure: Fig. 1.42(e) · Final equivalent resistance of 1.05 ohms*
+
 Identify nodes \(A\), \(B\) and \(C\). Between \(A\) and \(B\), the two 2-ohm resistances in the upper path are in series, giving \(4\ \Omega\). Between \(B\) and \(C\), the 2-ohm and 1-ohm resistances are in series, giving \(3\ \Omega\).
 
 The reduction figures then show \(4\ \Omega\parallel4\ \Omega=2\ \Omega\) between \(A\) and \(B\), and between \(B\) and \(C\),

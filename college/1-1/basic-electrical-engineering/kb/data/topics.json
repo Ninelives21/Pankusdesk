@@ -2028,18 +2028,81 @@
         ]
       },
       {
-        "heading": "Exercise 1.6.1 — find the current delivered by the source",
+        "heading": "Worked examples",
         "scope": "core",
-        "paragraphs": [
-          "Identify nodes \\(A\\), \\(B\\) and \\(C\\). Between \\(A\\) and \\(B\\), the two 2-ohm resistances in the upper path are in series, giving \\(4\\ \\Omega\\). Between \\(B\\) and \\(C\\), the 2-ohm and 1-ohm resistances are in series, giving \\(3\\ \\Omega\\).",
-          "The reduction figures then show \\(4\\ \\Omega\\parallel4\\ \\Omega=2\\ \\Omega\\) between \\(A\\) and \\(B\\), and between \\(B\\) and \\(C\\),",
-          "\\[R_{BC}=\\dfrac{2\\times3}{2+3}=\\dfrac65=1.2\\ \\Omega\\]",
-          "Between \\(A\\) and \\(C\\), the path through \\(2\\ \\Omega+1.2\\ \\Omega\\) is in parallel with a 2-ohm branch. Hence",
-          "\\[R_{AC}=\\dfrac{(2+1.2)\\times2}{2+(2+1.2)}=1.23\\ \\Omega\\]",
-          "The textbook reduction figures then add the series 1-ohm resistor to obtain \\(2.23\\ \\Omega\\), and place this in parallel with the remaining 2-ohm branch:",
-          "\\[R_{eq}=\\dfrac{2\\times2.23}{2+2.23}=1.05\\ \\Omega\\]",
-          "Therefore the current supplied by the 30-V source is",
-          "\\[I=\\dfrac{30}{1.05}=28.57\\ \\text{A}\\]"
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 1.6.1",
+            "question_paragraphs": [
+              "Find the current delivered by the source for the circuit shown in Figure 1.42."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-42.png",
+                "alt": "Exercise 1.6.1 original resistor network supplied by a 30 V source. Current i enters node A. The upper A-to-B path contains two 2 ohm resistors in series, a 4 ohm resistor directly connects A to B, the lower network contains 2 ohm branches from A and B to node C, the outer lower sloping branches are 2 ohm resistors, and the bottom branches to C are 1 ohm resistors.",
+                "caption": "Fig. 1.42 · Original circuit for Exercise 1.6.1",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-42a.png",
+                "alt": "First reduction of Exercise 1.6.1. The two 2 ohm resistors in the upper A-to-B path are replaced by 4 ohms, giving two 4 ohm branches between A and B. On the right, the outer 2 ohm and 1 ohm series path is replaced by a 3 ohm branch from B to the lower-right node.",
+                "caption": "Fig. 1.42(a) · First series reductions",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-42b.png",
+                "alt": "Second reduction of Exercise 1.6.1. The parallel 4 ohm branches between A and B are reduced to 2 ohms. The 2 ohm and 3 ohm branches between B and C are reduced to 1.2 ohms, shown with the calculation 2 times 3 divided by 2 plus 3 equals 1.2 ohms.",
+                "caption": "Fig. 1.42(b) · Parallel reductions to 2 ohms and 1.2 ohms",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-42c.png",
+                "alt": "Third reduction of Exercise 1.6.1. A 2 ohm branch connects the lower-left node directly to node A, the lower path contains a 1 ohm resistor to node C, and the right side from A to C is the 1.2 ohm equivalent branch.",
+                "caption": "Fig. 1.42(c) · Network after the B-to-C reduction",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-42d.png",
+                "alt": "Fourth reduction of Exercise 1.6.1. The network across the 30 V source has two parallel branches: a 2 ohm branch and a 2.23 ohm branch.",
+                "caption": "Fig. 1.42(d) · Two remaining parallel branches",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-42e.png",
+                "alt": "Final equivalent circuit for Exercise 1.6.1 showing a 30 V source driving current i through an equivalent resistance calculated as 2 times 2.23 divided by 2 plus 2.23, equal to 1.05 ohms.",
+                "caption": "Fig. 1.42(e) · Final equivalent resistance of 1.05 ohms",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Identify the nodes \\(A\\), \\(B\\) and \\(C\\). Between \\(A\\) and \\(B\\), the two 2 ohm resistances in the upper path are in series, giving \\(4\\ \\Omega\\). Between \\(B\\) and \\(C\\), the 2 ohm and 1 ohm resistances are in series, giving \\(3\\ \\Omega\\).",
+              "Between \\(A\\) and \\(B\\), the two 4 ohm resistances are connected in parallel, so",
+              "\\[4\\ \\Omega\\parallel4\\ \\Omega=2\\ \\Omega\\]",
+              "Between \\(B\\) and \\(C\\), the 2 ohm and 3 ohm resistances are connected in parallel:",
+              "\\[R_{BC}=\\dfrac{2\\times3}{2+3}=\\dfrac65=1.2\\ \\Omega\\]",
+              "Between \\(A\\) and \\(C\\), the 2 ohm and 1.2 ohm resistances are in series. This combination is in parallel with the other 2 ohm branch. Hence",
+              "\\[R_{AC}=\\dfrac{(2+1.2)\\times2}{2+(2+1.2)}=1.23\\ \\Omega\\]",
+              "The 1 ohm resistor is then in series with \\(1.23\\ \\Omega\\), giving \\(2.23\\ \\Omega\\). This is in parallel with the remaining 2 ohm branch:",
+              "\\[R_{eq}=\\dfrac{2\\times2.23}{2+2.23}=1.05\\ \\Omega\\]",
+              "Therefore the current supplied by the 30 V source is",
+              "\\[I=\\dfrac{30}{1.05}=28.57\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(I=28.57\\ \\text{A}\\)."
+          }
         ],
         "source_refs": [
           "TB-P031",
