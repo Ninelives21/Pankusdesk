@@ -56,11 +56,6 @@ async function initSubjectUnitPage() {
 		} catch (mathError) {
 			console.warn('Math typesetting failed; leaving LaTeX source visible.', mathError);
 		}
-		// Topic anchors are rendered asynchronously, and MathJax can change the
-		// height of everything above the requested topic. Re-apply the current
-		// hash after typesetting so a direct link or an early TOC click lands on
-		// the correct topic instead of drifting to an earlier section.
-		syncTopicHashPosition(unitTopics);
 	} catch (error) {
 		console.error('Subject unit page load failed:', error);
 		renderPageError(page, error);
@@ -285,19 +280,19 @@ function renderEndOfUnitPractice(context) {
 	`;
 }
 
+function buildTopicHashHref(id) {
+	const url = new URL(window.location.href);
+	url.hash = id;
+	return `${url.pathname}${url.search}${url.hash}`;
+}
+
 function renderTopicNav(unitTopics) {
 	const nav = document.getElementById('unit-topic-nav');
 	if (!nav) return;
 
-	// This site uses <base href="/">. A bare href="#topic" therefore resolves
-	// to the site root, not to the current unit page. Always emit an explicit
-	// same-document path so the TOC remains correct even if JavaScript does not
-	// intercept the click.
-	const currentPagePath = `${window.location.pathname}${window.location.search}`;
-
 	nav.innerHTML = unitTopics
 		.map((topic, index) => `
-			<a class="unit-toc-link" href="${escapeHtml(currentPagePath)}#${encodeURIComponent(topic.id)}">
+			<a class="unit-toc-link" href="${escapeHtml(buildTopicHashHref(topic.id))}">
 				<span class="toc-index">${String(index + 1).padStart(2, '0')}</span>
 				<span>${escapeHtml(topic.title)}</span>
 			</a>
@@ -893,41 +888,30 @@ function setupTopicNavigation(unitTopics) {
 	const sections = unitTopics.map(topic => document.getElementById(topic.id)).filter(Boolean);
 	if (!links.length || !sections.length) return;
 
-	const linkTopicId = link => {
-		try {
-			return decodeURIComponent(link.hash.slice(1));
-		} catch {
-			return link.hash.slice(1);
-		}
-	};
-
 	const setActive = id => {
 		links.forEach(link => {
-			const active = linkTopicId(link) === id;
+			const href = link.getAttribute('href') || '';
+			const hashId = href.includes('#') ? href.slice(href.indexOf('#') + 1) : '';
+			const active = hashId === id;
 			link.classList.toggle('is-active', active);
 			if (active) link.setAttribute('aria-current', 'location');
 			else link.removeAttribute('aria-current');
 		});
 	};
 
-	const scrollToTopic = (id, behavior = 'auto') => {
-		const target = id ? document.getElementById(id) : null;
-		if (!target) return false;
-		setActive(id);
-		target.scrollIntoView({ behavior, block: 'start' });
-		return true;
-	};
-
 	links.forEach(link => {
 		link.addEventListener('click', event => {
-			const id = linkTopicId(link);
-			if (!id || !document.getElementById(id)) return;
+			const href = link.getAttribute('href') || '';
+			const id = href.includes('#') ? href.slice(href.indexOf('#') + 1) : '';
+			const target = id ? document.getElementById(id) : null;
+			if (!target) return;
 
-			// Keep navigation on this unit page. This also avoids the <base href="/">
-			// rule turning a fragment click into a trip to the site homepage.
-		event.preventDefault();
-		history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${encodeURIComponent(id)}`);
-		scrollToTopic(id, 'smooth');
+			event.preventDefault();
+			setActive(id);
+			const url = new URL(window.location.href);
+			url.hash = id;
+			history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		});
 	});
 
@@ -943,29 +927,13 @@ function setupTopicNavigation(unitTopics) {
 
 	sections.forEach(section => observer.observe(section));
 
-	let initialId = '';
-	try {
-		initialId = decodeURIComponent(window.location.hash.slice(1));
-	} catch {
-		initialId = window.location.hash.slice(1);
-	}
+	const initialId = window.location.hash.slice(1);
 	if (initialId && document.getElementById(initialId)) {
 		setActive(initialId);
-		requestAnimationFrame(() => scrollToTopic(initialId));
+		requestAnimationFrame(() => document.getElementById(initialId)?.scrollIntoView({ block: 'start' }));
 	} else {
 		setActive(sections[0].id);
 	}
-}
-
-function syncTopicHashPosition(unitTopics) {
-	const id = window.location.hash.slice(1);
-	if (!id || !unitTopics.some(topic => topic.id === id)) return;
-	const target = document.getElementById(id);
-	if (!target) return;
-
-	requestAnimationFrame(() => {
-		target.scrollIntoView({ block: 'start' });
-	});
 }
 
 function renderPageError(page, error) {
