@@ -1090,17 +1090,23 @@ When a 6-V battery is connected between \(x\) and \(y\), the current driven is
 
 ### Exercise 1.6.3 — same-potential nodes
 
-Find the resistance between \(a\) and \(b\). The textbook notes that nodes \(A\) and \(B\) are at the same potential; therefore they are one and the same node. The reduction figure then gives the upper pair as
+*Figure: Fig. 1.44 · Original circuit for Exercise 1.6.3*
 
-\[3\ \Omega\parallel6\ \Omega=2\ \Omega\]
+*Figure: Fig. 1.44(a) · Reduction using the equal-potential node A = B*
 
-and the lower pair as
+Find the resistance between \(a\) and \(b\). The nodes \(A\) and \(B\) are of the same potential; therefore they are one and the same node.
 
-\[4\ \Omega\parallel4\ \Omega=2\ \Omega\]
+Between \(a\) and the common node \(A=B\), the 3-ohm and 6-ohm resistances are in parallel:
 
-These two reduced resistances are in series, so
+\[R_1=3\parallel6=\dfrac{3\times6}{3+6}=\dfrac{18}{9}=2\ \Omega\]
 
-\[R_{ab}=2+2=4\ \Omega\]
+Between \(A=B\) and \(b\), the two 4-ohm resistances are in parallel:
+
+\[R_2=4\parallel4=\dfrac{4\times4}{4+4}=\dfrac{16}{8}=2\ \Omega\]
+
+These two equivalent resistances are in series, so
+
+\[R_{ab}=R_1+R_2=2+2=4\ \Omega\]
 
 ### Key formulas
 

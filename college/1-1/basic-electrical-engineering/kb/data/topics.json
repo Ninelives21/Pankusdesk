@@ -2163,6 +2163,43 @@
               "\\[I=\\dfrac{6}{1.698\\times10^3}=3.53\\ \\text{mA}\\]"
             ],
             "final_answer": "\\(R_{xy}=1.698\\ \\mathrm{k}\\Omega\\), current from a 6 V source \\(I=3.53\\ \\text{mA}\\)."
+          },
+          {
+            "title": "Exercise 1.6.3",
+            "question_paragraphs": [
+              "Find the resistance between \\(a\\) and \\(b\\) for the circuit shown in Figure 1.44."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-44.png",
+                "alt": "Exercise 1.6.3 original bridge-shaped resistor network between terminals a and b. The upper-left branch from a to node A contains 3 ohms, the upper-right branch from a to node B contains 6 ohms, the lower-left branch from A to b contains 4 ohms, the lower-right branch from B to b contains 4 ohms, and nodes A and B are directly connected by a wire.",
+                "caption": "Fig. 1.44 · Original circuit for Exercise 1.6.3",
+                "page": 36,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-44a.png",
+                "alt": "Reduction sequence for Exercise 1.6.3. Since nodes A and B are the same node, the 3 ohm and 6 ohm resistors form a parallel pair equal to 2 ohms, and the two 4 ohm resistors form another parallel pair equal to 2 ohms. These two 2 ohm equivalents are then in series, giving 4 ohms between terminals a and b.",
+                "caption": "Fig. 1.44(a) · Reduction using the equal-potential node A = B",
+                "page": 36,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "The nodes \\(A\\) and \\(B\\) are of the same potential. Hence, these two nodes are one and the same. The circuit therefore reduces as shown in Figure 1.44(a).",
+              "Between \\(a\\) and the common node \\(A=B\\), the 3 ohm and 6 ohm resistances are in parallel:",
+              "\\[R_1=3\\parallel6=\\dfrac{3\times6}{3+6}=\\dfrac{18}{9}=2\\ \\Omega\\]",
+              "Between the common node \\(A=B\\) and \\(b\\), the 4 ohm and 4 ohm resistances are in parallel:",
+              "\\[R_2=4\\parallel4=\\dfrac{4\times4}{4+4}=\\dfrac{16}{8}=2\\ \\Omega\\]",
+              "These two equivalent resistances are in series, so",
+              "\\[R_{ab}=R_1+R_2=2+2=4\\ \\Omega\\]"
+            ],
+            "final_answer": "\\(R_{ab}=4\\ \\Omega\\)."
           }
         ],
         "source_refs": [
@@ -2177,27 +2214,6 @@
           {
             "pages": "31–36",
             "images": "31.png–36.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.6.3 — same-potential nodes",
-        "scope": "core",
-        "paragraphs": [
-          "Find the resistance between \\(a\\) and \\(b\\). The textbook notes that nodes \\(A\\) and \\(B\\) are at the same potential; therefore they are one and the same node. The reduction figure then gives the upper pair as",
-          "\\[3\\ \\Omega\\parallel6\\ \\Omega=2\\ \\Omega\\]",
-          "and the lower pair as",
-          "\\[4\\ \\Omega\\parallel4\\ \\Omega=2\\ \\Omega\\]",
-          "These two reduced resistances are in series, so",
-          "\\[R_{ab}=2+2=4\\ \\Omega\\]"
-        ],
-        "source_refs": [
-          "TB-P036"
-        ],
-        "book_refs": [
-          {
-            "pages": "36",
-            "images": "36.png"
           }
         ]
       }
