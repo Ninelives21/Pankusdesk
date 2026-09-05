@@ -56,6 +56,11 @@ async function initSubjectUnitPage() {
 		} catch (mathError) {
 			console.warn('Math typesetting failed; leaving LaTeX source visible.', mathError);
 		}
+		// Topic anchors are rendered asynchronously, and MathJax can change the
+		// height of everything above the requested topic. Re-apply the current
+		// hash after typesetting so a direct link or an early TOC click lands on
+		// the correct topic instead of drifting to an earlier section.
+		syncTopicHashPosition(unitTopics);
 	} catch (error) {
 		console.error('Subject unit page load failed:', error);
 		renderPageError(page, error);
@@ -892,15 +897,11 @@ function setupTopicNavigation(unitTopics) {
 	};
 
 	links.forEach(link => {
-		link.addEventListener('click', event => {
+		link.addEventListener('click', () => {
 			const id = link.getAttribute('href')?.slice(1);
-			const target = id ? document.getElementById(id) : null;
-			if (!target) return;
-
-			event.preventDefault();
-			setActive(id);
-			history.replaceState(null, '', `#${id}`);
-			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			if (id && document.getElementById(id)) setActive(id);
+			// Keep the native fragment-link behaviour. It is more reliable than
+			// replacing the hash and manually scrolling a dynamically rendered page.
 		});
 	});
 
@@ -923,6 +924,17 @@ function setupTopicNavigation(unitTopics) {
 	} else {
 		setActive(sections[0].id);
 	}
+}
+
+function syncTopicHashPosition(unitTopics) {
+	const id = window.location.hash.slice(1);
+	if (!id || !unitTopics.some(topic => topic.id === id)) return;
+	const target = document.getElementById(id);
+	if (!target) return;
+
+	requestAnimationFrame(() => {
+		target.scrollIntoView({ block: 'start' });
+	});
 }
 
 function renderPageError(page, error) {
