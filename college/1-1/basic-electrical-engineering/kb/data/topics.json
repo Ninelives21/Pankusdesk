@@ -1726,6 +1726,71 @@
               "\\[V=71.4\\ \\text{V}\\]"
             ],
             "final_answer": "Voltage drop across the 10 ohm resistance: \\(V=71.4\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.10",
+            "question_paragraphs": [
+              "Find the current flowing through different resistances using Kirchhoff’s Laws for the circuit shown in Figure 1.37."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-37.png",
+                "alt": "Exercise 1.5.10 bridge circuit with a diamond-shaped resistor network connected between left node a and right node d, and a 12 V source in the outer bottom branch. The upper-left branch a to b has a 2 ohm resistor, the lower-left branch a to c has a 1 ohm resistor, the upper-right branch b to d has a 4 ohm resistor, the lower-right branch c to d has a 3 ohm resistor, and the central vertical branch b to c has a 1 ohm resistor.",
+                "caption": "Fig. 1.37 · Bridge circuit for Exercise 1.5.10",
+                "page": 25,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-37a.png",
+                "alt": "Exercise 1.5.10 solution reference figure showing the same bridge circuit with nodes a, b, c and d marked. Branch currents are indicated as i1 upward in the left outer branch and downward in the right outer branch, i2 upward through the upper-left 2 ohm branch, i3 downward through the central 1 ohm branch, i2 minus i3 through the upper-right 4 ohm branch, i1 minus i2 through the lower-left 1 ohm branch, and i1 minus i2 plus i3 through the lower-right 3 ohm branch. Polarity marks are shown across the bridge resistors and the 12 V source is on the bottom outer branch with positive on the left and negative on the right.",
+                "caption": "Fig. 1.37(a) · Assumed current directions used in the solution",
+                "page": 26,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Identify the different nodes \\(a,b,c\\) and \\(d\\), and assume the current directions through all branches as shown in Figure 1.37(a).",
+              "Applying KVL for the loop \\(abca\\),",
+              "\\[-2i_2-1\\times i_3+1[i_1-i_2]=0\\]",
+              "\\[-2i_2-i_3+i_1-i_2=0\\]",
+              "\\[i_1-3i_2-i_3=0\\tag{1}\\]",
+              "Applying KVL for the loop \\(cbdc\\),",
+              "\\[1\\times i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\\]",
+              "\\[i_3-4i_2+4i_3+3i_1-3i_2+3i_3=0\\]",
+              "\\[3i_1-7i_2+8i_3=0\\tag{2}\\]",
+              "Applying KVL for the loop \\(acda\\) through the 12 V source,",
+              "\\[-(i_1-i_2)\\times1-(i_1-i_2+i_3)\\times3+12=0\\]",
+              "\\[-i_1+i_2-3i_1+3i_2-3i_3+12=0\\]",
+              "\\[-4i_1+4i_2-3i_3=-12\\]",
+              "\\[4i_1-4i_2+3i_3=12\\tag{3}\\]",
+              "Solving equations (1) and (2),",
+              "\\[(1)\\times3,\\qquad 3i_1-9i_2-3i_3=0\\]",
+              "\\[-(2),\\qquad -3i_1+7i_2-8i_3=0\\]",
+              "\\[-2i_2+11i_3=0\\tag{4}\\]",
+              "Solving equations (2) and (3),",
+              "\\[(2)\\times4,\\qquad 12i_1-28i_2+32i_3=0\\]",
+              "\\[-(3)\\times3,\\qquad -12i_1+12i_2-9i_3=-36\\]",
+              "\\[-16i_2+23i_3=-36\\tag{5}\\]",
+              "Solving equations (4) and (5),",
+              "\\[-(4)\\times8,\\qquad 16i_2-88i_3=0\\]",
+              "\\[(5),\\qquad -16i_2+23i_3=-36\\]",
+              "\\[-65i_3=-36\\]",
+              "\\[i_3=\\dfrac{36}{65}=0.553\\ \\text{A}\\]",
+              "From equation (4),",
+              "\\[-2i_2+11\\left(\\dfrac{36}{65}\\right)=0\\]",
+              "\\[i_2=\\dfrac{396}{130}\\ \\text{A}\\]",
+              "From equation (1),",
+              "\\[i_1-3\\times\\dfrac{396}{130}-\\dfrac{36}{65}=0\\]",
+              "\\[i_1=9.69\\ \\text{A}\\]",
+              "The different branch currents are",
+              "\\[i_1=9.69\\ \\text{A},\\qquad i_2=\\dfrac{396}{130}\\ \\text{A},\\qquad i_3=0.553\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(i_1=9.69\\ \\text{A}\\), \\(i_2=\\dfrac{396}{130}\\ \\text{A}\\), \\(i_3=0.553\\ \\text{A}\\)."
           }
         ],
         "source_refs": [
@@ -1736,63 +1801,14 @@
           "TB-P022",
           "TB-P023",
           "TB-P024",
-          "TB-P025"
-        ],
-        "book_refs": [
-          {
-            "pages": "18–25",
-            "images": "18.png–25.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.10 — Kirchhoff’s laws",
-        "scope": "core",
-        "paragraphs": [
-          "Find the currents flowing through the different resistances. Identify nodes \\(a,b,c,d\\) and assume current directions through the branches. Applying KVL to loop \\(abca\\),",
-          "\\[-2i_2-i_3+(i_1-i_2)=0\\]",
-          "\\[-2i_2-i_3+i_1-i_2=0\\]",
-          "\\[i_1-3i_2-i_3=0\\tag{1}\\]",
-          "Applying KVL to loop \\(cbdc\\),",
-          "\\[i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\\]",
-          "\\[i_3-4i_2+4i_3+3i_1-3i_2+3i_3=0\\]",
-          "\\[3i_1-7i_2+8i_3=0\\tag{2}\\]",
-          "Applying KVL to loop \\(acda\\) through the 12-V source,",
-          "\\[-(i_1-i_2)-3(i_1-i_2+i_3)+12=0\\]",
-          "\\[-i_1+i_2-3i_1+3i_2-3i_3+12=0\\]",
-          "\\[-4i_1+4i_2-3i_3=-12\\]",
-          "\\[4i_1-4i_2+3i_3=12\\tag{3}\\]",
-          "Solving equations (1) and (2), the textbook shows",
-          "\\[3i_1-9i_2-3i_3=0\\]",
-          "\\[-3i_1+7i_2-8i_3=0\\]",
-          "\\[-2i_2+11i_3=0\\tag{4}\\]",
-          "Solving equations (2) and (3),",
-          "\\[12i_1-28i_2+32i_3=0\\]",
-          "\\[-12i_1+12i_2-9i_3=-36\\]",
-          "\\[-16i_2+23i_3=-36\\tag{5}\\]",
-          "Solving equations (4) and (5),",
-          "\\[16i_2-88i_3=0\\]",
-          "\\[-16i_2+23i_3=-36\\]",
-          "\\[-65i_3=-36\\]",
-          "\\[i_3=\\dfrac{36}{65}=0.553\\ \\text{A}\\]",
-          "From equation (4),",
-          "\\[-2i_2+11\\left(\\dfrac{36}{65}\\right)=0\\]",
-          "\\[i_2=\\dfrac{396}{130}\\ \\text{A}\\]",
-          "From equation (1),",
-          "\\[i_1-3\\left(\\dfrac{396}{130}\\right)-\\dfrac{36}{65}=0\\]",
-          "\\[i_1=9.69\\ \\text{A}\\]",
-          "The branch currents printed by the textbook are",
-          "\\[i_1=9.69\\ \\text{A},\\qquad i_2=\\dfrac{396}{130}\\ \\text{A},\\qquad i_3=0.553\\ \\text{A}\\]"
-        ],
-        "source_refs": [
           "TB-P025",
           "TB-P026",
           "TB-P027"
         ],
         "book_refs": [
           {
-            "pages": "25–27",
-            "images": "25.png–27.png"
+            "pages": "18–27",
+            "images": "18.png–27.png"
           }
         ]
       },

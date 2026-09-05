@@ -794,9 +794,15 @@ Applying KCL at node \(A\),
 
 ### Exercise 1.5.10 — Kirchhoff’s laws
 
-Find the currents flowing through the different resistances. Identify nodes \(a,b,c,d\) and assume current directions through the branches. Applying KVL to loop \(abca\),
+*Figure: Fig. 1.37 · Bridge circuit for Exercise 1.5.10*
 
-\[-2i_2-i_3+(i_1-i_2)=0\]
+*Figure: Fig. 1.37(a) · Assumed current directions used in the solution*
+
+Find the currents flowing through the different resistances. Identify nodes \(a,b,c,d\) and assume current directions through the branches.
+
+Applying KVL to loop \(abca\),
+
+\[-2i_2-1\times i_3+1[i_1-i_2]=0\]
 
 \[-2i_2-i_3+i_1-i_2=0\]
 
@@ -804,7 +810,7 @@ Find the currents flowing through the different resistances. Identify nodes \(a,
 
 Applying KVL to loop \(cbdc\),
 
-\[i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\]
+\[1\times i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\]
 
 \[i_3-4i_2+4i_3+3i_1-3i_2+3i_3=0\]
 
@@ -812,7 +818,7 @@ Applying KVL to loop \(cbdc\),
 
 Applying KVL to loop \(acda\) through the 12-V source,
 
-\[-(i_1-i_2)-3(i_1-i_2+i_3)+12=0\]
+\[-(i_1-i_2)\times1-3(i_1-i_2+i_3)+12=0\]
 
 \[-i_1+i_2-3i_1+3i_2-3i_3+12=0\]
 
@@ -820,27 +826,27 @@ Applying KVL to loop \(acda\) through the 12-V source,
 
 \[4i_1-4i_2+3i_3=12\tag{3}\]
 
-Solving equations (1) and (2), the textbook shows
+Solving equations (1) and (2),
 
-\[3i_1-9i_2-3i_3=0\]
+\[(1)\times3,\qquad 3i_1-9i_2-3i_3=0\]
 
-\[-3i_1+7i_2-8i_3=0\]
+\[-(2),\qquad -3i_1+7i_2-8i_3=0\]
 
 \[-2i_2+11i_3=0\tag{4}\]
 
 Solving equations (2) and (3),
 
-\[12i_1-28i_2+32i_3=0\]
+\[(2)\times4,\qquad 12i_1-28i_2+32i_3=0\]
 
-\[-12i_1+12i_2-9i_3=-36\]
+\[-(3)\times3,\qquad -12i_1+12i_2-9i_3=-36\]
 
 \[-16i_2+23i_3=-36\tag{5}\]
 
 Solving equations (4) and (5),
 
-\[16i_2-88i_3=0\]
+\[-(4)\times8,\qquad 16i_2-88i_3=0\]
 
-\[-16i_2+23i_3=-36\]
+\[(5),\qquad -16i_2+23i_3=-36\]
 
 \[-65i_3=-36\]
 
@@ -858,7 +864,7 @@ From equation (1),
 
 \[i_1=9.69\ \text{A}\]
 
-The branch currents printed by the textbook are
+The different branch currents are
 
 \[i_1=9.69\ \text{A},\qquad i_2=\dfrac{396}{130}\ \text{A},\qquad i_3=0.553\ \text{A}\]
 
