@@ -289,9 +289,15 @@ function renderTopicNav(unitTopics) {
 	const nav = document.getElementById('unit-topic-nav');
 	if (!nav) return;
 
+	// This site uses <base href="/">. A bare href="#topic" therefore resolves
+	// to the site root, not to the current unit page. Always emit an explicit
+	// same-document path so the TOC remains correct even if JavaScript does not
+	// intercept the click.
+	const currentPagePath = `${window.location.pathname}${window.location.search}`;
+
 	nav.innerHTML = unitTopics
 		.map((topic, index) => `
-			<a class="unit-toc-link" href="#${escapeHtml(topic.id)}">
+			<a class="unit-toc-link" href="${escapeHtml(currentPagePath)}#${encodeURIComponent(topic.id)}">
 				<span class="toc-index">${String(index + 1).padStart(2, '0')}</span>
 				<span>${escapeHtml(topic.title)}</span>
 			</a>
@@ -887,21 +893,41 @@ function setupTopicNavigation(unitTopics) {
 	const sections = unitTopics.map(topic => document.getElementById(topic.id)).filter(Boolean);
 	if (!links.length || !sections.length) return;
 
+	const linkTopicId = link => {
+		try {
+			return decodeURIComponent(link.hash.slice(1));
+		} catch {
+			return link.hash.slice(1);
+		}
+	};
+
 	const setActive = id => {
 		links.forEach(link => {
-			const active = link.getAttribute('href') === `#${id}`;
+			const active = linkTopicId(link) === id;
 			link.classList.toggle('is-active', active);
 			if (active) link.setAttribute('aria-current', 'location');
 			else link.removeAttribute('aria-current');
 		});
 	};
 
+	const scrollToTopic = (id, behavior = 'auto') => {
+		const target = id ? document.getElementById(id) : null;
+		if (!target) return false;
+		setActive(id);
+		target.scrollIntoView({ behavior, block: 'start' });
+		return true;
+	};
+
 	links.forEach(link => {
-		link.addEventListener('click', () => {
-			const id = link.getAttribute('href')?.slice(1);
-			if (id && document.getElementById(id)) setActive(id);
-			// Keep the native fragment-link behaviour. It is more reliable than
-			// replacing the hash and manually scrolling a dynamically rendered page.
+		link.addEventListener('click', event => {
+			const id = linkTopicId(link);
+			if (!id || !document.getElementById(id)) return;
+
+			// Keep navigation on this unit page. This also avoids the <base href="/">
+			// rule turning a fragment click into a trip to the site homepage.
+		event.preventDefault();
+		history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${encodeURIComponent(id)}`);
+		scrollToTopic(id, 'smooth');
 		});
 	});
 
@@ -917,10 +943,15 @@ function setupTopicNavigation(unitTopics) {
 
 	sections.forEach(section => observer.observe(section));
 
-	const initialId = window.location.hash.slice(1);
+	let initialId = '';
+	try {
+		initialId = decodeURIComponent(window.location.hash.slice(1));
+	} catch {
+		initialId = window.location.hash.slice(1);
+	}
 	if (initialId && document.getElementById(initialId)) {
 		setActive(initialId);
-		requestAnimationFrame(() => document.getElementById(initialId)?.scrollIntoView({ block: 'start' }));
+		requestAnimationFrame(() => scrollToTopic(initialId));
 	} else {
 		setActive(sections[0].id);
 	}
