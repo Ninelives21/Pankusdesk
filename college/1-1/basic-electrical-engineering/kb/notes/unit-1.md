@@ -708,45 +708,55 @@ In loop \(adefa\),
 
 ### Exercise 1.5.6 — KVL
 
-Calculate \(V\) and \(i_2\). Assume currents \(i_1\) and \(i_2\) and identify nodes \(a,b,c,d\). In loop \(abca\),
+*Figure: Fig. 1.33 · Circuit for Exercise 1.5.6*
+
+*Figure: Fig. 1.33(a) · Node and current references used in the solution*
+
+Calculate \(V\) and \(i_x\). Assume currents \(i_1\) and \(i_2\). Also identify the different nodes \(a, b, c\) and \(d\).
+
+In loop \(abca\),
 
 \[12-12i_1-2=0\]
 
 \[10-12i_1=0\]
 
-\[i_1=\dfrac{10}{12}=\dfrac56\ \text{A}\]
+\[i_1=\dfrac{10}{12}=\dfrac{5}{6}\ 	ext{A}\]
 
-\[V=i_1\times12=\dfrac56\times12=10\ \text{V}\]
+\[V=i_1	imes 12=\dfrac{5}{6}	imes 12=10\ 	ext{V}\]
 
 In loop \(acda\),
 
-\[2-8-3i_2=0\]
+\[2-8-3i_x=0\]
 
-\[3i_2=-6\]
+\[3i_x=-6\]
 
-\[i_2=\dfrac{-6}{3}=-2\ \text{A}\]
+\[i_x=\dfrac{-6}{3}=-2\ 	ext{A}\]
 
 ### Exercise 1.5.7 — KVL
 
-Find \(V_1\), \(V_2\) and \(V_3\) using KVL. Identify nodes \(a,b,c,d,e,f\). In loop \(abedefa\),
+*Figure: Fig. 1.34 · Circuit for Exercise 1.5.7*
+
+Find \(V_1\), \(V_2\) and \(V_3\) using KVL. Identify nodes \(a, b, c, d, e\) and \(f\).
+
+In the loop \(abcdefa\),
 
 \[24-V_1-10-12=0\]
 
 \[24-V_1-22=0\]
 
-\[V_1=2\ \text{V}\]
+\[V_1=2\ 	ext{V}\]
 
-In loop \(abea\),
+In the loop \(abca\),
 
 \[24-2+V_2=0\]
 
-\[V_2=-22\ \text{V}\]
+\[V_2=-22\ 	ext{V}\]
 
-In loop \(fedef\),
+In the loop \(fcdef\),
 
 \[V_3-10=0\]
 
-\[V_3=10\ \text{V}\]
+\[V_3=10\ 	ext{V}\]
 
 ### Exercise 1.5.8 — KVL
 

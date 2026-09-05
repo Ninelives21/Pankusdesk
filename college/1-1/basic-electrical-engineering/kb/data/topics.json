@@ -1447,21 +1447,21 @@
             ],
             "figures": [
               {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-29.png",
-                "alt": "Exercise 1.5.2 circuit showing a 35 V independent voltage source on the left, a 10 ohm resistor on the top branch with voltage Vx marked positive on the left and negative on the right, a dependent voltage source of 2Vx on the right with positive polarity at the top and negative at the bottom, and a 5 ohm resistor on the bottom branch with output voltage Vo marked positive on the left and negative on the right.",
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-29.png",
+                "alt": "Exercise 1.5.2 circuit showing a 35 V independent voltage source, a 10 ohm resistor with voltage Vx marked positive on the left and negative on the right, a dependent voltage source of 2Vx with positive polarity at the top, and a 5 ohm resistor with output voltage Vo marked positive on the left and negative on the right.",
                 "caption": "Fig. 1.29 · Circuit for Exercise 1.5.2",
                 "page": 18,
-                "width": 1448,
-                "height": 1086,
+                "width": 864,
+                "height": 620,
                 "size": "medium"
               },
               {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-29a.png",
-                "alt": "Solution reference figure for Exercise 1.5.2 showing the same circuit with current I directed to the right through the top branch, Vx across the 10 ohm resistor, Vy across the 5 ohm resistor with negative polarity on the left and positive on the right, Vo across the same 5 ohm resistor with the opposite polarity, and the dependent source labelled 2Vx.",
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-29a.png",
+                "alt": "Textbook solution circuit for Exercise 1.5.2 with current I directed to the right through the top branch, Vx across the 10 ohm resistor, Vy across the 5 ohm resistor with negative polarity on the left and positive on the right, Vo across the same 5 ohm resistor with the opposite polarity, and the dependent source labelled 2Vx.",
                 "caption": "Fig. 1.29(a) · Current and voltage references used in the solution",
                 "page": 19,
-                "width": 1448,
-                "height": 1086,
+                "width": 936,
+                "height": 620,
                 "size": "medium"
               }
             ],
@@ -1482,106 +1482,6 @@
               "\\[V_o=-V_y=-(5\\times1)=-5\\ \\text{V}\\]"
             ],
             "final_answer": "\\(V_x=10\\ \\text{V}\\), \\(V_o=-5\\ \\text{V}\\)."
-          },
-          {
-            "title": "Exercise 1.5.3",
-            "question_paragraphs": [
-              "Find the values of \\(V_o\\) and \\(i_o\\) in the given circuit (Figure 1.30)."
-            ],
-            "figures": [
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-30.png",
-                "alt": "Exercise 1.5.3 question figure showing four parallel branches between a common top and bottom conductor: a 6 ampere independent current source directed upward in the left branch, a 2 ohm resistor in the next branch with downward current io, a dependent current source of io by 4 directed downward in the third branch, and an 8 ohm resistor in the right branch with output voltage Vo marked positive at the top and negative at the bottom.",
-                "caption": "Fig. 1.30 · Given circuit for Exercise 1.5.3",
-                "page": 19,
-                "width": 1448,
-                "height": 1086,
-                "size": "medium"
-              },
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-30a.png",
-                "alt": "Solution reference figure for Exercise 1.5.3 showing the same parallel network, with the top conductor identified as Node A and the bottom conductor identified as Node B.",
-                "caption": "Fig. 1.30(a) · Node labels used in the solution",
-                "page": 20,
-                "width": 1448,
-                "height": 1086,
-                "size": "medium"
-              }
-            ],
-            "paragraphs": [
-              "Solution:",
-              "Assume the current \\(i\\) through the 8 ohm resistance in the direction that satisfies the given polarity of \\(V_o\\). Since the 8 ohm and 2 ohm resistances are connected in parallel,",
-              "\\[2i_o=V_o\\qquad\\text{or}\\qquad i_o=\\dfrac{V_o}{2}\\]",
-              "Applying KCL at node \\(a\\),",
-              "\\[6-i_o-\\dfrac{i_o}{4}-i=0\\]",
-              "\\[6-i_o\\left(1+\\dfrac14\\right)-\\dfrac{V_o}{8}=0\\]",
-              "\\[6-1.25i_o-\\dfrac{V_o}{8}=0\\]",
-              "Writing \\(i_o=V_o/2\\) in the above equation,",
-              "\\[6-1.25\\left(\\dfrac{V_o}{2}\\right)-\\dfrac{V_o}{8}=0\\]",
-              "\\[6-1.375\\times\\dfrac{V_o}{2}=0\\]",
-              "\\[V_o=\\dfrac{6\\times2}{1.375}=8\\ \\text{V}\\]",
-              "And",
-              "\\[i_o=\\dfrac{V_o}{2}=\\dfrac{8}{2}=4\\ \\text{A}\\]"
-            ],
-            "final_answer": "\\(V_o=8\\ \\text{V}\\), \\(i_o=4\\ \\text{A}\\)."
-          },
-          {
-            "title": "Exercise 1.5.4",
-            "question_paragraphs": [
-              "Obtain the currents \\(i_1\\), \\(i_2\\) and \\(i_3\\) using KCL for the network shown in Figure 1.31."
-            ],
-            "figures": [
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-31.png",
-                "alt": "Exercise 1.5.4 figure showing an outer rectangular path with currents 8 mA upward on the left side, 12 mA to the right on the top side, and 9 mA to the left on the lower inner branch, together with an inner rectangular branch network labelled nodes a, b, c and d, and unknown currents i1 downward from the top inner branch, i2 upward on the left inner branch, and i3 downward on the right inner branch.",
-                "caption": "Fig. 1.31 · Network for Exercise 1.5.4",
-                "page": 21,
-                "width": 1448,
-                "height": 1086,
-                "size": "medium"
-              }
-            ],
-            "paragraphs": [
-              "Solution:",
-              "Applying KCL at node \\(a\\),",
-              "\\[8-i_1-12=0\\]",
-              "\\[i_1=8-12=-4\\ \\text{mA}\\]",
-              "Applying KCL at node \\(c\\),",
-              "\\[12+i_3-9=0\\]",
-              "\\[i_3=9-12=-3\\ \\text{mA}\\]",
-              "Applying KCL at node \\(b\\),",
-              "\\[i_1+i_2=i_3\\]",
-              "\\[-4+i_2=-3\\]",
-              "\\[i_2=1\\ \\text{mA}\\]"
-            ],
-            "final_answer": "\\(i_1=-4\\ \\text{mA}\\), \\(i_2=1\\ \\text{mA}\\), \\(i_3=-3\\ \\text{mA}\\)."
-          },
-          {
-            "title": "Exercise 1.5.5",
-            "question_paragraphs": [
-              "Find the values of \\(V_1\\) and \\(V_2\\) in the network given in Figure 1.32."
-            ],
-            "figures": [
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-32.png",
-                "alt": "Exercise 1.5.5 circuit showing three vertical branches connected to a common bottom conductor through points b, a and f, and two top branches between c and d and between d and e. The top left element is labelled 1 V with polarity plus at c and minus at d, the top right element is labelled 2 V with polarity plus at d and minus at e, the middle vertical element is labelled 5 V with polarity plus at d and minus at a, the left vertical element is labelled V1 with polarity plus at c and minus at b, and the right vertical element is labelled V2 with polarity plus at e and minus at f.",
-                "caption": "Fig. 1.32 · Network for Exercise 1.5.5",
-                "page": 21,
-                "width": 1774,
-                "height": 887,
-                "size": "medium"
-              }
-            ],
-            "paragraphs": [
-              "Solution:",
-              "In the loop \\(abcda\\),",
-              "\\[V_1-1-5=0\\]",
-              "\\[V_1=6\\ \\text{V}\\]",
-              "In the loop \\(adefa\\),",
-              "\\[5-2-V_2=0\\]",
-              "\\[V_2=3\\ \\text{V}\\]"
-            ],
-            "final_answer": "\\(V_1=6\\ \\text{V}\\), \\(V_2=3\\ \\text{V}\\)."
           }
         ],
         "source_refs": [
@@ -1596,51 +1496,166 @@
         ]
       },
       {
-        "heading": "Exercise 1.5.6 — KVL",
+        "heading": "Exercise 1.5.3 — KCL with a dependent source",
         "scope": "core",
         "paragraphs": [
-          "Calculate \\(V\\) and \\(i_2\\). Assume currents \\(i_1\\) and \\(i_2\\) and identify nodes \\(a,b,c,d\\). In loop \\(abca\\),",
-          "\\[12-12i_1-2=0\\]",
-          "\\[10-12i_1=0\\]",
-          "\\[i_1=\\dfrac{10}{12}=\\dfrac56\\ \\text{A}\\]",
-          "\\[V=i_1\\times12=\\dfrac56\\times12=10\\ \\text{V}\\]",
-          "In loop \\(acda\\),",
-          "\\[2-8-3i_2=0\\]",
-          "\\[3i_2=-6\\]",
-          "\\[i_2=\\dfrac{-6}{3}=-2\\ \\text{A}\\]"
+          "Find \\(V_o\\) and \\(i_o\\). Assume the current through the 8-ohm resistance in the direction required by the given polarity of \\(V_o\\). Since the 8-ohm and 2-ohm resistances are connected in parallel, the textbook writes",
+          "\\[2i_o=V_o\\qquad\\text{or}\\qquad i_o=\\dfrac{V_o}{2}\\tag{1}\\]",
+          "Applying KCL at node \\(a\\),",
+          "\\[6-i_o-\\dfrac{i_o}{4}-i=0\\]",
+          "\\[6-i_o\\left(1+\\dfrac14\\right)-\\dfrac{V_o}{8}=0\\]",
+          "\\[6-1.25i_o-\\dfrac{V_o}{8}=0\\]",
+          "Writing \\(i_o=V_o/2\\) in the above equation,",
+          "\\[6-1.25\\left(\\dfrac{V_o}{2}\\right)-\\dfrac{V_o}{8}=0\\]",
+          "The textbook then prints",
+          "\\[6-1.375\\left(\\dfrac{V_o}{2}\\right)=0\\]",
+          "\\[V_o=\\dfrac{6\\times2}{1.375}=8\\ \\text{V}\\]",
+          "\\[i_o=\\dfrac{V_o}{2}=\\dfrac82=4\\ \\text{A}\\]"
         ],
         "source_refs": [
-          "TB-P022"
+          "TB-P019",
+          "TB-P020"
         ],
         "book_refs": [
           {
-            "pages": "22",
-            "images": "22.png"
+            "pages": "19–20",
+            "images": "19.png–20.png"
           }
         ]
       },
       {
-        "heading": "Exercise 1.5.7 — KVL",
+        "heading": "Exercise 1.5.4 — KCL",
         "scope": "core",
         "paragraphs": [
-          "Find \\(V_1\\), \\(V_2\\) and \\(V_3\\) using KVL. Identify nodes \\(a,b,c,d,e,f\\). In loop \\(abedefa\\),",
-          "\\[24-V_1-10-12=0\\]",
-          "\\[24-V_1-22=0\\]",
-          "\\[V_1=2\\ \\text{V}\\]",
-          "In loop \\(abea\\),",
-          "\\[24-2+V_2=0\\]",
-          "\\[V_2=-22\\ \\text{V}\\]",
-          "In loop \\(fedef\\),",
-          "\\[V_3-10=0\\]",
-          "\\[V_3=10\\ \\text{V}\\]"
+          "Obtain currents \\(i_1\\), \\(i_2\\) and \\(i_3\\). Applying KCL at node \\(a\\),",
+          "\\[8-i_1-12=0\\]",
+          "\\[i_1=8-12=-4\\ \\text{mA}\\]",
+          "Applying KCL at node \\(c\\),",
+          "\\[12+i_3-9=0\\]",
+          "\\[i_3=9-12=-3\\ \\text{mA}\\]",
+          "Applying KCL at node \\(b\\),",
+          "\\[i_1+i_2=i_3\\]",
+          "\\[-4+i_2=-3\\]",
+          "\\[i_2=1\\ \\text{mA}\\]"
         ],
         "source_refs": [
+          "TB-P021"
+        ],
+        "book_refs": [
+          {
+            "pages": "21",
+            "images": "21.png"
+          }
+        ]
+      },
+      {
+        "heading": "Exercise 1.5.5 — KVL",
+        "scope": "core",
+        "paragraphs": [
+          "Find \\(V_1\\) and \\(V_2\\). In loop \\(abeda\\),",
+          "\\[V_1-1-5=0\\]",
+          "\\[V_1=6\\ \\text{V}\\]",
+          "In loop \\(adefa\\),",
+          "\\[5-2-V_2=0\\]",
+          "\\[V_2=3\\ \\text{V}\\]"
+        ],
+        "source_refs": [
+          "TB-P021"
+        ],
+        "book_refs": [
+          {
+            "pages": "21",
+            "images": "21.png"
+          }
+        ]
+      },
+      {
+        "heading": "Worked examples",
+        "scope": "core",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 1.5.6",
+            "question_paragraphs": [
+              "Calculate the values of \\(V\\) and \\(i_x\\) in the circuit shown in Figure 1.33."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-33.png",
+                "alt": "Exercise 1.5.6 circuit showing a 12 V source on the left, a 12 ohm resistor across the top left with voltage V marked positive on the left and negative on the right, an 8 V source across the top right with positive on the left and negative on the right, a central vertical element marked 2 V with positive polarity at the top and negative at the bottom and a downward current ix, and a dependent voltage source on the right marked 3ix with positive polarity at the top and negative at the bottom.",
+                "caption": "Fig. 1.33 · Circuit for Exercise 1.5.6",
+                "page": 22,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-33a.png",
+                "alt": "Exercise 1.5.6 solution figure showing the same circuit with nodes a, b, c and d marked, current I1 directed upward in the left branch, current I2 directed upward in the right branch, voltage V across the 12 ohm resistor, a downward current ix in the central vertical branch, and the dependent source labelled 3ix.",
+                "caption": "Fig. 1.33(a) · Node and current references used in the solution",
+                "page": 22,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Assume the currents \\(i_1\\) and \\(i_2\\). Also identify the different nodes \\(a, b, c\\) and \\(d\\).",
+              "In loop \\(abca\\),",
+              "\\[12-12i_1-2=0\\]",
+              "\\[10-12i_1=0\\]",
+              "\\[i_1=\\dfrac{10}{12}=\\dfrac{5}{6}\\ \\text{A}\\]",
+              "and",
+              "\\[V=i_1\\times 12=\\dfrac{5}{6}\\times 12=10\\ \\text{V}\\]",
+              "In loop \\(acda\\),",
+              "\\[2-8-3i_x=0\\]",
+              "\\[3i_x=-6\\]",
+              "\\[i_x=\\dfrac{-6}{3}=-2\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(V=10\\ \\text{V}\\), \\(i_x=-2\\ \\text{A}\\)."
+          },
+          {
+            "title": "Exercise 1.5.7",
+            "question_paragraphs": [
+              "Find the voltages \\(V_1\\), \\(V_2\\) and \\(V_3\\) using KVL for the circuit shown in Figure 1.34."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-34.png",
+                "alt": "Exercise 1.5.7 circuit with nodes a, b, c, d, e and f marked; a 24 V source on the left between a and b, a top branch element labelled V1 between b and c, a diagonal branch from a to c marked 12 and labelled V2 with positive polarity near a and negative near c, a vertical branch from c to f labelled V3 with positive polarity at the top and negative at the bottom, a 12 V source on the bottom branch between a and f with negative on the left and positive on the right, and a 10 V source on the right between e and d.",
+                "caption": "Fig. 1.34 · Circuit for Exercise 1.5.7",
+                "page": 23,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Identify the nodes \\(a, b, c, d, e\\) and \\(f\\).",
+              "In the loop \\(abcdefa\\),",
+              "\\[24-V_1-10-12=0\\]",
+              "\\[24-V_1-22=0\\]",
+              "\\[V_1=2\\ \\text{V}\\]",
+              "In the loop \\(abca\\),",
+              "\\[24-2+V_2=0\\]",
+              "\\[V_2=-22\\ \\text{V}\\]",
+              "In the loop \\(fcdef\\),",
+              "\\[V_3-10=0\\]",
+              "\\[V_3=10\\ \\text{V}\\]"
+            ],
+            "final_answer": "\\(V_1=2\\ \\text{V}\\), \\(V_2=-22\\ \\text{V}\\), \\(V_3=10\\ \\text{V}\\)."
+          }
+        ],
+        "source_refs": [
+          "TB-P022",
           "TB-P023"
         ],
         "book_refs": [
           {
-            "pages": "23",
-            "images": "23.png"
+            "pages": "22–23",
+            "images": "22.png–23.png"
           }
         ]
       },
