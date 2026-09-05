@@ -1062,6 +1062,16 @@ Therefore the current supplied by the 30-V source is
 
 ### Exercise 1.6.2 — resistance between x and y
 
+*Figure: Fig. 1.43 · Original circuit for Exercise 1.6.2*
+
+*Figure: Fig. 1.43(a) · Nodes identified for the reduction*
+
+*Figure: Fig. 1.43(b) · 5 kΩ and 4.7 kΩ reduced to 2.42 kΩ*
+
+*Figure: Fig. 1.43(c) · Remaining branches reduced to 10 kΩ and 2.04 kΩ*
+
+*Figure: Fig. 1.43(d) · Final parallel network between x and y*
+
 Identify nodes \(A,B,C,D,E\). Between \(E\) and \(D\), the 5-k\(\Omega\) and 4.7-k\(\Omega\) resistances are in parallel:
 
 \[5\ \mathrm{k}\Omega\parallel4.7\ \mathrm{k}\Omega=\dfrac{5\times4.7}{5+4.7}=2.42\ \mathrm{k}\Omega\]

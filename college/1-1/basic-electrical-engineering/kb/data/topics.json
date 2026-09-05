@@ -2102,43 +2102,81 @@
               "\\[I=\\dfrac{30}{1.05}=28.57\\ \\text{A}\\]"
             ],
             "final_answer": "\\(I=28.57\\ \\text{A}\\)."
+          },
+          {
+            "title": "Exercise 1.6.2",
+            "question_paragraphs": [
+              "Find the resistance between the points \\(x\\) and \\(y\\) in the circuit shown in Figure 1.43. Also find the total current supplied by a 6 V source when it is connected between \\(x\\) and \\(y\\)."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-43.png",
+                "alt": "Original circuit for Exercise 1.6.2 with terminals x and y, a 10 kilo-ohm branch on the left, a 3 kilo-ohm central vertical resistor, a 4 kilo-ohm upper-right resistor, a 5 kilo-ohm middle-right resistor, and a 4.7 kilo-ohm lower-right resistor.",
+                "caption": "Fig. 1.43 · Original circuit for Exercise 1.6.2",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-43a.png",
+                "alt": "Exercise 1.6.2 circuit with nodes A, B, C, D and E identified. The 10 kilo-ohm resistor lies between A and B, the 3 kilo-ohm resistor between C and E, the 4 kilo-ohm resistor between C and D, the 5 kilo-ohm resistor between E and D, and the 4.7 kilo-ohm resistor between D and E; terminals x and y remain open.",
+                "caption": "Fig. 1.43(a) · Nodes identified for the reduction",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-43b.png",
+                "alt": "First reduction of Exercise 1.6.2 after combining the 5 kilo-ohm and 4.7 kilo-ohm resistors in parallel. The equivalent right-hand resistance is shown as 5 times 4.7 divided by 5 plus 4.7, equal to 2.42 kilo-ohms.",
+                "caption": "Fig. 1.43(b) · 5 kΩ and 4.7 kΩ reduced to 2.42 kΩ",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-43c.png",
+                "alt": "Second reduction of Exercise 1.6.2 showing the network between terminals x and y reduced to two branches, 10 kilo-ohms and 2.04 kilo-ohms.",
+                "caption": "Fig. 1.43(c) · Remaining branches reduced to 10 kΩ and 2.04 kΩ",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-43d.png",
+                "alt": "Final equivalent network for Exercise 1.6.2 showing 10 kilo-ohms and 2.04 kilo-ohms connected in parallel directly between terminals x and y.",
+                "caption": "Fig. 1.43(d) · Final parallel network between x and y",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Identify the nodes \\(A\\), \\(B\\), \\(C\\), \\(D\\) and \\(E\\) as shown.",
+              "Between \\(E\\) and \\(D\\), the 5 k\\(\\Omega\\) and 4.7 k\\(\\Omega\\) resistances are connected in parallel:",
+              "\\[5\\ \\mathrm{k}\\Omega\\parallel4.7\\ \\mathrm{k}\\Omega=\\dfrac{5\\times4.7}{5+4.7}=2.42\\ \\mathrm{k}\\Omega\\]",
+              "Between \\(C\\) and \\(E\\), the 4 k\\(\\Omega\\) resistance and 2.42 k\\(\\Omega\\) resistance are in series, and this combination is in parallel with the 3 k\\(\\Omega\\) resistance:",
+              "\\[3\\parallel(4+2.42)=\\dfrac{3(4+2.42)}{3+(4+2.42)}=2.04\\ \\mathrm{k}\\Omega\\]",
+              "The resistance between \\(x\\) and \\(y\\) is therefore",
+              "\\[R_{xy}=\\dfrac{10\\times2.04}{10+2.04}=1.698\\ \\mathrm{k}\\Omega\\]",
+              "When a 6 V battery is connected between \\(x\\) and \\(y\\), the current driven is",
+              "\\[I=\\dfrac{6}{1.698\\times10^3}=3.53\\ \\text{mA}\\]"
+            ],
+            "final_answer": "\\(R_{xy}=1.698\\ \\mathrm{k}\\Omega\\), current from a 6 V source \\(I=3.53\\ \\text{mA}\\)."
           }
         ],
         "source_refs": [
           "TB-P031",
           "TB-P032",
           "TB-P033",
-          "TB-P034"
-        ],
-        "book_refs": [
-          {
-            "pages": "31–34",
-            "images": "31.png–34.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.6.2 — resistance between x and y",
-        "scope": "core",
-        "paragraphs": [
-          "Identify nodes \\(A,B,C,D,E\\). Between \\(E\\) and \\(D\\), the 5-k\\(\\Omega\\) and 4.7-k\\(\\Omega\\) resistances are in parallel:",
-          "\\[5\\ \\mathrm{k}\\Omega\\parallel4.7\\ \\mathrm{k}\\Omega=\\dfrac{5\\times4.7}{5+4.7}=2.42\\ \\mathrm{k}\\Omega\\]",
-          "Between \\(C\\) and \\(E\\), the 4-k\\(\\Omega\\) resistor is in series with \\(2.42\\ \\mathrm{k}\\Omega\\), and this combination is in parallel with 3 k\\(\\Omega\\):",
-          "\\[3\\parallel(4+2.42)=\\dfrac{3(4+2.42)}{3+(4+2.42)}=2.04\\ \\mathrm{k}\\Omega\\]",
-          "The resistance between \\(x\\) and \\(y\\) is then",
-          "\\[R_{xy}=\\dfrac{10\\times2.04}{10+2.04}=1.698\\ \\mathrm{k}\\Omega\\]",
-          "When a 6-V battery is connected between \\(x\\) and \\(y\\), the current driven is",
-          "\\[I=\\dfrac{6}{1.698\\times10^3}=3.53\\ \\text{mA}\\]"
-        ],
-        "source_refs": [
           "TB-P034",
           "TB-P035",
           "TB-P036"
         ],
         "book_refs": [
           {
-            "pages": "34–36",
-            "images": "34.png–36.png"
+            "pages": "31–36",
+            "images": "31.png–36.png"
           }
         ]
       },
