@@ -1482,44 +1482,62 @@
               "\\[V_o=-V_y=-(5\\times1)=-5\\ \\text{V}\\]"
             ],
             "final_answer": "\\(V_x=10\\ \\text{V}\\), \\(V_o=-5\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.3",
+            "question_paragraphs": [
+              "Find the values of \\(V_o\\) and \\(i_o\\) in the given circuit shown in Figure 1.30."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-30.png",
+                "alt": "Exercise 1.5.3 circuit showing four parallel branches between common top and bottom rails: a 6 A independent current source in the left branch with arrow upward, a 2 ohm resistor in the next branch with current i subscript o marked downward, a dependent current source in diamond form in the third branch with downward arrow labelled i subscript o by 4, and an 8 ohm resistor in the right branch with output voltage V subscript o marked positive at the top and negative at the bottom.",
+                "caption": "Fig. 1.30 · Given parallel network for Exercise 1.5.3",
+                "page": 20,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-30a.png",
+                "alt": "Textbook solution diagram for Exercise 1.5.3 showing the same four parallel branches, with the common top rail labelled Node A and the common bottom rail labelled Node B, current i subscript o downward through the 2 ohm resistor, dependent current source i subscript o by 4 downward, and voltage V subscript o across the 8 ohm resistor with positive at the top and negative at the bottom.",
+                "caption": "Fig. 1.30(a) · Node labels used in the KCL solution",
+                "page": 20,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Assume the current \\(i\\) through the 8 ohm resistance in the direction required by the given polarity of \\(V_o\\).",
+              "Since the 8 ohm and 2 ohm resistances are connected in parallel,",
+              "\\[2i_o=V_o\\qquad\\text{or}\\qquad i_o=\\dfrac{V_o}{2}\\tag{1.1}\\]",
+              "Applying KCL at node \\(a\\),",
+              "\\[6-i_o-\\dfrac{i_o}{4}-i=0\\]",
+              "Since \\(i=V_o/8\\),",
+              "\\[6-i_o\\left(1+\\dfrac14\\right)-\\dfrac{V_o}{8}=0\\]",
+              "\\[6-1.25i_o-\\dfrac{V_o}{8}=0\\]",
+              "Writing \\(i_o=V_o/2\\) in the above equation,",
+              "\\[6-1.25\\left(\\dfrac{V_o}{2}\\right)-\\dfrac{V_o}{8}=0\\]",
+              "\\[6-0.625V_o-0.125V_o=0\\]",
+              "\\[6-0.75V_o=0\\]",
+              "\\[V_o=\\dfrac{6}{0.75}=8\\ \\text{V}\\]",
+              "And",
+              "\\[i_o=\\dfrac{V_o}{2}=\\dfrac{8}{2}=4\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(V_o=8\\ \\text{V}\\), \\(i_o=4\\ \\text{A}\\)."
           }
         ],
         "source_refs": [
           "TB-P018",
-          "TB-P019"
-        ],
-        "book_refs": [
-          {
-            "pages": "18–19",
-            "images": "18.png–19.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.3 — KCL with a dependent source",
-        "scope": "core",
-        "paragraphs": [
-          "Find \\(V_o\\) and \\(i_o\\). Assume the current through the 8-ohm resistance in the direction required by the given polarity of \\(V_o\\). Since the 8-ohm and 2-ohm resistances are connected in parallel, the textbook writes",
-          "\\[2i_o=V_o\\qquad\\text{or}\\qquad i_o=\\dfrac{V_o}{2}\\tag{1}\\]",
-          "Applying KCL at node \\(a\\),",
-          "\\[6-i_o-\\dfrac{i_o}{4}-i=0\\]",
-          "\\[6-i_o\\left(1+\\dfrac14\\right)-\\dfrac{V_o}{8}=0\\]",
-          "\\[6-1.25i_o-\\dfrac{V_o}{8}=0\\]",
-          "Writing \\(i_o=V_o/2\\) in the above equation,",
-          "\\[6-1.25\\left(\\dfrac{V_o}{2}\\right)-\\dfrac{V_o}{8}=0\\]",
-          "The textbook then prints",
-          "\\[6-1.375\\left(\\dfrac{V_o}{2}\\right)=0\\]",
-          "\\[V_o=\\dfrac{6\\times2}{1.375}=8\\ \\text{V}\\]",
-          "\\[i_o=\\dfrac{V_o}{2}=\\dfrac82=4\\ \\text{A}\\]"
-        ],
-        "source_refs": [
           "TB-P019",
           "TB-P020"
         ],
         "book_refs": [
           {
-            "pages": "19–20",
-            "images": "19.png–20.png"
+            "pages": "18–20",
+            "images": "18.png–20.png"
           }
         ]
       },
