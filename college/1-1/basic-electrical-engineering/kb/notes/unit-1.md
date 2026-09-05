@@ -870,6 +870,8 @@ The different branch currents are
 
 ### Exercise 1.5.11 — dependent source
 
+*Figure: Fig. 1.38 · Circuit for Exercise 1.5.11*
+
 Find \(V_x\). Assume current \(i\) in the circuit and apply KVL:
 
 \[15-i-2V_x-5i-2i=0\]
@@ -885,6 +887,8 @@ Writing \(i=V_x/5\),
 \[V_x=\dfrac{15}{3.6}=4.16\ \text{V}\]
 
 ### Exercise 1.5.12 — KCL and KVL together
+
+*Figure: Fig. 1.39 · Circuit for Exercise 1.5.12*
 
 Find the voltage across all resistances and the branch currents. Identify nodes \(a,b,c,d\) and assume the branch currents as shown. Applying KCL at node \(c\),
 

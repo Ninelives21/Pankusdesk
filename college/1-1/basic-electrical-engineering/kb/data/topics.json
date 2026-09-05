@@ -1447,21 +1447,21 @@
             ],
             "figures": [
               {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-29.png",
-                "alt": "Exercise 1.5.2 circuit showing a 35 V independent voltage source, a 10 ohm resistor with voltage Vx marked positive on the left and negative on the right, a dependent voltage source of 2Vx with positive polarity at the top, and a 5 ohm resistor with output voltage Vo marked positive on the left and negative on the right.",
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-29.png",
+                "alt": "Exercise 1.5.2 circuit showing a 35 V independent voltage source on the left, a 10 ohm resistor on the top branch with voltage Vx marked positive on the left and negative on the right, a dependent voltage source of 2Vx on the right with positive polarity at the top and negative at the bottom, and a 5 ohm resistor on the bottom branch with output voltage Vo marked positive on the left and negative on the right.",
                 "caption": "Fig. 1.29 · Circuit for Exercise 1.5.2",
                 "page": 18,
-                "width": 864,
-                "height": 620,
+                "width": 1448,
+                "height": 1086,
                 "size": "medium"
               },
               {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-29a.png",
-                "alt": "Textbook solution circuit for Exercise 1.5.2 with current I directed to the right through the top branch, Vx across the 10 ohm resistor, Vy across the 5 ohm resistor with negative polarity on the left and positive on the right, Vo across the same 5 ohm resistor with the opposite polarity, and the dependent source labelled 2Vx.",
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-29a.png",
+                "alt": "Solution reference figure for Exercise 1.5.2 showing the same circuit with current I directed to the right through the top branch, Vx across the 10 ohm resistor, Vy across the 5 ohm resistor with negative polarity on the left and positive on the right, Vo across the same 5 ohm resistor with the opposite polarity, and the dependent source labelled 2Vx.",
                 "caption": "Fig. 1.29(a) · Current and voltage references used in the solution",
                 "page": 19,
-                "width": 936,
-                "height": 620,
+                "width": 1448,
+                "height": 1086,
                 "size": "medium"
               }
             ],
@@ -1482,98 +1482,111 @@
               "\\[V_o=-V_y=-(5\\times1)=-5\\ \\text{V}\\]"
             ],
             "final_answer": "\\(V_x=10\\ \\text{V}\\), \\(V_o=-5\\ \\text{V}\\)."
-          }
-        ],
-        "source_refs": [
-          "TB-P018",
-          "TB-P019"
-        ],
-        "book_refs": [
+          },
           {
-            "pages": "18–19",
-            "images": "18.png–19.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.3 — KCL with a dependent source",
-        "scope": "core",
-        "paragraphs": [
-          "Find \\(V_o\\) and \\(i_o\\). Assume the current through the 8-ohm resistance in the direction required by the given polarity of \\(V_o\\). Since the 8-ohm and 2-ohm resistances are connected in parallel, the textbook writes",
-          "\\[2i_o=V_o\\qquad\\text{or}\\qquad i_o=\\dfrac{V_o}{2}\\tag{1}\\]",
-          "Applying KCL at node \\(a\\),",
-          "\\[6-i_o-\\dfrac{i_o}{4}-i=0\\]",
-          "\\[6-i_o\\left(1+\\dfrac14\\right)-\\dfrac{V_o}{8}=0\\]",
-          "\\[6-1.25i_o-\\dfrac{V_o}{8}=0\\]",
-          "Writing \\(i_o=V_o/2\\) in the above equation,",
-          "\\[6-1.25\\left(\\dfrac{V_o}{2}\\right)-\\dfrac{V_o}{8}=0\\]",
-          "The textbook then prints",
-          "\\[6-1.375\\left(\\dfrac{V_o}{2}\\right)=0\\]",
-          "\\[V_o=\\dfrac{6\\times2}{1.375}=8\\ \\text{V}\\]",
-          "\\[i_o=\\dfrac{V_o}{2}=\\dfrac82=4\\ \\text{A}\\]"
-        ],
-        "source_refs": [
-          "TB-P019",
-          "TB-P020"
-        ],
-        "book_refs": [
+            "title": "Exercise 1.5.3",
+            "question_paragraphs": [
+              "Find the values of \\(V_o\\) and \\(i_o\\) in the given circuit (Figure 1.30)."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-30.png",
+                "alt": "Exercise 1.5.3 question figure showing four parallel branches between a common top and bottom conductor: a 6 ampere independent current source directed upward in the left branch, a 2 ohm resistor in the next branch with downward current io, a dependent current source of io by 4 directed downward in the third branch, and an 8 ohm resistor in the right branch with output voltage Vo marked positive at the top and negative at the bottom.",
+                "caption": "Fig. 1.30 · Given circuit for Exercise 1.5.3",
+                "page": 19,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-30a.png",
+                "alt": "Solution reference figure for Exercise 1.5.3 showing the same parallel network, with the top conductor identified as Node A and the bottom conductor identified as Node B.",
+                "caption": "Fig. 1.30(a) · Node labels used in the solution",
+                "page": 20,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Assume the current \\(i\\) through the 8 ohm resistance in the direction that satisfies the given polarity of \\(V_o\\). Since the 8 ohm and 2 ohm resistances are connected in parallel,",
+              "\\[2i_o=V_o\\qquad\\text{or}\\qquad i_o=\\dfrac{V_o}{2}\\]",
+              "Applying KCL at node \\(a\\),",
+              "\\[6-i_o-\\dfrac{i_o}{4}-i=0\\]",
+              "\\[6-i_o\\left(1+\\dfrac14\\right)-\\dfrac{V_o}{8}=0\\]",
+              "\\[6-1.25i_o-\\dfrac{V_o}{8}=0\\]",
+              "Writing \\(i_o=V_o/2\\) in the above equation,",
+              "\\[6-1.25\\left(\\dfrac{V_o}{2}\\right)-\\dfrac{V_o}{8}=0\\]",
+              "\\[6-1.375\\times\\dfrac{V_o}{2}=0\\]",
+              "\\[V_o=\\dfrac{6\\times2}{1.375}=8\\ \\text{V}\\]",
+              "And",
+              "\\[i_o=\\dfrac{V_o}{2}=\\dfrac{8}{2}=4\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(V_o=8\\ \\text{V}\\), \\(i_o=4\\ \\text{A}\\).",
+            "discrepancy": {
+              "label": "Textbook discrepancy",
+              "message": "Exercise 1.5.3 contains an algebraic inconsistency in the printed solution. From \\(6-1.25(V_o/2)-V_o/8=0\\), the next equivalent line should be \\(6-0.75V_o=0\\), or equivalently \\(6-1.5(V_o/2)=0\\), not \\(6-1.375(V_o/2)=0\\). The textbook’s final values \\(V_o=8\\,\\text{V}\\) and \\(i_o=4\\,\\text{A}\\) are nevertheless correct."
+            }
+          },
           {
-            "pages": "19–20",
-            "images": "19.png–20.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.4 — KCL",
-        "scope": "core",
-        "paragraphs": [
-          "Obtain currents \\(i_1\\), \\(i_2\\) and \\(i_3\\). Applying KCL at node \\(a\\),",
-          "\\[8-i_1-12=0\\]",
-          "\\[i_1=8-12=-4\\ \\text{mA}\\]",
-          "Applying KCL at node \\(c\\),",
-          "\\[12+i_3-9=0\\]",
-          "\\[i_3=9-12=-3\\ \\text{mA}\\]",
-          "Applying KCL at node \\(b\\),",
-          "\\[i_1+i_2=i_3\\]",
-          "\\[-4+i_2=-3\\]",
-          "\\[i_2=1\\ \\text{mA}\\]"
-        ],
-        "source_refs": [
-          "TB-P021"
-        ],
-        "book_refs": [
+            "title": "Exercise 1.5.4",
+            "question_paragraphs": [
+              "Obtain the currents \\(i_1\\), \\(i_2\\) and \\(i_3\\) using KCL for the network shown in Figure 1.31."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-31.png",
+                "alt": "Exercise 1.5.4 figure showing an outer rectangular path with currents 8 mA upward on the left side, 12 mA to the right on the top side, and 9 mA to the left on the lower inner branch, together with an inner rectangular branch network labelled nodes a, b, c and d, and unknown currents i1 downward from the top inner branch, i2 upward on the left inner branch, and i3 downward on the right inner branch.",
+                "caption": "Fig. 1.31 · Network for Exercise 1.5.4",
+                "page": 21,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Applying KCL at node \\(a\\),",
+              "\\[8-i_1-12=0\\]",
+              "\\[i_1=8-12=-4\\ \\text{mA}\\]",
+              "Applying KCL at node \\(c\\),",
+              "\\[12+i_3-9=0\\]",
+              "\\[i_3=9-12=-3\\ \\text{mA}\\]",
+              "Applying KCL at node \\(b\\),",
+              "\\[i_1+i_2=i_3\\]",
+              "\\[-4+i_2=-3\\]",
+              "\\[i_2=1\\ \\text{mA}\\]"
+            ],
+            "final_answer": "\\(i_1=-4\\ \\text{mA}\\), \\(i_2=1\\ \\text{mA}\\), \\(i_3=-3\\ \\text{mA}\\)."
+          },
           {
-            "pages": "21",
-            "images": "21.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.5 — KVL",
-        "scope": "core",
-        "paragraphs": [
-          "Find \\(V_1\\) and \\(V_2\\). In loop \\(abeda\\),",
-          "\\[V_1-1-5=0\\]",
-          "\\[V_1=6\\ \\text{V}\\]",
-          "In loop \\(adefa\\),",
-          "\\[5-2-V_2=0\\]",
-          "\\[V_2=3\\ \\text{V}\\]"
-        ],
-        "source_refs": [
-          "TB-P021"
-        ],
-        "book_refs": [
-          {
-            "pages": "21",
-            "images": "21.png"
-          }
-        ]
-      },
-      {
-        "heading": "Worked examples",
-        "scope": "core",
-        "accordion_label": "Worked examples",
-        "accordions": [
+            "title": "Exercise 1.5.5",
+            "question_paragraphs": [
+              "Find the values of \\(V_1\\) and \\(V_2\\) in the network given in Figure 1.32."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-32.png",
+                "alt": "Exercise 1.5.5 circuit showing three vertical branches connected to a common bottom conductor through points b, a and f, and two top branches between c and d and between d and e. The top left element is labelled 1 V with polarity plus at c and minus at d, the top right element is labelled 2 V with polarity plus at d and minus at e, the middle vertical element is labelled 5 V with polarity plus at d and minus at a, the left vertical element is labelled V1 with polarity plus at c and minus at b, and the right vertical element is labelled V2 with polarity plus at e and minus at f.",
+                "caption": "Fig. 1.32 · Network for Exercise 1.5.5",
+                "page": 21,
+                "width": 1774,
+                "height": 887,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "In the loop \\(abcda\\),",
+              "\\[V_1-1-5=0\\]",
+              "\\[V_1=6\\ \\text{V}\\]",
+              "In the loop \\(adefa\\),",
+              "\\[5-2-V_2=0\\]",
+              "\\[V_2=3\\ \\text{V}\\]"
+            ],
+            "final_answer": "\\(V_1=6\\ \\text{V}\\), \\(V_2=3\\ \\text{V}\\)."
+          },
           {
             "title": "Exercise 1.5.6",
             "question_paragraphs": [
@@ -1646,204 +1659,230 @@
               "\\[V_3=10\\ \\text{V}\\]"
             ],
             "final_answer": "\\(V_1=2\\ \\text{V}\\), \\(V_2=-22\\ \\text{V}\\), \\(V_3=10\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.8",
+            "question_paragraphs": [
+              "Find the values of \\(V_{ab}\\) and \\(I\\) in the given circuit shown in Figure 1.35."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-35.png",
+                "alt": "Exercise 1.5.8 single-loop circuit with a 30 V source on the left, a 3 ohm resistor on the upper-left branch, a 10 V source on the top branch with negative polarity on the left and positive on the right, point a followed by a 5 ohm resistor, a downward current I on the right branch above an 8 V source with positive polarity at the top and negative at the bottom, and Vab indicated from point a to point b with positive at a and negative at b.",
+                "caption": "Fig. 1.35 · Circuit for Exercise 1.5.8",
+                "page": 23,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Applying KVL,",
+              "\\[30-3i+10-5i-8=0\\]",
+              "\\[32-8i=0\\]",
+              "\\[i=\\dfrac{32}{8}=4\\ \\text{A}\\]",
+              "Voltage drop in the 5 ohm resistance is",
+              "\\[4\\times5=20\\ \\text{V}\\]",
+              "\\(V_{ab}\\) is the potential of point \\(a\\) with respect to point \\(b\\). Starting from \\(a\\),",
+              "\\[V_{ab}=+8+20=28\\ \\text{V}\\]"
+            ],
+            "final_answer": "\\(I=4\\ \\text{A}\\), \\(V_{ab}=28\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.9",
+            "question_paragraphs": [
+              "Determine the voltage drop across the 10 ohm resistance for the circuit shown in Figure 1.36."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-36.png",
+                "alt": "Exercise 1.5.9 original network with repeated A and B potential labels, a 20 ohm resistor on the upper-left branch, a 15 A current source directed downward on the lower-left branch, a 10 A current source directed upward in the central upper branch, and a 5 ohm resistor in the central lower branch.",
+                "caption": "Fig. 1.36 · Circuit for Exercise 1.5.9",
+                "page": 24,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-36a.png",
+                "alt": "Exercise 1.5.9 equivalent parallel network between nodes A and B, with a 10 A current source directed upward, downward currents i1, i2 and i3 through 20 ohm, 10 ohm and 5 ohm resistors respectively, and a 15 A current source directed upward.",
+                "caption": "Fig. 1.36(a) · Equivalent parallel network used in the solution",
+                "page": 24,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Let us identify the points \\(A\\) and \\(B\\) across the 10 A current source initially. These points get extended to points of the same potential as shown. The circuit is then represented as in Figure 1.36(a).",
+              "Let \\(V\\) be the voltage across the 10 ohm resistance.",
+              "\\[V=i_2\\times10\\]",
+              "Applying KCL at node \\(A\\),",
+              "\\[10-\\dfrac{V}{20}-\\dfrac{V}{10}-\\dfrac{V}{5}+15=0\\]",
+              "\\[25-V\\left(\\dfrac1{20}+\\dfrac1{10}+\\dfrac15\\right)=0\\]",
+              "\\[25-V\\left(\\dfrac{1+2+4}{20}\\right)=0\\]",
+              "\\[V=71.4\\ \\text{V}\\]"
+            ],
+            "final_answer": "Voltage drop across the 10 ohm resistance: \\(V=71.4\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.10",
+            "question_paragraphs": [
+              "Find the current flowing through different resistances using Kirchhoff’s Laws for the circuit shown in Figure 1.37."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-37.png",
+                "alt": "Exercise 1.5.10 bridge circuit with a diamond-shaped resistor network connected between left node a and right node d, and a 12 V source in the outer bottom branch. The upper-left branch a to b has a 2 ohm resistor, the lower-left branch a to c has a 1 ohm resistor, the upper-right branch b to d has a 4 ohm resistor, the lower-right branch c to d has a 3 ohm resistor, and the central vertical branch b to c has a 1 ohm resistor.",
+                "caption": "Fig. 1.37 · Bridge circuit for Exercise 1.5.10",
+                "page": 25,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-37a.png",
+                "alt": "Exercise 1.5.10 solution reference figure showing the same bridge circuit with nodes a, b, c and d marked. Branch currents are indicated as i1 upward in the left outer branch and downward in the right outer branch, i2 upward through the upper-left 2 ohm branch, i3 downward through the central 1 ohm branch, i2 minus i3 through the upper-right 4 ohm branch, i1 minus i2 through the lower-left 1 ohm branch, and i1 minus i2 plus i3 through the lower-right 3 ohm branch. Polarity marks are shown across the bridge resistors and the 12 V source is on the bottom outer branch with positive on the left and negative on the right.",
+                "caption": "Fig. 1.37(a) · Assumed current directions used in the solution",
+                "page": 26,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Identify the different nodes \\(a,b,c\\) and \\(d\\), and assume the current directions through all branches as shown in Figure 1.37(a).",
+              "Applying KVL for the loop \\(abca\\),",
+              "\\[-2i_2-1\\times i_3+1[i_1-i_2]=0\\]",
+              "\\[-2i_2-i_3+i_1-i_2=0\\]",
+              "\\[i_1-3i_2-i_3=0\\tag{1}\\]",
+              "Applying KVL for the loop \\(cbdc\\),",
+              "\\[1\\times i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\\]",
+              "\\[i_3-4i_2+4i_3+3i_1-3i_2+3i_3=0\\]",
+              "\\[3i_1-7i_2+8i_3=0\\tag{2}\\]",
+              "Applying KVL for the loop \\(acda\\) through the 12 V source,",
+              "\\[-(i_1-i_2)\\times1-(i_1-i_2+i_3)\\times3+12=0\\]",
+              "\\[-i_1+i_2-3i_1+3i_2-3i_3+12=0\\]",
+              "\\[-4i_1+4i_2-3i_3=-12\\]",
+              "\\[4i_1-4i_2+3i_3=12\\tag{3}\\]",
+              "Solving equations (1) and (2),",
+              "\\[(1)\\times3,\\qquad 3i_1-9i_2-3i_3=0\\]",
+              "\\[-(2),\\qquad -3i_1+7i_2-8i_3=0\\]",
+              "\\[-2i_2+11i_3=0\\tag{4}\\]",
+              "Solving equations (2) and (3),",
+              "\\[(2)\\times4,\\qquad 12i_1-28i_2+32i_3=0\\]",
+              "\\[-(3)\\times3,\\qquad -12i_1+12i_2-9i_3=-36\\]",
+              "\\[-16i_2+23i_3=-36\\tag{5}\\]",
+              "Solving equations (4) and (5),",
+              "\\[-(4)\\times8,\\qquad 16i_2-88i_3=0\\]",
+              "\\[(5),\\qquad -16i_2+23i_3=-36\\]",
+              "\\[-65i_3=-36\\]",
+              "\\[i_3=\\dfrac{36}{65}=0.553\\ \\text{A}\\]",
+              "From equation (4),",
+              "\\[-2i_2+11\\left(\\dfrac{36}{65}\\right)=0\\]",
+              "\\[i_2=\\dfrac{396}{130}\\ \\text{A}\\]",
+              "From equation (1),",
+              "\\[i_1-3\\times\\dfrac{396}{130}-\\dfrac{36}{65}=0\\]",
+              "\\[i_1=9.69\\ \\text{A}\\]",
+              "The different branch currents are",
+              "\\[i_1=9.69\\ \\text{A},\\qquad i_2=\\dfrac{396}{130}\\ \\text{A},\\qquad i_3=0.553\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(i_1=9.69\\ \\text{A}\\), \\(i_2=\\dfrac{396}{130}\\ \\text{A}\\), \\(i_3=0.553\\ \\text{A}\\)."
+          },
+          {
+            "title": "Exercise 1.5.11",
+            "question_paragraphs": [
+              "Find the voltage \\(V_x\\) in the circuit shown in Figure 1.38."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-38.png",
+                "alt": "Exercise 1.5.11 single-loop circuit with a 15 V source on the left and current i directed upward, a 1 ohm resistor on the upper-left branch with positive polarity on the left and negative on the right, a dependent voltage source labelled 2Vx on the upper-right branch with positive polarity on the left and negative on the right, a 5 ohm resistor on the right with Vx marked positive at the top and negative at the bottom, and a 2 ohm resistor on the bottom branch with negative polarity on the left and positive on the right.",
+                "caption": "Fig. 1.38 · Circuit for Exercise 1.5.11",
+                "page": 27,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Let us assume the current \\(i\\) in the circuit and apply KVL,",
+              "\\[15-1\\times i-2V_x-5i-2i=0\\]",
+              "\\[15-8i-2V_x=0\\]",
+              "Writing \\(i=V_x/5\\),",
+              "\\[15-8\\times\\dfrac{V_x}{5}-2V_x=0\\]",
+              "\\[15=1.6V_x+2V_x\\]",
+              "\\[V_x=\\dfrac{15}{3.6}=4.16\\ \\text{V}\\]"
+            ],
+            "final_answer": "\\(V_x=4.16\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.12",
+            "question_paragraphs": [
+              "Find the voltage across all the resistances and branch currents using Kirchhoff’s Laws for the circuit shown in Figure 1.39."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-39.png",
+                "alt": "Exercise 1.5.12 circuit with nodes a, b, c and d marked. A 5 V source is on the left branch with current i1 directed upward. A 2 ohm resistor between b and c has voltage V1 marked positive on the left and negative on the right. The central 8 ohm branch from c to a carries current i2 downward and has voltage V2 marked positive at the top and negative at the bottom. A 4 ohm resistor between c and d has voltage V3 marked positive on the left and negative on the right. The right branch contains a 3 V source and current i1 minus i2 directed downward.",
+                "caption": "Fig. 1.39 · Circuit for Exercise 1.5.12",
+                "page": 28,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Identify different nodes \\(a,b,c\\) and \\(d\\). Assume the currents in different branches as shown.",
+              "Applying KCL at node \\(c\\),",
+              "\\[i_1=i_2+i_3\\qquad\\text{or}\\qquad i_3=i_1-i_2\\]",
+              "Applying KVL for the loop \\(abca\\),",
+              "\\[5-2i_1-8i_2=0\\]",
+              "\\[2i_1+8i_2=5\\tag{1}\\]",
+              "Applying KVL for the loop \\(acda\\),",
+              "\\[8i_2-4(i_1-i_2)+3=0\\]",
+              "\\[-4i_1+12i_2=-3\\tag{2}\\]",
+              "Solving equations (1) and (2),",
+              "\\[2\\times(1),\\qquad 4i_1+16i_2=10\\]",
+              "\\[(2),\\qquad -4i_1+12i_2=-3\\]",
+              "\\[28i_2=7\\]",
+              "\\[i_2=\\dfrac{7}{28}=0.25\\ \\text{A}\\]",
+              "From equation (1),",
+              "\\[2i_1+8\\times0.25=5\\]",
+              "\\[i_1=\\dfrac{3}{2}=1.5\\ \\text{A}\\]",
+              "And also,",
+              "\\[i_3=i_1-i_2=1.5-0.25=1.25\\ \\text{A}\\]",
+              "Then, the voltage drops across different resistances are",
+              "\\[V_1=2\\times i_1=2\\times1.5=3\\ \\text{V}\\]",
+              "\\[V_2=8\\times i_2=8\\times0.25=2\\ \\text{V}\\]",
+              "\\[V_3=4\\times i_3=4\\times1.25=5\\ \\text{V}\\]"
+            ],
+            "final_answer": "\\(i_1=1.5\\ \\text{A}\\), \\(i_2=0.25\\ \\text{A}\\), \\(i_3=1.25\\ \\text{A}\\); \\(V_1=3\\ \\text{V}\\), \\(V_2=2\\ \\text{V}\\), \\(V_3=5\\ \\text{V}\\)."
           }
         ],
         "source_refs": [
+          "TB-P018",
+          "TB-P019",
+          "TB-P020",
+          "TB-P021",
           "TB-P022",
-          "TB-P023"
-        ],
-        "book_refs": [
-          {
-            "pages": "22–23",
-            "images": "22.png–23.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.8 — KVL",
-        "scope": "core",
-        "paragraphs": [
-          "Find \\(V_{ab}\\) and \\(I\\). Applying KVL,",
-          "\\[30-3i+10-5i-8=0\\]",
-          "\\[32-8i=0\\]",
-          "\\[i=\\dfrac{32}{8}=4\\ \\text{A}\\]",
-          "The voltage drop across the 5-ohm resistance is",
-          "\\[5i=4\\times5=20\\ \\text{V}\\]",
-          "The voltage \\(V_{ab}\\) is the potential of point \\(a\\) with respect to point \\(b\\). Starting from \\(a\\),",
-          "\\[V_{ab}=+8+20=28\\ \\text{V}\\]"
-        ],
-        "source_refs": [
           "TB-P023",
-          "TB-P024"
-        ],
-        "book_refs": [
-          {
-            "pages": "23–24",
-            "images": "23.png–24.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.9 — KCL",
-        "scope": "core",
-        "paragraphs": [
-          "Determine the voltage drop across the 10-ohm resistance. The points \\(A\\) and \\(B\\) across the 10-A current source are extended to points of the same potential. Let \\(V\\) be the voltage across the 10-ohm resistance.",
-          "\\[V=i_2\\times10\\]",
-          "Applying KCL at node \\(A\\),",
-          "\\[10-\\dfrac{V}{20}-\\dfrac{V}{10}-\\dfrac{V}{5}+15=0\\]",
-          "\\[25-V\\left(\\dfrac1{20}+\\dfrac1{10}+\\dfrac15\\right)=0\\]",
-          "\\[25-V\\left(\\dfrac{1+2+4}{20}\\right)=0\\]",
-          "\\[V=71.4\\ \\text{V}\\]"
-        ],
-        "source_refs": [
           "TB-P024",
-          "TB-P025"
-        ],
-        "book_refs": [
-          {
-            "pages": "24–25",
-            "images": "24.png–25.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.10 — Kirchhoff’s laws",
-        "scope": "core",
-        "paragraphs": [
-          "Find the currents flowing through the different resistances. Identify nodes \\(a,b,c,d\\) and assume current directions through the branches. Applying KVL to loop \\(abca\\),",
-          "\\[-2i_2-i_3+(i_1-i_2)=0\\]",
-          "\\[-2i_2-i_3+i_1-i_2=0\\]",
-          "\\[i_1-3i_2-i_3=0\\tag{1}\\]",
-          "Applying KVL to loop \\(cbdc\\),",
-          "\\[i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\\]",
-          "\\[i_3-4i_2+4i_3+3i_1-3i_2+3i_3=0\\]",
-          "\\[3i_1-7i_2+8i_3=0\\tag{2}\\]",
-          "Applying KVL to loop \\(acda\\) through the 12-V source,",
-          "\\[-(i_1-i_2)-3(i_1-i_2+i_3)+12=0\\]",
-          "\\[-i_1+i_2-3i_1+3i_2-3i_3+12=0\\]",
-          "\\[-4i_1+4i_2-3i_3=-12\\]",
-          "\\[4i_1-4i_2+3i_3=12\\tag{3}\\]",
-          "Solving equations (1) and (2), the textbook shows",
-          "\\[3i_1-9i_2-3i_3=0\\]",
-          "\\[-3i_1+7i_2-8i_3=0\\]",
-          "\\[-2i_2+11i_3=0\\tag{4}\\]",
-          "Solving equations (2) and (3),",
-          "\\[12i_1-28i_2+32i_3=0\\]",
-          "\\[-12i_1+12i_2-9i_3=-36\\]",
-          "\\[-16i_2+23i_3=-36\\tag{5}\\]",
-          "Solving equations (4) and (5),",
-          "\\[16i_2-88i_3=0\\]",
-          "\\[-16i_2+23i_3=-36\\]",
-          "\\[-65i_3=-36\\]",
-          "\\[i_3=\\dfrac{36}{65}=0.553\\ \\text{A}\\]",
-          "From equation (4),",
-          "\\[-2i_2+11\\left(\\dfrac{36}{65}\\right)=0\\]",
-          "\\[i_2=\\dfrac{396}{130}\\ \\text{A}\\]",
-          "From equation (1),",
-          "\\[i_1-3\\left(\\dfrac{396}{130}\\right)-\\dfrac{36}{65}=0\\]",
-          "\\[i_1=9.69\\ \\text{A}\\]",
-          "The branch currents printed by the textbook are",
-          "\\[i_1=9.69\\ \\text{A},\\qquad i_2=\\dfrac{396}{130}\\ \\text{A},\\qquad i_3=0.553\\ \\text{A}\\]"
-        ],
-        "source_refs": [
           "TB-P025",
           "TB-P026",
-          "TB-P027"
-        ],
-        "book_refs": [
-          {
-            "pages": "25–27",
-            "images": "25.png–27.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.11 — dependent source",
-        "scope": "core",
-        "paragraphs": [
-          "Find \\(V_x\\). Assume current \\(i\\) in the circuit and apply KVL:",
-          "\\[15-i-2V_x-5i-2i=0\\]",
-          "\\[15-8i-2V_x=0\\]",
-          "Writing \\(i=V_x/5\\),",
-          "\\[15-8\\left(\\dfrac{V_x}{5}\\right)-2V_x=0\\]",
-          "\\[15=1.6V_x+2V_x\\]",
-          "\\[V_x=\\dfrac{15}{3.6}=4.16\\ \\text{V}\\]"
-        ],
-        "source_refs": [
           "TB-P027",
-          "TB-P028"
-        ],
-        "book_refs": [
-          {
-            "pages": "27–28",
-            "images": "27.png–28.png"
-          }
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-38.png",
-            "alt": "Exercise 1.5.11 circuit showing a 15 V source on the left with current i upward, a 1 ohm resistor on the top left, a dependent voltage source labelled 2Vx on the top right, a 5 ohm resistor on the right with Vx marked positive at the top and negative at the bottom, and a 2 ohm resistor on the bottom branch with negative polarity on the left and positive on the right.",
-            "caption": "Fig. 1.38 · Circuit for Exercise 1.5.11",
-            "page": 27,
-            "width": 1448,
-            "height": 1086,
-            "size": "medium",
-            "after": {
-              "type": "before-paragraph",
-              "index": 0
-            }
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.12 — KCL and KVL together",
-        "scope": "core",
-        "paragraphs": [
-          "Find the voltage across all resistances and the branch currents. Identify nodes \\(a,b,c,d\\) and assume the branch currents as shown. Applying KCL at node \\(c\\),",
-          "\\[i_1=i_2+i_3\\qquad\\text{or}\\qquad i_3=i_1-i_2\\]",
-          "Applying KVL to loop \\(abca\\),",
-          "\\[5-2i_1-8i_2=0\\]",
-          "\\[2i_1+8i_2=5\\tag{1}\\]",
-          "Applying KVL to loop \\(acda\\),",
-          "\\[8i_2-4(i_1-i_2)+3=0\\]",
-          "\\[-4i_1+12i_2=-3\\tag{2}\\]",
-          "Solving (1) and (2),",
-          "\\[4i_1+16i_2=10\\]",
-          "\\[-4i_1+12i_2=-3\\]",
-          "\\[28i_2=7\\]",
-          "\\[i_2=\\dfrac7{28}=0.25\\ \\text{A}\\]",
-          "From equation (1),",
-          "\\[2i_1+8(0.25)=5\\]",
-          "\\[i_1=\\dfrac32=1.5\\ \\text{A}\\]",
-          "\\[i_3=i_1-i_2=1.5-0.25=1.25\\ \\text{A}\\]",
-          "The voltage drops are",
-          "\\[V_1=2i_1=2\\times1.5=3\\ \\text{V}\\]",
-          "\\[V_2=8i_2=8\\times0.25=2\\ \\text{V}\\]",
-          "\\[V_3=4i_3=4\\times1.25=5\\ \\text{V}\\]"
-        ],
-        "source_refs": [
           "TB-P028",
           "TB-P029"
         ],
         "book_refs": [
           {
-            "pages": "28–29",
-            "images": "28.png–29.png"
-          }
-        ],
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-39.png",
-            "alt": "Exercise 1.5.12 circuit with nodes a, b, c and d marked; a 5 V source on the left branch carrying current i1 upward, a 2 ohm resistor between b and c with voltage V1 marked positive on the left and negative on the right, an 8 ohm vertical branch from c to a carrying current i2 downward with voltage V2 marked positive at the top and negative at the bottom, a 4 ohm resistor between c and d with voltage V3 marked positive on the left and negative on the right, and a 3 V source on the right branch carrying current i1 minus i2 downward.",
-            "caption": "Fig. 1.39 · Circuit for Exercise 1.5.12",
-            "page": 28,
-            "width": 1448,
-            "height": 1086,
-            "size": "medium",
-            "after": {
-              "type": "before-paragraph",
-              "index": 0
-            }
+            "pages": "18–29",
+            "images": "18.png–29.png"
           }
         ]
       },
