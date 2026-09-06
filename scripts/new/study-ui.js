@@ -111,6 +111,33 @@ function renderAccordionGroup(config = {}) {
 		</div>`;
 }
 
+function renderExampleSolutionContent(item, solutionParagraphs) {
+	const figures = Array.isArray(item.figures) ? item.figures : [];
+	const anchored = new Set(
+		figures
+			.filter(figure => figure?.after?.type)
+			.map(figure => figure.src)
+	);
+	const figuresAt = (hook, index) => figures
+		.filter(figure => figure?.after?.type === hook && Number(figure.after.index) === index)
+		.map(fig => renderFigure(fig))
+		.join('');
+	let html = figures
+		.filter(figure => !anchored.has(figure.src))
+		.map(fig => renderFigure(fig))
+		.join('');
+	for (let index = 0; index < solutionParagraphs.length; index += 1) {
+		html += figuresAt('before-paragraph', index);
+		html += `<p>${formatText(solutionParagraphs[index])}</p>`;
+		html += figuresAt('paragraph', index);
+	}
+	html += figures
+		.filter(figure => figure?.after?.type === 'end')
+		.map(fig => renderFigure(fig))
+		.join('');
+	return html;
+}
+
 function renderAccordionItem(item, options = {}) {
 	const isExample = options.isExampleGroup || (item.question_paragraphs ?? item.questionParagraphs)?.length;
 	const mismatch = normalizeMismatch(item.math_mismatch ?? item.discrepancy);
@@ -144,8 +171,7 @@ function renderAccordionItem(item, options = {}) {
 			</summary>
 			<div class="study-accordion-content study-example-solution">
 				<div class="study-solution-label">Solution</div>
-				${(item.figures || []).map(fig => renderFigure(fig)).join('')}
-				${split.solution.map(p => `<p>${formatText(p)}</p>`).join('')}
+				${renderExampleSolutionContent(item, split.solution)}
 				${(item.bullets || []).length ? `<ul>${item.bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
 				${mismatch ? renderMismatch(mismatch) : ''}
 				${item.final_answer ? `<div class="study-final-answer"><strong>Final answer:</strong> <strong>${formatText(item.final_answer)}</strong></div>` : ''}

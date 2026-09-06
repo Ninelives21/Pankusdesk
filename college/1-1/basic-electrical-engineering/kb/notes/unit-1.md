@@ -1250,19 +1250,37 @@ Convert the delta network of Figure 1.46 to the equivalent star network. The tex
 
 ### Exercise 1.7.2 — Star to Delta and source current
 
-Convert the star network between points \(a,b,c\) into a delta network. The three delta resistances are
+*Figure: Fig. 1.47 · Circuit for Exercise 1.7.2*
 
-\[R_{ac}=\dfrac{5\times10+10\times20+20\times5}{20}=\dfrac{350}{20}=17.5\ \Omega\]
+Find the current supplied by the 120 V battery shown in Figure 1.47.
 
-\[R_{ab}=\dfrac{5\times10+10\times20+20\times5}{5}=\dfrac{350}{5}=70\ \Omega\]
+The Star network between the points \(a,b,c\) is converted into Delta network as follows.
 
-\[R_{bc}=\dfrac{5\times10+10\times20+20\times5}{10}=\dfrac{350}{10}=35\ \Omega\]
+*Figure: Fig. 1.47(a) · Star network converted to a delta network*
 
-The textbook reduction figures next show the parallel reductions \(17.5\parallel30=10.5\ \Omega\), \(70\parallel15=12.35\ \Omega\) approximately, and \(35\parallel45\approx19.69\ \Omega\), followed by further series/parallel reduction to an equivalent resistance of \(9.63\ \Omega\).
+\[R_{ac}=\dfrac{5\times10+10\times20+20\times5}{20}=\dfrac{50+200+100}{20}=\dfrac{350}{20}=17.5\ \Omega\]
 
-The current supplied is then
+\[R_{ab}=\dfrac{5\times10+10\times20+20\times5}{5}=\dfrac{50+200+100}{5}=\dfrac{350}{5}=70\ \Omega\]
 
-\[I=\dfrac{120}{9.63}=12.46\ \text{A}\]
+\[R_{bc}=\dfrac{5\times10+10\times20+20\times5}{10}=\dfrac{50+200+100}{10}=\dfrac{350}{10}=35\ \Omega\]
+
+*Figure: Fig. 1.47(b) · Delta-equivalent resistance values inserted*
+
+The above circuit gets reduced to
+
+*Figure: Fig. 1.47(c) · Circuit after grouping the parallel branches*
+
+It is further reduced to
+
+*Figure: Fig. 1.47(d) · Further reduced circuit*
+
+and
+
+*Figure: Fig. 1.47(e) · Final equivalent resistance of 9.63 ohm*
+
+The current supplied is
+
+\[i=\dfrac{120}{9.63}=12.46\ \text{A}\]
 
 ### Exercise 1.7.3 — Delta to Star followed by reduction
 

@@ -2410,29 +2410,101 @@
               "\\[R_c=\\dfrac{10\\times15}{25+15+10}=\\dfrac{150}{50}=3\\ \\Omega\\]"
             ],
             "final_answer": "\\(R_a=5\\ \\Omega\\), \\(R_b=7.5\\ \\Omega\\), \\(R_c=3\\ \\Omega\\)."
-          }
-        ],
-        "source_refs": [
-          "TB-P040"
-        ],
-        "book_refs": [
+          },
           {
-            "pages": "40",
-            "images": "40.png"
+            "title": "Exercise 1.7.2",
+            "question_paragraphs": [
+              "Find the current supplied by the 120 V battery shown in Figure 1.47."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-47.png",
+                "alt": "Exercise 1.7.2 original bridge circuit supplied by a 120 V source. The left vertical branch of the bridge has 12.5 ohm above node c and 15 ohm below it; the right vertical branch has 10 ohm above node d and 20 ohm below it; a 5 ohm resistor connects c to d; a separate 30 ohm branch is connected across the supply. Current i is shown on the top supply conductor.",
+                "caption": "Fig. 1.47 · Circuit for Exercise 1.7.2",
+                "page": 40,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-47a.png",
+                "alt": "Exercise 1.7.2 star-to-delta conversion stage. The star made by the 5 ohm, 10 ohm and 20 ohm resistors is replaced symbolically by the delta resistors R_ac, R_ab and R_cb, while the 12.5 ohm, 15 ohm and 30 ohm branches remain connected to the 120 V source.",
+                "caption": "Fig. 1.47(a) · Star network converted to a delta network",
+                "page": 41,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-47b.png",
+                "alt": "Exercise 1.7.2 delta-equivalent circuit with the converted delta values inserted: 17.5 ohm from the central junction to node a, 35 ohm from the central junction to node b, and 70 ohm directly between a and b, together with the original 12.5 ohm, 15 ohm and 30 ohm branches.",
+                "caption": "Fig. 1.47(b) · Delta-equivalent resistance values inserted",
+                "page": 41,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 3
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-47c.png",
+                "alt": "Exercise 1.7.2 first reduction stage. The 12.5 ohm and 17.5 ohm resistors are drawn as a parallel pair, the 15 ohm and 35 ohm resistors as another parallel pair, and the 70 ohm and 30 ohm resistors as a third parallel pair, all across the 120 V source network.",
+                "caption": "Fig. 1.47(c) · Circuit after grouping the parallel branches",
+                "page": 42,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 4
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-47d.png",
+                "alt": "Exercise 1.7.2 further reduced circuit. A branch containing 7.29 ohm in series with 10.5 ohm is connected in parallel with a 21 ohm branch across the 120 V source.",
+                "caption": "Fig. 1.47(d) · Further reduced circuit",
+                "page": 42,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 5
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-47e.png",
+                "alt": "Exercise 1.7.2 final reduction. The left drawing shows 17.79 ohm in parallel with 21 ohm across the 120 V source; an arrow leads to the equivalent single-loop circuit containing a 9.63 ohm resistance and current i.",
+                "caption": "Fig. 1.47(e) · Final equivalent resistance of 9.63 ohm",
+                "page": 43,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 6
+                }
+              }
+            ],
+            "paragraphs": [
+              "The Star network between the points \\(a,b,c\\) is converted into Delta network as follows.",
+              "\\[R_{ac}=\\dfrac{5\\times10+10\\times20+20\\times5}{20}=\\dfrac{50+200+100}{20}=\\dfrac{350}{20}=17.5\\ \\Omega\\]",
+              "\\[R_{ab}=\\dfrac{5\\times10+10\\times20+20\\times5}{5}=\\dfrac{50+200+100}{5}=\\dfrac{350}{5}=70\\ \\Omega\\]",
+              "\\[R_{bc}=\\dfrac{5\\times10+10\\times20+20\\times5}{10}=\\dfrac{50+200+100}{10}=\\dfrac{350}{10}=35\\ \\Omega\\]",
+              "The above circuit gets reduced to",
+              "It is further reduced to",
+              "and",
+              "The current supplied is",
+              "\\[i=\\dfrac{120}{9.63}=12.46\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(i=12.46\\ \\text{A}\\)."
           }
-        ]
-      },
-      {
-        "heading": "Exercise 1.7.2 — Star to Delta and source current",
-        "scope": "core",
-        "paragraphs": [
-          "Convert the star network between points \\(a,b,c\\) into a delta network. The three delta resistances are",
-          "\\[R_{ac}=\\dfrac{5\\times10+10\\times20+20\\times5}{20}=\\dfrac{350}{20}=17.5\\ \\Omega\\]",
-          "\\[R_{ab}=\\dfrac{5\\times10+10\\times20+20\\times5}{5}=\\dfrac{350}{5}=70\\ \\Omega\\]",
-          "\\[R_{bc}=\\dfrac{5\\times10+10\\times20+20\\times5}{10}=\\dfrac{350}{10}=35\\ \\Omega\\]",
-          "The textbook reduction figures next show the parallel reductions \\(17.5\\parallel30=10.5\\ \\Omega\\), \\(70\\parallel15=12.35\\ \\Omega\\) approximately, and \\(35\\parallel45\\approx19.69\\ \\Omega\\), followed by further series/parallel reduction to an equivalent resistance of \\(9.63\\ \\Omega\\).",
-          "The current supplied is then",
-          "\\[I=\\dfrac{120}{9.63}=12.46\\ \\text{A}\\]"
         ],
         "source_refs": [
           "TB-P040",
