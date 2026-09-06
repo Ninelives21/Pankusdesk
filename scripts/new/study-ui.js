@@ -66,6 +66,16 @@ function renderFigure(figure, options = {}) {
 	const width = Number(figure.width);
 	const height = Number(figure.height);
 	const dimensions = Number.isFinite(width) && Number.isFinite(height) ? ` width="${width}" height="${height}"` : '';
+	const displayHeight = Number(figure.display_height ?? figure.displayHeight);
+	const displayWidth = Number(figure.display_width ?? figure.displayWidth);
+	const imageStyles = [];
+	if (Number.isFinite(displayHeight) && displayHeight > 0) {
+		imageStyles.push(`max-height: ${Math.round(displayHeight)}px`, 'width: auto');
+	}
+	if (Number.isFinite(displayWidth) && displayWidth > 0) {
+		imageStyles.push(`max-width: ${Math.round(displayWidth)}px`);
+	}
+	const imageStyle = imageStyles.length ? ` style="${imageStyles.join('; ')}"` : '';
 	const className = options.className || 'study-figure';
 	const extraClass = options.extraClass ? ` ${options.extraClass}` : '';
 	const captionParts = [];
@@ -73,7 +83,7 @@ function renderFigure(figure, options = {}) {
 	if (figure.page) captionParts.push(`<span class="study-figure-page">Book p. ${escapeHtml(figure.page)}</span>`);
 	return `
 		<figure class="${escapeHtml(className)}${extraClass}">
-			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}>
+			<img src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.alt)}" loading="lazy" decoding="async"${dimensions}${imageStyle}>
 			${captionParts.length ? `<figcaption>${captionParts.join('')}</figcaption>` : ''}
 		</figure>`;
 }
