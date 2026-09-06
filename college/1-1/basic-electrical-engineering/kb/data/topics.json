@@ -2383,13 +2383,34 @@
         ]
       },
       {
-        "heading": "Exercise 1.7.1 — Delta to Star",
+        "heading": "Worked examples",
         "scope": "core",
-        "paragraphs": [
-          "Convert the delta network of Figure 1.46 to the equivalent star network. The textbook calculates",
-          "\\[R_a=\\dfrac{25\\times10}{25+15+10}=\\dfrac{250}{50}=5\\ \\Omega\\]",
-          "\\[R_b=\\dfrac{25\\times15}{25+15+10}=\\dfrac{375}{50}=7.5\\ \\Omega\\]",
-          "\\[R_c=\\dfrac{10\\times15}{25+15+10}=\\dfrac{150}{50}=3\\ \\Omega\\]"
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 1.7.1",
+            "question_paragraphs": [
+              "Convert the given Delta Network shown in Figure 1.46 into an equivalent Star Network."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-46.png",
+                "alt": "Exercise 1.7.1 conversion from a delta network to an equivalent star network. In the delta, terminals A and B are connected by 25 ohms, A and C by 10 ohms, and B and C by 15 ohms. An arrow points to the equivalent star network with arms RA to A, RB to B, and RC to C.",
+                "caption": "Fig. 1.46 · Delta network converted to its equivalent star network",
+                "page": 40,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "\\[R_a=\\dfrac{25\\times10}{25+15+10}=\\dfrac{250}{50}=5\\ \\Omega\\]",
+              "\\[R_b=\\dfrac{25\\times15}{25+15+10}=\\dfrac{375}{50}=7.5\\ \\Omega\\]",
+              "\\[R_c=\\dfrac{10\\times15}{25+15+10}=\\dfrac{150}{50}=3\\ \\Omega\\]"
+            ],
+            "final_answer": "\\(R_a=5\\ \\Omega\\), \\(R_b=7.5\\ \\Omega\\), \\(R_c=3\\ \\Omega\\)."
+          }
         ],
         "source_refs": [
           "TB-P040"

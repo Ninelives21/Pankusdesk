@@ -720,9 +720,9 @@ In loop \(abca\),
 
 \[10-12i_1=0\]
 
-\[i_1=\dfrac{10}{12}=\dfrac{5}{6}\ 	ext{A}\]
+\[i_1=\dfrac{10}{12}=\dfrac{5}{6}\ \text{A}\]
 
-\[V=i_1	imes 12=\dfrac{5}{6}	imes 12=10\ 	ext{V}\]
+\[V=i_1\times 12=\dfrac{5}{6}\times 12=10\ \text{V}\]
 
 In loop \(acda\),
 
@@ -730,7 +730,7 @@ In loop \(acda\),
 
 \[3i_x=-6\]
 
-\[i_x=\dfrac{-6}{3}=-2\ 	ext{A}\]
+\[i_x=\dfrac{-6}{3}=-2\ \text{A}\]
 
 ### Exercise 1.5.7 — KVL
 
@@ -744,19 +744,19 @@ In the loop \(abcdefa\),
 
 \[24-V_1-22=0\]
 
-\[V_1=2\ 	ext{V}\]
+\[V_1=2\ \text{V}\]
 
 In the loop \(abca\),
 
 \[24-2+V_2=0\]
 
-\[V_2=-22\ 	ext{V}\]
+\[V_2=-22\ \text{V}\]
 
 In the loop \(fcdef\),
 
 \[V_3-10=0\]
 
-\[V_3=10\ 	ext{V}\]
+\[V_3=10\ \text{V}\]
 
 ### Exercise 1.5.8 — KVL
 
@@ -1237,6 +1237,8 @@ If all star arms have equal resistance \(R_{star}\), then each equivalent delta 
 Thus, when transforming from delta to star the resistance in each corresponding branch decreases; when transforming from star to delta it increases.
 
 ### Exercise 1.7.1 — Delta to Star
+
+*Figure: Fig. 1.46 · Delta network converted to its equivalent star network*
 
 Convert the delta network of Figure 1.46 to the equivalent star network. The textbook calculates
 
