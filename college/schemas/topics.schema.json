@@ -239,6 +239,76 @@
         }
       }
     },
+    "explainerSection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "anyOf": [
+        { "required": ["paragraphs"] },
+        { "required": ["bullets"] }
+      ]
+    },
+    "explainer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/explainerSection"
+          }
+        }
+      },
+      "anyOf": [
+        { "required": ["paragraphs"] },
+        { "required": ["bullets"] },
+        { "required": ["sections"] }
+      ]
+    },
     "accordion": {
       "type": "object",
       "additionalProperties": true,
@@ -364,6 +434,12 @@
             "$ref": "#/$defs/accordion"
           }
         },
+        "explainers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/explainer"
+          }
+        },
         "accordion_recap": {
           "type": "array",
           "items": {
@@ -420,6 +496,11 @@
         {
           "required": [
             "accordions"
+          ]
+        },
+        {
+          "required": [
+            "explainers"
           ]
         }
       ]

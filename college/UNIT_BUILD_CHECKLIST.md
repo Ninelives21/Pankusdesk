@@ -222,5 +222,6 @@ Set `publicationStatus: "ready"` only when:
 - [ ] For examples, show title + complete question while closed; opening the same card begins with the non-clickable `Solution` label and full working.
 - [ ] Route LaTeX escaping/typesetting through `PankuStudyUI`; do not add another subject-specific MathJax loader.
 - [ ] Route baseline study figures/drawings through the shared figure renderer; subject CSS may alter placement/size only.
-- [ ] Put model-added explanatory notes in the shared `PankusDesk tip` box so they are visibly distinct from textbook/class-source material.
+- [ ] Keep model-added explanatory material visibly distinct from textbook/class-source material: use the shared `PankusDesk tip` for short notes and the shared collapsible `Simple terms` explainer for detailed layman teaching.
+- [ ] Add detailed layman explanations through section-level `explainers` data and `PankuStudyUI.renderExplainer()`; never fork a subject-specific/simple-terms dropdown.
 - [ ] Treat the shared accordion, LaTeX, drawing and tip look-and-feel as cross-subject/cross-semester design-locked components.

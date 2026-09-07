@@ -133,6 +133,26 @@ def visible_topic_strings(topic: dict):
                     if isinstance(value, str):
                         yield f"sections[{si}].accordions[{ai}].{key}[{i}]", value
 
+        for ei, item in enumerate(section.get("explainers", []) or []):
+            if not isinstance(item, dict):
+                continue
+            for key in ("label", "summary", "title"):
+                if isinstance(item.get(key), str):
+                    yield f"sections[{si}].explainers[{ei}].{key}", item[key]
+            for key in ("paragraphs", "bullets"):
+                for i, value in enumerate(item.get(key, []) or []):
+                    if isinstance(value, str):
+                        yield f"sections[{si}].explainers[{ei}].{key}[{i}]", value
+            for xi, sub in enumerate(item.get("sections", []) or []):
+                if not isinstance(sub, dict):
+                    continue
+                if isinstance(sub.get("heading"), str):
+                    yield f"sections[{si}].explainers[{ei}].sections[{xi}].heading", sub["heading"]
+                for key in ("paragraphs", "bullets"):
+                    for i, value in enumerate(sub.get(key, []) or []):
+                        if isinstance(value, str):
+                            yield f"sections[{si}].explainers[{ei}].sections[{xi}].{key}[{i}]", value
+
     for qi, item in enumerate(topic.get("self_checks", []) or []):
         if isinstance(item, dict):
             for key in ("question", "answer"):
@@ -548,6 +568,16 @@ def verify_subject(subject_dir: Path):
             for ai, accordion in enumerate(section.get("accordions", []) or []):
                 check_accordion(accordion, f"{scontext} accordion {ai}")
 
+            for ei, explainer in enumerate(section.get("explainers", []) or []):
+                if not isinstance(explainer, dict):
+                    errors.append(f"{scontext} explainer {ei}: explainer is not an object")
+                    continue
+                if not isinstance(explainer.get("title"), str) or not explainer.get("title", "").strip():
+                    errors.append(f"{scontext} explainer {ei}: title is required")
+                has_content = any(explainer.get(key) for key in ("paragraphs", "bullets", "sections"))
+                if not has_content:
+                    errors.append(f"{scontext} explainer {ei}: needs paragraphs, bullets or sections")
+
         if unit in ready_units:
             if not (t.get("sections") or []):
                 errors.append(f"{label}: ready-unit topic {tid} has no detailed sections")
@@ -693,7 +723,7 @@ def main() -> int:
     print(" - ready units have detailed topic data and shells")
     print(" - topic/section provenance present and configured refs resolved")
     print(" - class-note labels/source refs checked")
-    print(" - semantic study tables and explanation accordions checked")
+    print(" - semantic study tables, explanation accordions and plain-language explainers checked")
     print(" - figure assets/alt text/explicit anchors/Grid placement checked")
     print(" - textbook practice anchors checked where configured")
     print(" - class-log mappings/assets/calendar links checked")

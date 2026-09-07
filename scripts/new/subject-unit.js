@@ -449,6 +449,7 @@ function renderSectionContent(section, context) {
 
 	html += renderStudyTables(section.tables ?? []);
 	html += renderExplanationAccordions(section.accordions ?? [], section.accordion_recap ?? [], section.accordion_label || 'Understand this diagram');
+	html += renderPlainLanguageExplainers(section.explainers ?? []);
 
 	const explicitlyEnded = ordinaryFigures
 		.filter(figure => figure.after?.type === 'end')
@@ -532,6 +533,11 @@ function renderStudyTableCell(cell) {
 		return `<img class="study-table-image${sizeClass}" src="${src}" alt="${alt}" width="${width}" height="${height}" loading="lazy">`;
 	}
 	return formatText(cell);
+}
+
+function renderPlainLanguageExplainers(items) {
+	if (!Array.isArray(items) || !items.length) return '';
+	return items.map(item => window.PankuStudyUI?.renderExplainer?.(item) || '').join('');
 }
 
 function renderExplanationAccordions(items, recapItems = [], label = 'Understand this diagram') {

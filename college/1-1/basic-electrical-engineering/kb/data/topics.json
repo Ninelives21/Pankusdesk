@@ -521,6 +521,98 @@
             "pages": "5–7",
             "images": "05.png–07.png"
           }
+        ],
+        "explainers": [
+          {
+            "label": "Simple terms",
+            "summary": "Inductance, Faraday’s law and the calculus — explained from the beginning",
+            "title": "What is really happening in this coil?",
+            "paragraphs": [
+              "There is no separate magnetic field that we need to imagine at the start. In this section, the current in the coil creates the magnetic field itself."
+            ],
+            "sections": [
+              {
+                "heading": "1. Start with the current",
+                "paragraphs": [
+                  "When current flows through a wire, it creates a magnetic field around the wire. If the wire is wound into a coil, the magnetic fields produced by the turns reinforce one another, so there is a stronger resultant magnetic field through the coil.",
+                  "\\[\\text{current}\\;i\\;\\longrightarrow\\;\\text{magnetic field}\\]"
+                ]
+              },
+              {
+                "heading": "2. Flux and flux linkage",
+                "paragraphs": [
+                  "Magnetic flux \\(\\phi\\) is a way of describing how much magnetic field passes through a turn of the coil. More current produces a stronger magnetic field, so for this ideal linear case, more current means more flux.",
+                  "\\[i\\uparrow\\;\\Longrightarrow\\;\\phi\\uparrow\\]",
+                  "If the coil has \\(N\\) turns, the flux is linked with every turn. The total flux linkage is therefore \\(\\varphi=N\\phi\\)."
+                ]
+              },
+              {
+                "heading": "3. Faraday’s law — the one idea to remember",
+                "paragraphs": [
+                  "Faraday’s law says that a voltage is induced whenever the magnetic flux linkage changes. A steady magnetic field does not keep creating an induced voltage; it is the change that matters.",
+                  "\\[\\text{changing flux linkage}\\;\\longrightarrow\\;\\text{induced emf}\\]",
+                  "The faster the flux linkage changes, the larger the induced emf. That is what \\(e\\propto d\\varphi/dt\\) is saying. The symbol \\(d\\varphi/dt\\) simply means “how quickly the flux linkage is changing with time.”"
+                ],
+                "bullets": [
+                  "No change in flux linkage → no induced emf.",
+                  "Slow change in flux linkage → small induced emf.",
+                  "Fast change in flux linkage → large induced emf."
+                ]
+              },
+              {
+                "heading": "4. Why the coil can induce a voltage in itself",
+                "paragraphs": [
+                  "Now suppose the current itself changes. Because the current created the magnetic field, a changing current creates a changing magnetic field. That changes the flux through the same coil, and Faraday’s law then produces an induced emf in that same coil. This is self-induction.",
+                  "\\[\\text{changing current}\\;\\longrightarrow\\;\\text{changing magnetic field}\\;\\longrightarrow\\;\\text{changing flux}\\;\\longrightarrow\\;\\text{induced emf}\\]"
+                ]
+              },
+              {
+                "heading": "5. Lenz’s law — which way does that induced emf act?",
+                "paragraphs": [
+                  "Lenz’s law says that the induced emf acts against the change that produced it. If the current is trying to increase, the induced emf opposes that increase. If the current is trying to decrease, the induced emf acts in the direction that tries to keep the current flowing.",
+                  "So an inductor does not oppose current itself. It opposes a change in current. This is why inductance is often compared with inertia."
+                ]
+              },
+              {
+                "heading": "6. The inductor equation",
+                "paragraphs": [
+                  "For an ideal linear inductor, the magnitude of the induced voltage is written as \\(e=L\\,di/dt\\). Here \\(L\\) is the inductance and \\(di/dt\\) means “how quickly the current is changing.”",
+                  "\\[e=L\\dfrac{di}{dt}\\]",
+                  "If the current is steady, \\(di/dt=0\\), so the induced emf is zero. If you try to change the current very quickly, \\(di/dt\\) is large and the opposing induced voltage is large."
+                ]
+              },
+              {
+                "heading": "7. Now unpack the energy calculus",
+                "paragraphs": [
+                  "The source has to do work while it builds up current in the inductor. That supplied energy is stored in the magnetic field. Start with energy as accumulated power:",
+                  "\\[W=\\int_0^t P\\,dt\\]",
+                  "Electrical power is \\(P=ei\\), so:",
+                  "\\[W=\\int_0^t ei\\,dt\\]",
+                  "Substitute the inductor relation \\(e=L\\,di/dt\\):",
+                  "\\[W=\\int_0^t L\\dfrac{di}{dt}i\\,dt\\]",
+                  "The expression \\((di/dt)\\,dt\\) is simply a tiny change in current, \\(di\\). So instead of adding the energy contributions as time changes, we can add them as current changes:",
+                  "\\[W=\\int_0^I Li\\,di\\]",
+                  "If \\(L\\) is constant, take it outside the integral. Since \\(\\int i\\,di=i^2/2\\), we get:",
+                  "\\[W=L\\left[\\dfrac{i^2}{2}\\right]_0^I=\\dfrac{1}{2}LI^2\\]",
+                  "So the energy stored in the magnetic field at current \\(I\\) is \\(W=\\dfrac{1}{2}LI^2\\) joules."
+                ]
+              },
+              {
+                "heading": "8. What the textbook bullet points mean",
+                "bullets": [
+                  "Steady DC: once an ideal inductor’s current has become constant, \\(di/dt=0\\), so its induced voltage is zero. An ideal inductor then behaves like a short circuit. This is the steady-state result, not the instant just after switching.",
+                  "Current cannot jump instantaneously: an instantaneous finite jump in current would make \\(di/dt\\) infinite, which would require an infinite voltage in the ideal model.",
+                  "Energy wording: the inductor absorbs or releases energy while its current changes. Once a non-zero current is steady, the ideal inductor can still have \\(W=\\dfrac{1}{2}LI^2\\) stored in its magnetic field even though no additional energy is being absorbed."
+                ]
+              },
+              {
+                "heading": "The whole story in one line",
+                "paragraphs": [
+                  "\\[\\boxed{\\text{changing current}\\;\\to\\;\\text{changing magnetic field}\\;\\to\\;\\text{changing flux}\\;\\to\\;\\text{opposing induced emf}}\\]"
+                ]
+              }
+            ]
+          }
         ]
       },
       {

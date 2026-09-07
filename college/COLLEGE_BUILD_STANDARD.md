@@ -605,7 +605,8 @@ This is a project-wide invariant across every subject, unit, semester and future
 - Every worked example must remain fully solved step by step and end with the shared bold final-answer treatment when a determinate result exists.
 - Shared LaTeX handling is centralized through `PankuStudyUI.formatText()` and `PankuStudyUI.typesetMath()`. Do not create subject-specific MathJax loaders or escaping behaviour.
 - Shared study drawings/figures use the common `PankuStudyUI.renderFigure()` baseline and the notebook-redraw design lock. Subject-specific CSS may control placement/width only; it must not redefine the core look and feel.
-- Model-added explanatory material that is not part of the source/class transcription must be visibly separated with the shared `PankusDesk tip` treatment. It must not be styled as source text or Priyanka's class notes.
+- Model-added explanatory material that is not part of the source/class transcription must be visibly separated from source text. Short advisory/context notes use the shared `PankusDesk tip` treatment. Optional detailed simplified teaching uses the shared collapsible `Simple terms` explainer rendered by `PankuStudyUI.renderExplainer()`.
+- The `Simple terms` explainer is a project-wide college component, never a BEE-only component. Its implementation lives in `scripts/new/study-ui.js` and `styles/new/study-ui.css`; topic data supplies only content through a section-level `explainers` array. Teal/mint is reserved for this optional plain-language layer, keeping it visually distinct from blue tips/source-adjacent notes and amber mathematical mismatches.
 - Mathematical/source discrepancy amber remains the single shared project-wide mismatch state.
 - A change to any of these common elements must be made in the shared component first and must therefore propagate across subjects/semesters. Do not patch only MAC, BEE, or one unit.
 

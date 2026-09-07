@@ -179,6 +179,44 @@ function renderAccordionItem(item, options = {}) {
 		</details>`;
 }
 
+function renderExplainer(block) {
+	if (!block || typeof block !== 'object') return '';
+	const title = String(block.title || 'Simple explanation');
+	const summary = String(block.summary || 'Open for a plain-language explanation');
+	const label = String(block.label || 'Simple terms');
+	const paragraphs = Array.isArray(block.paragraphs) ? block.paragraphs : [];
+	const bullets = Array.isArray(block.bullets) ? block.bullets : [];
+	const sections = Array.isArray(block.sections) ? block.sections : [];
+	const renderSection = section => {
+		if (!section || typeof section !== 'object') return '';
+		const sectionParagraphs = Array.isArray(section.paragraphs) ? section.paragraphs : [];
+		const sectionBullets = Array.isArray(section.bullets) ? section.bullets : [];
+		return `
+			<section class="study-explainer-section">
+				${section.heading ? `<h6>${formatText(section.heading)}</h6>` : ''}
+				${sectionParagraphs.map(p => `<p>${formatText(p)}</p>`).join('')}
+				${sectionBullets.length ? `<ul>${sectionBullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
+			</section>`;
+	};
+
+	return `
+		<details class="study-explainer">
+			<summary>
+				<span class="study-explainer-summary-copy">
+					<span class="study-explainer-label">${escapeHtml(label)}</span>
+					<span class="study-explainer-summary-title">${formatText(summary)}</span>
+				</span>
+				<span class="study-explainer-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-explainer-content">
+				<h5>${formatText(title)}</h5>
+				${paragraphs.map(p => `<p>${formatText(p)}</p>`).join('')}
+				${bullets.length ? `<ul>${bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
+				${sections.map(renderSection).join('')}
+			</div>
+		</details>`;
+}
+
 function renderTip(block) {
 	const title = block?.title || 'PankusDesk tip';
 	const paragraphs = Array.isArray(block?.paragraphs) ? block.paragraphs : [];
@@ -209,6 +247,7 @@ window.PankuStudyUI = {
 	typesetMath,
 	renderFigure,
 	renderAccordionGroup,
+	renderExplainer,
 	renderTip,
 	initAccordions,
 };
