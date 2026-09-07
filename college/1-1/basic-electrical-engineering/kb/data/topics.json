@@ -1071,6 +1071,38 @@
             "pages": "12–13",
             "images": "12.png–13.png"
           }
+        ],
+        "explainers": [
+          {
+            "label": "Simpler",
+            "summary": "Source vs load — what do source voltage/current and load voltage/current actually mean?",
+            "title": "First, know which part is giving energy and which part is using it",
+            "paragraphs": [
+              "A source is the part of a circuit that supplies electrical energy. A load is the part that receives and uses that energy. In a simple battery-and-bulb circuit, the battery is the source and the bulb is the load.",
+              "The words “source” and “load” in front of voltage or current simply tell you which part of the circuit you are talking about."
+            ],
+            "bullets": [
+              "Source voltage = the voltage produced by the source.",
+              "Source current = the current delivered by the source.",
+              "Load voltage = the voltage across the load.",
+              "Load current = the current flowing through the load."
+            ],
+            "sections": [
+              {
+                "heading": "In a simple one-loop circuit",
+                "paragraphs": [
+                  "The same current flows around the entire loop, so the source current and the load current are the same current. With one ideal source connected directly to one load, the source voltage also appears across the load.",
+                  "\\[\\boxed{\\text{Source gives energy}}\\qquad\\boxed{\\text{Load receives energy}}\\]"
+                ]
+              },
+              {
+                "heading": "Why this matters for independent and dependent sources",
+                "paragraphs": [
+                  "An independent source sets its own voltage or current without being controlled by another voltage or current elsewhere in the circuit. A dependent (controlled) source still supplies energy like a source, but the value it supplies is determined by some other voltage or current in the circuit."
+                ]
+              }
+            ]
+          }
         ]
       }
     ],
