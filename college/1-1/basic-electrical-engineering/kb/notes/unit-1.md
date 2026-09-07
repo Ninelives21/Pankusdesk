@@ -1302,25 +1302,35 @@ The current delivered by the source is
 
 \[i=\dfrac{12}{3.44}=3.49\ \text{A}\]
 
-### Exercise 1.7.4 — two Delta networks
+### Exercise 1.7.4 — equivalent resistance and current
 
-First, the 2-ohm and 1-ohm resistors are in series, and the 3-ohm and 5-ohm resistors are in series. The circuit is redrawn. The delta connections between \(a,b,c\) and \(d,c,f\) are then changed to equivalent star networks.
+Find the equivalent resistance and the current \(I\) for the circuit shown in Figure 1.49.
 
-The transformed branch values shown by the textbook reduction figure are approximately
+*Figure: Fig. 1.49 · Circuit for Exercise 1.7.4*
 
-\[3.43\ \Omega,\quad0.857\ \Omega,\quad1.714\ \Omega\]
+The resistances 2 ohms and 1 ohm are connected in series. Also, 3 ohms and 5 ohms are in series. Then, the circuit gets changed to:
 
-for the upper transformed delta, and
+*Figure: Fig. 1.49(a) · Circuit after the initial series reductions*
 
-\[1.818\ \Omega,\quad1.455\ \Omega,\quad3.636\ \Omega\]
+The textbook states that the delta connections between the points \(a,b,c\) and \(d,c,f\) are changed to equivalent star networks. Figure 1.49(a), however, labels the lower delta \(d,e,f\).
 
-for the lower transformed delta. Subsequent reduction figures combine these branches until the network reduces to
+*Figure: Fig. 1.49(b) · Both delta networks converted to equivalent star networks*
+
+It is further reduced to
+
+*Figure: Fig. 1.49(c) · Further reduced circuit*
+
+Then, it is simplified to
+
+*Figure: Fig. 1.49(d) · Final equivalent resistance*
+
+The equivalent resistance is given by
 
 \[R_{eq}=12.211\ \Omega\]
 
-The source current is
+The current \(I\) is given by
 
-\[I=\dfrac{20}{12.211}=1.638\ \text{A}\]
+\[i=\dfrac{20}{12.211}=1.638\ 	ext{A}\]
 
 ### Key formulas
 
