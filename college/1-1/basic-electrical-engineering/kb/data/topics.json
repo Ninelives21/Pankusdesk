@@ -1075,7 +1075,7 @@
         "explainers": [
           {
             "label": "Simpler",
-            "summary": "Source vs load — what do source voltage/current and load voltage/current actually mean?",
+            "summary": "Source vs load, and ideal vs practical voltage/current sources — explained simply",
             "title": "First, know which part is giving energy and which part is using it",
             "paragraphs": [
               "A source is the part of a circuit that supplies electrical energy. A load is the part that receives and uses that energy. In a simple battery-and-bulb circuit, the battery is the source and the bulb is the load.",
@@ -1093,6 +1093,33 @@
                 "paragraphs": [
                   "The same current flows around the entire loop, so the source current and the load current are the same current. With one ideal source connected directly to one load, the source voltage also appears across the load.",
                   "\\[\\boxed{\\text{Source gives energy}}\\qquad\\boxed{\\text{Load receives energy}}\\]"
+                ]
+              },
+              {
+                "heading": "Ideal vs practical voltage source",
+                "paragraphs": [
+                  "An ideal voltage source keeps its voltage perfectly constant, no matter how much current the load asks for. So an ideal 10 V source would always give 10 V whether the load draws a tiny current or a very large current.",
+                  "A practical (real) voltage source cannot do this perfectly because every real source has some internal resistance. When current is drawn, a little voltage is lost inside the source itself.",
+                  "\\[\\boxed{V_{\\text{load}}=V_{\\text{source}}-\\text{internal voltage drop}}\\]",
+                  "So, as the load draws more current, the voltage available at the load may fall slightly. A real battery marked 9 V, for example, may have a terminal voltage a little below 9 V under a heavy load."
+                ]
+              },
+              {
+                "heading": "Ideal vs practical current source",
+                "paragraphs": [
+                  "An ideal current source supplies exactly the same current regardless of the load connected to it. An ideal 2 A current source would therefore keep the current at 2 A even if the load resistance changed.",
+                  "To do that perfectly, however, it might sometimes need to produce an impossibly large voltage. A practical (real) current source therefore has limits: it can keep its current approximately constant only over a certain range of loads and voltages.",
+                  "\\[\\boxed{\\text{Ideal current source: current never changes}}\\]",
+                  "\\[\\boxed{\\text{Practical current source: current is approximately constant within its working limits}}\\]"
+                ]
+              },
+              {
+                "heading": "The quickest way to remember it",
+                "bullets": [
+                  "Voltage source: “I will try to keep my voltage fixed; the current can change depending on the load.”",
+                  "Current source: “I will try to keep my current fixed; the voltage can change depending on the load.”",
+                  "Ideal = a perfect mathematical model.",
+                  "Practical/real = what an actual device can approximately achieve."
                 ]
               },
               {
