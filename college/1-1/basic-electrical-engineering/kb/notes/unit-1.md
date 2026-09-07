@@ -720,9 +720,9 @@ In loop \(abca\),
 
 \[10-12i_1=0\]
 
-\[i_1=\dfrac{10}{12}=\dfrac{5}{6}\ \text{A}\]
+\[i_1=\dfrac{10}{12}=\dfrac{5}{6}\ 	ext{A}\]
 
-\[V=i_1\times 12=\dfrac{5}{6}\times 12=10\ \text{V}\]
+\[V=i_1	imes 12=\dfrac{5}{6}	imes 12=10\ 	ext{V}\]
 
 In loop \(acda\),
 
@@ -730,7 +730,7 @@ In loop \(acda\),
 
 \[3i_x=-6\]
 
-\[i_x=\dfrac{-6}{3}=-2\ \text{A}\]
+\[i_x=\dfrac{-6}{3}=-2\ 	ext{A}\]
 
 ### Exercise 1.5.7 — KVL
 
@@ -744,19 +744,19 @@ In the loop \(abcdefa\),
 
 \[24-V_1-22=0\]
 
-\[V_1=2\ \text{V}\]
+\[V_1=2\ 	ext{V}\]
 
 In the loop \(abca\),
 
 \[24-2+V_2=0\]
 
-\[V_2=-22\ \text{V}\]
+\[V_2=-22\ 	ext{V}\]
 
 In the loop \(fcdef\),
 
 \[V_3-10=0\]
 
-\[V_3=10\ \text{V}\]
+\[V_3=10\ 	ext{V}\]
 
 ### Exercise 1.5.8 — KVL
 
@@ -794,15 +794,9 @@ Applying KCL at node \(A\),
 
 ### Exercise 1.5.10 — Kirchhoff’s laws
 
-*Figure: Fig. 1.37 · Bridge circuit for Exercise 1.5.10*
+Find the currents flowing through the different resistances. Identify nodes \(a,b,c,d\) and assume current directions through the branches. Applying KVL to loop \(abca\),
 
-*Figure: Fig. 1.37(a) · Assumed current directions used in the solution*
-
-Find the currents flowing through the different resistances. Identify nodes \(a,b,c,d\) and assume current directions through the branches.
-
-Applying KVL to loop \(abca\),
-
-\[-2i_2-1\times i_3+1[i_1-i_2]=0\]
+\[-2i_2-i_3+(i_1-i_2)=0\]
 
 \[-2i_2-i_3+i_1-i_2=0\]
 
@@ -810,7 +804,7 @@ Applying KVL to loop \(abca\),
 
 Applying KVL to loop \(cbdc\),
 
-\[1\times i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\]
+\[i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\]
 
 \[i_3-4i_2+4i_3+3i_1-3i_2+3i_3=0\]
 
@@ -818,7 +812,7 @@ Applying KVL to loop \(cbdc\),
 
 Applying KVL to loop \(acda\) through the 12-V source,
 
-\[-(i_1-i_2)\times1-3(i_1-i_2+i_3)+12=0\]
+\[-(i_1-i_2)-3(i_1-i_2+i_3)+12=0\]
 
 \[-i_1+i_2-3i_1+3i_2-3i_3+12=0\]
 
@@ -826,27 +820,27 @@ Applying KVL to loop \(acda\) through the 12-V source,
 
 \[4i_1-4i_2+3i_3=12\tag{3}\]
 
-Solving equations (1) and (2),
+Solving equations (1) and (2), the textbook shows
 
-\[(1)\times3,\qquad 3i_1-9i_2-3i_3=0\]
+\[3i_1-9i_2-3i_3=0\]
 
-\[-(2),\qquad -3i_1+7i_2-8i_3=0\]
+\[-3i_1+7i_2-8i_3=0\]
 
 \[-2i_2+11i_3=0\tag{4}\]
 
 Solving equations (2) and (3),
 
-\[(2)\times4,\qquad 12i_1-28i_2+32i_3=0\]
+\[12i_1-28i_2+32i_3=0\]
 
-\[-(3)\times3,\qquad -12i_1+12i_2-9i_3=-36\]
+\[-12i_1+12i_2-9i_3=-36\]
 
 \[-16i_2+23i_3=-36\tag{5}\]
 
 Solving equations (4) and (5),
 
-\[-(4)\times8,\qquad 16i_2-88i_3=0\]
+\[16i_2-88i_3=0\]
 
-\[(5),\qquad -16i_2+23i_3=-36\]
+\[-16i_2+23i_3=-36\]
 
 \[-65i_3=-36\]
 
@@ -864,13 +858,11 @@ From equation (1),
 
 \[i_1=9.69\ \text{A}\]
 
-The different branch currents are
+The branch currents printed by the textbook are
 
 \[i_1=9.69\ \text{A},\qquad i_2=\dfrac{396}{130}\ \text{A},\qquad i_3=0.553\ \text{A}\]
 
 ### Exercise 1.5.11 — dependent source
-
-*Figure: Fig. 1.38 · Circuit for Exercise 1.5.11*
 
 Find \(V_x\). Assume current \(i\) in the circuit and apply KVL:
 
@@ -887,8 +879,6 @@ Writing \(i=V_x/5\),
 \[V_x=\dfrac{15}{3.6}=4.16\ \text{V}\]
 
 ### Exercise 1.5.12 — KCL and KVL together
-
-*Figure: Fig. 1.39 · Circuit for Exercise 1.5.12*
 
 Find the voltage across all resistances and the branch currents. Identify nodes \(a,b,c,d\) and assume the branch currents as shown. Applying KCL at node \(c\),
 
@@ -1030,18 +1020,6 @@ The textbook introduces this section through worked reductions. Each example ide
 
 ### Exercise 1.6.1 — find the current delivered by the source
 
-*Figure: Fig. 1.42 · Original circuit for Exercise 1.6.1*
-
-*Figure: Fig. 1.42(a) · First series reductions*
-
-*Figure: Fig. 1.42(b) · Parallel reductions to 2 ohms and 1.2 ohms*
-
-*Figure: Fig. 1.42(c) · Network after the B-to-C reduction*
-
-*Figure: Fig. 1.42(d) · Two remaining parallel branches*
-
-*Figure: Fig. 1.42(e) · Final equivalent resistance of 1.05 ohms*
-
 Identify nodes \(A\), \(B\) and \(C\). Between \(A\) and \(B\), the two 2-ohm resistances in the upper path are in series, giving \(4\ \Omega\). Between \(B\) and \(C\), the 2-ohm and 1-ohm resistances are in series, giving \(3\ \Omega\).
 
 The reduction figures then show \(4\ \Omega\parallel4\ \Omega=2\ \Omega\) between \(A\) and \(B\), and between \(B\) and \(C\),
@@ -1062,16 +1040,6 @@ Therefore the current supplied by the 30-V source is
 
 ### Exercise 1.6.2 — resistance between x and y
 
-*Figure: Fig. 1.43 · Original circuit for Exercise 1.6.2*
-
-*Figure: Fig. 1.43(a) · Nodes identified for the reduction*
-
-*Figure: Fig. 1.43(b) · 5 kΩ and 4.7 kΩ reduced to 2.42 kΩ*
-
-*Figure: Fig. 1.43(c) · Remaining branches reduced to 10 kΩ and 2.04 kΩ*
-
-*Figure: Fig. 1.43(d) · Final parallel network between x and y*
-
 Identify nodes \(A,B,C,D,E\). Between \(E\) and \(D\), the 5-k\(\Omega\) and 4.7-k\(\Omega\) resistances are in parallel:
 
 \[5\ \mathrm{k}\Omega\parallel4.7\ \mathrm{k}\Omega=\dfrac{5\times4.7}{5+4.7}=2.42\ \mathrm{k}\Omega\]
@@ -1090,23 +1058,17 @@ When a 6-V battery is connected between \(x\) and \(y\), the current driven is
 
 ### Exercise 1.6.3 — same-potential nodes
 
-*Figure: Fig. 1.44 · Original circuit for Exercise 1.6.3*
+Find the resistance between \(a\) and \(b\). The textbook notes that nodes \(A\) and \(B\) are at the same potential; therefore they are one and the same node. The reduction figure then gives the upper pair as
 
-*Figure: Fig. 1.44(a) · Reduction using the equal-potential node A = B*
+\[3\ \Omega\parallel6\ \Omega=2\ \Omega\]
 
-Find the resistance between \(a\) and \(b\). The nodes \(A\) and \(B\) are of the same potential; therefore they are one and the same node.
+and the lower pair as
 
-Between \(a\) and the common node \(A=B\), the 3-ohm and 6-ohm resistances are in parallel:
+\[4\ \Omega\parallel4\ \Omega=2\ \Omega\]
 
-\[R_1=3\parallel6=\dfrac{3\times6}{3+6}=\dfrac{18}{9}=2\ \Omega\]
+These two reduced resistances are in series, so
 
-Between \(A=B\) and \(b\), the two 4-ohm resistances are in parallel:
-
-\[R_2=4\parallel4=\dfrac{4\times4}{4+4}=\dfrac{16}{8}=2\ \Omega\]
-
-These two equivalent resistances are in series, so
-
-\[R_{ab}=R_1+R_2=2+2=4\ \Omega\]
+\[R_{ab}=2+2=4\ \Omega\]
 
 ### Key formulas
 
@@ -1238,8 +1200,6 @@ Thus, when transforming from delta to star the resistance in each corresponding 
 
 ### Exercise 1.7.1 — Delta to Star
 
-*Figure: Fig. 1.46 · Delta network converted to its equivalent star network*
-
 Convert the delta network of Figure 1.46 to the equivalent star network. The textbook calculates
 
 \[R_a=\dfrac{25\times10}{25+15+10}=\dfrac{250}{50}=5\ \Omega\]
@@ -1250,51 +1210,41 @@ Convert the delta network of Figure 1.46 to the equivalent star network. The tex
 
 ### Exercise 1.7.2 — Star to Delta and source current
 
-*Figure: Fig. 1.47 · Circuit for Exercise 1.7.2*
+Convert the star network between points \(a,b,c\) into a delta network. The three delta resistances are
 
-Find the current supplied by the 120 V battery shown in Figure 1.47.
+\[R_{ac}=\dfrac{5\times10+10\times20+20\times5}{20}=\dfrac{350}{20}=17.5\ \Omega\]
 
-The Star network between the points \(a,b,c\) is converted into Delta network as follows.
+\[R_{ab}=\dfrac{5\times10+10\times20+20\times5}{5}=\dfrac{350}{5}=70\ \Omega\]
 
-*Figure: Fig. 1.47(a) · Star network converted to a delta network*
+\[R_{bc}=\dfrac{5\times10+10\times20+20\times5}{10}=\dfrac{350}{10}=35\ \Omega\]
 
-\[R_{ac}=\dfrac{5\times10+10\times20+20\times5}{20}=\dfrac{50+200+100}{20}=\dfrac{350}{20}=17.5\ \Omega\]
+The textbook reduction figures next show the parallel reductions \(17.5\parallel30=10.5\ \Omega\), \(70\parallel15=12.35\ \Omega\) approximately, and \(35\parallel45\approx19.69\ \Omega\), followed by further series/parallel reduction to an equivalent resistance of \(9.63\ \Omega\).
 
-\[R_{ab}=\dfrac{5\times10+10\times20+20\times5}{5}=\dfrac{50+200+100}{5}=\dfrac{350}{5}=70\ \Omega\]
+The current supplied is then
 
-\[R_{bc}=\dfrac{5\times10+10\times20+20\times5}{10}=\dfrac{50+200+100}{10}=\dfrac{350}{10}=35\ \Omega\]
-
-*Figure: Fig. 1.47(b) · Delta-equivalent resistance values inserted*
-
-The above circuit gets reduced to
-
-*Figure: Fig. 1.47(c) · Circuit after grouping the parallel branches*
-
-It is further reduced to
-
-*Figure: Fig. 1.47(d) · Further reduced circuit*
-
-and
-
-*Figure: Fig. 1.47(e) · Final equivalent resistance of 9.63 ohm*
-
-The current supplied is
-
-\[i=\dfrac{120}{9.63}=12.46\ \text{A}\]
+\[I=\dfrac{120}{9.63}=12.46\ \text{A}\]
 
 ### Exercise 1.7.3 — Delta to Star followed by reduction
 
-For the delta between points \(a,b,c\),
+Find the current supplied by the source for the circuit shown in Figure 1.48.
 
-\[R_a=\dfrac{3\times2}{3+2+1}=\dfrac66=1\ \Omega\]
+Solution: The delta network between points \(a,b,c\) is converted into an equivalent star network as shown in Figure 1.48(a).
 
-\[R_b=\dfrac{3\times1}{3+2+1}=\dfrac36=0.5\ \Omega\]
+\[R_a=\dfrac{3	imes2}{3+2+1}=\dfrac{6}{6}=1\ \Omega\]
 
-\[R_c=\dfrac{1\times2}{3+2+1}=\dfrac26=0.33\ \Omega\]
+\[R_b=\dfrac{3	imes1}{3+2+1}=\dfrac{3}{6}=0.5\ \Omega\]
 
-After substituting these values, the textbook reduction figures show the series branches and their parallel reduction, ultimately giving an equivalent resistance of about \(3.44\ \Omega\). Hence
+\[R_c=\dfrac{1	imes2}{3+2+1}=\dfrac{2}{6}=0.33\ \Omega\]
 
-\[I=\dfrac{12}{3.44}=3.49\ \text{A}\]
+By substituting these values in the above network, we get the reduced circuit of Figure 1.48(b).
+
+The two series branches are then combined as shown in Figure 1.48(c), giving the textbook values \(4.55\ \Omega\) on the upper branch and \(5.33\ \Omega\) on the lower branch.
+
+Reducing the parallel part again gives Figure 1.48(d), corresponding to an equivalent resistance of about \(3.44\ \Omega\).
+
+Hence
+
+\[I=\dfrac{12}{3.44}=3.49\ 	ext{A}\]
 
 ### Exercise 1.7.4 — two Delta networks
 
