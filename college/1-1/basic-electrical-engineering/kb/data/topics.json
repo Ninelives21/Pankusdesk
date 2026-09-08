@@ -3237,73 +3237,79 @@
         ]
       },
       {
-        "heading": "Example 1.9.1 — current through 4 Ω",
+        "heading": "Worked examples",
         "scope": "core",
-        "paragraphs": [
-          "Find the current passing through 4 ohms resistance using Thevenin's Theorem.",
-          "To find the Thevenin resistance, the resistance 4 ohm is removed from the circuit and the 20 V voltage source is short-circuited. The resistance between the load terminals \\(a\\) and \\(b\\) is",
-          "\\[R_{th}=R_{ab}=\\dfrac{5\\times15}{5+15}+2+3=8.75\\ \\Omega\\]",
-          "To find the Thevenin voltage, the resistance 4 ohm is removed from the circuit and the open circuit voltage is found between the load terminals \\(a\\) and \\(b\\).",
-          "\\[V_{th}=V_{ab}=V_{xy}\\ \\text{since no current flows through 2 and 3 ohms resistances.}\\]",
-          "\\[I=\\dfrac{20}{5+15}=1\\ \\text{A}\\]",
-          "The voltage across the 15 ohm resistance is",
-          "\\[V_{xy}=V_{ab}=V_{th}=I\\times15=1\\times15=15\\ \\text{V}\\]",
-          "The Thevenin's equivalent circuit is given by Figure 1.57(c).",
-          "The current passing through 4 ohms resistance is",
-          "\\[I_L=\\dfrac{V_{th}}{R_{th}+R_L}=\\dfrac{15}{8.75+4}=1.17\\ \\text{A}\\]"
-        ],
-        "figures": [
+        "accordion_label": "Worked examples",
+        "accordions": [
           {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-56.png",
-            "alt": "Original circuit for Example 1.9.1 with a 20 V source, 5 ohm and 2 ohm resistors in the top branch, a 15 ohm vertical branch, a 3 ohm lower branch and a 4 ohm load between terminals a and b.",
-            "caption": "Fig. 1.56 · Circuit for Example 1.9.1",
-            "page": 53,
-            "width": 1448,
-            "height": 1086,
-            "after": {
-              "type": "paragraph",
-              "index": 0
-            },
-            "size": "large"
-          },
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-57a.png",
-            "alt": "Reduced circuit used to find Thevenin resistance with the 4 ohm load removed, the 20 V source short-circuited and the resistance seen from terminals a and b marked as Rth.",
-            "caption": "Fig. 1.57(a) · Finding Thevenin resistance",
-            "page": 53,
-            "width": 1448,
-            "height": 1086,
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "large"
-          },
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-57b.png",
-            "alt": "Open-circuit network used to find Thevenin voltage with the 4 ohm load removed, nodes x and y marked on the 15 ohm branch, current I indicated through the 5 ohm and 15 ohm path, and Vth measured between terminals a and b.",
-            "caption": "Fig. 1.57(b) · Finding Thevenin voltage",
-            "page": 54,
-            "width": 1448,
-            "height": 1086,
-            "after": {
-              "type": "paragraph",
-              "index": 3
-            },
-            "size": "large"
-          },
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-57c.png",
-            "alt": "Thevenin equivalent circuit for Example 1.9.1 showing Vth equals 15 V in series with Rth equals 8.75 ohm feeding the load resistance RL equals 4 ohms between terminals a and b.",
-            "caption": "Fig. 1.57(c) · Thevenin equivalent circuit",
-            "page": 54,
-            "width": 1448,
-            "height": 1086,
-            "after": {
-              "type": "paragraph",
-              "index": 8
-            },
-            "size": "large"
+            "title": "Example 1.9.1",
+            "question_paragraphs": [
+              "Find the current passing through 4 ohms resistance using Thevenin’s Theorem."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-56.png",
+                "alt": "Original circuit for Example 1.9.1 with a 20 V source, 5 ohm and 2 ohm resistors in the top branch, a 15 ohm vertical branch, a 3 ohm lower branch and a 4 ohm load between terminals a and b.",
+                "caption": "Fig. 1.56 · Circuit for Example 1.9.1",
+                "page": 53,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-57a.png",
+                "alt": "Reduced circuit used to find Thevenin resistance with the 4 ohm load removed, the 20 V source short-circuited and the resistance seen from terminals a and b marked as Rth.",
+                "caption": "Fig. 1.57(a) · Finding Thevenin resistance",
+                "page": 53,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 2
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-57b.png",
+                "alt": "Open-circuit network used to find Thevenin voltage with the 4 ohm load removed, nodes x and y marked on the 15 ohm branch, current I indicated through the 5 ohm and 15 ohm path, and Vth measured between terminals a and b.",
+                "caption": "Fig. 1.57(b) · Finding Thevenin voltage",
+                "page": 54,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 5
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-57c.png",
+                "alt": "Thevenin equivalent circuit for Example 1.9.1 showing Vth equals 15 V in series with Rth equals 8.75 ohm feeding the load resistance RL equals 4 ohms between terminals a and b.",
+                "caption": "Fig. 1.57(c) · Thevenin equivalent circuit",
+                "page": 54,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 10
+                }
+              }
+            ],
+            "paragraphs": [
+              "To find the Thevenin resistance, the resistance 4 ohm is removed from the circuit and the 20 V voltage source is short-circuited. The resistance between the load terminals \\(a\\) and \\(b\\) is",
+              "\\[R_{th}=R_{ab}=\\dfrac{5\\times15}{5+15}+2+3=8.75\\ \\Omega\\]",
+              "To find the Thevenin voltage, the resistance 4 ohm is removed from the circuit and the open circuit voltage is found between the load terminals \\(a\\) and \\(b\\).",
+              "\\[V_{th}=V_{ab}=V_{xy}\\ \\text{since no current flows through 2 and 3 ohms resistances.}\\]",
+              "The current in the left path is",
+              "\\[I=\\dfrac{20}{5+15}=1\\ \\text{A}\\]",
+              "The voltage across the 15 ohm resistance is",
+              "\\[V_{xy}=V_{ab}=V_{th}=I\\times15=1\\times15=15\\ \\text{V}\\]",
+              "The Thevenin’s equivalent circuit is given by Figure 1.57(c).",
+              "The current passing through 4 ohms resistance is",
+              "\\[I_L=\\dfrac{V_{th}}{R_{th}+R_L}=\\dfrac{15}{8.75+4}=1.17\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(I_L=1.17\\ \\text{A}\\)"
           }
         ],
         "source_refs": [
