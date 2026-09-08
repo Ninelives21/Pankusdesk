@@ -3498,6 +3498,105 @@
               "message": "The textbook line immediately after the 4-ohm drop states “voltage drop across 4 ohms resistance” but evaluates \\(1.5\\times3=4.5\\ \\text{V}\\), which is the drop across the 3-ohm resistor. It also first obtains the potential of \\(a\\) with respect to \\(b\\) as \\(-0.3\\ \\text{V}\\), then uses the magnitude \\(0.3\\ \\text{V}\\) as \\(V_{th}=V_{ab}\\). The portal preserves the printed calculation and final magnitude while flagging these inconsistencies."
             },
             "final_answer": "\\(I=0.0478\\ \\text{A}\\) through the 2-ohm load."
+          },
+          {
+            "title": "Example 1.9.4",
+            "question_paragraphs": [
+              "Find the current passing through the load resistance \\(R_L\\) using Thevenin’s Theorem for \\(R_L=6\\ \\Omega\\) and \\(R_L=16\\ \\Omega\\)."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-62.png",
+                "alt": "Original circuit for Example 1.9.4 with a 32 V source, 4 ohm and 1 ohm resistors along the top branch, a 12 ohm shunt resistor and 2 A current source in parallel at the centre, and load resistance RL connected between terminals a and b.",
+                "caption": "Fig. 1.62 · Circuit for Example 1.9.4",
+                "page": 59,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-63a.png",
+                "alt": "Source transformation used in Example 1.9.4: a 2 A current source in parallel with 12 ohms is replaced by a 24 V voltage source in series with 12 ohms, with the voltage source positive at the top.",
+                "caption": "Fig. 1.63(a) · Transforming the 2 A current source and 12 ohm resistance",
+                "page": 60,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-63b.png",
+                "alt": "Example 1.9.4 circuit after source transformation, showing the 32 V source and 4 ohm resistor on the left, a central 12 ohm resistor in series with a 24 V source, the 1 ohm resistor to terminal a, and load RL between terminals a and b.",
+                "caption": "Fig. 1.63(b) · Circuit after inserting the equivalent 24 V source",
+                "page": 60,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 1
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-63c.png",
+                "alt": "Open-circuit network used to find Thevenin voltage for Example 1.9.4, with RL removed, zero current through the 1 ohm output branch, loop current I through the 32 V source, 4 ohm resistor, 12 ohm resistor and 24 V source, a 6 V drop across the 12 ohm resistor, and Vab equal to Vth.",
+                "caption": "Fig. 1.63(c) · Finding the open-circuit Thevenin voltage",
+                "page": 60,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 2
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-63d.png",
+                "alt": "Network used to find Thevenin resistance for Example 1.9.4 after the voltage sources are short-circuited and RL is removed, showing the 4 ohm and 12 ohm resistors in parallel before the series 1 ohm resistor, as seen from terminals a and b.",
+                "caption": "Fig. 1.63(d) · Finding Thevenin resistance",
+                "page": 61,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 6
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-63e.png",
+                "alt": "Thevenin equivalent circuit for Example 1.9.4 with a 30 V Thevenin source, 4 ohm Thevenin resistance, load resistance RL, current IL upward in the source branch, and terminals a and b marked at the two nodes directly across RL.",
+                "caption": "Fig. 1.63(e) · Thevenin equivalent circuit",
+                "page": 61,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 8
+                }
+              }
+            ],
+            "paragraphs": [
+              "In the above circuit, the given 2 A current source is converted into its equivalent voltage source to simplify the circuit. The 2 A source in parallel with 12 ohms becomes a 24 V source in series with 12 ohms.",
+              "Including this equivalent voltage source in the original circuit gives Figure 1.63(b).",
+              "To find the Thevenin voltage \\(V_{Th}\\), remove the load resistance \\(R_L\\) and find the open-circuit voltage between terminals \\(a\\) and \\(b\\).",
+              "\\[i=\\dfrac{32-24}{4+12}=\\dfrac{8}{16}=0.5\\ \\text{A}\\]",
+              "The voltage drop across the 12-ohm resistance is",
+              "\\[V_{12\\Omega}=12\\times0.5=6\\ \\text{V}\\]",
+              "\\[V_{Th}=V_{ab}=24+6=30\\ \\text{V}\\]",
+              "To find the Thevenin resistance \\(R_{Th}\\), short-circuit the voltage sources and remove the load resistance \\(R_L\\). The resistance seen between terminals \\(a\\) and \\(b\\) is",
+              "\\[R_{Th}=1+\\dfrac{4\\times12}{4+12}=1+3=4\\ \\Omega\\]",
+              "The Thevenin equivalent circuit is shown in Figure 1.63(e).",
+              "(i) When \\(R_L=6\\ \\Omega\\),",
+              "\\[I_L=\\dfrac{V_{Th}}{R_{Th}+R_L}=\\dfrac{30}{4+6}=3\\ \\text{A}\\]",
+              "(ii) When \\(R_L=16\\ \\Omega\\),",
+              "\\[I_L=\\dfrac{V_{Th}}{R_{Th}+R_L}=\\dfrac{30}{4+16}=1.5\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(V_{Th}=30\\ \\text{V},\\ R_{Th}=4\\ \\Omega;\\ I_L=3\\ \\text{A}\\) for \\(R_L=6\\ \\Omega\\), and \\(I_L=1.5\\ \\text{A}\\) for \\(R_L=16\\ \\Omega\\)."
           }
         ],
         "source_refs": [
@@ -3507,7 +3606,10 @@
           "TB-P056",
           "TB-P057",
           "TB-P058",
-          "TB-P059"
+          "TB-P059",
+          "TB-P060",
+          "TB-P061",
+          "TB-P062"
         ],
         "book_refs": [
           {
@@ -3523,34 +3625,7 @@
           {
             "pages": "56–59",
             "images": "56.png–59.png"
-          }
-        ]
-      },
-      {
-        "heading": "Example 1.9.4 — two values of \\(R_L\\)",
-        "scope": "core",
-        "paragraphs": [
-          "The given 2-A current source in parallel with 12 ohms is first converted into its equivalent voltage source. The equivalent source voltage shown is \\(24\\ \\text{V}\\) with the same 12-ohm resistance. This source is inserted into the original circuit.",
-          "To find \\(V_{th}\\), remove \\(R_L\\). The loop current is",
-          "\\[i=\\dfrac{32-24}{4+12}=\\dfrac8{16}=0.5\\ \\text{A}\\]",
-          "The voltage drop across 12 ohms is",
-          "\\[V_{12\\Omega}=12\\times0.5=6\\ \\text{V}\\]",
-          "Hence",
-          "\\[V_{th}=V_{ab}=24+6=30\\ \\text{V}\\]",
-          "To find \\(R_{th}\\), short the voltage sources and keep the load removed. The textbook obtains",
-          "\\[R_{th}=1+\\dfrac{4\\times12}{4+12}=1+3=4\\ \\Omega\\]",
-          "For \\(R_L=6\\ \\Omega\\),",
-          "\\[I_L=\\dfrac{30}{4+6}=3\\ \\text{A}\\]",
-          "For \\(R_L=16\\ \\Omega\\),",
-          "\\[I_L=\\dfrac{30}{4+16}=1.5\\ \\text{A}\\]"
-        ],
-        "source_refs": [
-          "TB-P059",
-          "TB-P060",
-          "TB-P061",
-          "TB-P062"
-        ],
-        "book_refs": [
+          },
           {
             "pages": "59–62",
             "images": "59.png–62.png"
