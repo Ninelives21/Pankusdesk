@@ -204,3 +204,104 @@
 	color: var(--muted-2);
 	cursor: default;
 }
+
+/* ---------------------------------------------------------------------- */
+/* Site-wide back-to-top control                                          */
+/* ---------------------------------------------------------------------- */
+
+.back-to-top-control {
+	min-height: 40px;
+	padding: 9px 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-pill);
+	background: color-mix(in srgb, var(--surface) 92%, var(--primary-soft));
+	box-shadow: var(--shadow-small);
+	color: var(--primary);
+	font: inherit;
+	font-size: var(--font-size-body-sm);
+	font-weight: var(--font-weight-heavy);
+	line-height: 1;
+	cursor: pointer;
+	transition:
+		background var(--transition-fast),
+		border-color var(--transition-fast),
+		box-shadow var(--transition-fast),
+		color var(--transition-fast),
+		opacity var(--transition-fast),
+		transform var(--transition-fast);
+}
+
+.back-to-top-control:hover {
+	background: var(--primary-soft);
+	border-color: var(--primary-2);
+	box-shadow: var(--shadow-hover);
+	color: var(--primary-dark);
+	transform: translateY(-1px);
+}
+
+.back-to-top-control:focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--primary-2) 35%, transparent);
+	outline-offset: 2px;
+}
+
+.back-to-top-arrow {
+	font-size: 1.05em;
+	line-height: 1;
+}
+
+.back-to-top-control.is-in-sidebar {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	width: 100%;
+	margin: 0 0 var(--space-5);
+	background: color-mix(in srgb, var(--surface) 96%, var(--primary-soft));
+}
+
+.back-to-top-control.is-floating {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	z-index: 90;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(8px);
+}
+
+.back-to-top-control.is-floating.is-visible {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+	.back-to-top-control.is-in-sidebar {
+		position: fixed;
+		top: auto;
+		right: 18px;
+		bottom: 18px;
+		z-index: 90;
+		width: auto;
+		margin: 0;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(8px);
+	}
+
+	.back-to-top-control.is-in-sidebar.is-visible {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.back-to-top-control {
+		transition: none;
+	}
+}
+

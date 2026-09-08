@@ -2,6 +2,8 @@
 let semesterContextModule;
 
 document.addEventListener('DOMContentLoaded', async () => {
+	initBackToTop();
+
 	const mount = document.getElementById('navbar-new');
 	if (!mount) return;
 
@@ -206,6 +208,65 @@ function highlightCurrentNav() {
 	}
 
 	document.querySelector(`[data-nav="${key}"]`)?.classList.add('active');
+}
+
+function initBackToTop() {
+	const button = document.createElement('button');
+	button.type = 'button';
+	button.className = 'back-to-top-control is-floating';
+	button.setAttribute('aria-label', 'Back to top');
+	button.setAttribute('title', 'Back to top');
+	button.innerHTML = `
+		<span class="back-to-top-arrow" aria-hidden="true">↑</span>
+		<span>Back to top</span>
+	`;
+
+	const sidebarSelector = '.unit-toc, .class-notes-toc';
+
+	function updateVisibility() {
+		button.classList.toggle('is-visible', window.scrollY > 360);
+	}
+
+	function placeControl() {
+		const sidebar = document.querySelector(sidebarSelector);
+
+		if (sidebar) {
+			button.classList.remove('is-floating');
+			button.classList.add('is-in-sidebar');
+
+			if (button.parentElement !== sidebar || sidebar.firstElementChild !== button) {
+				sidebar.prepend(button);
+			}
+		} else {
+			button.classList.remove('is-in-sidebar');
+			button.classList.add('is-floating');
+
+			if (button.parentElement !== document.body) {
+				document.body.append(button);
+			}
+		}
+
+		updateVisibility();
+	}
+
+	button.addEventListener('click', () => {
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: reduceMotion ? 'auto' : 'smooth',
+		});
+	});
+
+	document.body.append(button);
+	placeControl();
+	window.addEventListener('scroll', updateVisibility, { passive: true });
+
+	const observer = new MutationObserver(placeControl);
+	observer.observe(document.body, {
+		childList: true,
+		subtree: true,
+	});
 }
 
 function escapeHtml(value) {

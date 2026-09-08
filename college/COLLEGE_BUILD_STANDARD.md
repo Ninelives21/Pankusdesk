@@ -444,7 +444,7 @@ Current generic college renderers include:
 - `scripts/new/unit-class-notes.js`
 - `scripts/new/unit-resource-nav.js`
 - `scripts/new/calendar.js`
-- shared semester/subject/navigation renderers
+- shared semester/subject/navigation renderers, including the site-wide Back to top control (mounted at the top of long-page left navigation when present, with a floating fallback elsewhere)
 
 Unit I demonstrates that the generic unit renderer supports:
 
