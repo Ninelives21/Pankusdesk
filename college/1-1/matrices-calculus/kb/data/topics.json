@@ -1059,6 +1059,65 @@
         "bullets": [
           "Obs. 1. Corresponding to \\(n\\) distinct eigenvalues, we get \\(n\\) independent eigenvectors. When eigenvalues are repeated, it may or may not be possible to obtain linearly independent eigenvectors for the repeated roots.",
           "Obs. 2. If \\(X\\) is an eigenvector for \\(\\lambda\\), then \\(cX\\) is also an eigenvector for any non-zero scalar \\(c\\). Thus an eigenvector corresponding to an eigenvalue is not unique."
+        ],
+        "explainers": [
+          {
+            "label": "SIMPLER",
+            "summary": "What “stretched” and “shrunk” really mean — and why direction matters",
+            "title": "Think of an eigenvector as an arrow whose direction survives the matrix transformation",
+            "paragraphs": [
+              "Think of a vector as an arrow starting at the origin. For example, \\(X=\\begin{bmatrix}2\\\\1\\end{bmatrix}\\) is an arrow from \\((0,0)\\) to \\((2,1)\\).",
+              "If we multiply this vector by 3, then \\(3X=\\begin{bmatrix}6\\\\3\\end{bmatrix}\\). The endpoint moves farther away, but the arrow still points along the same line. Both coordinates became 3 times larger, so the vector is 3 times longer. This is what we mean by stretching a vector.",
+              "Similarly, \\(\\dfrac12X=\\begin{bmatrix}1\\\\0.5\\end{bmatrix}\\) still points in the same direction, but is only half as long. This is what we mean by shrinking a vector."
+            ],
+            "bullets": [
+              "\\(\\lambda>1\\): the vector is stretched.",
+              "\\(0<\\lambda<1\\): the vector is shrunk.",
+              "A negative \\(\\lambda\\) keeps the vector on the same line but reverses its direction. For example, \\(\\lambda=-2\\) makes it twice as long and points it the opposite way."
+            ],
+            "sections": [
+              {
+                "heading": "A matrix is a transformation machine",
+                "paragraphs": [
+                  "A matrix takes a vector and transforms it. For most vectors, this changes both the vector's length and its direction.",
+                  "For example, take \\(A=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}\\). If \\(X=\\begin{bmatrix}1\\\\0\\end{bmatrix}\\), then \\(AX=\\begin{bmatrix}2\\\\0\\end{bmatrix}=2X\\). The arrow stays on the x-axis and only becomes twice as long, so \\(X\\) is an eigenvector and \\(\\lambda=2\\).",
+                  "Likewise, if \\(X=\\begin{bmatrix}0\\\\1\\end{bmatrix}\\), then \\(AX=\\begin{bmatrix}0\\\\3\\end{bmatrix}=3X\\). The direction is unchanged and the vector becomes 3 times longer, so this is also an eigenvector, with \\(\\lambda=3\\)."
+                ]
+              },
+              {
+                "heading": "What happens to an ordinary vector?",
+                "paragraphs": [
+                  "With the same matrix, take \\(X=\\begin{bmatrix}1\\\\1\\end{bmatrix}\\). Then \\(AX=\\begin{bmatrix}2\\\\3\\end{bmatrix}\\).",
+                  "There is no single number \\(\\lambda\\) for which \\(\\begin{bmatrix}2\\\\3\\end{bmatrix}=\\lambda\\begin{bmatrix}1\\\\1\\end{bmatrix}\\). If we multiplied \\(\\begin{bmatrix}1\\\\1\\end{bmatrix}\\) by 2 we would get \\(\\begin{bmatrix}2\\\\2\\end{bmatrix}\\), and by 3 we would get \\(\\begin{bmatrix}3\\\\3\\end{bmatrix}\\), not \\(\\begin{bmatrix}2\\\\3\\end{bmatrix}\\). So the arrow has turned, and \\(\\begin{bmatrix}1\\\\1\\end{bmatrix}\\) is not an eigenvector."
+                ]
+              },
+              {
+                "heading": "Priyanka's example",
+                "paragraphs": [
+                  "Take \\(A=\\begin{bmatrix}5&4\\\\1&2\\end{bmatrix}\\) and \\(X=\\begin{bmatrix}4\\\\1\\end{bmatrix}\\).",
+                  "Multiplying gives \\[AX=\\begin{bmatrix}5&4\\\\1&2\\end{bmatrix}\\begin{bmatrix}4\\\\1\\end{bmatrix}=\\begin{bmatrix}24\\\\6\\end{bmatrix}.\\]",
+                  "But \\(\\begin{bmatrix}24\\\\6\\end{bmatrix}=6\\begin{bmatrix}4\\\\1\\end{bmatrix}\\). Therefore \\(AX=6X\\).",
+                  "Geometrically, the arrow originally goes from \\((0,0)\\) to \\((4,1)\\), and after the matrix acts it goes from \\((0,0)\\) to \\((24,6)\\). Since \\((24,6)=6(4,1)\\), it is still pointing along exactly the same line; it is simply 6 times longer. Therefore \\(X=\\begin{bmatrix}4\\\\1\\end{bmatrix}\\) is an eigenvector and \\(\\lambda=6\\) is its eigenvalue."
+                ]
+              },
+              {
+                "heading": "Why does the formula become \\((A-\\lambda I)X=0\\)?",
+                "paragraphs": [
+                  "Start with the defining equation \\(AX=\\lambda X\\). Bring everything to one side: \\(AX-\\lambda X=0\\).",
+                  "Because \\(IX=X\\), we can write \\(\\lambda X=\\lambda IX\\). Hence \\(AX-\\lambda IX=0\\), and taking \\(X\\) common gives \\[\\boxed{(A-\\lambda I)X=0}.\\]",
+                  "We want a non-zero eigenvector \\(X\\). For this homogeneous system to have a non-zero solution, the coefficient matrix \\(A-\\lambda I\\) must be singular. Therefore its determinant must be zero: \\[\\boxed{|A-\\lambda I|=0}.\\] This is the characteristic equation; solving it gives the eigenvalues."
+                ]
+              },
+              {
+                "heading": "Main idea to remember",
+                "paragraphs": [
+                  "\\[\\boxed{\\text{Eigenvector = a direction that the matrix does not turn}}\\]",
+                  "\\[\\boxed{\\text{Eigenvalue = the scale factor for that direction}}\\]",
+                  "For Priyanka's example, \\[\\boxed{\\begin{bmatrix}5&4\\\\1&2\\end{bmatrix}\\begin{bmatrix}4\\\\1\\end{bmatrix}=6\\begin{bmatrix}4\\\\1\\end{bmatrix}}.\\] The direction \\((4,1)\\) stays the same and is stretched by a factor of 6."
+                ]
+              }
+            ]
+          }
         ]
       },
       {
