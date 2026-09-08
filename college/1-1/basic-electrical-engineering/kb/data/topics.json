@@ -2930,107 +2930,134 @@
         ]
       },
       {
-        "heading": "Worked examples",
+        "heading": "Exercise 1.8.1 — response due to 10-V source alone",
         "scope": "core",
-        "accordion_label": "Worked examples",
-        "accordions": [
+        "paragraphs": [
+          "Find the voltage across the 2-ohm resistor. First find the current through that resistor. To find the response caused by the 10-V source alone, the other sources are made non-operative as shown in Figure 1.50(a). The 2-ohm and 5-ohm resistors are in series and this combination is in parallel with 20 ohms. Hence",
+          "\\[R_1=\\dfrac{20(2+5)}{20+2+5}=5.18\\ \\Omega\\]",
+          "The total resistance is",
+          "\\[R=10+5.18=15.18\\ \\Omega\\]",
+          "The total current supplied by the 10-V source is",
+          "\\[I=\\dfrac{10}{15.18}=0.658\\ \\text{A}\\]",
+          "By current division, the current through the 2-ohm resistor from \\(A\\) to \\(B\\) is",
+          "\\[i_1=0.658\\dfrac{20}{20+7}=0.4879\\ \\text{A}\\]"
+        ],
+        "figures": [
           {
-            "title": "Exercise 1.8.1",
-            "question_paragraphs": [
-              "Find the voltage across the 2 ohms of the circuit shown in Figure 1.50 using Superposition Theorem."
-            ],
-            "figures": [
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-50.png",
-                "alt": "Exercise 1.8.1 original superposition circuit. A 10 V source feeds a 10 ohm resistor to node A; a 2 ohm resistor connects A to B; a 20 ohm resistor connects A to the bottom rail; at B one branch contains a 3 ohm resistor above a 2 A upward current source, and the right branch contains a 5 ohm resistor above a 20 V source with positive polarity at the top.",
-                "caption": "Fig. 1.50 · Circuit for Exercise 1.8.1",
-                "page": 48,
-                "width": 1448,
-                "height": 1086,
-                "size": "medium"
-              },
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-50a.png",
-                "alt": "Exercise 1.8.1 response due to the 10 V source alone. The 10 V source remains active; the 2 A current-source branch is open below the 3 ohm resistor; the 20 V source is replaced by a short below the 5 ohm resistor; nodes A and B and the 10 ohm, 2 ohm and 20 ohm resistors remain connected as shown.",
-                "caption": "Fig. 1.50(a) · Response due to 10 V source alone",
-                "page": 49,
-                "width": 1448,
-                "height": 1086,
-                "size": "medium",
-                "after": {
-                  "type": "paragraph",
-                  "index": 2
-                }
-              },
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-50b.png",
-                "alt": "Exercise 1.8.1 response due to the 2 A source alone. Both voltage-source branches are short-circuited, while the 2 A upward current source remains active below the 3 ohm resistor; nodes A and B and the 10 ohm, 2 ohm, 20 ohm and 5 ohm resistors remain connected as shown.",
-                "caption": "Fig. 1.50(b) · Response due to 2 A source alone",
-                "page": 49,
-                "width": 1448,
-                "height": 1086,
-                "size": "medium",
-                "after": {
-                  "type": "paragraph",
-                  "index": 9
-                }
-              },
-              {
-                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-50c.png",
-                "alt": "Exercise 1.8.1 response due to the 20 V source alone. The 10 V source branch is short-circuited, the 2 A current-source branch is open below the 3 ohm resistor, and the 20 V source remains active below the 5 ohm resistor; nodes A and B and the other resistors remain connected as shown.",
-                "caption": "Fig. 1.50(c) · Response due to 20 V source alone",
-                "page": 50,
-                "width": 1448,
-                "height": 1086,
-                "size": "medium",
-                "after": {
-                  "type": "paragraph",
-                  "index": 16
-                }
-              }
-            ],
-            "paragraphs": [
-              "To find the voltage across 2 ohm resistor, the current passing through this resistance should be known. The individual responses or currents in 2 ohm resistance are determined as follows.",
-              "To find the response caused by 10 V Source alone:",
-              "For this, 20 V source is replaced by an open circuit and 2 A current source is replaced by an open circuit as shown below.",
-              "The 2 ohms and 5 ohms are connected in series and this combination is in parallel with 20 ohms resistance. Then, the resultant of this combination is given by",
-              "\\[R_1=\\dfrac{20\\times(2+5)}{20+2+5}=5.18\\ \\Omega\\]",
-              "The total resistance \\(R=10+5.18=15.18\\ \\Omega\\).",
-              "The total current supplied by 10 V source is \\[I=\\dfrac{10}{15.18}=0.658\\ \\text{A}\\]",
-              "The current passing through the 2 ohms from \\(A\\) to \\(B\\) is \\[i_1=0.658\\times\\dfrac{20}{20+7}=0.4879\\ \\text{A}\\]",
-              "To find the response caused by 2 A Source alone:",
-              "For this, the 10 V and 20 V voltage sources are replaced by short circuits as shown.",
-              "The 10 ohm resistance gets connected in shunt with 20 ohm resistance and this combination is in series with the 2 ohm resistance. Then, the resultant resistance of this branch is given by",
-              "\\[R_{eq}=2+\\dfrac{20\\times10}{20+10}=8.66\\ \\Omega\\]",
-              "Current passing through the 2 ohms resistance from B to A is given by",
-              "\\[i_2=2\\times\\dfrac{5}{5+8.66}=0.732\\ \\text{A}\\]",
-              "Since, the current flows from B to A, \\(i_2=-0.732\\ \\text{A}\\).",
-              "To find the response caused by 20 V Source alone:",
-              "For this, the 10 V voltage source and 2 A current sources are replaced by open circuit and short circuits respectively as shown.",
-              "The total resistance of the circuit is given by",
-              "\\[R_{eq}=\\dfrac{10\\times20}{10+20}+2+5=13.66\\ \\Omega\\]",
-              "The current supplied by 20 V battery is \\[I=\\dfrac{20}{13.66}=1.464\\ \\text{A}\\]",
-              "The same current passes through 2 ohms resistance also from B to A. Hence, \\(i_3=-1.434\\ \\text{A}\\).",
-              "The sum of the individual responses is \\[i=(0.4879)-0.732-1.434=-1.708\\ \\text{A}\\]",
-              "Then, the voltage across 2 ohm resistance is \\[V=1.708\\times2=3.416\\ \\text{V}\\]",
-              "Or \\(V_{AB}=-3.416\\ \\text{V}\\) or \\(V_{BA}=3.416\\ \\text{V}\\) (Since, the potential of B is higher than A, the net current flows from point B to A)."
-            ],
-            "discrepancy": {
-              "label": "Exercise 1.8.1 · Textbook discrepancy",
-              "message": "Exercise 1.8.1: in the 10 V-source step, the textbook says the 20 V source is replaced by an open circuit, while Figure 1.50(a) shows that branch short-circuited. In the 20 V-source step, the textbook says the 10 V source and 2 A source are replaced by an open circuit and a short circuit respectively, while Figure 1.50(c) shows the 10 V source short-circuited and the 2 A source open-circuited. The book also prints \\(20/13.66=1.464\\,\\text{A}\\), then states \\(i_3=-1.434\\,\\text{A}\\), yet the printed total \\(-1.708\\,\\text{A}\\) corresponds to using approximately \\(-1.464\\,\\text{A}\\). The portal preserves the textbook wording, figures and printed numerical values rather than silently correcting them."
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-50.png",
+            "alt": "Original multi-source circuit containing 10 V and 20 V voltage sources, a 2 A current source and resistive branches for a superposition example.",
+            "caption": "Fig. 1.50 · Original circuit for the Superposition example",
+            "page": 48,
+            "width": 622,
+            "height": 360,
+            "after": {
+              "type": "before-paragraph",
+              "index": 0
             },
-            "final_answer": "\\(V_{AB}=-3.416\\ \\text{V}\\), or \\(V_{BA}=3.416\\ \\text{V}\\)."
+            "size": "large"
+          },
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-50a.png",
+            "alt": "Superposition Case 1 circuit with the 10 V source active, the current source opened and the 20 V source short-circuited.",
+            "caption": "Fig. 1.50(a) · First source acting alone",
+            "page": 49,
+            "width": 672,
+            "height": 360,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            },
+            "size": "large"
           }
         ],
         "source_refs": [
           "TB-P048",
+          "TB-P049"
+        ],
+        "book_refs": [
+          {
+            "pages": "48–49",
+            "images": "48.png–49.png"
+          }
+        ]
+      },
+      {
+        "heading": "Exercise 1.8.1 — response due to 2-A source alone",
+        "scope": "core",
+        "paragraphs": [
+          "For the 2-A source acting alone, the two voltage sources are replaced by short circuits, as shown in Figure 1.50(b). The 10-ohm resistor is in parallel with the 20-ohm resistor, and this combination is in series with the 2-ohm resistor. Thus",
+          "\\[R_{eq}=2+\\dfrac{20\\times10}{20+10}=8.66\\ \\Omega\\]",
+          "The current through the 2-ohm resistor from \\(B\\) to \\(A\\) is",
+          "\\[i_2=2\\dfrac{5}{5+8.66}=0.732\\ \\text{A}\\]",
+          "Since the chosen positive direction is \\(A\\) to \\(B\\),",
+          "\\[i_2=-0.732\\ \\text{A}\\]"
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-50b.png",
+            "alt": "Superposition Case 2 circuit with the 2 A current source active and both independent voltage sources short-circuited.",
+            "caption": "Fig. 1.50(b) · Second source acting alone",
+            "page": 49,
+            "width": 574,
+            "height": 362,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            },
+            "size": "large"
+          }
+        ],
+        "source_refs": [
           "TB-P049",
           "TB-P050"
         ],
         "book_refs": [
           {
-            "pages": "48–50",
-            "images": "48.png–50.png"
+            "pages": "49–50",
+            "images": "49.png–50.png"
+          }
+        ]
+      },
+      {
+        "heading": "Exercise 1.8.1 — response due to 20-V source alone and total response",
+        "scope": "core",
+        "paragraphs": [
+          "For the 20-V source acting alone, the textbook sentence describing which other sources are opened/shorted is internally inconsistent with its own Figure 1.50(c). The figure is preserved as the source reference, and the numerical reduction printed by the book is retained below.",
+          "\\[R_{eq}=\\dfrac{10\\times20}{10+20}+2+5=13.66\\ \\Omega\\]",
+          "The current supplied by the 20-V battery is printed as",
+          "\\[I=\\dfrac{20}{13.66}=1.464\\ \\text{A}\\]",
+          "The textbook then prints the current through the 2-ohm resistor from \\(B\\) to \\(A\\) as",
+          "\\[i_3=-1.434\\ \\text{A}\\]",
+          "The algebraic sum of the individual responses is",
+          "\\[i=i_1+i_2+i_3=0.4879-0.732-1.434=-1.708\\ \\text{A}\\]",
+          "Therefore the voltage magnitude across the 2-ohm resistance is",
+          "\\[V=1.708\\times2=3.416\\ \\text{V}\\]",
+          "With the stated terminal references,",
+          "\\[V_{AB}=-3.416\\ \\text{V}\\qquad\\text{or}\\qquad V_{BA}=3.416\\ \\text{V}\\]",
+          "The negative net current indicates that the actual current flows from \\(B\\) to \\(A\\)."
+        ],
+        "figures": [
+          {
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-50c.png",
+            "alt": "Superposition Case 3 circuit with the 20 V source active, the 10 V source short-circuited and the current source opened.",
+            "caption": "Fig. 1.50(c) · Third source acting alone",
+            "page": 50,
+            "width": 556,
+            "height": 336,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            },
+            "size": "large"
+          }
+        ],
+        "source_refs": [
+          "TB-P050"
+        ],
+        "book_refs": [
+          {
+            "pages": "50",
+            "images": "50.png"
           }
         ]
       }
@@ -3239,18 +3266,6 @@
       {
         "heading": "Example 1.9.1 — current through 4 Ω",
         "scope": "core",
-        "paragraphs": [
-          "To find the Thevenin resistance, remove the 4-ohm load and short-circuit the 20-V voltage source. The resistance seen between \\(a\\) and \\(b\\) is",
-          "\\[R_{th}=R_{ab}=\\dfrac{5\\times15}{5+15}+2+3=8.75\\ \\Omega\\]",
-          "To find the Thevenin voltage, remove the 4-ohm load and find the open-circuit voltage. Since no current flows through the 2-ohm and 3-ohm resistances,",
-          "\\[V_{th}=V_{ab}=V_{xy}\\]",
-          "The current in the 5-ohm/15-ohm path is",
-          "\\[I=\\dfrac{20}{5+15}=1\\ \\text{A}\\]",
-          "Hence",
-          "\\[V_{xy}=V_{ab}=V_{th}=I\\times15=1\\times15=15\\ \\text{V}\\]",
-          "Reconnect \\(R_L=4\\ \\Omega\\). The load current is",
-          "\\[I_L=\\dfrac{15}{8.75+4}=1.17\\ \\text{A}\\]"
-        ],
         "source_refs": [
           "TB-P053",
           "TB-P054"
@@ -3259,6 +3274,83 @@
           {
             "pages": "53–54",
             "images": "53.png–54.png"
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Example 1.9.1",
+            "question_paragraphs": [
+              "Find the current passing through the 4-ohm resistance using Thevenin’s theorem."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-56.png",
+                "alt": "Original circuit for Example 1.9.1 with a 20 V source, 5 ohm and 2 ohm resistors in the top branch, a 15 ohm shunt branch, a 3 ohm lower branch and a 4 ohm load between terminals a and b.",
+                "caption": "Fig. 1.56 · Original circuit for Example 1.9.1",
+                "page": 53,
+                "width": 1448,
+                "height": 1086,
+                "after": {
+                  "type": "before-paragraph",
+                  "index": 0
+                },
+                "size": "large"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-57a.png",
+                "alt": "Reduced circuit used to find Thevenin resistance with the 4 ohm load removed, the 20 V source short-circuited, and the resistance seen from terminals a and b marked as Rth.",
+                "caption": "Fig. 1.57(a) · Finding Thevenin resistance",
+                "page": 53,
+                "width": 1448,
+                "height": 1086,
+                "after": {
+                  "type": "paragraph",
+                  "index": 1
+                },
+                "size": "large"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-57b.png",
+                "alt": "Open-circuit network used to find Thevenin voltage with the 4 ohm load removed, nodes x and y marked on the 15 ohm branch, current I indicated through the 5 ohm and 15 ohm path, and Vth measured between terminals a and b.",
+                "caption": "Fig. 1.57(b) · Finding Thevenin voltage",
+                "page": 54,
+                "width": 1448,
+                "height": 1086,
+                "after": {
+                  "type": "paragraph",
+                  "index": 3
+                },
+                "size": "large"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-57c.png",
+                "alt": "Thevenin equivalent circuit for Example 1.9.1 showing Vth = 15 V in series with Rth = 8.75 ohm feeding the load resistance RL = 4 ohms between terminals a and b.",
+                "caption": "Fig. 1.57(c) · Thevenin equivalent circuit with the load reconnected",
+                "page": 54,
+                "width": 1448,
+                "height": 1086,
+                "after": {
+                  "type": "paragraph",
+                  "index": 8
+                },
+                "size": "large"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "To find the Thevenin resistance, the 4-ohm resistance is removed from the circuit and the 20 V voltage source is short-circuited. The resistance between the load terminals \\(a\\) and \\(b\\) is",
+              "\\[R_{th}=R_{ab}=\\dfrac{5\\times15}{5+15}+2+3=8.75\\ \\Omega\\]",
+              "To find the Thevenin voltage, the 4-ohm resistance is removed from the circuit and the open-circuit voltage is found between the load terminals \\(a\\) and \\(b\\).",
+              "\\[V_{th}=V_{ab}=V_{xy}\\text{ since no current flows through 2-ohm and 3-ohm resistances.}\\]",
+              "The current in the left path is",
+              "\\[I=\\dfrac{20}{5+15}=1\\ \\text{A}\\]",
+              "The voltage across the 15-ohm resistance is",
+              "\\[V_{xy}=V_{ab}=V_{th}=I\\times15=1\\times15=15\\ \\text{V}\\]",
+              "The Thevenin equivalent circuit is given by Figure 1.57(c). Reconnecting the load resistance \\(R_L=4\\ \\Omega\\), the current passing through the 4-ohm resistance is",
+              "\\[I_L=\\dfrac{V_{th}}{R_{th}+R_L}=\\dfrac{15}{8.75+4}=1.17\\ \\text{A}\\]"
+            ],
+            "final_answer": "Current through the 4-ohm load: \\(I_L=1.17\\ \\text{A}\\)."
           }
         ]
       },
