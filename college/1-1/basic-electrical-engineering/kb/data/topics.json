@@ -3310,43 +3310,106 @@
               "\\[I_L=\\dfrac{V_{th}}{R_{th}+R_L}=\\dfrac{15}{8.75+4}=1.17\\ \\text{A}\\]"
             ],
             "final_answer": "\\(I_L=1.17\\ \\text{A}\\)"
+          },
+          {
+            "title": "Example 1.9.2",
+            "question_paragraphs": [
+              "Find the Thevenin’s equivalent circuit for the circuit shown in Figure 1.58. Find the value of \\(I\\) for (i) \\(R=3\\ \\Omega\\) and (ii) \\(R=8\\ \\Omega\\)."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-58.png",
+                "alt": "Example 1.9.2 original circuit with an 8 V source and 8 ohm resistor in the left branch, a 2 ohm top resistor, a 32 V source and 20 ohm resistor in the centre branch, and load resistance R between terminals a and b with current I toward a.",
+                "caption": "Fig. 1.58 · Circuit for Example 1.9.2",
+                "page": 54,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-59a.png",
+                "alt": "Example 1.9.2 circuit for finding Thevenin resistance after both voltage sources are short-circuited and load R is removed, showing the 8 ohm and 2 ohm series path in parallel with 20 ohms as seen from terminals a and b.",
+                "caption": "Fig. 1.59(a) · Finding Thevenin resistance",
+                "page": 55,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-59b.png",
+                "alt": "Example 1.9.2 open-circuit network for finding Thevenin voltage, with 8 V and 32 V sources restored, current I1 flowing right through the 2 ohm resistor and downward from x to y through the 20 ohm branch, I equals zero toward terminal a, and Vab equals Vxy equals Vth.",
+                "caption": "Fig. 1.59(b) · Finding Thevenin voltage",
+                "page": 55,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 2
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-59c.png",
+                "alt": "Thevenin equivalent circuit for Example 1.9.2 with Vth equal to 16 V, Rth equal to 6.66 ohms, current I toward terminal a, and a 3 ohm load between terminals a and b.",
+                "caption": "Fig. 1.59(c) · Thevenin equivalent for R = 3 ohms",
+                "page": 56,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 6
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-59d.png",
+                "alt": "Thevenin equivalent circuit for Example 1.9.2 with Vth equal to 16 V, Rth equal to 6.66 ohms, current I toward terminal a, and an 8 ohm load between terminals a and b.",
+                "caption": "Fig. 1.59(d) · Thevenin equivalent for R = 8 ohms",
+                "page": 56,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 8
+                }
+              }
+            ],
+            "paragraphs": [
+              "To find the Thevenin’s resistance \\(R_{Th}\\), the voltage sources are short-circuited and the load resistance \\(R\\) is removed. The resistance between the terminals \\(a\\) and \\(b\\) is called Thevenin’s resistance \\(R_{Th}\\).",
+              "\\[R_{Th}=R_{ab}=\\dfrac{(8+2)\\times20}{(8+2)+20}=\\dfrac{200}{30}=6.66\\ \\Omega\\]",
+              "To find the Thevenin’s voltage \\(V_{Th}\\), the load resistance \\(R\\) is removed and the open-circuit voltage between the terminals \\(a\\) and \\(b\\) is found.",
+              "\\[V_{Th}=V_{ab}=V_{xy}\\]",
+              "\\[I_1=\\dfrac{8-32}{8+2+20}=-0.8\\ \\text{A}\\]",
+              "\\[V_{Th}=V_{ab}=V_{xy}=+32+(-0.8\\times20)=16\\ \\text{V}\\]",
+              "(i) When \\(R=3\\ \\Omega\\)",
+              "\\[I_L=\\dfrac{V_{Th}}{R_{Th}+R}=\\dfrac{16}{6.66+3}=1.65\\ \\text{A}\\]",
+              "(ii) When \\(R=8\\ \\Omega\\)",
+              "\\[I_L=\\dfrac{V_{Th}}{R_{Th}+R}=\\dfrac{16}{6.66+8}=1.09\\ \\text{A}\\]"
+            ],
+            "final_answer": "\\(V_{Th}=16\\ \\text{V},\\ R_{Th}=6.66\\ \\Omega;\\ I_L=1.65\\ \\text{A}\\) for \\(R=3\\ \\Omega\\), and \\(I_L=1.09\\ \\text{A}\\) for \\(R=8\\ \\Omega\\)."
           }
         ],
         "source_refs": [
           "TB-P053",
-          "TB-P054"
-        ],
-        "book_refs": [
-          {
-            "pages": "53–54",
-            "images": "53.png–54.png"
-          }
-        ]
-      },
-      {
-        "heading": "Example 1.9.2 — Thevenin equivalent and two load values",
-        "scope": "core",
-        "paragraphs": [
-          "Remove the load and short the voltage sources to find \\(R_{th}\\):",
-          "\\[R_{th}=R_{ab}=\\dfrac{(8+2)\\times20}{(8+2)+20}=\\dfrac{200}{30}=6.66\\ \\Omega\\]",
-          "Remove the load and restore the sources to find the open-circuit voltage. The current in the loop is",
-          "\\[I_1=\\dfrac{8-32}{8+2+20}=-0.8\\ \\text{A}\\]",
-          "The textbook then finds",
-          "\\[V_{th}=V_{ab}=+32+(-0.8\\times20)=16\\ \\text{V}\\]",
-          "For \\(R=3\\ \\Omega\\),",
-          "\\[I_L=\\dfrac{16}{6.66+3}=1.65\\ \\text{A}\\]",
-          "For \\(R=8\\ \\Omega\\),",
-          "\\[I_L=\\dfrac{16}{6.66+8}=1.09\\ \\text{A}\\]"
-        ],
-        "source_refs": [
           "TB-P054",
           "TB-P055",
           "TB-P056"
         ],
         "book_refs": [
           {
+            "pages": "53–54",
+            "images": "53.png–54.png",
+            "note": "Example 1.9.1"
+          },
+          {
             "pages": "54–56",
-            "images": "54.png–56.png"
+            "images": "54.png–56.png",
+            "note": "Example 1.9.2"
           }
         ]
       },
