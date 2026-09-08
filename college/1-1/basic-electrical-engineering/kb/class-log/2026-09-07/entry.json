@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-07",
+  "date_label": "7 September 2026",
+  "source_id": "CLASS-U1-2026-09-07",
+  "subject": {
+    "code": "25ES1EE101",
+    "name": "Basic Electrical Engineering",
+    "shortName": "BEE"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Introduction to Electrical Energy and DC Circuits"
+  },
+  "title": "KVL/KCL practice and network-reduction techniques",
+  "summary": "Three-mesh KVL and source-power calculation; two-node KCL analysis; series/parallel reduction rules for R, L and C; and two equivalent-resistance practice networks.",
+  "transcription_policy": "Notebook order and meaning are preserved; grammar and awkward English are lightly cleaned. Worked equations and numerical results are kept source-faithful. Where a handwritten intermediate sign conflicts with the equation immediately before and after it, the discrepancy is called out explicitly rather than silently changed. Incomplete network-reduction working is left incomplete rather than guessed.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-kirchhoff",
+      "label": "Kirchhoff’s laws",
+      "href": "unit-1.html#u1-kirchhoff"
+    },
+    {
+      "topic_id": "u1-network-reduction",
+      "label": "Series, parallel and series-parallel reduction",
+      "href": "unit-1.html#u1-network-reduction"
+    },
+    {
+      "topic_id": "u1-rlc",
+      "label": "Circuit elements: resistance, inductance and capacitance",
+      "href": "unit-1.html#u1-rlc"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Three-mesh KVL problem — current and source power",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Question — find the current and power supplied by the source"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/c1.png",
+          "alt": "Notebook-style three-mesh DC circuit with a 10 V source, top resistors 6 ohms and 2 ohms, shared vertical resistors 1 ohm and 3 ohms, a right-side 10 ohm resistor, a 20 V source in the lower-right branch, and clockwise mesh currents I1, I2 and I3.",
+          "caption": "Class-note redraw · Three-mesh KVL problem",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "line",
+          "text": "Applying KVL to loop 1:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[10-6I_1-(I_1-I_2)=0\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[-7I_1+I_2=-10\\qquad (1)\\]"
+        },
+        {
+          "type": "line",
+          "text": "Applying KVL to loop 2:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[-2I_2-3(I_2-I_3)-(I_2-I_1)=0\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I_1-6I_2+3I_3=0\\qquad (2)\\]"
+        },
+        {
+          "type": "line",
+          "text": "Applying KVL to loop 3:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[-10I_3-20-3(I_3-I_2)=0\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[3I_2-13I_3=20\\qquad (3)\\]"
+        },
+        {
+          "type": "line",
+          "text": "Notebook results: \\(I_1=1.34\\,\\text{A}\\), \\(I_2=-0.62\\,\\text{A}\\), \\(I_3=-1.68\\,\\text{A}\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Sign check"
+        },
+        {
+          "type": "paragraph",
+          "text": "One intermediate handwritten expansion appears to show a minus sign before the \\(3I_2\\) term. The original loop-3 equation contains \\(-3(I_3-I_2)\\), and the following numbered equation correctly uses \\(+3I_2\\); the numbered equation is therefore preserved here."
+        },
+        {
+          "type": "line",
+          "text": "The notebook ends the power line as \\(VI_1=10\\times1.34\\). This evaluates to \\(13.4\\,\\text{W}\\)."
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "KCL nodal-analysis problem",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Question — find currents in each resistor by applying KCL"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/c2.png",
+          "alt": "Notebook-style nodal-analysis circuit with a 5 A current source feeding node V1, a 10 ohm shunt from V1 to the common return, a 3 ohm resistor between V1 and V2, a 5 ohm shunt from V2 to the return, a 1 ohm resistor from V2 to a 10 V source on the right, and a common bottom reference wire.",
+          "caption": "Class-note redraw · KCL two-node example",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "line",
+          "text": "Applying KCL at node 1:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[5=\\dfrac{V_1}{10}+\\dfrac{V_1-V_2}{3}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[13V_1-10V_2=150\\qquad (1)\\]"
+        },
+        {
+          "type": "line",
+          "text": "At node 2:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{V_2-V_1}{3}+\\dfrac{V_2}{5}+\\dfrac{V_2-10}{1}=0\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[-5V_1+23V_2=150\\qquad (2)\\]"
+        },
+        {
+          "type": "line",
+          "text": "Notebook node voltages: \\(V_1=19.88\\,\\text{V}\\), \\(V_2=10.84\\,\\text{V}\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Current in each element"
+        },
+        {
+          "type": "bullet",
+          "text": "\\(I_{10\\Omega}=\\dfrac{V_1}{10}\\approx1.98\\,\\text{A}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(I_{3\\Omega}=\\dfrac{V_1-V_2}{3}\\approx3.01\\,\\text{A}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(I_{5\\Omega}=\\dfrac{V_2}{5}\\approx2.16\\,\\text{A}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(I_{1\\Omega}=\\dfrac{V_2-10}{1}\\approx0.84\\,\\text{A}\\)."
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "Network-reduction techniques",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Network reduction technique"
+        },
+        {
+          "type": "bullet",
+          "text": "Series connection"
+        },
+        {
+          "type": "bullet",
+          "text": "Parallel connection"
+        },
+        {
+          "type": "bullet",
+          "text": "Series-parallel connection"
+        },
+        {
+          "type": "subheading",
+          "text": "1) Series connection"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/c3.png",
+          "alt": "Notebook-style series circuit with source Vs, current I and two series resistors R1 and R2.",
+          "caption": "Class-note redraw · Series connection",
+          "width": 1448,
+          "height": 1086,
+          "size": "medium"
+        },
+        {
+          "type": "equation",
+          "text": "\\[V_s=IR_1+IR_2\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[IR_{eq}=IR_1+IR_2\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[R_{eq}=R_1+R_2\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "2) Parallel connection"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/c4.png",
+          "alt": "Notebook-style parallel circuit with source Vs, total current I splitting into currents I1 and I2 through parallel resistors R1 and R2.",
+          "caption": "Class-note redraw · Parallel connection",
+          "width": 1448,
+          "height": 1086,
+          "size": "medium"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I=I_1+I_2\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{1}{R_{eq}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[R_{eq}=\\dfrac{R_1R_2}{R_1+R_2}\\]"
+        },
+        {
+          "type": "line",
+          "text": "Current-divider note for two parallel branches: current in one branch equals total current multiplied by the resistance of the other branch, divided by the sum of the two branch resistances."
+        },
+        {
+          "type": "subheading",
+          "text": "Equivalent inductance and capacitance relations written in class"
+        },
+        {
+          "type": "bullet",
+          "text": "Inductors in series: \\(L_{eq}=L_1+L_2\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "Inductors in parallel: \\(L_{eq}=\\dfrac{L_1L_2}{L_1+L_2}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "Capacitors in series: \\(C_{eq}=\\dfrac{C_1C_2}{C_1+C_2}\\)."
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "heading": "Series-parallel reduction examples",
+      "blocks": [
+        {
+          "type": "line",
+          "text": "Capacitors in parallel: \\(C_{eq}=C_1+C_2\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Example — reduce the network between X and Y"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/c5.png",
+          "alt": "Notebook-style X-to-Y resistor network with an upper path containing a 2 ohm resistor, three 6 ohm resistors in parallel, and two 2 ohm resistors in parallel, plus a separate lower 5 ohm branch directly between X and Y.",
+          "caption": "Class-note redraw · X–Y series-parallel reduction example",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "equation",
+          "text": "\\[6\\parallel6\\parallel6=2\\,\\Omega\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[2\\parallel2=1\\,\\Omega\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[R_{\\text{upper}}=2+2+1=5\\,\\Omega\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[R_{XY}=5\\parallel5=2.5\\,\\Omega\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Question — find the equivalent resistance between A and B"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/c6.png",
+          "alt": "Notebook-style original A–B equivalent-resistance network with 2 ohm input resistors, a 1.5 ohm upper resistor, vertical 4 ohm and 5 ohm branches, and a right-side network containing 2 ohm, 3 ohm and diagonal 4 ohm branches.",
+          "caption": "Class-note redraw · A–B network as drawn in class",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "line",
+          "text": "The notes then redraw the network as a first simplification step:"
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/c7.png",
+          "alt": "Notebook-style first reduced redraw of the A–B equivalent-resistance network, preserving the 2 ohm input arms, 1.5 ohm upper branch, 4 ohm and 5 ohm internal branches, diagonal 4 ohm branch and lower-right 3 ohm connection.",
+          "caption": "Class-note redraw · First reduced A–B network",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "paragraph",
+          "text": "The supplied page does not show a completed final equivalent-resistance answer for this A–B problem, so the class record stops at the visible reduction step rather than inferring the missing working."
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The four supplied notebook photographs are preserved as the source intake for the 7 September record; seven circuit/redraw visuals are used on the website.",
+    "The cumulative Unit I Text page remains textbook-only; this dated material is kept on Priyanka’s Class Notes page.",
+    "The loop-3 intermediate sign slip is called out because the original KVL setup and the following numbered equation agree with each other.",
+    "The A–B equivalent-resistance problem is not completed in the supplied page, so no final resistance is invented."
+  ]
+}
