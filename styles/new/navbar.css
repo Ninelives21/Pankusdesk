@@ -216,11 +216,11 @@
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
-	border: 1px solid var(--line-primary);
+	border: 1px solid var(--primary-dark);
 	border-radius: var(--radius-pill);
-	background: color-mix(in srgb, var(--surface) 92%, var(--primary-soft));
+	background: var(--primary-dark);
 	box-shadow: var(--shadow-small);
-	color: var(--primary);
+	color: #ffffff;
 	font: inherit;
 	font-size: var(--font-size-body-sm);
 	font-weight: var(--font-weight-heavy);
@@ -236,15 +236,15 @@
 }
 
 .back-to-top-control:hover {
-	background: var(--primary-soft);
-	border-color: var(--primary-2);
+	background: color-mix(in srgb, var(--primary-dark) 88%, #000000);
+	border-color: color-mix(in srgb, var(--primary-dark) 82%, #000000);
 	box-shadow: var(--shadow-hover);
-	color: var(--primary-dark);
+	color: #ffffff;
 	transform: translateY(-1px);
 }
 
 .back-to-top-control:focus-visible {
-	outline: 3px solid color-mix(in srgb, var(--primary-2) 35%, transparent);
+	outline: 3px solid color-mix(in srgb, var(--primary-2) 72%, #ffffff);
 	outline-offset: 2px;
 }
 
@@ -259,7 +259,6 @@
 	z-index: 5;
 	width: 100%;
 	margin: 0 0 var(--space-5);
-	background: color-mix(in srgb, var(--surface) 96%, var(--primary-soft));
 }
 
 .back-to-top-control.is-floating {
