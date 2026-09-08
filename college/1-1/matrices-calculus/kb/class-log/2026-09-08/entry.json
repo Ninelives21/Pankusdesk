@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-08",
+  "date_label": "8 September 2026",
+  "source_id": "CLASS-U2-2026-09-08",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 2,
+    "title": "Eigenvalues, Eigenvectors and Quadratic Forms"
+  },
+  "title": "Eigenvalues and eigenvectors — definition, properties and class examples",
+  "summary": "Definition of eigenvalues and eigenvectors; characteristic equation; nine properties; examples using triangular matrices, trace, transpose, inverse and powers.",
+  "transcription_policy": "Notebook order and mathematical intent are preserved, with grammar cleaned for study. A faint/omitted minus sign in the second example is restored because the stated eigenvalues 3 and 6 are consistent with the matrix only when the (3,2) entry is -1.",
+  "mapped_topics": [
+    {
+      "topic_id": "u2-eigenvalues",
+      "label": "Eigenvalues",
+      "href": "unit-2.html#u2-eigenvalues"
+    },
+    {
+      "topic_id": "u2-eigenvectors-properties",
+      "label": "Eigenvectors and their properties",
+      "href": "unit-2.html#u2-eigenvectors-properties"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Eigenvalues and eigenvectors — definition and characteristic equation",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Eigenvalues and eigenvectors"
+        },
+        {
+          "type": "paragraph",
+          "text": "Let \\(A\\) be a square matrix of order \\(n\\). If there exists a non-zero column vector \\(X\\) and a scalar \\(\\lambda\\) such that"
+        },
+        {
+          "type": "equation",
+          "text": "\\[AX=\\lambda X,\\]"
+        },
+        {
+          "type": "bullet",
+          "text": "\\(\\lambda\\) is an eigenvalue of the matrix \\(A\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(X\\) is an eigenvector of \\(A\\) corresponding to \\(\\lambda\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Class example"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\begin{bmatrix}5&4\\\\1&2\\end{bmatrix},\\qquad X=\\begin{bmatrix}4\\\\1\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[AX=\\begin{bmatrix}24\\\\6\\end{bmatrix}=6\\begin{bmatrix}4\\\\1\\end{bmatrix}=6X.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hence \\(\\lambda=6\\) is an eigenvalue and \\(X=[4\\;1]^T\\) is a corresponding eigenvector."
+        },
+        {
+          "type": "paragraph",
+          "text": "The equation \\(AX=\\lambda X\\) can be written as"
+        },
+        {
+          "type": "equation",
+          "text": "\\[(A-\\lambda I)X=0.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is a homogeneous system and has a non-trivial solution when"
+        },
+        {
+          "type": "equation",
+          "text": "\\[|A-\\lambda I|=0.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the characteristic equation of the matrix. Its roots are called eigenvalues, characteristic roots or latent roots. For each eigenvalue \\(\\lambda\\), the corresponding non-zero column vector \\(X\\) is called an eigenvector or characteristic vector of \\(A\\)."
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "Properties of eigenvalues and eigenvectors — 1 to 6",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "1. Eigenvalues of the inverse"
+        },
+        {
+          "type": "paragraph",
+          "text": "If \\(\\lambda\\) is an eigenvalue of a non-singular matrix \\(A\\), then \\(1/\\lambda\\) is an eigenvalue of \\(A^{-1}\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Proof: Given \\(AX=\\lambda X\\),"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A^{-1}(AX)=A^{-1}(\\lambda X)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[(A^{-1}A)X=\\lambda(A^{-1}X)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[X=\\lambda A^{-1}X\\quad\\Rightarrow\\quad A^{-1}X=\\dfrac{1}{\\lambda}X.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "2. The eigenvalues of \\(A\\) and \\(A^T\\) are the same."
+        },
+        {
+          "type": "paragraph",
+          "text": "3. If \\(\\lambda\\neq0\\) is an eigenvalue of \\(A\\), then \\(|A|/\\lambda\\) is an eigenvalue of \\(\\operatorname{adj}A\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "4. If \\(\\lambda\\) is an eigenvalue of \\(A\\), then \\(\\lambda^m\\) is an eigenvalue of \\(A^m\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "5. If \\(\\lambda\\) is an eigenvalue of \\(A\\), then \\(a\\lambda^2+b\\lambda+c\\) is an eigenvalue of \\(aA^2+bA+cI\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "6. An eigenvector \\(X\\) of a matrix \\(A\\) cannot correspond to more than one eigenvalue of \\(A\\)."
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "Further properties and a triangular-matrix example",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "7. The sum of the eigenvalues of a matrix \\(A\\) is its trace, and the product of its eigenvalues is its determinant."
+        },
+        {
+          "type": "paragraph",
+          "text": "8. The eigenvalues of a triangular matrix or diagonal matrix are its diagonal elements."
+        },
+        {
+          "type": "paragraph",
+          "text": "9. If \\(A\\) and \\(P\\) are square matrices of the same order and \\(P\\) is non-singular, then \\(A\\) and \\(P^{-1}AP\\) have the same eigenvalues."
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples",
+          "items": [
+            {
+              "title": "Example 1 — Find the eigenvalues of \\(A^{-1}\\) and \\(A^2\\)",
+              "question_paragraphs": [
+                "\\[A=\\begin{bmatrix}1&2&3\\\\0&2&-7\\\\0&0&3\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "Since \\(A\\) is triangular, its eigenvalues are its diagonal elements:",
+                "\\[1,\\ 2,\\ 3.\\]",
+                "Therefore the eigenvalues of \\(A^{-1}\\) are",
+                "\\[1,\\ \\dfrac12,\\ \\dfrac13,\\]",
+                "and the eigenvalues of \\(A^2\\) are",
+                "\\[1,\\ 4,\\ 9.\\]"
+              ],
+              "final_answer": "Eigenvalues of \\(A^{-1}\\): \\(1,\\dfrac12,\\dfrac13\\); eigenvalues of \\(A^2\\): \\(1,4,9\\)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "heading": "Class example using trace, transpose and inverse",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class example",
+          "items": [
+            {
+              "title": "Example 2 — Two eigenvalues are 3 and 6; find the eigenvalues of \\(A^T\\) and \\(A^{-1}\\)",
+              "question_paragraphs": [
+                "\\[A=\\begin{bmatrix}3&-1&1\\\\-1&5&-1\\\\1&-1&3\\end{bmatrix}.\\]",
+                "Two eigenvalues of \\(A\\) are \\(3\\) and \\(6\\). Find the eigenvalues of \\(A^T\\) and \\(A^{-1}\\)."
+              ],
+              "paragraphs": [
+                "Let \\(\\lambda_1=3\\), \\(\\lambda_2=6\\) and \\(\\lambda_3\\) be the third eigenvalue.",
+                "The sum of the eigenvalues equals the trace of \\(A\\):",
+                "\\[\\lambda_1+\\lambda_2+\\lambda_3=3+5+3=11.\\]",
+                "Hence",
+                "\\[3+6+\\lambda_3=11\\quad\\Rightarrow\\quad\\lambda_3=2.\\]",
+                "Since \\(A\\) and \\(A^T\\) have the same eigenvalues, the eigenvalues of \\(A^T\\) are \\(2,3,6\\).",
+                "The eigenvalues of \\(A^{-1}\\) are the reciprocals of those of \\(A\\):",
+                "\\[\\dfrac12,\\ \\dfrac13,\\ \\dfrac16.\\]"
+              ],
+              "final_answer": "Eigenvalues of \\(A^T\\): \\(2,3,6\\); eigenvalues of \\(A^{-1}\\): \\(\\dfrac12,\\dfrac13,\\dfrac16\\)."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The source consists of four notebook photographs: Mac-class-unit2 - 1.jpg through Mac-class-unit2 - 4.jpg; raw notebook images are not copied into website assets.",
+    "The notes begin Unit II with eigenvalues/eigenvectors, the characteristic equation, nine listed properties, and two short property-based examples.",
+    "In Example 2, the photographed (3,2) entry appears as +1/has an omitted minus sign. The stated eigenvalues 3 and 6 imply the intended matrix has (3,2)=-1; with that correction its eigenvalues are exactly 2, 3 and 6. The study copy uses the mathematically consistent intended sign."
+  ]
+}
