@@ -1,0 +1,92 @@
+{
+  "code": "25BS1CH101",
+  "name": "Chemistry for Engineers",
+  "shortName": "CFE",
+  "regulation": "R25",
+  "semester": "1-1",
+  "credits": 3,
+  "kb": "kb/data/topics.json",
+  "syllabus": "kb/data/syllabus.json",
+  "coverage": "kb/data/coverage-audit.json",
+  "units": [
+    {
+      "number": 1,
+      "title": "Water and its Treatment",
+      "notes": "kb/notes/unit-1.md",
+      "publicationStatus": "draft"
+    },
+    {
+      "number": 2,
+      "title": "Electrochemistry and Corrosion",
+      "notes": "kb/notes/unit-2.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 3,
+      "title": "Energy Sources and Battery Technology",
+      "notes": "kb/notes/unit-3.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 4,
+      "title": "Polymers",
+      "notes": "kb/notes/unit-4.md",
+      "publicationStatus": "scaffold"
+    },
+    {
+      "number": 5,
+      "title": "Spectroscopic Applications and Advanced Functional Materials",
+      "notes": "kb/notes/unit-5.md",
+      "publicationStatus": "scaffold"
+    }
+  ],
+  "pyqStatus": "not-added-yet",
+  "unitRenderer": {
+    "syllabusPage": "r25-syllabus.html",
+    "sources": [
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "syllabus_refs",
+        "idField": "source_id",
+        "kind": "Syllabus",
+        "format": "syllabus"
+      },
+      {
+        "path": "kb/data/book-index.json",
+        "idField": "source_id",
+        "kind": "Textbook",
+        "format": "book-page"
+      },
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "gap_sources",
+        "idField": "id",
+        "kind": "Approved source",
+        "format": "external"
+      }
+    ]
+  },
+  "practice": {
+    "unitQuestions": {
+      "label": "Textbook Questions",
+      "description": "Prescribed textbook questions for each unit.",
+      "hrefPattern": "unit-{unit}-questions.html",
+      "availableUnits": [],
+      "data": "kb/data/textbook-questions.json"
+    },
+    "pyqs": {
+      "label": "CFE PYQs",
+      "description": "VNR previous-year questions for Chemistry for Engineers.",
+      "href": "pyqs.html",
+      "status": "scaffold"
+    }
+  },
+  "classNotes": {
+    "label": "Priyanka's Class Notes",
+    "description": "Chronological dated Chemistry class notes.",
+    "hrefPattern": "unit-{unit}-class-notes.html",
+    "availableUnits": [],
+    "sourceManifest": "kb/data/source-manifest.json",
+    "collection": "class_sources"
+  }
+}

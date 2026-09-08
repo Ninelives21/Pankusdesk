@@ -23,7 +23,7 @@ import sys
 
 REPO = Path(__file__).resolve().parents[2]
 ALLOWED_TOPIC_STATUS = {"core", "supporting", "core-gap-filled"}
-ALLOWED_PUBLICATION = {"ready", "scaffold"}
+ALLOWED_PUBLICATION = {"ready", "draft", "scaffold"}
 ALLOWED_FIGURE_ANCHORS = {"before-paragraph", "paragraph", "bullet", "end"}
 ALLOWED_GRID_SIDE = {"left", "right"}
 ALLOWED_FIGURE_SIZE = {"symbol", "small", "medium", "large"}

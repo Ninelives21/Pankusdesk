@@ -33,7 +33,7 @@ async function initSubjectUnitPage() {
 		const context = createPageContext(page, subject, subjectUrl, unitMeta, syllabusUnit);
 		renderBaseShell(context);
 
-		if (unitMeta.publicationStatus !== 'ready') {
+		if (!['ready', 'draft'].includes(unitMeta.publicationStatus)) {
 			renderScaffold(context);
 			return;
 		}
@@ -140,6 +140,7 @@ function renderReadyUnit(context, unitTopics, sourceCollections) {
 	body.innerHTML = `
 		${renderUnitHero(context, unitTopics)}
 		${resourceNav}
+		${context.unitMeta.publicationStatus === 'draft' ? renderDraftNotice(context) : ''}
 		${renderSyllabusBoundary(context)}
 		<div class="unit-layout section">
 			<aside class="unit-toc" aria-label="Unit ${escapeHtml(context.unitLabel)} topic navigation">
@@ -163,7 +164,8 @@ function renderReadyUnit(context, unitTopics, sourceCollections) {
 
 function renderUnitHero(context, unitTopics) {
 	const { subject, unitMeta, unitLabel, syllabusUnit, syllabusUnitUrl } = context;
-	const isReady = unitMeta.publicationStatus === 'ready';
+	const isReady = ['ready', 'draft'].includes(unitMeta.publicationStatus);
+	const isDraft = unitMeta.publicationStatus === 'draft';
 	const coreCount = unitTopics.filter(topic => topic.status === 'core').length;
 	const regulation = escapeHtml(subject.regulation || 'Syllabus');
 
@@ -177,7 +179,9 @@ function renderUnitHero(context, unitTopics) {
 				<h1>Unit ${escapeHtml(unitLabel)}</h1>
 				<p class="unit-subtitle">${escapeHtml(unitMeta.title)}</p>
 				<p class="unit-description">${isReady
-					? 'Textbook-led theory for the unit, kept separate from Priyanka’s dated class notes and the question bank.'
+					? (isDraft
+						? 'Textbook-led theory is visible for review. Explicit source gaps remain marked and figures are still placeholders.'
+						: 'Textbook-led theory for the unit, kept separate from Priyanka’s dated class notes and the question bank.')
 					: 'This destination is in place now; the full consolidated study notes will be populated here next.'}</p>
 			</div>
 
@@ -188,6 +192,15 @@ function renderUnitHero(context, unitTopics) {
 					<div><strong>${coreCount}</strong><span>core topics</span></div>
 				</div>
 			` : ''}
+		</section>
+	`;
+}
+
+function renderDraftNotice(context) {
+	return `
+		<section class="unit-draft-notice section" role="note" aria-label="Draft unit status">
+			<strong>Unit under construction</strong>
+			<p>The textbook-backed text is available for review now. Figure placeholders are intentional, and syllabus items that are not supported by the supplied textbook remain explicitly marked as source gaps.</p>
 		</section>
 	`;
 }
@@ -609,6 +622,18 @@ function splitExampleQuestionAndSolution(item) {
 function setupExplanationAccordions() { window.PankuStudyUI?.initAccordions?.(document); }
 
 function renderTextbookFigure(figure) {
+	if (figure?.placeholder) {
+		const number = figure.figure_number || figure.figureNumber || 'Figure';
+		const name = figure.figure_name || figure.figureName || figure.alt || 'Textbook figure';
+		const page = figure.page ? `Textbook p. ${figure.page}` : 'Textbook page to be confirmed';
+		return `
+			<div class="study-figure textbook-figure textbook-figure-placeholder" role="note" aria-label="${escapeHtml(`${number}: ${name}`)}">
+				<div class="textbook-figure-placeholder-kicker">Image placeholder</div>
+				<div class="textbook-figure-placeholder-title">${escapeHtml(number)} · ${escapeHtml(name)}</div>
+				<div class="textbook-figure-placeholder-page">${escapeHtml(page)}</div>
+			</div>
+		`;
+	}
 	if (!figure?.src || !figure?.alt) return '';
 	const kindClass = figure.kind === 'class-note' ? 'class-note-figure' : '';
 	return window.PankuStudyUI?.renderFigure?.(figure, { className: 'study-figure textbook-figure', extraClass: kindClass }) || '';

@@ -111,7 +111,6 @@
       "type": "object",
       "additionalProperties": true,
       "required": [
-        "src",
         "alt"
       ],
       "properties": {
@@ -154,14 +153,51 @@
         },
         "grid": {
           "$ref": "#/$defs/gridPlacement"
+        },
+        "placeholder": {
+          "type": "boolean"
+        },
+        "figure_number": {
+          "type": "string",
+          "minLength": 1
+        },
+        "figure_name": {
+          "type": "string",
+          "minLength": 1
         }
       },
-      "not": {
-        "required": [
-          "after",
-          "grid"
-        ]
-      }
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "src"
+              ]
+            },
+            {
+              "properties": {
+                "placeholder": {
+                  "const": true
+                }
+              },
+              "required": [
+                "placeholder",
+                "figure_number",
+                "figure_name",
+                "page"
+              ]
+            }
+          ]
+        },
+        {
+          "not": {
+            "required": [
+              "after",
+              "grid"
+            ]
+          }
+        }
+      ]
     },
     "studyTable": {
       "type": "object",
@@ -261,8 +297,16 @@
         }
       },
       "anyOf": [
-        { "required": ["paragraphs"] },
-        { "required": ["bullets"] }
+        {
+          "required": [
+            "paragraphs"
+          ]
+        },
+        {
+          "required": [
+            "bullets"
+          ]
+        }
       ]
     },
     "explainer": {
@@ -304,9 +348,21 @@
         }
       },
       "anyOf": [
-        { "required": ["paragraphs"] },
-        { "required": ["bullets"] },
-        { "required": ["sections"] }
+        {
+          "required": [
+            "paragraphs"
+          ]
+        },
+        {
+          "required": [
+            "bullets"
+          ]
+        },
+        {
+          "required": [
+            "sections"
+          ]
+        }
       ]
     },
     "accordion": {

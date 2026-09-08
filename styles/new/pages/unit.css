@@ -1783,3 +1783,54 @@ sub {
 .section-discrepancy-note-text mjx-container {
 	color: inherit;
 }
+
+
+.textbook-figure-placeholder {
+	border: 2px dashed var(--border-strong, #7c8ba1);
+	border-radius: 14px;
+	padding: 1.1rem 1.2rem;
+	background: var(--surface-muted, #f6f8fb);
+	text-align: left;
+	min-height: 120px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.35rem;
+}
+
+.textbook-figure-placeholder-kicker {
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text-muted, #58677a);
+}
+
+.textbook-figure-placeholder-title {
+	font-size: 1.05rem;
+	font-weight: 800;
+	color: var(--text-strong, #172235);
+}
+
+.textbook-figure-placeholder-page {
+	font-size: 0.92rem;
+	font-weight: 700;
+	color: var(--text-muted, #58677a);
+}
+
+
+.unit-draft-notice {
+	border: 1px solid #d5a93f;
+	background: #fff8e7;
+	border-radius: 14px;
+	padding: 1rem 1.2rem;
+	color: #5d4512;
+}
+.unit-draft-notice strong {
+	display: block;
+	font-size: 1rem;
+	margin-bottom: 0.25rem;
+}
+.unit-draft-notice p {
+	margin: 0;
+}
