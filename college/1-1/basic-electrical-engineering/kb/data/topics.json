@@ -3392,13 +3392,122 @@
               "\\[I_L=\\dfrac{V_{Th}}{R_{Th}+R}=\\dfrac{16}{6.66+8}=1.09\\ \\text{A}\\]"
             ],
             "final_answer": "\\(V_{Th}=16\\ \\text{V},\\ R_{Th}=6.66\\ \\Omega;\\ I_L=1.65\\ \\text{A}\\) for \\(R=3\\ \\Omega\\), and \\(I_L=1.09\\ \\text{A}\\) for \\(R=8\\ \\Omega\\)."
+          },
+          {
+            "title": "Example 1.9.3",
+            "question_paragraphs": [
+              "Find the current flowing through the 2-ohm resistor connected between the points \\(a\\) and \\(b\\) using Thevenin’s Theorem."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-60.png",
+                "alt": "Original bridge circuit for Example 1.9.3 with a 12 V source across the left and right bridge nodes, 4 ohm and 6 ohm resistors in the upper branches, 3 ohm and 5 ohm resistors in the lower branches, and a 2 ohm load connected vertically between terminals a and b.",
+                "caption": "Fig. 1.60 · Circuit for Example 1.9.3",
+                "page": 56,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-61a.png",
+                "alt": "Thevenin-resistance circuit for Example 1.9.3 with the 2 ohm load removed between terminals a and b and the 12 V source short-circuited, leaving the 4, 6, 3 and 5 ohm bridge resistors.",
+                "caption": "Fig. 1.61(a) · Load removed and source short-circuited",
+                "page": 56,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-61b.png",
+                "alt": "Reduced bridge for Example 1.9.3 showing the left and right bridge nodes shorted together, so 4 ohm and 6 ohm form one parallel pair from terminal a and 3 ohm and 5 ohm form another parallel pair to terminal b.",
+                "caption": "Fig. 1.61(b) · Bridge reduced after source deactivation",
+                "page": 56,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 1
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-61c.png",
+                "alt": "Series representation of the two equivalent parallel resistances between terminals a and b: 4 ohm parallel 6 ohm equals 2.4 ohm, and 3 ohm parallel 5 ohm equals 1.875 ohm.",
+                "caption": "Fig. 1.61(c) · Equivalent resistances in series",
+                "page": 57,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 4
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-61d.png",
+                "alt": "Open-circuit bridge used to find Thevenin voltage for Example 1.9.3 with the 12 V source restored, the 2 ohm load removed, branch currents x and y marked, and polarity signs across the 4, 6, 3 and 5 ohm resistors.",
+                "caption": "Fig. 1.61(d) · Finding the open-circuit Thevenin voltage",
+                "page": 57,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 6
+                }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-61e.png",
+                "alt": "Thevenin equivalent for Example 1.9.3 showing a 0.3 V Thevenin source in series with 4.275 ohm Thevenin resistance and the reconnected 2 ohm load between terminals a and b, with current I directed toward terminal a.",
+                "caption": "Fig. 1.61(e) · Thevenin equivalent with the 2 ohm load reconnected",
+                "page": 58,
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 16
+                }
+              }
+            ],
+            "paragraphs": [
+              "To find the Thevenin’s resistance \\(R_{th}\\), the voltage source is short-circuited and the 2-ohm load resistance is removed. The resistance between terminals \\(a\\) and \\(b\\) is the Thevenin resistance \\(R_{th}\\).",
+              "The above circuit gets reduced to Figure 1.61(b).",
+              "The upper pair gives \\[\\dfrac{4\\times6}{4+6}=2.4\\ \\Omega\\]",
+              "The lower pair gives \\[\\dfrac{3\\times5}{3+5}=1.875\\ \\Omega\\]",
+              "Therefore, \\[R_{th}=R_{ab}=2.4+1.875=4.275\\ \\Omega\\]",
+              "To find the Thevenin voltage \\(V_{th}\\), the load resistance is removed and the open-circuit voltage between terminals \\(a\\) and \\(b\\) is found.",
+              "With the 12 V source restored, the two branch currents are",
+              "\\[x=\\dfrac{12}{4+6}=1.2\\ \\text{A}\\]",
+              "\\[y=\\dfrac{12}{3+5}=1.5\\ \\text{A}\\]",
+              "The voltage drop across the 4-ohm resistance is \\[1.2\\times4=4.8\\ \\text{V}\\]",
+              "The textbook next prints \\[1.5\\times3=4.5\\ \\text{V}\\]",
+              "The potential of point \\(a\\) with respect to point \\(b\\) is \\[+4.5-4.8=-0.3\\ \\text{V}\\]",
+              "The textbook then uses the magnitude of the potential difference as the Thevenin voltage:",
+              "\\[V_{th}=V_{ab}=0.3\\ \\text{V}\\]",
+              "The Thevenin equivalent circuit is shown in Figure 1.61(e).",
+              "With the 2-ohm load reconnected, the current flowing through it is",
+              "\\[I=\\dfrac{V_{th}}{R_{th}+R}=\\dfrac{0.3}{4.275+2}=\\dfrac{0.3}{6.275}=0.0478\\ \\text{A}\\]"
+            ],
+            "discrepancy": {
+              "label": "Example 1.9.3 · Textbook discrepancy",
+              "message": "The textbook line immediately after the 4-ohm drop states “voltage drop across 4 ohms resistance” but evaluates \\(1.5\\times3=4.5\\ \\text{V}\\), which is the drop across the 3-ohm resistor. It also first obtains the potential of \\(a\\) with respect to \\(b\\) as \\(-0.3\\ \\text{V}\\), then uses the magnitude \\(0.3\\ \\text{V}\\) as \\(V_{th}=V_{ab}\\). The portal preserves the printed calculation and final magnitude while flagging these inconsistencies."
+            },
+            "final_answer": "\\(I=0.0478\\ \\text{A}\\) through the 2-ohm load."
           }
         ],
         "source_refs": [
           "TB-P053",
           "TB-P054",
           "TB-P055",
-          "TB-P056"
+          "TB-P056",
+          "TB-P057",
+          "TB-P058",
+          "TB-P059"
         ],
         "book_refs": [
           {
@@ -3410,39 +3519,7 @@
             "pages": "54–56",
             "images": "54.png–56.png",
             "note": "Example 1.9.2"
-          }
-        ]
-      },
-      {
-        "heading": "Example 1.9.3 — current through a 2 Ω load",
-        "scope": "core",
-        "paragraphs": [
-          "Remove the 2-ohm load and short the source to find \\(R_{th}\\). The two reduced branches are",
-          "\\[\\dfrac{4\\times6}{4+6}=2.4\\ \\Omega\\]",
-          "\\[\\dfrac{3\\times5}{3+5}=1.875\\ \\Omega\\]",
-          "Therefore",
-          "\\[R_{th}=2.4+1.875=4.275\\ \\Omega\\]",
-          "Restore the source and leave the load open to find \\(V_{th}\\). The branch currents printed by the textbook are",
-          "\\[x=\\dfrac{12}{4+6}=1.2\\ \\text{A}\\]",
-          "\\[y=\\dfrac{12}{3+5}=1.5\\ \\text{A}\\]",
-          "The voltage drop across the 4-ohm resistance is",
-          "\\[1.2\\times4=4.8\\ \\text{V}\\]",
-          "The next textbook line is labelled “voltage drop across 4 ohms resistance” but calculates",
-          "\\[1.5\\times3=4.5\\ \\text{V}\\]",
-          "The potential of point \\(a\\) with respect to point \\(b\\) is",
-          "\\[+4.5-4.8=-0.3\\ \\text{V}\\]",
-          "The textbook then uses the magnitude as the Thevenin voltage:",
-          "\\[V_{th}=V_{ab}=0.3\\ \\text{V}\\]",
-          "With the 2-ohm load reconnected,",
-          "\\[I_L=\\dfrac{0.3}{4.275+2}=\\dfrac{0.3}{6.275}=0.0478\\ \\text{A}\\]"
-        ],
-        "source_refs": [
-          "TB-P056",
-          "TB-P057",
-          "TB-P058",
-          "TB-P059"
-        ],
-        "book_refs": [
+          },
           {
             "pages": "56–59",
             "images": "56.png–59.png"
