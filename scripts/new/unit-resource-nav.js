@@ -30,28 +30,30 @@ function render({ subject, subjectUrl, unitNumber, active = 'text' }) {
 	];
 
 	const q = subject.practice?.unitQuestions;
-	if (q?.hrefPattern && unitIsAvailable(q.availableUnits, unitNumber)) {
-		links.push({
-			key: 'questions',
-			label: q.label || 'Textbook Questions',
-			href: new URL(q.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href,
-		});
-	}
+	const questionsAvailable = Boolean(q?.hrefPattern && unitIsAvailable(q.availableUnits, unitNumber));
+	links.push({
+		key: 'questions',
+		label: q?.label || 'Textbook Questions',
+		href: questionsAvailable
+			? new URL(q.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href
+			: '#',
+		dummy: !questionsAvailable,
+	});
 
 	const c = subject.classNotes;
-	if (c?.hrefPattern && unitIsAvailable(c.availableUnits, unitNumber)) {
-		links.push({
-			key: 'class-notes',
-			label: c.label || "Priyanka's Class Notes",
-			href: new URL(c.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href,
-		});
-	}
-
-	if (links.length < 2) return '';
+	const classNotesAvailable = Boolean(c?.hrefPattern && unitIsAvailable(c.availableUnits, unitNumber));
+	links.push({
+		key: 'class-notes',
+		label: c?.label || "Priyanka's Class Notes",
+		href: classNotesAvailable
+			? new URL(c.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href
+			: '#',
+		dummy: !classNotesAvailable,
+	});
 	return `
 		<nav class="unit-resource-nav" aria-label="Unit ${escapeHtml(unitLabel)} study pages">
 			${links.map(link => `
-				<a class="unit-resource-link${active === link.key ? ' is-active' : ''}" href="${escapeHtml(link.href)}"${active === link.key ? ' aria-current="page"' : ''}>
+				<a class="unit-resource-link${active === link.key ? ' is-active' : ''}${link.dummy ? ' is-dummy' : ''}" href="${escapeHtml(link.href)}"${active === link.key ? ' aria-current="page"' : ''}${link.dummy ? ' aria-disabled="true" title="Page not added yet"' : ''}>
 					${escapeHtml(link.label)}
 				</a>
 			`).join('')}
