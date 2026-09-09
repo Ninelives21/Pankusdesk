@@ -13,8 +13,8 @@
     "title": "Eigenvalues, Eigenvectors and Quadratic Forms"
   },
   "title": "Eigenvalues and eigenvectors — worked eigenvector problems",
-  "summary": "Three class problems on finding eigenvalues and corresponding eigenvectors by the characteristic equation and row reduction; the third problem is only begun in the notebook.",
-  "transcription_policy": "Notebook order and mathematical intent are preserved, with grammar lightly cleaned. Calculations were independently verified. Where the notebook contains a mathematical slip, the student-facing copy states the discrepancy explicitly rather than silently copying it.",
+  "summary": "Three class problems on finding eigenvalues and corresponding eigenvectors. All three are now fully solved in dropdowns and independently verified; where the notebook contains a slip or stops mid-solution, that is stated explicitly.",
+  "transcription_policy": "Notebook order and mathematical intent are preserved, with grammar lightly cleaned. Each class problem is presented as a dropdown with a complete independently verified solution. Notebook slips are flagged explicitly rather than silently corrected; material completed beyond the photographed notes is labelled as an independent completion.",
   "mapped_topics": [
     {
       "topic_id": "u2-eigenvalues",
@@ -30,15 +30,11 @@
   "pages": [
     {
       "page": 5,
-      "heading": "Example 3 — characteristic equation and eigenvalues",
+      "heading": "Notebook pp. 5–8 · Example 3",
       "blocks": [
         {
-          "type": "paragraph",
-          "text": "The top of the photograph contains the tail end of the 8 September example. The new 9 September work starts with the following problem."
-        },
-        {
           "type": "accordions",
-          "label": "Class example",
+          "label": "Class questions",
           "items": [
             {
               "title": "Example 3 — Find the eigenvalues and corresponding eigenvectors",
@@ -49,131 +45,50 @@
                 "Start with the characteristic equation",
                 "\\[|A-\\lambda I|=\\begin{vmatrix}8-\\lambda&-6&2\\\\-6&7-\\lambda&-4\\\\2&-4&3-\\lambda\\end{vmatrix}=0.\\]",
                 "Expanding and collecting terms gives",
-                "\\[-\\lambda^3+18\\lambda^2-45\\lambda=0.\\]",
-                "Hence",
-                "\\[-\\lambda(\\lambda-3)(\\lambda-15)=0,\\]",
-                "so the eigenvalues are",
-                "\\[\\lambda=0,\\ 3,\\ 15.\\]"
+                "\\[-\\lambda^3+18\\lambda^2-45\\lambda=0,\\]",
+                "so",
+                "\\[-\\lambda(\\lambda-3)(\\lambda-15)=0.\\]",
+                "Hence the eigenvalues are",
+                "\\[\\boxed{\\lambda=0,\\ 3,\\ 15}.\\]",
+                "For \\(\\lambda=0\\), solve \\(AX=0\\):",
+                "\\[\\begin{bmatrix}8&-6&2\\\\-6&7&-4\\\\2&-4&3\\end{bmatrix}\\begin{bmatrix}u_1\\\\u_2\\\\u_3\\end{bmatrix}=0.\\]",
+                "Using the notebook row operations \\(R_2\\to4R_2+3R_1\\), \\(R_3\\to4R_3-R_1\\), then \\(R_3\\to R_3+R_2\\),",
+                "\\[\\begin{bmatrix}8&-6&2\\\\0&10&-10\\\\0&0&0\\end{bmatrix}X=0.\\]",
+                "Thus \\(u_2=u_3\\). Let \\(u_3=k\\), so \\(u_2=k\\). The first row gives \\(8u_1-4k=0\\), hence \\(u_1=k/2\\). Therefore",
+                "\\[X=\\dfrac{k}{2}\\begin{bmatrix}1\\\\2\\\\2\\end{bmatrix},\\qquad \\lambda=0.\\]",
+                "A convenient eigenvector is \\(\\begin{bmatrix}1&2&2\\end{bmatrix}^T\\).",
+                "For \\(\\lambda=3\\),",
+                "\\[(A-3I)X=\\begin{bmatrix}5&-6&2\\\\-6&4&-4\\\\2&-4&0\\end{bmatrix}X=0.\\]",
+                "Using \\(R_2\\to5R_2+6R_1\\), \\(R_3\\to5R_3-2R_1\\), then \\(R_3\\to2R_3-R_2\\),",
+                "\\[\\begin{bmatrix}5&-6&2\\\\0&-16&-8\\\\0&0&0\\end{bmatrix}X=0.\\]",
+                "Hence \\(2u_2+u_3=0\\). Let \\(u_3=k\\); then \\(u_2=-k/2\\). The first row gives \\(u_1=-k\\). Thus",
+                "\\[X=-\\dfrac{k}{2}\\begin{bmatrix}2\\\\1\\\\-2\\end{bmatrix},\\qquad \\lambda=3.\\]",
+                "A convenient eigenvector is \\(\\begin{bmatrix}2&1&-2\\end{bmatrix}^T\\).",
+                "For \\(\\lambda=15\\),",
+                "\\[(A-15I)X=\\begin{bmatrix}-7&-6&2\\\\-6&-8&-4\\\\2&-4&-12\\end{bmatrix}X=0.\\]",
+                "Using \\(R_2\\to7R_2-6R_1\\) and \\(R_3\\to7R_3+2R_1\\), the system reduces to",
+                "\\[\\begin{bmatrix}-7&-6&2\\\\0&-20&-40\\\\0&0&0\\end{bmatrix}X=0.\\]",
+                "So \\(u_2=-2u_3\\). Let \\(u_3=k\\); then \\(u_2=-2k\\), and the first row gives \\(u_1=2k\\). Hence",
+                "\\[X=k\\begin{bmatrix}2\\\\-2\\\\1\\end{bmatrix},\\qquad \\lambda=15.\\]",
+                "All three vectors have been checked directly using \\(AX=\\lambda X\\)."
               ],
-              "final_answer": "Eigenvalues: \\(0,3,15\\)."
+              "math_mismatch": {
+                "label": "Notebook mismatch",
+                "message": "In the handwritten final summary for \\(\\lambda=3\\), the third entry of the eigenvector appears without the minus sign. Direct substitution shows that \\([2,1,2]^T\\) is not an eigenvector for \\(\\lambda=3\\); the verified vector is \\([2,1,-2]^T\\) (or any non-zero scalar multiple)."
+              },
+              "final_answer": "\\(\\lambda=0:\\ \\operatorname{span}\\{[1,2,2]^T\\};\\quad \\lambda=3:\\ \\operatorname{span}\\{[2,1,-2]^T\\};\\quad \\lambda=15:\\ \\operatorname{span}\\{[2,-2,1]^T\\}.\\)"
             }
           ]
         }
       ]
     },
     {
-      "page": 6,
-      "heading": "Example 3 — eigenvector for \\(\\lambda=0\\)",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "For \\(\\lambda=0\\), solve \\(AX=0\\):"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\begin{bmatrix}8&-6&2\\\\-6&7&-4\\\\2&-4&3\\end{bmatrix}\\begin{bmatrix}u_1\\\\u_2\\\\u_3\\end{bmatrix}=\\begin{bmatrix}0\\\\0\\\\0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "The notebook uses \\(R_2\\to4R_2+3R_1\\), \\(R_3\\to4R_3-R_1\\), followed by \\(R_3\\to R_3+R_2\\), giving"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\begin{bmatrix}8&-6&2\\\\0&10&-10\\\\0&0&0\\end{bmatrix}X=0.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "Thus \\(u_2=u_3\\). Let \\(u_3=k\\), so \\(u_2=k\\). The first row gives \\(8u_1-4k=0\\), hence \\(u_1=k/2\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[X=\\dfrac{k}{2}\\begin{bmatrix}1\\\\2\\\\2\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "A corresponding eigenvector is therefore \\( [1\\;2\\;2]^T \\)."
-        }
-      ]
-    },
-    {
-      "page": 7,
-      "heading": "Example 3 — eigenvector for \\(\\lambda=3\\) and start of \\(\\lambda=15\\)",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "For \\(\\lambda=3\\), solve \\((A-3I)X=0\\):"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\begin{bmatrix}5&-6&2\\\\-6&4&-4\\\\2&-4&0\\end{bmatrix}X=0.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "Using the row operations written in class, the system reduces to"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\begin{bmatrix}5&-6&2\\\\0&-16&-8\\\\0&0&0\\end{bmatrix}X=0.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "Hence \\(2u_2+u_3=0\\). Let \\(u_3=k\\), so \\(u_2=-k/2\\), and the first equation gives \\(u_1=-k\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[X=-\\dfrac{k}{2}\\begin{bmatrix}2\\\\1\\\\-2\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "A corresponding eigenvector may therefore be taken as \\( [2\\;1\\;-2]^T \\)."
-        },
-        {
-          "type": "paragraph",
-          "text": "The page then starts the \\(\\lambda=15\\) case with \\((A-15I)X=0\\)."
-        }
-      ]
-    },
-    {
-      "page": 8,
-      "heading": "Example 3 — eigenvector for \\(\\lambda=15\\) and verified summary",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "For \\(\\lambda=15\\), the row reduction gives"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\begin{bmatrix}-7&-6&2\\\\0&-20&-40\\\\0&0&0\\end{bmatrix}X=0.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "Thus \\(u_2=-2u_3\\). Let \\(u_3=k\\); then \\(u_2=-2k\\), and the first row gives \\(u_1=2k\\)."
-        },
-        {
-          "type": "equation",
-          "text": "\\[X=k\\begin{bmatrix}2\\\\-2\\\\1\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "subheading",
-          "text": "Verified result for Example 3"
-        },
-        {
-          "type": "equation",
-          "text": "\\[\\lambda=0:\\ X_1=\\begin{bmatrix}1\\\\2\\\\2\\end{bmatrix},\\qquad \\lambda=3:\\ X_2=\\begin{bmatrix}2\\\\1\\\\-2\\end{bmatrix},\\qquad \\lambda=15:\\ X_3=\\begin{bmatrix}2\\\\-2\\\\1\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "Each displayed vector was checked directly against \\(AX=\\lambda X\\)."
-        }
-      ]
-    },
-    {
       "page": 9,
-      "heading": "Example 4 — repeated eigenvalue appears",
+      "heading": "Notebook pp. 9–10 · Example 4",
       "blocks": [
         {
           "type": "accordions",
-          "label": "Class example",
+          "label": "Class questions",
           "items": [
             {
               "title": "Example 4 — Find the eigenvalues and eigenvectors",
@@ -181,108 +96,98 @@
                 "\\[A=\\begin{bmatrix}6&-2&2\\\\-2&3&-1\\\\2&-1&3\\end{bmatrix}.\\]"
               ],
               "paragraphs": [
-                "The characteristic equation written in class simplifies to",
+                "The characteristic equation is",
+                "\\[|A-\\lambda I|=\\begin{vmatrix}6-\\lambda&-2&2\\\\-2&3-\\lambda&-1\\\\2&-1&3-\\lambda\\end{vmatrix}=0.\\]",
+                "Expanding gives",
                 "\\[-\\lambda^3+12\\lambda^2-36\\lambda+32=0.\\]",
-                "Factoring the verified polynomial gives",
+                "Factor:",
                 "\\[-(\\lambda-8)(\\lambda-2)^2=0.\\]",
-                "Therefore the eigenvalues are \\(8,2,2\\).",
-                "For \\(\\lambda=8\\), row reduction of \\((A-8I)X=0\\) gives",
+                "Therefore",
+                "\\[\\boxed{\\lambda=8,\\ 2,\\ 2}.\\]",
+                "For \\(\\lambda=8\\),",
+                "\\[(A-8I)X=\\begin{bmatrix}-2&-2&2\\\\-2&-5&-1\\\\2&-1&-5\\end{bmatrix}X=0.\\]",
+                "Using \\(R_2\\to R_2-R_1\\), \\(R_3\\to R_3+R_1\\), followed by \\(R_3\\to R_3-R_2\\),",
                 "\\[\\begin{bmatrix}-2&-2&2\\\\0&-3&-3\\\\0&0&0\\end{bmatrix}X=0.\\]",
-                "Hence \\(u_2=-u_3\\) and \\(u_1=2u_3\\). A corresponding eigenvector is",
-                "\\[X=\\begin{bmatrix}2\\\\-1\\\\1\\end{bmatrix}.\\]"
+                "Thus \\(u_2=-u_3\\), and the first row gives \\(u_1=2u_3\\). Taking \\(u_3=k\\),",
+                "\\[X=k\\begin{bmatrix}2\\\\-1\\\\1\\end{bmatrix}.\\]",
+                "So an eigenvector for \\(\\lambda=8\\) is \\([2,-1,1]^T\\).",
+                "For the repeated eigenvalue \\(\\lambda=2\\),",
+                "\\[(A-2I)X=\\begin{bmatrix}4&-2&2\\\\-2&1&-1\\\\2&-1&1\\end{bmatrix}X=0.\\]",
+                "All three rows are multiples of the same equation, so",
+                "\\[4u_1-2u_2+2u_3=0,\\qquad u_1=\\dfrac{u_2-u_3}{2}.\\]",
+                "Let \\(u_2=s\\) and \\(u_3=t\\). Then",
+                "\\[X=\\begin{bmatrix}(s-t)/2\\\\s\\\\t\\end{bmatrix}=\\dfrac{s}{2}\\begin{bmatrix}1\\\\2\\\\0\\end{bmatrix}+\\dfrac{t}{2}\\begin{bmatrix}-1\\\\0\\\\2\\end{bmatrix}.\\]",
+                "Hence the eigenspace for \\(\\lambda=2\\) is two-dimensional:",
+                "\\[E_2=\\operatorname{span}\\left\\{\\begin{bmatrix}1\\\\2\\\\0\\end{bmatrix},\\begin{bmatrix}-1\\\\0\\\\2\\end{bmatrix}\\right\\}.\\]",
+                "So this matrix has three linearly independent eigenvectors in all."
               ],
-              "final_answer": "Eigenvalue \\(8\\) has eigenvector \\([2\\;-1\\;1]^T\\); the remaining eigenvalue is \\(2\\) with algebraic multiplicity 2."
+              "math_mismatch": {
+                "label": "Notebook mismatch",
+                "message": "The notebook briefly lists the roots as \\(8,6,2\\) and starts a \\(\\lambda=6\\) case. But its own characteristic polynomial factors as \\(-(\\lambda-8)(\\lambda-2)^2\\). Therefore \\(6\\) is not an eigenvalue; the correct eigenvalues are \\(8,2,2\\)."
+              },
+              "final_answer": "\\(\\lambda=8:\\ \\operatorname{span}\\{[2,-1,1]^T\\};\\quad \\lambda=2\\) (double): \\(\\operatorname{span}\\{[1,2,0]^T,\\ [-1,0,2]^T\\}\\)."
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "Verification note"
-        },
-        {
-          "type": "paragraph",
-          "text": "The notebook briefly writes the roots as \\(8,6,2\\) and later starts a \\(\\lambda=6\\) line. That is inconsistent with its own characteristic polynomial: \\(\\lambda=6\\) is not a root. The correct roots are \\(8,2,2\\), so \\(2\\) is a repeated eigenvalue."
-        }
-      ]
-    },
-    {
-      "page": 10,
-      "heading": "Example 4 — two independent eigenvectors for the repeated eigenvalue \\(\\lambda=2\\)",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "For \\(\\lambda=2\\),"
-        },
-        {
-          "type": "equation",
-          "text": "\\[A-2I=\\begin{bmatrix}4&-2&2\\\\-2&1&-1\\\\2&-1&1\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "The second and third rows are multiples of the first, so the equation reduces to"
-        },
-        {
-          "type": "equation",
-          "text": "\\[4u_1-2u_2+2u_3=0,\\qquad u_1=\\dfrac{u_2-u_3}{2}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "Taking \\(u_3=k_1\\) and \\(u_2=k_2\\),"
-        },
-        {
-          "type": "equation",
-          "text": "\\[X=\\dfrac{k_1}{2}\\begin{bmatrix}-1\\\\0\\\\2\\end{bmatrix}+\\dfrac{k_2}{2}\\begin{bmatrix}1\\\\2\\\\0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "Thus the eigenspace for \\(\\lambda=2\\) is two-dimensional. Two independent eigenvectors are \\( [-1\\;0\\;2]^T \\) and \\( [1\\;2\\;0]^T \\)."
-        },
-        {
-          "type": "paragraph",
-          "text": "Together with the \\(\\lambda=8\\) eigenvector \\( [2\\;-1\\;1]^T \\), this gives three linearly independent eigenvectors."
         }
       ]
     },
     {
       "page": 11,
-      "heading": "Example 5 — a new eigenvalue/eigenvector problem begins",
+      "heading": "Notebook p. 11 · Example 5",
       "blocks": [
         {
-          "type": "paragraph",
-          "text": "The notebook starts a new problem:"
-        },
-        {
-          "type": "equation",
-          "text": "\\[A=\\begin{bmatrix}-2&2&-3\\\\2&1&-6\\\\-1&2&0\\end{bmatrix}.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "The class begins setting up the characteristic equation \\(|A-\\lambda I|=0\\), but the photographed working stops at this point."
-        },
-        {
-          "type": "subheading",
-          "text": "Verification note"
-        },
-        {
-          "type": "paragraph",
-          "text": "In the handwritten determinant setup, the top-left diagonal entry is written as \\(-2\\). Since \\(\\lambda I\\) must be subtracted from every diagonal entry, the correct setup is"
-        },
-        {
-          "type": "equation",
-          "text": "\\[|A-\\lambda I|=\\begin{vmatrix}-2-\\lambda&2&-3\\\\2&1-\\lambda&-6\\\\-1&2&-\\lambda\\end{vmatrix}=0.\\]"
-        },
-        {
-          "type": "paragraph",
-          "text": "No further solution is added here because the supplied 9 September notes do not continue this example."
+          "type": "accordions",
+          "label": "Class questions",
+          "items": [
+            {
+              "title": "Example 5 — Find the eigenvalues and eigenvectors",
+              "question_paragraphs": [
+                "\\[A=\\begin{bmatrix}-2&2&-3\\\\2&1&-6\\\\-1&2&0\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "The photographed notebook begins this problem but stops during the characteristic-determinant setup. The solution below is an independent completion from the matrix written in class.",
+                "The correct characteristic equation is",
+                "\\[|A-\\lambda I|=\\begin{vmatrix}-2-\\lambda&2&-3\\\\2&1-\\lambda&-6\\\\-1&2&-\\lambda\\end{vmatrix}=0.\\]",
+                "Expanding along the first row:",
+                "\\[(-2-\\lambda)(\\lambda^2-\\lambda+12)-2(-2\\lambda-6)-3(5-\\lambda)=0.\\]",
+                "Therefore",
+                "\\[-\\lambda^3-\\lambda^2-3\\lambda-27=0,\\]",
+                "or, equivalently,",
+                "\\[(\\lambda+3)(\\lambda^2-2\\lambda+9)=0.\\]",
+                "Hence the eigenvalues are",
+                "\\[\\boxed{\\lambda_1=-3,\\qquad \\lambda_{2,3}=1\\pm2\\sqrt{2}\\,i}.\\]",
+                "For \\(\\lambda=-3\\), solve \\((A+3I)X=0\\):",
+                "\\[\\begin{bmatrix}1&2&-3\\\\2&4&-6\\\\-1&2&3\\end{bmatrix}X=0.\\]",
+                "Using \\(R_2\\to R_2-2R_1\\) and \\(R_3\\to R_3+R_1\\),",
+                "\\[\\begin{bmatrix}1&2&-3\\\\0&0&0\\\\0&4&0\\end{bmatrix}X=0.\\]",
+                "So \\(u_2=0\\) and \\(u_1=3u_3\\). Taking \\(u_3=k\\),",
+                "\\[X=k\\begin{bmatrix}3\\\\0\\\\1\\end{bmatrix}.\\]",
+                "For either complex eigenvalue \\(\\mu=1\\pm2\\sqrt{2}\\,i\\), note that \\(\\mu^2-2\\mu+9=0\\). Take",
+                "\\[X_\\mu=\\begin{bmatrix}\\mu\\\\2\\mu\\\\3\\end{bmatrix}.\\]",
+                "Then direct substitution gives",
+                "\\[(A-\\mu I)X_\\mu=\\begin{bmatrix}-\\mu^2+2\\mu-9\\\\-2\\mu^2+4\\mu-18\\\\0\\end{bmatrix}=0,\\]",
+                "because \\(\\mu^2-2\\mu+9=0\\). Therefore the two complex eigenvectors may be taken as",
+                "\\[\\lambda=1+2\\sqrt{2}\\,i:\\quad X=\\begin{bmatrix}1+2\\sqrt{2}\\,i\\\\2+4\\sqrt{2}\\,i\\\\3\\end{bmatrix},\\]",
+                "\\[\\lambda=1-2\\sqrt{2}\\,i:\\quad X=\\begin{bmatrix}1-2\\sqrt{2}\\,i\\\\2-4\\sqrt{2}\\,i\\\\3\\end{bmatrix}.\\]",
+                "Each of the three eigenpairs was independently checked by direct multiplication."
+              ],
+              "math_mismatch": {
+                "label": "Notebook mismatch",
+                "message": "In the handwritten determinant setup, the top-left entry is written as \\(-2\\). In \\(A-\\lambda I\\), \\(\\lambda\\) must be subtracted from every diagonal entry, so that entry must be \\(-2-\\lambda\\). The photographed notes stop there; everything after the corrected determinant setup is an independently verified completion."
+              },
+              "final_answer": "\\(\\lambda=-3:\\ \\operatorname{span}\\{[3,0,1]^T\\};\\quad \\lambda=1\\pm2\\sqrt{2}\\,i:\\ \\operatorname{span}\\{[\\lambda,2\\lambda,3]^T\\}.\\)"
+            }
+          ]
         }
       ]
     }
   ],
   "source_notes": [
     "The source consists of seven notebook photographs: Mac-class-unit2 - 5.jpg through Mac-class-unit2 - 11.jpg; raw notebook images are not copied into website assets.",
-    "The top of page 5 repeats the tail of the 8 September trace/transpose/inverse example. The dated 9 September entry begins at Example 3 below the written date, avoiding duplicate class-note content.",
-    "Example 3 was independently checked: eigenvalues are 0, 3 and 15, with corresponding eigenvectors proportional to [1,2,2]^T, [2,1,-2]^T and [2,-2,1]^T.",
-    "Example 4 contains a notebook slip: the characteristic polynomial factors as -(lambda-8)(lambda-2)^2, so the roots are 8, 2, 2 rather than 8, 6, 2. The student-facing copy records this explicitly.",
-    "Example 5 is incomplete in the supplied notes. The handwritten characteristic determinant also omits -lambda from the top-left diagonal entry; the correct setup is shown, but the solution is not invented."
+    "The top of page 5 is the tail end of the 8 September property example. The dated 9 September work begins at Example 3 below the written date, so only Examples 3–5 are included here.",
+    "All three 9 September class questions are now presented as complete dropdown solutions.",
+    "Example 3 was independently verified: eigenvalues are 0, 3 and 15. The notebook's final eigenvector for lambda=3 appears to omit the minus sign on the third component; the verified vector is [2,1,-2]^T.",
+    "Example 4 contains a notebook slip: the characteristic polynomial factors as -(lambda-8)(lambda-2)^2, so the roots are 8,2,2 rather than 8,6,2. The lambda=2 eigenspace is two-dimensional.",
+    "Example 5 is incomplete in the notebook and its determinant setup omits -lambda from the top-left diagonal entry. The dropdown gives the corrected setup and then an explicitly identified independent completion, yielding eigenvalues -3 and 1±2sqrt(2)i."
   ]
 }
