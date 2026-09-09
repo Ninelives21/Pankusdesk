@@ -5,40 +5,54 @@
     "title": "Water, impurities and hardness",
     "status": "core",
     "learn": [
-      "Natural water contains dissolved and suspended impurities; hardness is chiefly associated with dissolved calcium and magnesium salts.",
-      "Temporary (carbonate) hardness is associated mainly with bicarbonates; permanent (non-carbonate) hardness is associated mainly with chlorides and sulphates.",
-      "Hardness is conventionally expressed as CaCO₃ equivalent so salts with different formula masses can be compared on one common basis."
+      "Natural water is not chemically pure; its impurities depend on the source of water and on the materials with which it comes in contact.",
+      "Hardness is mainly associated with dissolved calcium and magnesium salts and is classified as temporary (carbonate) and permanent (non-carbonate) hardness.",
+      "For calculations, different hardness-producing salts are converted to a common calcium-carbonate-equivalent basis."
     ],
     "sections": [
       {
-        "heading": "Introduction and impurities in natural water",
+        "heading": "Introduction: natural water and its sources",
         "scope": "core",
         "paragraphs": [
-          "The textbook treats water as naturally impure. Rain water, river water, lake water, spring water and well water acquire impurities from the atmosphere, soil, rocks and biological surroundings.",
-          "The impurities discussed include suspended matter, dissolved salts and gases, and biological matter. For hardness calculations, the dissolved salts of calcium and magnesium are the most important."
+          "The textbook begins by treating water as an essential natural material whose usefulness depends strongly on its quality. Naturally occurring water is seldom pure because, during its movement through air, soil and rock, it picks up gases, mineral matter, suspended solids and living organisms.",
+          "Natural sources are grouped as rain water, river water, lake water, spring water and well water. Rain water is comparatively pure when it first condenses, but it can absorb atmospheric gases and suspended impurities. River and lake water collect material from surface drainage and biological surroundings. Spring and well water remain in contact with underground mineral matter for longer periods and therefore commonly contain more dissolved salts.",
+          "Because the kind and amount of impurity vary with source, the same water may be suitable for one use and unsuitable for another. The chapter therefore examines the impurities first and then the treatment methods used to remove or control them."
         ],
         "source_refs": [
           "CHEM-TB-P0001",
-          "CHEM-TB-P0002",
-          "CHEM-TB-P0003"
+          "CHEM-TB-P0002"
         ],
         "book_refs": [
           {
-            "pages": "1–3",
-            "note": "Introduction, sources and impurities of water"
+            "pages": "1–2",
+            "note": "Introduction and natural sources of water"
           }
+        ]
+      },
+      {
+        "heading": "Impurities in natural water",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook classifies the impurities broadly as physical, chemical and biological. Physical impurities include suspended material that produces turbidity, colour, taste and odour. Chemical impurities include dissolved inorganic salts, dissolved gases and traces of organic substances. Biological impurities include algae, bacteria, fungi, viruses and other microscopic organisms.",
+          "Dissolved mineral salts are especially important in engineering use. Salts of calcium and magnesium are responsible for hardness; chlorides, sulphates and bicarbonates occur frequently in natural waters. Dissolved gases such as carbon dioxide and oxygen can influence corrosion and water quality, while biological contamination is important when the water is intended for drinking.",
+          "For Unit I, the main consequence of dissolved calcium and magnesium salts is hardness, so the textbook next defines hardness and distinguishes its two forms."
+        ],
+        "source_refs": [
+          "CHEM-TB-P0002",
+          "CHEM-TB-P0003"
         ]
       },
       {
         "heading": "Hardness of water",
         "scope": "core",
         "paragraphs": [
-          "Hardness is the characteristic of water by which it does not readily form lather with soap. The textbook attributes hardness mainly to dissolved salts of calcium and magnesium.",
-          "Temporary hardness, also called carbonate hardness, is caused principally by bicarbonates of calcium and magnesium and can be removed by boiling. Permanent hardness, also called non-carbonate hardness, is caused principally by chlorides and sulphates of calcium and magnesium and is not removed by boiling."
+          "Hardness is the property of water that prevents it from producing lather readily with soap. Instead of forming a stable lather, soap reacts with dissolved calcium and magnesium ions to form insoluble precipitates. The textbook therefore treats calcium and magnesium salts as the principal hardness-producing constituents.",
+          "Temporary hardness, also called carbonate hardness, is caused mainly by the bicarbonates of calcium and magnesium. It can be removed by boiling because the bicarbonates decompose to insoluble products.",
+          "Permanent hardness, also called non-carbonate hardness, is caused mainly by chlorides and sulphates of calcium and magnesium. These salts do not decompose simply by boiling, so permanent hardness requires a chemical softening or ion-exchange process."
         ],
         "bullets": [
           "Temporary hardness: chiefly \\(\\mathrm{Ca(HCO_3)_2}\\) and \\(\\mathrm{Mg(HCO_3)_2}\\).",
-          "Permanent hardness: chiefly chlorides and sulphates such as \\(\\mathrm{CaCl_2}\\), \\(\\mathrm{MgCl_2}\\), \\(\\mathrm{CaSO_4}\\) and \\(\\mathrm{MgSO_4}\\)."
+          "Permanent hardness: chiefly \\(\\mathrm{CaCl_2}\\), \\(\\mathrm{MgCl_2}\\), \\(\\mathrm{CaSO_4}\\) and \\(\\mathrm{MgSO_4}\\)."
         ],
         "source_refs": [
           "CHEM-TB-P0003",
@@ -49,9 +63,9 @@
         "heading": "Removal of temporary hardness by boiling",
         "scope": "core",
         "paragraphs": [
-          "On boiling, bicarbonates decompose and form insoluble precipitates, thereby removing temporary hardness."
+          "On boiling, soluble bicarbonates are converted into insoluble precipitates. Calcium bicarbonate gives calcium carbonate, whereas magnesium bicarbonate ultimately gives magnesium hydroxide. The precipitated solids can then be separated from the water."
         ],
-        "bullets": [
+        "formulas": [
           "\\(\\mathrm{Ca(HCO_3)_2 \\xrightarrow{\\Delta} CaCO_3\\downarrow + H_2O + CO_2\\uparrow}\\)",
           "\\(\\mathrm{Mg(HCO_3)_2 \\xrightarrow{\\Delta} Mg(OH)_2\\downarrow + 2CO_2\\uparrow}\\)"
         ],
@@ -60,22 +74,23 @@
         ]
       },
       {
-        "heading": "CaCO₃ equivalents",
+        "heading": "Calcium-carbonate equivalents",
         "scope": "core",
         "paragraphs": [
-          "Hardness-producing substances are converted to their calcium-carbonate equivalents. The textbook uses the equivalent mass of \\(\\mathrm{CaCO_3}\\), namely 50, as the common reference."
+          "A water sample may contain several different calcium and magnesium salts. Their concentrations cannot be added directly to obtain hardness because their molar masses and chemical equivalents differ. The textbook therefore converts the amount of every hardness-producing substance into the amount of calcium carbonate that would be chemically equivalent to it.",
+          "Calcium carbonate is used as the common reference because its molar mass is 100 and, for hardness reactions, its chemical equivalent is 50. Once each constituent is converted to a CaCO₃ equivalent, the individual contributions can be added directly."
         ],
         "formulas": [
           "\\(\\text{CaCO}_3\\text{ equivalent}=\\dfrac{\\text{mass of hardness-producing substance}\\times 50}{\\text{chemical equivalent of hardness-producing substance}}\\)"
         ],
         "tables": [
           {
-            "caption": "Selected CaCO₃ conversion factors from textbook Table 1",
+            "caption": "CaCO₃ conversion factors from textbook Table 1",
             "headers": [
               "Dissolved salt",
               "Molar mass",
               "Chemical equivalent",
-              "Multiply concentration by"
+              "Factor for conversion to CaCO₃ equivalent"
             ],
             "rows": [
               [
@@ -124,44 +139,51 @@
           }
         ],
         "source_refs": [
-          "CHEM-TB-P0004"
+          "CHEM-TB-P0004",
+          "CHEM-TB-P0005"
         ]
       },
       {
         "heading": "Units and degree of hardness",
         "scope": "core",
         "paragraphs": [
-          "The textbook defines hardness in parts per million (ppm), milligrams per litre (mg/L), Clark's degree, French degree and milliequivalents per litre. For dilute aqueous solutions, 1 mg/L as CaCO₃ is numerically equal to 1 ppm."
+          "Hardness may be expressed in several units. The textbook gives parts per million, milligrams per litre, Clark degree, French degree and milliequivalents per litre, and also provides the relationships between them.",
+          "For dilute aqueous solutions, 1 mg of CaCO₃ equivalent per litre is numerically the same as 1 ppm. Clark degree is based on grains of CaCO₃ equivalent per gallon of water, whereas French degree represents one part of CaCO₃ equivalent in one hundred thousand parts of water."
         ],
         "tables": [
           {
+            "caption": "Units of hardness used in the textbook",
             "headers": [
               "Unit",
-              "Meaning / relation used in the textbook"
+              "Definition / relation"
             ],
             "rows": [
               [
                 "ppm",
-                "1 part CaCO₃ equivalent in \\(10^6\\) parts of water"
+                "1 part of CaCO₃ equivalent in \\(10^6\\) parts of water"
               ],
               [
                 "mg/L",
-                "1 mg CaCO₃ equivalent per litre of water"
+                "1 mg of CaCO₃ equivalent per litre of water; for dilute water, 1 mg/L = 1 ppm"
               ],
               [
-                "Clark's degree (°Cl)",
-                "1 grain CaCO₃ equivalent per gallon of water"
+                "Clark degree (°Cl)",
+                "1 grain of CaCO₃ equivalent per gallon of water"
               ],
               [
                 "French degree (°Fr)",
-                "1 part CaCO₃ equivalent in \\(10^5\\) parts of water"
+                "1 part of CaCO₃ equivalent in \\(10^5\\) parts of water"
               ],
               [
                 "mEq/L",
-                "1 milliequivalent per litre"
+                "1 milliequivalent of hardness per litre"
               ]
             ]
           }
+        ],
+        "formulas": [
+          "\\(1\\,\\mathrm{mg/L}=1\\,\\mathrm{ppm}\\)",
+          "\\(1^\\circ\\mathrm{Fr}=10\\,\\mathrm{ppm}\\)"
         ],
         "source_refs": [
           "CHEM-TB-P0005"
@@ -182,7 +204,7 @@
     "book_refs": [
       {
         "pages": "1–5",
-        "note": "Introduction, hardness, CaCO₃ equivalents and units"
+        "note": "Natural water, impurities, hardness, CaCO₃ equivalents and units"
       }
     ],
     "cautions": [],
@@ -203,20 +225,22 @@
     "title": "Hardness calculations and complexometric estimation",
     "status": "core",
     "learn": [
-      "Hardness calculations first convert every hardness-producing constituent to its CaCO₃ equivalent and then add the contributions.",
-      "EDTA forms stable soluble complexes with metal ions such as Ca²⁺ and Mg²⁺.",
-      "With Eriochrome Black T at about pH 10, the metal–indicator complex is wine red; at the EDTA end point the liberated indicator gives a blue colour."
+      "Numerical hardness is obtained by converting every hardness-producing constituent to its CaCO₃ equivalent and adding the appropriate contributions.",
+      "The EDTA method is a complexometric method in which Ca²⁺ and Mg²⁺ form stable complexes with EDTA.",
+      "At about pH 10, Eriochrome Black T gives a wine-red metal–indicator complex; the end point is the change from wine red to distinct blue.",
+      "The textbook gives the complete procedure for total, permanent and temporary hardness by the EDTA method."
     ],
     "sections": [
       {
-        "heading": "Numerical method for hardness",
+        "heading": "Numerical calculation of hardness from dissolved salts",
         "scope": "core",
         "paragraphs": [
-          "For a water analysis reported in mg/L, multiply the concentration of each hardness-producing salt by its CaCO₃ conversion factor and add the resulting CaCO₃-equivalent concentrations. Separate temporary and permanent contributors when the question asks for both."
+          "When a water analysis gives the concentration of several dissolved salts, each hardness-producing salt is first multiplied by its CaCO₃ conversion factor. The CaCO₃-equivalent values are then grouped according to the type of hardness they produce.",
+          "Bicarbonates of calcium and magnesium contribute to temporary hardness. Chlorides and sulphates of calcium and magnesium contribute to permanent hardness. Total hardness is the sum of temporary and permanent hardness."
         ],
         "formulas": [
           "\\(\\text{Hardness as CaCO}_3=\\sum_i C_i\\times\\dfrac{50}{E_i}\\)",
-          "Equivalently, for a divalent salt, \\(C_i\\times\\dfrac{100}{M_i}\\)."
+          "\\(\\text{For a divalent salt: }\\ C_i\\times\\dfrac{100}{M_i}\\)"
         ],
         "source_refs": [
           "CHEM-TB-P0037",
@@ -224,79 +248,122 @@
         ]
       },
       {
-        "heading": "Worked example — hardness from dissolved salts",
+        "heading": "Worked example — temporary, permanent and total hardness",
         "scope": "core",
         "paragraphs": [
-          "A water sample contains \\(\\mathrm{Mg(HCO_3)_2}=73\\,mg/L\\), \\(\\mathrm{Ca(HCO_3)_2}=162\\,mg/L\\), \\(\\mathrm{MgCl_2}=95\\,mg/L\\) and \\(\\mathrm{CaSO_4}=136\\,mg/L\\).",
-          "Temporary hardness: \\(73\\times\\dfrac{100}{146}+162\\times\\dfrac{100}{162}=50+100=150\\,ppm\\).",
-          "Permanent hardness: \\(95\\times\\dfrac{100}{95}+136\\times\\dfrac{100}{136}=100+100=200\\,ppm\\).",
-          "Total hardness: \\(150+200=350\\,ppm\\).",
-          "**Final answer:** Temporary hardness \\(=150\\,ppm\\), permanent hardness \\(=200\\,ppm\\), total hardness \\(=350\\,ppm\\)."
+          "Textbook Example 4 uses a sample containing \\(\\mathrm{Mg(HCO_3)_2}=73\\,mg/L\\), \\(\\mathrm{Ca(HCO_3)_2}=162\\,mg/L\\), \\(\\mathrm{MgCl_2}=95\\,mg/L\\) and \\(\\mathrm{CaSO_4}=136\\,mg/L\\).",
+          "For \\(\\mathrm{Mg(HCO_3)_2}\\), the CaCO₃ equivalent is \\(73\\times\\dfrac{100}{146}=50\\,mg/L\\). For \\(\\mathrm{Ca(HCO_3)_2}\\), it is \\(162\\times\\dfrac{100}{162}=100\\,mg/L\\). Hence temporary hardness is \\(150\\,ppm\\).",
+          "For \\(\\mathrm{MgCl_2}\\), the CaCO₃ equivalent is \\(95\\times\\dfrac{100}{95}=100\\,mg/L\\). For \\(\\mathrm{CaSO_4}\\), it is \\(136\\times\\dfrac{100}{136}=100\\,mg/L\\). Hence permanent hardness is \\(200\\,ppm\\).",
+          "Therefore total hardness is \\(150+200=350\\,ppm\\)."
         ],
         "source_refs": [
           "CHEM-TB-P0038"
         ]
       },
       {
-        "heading": "Complexometric method using EDTA",
+        "heading": "Principle of the EDTA complexometric method",
         "scope": "core",
         "paragraphs": [
-          "The textbook describes EDTA as a complexometric reagent that forms chelate complexes with metal ions. In alkaline medium, EDTA reacts with Ca²⁺ and Mg²⁺ to form stable soluble metal–EDTA complexes.",
-          "Eriochrome Black T (EBT) is used at about pH 10. Before the end point, the metal–indicator complex is wine red. As EDTA binds the metal ions, EBT is released; the end point is the change from wine red to blue."
+          "The textbook identifies the EDTA method as a complexometric method. Ethylenediaminetetraacetic acid is used in the form of its disodium salt. In solution it provides the ligand that combines with calcium and magnesium ions to form soluble metal–EDTA complexes.",
+          "For detection of the equivalence point, Eriochrome Black T (EBT) is used as indicator. The sample is buffered to about pH 10 with an ammonium hydroxide–ammonium chloride buffer. Under these conditions, hardness ions and EBT form an unstable wine-red metal–indicator complex.",
+          "During titration, added EDTA removes Ca²⁺ and Mg²⁺ from the metal–indicator complex by forming the more stable metal–EDTA complex. As long as hardness ions remain, released EBT again combines with them and the wine-red colour persists. When essentially all Ca²⁺ and Mg²⁺ have been complexed by EDTA, the next small excess of EDTA releases the indicator in its blue form. Thus the end point is the sharp change from wine red to blue."
         ],
-        "bullets": [
-          "\\(\\mathrm{M^{2+}+EBT \\rightleftharpoons [M{-}EBT]}\\) (wine red)",
-          "\\(\\mathrm{[M{-}EBT]+EDTA \\rightarrow [M{-}EDTA]+EBT}\\) (blue at end point)"
+        "formulas": [
+          "\\(\\mathrm{M^{2+}+EBT \\rightleftharpoons [M{-}EBT]}\\) \\;\\text{(wine red, at pH about 10)}",
+          "\\(\\mathrm{[M{-}EBT]+EDTA \\rightarrow [M{-}EDTA]+EBT}\\) \\;\\text{(blue at the end point)}"
+        ],
+        "source_refs": [
+          "CHEM-TB-P0033",
+          "CHEM-TB-P0034"
+        ]
+      },
+      {
+        "heading": "Preparation of solutions for the EDTA method",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook first prepares a standard hard-water solution. Pure dry CaCO₃ is dissolved using the minimum required dilute hydrochloric acid, the solution is evaporated to dryness, and the residue is dissolved and diluted so that each millilitre of the final standard hard water corresponds to 1 mg of CaCO₃-equivalent hardness.",
+          "The EDTA titrant is prepared from pure EDTA crystals together with a small quantity of MgCl₂ in distilled water. The indicator solution is prepared from Eriochrome Black T in alcohol. The pH-10 buffer is prepared from NH₄Cl and concentrated ammonia and then diluted to the specified volume."
         ],
         "tables": [
           {
-            "caption": "Relevant complexometric indicator information from the supplied appendix",
+            "caption": "Textbook preparation quantities for the hardness-by-EDTA method",
             "headers": [
-              "Metal ion",
-              "Indicator",
-              "pH",
-              "Colour change"
+              "Solution",
+              "Textbook preparation"
             ],
             "rows": [
               [
-                "\\(\\mathrm{Mg^{2+}}\\)",
-                "Eriochrome Black T",
-                "10",
-                "Red to blue"
+                "Standard hard water",
+                "1.0 g pure, dry CaCO₃; dissolve with minimum dilute HCl, evaporate to dryness, redissolve and make to 1 L; 1 mL corresponds to 1 mg CaCO₃ equivalent"
               ],
               [
-                "\\(\\mathrm{Zn^{2+}}\\)",
-                "Eriochrome Black T",
-                "7–10",
-                "Red to blue"
+                "EDTA solution",
+                "4 g pure EDTA crystals + 0.1 g MgCl₂ in 1 L distilled water"
+              ],
+              [
+                "EBT indicator",
+                "0.5 g Eriochrome Black T in 100 mL alcohol"
+              ],
+              [
+                "Buffer, pH about 10",
+                "67.5 g NH₄Cl added to 570 mL concentrated ammonia solution, then diluted to 1 L"
               ]
             ]
           }
         ],
         "source_refs": [
-          "CHEM-TB-P0033",
-          "CHEM-TB-P0034",
-          "CHEM-TB-P1415",
-          "CHEM-TB-P1416"
+          "CHEM-TB-P0034"
         ]
       },
       {
-        "heading": "Source boundary for the R25 water-hardness titration",
+        "heading": "Standardisation of EDTA and titration of total hardness",
         "scope": "core",
         "paragraphs": [
-          "The supplied textbook pages support the EDTA complexation principle, EBT indicator, pH and colour change. They do not present a single standalone water-hardness-by-EDTA laboratory procedure in the same form as the R25 wording. A water-hardness-specific procedure should therefore be added only from an approved source or class/lab material."
+          "The burette is rinsed and filled with EDTA solution. A 50 mL portion of standard hard water is pipetted into a conical flask; buffer solution and a few drops of EBT are added. The solution is titrated with EDTA until the wine-red colour changes to clear blue. Let the EDTA volume be \\(V_1\\) mL.",
+          "For the unknown sample, 50 mL of the water is treated in the same way and titrated to the same wine-red-to-blue end point. Let this EDTA volume be \\(V_2\\) mL.",
+          "Since 50 mL of the standard hard water contains 50 mg CaCO₃ equivalent, \\(V_1\\) mL of EDTA corresponds to 50 mg CaCO₃ equivalent. This relation is used to convert the EDTA volume consumed by the unknown sample into hardness."
+        ],
+        "formulas": [
+          "\\(1\\,\\mathrm{mL\\ EDTA}=\\dfrac{50}{V_1}\\,\\mathrm{mg\\ CaCO_3\\ equivalent}\\)",
+          "\\(\\text{Total hardness}=\\dfrac{1000V_2}{V_1}\\,\\mathrm{ppm}\\)"
         ],
         "source_refs": [
-          "SYL-R25-CHEM-U1",
-          "CHEM-TB-P0033",
+          "CHEM-TB-P0034"
+        ]
+      },
+      {
+        "heading": "Permanent hardness and temporary hardness by EDTA",
+        "scope": "core",
+        "paragraphs": [
+          "To determine permanent hardness, the textbook takes 250 mL of the sample and boils it until its volume is reduced to about 50 mL. Boiling decomposes bicarbonates and precipitates the temporary-hardness constituents as CaCO₃ and Mg(OH)₂.",
+          "The precipitate is filtered off and washed. The filtrate and washings are collected and made back to 250 mL with distilled water. A 50 mL aliquot of this boiled-and-filtered water is then titrated in the same manner with EDTA. Let the EDTA volume be \\(V_3\\) mL.",
+          "The hardness remaining after boiling is permanent hardness. Temporary hardness is obtained by subtracting permanent hardness from total hardness."
+        ],
+        "formulas": [
+          "\\(\\text{Permanent hardness}=\\dfrac{1000V_3}{V_1}\\,\\mathrm{ppm}\\)",
+          "\\(\\text{Temporary hardness}=\\text{Total hardness}-\\text{Permanent hardness}\\)",
+          "\\(\\text{Temporary hardness}=\\dfrac{1000(V_2-V_3)}{V_1}\\,\\mathrm{ppm}\\)"
+        ],
+        "source_refs": [
           "CHEM-TB-P0034",
-          "CHEM-TB-P1415",
-          "CHEM-TB-P1416"
+          "CHEM-TB-P0035"
+        ]
+      },
+      {
+        "heading": "Advantages of the EDTA method",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook lists three practical advantages of the EDTA method over the older hardness-estimation methods: greater accuracy, convenience and a more rapid procedure."
+        ],
+        "source_refs": [
+          "CHEM-TB-P0035"
         ]
       }
     ],
     "formulas": [
-      "\\(\\text{Hardness as CaCO}_3=\\sum_i C_i\\times\\dfrac{50}{E_i}\\)"
+      "\\(\\text{Total hardness}=\\dfrac{1000V_2}{V_1}\\,\\mathrm{ppm}\\)",
+      "\\(\\text{Permanent hardness}=\\dfrac{1000V_3}{V_1}\\,\\mathrm{ppm}\\)",
+      "\\(\\text{Temporary hardness}=\\dfrac{1000(V_2-V_3)}{V_1}\\,\\mathrm{ppm}\\)"
     ],
     "source_refs": [
       "SYL-R25-CHEM-U1",
@@ -309,21 +376,19 @@
     ],
     "book_refs": [
       {
-        "pages": "33–35, 37–38; Appendix 1415–1416",
-        "note": "EDTA method, hardness numericals and complexometric chemistry"
+        "pages": "33–35, 37–38",
+        "note": "Complete EDTA hardness method, calculations and hardness numericals"
       }
     ],
-    "cautions": [
-      "R25's exact water-hardness EDTA procedure is not fully stated in the supplied textbook pages."
-    ],
+    "cautions": [],
     "self_checks": [
       {
-        "question": "What is the EBT colour change at the EDTA end point?",
-        "answer": "Wine red to blue."
+        "question": "What colour change marks the EDTA hardness end point?",
+        "answer": "Wine red to distinct blue."
       },
       {
-        "question": "What is the first step in a hardness numerical when salts are given in mg/L?",
-        "answer": "Convert each hardness-producing salt concentration to its CaCO₃ equivalent."
+        "question": "How are total and permanent hardness distinguished in the textbook EDTA method?",
+        "answer": "Total hardness is measured directly on the sample; permanent hardness is measured after boiling, filtering and restoring the sample volume. Temporary hardness is total minus permanent hardness."
       }
     ]
   },
@@ -333,16 +398,18 @@
     "title": "Boiler troubles: scales and sludges",
     "status": "core",
     "learn": [
-      "Scale is a hard, adherent deposit on boiler surfaces; sludge is a soft, loose, non-adherent deposit.",
-      "Scale lowers heat transfer, wastes fuel, lowers boiler safety and efficiency, and can contribute to dangerous overheating.",
-      "R25 requires scales and sludges, not the chapter's later boiler-corrosion topics."
+      "Concentration of dissolved salts during steam generation can produce sludge or scale inside boilers.",
+      "Sludge is soft, loose and non-adherent; scale is hard and adherent.",
+      "Scale causes serious heat-transfer, fuel-consumption, maintenance, safety and efficiency problems."
     ],
     "sections": [
       {
-        "heading": "Scale and sludge formation",
+        "heading": "Scale and sludge formation in boilers",
         "scope": "core",
         "paragraphs": [
-          "When dissolved salts are concentrated by evaporation in a boiler, some precipitate. A soft, loose and slimy precipitate is called sludge; a hard, adherent deposit on the inner wall is called scale."
+          "As boiler water is heated and converted into steam, dissolved salts become progressively concentrated. When their concentration exceeds their solubility under boiler conditions, they precipitate on or within the boiler.",
+          "A precipitate that remains soft, loose, slimy and non-adherent is termed sludge. Sludge commonly collects in comparatively cooler parts of the boiler and can often be removed by blow-down. A deposit that becomes hard and adheres firmly to the inner boiler surface is termed scale.",
+          "The textbook figure contrasts loose precipitate suspended or deposited in water with the hard coating formed directly on the metal surface."
         ],
         "figures": [
           {
@@ -363,23 +430,39 @@
         ]
       },
       {
+        "heading": "Disadvantages of sludge formation",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook notes that sludge is a poor conductor of heat and therefore wastes fuel. It can settle in narrow or cooler portions of the boiler, obstructing pipes and fittings and interfering with circulation.",
+          "Because sludge promotes local accumulation of solids and poor heat transfer, it can also encourage corrosion beneath deposits. Regular blow-down and proper external treatment of feed water are used to limit sludge formation."
+        ],
+        "source_refs": [
+          "CHEM-TB-P0006",
+          "CHEM-TB-P0007"
+        ]
+      },
+      {
         "heading": "Causes of scale formation",
         "scope": "core",
+        "paragraphs": [
+          "The textbook gives several distinct mechanisms by which scale may form. The important point is that different salts become insoluble for different reasons: decomposition, reduced solubility at high temperature, hydrolysis, or formation of very hard silicate deposits."
+        ],
         "bullets": [
-          "Decomposition of calcium bicarbonate: \\(\\mathrm{Ca(HCO_3)_2\\rightarrow CaCO_3\\downarrow+H_2O+CO_2\\uparrow}\\).",
-          "Deposition of calcium sulphate as its solubility decreases at high temperature.",
-          "Hydrolysis of magnesium salts, producing \\(\\mathrm{Mg(OH)_2}\\).",
-          "Silica may form hard silicate deposits such as calcium or magnesium silicate."
+          "Decomposition of bicarbonates: \\(\\mathrm{Ca(HCO_3)_2 \\rightarrow CaCO_3\\downarrow + H_2O + CO_2\\uparrow}\\).",
+          "Deposition of calcium sulphate: the solubility of \\(\\mathrm{CaSO_4}\\) decreases at boiler temperatures, so it can precipitate directly as a hard deposit.",
+          "Hydrolysis of magnesium salts: dissolved magnesium salts can hydrolyse and precipitate \\(\\mathrm{Mg(OH)_2}\\), contributing to scale.",
+          "Silica and silicates: silica may form calcium or magnesium silicate deposits, which are particularly hard and firmly adherent."
         ],
         "source_refs": [
           "CHEM-TB-P0007"
         ]
       },
       {
-        "heading": "Disadvantages of scale",
+        "heading": "Disadvantages of scale formation",
         "scope": "core",
         "paragraphs": [
-          "Because scale has low thermal conductivity, more fuel is needed to transfer the same amount of heat. The textbook also lists reduced boiler safety, reduced efficiency and danger of explosion when thick scale causes severe local overheating."
+          "Scale has low thermal conductivity. A scale-coated heating surface therefore requires a larger temperature difference to transfer the same quantity of heat. More fuel must be burnt, and the metal beneath the scale may become dangerously overheated.",
+          "The textbook lists wastage of fuel, lowering of boiler safety, reduction in boiler efficiency and danger of explosion among the important consequences. Thick scale may also choke passages and interfere with water circulation."
         ],
         "tables": [
           {
@@ -409,10 +492,11 @@
         ]
       },
       {
-        "heading": "Prevention by water treatment",
+        "heading": "Prevention of scale and sludge",
         "scope": "core",
         "paragraphs": [
-          "The textbook separates prevention into external softening before boiler use and internal treatment within the boiler. R25 names three internal methods: colloidal, phosphate and Calgon conditioning."
+          "The textbook separates preventive treatment into external and internal methods. External treatment removes hardness-producing constituents before the water enters the boiler. Internal treatment adds suitable chemicals within the boiler so that scale-forming constituents are converted into harmless, removable or soluble forms.",
+          "For R25, the required internal methods are colloidal conditioning, phosphate conditioning and Calgon conditioning. The required external method is ion-exchange softening/demineralisation, covered separately below."
         ],
         "source_refs": [
           "CHEM-TB-P0008"
@@ -452,10 +536,22 @@
     ],
     "sections": [
       {
+        "heading": "Internal treatment: principle",
+        "scope": "core",
+        "paragraphs": [
+          "Internal treatment is carried out by adding suitable chemicals directly to boiler water. The objective is not necessarily to remove every dissolved salt before it reaches the boiler; instead, scale-forming constituents are converted into forms that remain soluble or form soft, non-adherent sludge that can be removed by blow-down.",
+          "R25 specifically requires colloidal, phosphate and Calgon conditioning. These three textbook methods are retained here in the same sequence in which they appear in the chapter."
+        ],
+        "source_refs": [
+          "CHEM-TB-P0008"
+        ]
+      },
+      {
         "heading": "Colloidal conditioning",
         "scope": "core",
         "paragraphs": [
-          "For low-pressure boilers, the textbook describes adding organic substances such as kerosene, tannin or agar-agar. They coat scale-forming precipitates and produce non-sticky, loose deposits that can be removed by blow-down."
+          "For low-pressure boilers, the textbook describes the addition of organic substances such as kerosene, tannin and agar-agar. These substances coat the scale-forming precipitates and change them into loose, non-sticky deposits.",
+          "Because the deposits do not adhere firmly to the boiler surface, they can be removed along with boiler water by blow-down. The method is therefore aimed at preventing the formation of a hard adherent scale rather than at eliminating all precipitated matter."
         ],
         "source_refs": [
           "CHEM-TB-P0008"
@@ -465,11 +561,16 @@
         "heading": "Phosphate conditioning",
         "scope": "core",
         "paragraphs": [
-          "For high-pressure boilers, sodium phosphate is added so hardness salts form soft, non-adherent calcium and magnesium phosphate sludge removable by blow-down."
+          "Phosphate conditioning is described for high-pressure boilers. Sodium phosphate is added so that calcium and magnesium hardness is precipitated as soft phosphate sludge rather than as a hard scale.",
+          "The textbook lists three sodium phosphates—sodium dihydrogen phosphate, disodium hydrogen phosphate and trisodium phosphate. Their use is related to the alkalinity of the feed water. The precipitated phosphate sludge remains comparatively non-adherent and can be discharged by blow-down."
+        ],
+        "formulas": [
+          "\\(\\mathrm{3CaCl_2 + 2Na_3PO_4 \\rightarrow Ca_3(PO_4)_2\\downarrow + 6NaCl}\\)"
         ],
         "bullets": [
-          "\\(\\mathrm{3CaCl_2+2Na_3PO_4\\rightarrow Ca_3(PO_4)_2\\downarrow+6NaCl}\\)",
-          "The textbook lists \\(\\mathrm{NaH_2PO_4}\\), \\(\\mathrm{Na_2HPO_4}\\) and \\(\\mathrm{Na_3PO_4}\\); the choice depends on feed-water alkalinity."
+          "\\(\\mathrm{NaH_2PO_4}\\): acidic phosphate",
+          "\\(\\mathrm{Na_2HPO_4}\\): weakly alkaline phosphate",
+          "\\(\\mathrm{Na_3PO_4}\\): alkaline phosphate"
         ],
         "source_refs": [
           "CHEM-TB-P0008",
@@ -480,11 +581,12 @@
         "heading": "Calgon conditioning",
         "scope": "core",
         "paragraphs": [
-          "Calgon is sodium hexametaphosphate, represented in the textbook as \\(\\mathrm{(NaPO_3)_6}\\). It prevents scale and sludge by forming soluble complex species with calcium salts."
+          "Calgon is sodium hexametaphosphate. In water it provides a complex-forming phosphate species that combines with calcium ions. Instead of precipitating as an adherent scale, calcium is held in a soluble complex form.",
+          "The textbook therefore presents Calgon conditioning as a way of preventing both scale and sludge formation through complex formation rather than through precipitation."
         ],
-        "bullets": [
-          "\\(\\mathrm{Na_2[Na_4(PO_3)_6]\\rightleftharpoons 2Na^+ + [Na_4P_6O_{18}]^{2-}}\\)",
-          "\\(\\mathrm{2CaSO_4+[Na_4P_6O_{18}]^{2-}\\rightarrow [Ca_2P_6O_{18}]^{2-}+2Na_2SO_4}\\)"
+        "formulas": [
+          "\\(\\mathrm{Na_2[Na_4(PO_3)_6] \\rightleftharpoons 2Na^+ + [Na_4P_6O_{18}]^{2-}}\\)",
+          "\\(\\mathrm{2CaSO_4 + [Na_4P_6O_{18}]^{2-} \\rightarrow [Ca_2P_6O_{18}]^{2-} + 2Na_2SO_4}\\)"
         ],
         "source_refs": [
           "CHEM-TB-P0009"
@@ -517,16 +619,30 @@
     "title": "External treatment: ion-exchange demineralisation",
     "status": "core",
     "learn": [
-      "Ion-exchange treatment uses a cation exchanger followed by an anion exchanger.",
-      "The cation exchanger replaces dissolved cations with H⁺; the anion exchanger replaces dissolved anions with OH⁻.",
-      "The released H⁺ and OH⁻ combine to form water, giving deionised/demineralised water."
+      "Ion-exchange demineralisation uses synthetic resins containing exchangeable acidic or basic functional groups.",
+      "A cation exchanger removes dissolved cations and releases H⁺; an anion exchanger removes dissolved anions and releases OH⁻.",
+      "The H⁺ and OH⁻ released in the two stages combine to give water, producing deionised or demineralised water.",
+      "Exhausted resins are regenerated and reused."
     ],
     "sections": [
+      {
+        "heading": "Ion-exchange or deionisation process",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook describes ion exchange as a process using insoluble, cross-linked polymer resins that carry ionisable functional groups. The resins are insoluble in water but can exchange their mobile ions with ions present in the water passing through the bed.",
+          "Two types of exchanger are used in sequence. The cation exchanger is used in the hydrogen form and exchanges H⁺ for dissolved metal cations. The anion exchanger is used in the hydroxide form and exchanges OH⁻ for dissolved anions."
+        ],
+        "source_refs": [
+          "CHEM-TB-P0017",
+          "CHEM-TB-P0018"
+        ]
+      },
       {
         "heading": "Cation-exchange resin",
         "scope": "core",
         "paragraphs": [
-          "The textbook describes acidic cation-exchange resins carrying groups such as sulphonic acid. When hard water passes through the cation exchanger, Ca²⁺, Mg²⁺ and other cations are retained and equivalent H⁺ ions are released."
+          "Acidic cation-exchange resins are represented in the textbook by cross-linked aromatic polymers carrying acidic groups such as sulphonic-acid groups. In the hydrogen form, the exchangeable ion is H⁺.",
+          "When hard water passes through the cation-exchange column, Ca²⁺, Mg²⁺ and other cations are retained by the resin and an equivalent quantity of H⁺ is released into the water. The dissolved salts are therefore converted into their corresponding acids before the water enters the anion exchanger."
         ],
         "figures": [
           {
@@ -541,9 +657,9 @@
             "size": "large"
           }
         ],
-        "bullets": [
-          "\\(\\mathrm{2RH^+ + Ca^{2+}\\rightarrow R_2Ca^{2+}+2H^+}\\)",
-          "\\(\\mathrm{2RH^+ + Mg^{2+}\\rightarrow R_2Mg^{2+}+2H^+}\\)"
+        "formulas": [
+          "\\(\\mathrm{2RH + Ca^{2+} \\rightarrow R_2Ca + 2H^+}\\)",
+          "\\(\\mathrm{2RH + Mg^{2+} \\rightarrow R_2Mg + 2H^+}\\)"
         ],
         "source_refs": [
           "CHEM-TB-P0017",
@@ -554,7 +670,8 @@
         "heading": "Anion-exchange resin",
         "scope": "core",
         "paragraphs": [
-          "The anion exchanger contains basic functional groups and releases OH⁻ in exchange for anions such as chloride and sulphate."
+          "Basic anion-exchange resins contain basic nitrogen-containing functional groups. In the hydroxide form, OH⁻ is the exchangeable ion.",
+          "Water leaving the cation exchanger is passed through the anion-exchange column. Chloride, sulphate and other anions are retained on the resin and equivalent OH⁻ ions are released. The H⁺ produced in the first column and the OH⁻ produced in the second combine to form water."
         ],
         "figures": [
           {
@@ -569,20 +686,21 @@
             "size": "large"
           }
         ],
-        "bullets": [
-          "\\(\\mathrm{ROH^-+Cl^-\\rightarrow RCl^-+OH^-}\\)",
-          "\\(\\mathrm{2ROH^-+SO_4^{2-}\\rightarrow R_2SO_4^{2-}+2OH^-}\\)",
-          "\\(\\mathrm{H^++OH^-\\rightarrow H_2O}\\)"
+        "formulas": [
+          "\\(\\mathrm{ROH + Cl^- \\rightarrow RCl + OH^-}\\)",
+          "\\(\\mathrm{2ROH + SO_4^{2-} \\rightarrow R_2SO_4 + 2OH^-}\\)",
+          "\\(\\mathrm{H^+ + OH^- \\rightarrow H_2O}\\)"
         ],
         "source_refs": [
           "CHEM-TB-P0018"
         ]
       },
       {
-        "heading": "Demineralisation unit and regeneration",
+        "heading": "Demineralisation plant",
         "scope": "core",
         "paragraphs": [
-          "A demineralisation plant passes water through cation and anion exchangers in sequence. The exhausted cation exchanger is regenerated with dilute acid; the exhausted anion exchanger is regenerated with dilute alkali."
+          "In a two-bed demineralisation unit, raw water first enters the cation-exchange column and then the anion-exchange column. The sequence removes both positively charged and negatively charged dissolved ions.",
+          "The textbook notes that the resulting deionised water is essentially free from dissolved ionic salts. The process can produce very low residual hardness and is particularly useful where high-purity water is required."
         ],
         "figures": [
           {
@@ -595,7 +713,21 @@
               "type": "end"
             },
             "size": "large"
-          },
+          }
+        ],
+        "source_refs": [
+          "CHEM-TB-P0019"
+        ]
+      },
+      {
+        "heading": "Regeneration of exhausted ion exchangers",
+        "scope": "core",
+        "paragraphs": [
+          "After continued use, the cation exchanger becomes loaded with metal ions and loses its ability to exchange further H⁺. It is regenerated by passing a dilute mineral acid through the bed, which restores the resin to the hydrogen form and washes the displaced metal ions away.",
+          "The anion exchanger becomes loaded with anions and is regenerated with dilute sodium hydroxide, restoring the hydroxide form. After regeneration and washing, the resins can be returned to service.",
+          "The textbook also describes a mixed-bed arrangement in which cation and anion resins are mixed for final polishing. During regeneration the two resins are separated, regenerated individually and then remixed."
+        ],
+        "figures": [
           {
             "placeholder": true,
             "figure_number": "Fig. 9",
@@ -607,6 +739,18 @@
             },
             "size": "large"
           }
+        ],
+        "source_refs": [
+          "CHEM-TB-P0019",
+          "CHEM-TB-P0020"
+        ]
+      },
+      {
+        "heading": "Advantages and limitations noted in the textbook",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook emphasises the very high degree of softening obtainable by ion exchange and its suitability for producing demineralised water. It also notes that the equipment is compact and the process can be operated continuously with regeneration cycles.",
+          "At the same time, feed containing turbidity or suspended matter can foul or block the resin bed, so pretreatment may be required. The cost of the resin and chemicals for regeneration must also be considered."
         ],
         "source_refs": [
           "CHEM-TB-P0019",
@@ -642,23 +786,24 @@
     "title": "Potable water and municipal treatment",
     "status": "core",
     "learn": [
-      "Potable water is water safe for drinking.",
-      "The textbook sequence is removal of suspended impurities, sedimentation/coagulation, filtration, and removal of microorganisms.",
-      "Chlorination is the R25-required disinfection method, with break-point chlorination explicitly required."
+      "Municipal treatment converts raw natural water into water suitable for drinking by removing suspended matter, colloidal matter and microorganisms.",
+      "The textbook sequence includes screening, sedimentation, coagulation, filtration and disinfection.",
+      "Chlorination is explained in detail, including the chemistry of hypochlorous acid and the meaning of break-point chlorination."
     ],
     "sections": [
       {
-        "heading": "Potable-water specifications in the supplied textbook",
+        "heading": "Drinking or municipal water: requirements",
         "scope": "core",
         "paragraphs": [
-          "The textbook describes drinking water as clear and odourless, pleasant in taste, cool, and free from objectionable dissolved gases and harmful disease-producing microorganisms. It also states numerical limits for hardness, chlorides, fluorides and dissolved solids.",
-          "R25 specifically labels the specifications as WHO specifications. The supplied textbook page does not identify its list as a WHO table, so this page preserves the textbook specifications but does not relabel them as WHO values."
+          "The textbook defines drinking or potable water as water suitable for safe consumption. It should be clear and odourless, pleasant in taste, reasonably cool and free from disease-producing microorganisms and objectionable dissolved gases.",
+          "It also gives numerical limits for several constituents. R25 labels this syllabus point as WHO specifications; the supplied textbook presents the numerical values as drinking-water requirements without explicitly identifying the table as WHO. The values below therefore retain the textbook attribution rather than relabelling them."
         ],
         "tables": [
           {
+            "caption": "Drinking-water values stated in the supplied textbook",
             "headers": [
               "Property",
-              "Textbook specification"
+              "Textbook value"
             ],
             "rows": [
               [
@@ -685,10 +830,39 @@
         ]
       },
       {
-        "heading": "Screening, sedimentation and coagulation",
+        "heading": "Sequence of municipal-water treatment",
         "scope": "core",
         "paragraphs": [
-          "Screening removes larger suspended matter. Sedimentation allows heavier suspended particles to settle. When fine colloidal matter does not settle readily, coagulation is used to convert it into larger flocs that can settle."
+          "Natural water from rivers, lakes and other surface sources can contain suspended solids, colloidal particles, dissolved impurities and microorganisms. The textbook treats municipal purification as a sequence in which coarse and settleable matter are removed first, finer suspended and colloidal matter are removed next, and microorganisms are destroyed at the final disinfection stage.",
+          "The main stages corresponding to the R25 syllabus are screening, sedimentation, coagulation, filtration and chlorination."
+        ],
+        "source_refs": [
+          "CHEM-TB-P0020",
+          "CHEM-TB-P0021",
+          "CHEM-TB-P0022"
+        ]
+      },
+      {
+        "heading": "Screening and sedimentation",
+        "scope": "core",
+        "paragraphs": [
+          "Screening removes larger floating and suspended impurities by passing raw water through screens. This protects the later treatment units from coarse debris.",
+          "After screening, water is allowed to stand in sedimentation tanks. Heavier suspended particles settle under gravity. The textbook notes that sedimentation is much more effective for larger particles than for very fine colloidal material, which remains dispersed because of its small particle size and electrical charge."
+        ],
+        "source_refs": [
+          "CHEM-TB-P0020"
+        ]
+      },
+      {
+        "heading": "Coagulation",
+        "scope": "core",
+        "paragraphs": [
+          "When very fine suspended and colloidal particles do not settle readily, a coagulant is added. Coagulation destroys the stability of the colloidal dispersion and produces larger gelatinous flocs. These flocs entrap or adsorb fine impurities and can then settle more readily.",
+          "The textbook discusses alum and sodium aluminate as common coagulants. Alum forms a gelatinous aluminium-hydroxide precipitate in the presence of natural alkalinity; this floc sweeps suspended and colloidal matter from the water. Sodium aluminate can also produce aluminium hydroxide and is useful where suitable alkalinity conditions are maintained."
+        ],
+        "formulas": [
+          "\\(\\mathrm{Al_2(SO_4)_3 + 3Ca(HCO_3)_2 \\rightarrow 2Al(OH)_3\\downarrow + 3CaSO_4 + 6CO_2\\uparrow}\\)",
+          "\\(\\mathrm{NaAlO_2 + 2H_2O \\rightarrow Al(OH)_3\\downarrow + NaOH}\\)"
         ],
         "source_refs": [
           "CHEM-TB-P0020",
@@ -696,10 +870,11 @@
         ]
       },
       {
-        "heading": "Filtration",
+        "heading": "Filtration through a sand filter",
         "scope": "core",
         "paragraphs": [
-          "Filtration removes much of the remaining suspended matter and microorganisms by passing water through filter media. The textbook illustrates a sand filter."
+          "After sedimentation and coagulation, water is filtered to remove remaining fine suspended matter and a large proportion of microorganisms. The textbook illustrates a sand filter consisting of graded filtering material through which the water percolates.",
+          "As water passes through the filter bed, suspended particles are retained in the voids and on the surfaces of the filter media. Filtration therefore improves clarity and reduces the microbial load before the water reaches the disinfection stage."
         ],
         "figures": [
           {
@@ -715,18 +890,21 @@
           }
         ],
         "source_refs": [
-          "CHEM-TB-P0021"
+          "CHEM-TB-P0021",
+          "CHEM-TB-P0022"
         ]
       },
       {
         "heading": "Disinfection by chlorination",
         "scope": "core",
         "paragraphs": [
-          "Chlorination is described as a widely used disinfection method. Chlorine in water forms hypochlorous acid, and the textbook attributes the disinfecting action mainly to hypochlorous acid."
+          "The textbook describes chlorination as a widely used method for destroying disease-producing microorganisms. When chlorine is added to water, it hydrolyses to form hydrochloric acid and hypochlorous acid. Hypochlorous acid can dissociate further to hydrogen ion and hypochlorite ion.",
+          "The disinfecting action is attributed mainly to hypochlorous acid, which is a stronger germicide than the hypochlorite ion. The relative amounts of these species depend on pH, so the efficiency of chlorination changes with the pH of the water.",
+          "Chlorine must be mixed thoroughly with the water and allowed sufficient contact time. The textbook also discusses the importance of maintaining a small residual chlorine concentration after the chlorine demand of the water has been satisfied."
         ],
-        "bullets": [
-          "\\(\\mathrm{Cl_2+H_2O\\rightleftharpoons HCl+HOCl}\\)",
-          "\\(\\mathrm{HOCl\\rightleftharpoons H^+ + OCl^-}\\)"
+        "formulas": [
+          "\\(\\mathrm{Cl_2 + H_2O \\rightleftharpoons HCl + HOCl}\\)",
+          "\\(\\mathrm{HOCl \\rightleftharpoons H^+ + OCl^-}\\)"
         ],
         "figures": [
           {
@@ -750,7 +928,9 @@
         "heading": "Break-point chlorination",
         "scope": "core",
         "paragraphs": [
-          "When chlorine is added to water containing reducing substances and ammonia, the initial dose is consumed. As dosage increases, chloramines form and are then destroyed. Beyond the minimum residual point — the break point — further chlorine produces a free residual chlorine concentration. The textbook recommends dosage beyond the break point to provide effective disinfection."
+          "Raw water may contain reducing substances, organic matter and ammonia that consume added chlorine. At low chlorine dose, the added chlorine is first used up by these chlorine-demanding substances, so little or no free residual chlorine appears.",
+          "With further addition, chlorine reacts with ammonia and nitrogenous material to form chloramines. As the dose is increased still further, these combined-chlorine compounds are oxidised and destroyed, causing the residual chlorine concentration to fall.",
+          "A minimum is eventually reached. This point is the break point. Beyond it, further chlorine addition produces a steadily increasing free residual chlorine concentration. The textbook recommends chlorination beyond the break point so that the water receives effective disinfection and retains a protective free-chlorine residual."
         ],
         "figures": [
           {
@@ -771,10 +951,10 @@
         ]
       },
       {
-        "heading": "Overall municipal treatment flow",
+        "heading": "Overall drinking-water treatment plant",
         "scope": "core",
         "paragraphs": [
-          "The textbook summarises municipal-water treatment in a flow diagram. The figure placeholder is retained here for the later image pass."
+          "The chapter concludes the municipal-treatment discussion with a flow diagram that places the principal operations in sequence. The figure is retained as a placeholder for the image pass so that the final page can reproduce the textbook treatment flow visually as well as in text."
         ],
         "figures": [
           {
@@ -811,7 +991,7 @@
       }
     ],
     "cautions": [
-      "WHO-labelled specifications are not explicitly identified as WHO values in the supplied textbook page."
+      "R25 says WHO specifications; the supplied textbook gives drinking-water values but does not explicitly label them as WHO values."
     ],
     "self_checks": [
       {
@@ -832,21 +1012,23 @@
     ],
     "sections": [
       {
-        "heading": "R25 membrane-separation source gap",
+        "heading": "Membrane-separation topics required by R25 but absent from supplied textbook pages",
         "scope": "core",
         "paragraphs": [
-          "R25 requires Microfiltration (MF), Ultrafiltration (UF) and Nanofiltration (NF), together with their advantages and applications. These topics were not found in the supplied Unit-I textbook pages. No outside explanation has been inserted here without an approved source."
+          "R25 explicitly requires the types of membranes Microfiltration (MF), Ultrafiltration (UF) and Nanofiltration (NF), together with their advantages and applications. These three membrane classifications were not found in the supplied Jain & Jain Unit-I pages.",
+          "Because this page is being kept textbook-grounded, no outside description of MF, UF or NF has been inserted. They remain a clearly marked source gap until an approved source or class material is supplied."
         ],
         "source_refs": [
           "SYL-R25-CHEM-U1"
         ]
       },
       {
-        "heading": "Reverse osmosis",
+        "heading": "Desalination of brackish water: reverse osmosis",
         "scope": "core",
         "paragraphs": [
-          "The textbook describes reverse osmosis as a desalination method in which pressure greater than the osmotic pressure is applied on the concentrated/saline side of a semipermeable membrane. Water is thereby forced through the membrane in the reverse direction to normal osmosis, while dissolved salts are largely retained.",
-          "The textbook lists advantages including comparatively low energy demand, continuous operation, compact equipment, low operating cost and high reliability."
+          "Desalination means removal of dissolved salts from saline or brackish water. The textbook discusses several desalination methods, but for R25 the required method is reverse osmosis.",
+          "In ordinary osmosis, solvent tends to pass through a semipermeable membrane from the dilute side towards the more concentrated side. If a pressure greater than the osmotic pressure is applied to the concentrated saline side, the direction of solvent flow is reversed. Water is forced through the membrane while most dissolved salts are retained. This is reverse osmosis.",
+          "The textbook describes pressure being applied to saline water in a reverse-osmosis cell. The membrane separates the feed into a purified-water stream and a more concentrated reject stream. Suitable semipermeable membranes are therefore the key component of the process."
         ],
         "figures": [
           {
@@ -862,6 +1044,18 @@
           }
         ],
         "source_refs": [
+          "CHEM-TB-P0025",
+          "CHEM-TB-P0027"
+        ]
+      },
+      {
+        "heading": "Advantages of reverse osmosis listed in the textbook",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook lists several practical advantages of reverse osmosis: the process is comparatively simple, can operate continuously, requires relatively little space, and avoids the large thermal-energy requirement of evaporation-based desalination.",
+          "It also notes comparatively low operating cost, reliability and the ability to remove dissolved salts without a phase change of the water. These features make reverse osmosis suitable for producing usable water from brackish or saline feed."
+        ],
+        "source_refs": [
           "CHEM-TB-P0027"
         ]
       }
@@ -873,8 +1067,8 @@
     ],
     "book_refs": [
       {
-        "pages": "27",
-        "note": "Reverse osmosis"
+        "pages": "25–27",
+        "note": "Desalination and reverse osmosis"
       }
     ],
     "cautions": [
