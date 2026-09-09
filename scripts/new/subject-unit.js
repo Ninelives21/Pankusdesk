@@ -442,6 +442,11 @@ function renderSectionContent(section, context) {
 		html += figuresAt('paragraph', index);
 	}
 
+	const working = section.working ?? [];
+	if (working.length) {
+		html += `<div class="formula-list worked-solution-lines">${working.map(line => `<div class="formula-line">${formatText(line)}</div>`).join('')}</div>`;
+	}
+
 	const bullets = section.bullets ?? [];
 	let bulletBuffer = [];
 	const flushBullets = () => {
