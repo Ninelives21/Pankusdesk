@@ -271,7 +271,7 @@
               "Solution: Order of A = 3 × 4. Total number of rows in A = 3. ∴ Consider unit matrix I₃. Total number of columns in A = 4. ∴ Consider unit matrix I₄.",
               "\\[A_{3\\times4}=I_3AI_4\\]",
               "By \\(R_{13}\\),",
-              "PankusDesk source note: the printed question has −1 as the first entry of the third row, but the book’s first displayed step after R₁₃ uses +1. The remaining printed working is reproduced as printed, following that +1 entry.",
+              "Printed mismatch: the question has −1 as the first entry of the third row, while the first displayed step after R₁₃ uses +1. The subsequent working follows the +1 entry.",
               "\\[\\begin{bmatrix}1&1&1&2\\\\3&-3&1&2\\\\2&1&-3&-6\\end{bmatrix}=\\begin{bmatrix}0&0&1\\\\0&1&0\\\\1&0&0\\end{bmatrix}A\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&1&0\\\\0&0&0&1\\end{bmatrix}\\]",
               "By \\(R_2-3R_1,\\ R_3-2R_1\\),",
               "\\[\\begin{bmatrix}1&1&1&2\\\\0&-6&-2&-4\\\\0&-1&-5&-10\\end{bmatrix}=\\begin{bmatrix}0&0&1\\\\0&1&-3\\\\1&0&-2\\end{bmatrix}A\\begin{bmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&1&0\\\\0&0&0&1\\end{bmatrix}\\]",
@@ -857,14 +857,14 @@
         "note": "Gauss-Seidel method and Examples 28.22–28.23"
       }
     ],
-    "intro": "**PankusDesk context.** Gauss–Seidel is an iterative method for solving simultaneous linear equations. Instead of obtaining the solution through one finite elimination process, we begin with approximate values and repeatedly improve them. The unknowns are calculated one after another, and each newly calculated value is used immediately in the next calculation. This is the key idea behind the textbook’s statement that Gauss–Seidel is a modification of Jacobi’s method."
+    "intro": "Gauss–Seidel is an iterative method for solving simultaneous linear equations. Instead of obtaining the solution through one finite elimination process, we begin with approximate values and repeatedly improve them. The unknowns are calculated one after another, and each newly calculated value is used immediately in the next calculation. This immediate use of newly calculated values is the key difference from Jacobi iteration."
   },
   {
     "id": "u2-orthogonal-transformations",
     "unit": 2,
     "title": "Orthogonal transformations",
     "status": "supporting",
-    "intro": "Grewal introduces the orthogonal-transformation idea before eigenvalues. R25 later requires reduction of a quadratic form by an orthogonal transformation, so only that relevant part of §2.11 is retained here; the surrounding general linear-transformation material is omitted.",
+    "intro": "An orthogonal transformation preserves lengths and angles and is used later to reduce a quadratic form to canonical form.",
     "learn": [
       "For an orthogonal matrix, transpose and inverse are the same: \\(A^{-1}=A^{T}\\).",
       "A square matrix is orthogonal when \\(AA^{T}=A^{T}A=I\\).",
@@ -926,16 +926,16 @@
               "\\[ab=-4,\\qquad ac=2,\\qquad bc=-2.\\]",
               "These conditions give the two possible triples",
               "\\[(a,b,c)=(2,-2,1)\\quad\\text{or}\\quad(-2,2,-1),\\]",
-              "i.e. \\((a,b,c)=\\pm(2,-2,1)\\). Choosing the first branch, which is the branch used by the textbook's displayed inverse,",
+              "i.e. \\((a,b,c)=\\pm(2,-2,1)\\). Choosing the first branch \\((2,-2,1)\\),",
               "\\[A=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}.\\]",
               "For an orthogonal matrix, \\(A^{-1}=A^{T}\\). Here this chosen matrix is symmetric, hence",
               "\\[A^{-1}=A^{T}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}.\\]",
               "If the second sign branch is chosen, its transpose is the corresponding inverse in exactly the same way."
             ],
-            "final_answer": "\\((a,b,c)=\\pm(2,-2,1)\\). For the textbook branch \\((2,-2,1)\\), \\(A^{-1}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}\\).",
+            "final_answer": "\\((a,b,c)=\\pm(2,-2,1)\\). For the branch \\((2,-2,1)\\), \\(A^{-1}=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}\\).",
             "math_mismatch": {
               "label": "Math mismatch",
-              "message": "Grewal p. 59 prints \\(a=2,\\ b=2,\\ c=1\\) after using only the diagonal equations. Independent verification of the full orthogonality condition \\(AA^T=I\\) also requires \\(ab=-4,\\ ac=2,\\ bc=-2\\), giving \\((a,b,c)=\\pm(2,-2,1)\\). The textbook's displayed inverse is consistent with the branch \\((2,-2,1)\\), not with \\(b=2\\)."
+              "message": "Printed mismatch on Grewal p. 59: \\(a=2,\\ b=2,\\ c=1\\) is obtained from only the diagonal equations. The full orthogonality condition \\(AA^T=I\\) also requires \\(ab=-4,\\ ac=2,\\ bc=-2\\), giving \\((a,b,c)=\\pm(2,-2,1)\\). The displayed inverse is consistent with the branch \\((2,-2,1)\\), not with \\(b=2\\)."
             }
           }
         ],
@@ -1281,7 +1281,7 @@
     "unit": 2,
     "title": "Cayley-Hamilton Theorem (without proof)",
     "status": "core",
-    "intro": "R25 explicitly prescribes the Cayley–Hamilton theorem without proof. Grewal’s theorem statement is retained, but the proof printed across pp. 66–67 is intentionally not reproduced as syllabus theory.",
+    "intro": "The Cayley–Hamilton theorem is used without proof in this syllabus.",
     "learn": [
       "Every square matrix satisfies its own characteristic equation.",
       "Obtain the matrix identity by replacing \\(\\lambda\\) with \\(A\\) and the scalar constant with that constant times \\(I\\)."
@@ -1298,7 +1298,7 @@
         "book_refs": [
           {
             "pages": "66–67",
-            "note": "Theorem statement; proof omitted because R25 says without proof"
+            "note": "Theorem statement; proof omitted"
           }
         ],
         "paragraphs": [
@@ -1553,7 +1553,7 @@
     "unit": 2,
     "title": "Additional eigenvalue and eigenvector examples",
     "status": "supporting",
-    "intro": "Grewal places two further fully worked eigenvalue/eigenvector examples after the Cayley–Hamilton applications and before Problems 2.9. They are retained at that same point in the book sequence.",
+    "intro": "The following two worked examples reinforce eigenvalue and eigenvector calculations before the next problem set.",
     "learn": [
       "These examples repeat the complete workflow: characteristic equation, eigenvalues, then one eigenvector for each eigenvalue."
     ],
@@ -1784,7 +1784,7 @@
             "final_answer": "\\(P=\\begin{bmatrix}-1&1&1\\\\0&-1&2\\\\1&1&1\\end{bmatrix}\\), and \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\).",
             "math_mismatch": {
               "label": "Math mismatch",
-              "message": "Grewal p. 76 prints an incorrect product for \\(A^4\\). Independent multiplication (and the diagonalisation check \\(A^4=PD^4P^{-1}\\)) gives \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\). PankusDesk retains this verified result and flags the printed mismatch explicitly."
+              "message": "Printed mismatch on Grewal p. 76: the displayed product for \\(A^4\\) is incorrect. Independent multiplication and the diagonalisation check \\(A^4=PD^4P^{-1}\\) give \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\)."
             }
           }
         ],
@@ -2057,7 +2057,7 @@
               "\\[-l+m+n=0,\\qquad l+n=0.\\]",
               "Thus \\(l:m:n=1:2:-1\\), so",
               "\\[X_3=\\begin{bmatrix}1\\\\2\\\\-1\\end{bmatrix},\\qquad \\widehat X_3=\\begin{bmatrix}1/\\sqrt6\\\\2/\\sqrt6\\\\-1/\\sqrt6\\end{bmatrix}.\\]",
-              "Following the textbook's displayed column order \\((-2,1,1)\\), the modal matrix is",
+              "Using the column order \\((-2,1,1)\\), the modal matrix is",
               "\\[P=\\begin{bmatrix}-1/\\sqrt3&1/\\sqrt2&1/\\sqrt6\\\\1/\\sqrt3&0&2/\\sqrt6\\\\1/\\sqrt3&1/\\sqrt2&-1/\\sqrt6\\end{bmatrix}.\\]",
               "The vectors are orthonormal, so \\(P^{T}P=I\\). With this displayed column order,",
               "\\[P^{T}AP=\\operatorname{diag}(-2,1,1),\\]",
@@ -2098,7 +2098,7 @@
     "unit": 2,
     "title": "Cayley-Hamilton recap example",
     "status": "supporting",
-    "intro": "Grewal places one final Cayley–Hamilton simplification example after §2.18 and immediately before Problems 2.10. It is retained here at the same printed position in the Unit II flow.",
+    "intro": "The following worked example applies the Cayley–Hamilton theorem to a matrix expression before the next problem set.",
     "learn": [
       "A characteristic equation can reduce every higher power of the same matrix to a linear combination of lower powers."
     ],

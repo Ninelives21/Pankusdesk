@@ -151,7 +151,7 @@
       {
         "pages": "1–3",
         "images": "01.png–03.png",
-        "note": "Textbook Chapter 1 introduction; modern-life role; CSE relevance; generation, transmission, distribution and utilization"
+        "note": "Chapter 1 introduction; modern-life role; CSE relevance; generation, transmission, distribution and utilization"
       }
     ],
     "cautions": [],
@@ -598,7 +598,7 @@
                 ]
               },
               {
-                "heading": "8. What the textbook bullet points mean",
+                "heading": "8. What these points mean",
                 "bullets": [
                   "Steady DC: once an ideal inductor’s current has become constant, \\(di/dt=0\\), so its induced voltage is zero. An ideal inductor then behaves like a short circuit. This is the steady-state result, not the instant just after switching.",
                   "Current cannot jump instantaneously: an instantaneous finite jump in current would make \\(di/dt\\) infinite, which would require an infinite voltage in the ideal model.",
@@ -691,7 +691,7 @@
       {
         "pages": "5–8",
         "images": "05.png–08.png",
-        "note": "Textbook §1.3.1: resistance, inductance and capacitance, including derivations"
+        "note": "§1.3.1: resistance, inductance and capacitance, including derivations"
       }
     ],
     "cautions": [],
@@ -1156,7 +1156,7 @@
       {
         "pages": "8–13",
         "images": "08.png–13.png",
-        "note": "Textbook §1.3.2: ideal, dependent and practical sources"
+        "note": "§1.3.2: ideal, dependent and practical sources"
       }
     ],
     "cautions": [],
@@ -1228,7 +1228,7 @@
           "\\[\\dfrac{V_s}{R_s+R_L}R_L=I_s\\dfrac{R_p}{R_p+R_L}R_L\\]",
           "or",
           "\\[\\dfrac{V_s}{R_s+R_L}=I_s\\dfrac{R_p}{R_p+R_L}\\]",
-          "Using \\(I_sR_p=V_s\\) in the above equation, the textbook obtains",
+          "Using \\(I_sR_p=V_s\\) in the above equation, we obtain",
           "\\[R_s=R_p\\]",
           "and",
           "\\[V_s=I_sR_p\\]",
@@ -1407,11 +1407,11 @@
       {
         "pages": "13–16",
         "images": "13.png–16.png",
-        "note": "Textbook §1.4 source-transformation derivation and Exercises 1.4.1–1.4.2"
+        "note": "§1.4 source-transformation derivation and Exercises 1.4.1–1.4.2"
       }
     ],
     "cautions": [
-      "Supporting topic: source transformation is not separately named in the Unit I syllabus line, but it appears in the book immediately before Kirchhoff’s laws and is used in later worked examples."
+      "Source transformation is useful before applying Kirchhoff’s laws and in later worked examples."
     ],
     "self_checks": [
       {
@@ -1573,8 +1573,8 @@
               }
             ],
             "discrepancy": {
-              "label": "Textbook discrepancy",
-              "message": "Exercise 1.5.1 contains a source mismatch in the prescribed textbook. The question figure (Fig. 1.28) shows the right-hand source as 3 V, but the printed solution figure (Fig. 1.28(a)) redraws that same source as 8 V. The worked steps below are preserved as printed and therefore follow the 8 V solution figure."
+              "label": "Printed discrepancy",
+              "message": "Exercise 1.5.1 printed mismatch: Fig. 1.28 shows the right-hand source as 3 V, while Fig. 1.28(a) redraws the same source as 8 V. The displayed working follows the 8 V solution figure."
             },
             "paragraphs": [
               "Solution:",
@@ -1676,8 +1676,8 @@
             ],
             "final_answer": "\\(V_o=8\\ \\text{V}\\), \\(i_o=4\\ \\text{A}\\).",
             "discrepancy": {
-              "label": "Textbook discrepancy",
-              "message": "Exercise 1.5.3 contains an algebraic inconsistency in the printed solution. From \\(6-1.25(V_o/2)-V_o/8=0\\), the next equivalent line should be \\(6-0.75V_o=0\\), or equivalently \\(6-1.5(V_o/2)=0\\), not \\(6-1.375(V_o/2)=0\\). The textbook’s final values \\(V_o=8\\,\\text{V}\\) and \\(i_o=4\\,\\text{A}\\) are nevertheless correct."
+              "label": "Printed discrepancy",
+              "message": "Exercise 1.5.3 contains an algebraic inconsistency in the printed solution. From \\(6-1.25(V_o/2)-V_o/8=0\\), the next equivalent line should be \\(6-0.75V_o=0\\), or equivalently \\(6-1.5(V_o/2)=0\\), not \\(6-1.375(V_o/2)=0\\). The final values \\(V_o=8\\,\\text{V}\\) and \\(i_o=4\\,\\text{A}\\) are nevertheless correct."
             }
           },
           {
@@ -2068,7 +2068,7 @@
         "heading": "Exercise 1.5.14 — power absorbed",
         "scope": "core",
         "paragraphs": [
-          "Find the power absorbed by each element. Identify nodes \\(x\\) and \\(y\\). By observation, all elements are connected in parallel between \\(x\\) and \\(y\\). Therefore the resistor voltages are equal and the textbook writes",
+          "Find the power absorbed by each element. Identify nodes \\(x\\) and \\(y\\). By observation, all elements are connected in parallel between \\(x\\) and \\(y\\). Therefore the resistor voltages are equal:",
           "\\[1000i_1=4000i_2\\]",
           "\\[i_2=-\\dfrac{1000}{4000}i_1=-0.25i_1\\]",
           "Applying KCL at node \\(x\\),",
@@ -2076,7 +2076,7 @@
           "\\[3i_1+20\\times10^{-3}-(-0.25i_1)+i_1=0\\]",
           "\\[4.25i_1+20\\times10^{-3}=0\\]",
           "\\[i_1=-4.7\\ \\text{mA}\\]",
-          "Then the textbook prints",
+          "Then",
           "\\[i_2=-(0.25)(-4.7\\times10^{-3})=1.175\\ \\text{A}\\]",
           "For the 4-k\\(\\Omega\\) resistance, the subsequent power line uses milliampere scale:",
           "\\[P_{4\\mathrm{k}\\Omega}=i_2^2(4000)=(1.175\\times10^{-3})^2(4000)=5.5\\ \\text{mW}\\]",
@@ -2129,12 +2129,12 @@
       {
         "pages": "16–31",
         "images": "16.png–31.png",
-        "note": "Textbook §1.5: KCL, KVL and Exercises 1.5.1–1.5.14"
+        "note": "§1.5: KCL, KVL and Exercises 1.5.1–1.5.14"
       }
     ],
     "cautions": [
       "Exercise 1.5.3 is retained as printed. Its intermediate arithmetic and printed final value are not silently corrected here.",
-      "Exercise 1.5.10 is retained as printed, including the signs shown in the textbook elimination steps.",
+      "Exercise 1.5.10 uses the signs shown in the displayed elimination steps.",
       "Exercise 1.5.14 prints \\(i_2=1.175\\,\\text{A}\\), but its following power calculation uses \\(1.175\\times10^{-3}\\,\\text{A}\\). Both printed lines are preserved and this discrepancy is explicitly flagged rather than silently repaired."
     ],
     "self_checks": [
@@ -2166,7 +2166,7 @@
         "heading": "1.6 Problems on Series-Parallel Connections",
         "scope": "core",
         "paragraphs": [
-          "The textbook introduces this section through worked reductions. Each example identifies nodes, reduces obvious series/parallel groups, redraws the network and continues until the required equivalent resistance or source current is obtained."
+          "Worked reductions identify nodes, reduce obvious series/parallel groups, redraw the network and continue until the required equivalent resistance or source current is obtained."
         ],
         "source_refs": [
           "TB-P031"
@@ -2394,11 +2394,11 @@
       {
         "pages": "31–36",
         "images": "31.png–36.png",
-        "note": "Textbook §1.6: Exercises 1.6.1–1.6.3"
+        "note": "§1.6: Exercises 1.6.1–1.6.3"
       }
     ],
     "cautions": [
-      "Some intermediate arithmetic in these examples is presented graphically in the textbook reduction figures; those figure-labelled reductions have been written as LaTeX equations here so the calculation is not lost."
+      "Intermediate arithmetic shown in the reduction figures is also written as LaTeX equations so the calculation remains clear."
     ],
     "self_checks": [
       {
@@ -2474,11 +2474,11 @@
         "heading": "Delta → Star derivation",
         "scope": "core",
         "paragraphs": [
-          "To convert a delta network into an equivalent star network, equate the resistances measured between the same terminal pairs. The textbook obtains",
+          "To convert a delta network into an equivalent star network, equate the resistances measured between the same terminal pairs. This gives",
           "\\[R_a+R_b=\\dfrac{R_{ab}R_{bc}+R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\\tag{1}\\]",
           "\\[R_b+R_c=\\dfrac{R_{ab}R_{bc}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\\tag{2}\\]",
           "\\[R_a+R_c=\\dfrac{R_{ab}R_{ca}+R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\\tag{3}\\]",
-          "Subtracting equation (2) from equation (1), the textbook writes",
+          "Subtracting equation (2) from equation (1) gives",
           "\\[R_a-R_c=\\dfrac{R_{ab}R_{ca}-R_{bc}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\\tag{4}\\]",
           "Adding equations (3) and (4),",
           "\\[2R_a=\\dfrac{2R_{ab}R_{ca}}{R_{ab}+R_{bc}+R_{ca}}\\]",
@@ -2814,8 +2814,8 @@
               "The current \\(I\\) is given by \\[i=\\dfrac{20}{12.211}=1.638\\ \\text{A}\\]"
             ],
             "discrepancy": {
-              "label": "Textbook discrepancy",
-              "message": "Exercise 1.7.4: the textbook sentence identifies the lower delta as points \\(d,c,f\\), but Figure 1.49(a) labels that lower delta \\(d,e,f\\). The circuit drawing and the subsequent transformation use nodes \\(d,e,f\\)."
+              "label": "Printed discrepancy",
+              "message": "Exercise 1.7.4: the printed sentence identifies the lower delta as points \\(d,c,f\\), but Figure 1.49(a) labels that lower delta \\(d,e,f\\). The circuit drawing and the subsequent transformation use nodes \\(d,e,f\\)."
             },
             "final_answer": "\\(R_{eq}=12.211\\ \\Omega\\), \\(I=1.638\\ \\text{A}\\)."
           }
@@ -2872,7 +2872,7 @@
       {
         "pages": "36–48",
         "images": "36.png–48.png",
-        "note": "Textbook §1.7: derivations and Exercises 1.7.1–1.7.4"
+        "note": "§1.7: derivations and Exercises 1.7.1–1.7.4"
       }
     ],
     "cautions": [
@@ -2917,7 +2917,7 @@
           "The Superposition Theorem states that in any linear, bilateral network containing two or more sources, the response in any element is equal to the algebraic sum of the responses caused by the individual sources acting alone, while the other sources are non-operative.",
           "When considering the response of an individual source, the other ideal voltage sources are replaced by short circuits and the other ideal current sources are replaced by open circuits. This theorem is valid only for linear systems.",
           "A linear network is a network whose parameters do not change with voltage and current; its \\(V\\)-\\(I\\) characteristic is linear. A bilateral network is one whose characteristics or behaviour are the same irrespective of the direction of current through its elements. A simple resistor is an example of a bilateral element, whereas a diode is unilateral.",
-          "The textbook illustrates the theorem through Exercise 1.8.1."
+          "Exercise 1.8.1 illustrates the theorem."
         ],
         "source_refs": [
           "TB-P048"
@@ -3016,8 +3016,8 @@
               "Or \\(V_{AB}=-3.416\\ \\text{V}\\) or \\(V_{BA}=3.416\\ \\text{V}\\) (Since, the potential of B is higher than A, the net current flows from point B to A)."
             ],
             "discrepancy": {
-              "label": "Exercise 1.8.1 · Textbook discrepancy",
-              "message": "Exercise 1.8.1: in the 10 V-source step, the textbook says the 20 V source is replaced by an open circuit, while Figure 1.50(a) shows that branch short-circuited. In the 20 V-source step, the textbook says the 10 V source and 2 A source are replaced by an open circuit and a short circuit respectively, while Figure 1.50(c) shows the 10 V source short-circuited and the 2 A source open-circuited. The book also prints \\(20/13.66=1.464\\,\\text{A}\\), then states \\(i_3=-1.434\\,\\text{A}\\), yet the printed total \\(-1.708\\,\\text{A}\\) corresponds to using approximately \\(-1.464\\,\\text{A}\\). The portal preserves the textbook wording, figures and printed numerical values rather than silently correcting them."
+              "label": "Exercise 1.8.1 · Printed discrepancy",
+              "message": "Exercise 1.8.1: in the 10 V-source step, the printed solution says the 20 V source is replaced by an open circuit, while Figure 1.50(a) shows that branch short-circuited. In the 20 V-source step, the printed solution says the 10 V source and 2 A source are replaced by an open circuit and a short circuit respectively, while Figure 1.50(c) shows the 10 V source short-circuited and the 2 A source open-circuited. The calculation also prints \\(20/13.66=1.464\\,\\text{A}\\), then states \\(i_3=-1.434\\,\\text{A}\\), yet the printed total \\(-1.708\\,\\text{A}\\) corresponds to using approximately \\(-1.464\\,\\text{A}\\). The discrepancy is flagged here rather than silently corrected."
             },
             "final_answer": "\\(V_{AB}=-3.416\\ \\text{V}\\), or \\(V_{BA}=3.416\\ \\text{V}\\)."
           }
@@ -3057,7 +3057,7 @@
       {
         "pages": "48–50",
         "images": "48.png–50.png",
-        "note": "Textbook §1.8 and Exercise 1.8.1"
+        "note": "§1.8 and Exercise 1.8.1"
       }
     ],
     "cautions": [
@@ -3124,8 +3124,8 @@
         "heading": "Step 1 — finding Thevenin resistance \\(R_{th}\\)",
         "scope": "core",
         "paragraphs": [
-          "Remove the load resistance between terminals \\(a\\) and \\(b\\). Replace voltage sources with short circuits and current sources with open circuits. Find the resultant resistance between terminals \\(a\\) and \\(b\\); this is the Thevenin resistance \\(R_{th}\\). Figure 1.52 illustrates the procedure for the textbook’s generic circuit.",
-          "For that generic figure, the textbook prints the following expression on p. 52:",
+          "Remove the load resistance between terminals \\(a\\) and \\(b\\). Replace voltage sources with short circuits and current sources with open circuits. Find the resultant resistance between terminals \\(a\\) and \\(b\\); this is the Thevenin resistance \\(R_{th}\\). Figure 1.52 illustrates the procedure.",
+          "For that circuit, the equivalent resistance is:",
           "\\[R_{th}=\\dfrac{R_1R_2}{R_1+R_2}+R_2\\]"
         ],
         "figures": [
@@ -3158,7 +3158,7 @@
         "heading": "Step 2 — finding Thevenin voltage \\(V_{th}\\)",
         "scope": "core",
         "paragraphs": [
-          "Remove the load resistance between terminals \\(a\\) and \\(b\\). Obtain the open-circuit voltage between \\(a\\) and \\(b\\). This open-circuit voltage is the Thevenin voltage \\(V_{th}\\). For the generic circuit in Figure 1.53, the textbook writes",
+          "Remove the load resistance between terminals \\(a\\) and \\(b\\). Obtain the open-circuit voltage between \\(a\\) and \\(b\\). This open-circuit voltage is the Thevenin voltage \\(V_{th}\\). For the circuit in Figure 1.53:",
           "\\[I_1=\\dfrac{V_s}{R_1+R_2}\\]",
           "\\[V_0=V_{ab}=I_1R_3\\]",
           "\\[V_0=\\dfrac{V_s}{R_1+R_2}R_3\\]",
@@ -3485,17 +3485,17 @@
               "\\[x=\\dfrac{12}{4+6}=1.2\\ \\text{A}\\]",
               "\\[y=\\dfrac{12}{3+5}=1.5\\ \\text{A}\\]",
               "The voltage drop across the 4-ohm resistance is \\[1.2\\times4=4.8\\ \\text{V}\\]",
-              "The textbook next prints \\[1.5\\times3=4.5\\ \\text{V}\\]",
+              "Next, \\[1.5\\times3=4.5\\ \\text{V}\\]",
               "The potential of point \\(a\\) with respect to point \\(b\\) is \\[+4.5-4.8=-0.3\\ \\text{V}\\]",
-              "The textbook then uses the magnitude of the potential difference as the Thevenin voltage:",
+              "Using the magnitude of the potential difference as the Thevenin voltage:",
               "\\[V_{th}=V_{ab}=0.3\\ \\text{V}\\]",
               "The Thevenin equivalent circuit is shown in Figure 1.61(e).",
               "With the 2-ohm load reconnected, the current flowing through it is",
               "\\[I=\\dfrac{V_{th}}{R_{th}+R}=\\dfrac{0.3}{4.275+2}=\\dfrac{0.3}{6.275}=0.0478\\ \\text{A}\\]"
             ],
             "discrepancy": {
-              "label": "Example 1.9.3 · Textbook discrepancy",
-              "message": "The textbook line immediately after the 4-ohm drop states “voltage drop across 4 ohms resistance” but evaluates \\(1.5\\times3=4.5\\ \\text{V}\\), which is the drop across the 3-ohm resistor. It also first obtains the potential of \\(a\\) with respect to \\(b\\) as \\(-0.3\\ \\text{V}\\), then uses the magnitude \\(0.3\\ \\text{V}\\) as \\(V_{th}=V_{ab}\\). The portal preserves the printed calculation and final magnitude while flagging these inconsistencies."
+              "label": "Example 1.9.3 · Printed discrepancy",
+              "message": "The line immediately after the 4-ohm drop states “voltage drop across 4 ohms resistance” but evaluates \\(1.5\\times3=4.5\\ \\text{V}\\), which is the drop across the 3-ohm resistor. It also first obtains the potential of \\(a\\) with respect to \\(b\\) as \\(-0.3\\ \\text{V}\\), then uses the magnitude \\(0.3\\ \\text{V}\\) as \\(V_{th}=V_{ab}\\). These inconsistencies are flagged explicitly."
             },
             "final_answer": "\\(I=0.0478\\ \\text{A}\\) through the 2-ohm load."
           },
@@ -3662,7 +3662,7 @@
       {
         "pages": "51–62",
         "images": "51.png–62.png",
-        "note": "Textbook §1.9: theorem, four-step procedure and Examples 1.9.1–1.9.4"
+        "note": "§1.9: theorem, four-step procedure and Examples 1.9.1–1.9.4"
       }
     ],
     "cautions": [
@@ -4649,7 +4649,7 @@
         "heading": "Standard RL numerical workflow",
         "scope": "core",
         "paragraphs": [
-          "The book's worked problems repeatedly follow the same sequence: obtain ω from the supply frequency, calculate X_L, form Z, find |Z| and φ, calculate current, then calculate element voltages and powers. This is the safest order for exam problems because each result feeds the next."
+          "A reliable sequence for these worked problems is: obtain ω from the supply frequency, calculate X_L, form Z, find |Z| and φ, calculate current, then calculate element voltages and powers. Each result feeds the next."
         ],
         "source_refs": [
           "TB-P102",
@@ -5530,7 +5530,7 @@
       }
     ],
     "cautions": [
-      "R25 explicitly asks for the voltage/current relations in star and delta as derivations. Do not reduce these to formulas alone when preparing a six-mark answer.",
+      "For a six-mark answer, show the derivation of the star/delta voltage-current relations rather than giving formulas alone.",
       "Keep line and phase quantities distinct; using V_L directly as V_ph in a star problem or using I_L directly as I_ph in a delta problem gives the wrong result."
     ],
     "practice": [
@@ -5571,7 +5571,7 @@
     "status": "core",
     "learn": [
       "The prescribed text defines a transformer as a static machine that changes voltage level without changing frequency and transfers energy through magnetic coupling between circuits.",
-      "Its working principle is electromagnetic induction: AC in the primary produces alternating core flux that links the secondary and induces emf. The source explicitly states that a transformer does not work on DC because DC does not produce alternating flux.",
+      "Its working principle is electromagnetic induction: AC in the primary produces alternating core flux that links the secondary and induces emf. A transformer does not work on DC because DC does not produce alternating flux.",
       "The basic construction described includes primary and secondary copper windings, a laminated silicon-steel core, transformer oil for cooling/insulation, radiators and bushings."
     ],
     "formulas": [],
@@ -5597,8 +5597,8 @@
     "title": "Transformer EMF equation and transformation ratio",
     "status": "supporting",
     "learn": [
-      "For sinusoidal core flux, the textbook derives RMS induced emf proportional to frequency, turns and maximum flux.",
-      "With winding drops neglected, the voltage ratio follows the turns ratio; the book uses this to classify step-up, step-down and unit transformers."
+      "For sinusoidal core flux, RMS induced emf is proportional to frequency, turns and maximum flux.",
+      "With winding drops neglected, the voltage ratio follows the turns ratio. This gives the step-up, step-down and unit-transformer classifications."
     ],
     "formulas": [
       "E1 = 4.44 f N1 Φm",
@@ -5627,7 +5627,7 @@
     "title": "Practical transformer on no-load",
     "status": "supporting",
     "learn": [
-      "The practical transformer takes a small no-load current even with secondary open. The book resolves it into a magnetising component that establishes flux and an iron-loss component that supplies core losses.",
+      "A practical transformer takes a small no-load current even with the secondary open. It has a magnetising component that establishes flux and an iron-loss component that supplies core losses.",
       "This no-load model is one step toward the practical equivalent circuit."
     ],
     "formulas": [
@@ -5655,8 +5655,8 @@
     "title": "Ideal/practical transformer and equivalent circuit",
     "status": "core",
     "learn": [
-      "The ideal transformer assumptions in the source remove winding resistance, leakage, magnetic reluctance and losses; the practical transformer includes these effects.",
-      "The book develops an equivalent circuit using winding resistance/reactance and the shunt magnetising/iron-loss branch, and shows how impedances are referred across the turns ratio."
+      "An ideal transformer assumes zero winding resistance, zero leakage, negligible magnetic reluctance and no losses; a practical transformer includes these effects.",
+      "The transformer equivalent circuit uses winding resistance/reactance and a shunt magnetising/iron-loss branch; impedances can be referred across the turns ratio."
     ],
     "formulas": [],
     "method": [],
@@ -5683,7 +5683,7 @@
     "status": "core",
     "learn": [
       "The text relates the loaded secondary terminal voltage to the induced secondary emf and internal equivalent impedance drop.",
-      "Voltage regulation is presented as the change from no-load to loaded secondary voltage; the approximate drop uses resistance and reactance components, with a sign change for the leading-power-factor reactance term. The book notes that leading loads can produce negative regulation."
+      "Voltage regulation is the change from no-load to loaded secondary voltage; the approximate drop uses resistance and reactance components, with a sign change for the leading-power-factor reactance term. Leading loads can produce negative regulation."
     ],
     "formulas": [
       "As printed: %VR = (E2 − V2)/E2 × 100",
@@ -5706,7 +5706,7 @@
       }
     ],
     "cautions": [
-      "Use the textbook’s regulation denominator/convention when answering from this KB; do not silently replace it with another convention."
+      "Use the regulation convention defined in this section consistently in numerical problems."
     ]
   },
   {
@@ -5715,8 +5715,8 @@
     "title": "Transformer losses and efficiency",
     "status": "core",
     "learn": [
-      "The textbook divides losses into winding/copper loss and iron/core loss. Copper loss varies with load current squared; core loss is treated as approximately constant with load in the presented analysis.",
-      "Efficiency is output/input. The source states the maximum-efficiency condition as variable copper loss equal to constant loss."
+      "Transformer losses are divided into winding/copper loss and iron/core loss. Copper loss varies with load current squared; core loss is treated as approximately constant with load.",
+      "Efficiency is output/input. Maximum efficiency occurs when variable copper loss equals constant loss."
     ],
     "formulas": [
       "Copper loss ∝ I²",
@@ -5750,7 +5750,7 @@
     "title": "DC machine construction, generator principle and EMF equation",
     "status": "core",
     "learn": [
-      "The book introduces the DC machine as an electromechanical energy converter and describes the generator principle using electromagnetic induction and Fleming’s right-hand rule.",
+      "A DC machine is an electromechanical energy converter. The generator principle uses electromagnetic induction and Fleming’s right-hand rule.",
       "Constructional material covers the major magnetic/electrical parts before deriving the generated-emf equation and classifying generators by excitation."
     ],
     "formulas": [
@@ -5788,8 +5788,8 @@
     "title": "DC motor principle and back EMF",
     "status": "core",
     "learn": [
-      "The motor principle in the book is force on a current-carrying conductor in a magnetic field, with direction given by Fleming’s left-hand rule.",
-      "As the armature rotates it also generates an emf opposing the applied supply; the source calls this back emf and uses it in the motor voltage balance."
+      "The motor principle is the force on a current-carrying conductor in a magnetic field, with direction given by Fleming’s left-hand rule.",
+      "As the armature rotates it generates an emf opposing the applied supply. This back emf appears in the motor voltage balance."
     ],
     "formulas": [
       "Force relation shown: F = BIl",
@@ -5821,7 +5821,7 @@
     "title": "Load characteristics and speed control of separately excited DC motor",
     "status": "core",
     "learn": [
-      "For the separately excited motor, the textbook presents torque versus armature current, speed versus armature current and speed versus torque characteristics.",
+      "A separately excited motor has torque-versus-armature-current, speed-versus-armature-current and speed-versus-torque characteristics.",
       "With field flux treated as constant, developed torque is proportional to armature current. The speed relation shows control through armature voltage/resistance effects and field flux; the text presents field control and armature-voltage control."
     ],
     "formulas": [
@@ -5853,7 +5853,7 @@
     "title": "Swinburne’s test",
     "status": "core-gap-filled",
     "learn": [
-      "R25 explicitly requires Swinburne’s test, but the prescribed textbook chapter captured at pp.130–185 does not contain a Swinburne section. This subsection is therefore gap-filled, not inferred from the book.",
+      "Swinburne’s test is used to predetermine the efficiency of a DC shunt machine by measuring its constant losses at no load.",
       "The selected NPTEL Electrical Machines-I course identifies Lecture 89 as “Swinburne Test”. A tightly scoped institutional BEEE lab-manual cross-check describes it as a no-load test used to predetermine efficiency of a DC shunt machine as motor/generator.",
       "The cross-check procedure records supply voltage, no-load line current and field current at rated speed. From these, no-load armature current and armature copper loss are obtained; the remainder of no-load input is treated as constant loss for the efficiency calculation sequence."
     ],
@@ -5881,7 +5881,7 @@
     "title": "Three-phase induction motor types and construction",
     "status": "core",
     "learn": [
-      "The textbook separates the machine into stator and rotor and gives two rotor forms: phase-wound/slip-ring and squirrel-cage.",
+      "A three-phase induction motor has a stator and rotor. The rotor may be phase-wound/slip-ring or squirrel-cage type.",
       "The phase-wound rotor permits external rotor resistance through slip rings during starting; the squirrel-cage rotor uses bars shorted by end rings and is presented as the robust running construction."
     ],
     "formulas": [],
@@ -5906,7 +5906,7 @@
     "title": "Three-phase induction motor principle, slip and rotor frequency",
     "status": "core",
     "learn": [
-      "A balanced three-phase stator supply produces a rotating magnetic field. The textbook gives its synchronous speed from supply frequency and pole count.",
+      "A balanced three-phase stator supply produces a rotating magnetic field. Its synchronous speed depends on supply frequency and pole count.",
       "Relative motion between that rotating field and the rotor induces rotor emf/current; their interaction produces torque. The rotor cannot reach synchronous speed in motoring operation because zero relative speed would remove induced rotor emf/current and torque.",
       "The text defines slip from the difference between synchronous and rotor speed and gives rotor-current frequency proportional to slip."
     ],
@@ -5940,7 +5940,7 @@
     "title": "Torque-slip characteristics",
     "status": "core",
     "learn": [
-      "The textbook gives a torque-slip expression with rotor resistance in the numerator and resistance/reactance terms in the denominator.",
+      "The torque-slip expression contains rotor resistance in the numerator and resistance/reactance terms in the denominator.",
       "From that expression it describes the low-slip region where torque is approximately proportional to slip, the high-slip region where torque is approximately inversely proportional to slip, and the maximum-torque condition."
     ],
     "formulas": [
@@ -5970,7 +5970,7 @@
     "title": "Working principle of synchronous generator",
     "status": "core",
     "learn": [
-      "The textbook presents a synchronous generator as a machine converting mechanical input to AC electrical output by electromagnetic induction.",
+      "A synchronous generator converts mechanical input to AC electrical output by electromagnetic induction.",
       "Its field system is on the rotor and the armature is on the stator in the presented construction. Rotation of the rotor field produces alternating induced emf in the stator windings.",
       "The generated frequency is tied to rotor speed and pole count."
     ],
@@ -5999,14 +5999,14 @@
     "title": "Synchronous-generator voltage regulation by synchronous impedance method",
     "status": "core-gap-filled",
     "learn": [
-      "This R25 item is absent from the captured prescribed-book section and is filled only from the approved gap package.",
+      "Voltage regulation by the synchronous-impedance (EMF) method is included here as required by R25.",
       "The BIET lab source defines the open-circuit characteristic (OCC) as terminal/generated voltage versus field excitation at rated speed with no load, and the short-circuit characteristic (SCC) as armature current versus field excitation under symmetrical three-phase short circuit.",
-      "For a chosen excitation, the source obtains synchronous impedance from open-circuit voltage divided by short-circuit current. It then derives synchronous reactance using armature resistance and uses the resulting synchronous impedance in the EMF/synchronous-impedance regulation calculation. IARE independently labels the EMF method as the synchronous impedance method."
+      "For a chosen excitation, synchronous impedance is obtained from open-circuit voltage divided by short-circuit current. Synchronous reactance is then calculated using armature resistance, and the resulting synchronous impedance is used in the EMF/synchronous-impedance regulation calculation."
     ],
     "formulas": [
       "Zs = Voc/Isc (for the same field excitation, per the BIET source)",
       "Xs = √(Zs² − Ra²)",
-      "Regulation = (E0 − V)/V × 100 (conceptual EMF-method form; use the source’s phasor/sign convention for a numerical problem)"
+      "Regulation = (E0 − V)/V × 100 (conceptual EMF-method form; use the stated phasor/sign convention consistently)"
     ],
     "method": [],
     "source_refs": [
@@ -6027,7 +6027,7 @@
     "title": "Principle of operation of synchronous motor",
     "status": "core-gap-filled",
     "learn": [
-      "This R25 item is not covered in the captured textbook pages and is therefore gap-filled.",
+      "A synchronous motor operates at synchronous speed because its rotor magnetic field locks with the rotating stator field.",
       "The selected NPTEL material uses a DC-excited rotor to establish rotor magnetic poles and AC stator windings to establish a rotating magnetic field. Electromagnetic torque acts so that the rotor field follows the rotating stator field.",
       "In steady synchronous operation the rotor turns at the speed of the rotating field; that speed relationship is why it is called a synchronous machine."
     ],
@@ -6049,7 +6049,7 @@
     "title": "Stepper motor principle and applications",
     "status": "core",
     "learn": [
-      "The textbook describes a stepper motor as rotating in discrete equal angular steps rather than continuously. Its variable-reluctance example energises stator phase groups in sequence so rotor teeth repeatedly align with the minimum-reluctance position.",
+      "A stepper motor rotates in discrete equal angular steps rather than continuously. In a variable-reluctance stepper motor, stator phase groups are energised in sequence so rotor teeth repeatedly align with the minimum-reluctance position.",
       "In the worked description, sequential excitation moves the rotor through 30° steps; the exact example is an illustration, not a universal step angle.",
       "Applications listed include scanners, printers/3D printers, plotters, slot machines, CD drives, intelligent lighting, camera lenses, CNC machines, laser/optics actuators and fluid-control systems."
     ],
@@ -6075,7 +6075,7 @@
     "status": "core",
     "learn": [
       "The prescribed text traces a domestic supply through service connection/protection, energy meter, main MCB, distribution board and individual subcircuits protected by MCBs.",
-      "It also states that metallic covers/enclosures in the installation are connected to earth. Use the physical-book page for the exact diagram/layout."
+      "Metallic covers and enclosures in the installation are connected to earth."
     ],
     "formulas": [],
     "method": [],
@@ -6098,8 +6098,8 @@
     "title": "Types of wiring",
     "status": "core",
     "learn": [
-      "The book surveys cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring, including surface and concealed conduit forms.",
-      "These are retained because “Types of Wiring” is an explicit R25 item; detailed advantages/disadvantages should be answered from the specific physical-book pages."
+      "Common wiring systems include cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring, including surface and concealed conduit forms.",
+      "The main wiring types are described below with their construction and typical use."
     ],
     "formulas": [],
     "method": [],
@@ -6124,7 +6124,7 @@
     "title": "Switch Fuse Unit (SFU)",
     "status": "core",
     "learn": [
-      "The secure statement from the textbook is that an SFU combines a switch and fuse arrangement in a compact metal enclosure for switching/protection.",
+      "An SFU combines a switch and fuse arrangement in a compact metal enclosure for switching and protection.",
       "The remainder of the paragraph under the SFU heading on p.206 describes a current-balance/search-coil trip mechanism that resembles earth-leakage protection; the KB does not silently relabel that text. ELCB is sourced separately below."
     ],
     "formulas": [],
@@ -6140,7 +6140,7 @@
       }
     ],
     "cautions": [
-      "Source anomaly: textbook p.206 heading is SFU but subsequent mechanism is ELCB-like. Do not use that ambiguous passage as authoritative ELCB content."
+      "An ELCB disconnects the supply when earth-leakage conditions indicate a shock or insulation-failure hazard."
     ]
   },
   {
@@ -6149,8 +6149,8 @@
     "title": "MCB and MCCB",
     "status": "core",
     "learn": [
-      "The textbook presents an MCB as an automatically operating protective switch for abnormal overcurrent/short-circuit conditions and notes that it can be reset rather than replaced like a fuse.",
-      "MCCB is presented for higher current/fault capacity, with overload/short-circuit protection and adjustable trip settings in the source comparison."
+      "An MCB is an automatically operating protective switch for abnormal overcurrent or short-circuit conditions and can be reset rather than replaced like a fuse.",
+      "An MCCB is used for higher current and fault capacity, with overload/short-circuit protection and adjustable trip settings."
     ],
     "formulas": [],
     "method": [],
@@ -6173,7 +6173,7 @@
     "title": "ELCB",
     "status": "core-gap-filled",
     "learn": [
-      "R25 explicitly names ELCB, but the textbook’s p.206 treatment is internally ambiguous, so the KB uses the approved government gap sources instead of guessing from the mislabeled paragraph.",
+      "An ELCB disconnects the supply when earth-leakage conditions indicate a shock or insulation-failure hazard.",
       "HESCOM identifies an Earth Leakage Circuit Breaker as earth-leakage protection that automatically disconnects the supply when leakage occurs, protecting the user from electrical hazard.",
       "The DGT curriculum independently includes single-phase ELCB among protection devices and includes connecting/testing an ELCB for leakage; the CEA source is retained as a regulatory cross-check."
     ],
@@ -6187,7 +6187,7 @@
     ],
     "book_refs": [],
     "cautions": [
-      "Do not silently replace “ELCB” with “RCCB” terminology unless a supplied source explicitly makes that equivalence."
+      "Do not treat ELCB and RCCB as interchangeable terms without establishing that equivalence."
     ]
   },
   {
@@ -6196,9 +6196,9 @@
     "title": "Need for earthing; pipe and plate earthing",
     "status": "core",
     "learn": [
-      "The textbook presents earthing as connecting exposed metallic parts to earth so leakage/fault current has a low-resistance path, reducing shock/fire hazard.",
-      "The captured pages describe rod, strip, pipe and plate methods. R25 specifically requires pipe and plate earthing; rod and strip are retained only as supplied supporting content.",
-      "The pipe/plate descriptions include buried electrodes and moisture/charcoal/salt treatment in the textbook. Exact dimensions should be read from the physical book rather than reconstructed from OCR."
+      "Earthing connects exposed metallic parts to earth so leakage or fault current has a low-resistance path, reducing shock and fire hazard.",
+      "Earthing methods include rod, strip, pipe and plate methods; pipe and plate earthing are the main focus here.",
+      "Pipe and plate earthing use buried electrodes, with the surrounding soil kept suitably conductive using moisture and conventional backfill treatment."
     ],
     "formulas": [],
     "method": [],
@@ -6222,8 +6222,8 @@
     "title": "Classification of batteries",
     "status": "core",
     "learn": [
-      "The textbook classifies batteries into primary (non-rechargeable) and secondary (rechargeable) categories and gives examples for each.",
-      "Lead-acid appears as a secondary/rechargeable battery in the captured material."
+      "Batteries are classified into primary (non-rechargeable) and secondary (rechargeable) categories, with examples of each.",
+      "A lead-acid battery is a secondary, rechargeable battery."
     ],
     "formulas": [],
     "method": [],
@@ -6245,8 +6245,8 @@
     "title": "Lead-acid battery: construction, working and electrical characteristics",
     "status": "core",
     "learn": [
-      "The captured text identifies lead dioxide as the positive active material, sponge lead as the negative active material and diluted sulphuric acid as electrolyte.",
-      "During discharge the overall reaction printed in the source converts the active materials and sulphuric acid to lead sulphate and water; charging reverses the process.",
+      "Lead dioxide is the positive active material, sponge lead is the negative active material, and diluted sulphuric acid is the electrolyte.",
+      "During discharge, the overall reaction converts the active materials and sulphuric acid to lead sulphate and water; charging reverses the process.",
       "The electrical-characteristics section covers cell voltage, ampere-hour capacity and efficiency, and notes the effect of discharge rate on usable capacity/life."
     ],
     "formulas": [
@@ -6269,7 +6269,7 @@
       }
     ],
     "cautions": [
-      "When quoting exact cell-voltage limits/percentages, consult the physical page because those are textbook-specific values."
+      "Use the stated cell-voltage limits and percentages consistently in numerical or descriptive answers."
     ]
   },
   {
@@ -6278,7 +6278,7 @@
     "title": "Energy-use calculations and electrical safety",
     "status": "supporting",
     "learn": [
-      "Although not separately named in the R25 Unit-V line, the supplied chapter includes energy-consumption examples and electrical-safety precautions. They are preserved as supporting textbook material, not promoted to additional syllabus atoms.",
+      "Energy-consumption examples and electrical-safety precautions are included as supporting material.",
       "The energy section uses electrical energy = power × time and identifies one billing unit as one kilowatt-hour."
     ],
     "formulas": [
@@ -6306,9 +6306,9 @@
     "title": "UPS block diagram and operation",
     "status": "core",
     "learn": [
-      "Textbook p.243 defines the UPS as providing continuity of power for critical loads and gives a block diagram: AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.",
+      "A UPS provides continuity of power for critical loads. Its block diagram is: AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.",
       "Under normal conditions the rectifier supplies DC to the inverter and charges the battery. When the AC supply fails, the inverter converts battery DC to AC and supplies the load after filtering.",
-      "The source also states that the UPS improves supply quality and regulates output-load voltage against input fluctuations."
+      "A UPS improves supply quality and regulates output-load voltage against input fluctuations."
     ],
     "formulas": [],
     "method": [],

@@ -180,8 +180,8 @@ function renderUnitHero(context, unitTopics) {
 				<p class="unit-subtitle">${escapeHtml(unitMeta.title)}</p>
 				<p class="unit-description">${isReady
 					? (isDraft
-						? 'Textbook-led theory is visible for review. Explicit source gaps remain marked and figures are still placeholders.'
-						: 'Textbook-led theory for the unit, kept separate from Priyanka’s dated class notes and the question bank.')
+						? 'The theory is visible for review and figures are still placeholders.'
+						: 'Consolidated theory for the unit, kept separate from Priyanka’s dated class notes and the question bank.')
 					: 'This destination is in place now; the full consolidated study notes will be populated here next.'}</p>
 			</div>
 
@@ -200,7 +200,7 @@ function renderDraftNotice(context) {
 	return `
 		<section class="unit-draft-notice section" role="note" aria-label="Draft unit status">
 			<strong>Unit under construction</strong>
-			<p>The textbook-backed text is available for review now. Figure placeholders are intentional, and syllabus items that are not supported by the supplied textbook remain explicitly marked as source gaps.</p>
+			<p>The text is available for review now. Figure placeholders are intentional while the image pass is completed.</p>
 		</section>
 	`;
 }
@@ -283,7 +283,7 @@ function renderEndOfUnitPractice(context) {
 			<div>
 				<div class="note-kicker">Finished Unit ${escapeHtml(context.unitLabel)}?</div>
 				<h2>Put the unit into practice</h2>
-				<p>Move from the notes into source-backed practice while the ideas are still fresh.</p>
+				<p>Move from the notes into practice questions while the ideas are still fresh.</p>
 			</div>
 			<div class="end-unit-actions">
 				<a class="end-unit-primary" href="${escapeHtml(primary.href)}">Practice ${escapeHtml(primary.label)} →</a>
@@ -480,7 +480,7 @@ function renderSectionContent(section, context) {
 		.map(renderTextbookFigureRow)
 		.join('');
 
-	// Keep prescribed-textbook problem sets at the same logical point as the book.
+	// Keep problem sets at the intended logical point in the unit flow.
 	html += renderPractice(section.practice ?? [], context);
 
 	return html;

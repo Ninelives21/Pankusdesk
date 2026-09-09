@@ -824,7 +824,7 @@
       }
     ],
     "cautions": [
-      "Source transformation is supplied in the prescribed chapter and supplementary PDF, but it is not separately named in the R25 Unit-I syllabus line; it is therefore kept as Supporting material."
+      "Source transformation converts between equivalent voltage-source and current-source forms and is useful in circuit reduction."
     ],
     "practice": [
       {
@@ -1702,7 +1702,7 @@
       },
       {
         "question": "For the supplied resistor-network check with V₀ = 8 V and R = 16 kΩ, what Thevenin equivalent is obtained?",
-        "answer": "The source material gives V_th = V₀/4 = 2 V and R_th = 5R/8 = 10 kΩ, so the equivalent is a 2 V source in series with 10 kΩ."
+        "answer": "Here, V_th = V₀/4 = 2 V and R_th = 5R/8 = 10 kΩ, so the equivalent is a 2 V source in series with 10 kΩ."
       },
       {
         "question": "What must you do when finding R_th if a controlled source is present?",
@@ -1716,8 +1716,8 @@
     "title": "Sinusoidal waveforms and basic quantities",
     "status": "core",
     "learn": [
-      "The textbook represents a sinusoid by its maximum value, angular frequency and phase. One cycle corresponds to 2π radians; frequency and period are reciprocals.",
-      "The book notes practical advantages of sinusoidal quantities and the lecture corpus separately motivates why sinusoids are useful for measurement and linear steady-state response."
+      "A sinusoid is represented by its maximum value, angular frequency and phase. One cycle corresponds to 2π radians; frequency and period are reciprocals.",
+      "Sinusoidal quantities are especially useful for measurement and linear steady-state analysis."
     ],
     "formulas": [
       "T = 1/f",
@@ -1750,9 +1750,9 @@
     "title": "Average, RMS, form factor and peak factor",
     "status": "core",
     "learn": [
-      "For a symmetrical sinusoid, the book takes average value over a half-cycle because the full-cycle algebraic average is zero.",
+      "For a symmetrical sinusoid, average value is taken over a half-cycle because the full-cycle algebraic average is zero.",
       "RMS/effective value is introduced through equal heating in a resistor for DC and AC.",
-      "For a sine wave, the textbook obtains average = 0.637 of peak and RMS = 0.707 of peak; form factor is RMS/average and peak factor is peak/RMS."
+      "For a sine wave, average value is 0.637 of peak and RMS value is 0.707 of peak; form factor is RMS/average and peak factor is peak/RMS."
     ],
     "formulas": [
       "Sine half-cycle average = 0.637·peak",
@@ -1787,7 +1787,7 @@
     "title": "Phasor representation",
     "status": "core",
     "learn": [
-      "The book and lectures represent same-frequency sinusoids by phasors carrying magnitude and phase. Phase lead/lag is read from the relative angular displacement.",
+      "Same-frequency sinusoids can be represented by phasors carrying magnitude and phase. Phase lead/lag is read from the relative angular displacement.",
       "The Unit-II lecture set develops sinusoidal steady-state analysis further through phasors and complex exponentials; this deeper method is retained as lecture enrichment rather than being allowed to expand the R25 syllabus."
     ],
     "formulas": [],
@@ -1843,7 +1843,7 @@
     "title": "Single-phase AC through pure L",
     "status": "core",
     "learn": [
-      "For an ideal inductor with zero internal resistance, the supplied book derives a current that lags the applied voltage by 90°. The opposition to AC is expressed as inductive reactance."
+      "For an ideal inductor with zero internal resistance, current lags the applied voltage by 90°. The opposition to AC is expressed as inductive reactance."
     ],
     "formulas": [
       "XL = ωL = 2πfL",
@@ -1870,7 +1870,7 @@
     "title": "Single-phase AC through pure C",
     "status": "core",
     "learn": [
-      "For an ideal capacitor, the textbook derives current leading voltage by 90°. Capacitive opposition is represented by capacitive reactance."
+      "For an ideal capacitor, current leads voltage by 90°. Capacitive opposition is represented by capacitive reactance."
     ],
     "formulas": [
       "XC = 1/(ωC) = 1/(2πfC)",
@@ -1896,8 +1896,8 @@
     "title": "Series RL circuit",
     "status": "core",
     "learn": [
-      "For series R-L, the book combines resistance and inductive reactance as a complex impedance. Current lags supply voltage by the impedance angle.",
-      "The source separates active power, reactive power and apparent power, with lagging power factor for the inductive case."
+      "For a series R-L circuit, resistance and inductive reactance combine as a complex impedance. Current lags supply voltage by the impedance angle.",
+      "Power is separated into active, reactive and apparent components, with lagging power factor for the inductive case."
     ],
     "formulas": [
       "Z = R + jXL",
@@ -1928,14 +1928,14 @@
     "title": "Series RC circuit",
     "status": "core",
     "learn": [
-      "For series R-C, the source combines R with negative capacitive reactance. Current leads the supply voltage and the circuit has a leading power factor.",
-      "The book uses the same P/Q/S framework, with capacitive reactive power carrying the opposite sign convention to the inductive case."
+      "For a series R-C circuit, R combines with negative capacitive reactance. Current leads the supply voltage and the circuit has a leading power factor.",
+      "The same P/Q/S framework applies, with capacitive reactive power carrying the opposite sign convention to the inductive case."
     ],
     "formulas": [
       "Z = R − jXC",
       "|Z| = √(R²+XC²)",
       "P = VI cosφ",
-      "Q = VI sinφ (capacitive sign as used in the source treatment)",
+      "Q = VI sinφ (with the capacitive sign convention)",
       "S = P − jQ for the capacitive case as presented"
     ],
     "method": [],
@@ -1958,8 +1958,8 @@
     "title": "Series RLC circuit",
     "status": "core",
     "learn": [
-      "For a series RLC circuit the net reactance is XL − XC, so the source treats the circuit as inductive, capacitive or purely resistive depending on their relative values.",
-      "The book also includes the resonance condition XL = XC. Resonance is retained as supporting textbook content because R25 names RLC analysis but does not separately name resonance."
+      "For a series RLC circuit the net reactance is XL − XC, so the circuit is inductive, capacitive or purely resistive depending on their relative values.",
+      "At resonance, XL = XC and the series RLC circuit is purely resistive."
     ],
     "formulas": [
       "Z = R + j(XL − XC)",
@@ -2001,7 +2001,7 @@
     "title": "Real, reactive and apparent power; power factor",
     "status": "core",
     "learn": [
-      "The textbook defines power factor as the cosine of the phase angle between voltage and current.",
+      "Power factor is the cosine of the phase angle between voltage and current.",
       "For sinusoidal steady state it distinguishes active/real power P, reactive power Q and apparent power S. The RL and RC sections show the lagging/leading distinction."
     ],
     "formulas": [
@@ -2033,7 +2033,7 @@
     "title": "Three-phase balanced circuits",
     "status": "core",
     "learn": [
-      "A balanced three-phase system in the book has three quantities of equal magnitude and frequency separated by 120°. The book also introduces phase sequence.",
+      "A balanced three-phase system has three quantities of equal magnitude and frequency separated by 120°. Their order is described by the phase sequence.",
       "The text then derives line/phase relationships for star and delta connections and gives total three-phase P, Q and S."
     ],
     "formulas": [
@@ -2077,7 +2077,7 @@
     "status": "core",
     "learn": [
       "The prescribed text defines a transformer as a static machine that changes voltage level without changing frequency and transfers energy through magnetic coupling between circuits.",
-      "Its working principle is electromagnetic induction: AC in the primary produces alternating core flux that links the secondary and induces emf. The source explicitly states that a transformer does not work on DC because DC does not produce alternating flux.",
+      "Its working principle is electromagnetic induction: AC in the primary produces alternating core flux that links the secondary and induces emf. A transformer does not work on DC because DC does not produce alternating flux.",
       "The basic construction described includes primary and secondary copper windings, a laminated silicon-steel core, transformer oil for cooling/insulation, radiators and bushings."
     ],
     "formulas": [],
@@ -2103,8 +2103,8 @@
     "title": "Transformer EMF equation and transformation ratio",
     "status": "supporting",
     "learn": [
-      "For sinusoidal core flux, the textbook derives RMS induced emf proportional to frequency, turns and maximum flux.",
-      "With winding drops neglected, the voltage ratio follows the turns ratio; the book uses this to classify step-up, step-down and unit transformers."
+      "For sinusoidal core flux, RMS induced emf is proportional to frequency, turns and maximum flux.",
+      "With winding drops neglected, the voltage ratio follows the turns ratio. This gives the step-up, step-down and unit-transformer classifications."
     ],
     "formulas": [
       "E1 = 4.44 f N1 Φm",
@@ -2133,7 +2133,7 @@
     "title": "Practical transformer on no-load",
     "status": "supporting",
     "learn": [
-      "The practical transformer takes a small no-load current even with secondary open. The book resolves it into a magnetising component that establishes flux and an iron-loss component that supplies core losses.",
+      "A practical transformer takes a small no-load current even with the secondary open. It has a magnetising component that establishes flux and an iron-loss component that supplies core losses.",
       "This no-load model is one step toward the practical equivalent circuit."
     ],
     "formulas": [
@@ -2161,8 +2161,8 @@
     "title": "Ideal/practical transformer and equivalent circuit",
     "status": "core",
     "learn": [
-      "The ideal transformer assumptions in the source remove winding resistance, leakage, magnetic reluctance and losses; the practical transformer includes these effects.",
-      "The book develops an equivalent circuit using winding resistance/reactance and the shunt magnetising/iron-loss branch, and shows how impedances are referred across the turns ratio."
+      "An ideal transformer assumes zero winding resistance, zero leakage, negligible magnetic reluctance and no losses; a practical transformer includes these effects.",
+      "The transformer equivalent circuit uses winding resistance/reactance and a shunt magnetising/iron-loss branch; impedances can be referred across the turns ratio."
     ],
     "formulas": [],
     "method": [],
@@ -2189,7 +2189,7 @@
     "status": "core",
     "learn": [
       "The text relates the loaded secondary terminal voltage to the induced secondary emf and internal equivalent impedance drop.",
-      "Voltage regulation is presented as the change from no-load to loaded secondary voltage; the approximate drop uses resistance and reactance components, with a sign change for the leading-power-factor reactance term. The book notes that leading loads can produce negative regulation."
+      "Voltage regulation is the change from no-load to loaded secondary voltage; the approximate drop uses resistance and reactance components, with a sign change for the leading-power-factor reactance term. Leading loads can produce negative regulation."
     ],
     "formulas": [
       "As printed: %VR = (E2 − V2)/E2 × 100",
@@ -2212,7 +2212,7 @@
       }
     ],
     "cautions": [
-      "Use the textbook’s regulation denominator/convention when answering from this KB; do not silently replace it with another convention."
+      "Use the regulation convention defined in this section consistently in numerical problems."
     ]
   },
   {
@@ -2221,8 +2221,8 @@
     "title": "Transformer losses and efficiency",
     "status": "core",
     "learn": [
-      "The textbook divides losses into winding/copper loss and iron/core loss. Copper loss varies with load current squared; core loss is treated as approximately constant with load in the presented analysis.",
-      "Efficiency is output/input. The source states the maximum-efficiency condition as variable copper loss equal to constant loss."
+      "Transformer losses are divided into winding/copper loss and iron/core loss. Copper loss varies with load current squared; core loss is treated as approximately constant with load.",
+      "Efficiency is output/input. Maximum efficiency occurs when variable copper loss equals constant loss."
     ],
     "formulas": [
       "Copper loss ∝ I²",
@@ -2256,7 +2256,7 @@
     "title": "DC machine construction, generator principle and EMF equation",
     "status": "core",
     "learn": [
-      "The book introduces the DC machine as an electromechanical energy converter and describes the generator principle using electromagnetic induction and Fleming’s right-hand rule.",
+      "A DC machine is an electromechanical energy converter. The generator principle uses electromagnetic induction and Fleming’s right-hand rule.",
       "Constructional material covers the major magnetic/electrical parts before deriving the generated-emf equation and classifying generators by excitation."
     ],
     "formulas": [
@@ -2294,8 +2294,8 @@
     "title": "DC motor principle and back EMF",
     "status": "core",
     "learn": [
-      "The motor principle in the book is force on a current-carrying conductor in a magnetic field, with direction given by Fleming’s left-hand rule.",
-      "As the armature rotates it also generates an emf opposing the applied supply; the source calls this back emf and uses it in the motor voltage balance."
+      "The motor principle is the force on a current-carrying conductor in a magnetic field, with direction given by Fleming’s left-hand rule.",
+      "As the armature rotates it generates an emf opposing the applied supply. This back emf appears in the motor voltage balance."
     ],
     "formulas": [
       "Force relation shown: F = BIl",
@@ -2327,7 +2327,7 @@
     "title": "Load characteristics and speed control of separately excited DC motor",
     "status": "core",
     "learn": [
-      "For the separately excited motor, the textbook presents torque versus armature current, speed versus armature current and speed versus torque characteristics.",
+      "A separately excited motor has torque-versus-armature-current, speed-versus-armature-current and speed-versus-torque characteristics.",
       "With field flux treated as constant, developed torque is proportional to armature current. The speed relation shows control through armature voltage/resistance effects and field flux; the text presents field control and armature-voltage control."
     ],
     "formulas": [
@@ -2359,7 +2359,7 @@
     "title": "Swinburne’s test",
     "status": "core-gap-filled",
     "learn": [
-      "R25 explicitly requires Swinburne’s test, but the prescribed textbook chapter captured at pp.130–185 does not contain a Swinburne section. This subsection is therefore gap-filled, not inferred from the book.",
+      "Swinburne’s test is used to predetermine the efficiency of a DC shunt machine by measuring its constant losses at no load.",
       "The selected NPTEL Electrical Machines-I course identifies Lecture 89 as “Swinburne Test”. A tightly scoped institutional BEEE lab-manual cross-check describes it as a no-load test used to predetermine efficiency of a DC shunt machine as motor/generator.",
       "The cross-check procedure records supply voltage, no-load line current and field current at rated speed. From these, no-load armature current and armature copper loss are obtained; the remainder of no-load input is treated as constant loss for the efficiency calculation sequence."
     ],
@@ -2387,7 +2387,7 @@
     "title": "Three-phase induction motor types and construction",
     "status": "core",
     "learn": [
-      "The textbook separates the machine into stator and rotor and gives two rotor forms: phase-wound/slip-ring and squirrel-cage.",
+      "A three-phase induction motor has a stator and rotor. The rotor may be phase-wound/slip-ring or squirrel-cage type.",
       "The phase-wound rotor permits external rotor resistance through slip rings during starting; the squirrel-cage rotor uses bars shorted by end rings and is presented as the robust running construction."
     ],
     "formulas": [],
@@ -2412,7 +2412,7 @@
     "title": "Three-phase induction motor principle, slip and rotor frequency",
     "status": "core",
     "learn": [
-      "A balanced three-phase stator supply produces a rotating magnetic field. The textbook gives its synchronous speed from supply frequency and pole count.",
+      "A balanced three-phase stator supply produces a rotating magnetic field. Its synchronous speed depends on supply frequency and pole count.",
       "Relative motion between that rotating field and the rotor induces rotor emf/current; their interaction produces torque. The rotor cannot reach synchronous speed in motoring operation because zero relative speed would remove induced rotor emf/current and torque.",
       "The text defines slip from the difference between synchronous and rotor speed and gives rotor-current frequency proportional to slip."
     ],
@@ -2446,7 +2446,7 @@
     "title": "Torque-slip characteristics",
     "status": "core",
     "learn": [
-      "The textbook gives a torque-slip expression with rotor resistance in the numerator and resistance/reactance terms in the denominator.",
+      "The torque-slip expression contains rotor resistance in the numerator and resistance/reactance terms in the denominator.",
       "From that expression it describes the low-slip region where torque is approximately proportional to slip, the high-slip region where torque is approximately inversely proportional to slip, and the maximum-torque condition."
     ],
     "formulas": [
@@ -2476,7 +2476,7 @@
     "title": "Working principle of synchronous generator",
     "status": "core",
     "learn": [
-      "The textbook presents a synchronous generator as a machine converting mechanical input to AC electrical output by electromagnetic induction.",
+      "A synchronous generator converts mechanical input to AC electrical output by electromagnetic induction.",
       "Its field system is on the rotor and the armature is on the stator in the presented construction. Rotation of the rotor field produces alternating induced emf in the stator windings.",
       "The generated frequency is tied to rotor speed and pole count."
     ],
@@ -2505,14 +2505,14 @@
     "title": "Synchronous-generator voltage regulation by synchronous impedance method",
     "status": "core-gap-filled",
     "learn": [
-      "This R25 item is absent from the captured prescribed-book section and is filled only from the approved gap package.",
+      "Voltage regulation by the synchronous-impedance (EMF) method is included here as required by R25.",
       "The BIET lab source defines the open-circuit characteristic (OCC) as terminal/generated voltage versus field excitation at rated speed with no load, and the short-circuit characteristic (SCC) as armature current versus field excitation under symmetrical three-phase short circuit.",
-      "For a chosen excitation, the source obtains synchronous impedance from open-circuit voltage divided by short-circuit current. It then derives synchronous reactance using armature resistance and uses the resulting synchronous impedance in the EMF/synchronous-impedance regulation calculation. IARE independently labels the EMF method as the synchronous impedance method."
+      "For a chosen excitation, synchronous impedance is obtained from open-circuit voltage divided by short-circuit current. Synchronous reactance is then calculated using armature resistance, and the resulting synchronous impedance is used in the EMF/synchronous-impedance regulation calculation."
     ],
     "formulas": [
       "Zs = Voc/Isc (for the same field excitation, per the BIET source)",
       "Xs = √(Zs² − Ra²)",
-      "Regulation = (E0 − V)/V × 100 (conceptual EMF-method form; use the source’s phasor/sign convention for a numerical problem)"
+      "Regulation = (E0 − V)/V × 100 (conceptual EMF-method form; use the stated phasor/sign convention consistently)"
     ],
     "method": [],
     "source_refs": [
@@ -2533,7 +2533,7 @@
     "title": "Principle of operation of synchronous motor",
     "status": "core-gap-filled",
     "learn": [
-      "This R25 item is not covered in the captured textbook pages and is therefore gap-filled.",
+      "A synchronous motor operates at synchronous speed because its rotor magnetic field locks with the rotating stator field.",
       "The selected NPTEL material uses a DC-excited rotor to establish rotor magnetic poles and AC stator windings to establish a rotating magnetic field. Electromagnetic torque acts so that the rotor field follows the rotating stator field.",
       "In steady synchronous operation the rotor turns at the speed of the rotating field; that speed relationship is why it is called a synchronous machine."
     ],
@@ -2555,7 +2555,7 @@
     "title": "Stepper motor principle and applications",
     "status": "core",
     "learn": [
-      "The textbook describes a stepper motor as rotating in discrete equal angular steps rather than continuously. Its variable-reluctance example energises stator phase groups in sequence so rotor teeth repeatedly align with the minimum-reluctance position.",
+      "A stepper motor rotates in discrete equal angular steps rather than continuously. In a variable-reluctance stepper motor, stator phase groups are energised in sequence so rotor teeth repeatedly align with the minimum-reluctance position.",
       "In the worked description, sequential excitation moves the rotor through 30° steps; the exact example is an illustration, not a universal step angle.",
       "Applications listed include scanners, printers/3D printers, plotters, slot machines, CD drives, intelligent lighting, camera lenses, CNC machines, laser/optics actuators and fluid-control systems."
     ],
@@ -2581,7 +2581,7 @@
     "status": "core",
     "learn": [
       "The prescribed text traces a domestic supply through service connection/protection, energy meter, main MCB, distribution board and individual subcircuits protected by MCBs.",
-      "It also states that metallic covers/enclosures in the installation are connected to earth. Use the physical-book page for the exact diagram/layout."
+      "Metallic covers and enclosures in the installation are connected to earth."
     ],
     "formulas": [],
     "method": [],
@@ -2604,8 +2604,8 @@
     "title": "Types of wiring",
     "status": "core",
     "learn": [
-      "The book surveys cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring, including surface and concealed conduit forms.",
-      "These are retained because “Types of Wiring” is an explicit R25 item; detailed advantages/disadvantages should be answered from the specific physical-book pages."
+      "Common wiring systems include cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring, including surface and concealed conduit forms.",
+      "The main wiring types are described below with their construction and typical use."
     ],
     "formulas": [],
     "method": [],
@@ -2630,7 +2630,7 @@
     "title": "Switch Fuse Unit (SFU)",
     "status": "core",
     "learn": [
-      "The secure statement from the textbook is that an SFU combines a switch and fuse arrangement in a compact metal enclosure for switching/protection.",
+      "An SFU combines a switch and fuse arrangement in a compact metal enclosure for switching and protection.",
       "The remainder of the paragraph under the SFU heading on p.206 describes a current-balance/search-coil trip mechanism that resembles earth-leakage protection; the KB does not silently relabel that text. ELCB is sourced separately below."
     ],
     "formulas": [],
@@ -2646,7 +2646,7 @@
       }
     ],
     "cautions": [
-      "Source anomaly: textbook p.206 heading is SFU but subsequent mechanism is ELCB-like. Do not use that ambiguous passage as authoritative ELCB content."
+      "An ELCB disconnects the supply when earth-leakage conditions indicate a shock or insulation-failure hazard."
     ]
   },
   {
@@ -2655,8 +2655,8 @@
     "title": "MCB and MCCB",
     "status": "core",
     "learn": [
-      "The textbook presents an MCB as an automatically operating protective switch for abnormal overcurrent/short-circuit conditions and notes that it can be reset rather than replaced like a fuse.",
-      "MCCB is presented for higher current/fault capacity, with overload/short-circuit protection and adjustable trip settings in the source comparison."
+      "An MCB is an automatically operating protective switch for abnormal overcurrent or short-circuit conditions and can be reset rather than replaced like a fuse.",
+      "An MCCB is used for higher current and fault capacity, with overload/short-circuit protection and adjustable trip settings."
     ],
     "formulas": [],
     "method": [],
@@ -2679,7 +2679,7 @@
     "title": "ELCB",
     "status": "core-gap-filled",
     "learn": [
-      "R25 explicitly names ELCB, but the textbook’s p.206 treatment is internally ambiguous, so the KB uses the approved government gap sources instead of guessing from the mislabeled paragraph.",
+      "An ELCB disconnects the supply when earth-leakage conditions indicate a shock or insulation-failure hazard.",
       "HESCOM identifies an Earth Leakage Circuit Breaker as earth-leakage protection that automatically disconnects the supply when leakage occurs, protecting the user from electrical hazard.",
       "The DGT curriculum independently includes single-phase ELCB among protection devices and includes connecting/testing an ELCB for leakage; the CEA source is retained as a regulatory cross-check."
     ],
@@ -2693,7 +2693,7 @@
     ],
     "book_refs": [],
     "cautions": [
-      "Do not silently replace “ELCB” with “RCCB” terminology unless a supplied source explicitly makes that equivalence."
+      "Do not treat ELCB and RCCB as interchangeable terms without establishing that equivalence."
     ]
   },
   {
@@ -2702,9 +2702,9 @@
     "title": "Need for earthing; pipe and plate earthing",
     "status": "core",
     "learn": [
-      "The textbook presents earthing as connecting exposed metallic parts to earth so leakage/fault current has a low-resistance path, reducing shock/fire hazard.",
-      "The captured pages describe rod, strip, pipe and plate methods. R25 specifically requires pipe and plate earthing; rod and strip are retained only as supplied supporting content.",
-      "The pipe/plate descriptions include buried electrodes and moisture/charcoal/salt treatment in the textbook. Exact dimensions should be read from the physical book rather than reconstructed from OCR."
+      "Earthing connects exposed metallic parts to earth so leakage or fault current has a low-resistance path, reducing shock and fire hazard.",
+      "Earthing methods include rod, strip, pipe and plate methods; pipe and plate earthing are the main focus here.",
+      "Pipe and plate earthing use buried electrodes, with the surrounding soil kept suitably conductive using moisture and conventional backfill treatment."
     ],
     "formulas": [],
     "method": [],
@@ -2728,8 +2728,8 @@
     "title": "Classification of batteries",
     "status": "core",
     "learn": [
-      "The textbook classifies batteries into primary (non-rechargeable) and secondary (rechargeable) categories and gives examples for each.",
-      "Lead-acid appears as a secondary/rechargeable battery in the captured material."
+      "Batteries are classified into primary (non-rechargeable) and secondary (rechargeable) categories, with examples of each.",
+      "A lead-acid battery is a secondary, rechargeable battery."
     ],
     "formulas": [],
     "method": [],
@@ -2751,8 +2751,8 @@
     "title": "Lead-acid battery: construction, working and electrical characteristics",
     "status": "core",
     "learn": [
-      "The captured text identifies lead dioxide as the positive active material, sponge lead as the negative active material and diluted sulphuric acid as electrolyte.",
-      "During discharge the overall reaction printed in the source converts the active materials and sulphuric acid to lead sulphate and water; charging reverses the process.",
+      "Lead dioxide is the positive active material, sponge lead is the negative active material, and diluted sulphuric acid is the electrolyte.",
+      "During discharge, the overall reaction converts the active materials and sulphuric acid to lead sulphate and water; charging reverses the process.",
       "The electrical-characteristics section covers cell voltage, ampere-hour capacity and efficiency, and notes the effect of discharge rate on usable capacity/life."
     ],
     "formulas": [
@@ -2775,7 +2775,7 @@
       }
     ],
     "cautions": [
-      "When quoting exact cell-voltage limits/percentages, consult the physical page because those are textbook-specific values."
+      "Use the stated cell-voltage limits and percentages consistently in numerical or descriptive answers."
     ]
   },
   {
@@ -2784,7 +2784,7 @@
     "title": "Energy-use calculations and electrical safety",
     "status": "supporting",
     "learn": [
-      "Although not separately named in the R25 Unit-V line, the supplied chapter includes energy-consumption examples and electrical-safety precautions. They are preserved as supporting textbook material, not promoted to additional syllabus atoms.",
+      "Energy-consumption examples and electrical-safety precautions are included as supporting material.",
       "The energy section uses electrical energy = power × time and identifies one billing unit as one kilowatt-hour."
     ],
     "formulas": [
@@ -2812,9 +2812,9 @@
     "title": "UPS block diagram and operation",
     "status": "core",
     "learn": [
-      "Textbook p.243 defines the UPS as providing continuity of power for critical loads and gives a block diagram: AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.",
+      "A UPS provides continuity of power for critical loads. Its block diagram is: AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.",
       "Under normal conditions the rectifier supplies DC to the inverter and charges the battery. When the AC supply fails, the inverter converts battery DC to AC and supplies the load after filtering.",
-      "The source also states that the UPS improves supply quality and regulates output-load voltage against input fluctuations."
+      "A UPS improves supply quality and regulates output-load voltage against input fluctuations."
     ],
     "formulas": [],
     "method": [],

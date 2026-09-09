@@ -49,7 +49,7 @@ function renderKbStatus(subject, kbStatus) {
 	setText('[data-r25-count]', kbStatus.r25_atom_count);
 	setText('[data-gap-count]', kbStatus.gap_filled_topic_ids.length);
 	const sourceGaps = Number(kbStatus.source_gap_count ?? 0);
-	setText('[data-kb-label]', sourceGaps === 0 ? `${subject.regulation} coverage checked` : `${sourceGaps} source gaps`);
+	setText('[data-kb-label]', sourceGaps === 0 ? `${subject.regulation} coverage checked` : `${subject.regulation} coverage in progress`);
 }
 
 function renderUnits(subject, syllabus, kbStatus, subjectUrl) {

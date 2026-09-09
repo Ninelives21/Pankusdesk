@@ -63,7 +63,7 @@
                 "\\[A=\\begin{bmatrix}-1&1&0\\\\-1&-2&3\\\\2&1&-3\\end{bmatrix}\\sim\\begin{bmatrix}-1&1&0\\\\0&3&-3\\\\0&0&0\\end{bmatrix}.\\]",
                 "Hence \\(\\rho(A)=2<3\\), so the homogeneous system has infinitely many solutions.",
                 "From \\(-x_1+x_2=0\\) and \\(3x_2-3x_3=0\\), let \\(x_3=k\\). Then \\(x_2=k\\) and \\(x_1=k\\).",
-                "The notebook annotation \\(R_2\\to R_2-R_1\\) gives \\([0,-3,3]\\), while the displayed row \\([0,3,-3]\\) is its negative; the two rows are equivalent."
+                "The annotation \\(R_2\\to R_2-R_1\\) gives \\([0,-3,3]\\), while the displayed row \\([0,3,-3]\\) is its negative; the two rows are equivalent."
               ],
               "final_answer": "\\(X=k\\begin{bmatrix}1\\\\1\\\\1\\end{bmatrix},\\ k\\in\\mathbb R\\)."
             },
@@ -74,7 +74,7 @@
                 "\\[\\begin{aligned}2u_1+u_2+2u_3+u_4&=6\\\\6u_1-6u_2+6u_3+12u_4&=36\\\\4u_1+3u_2+3u_3-3u_4&=-1\\\\2u_1+2u_2-u_3+u_4&=10.\\end{aligned}\\]"
               ],
               "paragraphs": [
-                "The notebook forms the augmented matrix and continues row reduction, but several intermediate entries are overwritten and the visible final numbers do not satisfy the original system.",
+                "The augmented matrix is row-reduced, but several intermediate entries are overwritten and the visible final numbers do not satisfy the original system.",
                 "Independent row reduction gives",
                 "\\[\\operatorname{rref}(A|B)=\\left[\\begin{array}{cccc|c}1&0&0&0&2\\\\0&1&0&0&1\\\\0&0&1&0&-1\\\\0&0&0&1&3\\end{array}\\right].\\]",
                 "Therefore \\(\\rho(A)=\\rho(A|B)=4\\), so the system has a unique solution."
