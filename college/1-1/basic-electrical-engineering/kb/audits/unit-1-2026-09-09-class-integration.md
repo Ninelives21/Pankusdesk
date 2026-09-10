@@ -7,3 +7,8 @@
 - Added **10 structured image placeholders** in source-page order. Intended future redraw paths are stored as `target_src` values under `assets/class/2026-09-09/figures/`.
 - No textbook theory page or existing dated BEE class record was changed.
 - Date is recorded as **9 September 2026** per the user’s instruction; the supplied archive filename is `2026-09-8.zip`.
+
+## Superposition example redraw update
+
+- Replaced placeholders `c1.png`, `c2.png`, and `c3.png` with the three approved NRS redraws for the single Superposition worked example.
+- Preserved the note sequence and left placeholders `c4.png`–`c10.png` untouched for the remaining diagrams.
