@@ -3013,6 +3013,2400 @@
           "nav_label": "Problems 28.4 · Gauss–Seidel"
         }
       ]
+    },
+    "2": {
+      "title": "Eigenvalues, Eigenvectors and Quadratic Forms",
+      "page_title": "Textbook Questions",
+      "page_description": "R25-relevant Grewal Unit II questions, with independently verified PankusDesk solutions and printed Appendix 3 checks.",
+      "summary": {
+        "selected_question_count": 70,
+        "stats": [
+          {
+            "value": 70,
+            "label": "questions added"
+          },
+          {
+            "value": 4,
+            "label": "textbook sets"
+          },
+          {
+            "value": "pp. 61, 72–73, 80, 86–88",
+            "label": "book pages"
+          }
+        ]
+      },
+      "scope_note": "Published R25-relevant sets: Problems 2.8 (Q6–Q9), all Problems 2.9 (Q1–Q18), Problems 2.10 (Q1–Q5, Q7–Q13; Q6 excluded as matrix-functions material), and 36 selected chapter-end Problems 2.12 objective questions. Worked examples remain in the Unit II Text page.",
+      "source": {
+        "chapter": "Chapter 2 · Problems 2.8, 2.9, 2.10 and 2.12",
+        "review_pages": [
+          61,
+          72,
+          73,
+          80,
+          86,
+          87,
+          88
+        ]
+      },
+      "groups": [
+        {
+          "id": "problems-2-8",
+          "nav_label": "Problems 2.8",
+          "title": "Problems 2.8 · Orthogonal Matrices",
+          "note": "Book p. 61 · R25-relevant Q6–Q9. Open a question to see the verified solution.",
+          "questions": [
+            {
+              "id": "u2-p28-06",
+              "number": 6,
+              "book_page": 61,
+              "topic_id": "u2-orthogonal-transformations",
+              "r25_scope": "core",
+              "question": "Verify that the following matrices are orthogonal.",
+              "question_source_refs": [
+                "TB-P0061"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "Let \\(A=\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}\\). Its rows have unit length and distinct rows are mutually perpendicular.",
+                      "\\[AA^T=\\dfrac19\\begin{bmatrix}9&0&0\\\\0&9&0\\\\0&0&9\\end{bmatrix}=I.\\]"
+                    ],
+                    "result": "The matrix in part (i) is orthogonal."
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "For the printed matrix \\(B=\\begin{bmatrix}\\cos\\theta&0&\\sin\\theta\\\\0&1&0\\\\\\sin\\theta&0&\\cos\\theta\\end{bmatrix}\\), compute \\(BB^T\\).",
+                      "\\[BB^T=\\begin{bmatrix}1&0&\\sin2\\theta\\\\0&1&0\\\\\\sin2\\theta&0&1\\end{bmatrix}.\\]",
+                      "Thus the printed matrix is not orthogonal for arbitrary \\(\\theta\\); it is orthogonal only when \\(\\sin2\\theta=0\\). A usual rotation form would have one of the two sine entries negative."
+                    ],
+                    "result": "As printed, part (ii) is not orthogonal for arbitrary \\(\\theta\\)."
+                  }
+                ],
+                "book_check": "No printed appendix answer is supplied for Q6."
+              },
+              "question_lead": "Verify that the following matrices are orthogonal:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(\\dfrac13\\begin{bmatrix}1&2&2\\\\2&1&-2\\\\2&-2&1\\end{bmatrix}\\).",
+                  "id": "question-u2-p28-06-i"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(\\begin{bmatrix}\\cos\\theta&0&\\sin\\theta\\\\0&1&0\\\\\\sin\\theta&0&\\cos\\theta\\end{bmatrix}\\).",
+                  "id": "question-u2-p28-06-ii"
+                }
+              ],
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "In Q6(ii), Grewal prints the same positive \\(\\sin\\theta\\) in positions (1,3) and (3,1). Their row dot-product is \\(\\sin2\\theta\\), so the matrix is not orthogonal for general \\(\\theta\\). One sine entry would need the opposite sign for the usual orthogonal rotation matrix.",
+                "affected_parts": [
+                  "(ii)"
+                ]
+              }
+            },
+            {
+              "id": "u2-p28-07",
+              "number": 7,
+              "book_page": 61,
+              "topic_id": "u2-orthogonal-transformations",
+              "r25_scope": "core",
+              "question": "Find the values of \\(a,b,c\\) if \\(A=\\begin{bmatrix}0&2b&c\\\\a&b&-c\\\\a&-b&c\\end{bmatrix}\\) is orthogonal.",
+              "question_source_refs": [
+                "TB-P0061"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Orthogonality gives unit row norms and zero pairwise row products.",
+                  "\\[4b^2+c^2=1,\\qquad a^2+b^2+c^2=1,\\]",
+                  "\\[2b^2-c^2=0,\\qquad a^2-b^2-c^2=0.\\]",
+                  "From \\(c^2=2b^2\\) and \\(4b^2+c^2=1\\), we get \\(6b^2=1\\). Hence \\(b^2=1/6\\), \\(c^2=1/3\\), and then \\(a^2=1/2\\)."
+                ],
+                "result": "\\(a=\\pm\\dfrac1{\\sqrt2},\\ b=\\pm\\dfrac1{\\sqrt6},\\ c=\\pm\\dfrac1{\\sqrt3}.\\)",
+                "book_check": "Printed appendix p. 1381: \\(a=\\pm1/\\sqrt2,\\ b=\\pm1/\\sqrt6,\\ c=\\pm1/\\sqrt3\\)."
+              }
+            },
+            {
+              "id": "u2-p28-08",
+              "number": 8,
+              "book_page": 61,
+              "topic_id": "u2-orthogonal-transformations",
+              "r25_scope": "core",
+              "question": "Prove that \\(\\begin{bmatrix}l&m&n&0\\\\0&0&0&1\\\\n&l&-m&0\\\\-m&n&-l&0\\end{bmatrix}\\) is orthogonal when \\(l=2/7,\\ m=3/7,\\ n=6/7\\).",
+              "question_source_refs": [
+                "TB-P0061"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "With \\(l=2/7,m=3/7,n=6/7\\), each row has norm 1 because \\(l^2+m^2+n^2=(4+9+36)/49=1\\).",
+                  "The non-trivial row dot-products are",
+                  "\\[ln+ml-mn=\\dfrac{12+6-18}{49}=0,\\]",
+                  "\\[-lm+mn-ln=\\dfrac{-6+18-12}{49}=0,\\]",
+                  "\\[-mn+ln+lm=\\dfrac{-18+12+6}{49}=0.\\]",
+                  "The second row is \\([0,0,0,1]\\), which is automatically orthogonal to the other three rows. Hence the rows are orthonormal and \\(AA^T=I\\)."
+                ],
+                "result": "The given matrix is orthogonal.",
+                "book_check": "No printed appendix answer is supplied for Q8."
+              }
+            },
+            {
+              "id": "u2-p28-09",
+              "number": 9,
+              "book_page": 61,
+              "topic_id": "u2-orthogonal-transformations",
+              "r25_scope": "core",
+              "question": "If \\(A\\) and \\(B\\) are orthogonal matrices, prove that \\(AB\\) is also orthogonal.",
+              "question_source_refs": [
+                "TB-P0061"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "Since \\(A\\) and \\(B\\) are orthogonal, \\(AA^T=I\\) and \\(BB^T=I\\).",
+                  "\\[(AB)(AB)^T=AB(B^TA^T)=A(BB^T)A^T=AA^T=I.\\]",
+                  "Therefore \\(AB\\) satisfies the defining condition for an orthogonal matrix."
+                ],
+                "result": "\\(AB\\) is orthogonal.",
+                "book_check": "No printed appendix answer is supplied for Q9."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-2-9",
+          "nav_label": "Problems 2.9",
+          "title": "Problems 2.9 · Eigenvalues, Eigenvectors and Cayley–Hamilton",
+          "note": "Book pp. 72–73 · All Q1–Q18 are within Unit II scope.",
+          "questions": [
+            {
+              "id": "u2-p29-01",
+              "number": 1,
+              "book_page": 72,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "Find the sum and product of the eigenvalues of \\(\\begin{bmatrix}3&1&4\\\\0&2&6\\\\0&0&5\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The matrix is upper triangular, so its eigenvalues are the diagonal entries \\(3,2,5\\).",
+                  "Equivalently, the sum is the trace and the product is the determinant."
+                ],
+                "result": "Sum \\(=10\\); product \\(=30\\).",
+                "book_check": "Printed appendix p. 1381: \\(10;30\\)."
+              }
+            },
+            {
+              "id": "u2-p29-02",
+              "number": 2,
+              "book_page": 72,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "Find the eigenvalues and eigenvectors of the following matrices.",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=\\begin{vmatrix}4-\\lambda&3\\\\2&9-\\lambda\\end{vmatrix}=\\lambda^2-13\\lambda+30=(\\lambda-10)(\\lambda-3).\\]",
+                      "For \\(\\lambda=10\\), \\(-6x+3y=0\\Rightarrow y=2x\\), so take \\([1,2]^T\\). For \\(\\lambda=3\\), \\(x+3y=0\\), so take \\([3,-1]^T\\)."
+                    ],
+                    "result": "\\(\\lambda=10:\\ [1,2]^T;\\quad \\lambda=3:\\ [3,-1]^T.\\)"
+                  },
+                  {
+                    "label": "(b)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=\\lambda(\\lambda-6)(\\lambda-10)=0.\\]",
+                      "Solving \\((A-\\lambda I)X=0\\) gives convenient eigenvectors \\([3,0,1]^T\\) for \\(10\\), \\([0,1,0]^T\\) for \\(6\\), and \\([1,-1,1]^T\\) for \\(0\\)."
+                    ],
+                    "result": "Eigenvalues \\(10,6,0\\) with eigenvectors \\([3,0,1]^T,[0,1,0]^T,[1,-1,1]^T\\), respectively."
+                  }
+                ],
+                "book_check": "Printed appendix p. 1381 agrees with these eigenvalues/eigenvectors up to non-zero scalar multiples."
+              },
+              "question_lead": "Find the eigenvalues and corresponding eigenvectors of:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(\\begin{bmatrix}4&3\\\\2&9\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-02-a"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(\\begin{bmatrix}15&0&-15\\\\-3&6&9\\\\5&0&-5\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-02-b"
+                }
+              ]
+            },
+            {
+              "id": "u2-p29-03",
+              "number": 3,
+              "book_page": 72,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "Find the latent roots and latent vectors of the following matrices.",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "paragraphs": [
+                      "The matrix is triangular, so the only eigenvalue is \\(1\\), with algebraic multiplicity 3.",
+                      "\\[(A-I)X=0\\Rightarrow y=z=0,\\] so the eigenspace is one-dimensional."
+                    ],
+                    "result": "\\(\\lambda=1\\) (triple), with eigenspace \\(\\operatorname{span}\\{[1,0,0]^T\\}\\)."
+                  },
+                  {
+                    "label": "(b)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=-\\lambda(\\lambda-3)(\\lambda-15)=0.\\]",
+                      "Row reduction of \\((A-\\lambda I)X=0\\) gives \\([1,2,2]^T\\) for \\(0\\), \\([2,1,-2]^T\\) for \\(3\\), and \\([2,-2,1]^T\\) for \\(15\\)."
+                    ],
+                    "result": "\\(0:[1,2,2]^T;\\ 3:[2,1,-2]^T;\\ 15:[2,-2,1]^T.\\)",
+                    "book_check": "Printed appendix p. 1381 prints the eigenvalues as \\(0,3,5\\), although its third eigenvector is the verified \\(\\lambda=15\\) eigenvector."
+                  },
+                  {
+                    "label": "(c)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=(\\lambda-1)(\\lambda-2)(\\lambda-3)=0.\\]",
+                      "Corresponding eigenvectors can be chosen as \\([1,0,-1]^T,[0,1,0]^T,[1,0,1]^T\\)."
+                    ],
+                    "result": "\\(1:[1,0,-1]^T;\\ 2:[0,1,0]^T;\\ 3:[1,0,1]^T.\\)"
+                  },
+                  {
+                    "label": "(d)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=(\\lambda-5)(\\lambda+3)^2=0.\\]",
+                      "For \\(\\lambda=5\\), take \\([1,2,-1]^T\\). For \\(\\lambda=-3\\), the eigenspace is two-dimensional; a convenient basis is \\([2,-1,0]^T,[3,0,1]^T\\)."
+                    ],
+                    "result": "\\(5:[1,2,-1]^T;\\ -3:\\operatorname{span}\\{[2,-1,0]^T,[3,0,1]^T\\}.\\)"
+                  },
+                  {
+                    "label": "(e)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=(\\lambda-8)(\\lambda-2)^2=0.\\]",
+                      "For \\(\\lambda=8\\), take \\([2,-1,1]^T\\). For \\(\\lambda=2\\), the eigenspace is two-dimensional; one convenient basis is \\([1,2,0]^T,[1,0,-2]^T\\)."
+                    ],
+                    "result": "\\(8:[2,-1,1]^T;\\ 2:\\operatorname{span}\\{[1,2,0]^T,[1,0,-2]^T\\}.\\)"
+                  }
+                ],
+                "book_check": "Printed appendix p. 1381 agrees for (a), (c), (d), (e); part (b) has a verified eigenvalue misprint."
+              },
+              "question_lead": "Find the latent roots and latent vectors of:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(\\begin{bmatrix}1&1&0\\\\0&1&1\\\\0&0&1\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-03-a"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(\\begin{bmatrix}8&-6&2\\\\-6&7&-4\\\\2&-4&3\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-03-b"
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(\\begin{bmatrix}2&0&1\\\\0&2&0\\\\1&0&2\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-03-c"
+                },
+                {
+                  "label": "(d)",
+                  "content": "\\(\\begin{bmatrix}-2&2&-3\\\\2&1&-6\\\\-1&-2&0\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-03-d"
+                },
+                {
+                  "label": "(e)",
+                  "content": "\\(\\begin{bmatrix}6&-2&2\\\\-2&3&-1\\\\2&-1&3\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-03-e"
+                }
+              ],
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "For Q3(b), direct expansion gives \\(-\\lambda(\\lambda-3)(\\lambda-15)=0\\), and the trace is \\(18\\). Grewal Appendix p. 1381 prints \\(0,3,5\\); the third value must be \\(15\\). The printed third eigenvector \\([2,-2,1]^T\\) also verifies \\(A X=15X\\).",
+                "affected_parts": [
+                  "(b)"
+                ]
+              }
+            },
+            {
+              "id": "u2-p29-04",
+              "number": 4,
+              "book_page": 72,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(\\lambda\\) is an eigenvalue of a non-singular matrix \\(A\\), show that \\(|A|/\\lambda\\) is an eigenvalue of \\(\\operatorname{adj}A\\).",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "Let \\(AX=\\lambda X\\) with \\(X\\ne0\\). Since \\(A\\) is non-singular, \\(\\lambda\\ne0\\).",
+                  "Use \\(\\operatorname{adj}A=|A|A^{-1}\\). From \\(AX=\\lambda X\\), \\(A^{-1}X=\\dfrac1\\lambda X\\).",
+                  "Therefore \\(\\operatorname{adj}A\\,X=|A|A^{-1}X=\\dfrac{|A|}{\\lambda}X\\)."
+                ],
+                "result": "\\(|A|/\\lambda\\) is an eigenvalue of \\(\\operatorname{adj}A\\).",
+                "book_check": "No printed appendix answer is supplied for Q4."
+              }
+            },
+            {
+              "id": "u2-p29-05",
+              "number": 5,
+              "book_page": 72,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "Find the eigenvalues of \\(\\operatorname{adj}A\\) and of \\(A^2-2A+I\\), where \\(A=\\begin{bmatrix}2&3&4\\\\0&4&2\\\\0&0&3\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "Since \\(A\\) is triangular, its eigenvalues are \\(2,4,3\\) and \\(|A|=24\\).",
+                      "Eigenvalues of \\(\\operatorname{adj}A\\) are \\(|A|/\\lambda\\): \\(12,6,8\\)."
+                    ],
+                    "result": "Eigenvalues of \\(\\operatorname{adj}A\\): \\(12,6,8\\).",
+                    "book_check": "Printed appendix p. 1381 lists \\(8,12,6\\), the same set."
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "If \\(\\lambda\\) is an eigenvalue of \\(A\\), then \\(\\lambda^2-2\\lambda+1=(\\lambda-1)^2\\) is an eigenvalue of \\(A^2-2A+I\\).",
+                      "For \\(\\lambda=2,4,3\\), the values are \\(1,9,4\\)."
+                    ],
+                    "result": "Eigenvalues: \\(1,9,4\\).",
+                    "book_check": "Printed appendix p. 1381 gives \\(49,121,25\\), which does not follow from the printed expression."
+                  }
+                ]
+              },
+              "question_lead": "For the printed matrix, find:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "Eigenvalues of \\(\\operatorname{adj}A\\).",
+                  "id": "question-u2-p29-05-i"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "Eigenvalues of \\(A^2-2A+I\\).",
+                  "id": "question-u2-p29-05-ii"
+                }
+              ],
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "In Q5(ii), the eigenvalue mapping for the printed expression \\(A^2-2A+I\\) is \\((\\lambda-1)^2\\). For \\(\\lambda=2,4,3\\), this gives \\(1,9,4\\), not the appendix values \\(49,121,25\\).",
+                "affected_parts": [
+                  "(ii)"
+                ]
+              }
+            },
+            {
+              "id": "u2-p29-06",
+              "number": 6,
+              "book_page": 72,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "Two eigenvalues of \\(A=\\begin{bmatrix}2&2&1\\\\1&3&1\\\\1&2&2\\end{bmatrix}\\) are printed as \\(-1\\) each. Find the eigenvalues of \\(A^{-1}\\).",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The printed matrix has characteristic polynomial",
+                  "\\[|\\lambda I-A|=(\\lambda-5)(\\lambda-1)^2.\\]",
+                  "So the actual eigenvalues of the printed matrix are \\(1,1,5\\), and the eigenvalues of its inverse are their reciprocals."
+                ],
+                "result": "Eigenvalues of \\(A^{-1}\\): \\(1,1,\\dfrac15\\).",
+                "book_check": "Printed appendix p. 1381: \\(1,1,1/5\\), which agrees with the printed matrix rather than with the phrase “−1 each”."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "The question says two eigenvalues are \\(-1\\) each, but the printed matrix has characteristic polynomial \\((\\lambda-5)(\\lambda-1)^2\\), so its repeated eigenvalue is \\(+1\\), not \\(-1\\). The appendix answer \\(1,1,1/5\\) confirms that the intended sign is positive."
+              }
+            },
+            {
+              "id": "u2-p29-07",
+              "number": 7,
+              "book_page": 72,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "Show that if \\(\\lambda_1,\\lambda_2,\\ldots,\\lambda_n\\) are the latent roots of a matrix \\(A\\), then the stated eigenvalue properties hold.",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "If \\(AX=\\lambda_iX\\), then \\(A^2X=A(\\lambda_iX)=\\lambda_i^2X\\)."
+                    ],
+                    "result": "\\(A^2\\) has eigenvalue \\(\\lambda_i^2\\)."
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "If \\(AX=\\lambda_iX\\), then \\((kA)X=k\\lambda_iX\\)."
+                    ],
+                    "result": "\\(kA\\) has eigenvalue \\(k\\lambda_i\\)."
+                  },
+                  {
+                    "label": "(iii)",
+                    "paragraphs": [
+                      "For non-zero \\(\\lambda_i\\), multiply \\(AX=\\lambda_iX\\) by \\(A^{-1}\\): \\(A^{-1}X=(1/\\lambda_i)X\\)."
+                    ],
+                    "result": "\\(A^{-1}\\) has eigenvalue \\(1/\\lambda_i\\)."
+                  }
+                ],
+                "book_check": "No printed appendix answer is supplied for Q7."
+              },
+              "question_lead": "Prove:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(A^2\\) has latent roots \\(\\lambda_1^2,\\ldots,\\lambda_n^2\\).",
+                  "id": "question-u2-p29-07-i"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(kA\\) has eigenvalues \\(k\\lambda_i\\).",
+                  "id": "question-u2-p29-07-ii"
+                },
+                {
+                  "label": "(iii)",
+                  "content": "\\(A^{-1}\\) has eigenvalues \\(1/\\lambda_i\\).",
+                  "id": "question-u2-p29-07-iii"
+                }
+              ]
+            },
+            {
+              "id": "u2-p29-08",
+              "number": 8,
+              "book_page": 72,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "The eigenvectors of a \\(3\\times3\\) matrix \\(A\\) corresponding to eigenvalues \\(1,1,3\\) are \\([1,0,-1]^T,[0,1,-1]^T,[1,1,0]^T\\), respectively. Find \\(A\\).",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Place the eigenvectors as columns of \\(P\\) and the eigenvalues on \\(D\\):",
+                  "\\[P=\\begin{bmatrix}1&0&1\\\\0&1&1\\\\-1&-1&0\\end{bmatrix},\\qquad D=\\operatorname{diag}(1,1,3).\\]",
+                  "Since \\(AP=PD\\), \\(A=PDP^{-1}\\).",
+                  "\\[A=\\begin{bmatrix}2&1&1\\\\1&2&1\\\\0&0&1\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(A=\\begin{bmatrix}2&1&1\\\\1&2&1\\\\0&0&1\\end{bmatrix}\\).",
+                "book_check": "Printed appendix p. 1381 agrees."
+              }
+            },
+            {
+              "id": "u2-p29-09",
+              "number": 9,
+              "book_page": 72,
+              "topic_id": "u2-cayley-hamilton-inverse",
+              "r25_scope": "core",
+              "question": "Using the Cayley–Hamilton theorem, find the inverse of the following matrices.",
+              "question_source_refs": [
+                "TB-P0072"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "For \\(A=\\begin{bmatrix}5&3\\\\3&2\\end{bmatrix}\\), the characteristic equation is \\(\\lambda^2-7\\lambda+1=0\\).",
+                      "By Cayley–Hamilton, \\(A^2-7A+I=0\\). Multiplying by \\(A^{-1}\\) gives \\(A-7I+A^{-1}=0\\), hence \\(A^{-1}=7I-A\\).",
+                      "Therefore \\[A^{-1}=\\begin{bmatrix}7&0\\\\0&7\\end{bmatrix}-\\begin{bmatrix}5&3\\\\3&2\\end{bmatrix}=\\begin{bmatrix}2&-3\\\\-3&5\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\begin{bmatrix}2&-3\\\\-3&5\\end{bmatrix}\\).",
+                    "book_check": "Printed appendix p. 1381 shows positive off-diagonal 3s, which fails direct multiplication with the printed matrix."
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "The characteristic equation is \\(\\lambda^3-2\\lambda^2-5\\lambda+6=0\\), so Cayley–Hamilton gives \\(A^3-2A^2-5A+6I=0\\).",
+                      "Multiplying by \\(A^{-1}\\): \\(A^2-2A-5I+6A^{-1}=0\\), hence \\(A^{-1}=\\dfrac{-A^2+2A+5I}{6}\\).",
+                      "Here \\[A^2=\\begin{bmatrix}1&-1&8\\\\0&4&0\\\\0&0&9\\end{bmatrix}.\\] Substitution gives \\[A^{-1}=\\begin{bmatrix}1&\\dfrac12&-\\dfrac23\\\\0&-\\dfrac12&0\\\\0&0&\\dfrac13\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\begin{bmatrix}1&\\dfrac12&-\\dfrac23\\\\0&-\\dfrac12&0\\\\0&0&\\dfrac13\\end{bmatrix}\\).",
+                    "book_check": "Printed appendix p. 1381 agrees."
+                  },
+                  {
+                    "label": "(iii)",
+                    "paragraphs": [
+                      "The characteristic equation is \\(\\lambda^3-11\\lambda^2-4\\lambda+1=0\\), hence \\(A^3-11A^2-4A+I=0\\).",
+                      "Multiplying by \\(A^{-1}\\): \\(A^2-11A-4I+A^{-1}=0\\), so \\(A^{-1}=-A^2+11A+4I\\).",
+                      "Since \\[A^2=\\begin{bmatrix}14&25&31\\\\25&45&56\\\\31&56&70\\end{bmatrix},\\] we get \\[A^{-1}=\\begin{bmatrix}1&-3&2\\\\-3&3&-1\\\\2&-1&0\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\begin{bmatrix}1&-3&2\\\\-3&3&-1\\\\2&-1&0\\end{bmatrix}\\).",
+                    "book_check": "Printed appendix p. 1381 is the negative of the verified inverse (apart from the zero entry), so it does not invert the printed matrix."
+                  },
+                  {
+                    "label": "(iv)",
+                    "paragraphs": [
+                      "The characteristic equation is \\(\\lambda^3-2\\lambda^2-\\lambda+2=0\\), so \\(A^3-2A^2-A+2I=0\\).",
+                      "Multiplying by \\(A^{-1}\\): \\(A^2-2A-I+2A^{-1}=0\\), hence \\(A^{-1}=\\dfrac{-A^2+2A+I}{2}\\).",
+                      "With \\[A^2=\\begin{bmatrix}2&1&1\\\\1&2&1\\\\1&1&2\\end{bmatrix},\\] this gives \\[A^{-1}=\\dfrac12\\begin{bmatrix}1&1&-1\\\\1&-1&1\\\\-1&1&1\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\dfrac12\\begin{bmatrix}1&1&-1\\\\1&-1&1\\\\-1&1&1\\end{bmatrix}\\).",
+                    "book_check": "Printed appendix p. 1381 agrees."
+                  }
+                ]
+              },
+              "question_lead": "Using Cayley–Hamilton theorem, find the inverse of:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(\\begin{bmatrix}5&3\\\\3&2\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-09-i"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(\\begin{bmatrix}1&1&2\\\\0&-2&0\\\\0&0&3\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-09-ii"
+                },
+                {
+                  "label": "(iii)",
+                  "content": "\\(\\begin{bmatrix}1&2&3\\\\2&4&5\\\\3&5&6\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-09-iii"
+                },
+                {
+                  "label": "(iv)",
+                  "content": "\\(\\begin{bmatrix}1&1&0\\\\1&0&1\\\\0&1&1\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-09-iv"
+                }
+              ],
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "For Q9(i), direct multiplication shows the printed appendix signs are wrong: the inverse must have off-diagonal entries \\(-3\\). For Q9(iii), the printed appendix gives \\(-A^{-1}\\) instead of the verified inverse. Parts (ii) and (iv) agree.",
+                "affected_parts": [
+                  "(i)",
+                  "(iii)"
+                ]
+              }
+            },
+            {
+              "id": "u2-p29-10",
+              "number": 10,
+              "book_page": 73,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "Find the eigenvalues and corresponding eigenvectors of the following matrices.",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=\\lambda(\\lambda-2)(\\lambda+1)=0.\\]",
+                      "Convenient eigenvectors are \\([-1,-1,1]^T\\) for \\(-1\\), \\([-1,0,1]^T\\) for \\(0\\), and \\([-4,-1,3]^T\\) for \\(2\\)."
+                    ],
+                    "result": "\\(-1:[-1,-1,1]^T;\\ 0:[-1,0,1]^T;\\ 2:[-4,-1,3]^T.\\)"
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=(\\lambda-1)(\\lambda-4)^2=0.\\]",
+                      "For \\(\\lambda=1\\), take \\([-1,1,1]^T\\). For \\(\\lambda=4\\), a convenient eigenspace basis is \\([0,1,-1]^T,[2,1,1]^T\\)."
+                    ],
+                    "result": "\\(1:[-1,1,1]^T;\\ 4:\\operatorname{span}\\{[0,1,-1]^T,[2,1,1]^T\\}.\\)"
+                  }
+                ],
+                "book_check": "The matching two answers are printed on appendix p. 1381 under item “11”, apparently a numbering slip; the mathematical values correspond to Q10."
+              },
+              "question_lead": "Find the eigenvalues and corresponding eigenvectors of:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(\\begin{bmatrix}9&-1&9\\\\3&-1&3\\\\-7&1&-7\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-10-i"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(\\begin{bmatrix}3&1&1\\\\1&3&-1\\\\1&-1&3\\end{bmatrix}\\).",
+                  "id": "question-u2-p29-10-ii"
+                }
+              ]
+            },
+            {
+              "id": "u2-p29-11",
+              "number": 11,
+              "book_page": 73,
+              "topic_id": "u2-cayley-hamilton-inverse",
+              "r25_scope": "core",
+              "question": "Find the characteristic equation of \\(A=\\begin{bmatrix}1&3&7\\\\4&2&3\\\\1&2&1\\end{bmatrix}\\). Show that the equation is satisfied by \\(A\\) and hence obtain \\(A^{-1}\\).",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "The monic characteristic polynomial is",
+                  "\\[p(\\lambda)=\\lambda^3-4\\lambda^2-20\\lambda-35.\\]",
+                  "By Cayley–Hamilton,",
+                  "\\[A^3-4A^2-20A-35I=0.\\]",
+                  "Multiplying by \\(A^{-1}\\):",
+                  "\\[A^2-4A-20I-35A^{-1}=0,\\]",
+                  "hence",
+                  "\\[A^{-1}=\\dfrac{A^2-4A-20I}{35}=\\dfrac1{35}\\begin{bmatrix}-4&11&-5\\\\-1&-6&25\\\\6&1&-10\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(\\dfrac1{35}\\begin{bmatrix}-4&11&-5\\\\-1&-6&25\\\\6&1&-10\\end{bmatrix}\\)",
+                "book_check": "No printed appendix answer for Q11 was found; p. 1381 jumps from the misnumbered Q10 result to Q12."
+              }
+            },
+            {
+              "id": "u2-p29-12",
+              "number": 12,
+              "book_page": 73,
+              "topic_id": "u2-cayley-hamilton-inverse",
+              "r25_scope": "core",
+              "question": "Verify Cayley–Hamilton theorem for each matrix and find its inverse.",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "paragraphs": [
+                      "The characteristic equation is \\(\\lambda^3-6\\lambda^2+9\\lambda-4=0\\). Compute",
+                      "\\[A^2=\\begin{bmatrix}6&-5&5\\\\-5&6&-5\\\\5&-5&6\\end{bmatrix},\\qquad A^3=\\begin{bmatrix}22&-21&21\\\\-21&22&-21\\\\21&-21&22\\end{bmatrix}.\\]",
+                      "Substitution gives \\(A^3-6A^2+9A-4I=0\\), i.e. the zero matrix, verifying Cayley–Hamilton for this matrix.",
+                      "Multiplying that equation by \\(A^{-1}\\) and rearranging gives \\(A^{-1}=\\dfrac{A^2-6A+9I}{4}\\). Substituting \\(A^2\\), \\(A\\) and \\(I\\) gives",
+                      "\\[A^{-1}=\\dfrac14\\begin{bmatrix}3&1&-1\\\\1&3&1\\\\-1&1&3\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\dfrac14\\begin{bmatrix}3&1&-1\\\\1&3&1\\\\-1&1&3\\end{bmatrix}\\)",
+                    "book_check": "Printed appendix p. 1381 agrees."
+                  },
+                  {
+                    "label": "(b)",
+                    "paragraphs": [
+                      "The characteristic equation is \\(\\lambda^3-\\lambda^2-18\\lambda-30=0\\). Compute",
+                      "\\[A^2=\\begin{bmatrix}14&3&14\\\\12&9&6\\\\8&6&14\\end{bmatrix},\\qquad A^3=\\begin{bmatrix}62&39&68\\\\48&21&78\\\\62&24&62\\end{bmatrix}.\\]",
+                      "Substitution gives \\(A^3-A^2-18A-30I=0\\), i.e. the zero matrix, verifying Cayley–Hamilton for this matrix.",
+                      "Multiplying that equation by \\(A^{-1}\\) and rearranging gives \\(A^{-1}=\\dfrac{A^2-A-18I}{30}\\). Substituting \\(A^2\\), \\(A\\) and \\(I\\) gives",
+                      "\\[A^{-1}=\\dfrac1{30}\\begin{bmatrix}-5&1&11\\\\10&-8&2\\\\5&5&-5\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\dfrac1{30}\\begin{bmatrix}-5&1&11\\\\10&-8&2\\\\5&5&-5\\end{bmatrix}\\)",
+                    "book_check": "Printed appendix p. 1381 gives a different matrix; it does not multiply with the printed A to give I."
+                  },
+                  {
+                    "label": "(c)",
+                    "paragraphs": [
+                      "The characteristic equation is \\(\\lambda^3-16\\lambda^2+55\\lambda-50=0\\). Compute",
+                      "\\[A^2=\\begin{bmatrix}49&4&41\\\\56&11&54\\\\54&34&86\\end{bmatrix},\\qquad A^3=\\begin{bmatrix}449&119&491\\\\566&171&644\\\\754&324&986\\end{bmatrix}.\\]",
+                      "Substitution gives \\(A^3-16A^2+55A-50I=0\\), i.e. the zero matrix, verifying Cayley–Hamilton for this matrix.",
+                      "Multiplying that equation by \\(A^{-1}\\) and rearranging gives \\(A^{-1}=\\dfrac{A^2-16A+55I}{50}\\). Substituting \\(A^2\\), \\(A\\) and \\(I\\) gives",
+                      "\\[A^{-1}=\\dfrac1{50}\\begin{bmatrix}-8&20&-7\\\\-40&50&-10\\\\22&-30&13\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\dfrac1{50}\\begin{bmatrix}-8&20&-7\\\\-40&50&-10\\\\22&-30&13\\end{bmatrix}\\)",
+                    "book_check": "Printed appendix p. 1381 gives a different matrix; direct multiplication shows it is not the inverse of the printed A."
+                  },
+                  {
+                    "label": "(d)",
+                    "paragraphs": [
+                      "The characteristic equation is \\(\\lambda^3-5\\lambda^2+7\\lambda-3=0\\). Compute",
+                      "\\[A^2=\\begin{bmatrix}25&8&-8\\\\-24&-7&8\\\\24&8&-7\\end{bmatrix},\\qquad A^3=\\begin{bmatrix}79&26&-26\\\\-78&-25&26\\\\78&26&-25\\end{bmatrix}.\\]",
+                      "Substitution gives \\(A^3-5A^2+7A-3I=0\\), i.e. the zero matrix, verifying Cayley–Hamilton for this matrix.",
+                      "Multiplying that equation by \\(A^{-1}\\) and rearranging gives \\(A^{-1}=\\dfrac{A^2-5A+7I}{3}\\). Substituting \\(A^2\\), \\(A\\) and \\(I\\) gives",
+                      "\\[A^{-1}=\\dfrac13\\begin{bmatrix}-3&-2&2\\\\6&5&-2\\\\-6&-2&5\\end{bmatrix}.\\]"
+                    ],
+                    "result": "\\(\\dfrac13\\begin{bmatrix}-3&-2&2\\\\6&5&-2\\\\-6&-2&5\\end{bmatrix}\\)",
+                    "book_check": "Printed appendix p. 1381 agrees."
+                  }
+                ]
+              },
+              "question_lead": "Verify Cayley–Hamilton theorem and find the inverse for:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(\\begin{bmatrix}2&-1&1\\\\-1&2&-1\\\\1&-1&2\\end{bmatrix}\\)",
+                  "id": "question-u2-p29-12-a"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(\\begin{bmatrix}1&2&3\\\\2&-1&4\\\\3&1&1\\end{bmatrix}\\)",
+                  "id": "question-u2-p29-12-b"
+                },
+                {
+                  "label": "(c)",
+                  "content": "\\(\\begin{bmatrix}7&-1&3\\\\6&1&4\\\\2&4&8\\end{bmatrix}\\)",
+                  "id": "question-u2-p29-12-c"
+                },
+                {
+                  "label": "(d)",
+                  "content": "\\(\\begin{bmatrix}7&2&-2\\\\-6&-1&2\\\\6&2&-1\\end{bmatrix}\\)",
+                  "id": "question-u2-p29-12-d"
+                }
+              ],
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "The independently verified inverses for Q12(b) and Q12(c) do not match the appendix matrices on p. 1381. Multiplying the appendix matrices by the corresponding printed matrices does not give the identity. Parts (a) and (d) agree.",
+                "affected_parts": [
+                  "(b)",
+                  "(c)"
+                ]
+              }
+            },
+            {
+              "id": "u2-p29-13",
+              "number": 13,
+              "book_page": 73,
+              "topic_id": "u2-cayley-hamilton-power",
+              "r25_scope": "core",
+              "question": "Using the Cayley–Hamilton theorem, find \\(A^8\\) if \\(A=\\begin{bmatrix}1&2\\\\2&-1\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Direct multiplication gives \\(A^2=5I\\). This is also the Cayley–Hamilton relation because the characteristic equation is \\(\\lambda^2-5=0\\).",
+                  "Therefore \\(A^8=(A^2)^4=(5I)^4=625I\\)."
+                ],
+                "result": "\\(A^8=625I\\).",
+                "book_check": "Printed appendix p. 1381: \\(625I\\)."
+              }
+            },
+            {
+              "id": "u2-p29-14",
+              "number": 14,
+              "book_page": 73,
+              "topic_id": "u2-cayley-hamilton-power",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}2&-1&2\\\\-1&2&-1\\\\1&-1&2\\end{bmatrix}\\), find \\(A^4\\).",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic equation is \\(\\lambda^3-6\\lambda^2+8\\lambda-3=0\\). Hence, by Cayley–Hamilton, \\(A^3=6A^2-8A+3I\\).",
+                  "First compute \\[A^2=\\begin{bmatrix}7&-6&9\\\\-5&6&-6\\\\5&-5&7\\end{bmatrix}.\\]",
+                  "Therefore \\[A^3=6A^2-8A+3I=\\begin{bmatrix}29&-28&38\\\\-22&23&-28\\\\22&-22&29\\end{bmatrix}.\\]",
+                  "Multiplying the Cayley–Hamilton relation by \\(A\\), \\(A^4=6A^3-8A^2+3A\\). Substitution gives",
+                  "\\[A^4=\\begin{bmatrix}124&-123&162\\\\-95&96&-123\\\\95&-95&124\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(A^4=\\begin{bmatrix}124&-123&162\\\\-95&96&-123\\\\95&-95&124\\end{bmatrix}\\).",
+                "book_check": "Printed appendix p. 1381 agrees."
+              }
+            },
+            {
+              "id": "u2-p29-15",
+              "number": 15,
+              "book_page": 73,
+              "topic_id": "u2-cayley-hamilton-power",
+              "r25_scope": "core",
+              "question": "Using the Cayley–Hamilton theorem, find \\(A^{-2}\\), where \\(A=\\begin{bmatrix}1&2&0\\\\2&-1&0\\\\0&0&-1\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1381"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic equation is \\(\\lambda^3+\\lambda^2-5\\lambda-5=0\\), so Cayley–Hamilton gives \\(A^3+A^2-5A-5I=0\\).",
+                  "Multiplying by \\(A^{-1}\\) gives \\(A^2+A-5I-5A^{-1}=0\\), hence \\(A^{-1}=\\dfrac{A^2+A-5I}{5}\\).",
+                  "Here \\[A^2=\\begin{bmatrix}5&0&0\\\\0&5&0\\\\0&0&1\\end{bmatrix},\\] so",
+                  "\\[A^{-1}=\\begin{bmatrix}\\dfrac15&\\dfrac25&0\\\\\\dfrac25&-\\dfrac15&0\\\\0&0&-1\\end{bmatrix}.\\]",
+                  "Now square the inverse:",
+                  "\\[A^{-2}=(A^{-1})^2=\\begin{bmatrix}\\dfrac15&0&0\\\\0&\\dfrac15&0\\\\0&0&1\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(A^{-2}=\\begin{bmatrix}\\dfrac15&0&0\\\\0&\\dfrac15&0\\\\0&0&1\\end{bmatrix}\\).",
+                "book_check": "Printed appendix p. 1381 instead prints \\(\\operatorname{diag}(1/5,1/5,1/5)\\)."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "For the printed matrix, the third diagonal entry is \\(-1\\), so its square is \\(1\\) and the (3,3) entry of \\(A^{-2}\\) must remain \\(1\\). Appendix p. 1381 prints \\(1/5\\) there; direct multiplication verifies the corrected result."
+              }
+            },
+            {
+              "id": "u2-p29-16",
+              "number": 16,
+              "book_page": 73,
+              "topic_id": "u2-cayley-hamilton-power",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}4&6&6\\\\1&3&2\\\\-1&-4&-3\\end{bmatrix}\\), evaluate \\(A^{-1},A^{-2}\\) and \\(A^{-3}\\).",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic polynomial factors as \\((\\lambda-4)(\\lambda-1)(\\lambda+1)\\), i.e. \\(\\lambda^3-4\\lambda^2-\\lambda+4=0\\). Thus Cayley–Hamilton gives \\(A^3-4A^2-A+4I=0\\).",
+                  "Multiplying by \\(A^{-1}\\): \\(A^2-4A-I+4A^{-1}=0\\), so \\(A^{-1}=\\dfrac{-A^2+4A+I}{4}\\).",
+                  "Since \\[A^2=\\begin{bmatrix}16&18&18\\\\5&7&6\\\\-5&-6&-5\\end{bmatrix},\\]",
+                  "\\[A^{-1}=\\dfrac14\\begin{bmatrix}1&6&6\\\\-1&6&2\\\\1&-10&-6\\end{bmatrix}.\\]",
+                  "Then \\(A^{-2}=(A^{-1})^2\\) and \\(A^{-3}=A^{-2}A^{-1}\\):",
+                  "\\[A^{-2}=\\dfrac1{16}\\begin{bmatrix}1&-18&-18\\\\-5&10&-6\\\\5&6&22\\end{bmatrix},\\]",
+                  "\\[A^{-3}=\\dfrac1{64}\\begin{bmatrix}1&78&78\\\\-21&90&26\\\\21&-154&-90\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(A^{-1},A^{-2},A^{-3}\\) are the three matrices displayed above.",
+                "book_check": "Printed appendix p. 1382 agrees."
+              }
+            },
+            {
+              "id": "u2-p29-17",
+              "number": 17,
+              "book_page": 73,
+              "topic_id": "u2-cayley-hamilton-power",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}1&0&0\\\\1&0&1\\\\0&1&0\\end{bmatrix}\\), show that \\(A^n=A^{n-2}+A^2-I\\). Hence find \\(A^{50}\\).",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic equation is \\(\\lambda^3-\\lambda^2-\\lambda+1=0\\), hence Cayley–Hamilton gives \\(A^3-A^2-A+I=0\\).",
+                  "Rearrange it as \\(A(A^2-I)=A^2-I\\). Let \\(B=A^2-I\\). Then \\(AB=B\\), and therefore \\(A^mB=B\\) for every integer \\(m\\ge 0\\).",
+                  "For \\(n\\ge2\\),",
+                  "\\[A^n-A^{n-2}=A^{n-2}(A^2-I)=A^{n-2}B=B=A^2-I.\\]",
+                  "Thus \\[A^n=A^{n-2}+A^2-I,\\] as required.",
+                  "For \\(n=50\\), apply this recurrence 24 times:",
+                  "\\[A^{50}=A^2+24(A^2-I)=25A^2-24I.\\]",
+                  "Now \\[A^2=\\begin{bmatrix}1&0&0\\\\1&1&0\\\\1&0&1\\end{bmatrix},\\] so",
+                  "\\[A^{50}=\\begin{bmatrix}1&0&0\\\\25&1&0\\\\25&0&1\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(A^{50}=\\begin{bmatrix}1&0&0\\\\25&1&0\\\\25&0&1\\end{bmatrix}\\).",
+                "book_check": "Printed appendix p. 1382 agrees."
+              }
+            },
+            {
+              "id": "u2-p29-18",
+              "number": 18,
+              "book_page": 73,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "For the non-symmetric matrix \\(A=\\begin{bmatrix}1&20&0\\\\-1&7&1\\\\3&6&-2\\end{bmatrix}\\), find the eigenvalues and corresponding eigenvectors.",
+              "question_source_refs": [
+                "TB-P0073"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic polynomial of the printed matrix is \\[|\\lambda I-A|=\\lambda(\\lambda-1)(\\lambda-5).\\] Hence the eigenvalues are \\(0,1,5\\).",
+                  "For \\(\\lambda=0\\), \\(AX=0\\). The first two equations give \\(x+20y=0\\) and \\(-x+7y+z=0\\). Thus \\(x=-20y\\) and \\(z=-27y\\). Choosing \\(y=-1\\) gives \\(X=[20,-1,27]^T\\).",
+                  "For \\(\\lambda=1\\), \\((A-I)X=0\\). The first equation gives \\(20y=0\\), so \\(y=0\\); the second then gives \\(-x+z=0\\). Choosing \\(x=1\\) gives \\(X=[1,0,1]^T\\).",
+                  "For \\(\\lambda=5\\), \\((A-5I)X=0\\). From \\(-4x+20y=0\\), \\(x=5y\\); substituting into \\(-x+2y+z=0\\) gives \\(z=3y\\). Choosing \\(y=1\\) gives \\(X=[5,1,3]^T\\).",
+                  "Each vector verifies directly under \\(AX=\\lambda X\\)."
+                ],
+                "result": "\\(\\lambda=0:[20,-1,27]^T;\\quad \\lambda=1:[1,0,1]^T;\\quad \\lambda=5:[5,1,3]^T.\\)",
+                "book_check": "Printed appendix p. 1382 instead gives characteristic equation \\(\\lambda^3-6\\lambda^2+11\\lambda-6=0\\), eigenvalues \\(1,2,3\\), and different vectors."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "Appendix p. 1382 does not correspond to the matrix printed in Q18. Direct expansion of that matrix gives \\(\\lambda(\\lambda-1)(\\lambda-5)\\), and the listed verified eigenvectors satisfy the printed matrix exactly."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-2-10",
+          "nav_label": "Problems 2.10",
+          "title": "Problems 2.10 · Diagonalization and Quadratic Forms",
+          "note": "Book p. 80 · Q1–Q5 and Q7–Q13 are in scope; matrix-functions Q6 is excluded.",
+          "questions": [
+            {
+              "id": "u2-p210-01",
+              "number": 1,
+              "book_page": 80,
+              "topic_id": "u2-diagonalization",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}-1/2&-\\sqrt3/2&0\\\\-\\sqrt3/2&1/2&0\\\\0&0&0\\end{bmatrix}\\) and \\(P=\\begin{bmatrix}1/2&\\sqrt3/2&0\\\\-\\sqrt3/2&1/2&0\\\\0&0&1\\end{bmatrix}\\), show that \\(P^{-1}AP\\) is diagonal.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "The matrix \\(P\\) is orthogonal, so \\(P^{-1}=P^T\\).",
+                  "Direct multiplication gives",
+                  "\\[P^{-1}AP=P^TAP=\\begin{bmatrix}1&0&0\\\\0&-1&0\\\\0&0&0\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(P^{-1}AP=\\operatorname{diag}(1,-1,0)\\).",
+                "book_check": "No printed appendix answer is supplied for Q1."
+              }
+            },
+            {
+              "id": "u2-p210-02",
+              "number": 2,
+              "book_page": 80,
+              "topic_id": "u2-canonical-orthogonal",
+              "r25_scope": "core",
+              "question": "Show that the linear transformation \\(H=\\begin{bmatrix}\\cos\\theta&\\sin\\theta\\\\-\\sin\\theta&\\cos\\theta\\end{bmatrix}\\), where \\(\\theta=\\dfrac12\\tan^{-1}\\dfrac{2h}{a-b}\\), changes \\(C=\\begin{bmatrix}a&h\\\\h&b\\end{bmatrix}\\) to diagonal form \\(D=HCH^T\\).",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "Multiplying gives an off-diagonal entry",
+                  "\\[D_{12}=h\\cos2\\theta-\\dfrac{a-b}{2}\\sin2\\theta.\\]",
+                  "The stated angle satisfies \\(\\tan2\\theta=2h/(a-b)\\), so \\(D_{12}=0\\). Symmetry gives \\(D_{21}=0\\).",
+                  "Therefore \\(D\\) is diagonal; its diagonal entries are \\(a\\cos^2\\theta+b\\sin^2\\theta+h\\sin2\\theta\\) and \\(a\\sin^2\\theta+b\\cos^2\\theta-h\\sin2\\theta\\)."
+                ],
+                "result": "The stated orthogonal transformation diagonalizes \\(C\\).",
+                "book_check": "No printed appendix answer is supplied for Q2."
+              }
+            },
+            {
+              "id": "u2-p210-03",
+              "number": 3,
+              "book_page": 80,
+              "topic_id": "u2-diagonalization",
+              "r25_scope": "core",
+              "question": "Reduce the following matrices to diagonal form.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=(\\lambda+5)(\\lambda-2)=0.\\]",
+                      "Eigenvectors may be chosen as \\([1,2]^T\\) for \\(-5\\) and \\([1,3]^T\\) for \\(2\\). Thus with \\(P=\\begin{bmatrix}1&1\\\\2&3\\end{bmatrix}\\),",
+                      "\\[P^{-1}AP=\\operatorname{diag}(-5,2).\\]"
+                    ],
+                    "result": "Diagonal form \\(\\operatorname{diag}(-5,2)\\).",
+                    "book_check": "Printed appendix p. 1382 agrees."
+                  },
+                  {
+                    "label": "(b)",
+                    "paragraphs": [
+                      "\\[|A-\\lambda I|=(\\lambda-1)(\\lambda^2-5)=0.\\]",
+                      "Eigenvalues are \\(1,\\sqrt5,-\\sqrt5\\). Convenient eigenvectors are \\([-1,0,1]^T\\), \\([1-\\sqrt5,-1,1]^T\\), and \\([1+\\sqrt5,-1,1]^T\\), respectively. Using these as columns of \\(P\\) gives",
+                      "\\[P^{-1}AP=\\operatorname{diag}(1,\\sqrt5,-\\sqrt5).\\]"
+                    ],
+                    "result": "Diagonal form \\(\\operatorname{diag}(1,\\sqrt5,-\\sqrt5)\\).",
+                    "book_check": "Printed appendix p. 1382 instead gives \\(\\operatorname{diag}(0,3,15)\\), which is not similar to the printed matrix."
+                  }
+                ]
+              },
+              "question_lead": "Reduce to diagonal form:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "\\(A=\\begin{bmatrix}-19&7\\\\-42&16\\end{bmatrix}\\).",
+                  "id": "question-u2-p210-03-a"
+                },
+                {
+                  "label": "(b)",
+                  "content": "\\(A=\\begin{bmatrix}-1&2&-2\\\\1&2&1\\\\-1&-1&0\\end{bmatrix}\\).",
+                  "id": "question-u2-p210-03-b"
+                }
+              ],
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "For Q3(b), the printed matrix has characteristic polynomial \\((\\lambda-1)(\\lambda^2-5)\\), hence eigenvalues \\(1,\\pm\\sqrt5\\). Appendix p. 1382 prints diagonal entries \\(0,3,15\\), which cannot be a diagonal form similar to the printed matrix.",
+                "affected_parts": [
+                  "(b)"
+                ]
+              }
+            },
+            {
+              "id": "u2-p210-04",
+              "number": 4,
+              "book_page": 80,
+              "topic_id": "u2-diagonalization",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}1&2&3\\\\0&3&1\\\\0&0&1\\end{bmatrix}\\), obtain a matrix \\(P\\) such that \\(P^{-1}AP\\) is diagonal.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The eigenvalues are the diagonal entries \\(1,3,1\\). For \\(\\lambda=1\\),",
+                  "\\[(A-I)X=0\\Rightarrow y=z=0,\\]",
+                  "so its eigenspace has dimension only 1 although the algebraic multiplicity of \\(1\\) is 2. For \\(\\lambda=3\\), one independent eigenvector is available.",
+                  "Thus there are only two linearly independent eigenvectors in total, so \\(A\\) is not diagonalizable."
+                ],
+                "result": "No such non-singular modal matrix \\(P\\) exists for the printed matrix.",
+                "book_check": "Printed appendix p. 1382 supplies a matrix \\(P\\), but direct calculation gives a non-diagonal \\(P^{-1}AP\\)."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "The printed Q4 matrix is defective: eigenvalue \\(1\\) has algebraic multiplicity 2 but only one independent eigenvector. Therefore it cannot be diagonalized. The appendix matrix does not diagonalize the printed A."
+              }
+            },
+            {
+              "id": "u2-p210-05",
+              "number": 5,
+              "book_page": 80,
+              "topic_id": "u2-diagonalization",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}5&3\\\\1&3\\end{bmatrix}\\), find \\(A^n\\) and \\(A^4\\).",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Eigenvalues are \\(2\\) and \\(6\\), with eigenvectors \\([-1,1]^T\\) and \\([3,1]^T\\). Take \\(P=\\begin{bmatrix}-1&3\\\\1&1\\end{bmatrix}\\), so \\(A=P\\operatorname{diag}(2,6)P^{-1}\\).",
+                  "Therefore",
+                  "\\[A^n=\\dfrac14\\begin{bmatrix}2^n+3\\cdot6^n&-3\\cdot2^n+3\\cdot6^n\\\\-2^n+6^n&3\\cdot2^n+6^n\\end{bmatrix}.\\]",
+                  "Putting \\(n=4\\):",
+                  "\\[A^4=\\begin{bmatrix}976&960\\\\320&336\\end{bmatrix}.\\]"
+                ],
+                "result": "The formula above for \\(A^n\\); \\(A^4=\\begin{bmatrix}976&960\\\\320&336\\end{bmatrix}\\).",
+                "book_check": "Printed appendix p. 1382 prints the same numerator matrix for \\(A^n\\) but omits the required factor \\(1/4\\); its separately printed \\(A^4\\) is correct."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "Appendix p. 1382 omits the factor \\(1/4\\) from the displayed general formula for \\(A^n\\). Without it, setting \\(n=1\\) gives \\(4A\\), not \\(A\\). The appendix value of \\(A^4\\) itself agrees with the corrected formula."
+              }
+            },
+            {
+              "id": "u2-p210-07",
+              "number": 7,
+              "book_page": 80,
+              "topic_id": "u2-canonical-orthogonal",
+              "r25_scope": "core",
+              "question": "Find the eigenvectors of \\(A=\\begin{bmatrix}6&-2&2\\\\-2&3&-1\\\\2&-1&3\\end{bmatrix}\\) and hence reduce \\(6x^2+3y^2+3z^2-2yz+4zx-4xy\\) to a sum of squares. Also state the nature of the matrix.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic polynomial is \\((\\lambda-8)(\\lambda-2)^2\\).",
+                  "Choose mutually orthogonal eigenvectors \\(v_1=[1,1,-1]^T\\), \\(v_2=[0,1,1]^T\\) for \\(\\lambda=2\\), and \\(v_3=[2,-1,1]^T\\) for \\(\\lambda=8\\).",
+                  "After normalization,",
+                  "\\[P=\\begin{bmatrix}1/\\sqrt3&0&2/\\sqrt6\\\\1/\\sqrt3&1/\\sqrt2&-1/\\sqrt6\\\\-1/\\sqrt3&1/\\sqrt2&1/\\sqrt6\\end{bmatrix},\\qquad P^TAP=\\operatorname{diag}(2,2,8).\\]",
+                  "Hence under \\(X=PY\\),",
+                  "\\[Q=2y_1^2+2y_2^2+8y_3^2.\\]",
+                  "All three eigenvalues are positive, so the quadratic form/matrix is positive definite."
+                ],
+                "result": "Canonical sum of squares: \\(2y_1^2+2y_2^2+8y_3^2\\); positive definite.",
+                "book_check": "Printed appendix p. 1382 repeats one eigenvector and prints \\(4x^2+y^2+z^2\\), which is incompatible with the verified eigenvalues \\(2,2,8\\)."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "For the printed symmetric matrix, the eigenvalues are \\(2,2,8\\). Orthogonal reduction must preserve these diagonal coefficients (up to order), so the appendix form \\(4x^2+y^2+z^2\\) cannot be the orthogonal canonical form. The appendix also repeats an eigenvector instead of supplying two independent vectors for the repeated eigenvalue."
+              }
+            },
+            {
+              "id": "u2-p210-08",
+              "number": 8,
+              "book_page": 80,
+              "topic_id": "u2-canonical-orthogonal",
+              "r25_scope": "core",
+              "question": "Reduce the quadratic form \\(2xy+2yz+2zx\\) to canonical form.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The symmetric matrix is",
+                  "\\[A=\\begin{bmatrix}0&1&1\\\\1&0&1\\\\1&1&0\\end{bmatrix}.\\]",
+                  "Its eigenvalues are \\(2,-1,-1\\). An orthonormal eigenbasis may be chosen from \\([1,1,1]^T\\), \\([1,-1,0]^T\\), and \\([1,1,-2]^T\\).",
+                  "Therefore an orthogonal transformation gives",
+                  "\\[Q=2y_1^2-y_2^2-y_3^2.\\]"
+                ],
+                "result": "Canonical form: \\(2y_1^2-y_2^2-y_3^2\\).",
+                "book_check": "Printed appendix p. 1382 gives \\(x^2+y^2-2z^2\\), which has different orthogonal eigenvalue coefficients."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "Orthogonal reduction preserves the eigenvalues of the associated symmetric matrix. Here they are \\(2,-1,-1\\), so the orthogonal canonical coefficients must be \\(2,-1,-1\\) up to order. The appendix coefficients \\(1,1,-2\\) are not an orthogonal diagonalization of the printed matrix."
+              }
+            },
+            {
+              "id": "u2-p210-09",
+              "number": 9,
+              "book_page": 80,
+              "topic_id": "u2-canonical-orthogonal",
+              "r25_scope": "core",
+              "question": "For the given matrix and its quadratic form, complete the following tasks.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "paragraphs": [
+                      "For \\(A=\\begin{bmatrix}1&0&0\\\\0&3&-1\\\\0&-1&3\\end{bmatrix}\\), the eigenvalues are \\(1,2,4\\).",
+                      "Convenient eigenvectors are \\([1,0,0]^T,[0,1,1]^T,[0,1,-1]^T\\). Thus a modal matrix is \\(P=\\begin{bmatrix}1&0&0\\\\0&1&1\\\\0&1&-1\\end{bmatrix}\\)."
+                    ],
+                    "result": "Eigenvalues \\(1,2,4\\); eigenvectors as above; modal matrix \\(P\\) as displayed.",
+                    "book_check": "Printed appendix p. 1382 agrees."
+                  },
+                  {
+                    "label": "(b)",
+                    "paragraphs": [
+                      "The quadratic form \\(x_1^2+3x_2^2+3x_3^2-2x_2x_3\\) has the same symmetric matrix. Using normalized versions of the eigenvectors gives an orthogonal transformation."
+                    ],
+                    "result": "Canonical form: \\(y_1^2+2y_2^2+4y_3^2\\).",
+                    "book_check": "Printed appendix p. 1382 agrees."
+                  }
+                ]
+              },
+              "question_lead": "Solve:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "Find the eigenvalues, eigenvectors and modal matrix of \\(A=\\begin{bmatrix}1&0&0\\\\0&3&-1\\\\0&-1&3\\end{bmatrix}\\).",
+                  "id": "question-u2-p210-09-a"
+                },
+                {
+                  "label": "(b)",
+                  "content": "Reduce \\(x_1^2+3x_2^2+3x_3^2-2x_2x_3\\) to canonical form.",
+                  "id": "question-u2-p210-09-b"
+                }
+              ]
+            },
+            {
+              "id": "u2-p210-10",
+              "number": 10,
+              "book_page": 80,
+              "topic_id": "u2-canonical-orthogonal",
+              "r25_scope": "core",
+              "question": "Reduce the following quadratic forms to a sum of squares by an orthogonal transformation and give the transformation matrix.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "The symmetric matrix is \\(A=\\begin{bmatrix}3&1&1\\\\1&3&-1\\\\1&-1&3\\end{bmatrix}\\), with eigenvalues \\(1,4,4\\).",
+                      "One orthogonal eigenbasis gives",
+                      "\\[P=\\begin{bmatrix}-1/\\sqrt3&0&2/\\sqrt6\\\\1/\\sqrt3&1/\\sqrt2&1/\\sqrt6\\\\1/\\sqrt3&-1/\\sqrt2&1/\\sqrt6\\end{bmatrix}.\\]",
+                      "Then \\(P^TAP=\\operatorname{diag}(1,4,4)\\)."
+                    ],
+                    "result": "\\(y_1^2+4y_2^2+4y_3^2\\), with the displayed \\(P\\).",
+                    "book_check": "Printed appendix p. 1382 agrees."
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "The symmetric matrix is \\(A=\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&1&1\\end{bmatrix}\\), whose eigenvalues are \\(-2,3,6\\).",
+                      "An orthogonal modal matrix is",
+                      "\\[P=\\begin{bmatrix}-1/\\sqrt2&-1/\\sqrt3&1/\\sqrt6\\\\0&1/\\sqrt3&2/\\sqrt6\\\\1/\\sqrt2&-1/\\sqrt3&1/\\sqrt6\\end{bmatrix}.\\]",
+                      "Hence \\(P^TAP=\\operatorname{diag}(-2,3,6)\\)."
+                    ],
+                    "result": "\\(-2y_1^2+3y_2^2+6y_3^2\\), with the displayed \\(P\\).",
+                    "book_check": "Printed appendix p. 1382 agrees."
+                  }
+                ]
+              },
+              "question_lead": "Reduce by orthogonal transformation:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "\\(3x_1^2+3x_2^2+3x_3^2+2x_1x_2+2x_1x_3-2x_2x_3\\).",
+                  "id": "question-u2-p210-10-i"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "\\(x^2+5y^2+z^2+2yz+6zx+2xy\\).",
+                  "id": "question-u2-p210-10-ii"
+                }
+              ]
+            },
+            {
+              "id": "u2-p210-11",
+              "number": 11,
+              "book_page": 80,
+              "topic_id": "u2-nature-quadratic-forms",
+              "r25_scope": "core",
+              "question": "Find the index and signature of the quadratic form \\(x_1^2+2x_2^2-3x_3^2\\).",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The form is already diagonal. It has two positive square coefficients and one negative coefficient.",
+                  "Index = number of positive terms = 2. Signature = positive count − negative count = \\(2-1=1\\)."
+                ],
+                "result": "Index \\(=2\\), signature \\(=1\\).",
+                "book_check": "Printed appendix p. 1382 agrees."
+              }
+            },
+            {
+              "id": "u2-p210-12",
+              "number": 12,
+              "book_page": 80,
+              "topic_id": "u2-nature-quadratic-forms",
+              "r25_scope": "core",
+              "question": "Find the nature of \\(x^2+5y^2+z^2+2xy+2yz+6zx\\).",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The associated symmetric matrix is \\(\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&1&1\\end{bmatrix}\\).",
+                  "Its eigenvalues are \\(-2,3,6\\). Since both positive and negative eigenvalues occur, the quadratic form is indefinite."
+                ],
+                "result": "Indefinite.",
+                "book_check": "Printed appendix p. 1382: Indefinite."
+              }
+            },
+            {
+              "id": "u2-p210-13",
+              "number": 13,
+              "book_page": 80,
+              "topic_id": "u2-nature-quadratic-forms",
+              "r25_scope": "core",
+              "question": "Show that \\(5x_1^2+26x_2^2+10x_3^2+4x_2x_3+14x_3x_1+6x_1x_2\\) is positive semi-definite and find a non-zero set of \\(x_1,x_2,x_3\\) making the form zero.",
+              "question_source_refs": [
+                "TB-P0080"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "The symmetric matrix is",
+                  "\\[A=\\begin{bmatrix}5&3&7\\\\3&26&2\\\\7&2&10\\end{bmatrix}.\\]",
+                  "Its characteristic polynomial is \\(\\lambda(\\lambda-14)(\\lambda-27)\\). Hence its eigenvalues are \\(0,14,27\\), all non-negative, so the form is positive semi-definite.",
+                  "For the zero eigenvalue, solve \\(AX=0\\). A non-zero null vector is",
+                  "\\[X=\\begin{bmatrix}-16\\\\1\\\\11\\end{bmatrix}.\\]",
+                  "Substitution gives the quadratic form value 0."
+                ],
+                "result": "Positive semi-definite; one non-zero zero-producing set is \\((x_1,x_2,x_3)=(-16,1,11)\\).",
+                "book_check": "No printed appendix answer is supplied for Q13."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-2-12",
+          "nav_label": "Problems 2.12",
+          "title": "Problems 2.12 · Objective Checks for R25 Unit II",
+          "note": "Book pp. 86–88 · 36 chapter-end objective questions selected for Unit II. Q13 is not duplicated because it was already allocated to Unit I.",
+          "questions": [
+            {
+              "id": "u2-p212-15",
+              "number": 15,
+              "book_page": 86,
+              "topic_id": "u2-orthogonal-transformations",
+              "r25_scope": "core",
+              "question": "A square matrix \\(A\\) is called orthogonal if: (a) \\(A=A^2\\); (b) \\(A^T=A^{-1}\\); (c) \\(AA^{-1}=I\\).",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "By definition, a real square matrix is orthogonal when \\(A^TA=I\\), equivalently \\(A^T=A^{-1}\\). Option (c) is true for every invertible matrix, not specifically orthogonal matrices."
+                ],
+                "result": "Option (b): \\(A^T=A^{-1}\\).",
+                "book_check": "Printed appendix p. 1382 marks option (c)."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "Appendix p. 1382 marks (c) \\(AA^{-1}=I\\), but that is the ordinary inverse identity for any invertible matrix. The defining orthogonal condition is (b) \\(A^T=A^{-1}\\)."
+              }
+            },
+            {
+              "id": "u2-p212-17",
+              "number": 17,
+              "book_page": 86,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "The sum of the eigenvalues of a matrix is the ______ of the elements of the principal diagonal.",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The sum of eigenvalues equals the trace, and the trace is the sum of the principal-diagonal elements."
+                ],
+                "result": "sum.",
+                "book_check": "Printed appendix p. 1382: sum."
+              }
+            },
+            {
+              "id": "u2-p212-18",
+              "number": 18,
+              "book_page": 86,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "The sum and product of the eigenvalues of \\(\\begin{bmatrix}2&-3\\\\4&-2\\end{bmatrix}\\) are ______ and ______, respectively.",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Sum = trace = \\(2-2=0\\). Product = determinant = \\(2(-2)-(-3)(4)=8\\)."
+                ],
+                "result": "Sum \\(0\\), product \\(8\\).",
+                "book_check": "Printed appendix p. 1382: \\(0,8\\)."
+              }
+            },
+            {
+              "id": "u2-p212-20",
+              "number": 20,
+              "book_page": 86,
+              "topic_id": "u2-cayley-hamilton-power",
+              "r25_scope": "core",
+              "question": "Using Cayley–Hamilton theorem, find \\(A^4-4A^3-5A^2-A+2I\\) when \\(A=\\begin{bmatrix}1&2\\\\4&2\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic polynomial is \\(\\lambda^2-3\\lambda-6\\), so \\(A^2=3A+6I\\).",
+                  "Using this relation repeatedly: \\(A^3=15A+18I\\) and \\(A^4=63A+90I\\).",
+                  "Therefore",
+                  "\\[A^4-4A^3-5A^2-A+2I=-13A-10I=\\begin{bmatrix}-23&-26\\\\-52&-36\\end{bmatrix}.\\]"
+                ],
+                "result": "\\(\\begin{bmatrix}-23&-26\\\\-52&-36\\end{bmatrix}\\).",
+                "book_check": "Printed appendix p. 1382 gives \\(\\begin{bmatrix}3&2\\\\4&5\\end{bmatrix}\\)."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "For the printed polynomial and matrix, Cayley–Hamilton reduces the expression to \\(-13A-10I\\), giving \\(\\begin{bmatrix}-23&-26\\\\-52&-36\\end{bmatrix}\\). The appendix matrix does not equal the printed expression."
+              }
+            },
+            {
+              "id": "u2-p212-21",
+              "number": 21,
+              "book_page": 86,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "If two eigenvalues of \\(\\begin{bmatrix}8&-6&2\\\\-6&7&-4\\\\2&-4&3\\end{bmatrix}\\) are 3 and 15, find the third eigenvalue.",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The sum of eigenvalues equals the trace \\(8+7+3=18\\). Hence the third eigenvalue is \\(18-3-15=0\\)."
+                ],
+                "result": "\\(0\\).",
+                "book_check": "Printed appendix p. 1382: \\(0\\)."
+              }
+            },
+            {
+              "id": "u2-p212-22",
+              "number": 22,
+              "book_page": 86,
+              "topic_id": "u2-nature-quadratic-forms",
+              "r25_scope": "core",
+              "question": "A quadratic form is positive semi-definite when ______.",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "A real quadratic form is positive semi-definite exactly when every eigenvalue of its symmetric matrix is non-negative and at least one is zero (for the non-definite case intended here)."
+                ],
+                "result": "All eigenvalues are \\(\\ge0\\) and at least one eigenvalue is zero.",
+                "book_check": "Printed appendix p. 1382 gives the same condition."
+              }
+            },
+            {
+              "id": "u2-p212-24",
+              "number": 24,
+              "book_page": 86,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "Find the product of the eigenvalues of each matrix.",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "paragraphs": [
+                      "The product of eigenvalues equals the determinant. Here \\(|A|=8\\)."
+                    ],
+                    "result": "\\(8\\).",
+                    "book_check": "Printed appendix p. 1382: 8."
+                  },
+                  {
+                    "label": "(b)",
+                    "paragraphs": [
+                      "The determinant is \\(-36\\)."
+                    ],
+                    "result": "\\(-36\\).",
+                    "book_check": "Printed appendix p. 1382: −36."
+                  }
+                ]
+              },
+              "question_lead": "Find the product of the eigenvalues of:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "content": "Product of eigenvalues of \\(\\begin{bmatrix}1&0&0\\\\0&3&-1\\\\0&-1&3\\end{bmatrix}\\).",
+                  "id": "question-u2-p212-24-a"
+                },
+                {
+                  "label": "(b)",
+                  "content": "Product of eigenvalues of \\(\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&1&1\\end{bmatrix}\\).",
+                  "id": "question-u2-p212-24-b"
+                }
+              ]
+            },
+            {
+              "id": "u2-p212-25",
+              "number": 25,
+              "book_page": 86,
+              "topic_id": "u2-quadratic-forms",
+              "r25_scope": "core",
+              "question": "The quadratic form corresponding to \\(\\operatorname{diag}(\\lambda_1,\\lambda_2,\\ldots,\\lambda_n)\\) is: (a) \\(x_1^2+\\cdots+x_n^2\\); (b) \\(\\lambda_1x_1^2+\\lambda_2x_2^2+\\cdots+\\lambda_nx_n^2\\); (c) \\(\\lambda_1^2x_1^2+\\cdots+\\lambda_n^2x_n^2\\).",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For \\(Q=X^TAX\\) with diagonal \\(A\\), only diagonal terms remain."
+                ],
+                "result": "Option (b): \\(\\lambda_1x_1^2+\\cdots+\\lambda_nx_n^2\\).",
+                "book_check": "Printed appendix p. 1382: (b)."
+              }
+            },
+            {
+              "id": "u2-p212-27",
+              "number": 27,
+              "book_page": 86,
+              "topic_id": "u2-quadratic-forms",
+              "r25_scope": "core",
+              "question": "Find the quadratic form corresponding to the symmetric matrix \\(\\begin{bmatrix}1&2\\\\2&-4\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0086"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For a symmetric 2×2 matrix \\(\\begin{bmatrix}a&h\\\\h&b\\end{bmatrix}\\), the form is \\(ax^2+2hxy+by^2\\)."
+                ],
+                "result": "\\(x^2+4xy-4y^2\\).",
+                "book_check": "Printed appendix p. 1382 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-29",
+              "number": 29,
+              "book_page": 87,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If 3 and 6 are two eigenvalues of \\(A=\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&7&7\\end{bmatrix}\\), find the eigenvalues of \\(A^{-1}\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For the matrix actually printed,",
+                  "\\[|\\lambda I-A|=\\lambda(\\lambda-3)(\\lambda-10).\\]",
+                  "Thus its eigenvalues are \\(0,3,10\\), so \\(A\\) is singular and \\(A^{-1}\\) does not exist. The phrase “3 and 6 are two eigenvalues” is inconsistent with the printed matrix."
+                ],
+                "result": "For the printed matrix, \\(A^{-1}\\) does not exist.",
+                "book_check": "Printed appendix p. 1382 gives \\(1/3,1/6,1/4\\), evidently following the stated eigenvalues rather than the printed matrix."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "Q29 is internally inconsistent. The printed matrix has eigenvalues \\(0,3,10\\), not eigenvalues including 6, and is singular. Therefore its inverse does not exist. The appendix answer \\(1/3,1/6,1/4\\) cannot apply to the printed matrix."
+              }
+            },
+            {
+              "id": "u2-p212-32",
+              "number": 32,
+              "book_page": 87,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}-1&2&3\\\\0&3&5\\\\0&0&-2\\end{bmatrix}\\), find the eigenvalues of \\(A^2\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Since \\(A\\) is triangular, its eigenvalues are \\(-1,3,-2\\). Squaring them gives the eigenvalues of \\(A^2\\): \\(1,9,4\\)."
+                ],
+                "result": "\\(1,4,9\\) (order immaterial).",
+                "book_check": "Printed appendix p. 1382: \\(1,4,9\\)."
+              }
+            },
+            {
+              "id": "u2-p212-33",
+              "number": 33,
+              "book_page": 87,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "Find the sum of the eigenvalues of \\(\\begin{bmatrix}1&1&3\\\\1&5&1\\\\3&-1&-1\\end{bmatrix}\\): (i) −2, (ii) 3, (iii) 6, (iv) 7.",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The sum of eigenvalues equals the trace: \\(1+5-1=5\\)."
+                ],
+                "result": "\\(5\\); none of the printed options is correct.",
+                "book_check": "Printed appendix p. 1382 marks option (iv), 7."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "The trace of the printed matrix is \\(5\\), so the eigenvalue sum is \\(5\\). None of the four options matches. Appendix p. 1382 marks 7, which is also inconsistent with the printed matrix."
+              }
+            },
+            {
+              "id": "u2-p212-35",
+              "number": 35,
+              "book_page": 87,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "For a \\(3\\times3\\) matrix, if the sum of two eigenvalues equals the trace, find \\(|A|\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Let eigenvalues be \\(\\lambda_1,\\lambda_2,\\lambda_3\\). Since the trace is their sum, \\(\\lambda_1+\\lambda_2=\\lambda_1+\\lambda_2+\\lambda_3\\) gives \\(\\lambda_3=0\\). Therefore the determinant, their product, is zero."
+                ],
+                "result": "\\(|A|=0\\).",
+                "book_check": "Printed appendix p. 1382: zero."
+              }
+            },
+            {
+              "id": "u2-p212-36",
+              "number": 36,
+              "book_page": 87,
+              "topic_id": "u2-nature-quadratic-forms",
+              "r25_scope": "core",
+              "question": "If the sum of the eigenvalues of the matrix of a quadratic form is zero, state the nature of the quadratic form.",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For a non-zero real symmetric matrix, a zero sum of eigenvalues cannot have all eigenvalues strictly positive or strictly negative. If non-zero eigenvalues are present, positive and negative values must occur, so the form is indefinite."
+                ],
+                "result": "Indefinite (for the intended non-zero quadratic form).",
+                "book_check": "Printed appendix p. 1382: Indefinite.",
+                "note": "Strictly, the zero quadratic form has all eigenvalues zero and is a degenerate exceptional case; the textbook answer assumes a non-zero form."
+              }
+            },
+            {
+              "id": "u2-p212-37",
+              "number": 37,
+              "book_page": 87,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "Find the eigenvalues of \\(\\begin{bmatrix}\\cos\\theta&-\\sin\\theta\\\\-\\sin\\theta&-\\cos\\theta\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1382"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The trace is 0 and determinant is \\(-1\\). Hence the characteristic equation is \\(\\lambda^2-1=0\\)."
+                ],
+                "result": "\\(1,-1\\).",
+                "book_check": "Printed appendix p. 1382: \\(1,-1\\)."
+              }
+            },
+            {
+              "id": "u2-p212-38",
+              "number": 38,
+              "book_page": 87,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "The eigenvalues of a triangular matrix are ______.",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic determinant of a triangular matrix is the product of its diagonal factors \\((a_{ii}-\\lambda)\\)."
+                ],
+                "result": "The elements of its leading (principal) diagonal.",
+                "book_check": "Printed appendix p. 1383: the elements of its leading diagonal."
+              }
+            },
+            {
+              "id": "u2-p212-39",
+              "number": 39,
+              "book_page": 87,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "If the product of two eigenvalues of \\(\\begin{bmatrix}6&-2&2\\\\-2&3&-1\\\\2&-1&3\\end{bmatrix}\\) is 16, find the third eigenvalue.",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The matrix has eigenvalues \\(8,2,2\\). A product of two equal to 16 must be \\(8\\cdot2\\), leaving the third eigenvalue \\(2\\)."
+                ],
+                "result": "\\(2\\).",
+                "book_check": "Printed appendix p. 1383: 2."
+              }
+            },
+            {
+              "id": "u2-p212-40",
+              "number": 40,
+              "book_page": 87,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(\\lambda_i, i=1,2,\\ldots,n\\) are the eigenvalues of a square matrix \\(A\\), what are the eigenvalues of \\(A^T\\)?",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "A matrix and its transpose have the same characteristic polynomial because \\(|A^T-\\lambda I|=|(A-\\lambda I)^T|=|A-\\lambda I|\\)."
+                ],
+                "result": "\\(\\lambda_i,\\ i=1,2,\\ldots,n\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-42",
+              "number": 42,
+              "book_page": 87,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(\\lambda\\) is an eigenvalue of \\(A\\), then it is an eigenvalue of \\(B\\), only if \\(B=\\) ______.",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Certainly \\(A\\) and \\(A^T\\) share eigenvalues. However, many other matrices—especially matrices similar to \\(A\\)—can also share the eigenvalue \\(\\lambda\\). Therefore the phrase “only if” does not define a unique necessary form for \\(B\\)."
+                ],
+                "result": "The printed item is not mathematically unique as written.",
+                "book_check": "Printed appendix p. 1383 answers “A or \\(A^T\\)”."
+              },
+              "math_mismatch": {
+                "label": "Textbook discrepancy",
+                "message": "The appendix answer “\\(A\\) or \\(A^T\\)” gives two sufficient examples, but the question says “only if”. Many matrices other than \\(A\\) or \\(A^T\\) can have the same eigenvalue, so the printed statement is not a valid unique necessity condition."
+              }
+            },
+            {
+              "id": "u2-p212-43",
+              "number": 43,
+              "book_page": 87,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}3&1&4\\\\0&2&6\\\\0&0&5\\end{bmatrix}\\), find the eigenvalues of \\(A^{-1}\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Eigenvalues of triangular \\(A\\) are \\(3,2,5\\). For a non-singular matrix, inverse eigenvalues are reciprocals."
+                ],
+                "result": "\\(1/3,1/2,1/5\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-44",
+              "number": 44,
+              "book_page": 87,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "Find the characteristic equation of \\(\\begin{bmatrix}3&10&5\\\\-2&-3&-4\\\\3&5&7\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Expanding \\(|\\lambda I-A|\\) gives \\(\\lambda^3-7\\lambda^2+16\\lambda-12\\), which factors as \\((\\lambda-3)(\\lambda-2)^2\\)."
+                ],
+                "result": "\\(\\lambda^3-7\\lambda^2+16\\lambda-12=0\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-45",
+              "number": 45,
+              "book_page": 87,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(A=\\begin{bmatrix}2&1\\\\1&2\\end{bmatrix}\\), find the eigenvalues of \\(A^{-1}\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Eigenvalues of \\(A\\) are \\(3\\) and \\(1\\). Their reciprocals are \\(1/3\\) and \\(1\\)."
+                ],
+                "result": "\\(1,1/3\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-48",
+              "number": 48,
+              "book_page": 87,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "Find the sum and product of the eigenvalues of \\(\\begin{bmatrix}2&2&1\\\\1&3&1\\\\1&2&2\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0087"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Sum = trace = \\(7\\). Product = determinant = \\(5\\)."
+                ],
+                "result": "Sum \\(7\\), product \\(5\\).",
+                "book_check": "Printed appendix p. 1383: \\(7;5\\)."
+              }
+            },
+            {
+              "id": "u2-p212-50",
+              "number": 50,
+              "book_page": 88,
+              "topic_id": "u2-diagonalization",
+              "r25_scope": "core",
+              "question": "Pick the correct answer.",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "paragraphs": [
+                      "The all-ones matrix has rank 1, eigenvalue \\(3\\) along \\([1,1,1]^T\\), and two zero eigenvalues."
+                    ],
+                    "result": "Option (c): \\(0,0,3\\).",
+                    "book_check": "Printed appendix p. 1383: (c)."
+                  },
+                  {
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "Similarity is defined by \\(B=P^{-1}AP\\) for some non-singular \\(P\\)."
+                    ],
+                    "result": "Option (b).",
+                    "book_check": "Printed appendix p. 1383: (b)."
+                  }
+                ]
+              },
+              "question_lead": "Pick the correct answer:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "content": "Eigenvalues of \\(\\begin{bmatrix}1&1&1\\\\1&1&1\\\\1&1&1\\end{bmatrix}\\): (a) 0,0,0; (b) 0,0,1; (c) 0,0,3; (d) 1,1,1.",
+                  "id": "question-u2-p212-50-i"
+                },
+                {
+                  "label": "(ii)",
+                  "content": "Two square matrices \\(A\\) and \\(B\\) are similar if: (a) \\(A=B\\); (b) \\(B=P^{-1}AP\\); (c) \\(A^T=B^T\\); (d) \\(A^{-1}=B^{-1}\\).",
+                  "id": "question-u2-p212-50-ii"
+                }
+              ]
+            },
+            {
+              "id": "u2-p212-51",
+              "number": 51,
+              "book_page": 88,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "The eigenvalues of \\(A=\\begin{bmatrix}1&1\\\\2&5\\end{bmatrix}\\) are the roots of the equation ______.",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[|\\lambda I-A|=(\\lambda-1)(\\lambda-5)-2=\\lambda^2-6\\lambda+3.\\]"
+                ],
+                "result": "\\(\\lambda^2-6\\lambda+3=0\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-53",
+              "number": 53,
+              "book_page": 88,
+              "topic_id": "u2-quadratic-forms",
+              "r25_scope": "core",
+              "question": "Find the matrix of the quadratic form \\(q=4x^2-2y^2+z^2-2xy+6zx\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Cross-term coefficients are twice the corresponding off-diagonal entries: \\(2a_{12}=-2\\Rightarrow a_{12}=-1\\), and \\(2a_{13}=6\\Rightarrow a_{13}=3\\)."
+                ],
+                "result": "\\(\\begin{bmatrix}4&-1&3\\\\-1&-2&0\\\\3&0&1\\end{bmatrix}\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-54",
+              "number": 54,
+              "book_page": 88,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(\\lambda_1,\\lambda_2,\\lambda_3\\) are eigenvalues of \\(A\\), find the eigenvalues of \\(A^3\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "If \\(AX=\\lambda X\\), then \\(A^3X=\\lambda^3X\\)."
+                ],
+                "result": "\\(\\lambda_1^3,\\lambda_2^3,\\lambda_3^3\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-55",
+              "number": 55,
+              "book_page": 88,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "If \\(\\lambda\\) is an eigenvalue of a non-singular matrix \\(A\\), what is the corresponding eigenvalue of \\(A^{-1}\\)?",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "From \\(AX=\\lambda X\\), multiply by \\(A^{-1}\\) to obtain \\(A^{-1}X=(1/\\lambda)X\\)."
+                ],
+                "result": "\\(1/\\lambda\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-57",
+              "number": 57,
+              "book_page": 88,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "Find the sum of the squares of the eigenvalues of \\(\\begin{bmatrix}3&1&4\\\\0&2&6\\\\0&0&5\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The matrix is triangular, so eigenvalues are \\(3,2,5\\). Their squared sum is \\(9+4+25=38\\)."
+                ],
+                "result": "\\(38\\).",
+                "book_check": "Printed appendix p. 1383: 38."
+              }
+            },
+            {
+              "id": "u2-p212-59",
+              "number": 59,
+              "book_page": 88,
+              "topic_id": "u2-nature-quadratic-forms",
+              "r25_scope": "core",
+              "question": "Find the index and signature of \\(x_1^2+2x_2^2-3x_3^2\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "There are two positive terms and one negative term. Index = 2; signature = \\(2-1=1\\)."
+                ],
+                "result": "Index \\(=2\\), signature \\(=1\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            },
+            {
+              "id": "u2-p212-63",
+              "number": 63,
+              "book_page": 88,
+              "topic_id": "u2-eigenvectors-properties",
+              "r25_scope": "core",
+              "question": "True or False: If \\(\\lambda\\) is an eigenvalue of a symmetric matrix, then \\(\\lambda\\) is real.",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Every real symmetric matrix has only real eigenvalues."
+                ],
+                "result": "True.",
+                "book_check": "Printed appendix p. 1383: True."
+              }
+            },
+            {
+              "id": "u2-p212-64",
+              "number": 64,
+              "book_page": 88,
+              "topic_id": "u2-cayley-hamilton",
+              "r25_scope": "core",
+              "question": "True or False: Every square matrix does not satisfy its own characteristic equation.",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Cayley–Hamilton states that every square matrix does satisfy its own characteristic equation. Therefore the negative statement is false."
+                ],
+                "result": "False.",
+                "book_check": "Printed appendix p. 1383: False."
+              }
+            },
+            {
+              "id": "u2-p212-65",
+              "number": 65,
+              "book_page": 88,
+              "topic_id": "u2-orthogonal-transformations",
+              "r25_scope": "core",
+              "question": "True or False: If \\(\\lambda\\) is an eigenvalue of an orthogonal matrix, then \\(1/\\lambda\\) is also an eigenvalue.",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For orthogonal \\(A\\), \\(A^{-1}=A^T\\). The eigenvalues of \\(A^{-1}\\) are reciprocals of those of \\(A\\), while \\(A^T\\) has the same eigenvalues as \\(A\\). Hence the reciprocal also occurs in the spectrum."
+                ],
+                "result": "True.",
+                "book_check": "Printed appendix p. 1383: True."
+              }
+            },
+            {
+              "id": "u2-p212-68",
+              "number": 68,
+              "book_page": 88,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "True or False: The eigenvalues of a triangular matrix are just the diagonal elements of the matrix.",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The characteristic determinant of a triangular matrix is the product of its diagonal factors."
+                ],
+                "result": "True.",
+                "book_check": "Printed appendix p. 1383: True."
+              }
+            },
+            {
+              "id": "u2-p212-71",
+              "number": 71,
+              "book_page": 88,
+              "topic_id": "u2-eigenvalues",
+              "r25_scope": "core",
+              "question": "True or False: The sum of the eigenvalues of \\(A\\) equals the trace of \\(A=\\begin{bmatrix}1&0&0\\\\0&3&-1\\\\0&-1&3\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For every square matrix, the sum of eigenvalues (with algebraic multiplicity) equals the trace. Here the trace is \\(7\\)."
+                ],
+                "result": "True.",
+                "book_check": "Printed appendix p. 1383: True."
+              }
+            },
+            {
+              "id": "u2-p212-73",
+              "number": 73,
+              "book_page": 88,
+              "topic_id": "u2-quadratic-forms",
+              "r25_scope": "core",
+              "question": "Find the quadratic form corresponding to \\(\\begin{bmatrix}2&0&-2\\\\0&2&1\\\\-2&1&-2\\end{bmatrix}\\).",
+              "question_source_refs": [
+                "TB-P0088"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer_source_refs": [
+                "TB-P1383"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Using \\(Q=X^TAX\\), the diagonal terms are \\(2x^2+2y^2-2z^2\\); symmetric off-diagonal terms contribute \\(-4xz+2yz\\)."
+                ],
+                "result": "\\(2x^2+2y^2-2z^2+2yz-4zx\\).",
+                "book_check": "Printed appendix p. 1383 agrees."
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

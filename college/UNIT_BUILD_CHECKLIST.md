@@ -122,6 +122,7 @@ For **every technical redraw**:
 - [ ] Preserve source page sequence in provenance, but do **not** let physical notebook page breaks dictate the student-facing layout.
 - [ ] Group dated class material into logical lessons/topics; never expose artificial `Example — beginning`, `completion`, or `continued on next page` sections when they belong to one worked problem.
 - [ ] Render every worked class example as one complete shared-study accordion: full question visible when closed, complete solution and bold final answer inside.
+- [ ] **Before solving any class question/example, run the textbook-match gate:** compare the complete class data against prescribed-textbook worked examples, in-scope section-end questions and in-scope chapter-end questions. Exact match → link to the stable textbook anchor and do not duplicate a solution. Near-match → state the differing data and link only for comparison. No exact match → independent solution is allowed, with any source-external completion labelled clearly.
 - [ ] Record user-confirmed ambiguous readings where useful.
 - [ ] Map the dated entry to stable topic IDs.
 - [ ] Add/update the class source in provenance/source manifest.
@@ -138,6 +139,7 @@ For **every technical redraw**:
 - [ ] Audit all chapter-end questions belonging to the unit.
 - [ ] Preserve the official mathematical content and intent; lightly clean awkward grammar, punctuation and wording when this improves readability without changing the mathematics.
 - [ ] Give every question a stable ID/anchor.
+- [ ] Give every worked textbook example and every labelled textbook-question subpart a stable deep-link anchor so class notes can link to the exact source item.
 - [ ] Link theory practice rows to exact anchors.
 - [ ] Render every inline prescribed-book practice reference as the shared large, high-contrast practice callout; it must be immediately distinguishable from theory and class-note boxes.
 - [ ] Keep PankusDesk answers distinct from official textbook solutions.

@@ -209,3 +209,43 @@
 	.study-explainer > summary,
 	.study-explainer-content { padding-left: 13px; padding-right: 13px; }
 }
+
+
+/* Textbook-match handoff inside class-note example accordions.
+ * Exact matches link to the single verified textbook solution instead of duplicating working. */
+.study-accordion-item[id],
+.chapter-question-part[id] { scroll-margin-top: 104px; }
+
+.study-textbook-match {
+	margin: .35rem 0 1rem;
+	padding: 13px 15px;
+	border: 1px solid var(--notes-border);
+	border-left: 5px solid var(--notes);
+	border-radius: var(--radius-sm);
+	background: var(--notes-soft);
+}
+.study-textbook-match--near {
+	border-color: var(--line-strong);
+	border-left-color: var(--primary-muted);
+	background: var(--surface-subtle);
+}
+.study-textbook-match-label {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: .07em;
+	text-transform: uppercase;
+	color: var(--notes-text);
+}
+.study-textbook-match p { margin: 7px 0 10px; line-height: 1.6; }
+.study-textbook-match-link {
+	display: inline-flex;
+	align-items: center;
+	padding: 8px 12px;
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-pill);
+	background: var(--surface);
+	color: var(--primary-dark);
+	font-weight: 800;
+	text-decoration: none;
+}
+.study-textbook-match-link:hover { background: var(--surface-soft); }

@@ -965,8 +965,10 @@ function setupTopicNavigation(unitTopics) {
 
 	const initialId = window.location.hash.slice(1);
 	if (initialId && document.getElementById(initialId)) {
+		const initialTarget = document.getElementById(initialId);
+		if (initialTarget?.matches?.('details.study-accordion-item')) initialTarget.open = true;
 		setActive(initialId);
-		requestAnimationFrame(() => document.getElementById(initialId)?.scrollIntoView({ block: 'start' }));
+		requestAnimationFrame(() => initialTarget?.scrollIntoView({ block: 'start' }));
 	} else {
 		setActive(sections[0].id);
 	}

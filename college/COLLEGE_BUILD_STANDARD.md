@@ -160,6 +160,8 @@ The **class-note source label itself is allowed and intentional**; source-manage
 
 If textbook, lecture and class notes overlap, keep the Text page textbook-led and keep the class lesson on the dated Class Notes page. Do not reconcile overlap by merging source voices into one paragraph.
 
+**Class-question textbook-match gate.** Before independently solving any class-note question or worked class example, compare its complete given data against the prescribed textbook's worked examples, in-scope section-end questions and in-scope chapter-end questions. If it is an exact match, keep the class question in the dated notes but link to the stable textbook example/question anchor instead of creating or maintaining a second solution. If it is only a near-match, state the differing matrix entry/value/sign/condition explicitly and link to the textbook item only as a comparison; never call it an exact match. Only when no exact textbook match exists may PankusDesk provide an independent class solution, and any completion beyond the photographed/written class source must be identified as PankusDesk verification rather than class working. Every textbook worked example and labelled textbook-question subpart that may be referenced from class notes must therefore have a stable deep-link anchor. This gate applies to all subjects and future college builds.
+
 ---
 
 ## 6. Mathematics and notation

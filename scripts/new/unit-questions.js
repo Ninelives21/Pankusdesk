@@ -149,7 +149,7 @@ function renderQuestionPrompt(question, mismatch) {
 		${lead ? `<span class="chapter-question-lead">${formatText(lead)}</span>` : ''}
 		<span class="chapter-question-parts">
 			${parts.map(part => `
-				<span class="chapter-question-part">
+				<span class="chapter-question-part"${part.id ? ` id="${escapeHtml(part.id)}"` : ''}>
 					<span class="chapter-question-part-label ${affectedParts.has(part.label) ? 'is-math-mismatch' : ''}">${escapeHtml(part.label || '')}</span>
 					<span class="chapter-question-part-content">${formatText(part.content || '')}</span>
 				</span>

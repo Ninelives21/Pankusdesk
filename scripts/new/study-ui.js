@@ -138,12 +138,37 @@ function renderExampleSolutionContent(item, solutionParagraphs) {
 	return html;
 }
 
+function normalizeTextbookMatch(value) {
+	if (!value || typeof value !== 'object' || !value.status || value.status === 'none') return null;
+	return {
+		status: String(value.status),
+		label: String(value.label || (value.status === 'exact' ? 'Exact textbook match' : 'Textbook comparison')),
+		target: String(value.target || 'Textbook item'),
+		href: value.href ? String(value.href) : null,
+		note: value.note ? String(value.note) : '',
+	};
+}
+
+function renderTextbookMatch(match) {
+	if (!match) return '';
+	const kind = match.status === 'exact' ? 'exact' : 'near';
+	return `
+		<aside class="study-textbook-match study-textbook-match--${escapeHtml(kind)}" role="note">
+			<div class="study-textbook-match-label">${escapeHtml(match.label)}</div>
+			${match.note ? `<p>${escapeHtml(match.note)}</p>` : ''}
+			${match.href ? `<a class="study-textbook-match-link" href="${escapeHtml(match.href)}">Open ${escapeHtml(match.target)} →</a>` : ''}
+		</aside>`;
+}
+
 function renderAccordionItem(item, options = {}) {
 	const isExample = options.isExampleGroup || (item.question_paragraphs ?? item.questionParagraphs)?.length;
 	const mismatch = normalizeMismatch(item.math_mismatch ?? item.discrepancy);
+	const textbookMatch = normalizeTextbookMatch(item.textbook_match);
+	const linkOnly = item.solution_mode === 'textbook-link' && textbookMatch;
+	const itemId = item.id ? ` id="${escapeHtml(item.id)}"` : '';
 	if (!isExample) {
 		return `
-			<details class="study-accordion-item${mismatch ? ' has-math-mismatch' : ''}">
+			<details class="study-accordion-item${mismatch ? ' has-math-mismatch' : ''}"${itemId}>
 				<summary>
 					<span class="study-accordion-summary-title">${formatText(item.title || '')}</span>
 					<span class="study-accordion-toggle" aria-hidden="true">+</span>
@@ -158,7 +183,7 @@ function renderAccordionItem(item, options = {}) {
 
 	const split = splitQuestionAndSolution(item);
 	return `
-		<details class="study-accordion-item study-accordion-item--example${mismatch ? ' has-math-mismatch' : ''}">
+		<details class="study-accordion-item study-accordion-item--example${mismatch ? ' has-math-mismatch' : ''}"${itemId}>
 			<summary>
 				<span class="study-example-summary-copy">
 					<span class="study-example-title-row">
@@ -170,11 +195,12 @@ function renderAccordionItem(item, options = {}) {
 				<span class="study-accordion-toggle" aria-hidden="true">+</span>
 			</summary>
 			<div class="study-accordion-content study-example-solution">
-				<div class="study-solution-label">Solution</div>
-				${renderExampleSolutionContent(item, split.solution)}
-				${(item.bullets || []).length ? `<ul>${item.bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
+				<div class="study-solution-label">${linkOnly ? (textbookMatch.status === 'exact' ? 'Textbook match' : 'Textbook comparison') : 'Solution'}</div>
+				${textbookMatch ? renderTextbookMatch(textbookMatch) : ''}
+				${linkOnly ? '' : renderExampleSolutionContent(item, split.solution)}
+				${!linkOnly && (item.bullets || []).length ? `<ul>${item.bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
 				${mismatch ? renderMismatch(mismatch) : ''}
-				${item.final_answer ? `<div class="study-final-answer"><strong>Final answer:</strong> <strong>${formatText(item.final_answer)}</strong></div>` : ''}
+				${!linkOnly && item.final_answer ? `<div class="study-final-answer"><strong>Final answer:</strong> <strong>${formatText(item.final_answer)}</strong></div>` : ''}
 			</div>
 		</details>`;
 }

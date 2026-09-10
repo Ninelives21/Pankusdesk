@@ -910,7 +910,8 @@
               "\\[AA^{T}=\\begin{bmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{bmatrix}=I.\\]",
               "Hence the given matrix is orthogonal."
             ],
-            "final_answer": "The given matrix is orthogonal."
+            "final_answer": "The given matrix is orthogonal.",
+            "id": "example-2-42"
           },
           {
             "title": "Example 2.43 — If the matrix is orthogonal, find \\(a,b,c\\) and \\(A^{-1}\\).",
@@ -936,10 +937,19 @@
             "math_mismatch": {
               "label": "Math mismatch",
               "message": "Printed mismatch on Grewal p. 59: \\(a=2,\\ b=2,\\ c=1\\) is obtained from only the diagonal equations. The full orthogonality condition \\(AA^T=I\\) also requires \\(ab=-4,\\ ac=2,\\ bc=-2\\), giving \\((a,b,c)=\\pm(2,-2,1)\\). The displayed inverse is consistent with the branch \\((2,-2,1)\\), not with \\(b=2\\)."
-            }
+            },
+            "id": "example-2-43"
           }
         ],
-        "accordion_label": "Worked examples"
+        "accordion_label": "Worked examples",
+        "practice": [
+          {
+            "book_page": 61,
+            "type": "Problems 2.8",
+            "items": "Q6–Q9",
+            "group_anchor": "problems-2-8"
+          }
+        ]
       }
     ],
     "formulas": [
@@ -1166,7 +1176,8 @@
               "Taking \\(z=1\\) gives \\(y=-1\\) and \\(x=-3\\), so",
               "\\[X_3=\\begin{bmatrix}-3\\\\-1\\\\1\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(\\lambda=-1,1,4\\), with eigenvectors proportional to \\((-6,-2,7)^T,(0,1,-1)^T,(-3,-1,1)^T\\)."
+            "final_answer": "\\(\\lambda=-1,1,4\\), with eigenvectors proportional to \\((-6,-2,7)^T,(0,1,-1)^T,(-3,-1,1)^T\\).",
+            "id": "example-2-45"
           },
           {
             "title": "Example 2.46 — Find the eigenvalues and eigenvectors of the matrix.",
@@ -1194,7 +1205,8 @@
               "From the second equation \\(x=y-z\\). Substitution in the first gives \\(y=2z\\), hence \\(x=z\\). Taking \\(z=1\\),",
               "\\[X_3=\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(\\lambda=-2,3,6\\), with eigenvectors proportional to \\((-1,0,1)^T,(1,-1,1)^T,(1,2,1)^T\\)."
+            "final_answer": "\\(\\lambda=-2,3,6\\), with eigenvectors proportional to \\((-1,0,1)^T,(1,-1,1)^T,(1,2,1)^T\\).",
+            "id": "example-2-46"
           },
           {
             "title": "Example 2.47 — Find the eigenvalues and eigenvectors of the matrix.",
@@ -1214,7 +1226,8 @@
               "Taking \\(z=1\\),",
               "\\[X_3=\\begin{bmatrix}3\\\\2\\\\1\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(\\lambda=2,3,5\\), with eigenvectors proportional to \\((1,-1,0)^T,(1,0,0)^T,(3,2,1)^T\\)."
+            "final_answer": "\\(\\lambda=2,3,5\\), with eigenvectors proportional to \\((1,-1,0)^T,(1,0,0)^T,(3,2,1)^T\\).",
+            "id": "example-2-47"
           }
         ],
         "accordion_label": "Worked examples"
@@ -1242,6 +1255,14 @@
           "VI. If \\(\\lambda\\) is an eigenvalue of a non-singular matrix \\(A\\), then \\(1/\\lambda\\) is an eigenvalue of \\(A^{-1}\\).",
           "VII. If \\(\\lambda\\) is an eigenvalue of an orthogonal matrix \\(A\\), then \\(1/\\lambda\\) is also an eigenvalue of \\(A\\), because \\(A^{-1}=A^{T}\\) and \\(A\\) and \\(A^{T}\\) have the same eigenvalues.",
           "VIII. If \\(\\lambda_1,\\lambda_2,\\ldots,\\lambda_n\\) are the eigenvalues of \\(A\\), then \\(A^m\\) has eigenvalues \\(\\lambda_1^m,\\lambda_2^m,\\ldots,\\lambda_n^m\\) for a positive integer \\(m\\); the corresponding eigenvectors remain the same."
+        ],
+        "practice": [
+          {
+            "book_page": "72–73",
+            "type": "Problems 2.9",
+            "items": "Q1–Q18",
+            "group_anchor": "problems-2-9"
+          }
         ]
       }
     ],
@@ -1407,7 +1428,8 @@
               "The first factor vanishes when \\(\\lambda\\) is replaced by \\(A\\), so",
               "\\[A^5-4A^4-7A^3+11A^2-A-10I=A+5I.\\]"
             ],
-            "final_answer": "\\(A^{-1}=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}\\), and \\(A^5-4A^4-7A^3+11A^2-A-10I=A+5I\\)."
+            "final_answer": "\\(A^{-1}=\\dfrac15\\begin{bmatrix}-3&4\\\\2&-1\\end{bmatrix}\\), and \\(A^5-4A^4-7A^3+11A^2-A-10I=A+5I\\).",
+            "id": "example-2-48"
           },
           {
             "title": "Example 2.49 — Find the characteristic equation and hence the inverse.",
@@ -1430,7 +1452,8 @@
               "Therefore",
               "\\[A^{-1}=\\dfrac52I-\\dfrac18\\begin{bmatrix}-4&-8&-12\\\\10&22&6\\\\2&2&22\\end{bmatrix}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(A^{-1}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}\\)."
+            "final_answer": "\\(A^{-1}=\\begin{bmatrix}3&1&3/2\\\\-5/4&-1/4&-3/4\\\\-1/4&-1/4&-1/4\\end{bmatrix}\\).",
+            "id": "example-2-49"
           }
         ],
         "accordion_label": "Worked examples"
@@ -1518,7 +1541,8 @@
               "The two bracketed factors are zero by Cayley–Hamilton. Hence the expression is \\(A^2+A+I\\):",
               "\\[A^2+A+I=\\begin{bmatrix}8&5&5\\\\0&3&0\\\\5&5&8\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(A^{-1}=\\dfrac13\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix}\\), and the polynomial equals \\(\\begin{bmatrix}8&5&5\\\\0&3&0\\\\5&5&8\\end{bmatrix}\\)."
+            "final_answer": "\\(A^{-1}=\\dfrac13\\begin{bmatrix}2&-1&-1\\\\0&3&0\\\\-1&-1&2\\end{bmatrix}\\), and the polynomial equals \\(\\begin{bmatrix}8&5&5\\\\0&3&0\\\\5&5&8\\end{bmatrix}\\).",
+            "id": "example-2-50"
           }
         ],
         "accordion_label": "Worked examples"
@@ -1598,7 +1622,8 @@
               "Taking \\(y=1\\) gives \\(x=1\\), hence",
               "\\[X_2=\\begin{bmatrix}1\\\\1\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(\\lambda=9,4\\), with eigenvectors proportional to \\((2,1)^T\\) and \\((1,1)^T\\)."
+            "final_answer": "\\(\\lambda=9,4\\), with eigenvectors proportional to \\((2,1)^T\\) and \\((1,1)^T\\).",
+            "id": "example-2-51"
           },
           {
             "title": "Example 2.52 — Find the eigenvalues and eigenvectors of the matrix.",
@@ -1623,7 +1648,8 @@
               "For \\(\\lambda=3\\), the first equation gives \\(z=-2x\\), and the second gives \\(x-y+z=0\\), hence \\(y=-x\\). Taking \\(x=1\\),",
               "\\[X_3=\\begin{bmatrix}1\\\\-1\\\\-2\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(\\lambda=1,2,3\\), with eigenvectors proportional to \\((-1,1,0)^T,(-2,1,2)^T,(1,-1,-2)^T\\)."
+            "final_answer": "\\(\\lambda=1,2,3\\), with eigenvectors proportional to \\((-1,1,0)^T,(-2,1,2)^T,(1,-1,-2)^T\\).",
+            "id": "example-2-52"
           }
         ],
         "accordion_label": "Worked examples"
@@ -1757,7 +1783,8 @@
             "math_mismatch": {
               "label": "Math mismatch",
               "message": "Grewal p. 75 correctly derives the eigenvector \\(X_1=(1,0,-1)^T\\) for \\(\\lambda=1\\), but the printed modal matrix shows \\(+1\\) in its lower-left entry. Independent substitution confirms the entry must be \\(-1\\). PankusDesk therefore uses the verified modal matrix with first column \\((1,0,-1)^T\\)."
-            }
+            },
+            "id": "example-2-53"
           },
           {
             "title": "Example 2.54 — Find the modal matrix and hence calculate \\(A^4\\).",
@@ -1785,7 +1812,8 @@
             "math_mismatch": {
               "label": "Math mismatch",
               "message": "Printed mismatch on Grewal p. 76: the displayed product for \\(A^4\\) is incorrect. Independent multiplication and the diagonalisation check \\(A^4=PD^4P^{-1}\\) give \\(A^4=\\begin{bmatrix}251&405&235\\\\405&891&405\\\\235&405&251\\end{bmatrix}\\)."
-            }
+            },
+            "id": "example-2-54"
           }
         ],
         "accordion_label": "Worked examples"
@@ -1951,7 +1979,8 @@
               "A direct check gives \\(P^{T}P=I\\) and",
               "\\[P^{T}AP=\\operatorname{diag}(2,3,6).\\]"
             ],
-            "final_answer": "Canonical form \\(2u^2+3v^2+6w^2\\), with \\(P=\\begin{bmatrix}1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\\\0&1/\\sqrt3&-2/\\sqrt6\\\\-1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\end{bmatrix}\\)."
+            "final_answer": "Canonical form \\(2u^2+3v^2+6w^2\\), with \\(P=\\begin{bmatrix}1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\\\0&1/\\sqrt3&-2/\\sqrt6\\\\-1/\\sqrt2&1/\\sqrt3&1/\\sqrt6\\end{bmatrix}\\).",
+            "id": "example-2-56"
           }
         ],
         "accordion_label": "Worked examples"
@@ -2063,10 +2092,25 @@
               "\\[P^{T}AP=\\operatorname{diag}(-2,1,1),\\]",
               "which gives \\(-2u^2+v^2+w^2\\). This is the same canonical form as \\(u^2+v^2-2w^2\\) after merely renaming the transformed variables."
             ],
-            "final_answer": "Canonical form \\(u^2+v^2-2w^2\\) (equivalently \\(-2u^2+v^2+w^2\\) with the displayed \\(P\\)); the form is indefinite."
+            "final_answer": "Canonical form \\(u^2+v^2-2w^2\\) (equivalently \\(-2u^2+v^2+w^2\\) with the displayed \\(P\\)); the form is indefinite.",
+            "id": "example-2-57"
           }
         ],
-        "accordion_label": "Worked examples"
+        "accordion_label": "Worked examples",
+        "practice": [
+          {
+            "book_page": 80,
+            "type": "Problems 2.10",
+            "items": "Q1–Q5, Q7–Q13",
+            "group_anchor": "problems-2-10"
+          },
+          {
+            "book_page": "86–88",
+            "type": "Problems 2.12 · Objective Checks",
+            "items": "36 selected Unit-II questions",
+            "group_anchor": "problems-2-12"
+          }
+        ]
       }
     ],
     "formulas": [
@@ -2139,7 +2183,8 @@
               "Finally,",
               "\\[919A+942I=919\\begin{bmatrix}1&4\\\\2&3\\end{bmatrix}+942I=\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}.\\]"
             ],
-            "final_answer": "\\(\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}\\)."
+            "final_answer": "\\(\\begin{bmatrix}1861&3676\\\\1838&3699\\end{bmatrix}\\).",
+            "id": "example-2-58"
           }
         ],
         "accordion_label": "Worked examples"
