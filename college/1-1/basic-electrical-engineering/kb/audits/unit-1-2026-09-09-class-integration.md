@@ -12,3 +12,9 @@
 
 - Replaced placeholders `c1.png`, `c2.png`, and `c3.png` with the three approved NRS redraws for the single Superposition worked example.
 - Preserved the note sequence and left placeholders `c4.png`–`c10.png` untouched for the remaining diagrams.
+
+
+## Thevenin redraw update
+
+- Replaced placeholders `c6.png` and `c7.png` with the two approved NRS redraws for the Thevenin-resistance circuit and the Thevenin equivalent circuit with load.
+- Remaining placeholders still pending: `c4.png`, `c5.png`, `c8.png`, `c9.png`, `c10.png`.
