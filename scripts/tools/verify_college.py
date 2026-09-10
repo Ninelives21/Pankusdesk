@@ -38,6 +38,8 @@ DESIGN_LOCK_FILES = [
     REPO / "college" / "schemas" / "class-log.schema.json",
     REPO / "scripts" / "new" / "study-ui.js",
     REPO / "styles" / "new" / "study-ui.css",
+    REPO / "scripts" / "new" / "unit-resource-nav.js",
+    REPO / "styles" / "new" / "components.css",
 ]
 
 META_PATTERNS = [
@@ -664,6 +666,12 @@ def verify_shared_study_ui_shells():
             errors.append(f"{rel(shell)}: shared study UI stylesheet is not loaded")
         if "scripts/new/study-ui.js" not in text:
             errors.append(f"{rel(shell)}: shared study UI renderer is not loaded")
+        uses_unit_resource_page = any(
+            f"scripts/new/{name}" in text
+            for name in ("subject-unit.js", "unit-class-notes.js", "unit-questions.js")
+        )
+        if uses_unit_resource_page and "scripts/new/unit-resource-nav.js" not in text:
+            errors.append(f"{rel(shell)}: unit Text/Questions/Class Notes pages must load shared unit-resource-nav.js")
 
 
 def verify_design_lock_files():

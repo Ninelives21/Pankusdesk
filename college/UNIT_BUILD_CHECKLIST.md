@@ -115,6 +115,13 @@ For **every technical redraw**:
 - [ ] Verify mobile one-column behaviour.
 - [ ] Verify labels/arrows remain readable at normal page size.
 
+## I.1 Unit-to-unit navigation
+
+- [ ] Every Text, Textbook Questions and Class Notes page loads `scripts/new/unit-resource-nav.js`.
+- [ ] The shared unit navigation renders previous/next unit links from `subject.units`.
+- [ ] Previous/next links always land on the adjacent unit's **Text/index page** (`unit-N.html`), regardless of which of the three pages the student is currently viewing.
+- [ ] Do not fork this navigation by subject or semester.
+
 ## J. Daily class notes
 
 - [ ] Create/maintain `kb/class-log/YYYY-MM-DD/entry.json`.
@@ -140,6 +147,7 @@ For **every technical redraw**:
 - [ ] Preserve the official mathematical content and intent; lightly clean awkward grammar, punctuation and wording when this improves readability without changing the mathematics.
 - [ ] Give every question a stable ID/anchor.
 - [ ] Give every worked textbook example and every labelled textbook-question subpart a stable deep-link anchor so class notes can link to the exact source item.
+- [ ] Keep question/answer typography in the shared `practice.css`; do not add subject-specific font sizing.
 - [ ] Link theory practice rows to exact anchors.
 - [ ] Render every inline prescribed-book practice reference as the shared large, high-contrast practice callout; it must be immediately distinguishable from theory and class-note boxes.
 - [ ] Keep PankusDesk answers distinct from official textbook solutions.

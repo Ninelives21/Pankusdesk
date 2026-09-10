@@ -428,7 +428,8 @@ Never label a generated question as textbook/PYQ material.
 8. For any multi-part solution or answer, render each part as a clearly separate labelled panel rather than one uninterrupted stream of working.
 9. End every fully worked solution with a clearly separated **bold final answer/result** whenever a determinate final result exists; keep `book_check` or other source metadata separate.
 10. Reference each in-scope textbook problem/exercise set on the theory page at the same logical point where the book places it, linking to the exact question-group anchor.
-11. If sources cannot support an answer, keep `status: "source-gap"` instead of filling from memory.
+11. Keep textbook-question typography comfortably readable across subjects by styling it only in the shared `styles/new/pages/practice.css`; do not introduce subject- or unit-specific font overrides.
+12. If sources cannot support an answer, keep `status: "source-gap"` instead of filling from memory.
 
 ### 13.2 PYQ rules
 
@@ -456,6 +457,7 @@ Unit I demonstrates that the generic unit renderer supports:
 - Check yourself accordions;
 - textbook practice links;
 - unit-level Text / Questions / Class Notes navigation;
+- shared previous/next-unit navigation on **all three unit pages**, always linking to the adjacent unit's Text/index page rather than to the same resource type; this comes from `subject.units` through `unit-resource-nav.js` and must never be reimplemented per subject or semester;
 - chronological dated class-note rendering;
 - blue explanation accordions;
 - MathJax;
