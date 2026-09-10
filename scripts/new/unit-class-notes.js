@@ -191,8 +191,18 @@ function renderClassAccordions(group) {
 }
 
 function renderClassFigure(figure) {
+	const size = ['symbol','small','medium','large'].includes(figure?.size) ? `class-note-visual--${figure.size}` : 'class-note-visual--medium';
+	if (figure?.placeholder) {
+		const label = figure.figure_label || figure.caption || 'Class-note diagram';
+		const sourcePage = figure.source_page || '';
+		return `
+			<div class="study-figure class-note-visual ${size} class-figure-placeholder" role="note" aria-label="${escapeHtml(`Image placeholder: ${label}`)}">
+				<div class="class-figure-placeholder-kicker">Image placeholder</div>
+				<div class="class-figure-placeholder-title">${escapeHtml(label)}</div>
+				${sourcePage ? `<div class="class-figure-placeholder-source">${escapeHtml(sourcePage)}</div>` : ''}
+			</div>`;
+	}
 	if (!figure?.src || !figure?.alt) return '';
-	const size = ['symbol','small','medium','large'].includes(figure.size) ? `class-note-visual--${figure.size}` : 'class-note-visual--medium';
 	return window.PankuStudyUI?.renderFigure?.(figure, { className: 'study-figure class-note-visual', extraClass: size }) || '';
 }
 

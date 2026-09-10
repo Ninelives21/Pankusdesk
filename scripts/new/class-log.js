@@ -139,6 +139,17 @@ function renderBlocks(blocks) {
 }
 
 function renderClassFigure(figure) {
+	if (figure?.placeholder) {
+		const label = figure.figure_label || figure.caption || 'Class-note diagram';
+		const sourcePage = figure.source_page || '';
+		return `
+			<div class="study-figure class-log-figure class-figure-placeholder" role="note" aria-label="${escapeHtml(`Image placeholder: ${label}`)}">
+				<div class="class-figure-placeholder-kicker">Image placeholder</div>
+				<div class="class-figure-placeholder-title">${escapeHtml(label)}</div>
+				${sourcePage ? `<div class="class-figure-placeholder-source">${escapeHtml(sourcePage)}</div>` : ''}
+			</div>`;
+	}
+	if (!figure?.src || !figure?.alt) return '';
 	return window.PankuStudyUI?.renderFigure?.(figure, { className: 'study-figure class-log-figure' }) || '';
 }
 

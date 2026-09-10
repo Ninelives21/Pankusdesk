@@ -283,12 +283,14 @@ def check_figure(
 
     src = fig.get("src")
     alt = fig.get("alt")
-    if not isinstance(src, str) or not src.strip():
-        errors.append(f"{context}: figure missing src")
-    else:
-        path = resolve_repo_asset(src)
-        if path is not None and not path.exists():
-            errors.append(f"{context}: missing figure asset {src}")
+    placeholder = fig.get("placeholder") is True
+    if not placeholder:
+        if not isinstance(src, str) or not src.strip():
+            errors.append(f"{context}: figure missing src")
+        else:
+            path = resolve_repo_asset(src)
+            if path is not None and not path.exists():
+                errors.append(f"{context}: missing figure asset {src}")
 
     if not isinstance(alt, str) or len(alt.strip()) < 8:
         errors.append(f"{context}: figure needs descriptive alt text")

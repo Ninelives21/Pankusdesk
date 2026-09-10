@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "date_label": "9 September 2026",
+  "source_id": "CLASS-U1-2026-09-09",
+  "subject": {
+    "code": "25ES1EE101",
+    "name": "Basic Electrical Engineering",
+    "shortName": "BEE"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Introduction to Electrical Energy and DC Circuits"
+  },
+  "title": "Network theorems — superposition and Thevenin’s theorem",
+  "summary": "Network theorems; superposition theorem and source suppression; a two-source superposition example; Thevenin’s theorem, open-circuit voltage and Thevenin resistance; and class-worked circuit calculations.",
+  "transcription_policy": "Class-note order is preserved and wording is lightly cleaned for study. Crossed-out calculations are not treated as final answers. Figure redraws are pending.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-superposition",
+      "label": "Superposition theorem",
+      "href": "unit-1.html#u1-superposition"
+    },
+    {
+      "topic_id": "u1-thevenin",
+      "label": "Thevenin’s theorem",
+      "href": "unit-1.html#u1-thevenin"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Network theorems and superposition theorem",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Network theorems"
+        },
+        {
+          "type": "paragraph",
+          "text": "Network theorems are useful for finding the voltage or current of one specific branch. This simplifies the use of mesh or nodal analysis, which can otherwise produce simultaneous equations involving other voltages and currents in addition to the required one."
+        },
+        {
+          "type": "subheading",
+          "text": "Superposition theorem"
+        },
+        {
+          "type": "paragraph",
+          "text": "In a linear network containing two or more sources, the response in any element is equal to the algebraic sum of the responses caused by the individual sources acting alone."
+        },
+        {
+          "type": "bullet",
+          "text": "Voltage source → replace with a short circuit when it is made non-operative."
+        },
+        {
+          "type": "bullet",
+          "text": "Current source → replace with an open circuit when it is made non-operative."
+        },
+        {
+          "type": "line",
+          "text": "Ideal current source: internal resistance \\(\to\\infty\\). Ideal voltage source: internal resistance \\(=0\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Example"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Superposition example — original two-source circuit",
+          "source_page": "Notebook image 20",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c1.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for superposition example — original two-source circuit."
+        },
+        {
+          "type": "subheading",
+          "text": "When 15 V is acting alone"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Superposition example — 15 V source acting alone",
+          "source_page": "Notebook image 20",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c2.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for superposition example — 15 v source acting alone."
+        },
+        {
+          "type": "equation",
+          "text": "\\[15-V=\\dfrac{V}{3.3}+\\dfrac{V}{2.2}\\]"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "heading": "Superposition example continued and Thevenin’s theorem",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "When 20 V is acting alone"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Superposition example — 20 V source acting alone",
+          "source_page": "Notebook image 21",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c3.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for superposition example — 20 v source acting alone."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{20-V}{2.2}=V+\\dfrac{V}{3.3}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[V=5.17\\ \\text{V}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I'=1.56\\ \\text{mA}\\]"
+        },
+        {
+          "type": "heading",
+          "text": "Thevenin’s theorem"
+        },
+        {
+          "type": "paragraph",
+          "text": "Any two-terminal linear bilateral network can be replaced by an equivalent circuit consisting of an equivalent source \\(V_{th}\\) (or \\(V_{oc}\\)) in series with resistance \\(R_{th}\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(V_{th}\\) or \\(V_{oc}\\): open-circuit voltage measured between the load terminals."
+        },
+        {
+          "type": "bullet",
+          "text": "\\(R_{th}\\): Thevenin resistance seen from the load terminals with the independent sources replaced by their internal resistances."
+        },
+        {
+          "type": "subheading",
+          "text": "Example network"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Thevenin example — original network",
+          "source_page": "Notebook image 21",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c4.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for thevenin example — original network."
+        },
+        {
+          "type": "subheading",
+          "text": "\\(V_{th}\\) or \\(V_{oc}\\)"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Thevenin voltage / open-circuit-voltage circuit",
+          "source_page": "Notebook image 21",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c5.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for thevenin voltage / open-circuit-voltage circuit."
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "heading": "Thevenin resistance, equivalent circuit and worked network",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "\\(R_{th}\\)"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Thevenin resistance circuit",
+          "source_page": "Notebook image 22",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c6.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for thevenin resistance circuit."
+        },
+        {
+          "type": "subheading",
+          "text": "Thevenin’s equivalent circuit"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Thevenin equivalent circuit with load",
+          "source_page": "Notebook image 22",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c7.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for thevenin equivalent circuit with load."
+        },
+        {
+          "type": "subheading",
+          "text": "Worked two-source network"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Two-source network with node voltage V",
+          "source_page": "Notebook image 22",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c8.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for two-source network with node voltage v."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{18-V}{1}+\\dfrac{22-V}{2.2}=\\dfrac{V}{3.3}\\]"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "heading": "Worked network — corrected copy and source-reduction sketch",
+      "blocks": [
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Worked two-source network — corrected copy",
+          "source_page": "Notebook image 23",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c9.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for worked two-source network — corrected copy."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{18-V}{1}+\\dfrac{22-V}{2.2}=\\dfrac{V}{3.3}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[V=10.24\\ \\text{V}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I=3.10\\ \\text{mA}\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Source-reduction sketch"
+        },
+        {
+          "type": "figure",
+          "placeholder": true,
+          "figure_label": "Single-source reduction / checking circuit",
+          "source_page": "Notebook image 23",
+          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c10.png",
+          "size": "large",
+          "alt": "Pending NRS redraw placeholder for single-source reduction / checking circuit."
+        }
+      ]
+    }
+  ]
+}

@@ -249,3 +249,31 @@
 	text-decoration: none;
 }
 .study-textbook-match-link:hover { background: var(--surface-soft); }
+
+/* Structured placeholders for class-note diagrams awaiting the NRS redraw pass. */
+.class-figure-placeholder {
+	display: grid;
+	place-items: center;
+	gap: .35rem;
+	min-height: 170px;
+	padding: 1.35rem 1.5rem;
+	border: 1px dashed rgba(39, 92, 133, .5);
+	border-radius: 14px;
+	background: rgba(235, 244, 252, .6);
+	text-align: center;
+}
+.class-figure-placeholder-kicker {
+	font-size: .76rem;
+	font-weight: 800;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+}
+.class-figure-placeholder-title {
+	font-weight: 800;
+	color: var(--text-strong);
+}
+.class-figure-placeholder-source {
+	font-size: .88rem;
+	color: var(--text-secondary);
+}
