@@ -778,7 +778,27 @@ The voltage \(V_{ab}\) is the potential of point \(a\) with respect to point \(b
 
 ### Exercise 1.5.9 — KCL
 
-Determine the voltage drop across the 10-ohm resistance. The points \(A\) and \(B\) across the 10-A current source are extended to points of the same potential. Let \(V\) be the voltage across the 10-ohm resistance.
+Determine the voltage drop across the 10-ohm resistance.
+
+*Figure: Fig. 1.36 · Original textbook question figure (retained unchanged)*
+
+> **Why a corrected question drawing is needed:** The original textbook Figure 1.36 does not show the 10-ohm resistor named in the question. The following Figure 1.36(a) and the KCL calculation both require 20-ohm, 10-ohm and 5-ohm resistor branches between nodes A and B. The printed Figure 1.36 also visually allows the B conductor to meet a wire marked A, which would short A and B if taken literally. The reconstruction below therefore restores the missing 10-ohm A–B branch and keeps A and B electrically separate. It is an inferred correction, not a replacement of the printed figure.
+
+*Figure: Corrected reconstruction of Fig. 1.36 · missing 10-ohm A–B branch restored*
+
+The points \(A\) and \(B\) across the 10-A current source extend along their respective uninterrupted conductors to points of the same potential. With the corrected reconstruction, every element is connected between the same two nodes, so the circuit can be redrawn as Figure 1.36(a).
+
+*Figure: Fig. 1.36(a) · Equivalent parallel network used in the solution*
+
+#### How Figure 1.36(a) is obtained
+
+Every point marked A belongs to one node and every point marked B belongs to the other node. The 20-ohm resistor, 10-ohm resistor, 5-ohm resistor, 10-A current source and 15-A current source are each connected between A and B. Elements connected across the same two nodes are in parallel, so these five branches can be redrawn side by side without changing the circuit electrically.
+
+Both current sources are directed electrically from B to A. In the original-style drawing, the 10-A source points upward because B is below A, while the 15-A source points downward because B is above A on that branch. When the circuit is redrawn with A as the top rail and B as the bottom rail, both B-to-A source currents point upward.
+
+The resistors have no built-in current direction. In Figure 1.36(a), the solution assumes \(i_1,i_2,i_3\) flow from A to B. These currents therefore leave node A, while the 10-A and 15-A source currents enter node A.
+
+Let \(V\) be the voltage across the 10-ohm resistance.
 
 \[V=i_2\times10\]
 

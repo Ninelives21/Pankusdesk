@@ -113,6 +113,8 @@ function renderAccordionGroup(config = {}) {
 
 function renderExampleSolutionContent(item, solutionParagraphs) {
 	const figures = Array.isArray(item.figures) ? item.figures : [];
+	const notes = Array.isArray(item.notes) ? item.notes : [];
+	const explainers = Array.isArray(item.explainers) ? item.explainers : [];
 	const anchored = new Set(
 		figures
 			.filter(figure => figure?.after?.type)
@@ -122,18 +124,46 @@ function renderExampleSolutionContent(item, solutionParagraphs) {
 		.filter(figure => figure?.after?.type === hook && Number(figure.after.index) === index)
 		.map(fig => renderFigure(fig))
 		.join('');
+	const notesAt = (hook, index) => notes
+		.filter(note => note?.after?.type === hook && Number(note.after.index) === index)
+		.map(note => renderMismatch({ label: String(note.label || 'Note'), message: String(note.message || '') }))
+		.join('');
+	const explainersAt = (hook, index) => explainers
+		.filter(explainer => explainer?.after?.type === hook && Number(explainer.after.index) === index)
+		.map(explainer => renderExplainer(explainer))
+		.join('');
 	let html = figures
 		.filter(figure => !anchored.has(figure.src))
 		.map(fig => renderFigure(fig))
 		.join('');
+	html += notes
+		.filter(note => !note?.after?.type && String(note?.message || '').trim())
+		.map(note => renderMismatch({ label: String(note.label || 'Note'), message: String(note.message) }))
+		.join('');
+	html += explainers
+		.filter(explainer => !explainer?.after?.type)
+		.map(explainer => renderExplainer(explainer))
+		.join('');
 	for (let index = 0; index < solutionParagraphs.length; index += 1) {
+		html += notesAt('before-paragraph', index);
+		html += explainersAt('before-paragraph', index);
 		html += figuresAt('before-paragraph', index);
 		html += `<p>${formatText(solutionParagraphs[index])}</p>`;
 		html += figuresAt('paragraph', index);
+		html += notesAt('paragraph', index);
+		html += explainersAt('paragraph', index);
 	}
 	html += figures
 		.filter(figure => figure?.after?.type === 'end')
 		.map(fig => renderFigure(fig))
+		.join('');
+	html += notes
+		.filter(note => note?.after?.type === 'end' && String(note?.message || '').trim())
+		.map(note => renderMismatch({ label: String(note.label || 'Note'), message: String(note.message) }))
+		.join('');
+	html += explainers
+		.filter(explainer => explainer?.after?.type === 'end')
+		.map(explainer => renderExplainer(explainer))
 		.join('');
 	return html;
 }

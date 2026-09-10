@@ -1849,11 +1849,23 @@
               {
                 "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-36.png",
                 "alt": "Exercise 1.5.9 original network with repeated A and B potential labels, a 20 ohm resistor on the upper-left branch, a 15 A current source directed downward on the lower-left branch, a 10 A current source directed upward in the central upper branch, and a 5 ohm resistor in the central lower branch.",
-                "caption": "Fig. 1.36 · Circuit for Exercise 1.5.9",
+                "caption": "Fig. 1.36 · Original textbook question figure (retained unchanged)",
                 "page": 24,
                 "width": 1448,
                 "height": 1086,
                 "size": "medium"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-36-corrected.png",
+                "alt": "Corrected reconstruction of Exercise 1.5.9 with two distinct nodes A and B: a 20 ohm resistor from A to B at upper left, a 15 A current source directed from B to A on the lower-left branch, a 10 A current source directed from B to A on the central upper branch, a 5 ohm resistor from B to A in the central lower branch, and the missing 10 ohm resistor restored as a separate branch from B to A. The B conductor stops before the right-hand A conductor so nodes A and B are not shorted together.",
+                "caption": "Corrected reconstruction of Fig. 1.36 · missing 10 Ω A–B branch restored",
+                "width": 1448,
+                "height": 1086,
+                "size": "medium",
+                "after": {
+                  "type": "before-paragraph",
+                  "index": 0
+                }
               },
               {
                 "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-36a.png",
@@ -1862,12 +1874,16 @@
                 "page": 24,
                 "width": 1448,
                 "height": 1086,
-                "size": "medium"
+                "size": "medium",
+                "after": {
+                  "type": "paragraph",
+                  "index": 1
+                }
               }
             ],
             "paragraphs": [
               "Solution:",
-              "Let us identify the points \\(A\\) and \\(B\\) across the 10 A current source initially. These points get extended to points of the same potential as shown. The circuit is then represented as in Figure 1.36(a).",
+              "Let us identify the points \\(A\\) and \\(B\\) across the 10 A current source initially. These points extend along their respective uninterrupted conductors to all points of the same potential. With the corrected question reconstruction above, each element is connected between the same two nodes, so the circuit can be redrawn as Figure 1.36(a).",
               "Let \\(V\\) be the voltage across the 10 ohm resistance.",
               "\\[V=i_2\\times10\\]",
               "Applying KCL at node \\(A\\),",
@@ -1876,7 +1892,49 @@
               "\\[25-V\\left(\\dfrac{1+2+4}{20}\\right)=0\\]",
               "\\[V=71.4\\ \\text{V}\\]"
             ],
-            "final_answer": "Voltage drop across the 10 ohm resistance: \\(V=71.4\\ \\text{V}\\)."
+            "final_answer": "Voltage drop across the 10 ohm resistance: \\(V=71.4\\ \\text{V}\\).",
+            "notes": [
+              {
+                "label": "Why a corrected question drawing is needed",
+                "message": "The original textbook Figure 1.36 is preserved above exactly as printed. However, the question asks for the voltage across a 10 Ω resistor that is not shown in that figure. The very next solution figure, Figure 1.36(a), and the KCL calculation both require three resistor branches of 20 Ω, 10 Ω and 5 Ω between nodes A and B. The printed Figure 1.36 also visually lets the B conductor meet a wire marked A, which would short A and B if taken literally. The reconstruction below is therefore an inferred correction: it restores the missing 10 Ω A–B branch and keeps nodes A and B electrically separate so that Figure 1.36(a) and the printed solution follow consistently."
+              }
+            ],
+            "explainers": [
+              {
+                "label": "How was the equivalent circuit determined?",
+                "summary": "Why Figure 1.36 becomes five parallel branches between A and B",
+                "title": "Same two nodes means parallel",
+                "paragraphs": [
+                  "Ignore the physical shape of the corrected question drawing and identify only the electrical nodes. Every point marked A is connected to every other A point by uninterrupted wire, so all A labels represent one node. Likewise, all B labels represent one second node. A and B must remain separate nodes.",
+                  "Now inspect the two ends of each element. The 20 Ω resistor, 10 Ω resistor, 5 Ω resistor, 10 A current source and 15 A current source are each connected between the same two nodes A and B. Any elements connected across the same two nodes are in parallel, so the circuit can be redrawn as five side-by-side A–B branches without changing it electrically."
+                ],
+                "sections": [
+                  {
+                    "heading": "Why both current-source arrows point upward in Figure 1.36(a)",
+                    "paragraphs": [
+                      "Both current sources are directed electrically from B to A. In the original-style drawing, the 10 A source has B below and A above, so B→A looks upward. The 15 A source has B above and A below, so the same B→A direction looks downward. After redrawing A as the top rail and B as the bottom rail, both B→A source currents naturally point upward."
+                    ]
+                  },
+                  {
+                    "heading": "What about the resistor-current directions?",
+                    "paragraphs": [
+                      "A resistor has no built-in current direction. In Figure 1.36(a), the solution simply assumes the resistor currents i₁, i₂ and i₃ flow from A to B. With A as the node where KCL is written, these assumed resistor currents leave A, while the 10 A and 15 A sources enter A."
+                    ]
+                  },
+                  {
+                    "heading": "That is why the KCL equation has these signs",
+                    "paragraphs": [
+                      "\\[10+15-\\dfrac{V}{20}-\\dfrac{V}{10}-\\dfrac{V}{5}=0\\]",
+                      "The two source currents are positive because they enter node A. The three resistor currents are negative because the assumed currents leave node A. Since all three resistors are in parallel, each has the same A-to-B voltage V."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 1
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.5.10",
