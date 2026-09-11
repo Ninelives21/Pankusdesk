@@ -952,7 +952,7 @@ The voltage drops are
 
 \[V_3=4i_3=4\times1.25=5\ \text{V}\]
 
-### Exercise 1.5.13 — potential difference
+### Exercise 1.5.13
 
 Find the voltage between points \(A\) and \(B\). Assume currents \(i_1\) and \(i_2\). No current flows through the 12-V source branch because there is no closed or return path for current entering that branch. Identify the polarity of voltage drops across the resistances for the assumed current directions.
 
@@ -976,63 +976,52 @@ Therefore,
 
 Thus the potential difference between \(A\) and \(B\) has magnitude \(13\ \text{V}\), with sign depending on the stated reference direction.
 
-### Exercise 1.5.14 — power absorbed
 
-Find the power absorbed by each element in the circuit shown in Figure 1.41.
+**SIMPLER — Exercise 1.5.13**
 
-**Textbook solution:** Identify the nodes \(x\) and \(y\). By observation, all the elements are connected in parallel between \(x\) and \(y\). Therefore the resistor voltages are equal and the textbook writes
+- The diagonal C–D source carries no current because it is the only connection between the two otherwise closed loops, so there is no return path through that branch. It still fixes \(V_C-V_D=12\,\text{V}\).
+- Current directions are assumptions; a negative result would mean the real current is opposite.
+- For a resistor, current enters the assumed \(+\) terminal and leaves the \(-\) terminal.
+- Walking \(B\to D\to C\to A\): \(+3.4+12-2.4=13\,\text{V}\).
+
+### Exercise 1.5.14
+
+Find the power absorbed by each element. Identify nodes \(x\) and \(y\). By observation, all elements are connected in parallel between \(x\) and \(y\). Therefore the resistor voltages are equal and the textbook writes
 
 \[1000i_1=4000i_2\]
-
-Or, accounting for the chosen reference directions,
 
 \[i_2=-\dfrac{1000}{4000}i_1=-0.25i_1\]
 
 Applying KCL at node \(x\),
 
-\[3i_1+20	imes10^{-3}-i_2+i_1=0\]
+\[3i_1+20\times10^{-3}-i_2+i_1=0\]
 
-\[3i_1+20	imes10^{-3}-(-0.25i_1)+i_1=0\]
+\[3i_1+20\times10^{-3}-(-0.25i_1)+i_1=0\]
 
-\[4.25i_1+20	imes10^{-3}=0\]
+\[4.25i_1+20\times10^{-3}=0\]
 
-\[i_1=-4.7\ 	ext{mA}\]
+\[i_1=-4.7\ \text{mA}\]
 
 Then the textbook prints
 
-\[i_2=-(0.25)(-4.7	imes10^{-3})=1.175\ 	ext{A}\]
+\[i_2=-(0.25)(-4.7\times10^{-3})=1.175\ \text{A}\]
 
 For the 4-k\(\Omega\) resistance, the subsequent power line uses milliampere scale:
 
-\[P_{4\mathrm{k}\Omega}=i_2^2(4000)=(1.175	imes10^{-3})^2(4000)=5.5\ 	ext{mW}\]
+\[P_{4\mathrm{k}\Omega}=i_2^2(4000)=(1.175\times10^{-3})^2(4000)=5.5\ \text{mW}\]
 
 For the 1-k\(\Omega\) resistance,
 
-\[P_{1\mathrm{k}\Omega}=i_1^2(1000)=(4.7	imes10^{-3})^2(1000)=22\ 	ext{mW}\]
+\[P_{1\mathrm{k}\Omega}=i_1^2(1000)=(4.7\times10^{-3})^2(1000)=22\ \text{mW}\]
 
-**Textbook discrepancy note:** The printed line for \(i_2\) shows \(1.175\,	ext{A}\), but the following power calculation substitutes \(1.175	imes10^{-3}\,	ext{A}\). The latter is internally consistent with the milliwatt answer, so the mismatch should be read as a textbook print/unit error rather than a new calculation step.
+**SIMPLER — Exercise 1.5.14**
 
-**SIMPLER**
+- All branches are connected between the same two nodes \(x\) and \(y\), so they are parallel.
+- The directions of \(i_1\) and \(i_2\) are reference choices and could have been chosen the other way.
+- With the arrows shown, \(V_{xy}=4000i_2=-1000i_1\), hence \(i_2=-0.25i_1\).
+- KCL at \(x\) gives \(3i_1+20\times10^{-3}+i_1-i_2=0\), hence \(i_1\approx-4.7\,\text{mA}\). The negative sign means the actual current is opposite to the assumed \(i_1\) direction.
+- Then \(i_2\approx1.175\,\text{mA}\), \(P_{4\mathrm{k}\Omega}\approx5.5\,\text{mW}\), and \(P_{1\mathrm{k}\Omega}\approx22\,\text{mW}\).
 
-1. **Why can Figure 1.41 be redrawn as Figure 1.41(a)?**  
-   All the points marked \(x\) are at one and the same potential, and all the points marked \(y\) are at one and the same potential. Therefore every element is connected between the same two nodes \(x\) and \(y\), which means all the branches are in parallel.
-
-2. **How are current directions chosen?**  
-   The directions of unknown currents are assumed first. They could just as well have been chosen the other way. If the final answer is negative, it only means the actual current is opposite to the assumed direction.
-
-3. **What do the + and − ends of a resistor mean?**  
-   A resistor has no permanent positive or negative end. Once a current direction is assumed, we use the passive sign convention: current enters the positive side and leaves the negative side. Thus the 4-k\(\Omega\) branch gives \(V_{xy}=4000i_2\), while the 1-k\(\Omega\) branch gives \(V_{xy}=-1000i_1\) because \(i_1\) was assumed upward.
-
-4. **Why does the minus sign appear in \(i_2=-0.25i_1\)?**  
-   Since both branches share the same node voltage, \(V_{xy}\) must be the same in each branch. But their chosen current directions are opposite with respect to \(V_{xy}=V_x-V_y\). So \(-1000i_1=4000i_2\), which becomes \(i_2=-0.25i_1\).
-
-5. **How is KCL written at node \(x\)?**  
-   The currents \(3i_1\), 20 mA and \(i_1\) are taken as entering node \(x\), while \(i_2\) is taken as leaving. Hence:
-
-   \[3i_1+20	imes10^{-3}+i_1-i_2=0\]
-
-6. **What does \(i_1=-4.7\,	ext{mA}\) mean?**  
-   It means the actual current is not in the originally assumed \(i_1\) direction. Its magnitude is \(4.7\,	ext{mA}\), but it flows opposite to the arrow chosen at the start.
 
 ### Key formulas
 

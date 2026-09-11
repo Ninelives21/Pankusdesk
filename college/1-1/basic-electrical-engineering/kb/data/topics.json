@@ -2072,6 +2072,258 @@
               "\\[V_3=4\\times i_3=4\\times1.25=5\\ \\text{V}\\]"
             ],
             "final_answer": "\\(i_1=1.5\\ \\text{A}\\), \\(i_2=0.25\\ \\text{A}\\), \\(i_3=1.25\\ \\text{A}\\); \\(V_1=3\\ \\text{V}\\), \\(V_2=2\\ \\text{V}\\), \\(V_3=5\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.13",
+            "question_paragraphs": [
+              "What is the voltage between the points \\(A\\) and \\(B\\) in the circuit shown in Figure 1.40?"
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-40.png",
+                "alt": "NRS redraw of Figure 1.40 for Exercise 1.5.13. The left closed loop contains a 6 V source, a 6 ohm resistor and a 4 ohm resistor with assumed current i1. The right closed loop contains a 12 V source, a 4 ohm resistor and a 10 ohm resistor with assumed current i2. A separate diagonal 12 V source connects node C of the left loop to node D of the right loop, with minus at D and plus at C. Nodes A, B, C and D and the resistor voltage polarities match the textbook figure.",
+                "caption": "Fig. 1.40 · Circuit for Exercise 1.5.13",
+                "page": 29,
+                "width": 1448,
+                "height": 1086,
+                "size": "large"
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Assume the current directions \\(i_1\\) and \\(i_2\\). No current flows through the diagonal 12 V source because there is no closed path or return path for current which enters this branch.",
+              "Identify the polarity of voltage drops across different resistances for the assumed current directions.",
+              "\\[i_1=\\dfrac{6}{6+4}=0.6\\ \\text{A}\\]",
+              "\\[i_2=\\dfrac{12}{4+10}=\\dfrac67\\ \\text{A}\\]",
+              "To find the voltage between the points \\(A\\) and \\(B\\), start considering the potential from point \\(B\\).",
+              "From \\(B\\) to \\(D\\), the voltage rises by",
+              "\\[4i_2=4\\left(\\dfrac67\\right)=3.4\\ \\text{V}\\]",
+              "From \\(D\\) to \\(C\\), the voltage rises by 12 V.",
+              "From \\(C\\) to \\(A\\), the voltage drops by",
+              "\\[4i_1=4\\times0.6=2.4\\ \\text{V}\\]",
+              "Therefore, the voltage between points \\(A\\) and \\(B\\) is",
+              "\\[V_{AB}=3.4+12-2.4=13\\ \\text{V}\\]",
+              "Or the potential of point \\(B\\) with respect to point \\(A\\) is \\(V_{BA}=-13\\ \\text{V}\\).",
+              "Therefore, the potential difference between \\(A\\) and \\(B\\) is \\(+13\\ \\text{V}\\)."
+            ],
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "Why the diagonal 12 V branch carries no current, how resistor +/− signs are chosen, and how the 13 V result is built",
+                "title": "Understand Exercise 1.5.13 step by step",
+                "paragraphs": [
+                  "There are two separate closed loops joined by one extra diagonal branch. The easiest way to follow the solution is to separate current flow from voltage difference."
+                ],
+                "sections": [
+                  {
+                    "heading": "1. Why does no current flow through the diagonal 12 V source?",
+                    "paragraphs": [
+                      "Suppose current tried to leave the left loop through \\(C\\), cross the diagonal source, and enter the right loop at \\(D\\). There is no second connection from the right loop back to the left loop, so there is no return path. Continuous current needs a closed path, so the current in the diagonal \\(C-D\\) branch is zero.",
+                      "Zero current does not mean zero voltage. The diagonal source still fixes the potential difference between its terminals. Its polarity is minus at \\(D\\) and plus at \\(C\\), so \\(C\\) is 12 V higher than \\(D\\):",
+                      "\\[V_C-V_D=12\\ \\text{V}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "2. How are the current directions chosen?",
+                    "paragraphs": [
+                      "The directions of unknown currents are assumed. They could have been chosen the other way round. The equations still work as long as the assumed directions and signs are used consistently.",
+                      "If a calculated current comes out negative, that simply means the actual current flows opposite to the assumed arrow."
+                    ]
+                  },
+                  {
+                    "heading": "3. What do + and − mean across a resistor?",
+                    "paragraphs": [
+                      "A resistor has no permanent positive or negative end. Once a current direction is assumed, the passive sign convention marks the terminal where the assumed current enters as \\( + \\) and the terminal where it leaves as \\( - \\). Potential therefore falls in the assumed direction of current.",
+                      "In the right-hand 4 ohm resistor, \\(i_2\\) flows from \\(D\\) down to \\(B\\), so \\(D\\) is \\( + \\) and \\(B\\) is \\( - \\). Travelling from \\(B\\) to \\(D\\) is therefore a voltage rise.",
+                      "In the left-hand 4 ohm resistor, \\(i_1\\) flows from \\(C\\) up to \\(A\\), so \\(C\\) is \\( + \\) and \\(A\\) is \\( - \\). Travelling from \\(C\\) to \\(A\\) is therefore a voltage drop."
+                    ]
+                  },
+                  {
+                    "heading": "4. Find the current in each closed loop",
+                    "paragraphs": [
+                      "The diagonal branch carries no current, so each closed outer loop can be solved independently.",
+                      "Left loop:",
+                      "\\[i_1=\\dfrac{6}{6+4}=0.6\\ \\text{A}\\]",
+                      "Right loop:",
+                      "\\[i_2=\\dfrac{12}{4+10}=\\dfrac67\\ \\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "5. Walk from B to A and track the potential",
+                    "paragraphs": [
+                      "We want \\(V_{AB}=V_A-V_B\\), so take the convenient path \\(B\\to D\\to C\\to A\\).",
+                      "From \\(B\\) to \\(D\\), we move against the current through the 4 ohm resistor, from \\( - \\) to \\( + \\), so the potential rises by \\(+4i_2=+3.4\\,\\text{V}\\).",
+                      "From \\(D\\) to \\(C\\), we cross the 12 V source from \\( - \\) to \\( + \\), so the potential rises by another 12 V.",
+                      "From \\(C\\) to \\(A\\), we move with the current through the left 4 ohm resistor, from \\( + \\) to \\( - \\), so the potential drops by \\(2.4\\,\\text{V}\\).",
+                      "\\[V_{AB}=+3.4+12-2.4=13\\ \\text{V}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "6. Sign rules to remember",
+                    "bullets": [
+                      "Across a resistor: travelling with the assumed current gives a voltage drop \\(-IR\\); travelling against it gives a voltage rise \\(+IR\\).",
+                      "Across a voltage source: travelling from \\( - \\) to \\( + \\) is a rise; travelling from \\( + \\) to \\( - \\) is a drop.",
+                      "A resistor itself has no built-in current direction or permanent polarity."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 4
+                }
+              }
+            ],
+            "final_answer": "\\(V_{AB}=+13\\ \\text{V}\\), equivalently \\(V_{BA}=-13\\ \\text{V}\\)."
+          },
+          {
+            "title": "Exercise 1.5.14",
+            "question_paragraphs": [
+              "Find the power absorbed by each element in the circuit shown in Figure 1.41."
+            ],
+            "figures": [
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-41.png",
+                "alt": "NRS redraw of Figure 1.41 for Exercise 1.5.14. The original circuit marks nodes x and y and contains a dependent current source labelled 3 i1 in the top-left branch pointing right, a 20 mA current source in the central vertical branch pointing upward, a 1 kilo-ohm resistor on the right with current i1 shown leftward along the top conductor, and a 4 kilo-ohm resistor in the lower inner branch. The wire crossings and node labels match the textbook drawing.",
+                "caption": "Fig. 1.41 · Circuit for Exercise 1.5.14",
+                "page": 30,
+                "width": 1448,
+                "height": 1086,
+                "size": "large"
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-41a.png",
+                "alt": "NRS redraw of Figure 1.41(a), the equivalent parallel circuit between node x at the top and node y at the bottom. The four branches are a dependent current source 3 i1 upward, an independent 20 mA current source upward, a 4 kilo-ohm resistor with i2 downward, and a 1 kilo-ohm resistor with i1 referenced upward toward node x.",
+                "caption": "Fig. 1.41(a) · Equivalent circuit",
+                "page": 31,
+                "width": 1448,
+                "height": 1086,
+                "size": "large",
+                "after": {
+                  "type": "paragraph",
+                  "index": 1
+                }
+              }
+            ],
+            "paragraphs": [
+              "Solution:",
+              "Identify the nodes \\(x\\) and \\(y\\). By keen observation, all the elements are connected in parallel between \\(x\\) and \\(y\\). The resultant circuit becomes Figure 1.41(a).",
+              "\\[1000i_1=4000i_2\\]",
+              "Or",
+              "\\[i_2=-\\dfrac{1000}{4000}i_1=-0.25i_1\\]",
+              "Applying KCL at node \\(x\\),",
+              "\\[3i_1+20\\times10^{-3}-i_2+i_1=0\\]",
+              "\\[3i_1+20\\times10^{-3}-(-0.25i_1)+i_1=0\\]",
+              "\\[4.25i_1+20\\times10^{-3}=0\\]",
+              "\\[4.25i_1=-20\\times10^{-3}\\qquad\\text{or}\\qquad i_1=-4.7\\ \\text{mA}\\]",
+              "\\[i_2=-(0.25)(-4.7\\times10^{-3})=1.175\\ \\text{A}\\]",
+              "Power absorbed by 4 k\\(\\Omega\\) resistance:",
+              "\\[P_{4\\mathrm{k}\\Omega}=i_2^2\\times4000=(1.175\\times10^{-3})^2\\times4000=5.5\\ \\text{mW}\\]",
+              "Power absorbed by 1 k\\(\\Omega\\) resistance:",
+              "\\[P_{1\\mathrm{k}\\Omega}=i_1^2\\times1000=(4.7\\times10^{-3})^2\\times1000=22\\ \\text{mW}\\]"
+            ],
+            "notes": [
+              {
+                "label": "Printed discrepancy",
+                "message": "The textbook first writes \\(1000i_1=4000i_2\\) but the next line uses the sign relation \\(i_2=-0.25i_1\\). With the arrows drawn in Figure 1.41(a), the consistent node-voltage relation is \\(-1000i_1=4000i_2\\).",
+                "after": {
+                  "type": "paragraph",
+                  "index": 4
+                }
+              },
+              {
+                "label": "Printed unit discrepancy",
+                "message": "The textbook prints \\(i_2=1.175\\,\\text{A}\\), while the following power calculation substitutes \\(1.175\\times10^{-3}\\,\\text{A}\\). The latter corresponds to \\(1.175\\,\\text{mA}\\) and is the value consistent with the preceding equations and the printed milliwatt power result.",
+                "after": {
+                  "type": "paragraph",
+                  "index": 10
+                }
+              }
+            ],
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "How Figure 1.41 becomes the parallel circuit, how current directions are assumed, what resistor +/− signs mean, and how the power results follow",
+                "title": "Understand Exercise 1.5.14 step by step",
+                "paragraphs": [
+                  "The difficult part here is not the arithmetic. It is recognising the two nodes, keeping the assumed current directions straight, and interpreting a negative current correctly."
+                ],
+                "sections": [
+                  {
+                    "heading": "1. Why does Figure 1.41 become Figure 1.41(a)?",
+                    "paragraphs": [
+                      "Every point marked \\(x\\) is connected by uninterrupted wire and is therefore the same electrical node. Every point marked \\(y\\) is likewise one node.",
+                      "The dependent source, the 20 mA source, the 4 k\\(\\Omega\\) resistor and the 1 k\\(\\Omega\\) resistor each have one terminal connected to \\(x\\) and the other connected to \\(y\\). Therefore all four elements are in parallel. Figure 1.41(a) simply redraws those same x–y branches side by side."
+                    ]
+                  },
+                  {
+                    "heading": "2. How are the current directions assumed?",
+                    "paragraphs": [
+                      "The direction of an unknown current is a reference choice, not something we must know beforehand. The textbook could have chosen the opposite direction for \\(i_1\\) or \\(i_2\\) and the final physical answer would still be the same if all signs were used consistently.",
+                      "Here \\(i_2\\) is assumed downward through the 4 k\\(\\Omega\\) resistor, from \\(x\\) to \\(y\\). The reference arrow for \\(i_1\\) corresponds to current upward through the 1 k\\(\\Omega\\) branch, from \\(y\\) to \\(x\\).",
+                      "If a solved current is negative, that means only that the real current flows opposite to the assumed direction."
+                    ]
+                  },
+                  {
+                    "heading": "3. What do + and − mean across the resistors?",
+                    "paragraphs": [
+                      "A resistor has no permanent positive or negative end. Once a current direction is assumed, we use the passive sign convention: current enters the positive side and leaves the negative side.",
+                      "For the 4 k\\(\\Omega\\) resistor, \\(i_2\\) is assumed from \\(x\\) to \\(y\\), so \\(V_{xy}=4000i_2\\).",
+                      "For the 1 k\\(\\Omega\\) resistor, \\(i_1\\) is assumed from \\(y\\) to \\(x\\), so \\(V_{xy}=-1000i_1\\).",
+                      "Because the resistors are in parallel, both expressions describe the same \\(V_{xy}\\). Therefore the sign-consistent relation is",
+                      "\\[-1000i_1=4000i_2\\]",
+                      "\\[i_2=-0.25i_1\\]"
+                    ]
+                  },
+                  {
+                    "heading": "4. Apply KCL at node x",
+                    "paragraphs": [
+                      "Using the arrows as drawn, \\(3i_1\\), 20 mA and \\(i_1\\) are referenced as entering node \\(x\\), while \\(i_2\\) leaves node \\(x\\). So",
+                      "\\[3i_1+20\\times10^{-3}+i_1-i_2=0\\]",
+                      "Substitute \\(i_2=-0.25i_1\\):",
+                      "\\[4.25i_1+20\\times10^{-3}=0\\]",
+                      "\\[i_1\\approx-4.7\\ \\text{mA}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "5. What does the negative i1 mean?",
+                    "paragraphs": [
+                      "The \\(-\\) sign says the actual current through the 1 k\\(\\Omega\\) resistor is opposite to the assumed upward arrow. The actual current therefore flows from \\(x\\) down to \\(y\\) with magnitude about \\(4.7\\,\\text{mA}\\).",
+                      "Then \\(i_2=-0.25i_1\\) gives \\(i_2\\approx1.175\\,\\text{mA}\\), which is positive, so its actual direction is the same as the assumed downward arrow."
+                    ]
+                  },
+                  {
+                    "heading": "6. Power absorbed by the resistors",
+                    "paragraphs": [
+                      "For a resistor, \\(P=I^2R\\), so the direction sign disappears when the current is squared.",
+                      "\\[P_{4\\mathrm{k}\\Omega}=(1.175\\times10^{-3})^2(4000)\\approx5.5\\ \\text{mW}\\]",
+                      "\\[P_{1\\mathrm{k}\\Omega}=(4.7\\times10^{-3})^2(1000)\\approx22\\ \\text{mW}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "7. If we continue the check to the current sources",
+                    "paragraphs": [
+                      "From the 4 k\\(\\Omega\\) branch, the node voltage is approximately \\(V_{xy}=4000(1.175\\,\\text{mA})=4.7\\,\\text{V}\\).",
+                      "The 20 mA source current flows upward from \\(y\\) to \\(x\\), entering the lower-potential terminal, so it delivers power: \\(P_{20\\mathrm{mA}}\\approx-94\\,\\text{mW}\\).",
+                      "The dependent source current is \\(3i_1\\approx-14.1\\,\\text{mA}\\) relative to its upward arrow, so its actual current is about 14.1 mA downward from \\(x\\) to \\(y\\). It therefore absorbs approximately \\(66\\,\\text{mW}\\).",
+                      "The two resistor powers plus the dependent-source absorbed power approximately balance the 20 mA source power; the small mismatch is only from rounding."
+                    ]
+                  },
+                  {
+                    "heading": "8. Three rules to remember",
+                    "bullets": [
+                      "Same two nodes means parallel, regardless of how tangled the original drawing looks.",
+                      "Unknown current directions may be assumed either way; a negative result means the real direction is opposite.",
+                      "A resistor has no built-in direction or polarity. Its +/− labels follow the assumed current direction."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 1
+                }
+              }
+            ],
+            "final_answer": "\\(i_1\\approx-4.7\\ \\text{mA}\\), \\(i_2\\approx1.175\\ \\text{mA}\\); \\(P_{4\\mathrm{k}\\Omega}\\approx5.5\\ \\text{mW}\\), \\(P_{1\\mathrm{k}\\Omega}\\approx22\\ \\text{mW}\\)."
           }
         ],
         "source_refs": [
@@ -2086,172 +2338,14 @@
           "TB-P026",
           "TB-P027",
           "TB-P028",
-          "TB-P029"
-        ],
-        "book_refs": [
-          {
-            "pages": "18–29",
-            "images": "18.png–29.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.13 — potential difference",
-        "scope": "core",
-        "paragraphs": [
-          "Find the voltage between points \\(A\\) and \\(B\\). Assume currents \\(i_1\\) and \\(i_2\\). No current flows through the 12-V source branch because there is no closed or return path for current entering that branch. Identify the polarity of voltage drops across the resistances for the assumed current directions.",
-          "\\[i_1=\\dfrac{6}{6+4}=0.6\\ \\text{A}\\]",
-          "\\[i_2=\\dfrac{12}{4+10}=\\dfrac67\\ \\text{A}\\]",
-          "To find the voltage between \\(A\\) and \\(B\\), start from point \\(B\\). From \\(B\\) to \\(D\\), the voltage rises by",
-          "\\[4i_2=4\\left(\\dfrac67\\right)=3.4\\ \\text{V}\\]",
-          "From \\(D\\) to \\(C\\), the voltage rises by \\(12\\ \\text{V}\\). From \\(C\\) to \\(A\\), it drops by",
-          "\\[4i_1=4(0.6)=2.4\\ \\text{V}\\]",
-          "Therefore,",
-          "\\[V_{AB}=3.4+12-2.4=13\\ \\text{V}\\]",
-          "\\[V_{BA}=-13\\ \\text{V}\\]",
-          "Thus the potential difference between \\(A\\) and \\(B\\) has magnitude \\(13\\ \\text{V}\\), with sign depending on the stated reference direction."
-        ],
-        "source_refs": [
           "TB-P029",
-          "TB-P030"
-        ],
-        "book_refs": [
-          {
-            "pages": "29–30",
-            "images": "29.png–30.png"
-          }
-        ]
-      },
-      {
-        "heading": "Exercise 1.5.14 — power absorbed",
-        "scope": "core",
-        "paragraphs": [
-          "Find the power absorbed by each element in the circuit shown in Figure 1.41.",
-          "Textbook solution: identify the nodes \\(x\\) and \\(y\\). By inspection, every element is connected between these same two nodes, so the circuit can be redrawn as the equivalent parallel network in Figure 1.41(a).",
-          "Because the 1-k\\(\\Omega\\) and 4-k\\(\\Omega\\) resistors are connected across the same two nodes, the voltage across them must be equal. With the assumed current directions, the textbook writes",
-          "\\[1000i_1=4000i_2\\]",
-          "or",
-          "\\[i_2=-\\dfrac{1000}{4000}i_1=-0.25i_1\\]",
-          "Applying KCL at node \\(x\\),",
-          "\\[3i_1+20\\times10^{-3}-i_2+i_1=0\\]",
-          "\\[3i_1+20\\times10^{-3}-(-0.25i_1)+i_1=0\\]",
-          "\\[4.25i_1+20\\times10^{-3}=0\\]",
-          "\\[i_1=-4.7\\ \\text{mA}\\]",
-          "Then the textbook prints",
-          "\\[i_2=-(0.25)(-4.7\\times10^{-3})=1.175\\ \\text{A}\\]",
-          "For the 4-k\\(\\Omega\\) resistance, the subsequent power line uses milliampere scale:",
-          "\\[P_{4\\mathrm{k}\\Omega}=i_2^2(4000)=(1.175\\times10^{-3})^2(4000)=5.5\\ \\text{mW}\\]",
-          "For the 1-k\\(\\Omega\\) resistance,",
-          "\\[P_{1\\mathrm{k}\\Omega}=i_1^2(1000)=(4.7\\times10^{-3})^2(1000)=22\\ \\text{mW}\\]"
-        ],
-        "source_refs": [
           "TB-P030",
           "TB-P031"
         ],
         "book_refs": [
           {
-            "pages": "30–31",
-            "images": "30.png–31.png"
-          }
-        ],
-        "discrepancy": {
-          "label": "Textbook unit mismatch",
-          "message": "The textbook prints \\(i_2=1.175\\,\\text{A}\\), but the very next power line substitutes \\(1.175\\times10^{-3}\\,\\text{A}\\). The printed line is preserved below, and the mismatch is flagged instead of being silently repaired."
-        },
-        "figures": [
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-41.png",
-            "alt": "NRS redraw of Figure 1.41 for Exercise 1.5.14. The original circuit marks nodes x and y and contains a dependent current source of value 3 i1 in the top-left branch pointing right, a 20 mA current source in the central vertical branch pointing upward, a 1 kilo-ohm resistor in the right branch with current i1 shown along the top conductor to the left, and a 4 kilo-ohm resistor in the lower inner rectangular branch. The connections match the textbook exactly.",
-            "caption": "Fig. 1.41 · Circuit for Exercise 1.5.14",
-            "page": 30,
-            "width": 1448,
-            "height": 1086,
-            "after": {
-              "type": "paragraph",
-              "index": 0
-            },
-            "size": "large"
-          },
-          {
-            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/examples/f1-41a.png",
-            "alt": "NRS redraw of Figure 1.41(a), the equivalent parallel network for Exercise 1.5.14. Between node x at the top and node y at the bottom there are four parallel branches: a dependent current source 3 i1 pointing upward, an independent 20 mA current source pointing upward, a 4 kilo-ohm resistor with current i2 downward, and a 1 kilo-ohm resistor with current i1 upward as indicated by the arrow on the top conductor.",
-            "caption": "Fig. 1.41(a) · Equivalent parallel network used in the solution",
-            "page": 31,
-            "width": 1448,
-            "height": 1086,
-            "after": {
-              "type": "paragraph",
-              "index": 1
-            },
-            "size": "large"
-          }
-        ],
-        "explainers": [
-          {
-            "label": "SIMPLER",
-            "summary": "How the redraw works, how the current directions were chosen, why the minus sign appears, and how the power values are obtained",
-            "title": "Understand Exercise 1.5.14 step by step",
-            "paragraphs": [
-              "The key to this problem is to separate three ideas: which points are the same node, how current directions are assumed, and how the resistor voltage signs follow from those assumed directions."
-            ],
-            "sections": [
-              {
-                "heading": "1. Why can the circuit be redrawn as Figure 1.41(a)?",
-                "paragraphs": [
-                  "A node is a set of points that are directly connected by ideal wire, so every point on that wire is at the same potential. In Figure 1.41, all the points marked \\(x\\) are one node and all the points marked \\(y\\) are another node.",
-                  "Once we identify those two nodes, each element is seen to be connected between the same pair of nodes \\(x\\) and \\(y\\). That means all four elements are in parallel, so the circuit may be redrawn in the cleaner parallel form of Figure 1.41(a) without changing the electrical behavior."
-                ]
-              },
-              {
-                "heading": "2. How are the current directions chosen?",
-                "paragraphs": [
-                  "For unknown currents, the direction is first assumed. It could have been chosen the other way as well. The mathematics still works as long as the same choice is used consistently in every equation.",
-                  "Here the textbook chooses \\(i_1\\) in the 1-k\\(\\Omega\\) branch and \\(i_2\\) downward through the 4-k\\(\\Omega\\) branch. The dependent source current is given as \\(3i_1\\), so it automatically follows the assumed sign of \\(i_1\\).",
-                  "If an answer comes out negative, it does not mean the circuit is wrong. It only means the actual current flows opposite to the assumed arrow."
-                ]
-              },
-              {
-                "heading": "3. What do the + and − sides of a resistor mean?",
-                "paragraphs": [
-                  "A resistor has no permanent positive or negative end. Its polarity is assigned from the assumed current direction using the passive sign convention: current enters the positive side and leaves the negative side.",
-                  "So, for the 4-k\\(\\Omega\\) resistor, if \\(i_2\\) is drawn downward from \\(x\\) to \\(y\\), then the top is positive and the bottom is negative, giving \\(V_{xy}=4000i_2\\).",
-                  "For the 1-k\\(\\Omega\\) resistor, the assumed \\(i_1\\) direction is upward from \\(y\\) to \\(x\\), so the bottom is positive and the top is negative. Therefore \\(V_{xy}=V_x-V_y=-1000i_1\\). This sign difference is why the next relation effectively becomes \\(-1000i_1=4000i_2\\), or \\(i_2=-0.25i_1\\)."
-                ]
-              },
-              {
-                "heading": "4. Why is the KCL equation written that way?",
-                "paragraphs": [
-                  "At node \\(x\\), the dependent current source \\(3i_1\\), the 20 mA source, and the assumed \\(i_1\\) current all enter the node, while the assumed \\(i_2\\) current leaves the node.",
-                  "So a convenient KCL statement is: entering currents minus leaving currents equals zero.",
-                  "\\[3i_1+20\\times10^{-3}+i_1-i_2=0\\]",
-                  "That is exactly the same as the textbook line",
-                  "\\[3i_1+20\\times10^{-3}-i_2+i_1=0\\]"
-                ]
-              },
-              {
-                "heading": "5. What does the negative value of i1 mean?",
-                "paragraphs": [
-                  "After substituting \\(i_2=-0.25i_1\\) into KCL, the solution gives \\(i_1=-4.7\\,\\text{mA}\\).",
-                  "The negative sign means the actual current through the 1-k\\(\\Omega\\) branch is opposite to the assumed \\(i_1\\) arrow. Its magnitude is \\(4.7\\,\\text{mA}\\).",
-                  "Using the relation \\(i_2=-0.25i_1\\), we then get a positive \\(i_2\\), so the actual current through the 4-k\\(\\Omega\\) branch does flow in the assumed downward direction."
-                ]
-              },
-              {
-                "heading": "6. How are the power values obtained?",
-                "paragraphs": [
-                  "For a resistor, the absorbed power is found from \\(P=I^2R\\). The textbook’s final power substitutions show that the intended value is \\(i_2=1.175\\times10^{-3}\\,\\text{A}=1.175\\,\\text{mA}\\), not \\(1.175\\,\\text{A}\\).",
-                  "Hence the 4-k\\(\\Omega\\) resistor power is",
-                  "\\[P_{4\\mathrm{k}\\Omega}=(1.175\\times10^{-3})^2(4000)=5.5\\ \\text{mW}\\]",
-                  "and the 1-k\\(\\Omega\\) resistor power is",
-                  "\\[P_{1\\mathrm{k}\\Omega}=(4.7\\times10^{-3})^2(1000)=22\\ \\text{mW}\\]."
-                ],
-                "bullets": [
-                  "Any current direction may be assumed first; a negative answer just means the true direction is opposite.",
-                  "A resistor does not have a built-in direction or built-in polarity. Both follow from the assumed current direction.",
-                  "The redraw to Figure 1.41(a) is valid because every branch is connected between the same two nodes, \\(x\\) and \\(y\\)."
-                ]
-              }
-            ]
+            "pages": "18–31",
+            "images": "18.png–31.png"
           }
         ]
       }
