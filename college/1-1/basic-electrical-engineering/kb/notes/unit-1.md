@@ -954,19 +954,31 @@ The voltage drops are
 
 ### Exercise 1.5.13 — potential difference
 
-Find the voltage between points \(A\) and \(B\). Assume currents \(i_1\) and \(i_2\). No current flows through the 12-V source branch because there is no closed or return path for current entering that branch. Identify the polarity of voltage drops across the resistances for the assumed current directions.
+What is the voltage between the points \(A\) and \(B\) in the circuit shown in Figure 1.40?
+
+*Figure: Fig. 1.40 · Circuit for Exercise 1.5.13 — NRS redraw*
+
+**Textbook solution**
+
+Assume the current directions \(i_1\) and \(i_2\). No current flows through the diagonal 12 V source because there is no closed path or return path for current which enters this branch.
+
+Identify the polarity of voltage drops across the different resistances for the assumed current directions.
 
 \[i_1=\dfrac{6}{6+4}=0.6\ \text{A}\]
 
 \[i_2=\dfrac{12}{4+10}=\dfrac67\ \text{A}\]
 
-To find the voltage between \(A\) and \(B\), start from point \(B\). From \(B\) to \(D\), the voltage rises by
+To find the voltage between the points \(A\) and \(B\), start considering the potential from point \(B\).
+
+From \(B\) to \(D\), the voltage rises by
 
 \[4i_2=4\left(\dfrac67\right)=3.4\ \text{V}\]
 
-From \(D\) to \(C\), the voltage rises by \(12\ \text{V}\). From \(C\) to \(A\), it drops by
+From \(D\) to \(C\), the voltage rises by \(12\ \text{V}\).
 
-\[4i_1=4(0.6)=2.4\ \text{V}\]
+From \(C\) to \(A\), the voltage drops by
+
+\[4i_1=4\times0.6=2.4\ \text{V}\]
 
 Therefore,
 
@@ -974,7 +986,39 @@ Therefore,
 
 \[V_{BA}=-13\ \text{V}\]
 
-Thus the potential difference between \(A\) and \(B\) has magnitude \(13\ \text{V}\), with sign depending on the stated reference direction.
+Therefore, the potential difference between \(A\) and \(B\) is \(+13\ \text{V}\).
+
+#### SIMPLER — understand the branch current, resistor signs, and voltage walk
+
+There are two separate closed loops joined by only one extra branch: the diagonal 12 V source between \(C\) and \(D\).
+
+**Why no current flows through the diagonal source.** If current crossed from the left loop into the right loop through the C–D branch, there would be no second connection providing a return path to the left loop. Continuous current requires a closed path, so the current in the C–D branch is zero. Zero current does not mean zero voltage: the source still fixes
+
+\[V_C-V_D=12\ \text{V}\]
+
+because \(C\) is the positive terminal and \(D\) is the negative terminal.
+
+**What + and − mean on a resistor.** A resistor has no permanent polarity. After a current direction is assumed, the passive sign convention marks the terminal where current enters as \(+\) and the terminal where it leaves as \(-\). Therefore potential falls in the direction of current.
+
+For the right-hand 4 Ω resistor, \(i_2\) flows from \(D\) to \(B\), so \(D\) is \(+\) and \(B\) is \(-\). Travelling from \(B\) to \(D\) is therefore a rise. For the left-hand 4 Ω resistor, \(i_1\) flows from \(C\) to \(A\), so \(C\) is \(+\) and \(A\) is \(-\). Travelling from \(C\) to \(A\) is therefore a drop.
+
+The diagonal branch carries no current, so each outer loop can be solved independently:
+
+\[i_1=\dfrac{6}{6+4}=0.6\ \text{A}\]
+
+\[i_2=\dfrac{12}{4+10}=\dfrac67\ \text{A}\]
+
+To obtain \(V_{AB}=V_A-V_B\), walk from \(B\to D\to C\to A\):
+
+- \(B\to D\): against current through 4 Ω, so rise \(+4i_2=+3.4\ \text{V}\).
+- \(D\to C\): from \(-\) to \(+\) across the 12 V source, so rise \(+12\ \text{V}\).
+- \(C\to A\): with current through 4 Ω, so drop \(-4i_1=-2.4\ \text{V}\).
+
+Hence,
+
+\[V_{AB}=+3.4+12-2.4=13\ \text{V}\]
+
+Remember: through a resistor, travelling with current gives \(-IR\), travelling against current gives \(+IR\). Across a source, travelling from \(-\) to \(+\) is a rise and from \(+\) to \(-\) is a drop.
 
 ### Exercise 1.5.14 — power absorbed
 
