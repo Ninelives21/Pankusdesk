@@ -13,10 +13,12 @@ In a linear network containing two or more sources, the response in any element 
 - Ideal current source internal resistance: \(\infty\).
 - Ideal voltage source internal resistance: \(0\).
 
-The page contains the original two-source example and a second sketch headed “When 15 V is acting alone”.
+The first redraw shows the original two-source circuit. The second redraw shows the case when only the 15 V source acts.
+
+Note: In the notebook sequence, the right-hand source in the original sketch is unlabeled, but the next sketch clearly says “When 20 V is acting alone”. To keep the three Superposition sketches consistent with each other and with the theorem, the redraw treats the original second source as 20 V. In the source-isolation sketches, only one source remains active at a time and the other voltage source is suppressed by a short circuit.
 
 \[
-15-V=\frac{V}{3.3}+\frac{V}{2.2}
+15-V=rac{V}{3.3}+rac{V}{2.2}
 \]
 
 ## Page 2 — Superposition example continued and Thevenin’s theorem
@@ -24,12 +26,25 @@ The page contains the original two-source example and a second sketch headed “
 ### When 20 V is acting alone
 
 \[
-\frac{20-V}{2.2}=V+\frac{V}{3.3}
+rac{20-V}{2.2}=V+rac{V}{3.3}
 \]
 
 \[
-V=5.17\text{ V},\qquad I'=1.56\text{ mA}
+V=5.17	ext{ V},\qquad I'=1.56	ext{ mA}
 \]
+
+### Superposition example — explanation
+
+- Superposition theorem is used when a linear circuit has more than one independent source.
+- Original circuit: keep both sources active.
+- 15 V acting alone: keep the 15 V source and suppress the 20 V source by a short circuit.
+- 20 V acting alone: keep the 20 V source and suppress the 15 V source by a short circuit.
+- Final response: add the separate contributions algebraically with the correct sign.
+
+The corrected redraws are meant to make the class-note working internally consistent. The equations match the source-isolation sketches:
+
+- For 15 V acting alone: \((15-V)/1 = V/3.3 + V/2.2\), written in the notebook as \(15-V=V/3.3+V/2.2\).
+- For 20 V acting alone: \((20-V)/2.2 = V/1 + V/3.3\), written in the notebook as \((20-V)/2.2 = V + V/3.3\).
 
 ### Thevenin’s theorem
 
@@ -44,7 +59,7 @@ The page sketches the circuit used to obtain \(R_{th}\), followed by the Theveni
 A further two-source circuit is written with node voltage \(V\):
 
 \[
-\frac{18-V}{1}+\frac{22-V}{2.2}=\frac{V}{3.3}
+rac{18-V}{1}+rac{22-V}{2.2}=rac{V}{3.3}
 \]
 
 ## Page 4 — Corrected copy and source-reduction sketch
@@ -52,13 +67,13 @@ A further two-source circuit is written with node voltage \(V\):
 The corrected copy of the two-source circuit repeats:
 
 \[
-\frac{18-V}{1}+\frac{22-V}{2.2}=\frac{V}{3.3}
+rac{18-V}{1}+rac{22-V}{2.2}=rac{V}{3.3}
 \]
 
 The written results are:
 
 \[
-V=10.24\text{ V},\qquad I=3.10\text{ mA}
+V=10.24	ext{ V},\qquad I=3.10	ext{ mA}
 \]
 
 The lower part of the page contains another source-reduction/checking sketch. The calculations underneath are crossed through and are not transcribed as final working.

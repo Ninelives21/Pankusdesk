@@ -13,8 +13,8 @@
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
   "title": "Network theorems — superposition and Thevenin’s theorem",
-  "summary": "Network theorems; superposition theorem and source suppression; a two-source superposition example; Thevenin’s theorem, open-circuit voltage and Thevenin resistance; and class-worked circuit calculations.",
-  "transcription_policy": "Class-note order is preserved and wording is lightly cleaned for study. Crossed-out calculations are not treated as final answers. Five class-note redraws are integrated so far: the three Superposition figures plus the Thevenin resistance circuit and the Thevenin equivalent circuit with load. Remaining figure redraws are pending.",
+  "summary": "Network theorems; superposition theorem and source suppression; a corrected two-source superposition example; Thevenin’s theorem, open-circuit voltage and Thevenin resistance; and class-worked circuit calculations.",
+  "transcription_policy": "Class-note order is preserved and wording is lightly cleaned for study. Crossed-out calculations are not treated as final answers. The Superposition redraws have been normalized so the original circuit and the two source-isolation sketches are internally consistent with the theorem: the original circuit is shown with both 15 V and 20 V sources, the “15 V acting alone” sketch suppresses the 20 V source by a short circuit, and the “20 V acting alone” sketch suppresses the 15 V source by a short circuit. Five class-note redraws are integrated so far: the three Superposition figures plus the Thevenin resistance circuit and the Thevenin equivalent circuit with load. Remaining figure redraws are pending.",
   "mapped_topics": [
     {
       "topic_id": "u1-superposition",
@@ -69,11 +69,15 @@
           "figure_label": "Superposition example — original two-source circuit",
           "source_page": "Notebook image 20",
           "size": "large",
-          "alt": "Notebook-style superposition example with a 15 V source on the left, a 20 V source on the right, 1 kΩ and 2.2 kΩ resistors across the top, and a 3.3 kΩ vertical branch to the common return.",
+          "alt": "Notebook-style superposition example showing the original two-source circuit: a 15 V source on the left, a 20 V source on the right, 1 kΩ and 2.2 kΩ resistors across the top branch, and a 3.3 kΩ vertical branch to the common return.",
           "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c1.png",
           "caption": "Class-note redraw · Superposition example — original two-source circuit",
           "width": 1448,
           "height": 1086
+        },
+        {
+          "type": "paragraph",
+          "text": "Note: In the notebook sequence, the right-hand source in the original sketch is unlabeled, but the next sketch clearly says “When 20 V is acting alone”. To keep the three Superposition sketches consistent with each other and with the theorem, the redraw below treats the original second source as 20 V. In the source-isolation sketches, only one source remains active at a time and the other voltage source is suppressed by a short circuit."
         },
         {
           "type": "subheading",
@@ -84,9 +88,9 @@
           "figure_label": "Superposition example — 15 V source acting alone",
           "source_page": "Notebook image 20",
           "size": "large",
-          "alt": "Notebook-style source-isolation sketch from the class example, with 1 kΩ and 2.2 kΩ top resistors, a 3.3 kΩ vertical branch, an unlabeled left source symbol, and a 20 V source shown on the right as in the notes.",
+          "alt": "Notebook-style superposition sketch for the case when only the 15 V source acts: the left 15 V source remains active, the right 20 V source is suppressed and replaced by a short circuit, and the 1 kΩ, 2.2 kΩ and 3.3 kΩ resistors remain in the network.",
           "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c2.png",
-          "caption": "Class-note redraw · Superposition example — first source-isolation sketch",
+          "caption": "Class-note redraw · Superposition example — 15 V source acting alone",
           "width": 1448,
           "height": 1086
         },
@@ -109,7 +113,7 @@
           "figure_label": "Superposition example — 20 V source acting alone",
           "source_page": "Notebook image 21",
           "size": "large",
-          "alt": "Notebook-style superposition sketch with the left voltage source replaced by a short circuit, a 20 V source active on the right, 1 kΩ and 2.2 kΩ top resistors, and a 3.3 kΩ vertical branch.",
+          "alt": "Notebook-style superposition sketch for the case when only the 20 V source acts: the right 20 V source remains active, the left 15 V source is suppressed and replaced by a short circuit, and the 1 kΩ, 2.2 kΩ and 3.3 kΩ resistors remain in the network.",
           "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c3.png",
           "caption": "Class-note redraw · Superposition example — 20 V source acting alone",
           "width": 1448,
@@ -126,6 +130,44 @@
         {
           "type": "equation",
           "text": "\\[I'=1.56\\ \\text{mA}\\]"
+        },
+        {
+          "type": "accordions",
+          "label": "Understand the superposition example",
+          "items": [
+            {
+              "title": "What the theorem means here",
+              "paragraphs": [
+                "Superposition theorem is used when a linear circuit has more than one independent source. Instead of solving the full circuit at once, we find the required response due to one source at a time and then add the individual responses algebraically.",
+                "A voltage source that is made non-operative is replaced by a short circuit because an ideal voltage source has zero internal resistance. A current source that is made non-operative is replaced by an open circuit because an ideal current source has infinite internal resistance."
+              ],
+              "bullets": [
+                "Original circuit: keep both sources active.",
+                "15 V acting alone: keep the 15 V source, suppress the 20 V source by a short circuit.",
+                "20 V acting alone: keep the 20 V source, suppress the 15 V source by a short circuit.",
+                "Final response: add the separate contributions with the correct sign."
+              ]
+            },
+            {
+              "title": "How the three redraws are related",
+              "paragraphs": [
+                "The first redraw is the original two-source network. The left branch contains the 15 V source, the right branch contains the 20 V source, the top branch has 1 kΩ and 2.2 kΩ resistors, and the centre branch has a 3.3 kΩ resistor.",
+                "In the notebook, the right-hand source in the original sketch is not clearly labeled, but the next class-note sketch explicitly says “When 20 V is acting alone”. That is why the corrected redraw labels the original right-hand source as 20 V.",
+                "The second redraw shows the 15 V source acting alone, so the 20 V source is replaced by a short. The third redraw shows the 20 V source acting alone, so the 15 V source is replaced by a short."
+              ]
+            },
+            {
+              "title": "How the written equations match the sketches",
+              "paragraphs": [
+                "When 15 V acts alone, the current through the 1 kΩ branch is written as \\((15-V)/1\\). The node voltage \\(V\\) drives current through the 3.3 kΩ and 2.2 kΩ branches, giving the class-note relation \\(15-V=V/3.3+V/2.2\\). The division by 1 is omitted in the notebook because the resistance is 1 kΩ.",
+                "When 20 V acts alone, the 15 V source is shorted, so the 1 kΩ and 3.3 kΩ branches are both connected from the node to the return line. That gives the class-note relation \\((20-V)/2.2=V+V/3.3\\), where \\(V\\) again stands for \\(V/1\\)."
+              ],
+              "bullets": [
+                "The equations are consistent with the corrected redraws.",
+                "The redrawn sketches are intended to make the class-note working readable, not to invent a different example."
+              ]
+            }
+          ]
         },
         {
           "type": "heading",
