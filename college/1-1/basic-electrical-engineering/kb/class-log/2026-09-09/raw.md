@@ -18,7 +18,7 @@ The first redraw shows the original two-source circuit. The second redraw shows 
 Note: In the notebook sequence, the right-hand source in the original sketch is unlabeled, but the next sketch clearly says “When 20 V is acting alone”. To keep the three Superposition sketches consistent with each other and with the theorem, the redraw treats the original second source as 20 V. In the source-isolation sketches, only one source remains active at a time and the other voltage source is suppressed by a short circuit.
 
 \[
-15-V=rac{V}{3.3}+rac{V}{2.2}
+15-V=\dfrac{V}{3.3}+\dfrac{V}{2.2}
 \]
 
 ## Page 2 — Superposition example continued and Thevenin’s theorem
@@ -26,11 +26,11 @@ Note: In the notebook sequence, the right-hand source in the original sketch is 
 ### When 20 V is acting alone
 
 \[
-rac{20-V}{2.2}=V+rac{V}{3.3}
+\dfrac{20-V}{2.2}=V+\dfrac{V}{3.3}
 \]
 
 \[
-V=5.17	ext{ V},\qquad I'=1.56	ext{ mA}
+V=5.17\text{ V},\qquad I'=1.56\text{ mA}
 \]
 
 ### Superposition example — explanation
@@ -50,16 +50,19 @@ The corrected redraws are meant to make the class-note working internally consis
 
 Any two-terminal linear bilateral network can be replaced by an equivalent circuit consisting of an equivalent source \(V_{th}\) (or \(V_{oc}\)) in series with resistance \(R_{th}\).
 
-The page then sketches an example network and the open-circuit-voltage arrangement for \(V_{th}\) or \(V_{oc}\).
+- \(V_{th}\) or \(V_{oc}\): open-circuit voltage measured between the load terminals.
+- \(R_{th}\): Thevenin resistance seen from the load terminals with the independent sources replaced by their internal resistances.
+
+The class example is shown first as the original loaded network, followed by the open-circuit arrangement used for \(V_{th}\) or \(V_{oc}\).
 
 ## Page 3 — Thevenin resistance, equivalent circuit and worked network
 
-The page sketches the circuit used to obtain \(R_{th}\), followed by the Thevenin equivalent circuit with the load reconnected.
+The next sketch suppresses the source and shows the network used to obtain \(R_{th}\). The following sketch is the Thevenin equivalent circuit with the 3.3 kΩ load reconnected and the load current \(I_L\) marked downward.
 
 A further two-source circuit is written with node voltage \(V\):
 
 \[
-rac{18-V}{1}+rac{22-V}{2.2}=rac{V}{3.3}
+\dfrac{18-V}{1}+\dfrac{22-V}{2.2}=\dfrac{V}{3.3}
 \]
 
 ## Page 4 — Corrected copy and source-reduction sketch
@@ -67,13 +70,13 @@ A further two-source circuit is written with node voltage \(V\):
 The corrected copy of the two-source circuit repeats:
 
 \[
-rac{18-V}{1}+rac{22-V}{2.2}=rac{V}{3.3}
+\dfrac{18-V}{1}+\dfrac{22-V}{2.2}=\dfrac{V}{3.3}
 \]
 
 The written results are:
 
 \[
-V=10.24	ext{ V},\qquad I=3.10	ext{ mA}
+V=10.24\text{ V},\qquad I=3.10\text{ mA}
 \]
 
 The lower part of the page contains another source-reduction/checking sketch. The calculations underneath are crossed through and are not transcribed as final working.

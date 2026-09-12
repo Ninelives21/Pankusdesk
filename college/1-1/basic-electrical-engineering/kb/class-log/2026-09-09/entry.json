@@ -14,7 +14,7 @@
   },
   "title": "Network theorems — superposition and Thevenin’s theorem",
   "summary": "Network theorems; superposition theorem and source suppression; a corrected two-source superposition example; Thevenin’s theorem, open-circuit voltage and Thevenin resistance; and class-worked circuit calculations.",
-  "transcription_policy": "Class-note order is preserved and wording is lightly cleaned for study. Crossed-out calculations are not treated as final answers. The Superposition redraws have been normalized so the original circuit and the two source-isolation sketches are internally consistent with the theorem: the original circuit is shown with both 15 V and 20 V sources, the “15 V acting alone” sketch suppresses the 20 V source by a short circuit, and the “20 V acting alone” sketch suppresses the 15 V source by a short circuit. Five class-note redraws are integrated so far: the three Superposition figures plus the Thevenin resistance circuit and the Thevenin equivalent circuit with load. Remaining figure redraws are pending.",
+  "transcription_policy": "Class-note order is preserved and wording is lightly cleaned for study. Crossed-out calculations are not treated as final answers. The Superposition redraws have been normalized so the original circuit and the two source-isolation sketches are internally consistent with the theorem: the original circuit is shown with both 15 V and 20 V sources, the “15 V acting alone” sketch suppresses the 20 V source by a short circuit, and the “20 V acting alone” sketch suppresses the 15 V source by a short circuit. Seven class-note redraws are integrated: the three Superposition figures and the four Thevenin figures (original network, open-circuit-voltage circuit, Thevenin-resistance circuit, and Thevenin equivalent with load). The later worked-network figures c8–c10 remain pending.",
   "mapped_topics": [
     {
       "topic_id": "u1-superposition",
@@ -58,7 +58,7 @@
         },
         {
           "type": "line",
-          "text": "Ideal current source: internal resistance \\(\to\\infty\\). Ideal voltage source: internal resistance \\(=0\\)."
+          "text": "Ideal current source: internal resistance \\(\\to\\infty\\). Ideal voltage source: internal resistance \\(=0\\)."
         },
         {
           "type": "subheading",
@@ -191,12 +191,14 @@
         },
         {
           "type": "figure",
-          "placeholder": true,
           "figure_label": "Thevenin example — original network",
           "source_page": "Notebook image 21",
-          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c4.png",
           "size": "large",
-          "alt": "Pending NRS redraw placeholder for thevenin example — original network."
+          "alt": "Notebook-style Thevenin example showing the original network: a voltage source on the left, 1 kΩ and 2.2 kΩ resistors along the top branch, a vertical 1 kΩ branch to the common return, and a 3.3 kΩ load on the right.",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c4.png",
+          "caption": "Class-note redraw · Thevenin example — original network",
+          "width": 1448,
+          "height": 1086
         },
         {
           "type": "subheading",
@@ -204,12 +206,14 @@
         },
         {
           "type": "figure",
-          "placeholder": true,
           "figure_label": "Thevenin voltage / open-circuit-voltage circuit",
           "source_page": "Notebook image 21",
-          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c5.png",
           "size": "large",
-          "alt": "Pending NRS redraw placeholder for thevenin voltage / open-circuit-voltage circuit."
+          "alt": "Notebook-style circuit for finding Thevenin voltage: the 3.3 kΩ load is removed, leaving open output terminals across which Voc or Vth is marked; the source, 1 kΩ top resistor, 2.2 kΩ top resistor and vertical 1 kΩ branch remain.",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c5.png",
+          "caption": "Class-note redraw · Finding Vth or Voc",
+          "width": 1448,
+          "height": 1086
         }
       ]
     },
@@ -226,11 +230,11 @@
           "figure_label": "Thevenin resistance circuit",
           "source_page": "Notebook image 22",
           "size": "large",
-          "alt": "Notebook-style Thevenin resistance circuit showing a 1 kΩ resistor at the top left, a 2.2 kΩ resistor at the top right, a vertical 1 kΩ branch to the common bottom line, and the Rth measurement marked across the right-hand output terminals.",
+          "alt": "Notebook-style Thevenin resistance circuit with the independent voltage source suppressed by a short circuit, a 1 kΩ top-left resistor, a 2.2 kΩ top-right resistor, a vertical 1 kΩ branch to the common return, and Rth indicated across the open output terminals.",
           "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c6.png",
           "caption": "Class-note redraw · Thevenin resistance circuit",
-          "width": 2038,
-          "height": 772
+          "width": 1448,
+          "height": 1086
         },
         {
           "type": "subheading",
@@ -241,7 +245,7 @@
           "figure_label": "Thevenin equivalent circuit with load",
           "source_page": "Notebook image 22",
           "size": "large",
-          "alt": "Notebook-style Thevenin equivalent circuit showing a source on the left, an Rth resistor in series across the top, and a 3.3 kΩ load resistor on the right with downward load current IL.",
+          "alt": "Notebook-style Thevenin equivalent circuit showing a voltage source with positive upper polarity and negative lower polarity, Rth in series, and the 3.3 kΩ load with downward load current IL.",
           "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c7.png",
           "caption": "Class-note redraw · Thevenin equivalent circuit with load",
           "width": 1448,
