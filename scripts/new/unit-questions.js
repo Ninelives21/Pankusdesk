@@ -280,7 +280,7 @@ function formatReviewPages(pages) {
 }
 
 async function fetchJson(url) {
-	const response = await fetch(url);
+	const response = await fetch(url, { cache: 'no-store' });
 	if (!response.ok) throw new Error(`${url} returned ${response.status}`);
 	return response.json();
 }

@@ -33,7 +33,7 @@ async function initSubjectHome() {
 
 async function fetchJson(url) {
 	if (!url) throw new Error('Missing JSON source URL.');
-	const response = await fetch(url);
+	const response = await fetch(url, { cache: 'no-store' });
 	if (!response.ok) throw new Error(`${url} returned ${response.status}`);
 	return response.json();
 }

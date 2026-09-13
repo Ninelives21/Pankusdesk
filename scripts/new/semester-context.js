@@ -347,7 +347,7 @@ function toIsoDate(date) {
 
 async function loadJson(path) {
 	const response =
-		await fetch(path);
+		await fetch(path, { cache: 'no-store' });
 
 	if (!response.ok) {
 		throw new Error(
