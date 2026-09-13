@@ -1543,6 +1543,112 @@
         ]
       },
       {
+        "heading": "Problem-solving guide",
+        "scope": "core",
+        "explainers": [
+          {
+            "label": "SIMPLER",
+            "summary": "A repeatable way to approach Kirchhoff problems before writing equations",
+            "title": "How to approach a Kirchhoff’s-law problem",
+            "paragraphs": [
+              "Kirchhoff problems become much easier if you separate the thinking into a fixed order. Do not start by hunting for equations. First understand the circuit, choose reference directions, and then let KCL or KVL turn that picture into equations."
+            ],
+            "sections": [
+              {
+                "heading": "1. Read the circuit before doing any maths",
+                "paragraphs": [
+                  "Identify the voltage sources, resistors, junctions or nodes, and the closed paths or loops. Notice whether any resistor or branch is shared by two loops. At this stage, the goal is only to understand how the circuit is connected."
+                ]
+              },
+              {
+                "heading": "2. Mark the unknown currents",
+                "paragraphs": [
+                  "Give the unknown branch currents names such as \\(I_1\\), \\(I_2\\) and \\(I_3\\), and draw an arrow for each one. The direction is a reference choice; you do not have to guess the real direction correctly.",
+                  "If you assume a current in one direction and later obtain a negative value, the mathematics is telling you that the real current flows in the opposite direction. For example, if the assumed arrow is to the right and the answer is \\(I=-2\\,\\text{A}\\), the actual current is \\(2\\,\\text{A}\\) to the left."
+                ]
+              },
+              {
+                "heading": "3. Use KCL at useful junctions",
+                "paragraphs": [
+                  "At a node, use",
+                  "\\[\\sum I_{\\text{entering}}=\\sum I_{\\text{leaving}}\\]",
+                  "A good strategy is to start at a node that contains the fewest unknown currents. That often lets you find one current immediately and then use it at the next node."
+                ]
+              },
+              {
+                "heading": "4. For KVL, choose a loop and a traversal direction",
+                "paragraphs": [
+                  "Choose a closed loop and decide whether you will walk around it clockwise or anticlockwise. Either direction is valid. The loop-traversal direction is only the direction in which you read the circuit while writing KVL; it does not have to be the same as the current direction."
+                ]
+              },
+              {
+                "heading": "5. Assign the sign of each voltage as you walk around the loop",
+                "paragraphs": [
+                  "For a voltage source, crossing from \\(-\\) to \\(+\\) is a voltage rise, so write \\(+V\\). Crossing from \\(+\\) to \\(-\\) is a voltage drop, so write \\(-V\\).",
+                  "For a resistor, use \\(V_R=IR\\). Travelling through the resistor in the same direction as the assumed current is a drop, \\(-IR\\). Travelling against the assumed current is a rise, \\(+IR\\).",
+                  "Then apply",
+                  "\\[\\sum V=0\\]"
+                ]
+              },
+              {
+                "heading": "6. Write only as many independent equations as you need",
+                "paragraphs": [
+                  "If there are three unknown currents, you need three independent equations. Depending on the circuit, those might be one KCL equation and two KVL equations, or several KCL equations. Do not create extra equations unless they are useful as a check."
+                ]
+              },
+              {
+                "heading": "7. Watch a resistor or branch shared by two loops",
+                "paragraphs": [
+                  "If two loop currents pass through the same resistor in opposite directions, the branch current is their difference. For example, if loop currents \\(I_1\\) and \\(I_2\\) oppose each other through a \\(4\\,\\Omega\\) resistor, the resistor current viewed in the \\(I_1\\) direction is \\(I_1-I_2\\), so its voltage term is \\(4(I_1-I_2)\\).",
+                  "When the same branch is viewed in the \\(I_2\\) direction, the corresponding expression is \\(4(I_2-I_1)\\)."
+                ]
+              },
+              {
+                "heading": "8. Solve, then interpret the signs",
+                "paragraphs": [
+                  "Solve the simultaneous equations only after the circuit relationships have been written consistently. A positive result means the actual direction agrees with the assumed arrow. A negative result means the actual direction is opposite to the assumed arrow."
+                ]
+              },
+              {
+                "heading": "9. Keep three different directions separate",
+                "bullets": [
+                  "Current direction: the reference arrow assigned to a branch current.",
+                  "Loop-traversal direction: clockwise or anticlockwise direction chosen while writing KVL.",
+                  "Voltage polarity: which side of an element is treated as positive and which side as negative."
+                ],
+                "paragraphs": [
+                  "These directions interact when signs are assigned, but they are not the same thing. For example, you may walk through a resistor from right to left even though its assumed current is left to right; in that case you are travelling against the current and encounter a voltage rise."
+                ]
+              },
+              {
+                "heading": "10. Finish with a sanity check",
+                "paragraphs": [
+                  "Substitute the solved currents back into an unused KCL equation or one of the KVL equations. If the equality is satisfied, the result is internally consistent."
+                ]
+              },
+              {
+                "heading": "A short sequence to remember",
+                "paragraphs": [
+                  "Circuit → current arrows → KCL → choose loop → voltage signs → KVL → solve → interpret negative signs → check."
+                ]
+              }
+            ]
+          }
+        ],
+        "source_refs": [
+          "SYL-R25-U1",
+          "TB-P016",
+          "TB-P017"
+        ],
+        "book_refs": [
+          {
+            "pages": "16–17",
+            "images": "16.png–17.png",
+            "note": "KCL and KVL formal rules; SIMPLER is a PankusDesk problem-solving aid built around these in-scope laws."
+          }
+        ]
+      },
+      {
         "heading": "Worked examples",
         "scope": "core",
         "accordion_label": "Worked examples",
@@ -1709,7 +1815,91 @@
               "\\[-4+i_2=-3\\]",
               "\\[i_2=1\\ \\text{mA}\\]"
             ],
-            "final_answer": "\\(i_1=-4\\ \\text{mA}\\), \\(i_2=1\\ \\text{mA}\\), \\(i_3=-3\\ \\text{mA}\\)."
+            "final_answer": "\\(i_1=-4\\ \\text{mA}\\), \\(i_2=1\\ \\text{mA}\\), \\(i_3=-3\\ \\text{mA}\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "Apply the problem-solving steps to Figure 1.31 before reading the compact textbook equations",
+                "title": "Exercise 1.5.4 — solve it systematically with KCL",
+                "paragraphs": [
+                  "This question asks specifically for KCL, so we only need to think about nodes and current directions. We do not need KVL or loop equations."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Read the circuit",
+                    "paragraphs": [
+                      "The important nodes are \\(a\\), \\(b\\), \\(c\\) and \\(d\\). The known branch currents are \\(8\\,\\text{mA}\\), \\(12\\,\\text{mA}\\) and \\(9\\,\\text{mA}\\). The unknown currents are \\(i_1\\), \\(i_2\\) and \\(i_3\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Keep the reference arrows shown in the figure",
+                    "paragraphs": [
+                      "The diagram assumes \\(i_1\\) from \\(a\\) down toward \\(b\\), \\(i_2\\) from \\(d\\) up toward \\(b\\), and \\(i_3\\) from \\(b\\) down toward \\(c\\). We keep those arrows even though we do not yet know whether they are the actual directions."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Start at node a because it has only one unknown",
+                    "paragraphs": [
+                      "At node \\(a\\), \\(8\\,\\text{mA}\\) enters. The \\(12\\,\\text{mA}\\) current and the assumed \\(i_1\\) current leave. Therefore,",
+                      "\\[8=12+i_1\\]",
+                      "\\[8-i_1-12=0\\]",
+                      "\\[i_1=-4\\,\\text{mA}\\]",
+                      "The negative sign means the actual \\(i_1\\) direction is opposite to its arrow: \\(4\\,\\text{mA}\\) actually flows from \\(b\\) toward \\(a\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Move to node c, which also has only one unknown",
+                    "paragraphs": [
+                      "At node \\(c\\), the \\(12\\,\\text{mA}\\) outer-branch current arrives at the node and the assumed \\(i_3\\) current also enters from \\(b\\). The \\(9\\,\\text{mA}\\) current leaves toward \\(d\\). Hence,",
+                      "\\[12+i_3=9\\]",
+                      "\\[12+i_3-9=0\\]",
+                      "\\[i_3=-3\\,\\text{mA}\\]",
+                      "Again the answer is negative, so the actual current is \\(3\\,\\text{mA}\\) from \\(c\\) toward \\(b\\), opposite to the arrow drawn for \\(i_3\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Use node b to obtain the remaining current",
+                    "paragraphs": [
+                      "Using the reference arrows as drawn, \\(i_1\\) and \\(i_2\\) enter node \\(b\\), while \\(i_3\\) leaves. Thus,",
+                      "\\[i_1+i_2=i_3\\]",
+                      "Substitute the signed values already found:",
+                      "\\[-4+i_2=-3\\]",
+                      "\\[i_2=1\\,\\text{mA}\\]",
+                      "This result is positive, so the actual \\(i_2\\) direction is the same as the arrow in the figure: from \\(d\\) toward \\(b\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Interpret the three answers physically",
+                    "paragraphs": [
+                      "In the reference directions used by the textbook:",
+                      "\\[i_1=-4\\,\\text{mA},\\qquad i_2=1\\,\\text{mA},\\qquad i_3=-3\\,\\text{mA}\\]",
+                      "In actual physical directions: \\(4\\,\\text{mA}\\) flows from \\(b\\to a\\), \\(1\\,\\text{mA}\\) flows from \\(d\\to b\\), and \\(3\\,\\text{mA}\\) flows from \\(c\\to b\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 7 — Sanity-check at the unused node d",
+                    "paragraphs": [
+                      "At node \\(d\\), \\(9\\,\\text{mA}\\) enters from the right. The \\(8\\,\\text{mA}\\) current and \\(i_2=1\\,\\text{mA}\\) leave upward. Therefore,",
+                      "\\[9=8+1\\]",
+                      "The equality is satisfied, so the solved currents are consistent with KCL."
+                    ]
+                  },
+                  {
+                    "heading": "What to notice in this problem",
+                    "bullets": [
+                      "Because the question asks for KCL, focus on nodes rather than loops.",
+                      "Choose the easiest node first: a and c each contain only one unknown current.",
+                      "A negative current is not a failed answer; it means the actual current flows opposite to the reference arrow.",
+                      "Use an unused node such as d as a quick check after solving."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.5.5",
