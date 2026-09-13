@@ -1967,7 +1967,92 @@
               "\\[3i_x=-6\\]",
               "\\[i_x=\\dfrac{-6}{3}=-2\\ \\text{A}\\]"
             ],
-            "final_answer": "\\(V=10\\ \\text{V}\\), \\(i_x=-2\\ \\text{A}\\)."
+            "final_answer": "\\(V=10\\ \\text{V}\\), \\(i_x=-2\\ \\text{A}\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "Apply the Kirchhoff problem-solving steps to Figure 1.33 before reading the compact textbook equations",
+                "title": "Exercise 1.5.6 — solve it systematically with KVL",
+                "paragraphs": [
+                  "This is mainly a KVL problem. The aim is to find the voltage \\(V\\) across the \\(12\\,\\Omega\\) resistor and the controlling current \\(i_x\\). The safest approach is to read the circuit first, keep the reference arrows and polarities exactly as drawn, and then walk around one loop at a time."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Read the circuit and identify what is known",
+                    "paragraphs": [
+                      "Using Figure 1.33(a), the nodes are \\(a,b,c,d\\). The left source is \\(12\\,\\text{V}\\), the top-left resistor is \\(12\\,\\Omega\\), the centre branch has a known voltage of \\(2\\,\\text{V}\\), the top-right element has \\(8\\,\\text{V}\\), and the dependent voltage source is labelled \\(3i_x\\).",
+                      "The resistor voltage \\(V\\) is referenced \\(+\\) at node \\(b\\) and \\(-\\) at node \\(c\\). The current \\(i_x\\) is referenced downward from \\(c\\) to \\(a\\). The solution figure also assumes \\(i_1\\) upward in the left branch, so through the resistor \\(i_1\\) flows from \\(b\\) to \\(c\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Choose the left loop and decide how you will walk around it",
+                    "paragraphs": [
+                      "Take loop \\(abca\\), travelling \\(a\\to b\\to c\\to a\\). The loop-traversal direction is only the direction in which we read the circuit; it is not a new current direction.",
+                      "From \\(a\\to b\\), we cross the \\(12\\,\\text{V}\\) source from \\(-\\) to \\(+\\), so this is a voltage rise: \\(+12\\).",
+                      "From \\(b\\to c\\), we move through the \\(12\\,\\Omega\\) resistor in the same direction as \\(i_1\\), so the resistor gives a drop: \\(-12i_1\\).",
+                      "From \\(c\\to a\\), we cross the \\(2\\,\\text{V}\\) element from \\(+\\) to \\(-\\), so this is a drop: \\(-2\\).",
+                      "Now apply KVL:",
+                      "\\[12-12i_1-2=0\\]",
+                      "\\[10-12i_1=0\\]",
+                      "\\[i_1=\\dfrac{10}{12}=\\dfrac{5}{6}\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Use the resistor current to find V",
+                    "paragraphs": [
+                      "The \\(12\\,\\Omega\\) resistor carries \\(i_1=\\dfrac{5}{6}\\,\\text{A}\\) from \\(b\\) to \\(c\\). Its marked polarity is \\(+\\) at \\(b\\) and \\(-\\) at \\(c\\), so Ohm's law gives",
+                      "\\[V=12i_1\\]",
+                      "\\[V=12\\left(\\dfrac{5}{6}\\right)=10\\,\\text{V}\\]",
+                      "The answer is positive, so the polarity marked for \\(V\\) in the figure is consistent with the solved current direction."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Choose the right loop and assign each KVL sign carefully",
+                    "paragraphs": [
+                      "Now take loop \\(acda\\), travelling \\(a\\to c\\to d\\to a\\).",
+                      "From \\(a\\to c\\), the \\(2\\,\\text{V}\\) element is crossed from \\(-\\) to \\(+\\), so it contributes \\(+2\\).",
+                      "From \\(c\\to d\\), the \\(8\\,\\text{V}\\) element is crossed from \\(+\\) to \\(-\\), so it contributes \\(-8\\).",
+                      "From \\(d\\to a\\), the dependent source \\(3i_x\\) is crossed from \\(+\\) to \\(-\\), so it contributes \\(-3i_x\\).",
+                      "Therefore,",
+                      "\\[2-8-3i_x=0\\]",
+                      "\\[3i_x=-6\\]",
+                      "\\[i_x=-2\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Interpret the negative current correctly",
+                    "paragraphs": [
+                      "The reference arrow for \\(i_x\\) was drawn downward from \\(c\\) to \\(a\\). The result \\(i_x=-2\\,\\text{A}\\) means that this assumed reference direction is opposite to the actual current direction.",
+                      "So the physical current has magnitude \\(2\\,\\text{A}\\) and actually flows upward from \\(a\\) to \\(c\\). A negative current is not a mistake; it is the circuit telling us that the original reference arrow points the other way."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Check both loop equations with the solved values",
+                    "paragraphs": [
+                      "Left loop:",
+                      "\\[12-10-2=0\\]",
+                      "Right loop:",
+                      "\\[2-8-3(-2)=2-8+6=0\\]",
+                      "Both loops satisfy KVL, so the results are internally consistent."
+                    ]
+                  },
+                  {
+                    "heading": "What to notice in this problem",
+                    "bullets": [
+                      "For KVL, first choose a loop-traversal direction and then determine each sign from the polarity you cross.",
+                      "Current direction, loop-traversal direction and voltage polarity are three different things; do not merge them mentally.",
+                      "Keep a dependent source such as \\(3i_x\\) as an expression until the controlling quantity \\(i_x\\) is solved.",
+                      "A negative value for \\(i_x\\) simply reverses the actual current direction relative to the arrow shown.",
+                      "The current \\(i_2\\) is marked in the solution figure, but it is not needed in the KVL equation used here to obtain \\(i_x\\)."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.5.7",
