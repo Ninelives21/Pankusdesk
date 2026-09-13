@@ -2204,7 +2204,100 @@
               "\\(V_{ab}\\) is the potential of point \\(a\\) with respect to point \\(b\\). Starting from \\(a\\),",
               "\\[V_{ab}=+8+20=28\\ \\text{V}\\]"
             ],
-            "final_answer": "\\(I=4\\ \\text{A}\\), \\(V_{ab}=28\\ \\text{V}\\)."
+            "final_answer": "\\(I=4\\ \\text{A}\\), \\(V_{ab}=28\\ \\text{V}\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "Apply the Kirchhoff problem-solving steps to Figure 1.35: solve the single-loop current first, then use node potentials to find Vab",
+                "title": "Exercise 1.5.8 — solve the current and Vₐᵦ systematically with KVL",
+                "paragraphs": [
+                  "This is a single-loop KVL problem. Because every element lies in the same series path, the same current \\(I\\) flows through both resistors. First solve that loop current. Then use the definition \\(V_{ab}=V_a-V_b\\) to find the voltage of point \\(a\\) with respect to point \\(b\\)."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Read the circuit before writing the equation",
+                    "paragraphs": [
+                      "The circuit has a \\(30\\,\\text{V}\\) source on the left, a \\(3\\,\\Omega\\) resistor, a \\(10\\,\\text{V}\\) source on the top branch, a \\(5\\,\\Omega\\) resistor, and an \\(8\\,\\text{V}\\) source on the right. Point \\(a\\) is between the \\(10\\,\\text{V}\\) source and the \\(5\\,\\Omega\\) resistor; point \\(b\\) is on the bottom conductor.",
+                      "The \\(30\\,\\text{V}\\) source is marked \\(+\\) at the top and \\(-\\) at the bottom. The \\(10\\,\\text{V}\\) source is marked \\(-\\) on the left and \\(+\\) on the right. The \\(8\\,\\text{V}\\) source is marked \\(+\\) at the top and \\(-\\) at the bottom. The current arrow \\(I\\) is downward on the right branch."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Keep the shown current direction and choose the same clockwise loop traversal",
+                    "paragraphs": [
+                      "The downward arrow on the right branch means the reference current travels clockwise around the single loop. Therefore, through both the \\(3\\,\\Omega\\) and \\(5\\,\\Omega\\) resistors, the reference current flows from left to right.",
+                      "For KVL, walk clockwise around the circuit. The loop-traversal direction is simply the direction in which we read the circuit; here it happens to be the same as the assumed current direction."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Walk around the loop and assign every KVL sign",
+                    "paragraphs": [
+                      "Start on the bottom conductor and move clockwise.",
+                      "Across the \\(30\\,\\text{V}\\) source we move from \\(-\\) to \\(+\\), so this is a rise: \\(+30\\).",
+                      "Across the \\(3\\,\\Omega\\) resistor we move with the current, so the resistor gives a drop: \\(-3I\\).",
+                      "Across the \\(10\\,\\text{V}\\) source we move from \\(-\\) to \\(+\\), so this is a rise: \\(+10\\).",
+                      "Across the \\(5\\,\\Omega\\) resistor we again move with the current, so the drop is \\(-5I\\).",
+                      "Across the \\(8\\,\\text{V}\\) source we move from \\(+\\) to \\(-\\), so this is a drop: \\(-8\\).",
+                      "Applying KVL gives",
+                      "\\[30-3I+10-5I-8=0\\]",
+                      "\\[32-8I=0\\]",
+                      "\\[I=\\dfrac{32}{8}=4\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Interpret the current result",
+                    "paragraphs": [
+                      "The answer \\(I=4\\,\\text{A}\\) is positive. Therefore the actual current flows in the same direction as the arrow shown in the figure: clockwise, and downward through the right branch.",
+                      "Because this is a single series loop, the same \\(4\\,\\text{A}\\) also flows through the \\(3\\,\\Omega\\) and \\(5\\,\\Omega\\) resistors."
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Find the voltage drop across the 5 Ω resistor",
+                    "paragraphs": [
+                      "Using Ohm's law,",
+                      "\\[V_{5\\Omega}=IR=4\\times5=20\\,\\text{V}\\]",
+                      "The current flows through the \\(5\\,\\Omega\\) resistor from point \\(a\\) toward the right, so there is a \\(20\\,\\text{V}\\) drop from \\(a\\) to the right-hand side of the resistor. Equivalently, if we move through that resistor from right to left, the potential rises by \\(20\\,\\text{V}\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Use Vₐᵦ = Vₐ − Vᵦ",
+                    "paragraphs": [
+                      "By definition, \\(V_{ab}\\) means the potential of point \\(a\\) with respect to point \\(b\\):",
+                      "\\[V_{ab}=V_a-V_b\\]",
+                      "The easiest path is to start at \\(b\\) and move toward \\(a\\) along the right side of the circuit.",
+                      "From \\(b\\), crossing the \\(8\\,\\text{V}\\) source upward takes us from \\(-\\) to \\(+\\), so the potential rises by \\(+8\\,\\text{V}\\).",
+                      "Then move from right to left through the \\(5\\,\\Omega\\) resistor. This is opposite to the current direction, so the potential rises by \\(+IR=+20\\,\\text{V}\\).",
+                      "Therefore,",
+                      "\\[V_{ab}=8+20=28\\,\\text{V}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 7 — Check the answer in two ways",
+                    "paragraphs": [
+                      "First, substitute \\(I=4\\,\\text{A}\\) back into the full-loop KVL equation:",
+                      "\\[30-3(4)+10-5(4)-8=30-12+10-20-8=0\\]",
+                      "So the complete loop balances.",
+                      "Second, calculate \\(V_{ab}\\) using the other path from \\(b\\) to \\(a\\): rise \\(+30\\,\\text{V}\\) across the left source, drop \\(-3I=-12\\,\\text{V}\\) across the \\(3\\,\\Omega\\) resistor, and rise \\(+10\\,\\text{V}\\) across the top source.",
+                      "\\[V_{ab}=30-12+10=28\\,\\text{V}\\]",
+                      "Both paths give the same node-to-node voltage, which is exactly what they should."
+                    ]
+                  },
+                  {
+                    "heading": "What to notice in this problem",
+                    "bullets": [
+                      "In a single series loop, one current flows through every element, so there is only one current unknown to solve.",
+                      "For a voltage source, the KVL sign comes from the polarity crossed: \\(-\\to+\\) is a rise and \\(+\\to-\\) is a drop.",
+                      "For a resistor, travelling with the current gives a drop \\(-IR\\); travelling against the current gives a rise \\(+IR\\).",
+                      "\\(V_{ab}\\) always means \\(V_a-V_b\\). You can evaluate that potential difference along any convenient path between \\(b\\) and \\(a\\).",
+                      "A useful final check is to calculate the same node-to-node voltage by a second path. Both paths must give the same answer."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.5.9",
