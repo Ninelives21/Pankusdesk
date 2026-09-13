@@ -2084,7 +2084,98 @@
               "\\[V_3-10=0\\]",
               "\\[V_3=10\\ \\text{V}\\]"
             ],
-            "final_answer": "\\(V_1=2\\ \\text{V}\\), \\(V_2=-22\\ \\text{V}\\), \\(V_3=10\\ \\text{V}\\)."
+            "final_answer": "\\(V_1=2\\ \\text{V}\\), \\(V_2=-22\\ \\text{V}\\), \\(V_3=10\\ \\text{V}\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "Apply the Kirchhoff problem-solving steps to Figure 1.34 and let the marked voltage polarities determine every KVL sign",
+                "title": "Exercise 1.5.7 — solve the three voltages systematically with KVL",
+                "paragraphs": [
+                  "This problem is a clean KVL exercise: the circuit already gives the source polarities and the reference polarities for \\(V_1,V_2\\) and \\(V_3\\). We do not need to invent current directions. We only need to choose a loop, choose a direction in which to walk around it, and record whether each element is crossed from \\(-\\) to \\(+\\) or from \\(+\\) to \\(-\\)."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Read the circuit before writing any equation",
+                    "paragraphs": [
+                      "The nodes are \\(a,b,c,d,e,f\\). The \\(24\\,\\text{V}\\) source is between \\(a\\) and \\(b\\), with \\(+\\) at \\(b\\). The bottom \\(12\\,\\text{V}\\) source is between \\(a\\) and \\(f\\), with \\(-\\) at \\(a\\) and \\(+\\) at \\(f\\). The right \\(10\\,\\text{V}\\) source has \\(+\\) at the top and \\(-\\) at the bottom.",
+                      "The unknown reference voltages are marked directly on the figure: \\(V_1\\) is \\(+\\) at \\(b\\) and \\(-\\) at \\(c\\); \\(V_2\\) is \\(+\\) near \\(a\\) and \\(-\\) near \\(c\\); \\(V_3\\) is \\(+\\) at \\(c\\) and \\(-\\) at \\(f\\).",
+                      "So the sign rule for every loop is simple: crossing \\(-\\to+\\) gives a voltage rise \\((+V)\\), while crossing \\(+\\to-\\) gives a voltage drop \\((-V)\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Start with the outer loop because it contains only one unknown",
+                    "paragraphs": [
+                      "Take the outer loop \\(abcdefa\\), travelling \\(a\\to b\\to c\\to d\\to e\\to f\\to a\\). This is a useful first choice because the only unknown voltage in this loop is \\(V_1\\).",
+                      "From \\(a\\to b\\), the \\(24\\,\\text{V}\\) source is crossed from \\(-\\) to \\(+\\): \\(+24\\).",
+                      "From \\(b\\to c\\), \\(V_1\\) is crossed from \\(+\\) to \\(-\\): \\(-V_1\\).",
+                      "From \\(c\\to d\\), the wire contributes \\(0\\,\\text{V}\\). From \\(d\\to e\\), the \\(10\\,\\text{V}\\) source is crossed from \\(+\\) to \\(-\\): \\(-10\\).",
+                      "From \\(e\\to f\\), the wire contributes \\(0\\,\\text{V}\\). From \\(f\\to a\\), the bottom \\(12\\,\\text{V}\\) source is crossed from \\(+\\) to \\(-\\): \\(-12\\).",
+                      "Apply KVL:",
+                      "\\[24-V_1-10-12=0\\]",
+                      "\\[24-V_1-22=0\\]",
+                      "\\[V_1=2\\,\\text{V}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Use the left inner loop to find V₂",
+                    "paragraphs": [
+                      "Now take loop \\(abca\\), travelling \\(a\\to b\\to c\\to a\\). We already know \\(V_1=2\\,\\text{V}\\).",
+                      "From \\(a\\to b\\), the \\(24\\,\\text{V}\\) source gives \\(+24\\). From \\(b\\to c\\), we cross \\(V_1\\) from \\(+\\) to \\(-\\), so the contribution is \\(-2\\).",
+                      "From \\(c\\to a\\), the reference polarity of \\(V_2\\) is crossed from \\(-\\) to \\(+\\), so it contributes \\(+V_2\\).",
+                      "Therefore,",
+                      "\\[24-2+V_2=0\\]",
+                      "\\[V_2=-22\\,\\text{V}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Interpret the negative value of V₂",
+                    "paragraphs": [
+                      "The figure defined \\(V_2\\) with \\(+\\) at the \\(a\\)-side and \\(-\\) at the \\(c\\)-side. The result \\(V_2=-22\\,\\text{V}\\) does not mean the calculation failed.",
+                      "It means the actual polarity is opposite to the reference polarity drawn for \\(V_2\\): node \\(c\\) is \\(22\\,\\text{V}\\) higher than node \\(a\\).",
+                      "This is the voltage version of getting a negative current after assuming a current arrow: the sign tells us whether the chosen reference direction or polarity agrees with the actual circuit condition."
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Use the right inner loop to find V₃",
+                    "paragraphs": [
+                      "Take loop \\(fcdef\\), travelling \\(f\\to c\\to d\\to e\\to f\\).",
+                      "From \\(f\\to c\\), \\(V_3\\) is crossed from \\(-\\) to \\(+\\), so it contributes \\(+V_3\\).",
+                      "The path \\(c\\to d\\) is a wire. From \\(d\\to e\\), the \\(10\\,\\text{V}\\) source is crossed from \\(+\\) to \\(-\\), so it contributes \\(-10\\). The path \\(e\\to f\\) is again a wire.",
+                      "Hence,",
+                      "\\[V_3-10=0\\]",
+                      "\\[V_3=10\\,\\text{V}\\]",
+                      "Because \\(V_3\\) is positive, its marked polarity \\(+\\) at \\(c\\) and \\(-\\) at \\(f\\) agrees with the actual polarity."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Check the three loop equations",
+                    "paragraphs": [
+                      "Outer loop:",
+                      "\\[24-2-10-12=0\\]",
+                      "Left inner loop:",
+                      "\\[24-2+(-22)=0\\]",
+                      "Right inner loop:",
+                      "\\[10-10=0\\]",
+                      "All three equations balance, so the solved voltages are internally consistent."
+                    ]
+                  },
+                  {
+                    "heading": "What to notice in this problem",
+                    "bullets": [
+                      "Choose the loop with the fewest unknowns first. Here the outer loop immediately gives \\(V_1\\).",
+                      "For a voltage-only KVL problem, you do not need to invent current arrows unless the circuit requires them for another relation such as \\(V=IR\\).",
+                      "The loop-traversal direction is your choice; the sign comes from the polarity you cross while travelling around that loop.",
+                      "A positive solved voltage confirms the marked reference polarity. A negative solved voltage means the actual polarity is the reverse of the marked reference.",
+                      "After solving, substitute the values back into the KVL equations. A quick zero-sum check catches sign mistakes immediately."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.5.8",
