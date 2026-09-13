@@ -2360,31 +2360,93 @@
             ],
             "explainers": [
               {
-                "label": "How was the equivalent circuit determined?",
-                "summary": "Why Figure 1.36 becomes five parallel branches between A and B",
-                "title": "Same two nodes means parallel",
+                "label": "SIMPLER",
+                "summary": "Use the Kirchhoff problem-solving steps: resolve the printed figure discrepancy, identify the two nodes, redraw the parallel branches, then combine KCL with Ohm's law",
+                "title": "Exercise 1.5.9 — identify the two nodes first, then solve with KCL",
                 "paragraphs": [
-                  "Ignore the physical shape of the corrected question drawing and identify only the electrical nodes. Every point marked A is connected to every other A point by uninterrupted wire, so all A labels represent one node. Likewise, all B labels represent one second node. A and B must remain separate nodes.",
-                  "Now inspect the two ends of each element. The 20 Ω resistor, 10 Ω resistor, 5 Ω resistor, 10 A current source and 15 A current source are each connected between the same two nodes A and B. Any elements connected across the same two nodes are in parallel, so the circuit can be redrawn as five side-by-side A–B branches without changing it electrically."
+                  "This problem looks harder than it is because the original printed Figure 1.36 is misleading. The safest method is not to chase the shape of the wires. First establish the electrical nodes, then redraw the circuit without changing its connections, and only then write KCL."
                 ],
                 "sections": [
                   {
-                    "heading": "Why both current-source arrows point upward in Figure 1.36(a)",
+                    "heading": "Step 1 — Stop and resolve the printed-figure discrepancy before solving",
                     "paragraphs": [
-                      "Both current sources are directed electrically from B to A. In the original-style drawing, the 10 A source has B below and A above, so B→A looks upward. The 15 A source has B above and A below, so the same B→A direction looks downward. After redrawing A as the top rail and B as the bottom rail, both B→A source currents naturally point upward."
+                      "The question asks for the voltage across a \\(10\\,\\Omega\\) resistor, but that resistor is missing from the original printed Figure 1.36. The printed drawing also appears to let the conductor marked \\(B\\) meet a conductor marked \\(A\\), which would short the two nodes together if taken literally.",
+                      "So do not silently guess from the faulty-looking drawing. PankusDesk keeps the original figure for reference, but the corrected reconstruction shown above restores the missing \\(10\\,\\Omega\\) branch and keeps nodes \\(A\\) and \\(B\\) separate. This correction is supported by Figure 1.36(a) and by the printed KCL equation, both of which require \\(20\\,\\Omega\\), \\(10\\,\\Omega\\) and \\(5\\,\\Omega\\) resistor branches between the same two nodes."
                     ]
                   },
                   {
-                    "heading": "What about the resistor-current directions?",
+                    "heading": "Step 2 — Identify nodes A and B before thinking about current equations",
                     "paragraphs": [
-                      "A resistor has no built-in current direction. In Figure 1.36(a), the solution simply assumes the resistor currents i₁, i₂ and i₃ flow from A to B. With A as the node where KCL is written, these assumed resistor currents leave A, while the 10 A and 15 A sources enter A."
+                      "Every point marked \\(A\\) that is joined by uninterrupted wire is the same electrical node. Likewise, every point marked \\(B\\) is the same second node. The corrected circuit therefore has only two distinct nodes: \\(A\\) and \\(B\\).",
+                      "Now inspect the two terminals of each element. The \\(20\\,\\Omega\\) resistor, \\(10\\,\\Omega\\) resistor, \\(5\\,\\Omega\\) resistor, \\(10\\,\\text{A}\\) source and \\(15\\,\\text{A}\\) source are all connected directly between \\(A\\) and \\(B\\)."
                     ]
                   },
                   {
-                    "heading": "That is why the KCL equation has these signs",
+                    "heading": "Step 3 — Recognize that all five branches are parallel",
                     "paragraphs": [
-                      "\\[10+15-\\dfrac{V}{20}-\\dfrac{V}{10}-\\dfrac{V}{5}=0\\]",
-                      "The two source currents are positive because they enter node A. The three resistor currents are negative because the assumed currents leave node A. Since all three resistors are in parallel, each has the same A-to-B voltage V."
+                      "Parallel does not mean that components must look side-by-side in the original sketch. Components are parallel when both of their terminals connect to the same two nodes. Here every branch is between \\(A\\) and \\(B\\), so the circuit can be redrawn as Figure 1.36(a) without changing the circuit electrically.",
+                      "After the redraw, both current sources point upward because both source currents are electrically directed from \\(B\\) to \\(A\\). In the original-shaped drawing the \\(15\\,\\text{A}\\) arrow looks downward only because the positions of \\(A\\) and \\(B\\) on that branch are reversed on the page.",
+                      "For the three resistors, the solution assumes branch currents \\(i_1,i_2,i_3\\) from \\(A\\) to \\(B\\). A resistor has no built-in current direction; this is simply a convenient reference choice."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Decide which Kirchhoff law is most useful",
+                    "paragraphs": [
+                      "The current sources directly tell us how much current enters node \\(A\\), and all three resistor currents leave that same node. That makes KCL at node \\(A\\) the natural choice.",
+                      "The two source currents entering \\(A\\) are",
+                      "\\[10+15=25\\,\\text{A}\\]",
+                      "So the three resistor currents together must carry \\(25\\,\\text{A}\\) away from node \\(A\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Express each resistor current using the common A-to-B voltage",
+                    "paragraphs": [
+                      "Let \\(V=V_A-V_B\\). Because the three resistors are in parallel, the same voltage \\(V\\) appears across every resistor branch.",
+                      "Using Ohm's law for the assumed \\(A\\to B\\) resistor currents,",
+                      "\\[i_1=\\dfrac{V}{20}\\]",
+                      "\\[i_2=\\dfrac{V}{10}\\]",
+                      "\\[i_3=\\dfrac{V}{5}\\]",
+                      "The required voltage drop across the \\(10\\,\\Omega\\) resistor is therefore this same \\(V\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Apply KCL at node A",
+                    "paragraphs": [
+                      "Using \\(\\text{current entering}=\\text{current leaving}\\),",
+                      "\\[10+15=\\dfrac{V}{20}+\\dfrac{V}{10}+\\dfrac{V}{5}\\]",
+                      "Bring the resistor terms together:",
+                      "\\[25=V\\left(\\dfrac1{20}+\\dfrac1{10}+\\dfrac15\\right)\\]",
+                      "Write all three fractions with denominator \\(20\\):",
+                      "\\[25=V\\left(\\dfrac{1+2+4}{20}\\right)\\]",
+                      "\\[25=V\\left(\\dfrac7{20}\\right)\\]",
+                      "Hence,",
+                      "\\[V=25\\times\\dfrac{20}{7}=\\dfrac{500}{7}=71.43\\,\\text{V}\\]",
+                      "Rounded to the textbook value,",
+                      "\\[\\boxed{V=71.4\\,\\text{V}}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 7 — Interpret the answer and check KCL",
+                    "paragraphs": [
+                      "The positive value means node \\(A\\) is \\(71.4\\,\\text{V}\\) above node \\(B\\). Therefore the voltage drop from \\(A\\) to \\(B\\) across the \\(10\\,\\Omega\\) resistor is \\(71.4\\,\\text{V}\\).",
+                      "We can verify the result by calculating the three resistor currents:",
+                      "\\[i_1=\\dfrac{71.43}{20}\\approx3.57\\,\\text{A}\\]",
+                      "\\[i_2=\\dfrac{71.43}{10}\\approx7.14\\,\\text{A}\\]",
+                      "\\[i_3=\\dfrac{71.43}{5}\\approx14.29\\,\\text{A}\\]",
+                      "Their sum is",
+                      "\\[3.57+7.14+14.29=25.00\\,\\text{A}\\]",
+                      "That exactly matches the total source current entering node \\(A\\): \\(10+15=25\\,\\text{A}\\). So KCL is satisfied."
+                    ]
+                  },
+                  {
+                    "heading": "What to notice in this problem",
+                    "bullets": [
+                      "Do not solve a circuit from its visual shape alone. First identify which points are actually the same electrical node.",
+                      "If the supplied figure is internally inconsistent, stop and resolve the source discrepancy before writing equations; do not invent the missing connection silently.",
+                      "Elements connected across the same two nodes are parallel, even if they are drawn in very different positions.",
+                      "A redraw may change where a branch appears on the page, but it must not change which nodes the branch connects to or the electrical direction of a source.",
+                      "KCL and Ohm's law work together here: KCL gives the total branch-current relationship, and Ohm's law expresses each resistor current in terms of the one common voltage.",
+                      "A final current-sum check is especially useful in KCL problems: total current entering the node must equal total current leaving it."
                     ]
                   }
                 ],
