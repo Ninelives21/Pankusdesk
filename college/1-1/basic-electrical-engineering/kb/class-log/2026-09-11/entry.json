@@ -12,9 +12,9 @@
     "number": 1,
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
-  "title": "Assessment Q2 — Thevenin’s theorem",
-  "summary": "Assessment question on finding the current through a 2 Ω bridge load using Thevenin’s theorem; exact match to textbook Example 1.9.3, with a verified current-direction correction for the polarity drawn.",
-  "transcription_policy": "The class question wording is preserved with light cleanup. Before solving, it was compared against the prescribed textbook and found to be an exact match to Example 1.9.3. The dated class entry therefore links to the canonical textbook worked solution rather than duplicating it. A PankusDesk verified direction note is retained because the drawn 12 V source polarity gives Vab = -0.3 V, so the 2 Ω load current flows from b to a.",
+  "title": "Assessment questions 1–3",
+  "summary": "Assessment questions on the role of electrical energy, a Thevenin-theorem bridge problem, and a later mesh-analysis problem retained as a placeholder.",
+  "transcription_policy": "The class-question wording is preserved with light cleanup. Question 1 is answered as theory using in-scope BEE knowledge. Question 2 matches prescribed-textbook Example 1.9.3, but the class-note entry now also shows the requested NRS worked-solution sheet while retaining the textbook linkage. Question 3 is kept as a placeholder only; no independent solution is added yet.",
   "mapped_topics": [
     {
       "topic_id": "u1-thevenin",
@@ -25,23 +25,30 @@
   "pages": [
     {
       "page": 1,
-      "heading": "Assessment Q2 — current through 2 Ω using Thevenin’s theorem",
+      "heading": "Assessment questions",
       "blocks": [
         {
-          "type": "subheading",
-          "text": "Question 2"
-        },
-        {
-          "type": "paragraph",
-          "text": "Find the current flowing through the 2-ohm resistor connected between the points \\(a\\) and \\(b\\) using Thevenin’s theorem."
-        },
-        {
           "type": "accordions",
-          "label": "Class question",
+          "label": "Assessment questions",
           "items": [
             {
+              "id": "class-2026-09-11-q1-role-of-electrical-energy",
+              "title": "Assessment Q1 — Role of electrical energy",
+              "question_paragraphs": [
+                "Explain the role of electrical energy in modern life and various engineering branches."
+              ],
+              "paragraphs": [
+                "Electrical energy plays a central role in modern life because it can be generated from many sources, transmitted over long distances, distributed conveniently, and converted easily into light, heat, sound and mechanical power.",
+                "In everyday life it is used for lighting, fans, refrigeration, air conditioning, water pumping, cooking appliances, communication systems, computers, mobile charging, medical equipment and public services. Because control is easy and operation is clean at the point of use, electrical energy has become the most convenient form of energy for homes, institutions and industries.",
+                "In industry, electrical energy drives motors, machine tools, pumps, compressors, conveyor systems, welding sets, furnaces, electroplating units and automated production lines. Its precise control makes it suitable for measurement, protection, instrumentation and modern process control.",
+                "Electrical energy is important in many engineering branches. In electrical engineering it is the basic subject for generation, transmission, distribution and utilization. In mechanical engineering it powers drives, electric heating and control systems. In civil engineering it is needed for lighting, lifts, pumps, HVAC systems and building services. In electronics and communication engineering it powers circuits, embedded systems and communication equipment. In computer and IT fields it supports computers, servers, data centres and networking. In chemical, biomedical, agricultural and other branches it is essential for process plants, laboratory instruments, hospital equipment, irrigation pumps and automation.",
+                "Thus, electrical energy is indispensable in both modern life and engineering practice because of its flexibility, cleanliness, ease of control and wide range of applications."
+              ],
+              "final_answer": "Electrical energy is an indispensable, easily controllable and widely usable form of energy for domestic life, industry and almost every branch of engineering."
+            },
+            {
               "id": "class-2026-09-11-q2-thevenin",
-              "title": "Assessment Q2 — Thevenin bridge",
+              "title": "Assessment Q2 — Current through 2 Ω using Thevenin’s theorem",
               "question_paragraphs": [
                 "Find the current flowing through the 2-ohm resistor connected between the points \\(a\\) and \\(b\\) using Thevenin’s theorem."
               ],
@@ -50,38 +57,48 @@
                 "label": "Exact textbook match",
                 "target": "Textbook Example 1.9.3",
                 "href": "college/1-1/basic-electrical-engineering/unit-1.html#u1-example-1-9-3",
-                "note": "This class question matches prescribed-textbook Example 1.9.3 exactly. Open the canonical worked solution and its NRS figures rather than maintaining a second copy here."
+                "note": "This class question matches prescribed-textbook Example 1.9.3. The class-note dropdown keeps the canonical link and also shows the requested NRS worked-solution sheet."
               },
-              "solution_mode": "textbook-link"
+              "figures": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-full-solution.png",
+                  "alt": "Notebook-style NRS worked solution for Assessment Question 2 showing the given bridge circuit, the open-circuit calculation of Vth, the short-circuited network used to find Rth, the Thevenin equivalent circuit and the final current through the 2-ohm resistor.",
+                  "caption": "Class-note redraw · Thevenin solution sheet for Assessment Q2",
+                  "width": 1312,
+                  "height": 1199,
+                  "display_width": 920
+                }
+              ],
+              "paragraphs": [
+                "Treat the 2-ohm resistor between \\(a\\) and \\(b\\) as the load and remove it to find the Thevenin equivalent seen from terminals \\(a\\) and \\(b\\).",
+                "With the load removed, the upper branch current is \\(I_1=\\dfrac{12}{4+6}=1.2\\,\\text{A}\\). Hence the node voltage at \\(a\\) is \\(V_a=I_1\\times 6=7.2\\,\\text{V}\\).",
+                "The lower branch current is \\(I_2=\\dfrac{12}{3+5}=1.5\\,\\text{A}\\). Hence the node voltage at \\(b\\) is \\(V_b=I_2\\times 5=7.5\\,\\text{V}\\).",
+                "Therefore the Thevenin voltage is \\(V_{th}=V_{ab}=V_a-V_b=7.2-7.5=-0.3\\,\\text{V}\\). This means point \\(b\\) is at a higher potential than point \\(a\\).",
+                "To find \\(R_{th}\\), replace the 12 V source by a short circuit. Then \\(R_{th}=(4\\parallel 6)+(3\\parallel 5)=\\dfrac{4\\times 6}{4+6}+\\dfrac{3\\times 5}{3+5}=2.4+1.875=4.275\\,\\Omega\\).",
+                "Reconnect the 2-ohm load. The total series resistance is \\(R_{th}+R_L=4.275+2=6.275\\,\\Omega\\).",
+                "Hence the load-current magnitude is \\(I=\\dfrac{|V_{th}|}{R_{th}+R_L}=\\dfrac{0.3}{6.275}=0.0478\\,\\text{A}=47.8\\,\\text{mA}\\). Since \\(b\\) is at the higher potential, the actual current through the 2-ohm resistor flows from \\(b\\) to \\(a\\)."
+              ],
+              "final_answer": "\\(I=47.8\\,\\text{mA}\\) flowing from \\(b\\) to \\(a\\). If referenced from \\(a\\) to \\(b\\), \\(I_{ab}=-47.8\\,\\text{mA}\\)."
+            },
+            {
+              "id": "class-2026-09-11-q3-mesh-analysis-placeholder",
+              "title": "Assessment Q3 — Mesh-analysis problem (placeholder)",
+              "question_paragraphs": [
+                "Find the current and power supplied by the source. Apply mesh analysis."
+              ],
+              "paragraphs": [
+                "Placeholder only. The detailed mesh-analysis solution and the NRS redraw for this circuit will be added later in a separate update."
+              ],
+              "final_answer": "Placeholder — solution to be added later."
             }
-          ]
-        },
-        {
-          "type": "subheading",
-          "text": "Verified direction check"
-        },
-        {
-          "type": "line",
-          "text": "For the source polarity shown in the question, \\(V_a=7.2\\,\\text{V}\\) and \\(V_b=7.5\\,\\text{V}\\), so \\(V_{ab}=-0.3\\,\\text{V}\\)."
-        },
-        {
-          "type": "line",
-          "text": "Therefore the current magnitude is \\(47.8\\,\\text{mA}\\), flowing from \\(b\\) to \\(a\\). If referenced from \\(a\\) to \\(b\\), \\(I_{ab}=-47.8\\,\\text{mA}\\)."
-        },
-        {
-          "type": "pankusdesk-tip",
-          "label": "PankusDesk verification",
-          "title": "Why the direction matters",
-          "summary": "The negative Thevenin voltage fixes the actual load-current direction.",
-          "paragraphs": [
-            "The open-circuit result is \\(V_{ab}=V_a-V_b=-0.3\\,\\text{V}\\). That sign means point \\(b\\) is at the higher potential. When the 2-ohm load is reconnected, conventional current therefore flows from \\(b\\) to \\(a\\). The magnitude remains \\(47.8\\,\\text{mA}\\)."
           ]
         }
       ]
     }
   ],
   "source_notes": [
-    "Only Assessment Q2 from the supplied page is integrated in this change; the other visible assessment questions were not requested.",
-    "The corrected NRS direction-aware equivalent is added to the canonical textbook Example 1.9.3 so the dated class entry can link to one authoritative worked solution."
+    "The supplied assessment page contains three visible questions. All three are now listed in the dated 11 September 2026 class-note entry.",
+    "Question 2 is still mapped as an exact textbook match to Example 1.9.3, but the class-note dropdown now also displays the requested NRS worked-solution sheet.",
+    "Question 3 remains a placeholder only until a later task requests the detailed solution and redraw."
   ]
 }
