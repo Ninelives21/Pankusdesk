@@ -2520,7 +2520,138 @@
               "The different branch currents are",
               "\\[i_1=9.69\\ \\text{A},\\qquad i_2=\\dfrac{396}{130}\\ \\text{A},\\qquad i_3=0.553\\ \\text{A}\\]"
             ],
-            "final_answer": "\\(i_1=9.69\\ \\text{A}\\), \\(i_2=\\dfrac{396}{130}\\ \\text{A}\\), \\(i_3=0.553\\ \\text{A}\\)."
+            "final_answer": "\\(i_1=9.69\\ \\text{A}\\), \\(i_2=\\dfrac{396}{130}\\ \\text{A}\\), \\(i_3=0.553\\ \\text{A}\\).",
+            "discrepancy": {
+              "label": "Printed discrepancy",
+              "message": "Exercise 1.5.10 contains a sign error while eliminating equations (1) and (2). From (1)×3 and −(2), the correct result is \\(-2i_2-11i_3=0\\), not \\(-2i_2+11i_3=0\\). Solving the original KVL equations (1)–(3) gives \\(i_1=186/37\\,\\text{A}\\approx5.027\\,\\text{A}\\), \\(i_2=66/37\\,\\text{A}\\approx1.784\\,\\text{A}\\), and \\(i_3=-12/37\\,\\text{A}\\approx-0.324\\,\\text{A}\\). The negative \\(i_3\\) means the actual current in the central 1 ohm branch is \\(0.324\\,\\text{A}\\) from node \\(c\\) to node \\(b\\). The compact printed solution and printed final values are preserved below for source fidelity; the SIMPLER walkthrough uses the corrected algebra."
+            },
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "Use the Kirchhoff problem-solving steps: define the branch currents from KCL first, write three independent KVL equations, then solve and check every resistor current",
+                "title": "Exercise 1.5.10 — turn the bridge circuit into a systematic KCL + KVL problem",
+                "paragraphs": [
+                  "This bridge circuit looks complicated because the current in each resistor is not the same. The key is to avoid writing KVL immediately. First read the nodes and the current arrows in Figure 1.37(a), use KCL to understand what current flows in each branch, and only then write the loop equations."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Read the circuit before writing equations",
+                    "paragraphs": [
+                      "The four important nodes are \\(a,b,c,d\\). The 12 V source is connected between the left side at node \\(a\\) and the right side at node \\(d\\), with \\(+\\) on the \\(a\\)-side and \\(-\\) on the \\(d\\)-side.",
+                      "The resistor branches are: \\(2\\,\\Omega\\) between \\(a\\) and \\(b\\), \\(1\\,\\Omega\\) between \\(a\\) and \\(c\\), \\(1\\,\\Omega\\) between \\(b\\) and \\(c\\), \\(4\\,\\Omega\\) between \\(b\\) and \\(d\\), and \\(3\\,\\Omega\\) between \\(c\\) and \\(d\\).",
+                      "Figure 1.37(a) chooses three reference currents: \\(i_1\\) is the total current supplied to the bridge, \\(i_2\\) flows from \\(a\\to b\\) through the 2 ohm resistor, and \\(i_3\\) is assumed from \\(b\\to c\\) through the central 1 ohm resistor."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Use KCL to understand every branch-current label",
+                    "paragraphs": [
+                      "At node \\(a\\), the total current \\(i_1\\) splits into the upper branch \\(i_2\\) and the lower-left branch. Therefore the lower-left 1 ohm resistor carries",
+                      "\\[i_1-i_2\\]",
+                      "At node \\(b\\), \\(i_2\\) arrives. The assumed central current \\(i_3\\) leaves toward \\(c\\), so the remaining current through the 4 ohm resistor is",
+                      "\\[i_2-i_3\\]",
+                      "At node \\(c\\), the current arriving from the lower-left branch is \\(i_1-i_2\\), and the assumed \\(i_3\\) also arrives from \\(b\\). Hence the 3 ohm branch carries",
+                      "\\[i_1-i_2+i_3\\]",
+                      "This is the first big idea in the problem: the expressions written beside the resistors in Figure 1.37(a) come directly from KCL. They are not extra unknowns."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Write KVL around the left small loop abca",
+                    "paragraphs": [
+                      "Walk around \\(a\\to b\\to c\\to a\\). From \\(a\\to b\\), we travel with \\(i_2\\) through 2 ohm, so the drop is \\(-2i_2\\). From \\(b\\to c\\), we travel with the assumed \\(i_3\\) through 1 ohm, so the drop is \\(-i_3\\). From \\(c\\to a\\), we travel opposite to the current \\(i_1-i_2\\) in the lower-left 1 ohm resistor, so that is a rise \\(+[i_1-i_2]\\).",
+                      "Therefore,",
+                      "\\[-2i_2-i_3+(i_1-i_2)=0\\]",
+                      "\\[i_1-3i_2-i_3=0\\tag{1}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Write KVL around the right small loop cbdc",
+                    "paragraphs": [
+                      "Take the loop \\(c\\to b\\to d\\to c\\). From \\(c\\to b\\), we travel opposite to the assumed \\(i_3\\), giving a rise \\(+i_3\\). From \\(b\\to d\\), we travel with current \\(i_2-i_3\\) through 4 ohm, giving \\(-4(i_2-i_3)\\). From \\(d\\to c\\), we travel opposite to current \\(i_1-i_2+i_3\\) through 3 ohm, giving \\(+3(i_1-i_2+i_3)\\).",
+                      "So,",
+                      "\\[i_3-4(i_2-i_3)+3(i_1-i_2+i_3)=0\\]",
+                      "\\[3i_1-7i_2+8i_3=0\\tag{2}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Use a loop containing the 12 V source for the third equation",
+                    "paragraphs": [
+                      "Take loop \\(a\\to c\\to d\\to a\\). Through the lower-left 1 ohm resistor we travel with \\(i_1-i_2\\), so the drop is \\(-(i_1-i_2)\\). Through the 3 ohm resistor we travel with \\(i_1-i_2+i_3\\), so the drop is \\(-3(i_1-i_2+i_3)\\). Returning through the source from its \\(-\\) terminal to its \\(+\\) terminal gives a rise of \\(+12\\).",
+                      "Hence,",
+                      "\\[-(i_1-i_2)-3(i_1-i_2+i_3)+12=0\\]",
+                      "\\[4i_1-4i_2+3i_3=12\\tag{3}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Solve the three equations carefully: this is where the printed solution slips",
+                    "paragraphs": [
+                      "The three KVL equations themselves are consistent. The printed working makes a sign error during elimination after them.",
+                      "Multiply equation (1) by 3:",
+                      "\\[3i_1-9i_2-3i_3=0\\]",
+                      "Subtract equation (2), which means adding",
+                      "\\[-3i_1+7i_2-8i_3=0\\]",
+                      "Now add term by term. The \\(i_3\\) terms are \\(-3i_3-8i_3=-11i_3\\), so the correct result is",
+                      "\\[-2i_2-11i_3=0\\tag{4 corrected}\\]",
+                      "not \\(-2i_2+11i_3=0\\).",
+                      "Equations (2) and (3) correctly give",
+                      "\\[-16i_2+23i_3=-36\\tag{5}\\]",
+                      "From corrected equation (4),",
+                      "\\[i_2=-\\dfrac{11}{2}i_3\\]",
+                      "Substitute this in equation (5):",
+                      "\\[-16\\left(-\\dfrac{11}{2}i_3\\right)+23i_3=-36\\]",
+                      "\\[88i_3+23i_3=-36\\]",
+                      "\\[111i_3=-36\\]",
+                      "\\[i_3=-\\dfrac{12}{37}\\approx-0.324\\,\\text{A}\\]",
+                      "Then,",
+                      "\\[i_2=\\dfrac{66}{37}\\approx1.784\\,\\text{A}\\]",
+                      "and from equation (1),",
+                      "\\[i_1=3i_2+i_3=\\dfrac{186}{37}\\approx5.027\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 7 — Interpret the negative current before finding the current in each resistor",
+                    "paragraphs": [
+                      "The reference arrow for \\(i_3\\) was drawn from \\(b\\to c\\), but \\(i_3\\) came out negative. Therefore the actual current in the central 1 ohm resistor is \\(0.324\\,\\text{A}\\) from \\(c\\to b\\).",
+                      "The other branch currents follow from the KCL expressions established in Step 2:"
+                    ],
+                    "bullets": [
+                      "\\(2\\,\\Omega\\) resistor, \\(a\\to b\\): \\(i_2=66/37\\approx1.784\\,\\text{A}\\).",
+                      "Central \\(1\\,\\Omega\\) resistor: \\(i_3=-12/37\\,\\text{A}\\), so the actual current is \\(12/37\\approx0.324\\,\\text{A}\\) from \\(c\\to b\\).",
+                      "\\(4\\,\\Omega\\) resistor, \\(b\\to d\\): \\(i_2-i_3=78/37\\approx2.108\\,\\text{A}\\).",
+                      "Lower-left \\(1\\,\\Omega\\) resistor, \\(a\\to c\\): \\(i_1-i_2=120/37\\approx3.243\\,\\text{A}\\).",
+                      "\\(3\\,\\Omega\\) resistor, \\(c\\to d\\): \\(i_1-i_2+i_3=108/37\\approx2.919\\,\\text{A}\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 8 — Sanity-check the result two ways",
+                    "paragraphs": [
+                      "First check KCL. At node \\(a\\), the source current should split into the two left resistor branches:",
+                      "\\[5.027\\approx1.784+3.243\\]",
+                      "At node \\(c\\), \\(3.243\\,\\text{A}\\) enters from \\(a\\); \\(0.324\\,\\text{A}\\) leaves toward \\(b\\) and \\(2.919\\,\\text{A}\\) leaves toward \\(d\\):",
+                      "\\[3.243\\approx0.324+2.919\\]",
+                      "Now check the 12 V source using either path from \\(a\\) to \\(d\\). Upper path:",
+                      "\\[2(1.784)+4(2.108)\\approx12.00\\,\\text{V}\\]",
+                      "Lower path:",
+                      "\\[1(3.243)+3(2.919)\\approx12.00\\,\\text{V}\\]",
+                      "Both KCL and KVL checks agree, so the corrected currents are internally consistent."
+                    ]
+                  },
+                  {
+                    "heading": "What to notice in this problem",
+                    "bullets": [
+                      "In a bridge circuit, do not assume one current flows through every resistor. Use the nodes to determine how current splits and recombines.",
+                      "Choose a small set of reference currents, then use KCL to express the remaining branch currents in terms of them.",
+                      "Once the branch currents are labelled, KVL becomes a sign-tracking exercise: with a branch current gives \\(-IR\\); against it gives \\(+IR\\).",
+                      "A negative solved current does not mean the method failed; it means the actual current flows opposite to the reference arrow.",
+                      "Always substitute or perform KCL/KVL checks at the end. Here that check also exposes the printed elimination error."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.5.11",
