@@ -3727,6 +3727,17 @@
                   "type": "paragraph",
                   "index": 16
                 }
+              },
+              {
+                "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-direction-correction.png",
+                "alt": "PankusDesk verified correction for Example 1.9.3 showing the Thevenin equivalent with Vth equal to negative 0.3 V, Rth equal to 4.275 ohms, the 2 ohm load reconnected between terminals a and b, and current 47.8 mA directed upward from b to a.",
+                "caption": "PankusDesk verified correction · Direction-aware Thevenin equivalent",
+                "width": 845,
+                "height": 285,
+                "size": "large",
+                "after": {
+                  "type": "end"
+                }
               }
             ],
             "paragraphs": [
@@ -3750,9 +3761,10 @@
             ],
             "discrepancy": {
               "label": "Example 1.9.3 · Printed discrepancy",
-              "message": "The line immediately after the 4-ohm drop states “voltage drop across 4 ohms resistance” but evaluates \\(1.5\\times3=4.5\\ \\text{V}\\), which is the drop across the 3-ohm resistor. It also first obtains the potential of \\(a\\) with respect to \\(b\\) as \\(-0.3\\ \\text{V}\\), then uses the magnitude \\(0.3\\ \\text{V}\\) as \\(V_{th}=V_{ab}\\). These inconsistencies are flagged explicitly."
+              "message": "The line immediately after the 4-ohm drop states ‘voltage drop across 4 ohms resistance’ but evaluates \\(1.5\\times3=4.5\\,\\text{V}\\), which is the drop across the 3-ohm resistor. More importantly, for the 12 V source polarity drawn in Fig. 1.60, the calculation gives \\(V_{ab}=V_a-V_b=-0.3\\,\\text{V}\\). Therefore \\(b\\) is 0.3 V above \\(a\\), and the 2-ohm load current has magnitude \\(47.8\\,\\text{mA}\\) flowing from \\(b\\) to \\(a\\). The printed solution subsequently uses the magnitude \\(0.3\\,\\text{V}\\) without preserving that sign/direction. The textbook figures are retained as printed; the PankusDesk correction figure below makes the verified direction explicit."
             },
-            "final_answer": "\\(I=0.0478\\ \\text{A}\\) through the 2-ohm load."
+            "final_answer": "\\(I=0.0478\\ \\text{A}\\) through the 2-ohm load.",
+            "id": "u1-example-1-9-3"
           },
           {
             "title": "Example 1.9.4",

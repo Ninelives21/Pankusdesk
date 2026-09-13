@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-11",
+  "date_label": "11 September 2026",
+  "source_id": "CLASS-U1-2026-09-11",
+  "subject": {
+    "code": "25ES1EE101",
+    "name": "Basic Electrical Engineering",
+    "shortName": "BEE"
+  },
+  "unit": {
+    "number": 1,
+    "title": "Introduction to Electrical Energy and DC Circuits"
+  },
+  "title": "Assessment Q2 — Thevenin’s theorem",
+  "summary": "Assessment question on finding the current through a 2 Ω bridge load using Thevenin’s theorem; exact match to textbook Example 1.9.3, with a verified current-direction correction for the polarity drawn.",
+  "transcription_policy": "The class question wording is preserved with light cleanup. Before solving, it was compared against the prescribed textbook and found to be an exact match to Example 1.9.3. The dated class entry therefore links to the canonical textbook worked solution rather than duplicating it. A PankusDesk verified direction note is retained because the drawn 12 V source polarity gives Vab = -0.3 V, so the 2 Ω load current flows from b to a.",
+  "mapped_topics": [
+    {
+      "topic_id": "u1-thevenin",
+      "label": "Thevenin’s theorem",
+      "href": "unit-1.html#u1-thevenin"
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Assessment Q2 — current through 2 Ω using Thevenin’s theorem",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Question 2"
+        },
+        {
+          "type": "paragraph",
+          "text": "Find the current flowing through the 2-ohm resistor connected between the points \\(a\\) and \\(b\\) using Thevenin’s theorem."
+        },
+        {
+          "type": "accordions",
+          "label": "Class question",
+          "items": [
+            {
+              "id": "class-2026-09-11-q2-thevenin",
+              "title": "Assessment Q2 — Thevenin bridge",
+              "question_paragraphs": [
+                "Find the current flowing through the 2-ohm resistor connected between the points \\(a\\) and \\(b\\) using Thevenin’s theorem."
+              ],
+              "textbook_match": {
+                "status": "exact",
+                "label": "Exact textbook match",
+                "target": "Textbook Example 1.9.3",
+                "href": "college/1-1/basic-electrical-engineering/unit-1.html#u1-example-1-9-3",
+                "note": "This class question matches prescribed-textbook Example 1.9.3 exactly. Open the canonical worked solution and its NRS figures rather than maintaining a second copy here."
+              },
+              "solution_mode": "textbook-link"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Verified direction check"
+        },
+        {
+          "type": "line",
+          "text": "For the source polarity shown in the question, \\(V_a=7.2\\,\\text{V}\\) and \\(V_b=7.5\\,\\text{V}\\), so \\(V_{ab}=-0.3\\,\\text{V}\\)."
+        },
+        {
+          "type": "line",
+          "text": "Therefore the current magnitude is \\(47.8\\,\\text{mA}\\), flowing from \\(b\\) to \\(a\\). If referenced from \\(a\\) to \\(b\\), \\(I_{ab}=-47.8\\,\\text{mA}\\)."
+        },
+        {
+          "type": "pankusdesk-tip",
+          "label": "PankusDesk verification",
+          "title": "Why the direction matters",
+          "summary": "The negative Thevenin voltage fixes the actual load-current direction.",
+          "paragraphs": [
+            "The open-circuit result is \\(V_{ab}=V_a-V_b=-0.3\\,\\text{V}\\). That sign means point \\(b\\) is at the higher potential. When the 2-ohm load is reconnected, conventional current therefore flows from \\(b\\) to \\(a\\). The magnitude remains \\(47.8\\,\\text{mA}\\)."
+          ]
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "Only Assessment Q2 from the supplied page is integrated in this change; the other visible assessment questions were not requested.",
+    "The corrected NRS direction-aware equivalent is added to the canonical textbook Example 1.9.3 so the dated class entry can link to one authoritative worked solution."
+  ]
+}
