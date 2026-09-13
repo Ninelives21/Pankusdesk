@@ -12,7 +12,7 @@ A short answer is integrated in the class-note entry. It covers domestic use, in
 
 Find the current flowing through the 2-ohm resistor connected between the points \(a\) and \(b\) using Thevenin’s theorem.
 
-This question matches prescribed-textbook **Example 1.9.3**. The class-note entry retains the canonical textbook link and now also shows the requested NRS worked-solution sheet. Final verified result:
+This question matches prescribed-textbook **Example 1.9.3**. The class-note entry retains the canonical textbook link and shows the requested solution as six separate NRS step images so each step fits the page cleanly. Final verified result:
 
 \[
 I=47.8\,\text{mA}

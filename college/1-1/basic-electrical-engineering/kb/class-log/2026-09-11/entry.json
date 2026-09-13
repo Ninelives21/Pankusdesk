@@ -13,8 +13,8 @@
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
   "title": "Assessment questions 1–3",
-  "summary": "Assessment questions on the role of electrical energy, a Thevenin-theorem bridge problem, and a later mesh-analysis problem retained as a placeholder.",
-  "transcription_policy": "The class-question wording is preserved with light cleanup. Question 1 is answered as theory using in-scope BEE knowledge. Question 2 matches prescribed-textbook Example 1.9.3, but the class-note entry now also shows the requested NRS worked-solution sheet while retaining the textbook linkage. Question 3 is kept as a placeholder only; no independent solution is added yet.",
+  "summary": "Assessment questions on the role of electrical energy, a Thevenin-theorem bridge problem shown in six NRS solution steps, and a later mesh-analysis problem retained as a placeholder.",
+  "transcription_policy": "The class-question wording is preserved with light cleanup. Question 1 is answered as theory using in-scope BEE knowledge. Question 2 matches prescribed-textbook Example 1.9.3 and keeps the canonical textbook link; its requested class solution is displayed as six separate NRS step images to avoid horizontal clipping. Question 3 remains a placeholder only.",
   "mapped_topics": [
     {
       "topic_id": "u1-thevenin",
@@ -57,26 +57,89 @@
                 "label": "Exact textbook match",
                 "target": "Textbook Example 1.9.3",
                 "href": "college/1-1/basic-electrical-engineering/unit-1.html#u1-example-1-9-3",
-                "note": "This class question matches prescribed-textbook Example 1.9.3. The class-note dropdown keeps the canonical link and also shows the requested NRS worked-solution sheet."
+                "note": "This class question matches prescribed-textbook Example 1.9.3. The canonical textbook solution remains linked here; the six NRS step images below present the same verified class solution in a readable sequence."
               },
               "figures": [
                 {
-                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-full-solution.png",
-                  "alt": "Notebook-style NRS worked solution for Assessment Question 2 showing the given bridge circuit, the open-circuit calculation of Vth, the short-circuited network used to find Rth, the Thevenin equivalent circuit and the final current through the 2-ohm resistor.",
-                  "caption": "Class-note redraw · Thevenin solution sheet for Assessment Q2",
-                  "width": 1312,
-                  "height": 1199,
-                  "display_width": 920
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-step-1.png",
+                  "alt": "NRS step 1 showing the original 12 V bridge circuit with 4 ohm, 6 ohm, 3 ohm and 5 ohm arms and the 2 ohm load between nodes a and b.",
+                  "caption": "Class-note redraw · Step 1 — Given circuit",
+                  "width": 600,
+                  "height": 490,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 0
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-step-2.png",
+                  "alt": "NRS step 2 showing the 2 ohm load removed and the calculations of Va, Vb and Vth across the open terminals a and b.",
+                  "caption": "Class-note redraw · Step 2 — Open-circuit voltage",
+                  "width": 672,
+                  "height": 490,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 1
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-step-3.png",
+                  "alt": "NRS step 3 showing the 12 V source replaced by a short circuit and the parallel-resistance calculation giving Rth equal to 4.275 ohms.",
+                  "caption": "Class-note redraw · Step 3 — Thevenin resistance",
+                  "width": 710,
+                  "height": 350,
+                  "display_width": 780,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 2
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-step-4.png",
+                  "alt": "NRS step 4 showing the Thevenin equivalent across terminals a and b with Vth equal to minus 0.3 V and Rth equal to 4.275 ohms.",
+                  "caption": "Class-note redraw · Step 4 — Thevenin equivalent",
+                  "width": 554,
+                  "height": 350,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 3
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-step-5.png",
+                  "alt": "NRS step 5 showing the 2 ohm load reconnected to the Thevenin equivalent and the current calculation giving 47.8 mA from b to a.",
+                  "caption": "Class-note redraw · Step 5 — Reconnect the 2 Ω load",
+                  "width": 780,
+                  "height": 259,
+                  "display_width": 780,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 4
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q2-thevenin-step-6.png",
+                  "alt": "NRS step 6 stating the final current through the 2 ohm resistor as 47.8 mA from b to a, or minus 47.8 mA when referenced from a to b.",
+                  "caption": "Class-note redraw · Step 6 — Final answer",
+                  "width": 507,
+                  "height": 274,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 5
+                  }
                 }
               ],
               "paragraphs": [
-                "Treat the 2-ohm resistor between \\(a\\) and \\(b\\) as the load and remove it to find the Thevenin equivalent seen from terminals \\(a\\) and \\(b\\).",
-                "With the load removed, the upper branch current is \\(I_1=\\dfrac{12}{4+6}=1.2\\,\\text{A}\\). Hence the node voltage at \\(a\\) is \\(V_a=I_1\\times 6=7.2\\,\\text{V}\\).",
-                "The lower branch current is \\(I_2=\\dfrac{12}{3+5}=1.5\\,\\text{A}\\). Hence the node voltage at \\(b\\) is \\(V_b=I_2\\times 5=7.5\\,\\text{V}\\).",
-                "Therefore the Thevenin voltage is \\(V_{th}=V_{ab}=V_a-V_b=7.2-7.5=-0.3\\,\\text{V}\\). This means point \\(b\\) is at a higher potential than point \\(a\\).",
-                "To find \\(R_{th}\\), replace the 12 V source by a short circuit. Then \\(R_{th}=(4\\parallel 6)+(3\\parallel 5)=\\dfrac{4\\times 6}{4+6}+\\dfrac{3\\times 5}{3+5}=2.4+1.875=4.275\\,\\Omega\\).",
-                "Reconnect the 2-ohm load. The total series resistance is \\(R_{th}+R_L=4.275+2=6.275\\,\\Omega\\).",
-                "Hence the load-current magnitude is \\(I=\\dfrac{|V_{th}|}{R_{th}+R_L}=\\dfrac{0.3}{6.275}=0.0478\\,\\text{A}=47.8\\,\\text{mA}\\). Since \\(b\\) is at the higher potential, the actual current through the 2-ohm resistor flows from \\(b\\) to \\(a\\)."
+                "Step 1 — Given circuit: treat the \\(2\\,\\Omega\\) resistor connected between \\(a\\) and \\(b\\) as the load whose current is required.",
+                "Step 2 — Remove the \\(2\\,\\Omega\\) load and find the open-circuit voltage. The upper branch current is \\(I_1=\\dfrac{12}{4+6}=1.2\\,\\text{A}\\), giving \\(V_a=1.2\\times6=7.2\\,\\text{V}\\). The lower branch current is \\(I_2=\\dfrac{12}{3+5}=1.5\\,\\text{A}\\), giving \\(V_b=1.5\\times5=7.5\\,\\text{V}\\). Hence \\(V_{th}=V_{ab}=V_a-V_b=-0.3\\,\\text{V}\\).",
+                "Step 3 — Find Thevenin resistance: deactivate the ideal 12 V source by replacing it with a short circuit. Then \\(R_{th}=(4\\parallel6)+(3\\parallel5)=2.4+1.875=4.275\\,\\Omega\\).",
+                "Step 4 — Thevenin equivalent seen from \\(a-b\\): \\(V_{th}=-0.3\\,\\text{V}\\) in series with \\(R_{th}=4.275\\,\\Omega\\). The negative sign means point \\(b\\) is at the higher potential.",
+                "Step 5 — Reconnect the \\(2\\,\\Omega\\) load. The total series resistance is \\(4.275+2=6.275\\,\\Omega\\), so \\(|I|=\\dfrac{0.3}{6.275}=0.04781\\,\\text{A}=47.8\\,\\text{mA}\\).",
+                "Step 6 — Final answer: the current through the \\(2\\,\\Omega\\) resistor is \\(47.8\\,\\text{mA}\\) from \\(b\\) to \\(a\\). If current is referenced from \\(a\\) to \\(b\\), then \\(I_{ab}=-47.8\\,\\text{mA}\\)."
               ],
               "final_answer": "\\(I=47.8\\,\\text{mA}\\) flowing from \\(b\\) to \\(a\\). If referenced from \\(a\\) to \\(b\\), \\(I_{ab}=-47.8\\,\\text{mA}\\)."
             },
@@ -97,8 +160,8 @@
     }
   ],
   "source_notes": [
-    "The supplied assessment page contains three visible questions. All three are now listed in the dated 11 September 2026 class-note entry.",
-    "Question 2 is still mapped as an exact textbook match to Example 1.9.3, but the class-note dropdown now also displays the requested NRS worked-solution sheet.",
-    "Question 3 remains a placeholder only until a later task requests the detailed solution and redraw."
+    "All three visible assessment questions are retained in the dated 11 September 2026 class-note entry.",
+    "Question 2 remains an exact textbook match to Example 1.9.3; its class solution is now split into six separate NRS step images so each step fits the class-note column cleanly.",
+    "Question 3 remains a placeholder only until a later task requests its final solution/redraw."
   ]
 }
