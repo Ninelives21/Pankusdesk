@@ -13,9 +13,14 @@
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
   "title": "Assessment questions 1–3",
-  "summary": "Assessment questions on the role of electrical energy, a Thevenin-theorem bridge problem shown in six NRS solution steps, and a later mesh-analysis problem retained as a placeholder.",
-  "transcription_policy": "The class-question wording is preserved with light cleanup. Question 1 is answered as theory using in-scope BEE knowledge. Question 2 matches prescribed-textbook Example 1.9.3 and keeps the canonical textbook link; its requested class solution is displayed as six separate NRS step images to avoid horizontal clipping. Question 3 remains a placeholder only.",
+  "summary": "Assessment questions on the role of electrical energy, a Thevenin-theorem bridge problem shown in six NRS solution steps, and a verified mesh-analysis problem shown in six NRS solution steps.",
+  "transcription_policy": "The class-question wording is preserved with light cleanup. Question 1 is answered as theory using in-scope BEE knowledge. Question 2 matches prescribed-textbook Example 1.9.3 and keeps the canonical textbook link; its requested class solution is displayed as six separate NRS step images. For Question 3, Priyanka’s notebook appears to label the upper-left bridge resistor as 1 kΩ, but a matching published problem (P. Ramana, M. Suryakalavathi and G. T. Chandra Sekhar, Basic Electrical Engineering, S. Chand, 2018, Solved Problem 23, p. 41; solution p. 42) uses 1 Ω. The class-note wording is preserved, while the verified solved version uses 1 Ω and the mismatch is shown explicitly.",
   "mapped_topics": [
+    {
+      "topic_id": "u1-kirchhoff",
+      "label": "Kirchhoff’s laws / mesh analysis",
+      "href": "unit-1.html#u1-kirchhoff"
+    },
     {
       "topic_id": "u1-thevenin",
       "label": "Thevenin’s theorem",
@@ -144,15 +149,100 @@
               "final_answer": "\\(I=47.8\\,\\text{mA}\\) flowing from \\(b\\) to \\(a\\). If referenced from \\(a\\) to \\(b\\), \\(I_{ab}=-47.8\\,\\text{mA}\\)."
             },
             {
-              "id": "class-2026-09-11-q3-mesh-analysis-placeholder",
-              "title": "Assessment Q3 — Mesh-analysis problem (placeholder)",
+              "id": "class-2026-09-11-q3-mesh-analysis",
+              "title": "Assessment Q3 — Current and power supplied by source (mesh analysis)",
               "question_paragraphs": [
                 "Find the current and power supplied by the source. Apply mesh analysis."
               ],
               "paragraphs": [
-                "Placeholder only. The detailed mesh-analysis solution and the NRS redraw for this circuit will be added later in a separate update."
+                "Step 1 — Use the verified circuit values: \\(3\\,\\Omega\\) on the outer top branch; bridge resistors \\(1\\,\\Omega\\), \\(2\\,\\Omega\\), \\(4\\,\\Omega\\), \\(5\\,\\Omega\\) and \\(6\\,\\Omega\\); and a \\(4\\,\\text{V}\\) source. The upper-left bridge resistor is taken as \\(1\\,\\Omega\\) because the matching published problem confirms that value.",
+                "Step 2 — Assume clockwise mesh currents \\(I_1\\), \\(I_2\\) and \\(I_3\\) in the left, upper and lower meshes respectively.",
+                "Step 3 — Apply KVL. Mesh 1: \\(4-3I_1-1(I_1-I_2)-4(I_1-I_3)=0\\), so \\(8I_1-I_2-4I_3=4\\). Mesh 2: \\(1(I_2-I_1)+2I_2+5(I_2-I_3)=0\\), so \\(-I_1+8I_2-5I_3=0\\). Mesh 3: \\(4(I_3-I_1)+5(I_3-I_2)+6I_3=0\\), so \\(-4I_1-5I_2+15I_3=0\\).",
+                "Step 4 — Solve the simultaneous equations. The exact mesh currents are \\(I_1=\\dfrac{380}{577}=0.6586\\,\\text{A}\\), \\(I_2=\\dfrac{140}{577}=0.2426\\,\\text{A}\\), and \\(I_3=\\dfrac{148}{577}=0.2565\\,\\text{A}\\). Rounded as in the matching source: \\(I_1\\approx0.66\\,\\text{A}\\), \\(I_2\\approx0.24\\,\\text{A}\\), \\(I_3\\approx0.26\\,\\text{A}\\).",
+                "Step 5 — The \\(4\\,\\text{V}\\) source is only in mesh 1, so the current supplied by the source is \\(I_s=I_1\\approx0.66\\,\\text{A}\\). The supplied power is \\(P=VI=4\\times0.66=2.64\\,\\text{W}\\).",
+                "Step 6 — Final answer: current supplied by the source \\(\\approx0.66\\,\\text{A}\\); power supplied by the source \\(\\approx2.64\\,\\text{W}\\). Matching reference: P. Ramana, M. Suryakalavathi and G. T. Chandra Sekhar, Basic Electrical Engineering, S. Chand, 2018, Chapter 1, Solved Problem 23, p. 41; solution p. 42."
               ],
-              "final_answer": "Placeholder — solution to be added later."
+              "final_answer": "Current supplied by the source: \\(0.66\\,\\text{A}\\). Power supplied by the source: \\(2.64\\,\\text{W}\\).",
+              "notes": [
+                {
+                  "label": "Verified source mismatch",
+                  "message": "Priyanka’s notebook appears to show 1 kΩ in the upper-left bridge branch. A matching published problem uses 1 Ω at this position: P. Ramana, M. Suryakalavathi and G. T. Chandra Sekhar, Basic Electrical Engineering, S. Chand, 2018, Chapter 1, Solved Problem 23 on p. 41; the worked solution continues on p. 42. The solved version below therefore uses 1 Ω. The 1 kΩ notebook reading is preserved here as the class-note discrepancy rather than silently changed."
+                }
+              ],
+              "figures": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-1.png",
+                  "alt": "NRS step 1 showing the corrected given circuit for Assessment Question 3: a 4 V source, 3 ohm outer resistor, bridge branches of 1 ohm, 2 ohm, 4 ohm and 6 ohm, and a 5 ohm middle branch.",
+                  "caption": "Class-note redraw · Step 1 — Corrected given circuit",
+                  "width": 486,
+                  "height": 428,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 0
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-2.png",
+                  "alt": "NRS step 2 showing the same corrected circuit with clockwise mesh currents I1 in the left mesh, I2 in the upper triangular mesh and I3 in the lower triangular mesh.",
+                  "caption": "Class-note redraw · Step 2 — Assign mesh currents",
+                  "width": 485,
+                  "height": 428,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 1
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-3.png",
+                  "alt": "NRS step 3 showing the three KVL mesh equations for the corrected 1-ohm circuit.",
+                  "caption": "Class-note redraw · Step 3 — Mesh equations",
+                  "width": 491,
+                  "height": 428,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 2
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-4.png",
+                  "alt": "NRS step 4 solving the three simultaneous mesh equations to obtain I1 equals 380 over 577 ampere, I2 equals 140 over 577 ampere and I3 equals 148 over 577 ampere.",
+                  "caption": "Class-note redraw · Step 4 — Solve simultaneous equations",
+                  "width": 486,
+                  "height": 402,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 3
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-5.png",
+                  "alt": "NRS step 5 identifying source current as I1 approximately 0.66 ampere and calculating power supplied as 4 times 0.66 equals 2.64 watts.",
+                  "caption": "Class-note redraw · Step 5 — Source current and power",
+                  "width": 485,
+                  "height": 402,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 4
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-6.png",
+                  "alt": "NRS step 6 stating the final answer: source current 0.66 ampere and power supplied 2.64 watts.",
+                  "caption": "Class-note redraw · Step 6 — Final answer",
+                  "width": 491,
+                  "height": 153,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 5
+                  }
+                }
+              ]
             }
           ]
         }
@@ -161,7 +251,8 @@
   ],
   "source_notes": [
     "All three visible assessment questions are retained in the dated 11 September 2026 class-note entry.",
-    "Question 2 remains an exact textbook match to Example 1.9.3; its class solution is now split into six separate NRS step images so each step fits the class-note column cleanly.",
-    "Question 3 remains a placeholder only until a later task requests its final solution/redraw."
+    "Question 2 remains an exact prescribed-textbook match to Example 1.9.3 and is shown in six separate NRS solution steps.",
+    "Question 3 is now solved in six separate NRS steps. The notebook’s apparent 1 kΩ value is preserved as a discrepancy; the solved circuit uses 1 Ω because the matching published problem confirms 1 Ω.",
+    "The Q3 matching reference is supplementary verification, not the prescribed V. Ramesh Babu textbook: P. Ramana, M. Suryakalavathi and G. T. Chandra Sekhar, Basic Electrical Engineering, S. Chand, 2018, Chapter 1, Solved Problem 23, p. 41; solution p. 42."
   ]
 }

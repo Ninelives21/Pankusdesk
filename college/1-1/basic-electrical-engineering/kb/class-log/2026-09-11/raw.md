@@ -24,4 +24,38 @@ flowing from \(b\) to \(a\). If current is referenced from \(a\) to \(b\), then 
 
 Find the current and power supplied by the source. Apply mesh analysis.
 
-Placeholder only. Detailed solution and redraw are pending a later update.
+Priyanka’s notebook appears to show the upper-left bridge resistor as \(1\,k\Omega\). A matching published problem confirms that the intended value is \(1\,\Omega\): P. Ramana, M. Suryakalavathi and G. T. Chandra Sekhar, *Basic Electrical Engineering*, S. Chand, 2018, Chapter 1, Solved Problem 23, p. 41; solution p. 42.
+
+Using \(1\,\Omega\), the mesh equations are
+
+\[
+8I_1-I_2-4I_3=4,
+\]
+
+\[
+-I_1+8I_2-5I_3=0,
+\]
+
+\[
+-4I_1-5I_2+15I_3=0.
+\]
+
+Solving,
+
+\[
+I_1=\frac{380}{577}\approx0.66\,\text{A},\qquad
+I_2=\frac{140}{577}\approx0.24\,\text{A},\qquad
+I_3=\frac{148}{577}\approx0.26\,\text{A}.
+\]
+
+Hence
+
+\[
+I_{source}=I_1\approx0.66\,\text{A}
+\]
+
+and
+
+\[
+P_{supplied}=4I_1\approx2.64\,\text{W}.
+\]
