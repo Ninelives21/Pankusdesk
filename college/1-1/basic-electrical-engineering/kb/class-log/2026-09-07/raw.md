@@ -4,7 +4,7 @@
 
 The four supplied notebook photographs are the authoritative source for this dated class record. Wording and notebook order are preserved as far as safely readable, with grammar lightly cleaned on the student-facing page. Seven circuit sketches are represented by the approved notebook-style redraws.
 
-Where a handwritten intermediate sign conflicts with the equation immediately before and after it, the source discrepancy is stated explicitly. The final A–B network problem is incomplete in the supplied page, so no missing steps or final resistance are invented.
+Where a handwritten intermediate sign conflicts with the equation immediately before and after it, the source discrepancy is stated explicitly. The final A–B network problem is incomplete in the supplied page. The class-source transcription therefore stops at the visible reduction step. A separately labelled **PankusDesk worked continuation** has now been added after that point so the student can complete the problem without misrepresenting the added working as Priyanka’s notebook content.
 
 ## Page 1 — Three-mesh KVL problem
 
@@ -105,4 +105,41 @@ Three 6-ohm branches reduce to 2 ohms; the two 2-ohm branches reduce to 1 ohm. T
 
 ### A–B network
 
-The class page draws the original A–B circuit and then a first simplified/redrawn form. The supplied page does not include a completed final equivalent-resistance answer, so this dated record stops at the visible reduction step.
+The class page draws the original A–B circuit and then a first simplified/redrawn form. The supplied page does not include a completed final equivalent-resistance answer, so the **class-source record** stops at the visible reduction step.
+
+## PankusDesk worked continuation — A–B equivalent resistance
+
+This continuation is a PankusDesk addition, not a transcription of missing notebook working. It uses seven separate NRS figures so each reduction remains visually explicit.
+
+1. Start from the original A–B network and work from the far right.
+2. The upper-right `2 Ω` resistor and the right vertical `2 Ω` resistor are in series because their shared junction has no other branch:
+
+   \[2+2=4\,\Omega.\]
+
+3. The new outer `4 Ω` branch and the diagonal `4 Ω` branch connect between the same two nodes, so they are in parallel:
+
+   \[4\parallel4=2\,\Omega.\]
+
+4. The resulting `2 Ω` branch is then in series with the lower-right `3 Ω` resistor:
+
+   \[2+3=5\,\Omega.\]
+
+5. This new `5 Ω` route is in parallel with the existing vertical `5 Ω` branch:
+
+   \[5\parallel5=2.5\,\Omega.\]
+
+6. The remaining `1.5 Ω` and `2.5 Ω` path is in series:
+
+   \[1.5+2.5=4\,\Omega.\]
+
+   It is therefore in parallel with the original `4 Ω` branch:
+
+   \[4\parallel4=2\,\Omega.\]
+
+7. The final network is three `2 Ω` resistances in series from A to B:
+
+   \[R_{AB}=2+2+2=6\,\Omega.\]
+
+Final result:
+
+\[\boxed{R_{AB}=6\,\Omega}\]

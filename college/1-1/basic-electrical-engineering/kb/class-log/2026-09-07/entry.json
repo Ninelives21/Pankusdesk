@@ -13,7 +13,7 @@
     "title": "Introduction to Electrical Energy and DC Circuits"
   },
   "title": "KVL/KCL practice and network-reduction techniques",
-  "summary": "Three-mesh KVL and source-power calculation; two-node KCL analysis; series/parallel reduction rules for R, L and C; and two equivalent-resistance practice networks.",
+  "summary": "Three-mesh KVL and source-power calculation; two-node KCL analysis; series/parallel reduction rules for R, L and C; two equivalent-resistance practice networks; and a separately labelled PankusDesk worked continuation of the incomplete A–B problem.",
   "transcription_policy": "Notebook order and meaning are preserved; grammar and awkward English are lightly cleaned. Worked equations and numerical results are kept source-faithful. Where a handwritten intermediate sign conflicts with the equation immediately before and after it, the discrepancy is called out explicitly rather than silently changed. Incomplete network-reduction working is left incomplete rather than guessed.",
   "mapped_topics": [
     {
@@ -328,7 +328,139 @@
         },
         {
           "type": "paragraph",
-          "text": "The supplied page does not show a completed final equivalent-resistance answer for this A–B problem, so the class record stops at the visible reduction step rather than inferring the missing working."
+          "text": "The supplied page does not show a completed final equivalent-resistance answer for this A–B problem. The class-source record therefore stops at the visible reduction above. The worked continuation below is a PankusDesk addition, not a transcription of Priyanka’s notebook."
+        },
+        {
+          "type": "pankusdesk-tip",
+          "label": "PankusDesk worked continuation",
+          "title": "Complete the A–B equivalent-resistance reduction",
+          "paragraphs": [
+            "Work from the far right toward terminals A and B. At every stage, decide series or parallel from the node connections—not from how the resistors look on the page.",
+            "Series: the shared junction has no other branch, so the same current must pass through both resistors. Parallel: both branches connect between the same two nodes."
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Step 1 — Start from the original network"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the original topology unchanged and begin at the extreme right, where the first series pair is unambiguous."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/ab-equivalent-step-1.png",
+          "alt": "NRS worked-continuation diagram of the original A–B resistor network: 2 ohm input resistors at A and B, 4 ohm and 5 ohm vertical branches, a 1.5 ohm upper resistor, a diagonal 4 ohm branch, a 3 ohm lower-right resistor, and two 2 ohm resistors at the far right.",
+          "caption": "PankusDesk worked continuation · Step 1 — Given A–B network",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "subheading",
+          "text": "Step 2 — Combine the two rightmost \\(2\\,\\Omega\\) resistors"
+        },
+        {
+          "type": "paragraph",
+          "text": "The upper-right \\(2\\,\\Omega\\) resistor and the right vertical \\(2\\,\\Omega\\) resistor share a junction with no other branch. They therefore carry the same current and are in series, giving \\(2+2=4\\,\\Omega\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/ab-equivalent-step-2.png",
+          "alt": "NRS reduction step showing the two far-right 2 ohm resistors replaced by one outer 4 ohm branch, while the diagonal 4 ohm branch, 3 ohm lower branch, 5 ohm vertical branch, 1.5 ohm resistor, and left-side network remain unchanged.",
+          "caption": "PankusDesk worked continuation · Step 2 — Rightmost series pair becomes 4 Ω",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "subheading",
+          "text": "Step 3 — Combine the two \\(4\\,\\Omega\\) branches"
+        },
+        {
+          "type": "paragraph",
+          "text": "The new outer \\(4\\,\\Omega\\) branch and the diagonal \\(4\\,\\Omega\\) branch connect between the same upper-middle and lower-right nodes. They are parallel, so \\(4\\parallel4=2\\,\\Omega\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/ab-equivalent-step-3.png",
+          "alt": "NRS reduction step showing the two parallel 4 ohm right-side branches replaced by one 2 ohm diagonal branch from the upper-middle node to the lower-right node, with the bottom 3 ohm resistor still present.",
+          "caption": "PankusDesk worked continuation · Step 3 — Parallel 4 Ω branches become 2 Ω",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "subheading",
+          "text": "Step 4 — Form a \\(5\\,\\Omega\\) path on the right"
+        },
+        {
+          "type": "paragraph",
+          "text": "After Step 3, the new \\(2\\,\\Omega\\) branch and the bottom \\(3\\,\\Omega\\) resistor meet at the lower-right node, where no other branch remains. They are therefore in series: \\(2+3=5\\,\\Omega\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/ab-equivalent-step-4.png",
+          "alt": "NRS reduction step showing two separate 5 ohm branches between the second upper node and the common lower node: the original vertical 5 ohm resistor and a new outer 5 ohm branch obtained from the 2 ohm plus 3 ohm series path.",
+          "caption": "PankusDesk worked continuation · Step 4 — The 2 Ω and 3 Ω path becomes 5 Ω",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "subheading",
+          "text": "Step 5 — Combine the two \\(5\\,\\Omega\\) branches"
+        },
+        {
+          "type": "paragraph",
+          "text": "Both \\(5\\,\\Omega\\) branches now connect between exactly the same two nodes, so they are in parallel: \\(5\\parallel5=2.5\\,\\Omega\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/ab-equivalent-step-5.png",
+          "alt": "NRS reduction step showing the two 5 ohm branches replaced by a single 2.5 ohm vertical branch, leaving the 1.5 ohm upper resistor, the left vertical 4 ohm resistor, and the 2 ohm input resistors at A and B.",
+          "caption": "PankusDesk worked continuation · Step 5 — Parallel 5 Ω branches become 2.5 Ω",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "subheading",
+          "text": "Step 6 — Reduce the middle path"
+        },
+        {
+          "type": "paragraph",
+          "text": "The \\(1.5\\,\\Omega\\) resistor and the new \\(2.5\\,\\Omega\\) branch are now in series, because their shared upper-right junction has no other branch. Their equivalent is \\(1.5+2.5=4\\,\\Omega\\), which lies in parallel with the original vertical \\(4\\,\\Omega\\) resistor."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/ab-equivalent-step-6.png",
+          "alt": "NRS reduction step showing two 4 ohm branches in parallel between the same upper and lower nodes, with a 2 ohm resistor from A to the upper node and a 2 ohm resistor from B to the lower node.",
+          "caption": "PankusDesk worked continuation · Step 6 — The middle path becomes 4 Ω",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "subheading",
+          "text": "Step 7 — Final equivalent resistance"
+        },
+        {
+          "type": "paragraph",
+          "text": "The two middle \\(4\\,\\Omega\\) branches are parallel, so they reduce to \\(2\\,\\Omega\\). The remaining network is then three \\(2\\,\\Omega\\) resistors in series from A to B: \\(R_{AB}=2+2+2=6\\,\\Omega\\)."
+        },
+        {
+          "type": "figure",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-07/figures/ab-equivalent-step-7.png",
+          "alt": "NRS final reduction showing 4 ohms in parallel with 4 ohms becoming a 2 ohm middle resistor, then three 2 ohm resistors in series between A and B, and finally one 6 ohm equivalent resistor between A and B.",
+          "caption": "PankusDesk worked continuation · Step 7 — Final equivalent resistance R_AB = 6 Ω",
+          "width": 1448,
+          "height": 1086,
+          "size": "large"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\boxed{R_{AB}=6\\,\\Omega}\\]"
         }
       ]
     }
