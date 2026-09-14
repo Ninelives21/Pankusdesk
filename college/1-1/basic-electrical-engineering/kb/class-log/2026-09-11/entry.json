@@ -155,6 +155,7 @@
                 "Find the current and power supplied by the source. Apply mesh analysis."
               ],
               "paragraphs": [
+                "Mesh analysis (theory first) — A mesh is the smallest closed loop in a planar circuit. In mesh analysis we assume a current in each mesh, usually clockwise, and apply Kirchhoff's Voltage Law around each mesh. For a resistor belonging to only one mesh, the voltage drop is simply \\(RI\\) for that mesh current. For a resistor shared by two meshes, the branch current is the algebraic difference of the two mesh currents, so the drop is written as \\(R(I_i-I_j)\\) in the KVL equation of mesh \\(i\\). For this circuit we take three clockwise mesh currents: \\(I_1\\) in the left mesh containing the source and the \\(3\\,\\Omega\\) resistor, \\(I_2\\) in the upper triangular mesh, and \\(I_3\\) in the lower triangular mesh. Then we write three KVL equations, solve them simultaneously, identify the source current, and finally calculate the source power from \\(P=VI\\).",
                 "Step 1 — Use the verified circuit values: \\(3\\,\\Omega\\) on the outer top branch; bridge resistors \\(1\\,\\Omega\\), \\(2\\,\\Omega\\), \\(4\\,\\Omega\\), \\(5\\,\\Omega\\) and \\(6\\,\\Omega\\); and a \\(4\\,\\text{V}\\) source. The upper-left bridge resistor is taken as \\(1\\,\\Omega\\) because the matching published problem confirms that value.",
                 "Step 2 — Assume clockwise mesh currents \\(I_1\\), \\(I_2\\) and \\(I_3\\) in the left, upper and lower meshes respectively.",
                 "Step 3 — Apply KVL. Mesh 1: \\(4-3I_1-1(I_1-I_2)-4(I_1-I_3)=0\\), so \\(8I_1-I_2-4I_3=4\\). Mesh 2: \\(1(I_2-I_1)+2I_2+5(I_2-I_3)=0\\), so \\(-I_1+8I_2-5I_3=0\\). Mesh 3: \\(4(I_3-I_1)+5(I_3-I_2)+6I_3=0\\), so \\(-4I_1-5I_2+15I_3=0\\).",
@@ -172,26 +173,26 @@
               "figures": [
                 {
                   "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-1.png",
-                  "alt": "NRS step 1 showing the corrected given circuit for Assessment Question 3: a 4 V source, 3 ohm outer resistor, bridge branches of 1 ohm, 2 ohm, 4 ohm and 6 ohm, and a 5 ohm middle branch.",
+                  "alt": "NRS step 1 showing the corrected given circuit for Assessment Question 3: a 4 volt source feeding a 3 ohm resistor and a bridge network with 1 ohm, 2 ohm, 4 ohm, 5 ohm and 6 ohm resistors.",
                   "caption": "Class-note redraw · Step 1 — Corrected given circuit",
-                  "width": 486,
-                  "height": 428,
-                  "display_width": 680,
-                  "after": {
-                    "type": "paragraph",
-                    "index": 0
-                  }
-                },
-                {
-                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-2.png",
-                  "alt": "NRS step 2 showing the same corrected circuit with clockwise mesh currents I1 in the left mesh, I2 in the upper triangular mesh and I3 in the lower triangular mesh.",
-                  "caption": "Class-note redraw · Step 2 — Assign mesh currents",
-                  "width": 485,
-                  "height": 428,
+                  "width": 1000,
+                  "height": 880,
                   "display_width": 680,
                   "after": {
                     "type": "paragraph",
                     "index": 1
+                  }
+                },
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-11/figures/q3-mesh-step-2.png",
+                  "alt": "NRS step 2 showing the same corrected circuit with clockwise mesh currents I1 in the left mesh, I2 in the upper mesh and I3 in the lower mesh.",
+                  "caption": "Class-note redraw · Step 2 — Assign mesh currents",
+                  "width": 1000,
+                  "height": 880,
+                  "display_width": 680,
+                  "after": {
+                    "type": "paragraph",
+                    "index": 2
                   }
                 },
                 {
@@ -203,7 +204,7 @@
                   "display_width": 680,
                   "after": {
                     "type": "paragraph",
-                    "index": 2
+                    "index": 3
                   }
                 },
                 {
@@ -215,7 +216,7 @@
                   "display_width": 680,
                   "after": {
                     "type": "paragraph",
-                    "index": 3
+                    "index": 4
                   }
                 },
                 {
@@ -227,7 +228,7 @@
                   "display_width": 680,
                   "after": {
                     "type": "paragraph",
-                    "index": 4
+                    "index": 5
                   }
                 },
                 {
@@ -239,7 +240,7 @@
                   "display_width": 680,
                   "after": {
                     "type": "paragraph",
-                    "index": 5
+                    "index": 6
                   }
                 }
               ]

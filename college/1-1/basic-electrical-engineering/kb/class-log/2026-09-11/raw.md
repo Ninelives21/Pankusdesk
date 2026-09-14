@@ -26,6 +26,8 @@ Find the current and power supplied by the source. Apply mesh analysis.
 
 Priyanka’s notebook appears to show the upper-left bridge resistor as \(1\,k\Omega\). A matching published problem confirms that the intended value is \(1\,\Omega\): P. Ramana, M. Suryakalavathi and G. T. Chandra Sekhar, *Basic Electrical Engineering*, S. Chand, 2018, Chapter 1, Solved Problem 23, p. 41; solution p. 42.
 
+The dropdown now presents the Q3 solution as **six separate NRS step figures**, one figure for each step, using the corrected circuit topology and the verified \(1\,\Omega\) value. A brief theory note is included before the worked steps: in mesh analysis we assign a current to each mesh, apply KVL around each mesh, and write shared-resistor drops using the difference of mesh currents.
+
 Using \(1\,\Omega\), the mesh equations are
 
 \[
