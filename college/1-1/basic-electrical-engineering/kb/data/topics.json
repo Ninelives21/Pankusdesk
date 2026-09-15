@@ -2679,6 +2679,102 @@
               "\\[15=1.6V_x+2V_x\\]",
               "\\[V_x=\\dfrac{15}{3.6}=4.16\\ \\text{V}\\]"
             ],
+            "discrepancy": {
+              "label": "Printed rounding discrepancy",
+              "message": "The source prints \\(V_x=4.16\\,\\text{V}\\). From the displayed equation, \\(V_x=15/3.6=25/6=4.1666\\ldots\\,\\text{V}\\), which rounds conventionally to \\(4.17\\,\\text{V}\\) to two decimal places. The printed \\(4.16\\,\\text{V}\\) is preserved in the compact solution for source fidelity; the SIMPLER walkthrough keeps the exact value and notes the rounding."
+            },
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "See why one current flows around the whole loop, what the dependent source \\(2V_x\\) means, and how \\(V_x=5i\\) turns the KVL equation into one unknown",
+                "title": "Exercise 1.5.11 — understand the dependent source before solving the KVL equation",
+                "paragraphs": [
+                  "This problem introduces a dependent voltage source. The diamond marked \\(2V_x\\) is not an extra unknown current source or a fixed battery. Its voltage is controlled by the voltage \\(V_x\\) across the 5 ohm resistor. Once that relationship is understood, the circuit is only a single-loop KVL problem."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Notice that there is only one closed loop",
+                    "paragraphs": [
+                      "There are no junctions where current can split. Starting from the 15 V source, there is only one path through the 1 ohm resistor, the dependent source, the 5 ohm resistor and the 2 ohm resistor before returning to the source.",
+                      "Therefore the same current \\(i\\) flows through every element in the loop. We do not need KCL here because there is no branching node to analyse.",
+                      "The arrow in Figure 1.38 assumes \\(i\\) upward through the left branch. That means the assumed current travels clockwise: left to right across the top, downward through the 5 ohm resistor, and right to left through the bottom 2 ohm resistor."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — What does the diamond source labelled 2Vₓ mean?",
+                    "paragraphs": [
+                      "A diamond symbol represents a dependent, or controlled, source. Its value depends on some voltage or current elsewhere in the circuit.",
+                      "Here the source voltage is \\(2V_x\\). So if \\(V_x\\) changes, the dependent source changes automatically to twice that voltage.",
+                      "Its polarity is shown as \\( + \\) on the left and \\( - \\) on the right. Therefore, when we walk clockwise from left to right through this source, we cross from \\( + \\) to \\( - \\), which is a voltage drop of \\(-2V_x\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Relate Vₓ to the loop current",
+                    "paragraphs": [
+                      "The voltage \\(V_x\\) is marked across the 5 ohm resistor, with \\( + \\) at the top and \\( - \\) at the bottom.",
+                      "The assumed current flows downward through that resistor, so it enters the terminal marked \\( + \\). By Ohm's law and the passive sign convention,",
+                      "\\[V_x=5i\\]",
+                      "or, equivalently,",
+                      "\\[i=\\dfrac{V_x}{5}\\]",
+                      "This relation is the key to the problem: it connects the controlling voltage \\(V_x\\) to the one loop current \\(i\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Walk clockwise and write every KVL sign",
+                    "paragraphs": [
+                      "Start at the bottom of the 15 V source and move clockwise around the loop.",
+                      "Across the 15 V source we move from \\( - \\) to \\( + \\), so that is a rise: \\(+15\\).",
+                      "Across the 1 ohm resistor we move with current \\(i\\), so the drop is \\(-1i\\).",
+                      "Across the dependent source we move from \\( + \\) to \\( - \\), so the drop is \\(-2V_x\\).",
+                      "Across the 5 ohm resistor we move with the current, so the drop is \\(-5i\\).",
+                      "Across the bottom 2 ohm resistor the current is from right to left, and our clockwise walk is also from right to left, so the drop is \\(-2i\\).",
+                      "KVL therefore gives",
+                      "\\[15-i-2V_x-5i-2i=0\\]",
+                      "\\[15-8i-2V_x=0\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Substitute i = Vₓ/5 and solve slowly",
+                    "paragraphs": [
+                      "Replace \\(i\\) in the KVL equation using the 5 ohm resistor relation:",
+                      "\\[15-8\\left(\\dfrac{V_x}{5}\\right)-2V_x=0\\]",
+                      "Since \\(8/5=1.6\\),",
+                      "\\[15-1.6V_x-2V_x=0\\]",
+                      "\\[15=3.6V_x\\]",
+                      "\\[V_x=\\dfrac{15}{3.6}=\\dfrac{25}{6}=4.1666\\ldots\\,\\text{V}\\]",
+                      "The compact source solution prints \\(4.16\\,\\text{V}\\). The exact value is \\(25/6\\,\\text{V}\\); conventional rounding to two decimal places gives \\(4.17\\,\\text{V}\\)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Check the result using the loop current",
+                    "paragraphs": [
+                      "From \\(V_x=5i\\),",
+                      "\\[i=\\dfrac{V_x}{5}=\\dfrac{5}{6}\\approx0.833\\,\\text{A}\\]",
+                      "The dependent source voltage is then",
+                      "\\[2V_x=\\dfrac{25}{3}\\approx8.333\\,\\text{V}\\]",
+                      "Now add all clockwise voltage drops: the 1 ohm resistor gives about \\(0.833\\,\\text{V}\\), the dependent source gives \\(8.333\\,\\text{V}\\), the 5 ohm resistor gives \\(4.167\\,\\text{V}\\), and the 2 ohm resistor gives \\(1.667\\,\\text{V}\\).",
+                      "\\[0.833+8.333+4.167+1.667=15.000\\,\\text{V}\\]",
+                      "The total drop equals the 15 V source rise, so KVL checks perfectly."
+                    ]
+                  },
+                  {
+                    "heading": "What to notice in this problem",
+                    "bullets": [
+                      "A diamond source is dependent: its value is controlled by another circuit variable. Here its voltage is exactly \\(2V_x\\).",
+                      "Because there is only one closed path, the same current flows through every element; no KCL equation is needed.",
+                      "The polarity marked on the 5 ohm resistor makes \\(V_x=5i\\) for the shown current direction.",
+                      "A dependent voltage source is included in KVL just like any other voltage source; the only difference is that its magnitude must be written in terms of its controlling variable.",
+                      "Current direction is an assumption. If \\(i\\) had come out negative, the actual current would simply flow opposite to the arrow shown.",
+                      "Always check the final result by adding all rises and drops around the loop."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ],
             "final_answer": "\\(V_x=4.16\\ \\text{V}\\)."
           },
           {
