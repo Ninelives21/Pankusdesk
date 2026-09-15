@@ -61,6 +61,8 @@ The next sketch suppresses the source and shows the network used to obtain \(R_{
 
 A later worked network uses the same resistor pattern as the earlier Superposition example — \(1\,\text{k}\Omega\), \(2.2\,\text{k}\Omega\) and \(3.3\,\text{k}\Omega\) — but changes the source values to \(18\,\text{V}\) and \(22\,\text{V}\).
 
+**Source-model clarification (PankusDesk):** the source symbol alone does not prove that either source is ideal, and the absence of a drawn internal resistance is not proof by itself. The ideal-source treatment comes from the class-note superposition method stated earlier: an ideal voltage source has zero internal resistance and a voltage source made non-operative is replaced by a short circuit. Therefore this worked example is interpreted using the same ideal-source model for both independent sources. If a practical source had a stated non-zero internal resistance, that resistance would remain when the source voltage was set to zero.
+
 With both sources active, the complete-circuit node equation is
 
 \[
@@ -75,7 +77,7 @@ Priyanka’s working is in black ink. The teacher’s review/correction is in re
 
 ### 18 V source acting alone
 
-The \(22\,\text{V}\) ideal voltage source is suppressed by a short circuit:
+Keep the \(18\,\text{V}\) source active. In the ideal-source model used by the class notes, set the \(22\,\text{V}\) source to zero volts, so it becomes a short circuit; the \(2.2\,\text{k}\Omega\) resistor remains connected from node \(V\) to the common return. At node \(V\), \((18-V)/1\) enters from the left, while \(V/3.3\) and \(V/2.2\) leave:
 
 \[
 \dfrac{18-V}{1}=\dfrac{V}{3.3}+\dfrac{V}{2.2}.
@@ -91,7 +93,7 @@ is marked with a red teacher tick and is consistent with the circuit.
 
 ### 22 V source acting alone
 
-The \(18\,\text{V}\) ideal voltage source is suppressed by a short circuit:
+Keep the \(22\,\text{V}\) source active. Set the \(18\,\text{V}\) source to zero volts, so it becomes a short circuit; the \(1\,\text{k}\Omega\) resistor then connects node \(V\) to the common return. At node \(V\), \((22-V)/2.2\) enters from the right, while \(V/1\) and \(V/3.3\) leave:
 
 \[
 \dfrac{22-V}{2.2}=\dfrac{V}{1}+\dfrac{V}{3.3}.
@@ -112,6 +114,8 @@ V\approx5.69\text{ V},\qquad I_{22}\approx1.72\text{ mA}.
 \]
 
 ### Superposition total and direct check
+
+Both source-isolation cases drive the current through the \(3.3\,\text{k}\Omega\) branch downward relative to the same reference direction, so the two contributions have the same sign and are added. If one contribution had been upward, it would enter the algebraic sum with the opposite sign.
 
 \[
 V_{\text{total}}\approx10.24+5.69=15.93\text{ V}

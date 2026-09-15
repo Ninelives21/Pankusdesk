@@ -260,8 +260,21 @@
           "text": "Although this worked network appears after the Thevenin notes, the source-by-source calculation shown in the notebook uses the superposition procedure introduced earlier. It has the same resistor pattern as the earlier \\(15\\,\\text{V}\\) / \\(20\\,\\text{V}\\) example — \\(1\\,\\text{k}\\Omega\\), \\(2.2\\,\\text{k}\\Omega\\) and \\(3.3\\,\\text{k}\\Omega\\) — but the source values are now \\(18\\,\\text{V}\\) and \\(22\\,\\text{V}\\)."
         },
         {
-          "type": "paragraph",
-          "text": "The class-note procedure treats the independent voltage sources as ideal, consistent with the rule stated earlier in these notes that an ideal voltage source has zero internal resistance. Therefore, when one voltage source is made non-operative for superposition, it is replaced by a short circuit."
+          "type": "pankusdesk-tip",
+          "label": "Source model",
+          "title": "Why are the 18 V and 22 V sources treated as ideal here?",
+          "paragraphs": [
+            "The source symbol by itself does not prove that a voltage source is ideal, and the fact that no internal resistance is drawn is not enough by itself to prove it either.",
+            "The reason we use the ideal-source model here comes from the class-note method immediately preceding these examples: the notes state that an ideal voltage source has zero internal resistance and that a voltage source made non-operative for superposition is replaced by a short circuit. This worked example follows that same model for both the \\(18\\,\\text{V}\\) and \\(22\\,\\text{V}\\) independent sources.",
+            "Suppressing an independent voltage source means setting its source voltage to zero. For an ideal voltage source, \\(R_{\\text{internal}}=0\\), so a zero-volt ideal source is electrically just a wire. That is why the suppressed source becomes a short circuit.",
+            "If the question had specified a practical source with a non-zero internal resistance, only the ideal source voltage would be set to zero; the stated internal resistance would remain in the circuit. We would not replace that whole branch by a plain wire."
+          ],
+          "bullets": [
+            "Do not infer “ideal” merely from the battery/source symbol.",
+            "Here “ideal” is the source model used by the class-note superposition procedure.",
+            "Ideal voltage source suppressed → set \\(V_s=0\\) → short circuit.",
+            "Practical source suppressed → source voltage set to zero, but any stated internal resistance remains."
+          ]
         },
         {
           "type": "figure",
@@ -279,10 +292,18 @@
           "label": "Source-note clarification",
           "title": "Why this looks familiar",
           "paragraphs": [
-            "This is essentially the same network pattern used in the earlier superposition example on these class notes. The resistor values are unchanged; only the source values change from \\(15\\,\\text{V},20\\,\\text{V}\\) to \\(18\\,\\text{V},22\\,\\text{V}\\).",
-            "The full two-source node equation is useful as an independent check after the two individual source contributions have been found:"
+            "This is essentially the same network pattern used in the earlier superposition example on these class notes. The resistor values are unchanged: \\(1\\,\\text{k}\\Omega\\), \\(2.2\\,\\text{k}\\Omega\\) and \\(3.3\\,\\text{k}\\Omega\\). Only the source values change from \\(15\\,\\text{V},20\\,\\text{V}\\) to \\(18\\,\\text{V},22\\,\\text{V}\\).",
+            "That means the logical method is the same: analyse the response due to one independent source while suppressing the other, then analyse the second source, and finally add the signed contributions.",
+            "The full two-source node equation is not the first superposition step. It is kept as an independent check after the two individual contributions have been found."
           ],
-          "example": "\\[\\dfrac{18-V}{1}+\\dfrac{22-V}{2.2}=\\dfrac{V}{3.3}\\]"
+          "example": "\\[\\dfrac{18-V}{1}+\\dfrac{22-V}{2.2}=\\dfrac{V}{3.3}\\]",
+          "bullets": [
+            "Same resistor topology as the earlier example.",
+            "Different source values only.",
+            "Case 1: \\(18\\,\\text{V}\\) active, \\(22\\,\\text{V}\\) suppressed.",
+            "Case 2: \\(22\\,\\text{V}\\) active, \\(18\\,\\text{V}\\) suppressed.",
+            "Final response = algebraic sum of the two source contributions."
+          ]
         }
       ]
     },
@@ -306,7 +327,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Keep the \\(18\\,\\text{V}\\) source active and suppress the ideal \\(22\\,\\text{V}\\) source by replacing it with a short circuit."
+          "text": "Keep the \\(18\\,\\text{V}\\) source active. In the ideal-source model being used by these class notes, suppress the \\(22\\,\\text{V}\\) source by setting it to zero volts, which replaces it with a short circuit."
         },
         {
           "type": "figure",
@@ -318,6 +339,22 @@
           "caption": "Class-note redraw · 18 V acting alone — 22 V source suppressed",
           "width": 1448,
           "height": 1086
+        },
+        {
+          "type": "pankusdesk-tip",
+          "label": "Step logic",
+          "title": "Case 1 — why the 22 V source becomes a wire and where the KCL equation comes from",
+          "paragraphs": [
+            "The \\(18\\,\\text{V}\\) source remains active. The \\(22\\,\\text{V}\\) source is the one being suppressed, so in this ideal-source model it becomes a short circuit. The \\(2.2\\,\\text{k}\\Omega\\) resistor does not disappear; its right-hand end is now connected directly to the common return through that short.",
+            "Look only at node \\(V\\). Current arrives at the node from the \\(18\\,\\text{V}\\) source through the \\(1\\,\\text{k}\\Omega\\) resistor. From node \\(V\\), current can leave through two paths: downward through \\(3.3\\,\\text{k}\\Omega\\), and to the right through \\(2.2\\,\\text{k}\\Omega\\) to the shorted return.",
+            "Using \\(I=(V_1-V_2)/R\\), the current entering from the left is \\((18-V)/1\\). The two currents leaving are \\(V/3.3\\) and \\(V/2.2\\). KCL therefore gives current entering = current leaving."
+          ],
+          "bullets": [
+            "\\((18-V)/1\\): current entering node \\(V\\) from the active 18 V source.",
+            "\\(V/3.3\\): current leaving node \\(V\\) through the centre branch.",
+            "\\(V/2.2\\): current leaving node \\(V\\) through the branch created when the 22 V source is shorted.",
+            "Because voltage is in volts and resistance is in \\(\\text{k}\\Omega\\), the numerical current comes out in mA."
+          ]
         },
         {
           "type": "paragraph",
@@ -349,7 +386,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Now suppress the ideal \\(18\\,\\text{V}\\) source by replacing it with a short circuit and keep the \\(22\\,\\text{V}\\) source active."
+          "text": "Now keep the \\(22\\,\\text{V}\\) source active. In the same ideal-source model, set the \\(18\\,\\text{V}\\) source to zero volts, so that source is replaced by a short circuit."
         },
         {
           "type": "figure",
@@ -361,6 +398,22 @@
           "caption": "Class-note redraw · 22 V acting alone — 18 V source suppressed",
           "width": 1448,
           "height": 1086
+        },
+        {
+          "type": "pankusdesk-tip",
+          "label": "Step logic",
+          "title": "Case 2 — why the 18 V source becomes a wire and how the current directions change",
+          "paragraphs": [
+            "This time the \\(22\\,\\text{V}\\) source remains active and the \\(18\\,\\text{V}\\) source is suppressed. The suppressed ideal source becomes a short, so the left side of the \\(1\\,\\text{k}\\Omega\\) resistor is connected to the common return.",
+            "At node \\(V\\), current now arrives from the active \\(22\\,\\text{V}\\) source through the \\(2.2\\,\\text{k}\\Omega\\) resistor. Current leaves node \\(V\\) through the \\(1\\,\\text{k}\\Omega\\) branch on the left and through the \\(3.3\\,\\text{k}\\Omega\\) branch downward.",
+            "So the entering current is \\((22-V)/2.2\\), while the leaving currents are \\(V/1\\) and \\(V/3.3\\). This is why the second KCL equation has a different arrangement from the first even though the resistor network is the same."
+          ],
+          "bullets": [
+            "\\((22-V)/2.2\\): current entering node \\(V\\) from the active 22 V source.",
+            "\\(V/1\\): current leaving node \\(V\\) through the left branch to the shorted return.",
+            "\\(V/3.3\\): current leaving node \\(V\\) through the centre branch.",
+            "A quick KCL substitution is a good way to catch the arithmetic error in the black-ink result."
+          ]
         },
         {
           "type": "equation",
@@ -400,6 +453,21 @@
           "text": "Both individual contributions drive current downward through the \\(3.3\\,\\text{k}\\Omega\\) branch, so the contributions add algebraically."
         },
         {
+          "type": "pankusdesk-tip",
+          "label": "Step logic",
+          "title": "Why the two superposition contributions are added, not subtracted",
+          "paragraphs": [
+            "Superposition is an algebraic sum, so direction matters. We use the same downward reference direction through the \\(3.3\\,\\text{k}\\Omega\\) resistor in both source-isolation cases.",
+            "The \\(18\\,\\text{V}\\)-alone calculation gives a downward contribution \\(I_{18}\\), and the \\(22\\,\\text{V}\\)-alone calculation also gives a downward contribution \\(I_{22}\\). Because both have the same sign relative to the chosen downward reference, they add.",
+            "If one source had produced current upward through the \\(3.3\\,\\text{k}\\Omega\\) resistor, that contribution would have the opposite sign and the algebraic sum would effectively subtract it."
+          ],
+          "bullets": [
+            "\\(I_{18}\\approx3.10\\,\\text{mA}\\) downward.",
+            "\\(I_{22}\\approx1.72\\,\\text{mA}\\) downward.",
+            "Therefore \\(I_{\\text{total}}=I_{18}+I_{22}\\)."
+          ]
+        },
+        {
           "type": "equation",
           "text": "\\[V_{\\text{total}}=10.24+5.69=15.93\\ \\text{V}\\]"
         },
@@ -410,6 +478,16 @@
         {
           "type": "subheading",
           "text": "Independent check with both sources active"
+        },
+        {
+          "type": "pankusdesk-tip",
+          "label": "Check",
+          "title": "Why solve the original circuit again after using superposition?",
+          "paragraphs": [
+            "This is an independent verification step. Superposition should give exactly the same final response as solving the complete linear circuit with both independent sources active at the same time.",
+            "With both sources active, current reaches node \\(V\\) from the \\(18\\,\\text{V}\\) side through \\(1\\,\\text{k}\\Omega\\) and from the \\(22\\,\\text{V}\\) side through \\(2.2\\,\\text{k}\\Omega\\). The current leaving node \\(V\\) is \\(V/3.3\\) through the centre branch.",
+            "If this direct solution disagreed materially with the source-by-source total, we would know that a sign, source-suppression step, or arithmetic operation was wrong. Here they agree; the tiny \\(4.82\\) versus \\(4.83\\,\\text{mA}\\) difference comes only from rounding the individual contributions before adding them."
+          ]
         },
         {
           "type": "equation",

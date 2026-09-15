@@ -278,13 +278,20 @@ function renderTip(block) {
 	const paragraphs = Array.isArray(block?.paragraphs) ? block.paragraphs : [];
 	const bullets = Array.isArray(block?.bullets) ? block.bullets : [];
 	return `
-		<aside class="study-tip" role="note">
-			<div class="study-tip-label">${escapeHtml(block?.label || 'PankusDesk tip')}</div>
-			<h5>${formatText(title)}</h5>
-			${paragraphs.map(p => `<p>${formatText(p)}</p>`).join('')}
-			${bullets.length ? `<ul>${bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
-			${block?.example ? `<div class="study-tip-example">${formatText(block.example)}</div>` : ''}
-		</aside>`;
+		<details class="study-tip">
+			<summary>
+				<span class="study-tip-summary-copy">
+					<span class="study-tip-label">${escapeHtml(block?.label || 'PankusDesk tip')}</span>
+					<span class="study-tip-summary-title">${formatText(title)}</span>
+				</span>
+				<span class="study-tip-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-tip-content">
+				${paragraphs.map(p => `<p>${formatText(p)}</p>`).join('')}
+				${bullets.length ? `<ul>${bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
+				${block?.example ? `<div class="study-tip-example">${formatText(block.example)}</div>` : ''}
+			</div>
+		</details>`;
 }
 
 function initAccordions(root = document) {

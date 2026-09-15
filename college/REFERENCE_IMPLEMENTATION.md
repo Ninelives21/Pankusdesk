@@ -413,4 +413,4 @@ scripts/new/study-ui.js
 styles/new/study-ui.css
 ```
 
-All college subjects and semesters consume this layer for accordions, example question/solution structure, MathJax/LaTeX handling, study-tip boxes and baseline figures. Subject renderers are data/layout adapters only; they must not fork these common behaviours.
+All college subjects and semesters consume this layer for accordions, example question/solution structure, MathJax/LaTeX handling, study-tip dropdowns and baseline figures. Subject renderers are data/layout adapters only; they must not fork these common behaviours. Blue PankusDesk tips are rendered as collapsed `<details>` dropdowns by default, with their label/title visible in the closed summary and the explanatory body opened on demand.
