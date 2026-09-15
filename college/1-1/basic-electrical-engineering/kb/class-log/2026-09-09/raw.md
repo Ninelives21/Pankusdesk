@@ -59,24 +59,74 @@ The class example is shown first as the original loaded network, followed by the
 
 The next sketch suppresses the source and shows the network used to obtain \(R_{th}\). The following sketch is the Thevenin equivalent circuit with the 3.3 kΩ load reconnected and the load current \(I_L\) marked downward.
 
-A further two-source circuit is written with node voltage \(V\):
+A later worked network uses the same resistor pattern as the earlier Superposition example — \(1\,\text{k}\Omega\), \(2.2\,\text{k}\Omega\) and \(3.3\,\text{k}\Omega\) — but changes the source values to \(18\,\text{V}\) and \(22\,\text{V}\).
+
+With both sources active, the complete-circuit node equation is
 
 \[
-\dfrac{18-V}{1}+\dfrac{22-V}{2.2}=\dfrac{V}{3.3}
+\dfrac{18-V}{1}+\dfrac{22-V}{2.2}=\dfrac{V}{3.3}.
 \]
 
-## Page 4 — Corrected copy and source-reduction sketch
+This complete-circuit equation is retained as an independent check. The source-by-source calculations on the following notebook page use superposition.
 
-The corrected copy of the two-source circuit repeats:
+## Page 4 — Teacher-corrected source-by-source working
+
+Priyanka’s working is in black ink. The teacher’s review/correction is in red ink. Red ticks, circles, arrows and crosses are therefore feedback marks, not additional circuit symbols or values.
+
+### 18 V source acting alone
+
+The \(22\,\text{V}\) ideal voltage source is suppressed by a short circuit:
 
 \[
-\dfrac{18-V}{1}+\dfrac{22-V}{2.2}=\dfrac{V}{3.3}
+\dfrac{18-V}{1}=\dfrac{V}{3.3}+\dfrac{V}{2.2}.
 \]
 
-The written results are:
+The notebook result
 
 \[
 V=10.24\text{ V},\qquad I=3.10\text{ mA}
 \]
 
-The lower part of the page contains another source-reduction/checking sketch. The calculations underneath are crossed through and are not transcribed as final working.
+is marked with a red teacher tick and is consistent with the circuit.
+
+### 22 V source acting alone
+
+The \(18\,\text{V}\) ideal voltage source is suppressed by a short circuit:
+
+\[
+\dfrac{22-V}{2.2}=\dfrac{V}{1}+\dfrac{V}{3.3}.
+\]
+
+Priyanka’s lower black-ink result near the red cross is approximately
+
+\[
+V=9.55\text{ V},\qquad I=2.89\text{ mA},
+\]
+
+but these values are not consistent with the shown circuit.
+
+Verified correction:
+
+\[
+V\approx5.69\text{ V},\qquad I_{22}\approx1.72\text{ mA}.
+\]
+
+### Superposition total and direct check
+
+\[
+V_{\text{total}}\approx10.24+5.69=15.93\text{ V}
+\]
+
+\[
+I_{\text{total}}\approx3.10+1.72=4.82\text{ mA}.
+\]
+
+Solving the complete circuit directly gives
+
+\[
+V\approx15.93\text{ V},\qquad I\approx4.83\text{ mA},
+\]
+
+with the small current difference due only to rounding the individual source contributions before adding them.
+
+Some other red circles/arrows on the notebook are clearly teacher emphasis or correction marks, but their exact intended wording is not legible enough to transcribe safely; they are therefore not assigned invented meanings.

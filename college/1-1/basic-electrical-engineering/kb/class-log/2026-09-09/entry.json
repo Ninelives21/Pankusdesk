@@ -14,7 +14,7 @@
   },
   "title": "Network theorems — superposition and Thevenin’s theorem",
   "summary": "Network theorems; superposition theorem and source suppression; a corrected two-source superposition example; Thevenin’s theorem, open-circuit voltage and Thevenin resistance; and class-worked circuit calculations.",
-  "transcription_policy": "Class-note order is preserved and wording is lightly cleaned for study. Crossed-out calculations are not treated as final answers. The Superposition redraws have been normalized so the original circuit and the two source-isolation sketches are internally consistent with the theorem: the original circuit is shown with both 15 V and 20 V sources, the “15 V acting alone” sketch suppresses the 20 V source by a short circuit, and the “20 V acting alone” sketch suppresses the 15 V source by a short circuit. Seven class-note redraws are integrated: the three Superposition figures and the four Thevenin figures (original network, open-circuit-voltage circuit, Thevenin-resistance circuit, and Thevenin equivalent with load). The later worked-network figures c8–c10 remain pending.",
+  "transcription_policy": "Class-note order is preserved and wording is lightly cleaned for study. Crossed-out calculations are not treated as final answers. The Superposition redraws have been normalized so the original circuit and the two source-isolation sketches are internally consistent with the theorem: the original circuit is shown with both 15 V and 20 V sources, the “15 V acting alone” sketch suppresses the 20 V source by a short circuit, and the “20 V acting alone” sketch suppresses the 15 V source by a short circuit. All ten class-note redraws are integrated: the three first Superposition figures, the four Thevenin figures, and the three later 18 V / 22 V worked-network figures. For the later worked network, Priyanka’s black-ink working and the teacher’s red review marks are distinguished explicitly; the teacher-approved 18 V-alone result is retained, the red-crossed 22 V-alone result is corrected and identified as a verified PankusDesk correction, and the complete two-source result is checked independently.",
   "mapped_topics": [
     {
       "topic_id": "u1-superposition",
@@ -253,35 +253,163 @@
         },
         {
           "type": "subheading",
-          "text": "Worked two-source network"
+          "text": "Worked two-source network — second superposition example"
+        },
+        {
+          "type": "paragraph",
+          "text": "Although this worked network appears after the Thevenin notes, the source-by-source calculation shown in the notebook uses the superposition procedure introduced earlier. It has the same resistor pattern as the earlier \\(15\\,\\text{V}\\) / \\(20\\,\\text{V}\\) example — \\(1\\,\\text{k}\\Omega\\), \\(2.2\\,\\text{k}\\Omega\\) and \\(3.3\\,\\text{k}\\Omega\\) — but the source values are now \\(18\\,\\text{V}\\) and \\(22\\,\\text{V}\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "The class-note procedure treats the independent voltage sources as ideal, consistent with the rule stated earlier in these notes that an ideal voltage source has zero internal resistance. Therefore, when one voltage source is made non-operative for superposition, it is replaced by a short circuit."
         },
         {
           "type": "figure",
-          "placeholder": true,
-          "figure_label": "Two-source network with node voltage V",
+          "figure_label": "Second superposition example — original 18 V / 22 V network",
           "source_page": "Notebook image 22",
-          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c8.png",
           "size": "large",
-          "alt": "Pending NRS redraw placeholder for two-source network with node voltage v."
+          "alt": "Notebook-style redraw of the second superposition example with an 18 V source on the left and a 22 V source on the right, both positive at the top; a 1 kΩ resistor from the left source to central node V, a 2.2 kΩ resistor from V to the right source, and a 3.3 kΩ resistor from V down to the common return with current I directed downward.",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c8.png",
+          "caption": "Class-note redraw · Second superposition example — both sources active",
+          "width": 1448,
+          "height": 1086
         },
         {
-          "type": "equation",
-          "text": "\\[\\dfrac{18-V}{1}+\\dfrac{22-V}{2.2}=\\dfrac{V}{3.3}\\]"
+          "type": "pankusdesk-tip",
+          "label": "Source-note clarification",
+          "title": "Why this looks familiar",
+          "paragraphs": [
+            "This is essentially the same network pattern used in the earlier superposition example on these class notes. The resistor values are unchanged; only the source values change from \\(15\\,\\text{V},20\\,\\text{V}\\) to \\(18\\,\\text{V},22\\,\\text{V}\\).",
+            "The full two-source node equation is useful as an independent check after the two individual source contributions have been found:"
+          ],
+          "example": "\\[\\dfrac{18-V}{1}+\\dfrac{22-V}{2.2}=\\dfrac{V}{3.3}\\]"
         }
       ]
     },
     {
       "page": 4,
-      "heading": "Worked network — corrected copy and source-reduction sketch",
+      "heading": "Worked network — teacher-corrected superposition calculation",
       "blocks": [
         {
+          "type": "pankusdesk-tip",
+          "label": "Teacher feedback",
+          "title": "Why there are so many red marks on the notebook page",
+          "paragraphs": [
+            "Priyanka’s original working is in black ink. The red ink is the teacher’s review/correction, so the red ticks, circles, arrows and crosses are not additional circuit symbols or source values.",
+            "The red tick beside the \\(18\\,\\text{V}\\)-source calculation supports the written result \\(V\\approx10.24\\,\\text{V}\\) and \\(I\\approx3.10\\,\\text{mA}\\). The large red cross over the lower \\(22\\,\\text{V}\\)-source calculation indicates that the later black-ink result is not accepted.",
+            "Some other red circles and arrows are clearly review/emphasis marks, but their exact intended wording is not legible enough to infer safely. PankusDesk therefore records them as teacher feedback without inventing a more specific comment."
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Case 1 — \\(18\\,\\text{V}\\) source acting alone"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the \\(18\\,\\text{V}\\) source active and suppress the ideal \\(22\\,\\text{V}\\) source by replacing it with a short circuit."
+        },
+        {
           "type": "figure",
-          "placeholder": true,
-          "figure_label": "Worked two-source network — corrected copy",
+          "figure_label": "18 V source acting alone",
           "source_page": "Notebook image 23",
-          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c9.png",
           "size": "large",
-          "alt": "Pending NRS redraw placeholder for worked two-source network — corrected copy."
+          "alt": "Notebook-style redraw for the 18 V source acting alone: the 18 V source remains on the left with positive terminal at the top; the 22 V source on the right is replaced by a short circuit; the 1 kΩ, 2.2 kΩ and 3.3 kΩ resistors remain; node V is at the junction and current I18 is directed downward through the 3.3 kΩ branch.",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c9.png",
+          "caption": "Class-note redraw · 18 V acting alone — 22 V source suppressed",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "type": "paragraph",
+          "text": "At node \\(V\\), with resistance in \\(\\text{k}\\Omega\\) and current therefore in mA:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{18-V}{1}=\\dfrac{V}{3.3}+\\dfrac{V}{2.2}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[18-V=V\\left(\\dfrac{1}{3.3}+\\dfrac{1}{2.2}\\right)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[V\\approx10.24\\ \\text{V}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I_{18}=\\dfrac{V}{3.3}=\\dfrac{10.24}{3.3}\\approx3.10\\ \\text{mA}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the result beside which the teacher has placed a red tick."
+        },
+        {
+          "type": "subheading",
+          "text": "Case 2 — \\(22\\,\\text{V}\\) source acting alone"
+        },
+        {
+          "type": "paragraph",
+          "text": "Now suppress the ideal \\(18\\,\\text{V}\\) source by replacing it with a short circuit and keep the \\(22\\,\\text{V}\\) source active."
+        },
+        {
+          "type": "figure",
+          "figure_label": "22 V source acting alone",
+          "source_page": "Notebook image 23",
+          "size": "large",
+          "alt": "Notebook-style redraw for the 22 V source acting alone: the 18 V source on the left is replaced by a short circuit; the 22 V source remains active on the right with positive terminal at the top; the 1 kΩ, 2.2 kΩ and 3.3 kΩ resistors remain; node V is at the junction and current I22 is directed downward through the 3.3 kΩ branch.",
+          "src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c10.png",
+          "caption": "Class-note redraw · 22 V acting alone — 18 V source suppressed",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{22-V}{2.2}=\\dfrac{V}{1}+\\dfrac{V}{3.3}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[22-V=2.2V\\left(1+\\dfrac{1}{3.3}\\right)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[22-V=2.8667V\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[V\\approx5.69\\ \\text{V}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I_{22}=\\dfrac{V}{3.3}=\\dfrac{5.69}{3.3}\\approx1.72\\ \\text{mA}\\]"
+        },
+        {
+          "type": "pankusdesk-tip",
+          "label": "Verified correction",
+          "title": "The lower black-ink result is not consistent with this circuit",
+          "paragraphs": [
+            "Priyanka’s lower working gives approximately \\(V=9.55\\,\\text{V}\\) and \\(I=2.89\\,\\text{mA}\\). Those values do not satisfy the \\(22\\,\\text{V}\\)-alone circuit shown above.",
+            "The corrected result is \\(V\\approx5.69\\,\\text{V}\\) and \\(I_{22}\\approx1.72\\,\\text{mA}\\). This is the calculation over which the teacher has placed the large red correction mark."
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Add the two source contributions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Both individual contributions drive current downward through the \\(3.3\\,\\text{k}\\Omega\\) branch, so the contributions add algebraically."
+        },
+        {
+          "type": "equation",
+          "text": "\\[V_{\\text{total}}=10.24+5.69=15.93\\ \\text{V}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[I_{\\text{total}}=3.10+1.72=4.82\\ \\text{mA}\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Independent check with both sources active"
         },
         {
           "type": "equation",
@@ -289,24 +417,15 @@
         },
         {
           "type": "equation",
-          "text": "\\[V=10.24\\ \\text{V}\\]"
+          "text": "\\[V\\approx15.93\\ \\text{V}\\]"
         },
         {
           "type": "equation",
-          "text": "\\[I=3.10\\ \\text{mA}\\]"
+          "text": "\\[I=\\dfrac{15.93}{3.3}\\approx4.83\\ \\text{mA}\\]"
         },
         {
-          "type": "subheading",
-          "text": "Source-reduction sketch"
-        },
-        {
-          "type": "figure",
-          "placeholder": true,
-          "figure_label": "Single-source reduction / checking circuit",
-          "source_page": "Notebook image 23",
-          "target_src": "college/1-1/basic-electrical-engineering/assets/class/2026-09-09/figures/c10.png",
-          "size": "large",
-          "alt": "Pending NRS redraw placeholder for single-source reduction / checking circuit."
+          "type": "paragraph",
+          "text": "The \\(4.82\\,\\text{mA}\\) obtained by adding the two rounded source contributions and the \\(4.83\\,\\text{mA}\\) obtained by solving the complete circuit differ only because the individual contributions were rounded before addition."
         }
       ]
     }
