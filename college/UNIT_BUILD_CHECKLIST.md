@@ -234,4 +234,6 @@ Set `publicationStatus: "ready"` only when:
 - [ ] Route baseline study figures/drawings through the shared figure renderer; subject CSS may alter placement/size only.
 - [ ] Keep model-added explanatory material visibly distinct from textbook/class-source material: use the shared `PankusDesk tip` for short notes and the shared collapsible `Simple terms` explainer for detailed layman teaching.
 - [ ] Add detailed layman explanations through section-level `explainers` data and `PankuStudyUI.renderExplainer()`; never fork a subject-specific/simple-terms dropdown.
+- [ ] Make every SIMPLER explainer hand-holding: re-establish the needed symbol/diagram clue before using it (source shape, arrowhead, polarity, node identity, series/parallel evidence, reference direction), rather than assuming the student remembers an earlier lesson.
+- [ ] In SIMPLER worked examples, explain **how we know** each important classification/sign from the visible figure before writing the corresponding equation; avoid unexplained “obvious/clearly/by inspection” jumps.
 - [ ] Treat the shared accordion, LaTeX, drawing and tip look-and-feel as cross-subject/cross-semester design-locked components.

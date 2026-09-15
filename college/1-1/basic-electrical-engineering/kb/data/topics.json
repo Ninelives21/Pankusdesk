@@ -1548,16 +1548,31 @@
         "explainers": [
           {
             "label": "SIMPLER",
-            "summary": "A repeatable way to approach Kirchhoff problems before writing equations",
+            "summary": "A hand-holding sequence: read the symbols and connections first, then choose KCL or KVL and write the equations",
             "title": "How to approach a Kirchhoff’s-law problem",
             "paragraphs": [
-              "Kirchhoff problems become much easier if you separate the thinking into a fixed order. Do not start by hunting for equations. First understand the circuit, choose reference directions, and then let KCL or KVL turn that picture into equations."
+              "Treat SIMPLER as if you are returning to the topic after forgetting yesterday's class. Before doing any maths, say out loud what the drawing is telling you. Do not rely on memory alone: use the symbol shape, arrowheads, +/− marks, node dots and wire connections as evidence, then turn that evidence into equations."
             ],
             "sections": [
               {
                 "heading": "1. Read the circuit before doing any maths",
                 "paragraphs": [
-                  "Identify the voltage sources, resistors, junctions or nodes, and the closed paths or loops. Notice whether any resistor or branch is shared by two loops. At this stage, the goal is only to understand how the circuit is connected."
+                  "First ask: what components are present, which points are the same node, where can current split, and which closed paths exist? Trace uninterrupted wire with your finger. A filled junction dot or a continuous wire means the connected points belong to the same node. If a branch leaves a node, current can split there; if there is only one path, it cannot.",
+                  "Also ask whether two elements really share the same two end nodes. If they do, they are parallel even if the drawing does not place them side by side. If two elements are end-to-end and the junction between them has no other branch, the same current must pass through both, so they are in series."
+                ]
+              },
+              {
+                "heading": "1A. Let the symbols tell you what kind of source or reference you are looking at",
+                "bullets": [
+                  "A circle with a stated value and +/− marks is an independent voltage source: the printed value is fixed by the source.",
+                  "A circle with an arrow is an independent current source: the arrow gives the source-current direction.",
+                  "A diamond means a dependent (controlled) source. The label tells you what controls it. For example, a diamond labelled \\(2V_x\\) depends on \\(V_x\\).",
+                  "On a diamond, +/− marks mean it is a dependent voltage source; an arrow inside the diamond means it is a dependent current source.",
+                  "An arrow beside an unknown current is a reference direction. It is allowed to be wrong; a negative answer later simply reverses the actual direction.",
+                  "+/− marks beside an unknown voltage are a reference polarity. A negative solved voltage means the actual polarity is opposite to the marked reference."
+                ],
+                "paragraphs": [
+                  "This visual reading is part of the solution, not decoration. In every SIMPLER worked example below, we will say how we know a source is dependent, how we know branches are parallel or series, and how we know a sign is positive or negative from the marks actually shown in the figure."
                 ]
               },
               {
@@ -1822,13 +1837,14 @@
                 "summary": "Apply the problem-solving steps to Figure 1.31 before reading the compact textbook equations",
                 "title": "Exercise 1.5.4 — solve it systematically with KCL",
                 "paragraphs": [
-                  "This question asks specifically for KCL, so we only need to think about nodes and current directions. We do not need KVL or loop equations."
+                  "This question asks specifically for KCL, so we focus on junctions and arrowheads. A useful hand-holding habit is to point at a node and read each nearby arrow as either pointing into that node or away from it before writing any equation. We do not need KVL or loop signs here."
                 ],
                 "sections": [
                   {
                     "heading": "Step 1 — Read the circuit",
                     "paragraphs": [
-                      "The important nodes are \\(a\\), \\(b\\), \\(c\\) and \\(d\\). The known branch currents are \\(8\\,\\text{mA}\\), \\(12\\,\\text{mA}\\) and \\(9\\,\\text{mA}\\). The unknown currents are \\(i_1\\), \\(i_2\\) and \\(i_3\\)."
+                      "The important nodes are \\(a\\), \\(b\\), \\(c\\) and \\(d\\). We know they are junctions because several branches meet at those labelled connection points. The figure already gives the known branch currents \\(8\\,\\text{mA}\\), \\(12\\,\\text{mA}\\) and \\(9\\,\\text{mA}\\), and it already draws reference arrows for the unknowns \\(i_1\\), \\(i_2\\) and \\(i_3\\).",
+                      "Do not try to remember which current should enter or leave a node. Look at the arrowhead next to that branch. For example, at node \\(a\\), the 8 mA arrow points into \\(a\\), the 12 mA arrow points away along the top branch, and the \\(i_1\\) arrow points away toward \\(b\\). That picture directly becomes the KCL equation used below."
                     ]
                   },
                   {
@@ -1888,6 +1904,7 @@
                     "heading": "What to notice in this problem",
                     "bullets": [
                       "Because the question asks for KCL, focus on nodes rather than loops.",
+                      "At each node, decide entering/leaving by the arrowhead you can see in the figure; do not guess the direction from the numerical value.",
                       "Choose the easiest node first: a and c each contain only one unknown current.",
                       "A negative current is not a failed answer; it means the actual current flows opposite to the reference arrow.",
                       "Use an unused node such as d as a quick check after solving."
@@ -1974,14 +1991,15 @@
                 "summary": "Apply the Kirchhoff problem-solving steps to Figure 1.33 before reading the compact textbook equations",
                 "title": "Exercise 1.5.6 — solve it systematically with KVL",
                 "paragraphs": [
-                  "This is mainly a KVL problem. The aim is to find the voltage \\(V\\) across the \\(12\\,\\Omega\\) resistor and the controlling current \\(i_x\\). The safest approach is to read the circuit first, keep the reference arrows and polarities exactly as drawn, and then walk around one loop at a time."
+                  "This is mainly a KVL problem. Before writing a loop equation, read the symbols. The 12 V source is an ordinary fixed voltage source. The source on the right is drawn as a diamond, so we know it is dependent; its +/− marks tell us it is a dependent voltage source, and the label \\(3i_x\\) tells us its voltage is controlled by the current \\(i_x\\). Then we can walk around one loop at a time and let the printed polarities determine the signs."
                 ],
                 "sections": [
                   {
                     "heading": "Step 1 — Read the circuit and identify what is known",
                     "paragraphs": [
-                      "Using Figure 1.33(a), the nodes are \\(a,b,c,d\\). The left source is \\(12\\,\\text{V}\\), the top-left resistor is \\(12\\,\\Omega\\), the centre branch has a known voltage of \\(2\\,\\text{V}\\), the top-right element has \\(8\\,\\text{V}\\), and the dependent voltage source is labelled \\(3i_x\\).",
-                      "The resistor voltage \\(V\\) is referenced \\(+\\) at node \\(b\\) and \\(-\\) at node \\(c\\). The current \\(i_x\\) is referenced downward from \\(c\\) to \\(a\\). The solution figure also assumes \\(i_1\\) upward in the left branch, so through the resistor \\(i_1\\) flows from \\(b\\) to \\(c\\)."
+                      "Using Figure 1.33(a), the nodes are \\(a,b,c,d\\). The left source is \\(12\\,\\text{V}\\), the top-left resistor is \\(12\\,\\Omega\\), the centre branch has a marked voltage of \\(2\\,\\text{V}\\), and the top-right element has \\(8\\,\\text{V}\\).",
+                      "Now read the special symbol on the right: it is a diamond. That shape is the clue that the source is dependent rather than fixed. The +/− marks on the diamond show that it is a voltage source, and the label \\(3i_x\\) says its voltage depends on the controlling current \\(i_x\\). The downward arrow marked \\(i_x\\) in the centre branch tells us the reference direction of that controlling current.",
+                      "The resistor voltage \\(V\\) is referenced \\(+\\) at node \\(b\\) and \\(-\\) at node \\(c\\). The solution figure also assumes \\(i_1\\) upward in the left branch, so through the resistor \\(i_1\\) flows from \\(b\\) to \\(c\\). These arrows and +/− marks are the evidence we use for every KVL sign below."
                     ]
                   },
                   {
@@ -2039,6 +2057,7 @@
                   {
                     "heading": "What to notice in this problem",
                     "bullets": [
+                      "The diamond shape tells us \\(3i_x\\) is a dependent source; the +/− marks tell us it is a dependent voltage source, and the label tells us which current controls it.",
                       "For KVL, first choose a loop-traversal direction and then determine each sign from the polarity you cross.",
                       "Current direction, loop-traversal direction and voltage polarity are three different things; do not merge them mentally.",
                       "Keep a dependent source such as \\(3i_x\\) as an expression until the controlling quantity \\(i_x\\) is solved.",
@@ -2091,15 +2110,15 @@
                 "summary": "Apply the Kirchhoff problem-solving steps to Figure 1.34 and let the marked voltage polarities determine every KVL sign",
                 "title": "Exercise 1.5.7 — solve the three voltages systematically with KVL",
                 "paragraphs": [
-                  "This problem is a clean KVL exercise: the circuit already gives the source polarities and the reference polarities for \\(V_1,V_2\\) and \\(V_3\\). We do not need to invent current directions. We only need to choose a loop, choose a direction in which to walk around it, and record whether each element is crossed from \\(-\\) to \\(+\\) or from \\(+\\) to \\(-\\)."
+                  "This is a voltage-only KVL exercise, so the figure does most of the setup for us. The sources show fixed voltage values and polarities, while \\(V_1,V_2,V_3\\) are unknown reference voltages marked with their own +/− signs. Those +/− marks are not extra sources: they simply tell us what a positive answer for each unknown voltage would mean."
                 ],
                 "sections": [
                   {
                     "heading": "Step 1 — Read the circuit before writing any equation",
                     "paragraphs": [
-                      "The nodes are \\(a,b,c,d,e,f\\). The \\(24\\,\\text{V}\\) source is between \\(a\\) and \\(b\\), with \\(+\\) at \\(b\\). The bottom \\(12\\,\\text{V}\\) source is between \\(a\\) and \\(f\\), with \\(-\\) at \\(a\\) and \\(+\\) at \\(f\\). The right \\(10\\,\\text{V}\\) source has \\(+\\) at the top and \\(-\\) at the bottom.",
-                      "The unknown reference voltages are marked directly on the figure: \\(V_1\\) is \\(+\\) at \\(b\\) and \\(-\\) at \\(c\\); \\(V_2\\) is \\(+\\) near \\(a\\) and \\(-\\) near \\(c\\); \\(V_3\\) is \\(+\\) at \\(c\\) and \\(-\\) at \\(f\\).",
-                      "So the sign rule for every loop is simple: crossing \\(-\\to+\\) gives a voltage rise \\((+V)\\), while crossing \\(+\\to-\\) gives a voltage drop \\((-V)\\)."
+                      "The nodes are \\(a,b,c,d,e,f\\). The \\(24\\,\\text{V}\\), \\(12\\,\\text{V}\\) and \\(10\\,\\text{V}\\) source values are fixed source voltages; their nearby +/− marks tell us which terminal is at higher potential for the stated source value.",
+                      "The labels \\(V_1\\), \\(V_2\\) and \\(V_3\\) are different: they are the unknown voltages we are being asked to determine. The +/− marks beside them define the reference polarity. For example, \\(V_1\\) is defined as the potential at its + side minus the potential at its − side. If we later get a negative value, the actual polarity is the reverse of that reference.",
+                      "So the sign rule for every loop comes straight from what we cross in the picture: crossing \\(-\\to+\\) gives a rise \\((+V)\\), while crossing \\(+\\to-\\) gives a drop \\((-V)\\)."
                     ]
                   },
                   {
@@ -2163,6 +2182,7 @@
                     "heading": "What to notice in this problem",
                     "bullets": [
                       "Choose the loop with the fewest unknowns first. Here the outer loop immediately gives \\(V_1\\).",
+                      "The +/− marks beside \\(V_1,V_2,V_3\\) define reference polarities; they do not mean those unknown voltages are separate voltage sources.",
                       "For a voltage-only KVL problem, you do not need to invent current arrows unless the circuit requires them for another relation such as \\(V=IR\\).",
                       "The loop-traversal direction is your choice; the sign comes from the polarity you cross while travelling around that loop.",
                       "A positive solved voltage confirms the marked reference polarity. A negative solved voltage means the actual polarity is the reverse of the marked reference.",
@@ -2211,14 +2231,15 @@
                 "summary": "Apply the Kirchhoff problem-solving steps to Figure 1.35: solve the single-loop current first, then use node potentials to find Vab",
                 "title": "Exercise 1.5.8 — solve the current and Vₐᵦ systematically with KVL",
                 "paragraphs": [
-                  "This is a single-loop KVL problem. Because every element lies in the same series path, the same current \\(I\\) flows through both resistors. First solve that loop current. Then use the definition \\(V_{ab}=V_a-V_b\\) to find the voltage of point \\(a\\) with respect to point \\(b\\)."
+                  "This is a single-loop KVL problem. We know it is a single loop because there is no junction where the conducting path splits into two branches. The current arrow on the right therefore represents the same series current through both resistors. Also notice that the dashed \\(a\\)-to-\\(b\\) line marked \\(V_{ab}\\) is only showing the voltage we want to measure; it is not a wire and does not create another current path."
                 ],
                 "sections": [
                   {
                     "heading": "Step 1 — Read the circuit before writing the equation",
                     "paragraphs": [
                       "The circuit has a \\(30\\,\\text{V}\\) source on the left, a \\(3\\,\\Omega\\) resistor, a \\(10\\,\\text{V}\\) source on the top branch, a \\(5\\,\\Omega\\) resistor, and an \\(8\\,\\text{V}\\) source on the right. Point \\(a\\) is between the \\(10\\,\\text{V}\\) source and the \\(5\\,\\Omega\\) resistor; point \\(b\\) is on the bottom conductor.",
-                      "The \\(30\\,\\text{V}\\) source is marked \\(+\\) at the top and \\(-\\) at the bottom. The \\(10\\,\\text{V}\\) source is marked \\(-\\) on the left and \\(+\\) on the right. The \\(8\\,\\text{V}\\) source is marked \\(+\\) at the top and \\(-\\) at the bottom. The current arrow \\(I\\) is downward on the right branch."
+                      "The three voltage sources have +/− polarity marks, so those marks tell us whether a chosen walk crosses each source as a rise or a drop. The current arrow \\(I\\) is drawn downward on the right branch, which gives us the reference current direction around the loop.",
+                      "The blue dashed line from \\(a\\) to \\(b\\) is not a conducting branch because it is drawn as a measurement/reference line rather than part of the solid circuit wiring. It only labels the requested potential difference \\(V_{ab}=V_a-V_b\\)."
                     ]
                   },
                   {
@@ -2284,6 +2305,7 @@
                   {
                     "heading": "What to notice in this problem",
                     "bullets": [
+                      "No branching junction means one series current. A dashed voltage-reference line is not an electrical connection and does not create another branch.",
                       "In a single series loop, one current flows through every element, so there is only one current unknown to solve.",
                       "For a voltage source, the KVL sign comes from the polarity crossed: \\(-\\to+\\) is a rise and \\(+\\to-\\) is a drop.",
                       "For a resistor, travelling with the current gives a drop \\(-IR\\); travelling against the current gives a rise \\(+IR\\).",
@@ -2364,7 +2386,7 @@
                 "summary": "Use the Kirchhoff problem-solving steps: resolve the printed figure discrepancy, identify the two nodes, redraw the parallel branches, then combine KCL with Ohm's law",
                 "title": "Exercise 1.5.9 — identify the two nodes first, then solve with KCL",
                 "paragraphs": [
-                  "This problem looks harder than it is because the original printed Figure 1.36 is misleading. The safest method is not to chase the shape of the wires. First establish the electrical nodes, then redraw the circuit without changing its connections, and only then write KCL."
+                  "This problem is a good example of why SIMPLER should read connections before equations. The visual shape is misleading, so we trace the node labels and wires first. A source drawn as a circle with an arrow is a current source; the arrow gives the source-current direction. Once we establish which terminals belong to node \\(A\\) and which belong to node \\(B\\), the parallel structure becomes obvious."
                 ],
                 "sections": [
                   {
@@ -2377,8 +2399,8 @@
                   {
                     "heading": "Step 2 — Identify nodes A and B before thinking about current equations",
                     "paragraphs": [
-                      "Every point marked \\(A\\) that is joined by uninterrupted wire is the same electrical node. Likewise, every point marked \\(B\\) is the same second node. The corrected circuit therefore has only two distinct nodes: \\(A\\) and \\(B\\).",
-                      "Now inspect the two terminals of each element. The \\(20\\,\\Omega\\) resistor, \\(10\\,\\Omega\\) resistor, \\(5\\,\\Omega\\) resistor, \\(10\\,\\text{A}\\) source and \\(15\\,\\text{A}\\) source are all connected directly between \\(A\\) and \\(B\\)."
+                      "Every point marked \\(A\\) that is joined by uninterrupted wire is the same electrical node. Likewise, every point marked \\(B\\) is the same second node. The letters and continuous conductors are the evidence; physical closeness on the page is not.",
+                      "Now inspect the two terminals of each element. The \\(20\\,\\Omega\\) resistor, \\(10\\,\\Omega\\) resistor, \\(5\\,\\Omega\\) resistor, \\(10\\,\\text{A}\\) source and \\(15\\,\\text{A}\\) source are all connected directly between \\(A\\) and \\(B\\). The current-source symbols are circles with arrows, so the arrowheads tell us their defined source-current directions."
                     ]
                   },
                   {
@@ -2441,6 +2463,7 @@
                   {
                     "heading": "What to notice in this problem",
                     "bullets": [
+                      "A circle with an arrow is a current source; use the arrowhead to read its source-current direction before writing KCL.",
                       "Do not solve a circuit from its visual shape alone. First identify which points are actually the same electrical node.",
                       "If the supplied figure is internally inconsistent, stop and resolve the source discrepancy before writing equations; do not invent the missing connection silently.",
                       "Elements connected across the same two nodes are parallel, even if they are drawn in very different positions.",
@@ -2531,15 +2554,15 @@
                 "summary": "Use the Kirchhoff problem-solving steps: define the branch currents from KCL first, write three independent KVL equations, then solve and check every resistor current",
                 "title": "Exercise 1.5.10 — turn the bridge circuit into a systematic KCL + KVL problem",
                 "paragraphs": [
-                  "This bridge circuit looks complicated because the current in each resistor is not the same. The key is to avoid writing KVL immediately. First read the nodes and the current arrows in Figure 1.37(a), use KCL to understand what current flows in each branch, and only then write the loop equations."
+                  "This bridge circuit looks complicated because several branches meet at the labelled junctions. The centre 1 ohm branch is the clue that the surrounding resistors are not one simple series chain: at nodes \\(b\\) and \\(c\\), current has a place to split or recombine. So first read the node dots and the arrows in Figure 1.37(a), use KCL to work out each branch current, and only then write KVL."
                 ],
                 "sections": [
                   {
                     "heading": "Step 1 — Read the circuit before writing equations",
                     "paragraphs": [
-                      "The four important nodes are \\(a,b,c,d\\). The 12 V source is connected between the left side at node \\(a\\) and the right side at node \\(d\\), with \\(+\\) on the \\(a\\)-side and \\(-\\) on the \\(d\\)-side.",
-                      "The resistor branches are: \\(2\\,\\Omega\\) between \\(a\\) and \\(b\\), \\(1\\,\\Omega\\) between \\(a\\) and \\(c\\), \\(1\\,\\Omega\\) between \\(b\\) and \\(c\\), \\(4\\,\\Omega\\) between \\(b\\) and \\(d\\), and \\(3\\,\\Omega\\) between \\(c\\) and \\(d\\).",
-                      "Figure 1.37(a) chooses three reference currents: \\(i_1\\) is the total current supplied to the bridge, \\(i_2\\) flows from \\(a\\to b\\) through the 2 ohm resistor, and \\(i_3\\) is assumed from \\(b\\to c\\) through the central 1 ohm resistor."
+                      "The four important nodes are \\(a,b,c,d\\). We know \\(b\\) and \\(c\\) are branching junctions because three resistor branches meet at each of them. That immediately tells us the bridge cannot be treated as one simple series path.",
+                      "The resistor branches are: \\(2\\,\\Omega\\) between \\(a\\) and \\(b\\), \\(1\\,\\Omega\\) between \\(a\\) and \\(c\\), \\(1\\,\\Omega\\) between \\(b\\) and \\(c\\), \\(4\\,\\Omega\\) between \\(b\\) and \\(d\\), and \\(3\\,\\Omega\\) between \\(c\\) and \\(d\\). The 12 V source is connected across the outer circuit with its polarity shown.",
+                      "Figure 1.37(a) then chooses three reference-current arrows: \\(i_1\\) is the total current supplied to the bridge, \\(i_2\\) flows from \\(a\\to b\\) through the 2 ohm resistor, and \\(i_3\\) is assumed from \\(b\\to c\\) through the central 1 ohm resistor. These are reference arrows, not guaranteed actual directions."
                     ]
                   },
                   {
@@ -2638,6 +2661,7 @@
                   {
                     "heading": "What to notice in this problem",
                     "bullets": [
+                      "A junction where three branches meet means current can split, so resistors on either side of that junction are not automatically in series. Read the node connectivity before combining anything.",
                       "In a bridge circuit, do not assume one current flows through every resistor. Use the nodes to determine how current splits and recombines.",
                       "Choose a small set of reference currents, then use KCL to express the remaining branch currents in terms of them.",
                       "Once the branch currents are labelled, KVL becomes a sign-tracking exercise: with a branch current gives \\(-IR\\); against it gives \\(+IR\\).",
@@ -2686,10 +2710,10 @@
             "explainers": [
               {
                 "label": "SIMPLER",
-                "summary": "See why one current flows around the whole loop, what the dependent source \\(2V_x\\) means, and how \\(V_x=5i\\) turns the KVL equation into one unknown",
+                "summary": "See how the diamond identifies the dependent source, why Vx is only the controlling voltage, and how Vx=5i reduces the single-loop KVL equation to one unknown",
                 "title": "Exercise 1.5.11 — understand the dependent source before solving the KVL equation",
                 "paragraphs": [
-                  "This problem introduces a dependent voltage source. The diamond marked \\(2V_x\\) is not an extra unknown current source or a fixed battery. Its voltage is controlled by the voltage \\(V_x\\) across the 5 ohm resistor. Once that relationship is understood, the circuit is only a single-loop KVL problem."
+                  "Start by reading the symbols, not by memorising a rule. The element labelled \\(2V_x\\) is drawn as a diamond. That diamond shape is how we know the \\(2V_x\\) element is a dependent (controlled) source. The nearby +/− marks tell us it is a dependent voltage source. \\(V_x\\) itself is not the source: \\(V_x\\) is the controlling voltage measured across the 5 ohm resistor. The source voltage is twice that controlling voltage."
                 ],
                 "sections": [
                   {
@@ -2703,20 +2727,21 @@
                   {
                     "heading": "Step 2 — What does the diamond source labelled 2Vₓ mean?",
                     "paragraphs": [
-                      "A diamond symbol represents a dependent, or controlled, source. Its value depends on some voltage or current elsewhere in the circuit.",
-                      "Here the source voltage is \\(2V_x\\). So if \\(V_x\\) changes, the dependent source changes automatically to twice that voltage.",
+                      "We know \\(2V_x\\) is a dependent source because the source is drawn with a diamond shape. This is the visual convention used for controlled sources. If the source were an ordinary independent source, it would use the ordinary source symbol rather than the dependent-source diamond.",
+                      "The +/− marks on the diamond tell us this particular dependent source is a voltage source. Its label \\(2V_x\\) tells us what controls its value: the source voltage equals twice the controlling voltage \\(V_x\\). So if \\(V_x\\) changes, the source automatically changes to \\(2V_x\\).",
+                      "Be careful with the names: \\(V_x\\) is not a dependent source. It is simply the voltage marked across the 5 ohm resistor. The diamond element whose value is \\(2V_x\\) is the dependent source.",
                       "Its polarity is shown as \\( + \\) on the left and \\( - \\) on the right. Therefore, when we walk clockwise from left to right through this source, we cross from \\( + \\) to \\( - \\), which is a voltage drop of \\(-2V_x\\)."
                     ]
                   },
                   {
                     "heading": "Step 3 — Relate Vₓ to the loop current",
                     "paragraphs": [
-                      "The voltage \\(V_x\\) is marked across the 5 ohm resistor, with \\( + \\) at the top and \\( - \\) at the bottom.",
-                      "The assumed current flows downward through that resistor, so it enters the terminal marked \\( + \\). By Ohm's law and the passive sign convention,",
+                      "Now look at where \\(V_x\\) is actually marked: it is across the 5 ohm resistor, with \\( + \\) at the top and \\( - \\) at the bottom. So \\(V_x\\) means top potential minus bottom potential across that resistor.",
+                      "The assumed loop current flows downward through the 5 ohm resistor. Because the current enters the terminal marked \\( + \\), the marked polarity follows the passive sign convention. Therefore Ohm's law gives",
                       "\\[V_x=5i\\]",
                       "or, equivalently,",
                       "\\[i=\\dfrac{V_x}{5}\\]",
-                      "This relation is the key to the problem: it connects the controlling voltage \\(V_x\\) to the one loop current \\(i\\)."
+                      "This is the bridge between the controlling voltage and the loop current. Once we have it, the KVL equation can be written using only one unknown."
                     ]
                   },
                   {
@@ -2760,10 +2785,11 @@
                   {
                     "heading": "What to notice in this problem",
                     "bullets": [
-                      "A diamond source is dependent: its value is controlled by another circuit variable. Here its voltage is exactly \\(2V_x\\).",
+                      "The diamond shape is the visual clue that \\(2V_x\\) is a dependent source. The +/− marks tell us it is a dependent voltage source.",
+                      "\\(V_x\\) is the controlling voltage across the 5 ohm resistor; it is not itself a source. The dependent source is the diamond element whose voltage equals \\(2V_x\\).",
                       "Because there is only one closed path, the same current flows through every element; no KCL equation is needed.",
-                      "The polarity marked on the 5 ohm resistor makes \\(V_x=5i\\) for the shown current direction.",
-                      "A dependent voltage source is included in KVL just like any other voltage source; the only difference is that its magnitude must be written in terms of its controlling variable.",
+                      "The polarity marked on the 5 ohm resistor and the downward current together give \\(V_x=5i\\).",
+                      "A dependent voltage source is included in KVL like any other voltage source; only its magnitude is written in terms of its controlling variable.",
                       "Current direction is an assumption. If \\(i\\) had come out negative, the actual current would simply flow opposite to the arrow shown.",
                       "Always check the final result by adding all rises and drops around the loop."
                     ]
@@ -2860,14 +2886,14 @@
                 "summary": "Why the diagonal 12 V branch carries no current, how resistor +/− signs are chosen, and how the 13 V result is built",
                 "title": "Understand Exercise 1.5.13 step by step",
                 "paragraphs": [
-                  "There are two separate closed loops joined by one extra diagonal branch. The easiest way to follow the solution is to separate current flow from voltage difference."
+                  "There are two closed outer loops joined by one extra diagonal branch. Before calculating anything, trace the possible current paths. The diagonal 12 V element is an ordinary voltage source, not a diamond controlled source, but that branch is the only electrical connection between the two loops. That one-connection geometry is why it can impose a voltage difference without carrying a continuous current."
                 ],
                 "sections": [
                   {
                     "heading": "1. Why does no current flow through the diagonal 12 V source?",
                     "paragraphs": [
-                      "Suppose current tried to leave the left loop through \\(C\\), cross the diagonal source, and enter the right loop at \\(D\\). There is no second connection from the right loop back to the left loop, so there is no return path. Continuous current needs a closed path, so the current in the diagonal \\(C-D\\) branch is zero.",
-                      "Zero current does not mean zero voltage. The diagonal source still fixes the potential difference between its terminals. Its polarity is minus at \\(D\\) and plus at \\(C\\), so \\(C\\) is 12 V higher than \\(D\\):",
+                      "Look at the wiring around the diagonal \\(C-D\\) branch. It is the only connection from the left loop to the right loop. If current crossed from \\(C\\) to \\(D\\), there is no second cross-connection that would let that current return to the left loop and complete a closed path. Continuous current therefore cannot circulate through the diagonal branch, so its branch current is zero.",
+                      "Zero current does not mean zero voltage. The source still fixes the potential difference between its terminals. Its polarity is minus at \\(D\\) and plus at \\(C\\), so the figure tells us \\(C\\) is 12 V higher than \\(D\\):",
                       "\\[V_C-V_D=12\\ \\text{V}\\]"
                     ]
                   },
@@ -2909,6 +2935,7 @@
                   {
                     "heading": "6. Sign rules to remember",
                     "bullets": [
+                      "First trace whether a complete return path exists. A branch can have a non-zero voltage across it even when no continuous current can flow through that branch.",
                       "Across a resistor: travelling with the assumed current gives a voltage drop \\(-IR\\); travelling against it gives a voltage rise \\(+IR\\).",
                       "Across a voltage source: travelling from \\( - \\) to \\( + \\) is a rise; travelling from \\( + \\) to \\( - \\) is a drop.",
                       "A resistor itself has no built-in current direction or permanent polarity."
@@ -2993,18 +3020,26 @@
                 "summary": "How Figure 1.41 becomes the parallel circuit, how current directions are assumed, what resistor +/− signs mean, and how the power results follow",
                 "title": "Understand Exercise 1.5.14 step by step",
                 "paragraphs": [
-                  "The difficult part here is not the arithmetic. It is recognising the two nodes, keeping the assumed current directions straight, and interpreting a negative current correctly."
+                  "This problem is mostly about reading symbols and nodes correctly. The left source is drawn as a diamond with an arrow, so we know it is a dependent current source; the label \\(3i_1\\) says its current is controlled by \\(i_1\\). The 20 mA source is drawn as a circle with an arrow, so it is an independent current source with a fixed 20 mA value. After that, the job is to recognise that every branch connects across the same two nodes \\(x\\) and \\(y\\)."
                 ],
                 "sections": [
                   {
-                    "heading": "1. Why does Figure 1.41 become Figure 1.41(a)?",
+                    "heading": "1. Read the source symbols before doing any algebra",
+                    "paragraphs": [
+                      "The arrow inside a source symbol tells us it is a current source. The shape tells us whether it is independent or dependent.",
+                      "The source labelled \\(3i_1\\) is a diamond, so it is dependent. Its arrow makes it a dependent current source, and the label means its source current is three times the controlling current \\(i_1\\).",
+                      "The \\(20\\,\\text{mA}\\) source is a circle with an arrow, so it is an independent current source. Its magnitude is fixed at 20 mA, and its arrow gives the source-current direction."
+                    ]
+                  },
+                  {
+                    "heading": "2. Why does Figure 1.41 become Figure 1.41(a)?",
                     "paragraphs": [
                       "Every point marked \\(x\\) is connected by uninterrupted wire and is therefore the same electrical node. Every point marked \\(y\\) is likewise one node.",
                       "The dependent source, the 20 mA source, the 4 k\\(\\Omega\\) resistor and the 1 k\\(\\Omega\\) resistor each have one terminal connected to \\(x\\) and the other connected to \\(y\\). Therefore all four elements are in parallel. Figure 1.41(a) simply redraws those same x–y branches side by side."
                     ]
                   },
                   {
-                    "heading": "2. How are the current directions assumed?",
+                    "heading": "3. How are the current directions assumed?",
                     "paragraphs": [
                       "The direction of an unknown current is a reference choice, not something we must know beforehand. The textbook could have chosen the opposite direction for \\(i_1\\) or \\(i_2\\) and the final physical answer would still be the same if all signs were used consistently.",
                       "Here \\(i_2\\) is assumed downward through the 4 k\\(\\Omega\\) resistor, from \\(x\\) to \\(y\\). The reference arrow for \\(i_1\\) corresponds to current upward through the 1 k\\(\\Omega\\) branch, from \\(y\\) to \\(x\\).",
@@ -3012,7 +3047,7 @@
                     ]
                   },
                   {
-                    "heading": "3. What do + and − mean across the resistors?",
+                    "heading": "4. What do + and − mean across the resistors?",
                     "paragraphs": [
                       "A resistor has no permanent positive or negative end. Once a current direction is assumed, we use the passive sign convention: current enters the positive side and leaves the negative side.",
                       "For the 4 k\\(\\Omega\\) resistor, \\(i_2\\) is assumed from \\(x\\) to \\(y\\), so \\(V_{xy}=4000i_2\\).",
@@ -3023,7 +3058,7 @@
                     ]
                   },
                   {
-                    "heading": "4. Apply KCL at node x",
+                    "heading": "5. Apply KCL at node x",
                     "paragraphs": [
                       "Using the arrows as drawn, \\(3i_1\\), 20 mA and \\(i_1\\) are referenced as entering node \\(x\\), while \\(i_2\\) leaves node \\(x\\). So",
                       "\\[3i_1+20\\times10^{-3}+i_1-i_2=0\\]",
@@ -3033,14 +3068,14 @@
                     ]
                   },
                   {
-                    "heading": "5. What does the negative i1 mean?",
+                    "heading": "6. What does the negative i1 mean?",
                     "paragraphs": [
                       "The \\(-\\) sign says the actual current through the 1 k\\(\\Omega\\) resistor is opposite to the assumed upward arrow. The actual current therefore flows from \\(x\\) down to \\(y\\) with magnitude about \\(4.7\\,\\text{mA}\\).",
                       "Then \\(i_2=-0.25i_1\\) gives \\(i_2\\approx1.175\\,\\text{mA}\\), which is positive, so its actual direction is the same as the assumed downward arrow."
                     ]
                   },
                   {
-                    "heading": "6. Power absorbed by the resistors",
+                    "heading": "7. Power absorbed by the resistors",
                     "paragraphs": [
                       "For a resistor, \\(P=I^2R\\), so the direction sign disappears when the current is squared.",
                       "\\[P_{4\\mathrm{k}\\Omega}=(1.175\\times10^{-3})^2(4000)\\approx5.5\\ \\text{mW}\\]",
@@ -3048,7 +3083,7 @@
                     ]
                   },
                   {
-                    "heading": "7. If we continue the check to the current sources",
+                    "heading": "8. If we continue the check to the current sources",
                     "paragraphs": [
                       "From the 4 k\\(\\Omega\\) branch, the node voltage is approximately \\(V_{xy}=4000(1.175\\,\\text{mA})=4.7\\,\\text{V}\\).",
                       "The 20 mA source current flows upward from \\(y\\) to \\(x\\), entering the lower-potential terminal, so it delivers power: \\(P_{20\\mathrm{mA}}\\approx-94\\,\\text{mW}\\).",
@@ -3057,8 +3092,9 @@
                     ]
                   },
                   {
-                    "heading": "8. Three rules to remember",
+                    "heading": "9. Three rules to remember",
                     "bullets": [
+                      "Diamond + arrow means dependent current source; circle + arrow means independent current source. Read the shape and arrow before using the source in KCL or power calculations.",
                       "Same two nodes means parallel, regardless of how tangled the original drawing looks.",
                       "Unknown current directions may be assumed either way; a negative result means the real direction is opposite.",
                       "A resistor has no built-in direction or polarity. Its +/− labels follow the assumed current direction."
