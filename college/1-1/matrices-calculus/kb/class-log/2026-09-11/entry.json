@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-11",
+  "date_label": "11 September 2026",
+  "source_id": "CLASS-U2-2026-09-11",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 2,
+    "title": "Eigenvalues, Eigenvectors and Quadratic Forms"
+  },
+  "title": "Eigenvalues and eigenvectors — characteristic roots and row-reduction examples",
+  "summary": "Two class problems on finding characteristic roots/eigenvalues and corresponding eigenvectors, cleaned into coherent determinant and row-reduction steps while preserving the notebook method.",
+  "transcription_policy": "Notebook matrices, eigenvalue order and row-reduction method are preserved. Crossed-out arithmetic is cleaned into a coherent derivation only where the intended step is unambiguous; no new class theory is invented. Both questions were checked against the Unit II textbook worked examples and in-scope Problems 2.8, 2.9, 2.10 and 2.12 before adding the cleaned class solutions; no exact textbook match was found.",
+  "mapped_topics": [
+    {
+      "topic_id": "u2-eigenvalues",
+      "label": "Eigenvalues",
+      "href": "unit-2.html#u2-eigenvalues"
+    },
+    {
+      "topic_id": "u2-eigenvectors-properties",
+      "label": "Eigenvectors and their properties",
+      "href": "unit-2.html#u2-eigenvectors-properties"
+    }
+  ],
+  "pages": [
+    {
+      "page": 12,
+      "heading": "Notebook pp. 12–14 · Example 6",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class questions",
+          "items": [
+            {
+              "title": "Example 6 — Find the characteristic roots and corresponding eigenvectors",
+              "question_paragraphs": [
+                "Find the characteristic roots of the matrix",
+                "\\[A=\\begin{bmatrix}5&-2&0\\\\-2&6&2\\\\0&2&7\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "The class begins with the characteristic equation",
+                "\\[|A-\\lambda I|=0.\\]",
+                "Thus",
+                "\\[\\begin{vmatrix}5-\\lambda&-2&0\\\\-2&6-\\lambda&2\\\\0&2&7-\\lambda\\end{vmatrix}=0.\\]",
+                "Expanding along the first row,",
+                "\\[(5-\\lambda)\\big[(6-\\lambda)(7-\\lambda)-4\\big]+2\\big[-2(7-\\lambda)\\big]=0.\\]",
+                "\\[(5-\\lambda)(\\lambda^2-13\\lambda+38)-28+4\\lambda=0.\\]",
+                "Therefore",
+                "\\[-\\lambda^3+18\\lambda^2-99\\lambda+162=0.\\]",
+                "Factoring,",
+                "\\[-(\\lambda-3)(\\lambda-6)(\\lambda-9)=0,\\]",
+                "so the characteristic roots are",
+                "\\[\\lambda=3,\\ 6,\\ 9.\\]",
+                "For \\(\\lambda=3\\), solve \\((A-3I)X=0\\):",
+                "\\[\\begin{bmatrix}2&-2&0\\\\-2&3&2\\\\0&2&4\\end{bmatrix}X=0.\\]",
+                "Using the notebook operations \\(R_2\\to R_2+R_1\\) and then \\(R_3\\to R_3-2R_2\\),",
+                "\\[\\begin{bmatrix}2&-2&0\\\\0&1&2\\\\0&0&0\\end{bmatrix}X=0.\\]",
+                "Hence \\(2x_1-2x_2=0\\) and \\(x_2+2x_3=0\\). Taking \\(x_3=k\\) gives \\(x_1=x_2=-2k\\), so one corresponding eigenvector is",
+                "\\[X_1=k\\begin{bmatrix}-2\\\\-2\\\\1\\end{bmatrix}.\\]",
+                "For \\(\\lambda=6\\),",
+                "\\[\\begin{bmatrix}-1&-2&0\\\\-2&0&2\\\\0&2&1\\end{bmatrix}X=0.\\]",
+                "Using \\(R_2\\to R_2-2R_1\\), scaling that row by \\(1/2\\), and eliminating the identical third row gives",
+                "\\[\\begin{bmatrix}-1&-2&0\\\\0&2&1\\\\0&0&0\\end{bmatrix}X=0.\\]",
+                "Thus \\(-x_1-2x_2=0\\) and \\(2x_2+x_3=0\\). Taking \\(x_2=-k\\) gives \\(x_1=2k\\), \\(x_3=2k\\), so",
+                "\\[X_2=k\\begin{bmatrix}2\\\\-1\\\\2\\end{bmatrix}.\\]",
+                "For \\(\\lambda=9\\),",
+                "\\[\\begin{bmatrix}-4&-2&0\\\\-2&-3&2\\\\0&2&-2\\end{bmatrix}X=0.\\]",
+                "Following the notebook reduction gives",
+                "\\[\\begin{bmatrix}-4&-2&0\\\\0&-2&2\\\\0&0&0\\end{bmatrix}X=0.\\]",
+                "Therefore \\(-2x_1-x_2=0\\) and \\(-x_2+x_3=0\\). Taking \\(x_2=2k\\) gives \\(x_1=-k\\), \\(x_3=2k\\), hence",
+                "\\[X_3=k\\begin{bmatrix}-1\\\\2\\\\2\\end{bmatrix}.\\]"
+              ],
+              "final_answer": "Characteristic roots: \\(3,6,9\\). Corresponding eigenvectors may be taken as \\([-2,-2,1]^T\\), \\([2,-1,2]^T\\), and \\([-1,2,2]^T\\), respectively.",
+              "textbook_match": {
+                "status": "none",
+                "checked": true,
+                "note": "Checked against the Unit II textbook worked examples and the in-scope Problems 2.8, 2.9, 2.10 and 2.12 sets; no exact match was found."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "heading": "Notebook pp. 14–15 · Next class question",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class questions",
+          "items": [
+            {
+              "title": "Find the eigenvalues and eigenvectors",
+              "question_paragraphs": [
+                "Find the eigenvalues and eigenvectors of",
+                "\\[A=\\begin{bmatrix}-3&-7&-5\\\\2&4&3\\\\1&2&2\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "The characteristic equation is",
+                "\\[|A-\\lambda I|=0.\\]",
+                "Hence",
+                "\\[\\begin{vmatrix}-3-\\lambda&-7&-5\\\\2&4-\\lambda&3\\\\1&2&2-\\lambda\\end{vmatrix}=0.\\]",
+                "Expanding along the first row and cleaning the crossed-out arithmetic in the notebook,",
+                "\\[(-3-\\lambda)\\big[(4-\\lambda)(2-\\lambda)-6\\big]+7\\big[2(2-\\lambda)-3\\big]-5\\big[4-(4-\\lambda)\\big]=0.\\]",
+                "\\[(-3-\\lambda)(\\lambda^2-6\\lambda+2)+7(1-2\\lambda)-5\\lambda=0.\\]",
+                "Therefore",
+                "\\[-\\lambda^3+3\\lambda^2-3\\lambda+1=0.\\]",
+                "That is,",
+                "\\[-(\\lambda-1)^3=0,\\]",
+                "so",
+                "\\[\\lambda=1,1,1.\\]",
+                "For \\(\\lambda=1\\),",
+                "\\[(A-I)X=0,\\qquad \\begin{bmatrix}-4&-7&-5\\\\2&3&3\\\\1&2&1\\end{bmatrix}X=0.\\]",
+                "The notebook uses \\(R_2\\to2R_2+R_1\\) and \\(R_3\\to4R_3+R_1\\), giving",
+                "\\[\\begin{bmatrix}-4&-7&-5\\\\0&-1&1\\\\0&1&-1\\end{bmatrix}X=0.\\]",
+                "Then \\(R_3\\to R_3+R_2\\):",
+                "\\[\\begin{bmatrix}-4&-7&-5\\\\0&-1&1\\\\0&0&0\\end{bmatrix}X=0.\\]",
+                "Thus \\(-x_2+x_3=0\\), so \\(x_3=x_2\\). Substituting in the first equation,",
+                "\\[-4x_1-7x_2-5x_3=0\\quad\\Rightarrow\\quad -4x_1-12x_2=0.\\]",
+                "Taking \\(x_2=k\\) gives \\(x_3=k\\) and \\(x_1=-3k\\). Hence a corresponding eigenvector is",
+                "\\[X=k\\begin{bmatrix}-3\\\\1\\\\1\\end{bmatrix}.\\]"
+              ],
+              "final_answer": "Eigenvalues: \\(1,1,1\\). A corresponding eigenvector is \\([-3,1,1]^T\\) (or any non-zero scalar multiple).",
+              "textbook_match": {
+                "status": "none",
+                "checked": true,
+                "note": "Checked against the Unit II textbook worked examples and the in-scope Problems 2.8, 2.9, 2.10 and 2.12 sets; no exact match was found."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The source consists of four notebook photographs: Mac-class-unit2 - 12.jpg through Mac-class-unit2 - 15.jpg, supplied directly in chat; raw notebook images are not copied into website assets.",
+    "Example 6 spans notebook photographs 12–14. The second class question begins on photograph 14 and continues on photograph 15.",
+    "Both questions were compared with the prescribed Grewal Unit II worked examples and the in-scope Problems 2.8, 2.9, 2.10 and 2.12 question sets; no exact textbook match was found, so the class solutions are retained rather than replaced by canonical textbook links.",
+    "Crossed-out determinant arithmetic was cleaned only where the intended calculation is unambiguous. The resulting eigenpairs were independently checked by direct multiplication."
+  ]
+}
