@@ -1,59 +1,111 @@
-# MAC Unit II — 15 September 2026 class-note integration
+# MAC Unit II — 15 September 2026 class-note integration (corrected full-solution pass)
 
-## Source
+## Source workspace
+
+Latest user-supplied `re.zip` from the correction task. This workspace already contained the earlier 15 September integration; that entry was inspected and replaced rather than applying the change to an older delta.
+
+## Source material
 
 Four notebook photographs supplied directly in chat:
 
-- `Mac-class-unit2 - 16.jpg` — SHA-256 `41a6ed073f2beb3a4d45368f6fcdf8736f8f4eb7b87960cfc5cfe9c888ada3d5`
-- `Mac-class-unit2 - 17.jpg` — SHA-256 `04d2db3e6002ef1845adb2e1c9ef11b8dd70f4847781c1572fad44f8bda03720`
-- `Mac-class-unit2 - 18.jpg` — SHA-256 `3d44e1b1bb094d0326950af38f3071f96e471f5d1cad92dd51652b8cfc481cd3`
-- `Mac-class-unit2 - 19.jpg` — SHA-256 `d8746fd8ae97e5aa7dacfc6193fe3caa2b42639588fbd90e50debd9d5c531bb3`
+- `Mac-class-unit2 - 16.jpg` — linearly independent/dependent vectors
+- `Mac-class-unit2 - 17.jpg` — algebraic/geometric multiplicity example
+- `Mac-class-unit2 - 18.jpg` — similarity and diagonalization theory
+- `Mac-class-unit2 - 19.jpg` — triangular-matrix eigenvalue/eigenvector question
 
-The first photographed page is dated `15/9/26`.
+The source hashes remain those already stored in `source-manifest.json`.
 
-## Material integrated
+## What was corrected in this pass
 
-- Definition and two examples of linearly independent/dependent vectors.
-- Algebraic multiplicity (AM) and geometric multiplicity (GM).
-- Similarity of matrices.
-- Diagonalization, modal matrix, spectral matrix and similarity transformation.
-- One triangular-matrix eigenvalue/eigenvector question begun in class but not completed in the supplied notes.
+The earlier 15 September integration was too summary-like. It did not satisfy the established class-example pattern.
 
-## Textbook/class-match checks
+This pass changes that behaviour so that:
 
-The multiplicity example uses
+1. every class example/question appears as a clickable accordion/dropdown;
+2. opening the question reveals a complete worked solution;
+3. intermediate equations, substitutions and row-reduction logic are shown rather than jumping to final answers;
+4. every class example was checked against both the prescribed Unit II worked examples and the in-scope textbook question bank before solving;
+5. when an exact textbook match exists, a textbook-match aside appears at the beginning of the dropdown;
+6. the class-note answer is checked against the printed textbook answer where one exists.
+
+## Textbook match check
+
+### Linear-independence vector examples
+
+No exact match was found in the current Grewal Unit II worked examples or the in-scope textbook question sets. Both examples are therefore solved directly from the class data.
+
+### Algebraic/geometric multiplicity matrix
+
+Class matrix:
 
 \[
-A=\begin{bmatrix}6&-2&2\\-2&3&-1\\2&-1&3\end{bmatrix}.
+A=\begin{bmatrix}
+6&-2&2\\
+-2&3&-1\\
+2&-1&3
+\end{bmatrix}.
 \]
 
-This is the same matrix as the 9 September class-note Example 4 and exactly matches Grewal Problems 2.9 Q3(e). The 15 September class entry therefore renders an aside linking to the canonical textbook solution instead of duplicating the eigenvalue/eigenvector derivation. The class-specific AM/GM interpretation is retained.
+Exact source match:
 
-The final triangular matrix
+- Grewal Problems 2.9 Q3(e), book p. 72.
+- Printed Appendix 3 answer, p. 1381: roots `8, 2, 2` with eigenvectors `(2,-1,1)`, `(1,0,-2)`, `(1,2,0)`.
+
+The new dropdown derives the characteristic equation and all eigenvector relations step by step. Priyanka's `[-1,0,2]^T` vector is explicitly recognized as the same eigendirection as the printed `[1,0,-2]^T` vector.
+
+Verified result:
 
 \[
-A=\begin{bmatrix}2&3&4\\0&2&-1\\0&0&1\end{bmatrix}
+AM(8)=GM(8)=1,\qquad AM(2)=GM(2)=2.
 \]
 
-was checked against the current Unit II worked-example and question bank; no exact match was found.
+### Triangular-matrix class question
 
-## Verified notebook discrepancy
+\[
+A=\begin{bmatrix}
+2&3&4\\
+0&2&-1\\
+0&0&1
+\end{bmatrix}.
+\]
 
-The final page writes `lambda = 1,1,1` and `AM(lambda=1)=3`. Since the written matrix is upper triangular, its eigenvalues are the diagonal entries `2,2,1`. Therefore:
+No exact match was found in the current Unit II worked examples or in-scope textbook question bank.
 
-- `AM(2)=2`
-- `AM(1)=1`
+The notebook writes `lambda = 1,1,1` and `AM(lambda=1)=3`; this is incorrect for the written matrix. The dropdown preserves that as a notebook discrepancy, then independently completes the problem at the user's explicit request.
 
-The photographed notes stop at this point. No independently invented eigenvector continuation was added.
+Verified result:
 
-## Cleanup policy
+- eigenvalues: `2,2,1`;
+- for `lambda=2`: eigenspace `span{[1,0,0]^T}`, so `GM(2)=1`;
+- for `lambda=1`: eigenspace `span{[-7,1,1]^T}`, so `GM(1)=1`;
+- therefore the matrix is not diagonalizable because `AM(2)=2` but `GM(2)=1`.
 
-- Grammar and notation were cleaned for readability while preserving class order and meaning.
-- Crossed-out work is not reproduced where it adds no mathematical information.
-- No raw notebook images are copied into website assets.
-- Class-only supporting material is kept on Priyanka's dated Class Notes page rather than being relabelled as textbook theory.
-- No new textbook-theory content was added.
+## UI behaviour
+
+The existing generic class-log/study accordion renderer is reused. No MAC-specific UI mechanism was introduced.
+
+The 15 September page now uses `accordions` blocks for all examples/questions so the visible question is clickable and the worked solution is revealed in the dropdown.
 
 ## Calendar
 
-Added the MAC Unit II 15 September entry to `college/1-1/data/class-log.json`, linking directly to `unit-2-class-notes.html#2026-09-15`.
+The existing 15 September MAC calendar entry is retained and its summary is updated to reflect the completed worked examples.
+
+## Files modified
+
+- `college/1-1/matrices-calculus/kb/class-log/2026-09-15/entry.json`
+- `college/1-1/matrices-calculus/kb/class-log/2026-09-15/raw.md`
+- `college/1-1/matrices-calculus/kb/data/source-manifest.json`
+- `college/1-1/matrices-calculus/kb/audits/unit-2-2026-09-15-class-integration.md`
+- `college/1-1/data/class-log.json`
+
+## Verification performed
+
+- JSON parse validation: PASS for the modified entry, source manifest and semester class-log files.
+- MAC KB verifier: PASS.
+- College verifier: PASS.
+- Direct mathematical checks: PASS. The AM/GM example characteristic polynomial is `-(lambda-8)(lambda-2)^2`; all three displayed eigenvectors satisfy `Av=lambda v`. The triangular example characteristic polynomial is `-(lambda-2)^2(lambda-1)`; `[1,0,0]^T` and `[-7,1,1]^T` satisfy the corresponding eigenvector equations.
+- Linear-independence checks: the first pair has rank 1 and the second pair has rank 2.
+- Malformed control-character/backslash scan: PASS; no control characters or malformed `\frac` tokens were found in the revised entry.
+- Source check against Grewal: Problems 2.9 Q3(e) confirmed on book p. 72; Appendix 3 p. 1381 confirmed the printed roots/eigenvectors used for the answer check.
+- Local browser visual QA was attempted, but the sandbox blocked loopback HTTP navigation (`ERR_BLOCKED_BY_ADMINISTRATOR`), so no browser-render claim is made for this pass. The generic accordion renderer itself was not changed.
+- Delta ZIP: created with one top-level folder and test-unzipped successfully.
