@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-15",
+  "date_label": "15 September 2026",
+  "source_id": "CLASS-U2-2026-09-15",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 2,
+    "title": "Eigenvalues, Eigenvectors and Quadratic Forms"
+  },
+  "title": "Linear independence, multiplicity and diagonalization",
+  "summary": "Linearly independent/dependent vectors; algebraic and geometric multiplicity; similarity and diagonalization; modal/spectral matrices; and an unfinished triangular-matrix class question.",
+  "transcription_policy": "Notebook order and terminology are preserved with grammar and algebra lightly cleaned for study. Existing textbook/class matches are linked rather than re-solved. The final triangular-matrix question is preserved only to the point reached in the notebook; the incorrect written eigenvalue line is flagged and corrected, but no missing eigenvector solution is invented.",
+  "mapped_topics": [
+    {
+      "topic_id": "u2-eigenvectors-properties",
+      "label": "Eigenvectors and their properties",
+      "href": "unit-2.html#u2-eigenvectors-properties"
+    },
+    {
+      "topic_id": "u2-diagonalization",
+      "label": "Diagonalization of a matrix",
+      "href": "unit-2.html#u2-diagonalization"
+    }
+  ],
+  "pages": [
+    {
+      "page": 16,
+      "heading": "Notebook p. 16 · Linearly independent vectors",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Linearly independent vectors"
+        },
+        {
+          "type": "paragraph",
+          "text": "The vectors \\(X_1,X_2,\\ldots,X_n\\) are linearly independent if"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\alpha_1X_1+\\alpha_2X_2+\\cdots+\\alpha_nX_n=0\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "implies \\(\\alpha_i=0\\) for every \\(i\\). Otherwise, the vectors are linearly dependent."
+        },
+        {
+          "type": "subheading",
+          "text": "Example 1 — linearly dependent"
+        },
+        {
+          "type": "equation",
+          "text": "\\[X_1=\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix},\\qquad X_2=\\begin{bmatrix}2\\\\4\\\\6\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here \\(X_2=2X_1\\), so"
+        },
+        {
+          "type": "equation",
+          "text": "\\[2X_1-X_2=0.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Since this relation uses coefficients that are not both zero, \\(X_1\\) and \\(X_2\\) are linearly dependent."
+        },
+        {
+          "type": "subheading",
+          "text": "Example 2 — linearly independent"
+        },
+        {
+          "type": "equation",
+          "text": "\\[X_3=\\begin{bmatrix}2\\\\5\\\\6\\end{bmatrix},\\qquad X_4=\\begin{bmatrix}1\\\\5\\\\3\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Assume"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\alpha_1X_3+\\alpha_2X_4=0.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Comparing components gives"
+        },
+        {
+          "type": "equation",
+          "text": "\\[2\\alpha_1+\\alpha_2=0,\\qquad 5\\alpha_1+5\\alpha_2=0,\\qquad 6\\alpha_1+3\\alpha_2=0.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "From the first equation, \\(\\alpha_2=-2\\alpha_1\\). Substituting in the second gives \\(-5\\alpha_1=0\\), so \\(\\alpha_1=0\\) and hence \\(\\alpha_2=0\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Therefore \\(X_3\\) and \\(X_4\\) are linearly independent."
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "heading": "Notebook p. 17 · Algebraic and geometric multiplicity",
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Algebraic multiplicity (AM)"
+        },
+        {
+          "type": "paragraph",
+          "text": "If an eigenvalue \\(\\lambda\\) occurs \\(t\\) times as a root of the characteristic equation, its algebraic multiplicity is \\(t\\). In the class note, AM is described as the number of repetitions of \\(\\lambda\\)."
+        },
+        {
+          "type": "subheading",
+          "text": "Geometric multiplicity (GM)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The number of linearly independent eigenvectors corresponding to an eigenvalue \\(\\lambda\\) is called the geometric multiplicity of \\(\\lambda\\)."
+        },
+        {
+          "type": "accordions",
+          "label": "Class example",
+          "items": [
+            {
+              "title": "Example — Identify the algebraic and geometric multiplicities",
+              "question_paragraphs": [
+                "\\[A=\\begin{bmatrix}6&-2&2\\\\-2&3&-1\\\\2&-1&3\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "The class reuses the verified eigenvalues \\(8,2,2\\). Therefore",
+                "\\[AM(8)=1,\\qquad AM(2)=2.\\]",
+                "For \\(\\lambda=8\\), one eigenvector shown in the notes is",
+                "\\[X_1=\\begin{bmatrix}2\\\\-1\\\\1\\end{bmatrix}.\\]",
+                "For the repeated eigenvalue \\(\\lambda=2\\), the notes use two linearly independent eigenvectors",
+                "\\[X_2=\\begin{bmatrix}-1\\\\0\\\\2\\end{bmatrix},\\qquad X_3=\\begin{bmatrix}1\\\\2\\\\0\\end{bmatrix}.\\]",
+                "Hence",
+                "\\[GM(8)=1,\\qquad GM(2)=2.\\]"
+              ],
+              "final_answer": "\\(AM(8)=1,\\ GM(8)=1;\\quad AM(2)=2,\\ GM(2)=2.\\)",
+              "textbook_match": {
+                "status": "exact",
+                "checked": true,
+                "label": "Aside — this matrix is already solved",
+                "href": "unit-2-questions.html#question-u2-p29-03-e",
+                "target": "Problems 2.9 · Q3(e)",
+                "note": "This is the same matrix used in the 9 September class notes (Example 4) and it exactly matches Grewal Problems 2.9 Q3(e). Use the canonical textbook solution for the eigenvalue/eigenvector calculation; the 15 September note reuses that verified result only to explain AM and GM."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "heading": "Notebook pp. 18–19 · Similarity and diagonalization",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Similarity of matrices"
+        },
+        {
+          "type": "paragraph",
+          "text": "A matrix \\(A\\) is said to be similar to a matrix \\(B\\) if there exists a non-singular matrix \\(P\\) such that"
+        },
+        {
+          "type": "equation",
+          "text": "\\[P^{-1}AP=B.\\]"
+        },
+        {
+          "type": "heading",
+          "text": "Diagonalization of a matrix"
+        },
+        {
+          "type": "paragraph",
+          "text": "If a matrix \\(A\\) is similar to a diagonal matrix \\(D\\), then \\(A\\) is said to be diagonalized, and \\(D\\) is called a diagonal form of \\(A\\). Thus, if \\(A\\) is diagonalizable, there exists a non-singular matrix \\(P\\) such that"
+        },
+        {
+          "type": "equation",
+          "text": "\\[P^{-1}AP=D.\\]"
+        },
+        {
+          "type": "subheading",
+          "text": "Notes from class"
+        },
+        {
+          "type": "bullet",
+          "text": "A matrix \\(A\\) is diagonalizable if and only if, for each eigenvalue of \\(A\\), its algebraic multiplicity equals its geometric multiplicity."
+        },
+        {
+          "type": "bullet",
+          "text": "If \\(A\\) has distinct eigenvalues, then \\(A\\) is diagonalizable. The converse need not be true."
+        },
+        {
+          "type": "bullet",
+          "text": "An \\(n\\times n\\) matrix is diagonalizable if and only if it has \\(n\\) linearly independent eigenvectors."
+        },
+        {
+          "type": "bullet",
+          "text": "The matrix formed by taking the eigenvectors of \\(A\\) as columns, \\(P=[X_1\\ X_2\\ X_3]\\) for the 3×3 case, is called the modal matrix of \\(A\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "The diagonal matrix \\(D\\) is called the spectral matrix; its diagonal entries are the eigenvalues of \\(A\\)."
+        },
+        {
+          "type": "bullet",
+          "text": "The transformation \\(P^{-1}AP=D\\) is called a similarity transformation."
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "heading": "Notebook p. 19 · Class question begun in class",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class question",
+          "items": [
+            {
+              "title": "Example 1 (unfinished) — Find the eigenvalues and eigenvectors",
+              "question_paragraphs": [
+                "\\[A=\\begin{bmatrix}2&3&4\\\\0&2&-1\\\\0&0&1\\end{bmatrix}.\\]"
+              ],
+              "paragraphs": [
+                "The notebook begins this question and then stops after writing a proposed eigenvalue line and algebraic multiplicity. No eigenvector working is present in the supplied 15 September pages.",
+                "Because the matrix is upper triangular, the eigenvalues must be its diagonal entries."
+              ],
+              "math_mismatch": {
+                "label": "Notebook mismatch",
+                "message": "The notebook writes \\(\\lambda=1,1,1\\) and \\(AM(\\lambda=1)=3\\). For the matrix actually written, the diagonal entries are \\(2,2,1\\), so the verified eigenvalues are \\(2,2,1\\), with \\(AM(2)=2\\) and \\(AM(1)=1\\). The photographed class work stops here, so no independently invented eigenvector solution is added."
+              },
+              "textbook_match": {
+                "status": "none",
+                "checked": true,
+                "note": "Checked against the Unit II textbook worked examples and the in-scope Problems 2.8, 2.9, 2.10 and 2.12 sets; no exact match was found."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The source consists of four notebook photographs: Mac-class-unit2 - 16.jpg through Mac-class-unit2 - 19.jpg, supplied directly in chat; the first page is dated 15/9/26.",
+    "The linearly independent/dependent vector material is retained as dated class material because it supports the later diagonalization discussion; it is not copied into the canonical textbook Text page.",
+    "The multiplicity example on notebook p. 17 uses the same matrix as 9 September Example 4 and exactly matches Grewal Problems 2.9 Q3(e). The class note therefore links to the canonical textbook solution for the eigenvalue/eigenvector calculation and uses the result only to explain AM and GM.",
+    "The final upper-triangular-matrix example does not match an existing in-scope textbook worked example/question. The notebook writes eigenvalues 1,1,1, but the written matrix has diagonal entries 2,2,1. The mismatch is explicitly flagged, and no missing eigenvector solution is invented because the photographed notes stop there."
+  ]
+}
