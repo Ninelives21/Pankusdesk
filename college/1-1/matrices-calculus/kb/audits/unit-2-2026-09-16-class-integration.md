@@ -46,3 +46,7 @@ Modified:
 - JSON files parse successfully through the verifiers.
 - No NRS redraw was needed: the source pages contain mathematics/text only and the class-note renderer presents them semantically in HTML/MathJax.
 - A deployed-browser visual check was not performed; this package is a local delta awaiting sync/deploy.
+
+## Follow-up cross-reference update — 17 September 2026
+
+Q3 now includes a visible textbook cross-reference aside linking directly to **Problems 2.10 Q9(a)** at `unit-2-questions.html#question-u2-p210-09-a`. The aside explicitly states that only the matrix/shared eigenvalue-eigenvector work overlaps; the class problem continues to diagonalization and `A^4`, so the class solution remains complete and independent.
