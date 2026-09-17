@@ -50,3 +50,9 @@ Modified:
 ## Follow-up cross-reference update — 17 September 2026
 
 Q3 now includes a visible textbook cross-reference aside linking directly to **Problems 2.10 Q9(a)** at `unit-2-questions.html#question-u2-p210-09-a`. The aside explicitly states that only the matrix/shared eigenvalue-eigenvector work overlaps; the class problem continues to diagonalization and `A^4`, so the class solution remains complete and independent.
+
+## Textbook cross-reference path fix — 17 September 2026
+
+The class-note textbook links were stored as `unit-2-questions.html#...`. Because the site uses a root `<base>` element, that resolves outside the MAC subject directory.
+
+The affected Unit II class-note links now use `college/1-1/matrices-calculus/unit-2-questions.html#...`, which resolves correctly with both the localhost `/` base and the GitHub Pages `/Pankusdesk/` base. The 16 September Q3 link targets `#question-u2-p210-09-a`. The same defective path form was corrected in the existing 9 September and 15 September textbook cross-references for consistency.
