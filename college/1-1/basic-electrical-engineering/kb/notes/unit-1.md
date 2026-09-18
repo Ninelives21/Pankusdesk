@@ -1526,6 +1526,90 @@ Find the equivalent resistance and the current \(I\) for the circuit shown in Fi
 
 The resistances 2 ohms and 1 ohm are connected in series. Also, 3 ohms and 5 ohms are in series. Then, the circuit gets changed to:
 
+**SIMPLER — Exercise 1.7.4**
+
+This example looks complicated because there are two delta networks stacked one above the other. Do not attack the whole circuit at once: make the easy series reductions, convert the two deltas, and then return to ordinary series/parallel reduction.
+
+**Step 1 — Start with the two obvious series pairs**
+
+At the top right, 2 ohms and 1 ohm share a junction with no other branch, so they are in series:
+
+\[2+1=3\,\Omega\]
+
+At the bottom right, 3 ohms and 5 ohms are also in series:
+
+\[3+5=8\,\Omega\]
+
+**Step 2 — Identify the two deltas in Figure 1.49(a)**
+
+Upper delta \(a-b-c\): 6 ohms, 12 ohms and 3 ohms.
+
+Lower delta \(d-e-f\): 10 ohms, 4 ohms and 8 ohms. The printed sentence says \(d,c,f\), but the drawing and subsequent transformation use \(d,e,f\).
+
+The 8 ohm branch between \(b-d\) and the 2 ohm branch between \(c-e\) are outside the deltas, so they remain unchanged.
+
+**Step 3 — Convert the upper delta to a star**
+
+Its denominator is
+
+\[6+12+3=21\,\Omega\]
+
+\[R_a=\dfrac{6\times3}{21}=0.857\,\Omega\]
+
+\[R_b=\dfrac{6\times12}{21}=3.43\,\Omega\]
+
+\[R_c=\dfrac{3\times12}{21}=1.714\,\Omega\]
+
+**Step 4 — Convert the lower delta to a star**
+
+Its denominator is
+
+\[10+4+8=22\,\Omega\]
+
+\[R_d=\dfrac{10\times4}{22}=1.818\,\Omega\]
+
+\[R_e=\dfrac{4\times8}{22}=1.455\,\Omega\]
+
+\[R_f=\dfrac{10\times8}{22}=3.636\,\Omega\]
+
+**Step 5 — Combine the two new series routes between the star centres**
+
+Via \(b-d\):
+
+\[3.43+8+1.818\approx13.25\,\Omega\]
+
+Via \(c-e\):
+
+\[1.714+2+1.455=5.169\,\Omega\]
+
+Both routes connect the same two star centres, so they are parallel.
+
+**Step 6 — Reduce the parallel pair**
+
+\[13.25\parallel5.169\approx3.718\,\Omega\]
+
+**Step 7 — Add the final series chain**
+
+\[R_{eq}=4+0.857+3.718+3.636=12.211\,\Omega\]
+
+The textbook's 12.211 ohm result follows from the rounded intermediate values displayed in its figures.
+
+**Step 8 — Use Ohm's law for the whole circuit**
+
+\[I=\dfrac{20}{12.211}=1.638\,\text{A}\]
+
+Therefore,
+
+\[\boxed{I=1.638\,\text{A}}\]
+
+**What to remember**
+
+- Do easy series reductions first; they can reveal the delta structure.
+- Convert only the resistors that actually belong to the selected delta.
+- After conversion, re-read the new circuit instead of reasoning from the old shape.
+- Same two end nodes means parallel. A shared node with no branching means series.
+- Reduce the entire network to one equivalent resistance before using \(I=V/R_{eq}\).
+
 *Figure: Fig. 1.49(a) · Circuit after the initial series reductions*
 
 The textbook states that the delta connections between the points \(a,b,c\) and \(d,c,f\) are changed to equivalent star networks. Figure 1.49(a), however, labels the lower delta \(d,e,f\).
