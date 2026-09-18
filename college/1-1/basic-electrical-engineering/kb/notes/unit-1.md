@@ -1409,97 +1409,6 @@ The current supplied is
 
 \[i=\dfrac{120}{9.63}=12.46\ \text{A}\]
 
-
-**SIMPLER — Exercise 1.7.2**
-
-The question asks for the current supplied by the 120 V battery. So the plan is to reduce the whole resistor network to one equivalent resistance across the battery, then use
-
-\[I=\dfrac{V}{R_{eq}}\]
-
-At first the middle part is a bridge because the 5 ohm resistor connects nodes c and d, so ordinary series/parallel reduction is not immediately available.
-
-**Step 1 — Which part is the star?**
-
-The two points marked a on the top conductor are the same node because they are joined by uninterrupted wire. The two points marked b on the bottom conductor are likewise the same node.
-
-At node d, exactly three resistors meet:
-
-- 10 ohms from d to a;
-- 20 ohms from d to b;
-- 5 ohms from d to c.
-
-Those three resistors therefore form a star (Y) with d as its centre. The 12.5 ohm, 15 ohm and 30 ohm resistors are outside this star and remain unchanged during the conversion.
-
-**Step 2 — Why convert this star?**
-
-The new delta will connect a, b and c. This is useful because it creates three parallel pairs:
-
-- new a–c branch with the existing 12.5 ohm a–c branch;
-- new c–b branch with the existing 15 ohm c–b branch;
-- new a–b branch with the existing 30 ohm a–b branch.
-
-So the point of the conversion is to turn the bridge into ordinary series/parallel combinations.
-
-**Step 3 — Star → Delta values**
-
-First form the common numerator:
-
-\[S=(5)(10)+(10)(20)+(20)(5)=350\]
-
-For a delta side between two terminals, divide this common numerator by the star arm connected to the third terminal.
-
-For a–c, the third terminal is b, whose star arm is 20 ohms:
-
-\[R_{ac}=\dfrac{350}{20}=17.5\ \Omega\]
-
-For a–b, the third terminal is c, whose star arm is 5 ohms:
-
-\[R_{ab}=\dfrac{350}{5}=70\ \Omega\]
-
-For b–c, the third terminal is a, whose star arm is 10 ohms:
-
-\[R_{bc}=\dfrac{350}{10}=35\ \Omega\]
-
-The centre node d disappears in the equivalent delta; external nodes a, b and c stay the same.
-
-**Step 4 — Reduce the three parallel pairs**
-
-Two resistors are parallel if both ends connect to the same two nodes.
-
-\[12.5\parallel17.5=7.2916\ldots\ \Omega\approx7.29\ \Omega\]
-
-\[15\parallel35=10.5\ \Omega\]
-
-\[70\parallel30=21\ \Omega\]
-
-**Step 5 — Reduce the remaining series path**
-
-After those reductions, 7.29 ohms goes from a to c and 10.5 ohms goes from c to b. Nothing else branches from c now, so the same current must pass through both: they are in series.
-
-\[7.29+10.5=17.79\ \Omega\]
-
-The 17.79 ohm path and the 21 ohm branch both connect a to b, so they are parallel.
-
-**Step 6 — Final equivalent resistance and source current**
-
-Using the book's rounded intermediate values,
-
-\[R_{eq}=17.79\parallel21\approx9.63\ \Omega\]
-
-Therefore,
-
-\[i=\dfrac{120}{9.63}\approx12.46\ \text{A}\]
-
-Using unrounded intermediate values gives \(R_{eq}\approx9.6316\ \Omega\) and \(i\approx12.459\ \text{A}\), which still rounds to \(12.46\ \text{A}\).
-
-**What to remember**
-
-- Convert a star/delta when the conversion makes the rest of the network easier, not merely because you can.
-- Here 10 ohms, 20 ohms and 5 ohms form the star because all three meet at d.
-- Star → Delta: common numerator = sum of the three pairwise products; divide by the star arm at the third/opposite terminal.
-- After conversion, go back to basic node tests: same two end nodes means parallel; one shared node with no branching means series.
-- Once one \(R_{eq}\) remains across the source, use \(I=V/R_{eq}\).
-
 ### Exercise 1.7.3 — Delta to Star followed by reduction
 
 Find the current supplied by the source for the circuit shown in Figure 1.48.
@@ -1519,6 +1428,95 @@ It is simplified as shown in Figure 1.48(c), and again further reduced as shown 
 The current delivered by the source is
 
 \[i=\dfrac{12}{3.44}=3.49\ \text{A}\]
+
+> **Figure arithmetic discrepancy:** Figure 1.48(c) visibly labels the upper reduced branch as \(4.55\,\Omega\), but Figure 1.48(b) shows that branch as \(0.5\,\Omega+4\,\Omega=4.50\,\Omega\). The later \(2.44\,\Omega\), \(3.44\,\Omega\) and \(3.49\,\text{A}\) values are consistent with \(4.50\,\Omega\). The source figure is preserved; the SIMPLER working uses the arithmetic implied by the preceding stage.
+
+**SIMPLER — Exercise 1.7.3**
+
+The original circuit is a bridge, so it does not immediately collapse using ordinary series and parallel rules. The useful move is to convert the left-hand delta formed by nodes \(a,b,c\) into an equivalent star. After that conversion, the circuit becomes a straightforward series/parallel reduction.
+
+The final goal is to find the equivalent resistance seen by the 12 V source between \(a\) and \(d\), then use \(i=V/R_{eq}\).
+
+**Step 1 — Identify the delta we are replacing**
+
+The triangle \(a-b-c\) contains:
+
+- \(a-b=3\,\Omega\)
+- \(a-c=2\,\Omega\)
+- \(b-c=1\,\Omega\)
+
+Those three resistors form a closed triangle, so they are a delta. The 4 ohm branch from \(b\) to \(d\) and the 5 ohm branch from \(c\) to \(d\) are outside this chosen delta and stay unchanged.
+
+Why convert this delta? Once it becomes a star, the branch through \(b\) will line up with the 4 ohm resistor and the branch through \(c\) will line up with the 5 ohm resistor, creating easy series pairs.
+
+**Step 2 — Name the delta sides before using the formulas**
+
+\[R_{ab}=3\,\Omega,\qquad R_{ac}=2\,\Omega,\qquad R_{bc}=1\,\Omega\]
+
+The denominator for every Delta → Star arm is the sum of all three delta resistors:
+
+\[3+2+1=6\,\Omega\]
+
+For the numerator, multiply the two delta resistors touching the terminal of the star arm you are finding.
+
+**Step 3 — Find the star arm at a**
+
+The two delta sides touching \(a\) are 3 ohms and 2 ohms:
+
+\[R_a=\dfrac{3\times2}{6}=1\,\Omega\]
+
+**Step 4 — Find the star arms at b and c**
+
+At \(b\), the touching delta sides are 3 ohms and 1 ohm:
+
+\[R_b=\dfrac{3\times1}{6}=0.5\,\Omega\]
+
+At \(c\), the touching sides are 2 ohms and 1 ohm:
+
+\[R_c=\dfrac{2\times1}{6}=\dfrac13\,\Omega\approx0.33\,\Omega\]
+
+So the new star has \(R_a=1\,\Omega\), \(R_b=0.5\,\Omega\), and \(R_c\approx0.33\,\Omega\). The external nodes \(a,b,c\) stay the same; only the internal arrangement changes.
+
+**Step 5 — Combine the new series pairs**
+
+On the upper route from the star centre to \(d\), \(R_b=0.5\,\Omega\) is followed by the original 4 ohm resistor. Node \(b\) has no other branch after the conversion, so the same branch current flows through both:
+
+\[0.5+4=4.5\,\Omega\]
+
+On the lower route, \(R_c\approx0.33\,\Omega\) is followed by the original 5 ohm resistor:
+
+\[0.33+5=5.33\,\Omega\]
+
+Figure 1.48(c) prints the upper result as 4.55 ohms; the preceding values give 4.50 ohms, and the later reduction agrees with 4.50 ohms.
+
+**Step 6 — Combine those two branches in parallel**
+
+The 4.5 ohm branch and the 5.33 ohm branch both start at the star centre and end at node \(d\). **Same two end nodes means parallel.** Using the exact lower value \(5+\tfrac13=\tfrac{16}{3}\,\Omega\):
+
+\[R_p=4.5\parallel\dfrac{16}{3}=\dfrac{144}{59}\approx2.44\,\Omega\]
+
+**Step 7 — Add the remaining 1 ohm in series**
+
+After the parallel pair is replaced by \(2.44\,\Omega\), the only path from \(a\) to \(d\) is through \(R_a=1\,\Omega\) and then the \(2.44\,\Omega\) equivalent. There is no branching at their shared node, so they are in series:
+
+\[R_{eq}=1+2.44=3.44\,\Omega\]
+
+**Step 8 — Use Ohm's law for the whole circuit**
+
+\[i=\dfrac{V}{R_{eq}}=\dfrac{12}{3.44}\approx3.49\,\text{A}\]
+
+Therefore the current supplied by the source is approximately
+
+\[\boxed{i=3.49\,\text{A}}\]
+
+**What to remember**
+
+- If a bridge will not reduce directly, look for a star or delta conversion that creates ordinary series/parallel combinations.
+- Delta → Star: multiply the two delta resistors touching the terminal, then divide by the sum of all three delta resistors.
+- After conversion, re-read the new circuit rather than reasoning from the old bridge shape.
+- Series: shared node with no other branch.
+- Parallel: same two end nodes.
+- Reduce the full network to one \(R_{eq}\) before using \(i=V/R_{eq}\).
 
 ### Exercise 1.7.4 — equivalent resistance and current
 
