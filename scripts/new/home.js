@@ -341,14 +341,226 @@ function updateRecentStudyContext(
 		return;
 	}
 
-	const hasCurrentLog =
-		semesterId === '1-1';
+	if (!semesterId) {
+		recentContent.hidden = true;
+		recentEmpty.hidden = false;
+		recentEmpty.textContent =
+			'No study activity has been recorded for the current semester yet.';
+		return;
+	}
 
-	recentContent.hidden =
-		!hasCurrentLog;
+	recentContent.hidden = false;
+	recentEmpty.hidden = true;
+	recentContent.innerHTML =
+		'<div class="recent-loading">Loading recent class notes…</div>';
 
-	recentEmpty.hidden =
-		hasCurrentLog;
+	loadRecentStudy(
+		semesterId,
+		recentContent,
+		recentEmpty,
+	);
+}
+
+
+async function loadRecentStudy(
+	semesterId,
+	recentContent,
+	recentEmpty,
+) {
+	try {
+		const logUrl =
+			new URL(
+				`college/${semesterId}/data/class-log.json`,
+				document.baseURI,
+			);
+
+		const response =
+			await fetch(
+				logUrl.href,
+				{ cache: 'no-store' },
+			);
+
+		if (!response.ok) {
+			throw new Error(
+				`${logUrl.href} returned ${response.status}`,
+			);
+		}
+
+		const classLog =
+			await response.json();
+
+		const recentEntries =
+			selectRecentStudyEntries(
+				classLog,
+				3,
+			);
+
+		if (!recentEntries.length) {
+			recentContent.hidden = true;
+			recentEmpty.hidden = false;
+			recentEmpty.textContent =
+				'No linked class-note activity has been recorded for this semester yet.';
+			return;
+		}
+
+		recentContent.innerHTML =
+			recentEntries
+				.map(renderRecentStudyCard)
+				.join('');
+
+		recentContent.hidden = false;
+		recentEmpty.hidden = true;
+	} catch (error) {
+		console.error(
+			'Landing page recent-study error:',
+			error,
+		);
+
+		recentContent.hidden = true;
+		recentEmpty.hidden = false;
+		recentEmpty.textContent =
+			'Recent class-note activity could not be loaded.';
+	}
+}
+
+
+function selectRecentStudyEntries(
+	classLog,
+	limit,
+) {
+	const datedEntries =
+		Object.entries(
+			classLog ?? {},
+		)
+			.flatMap(
+				([date, entries]) =>
+					(Array.isArray(entries)
+						? entries
+						: []
+					).map(entry => ({
+						...entry,
+						date,
+					})),
+			)
+			.filter(entry =>
+				entry.link &&
+				entry.subject &&
+				entry.summary,
+			)
+			.sort((a, b) =>
+				b.date.localeCompare(a.date),
+			);
+
+	const selected = [];
+	const seenSubjects =
+		new Set();
+
+	for (const entry of datedEntries) {
+		const subjectKey =
+			entry.subjectCode ||
+			entry.subject;
+
+		if (seenSubjects.has(subjectKey)) {
+			continue;
+		}
+
+		seenSubjects.add(subjectKey);
+		selected.push(entry);
+
+		if (selected.length >= limit) {
+			break;
+		}
+	}
+
+	return selected;
+}
+
+
+function renderRecentStudyCard(entry) {
+	const unitLabel =
+		Number.isFinite(
+			Number(entry.unit),
+		)
+			? `Unit ${toRoman(
+				Number(entry.unit),
+			)} · Class notes`
+			: 'Latest class notes';
+
+	return `
+		<a
+			class="recent-card recent-card-link"
+			href="${escapeHtml(entry.link)}"
+		>
+			<div class="recent-subject">
+				${escapeHtml(entry.subject)}
+			</div>
+
+			<h3>${escapeHtml(unitLabel)}</h3>
+
+			<p>${escapeHtml(entry.summary)}</p>
+
+			<div class="recent-card-footer">
+				<span class="date">
+					${escapeHtml(
+						formatStudyDate(
+							entry.date,
+						),
+					)}
+				</span>
+				<span class="recent-open">
+					Open notes →
+				</span>
+			</div>
+		</a>
+	`;
+}
+
+
+function formatStudyDate(value) {
+	const match =
+		/^(\\d{4})-(\\d{2})-(\\d{2})$/.exec(
+			String(value),
+		);
+
+	if (!match) return String(value);
+
+	const date =
+		new Date(
+			Number(match[1]),
+			Number(match[2]) - 1,
+			Number(match[3]),
+		);
+
+	return new Intl.DateTimeFormat(
+		'en-GB',
+		{
+			day: 'numeric',
+			month: 'long',
+		},
+	).format(date);
+}
+
+
+function toRoman(value) {
+	const numerals = [
+		[10, 'X'],
+		[9, 'IX'],
+		[5, 'V'],
+		[4, 'IV'],
+		[1, 'I'],
+	];
+
+	let number = Number(value);
+	let result = '';
+
+	for (const [amount, numeral] of numerals) {
+		while (number >= amount) {
+			result += numeral;
+			number -= amount;
+		}
+	}
+
+	return result;
 }
 
 

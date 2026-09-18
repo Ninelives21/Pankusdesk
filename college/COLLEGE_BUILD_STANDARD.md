@@ -617,3 +617,20 @@ This is a project-wide invariant across every subject, unit, semester and future
 - A change to any of these common elements must be made in the shared component first and must therefore propagate across subjects/semesters. Do not patch only MAC, BEE, or one unit.
 
 Any deliberate change to this design lock requires updating this standard, the checklist, schemas/verifier where applicable, and the shared component itself in the same change.
+
+
+---
+
+## 23. Homepage “Recently Studied” — calendar-driven
+
+The root homepage must not maintain a second manual list of recent study cards.
+
+- `index.html` provides only the `#recent-study-content` render target.
+- `scripts/new/home.js` reads the **current semester** calendar/class log at `college/<semester-id>/data/class-log.json`.
+- It selects the latest **linked** class-note entry for each distinct subject (using `subjectCode` when present, otherwise the subject label), sorts by date descending, and renders up to three subjects.
+- Each card links directly to the dated class-note anchor recorded in the calendar entry.
+- If fewer than three subjects have linked dated notes, show fewer cards. Do not fill the section with older unlinked/stale placeholders.
+- Therefore, whenever a new dated class note is integrated, the only required homepage-related action is the existing required calendar/class-log update. **Do not edit the root homepage manually.**
+- Calendar summaries should remain short, human-readable descriptions because the homepage reuses them verbatim.
+
+This keeps the homepage synchronized automatically with the canonical dated class-log history.
