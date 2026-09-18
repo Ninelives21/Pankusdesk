@@ -294,6 +294,12 @@
           "items": {
             "type": "string"
           }
+        },
+        "figures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/figure"
+          }
         }
       },
       "anyOf": [
@@ -305,6 +311,11 @@
         {
           "required": [
             "bullets"
+          ]
+        },
+        {
+          "required": [
+            "figures"
           ]
         }
       ]
@@ -340,6 +351,12 @@
             "type": "string"
           }
         },
+        "figures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/figure"
+          }
+        },
         "sections": {
           "type": "array",
           "items": {
@@ -356,6 +373,11 @@
         {
           "required": [
             "bullets"
+          ]
+        },
+        {
+          "required": [
+            "figures"
           ]
         },
         {

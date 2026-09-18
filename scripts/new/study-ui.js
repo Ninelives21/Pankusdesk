@@ -242,16 +242,19 @@ function renderExplainer(block) {
 	const label = String(block.label || 'Simple terms');
 	const paragraphs = Array.isArray(block.paragraphs) ? block.paragraphs : [];
 	const bullets = Array.isArray(block.bullets) ? block.bullets : [];
+	const figures = Array.isArray(block.figures) ? block.figures : [];
 	const sections = Array.isArray(block.sections) ? block.sections : [];
 	const renderSection = section => {
 		if (!section || typeof section !== 'object') return '';
 		const sectionParagraphs = Array.isArray(section.paragraphs) ? section.paragraphs : [];
 		const sectionBullets = Array.isArray(section.bullets) ? section.bullets : [];
+		const sectionFigures = Array.isArray(section.figures) ? section.figures : [];
 		return `
 			<section class="study-explainer-section">
 				${section.heading ? `<h6>${formatText(section.heading)}</h6>` : ''}
 				${sectionParagraphs.map(p => `<p>${formatText(p)}</p>`).join('')}
 				${sectionBullets.length ? `<ul>${sectionBullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
+				${sectionFigures.map(fig => renderFigure(fig, { extraClass: 'study-figure--explainer' })).join('')}
 			</section>`;
 	};
 
@@ -268,6 +271,7 @@ function renderExplainer(block) {
 				<h5>${formatText(title)}</h5>
 				${paragraphs.map(p => `<p>${formatText(p)}</p>`).join('')}
 				${bullets.length ? `<ul>${bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
+				${figures.map(fig => renderFigure(fig, { extraClass: 'study-figure--explainer' })).join('')}
 				${sections.map(renderSection).join('')}
 			</div>
 		</details>`;

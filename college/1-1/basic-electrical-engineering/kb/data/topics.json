@@ -3577,36 +3577,70 @@
         "explainers": [
           {
             "label": "SIMPLER",
-            "summary": "What a Star/Delta conversion actually changes — and what it must keep the same",
-            "title": "Think of Star ↔ Delta as changing the inside without changing what terminals a, b and c experience",
+            "summary": "What Star ↔ Delta equivalence really means — shown visually",
+            "title": "Change the internal shape; preserve what terminals a, b and c experience",
             "paragraphs": [
               "Star–Delta conversion means replacing one three-terminal resistor network with a different-looking three-terminal resistor network that behaves the same from the outside terminals \\(a\\), \\(b\\) and \\(c\\).",
-              "In a star (Y) network, three resistors meet at one common centre point. In a delta (\\(\\Delta\\)) network, three resistors form a triangle joining \\(a\\!\\leftrightarrow\\!b\\), \\(b\\!\\leftrightarrow\\!c\\) and \\(c\\!\\leftrightarrow\\!a\\).",
-              "The individual resistor values generally change during the conversion. What must stay the same is the electrical behaviour seen from the three external terminals."
+              "In a star (Y) network, three resistors meet at one common centre point. In a delta (\\(\\Delta\\)) network, three resistors form a triangle joining \\(a\\!\\leftrightarrow\\!b\\), \\(b\\!\\leftrightarrow\\!c\\) and \\(c\\!\\leftrightarrow\\!a\\). The individual resistor values generally change during the conversion. What must stay the same is the electrical behaviour seen from the three external terminals."
             ],
             "sections": [
               {
-                "heading": "What does ‘equivalent’ mean here?",
+                "heading": "1. Same three terminals, different inside",
                 "paragraphs": [
-                  "Imagine connecting the same outside circuit to terminals \\(a\\), \\(b\\) and \\(c\\). After the conversion, that outside circuit should experience the same terminal behaviour as before.",
-                  "For a resistor network, the derivation enforces this by making the resistance seen between the same terminal pairs equal in the two forms:",
-                  "\\[R_{ab}^{(star)}=R_{ab}^{(delta)},\\qquad R_{bc}^{(star)}=R_{bc}^{(delta)},\\qquad R_{ca}^{(star)}=R_{ca}^{(delta)}.\\]",
-                  "So the star and delta can look completely different inside, yet one can replace the other in the larger circuit when the converted resistor values are chosen correctly."
+                  "Think of the star/delta part of the circuit as a sealed three-terminal box. The rest of the circuit can touch only terminals \\(a\\), \\(b\\) and \\(c\\). Inside the box, the resistors may be connected as a star or as a delta. The two internal drawings can look completely different.",
+                  "Equivalent does not mean that one individual star resistor must equal one individual delta resistor. It means that, after the correct conversion, the network presents the same electrical behaviour at the three external terminals."
+                ],
+                "figures": [
+                  {
+                    "src": "assets/pankusdesk/u1/simpler/star-delta-same-terminals.png",
+                    "alt": "Notebook redraw comparing a three-terminal star network and its equivalent delta network. Both expose the same terminals a, b and c; the star has Ra, Rb and Rc meeting at centre node n, while the delta has Rab, Rbc and Rca forming a triangle.",
+                    "display_width": 980
+                  }
+                ]
+              },
+              {
+                "heading": "2. What does “equivalent” mean when we look between a and b?",
+                "paragraphs": [
+                  "Suppose we compare the resistance seen between terminals \\(a\\) and \\(b\\). The third terminal \\(c\\) must be treated in exactly the same way in both networks. In the drawing below, \\(c\\) is left open in both.",
+                  "In the star network, no current can continue through the open \\(R_c\\) branch. So the path from \\(a\\) to \\(b\\) is through \\(R_a\\) and \\(R_b\\) in series:",
+                  "\\[R_{ab}^{(star)}=R_a+R_b\\]",
+                  "In the delta network, there are two routes from \\(a\\) to \\(b\\): directly through \\(R_{ab}\\), or through \\(R_{ca}\\) and \\(R_{bc}\\) in series. Those two routes are in parallel, so:",
+                  "\\[R_{ab}^{(delta)}=R_{ab}\\parallel(R_{ca}+R_{bc})\\]",
+                  "For a correctly converted pair, these two resistances seen from \\(a\\) and \\(b\\) are equal. The same idea is applied to the other terminal pairs \\(b,c\\) and \\(c,a\\). This is why the derivation equates the resistance seen between corresponding terminal pairs."
+                ],
+                "figures": [
+                  {
+                    "src": "assets/pankusdesk/u1/simpler/star-delta-terminal-c-open.png",
+                    "alt": "Notebook redraw showing how resistance is compared between terminals a and b with terminal c open in both networks. In the star, Ra and Rb form the path; in the delta, Rab is parallel with the series path Rca plus Rbc.",
+                    "display_width": 980
+                  }
+                ]
+              },
+              {
+                "heading": "3. The outside circuit cannot tell which arrangement is inside",
+                "paragraphs": [
+                  "The rest of the circuit does not see the star centre point or the triangular shape inside the delta. It interacts with this three-terminal network only through \\(a\\), \\(b\\) and \\(c\\).",
+                  "If the conversion formulas are correct, then for the same conditions applied at those terminals, the terminal voltages and currents are unchanged. From the outside, the two networks therefore behave as equivalent replacements."
+                ],
+                "figures": [
+                  {
+                    "src": "assets/pankusdesk/u1/simpler/star-delta-outside-circuit.png",
+                    "alt": "Notebook redraw of a three-terminal black box labelled a, b and c. The box could contain either a star network or a delta network; the outside circuit sees only the terminal voltages and currents.",
+                    "display_width": 980
+                  }
                 ]
               },
               {
                 "heading": "Why would we convert at all?",
                 "paragraphs": [
                   "Some bridge-like resistor networks cannot be simplified directly by ordinary series and parallel rules. A Star/Delta conversion changes the internal arrangement so that useful series or parallel combinations may appear.",
-                  "The aim is not to change what the circuit does. The aim is to redraw that three-terminal part in an equivalent form that is easier to reduce."
+                  "The aim is not to change what the circuit does. The aim is to replace that three-terminal part with an equivalent form that is easier to reduce."
                 ]
               },
               {
-                "heading": "A useful mental picture",
+                "heading": "Memory aid",
                 "paragraphs": [
-                  "Think of the three-terminal network as a black box with only \\(a\\), \\(b\\) and \\(c\\) visible. A star and its equivalent delta are two different resistor arrangements inside the box. If the conversion formulas are used correctly, the outside circuit cannot tell which arrangement is inside.",
-                  "A useful one-line memory aid is: change the internal shape, but preserve the behaviour at the terminals.",
-                  "One subtle point: when we compare the resistance between a pair such as \\(a\\) and \\(b\\), the third terminal \\(c\\) must be treated the same way in both networks. We are preserving the complete three-terminal network behaviour, not merely matching one resistor value."
+                  "Change the internal shape, but preserve the behaviour at the terminals."
                 ]
               }
             ]
