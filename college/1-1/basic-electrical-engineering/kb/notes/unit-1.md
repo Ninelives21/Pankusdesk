@@ -1311,6 +1311,70 @@ Convert the delta network of Figure 1.46 to the equivalent star network. The tex
 
 \[R_c=\dfrac{10\times15}{25+15+10}=\dfrac{150}{50}=3\ \Omega\]
 
+**SIMPLER — Exercise 1.7.1**
+
+The figure on the left is a delta because the three resistors form a triangle between the external terminals A, B and C. The figure on the right is the equivalent star: three new resistors connect those same terminals to one new internal centre point. The resistor values are allowed to change; what must stay the same is the behaviour seen from A, B and C.
+
+**Step 1 — Read the delta before using a formula**
+
+Name each delta resistor from the two terminals it joins:
+
+- A–B is 25 ohms, so \(R_{ab}=25\,\Omega\).
+- B–C is 15 ohms, so \(R_{bc}=15\,\Omega\).
+- C–A is 10 ohms, so \(R_{ca}=10\,\Omega\).
+
+On the star side, \(R_a\), \(R_b\) and \(R_c\) are the arms connected to A, B and C respectively. The centre dot is a new internal junction; it is not terminal C.
+
+**Step 2 — The Delta → Star rule**
+
+For the star arm at a particular terminal, multiply the two delta resistors that touch that terminal, then divide by the sum of all three delta resistors. The denominator is the same every time:
+
+\[25+15+10=50\,\Omega\]
+
+**Step 3 — Find \(R_a\)**
+
+The two delta resistors touching A are 25 ohms and 10 ohms, so
+
+\[R_a=\dfrac{25\times10}{50}=5\,\Omega\]
+
+A useful way to say it is: **for the star arm at A, multiply the two delta sides that touch A.**
+
+**Step 4 — Find \(R_b\)**
+
+The two delta resistors touching B are 25 ohms and 15 ohms:
+
+\[R_b=\dfrac{25\times15}{50}=7.5\,\Omega\]
+
+**Step 5 — Find \(R_c\)**
+
+The two delta resistors touching C are 10 ohms and 15 ohms:
+
+\[R_c=\dfrac{10\times15}{50}=3\,\Omega\]
+
+Therefore the equivalent star is
+
+\[R_a=5\,\Omega,\qquad R_b=7.5\,\Omega,\qquad R_c=3\,\Omega.\]
+
+**Step 6 — Check what “equivalent” means**
+
+Compare the resistance seen between A and B with C left open. In the star, the A-to-B path is \(R_a+R_b\):
+
+\[R_{AB}^{(star)}=5+7.5=12.5\,\Omega\]
+
+In the delta, there are two A-to-B paths: the direct 25 ohm side and the A → C → B path, whose resistance is \(10+15=25\,\Omega\). These two paths are in parallel:
+
+\[R_{AB}^{(delta)}=25\parallel25=12.5\,\Omega\]
+
+The two networks therefore look different inside but present the same resistance between A and B. That is what **equivalent** means here.
+
+**What to remember**
+
+- Delta → Star: the denominator is always the sum of all three delta resistors.
+- For the numerator, multiply the two delta resistors that touch the terminal of the star arm you are finding.
+- \(R_a\): use the two touching A; \(R_b\): use the two touching B; \(R_c\): use the two touching C.
+- A, B and C stay the same external terminals; only the internal arrangement changes.
+- The resistor values change, but the terminal behaviour stays the same.
+
 ### Exercise 1.7.2 — Star to Delta and source current
 
 *Figure: Fig. 1.47 · Circuit for Exercise 1.7.2*
