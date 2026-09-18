@@ -3900,7 +3900,97 @@
               "The current supplied is",
               "\\[i=\\dfrac{120}{9.63}=12.46\\ \\text{A}\\]"
             ],
-            "final_answer": "\\(i=12.46\\ \\text{A}\\)."
+            "final_answer": "\\(i=12.46\\ \\text{A}\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "See why the 5Ω–10Ω–20Ω part is the useful star to convert, how the new delta creates three easy parallel pairs, and how the circuit reduces to the source current",
+                "title": "Exercise 1.7.2 — choose the useful Star → Delta conversion and then reduce step by step",
+                "paragraphs": [
+                  "The question asks for the current supplied by the 120 V battery. The easiest route is therefore to replace the whole resistor network by one equivalent resistance across the battery and then use \\(I=V/R_{eq}\\).",
+                  "At first the middle network is not a simple series/parallel circuit because the 5 ohm resistor joins nodes c and d. That extra connection creates a bridge, so we first look for a Star/Delta conversion that will make the network easier."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — First read the nodes: which resistors actually form the star?",
+                    "paragraphs": [
+                      "The two points marked a on the top wire are the same electrical node because there is only an uninterrupted wire between them. Likewise, the two points marked b on the bottom wire are the same node.",
+                      "Now look at node d. Exactly three resistors meet there: 10 ohms goes from d to a, 20 ohms goes from d to b, and 5 ohms goes from d to c. Three resistor arms meeting at one central node is a star (Y) network.",
+                      "So for this star, the arm toward a is 10 ohms, the arm toward b is 20 ohms, and the arm toward c is 5 ohms. The 12.5 ohm, 15 ohm and 30 ohm resistors are outside this star and are left untouched during the conversion."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Why convert this particular star to a delta?",
+                    "paragraphs": [
+                      "This is the useful choice because the new delta will connect the same three outer nodes a, b and c.",
+                      "After conversion, the new a–c resistor will lie between exactly the same two nodes as the existing 12.5 ohm resistor; the new c–b resistor will lie between the same two nodes as the existing 15 ohm resistor; and the new a–b resistor will lie between the same two nodes as the existing 30 ohm resistor.",
+                      "That means the conversion deliberately creates three obvious parallel pairs. This is the real reason for doing Star → Delta here: not because conversion is compulsory, but because it turns the bridge into ordinary series/parallel reductions."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Convert the 5Ω–10Ω–20Ω star into a delta",
+                    "paragraphs": [
+                      "For Star → Delta, first form the common numerator by adding the three pairwise products of the star arms:",
+                      "\\[S=(5)(10)+(10)(20)+(20)(5)=50+200+100=350\\]",
+                      "For a delta side between two terminals, divide this common numerator by the star arm connected to the third terminal — the terminal not on that delta side.",
+                      "For \\(R_{ac}\\), the third terminal is b, whose star arm is 20 ohms. Therefore",
+                      "\\[R_{ac}=\\dfrac{350}{20}=17.5\\,\\Omega\\]",
+                      "For \\(R_{ab}\\), the third terminal is c, whose star arm is 5 ohms:",
+                      "\\[R_{ab}=\\dfrac{350}{5}=70\\,\\Omega\\]",
+                      "For \\(R_{bc}\\), the third terminal is a, whose star arm is 10 ohms:",
+                      "\\[R_{bc}=\\dfrac{350}{10}=35\\,\\Omega\\]",
+                      "The centre node d disappears in the delta replacement. The outside terminals a, b and c remain exactly where they were."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Now spot the three parallel pairs in Figure 1.47(b)/(c)",
+                    "paragraphs": [
+                      "Two resistors are parallel when both of their ends connect to the same two nodes. Their drawn shape or position does not matter.",
+                      "Between a and c, 12.5 ohms and 17.5 ohms share the same two end nodes, so",
+                      "\\[12.5\\parallel17.5=\\dfrac{12.5\\times17.5}{12.5+17.5}=7.2916\\ldots\\,\\Omega\\approx7.29\\,\\Omega\\]",
+                      "Between c and b, 15 ohms and 35 ohms are parallel:",
+                      "\\[15\\parallel35=\\dfrac{15\\times35}{15+35}=10.5\\,\\Omega\\]",
+                      "Between a and b, 70 ohms and the original 30 ohms are parallel:",
+                      "\\[70\\parallel30=\\dfrac{70\\times30}{70+30}=21\\,\\Omega\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Why do 7.29Ω and 10.5Ω become series next?",
+                    "paragraphs": [
+                      "After the parallel reductions, the 7.29 ohm resistor runs from a to c and the 10.5 ohm resistor runs from c to b. At node c there is now no other branch for current to split into.",
+                      "So the same current that passes through 7.29 ohms must continue through 10.5 ohms. That is how we know they are in series:",
+                      "\\[7.29+10.5=17.79\\,\\Omega\\]",
+                      "This 17.79 ohm path goes from a to b. The 21 ohm branch also goes directly from a to b. Because both branches have the same two end nodes, they are parallel."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Reduce the last parallel pair and find the battery current",
+                    "paragraphs": [
+                      "Using the book's rounded intermediate values,",
+                      "\\[R_{eq}=17.79\\parallel21=\\dfrac{17.79\\times21}{17.79+21}\\approx9.63\\,\\Omega\\]",
+                      "So the entire resistor network seen by the 120 V battery behaves like one 9.63 ohm resistor. Now Ohm's law can be used on the whole circuit:",
+                      "\\[i=\\dfrac{V}{R_{eq}}=\\dfrac{120}{9.63}\\approx12.46\\,\\text{A}\\]",
+                      "If the unrounded intermediate values are carried through, \\(R_{eq}\\approx9.6316\\,\\Omega\\) and \\(i\\approx12.459\\,\\text{A}\\), which still rounds to the printed \\(12.46\\,\\text{A}\\)."
+                    ]
+                  },
+                  {
+                    "heading": "What to remember",
+                    "bullets": [
+                      "Do not convert a star or delta blindly. Choose a conversion that makes the remaining circuit easier to reduce.",
+                      "Here the 10Ω, 20Ω and 5Ω resistors are the star because all three meet at the single centre node d.",
+                      "The 12.5Ω, 15Ω and 30Ω resistors are not part of that star; they stay unchanged during the conversion.",
+                      "Star → Delta rule: form the common sum of pairwise products. For a delta side, divide by the star arm connected to the opposite/third terminal.",
+                      "After conversion, always return to the node test: same two end nodes means parallel; one shared node with no branching means series.",
+                      "Once the whole network becomes one equivalent resistance, source current is simply \\(I=V/R_{eq}\\)."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.7.3",

@@ -1409,6 +1409,97 @@ The current supplied is
 
 \[i=\dfrac{120}{9.63}=12.46\ \text{A}\]
 
+
+**SIMPLER — Exercise 1.7.2**
+
+The question asks for the current supplied by the 120 V battery. So the plan is to reduce the whole resistor network to one equivalent resistance across the battery, then use
+
+\[I=\dfrac{V}{R_{eq}}\]
+
+At first the middle part is a bridge because the 5 ohm resistor connects nodes c and d, so ordinary series/parallel reduction is not immediately available.
+
+**Step 1 — Which part is the star?**
+
+The two points marked a on the top conductor are the same node because they are joined by uninterrupted wire. The two points marked b on the bottom conductor are likewise the same node.
+
+At node d, exactly three resistors meet:
+
+- 10 ohms from d to a;
+- 20 ohms from d to b;
+- 5 ohms from d to c.
+
+Those three resistors therefore form a star (Y) with d as its centre. The 12.5 ohm, 15 ohm and 30 ohm resistors are outside this star and remain unchanged during the conversion.
+
+**Step 2 — Why convert this star?**
+
+The new delta will connect a, b and c. This is useful because it creates three parallel pairs:
+
+- new a–c branch with the existing 12.5 ohm a–c branch;
+- new c–b branch with the existing 15 ohm c–b branch;
+- new a–b branch with the existing 30 ohm a–b branch.
+
+So the point of the conversion is to turn the bridge into ordinary series/parallel combinations.
+
+**Step 3 — Star → Delta values**
+
+First form the common numerator:
+
+\[S=(5)(10)+(10)(20)+(20)(5)=350\]
+
+For a delta side between two terminals, divide this common numerator by the star arm connected to the third terminal.
+
+For a–c, the third terminal is b, whose star arm is 20 ohms:
+
+\[R_{ac}=\dfrac{350}{20}=17.5\ \Omega\]
+
+For a–b, the third terminal is c, whose star arm is 5 ohms:
+
+\[R_{ab}=\dfrac{350}{5}=70\ \Omega\]
+
+For b–c, the third terminal is a, whose star arm is 10 ohms:
+
+\[R_{bc}=\dfrac{350}{10}=35\ \Omega\]
+
+The centre node d disappears in the equivalent delta; external nodes a, b and c stay the same.
+
+**Step 4 — Reduce the three parallel pairs**
+
+Two resistors are parallel if both ends connect to the same two nodes.
+
+\[12.5\parallel17.5=7.2916\ldots\ \Omega\approx7.29\ \Omega\]
+
+\[15\parallel35=10.5\ \Omega\]
+
+\[70\parallel30=21\ \Omega\]
+
+**Step 5 — Reduce the remaining series path**
+
+After those reductions, 7.29 ohms goes from a to c and 10.5 ohms goes from c to b. Nothing else branches from c now, so the same current must pass through both: they are in series.
+
+\[7.29+10.5=17.79\ \Omega\]
+
+The 17.79 ohm path and the 21 ohm branch both connect a to b, so they are parallel.
+
+**Step 6 — Final equivalent resistance and source current**
+
+Using the book's rounded intermediate values,
+
+\[R_{eq}=17.79\parallel21\approx9.63\ \Omega\]
+
+Therefore,
+
+\[i=\dfrac{120}{9.63}\approx12.46\ \text{A}\]
+
+Using unrounded intermediate values gives \(R_{eq}\approx9.6316\ \Omega\) and \(i\approx12.459\ \text{A}\), which still rounds to \(12.46\ \text{A}\).
+
+**What to remember**
+
+- Convert a star/delta when the conversion makes the rest of the network easier, not merely because you can.
+- Here 10 ohms, 20 ohms and 5 ohms form the star because all three meet at d.
+- Star → Delta: common numerator = sum of the three pairwise products; divide by the star arm at the third/opposite terminal.
+- After conversion, go back to basic node tests: same two end nodes means parallel; one shared node with no branching means series.
+- Once one \(R_{eq}\) remains across the source, use \(I=V/R_{eq}\).
+
 ### Exercise 1.7.3 — Delta to Star followed by reduction
 
 Find the current supplied by the source for the circuit shown in Figure 1.48.
