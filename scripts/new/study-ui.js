@@ -73,7 +73,8 @@ function renderFigure(figure, options = {}) {
 		imageStyles.push(`max-height: ${Math.round(displayHeight)}px`, 'width: auto');
 	}
 	if (Number.isFinite(displayWidth) && displayWidth > 0) {
-		imageStyles.push(`max-width: ${Math.round(displayWidth)}px`);
+		const safeDisplayWidth = Math.round(displayWidth);
+		imageStyles.push(`width: min(100%, ${safeDisplayWidth}px)`, 'max-width: 100%');
 	}
 	const imageStyle = imageStyles.length ? ` style="${imageStyles.join('; ')}"` : '';
 	const className = options.className || 'study-figure';
