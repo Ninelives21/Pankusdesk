@@ -3931,7 +3931,96 @@
               "The current supplied is",
               "\\[i=\\dfrac{120}{9.63}=12.46\\ \\text{A}\\]"
             ],
-            "final_answer": "\\(i=12.46\\ \\text{A}\\)."
+            "final_answer": "\\(i=12.46\\ \\text{A}\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "See why the 5-10-20 ohm star is the useful one to convert, how each delta value is obtained, and how the conversion creates obvious parallel pairs that collapse the bridge",
+                "title": "Exercise 1.7.2 — choose the star that turns the bridge into easy parallel pairs",
+                "paragraphs": [
+                  "The awkward part of Figure 1.47 is the bridge in the middle. The 12.5-ohm and 15-ohm resistors form the left side, the 10-ohm and 20-ohm resistors form the right side, and the 5-ohm resistor joins the two middle points c and d. Because of that cross-connection, the bridge cannot be reduced immediately by ordinary series/parallel rules.",
+                  "The useful move is to convert the star centred at node d. Its three arms are 10 ohms from d to a, 20 ohms from d to b, and 5 ohms from d to c. We choose this star because replacing it by a delta between a, b and c creates new resistors that lie directly across the existing 12.5-ohm, 15-ohm and 30-ohm branches. That gives us three obvious parallel pairs."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Identify the star from the picture before using any formula",
+                    "paragraphs": [
+                      "A star has three resistors meeting at one common centre node. In Figure 1.47, node d is that centre: the 10-ohm resistor goes from d to a, the 20-ohm resistor goes from d to b, and the 5-ohm resistor goes from d to c.",
+                      "So the star-arm values are \\(R_a=10\\,\\Omega\\), \\(R_b=20\\,\\Omega\\), and \\(R_c=5\\,\\Omega\\). The external terminals of this star are a, b and c."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Why convert this star?",
+                    "paragraphs": [
+                      "Look at what already exists outside the star: there is a 12.5-ohm resistor between a and c, a 15-ohm resistor between c and b, and a 30-ohm resistor directly between a and b.",
+                      "If the star at d is converted to a delta between a, b and c, the new delta will also have one resistor on a-c, one on c-b, and one on a-b. Each new resistor will therefore sit across an existing resistor with the same two end nodes. That is exactly what we want, because those pairs can then be reduced in parallel."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Build the common numerator for Star → Delta",
+                    "paragraphs": [
+                      "For a star with arms 5 ohms, 10 ohms and 20 ohms, first form the sum of the three pairwise products:",
+                      "\\[S=(5\\times10)+(10\\times20)+(20\\times5)=50+200+100=350\\]",
+                      "Each delta side uses this same numerator. To find the delta resistor between two terminals, divide by the star arm connected to the opposite terminal."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Find the three delta resistors",
+                    "paragraphs": [
+                      "For the a-c side, the opposite terminal is b, whose star arm is 20 ohms:",
+                      "\\[R_{ac}=\\dfrac{350}{20}=17.5\\,\\Omega\\]",
+                      "For the a-b side, the opposite terminal is c, whose star arm is 5 ohms:",
+                      "\\[R_{ab}=\\dfrac{350}{5}=70\\,\\Omega\\]",
+                      "For the b-c side, the opposite terminal is a, whose star arm is 10 ohms:",
+                      "\\[R_{bc}=\\dfrac{350}{10}=35\\,\\Omega\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Now the reason for the conversion becomes visible",
+                    "paragraphs": [
+                      "After the star is replaced by the delta, compare end nodes rather than the way the lines are drawn.",
+                      "Between a and c, the original 12.5-ohm resistor and the new 17.5-ohm resistor share the same two end nodes, so they are parallel:",
+                      "\\[12.5\\parallel17.5=\\dfrac{12.5\\times17.5}{12.5+17.5}\\approx7.29\\,\\Omega\\]",
+                      "Between c and b, the original 15-ohm resistor and the new 35-ohm resistor are parallel:",
+                      "\\[15\\parallel35=\\dfrac{15\\times35}{15+35}=10.5\\,\\Omega\\]",
+                      "Between a and b, the new 70-ohm resistor is parallel with the original 30-ohm branch:",
+                      "\\[70\\parallel30=\\dfrac{70\\times30}{70+30}=21\\,\\Omega\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Reduce the remaining network",
+                    "paragraphs": [
+                      "The 7.29-ohm and 10.5-ohm equivalents meet at c, and after the parallel reductions there is no other branch leaving c. Therefore they are in series:",
+                      "\\[7.29+10.5=17.79\\,\\Omega\\]",
+                      "That 17.79-ohm path and the 21-ohm branch both connect directly between a and b, so they are parallel:",
+                      "\\[R_{eq}=17.79\\parallel21\\approx9.63\\,\\Omega\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 7 — Only now use the 120 V source",
+                    "paragraphs": [
+                      "The entire resistor network has now become a single equivalent resistance of about 9.63 ohms across the 120 V battery. The source current is therefore",
+                      "\\[i=\\dfrac{120}{9.63}\\approx12.46\\,\\text{A}\\]",
+                      "So the current supplied by the battery is approximately \\(\\boxed{12.46\\,\\text{A}}\\)."
+                    ]
+                  },
+                  {
+                    "heading": "What to remember",
+                    "bullets": [
+                      "Do not convert a star or delta just because you can. Choose one whose conversion creates easier series/parallel combinations.",
+                      "Here the 5-ohm, 10-ohm and 20-ohm star centred at d is useful because its delta sides land exactly across the existing 12.5-ohm, 15-ohm and 30-ohm branches.",
+                      "Star → Delta: use the sum of pairwise products as the common numerator; divide by the star arm opposite the delta side you are finding.",
+                      "Parallel test: same two end nodes. Series test: one shared intermediate node with no other branching.",
+                      "The transformation changes the internal resistor values, but the behaviour seen from the external terminals remains equivalent."
+                    ]
+                  }
+                ],
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
           },
           {
             "title": "Exercise 1.7.3",
@@ -5086,7 +5175,102 @@
               "(ii) When \\(R=8\\ \\Omega\\)",
               "\\[I_L=\\dfrac{V_{Th}}{R_{Th}+R}=\\dfrac{16}{6.66+8}=1.09\\ \\text{A}\\]"
             ],
-            "final_answer": "\\(V_{Th}=16\\ \\text{V},\\ R_{Th}=6.66\\ \\Omega;\\ I_L=1.65\\ \\text{A}\\) for \\(R=3\\ \\Omega\\), and \\(I_L=1.09\\ \\text{A}\\) for \\(R=8\\ \\Omega\\)."
+            "final_answer": "\\(V_{Th}=16\\ \\text{V},\\ R_{Th}=6.66\\ \\Omega;\\ I_L=1.65\\ \\text{A}\\) for \\(R=3\\ \\Omega\\), and \\(I_L=1.09\\ \\text{A}\\) for \\(R=8\\ \\Omega\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "See how to identify the load, why both voltage sources become wires for Rth, why 8 ohms and 2 ohms are series, what the negative loop current really means, and how one Thevenin equivalent handles both load values",
+                "title": "Example 1.9.2 — one Thevenin equivalent, then two different loads",
+                "paragraphs": [
+                  "This example asks for two things: first find the Thevenin equivalent seen from terminals a and b, and then use that same equivalent to find the load current for two different values of R. The useful idea is that the entire network to the left of a-b does not have to be solved again when the load changes.",
+                  "From Figure 1.58, R is the load because it is the resistor connected directly between the labelled output terminals a and b. The arrow I is the load-current direction chosen in the figure."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Remove the load and identify the two independent voltage sources",
+                    "paragraphs": [
+                      "To build a Thevenin equivalent, temporarily remove R from terminals a and b. We then find two properties of everything that remains to the left: Rth and Vth.",
+                      "The 8 V and 32 V elements are voltage sources: each is drawn with + and - polarity marks. No internal source resistance is shown, so in this circuit model they are ideal independent voltage sources.",
+                      "For Rth, an independent ideal voltage source is deactivated by setting its voltage to zero. A zero-volt ideal voltage source is just a short circuit, so both the 8 V source and the 32 V source are replaced by wires, giving Figure 1.59(a)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Read the changed circuit carefully to find Rth",
+                    "paragraphs": [
+                      "Now look into the network from terminals a and b in Figure 1.59(a). There are two complete paths from a to b.",
+                      "One path goes directly through the 20 ohm resistor.",
+                      "The other path goes from a through 2 ohms, then through 8 ohms, and then to b. The junction between the 2 ohm and 8 ohm resistors has no other branch leaving it, so the same current would have to pass through both; therefore they are in series:",
+                      "\\[2+8=10\\,\\Omega\\]",
+                      "That 10 ohm path and the 20 ohm path both connect the same two end nodes a and b, so they are in parallel:",
+                      "\\[R_{th}=10\\parallel20=\\dfrac{10\\times20}{10+20}=\\dfrac{200}{30}=6.66\\,\\Omega\\]",
+                      "This is why the textbook expression uses (8+2) first and then puts that result in parallel with 20 ohms."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Restore both sources, keep the load open, and find Vth",
+                    "paragraphs": [
+                      "For Vth, restore the 8 V and 32 V sources to their original values, but keep R removed. Figure 1.59(b) therefore has an open circuit at terminals a and b.",
+                      "Because the load branch is open, the current toward terminal a is I = 0. The points a and x are connected by an ideal wire with no component between them, so Va = Vx. Likewise b is directly connected to y, so Vb = Vy. Therefore",
+                      "\\[V_{th}=V_{ab}=V_{xy}\\]",
+                      "Unlike Example 1.9.1, removing the load here does not kill the current in the internal resistors. A closed loop still exists through the 8 V source, 8 ohms, 2 ohms, 20 ohms and the 32 V source. That internal loop current is what sets the open-circuit voltage between x and y."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Understand why the textbook gets a negative I1",
+                    "paragraphs": [
+                      "The textbook assumes I1 flows to the right through the 2 ohm resistor and then downward through the 20 ohm branch, exactly as the arrows in Figure 1.59(b) show.",
+                      "Following that assumed direction around the loop: the 8 V source gives an 8 V rise, the three resistors give a total drop I1(8+2+20), and crossing the 32 V source from + to - gives a 32 V drop. Thus",
+                      "\\[8-I_1(8+2+20)-32=0\\]",
+                      "so",
+                      "\\[I_1=\\dfrac{8-32}{8+2+20}=\\dfrac{-24}{30}=-0.8\\,\\text{A}\\]",
+                      "The minus sign does not mean a physically negative amount of current. It means the original arrow guess was opposite to the real direction. So the actual current is 0.8 A in the reverse direction: upward through the 20 ohm branch and leftward through the 2 ohm resistor.",
+                      "This also makes intuitive sense: the 32 V source is stronger than the 8 V source, and the two sources oppose each other in this loop, so the 32 V source determines the actual circulation direction."
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Use that signed current to get the open-circuit voltage",
+                    "paragraphs": [
+                      "We need Vxy, meaning the potential of x relative to y. Start at y and move upward through the centre branch toward x.",
+                      "Across the 32 V source, we move from its - terminal to its + terminal, so the potential rises by 32 V.",
+                      "The textbook keeps the assumed downward I1 direction algebraically. Therefore the voltage contribution of the 20 ohm resistor is I1 times 20, and because I1 = -0.8 A that contribution is -16 V:",
+                      "\\[V_{xy}=+32+(-0.8\\times20)=32-16=16\\,\\text{V}\\]",
+                      "So",
+                      "\\[V_{th}=16\\,\\text{V}\\]",
+                      "You can read the same result using the actual current direction: the real 0.8 A current flows upward through 20 ohms. Moving from y upward first gives a 32 V rise across the source and then a 16 V drop across the resistor, again leaving 16 V at x relative to y."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — What has Thevenin's theorem bought us?",
+                    "paragraphs": [
+                      "Everything to the left of a-b can now be replaced by one 16 V source in series with Rth = 6.66 ohms. We do this replacement only once.",
+                      "For R = 3 ohms, reconnect a 3 ohm load. Figure 1.59(c) is now one simple series loop, so",
+                      "\\[I_L=\\dfrac{16}{6.66+3}=\\dfrac{16}{9.66}\\approx1.656\\,\\text{A}\\]",
+                      "The textbook prints 1.65 A, so PankusDesk preserves that printed answer in the compact solution. Using ordinary two-decimal rounding on the displayed 6.66 ohm value would give 1.66 A.",
+                      "For R = 8 ohms, only the load changes; Vth and Rth stay exactly the same because the network to the left of a-b has not changed:",
+                      "\\[I_L=\\dfrac{16}{6.66+8}=\\dfrac{16}{14.66}\\approx1.091\\,\\text{A}\\]",
+                      "which agrees with the textbook value 1.09 A."
+                    ]
+                  },
+                  {
+                    "heading": "Sanity checks — do the signs and load-current changes make sense?",
+                    "paragraphs": [
+                      "Vth is positive from a to b because Vab = +16 V, so terminal a is 16 V higher than terminal b in the open-circuit condition. When a positive resistor load is connected, conventional load current should therefore leave the Thevenin source toward a and return through b, matching the arrow shown in Figures 1.59(c) and 1.59(d).",
+                      "Also, increasing the load resistance from 3 ohms to 8 ohms increases the total series resistance while the Thevenin source stays at 16 V. The current must therefore decrease. The textbook values do exactly that: about 1.65 A falls to 1.09 A."
+                    ]
+                  },
+                  {
+                    "heading": "What to remember",
+                    "paragraphs": [
+                      "1. The resistor R across a-b is the load; remove it before finding the Thevenin equivalent.",
+                      "2. For Rth, both independent ideal voltage sources become short circuits. Then 2 ohms and 8 ohms are series, and that 10 ohm path is parallel with 20 ohms.",
+                      "3. For Vth, restore both sources but leave the load open. The open load makes I = 0 at terminal a, but an internal closed loop still carries current.",
+                      "4. A negative current answer means the assumed arrow was backwards; here I1 = -0.8 A means the real current flows opposite the arrows initially chosen for I1.",
+                      "5. Once Vth = 16 V and Rth = 6.66 ohms are known, the same Thevenin equivalent can be reused for any load connected across a-b. Only the final load-current calculation changes."
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
             "title": "Example 1.9.3",

@@ -1479,6 +1479,82 @@ The current supplied is
 
 \[i=\dfrac{120}{9.63}=12.46\ \text{A}\]
 
+**SIMPLER — Exercise 1.7.2**
+
+The awkward part of Figure 1.47 is the bridge in the middle. The 12.5-ohm and 15-ohm resistors form the left side, the 10-ohm and 20-ohm resistors form the right side, and the 5-ohm resistor joins the two middle points \(c\) and \(d\). Because of that cross-connection, the bridge cannot be reduced immediately by ordinary series/parallel rules.
+
+The useful move is to convert the **star centred at node \(d\)**. Its three arms are 10 ohms from \(d\) to \(a\), 20 ohms from \(d\) to \(b\), and 5 ohms from \(d\) to \(c\). We choose this star because replacing it by a delta between \(a,b,c\) creates new resistors directly across the existing 12.5-ohm, 15-ohm and 30-ohm branches. That gives us three obvious parallel pairs.
+
+**Step 1 — Identify the star from the picture before using any formula**
+
+A star has three resistors meeting at one common centre node. In Figure 1.47, node \(d\) is that centre: 10 ohms goes from \(d\) to \(a\), 20 ohms from \(d\) to \(b\), and 5 ohms from \(d\) to \(c\).
+
+So the star-arm values are \(R_a=10\,\Omega\), \(R_b=20\,\Omega\), and \(R_c=5\,\Omega\).
+
+**Step 2 — Why convert this star?**
+
+Outside the star, there is already 12.5 ohms between \(a\) and \(c\), 15 ohms between \(c\) and \(b\), and 30 ohms directly between \(a\) and \(b\). A delta replacement creates one new resistor on each of those same three terminal pairs. Therefore each new delta resistor becomes parallel with an existing branch.
+
+**Step 3 — Build the common numerator for Star → Delta**
+
+\[S=(5\times10)+(10\times20)+(20\times5)=50+200+100=350\]
+
+Each delta side uses this same numerator. Divide by the star arm connected to the **opposite** terminal.
+
+**Step 4 — Find the three delta resistors**
+
+For the a-c side, the opposite star arm is the 20-ohm arm to \(b\):
+
+\[R_{ac}=\dfrac{350}{20}=17.5\,\Omega\]
+
+For the a-b side, the opposite star arm is the 5-ohm arm to \(c\):
+
+\[R_{ab}=\dfrac{350}{5}=70\,\Omega\]
+
+For the b-c side, the opposite star arm is the 10-ohm arm to \(a\):
+
+\[R_{bc}=\dfrac{350}{10}=35\,\Omega\]
+
+**Step 5 — Now the reason for the conversion becomes visible**
+
+Between \(a\) and \(c\):
+
+\[12.5\parallel17.5\approx7.29\,\Omega\]
+
+Between \(c\) and \(b\):
+
+\[15\parallel35=10.5\,\Omega\]
+
+Between \(a\) and \(b\):
+
+\[70\parallel30=21\,\Omega\]
+
+They are parallel because each pair shares the same two end nodes.
+
+**Step 6 — Reduce the remaining network**
+
+The 7.29-ohm and 10.5-ohm equivalents are in series through node \(c\):
+
+\[7.29+10.5=17.79\,\Omega\]
+
+That 17.79-ohm path is then parallel with the 21-ohm branch, because both connect between \(a\) and \(b\):
+
+\[R_{eq}=17.79\parallel21\approx9.63\,\Omega\]
+
+**Step 7 — Only now use the 120 V source**
+
+\[i=\dfrac{120}{9.63}\approx12.46\,\text{A}\]
+
+So the battery supplies approximately \(\boxed{12.46\,\text{A}}\).
+
+**What to remember**
+
+- Choose a Star/Delta conversion that creates easier series/parallel combinations; do not convert blindly.
+- Here the 5-ohm, 10-ohm and 20-ohm star centred at \(d\) is useful because its delta sides land across the existing 12.5-ohm, 15-ohm and 30-ohm branches.
+- Star → Delta: common numerator = sum of pairwise products; divide by the star arm opposite the delta side being found.
+- Parallel means same two end nodes. Series means one shared intermediate node with no other branch.
+- The internal values change, but the behaviour seen from the external terminals remains equivalent.
+
 ### Exercise 1.7.3 — Delta to Star followed by reduction
 
 Find the current supplied by the source for the circuit shown in Figure 1.48.
@@ -2159,6 +2235,46 @@ For \(R=3\ \Omega\),
 For \(R=8\ \Omega\),
 
 \[I_L=\dfrac{16}{6.66+8}=1.09\ \text{A}\]
+
+**SIMPLER — Example 1.9.2**
+
+The resistor \(R\) is the load because it is connected directly between output terminals \(a\) and \(b\). Thevenin lets us replace everything to the left of those terminals by one source \(V_{th}\) in series with one resistance \(R_{th}\), and then reuse that same equivalent for both requested load values.
+
+**1. Find \(R_{th}\).** Remove \(R\) and deactivate both ideal independent voltage sources. Each voltage source becomes a short circuit. In the resulting Figure 1.59(a), the 2-ohm and 8-ohm resistors are series because their shared node has no branching:
+
+\[2+8=10\ \Omega\]
+
+That 10-ohm path and the 20-ohm resistor connect the same two end nodes \(a\) and \(b\), so they are parallel:
+
+\[R_{th}=10\parallel20=\dfrac{10\times20}{10+20}=6.66\ \Omega\]
+
+**2. Find \(V_{th}\).** Restore both sources but keep the load open. The load current at terminal \(a\) is therefore zero, yet an internal closed loop still exists through the 8 V source, 8 ohms, 2 ohms, 20 ohms and the 32 V source. Since \(a\) is directly wired to \(x\) and \(b\) directly to \(y\),
+
+\[V_{th}=V_{ab}=V_{xy}\]
+
+The textbook assumes \(I_1\) to the right through 2 ohms and downward through 20 ohms. KVL gives
+
+\[8-I_1(8+2+20)-32=0\]
+
+so
+
+\[I_1=\dfrac{8-32}{30}=-0.8\ \text{A}\]
+
+The negative sign means the assumed arrow was backwards: the real current is 0.8 A in the opposite direction, driven mainly by the stronger 32 V source.
+
+Starting at \(y\) and moving toward \(x\), the 32 V source gives a 32 V rise and the 20-ohm resistor accounts for a 16 V drop, so
+
+\[V_{th}=V_{xy}=32-16=16\ \text{V}\]
+
+**3. Reconnect each load.** The Thevenin network is now fixed at \(V_{th}=16\text{ V}\) and \(R_{th}=6.66\ \Omega\). Only \(R\) changes. For \(R=3\ \Omega\),
+
+\[I_L=\dfrac{16}{6.66+3}\approx1.656\ \text{A}\]
+
+The textbook prints 1.65 A; the compact solution preserves that printed value, although ordinary two-decimal rounding of the displayed numbers gives 1.66 A. For \(R=8\ \Omega\),
+
+\[I_L=\dfrac{16}{6.66+8}\approx1.091\ \text{A}\approx1.09\ \text{A}\]
+
+The larger load resistance correctly produces the smaller load current.
 
 ### Example 1.9.3 — current through a 2 Ω load
 
