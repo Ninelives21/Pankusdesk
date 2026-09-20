@@ -5270,7 +5270,104 @@
               "(ii) When \\(R_L=16\\ \\Omega\\),",
               "\\[I_L=\\dfrac{V_{Th}}{R_{Th}+R_L}=\\dfrac{30}{4+16}=1.5\\ \\text{A}\\]"
             ],
-            "final_answer": "\\(V_{Th}=30\\ \\text{V},\\ R_{Th}=4\\ \\Omega;\\ I_L=3\\ \\text{A}\\) for \\(R_L=6\\ \\Omega\\), and \\(I_L=1.5\\ \\text{A}\\) for \\(R_L=16\\ \\Omega\\)."
+            "final_answer": "\\(V_{Th}=30\\ \\text{V},\\ R_{Th}=4\\ \\Omega;\\ I_L=3\\ \\text{A}\\) for \\(R_L=6\\ \\Omega\\), and \\(I_L=1.5\\ \\text{A}\\) for \\(R_L=16\\ \\Omega\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "See why the 2 A source is first transformed, how its arrow fixes the 24 V polarity, why the 1 ohm branch carries zero current while finding Vth, why 4 ohms and 12 ohms become parallel for Rth, and why the same Thevenin equivalent can be reused for both load values",
+                "title": "Example 1.9.4 — source transformation first, then one Thevenin equivalent for both loads",
+                "paragraphs": [
+                  "We are asked for the current through the load resistance R_L for two different values, 6 ohms and 16 ohms. This is exactly the kind of problem where Thevenin is useful: find the equivalent of the entire network to the left of terminals a and b once, then reconnect whichever load value we want.",
+                  "Before doing the Thevenin steps, the textbook makes one extra simplification: it converts the 2 A current source in parallel with 12 ohms into an equivalent 24 V voltage source in series with the same 12 ohms. This does not change what the rest of the circuit sees at those two terminals; it only makes the later loop calculation easier."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — How do we know the 2 A source and 12 ohms may be transformed?",
+                    "paragraphs": [
+                      "In Figure 1.62, the 2 A current source and the 12 ohm resistor are connected between the same top node and the same bottom node. Same two end nodes means they are in parallel, so they form the standard practical current-source form.",
+                      "For source transformation, a current source I in parallel with R becomes a voltage source V = IR in series with the same R. Here",
+                      "\\[V=IR=2\\times12=24\\,\\text{V}\\]",
+                      "The resistor stays 12 ohms; only the source representation changes from a current source in parallel to a voltage source in series.",
+                      "How do we know the polarity of the 24 V source? The original current-source arrow points upward. That source drives current toward the upper node, making the upper node positive relative to the lower node. Therefore the equivalent 24 V source is drawn with + at the top and - at the bottom, exactly as in Figure 1.63(a)."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Find Vth: remove R_L and notice what the open circuit does",
+                    "paragraphs": [
+                      "To find Vth, remove R_L but keep the sources active. The terminals a and b are now open.",
+                      "The 1 ohm resistor leads to terminal a, but because a is open there is no closed path through that branch. Therefore the current through the 1 ohm resistor is zero.",
+                      "Zero current through the 1 ohm resistor means zero voltage drop across it because V = IR. So terminal a is at the same potential as the central top node. Terminal b is the bottom reference node. That is why the voltage of the central top node relative to the bottom node is directly Vab = Vth.",
+                      "With the 1 ohm branch inactive, the only closed conducting loop contains the 32 V source, 4 ohms, 12 ohms and the transformed 24 V source."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Why do the two source voltages subtract?",
+                    "paragraphs": [
+                      "The 32 V source has + at the top and - at the bottom. The transformed 24 V source also has + at the top and - at the bottom. Around the closed loop they oppose each other: one provides a 32 V rise while the other contributes a 24 V opposing rise.",
+                      "So the net voltage driving the loop is",
+                      "\\[32-24=8\\,\\text{V}\\]",
+                      "The same loop current passes through 4 ohms and 12 ohms, so those two resistors are in series for this open-circuit calculation:",
+                      "\\[i=\\dfrac{32-24}{4+12}=\\dfrac{8}{16}=0.5\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Build Vth carefully from the figure",
+                    "paragraphs": [
+                      "The 0.5 A loop current flows downward through the 12 ohm resistor in Figure 1.63(c). Therefore the top of that resistor is 6 V above its bottom:",
+                      "\\[V_{12\\Omega}=0.5\\times12=6\\,\\text{V}\\]",
+                      "The bottom of the 12 ohm resistor is connected to the positive terminal of the 24 V source. Since that point is already 24 V above b, and the resistor adds another 6 V going upward to the central top node,",
+                      "\\[V_{th}=V_{ab}=24+6=30\\,\\text{V}\\]",
+                      "A useful cross-check is to come from the other side: the top of the 32 V source is 32 V above b, and the 0.5 A current causes a 0.5 x 4 = 2 V drop across the 4 ohm resistor, leaving 32 - 2 = 30 V at the same central node. Both routes give 30 V."
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Find Rth by deactivating the independent voltage sources",
+                    "paragraphs": [
+                      "Keep R_L removed. In the transformed circuit there are now two independent voltage sources: 32 V and 24 V. To find Rth, set each ideal voltage source to zero, which means replace each by a short circuit.",
+                      "After both sources become wires, look into the network from terminals a and b as in Figure 1.63(d). The 4 ohm resistor and 12 ohm resistor now connect between the same central top node and the same bottom node. Same two end nodes means they are parallel:",
+                      "\\[4\\parallel12=\\dfrac{4\\times12}{4+12}=\\dfrac{48}{16}=3\\,\\Omega\\]",
+                      "The 1 ohm resistor sits between terminal a and that parallel combination, with no branching between them, so it is in series with the 3 ohm equivalent. Therefore",
+                      "\\[R_{th}=1+3=4\\,\\Omega\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — What has Thevenin bought us?",
+                    "paragraphs": [
+                      "The whole original network to the left of a-b can now be replaced by one 30 V source in series with one 4 ohm resistance. We do not need to repeat the source transformation or the internal loop calculation for each new load.",
+                      "For any load connected between a and b, the load current is simply",
+                      "\\[I_L=\\dfrac{V_{th}}{R_{th}+R_L}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 7 — Reconnect each load value",
+                    "paragraphs": [
+                      "For R_L = 6 ohms, the total series resistance is 4 + 6 = 10 ohms, so",
+                      "\\[I_L=\\dfrac{30}{10}=3\\,\\text{A}\\]",
+                      "For R_L = 16 ohms, the total series resistance is 4 + 16 = 20 ohms, so",
+                      "\\[I_L=\\dfrac{30}{20}=1.5\\,\\text{A}\\]",
+                      "Nothing inside the original left-hand network has to be solved again. Only R_L changes."
+                    ]
+                  },
+                  {
+                    "heading": "Sanity check — should the larger load draw less current?",
+                    "paragraphs": [
+                      "Yes. With the same 30 V Thevenin source and the same 4 ohm internal Thevenin resistance, increasing the load from 6 ohms to 16 ohms increases the total series resistance from 10 ohms to 20 ohms.",
+                      "Doubling the total resistance from 10 ohms to 20 ohms halves the current from 3 A to 1.5 A. That is exactly what the answers show."
+                    ]
+                  },
+                  {
+                    "heading": "What to remember",
+                    "paragraphs": [
+                      "1. Same two end nodes means parallel. That is how we recognize the original 2 A source and 12 ohms as a transformable current-source pair.",
+                      "2. Current-source transformation uses V = IR, and the arrow direction tells us the voltage-source polarity.",
+                      "3. For Vth, remove the load but keep sources active. An open output branch means zero current through the 1 ohm resistor and therefore zero voltage drop across it.",
+                      "4. For Rth, deactivate independent voltage sources by shorting them. Then 4 ohms and 12 ohms share the same two nodes and become parallel.",
+                      "5. Once Vth and Rth are known, reuse the same Thevenin equivalent for every value of R_L."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ],
         "source_refs": [

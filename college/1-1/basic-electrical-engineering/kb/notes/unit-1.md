@@ -111,6 +111,58 @@ An electric circuit has a close analogy with a magnetic circuit. In a magnetic c
 
 *Figure: Fig. 1.4 · Analogy between electrical, magnetic and mechanical systems*
 
+**SIMPLER — Example 1.9.4**
+
+We need the current through the load \(R_L\) for two different values. Thevenin is useful because we can replace the whole network to the left of terminals \(a\)-\(b\) by one equivalent source and one equivalent resistance, and then reuse that same replacement for both loads.
+
+Before doing the Thevenin steps, the textbook first converts the 2-A current source in parallel with 12 ohms into an equivalent voltage source. The two elements share the same top and bottom nodes, so they are a standard current-source transformation pair:
+
+\[V=IR=2\times12=24\,\text{V}\]
+
+The 12-ohm resistance remains 12 ohms, but it is now in series with the 24-V source. The current-source arrow points upward, so the equivalent voltage source has \(+\) at the top and \(-\) at the bottom.
+
+**Find \(V_{th}\)**
+
+Remove \(R_L\). Terminal \(a\) is now open, so no current can flow through the 1-ohm branch. Therefore its voltage drop is zero and terminal \(a\) has the same potential as the central top node.
+
+The only closed loop now contains the 32-V source, 4 ohms, 12 ohms and the transformed 24-V source. The two sources oppose each other, so the net loop voltage is \(32-24=8\) V:
+
+\[i=\dfrac{32-24}{4+12}=0.5\,\text{A}\]
+
+The drop across 12 ohms is
+
+\[0.5\times12=6\,\text{V}\]
+
+The bottom of that resistor is already 24 V above \(b\), so the central top node — and therefore terminal \(a\) — is
+
+\[V_{th}=V_{ab}=24+6=30\,\text{V}\]
+
+Cross-check from the 32-V side: the 4-ohm resistor drops \(0.5\times4=2\) V, so \(32-2=30\) V again.
+
+**Find \(R_{th}\)**
+
+Keep the load removed and deactivate both independent voltage sources by replacing each ideal voltage source with a short circuit. The 4-ohm and 12-ohm resistors then connect between the same two nodes, so they are parallel:
+
+\[4\parallel12=\dfrac{4\times12}{4+12}=3\,\Omega\]
+
+The 1-ohm resistor is in series with that equivalent as seen from \(a\)-\(b\):
+
+\[R_{th}=1+3=4\,\Omega\]
+
+So the entire original network becomes a 30-V source in series with 4 ohms.
+
+For \(R_L=6\,\Omega\),
+
+\[I_L=\dfrac{30}{4+6}=3\,\text{A}\]
+
+For \(R_L=16\,\Omega\),
+
+\[I_L=\dfrac{30}{4+16}=1.5\,\text{A}\]
+
+The useful point is that \(V_{th}\) and \(R_{th}\) are found only once. Changing the load does not require us to solve the original network again.
+
+**Sanity check:** increasing the load from 6 ohms to 16 ohms increases total resistance from 10 ohms to 20 ohms, so the current should halve. It does: 3 A becomes 1.5 A.
+
 ### Key formulas
 
 - Steady current: \(I=\dfrac{Q}{T}\)
