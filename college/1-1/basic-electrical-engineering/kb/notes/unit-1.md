@@ -1873,6 +1873,74 @@ Reconnect \(R_L=4\ \Omega\). The load current is
 
 \[I_L=\dfrac{15}{8.75+4}=1.17\ \text{A}\]
 
+**SIMPLER — Example 1.9.1**
+
+We want the current through the 4-ohm resistor. Thevenin's theorem is useful because that resistor can be treated as the load connected between terminals \(a\) and \(b\). Instead of solving the full network with the load attached, temporarily remove the load, replace everything to its left by one equivalent voltage source \(V_{th}\) in series with one equivalent resistance \(R_{th}\), and then reconnect the same 4-ohm load.
+
+The key idea is: the complicated network may look different after the replacement, but from terminals \(a\) and \(b\) it must behave the same toward the load.
+
+**Step 1 — Identify the load and source from the figure**
+
+The 4-ohm resistor is directly between terminals \(a\) and \(b\), so this is the load whose current is required. That is why it is removed first.
+
+The 20-V element is drawn as a circle with \(+\) and \(-\) polarity marks, so it is an independent voltage source. No internal source resistance is drawn, so the circuit model treats it as ideal. For finding \(R_{th}\), an ideal independent voltage source is deactivated by setting its voltage to zero, which means replacing it with a short circuit.
+
+**Step 2 — Find \(R_{th}\) by looking into terminals \(a\) and \(b\)**
+
+After the 4-ohm load is removed and the 20-V source is shorted, the 5-ohm and 15-ohm resistors are in parallel. Their upper ends meet at the same central top node, and after the source is replaced by a wire their other ends also meet at the same bottom node. Same two end nodes means parallel.
+
+\[5\parallel15=\dfrac{5\times15}{5+15}=3.75\,\Omega\]
+
+From terminal \(a\) to terminal \(b\), the only complete route is then through 2 ohms, the 3.75-ohm equivalent block, and 3 ohms, so these three parts are in series as seen from the terminals:
+
+\[R_{th}=2+3.75+3=8.75\,\Omega\]
+
+**Step 3 — Restore the source and find the open-circuit voltage \(V_{th}\)**
+
+The 20-V source is restored, but the 4-ohm load remains removed. Therefore terminals \(a\) and \(b\) are open. The 2-ohm branch ends at open terminal \(a\), and the 3-ohm branch ends at open terminal \(b\), so neither branch has a closed return path and no current flows through either resistor.
+
+Zero current means zero resistor voltage drop because \(V=IR\). Therefore \(V_a=V_x\) and \(V_b=V_y\), so
+
+\[V_{th}=V_{ab}=V_{xy}\]
+
+This equality is because the 2-ohm and 3-ohm resistors carry zero current, not because the labelled points are physically the same node.
+
+**Step 4 — Find the current in the only closed loop**
+
+With the two right-hand branches open, the only conducting loop contains the 20-V source, 5-ohm resistor and 15-ohm resistor. The 5-ohm and 15-ohm resistors therefore carry the same loop current.
+
+The source has \(+\) at the top and \(-\) at the bottom, so conventional current leaves the positive terminal, passes through 5 ohms, then down through 15 ohms.
+
+\[I=\dfrac{20}{5+15}=1\,\text{A}\]
+
+Hence the voltage across the 15-ohm resistor is
+
+\[V_{xy}=1\times15=15\,\text{V}\]
+
+so
+
+\[V_{th}=15\,\text{V}\]
+
+**Step 5 — Replace the original network by its Thevenin equivalent**
+
+Everything to the left of terminals \(a\) and \(b\) can now be replaced by a 15-V source in series with \(8.75\,\Omega\). Reconnect the original \(4\,\Omega\) load. The once-complicated circuit is now a single series loop.
+
+\[I_L=\dfrac{V_{th}}{R_{th}+R_L}=\dfrac{15}{8.75+4}=\dfrac{15}{12.75}\approx1.176\,\text{A}\]
+
+The textbook prints this as \(1.17\,\text{A}\), and the compact solution keeps that printed value.
+
+**Sanity check**
+
+The load is not connected directly to an ideal 15-V source; it also has \(8.75\,\Omega\) of Thevenin resistance in series with it. So the current must be much less than \(15/4=3.75\,\text{A}\). A value a little above 1 A is therefore reasonable.
+
+**What to remember**
+
+- Identify the load first; here it is the 4-ohm resistor between \(a\) and \(b\).
+- For \(R_{th}\): remove the load, deactivate the independent voltage source by shorting it, then find the resistance seen from \(a-b\).
+- Parallel means same two end nodes; that is why 5 ohms and 15 ohms are parallel after the source is shorted.
+- For \(V_{th}\): restore the source but keep the load removed. Open-terminal branches carry zero current, so the 2-ohm and 3-ohm resistors have zero voltage drop.
+- Once \(V_{th}\) and \(R_{th}\) are known, replace the whole original network by \(V_{th}\) in series with \(R_{th}\), reconnect \(R_L\), and use Ohm's law.
+
 ### Example 1.9.2 — Thevenin equivalent and two load values
 
 Remove the load and short the voltage sources to find \(R_{th}\):

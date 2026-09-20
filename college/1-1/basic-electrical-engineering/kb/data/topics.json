@@ -4798,7 +4798,90 @@
               "The current passing through 4 ohms resistance is",
               "\\[I_L=\\dfrac{V_{th}}{R_{th}+R_L}=\\dfrac{15}{8.75+4}=1.17\\ \\text{A}\\]"
             ],
-            "final_answer": "\\(I_L=1.17\\ \\text{A}\\)"
+            "final_answer": "\\(I_L=1.17\\ \\text{A}\\)",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "See why the 4 ohm resistor is removed, how to read Rth directly from the changed circuit, why no current flows through 2 ohms and 3 ohms while finding Vth, and what the Thevenin replacement buys us",
+                "title": "Example 1.9.1 — reduce the whole left-hand network to one simple source and one resistance",
+                "paragraphs": [
+                  "We want the current through the 4 ohm resistor. Thevenin's theorem is useful because that 4 ohm resistor can be treated as the load connected between terminals a and b. Instead of solving the full network with the load attached, we temporarily remove the load, replace everything to its left by one equivalent voltage source Vth in series with one equivalent resistance Rth, and then reconnect the same 4 ohm load.",
+                  "The key idea is: the complicated network may look different after the replacement, but from terminals a and b it must behave the same toward the 4 ohm load."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — First identify the load and the source from the figure",
+                    "paragraphs": [
+                      "The 4 ohm resistor is connected directly between the two labelled output terminals a and b, so this is the load whose current we are asked to find. That is why the first Thevenin step is to remove the 4 ohm resistor and leave terminals a and b open.",
+                      "The 20 V element is drawn as a circle with + and - polarity marks, so it is an independent voltage source. No internal source resistance is drawn, so in this circuit model it is treated as an ideal voltage source. When an ideal independent voltage source is deactivated for finding Rth, its voltage is set to zero; a zero-volt ideal source is a short circuit, so the source is replaced by a wire."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Find Rth by looking into terminals a and b",
+                    "paragraphs": [
+                      "After the 4 ohm load is removed and the 20 V source is shorted, look at Figure 1.57(a) from terminal a toward terminal b.",
+                      "The 5 ohm and 15 ohm resistors are now in parallel. How do we know? Their upper ends meet at the same central top node, and after the voltage source has been replaced by a wire, their lower/left ends are also connected to the same central bottom node. Same two end nodes means parallel.",
+                      "Therefore",
+                      "\\[5\\parallel15=\\dfrac{5\\times15}{5+15}=\\dfrac{75}{20}=3.75\\,\\Omega\\]",
+                      "Now follow the only complete path from a to b: from a through 2 ohms, then through the equivalent 3.75 ohm block, then through 3 ohms to b. These three parts are in series as seen from a-b, so",
+                      "\\[R_{th}=2+3.75+3=8.75\\,\\Omega\\]",
+                      "This is what 'resistance seen from a and b' means: imagine looking into the network through those two terminals after the load has been removed and the independent source has been deactivated."
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Restore the 20 V source and find the open-circuit voltage Vth",
+                    "paragraphs": [
+                      "To find Vth, the source is restored to its original 20 V value, but the 4 ohm load stays removed. Terminals a and b are therefore open, exactly as in Figure 1.57(b).",
+                      "This open circuit is the reason no current flows through the 2 ohm and 3 ohm resistors. The 2 ohm branch ends at open terminal a and the 3 ohm branch ends at open terminal b; neither branch has a closed return path, so its current is zero.",
+                      "If current through a resistor is zero, its voltage drop is IR = 0. Therefore there is no voltage drop across the 2 ohm resistor, so Va = Vx. There is also no drop across the 3 ohm resistor, so Vb = Vy.",
+                      "Hence",
+                      "\\[V_{th}=V_{ab}=V_{xy}\\]",
+                      "This equality is not because a is physically the same point as x or b is physically the same point as y. It is because the zero-current 2 ohm and 3 ohm resistors have zero voltage drop."
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Find the current in the only closed loop that remains",
+                    "paragraphs": [
+                      "With the a and b branches open, the only conducting loop contains the 20 V source, 5 ohm resistor and 15 ohm resistor. The 5 ohm and 15 ohm resistors therefore carry the same loop current and are in series for this Vth calculation.",
+                      "The source has + at the top and - at the bottom, so conventional current leaves the positive terminal, passes through 5 ohms, then down through 15 ohms, and returns to the negative terminal.",
+                      "The loop current is",
+                      "\\[I=\\dfrac{20}{5+15}=1\\,\\text{A}\\]",
+                      "The voltage from x to y is the voltage across the 15 ohm resistor:",
+                      "\\[V_{xy}=I\\times15=1\\times15=15\\,\\text{V}\\]",
+                      "Therefore",
+                      "\\[V_{th}=15\\,\\text{V}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — What has Thevenin's theorem bought us?",
+                    "paragraphs": [
+                      "Everything to the left of terminals a and b can now be replaced by just two things: a 15 V Thevenin source and an 8.75 ohm series resistance. Figure 1.57(c) shows that replacement.",
+                      "Now reconnect the original 4 ohm load. The complicated original circuit has become one simple series loop containing Rth = 8.75 ohms and RL = 4 ohms.",
+                      "So the load current is simply",
+                      "\\[I_L=\\dfrac{V_{th}}{R_{th}+R_L}=\\dfrac{15}{8.75+4}=\\dfrac{15}{12.75}\\approx1.176\\,\\text{A}\\]",
+                      "The textbook prints this as 1.17 A, so the compact solution and final answer retain that printed value."
+                    ]
+                  },
+                  {
+                    "heading": "Sanity check — does the answer make physical sense?",
+                    "paragraphs": [
+                      "Yes. The Thevenin source is 15 V, but there is 8.75 ohms of internal Thevenin resistance in series with the 4 ohm load. Therefore the load cannot receive 15/4 = 3.75 A as though it were connected directly to an ideal 15 V source.",
+                      "With the extra 8.75 ohms in series, a current a little above 1 A is reasonable. The calculated value of about 1.176 A passes that check."
+                    ]
+                  },
+                  {
+                    "heading": "What to remember",
+                    "paragraphs": [
+                      "1. Identify the load first; here it is the 4 ohm resistor between a and b.",
+                      "2. For Rth: remove the load, deactivate the independent voltage source by shorting it, then find the resistance seen from a-b.",
+                      "3. Parallel means same two end nodes. That is why 5 ohms and 15 ohms become parallel after the source is shorted.",
+                      "4. For Vth: restore the source but keep the load removed. Open terminal branches carry zero current, so the 2 ohm and 3 ohm resistors have zero voltage drop.",
+                      "5. Once Vth and Rth are known, replace the entire original network by Vth in series with Rth, reconnect RL, and use ordinary Ohm's law."
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
             "title": "Example 1.9.2",
