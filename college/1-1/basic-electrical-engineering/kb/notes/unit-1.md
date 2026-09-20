@@ -1820,6 +1820,151 @@ The negative net current indicates that the actual current flows from \(B\) to \
 
 *Figure: Fig. 1.50(c) · Third source acting alone*
 
+**SIMPLER — Exercise 1.8.1**
+
+The question asks for the voltage across the 2-ohm resistor between nodes \(A\) and \(B\). The textbook first finds the current through that resistor, because once its current is known we can use \(V=IR\).
+
+Superposition means: **keep one independent source active at a time, replace the other independent sources by their zero-value equivalents, calculate that source's contribution through the same 2-ohm resistor, and finally add the contributions with their directions/signs.**
+
+Take current from \(A\) to \(B\) through the 2-ohm resistor as positive. So \(A\to B\) contributions are positive and \(B\to A\) contributions are negative.
+
+**Step 1 — Read the original circuit first**
+
+Figure 1.50 contains three independent sources: 10 V on the left, 2 A in the middle-right branch, and 20 V on the right.
+
+- A circle with \(+\) and \(-\) is an independent voltage source.
+- A circle with an arrow is an independent current source.
+- The 2-ohm resistor directly joins \(A\) and \(B\), so this is the branch whose response we must track in all three one-source circuits.
+
+When we deactivate an ideal independent source:
+
+- ideal voltage source at \(0\text{ V}\) \(\rightarrow\) **short circuit**;
+- ideal current source at \(0\text{ A}\) \(\rightarrow\) **open circuit**.
+
+The resistors remain in the circuit.
+
+**Step 2 — 10-V source acting alone**
+
+Keep the 10-V source active. Figure 1.50(a) shows the 20-V source shorted and the 2-A source opened.
+
+Because the current-source branch is open, the 3-ohm resistor is stranded in a broken branch and carries no current.
+
+The 2-ohm and 5-ohm resistors now lie one after another with no branching between them, so
+
+\[2+5=7\,\Omega\]
+
+That 7-ohm path and the 20-ohm resistor both connect from node \(A\) to the bottom rail. Same two end nodes means parallel:
+
+\[R_1=20\parallel7=\dfrac{20\times7}{20+7}=5.18\,\Omega\]
+
+This is in series with the left 10-ohm resistor:
+
+\[R=10+5.18=15.18\,\Omega\]
+
+so
+
+\[I=\dfrac{10}{15.18}=0.658\,\text{A}\]
+
+At node \(A\), this current splits between the 20-ohm branch and the 7-ohm branch. The 2-ohm resistor is in the 7-ohm branch, so by current division
+
+\[i_1=0.658\dfrac{20}{20+7}=0.4879\,\text{A}\]
+
+This flows from \(A\) to \(B\), so
+
+\[i_1=+0.4879\,\text{A}\]
+
+**Step 3 — 2-A source acting alone**
+
+Now keep only the 2-A source. Both voltage sources become short circuits, as in Figure 1.50(b).
+
+The 10-ohm and 20-ohm resistors now share the same two end nodes, so
+
+\[10\parallel20=\dfrac{10\times20}{10+20}=6.66\,\Omega\]
+
+The path from \(B\) through the 2-ohm resistor and then through this equivalent has
+
+\[R_{\text{left path}}=2+6.66=8.66\,\Omega\]
+
+The other path from \(B\) to the bottom rail is 5 ohms.
+
+The current-source arrow pushes 2 A upward through the 3-ohm resistor into node \(B\). At \(B\), that 2 A splits between the 5-ohm path and the 8.66-ohm left path:
+
+\[i_2=2\dfrac{5}{5+8.66}=0.732\,\text{A}\]
+
+But this current passes through the 2-ohm resistor from \(B\) to \(A\), opposite to our positive reference direction. Therefore
+
+\[i_2=-0.732\,\text{A}\]
+
+The minus sign is just direction information.
+
+**Step 4 — 20-V source acting alone**
+
+Keep the 20-V source active. Figure 1.50(c) correctly shows the 10-V source shorted and the 2-A source opened.
+
+Again, the open current-source branch means the 3-ohm resistor carries no current.
+
+The 10-ohm and 20-ohm resistors are again parallel:
+
+\[10\parallel20=6.66\,\Omega\]
+
+The conducting loop is then the 20-V source, 5 ohms, 2 ohms and the 6.66-ohm equivalent:
+
+\[R_{eq}=5+2+6.66=13.66\,\Omega\]
+
+Hence
+
+\[I=\dfrac{20}{13.66}\approx1.464\,\text{A}\]
+
+From the positive terminal of the 20-V source, current reaches node \(B\) and passes through the 2-ohm resistor from \(B\) to \(A\). So
+
+\[i_3\approx-1.464\,\text{A}\]
+
+**Step 5 — Add signed responses**
+
+Superposition requires an algebraic sum:
+
+\[i=i_1+i_2+i_3\]
+
+\[i\approx0.4879-0.732-1.464=-1.708\,\text{A}\]
+
+The negative result says the actual net current flows from \(B\) to \(A\), with magnitude about \(1.708\text{ A}\).
+
+Now apply Ohm's law to the 2-ohm resistor:
+
+\[V_{AB}=iR=(-1.708)(2)=-3.416\,\text{V}\]
+
+or equivalently
+
+\[V_{BA}=+3.416\,\text{V}\]
+
+So \(B\) is 3.416 V higher than \(A\).
+
+**Why the printed solution needs care**
+
+The textbook wording contains source-deactivation mismatches. In the 10-V-source step it says the 20-V source is opened, but Figure 1.50(a) correctly shows that voltage source shorted. In the 20-V-source step the printed wording again reverses the correct open/short treatment, while Figure 1.50(c) shows the correct circuit.
+
+There is also a numerical inconsistency: the book prints
+
+\[\dfrac{20}{13.66}=1.464\,\text{A}\]
+
+but later writes \(i_3=-1.434\,\text{A}\). The printed final total \(-1.708\text{ A}\) is consistent with using approximately \(-1.464\text{ A}\), not \(-1.434\text{ A}\).
+
+**Sanity check**
+
+The 10-V source contributes only about \(0.488\text{ A}\) from \(A\) to \(B\). The 2-A source and 20-V source contribute about \(0.732\text{ A}\) and \(1.464\text{ A}\) in the opposite direction. The two \(B\to A\) effects are larger together, so a net \(B\to A\) current makes sense.
+
+**What to remember**
+
+- Choose one reference direction before adding responses.
+- One source at a time.
+- Voltage source off \(\rightarrow\) short circuit.
+- Current source off \(\rightarrow\) open circuit.
+- An open branch carries no current.
+- Same two end nodes \(\rightarrow\) parallel.
+- One shared intermediate node with no branching \(\rightarrow\) series.
+- Current-divider formulas give a magnitude; the actual circuit direction gives the sign.
+- Add signed responses, not just magnitudes.
+
 ### Key formulas
 
 - Superposition response: \(x=x_1+x_2+\cdots+x_n\) (algebraic sum)

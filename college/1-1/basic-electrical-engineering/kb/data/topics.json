@@ -4508,7 +4508,130 @@
               "label": "Exercise 1.8.1 · Printed discrepancy",
               "message": "Exercise 1.8.1: in the 10 V-source step, the printed solution says the 20 V source is replaced by an open circuit, while Figure 1.50(a) shows that branch short-circuited. In the 20 V-source step, the printed solution says the 10 V source and 2 A source are replaced by an open circuit and a short circuit respectively, while Figure 1.50(c) shows the 10 V source short-circuited and the 2 A source open-circuited. The calculation also prints \\(20/13.66=1.464\\,\\text{A}\\), then states \\(i_3=-1.434\\,\\text{A}\\), yet the printed total \\(-1.708\\,\\text{A}\\) corresponds to using approximately \\(-1.464\\,\\text{A}\\). The discrepancy is flagged here rather than silently corrected."
             },
-            "final_answer": "\\(V_{AB}=-3.416\\ \\text{V}\\), or \\(V_{BA}=3.416\\ \\text{V}\\)."
+            "final_answer": "\\(V_{AB}=-3.416\\ \\text{V}\\), or \\(V_{BA}=3.416\\ \\text{V}\\).",
+            "explainers": [
+              {
+                "label": "SIMPLER",
+                "summary": "See how Superposition turns one three-source circuit into three easier one-source circuits, how to deactivate voltage and current sources correctly, why the 2-ohm current changes direction between cases, and how the three signed responses combine",
+                "title": "Exercise 1.8.1 — solve one source at a time, then add the signed effects",
+                "paragraphs": [
+                  "The question asks for the voltage across the 2-ohm resistor between nodes A and B. The textbook first finds the current through that resistor, because once its current is known we can use V = IR. Superposition says: keep one independent source active at a time, replace the other independent sources by their zero-value equivalents, calculate that source's contribution through the same 2-ohm resistor, and finally add the contributions with their directions/signs.",
+                  "Before starting, choose one reference direction for the 2-ohm current. The textbook treats A to B as positive. Therefore a contribution flowing A to B is positive, while a contribution flowing B to A is negative."
+                ],
+                "sections": [
+                  {
+                    "heading": "Step 1 — Read the original figure before doing any algebra",
+                    "paragraphs": [
+                      "Figure 1.50 contains three independent sources: a 10 V voltage source on the left, a 2 A current source in the middle-right branch, and a 20 V voltage source on the right. We know the voltage sources from the circular source symbols with + and - polarity marks, and we know the current source from the circular source symbol with an arrow.",
+                      "The resistor whose voltage is required is the 2-ohm resistor directly between nodes A and B. So every one-source calculation must ultimately tell us the current through this same A-B branch.",
+                      "The superposition rule for deactivating independent sources is important: an ideal voltage source set to 0 V becomes a short circuit (a wire), while an ideal current source set to 0 A becomes an open circuit (a break). We do not remove the resistors."
+                    ]
+                  },
+                  {
+                    "heading": "Step 2 — Keep only the 10 V source active",
+                    "paragraphs": [
+                      "Keep the 10 V source exactly as drawn. Deactivate the 20 V voltage source by replacing it with a short circuit, and deactivate the 2 A current source by replacing it with an open circuit. Figure 1.50(a) shows exactly this.",
+                      "Because the current-source branch is open below the 3-ohm resistor, that entire branch cannot carry current. The 3-ohm resistor therefore has no effect in this one-source circuit.",
+                      "The shorted 20 V source leaves the 5-ohm resistor connected from node B to the bottom rail. Starting at node A and going to the bottom rail through node B, the 2-ohm and 5-ohm resistors lie one after another with no branching between them, so they are in series:",
+                      "\\[2+5=7\\,\\Omega\\]",
+                      "From node A to the bottom rail there are now two paths: one directly through 20 ohms, and one through the 7-ohm series path. Same two end nodes means those two paths are parallel:",
+                      "\\[R_1=20\\parallel7=\\dfrac{20\\times7}{20+7}=5.18\\,\\Omega\\]",
+                      "That parallel equivalent is in series with the left 10-ohm resistor, so the 10 V source sees",
+                      "\\[R=10+5.18=15.18\\,\\Omega\\]",
+                      "and supplies approximately",
+                      "\\[I=\\dfrac{10}{15.18}=0.658\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 3 — Why is only part of 0.658 A flowing through the 2-ohm resistor?",
+                    "paragraphs": [
+                      "At node A, the 0.658 A current splits between the 20-ohm branch and the 7-ohm branch. The 2-ohm resistor belongs to the 7-ohm branch, so we need the current in that branch.",
+                      "For two parallel branches, current divides inversely with resistance. The current through the 7-ohm branch is therefore the total current multiplied by the opposite branch resistance, 20 ohms:",
+                      "\\[i_1=0.658\\times\\dfrac{20}{20+7}=0.4879\\,\\text{A}\\]",
+                      "This branch runs from A through the 2-ohm resistor toward B, so it agrees with our chosen A-to-B reference direction. Therefore",
+                      "\\[i_1=+0.4879\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 4 — Keep only the 2 A current source active",
+                    "paragraphs": [
+                      "Now keep the 2 A source and deactivate both voltage sources. Each ideal voltage source becomes a short circuit, as shown in Figure 1.50(b).",
+                      "With the 10 V source shorted, the 10-ohm resistor and 20-ohm resistor both connect between node A and the bottom rail. Same two end nodes means they are parallel:",
+                      "\\[10\\parallel20=\\dfrac{10\\times20}{10+20}=6.66\\,\\Omega\\]",
+                      "To go from node B through the 2-ohm resistor to the bottom rail, current must then pass through this 6.66-ohm equivalent. There is no branching between the 2-ohm resistor and that equivalent, so they are in series:",
+                      "\\[R_{\\text{left path}}=2+6.66=8.66\\,\\Omega\\]",
+                      "The right-hand 5-ohm resistor forms the other path from B to the bottom rail because the 20 V source has become a wire.",
+                      "The 2 A current source pushes current upward through the 3-ohm resistor into node B. At B that 2 A must split between the 5-ohm path and the 8.66-ohm left path. The current in the 8.66-ohm path is",
+                      "\\[i_2=2\\times\\dfrac{5}{5+8.66}=0.732\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 5 — Why is i2 negative?",
+                    "paragraphs": [
+                      "Look at the path carrying i2: current leaves node B, passes left through the 2-ohm resistor toward node A, and then reaches the bottom rail through the 10-ohm/20-ohm parallel combination.",
+                      "That is B to A through the 2-ohm resistor, opposite to our chosen positive direction A to B. The magnitude is 0.732 A, but its signed contribution is therefore",
+                      "\\[i_2=-0.732\\,\\text{A}\\]",
+                      "The minus sign does not mean the calculation failed. It is simply direction information."
+                    ]
+                  },
+                  {
+                    "heading": "Step 6 — Keep only the 20 V source active",
+                    "paragraphs": [
+                      "Now keep the 20 V source active. Deactivate the 10 V voltage source by shorting it and the 2 A current source by opening it, exactly as Figure 1.50(c) shows.",
+                      "The open current-source branch means no current can flow through the 3-ohm resistor, so that branch drops out of this one-source calculation.",
+                      "With the 10 V source shorted, the 10-ohm and 20-ohm resistors again share the same two nodes and are parallel:",
+                      "\\[10\\parallel20=6.66\\,\\Omega\\]",
+                      "The active loop is now the 20 V source, 5 ohms, 2 ohms, and the 6.66-ohm equivalent. These are traversed one after another in the conducting loop, so",
+                      "\\[R_{eq}=5+2+6.66=13.66\\,\\Omega\\]",
+                      "Hence the loop-current magnitude is",
+                      "\\[I=\\dfrac{20}{13.66}\\approx1.464\\,\\text{A}\\]",
+                      "From the + terminal of the 20 V source, current rises through the right branch, reaches node B, then passes through the 2-ohm resistor from B to A. So this contribution is opposite to the A-to-B reference direction:",
+                      "\\[i_3\\approx-1.464\\,\\text{A}\\]"
+                    ]
+                  },
+                  {
+                    "heading": "Step 7 — Add the three responses algebraically, not just their magnitudes",
+                    "paragraphs": [
+                      "Superposition is finished only after the signed contributions are added. Using A to B as positive:",
+                      "\\[i=i_1+i_2+i_3\\]",
+                      "\\[i\\approx0.4879-0.732-1.464=-1.708\\,\\text{A}\\]",
+                      "The negative result tells us that the real net current through the 2-ohm resistor flows from B to A, with magnitude about 1.708 A.",
+                      "Now use Ohm's law across the 2-ohm resistor:",
+                      "\\[V_{AB}=iR=(-1.708)(2)=-3.416\\,\\text{V}\\]",
+                      "Equivalently,",
+                      "\\[V_{BA}=+3.416\\,\\text{V}\\]",
+                      "So node B is 3.416 V higher than node A."
+                    ]
+                  },
+                  {
+                    "heading": "Why the printed solution needs care",
+                    "paragraphs": [
+                      "The compact textbook wording contains source-deactivation mismatches. In the 10 V-source step it says the 20 V source is replaced by an open circuit, but Figure 1.50(a) correctly shows that voltage source short-circuited. In the 20 V-source step the printed wording similarly reverses the correct short/open treatment, while Figure 1.50(c) shows the correct circuit.",
+                      "There is also a numerical inconsistency: the printed calculation gives 20/13.66 = 1.464 A but later writes i3 = -1.434 A. The printed final total -1.708 A is consistent with using approximately -1.464 A, not -1.434 A. PankusDesk preserves the source discrepancy and uses the circuit figures and verified arithmetic to explain the method."
+                    ]
+                  },
+                  {
+                    "heading": "Sanity check — does the final direction make sense?",
+                    "paragraphs": [
+                      "Yes. The 10 V source alone pushes only about 0.488 A from A to B, while the 2 A source and 20 V source contribute about 0.732 A and 1.464 A in the opposite B-to-A direction.",
+                      "The two B-to-A effects are much larger together than the A-to-B effect, so a net B-to-A current is exactly what we should expect."
+                    ]
+                  },
+                  {
+                    "heading": "What to remember",
+                    "paragraphs": [
+                      "1. Pick one reference direction for the quantity you are adding; here A to B is positive.",
+                      "2. One source at a time: keep the chosen independent source active and set every other independent source to zero.",
+                      "3. Ideal voltage source at 0 V -> short circuit. Ideal current source at 0 A -> open circuit.",
+                      "4. An open branch carries no current, so components stranded in that branch do not affect that one-source response.",
+                      "5. Same two end nodes means parallel; one shared intermediate node with no branching means series.",
+                      "6. Current-divider calculations give magnitudes; the circuit direction decides the sign.",
+                      "7. Add signed responses. A negative final answer means the actual direction is opposite to the reference direction you chose."
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ],
         "source_refs": [
