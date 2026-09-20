@@ -1963,46 +1963,6 @@ For \(R=8\ \Omega\),
 
 \[I_L=\dfrac{16}{6.66+8}=1.09\ \text{A}\]
 
-**SIMPLER — Example 1.9.2**
-
-The resistor \(R\) is the load because it is connected directly between output terminals \(a\) and \(b\). Thevenin lets us replace everything to the left of those terminals by one source \(V_{th}\) in series with one resistance \(R_{th}\), and then reuse that same equivalent for both requested load values.
-
-**1. Find \(R_{th}\).** Remove \(R\) and deactivate both ideal independent voltage sources. Each voltage source becomes a short circuit. In the resulting Figure 1.59(a), the 2-ohm and 8-ohm resistors are series because their shared node has no branching:
-
-\[2+8=10\ \Omega\]
-
-That 10-ohm path and the 20-ohm resistor connect the same two end nodes \(a\) and \(b\), so they are parallel:
-
-\[R_{th}=10\parallel20=\dfrac{10\times20}{10+20}=6.66\ \Omega\]
-
-**2. Find \(V_{th}\).** Restore both sources but keep the load open. The load current at terminal \(a\) is therefore zero, yet an internal closed loop still exists through the 8 V source, 8 ohms, 2 ohms, 20 ohms and the 32 V source. Since \(a\) is directly wired to \(x\) and \(b\) directly to \(y\),
-
-\[V_{th}=V_{ab}=V_{xy}\]
-
-The textbook assumes \(I_1\) to the right through 2 ohms and downward through 20 ohms. KVL gives
-
-\[8-I_1(8+2+20)-32=0\]
-
-so
-
-\[I_1=\dfrac{8-32}{30}=-0.8\ \text{A}\]
-
-The negative sign means the assumed arrow was backwards: the real current is 0.8 A in the opposite direction, driven mainly by the stronger 32 V source.
-
-Starting at \(y\) and moving toward \(x\), the 32 V source gives a 32 V rise and the 20-ohm resistor accounts for a 16 V drop, so
-
-\[V_{th}=V_{xy}=32-16=16\ \text{V}\]
-
-**3. Reconnect each load.** The Thevenin network is now fixed at \(V_{th}=16\text{ V}\) and \(R_{th}=6.66\ \Omega\). Only \(R\) changes. For \(R=3\ \Omega\),
-
-\[I_L=\dfrac{16}{6.66+3}\approx1.656\ \text{A}\]
-
-The textbook prints 1.65 A; the compact solution preserves that printed value, although ordinary two-decimal rounding of the displayed numbers gives 1.66 A. For \(R=8\ \Omega\),
-
-\[I_L=\dfrac{16}{6.66+8}\approx1.091\ \text{A}\approx1.09\ \text{A}\]
-
-The larger load resistance correctly produces the smaller load current.
-
 ### Example 1.9.3 — current through a 2 Ω load
 
 Remove the 2-ohm load and short the source to find \(R_{th}\). The two reduced branches are
@@ -2040,6 +2000,91 @@ The textbook then uses the magnitude as the Thevenin voltage:
 With the 2-ohm load reconnected,
 
 \[I_L=\dfrac{0.3}{4.275+2}=\dfrac{0.3}{6.275}=0.0478\ \text{A}\]
+
+
+**SIMPLER — Example 1.9.3**
+
+The 2-ohm resistor is the vertical branch directly between terminals \(a\) and \(b\), and the question asks for the current through it. So this 2-ohm branch is the load. Thevenin lets us remove that load temporarily, simplify everything else as seen from \(a-b\), and then reconnect the same 2-ohm resistor.
+
+This example has one extra lesson: **the sign of \(V_{th}\) matters**. The arithmetic gives \(V_a-V_b=-0.3\,\text{V}\), which means point \(b\) is actually \(0.3\,\text{V}\) higher than point \(a\). That decides the current direction when the load is reconnected.
+
+**Step 1 — Identify the load and source from the figure**
+
+The 2-ohm resistor joins \(a\) and \(b\), so it is the load. The 12-V source has \(+\) on the left and \(-\) on the right, so the left supply node is 12 V higher than the right supply node.
+
+**Step 2 — Find \(R_{th}\)**
+
+Remove the 2-ohm load and short the 12-V source. Shorting an ideal voltage source makes its two terminals one common node.
+
+The 4-ohm and 6-ohm resistors now both connect from \(a\) to that same common node, so they are parallel:
+
+\[4\parallel6=\dfrac{4\times6}{4+6}=2.4\,\Omega\]
+
+The 3-ohm and 5-ohm resistors both connect from \(b\) to the same common node, so they are parallel:
+
+\[3\parallel5=\dfrac{3\times5}{3+5}=1.875\,\Omega\]
+
+After replacing those two parallel pairs by their equivalents, there is only one path from \(a\) to \(b\), so the two equivalents are in series:
+
+\[R_{th}=2.4+1.875=4.275\,\Omega\]
+
+**Step 3 — Restore the source and find the open-circuit branch currents**
+
+Keep the 2-ohm load removed and restore the 12-V source. The upper and lower arms are now two separate series branches across the same 12 V.
+
+Upper branch:
+
+\[x=\dfrac{12}{4+6}=1.2\,\text{A}\]
+
+Lower branch:
+
+\[y=\dfrac{12}{3+5}=1.5\,\text{A}\]
+
+Both currents go from left to right because the source marks the left node positive and the right node negative.
+
+**Step 4 — Compare the actual potentials at \(a\) and \(b\)**
+
+From the same left reference node, the drop to point \(a\) across 4 ohms is
+
+\[1.2\times4=4.8\,\text{V}\]
+
+The drop to point \(b\) across 3 ohms is
+
+\[1.5\times3=4.5\,\text{V}\]
+
+So \(a\) is 4.8 V below the left node, while \(b\) is only 4.5 V below it. Therefore \(b\) is 0.3 V higher than \(a\):
+
+\[V_{th}=V_{ab}=V_a-V_b=-0.3\,\text{V}\]
+
+Equivalently,
+
+\[V_{ba}=+0.3\,\text{V}\]
+
+The minus sign is not a failed calculation. It tells us that the actual polarity is opposite to the assumed \(a\)-to-\(b\) direction.
+
+**Step 5 — Reconnect the 2-ohm load**
+
+Using the voltage magnitude, the current magnitude is
+
+\[|I|=\dfrac{0.3}{4.275+2}=0.0478\,\text{A}=47.8\,\text{mA}\]
+
+Because \(b\) is at the higher potential, conventional current flows **from \(b\) to \(a\)** through the 2-ohm resistor.
+
+**Why the printed solution needs care**
+
+The printed working reaches \(V_a-V_b=-0.3\,\text{V}\) but then uses the magnitude \(0.3\,\text{V}\) without carrying the sign into the current direction. It also labels the calculation \(1.5\times3=4.5\,\text{V}\) as a drop across 4 ohms; that value is actually the drop across the 3-ohm resistor. The textbook figure and wording are preserved, while PankusDesk keeps the verified discrepancy explicit.
+
+**Sanity check**
+
+Starting from the same left positive node, the upper path drops 4.8 V before reaching \(a\), while the lower path drops only 4.5 V before reaching \(b\). The point with the smaller drop must be at the higher potential. So \(b\) must be 0.3 V above \(a\), exactly matching the negative \(V_{ab}\).
+
+**What to remember**
+
+- The 2-ohm branch between \(a\) and \(b\) is the load because its current is requested.
+- Shorting the 12-V source makes the left and right source nodes one node, which creates the parallel pairs \(4\parallel6\) and \(3\parallel5\).
+- For \(V_{th}\), restore the source and keep the load removed.
+- Compare \(V_a\) and \(V_b\) using the same reference node; do not discard the sign too early.
+- Here \(V_{ab}=-0.3\,\text{V}\), so the load current magnitude is 47.8 mA and its actual direction is from \(b\) to \(a\).
 
 ### Example 1.9.4 — two values of \(R_L\)
 
