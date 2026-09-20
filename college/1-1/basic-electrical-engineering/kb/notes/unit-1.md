@@ -1963,6 +1963,46 @@ For \(R=8\ \Omega\),
 
 \[I_L=\dfrac{16}{6.66+8}=1.09\ \text{A}\]
 
+**SIMPLER — Example 1.9.2**
+
+The resistor \(R\) is the load because it is connected directly between output terminals \(a\) and \(b\). Thevenin lets us replace everything to the left of those terminals by one source \(V_{th}\) in series with one resistance \(R_{th}\), and then reuse that same equivalent for both requested load values.
+
+**1. Find \(R_{th}\).** Remove \(R\) and deactivate both ideal independent voltage sources. Each voltage source becomes a short circuit. In the resulting Figure 1.59(a), the 2-ohm and 8-ohm resistors are series because their shared node has no branching:
+
+\[2+8=10\ \Omega\]
+
+That 10-ohm path and the 20-ohm resistor connect the same two end nodes \(a\) and \(b\), so they are parallel:
+
+\[R_{th}=10\parallel20=\dfrac{10\times20}{10+20}=6.66\ \Omega\]
+
+**2. Find \(V_{th}\).** Restore both sources but keep the load open. The load current at terminal \(a\) is therefore zero, yet an internal closed loop still exists through the 8 V source, 8 ohms, 2 ohms, 20 ohms and the 32 V source. Since \(a\) is directly wired to \(x\) and \(b\) directly to \(y\),
+
+\[V_{th}=V_{ab}=V_{xy}\]
+
+The textbook assumes \(I_1\) to the right through 2 ohms and downward through 20 ohms. KVL gives
+
+\[8-I_1(8+2+20)-32=0\]
+
+so
+
+\[I_1=\dfrac{8-32}{30}=-0.8\ \text{A}\]
+
+The negative sign means the assumed arrow was backwards: the real current is 0.8 A in the opposite direction, driven mainly by the stronger 32 V source.
+
+Starting at \(y\) and moving toward \(x\), the 32 V source gives a 32 V rise and the 20-ohm resistor accounts for a 16 V drop, so
+
+\[V_{th}=V_{xy}=32-16=16\ \text{V}\]
+
+**3. Reconnect each load.** The Thevenin network is now fixed at \(V_{th}=16\text{ V}\) and \(R_{th}=6.66\ \Omega\). Only \(R\) changes. For \(R=3\ \Omega\),
+
+\[I_L=\dfrac{16}{6.66+3}\approx1.656\ \text{A}\]
+
+The textbook prints 1.65 A; the compact solution preserves that printed value, although ordinary two-decimal rounding of the displayed numbers gives 1.66 A. For \(R=8\ \Omega\),
+
+\[I_L=\dfrac{16}{6.66+8}\approx1.091\ \text{A}\approx1.09\ \text{A}\]
+
+The larger load resistance correctly produces the smaller load current.
+
 ### Example 1.9.3 — current through a 2 Ω load
 
 Remove the 2-ohm load and short the source to find \(R_{th}\). The two reduced branches are
