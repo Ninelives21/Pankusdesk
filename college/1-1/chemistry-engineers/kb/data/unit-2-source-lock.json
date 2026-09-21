@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "subject_code": "25BS1CH101",
+  "unit": 2,
+  "stage": 1,
+  "stage_name": "Source lock by micro-batch",
+  "status": "not_started",
+  "source_index": "unit-2-source-index.json",
+  "rules": {
+    "batch_size_max_pages": 10,
+    "source_only": true,
+    "no_web_or_general_knowledge": true,
+    "no_html_implementation_during_source_lock": true,
+    "record_only_what_is_visible_in_supplied_textbook_pages": true,
+    "preserve_textbook_order_and_numbering": true,
+    "unclear_content_policy": "mark unclear and stop rather than infer",
+    "r25_scope_filtering": "record source first; R25 inclusion decisions are made after source locking unless obvious metadata can be recorded without interpretation"
+  },
+  "batches": [
+    {
+      "batch_id": "U2-SL-01",
+      "textbook_pages": [
+        279,
+        288
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-02",
+      "textbook_pages": [
+        289,
+        298
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-03",
+      "textbook_pages": [
+        299,
+        308
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-04",
+      "textbook_pages": [
+        309,
+        318
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-05",
+      "textbook_pages": [
+        319,
+        328
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-06",
+      "textbook_pages": [
+        329,
+        338
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-07",
+      "textbook_pages": [
+        339,
+        348
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-08",
+      "textbook_pages": [
+        349,
+        358
+      ],
+      "expected_page_count": 10,
+      "status": "pending",
+      "entries": []
+    },
+    {
+      "batch_id": "U2-SL-09",
+      "textbook_pages": [
+        359,
+        362
+      ],
+      "expected_page_count": 4,
+      "status": "pending",
+      "entries": []
+    }
+  ],
+  "completion_summary": {
+    "completed_batches": 0,
+    "total_batches": 9,
+    "completed_textbook_pages": 0,
+    "total_textbook_pages": 84
+  }
+}
