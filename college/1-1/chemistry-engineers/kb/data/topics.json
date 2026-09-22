@@ -1449,5 +1449,102 @@
       }
     ],
     "learn": []
+  },
+  {
+    "id": "u2-emf-electrochemical-cell",
+    "unit": 2,
+    "nav_number": "2.4",
+    "title": "EMF of an Electrochemical Cell",
+    "status": "core",
+    "sections": [
+      {
+        "heading": "5 EMF OF AN ELECTROCHEMICAL CELL",
+        "scope": "core",
+        "paragraphs": [
+          "An electrochemical (or galvanic) cell is obtained by coupling two half-cells (or electrodes). For example, Daniell cell is obtained by coupling zinc half-cell and copper half-cell through a salt bridge.",
+          "Mathematically, the e.m.f. of an electrochemical cell is the algebraic sum of the single electrode potentials, provided proper signs are given according to the actual reaction taking place on the electrodes. A cell is generally written with the negative electrode to the left. Based on this, the e.m.f. of a galvanic cell can readily be calculated from the reduction half-cell potentials, using the following relationship:",
+          "where \\(E_{cell}\\) = e.m.f. of cell; \\(E_{right}\\) = reduction potential of right-hand side electrode; and \\(E_{left}\\) = reduction potential of left-hand side electrode.",
+          "It should be remembered that a positive value of \\(E_{cell}\\) indicates that the cell reaction is feasible. If, however, it comes out to be negative, the cell reaction is not feasible and, in actual operation of the cell, the electrodes will have to be reversed in order to bring about the cell reaction.",
+          "One advantage of using reduction potential is that the sign of the reduction potential is also the polarity sign of the electrode, when coupled with NHE to construct a galvanic cell."
+        ],
+        "working": [
+          "\\(\\mathrm{Zn^-\\,|\\,ZnSO_4(aq)\\,||\\,CuSO_4(aq)\\,|\\,Cu^+}\\)",
+          "\\(E_{cell}=E_{right}-E_{left}\\)"
+        ],
+        "source_refs": [
+          "CHEM-TB-P0286"
+        ]
+      },
+      {
+        "heading": "Nernst’s equation for a cell reaction",
+        "scope": "core",
+        "paragraphs": [
+          "For a cell:",
+          "reaction is:",
+          "At 298 K, the Nernst’s equation can be written as:"
+        ],
+        "working": [
+          "\\(\\mathrm{Zn(s)/Zn^{2+}(aq)\\,||\\,Cu^{2+}(aq)/Cu(s)}\\)",
+          "\\(\\mathrm{Zn(s)+Cu^{2+}(aq)\\longrightarrow Zn^{2+}(aq)+Cu(s)}\\)",
+          "\\(E_{cell}=E^\\circ_{cell}-\\dfrac{2.303RT}{nF}\\,\\mathrm{V}\\log Q\\qquad\\left[\\text{where }Q=\\dfrac{[Zn^{2+}]}{[Cu^{2+}]}\\right]\\)",
+          "\\(E_{cell}=\\left(E^\\circ_{cathode}-E^\\circ_{anode}\\right)-\\dfrac{0.0592\\,\\mathrm{V}}{n}\\log\\dfrac{[Zn^{2+}]}{[Cu^{2+}]}\\)",
+          "\\(=\\left(E^\\circ_{\\mathrm{Cu^{2+}/Cu}}-E^\\circ_{\\mathrm{Zn^{2+}/Zn}}\\right)+\\dfrac{0.0592\\,\\mathrm{V}}{2}\\log\\dfrac{[Cu^{2+}]}{[Zn^{2+}]}\\)"
+        ],
+        "source_refs": [
+          "CHEM-TB-P0286",
+          "CHEM-TB-P0287"
+        ]
+      },
+      {
+        "heading": "Measurement of e.m.f. of a cell",
+        "scope": "core",
+        "paragraphs": [
+          "The difference of potential, which causes a current to flow from the electrode of higher potential to one of lower potential, is called the “electromotive force (e.m.f.) of the cell” and is expressed in volts. The e.m.f. cannot be determined accurately by connecting a voltmeter directly between the two electrodes, because during such a measurement, a part of the cell current is drawn, thereby causing a change in the e.m.f. due to the formation of reaction products at the electrodes and change in the concentration of the electrolyte around the electrodes. Consequently, such a measurement would indicate a potential difference less than the actual e.m.f. of the cell. For precise e.m.f. measurements, potentiometers (which utilize Wheatstone’s bridge) are used, which require extremely small current at balance-point.",
+          "In potentiometric measurement of e.m.f. of a cell, an external adjustable potential is applied and its value determined when it prevents the current from flowing in the given cell. The imposed potential is, consequently, equal in magnitude to the potential of the cell. If care is taken during the measurements, the current taken from the cell is vanishingly small and the concentrations of the ions in the cell are not altered appreciably during the measurements. The e.m.f. of the cell thus remains constant and its value can be determined with a very high degree of precision.",
+          "In potentiometric measurements of e.m.f., it is necessary to have a cell whose e.m.f. is constant with time and is exactly known. For this purpose, a standard Weston cell is commonly employed. Fig. 7 shows a diagram of a simplified potentiometer. It consists of a uniform wire AB of high resistance. A storage battery (C) of constant, but large e.m.f. is connected to the ends A and B of the wire, through a rheostat, R (an adjustable resistance).",
+          "(i) The cell X, whose e.m.f. is to be determined, is included in another circuit by connecting the pole A through a galvanometer and sliding contact. The first circuit is completed by introducing key K₂. The sliding contact is moved along the wire AB till point D is reached, when no current flows through the galvanometer. The position of D is noted.",
+          "(ii) The second circuit is then completed through standard cell S of known e.m.f. by introducing key K₁. The sliding contact is again moved along the wire AB till the point D′ is reached, when no deflection is observed. The position of D′ is noted. Then:",
+          "Thus, unknown e.m.f. \\(E_x\\) of the cell can be calculated, since e.m.f. of standard cell \\(E_s\\) is known."
+        ],
+        "working": [
+          "\\(\\text{E.m.f. of cell,}\\qquad E_x\\propto\\text{length }AD\\)",
+          "\\(\\text{and e.m.f. of standard cell,}\\qquad E_s\\propto\\text{Length }AD'\\)",
+          "\\(\\therefore\\quad \\dfrac{E_x}{E_s}=\\dfrac{\\text{Length }AD}{\\text{Length }AD'}\\)",
+          "\\(\\text{or}\\qquad E_x=\\dfrac{\\text{Length }AD}{\\text{Length }AD'}\\times E_s\\)"
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "figure_number": "Fig. 7",
+            "figure_name": "Measurement of emf of a cell",
+            "page": 287,
+            "description": "Simplified potentiometer arrangement used for e.m.f. measurement: a uniform high-resistance wire AB is supplied by storage battery C through adjustable resistance R; standard cell S and unknown cell X are connected through keys K₁ and K₂, galvanometer G and sliding contact, with balance points D and D′ marked on wire AB.",
+            "alt": "Placeholder for textbook Fig. 7, Measurement of emf of a cell, showing the simplified potentiometer circuit with storage battery C, rheostat R, wire AB, standard cell S, unknown cell X, keys K1 and K2, galvanometer G, sliding contact, and balance points D and D prime.",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            },
+            "size": "large"
+          }
+        ],
+        "source_refs": [
+          "CHEM-TB-P0287",
+          "CHEM-TB-P0288"
+        ]
+      }
+    ],
+    "source_refs": [
+      "SYL-R25-CHEM-U2",
+      "CHEM-TB-P0286",
+      "CHEM-TB-P0287",
+      "CHEM-TB-P0288"
+    ],
+    "book_refs": [
+      {
+        "pages": "286–288",
+        "note": "EMF of an electrochemical cell, Nernst equation for a cell reaction, and potentiometric measurement of cell e.m.f.; Weston standard cell construction and concentration-cell material excluded as outside R25 Unit II scope"
+      }
+    ],
+    "learn": []
   }
 ]
