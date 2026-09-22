@@ -1234,7 +1234,8 @@
         "scope": "core",
         "paragraphs": [
           "Consider a general redox reaction:",
-          "This expression is known as Nernst’s equation for electrode potential. At 25°C:"
+          "This expression is known as Nernst’s equation for electrode potential. At 25°C:",
+          "From the above equations, it is clear that: (i) if concentration of solution [Mⁿ⁺] is increased, the electrode potential increases and vice versa; (ii) if temperature is increased, the electrode potential increases and vice versa."
         ],
         "working": [
           "\\(\\mathrm{M^{n+}(aq)+ne^-\\rightleftharpoons M(s)}\\)",
@@ -1244,7 +1245,118 @@
         ],
         "source_refs": [
           "CHEM-TB-P0281",
-          "CHEM-TB-P0282"
+          "CHEM-TB-P0282",
+          "CHEM-TB-P0283"
+        ]
+      },
+      {
+        "heading": "Importance of electrode potential",
+        "scope": "core",
+        "paragraphs": [
+          "When elements are arranged in increasing order (downwards) of their standard electrode potential, a series called electrochemical series (see Table 1) is obtained.",
+          "The electromotive series provides valuable information regarding:",
+          "(1) Relative ease of oxidation or reduction: A system with high reduction potential has a great tendency to undergo reduction, so we can easily interpret the behaviour of different elements. For example, the standard reduction potential of F₂/F⁻ system is highest (i.e., +2.87 volts), so F⁻ ions are very easily reduced to F₂ or conversely, F₂ is oxidized with great difficulty to F⁻ ions. On the other hand, standard reduction potential of Li⁺/Li system is least (i.e., −3.05 volts), so Li⁺ is reduced with great difficulty to Li or conversely, Li is very easily oxidized to Li⁺.",
+          "(2) Replacement tendency: Higher value of reduction potential shows a great tendency to assume the reduced form. So, a knowledge of electrode potential gives an indication of relative replacement tendency. For example, we can know whether Cu will displace Zn from solution or vice versa. We know that standard electrode potentials are:",
+          "Thus, Cu²⁺ has a greater tendency to acquire Cu form than Zn²⁺ has for acquiring Zn form. In other words, zinc will displace copper from the solution of the latter, or the reaction will occur in the direction:",
+          "(3) Predicting spontaneity of redox reactions: Spontaneity of a redox reaction can be predicted from the e.m.f. (E) value of the complete cell reaction. Positive value of E of a cell reaction indicates that the reaction is spontaneous. If value of E is negative, the reaction is not feasible. In general, an element having lower reduction potential can displace another metal having higher reduction potential from its salt solution spontaneously.",
+          "(4) Calculation of equilibrium constant: The standard electrode potential:"
+        ],
+        "working": [
+          "\\(E^\\circ_{\\mathrm{Cu^{2+}/Cu}}=0.34\\,\\text{volt};\\qquad E^\\circ_{\\mathrm{Zn^{2+}/Zn}}=-0.76\\,\\text{volt}\\)",
+          "\\(\\mathrm{Zn+Cu^{2+}\\longrightarrow Zn^{2+}+Cu}\\)",
+          "\\(E^\\circ=\\dfrac{RT}{nF}\\ln K_{eq}=\\dfrac{2.303RT}{nF}\\log K_{eq}\\)",
+          "\\(\\therefore\\quad \\log K_{eq}=\\dfrac{nF\\times E^\\circ}{2.303RT}=\\dfrac{nE^\\circ}{0.0592\\,V}\\qquad\\text{(At 25^\\circ C)}\\)"
+        ],
+        "tables": [
+          {
+            "caption": "Table 1. Standard electrode potentials (reduction) at 25°C.",
+            "headers": [
+              "Metal ion",
+              "Potential in volts"
+            ],
+            "rows": [
+              [
+                "\\(\\mathrm{Li^+ + e^- \\longrightarrow Li}\\) (BASE)",
+                "−3.05 (ANODE)"
+              ],
+              [
+                "\\(\\mathrm{K^+ + e^- \\longrightarrow K}\\)",
+                "−2.93"
+              ],
+              [
+                "\\(\\mathrm{Ca^{2+} + 2e^- \\longrightarrow Ca}\\)",
+                "−2.90"
+              ],
+              [
+                "\\(\\mathrm{Na^+ + e^- \\longrightarrow Na}\\)",
+                "−2.71"
+              ],
+              [
+                "\\(\\mathrm{Mg^{2+} + 2e^- \\longrightarrow Mg}\\)",
+                "−2.37"
+              ],
+              [
+                "\\(\\mathrm{Al^{3+} + 3e^- \\longrightarrow Al}\\)",
+                "−1.66"
+              ],
+              [
+                "\\(\\mathrm{Zn^{2+} + 2e^- \\longrightarrow Zn}\\)",
+                "−0.76"
+              ],
+              [
+                "\\(\\mathrm{Cr^{3+} + 3e^- \\longrightarrow Cr}\\)",
+                "−0.74"
+              ],
+              [
+                "\\(\\mathrm{Fe^{2+} + 2e^- \\longrightarrow Fe}\\)",
+                "−0.44"
+              ],
+              [
+                "\\(\\mathrm{Ni^{2+} + 2e^- \\longrightarrow Ni}\\)",
+                "−0.23"
+              ],
+              [
+                "\\(\\mathrm{Sn^{2+} + 2e^- \\longrightarrow Sn}\\)",
+                "−0.14"
+              ],
+              [
+                "\\(\\mathrm{Pb^{2+} + 2e^- \\longrightarrow Pb}\\)",
+                "−0.13"
+              ],
+              [
+                "\\(\\mathrm{Fe^{3+} + 3e^- \\longrightarrow Fe}\\)",
+                "−0.04"
+              ],
+              [
+                "\\(\\mathrm{H^+ + e^- \\longrightarrow \\dfrac{1}{2}H_2}\\)",
+                "0.00 (Reference)"
+              ],
+              [
+                "\\(\\mathrm{Cu^{2+} + 2e^- \\longrightarrow Cu}\\)",
+                "+0.34"
+              ],
+              [
+                "\\(\\mathrm{Ag^+ + e^- \\longrightarrow Ag}\\)",
+                "+0.80"
+              ],
+              [
+                "\\(\\mathrm{Pt^{4+} + 4e^- \\longrightarrow Pt}\\)",
+                "+0.86"
+              ],
+              [
+                "\\(\\mathrm{Au^+ + e^- \\longrightarrow Au}\\)",
+                "+1.69"
+              ],
+              [
+                "\\(\\mathrm{\\dfrac{1}{2}F_2 + e^- \\longrightarrow F^-}\\) (NOBLE)",
+                "+2.87 (CATHODIC)"
+              ]
+            ]
+          }
+        ],
+        "source_refs": [
+          "CHEM-TB-P0283",
+          "CHEM-TB-P0284"
         ]
       }
     ],
@@ -1253,12 +1365,87 @@
       "CHEM-TB-P0279",
       "CHEM-TB-P0280",
       "CHEM-TB-P0281",
-      "CHEM-TB-P0282"
+      "CHEM-TB-P0282",
+      "CHEM-TB-P0283",
+      "CHEM-TB-P0284"
     ],
     "book_refs": [
       {
-        "pages": "279–282",
-        "note": "Electrode potential, measurement relative to SHE and Nernst equation (derivation omitted per R25 syllabus)"
+        "pages": "279–284",
+        "note": "Electrode potential, measurement relative to SHE, Nernst equation (derivation omitted per R25 syllabus), electrochemical series and importance/applications of electrode potential"
+      }
+    ],
+    "learn": []
+  },
+  {
+    "id": "u2-electrochemical-cell",
+    "unit": 2,
+    "nav_number": "2.3",
+    "title": "Electrochemical Cell and Galvanic Cell",
+    "status": "core",
+    "sections": [
+      {
+        "heading": "3 ELECTROCHEMICAL CELL",
+        "scope": "core",
+        "paragraphs": [
+          "An electrochemical cell is a device in which a redox reaction is utilized to get electrical energy. An electrochemical cell is also commonly referred to as voltaic or galvanic cell. The electrode where oxidation occurs is called anode; while the electrode where reduction occurs is called cathode.",
+          "The practical application of an electrochemical or galvanic cell is Daniell cell. It consists of zinc electrode, dipping in ZnSO₄ solution (where oxidation takes place) and a copper electrode, dipping in CuSO₄ solution (where reduction takes place). In other words, each electrode may be regarded as a half-cell. The two solutions are separated by a salt bridge. The two solutions can seep through the salt bridge, and so come in contact with each other automatically. The electrode reactions in Daniell cell are:",
+          "The tendency of Zn to form Zn²⁺ is greater than the tendency of Zn²⁺ to get deposited as Zn and hence, Zn metal acquires a negative charge. On the other hand, tendency of copper to go into solution is less than the tendency of Cu²⁺ to get deposited as Cu and hence, copper electrode becomes positively charged. The e.m.f. of the cell is 1.1 volts."
+        ],
+        "working": [
+          "\\(\\text{At anode (or −ve electrode):}\\qquad \\mathrm{Zn\\longrightarrow Zn^{2+}+2e^-}\\qquad\\text{(Oxidation)}\\)",
+          "\\(\\text{At cathode (or +ve electrode):}\\qquad \\mathrm{Cu^{2+}+2e^-\\longrightarrow Cu}\\qquad\\text{(Reduction)}\\)",
+          "\\(\\text{Cell reaction:}\\qquad \\mathrm{Zn+Cu^{2+}\\longrightarrow Zn^{2+}+Cu}\\)"
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "figure_number": "Fig. 5",
+            "figure_name": "Daniell cell",
+            "page": 284,
+            "alt": "Placeholder for textbook Fig. 5, Daniell cell, showing zinc anode in ZnSO₄ solution and copper cathode in CuSO₄ solution connected by a salt bridge and external circuit with a voltmeter; electron flow is from zinc to copper.",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            },
+            "size": "large"
+          }
+        ],
+        "source_refs": [
+          "CHEM-TB-P0284",
+          "CHEM-TB-P0285"
+        ]
+      },
+      {
+        "heading": "Representation of a galvanic cell",
+        "scope": "core",
+        "paragraphs": [
+          "According to present conventions, a galvanic cell is represented by keeping in view the following points:",
+          "(1) Anode is written on the left-hand side; while cathode is written on the right-hand side.",
+          "(2) The electrode on the left (i.e., anode) is written by writing the metal (or solid phase) first and then the electrolyte. The two are separated by a vertical line or a semicolon. The electrolyte may be represented by the formula of the whole compound or by ionic species. Additional information regarding concentration may also be mentioned in bracket. These points will be made clear by the following examples of representing anode half-cell as:",
+          "(3) The cathode of the cell (at which reduction takes place) is written on the right-hand side. In this case, the electrolyte is represented first and the metal (or solid phase) thereafter. The two are separated by a vertical line or a semicolon. A few examples of representing cathode half-cell are cited below:",
+          "(4) A salt bridge is indicated by two vertical lines, separating the two half-cells. Thus, applying above considerations to Daniell cell, we may represent it as:"
+        ],
+        "working": [
+          "\\(\\mathrm{Zn/Zn^{2+}}\\quad\\text{or}\\quad\\mathrm{Zn:Zn^{2+}}\\quad\\text{or}\\quad\\mathrm{Zn;ZnSO_4(1\\,M)}\\)",
+          "\\(\\mathrm{Pt,H_2(1\\,atm);H^+(1\\,M)}\\)",
+          "\\(\\mathrm{Cu^{2+}/Cu}\\quad\\text{or}\\quad\\mathrm{Cu^{2+}:Cu}\\quad\\text{or}\\quad\\mathrm{Cu^{2+}(1M);Cu}\\quad\\text{or}\\quad\\mathrm{CuSO_4(1M)/Cu}\\)",
+          "\\(\\mathrm{Zn;Zn^{2+}(1\\,M)\\parallel Cu^{2+}(1\\,M);Cu}\\)"
+        ],
+        "source_refs": [
+          "CHEM-TB-P0285"
+        ]
+      }
+    ],
+    "source_refs": [
+      "SYL-R25-CHEM-U2",
+      "CHEM-TB-P0284",
+      "CHEM-TB-P0285"
+    ],
+    "book_refs": [
+      {
+        "pages": "284–285",
+        "note": "Electrochemical/galvanic cell, Daniell cell and representation of a galvanic cell"
       }
     ],
     "learn": []
