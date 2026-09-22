@@ -113,9 +113,8 @@ function renderScaffold(context) {
 
 	const resourceNav = window.PankuUnitResourceNav?.render?.({ subject: context.subject, subjectUrl: context.subjectUrl, unitNumber: context.unitMeta.number, active: 'text' }) || '';
 
-	body.innerHTML = `
-		${renderUnitHero(context, [])}
-		${resourceNav}
+	const plannedTopicNav = unitMeta.plannedTopicNav ?? [];
+	const scaffoldCard = `
 		<section class="unit-template-card">
 			<div class="note-kicker">Official ${escapeHtml(subject.regulation)} scope</div>
 			<h2>${escapeHtml(unitMeta.title)}</h2>
@@ -127,7 +126,24 @@ function renderScaffold(context) {
 				${syllabusUnitUrl ? `<a href="${escapeHtml(syllabusUnitUrl)}">Open Unit ${escapeHtml(unitLabel)} in ${escapeHtml(subject.regulation)} syllabus →</a>` : ''}
 				<a href="${escapeHtml(subjectHomeUrl)}">Back to ${escapeHtml(subject.shortName || subject.name)} →</a>
 			</div>
-		</section>
+		</section>`;
+
+	body.innerHTML = `
+		${renderUnitHero(context, [])}
+		${resourceNav}
+		${plannedTopicNav.length ? `
+			<div class="unit-layout section">
+				<aside class="unit-toc" aria-label="Unit ${escapeHtml(unitLabel)} planned topic navigation">
+					<div class="toc-label">On this page</div>
+					<nav>${plannedTopicNav.map(topic => `
+						<a class="unit-toc-link is-dummy" href="#" aria-disabled="true" tabindex="-1">
+							<span class="toc-index">${escapeHtml(topic.number)}</span>
+							<span>${escapeHtml(topic.title)}</span>
+						</a>`).join('')}
+					</nav>
+				</aside>
+				<section class="unit-content" aria-label="Unit ${escapeHtml(unitLabel)} study notes">${scaffoldCard}</section>
+			</div>` : scaffoldCard}
 	`;
 }
 

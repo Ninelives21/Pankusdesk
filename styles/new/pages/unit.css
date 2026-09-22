@@ -1839,3 +1839,15 @@ sub {
 .worked-solution-lines {
 	grid-template-columns: 1fr;
 }
+
+/* Planned topic navigation on scaffold units: visible structure, intentionally inactive links. */
+.unit-toc-link.is-dummy,
+.unit-toc-link.is-dummy:hover {
+	cursor: default;
+	background: transparent;
+	color: var(--text-secondary);
+}
+
+.unit-toc-link.is-dummy .toc-index {
+	color: var(--muted-2);
+}
