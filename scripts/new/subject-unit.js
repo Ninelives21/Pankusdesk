@@ -443,7 +443,39 @@ function renderSectionDiscrepancy(discrepancy) {
 	`;
 }
 
+function renderSectionFlow(section) {
+	const flow = Array.isArray(section.flow) ? section.flow : [];
+	if (!flow.length) return null;
+	const paragraphs = section.paragraphs ?? [];
+	const working = section.working ?? [];
+	const figures = section.figures ?? [];
+	const tables = section.tables ?? [];
+	const notes = section.notes ?? [];
+
+	return flow.map(block => {
+		if (!block || typeof block !== 'object') return '';
+		const index = Number(block.index);
+		switch (block.type) {
+			case 'paragraph':
+				return Number.isInteger(index) && paragraphs[index] != null ? `<p>${formatText(paragraphs[index])}</p>` : '';
+			case 'formula':
+				return Number.isInteger(index) && working[index] != null ? `<div class="formula-list worked-solution-lines"><div class="formula-line">${formatText(working[index])}</div></div>` : '';
+			case 'figure':
+				return Number.isInteger(index) && figures[index] ? renderTextbookFigureRow(figures[index]) : '';
+			case 'table':
+				return Number.isInteger(index) && tables[index] ? renderStudyTables([tables[index]]) : '';
+			case 'note':
+				return Number.isInteger(index) && notes[index] != null ? `<aside class="textbook-source-note" role="note">${formatText(notes[index])}</aside>` : '';
+			default:
+				return '';
+		}
+	}).join('');
+}
+
 function renderSectionContent(section, context) {
+	const flowed = renderSectionFlow(section);
+	if (flowed !== null) return flowed + renderExplanationAccordions(section.accordions ?? [], section.accordion_recap ?? [], section.accordion_label || 'Understand this diagram') + renderPlainLanguageExplainers(section.explainers ?? []) + renderPractice(section.practice ?? [], context);
+
 	const figures = section.figures ?? [];
 	const sideFigures = figures.filter(figure => figure.grid && Number.isInteger(Number(figure.grid.start)));
 	const ordinaryFigures = figures.filter(figure => !figure.grid);
