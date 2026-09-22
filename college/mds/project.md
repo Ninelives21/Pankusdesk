@@ -448,8 +448,9 @@ Do not claim to have tested something that was not tested.
 When producing a delta ZIP:
 
 - create a real valid ZIP;
-- it should contain exactly one appropriate top-level delta folder;
-- verify/test-unzip it;
+- it must contain exactly one appropriate top-level delta folder;
+- the top-level folder name must exactly match the ZIP filename basename (for example, `pankusdesk-chem-u2-delta.zip` must extract to `pankusdesk-chem-u2-delta/`);
+- verify/test-unzip it and explicitly verify that the extracted top-level folder name matches the ZIP basename;
 - ensure required JSON/JS/KB/college assets/provenance files are present as applicable;
 - verify generated mathematical content for broken escaping;
 - do not package unrelated stale files.

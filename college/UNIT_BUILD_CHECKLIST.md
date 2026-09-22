@@ -216,7 +216,9 @@ Set `publicationStatus: "ready"` only when:
 ## P. Handoff
 
 - [ ] Create a **minimal delta** unless a full workspace is explicitly requested.
-- [ ] Package the delta with one top-level folder.
+- [ ] Package the delta with exactly one top-level folder.
+- [ ] Ensure the top-level folder name exactly matches the ZIP filename basename.
+- [ ] Test-unzip the package and verify the extracted top-level folder name before handoff.
 - [ ] List changed/added files.
 - [ ] Provide an extraction command that works from the stated directory.
 - [ ] Provide `rsync -avhn` dry-run first.

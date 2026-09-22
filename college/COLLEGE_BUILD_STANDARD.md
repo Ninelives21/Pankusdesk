@@ -580,7 +580,7 @@ Do not update only the prose spec while leaving schemas/verifier behind.
 
 ## 21. Handoff convention
 
-Prefer a minimal delta ZIP with **one top-level folder** so extraction is predictable.
+Prefer a minimal delta ZIP with **exactly one top-level folder** so extraction is predictable. The top-level folder name must exactly match the ZIP filename basename (for example, `pankusdesk-chem-u2-delta.zip` must extract to `pankusdesk-chem-u2-delta/`). Test-unzip the package and verify this name match before handoff.
 
 Always provide dry-run before real sync. Do not use `--delete` for a delta.
 
