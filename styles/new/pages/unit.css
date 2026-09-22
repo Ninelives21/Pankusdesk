@@ -1851,3 +1851,12 @@ sub {
 .unit-toc-link.is-dummy .toc-index {
 	color: var(--muted-2);
 }
+
+/* Textbook figure placeholders may carry a source-faithful visual description for later redraw/replacement. */
+.textbook-figure-placeholder-description {
+	max-width: 70ch;
+	margin: 0.55rem auto 0;
+	color: var(--text-secondary);
+	font-size: 0.94rem;
+	line-height: 1.55;
+}

@@ -172,7 +172,7 @@ function renderReadyUnit(context, unitTopics, sourceCollections) {
 		</div>
 	`;
 
-	renderTopicNav(unitTopics);
+	renderTopicNav(unitTopics, context.unitMeta.plannedTopicNav ?? []);
 	renderTopicNotes(unitTopics, context, sourceCollections);
 	setupSelfCheckAccordions();
 	setupExplanationAccordions();
@@ -315,14 +315,33 @@ function buildTopicHashHref(id) {
 	return `${url.pathname}${url.search}${url.hash}`;
 }
 
-function renderTopicNav(unitTopics) {
+function renderTopicNav(unitTopics, plannedTopicNav = []) {
 	const nav = document.getElementById('unit-topic-nav');
 	if (!nav) return;
+
+	if (plannedTopicNav.length) {
+		const builtByNumber = new Map(unitTopics.map((topic, index) => [String(topic.nav_number || topic.number || index + 1), topic]));
+		nav.innerHTML = plannedTopicNav.map((planned, index) => {
+			const number = String(planned.number || index + 1);
+			const topic = builtByNumber.get(number);
+			if (!topic) {
+				return `<a class="unit-toc-link is-dummy" href="#" aria-disabled="true" tabindex="-1">
+					<span class="toc-index">${escapeHtml(number)}</span>
+					<span>${escapeHtml(planned.title)}</span>
+				</a>`;
+			}
+			return `<a class="unit-toc-link" href="${escapeHtml(buildTopicHashHref(topic.id))}">
+				<span class="toc-index">${escapeHtml(number)}</span>
+				<span>${escapeHtml(planned.title || topic.title)}</span>
+			</a>`;
+		}).join('');
+		return;
+	}
 
 	nav.innerHTML = unitTopics
 		.map((topic, index) => `
 			<a class="unit-toc-link" href="${escapeHtml(buildTopicHashHref(topic.id))}">
-				<span class="toc-index">${String(index + 1).padStart(2, '0')}</span>
+				<span class="toc-index">${escapeHtml(String(topic.nav_number || topic.number || String(index + 1).padStart(2, '0')))}</span>
 				<span>${escapeHtml(topic.title)}</span>
 			</a>
 		`)
@@ -647,10 +666,12 @@ function renderTextbookFigure(figure) {
 		const number = figure.figure_number || figure.figureNumber || 'Figure';
 		const name = figure.figure_name || figure.figureName || figure.alt || 'Textbook figure';
 		const page = figure.page ? `Textbook p. ${figure.page}` : 'Textbook page to be confirmed';
+		const description = figure.description ? `<div class="textbook-figure-placeholder-description">${formatText(figure.description)}</div>` : '';
 		return `
 			<div class="study-figure textbook-figure textbook-figure-placeholder" role="note" aria-label="${escapeHtml(`${number}: ${name}`)}">
 				<div class="textbook-figure-placeholder-kicker">Image placeholder</div>
 				<div class="textbook-figure-placeholder-title">${escapeHtml(number)} · ${escapeHtml(name)}</div>
+				${description}
 				<div class="textbook-figure-placeholder-page">${escapeHtml(page)}</div>
 			</div>
 		`;
