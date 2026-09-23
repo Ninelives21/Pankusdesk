@@ -407,18 +407,24 @@ function renderSections(sections, context) {
 
 function renderSection(section, context) {
 	const isClassNote = section.kind === 'class-note';
+	const isBeyondR25 = section.scope === 'beyond-r25';
 	const discrepancy = normalizeSectionDiscrepancy(section.discrepancy);
 	const className = [
 		isClassNote ? 'note-section class-note-section' : 'note-section',
+		isBeyondR25 ? 'beyond-r25-section' : '',
 		discrepancy ? 'has-discrepancy' : '',
 	].filter(Boolean).join(' ');
 	const sourceLabel = isClassNote
 		? `<div class="class-note-source-label">${escapeHtml(section.source_label || 'Priyanka\'s class notes')}</div>`
 		: '';
+	const scopeLabel = isBeyondR25
+		? `<div class="beyond-r25-label"><strong>${escapeHtml(section.scope_label || 'Beyond R25')}</strong><span>${escapeHtml(section.scope_note || 'Included for textbook completeness; outside the prescribed R25 scope.')}</span></div>`
+		: '';
 
 	return `
 		<section class="${className}">
 			${sourceLabel}
+			${scopeLabel}
 			<div class="note-section-heading"><h3>${formatText(section.heading)}</h3></div>
 			${discrepancy ? renderSectionDiscrepancy(discrepancy) : ''}
 			${renderSectionContent(section, context)}

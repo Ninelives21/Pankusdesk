@@ -1869,3 +1869,35 @@ sub {
   font-size: 0.94em;
   line-height: 1.55;
 }
+
+/* Textbook-completeness material outside the prescribed R25 unit scope. */
+.beyond-r25-section {
+	background: #f3f4f6;
+	border: 1px solid #d8dde5;
+	border-radius: 14px;
+	padding: 1.1rem 1.25rem;
+	margin-block: 1.25rem;
+}
+
+.beyond-r25-label {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: .45rem .75rem;
+	margin-bottom: .75rem;
+	color: #5f6875;
+	font-size: .86rem;
+	line-height: 1.45;
+}
+
+.beyond-r25-label strong {
+	text-transform: uppercase;
+	letter-spacing: .06em;
+	font-size: .75rem;
+	color: #4b5563;
+}
+
+.beyond-r25-section .study-figure,
+.beyond-r25-section table {
+	background: #fff;
+}
