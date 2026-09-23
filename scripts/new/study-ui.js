@@ -11,7 +11,7 @@ function escapeHtml(value) {
 
 function formatText(value) {
 	const input = String(value ?? '');
-	const mathPattern = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
+	const mathPattern = /(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g;
 	let result = '';
 	let lastIndex = 0;
 	let match;
@@ -25,7 +25,7 @@ function formatText(value) {
 }
 
 async function typesetMath(root) {
-	if (!root || !/[\\][(\[]/.test(root.textContent || '')) return;
+	if (!root || !(/\$\$|[\\][(\[]/).test(root.textContent || '')) return;
 	await ensureMathJax();
 	if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise([root]);
 }
@@ -35,7 +35,7 @@ function ensureMathJax() {
 	if (mathJaxPromise) return mathJaxPromise;
 	mathJaxPromise = new Promise((resolve, reject) => {
 		window.MathJax = {
-			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true },
+			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true },
 			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
 		};
 		const script = document.createElement('script');
