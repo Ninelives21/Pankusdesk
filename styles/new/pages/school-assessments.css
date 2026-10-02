@@ -1,0 +1,253 @@
+/* ====================================================================== */
+/*                    SCHOOL / ASSESSMENT GUIDANCE                        */
+/* ====================================================================== */
+
+.school-assessment-page { padding-top: var(--space-20); }
+
+.school-hero {
+	padding: var(--space-14);
+	display: grid;
+	grid-template-columns: minmax(0, 1.55fr) minmax(280px, .7fr);
+	gap: var(--space-12);
+	background: linear-gradient(135deg, var(--primary-soft), var(--surface));
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow);
+}
+
+.school-source-badge {
+	display: inline-flex;
+	margin-bottom: var(--space-5);
+	padding: 6px 10px;
+	border-radius: var(--radius-pill);
+	background: var(--notes-soft);
+	border: 1px solid var(--notes-border);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .45px;
+	text-transform: uppercase;
+	color: var(--notes-text);
+}
+
+.school-hero h1 {
+	margin: var(--space-3) 0 0;
+	font-size: clamp(36px, 5vw, 50px);
+	line-height: 1.06;
+	letter-spacing: -1px;
+	color: var(--text-strong);
+}
+
+.school-hero > div > p {
+	max-width: 780px;
+	margin: var(--space-6) 0 0;
+	font-size: 16px;
+	line-height: 1.7;
+	color: var(--text-secondary);
+}
+
+.school-hero-stats {
+	margin-top: var(--space-9);
+	display: flex;
+	gap: var(--space-10);
+	flex-wrap: wrap;
+}
+
+.school-hero-stats div { display: grid; gap: 2px; }
+.school-hero-stats strong { font-size: 26px; line-height: 1; color: var(--primary); }
+.school-hero-stats span { font-size: 12px; color: var(--muted-2); }
+
+.school-reference-card {
+	align-self: stretch;
+	padding: var(--space-9);
+	background: rgba(255,255,255,.88);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-small);
+}
+
+.school-reference-card strong {
+	display: block;
+	margin-top: var(--space-5);
+	font-size: 20px;
+	line-height: 1.25;
+	color: var(--text-strong);
+}
+
+.school-reference-card p {
+	margin: var(--space-3) 0 0;
+	font-size: 14px;
+	line-height: 1.55;
+	color: var(--muted);
+}
+.school-reference-card .school-isbn { font-size: 12px; color: var(--muted-2); }
+
+.school-guidance-note {
+	margin-top: var(--space-7);
+	padding: var(--space-6) var(--space-7);
+	background: var(--surface-subtle);
+	border: 1px solid var(--line-soft);
+	border-left: 4px solid var(--primary-muted);
+	border-radius: var(--radius-md);
+}
+.school-guidance-note strong { color: var(--text-strong); }
+.school-guidance-note p { margin: var(--space-2) 0 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
+
+.school-unit-jump {
+	margin-top: var(--space-7);
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0,1fr));
+	gap: var(--space-4);
+}
+.school-unit-jump a {
+	padding: 10px 13px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-4);
+	text-decoration: none;
+	background: var(--surface);
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-md);
+	font-size: 14px;
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary-dark);
+}
+.school-unit-jump small {
+	padding: 2px 7px;
+	border-radius: var(--radius-pill);
+	background: var(--primary-soft);
+	color: var(--primary-dark);
+}
+
+.school-unit { scroll-margin-top: 92px; }
+.school-unit-heading { align-items: flex-end; }
+.school-unit-count {
+	padding: 5px 9px;
+	border: 1px solid var(--line-strong);
+	border-radius: var(--radius-pill);
+	background: var(--primary-soft);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary-dark);
+	white-space: nowrap;
+}
+
+.school-range-list { display: grid; gap: var(--space-5); }
+.school-range {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-small);
+	overflow: hidden;
+	scroll-margin-top: 92px;
+}
+.school-range-summary {
+	padding: var(--space-6) var(--space-7);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-6);
+	cursor: pointer;
+	list-style: none;
+	background: var(--surface-soft);
+}
+.school-range-summary::-webkit-details-marker { display: none; }
+.school-range-summary > span:first-child { display: grid; gap: 3px; }
+.school-range-summary strong { font-size: 18px; color: var(--text-strong); }
+.school-range-summary small { font-size: 13px; color: var(--muted); }
+.school-range-count {
+	flex: 0 0 auto;
+	padding: 5px 9px;
+	border-radius: var(--radius-pill);
+	background: var(--primary-soft);
+	font-size: 12px;
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary-dark);
+}
+.school-range-body { padding: var(--space-6); border-top: 1px solid var(--line-soft); }
+.school-range-note { margin: 0 0 var(--space-5); font-size: 13px; line-height: 1.55; color: var(--muted); }
+.school-question-list { display: grid; gap: var(--space-6); }
+
+.school-question-card {
+	padding: var(--space-6);
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	scroll-margin-top: 92px;
+}
+.school-question-meta {
+	margin-bottom: var(--space-4);
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	font-size: 12px;
+	color: var(--muted-2);
+}
+.school-example-badge {
+	padding: 4px 7px;
+	border-radius: var(--radius-xs);
+	background: var(--primary-soft);
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary-dark);
+}
+.school-question-scan,
+.school-solution-body {
+	display: grid;
+	gap: var(--space-4);
+}
+.school-scan {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	background: #fff;
+	border-radius: var(--radius-xs);
+}
+.school-scan--question { border: 1px solid var(--line-soft); }
+.school-scan--solution { border: 1px solid var(--line-soft); }
+
+.school-solution {
+	margin-top: var(--space-5);
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-md);
+	overflow: hidden;
+}
+.school-solution > summary {
+	padding: 11px 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-4);
+	cursor: pointer;
+	list-style: none;
+	background: var(--primary-soft);
+	font-size: 14px;
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary-dark);
+}
+.school-solution > summary::-webkit-details-marker { display: none; }
+.school-solution-toggle { font-size: 20px; line-height: 1; transition: transform var(--transition-standard); }
+.school-solution[open] .school-solution-toggle { transform: rotate(45deg); }
+.school-solution-body { padding: var(--space-5); background: var(--surface); }
+.school-scan-missing { margin: 0; color: var(--muted); }
+
+.school-loading, .school-error {
+	padding: var(--space-12);
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	color: var(--muted);
+}
+.school-error { color: var(--error); background: var(--error-soft); }
+.back-to-top { display: inline-flex; margin: var(--space-10) 0 var(--space-12); font-weight: var(--font-weight-semibold); color: var(--primary); }
+
+@media (max-width: 820px) {
+	.school-hero { grid-template-columns: 1fr; padding: var(--space-10); }
+	.school-unit-jump { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+	.school-range-summary { align-items: flex-start; flex-direction: column; }
+	.school-range-body, .school-question-card { padding: var(--space-4); }
+	.school-hero-stats { gap: var(--space-6); }
+	.school-question-meta { flex-wrap: wrap; }
+}

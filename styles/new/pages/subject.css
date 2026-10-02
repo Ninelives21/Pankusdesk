@@ -390,3 +390,93 @@
 	color: var(--primary);
 }
 
+
+/* ====================================================================== */
+/*                       SCHOOL & EXAM GUIDANCE                            */
+/* ====================================================================== */
+
+.school-guidance-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--space-8);
+}
+
+.school-guidance-card {
+	min-height: 220px;
+	padding: var(--space-10);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+	background: linear-gradient(145deg, var(--surface), var(--primary-soft));
+	border: 1px solid var(--line-primary);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-small);
+	transition: transform var(--transition-standard), box-shadow var(--transition-standard), border-color var(--transition-standard);
+}
+
+.school-guidance-card::before {
+	content: '';
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: 4px;
+	background: var(--primary-2);
+}
+
+.school-guidance-card:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-hover);
+	border-color: var(--primary-muted);
+}
+
+.school-guidance-card-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-4);
+}
+
+.school-guidance-label,
+.school-guidance-status {
+	font-size: 11px;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .45px;
+	text-transform: uppercase;
+}
+
+.school-guidance-label { color: var(--primary-muted); }
+.school-guidance-status {
+	padding: 5px 8px;
+	border-radius: var(--radius-pill);
+	background: var(--notes-soft);
+	border: 1px solid var(--notes-border);
+	color: var(--notes-text);
+}
+
+.school-guidance-card h2 {
+	margin: var(--space-6) 0 var(--space-4);
+	font-size: 23px;
+	line-height: 1.25;
+	color: var(--text-strong);
+}
+
+.school-guidance-card p {
+	margin: 0;
+	max-width: 680px;
+	font-size: var(--font-size-body);
+	line-height: 1.7;
+	color: var(--muted);
+}
+
+.school-guidance-action {
+	margin-top: auto;
+	padding-top: var(--space-8);
+	font-size: 14px;
+	font-weight: var(--font-weight-heavy);
+	color: var(--primary);
+}
+
+@media (max-width: 760px) {
+	.school-guidance-grid { grid-template-columns: 1fr; }
+}
