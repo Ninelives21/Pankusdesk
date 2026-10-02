@@ -44,9 +44,9 @@ function renderItem(item, group) {
 		</article>`;
 }
 
-function renderGroup(group, index) {
+function renderGroup(group) {
 	return `
-		<details class="school-range" id="${escapeHtml(group.id)}" ${index === 0 ? 'open' : ''}>
+		<details class="school-range" id="${escapeHtml(group.id)}">
 			<summary class="school-range-summary">
 				<span>
 					<strong>${escapeHtml(group.label)}</strong>
@@ -75,7 +75,7 @@ function renderUnit(unit) {
 				<span class="school-unit-count">${count} questions</span>
 			</div>
 			<div class="school-range-list">
-				${(unit.groups || []).map((group, index) => renderGroup(group, index)).join('')}
+				${(unit.groups || []).map(renderGroup).join('')}
 			</div>
 		</section>`;
 }
