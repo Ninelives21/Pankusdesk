@@ -7648,9 +7648,10 @@
     "title": "Transformer principle and construction",
     "status": "core",
     "learn": [
-      "The prescribed text defines a transformer as a static machine that changes voltage level without changing frequency and transfers energy through magnetic coupling between circuits.",
-      "Its working principle is electromagnetic induction: AC in the primary produces alternating core flux that links the secondary and induces emf. A transformer does not work on DC because DC does not produce alternating flux.",
-      "The basic construction described includes primary and secondary copper windings, a laminated silicon-steel core, transformer oil for cooling/insulation, radiators and bushings."
+      "A transformer changes voltage level without changing frequency.",
+      "It works on electromagnetic induction: alternating current in the primary produces alternating flux, which links the secondary and induces emf.",
+      "The primary winding is connected to the source; the secondary winding is connected to the load.",
+      "The main constructional parts presented are the primary winding, secondary winding and laminated iron core, with oil, radiators, tank and bushings used for insulation and cooling."
     ],
     "formulas": [],
     "method": [],
@@ -7667,7 +7668,118 @@
         "figures": "3.1–3.4"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "A transformer is a static machine that changes voltage level without changing frequency and transfers electrical energy through magnetic coupling.",
+    "sections": [
+      {
+        "heading": "3.1 Transformers — uses and working principle",
+        "scope": "core",
+        "paragraphs": [
+          "A transformer is a static machine which changes voltage levels from one value to another without changing frequency. Electrical energy is transferred through the magnetic field between two circuits at different voltages.",
+          "The text lists applications such as changing voltage levels in power systems, reducing transmission losses by stepping up transmission voltage, coupling stages in cascaded circuits, providing electrical isolation, and allowing AC transfer while blocking DC.",
+          "When a coil is connected to an alternating-current source, its time-varying current produces alternating magnetic flux. If a second coil is placed so that this flux links it, the changing flux linkages induce an emf in that second coil. The alternating flux also induces an emf in the first coil.",
+          "An iron core is placed between the windings to provide a good magnetic path and reduce leakage of useful magnetic flux. A transformer therefore works on the principle of electromagnetic induction.",
+          "The source-connected winding is the primary winding and the load-connected winding is the secondary winding. If N2 > N1, the transformer is step-up; if N2 < N1, it is step-down; if N2 = N1, it is a unit transformer used for electrical isolation.",
+          "A transformer does not work on DC supply because DC does not produce alternating flux."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-1",
+            "figure_number": "Figure 3.1",
+            "figure_name": "Alternating flux produced by AC",
+            "alt": "Figure 3.1 · Alternating flux produced by AC · Textbook p. 130",
+            "page": 130,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-2",
+            "figure_number": "Figure 3.2",
+            "figure_name": "Transformer principle",
+            "alt": "Figure 3.2 · Transformer principle · Textbook p. 131",
+            "page": 131,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-3",
+            "figure_number": "Figure 3.3",
+            "figure_name": "Transformer with an iron core",
+            "alt": "Figure 3.3 · Transformer with an iron core · Textbook p. 131",
+            "page": 131,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 4
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P130",
+          "TB-P131"
+        ],
+        "book_refs": [
+          {
+            "pages": "130–131",
+            "images": "130.png–131.png",
+            "figures": "3.1–3.3"
+          }
+        ]
+      },
+      {
+        "heading": "3.1.2 Brief construction of transformers",
+        "scope": "core",
+        "paragraphs": [
+          "The main parts of a transformer are the primary winding, secondary winding and iron core. The primary and secondary windings are made of copper and carry current; their I²R losses are electrical or copper losses.",
+          "The iron core carries magnetic flux and is responsible for magnetic or iron losses. Heat produced by these losses can damage insulation, so the construction must remove heat efficiently. Transformer oil provides cooling and also insulation between windings and between the windings and core.",
+          "The core is built from silicon-steel laminations to reduce iron loss, particularly eddy-current loss. Radiators cool the oil by exposing a larger surface to the atmosphere. The tank is made of mild steel, and porcelain bushings bring live terminals out from the windings."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-4",
+            "figure_number": "Figure 3.4",
+            "figure_name": "Basic construction of a transformer",
+            "alt": "Figure 3.4 · Basic construction of a transformer · Textbook p. 132",
+            "page": 132,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P132"
+        ],
+        "book_refs": [
+          {
+            "pages": "132",
+            "images": "132.png",
+            "figures": "3.4"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "Why does a transformer not work on DC?",
+        "answer": "DC does not produce alternating flux, so there is no continuously changing flux linkage to induce the required transformer emf."
+      },
+      {
+        "question": "What decides whether a transformer is step-up or step-down?",
+        "answer": "The turns ratio. N2 > N1 gives step-up, N2 < N1 gives step-down, and N2 = N1 gives a unit transformer."
+      }
+    ]
   },
   {
     "id": "u3-transformer-emf-ratio",
@@ -7675,8 +7787,10 @@
     "title": "Transformer EMF equation and transformation ratio",
     "status": "supporting",
     "learn": [
-      "For sinusoidal core flux, RMS induced emf is proportional to frequency, turns and maximum flux.",
-      "With winding drops neglected, the voltage ratio follows the turns ratio. This gives the step-up, step-down and unit-transformer classifications."
+      "For sinusoidal flux, RMS induced emf is 4.44 f N Φm.",
+      "Volt per turn is the same on primary and secondary when winding drops are neglected.",
+      "The transformation ratio k = N2/N1 = E2/E1 ≈ V2/V1.",
+      "For the ideal/neglected-loss relation used here, V1I1 = V2I2."
     ],
     "formulas": [
       "E1 = 4.44 f N1 Φm",
@@ -7697,7 +7811,147 @@
         "images": "133.png–137.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "The textbook derives the transformer emf equation from sinusoidal core flux and then uses it to establish volts-per-turn, transformation ratio and kVA/current relations.",
+    "sections": [
+      {
+        "heading": "3.1.3 EMF equation",
+        "scope": "supporting",
+        "paragraphs": [
+          "Consider a transformer with N1 turns on the primary, N2 turns on the secondary, and sinusoidal core flux Φ = Φm sin ωt.",
+          "The instantaneous primary induced emf is obtained from the rate of change of flux linkages. Its maximum value is E1m = N1 Φm ω. For a sine wave, the RMS value is 0.707 times the maximum value.",
+          "\\[E_1=4.44\\,fN_1\\Phi_m\\]",
+          "Similarly,",
+          "\\[E_2=4.44\\,fN_2\\Phi_m\\]",
+          "When winding drops are neglected, V1 = E1 and V2 = E2. Therefore",
+          "\\[k=\\dfrac{V_2}{V_1}=\\dfrac{E_2}{E_1}=\\dfrac{N_2}{N_1}\\]",
+          "The volts per turn is therefore the same on both sides. The text also uses conservation of transformer kVA in the neglected-loss treatment:",
+          "\\[V_1I_1=V_2I_2\\]"
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-5",
+            "figure_number": "Figure 3.5",
+            "figure_name": "Transformer used for EMF-equation derivation",
+            "alt": "Figure 3.5 · Transformer used for EMF-equation derivation · Textbook p. 133",
+            "page": 133,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P133",
+          "TB-P134"
+        ],
+        "book_refs": [
+          {
+            "pages": "133–134",
+            "images": "133.png–134.png",
+            "figures": "3.5"
+          }
+        ]
+      },
+      {
+        "heading": "Worked examples — EMF equation and transformation ratio",
+        "scope": "supporting",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 3.1.1",
+            "question_paragraphs": [
+              "A 230/460 V transformer is excited by a 230 V, 50 Hz AC supply on primary side. The secondary winding has 240 turns. Find the number of primary turns and the maximum operating flux in the core."
+            ],
+            "paragraphs": [
+              "Transformation ratio:",
+              "\\[k=\\dfrac{V_2}{V_1}=\\dfrac{460}{230}=2\\]",
+              "With N2 = 240 turns,",
+              "\\[\\dfrac{N_2}{N_1}=2\\Rightarrow N_1=120\\]",
+              "Using V1 = 4.44 f N1 Φm,",
+              "\\[\\Phi_m=\\dfrac{230}{4.44\\times50\\times120}=0.0086\\,\\text{Wb}=8.6\\,\\text{mWb}\\]"
+            ],
+            "final_answer": "N1 = 120 turns; Φm = 8.6 mWb",
+            "figures": [
+              {
+                "placeholder": true,
+                "src": "placeholder://f3-6",
+                "figure_number": "Figure 3.6",
+                "figure_name": "Transformer diagram for Exercise 3.1.1",
+                "alt": "Figure 3.6 · Transformer diagram for Exercise 3.1.1 · Textbook p. 135",
+                "page": 135,
+                "size": "medium"
+              }
+            ]
+          },
+          {
+            "title": "Exercise 3.1.2",
+            "question_paragraphs": [
+              "A 200 kVA, 11000/415 V, 50 Hz single-phase transformer has 2120 primary turns. Calculate secondary turns, full-load secondary current, primary current and maximum core flux."
+            ],
+            "paragraphs": [
+              "\\[k=\\dfrac{415}{11000}=0.03773\\]",
+              "\\[N_2=kN_1=0.03773\\times2120=79.98\\approx80\\text{ turns}\\]",
+              "\\[I_1=\\dfrac{200\\times1000}{11000}=18.18\\,\\text{A}\\]",
+              "\\[I_2=\\dfrac{200\\times1000}{415}=481.9\\,\\text{A}\\]",
+              "\\[\\Phi_m=\\dfrac{11000}{4.44\\times50\\times2120}=0.0233\\,\\text{Wb}\\]"
+            ],
+            "final_answer": "N2 = 80 turns; I1 = 18.18 A; I2 = 481.9 A; Φm = 0.0233 Wb"
+          },
+          {
+            "title": "Exercise 3.1.3",
+            "question_paragraphs": [
+              "In a 220/3000 V, 50 Hz single-phase transformer, maximum flux density is 2 Wb/m² and emf per turn is 10 V. Determine (a) primary and secondary turns and (b) core cross-sectional area."
+            ],
+            "paragraphs": [
+              "\\[N_1=\\dfrac{220}{10}=22,\\qquad N_2=\\dfrac{3000}{10}=300\\]",
+              "\\[220=4.44\\times50\\times22\\times\\Phi_m\\Rightarrow\\Phi_m=0.04504\\,\\text{Wb}\\]",
+              "Since Bm = Φm/A,",
+              "\\[A=\\dfrac{0.04504}{2}=0.02252\\,\\text{m}^2\\]"
+            ],
+            "final_answer": "N1 = 22 turns; N2 = 300 turns; A = 0.02252 m²"
+          },
+          {
+            "title": "Exercise 3.1.4",
+            "question_paragraphs": [
+              "A 20 kVA transformer has 600 primary turns and 60 secondary turns. The primary is connected to 300 V, 50 Hz. Calculate secondary emf, full-load primary and secondary currents, and maximum core flux."
+            ],
+            "paragraphs": [
+              "\\[k=\\dfrac{60}{600}=0.1\\]",
+              "\\[V_2=kV_1=0.1\\times300=30\\,\\text{V}\\]",
+              "\\[I_1=\\dfrac{20\\times1000}{300}=66.67\\,\\text{A}\\]",
+              "\\[I_2=\\dfrac{20\\times1000}{30}=666.67\\,\\text{A}\\]",
+              "\\[\\Phi_m=\\dfrac{300}{4.44\\times50\\times600}=0.00225\\,\\text{Wb}\\]"
+            ],
+            "final_answer": "V2 = 30 V; I1 = 66.67 A; I2 = 666.67 A; Φm = 0.00225 Wb"
+          }
+        ],
+        "source_refs": [
+          "TB-P134",
+          "TB-P135",
+          "TB-P136",
+          "TB-P137"
+        ],
+        "book_refs": [
+          {
+            "pages": "134–137",
+            "images": "134.png–137.png"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What is the transformer EMF equation?",
+        "answer": "E = 4.44 f N Φm for sinusoidal flux."
+      },
+      {
+        "question": "What does k represent?",
+        "answer": "The transformation ratio k = N2/N1 = E2/E1 ≈ V2/V1 in the neglected-drop treatment."
+      }
+    ]
   },
   {
     "id": "u3-transformer-no-load",
@@ -7725,7 +7979,128 @@
         "figures": "3.7–3.10"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "sections": [
+      {
+        "heading": "3.1.4 Transformer on no-load",
+        "scope": "supporting",
+        "paragraphs": [
+          "When the secondary is open-circuited, the primary still takes a small no-load current I0 from the AC supply. This current is required to establish the mutual flux and supply the iron loss.",
+          "The no-load current is resolved into a magnetising component Im, which is in phase with the mutual flux, and an iron-loss component Iw, which is in phase with the applied voltage.",
+          "\\[I_m=I_0\\sin\\phi_0,\\qquad I_w=I_0\\cos\\phi_0\\]",
+          "The corresponding shunt elements of the no-load equivalent circuit are magnetising reactance Xm and iron-loss resistance R0."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-7",
+            "figure_number": "Figure 3.7",
+            "figure_name": "Transformer on no-load",
+            "alt": "Figure 3.7 · Transformer on no-load · Textbook p. 138",
+            "page": 138,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-8",
+            "figure_number": "Figure 3.8",
+            "figure_name": "No-load phasor diagram",
+            "alt": "Figure 3.8 · No-load phasor diagram · Textbook p. 138",
+            "page": 138,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-9",
+            "figure_number": "Figure 3.9",
+            "figure_name": "Transformer no-load equivalent circuit",
+            "alt": "Figure 3.9 · Transformer no-load equivalent circuit · Textbook p. 138",
+            "page": 138,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-10",
+            "figure_number": "Figure 3.10",
+            "figure_name": "No-load current components",
+            "alt": "Figure 3.10 · No-load current components · Textbook p. 139",
+            "page": 139,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P137",
+          "TB-P138",
+          "TB-P139"
+        ],
+        "book_refs": [
+          {
+            "pages": "137–139",
+            "images": "137.png–139.png",
+            "figures": "3.7–3.10"
+          }
+        ]
+      },
+      {
+        "heading": "Worked example — no-load current",
+        "scope": "supporting",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 3.1.5",
+            "question_paragraphs": [
+              "A transformer takes 2 A and consumes 110 W on no-load when excited from 220 V, 50 Hz. Find (a) no-load power factor, (b) magnetising and loss components of no-load current, and (c) magnetising reactance and iron-loss equivalent resistance."
+            ],
+            "paragraphs": [
+              "\\[110=220\\times2\\times\\cos\\phi_0\\Rightarrow\\cos\\phi_0=0.25\\text{ lagging}\\]",
+              "\\[\\sin\\phi_0=0.968\\]",
+              "\\[I_m=2\\times0.968=1.936\\,\\text{A}\\]",
+              "\\[I_w=2\\times0.25=0.5\\,\\text{A}\\]",
+              "\\[X_m=\\dfrac{220}{1.936}=113.63\\,\\Omega\\]",
+              "\\[R_0=\\dfrac{220}{0.5}=440\\,\\Omega\\]"
+            ],
+            "final_answer": "cos φ0 = 0.25 lagging; Im = 1.936 A; Iw = 0.5 A; Xm = 113.63 Ω; R0 = 440 Ω",
+            "figures": [
+              {
+                "placeholder": true,
+                "src": "placeholder://f3-10",
+                "figure_number": "Figure 3.10",
+                "figure_name": "No-load current components used in Exercise 3.1.5",
+                "alt": "Figure 3.10 · No-load current components used in Exercise 3.1.5 · Textbook p. 139",
+                "page": 139,
+                "size": "medium"
+              }
+            ]
+          }
+        ],
+        "source_refs": [
+          "TB-P138",
+          "TB-P139"
+        ],
+        "book_refs": [
+          {
+            "pages": "138–139",
+            "images": "138.png–139.png"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "u3-ideal-practical-equivalent",
@@ -7752,7 +8127,192 @@
         "images": "139.png–143.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "sections": [
+      {
+        "heading": "3.1.5 Ideal transformer",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook lists an ideal transformer as having zero winding resistance, no leakage flux, infinite core permeability or zero magnetic reluctance, and no power loss. An ideal transformer is a simplifying model; practical transformers do not satisfy all these conditions."
+        ],
+        "source_refs": [
+          "TB-P139"
+        ],
+        "book_refs": [
+          {
+            "pages": "139",
+            "images": "139.png"
+          }
+        ]
+      },
+      {
+        "heading": "3.1.6 Real or practical transformer",
+        "scope": "core",
+        "paragraphs": [
+          "A practical transformer has winding resistances R1 and R2, leakage reactances X1 and X2 caused by leakage flux, finite magnetising current, and iron loss. The practical transformer therefore has voltage drops and losses that are absent in the ideal model."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-11",
+            "figure_number": "Figure 3.11",
+            "figure_name": "Practical transformer",
+            "alt": "Figure 3.11 · Practical transformer · Textbook p. 140",
+            "page": 140,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-12",
+            "figure_number": "Figure 3.12",
+            "figure_name": "Complete equivalent circuit of a transformer",
+            "alt": "Figure 3.12 · Complete equivalent circuit of a transformer · Textbook p. 140",
+            "page": 140,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P140"
+        ],
+        "book_refs": [
+          {
+            "pages": "140",
+            "images": "140.png",
+            "figures": "3.11–3.12"
+          }
+        ]
+      },
+      {
+        "heading": "3.1.7 Transformer equivalent circuit",
+        "scope": "core",
+        "paragraphs": [
+          "The practical transformer is represented by primary resistance R1 and leakage reactance X1, secondary resistance R2 and leakage reactance X2, together with the shunt magnetising branch.",
+          "Secondary resistance and reactance can be referred to the primary side by dividing by k², while primary resistance and reactance can be referred to the secondary side by multiplying by k².",
+          "\\[R_2^{\\prime}=\\dfrac{R_2}{k^2},\\qquad X_2^{\\prime}=\\dfrac{X_2}{k^2}\\]",
+          "\\[R_1^{\\prime}=R_1k^2,\\qquad X_1^{\\prime}=X_1k^2\\]",
+          "This produces equivalent circuits referred wholly to one side, which are then simplified for calculation."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-13",
+            "figure_number": "Figure 3.13",
+            "figure_name": "Complete transformer equivalent circuit",
+            "alt": "Figure 3.13 · Complete transformer equivalent circuit · Textbook p. 141",
+            "page": 141,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-14",
+            "figure_number": "Figure 3.14",
+            "figure_name": "Equivalent circuit referred to secondary side",
+            "alt": "Figure 3.14 · Equivalent circuit referred to secondary side · Textbook p. 142",
+            "page": 142,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-15",
+            "figure_number": "Figure 3.15",
+            "figure_name": "Simplified equivalent circuit",
+            "alt": "Figure 3.15 · Simplified equivalent circuit · Textbook p. 142",
+            "page": 142,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 4
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-16",
+            "figure_number": "Figure 3.16",
+            "figure_name": "Further simplified equivalent circuit",
+            "alt": "Figure 3.16 · Further simplified equivalent circuit · Textbook p. 143",
+            "page": 143,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 4
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P141",
+          "TB-P142",
+          "TB-P143"
+        ],
+        "book_refs": [
+          {
+            "pages": "141–143",
+            "images": "141.png–143.png",
+            "figures": "3.13–3.16"
+          }
+        ]
+      },
+      {
+        "heading": "Worked example — referred impedance",
+        "scope": "core",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 3.1.6",
+            "question_paragraphs": [
+              "A 20 kVA, 50 Hz, 2000/200 V transformer has leakage impedance 0.42 + j5.2 Ω on the H.V. winding and 0.004 + j0.05 Ω on the L.V. winding. Find total leakage impedance referred to (i) H.V. side and (ii) L.V. side."
+            ],
+            "paragraphs": [
+              "\\[k=\\dfrac{200}{2000}=0.1\\]",
+              "Referred to H.V. side:",
+              "\\[R_{01}=0.42+\\dfrac{0.004}{0.1^2}=0.82\\,\\Omega\\]",
+              "\\[X_{01}=5.2+\\dfrac{0.05}{0.1^2}=10.2\\,\\Omega\\]",
+              "\\[Z_{01}=0.82+j10.2\\,\\Omega\\]",
+              "Referred to L.V. side:",
+              "\\[R_{02}=0.004+0.42(0.1)^2=0.0082\\,\\Omega\\]",
+              "\\[X_{02}=0.05+5.2(0.1)^2=0.102\\,\\Omega\\]",
+              "\\[Z_{02}=0.0082+j0.102\\,\\Omega\\]"
+            ],
+            "final_answer": "Z01 = 0.82 + j10.2 Ω; Z02 = 0.0082 + j0.102 Ω"
+          }
+        ],
+        "source_refs": [
+          "TB-P143",
+          "TB-P144"
+        ],
+        "book_refs": [
+          {
+            "pages": "143–144",
+            "images": "143.png–144.png"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What makes a transformer practical rather than ideal?",
+        "answer": "Winding resistance, leakage reactance, finite magnetising current and iron loss are included."
+      },
+      {
+        "question": "How is secondary impedance referred to the primary?",
+        "answer": "By dividing the secondary resistance/reactance by k², where k = N2/N1 = V2/V1."
+      }
+    ]
   },
   {
     "id": "u3-transformer-regulation",
@@ -7784,7 +8344,112 @@
       }
     ],
     "cautions": [
-      "Use the regulation convention defined in this section consistently in numerical problems."
+      "Use the textbook’s printed regulation denominator/convention consistently in this page; do not silently substitute another convention."
+    ],
+    "sections": [
+      {
+        "heading": "3.1.8 Voltage regulation",
+        "scope": "core",
+        "paragraphs": [
+          "The simplified equivalent circuit is used to relate the no-load secondary emf E2 and loaded terminal voltage V2 through the internal resistance and leakage-reactance drops.",
+          "The textbook defines percentage voltage regulation as the change in secondary terminal voltage from no-load to load, expressed using its printed convention:",
+          "\\[\\%VR=\\dfrac{E_2-V_2}{E_2}\\times100\\]",
+          "For a lagging power factor, the approximate internal drop contains R02 cos φ + X02 sin φ; for a leading power factor the reactance term changes sign.",
+          "\\[\\%VR\\approx\\dfrac{I_2(R_{02}\\cos\\phi+X_{02}\\sin\\phi)}{E_2}\\times100\\quad\\text{(lagging)}\\]",
+          "\\[\\%VR\\approx\\dfrac{I_2(R_{02}\\cos\\phi-X_{02}\\sin\\phi)}{E_2}\\times100\\quad\\text{(leading)}\\]",
+          "A leading-power-factor load can therefore produce negative regulation, meaning the secondary terminal voltage increases with load."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-17",
+            "figure_number": "Figure 3.17",
+            "figure_name": "Simplified equivalent circuit for voltage regulation",
+            "alt": "Figure 3.17 · Simplified equivalent circuit for voltage regulation · Textbook p. 144",
+            "page": 144,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-18",
+            "figure_number": "Figure 3.18",
+            "figure_name": "Transformer phasor diagram for voltage regulation",
+            "alt": "Figure 3.18 · Transformer phasor diagram for voltage regulation · Textbook p. 145",
+            "page": 145,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P144",
+          "TB-P145",
+          "TB-P146"
+        ],
+        "book_refs": [
+          {
+            "pages": "144–146",
+            "images": "144.png–146.png",
+            "figures": "3.17–3.18"
+          }
+        ]
+      },
+      {
+        "heading": "Worked examples — voltage regulation",
+        "scope": "core",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 3.1.7",
+            "question_paragraphs": [
+              "A 25 kVA, 6350/230 V, 50 Hz transformer has 15 Ω resistance and 35 Ω leakage reactance on the primary; the corresponding secondary values are 20 mΩ and 45 mΩ. Find percentage voltage regulation for (a) 50 A at 0.8 pf lagging and (b) 75 A at 0.6 pf leading on the secondary."
+            ],
+            "paragraphs": [
+              "\\[k=\\dfrac{230}{6350}=0.03622\\]",
+              "\\[R_{02}=0.020+15(0.03622)^2=0.0396\\,\\Omega\\]",
+              "\\[X_{02}=0.045+35(0.03622)^2=0.0909\\,\\Omega\\]",
+              "For 50 A, 0.8 pf lagging, sin φ = 0.6:",
+              "\\[\\%VR=\\dfrac{50(0.0396\\times0.8+0.0909\\times0.6)}{230}\\times100=1.87\\%\\]",
+              "For 75 A, 0.6 pf leading, sin φ = 0.8:",
+              "\\[\\%VR=\\dfrac{75(0.0396\\times0.6-0.0909\\times0.8)}{230}\\times100=-1.596\\%\\]",
+              "The negative sign indicates that the secondary voltage rises with load for this leading-power-factor case."
+            ],
+            "final_answer": "(a) 1.87%; (b) −1.596%"
+          },
+          {
+            "title": "Exercise 3.1.8",
+            "question_paragraphs": [
+              "A 15 kVA, 200/400 V, 50 Hz transformer has leakage impedance 0.2 + j0.6 Ω on the primary and 0.8 + j2.6 Ω on the secondary. Find percentage regulation at half full-load current for a resistive load on the secondary."
+            ],
+            "paragraphs": [
+              "\\[k=\\dfrac{400}{200}=2\\]",
+              "\\[Z_{02}=(0.8+0.2\\times2^2)+j(2.6+0.6\\times2^2)=1.6+j5\\,\\Omega\\]",
+              "\\[I_{2,FL}=\\dfrac{15\\times1000}{400}=37.5\\,\\text{A},\\qquad I_2=18.75\\,\\text{A}\\]",
+              "For a resistive load, cos φ = 1 and sin φ = 0:",
+              "\\[\\%VR=\\dfrac{18.75(1.6)}{400}\\times100=7.5\\%\\]"
+            ],
+            "final_answer": "7.5%"
+          }
+        ],
+        "source_refs": [
+          "TB-P146",
+          "TB-P147",
+          "TB-P148",
+          "TB-P149"
+        ],
+        "book_refs": [
+          {
+            "pages": "146–149",
+            "images": "146.png–149.png"
+          }
+        ]
+      }
     ]
   },
   {
@@ -7820,7 +8485,207 @@
         "images": "149.png–157.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "sections": [
+      {
+        "heading": "3.1.9 Losses and efficiency",
+        "scope": "core",
+        "paragraphs": [
+          "A transformer has no mechanical rotation, so the chapter treats its important losses as copper/electrical losses and iron/magnetic losses.",
+          "Primary and secondary copper losses are I1²R1 and I2²R2. These losses depend on load current and are therefore variable losses. At a fraction x of full load, copper loss is x² times full-load copper loss.",
+          "Iron loss consists of hysteresis loss and eddy-current loss. Because core flux is treated as essentially constant with load, iron loss is treated as a constant loss in the efficiency calculations.",
+          "\\[\\eta=\\dfrac{\\text{Output}}{\\text{Input}}\\times100\\]",
+          "The condition for maximum efficiency is obtained by differentiating the efficiency expression with respect to load current. The source result is:",
+          "\\[\\text{Copper loss}=\\text{Iron loss}\\]"
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-19",
+            "figure_number": "Figure 3.19",
+            "figure_name": "Transformer and loss paths",
+            "alt": "Figure 3.19 · Transformer and loss paths · Textbook p. 150",
+            "page": 150,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-20",
+            "figure_number": "Figure 3.20",
+            "figure_name": "Transformer input and output power",
+            "alt": "Figure 3.20 · Transformer input and output power · Textbook p. 150",
+            "page": 150,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P149",
+          "TB-P150",
+          "TB-P151"
+        ],
+        "book_refs": [
+          {
+            "pages": "149–151",
+            "images": "149.png–151.png",
+            "figures": "3.19–3.20"
+          }
+        ]
+      },
+      {
+        "heading": "Worked examples — transformer efficiency",
+        "scope": "core",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 3.1.9",
+            "question_paragraphs": [
+              "A 10 kVA single-phase transformer has iron loss 100 W and full-load copper loss 200 W. It feeds a 0.8 pf lagging load. Find efficiency at (a) full load, (b) 3/4 full load and (c) half full load."
+            ],
+            "paragraphs": [
+              "At full load:",
+              "\\[P_o=1000\\times10\\times0.8=8000\\,\\text{W}\\]",
+              "\\[W_L=100+200=300\\,\\text{W}\\]",
+              "\\[\\eta=\\dfrac{8000}{8300}\\times100=96.38\\%\\]",
+              "At 3/4 load:",
+              "\\[P_o=\\tfrac34(1000\\times10\\times0.8)=6000\\,\\text{W}\\]",
+              "\\[W_{cu}=(\\tfrac34)^2(200)=112.5\\,\\text{W}\\]",
+              "\\[\\eta=\\dfrac{6000}{6000+112.5+100}\\times100=96.57\\%\\]",
+              "At half load:",
+              "\\[P_o=4000\\,\\text{W},\\quad W_{cu}=(\\tfrac12)^2(200)=50\\,\\text{W}\\]",
+              "\\[\\eta=\\dfrac{4000}{4000+50+100}\\times100=96.38\\%\\]"
+            ],
+            "final_answer": "96.38%, 96.57%, 96.38%"
+          },
+          {
+            "title": "Exercise 3.1.10",
+            "question_paragraphs": [
+              "A 25 kVA, 400/200 V, 50 Hz transformer has R1 = 42 mΩ, R2 = 10 mΩ and iron loss 225 W. Find efficiency at 3/4 full load, 0.707 pf lagging."
+            ],
+            "paragraphs": [
+              "\\[k=0.5,\\qquad R_{02}=0.01+0.042(0.5)^2=0.0205\\,\\Omega\\]",
+              "\\[I_2=\\tfrac34\\dfrac{25\\times1000}{200}=93.75\\,\\text{A}\\]",
+              "\\[P_o=\\tfrac34(1000\\times25\\times0.707)=13256\\,\\text{W}\\]",
+              "\\[W_{cu}=93.75^2(0.0205)=180.17\\,\\text{W}\\]",
+              "\\[W_L=225+180.17=405.17\\,\\text{W}\\]",
+              "\\[\\eta=\\dfrac{13256}{13661.17}\\times100=97.03\\%\\]"
+            ],
+            "final_answer": "97.03%"
+          },
+          {
+            "title": "Exercise 3.1.11",
+            "question_paragraphs": [
+              "A 15 kVA, 230/460 V transformer has primary and secondary leakage impedances 0.065 + j0.4 Ω and 0.25 + j1.0 Ω. It takes 225 W on no-load. Find the secondary current at maximum efficiency and the corresponding kVA rating."
+            ],
+            "paragraphs": [
+              "\\[k=\\dfrac{460}{230}=2\\]",
+              "At no load, the text treats the 225 W input as iron loss.",
+              "\\[R_{02}=0.25+0.065(2)^2=0.51\\,\\Omega\\]",
+              "At maximum efficiency, iron loss = copper loss:",
+              "\\[225=I_2^2R_{02}\\Rightarrow I_2\\approx21.0\\,\\text{A}\\]",
+              "\\[\\text{kVA}=\\dfrac{460I_2}{1000}\\approx9.66\\,\\text{kVA}\\]"
+            ],
+            "final_answer": "Approximately I2 = 21 A and 9.7 kVA",
+            "math_mismatch": {
+              "label": "Textbook arithmetic note",
+              "message": "The printed working uses R02 = 0.5 Ω and obtains I2 = 21.21 A and 9.756 kVA. Using the printed component values exactly gives R02 = 0.51 Ω. The textbook result is preserved in the source; this page flags the arithmetic sensitivity rather than silently replacing it."
+            }
+          },
+          {
+            "title": "Exercise 3.1.12",
+            "question_paragraphs": [
+              "A 1000 VA, 300/150 V transformer has iron loss 25 W and feeds a load at 0.707 power factor. Find maximum efficiency. Total resistance referred to secondary is 1 Ω."
+            ],
+            "paragraphs": [
+              "At maximum efficiency, iron loss = copper loss:",
+              "\\[25=I_2^2(1)\\Rightarrow I_2=5\\,\\text{A}\\]",
+              "\\[S=150\\times5=750\\,\\text{VA}=0.75\\,\\text{kVA}\\]",
+              "\\[P_o=750\\times0.707=530.25\\,\\text{W}\\]",
+              "\\[W_L=25+25=50\\,\\text{W}\\]",
+              "\\[\\eta_{max}=\\dfrac{530.25}{580.25}\\times100=91.38\\%\\]"
+            ],
+            "final_answer": "91.38%"
+          },
+          {
+            "title": "Exercise 3.1.13",
+            "question_paragraphs": [
+              "A 15 kVA, 600/300 V transformer has iron loss 250 W and maximum efficiency at half full load. Find total resistance referred to (a) primary and (b) secondary."
+            ],
+            "paragraphs": [
+              "\\[k=\\dfrac{300}{600}=0.5\\]",
+              "\\[I_2(half)=\\tfrac12\\dfrac{15\\times1000}{300}=25\\,\\text{A}\\]",
+              "\\[250=25^2R_{02}\\Rightarrow R_{02}=0.4\\,\\Omega\\]",
+              "\\[R_{01}=\\dfrac{R_{02}}{k^2}=\\dfrac{0.4}{0.25}=1.6\\,\\Omega\\]"
+            ],
+            "final_answer": "R01 = 1.6 Ω; R02 = 0.4 Ω"
+          },
+          {
+            "title": "Exercise 3.1.14",
+            "question_paragraphs": [
+              "Maximum efficiency of a 20 kVA, 50 Hz, 2000/200 V distribution transformer is 98% at full load and unity pf. Calculate efficiency at half full load, 0.8 pf lagging."
+            ],
+            "paragraphs": [
+              "\\[P_o(max)=20,000\\,\\text{W}\\]",
+              "\\[P_i=\\dfrac{20000}{0.98}=20408\\,\\text{W}\\]",
+              "\\[W_L=408\\,\\text{W}\\]",
+              "At maximum efficiency, iron loss = full-load copper loss = 204 W.",
+              "\\[P_o(half)=0.5\\times20,000\\times0.8=8000\\,\\text{W}\\]",
+              "\\[W_{cu}(half)=0.25\\times204=51\\,\\text{W}\\]",
+              "\\[\\eta=\\dfrac{8000}{8000+204+51}\\times100=96.91\\%\\]"
+            ],
+            "final_answer": "96.91%"
+          },
+          {
+            "title": "Exercise 3.1.15",
+            "question_paragraphs": [
+              "A 50 kVA transformer feeding a unity-pf load has maximum efficiency of 98% at 3/4 full load. Find (a) iron loss, (b) full-load copper loss and (c) full-load efficiency."
+            ],
+            "paragraphs": [
+              "\\[P_o(max)=\\tfrac34(50,000)=37,500\\,\\text{W}\\]",
+              "\\[P_i(max)=\\dfrac{37500}{0.98}=38,265.3\\,\\text{W}\\]",
+              "\\[W_L(max)\\approx765\\,\\text{W}\\]",
+              "At maximum efficiency, iron loss = copper loss at that load ≈ 382.5 W.",
+              "\\[(\\tfrac34)^2W_{cu,FL}=382.5\\Rightarrow W_{cu,FL}=680\\,\\text{W}\\]",
+              "\\[\\eta_{FL}=\\dfrac{50000}{50000+680+382.5}\\times100\\approx97.9\\%\\]"
+            ],
+            "final_answer": "Iron loss ≈ 382.5 W; full-load copper loss ≈ 680 W; full-load efficiency ≈ 97.9%"
+          }
+        ],
+        "source_refs": [
+          "TB-P151",
+          "TB-P152",
+          "TB-P153",
+          "TB-P154",
+          "TB-P155",
+          "TB-P156",
+          "TB-P157",
+          "TB-P158"
+        ],
+        "book_refs": [
+          {
+            "pages": "151–158",
+            "images": "151.png–158.png"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "Which transformer loss varies with load current squared?",
+        "answer": "Copper loss."
+      },
+      {
+        "question": "What is the condition for maximum efficiency?",
+        "answer": "Variable copper loss equals constant iron/core loss."
+      }
+    ]
   },
   {
     "id": "u3-dc-generator",
@@ -7828,8 +8693,11 @@
     "title": "DC machine construction, generator principle and EMF equation",
     "status": "core",
     "learn": [
-      "A DC machine is an electromechanical energy converter. The generator principle uses electromagnetic induction and Fleming’s right-hand rule.",
-      "Constructional material covers the major magnetic/electrical parts before deriving the generated-emf equation and classifying generators by excitation."
+      "A DC generator converts mechanical energy to electrical energy by electromagnetic induction.",
+      "Fleming’s right-hand rule gives the direction of induced current.",
+      "A commutator makes the external output unidirectional even though the emf induced in the rotating loop alternates.",
+      "The major DC-machine constructional parts include yoke, poles, pole shoes, field windings, armature core, armature winding, commutator and brushes.",
+      "Generated emf is Eg = ΦZNP/(60A)."
     ],
     "formulas": [
       "Eg = Φ Z N P / (60 A)",
@@ -7858,7 +8726,341 @@
         "images": "158.png–170.png"
       }
     ],
-    "cautions": []
+    "cautions": [
+      "Classification of DC generators appears in the textbook after the EMF equation but is not a separate R25 Unit-III syllabus atom; it is not expanded here.",
+      "Exercises 3.2.1 and 3.2.2 contain verified printed arithmetic inconsistencies; the source results are not silently normalized."
+    ],
+    "sections": [
+      {
+        "heading": "3.2 DC machines and DC-generator principle",
+        "scope": "core",
+        "paragraphs": [
+          "A DC machine is an electromechanical energy converter. A DC generator converts mechanical energy supplied by a prime mover into electrical energy.",
+          "The generator principle is electromagnetic induction. When a conductor moves through a magnetic field and cuts magnetic flux, an emf is induced. Fleming’s right-hand rule is used to determine the current direction.",
+          "In a simple loop generator, the conductors on opposite sides of the loop cut flux in opposite directions, producing an alternating induced emf in the rotating loop. A split-ring commutator reverses the coil connection to the external circuit each half-turn so that current through the external load remains in one direction."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-21",
+            "figure_number": "Figure 3.21",
+            "figure_name": "DC generator",
+            "alt": "Figure 3.21 · DC generator · Textbook p. 158",
+            "page": 158,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-22",
+            "figure_number": "Figure 3.22",
+            "figure_name": "DC voltages and currents",
+            "alt": "Figure 3.22 · DC voltages and currents · Textbook p. 159",
+            "page": 159,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-23",
+            "figure_number": "Figure 3.23",
+            "figure_name": "Moving conductor in a magnetic field",
+            "alt": "Figure 3.23 · Moving conductor in a magnetic field · Textbook p. 159",
+            "page": 159,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-24",
+            "figure_number": "Figure 3.24",
+            "figure_name": "Obtaining current direction using Fleming’s right-hand rule",
+            "alt": "Figure 3.24 · Obtaining current direction using Fleming’s right-hand rule · Textbook p. 160",
+            "page": 160,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-25",
+            "figure_number": "Figure 3.25",
+            "figure_name": "Fleming’s right-hand rule",
+            "alt": "Figure 3.25 · Fleming’s right-hand rule · Textbook p. 160",
+            "page": 160,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-26",
+            "figure_number": "Figure 3.26",
+            "figure_name": "Simple loop generator",
+            "alt": "Figure 3.26 · Simple loop generator · Textbook p. 161",
+            "page": 161,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-27",
+            "figure_number": "Figure 3.27",
+            "figure_name": "Production of alternating emf",
+            "alt": "Figure 3.27 · Production of alternating emf · Textbook p. 162",
+            "page": 162,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-28",
+            "figure_number": "Figure 3.28",
+            "figure_name": "Commutator",
+            "alt": "Figure 3.28 · Commutator · Textbook p. 162",
+            "page": 162,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-29",
+            "figure_number": "Figure 3.29",
+            "figure_name": "Action of commutator",
+            "alt": "Figure 3.29 · Action of commutator · Textbook p. 162",
+            "page": 162,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-30",
+            "figure_number": "Figure 3.30",
+            "figure_name": "Unidirectional or direct current",
+            "alt": "Figure 3.30 · Unidirectional or direct current · Textbook p. 163",
+            "page": 163,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P158",
+          "TB-P159",
+          "TB-P160",
+          "TB-P161",
+          "TB-P162",
+          "TB-P163"
+        ],
+        "book_refs": [
+          {
+            "pages": "158–163",
+            "images": "158.png–163.png",
+            "figures": "3.21–3.30"
+          }
+        ]
+      },
+      {
+        "heading": "3.2.4 Basic construction of a DC machine",
+        "scope": "core",
+        "paragraphs": [
+          "The DC machine is broadly divided into stator and rotor. The stator includes the yoke, poles, pole shoes and field windings. The rotor includes the armature core, armature winding and commutator.",
+          "The yoke gives mechanical support and provides a return path for magnetic flux. Pole cores and pole shoes are laminated to reduce eddy-current loss; the pole shoes spread the flux in the air gap and support the field coils.",
+          "Field windings, generally of copper, are placed on the poles and carry DC excitation current to produce the magnetic field. The laminated silicon-steel armature core houses the armature conductors and provides a low-reluctance path for flux.",
+          "Carbon or graphite brushes rest on the commutator and collect current from the armature. The armature conductors are interconnected to form the armature winding. In lap winding A = P, while in wave winding A = 2."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-31",
+            "figure_number": "Figure 3.31",
+            "figure_name": "Basic construction of a DC machine",
+            "alt": "Figure 3.31 · Basic construction of a DC machine · Textbook p. 163",
+            "page": 163,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-32",
+            "figure_number": "Figure 3.32",
+            "figure_name": "Lap connection",
+            "alt": "Figure 3.32 · Lap connection · Textbook p. 164",
+            "page": 164,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-33",
+            "figure_number": "Figure 3.33",
+            "figure_name": "Wave connection",
+            "alt": "Figure 3.33 · Wave connection · Textbook p. 165",
+            "page": 165,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-34",
+            "figure_number": "Figure 3.34",
+            "figure_name": "DC generator symbol",
+            "alt": "Figure 3.34 · DC generator symbol · Textbook p. 165",
+            "page": 165,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P163",
+          "TB-P164",
+          "TB-P165"
+        ],
+        "book_refs": [
+          {
+            "pages": "163–165",
+            "images": "163.png–165.png",
+            "figures": "3.31–3.34"
+          }
+        ]
+      },
+      {
+        "heading": "3.2.5 EMF generated or EMF equation",
+        "scope": "core",
+        "paragraphs": [
+          "Let Φ be flux per pole, Z total armature conductors, P number of poles, A number of parallel paths, and N speed in rpm. A conductor takes 60/(NP) seconds to pass one pole pitch and links Φ webers in that interval.",
+          "Average emf per conductor is therefore ΦNP/60. Each parallel path contains Z/A conductors in series, so the generated emf is",
+          "\\[E_g=\\dfrac{\\Phi ZNP}{60A}\\]",
+          "For wave winding A = 2. For lap winding A = P."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-35",
+            "figure_number": "Figure 3.35",
+            "figure_name": "Conductor passing through a pole pitch",
+            "alt": "Figure 3.35 · Conductor passing through a pole pitch · Textbook p. 166",
+            "page": 166,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P166",
+          "TB-P167"
+        ],
+        "book_refs": [
+          {
+            "pages": "166–167",
+            "images": "166.png–167.png",
+            "figures": "3.35"
+          }
+        ]
+      },
+      {
+        "heading": "Worked examples — DC-generator EMF",
+        "scope": "core",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 3.2.1",
+            "question_paragraphs": [
+              "A four-pole generator with wave-connected armature has 51 slots, each containing 20 conductors. Find generated emf at 1500 rpm with flux per pole 7 mWb."
+            ],
+            "paragraphs": [
+              "\\[P=4,\\quad Z=51\\times20=1020,\\quad \\Phi=7\\times10^{-3}\\,\\text{Wb},\\quad N=1500,\\quad A=2\\]",
+              "\\[E_g=\\dfrac{\\Phi ZNP}{60A}\\]",
+              "Substitution of the printed data gives",
+              "\\[E_g=\\dfrac{7\\times10^{-3}\\times1020\\times1500\\times4}{60\\times2}=357\\,\\text{V}\\]"
+            ],
+            "final_answer": "Arithmetic from the printed data gives 357 V",
+            "math_mismatch": {
+              "label": "Textbook discrepancy",
+              "message": "The textbook prints 178.5 V after displaying the same formula and values. The displayed data and equation evaluate to 357 V, so the printed numerical result is inconsistent."
+            }
+          },
+          {
+            "title": "Exercise 3.2.2",
+            "question_paragraphs": [
+              "A six-pole DC generator has 1200 lap-connected armature conductors and generates 400 V. Find speed if flux is 10 mWb per pole."
+            ],
+            "paragraphs": [
+              "For lap winding, A = P = 6.",
+              "\\[N=\\dfrac{E_g60A}{\\Phi ZP}=\\dfrac{400\\times60\\times6}{10\\times10^{-3}\\times1200\\times6}=2000\\,\\text{rpm}\\]"
+            ],
+            "final_answer": "2000 rpm",
+            "math_mismatch": {
+              "label": "Textbook discrepancy",
+              "message": "The printed textbook working shows 5000 rpm. Using its own printed formula and values (Eg = 400 V, Φ = 10 mWb, Z = 1200, P = A = 6) gives 2000 rpm."
+            }
+          },
+          {
+            "title": "Exercise 3.2.3",
+            "question_paragraphs": [
+              "A DC generator gives 220 V at rated speed and flux. Find generated voltage when speed is increased by 60% and flux is reduced to half."
+            ],
+            "paragraphs": [
+              "Since generated emf is proportional to ΦN when Z, P and A are unchanged:",
+              "\\[\\dfrac{E_{g2}}{220}=0.5\\times1.6=0.8\\]",
+              "\\[E_{g2}=220\\times0.8=176\\,\\text{V}\\]"
+            ],
+            "final_answer": "176 V"
+          }
+        ],
+        "source_refs": [
+          "TB-P167",
+          "TB-P168"
+        ],
+        "book_refs": [
+          {
+            "pages": "167–168",
+            "images": "167.png–168.png"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "u3-dc-motor",
@@ -7891,7 +9093,173 @@
         "images": "171.png–177.png"
       }
     ],
-    "cautions": []
+    "cautions": [
+      "The textbook classification of DC motors is supporting material and is not expanded as a separate R25 syllabus topic here."
+    ],
+    "sections": [
+      {
+        "heading": "3.3.1 DC motor principle",
+        "scope": "core",
+        "paragraphs": [
+          "A DC motor converts electrical energy into mechanical energy. Its basic principle is that a current-carrying conductor placed in a magnetic field experiences a force.",
+          "The magnitude relation presented is F = BIl, and the direction of the force is obtained from Fleming’s left-hand rule. Forces on opposite armature conductors form a torque that rotates the armature."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-41",
+            "figure_number": "Figure 3.41",
+            "figure_name": "DC generator converted into a motor",
+            "alt": "Figure 3.41 · DC generator converted into a motor · Textbook p. 171",
+            "page": 171,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-42",
+            "figure_number": "Figure 3.42",
+            "figure_name": "Fleming’s left-hand rule",
+            "alt": "Figure 3.42 · Fleming’s left-hand rule · Textbook p. 172",
+            "page": 172,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-43",
+            "figure_number": "Figure 3.43",
+            "figure_name": "Fleming’s left-hand rule — conductor force",
+            "alt": "Figure 3.43 · Fleming’s left-hand rule — conductor force · Textbook p. 172",
+            "page": 172,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P171",
+          "TB-P172"
+        ],
+        "book_refs": [
+          {
+            "pages": "171–172",
+            "images": "171.png–172.png",
+            "figures": "3.41–3.43"
+          }
+        ]
+      },
+      {
+        "heading": "3.3.2 Back EMF",
+        "scope": "core",
+        "paragraphs": [
+          "When the motor armature rotates, its conductors also cut magnetic flux and therefore generate an emf. By Lenz’s law this generated emf opposes the applied supply and is called back emf Eb.",
+          "The armature voltage equation is",
+          "\\[V=E_b+I_aR_a\\]",
+          "When brush drop is considered, it is added to the armature-circuit voltage drop. Back emf is given by the same generated-emf form:",
+          "\\[E_b=\\dfrac{\\Phi ZNP}{60A}\\]"
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-44",
+            "figure_number": "Figure 3.44",
+            "figure_name": "Back EMF in a DC motor",
+            "alt": "Figure 3.44 · Back EMF in a DC motor · Textbook p. 173",
+            "page": 173,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-45",
+            "figure_number": "Figure 3.45",
+            "figure_name": "DC motor symbol",
+            "alt": "Figure 3.45 · DC motor symbol · Textbook p. 174",
+            "page": 174,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P173",
+          "TB-P174"
+        ],
+        "book_refs": [
+          {
+            "pages": "173–174",
+            "images": "173.png–174.png",
+            "figures": "3.44–3.45"
+          }
+        ]
+      },
+      {
+        "heading": "Worked examples — DC motor and back EMF",
+        "scope": "core",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 3.3.1",
+            "question_paragraphs": [
+              "A 4-pole DC motor with 960 lap-connected armature conductors rotates at 1400 rpm. Flux under each pole is 9 mWb. Find back emf."
+            ],
+            "paragraphs": [
+              "For lap winding, A = P = 4.",
+              "\\[E_b=\\dfrac{9\\times10^{-3}\\times960\\times1400\\times4}{60\\times4}=201.6\\,\\text{V}\\]"
+            ],
+            "final_answer": "201.6 V"
+          },
+          {
+            "title": "Exercise 3.3.2",
+            "question_paragraphs": [
+              "A 4-pole wave-connected separately excited DC motor draws 25 A from 220 V and runs at 1500 rpm. Armature resistance is 0.8 Ω. Find (a) back emf and (b) armature conductors if flux per pole is 20 mWb."
+            ],
+            "paragraphs": [
+              "\\[E_b=V-I_aR_a=220-25(0.8)=200\\,\\text{V}\\]",
+              "For wave winding A = 2:",
+              "\\[200=\\dfrac{20\\times10^{-3}\\times Z\\times1500\\times4}{60\\times2}\\Rightarrow Z=200\\]"
+            ],
+            "final_answer": "Eb = 200 V; Z = 200 conductors"
+          },
+          {
+            "title": "Exercise 3.3.3",
+            "question_paragraphs": [
+              "A 6-pole lap-connected DC motor with 1020 armature conductors absorbs 50 A. Flux per pole is 18 mWb. Find supply voltage for 1200 rpm if armature resistance is 0.62 Ω and brush drop is 2 V."
+            ],
+            "paragraphs": [
+              "For lap winding A = P = 6.",
+              "\\[E_b=\\dfrac{18\\times10^{-3}\\times1020\\times1200\\times6}{60\\times6}=367.2\\,\\text{V}\\]",
+              "\\[V=E_b+I_aR_a+\\text{brush drop}=367.2+50(0.62)+2=400.2\\,\\text{V}\\]"
+            ],
+            "final_answer": "Approximately 400 V (textbook)"
+          }
+        ],
+        "source_refs": [
+          "TB-P174",
+          "TB-P175"
+        ],
+        "book_refs": [
+          {
+            "pages": "174–175",
+            "images": "174.png–175.png"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "u3-separately-excited-motor",
@@ -7923,7 +9291,191 @@
         "images": "178.png–184.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "sections": [
+      {
+        "heading": "3.3.4 Load characteristics of a separately excited DC motor",
+        "scope": "core",
+        "paragraphs": [
+          "In a separately excited DC motor, the field winding is supplied independently, so field current and therefore flux can be held approximately constant while armature load changes.",
+          "The torque relation is T ∝ ΦIa. With Φ constant, torque is directly proportional to armature current, giving an approximately straight-line torque-versus-armature-current characteristic.",
+          "From V = Eb + IaRa and Eb = kΦN,",
+          "\\[N\\propto\\dfrac{V-I_aR_a}{\\Phi}\\]",
+          "With V and Φ constant, increasing armature current increases IaRa drop, so speed falls slightly with load. Speed regulation is the change from no-load to full-load speed expressed as a percentage of no-load speed.",
+          "\\[\\%\\text{Speed Regulation}=\\dfrac{N_{NL}-N_{FL}}{N_{NL}}\\times100\\]",
+          "Because torque is proportional to armature current for constant flux, the speed-versus-torque characteristic has the same general falling shape as speed versus armature current."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-51",
+            "figure_number": "Figure 3.51",
+            "figure_name": "Separately excited DC motor",
+            "alt": "Figure 3.51 · Separately excited DC motor · Textbook p. 178",
+            "page": 178,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-52",
+            "figure_number": "Figure 3.52",
+            "figure_name": "Torque vs armature current characteristic",
+            "alt": "Figure 3.52 · Torque vs armature current characteristic · Textbook p. 179",
+            "page": 179,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-53",
+            "figure_number": "Figure 3.53",
+            "figure_name": "Speed vs armature current characteristic",
+            "alt": "Figure 3.53 · Speed vs armature current characteristic · Textbook p. 180",
+            "page": 180,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-54",
+            "figure_number": "Figure 3.54",
+            "figure_name": "Speed vs torque characteristic",
+            "alt": "Figure 3.54 · Speed vs torque characteristic · Textbook p. 180",
+            "page": 180,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 5
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P178",
+          "TB-P179",
+          "TB-P180"
+        ],
+        "book_refs": [
+          {
+            "pages": "178–180",
+            "images": "178.png–180.png",
+            "figures": "3.51–3.54"
+          }
+        ]
+      },
+      {
+        "heading": "3.3.5 Speed control of separately excited DC motor",
+        "scope": "core",
+        "paragraphs": [
+          "The speed relation N ∝ (V − IaRa)/Φ shows two basic ways of controlling speed: change the field flux or change the armature-side voltage/current conditions.",
+          "Field control keeps armature supply voltage constant and varies field current with a rheostat in the field circuit. Reducing field current reduces flux and increases speed. The textbook therefore uses field control for speeds above rated speed and warns that an open field circuit can cause dangerously high speed.",
+          "Armature control keeps field current constant and varies the effective armature voltage with a series control resistance. As the voltage across the armature is reduced, the speed falls. The textbook uses armature control for speeds below rated speed."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-55",
+            "figure_number": "Figure 3.55",
+            "figure_name": "Separately excited DC motor for speed-control discussion",
+            "alt": "Figure 3.55 · Separately excited DC motor for speed-control discussion · Textbook p. 181",
+            "page": 181,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-56",
+            "figure_number": "Figure 3.56",
+            "figure_name": "Field control method",
+            "alt": "Figure 3.56 · Field control method · Textbook p. 182",
+            "page": 182,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-57",
+            "figure_number": "Figure 3.57",
+            "figure_name": "Field current vs speed characteristic",
+            "alt": "Figure 3.57 · Field current vs speed characteristic · Textbook p. 182",
+            "page": 182,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-58",
+            "figure_number": "Figure 3.58",
+            "figure_name": "Armature control method",
+            "alt": "Figure 3.58 · Armature control method · Textbook p. 183",
+            "page": 183,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f3-59",
+            "figure_number": "Figure 3.59",
+            "figure_name": "Armature voltage vs speed characteristic",
+            "alt": "Figure 3.59 · Armature voltage vs speed characteristic · Textbook p. 184",
+            "page": 184,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P181",
+          "TB-P182",
+          "TB-P183",
+          "TB-P184"
+        ],
+        "book_refs": [
+          {
+            "pages": "181–184",
+            "images": "181.png–184.png",
+            "figures": "3.55–3.59"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "With flux constant, how does torque vary with armature current?",
+        "answer": "Torque is directly proportional to armature current."
+      },
+      {
+        "question": "Which method gives speeds above rated speed in the textbook treatment?",
+        "answer": "Field control, by reducing field current and flux."
+      },
+      {
+        "question": "Which method is used for speeds below rated speed?",
+        "answer": "Armature control."
+      }
+    ]
   },
   {
     "id": "u3-swinburne",
@@ -7931,9 +9483,9 @@
     "title": "Swinburne’s test",
     "status": "core-gap-filled",
     "learn": [
-      "Swinburne’s test is used to predetermine the efficiency of a DC shunt machine by measuring its constant losses at no load.",
-      "The selected NPTEL Electrical Machines-I course identifies Lecture 89 as “Swinburne Test”. A tightly scoped institutional BEEE lab-manual cross-check describes it as a no-load test used to predetermine efficiency of a DC shunt machine as motor/generator.",
-      "The cross-check procedure records supply voltage, no-load line current and field current at rated speed. From these, no-load armature current and armature copper loss are obtained; the remainder of no-load input is treated as constant loss for the efficiency calculation sequence."
+      "Swinburne’s test is a no-load test used to predetermine efficiency of a DC shunt machine.",
+      "The approved gap source is NPTEL Electrical Machines-I, Lecture 89 — Swinburne Test; the workspace also retains a tightly scoped institutional lab-manual cross-check for the reading/calculation sequence.",
+      "No textbook figure is fabricated for this gap-filled topic."
     ],
     "formulas": [
       "Iao = IL0 − If",
@@ -7950,7 +9502,27 @@
     ],
     "book_refs": [],
     "cautions": [
-      "Gap content is intentionally limited to what the selected NPTEL lecture identification and institutional lab-manual cross-check support."
+      "This is not prescribed-textbook content. It is explicitly gap-filled because Swinburne’s test is required by R25 but absent from the supplied Chapter 3 scan."
+    ],
+    "intro": "R25 explicitly requires Swinburne’s test, but it is absent from the supplied prescribed-textbook Chapter 3 pages 130–185. This subsection is therefore kept as a clearly identified gap-filled source section.",
+    "sections": [
+      {
+        "heading": "Swinburne’s test — approved gap-filled coverage",
+        "scope": "core",
+        "paragraphs": [
+          "At no load, record the supply voltage, no-load line current and field current at rated speed. The no-load armature current is obtained from the difference between line and field currents.",
+          "\\[I_{a0}=I_{L0}-I_f\\]",
+          "The no-load armature copper loss is I_a0²Ra. The remaining part of the no-load input is treated as constant loss for the subsequent efficiency calculation sequence.",
+          "\\[W_{constant}=W_{in,0}-I_{a0}^2R_a\\]",
+          "For motor operation, efficiency is output divided by input, with output = input − total losses. For generator operation, efficiency is output divided by output + total losses.",
+          "This subsection is intentionally limited to the supplied gap-source support; details not present in that support are not added."
+        ],
+        "source_refs": [
+          "GAP-U3-SWINBURNE-NPTEL",
+          "GAP-U3-SWINBURNE-IARE-BEE-LAB"
+        ],
+        "book_refs": []
+      }
     ]
   },
   {
