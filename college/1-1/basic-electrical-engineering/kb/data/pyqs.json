@@ -1,0 +1,1727 @@
+{
+  "title": "BEE Semester Previous-Year Questions",
+  "latest_year": "2025-26",
+  "note": "Official VNR semester papers. Questions are preserved by their original paper/year and solved in accordion form. Historical R22 questions outside the current R25 syllabus are kept but clearly marked.",
+  "years": [
+    {
+      "id": "2023-24",
+      "label": "2023–24",
+      "exam": "January 2024 Regular Examinations",
+      "regulation": "R22",
+      "course_code": "22ES1EE101",
+      "course_title": "Basic Electrical and Electronics Engineering",
+      "branches": "Common to CSE, IT, CyS and DS",
+      "source_paper": "assets/pyq/2023-24/source-paper.pdf",
+      "source_note": "Official VNR R22 paper. Its original unit structure is preserved. Current-R25 mappings are shown question-by-question; the electronics questions in original Unit V are outside today’s BEE syllabus but are solved because this is a complete-paper archive.",
+      "groups": [
+        {
+          "id": "part-a",
+          "title": "Part A · 2-mark questions",
+          "note": "Answer all five questions.",
+          "questions": [
+            {
+              "id": "23-a",
+              "number": "a",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Kirchhoff’s laws",
+              "question": "Define KVL and KCL.",
+              "answer": {
+                "paragraphs": [
+                  "Kirchhoff’s laws are used with Ohm’s law to analyse electrical networks."
+                ],
+                "bullets": [
+                  "Kirchhoff’s Current Law (KCL): the algebraic sum of currents at a node is zero; equivalently, total current entering a node equals total current leaving it.",
+                  "Kirchhoff’s Voltage Law (KVL): the algebraic sum of all voltage rises and drops around any closed loop is zero."
+                ],
+                "equations": [
+                  "\\[\\sum i=0\\]",
+                  "\\[\\sum V=0\\]"
+                ],
+                "note": "A simple KCL example is \\(I_1+I_2=I_3+I_4\\). A simple KVL example is \\(V_s=IR_1+IR_2\\) for two series resistors."
+              }
+            },
+            {
+              "id": "23-b",
+              "number": "b",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Series RLC",
+              "question": "Draw the impedance triangle of series RLC Circuit.",
+              "answer": {
+                "paragraphs": [
+                  "For a series RLC circuit the complex impedance is \\(Z=R+j(X_L-X_C)\\). The impedance triangle has resistance on the horizontal axis, net reactance on the vertical axis and \\(|Z|\\) as the hypotenuse."
+                ],
+                "equations": [
+                  "\\[X=X_L-X_C\\]",
+                  "\\[|Z|=\\sqrt{R^2+(X_L-X_C)^2}\\]",
+                  "\\[\\phi=\\tan^{-1}\\!\\left(\\frac{X_L-X_C}{R}\\right)\\]"
+                ],
+                "diagram": "             |Z|\n            /|\n           / |  X = XL − XC\n          /φ |\n         /___|\n           R",
+                "note": "If \\(X_L>X_C\\), the triangle is inductive and the vertical side is upward; if \\(X_C>X_L\\), the net reactance is capacitive."
+              }
+            },
+            {
+              "id": "23-c",
+              "number": "c",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · DC motor speed control",
+              "question": "List the speed control techniques of DC Motor.",
+              "answer": {
+                "bullets": [
+                  "Field/flux control: vary field current; weakening flux raises speed and is used for speeds above rated speed.",
+                  "Armature-voltage control: vary the armature supply voltage with flux held approximately constant; used for speeds below rated speed.",
+                  "Armature-resistance control: add series resistance in the armature circuit to reduce speed; simple but inefficient."
+                ],
+                "equations": [
+                  "\\[N\\propto\\frac{V-I_aR_a}{\\Phi}\\]"
+                ]
+              }
+            },
+            {
+              "id": "23-d",
+              "number": "d",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit V · Lead-acid battery",
+              "question": "Briefly explain the electrical characteristics of lead acid battery.",
+              "answer": {
+                "bullets": [
+                  "A single lead-acid cell gives about 2.1 V nominally; the fully charged open-circuit value is stated as about 2.2 V.",
+                  "Terminal voltage falls during discharge and should not be allowed to fall below about 1.8 V per cell.",
+                  "Capacity is specified in ampere-hours (Ah) and decreases as discharge rate increases.",
+                  "Ampere-hour efficiency is typically about 90–95%; watt-hour efficiency is lower than Ah efficiency."
+                ],
+                "equations": [
+                  "\\[\\eta_{Ah}=\\frac{\\text{Ah delivered on discharge}}{\\text{Ah absorbed on charge}}\\times100\\]"
+                ]
+              }
+            },
+            {
+              "id": "23-e",
+              "number": "e",
+              "marks": "2M",
+              "r25_scope": "outside-current-r25",
+              "r25_mapping": "Outside current R25",
+              "question": "State PN junction diode and draw its V-I Characteristics.",
+              "answer": {
+                "paragraphs": [
+                  "A PN junction diode is formed by joining p-type and n-type semiconductor regions. The junction forms a depletion region and a built-in potential barrier.",
+                  "In forward bias, the applied voltage reduces the barrier. Current is initially small and then rises rapidly after the knee/cut-in region. In reverse bias, the barrier widens and only a small reverse saturation current flows until breakdown is reached."
+                ],
+                "diagram": "                I\n                ↑\n                │          /  Forward region\n                │        /\n───────────────┼──────/────────→ V\n   Reverse     │   knee\n   leakage ────┤\n                │                    breakdown → large reverse current",
+                "note": "Historical R22 topic outside the current 25ES1EE101 R25 syllabus. It is retained and solved here because this page covers the complete official paper."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-1",
+          "title": "Unit I · DC circuits",
+          "note": "In the paper, answer either Q1 or Q2. Both are solved here.",
+          "questions": [
+            {
+              "id": "23-q1",
+              "number": "1",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Series/parallel reduction",
+              "question": "Find the current I in the 50 Ω resistor in the circuit shown in figure.",
+              "figures": [
+                {
+                  "src": "assets/pyq/2023-24/q1.png",
+                  "alt": "2023–24 Unit I Q1 circuit: 110 V source feeding an upper parallel network of 60 ohms and 40 plus 20 ohms in series, followed by 50, 100 and 100 ohm parallel branches; current I is marked through the 50 ohm branch.",
+                  "caption": "2023–24 paper · Q1 circuit"
+                }
+              ],
+              "answer": {
+                "steps": [
+                  "The 40 Ω and 20 Ω resistors are in series: \\(40+20=60\\,\\Omega\\).",
+                  "That 60 Ω branch is in parallel with \\(R_1=60\\,\\Omega\\): \\(R_{upper}=60\\parallel60=30\\,\\Omega\\).",
+                  "The lower bank is \\(50\\,\\Omega\\parallel100\\,\\Omega\\parallel100\\,\\Omega\\): \\(R_{lower}=25\\,\\Omega\\).",
+                  "Total resistance: \\(R_T=30+25=55\\,\\Omega\\). Hence source current \\(I_T=110/55=2\\,A\\).",
+                  "Voltage across the lower parallel bank: \\(V_{lower}=2\\times25=50\\,V\\).",
+                  "Current through the 50 Ω branch: \\(I=50/50=1\\,A\\)."
+                ],
+                "result": "\\(I=1\\,A\\) downward through the 50 Ω resistor."
+              }
+            },
+            {
+              "id": "23-q2",
+              "number": "2",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Superposition theorem",
+              "question": "Find the current through the 4 Ω resistor by applying Superposition theorem.",
+              "figures": [
+                {
+                  "src": "assets/pyq/2023-24/q2.png",
+                  "alt": "2023–24 Unit I Q2 circuit with a 5 A current source, 20 V voltage source, 2 ohm and 5 ohm resistors, two 6 ohm resistors and a 4 ohm load branch.",
+                  "caption": "2023–24 paper · Q2 circuit"
+                }
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Take downward current through the 4 Ω resistor as positive. Use superposition by activating one independent source at a time."
+                ],
+                "equations": [
+                  "\\[I_4=\\frac{24}{7}+\\frac{6}{7}=\\frac{30}{7}\\,A\\]"
+                ],
+                "steps": [
+                  "5 A source acting alone: replace the 20 V source by a short circuit. Let the top node be \\(V_T\\) and the middle node between the two 6 Ω resistors be \\(V_M\\). The 5 A source forces 5 A through the 2 Ω branch into the top node.",
+                  "Node equations are \\((V_T-V_M)/6+V_T/4=5\\) and \\((V_M-V_T)/6+V_M/6+V_M/5=0\\). Solving gives \\(V_T=96/7\\,V\\), hence \\(I_{4,5A}=V_T/4=24/7\\,A\\) downward.",
+                  "20 V source acting alone: open the 5 A current source. The 2 Ω branch then carries no current. The node equations are \\((V_T-V_M)/6+V_T/4=0\\) and \\((V_M-V_T)/6+V_M/6+(V_M-20)/5=0\\).",
+                  "Solving gives \\(V_T=24/7\\,V\\), so \\(I_{4,20V}=6/7\\,A\\) downward.",
+                  "Add the two contributions algebraically."
+                ],
+                "result": "\\(I_4=30/7\\,A\\approx4.286\\,A\\) downward."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-2",
+          "title": "Unit II · AC circuits",
+          "note": "In the paper, answer either Q3 or Q4.",
+          "questions": [
+            {
+              "id": "23-q3",
+              "number": "3",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Three-phase star/delta",
+              "question_lead": "Derive the required balanced three-phase relations.",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Derive the relation between Line Voltage and Phase Voltage in Star connected three phase system."
+                },
+                {
+                  "label": "b",
+                  "content": "Derive the relation between Line current and Phase current in Delta connected three phase system."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "For a balanced star-connected load, the three phase voltages have equal magnitude and are displaced by 120°. Let \\(V_{RN}=V_{ph}\\angle0^\\circ\\) and \\(V_{YN}=V_{ph}\\angle-120^\\circ\\)."
+                    ],
+                    "bullets": [
+                      "Each line conductor is directly in series with one phase, so line current equals phase current.",
+                      "The line voltage leads the corresponding phase voltage by 30°."
+                    ],
+                    "equations": [
+                      "\\[V_{RY}=V_{RN}-V_{YN}\\]",
+                      "\\[|V_{RY}|=\\sqrt{3}V_{ph}\\]",
+                      "\\[V_L=\\sqrt{3}V_{ph},\\qquad I_L=I_{ph}\\]"
+                    ],
+                    "result": "For balanced star: \\(V_L=\\sqrt{3}V_{ph}\\) and \\(I_L=I_{ph}\\)."
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "In a balanced delta load, each line current is the phasor difference of the two phase currents meeting at that line terminal. The phase currents have equal magnitude and are 120° apart."
+                    ],
+                    "bullets": [
+                      "The line current lags the corresponding phase current by 30° for the usual phase sequence."
+                    ],
+                    "equations": [
+                      "\\[I_R=I_{RY}-I_{BR}\\]",
+                      "\\[|I_R|=\\sqrt{3}I_{ph}\\]",
+                      "\\[I_L=\\sqrt{3}I_{ph},\\qquad V_L=V_{ph}\\]"
+                    ],
+                    "result": "For balanced delta: \\(I_L=\\sqrt{3}I_{ph}\\) and \\(V_L=V_{ph}\\)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "23-q4",
+              "number": "4",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Series RC",
+              "question": "A Voltage of 120 V at 50 Hz is applied to a resistance R in series with a capacitance C. The current drawn is 2 A and power loss in the resistance is 100 W. Calculate the (i) Resistance (ii) Capacitance and (iii) Power factor of the circuit.",
+              "answer": {
+                "steps": [
+                  "For the resistor, \\(P=I^2R\\), hence \\(R=100/2^2=25\\,\\Omega\\).",
+                  "Circuit impedance magnitude: \\(|Z|=V/I=120/2=60\\,\\Omega\\).",
+                  "For a series RC circuit, \\(|Z|^2=R^2+X_C^2\\), so \\(X_C=\\sqrt{60^2-25^2}=54.544\\,\\Omega\\).",
+                  "Using \\(X_C=1/(2\\pi fC)\\), \\(C=1/(2\\pi\\times50\\times54.544)=58.36\\,\\mu F\\).",
+                  "Power factor \\(=R/|Z|=25/60=0.4167\\). Since the circuit is capacitive, current leads voltage."
+                ],
+                "result": "\\(R=25\\,\\Omega\\), \\(C\\approx58.36\\,\\mu F\\), power factor \\(\\approx0.417\\) leading."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-3",
+          "title": "Unit III · Transformers and DC machines",
+          "note": "In the paper, answer either Q5 or Q6.",
+          "questions": [
+            {
+              "id": "23-q5",
+              "number": "5",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · Transformer principle",
+              "question": "Explain the Principle of Operation and Working of single-phase transformer with neat diagrams.",
+              "answer": {
+                "paragraphs": [
+                  "A transformer is a static device that transfers AC electrical energy from one circuit to another at the same frequency by electromagnetic induction.",
+                  "When AC is applied to the primary winding, a small magnetising current produces alternating core flux. This flux links both windings and induces emfs in the primary and secondary according to Faraday’s law. If a load is connected to the secondary, secondary current flows and the primary draws the additional current needed to balance the secondary ampere-turns."
+                ],
+                "bullets": [
+                  "If \\(N_2>N_1\\), it is step-up; if \\(N_2<N_1\\), it is step-down.",
+                  "A transformer does not operate on steady DC because steady DC does not create alternating flux."
+                ],
+                "equations": [
+                  "\\[E_1=4.44fN_1\\Phi_m,\\qquad E_2=4.44fN_2\\Phi_m\\]",
+                  "\\[\\frac{E_2}{E_1}=\\frac{N_2}{N_1}=k\\]"
+                ],
+                "diagram": "AC supply V1 → [Primary N1] ║ laminated iron core ║ [Secondary N2] → Load"
+              }
+            },
+            {
+              "id": "23-q6",
+              "number": "6",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · DC generator and DC motor",
+              "question_lead": "",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Derive the Expression for Generator EMF Equation."
+                },
+                {
+                  "label": "b",
+                  "content": "Explain the Working of DC Motor with neat diagrams."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "Let \\(P\\) be the number of poles, \\(\\Phi\\) flux per pole, \\(Z\\) total armature conductors, \\(N\\) speed in rpm and \\(A\\) parallel paths."
+                    ],
+                    "bullets": [
+                      "For lap winding, \\(A=P\\).",
+                      "For wave winding, \\(A=2\\)."
+                    ],
+                    "equations": [
+                      "\\[E_g=\\frac{P\\Phi ZN}{60A}\\]"
+                    ],
+                    "steps": [
+                      "Flux cut by one conductor in one revolution = \\(P\\Phi\\) Wb.",
+                      "Time for one revolution = \\(60/N\\) s.",
+                      "Average emf induced in one conductor = \\(P\\Phi /(60/N)=P\\Phi N/60\\) V.",
+                      "Conductors in series per parallel path = \\(Z/A\\)."
+                    ],
+                    "result": "Generated emf: \\(E_g=P\\Phi ZN/(60A)\\)."
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "A DC motor converts electrical energy into mechanical energy. A current-carrying armature conductor placed in the magnetic field of the poles experiences a force. The forces on conductors on opposite sides of the armature form a torque and rotate the armature.",
+                      "The direction of force is given by Fleming’s left-hand rule. The commutator reverses current in the appropriate armature conductors every half-turn so that developed torque remains in the same rotational direction.",
+                      "As the armature rotates, it also cuts magnetic flux and generates an emf opposing the supply. This is the back emf."
+                    ],
+                    "bullets": [
+                      "Back emf automatically limits armature current as speed rises.",
+                      "At starting \\(E_b=0\\), so starting current would be large unless limited."
+                    ],
+                    "equations": [
+                      "\\[F=BIl\\]",
+                      "\\[V=E_b+I_aR_a\\]",
+                      "\\[T\\propto \\Phi I_a\\]"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-4",
+          "title": "Unit IV · Machines / installations in the R22 paper",
+          "note": "The R22 Unit IV mixes topics that are split between current R25 Units IV and V.",
+          "questions": [
+            {
+              "id": "23-q7",
+              "number": "7",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit IV · Three-phase induction motor",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Explain the principle of operation of Three phase Induction Motor."
+                },
+                {
+                  "label": "b",
+                  "content": "List the differences between Squirrel cage Induction Motor and slip ring induction motor."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "A balanced three-phase supply to the stator windings produces a rotating magnetic field (RMF). The RMF rotates at synchronous speed.",
+                      "Because the rotor initially has relative motion with respect to the RMF, an emf is induced in the short-circuited rotor conductors. Rotor current flows, and interaction of rotor current with the stator field produces torque in the direction of the RMF.",
+                      "The rotor cannot reach synchronous speed in motoring operation: at synchronous speed the relative speed would be zero, rotor emf and rotor current would vanish, and therefore torque would be zero."
+                    ],
+                    "equations": [
+                      "\\[N_s=\\frac{120f}{P}\\]",
+                      "\\[s=\\frac{N_s-N}{N_s}\\]",
+                      "\\[f_r=sf\\]"
+                    ],
+                    "result": "The induction motor therefore runs slightly below synchronous speed with non-zero slip."
+                  },
+                  {
+                    "label": "b",
+                    "table": {
+                      "headers": [
+                        "Feature",
+                        "Squirrel-cage rotor",
+                        "Slip-ring / wound rotor"
+                      ],
+                      "rows": [
+                        [
+                          "Rotor construction",
+                          "Bars short-circuited by end rings",
+                          "Three-phase insulated rotor winding connected to slip rings"
+                        ],
+                        [
+                          "External rotor resistance",
+                          "Cannot be added externally",
+                          "Can be added through slip rings"
+                        ],
+                        [
+                          "Starting torque",
+                          "Moderate",
+                          "Higher when external resistance is used"
+                        ],
+                        [
+                          "Starting current",
+                          "Generally higher",
+                          "Can be controlled using rotor resistance"
+                        ],
+                        [
+                          "Speed control",
+                          "Limited by rotor-circuit methods",
+                          "Rotor-resistance control is possible"
+                        ],
+                        [
+                          "Maintenance",
+                          "Low; rugged construction",
+                          "Higher because of brushes and slip rings"
+                        ],
+                        [
+                          "Cost",
+                          "Lower",
+                          "Higher"
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "23-q8",
+              "number": "8",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Current R25 Unit V · MCB and earthing",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "With neat Diagrams explain the working of MCB."
+                },
+                {
+                  "label": "b",
+                  "content": "Define Earthing and Explain Its Types."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "An MCB (Miniature Circuit Breaker) is a resettable protective device that automatically opens a circuit during overload or short circuit."
+                    ],
+                    "bullets": [
+                      "Overload protection: current heats a bimetal strip; it bends and releases the trip mechanism after a time delay.",
+                      "Short-circuit protection: a high fault current energises the magnetic trip strongly and opens the contacts almost instantaneously.",
+                      "The arc formed when contacts separate is driven into an arc chute and extinguished. After the fault is cleared, the MCB can be reset."
+                    ],
+                    "diagram": "Line → [thermal bimetal] → [magnetic trip] → moving contact → Load\n                         ↘ trip latch / arc chute"
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "Earthing connects exposed metallic parts of electrical equipment to the earth through a low-resistance conductor and electrode."
+                    ],
+                    "bullets": [
+                      "It reduces electric-shock risk by providing a preferred low-resistance path for leakage/fault current.",
+                      "It helps protective devices operate quickly during earth faults and reduces fire risk.",
+                      "Pipe earthing: a G.I. pipe electrode is buried vertically in moist soil; the surrounding soil is commonly treated with charcoal and salt and kept moist.",
+                      "Plate earthing: a G.I. plate electrode is buried in the ground, surrounded by alternate layers of charcoal and salt and kept moist."
+                    ],
+                    "result": "The current R25 syllabus specifically requires pipe earthing and plate earthing."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-5",
+          "title": "Unit V · Electronics (historical R22)",
+          "note": "These questions are outside the current R25 BEE syllabus but are solved to keep the official paper complete.",
+          "questions": [
+            {
+              "id": "23-q9",
+              "number": "9",
+              "marks": "10M",
+              "r25_scope": "outside-current-r25",
+              "r25_mapping": "Outside current R25",
+              "question": "With neat Diagrams and Waveforms Explain the Operation of Full wave Rectifier.",
+              "answer": {
+                "paragraphs": [
+                  "A full-wave rectifier makes the load current flow in the same direction during both half cycles of the AC input. A centre-tapped two-diode circuit is one standard realisation; a bridge rectifier is another."
+                ],
+                "bullets": [
+                  "Positive half-cycle: the diode connected to the positive end of the secondary conducts; the other diode is reverse biased.",
+                  "Negative half-cycle: the other end becomes positive relative to the centre tap, so the second diode conducts. Load current still has the same direction.",
+                  "Output ripple frequency is \\(2f\\)."
+                ],
+                "equations": [
+                  "\\[V_{DC}=\\frac{2V_m}{\\pi}\\]"
+                ],
+                "diagram": "Centre-tapped secondary:\n end A ──|>|──┐\n          D1   ├── +Vo ── RL ── centre tap\n end B ──|>|──┘\n          D2\n\nInput:   ~ sinusoid above and below zero\nOutput:  _/‾\\_/‾\\_/‾\\_  (both half-cycles positive)",
+                "note": "Historical R22 topic outside the current 25ES1EE101 R25 syllabus. It is retained and solved here because this page covers the complete official paper."
+              }
+            },
+            {
+              "id": "23-q10",
+              "number": "10",
+              "marks": "10M",
+              "r25_scope": "outside-current-r25",
+              "r25_mapping": "Outside current R25",
+              "question": "Describe the working of NPN and PNP Transistors.",
+              "answer": {
+                "paragraphs": [
+                  "A bipolar junction transistor has emitter, base and collector regions. In normal active operation the emitter-base junction is forward biased and the collector-base junction is reverse biased."
+                ],
+                "equations": [
+                  "\\[I_E=I_C+I_B,\\qquad I_C\\approx\\beta I_B\\]"
+                ],
+                "table": {
+                  "headers": [
+                    "Point",
+                    "NPN transistor",
+                    "PNP transistor"
+                  ],
+                  "rows": [
+                    [
+                      "Majority carriers",
+                      "Electrons",
+                      "Holes"
+                    ],
+                    [
+                      "Emitter-base bias in active mode",
+                      "Base positive with respect to emitter",
+                      "Base negative with respect to emitter"
+                    ],
+                    [
+                      "Conventional collector current",
+                      "Flows from collector to emitter",
+                      "Flows from emitter to collector"
+                    ],
+                    [
+                      "Emitter arrow",
+                      "Points out",
+                      "Points in"
+                    ],
+                    [
+                      "Operation",
+                      "Electrons injected from emitter cross thin base; most are swept into collector",
+                      "Holes injected from emitter cross thin base; most are swept into collector"
+                    ]
+                  ]
+                },
+                "note": "Historical R22 topic outside the current 25ES1EE101 R25 syllabus. It is retained and solved here because this page covers the complete official paper."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-25",
+      "label": "2024–25",
+      "exam": "January 2025 Regular/Supplementary Examinations",
+      "regulation": "R22",
+      "course_code": "22ES1EE101",
+      "course_title": "Basic Electrical and Electronics Engineering",
+      "branches": "Common to CSE, IT, CyS and DS",
+      "source_paper": "assets/pyq/2024-25/source-paper.pdf",
+      "source_note": "Official VNR R22 paper. Original numbering and unit grouping are preserved. Current-R25 mappings are added separately; the original Unit V electronics questions are historical/outside the current BEE syllabus.",
+      "groups": [
+        {
+          "id": "part-a",
+          "title": "Part A · 2-mark questions",
+          "note": "Answer all five questions.",
+          "questions": [
+            {
+              "id": "24-a",
+              "number": "a",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Thevenin theorem",
+              "question": "State Thevenin’s theorem.",
+              "answer": {
+                "paragraphs": [
+                  "Any linear bilateral two-terminal network containing sources and resistances can be replaced, as seen from the terminals, by an equivalent voltage source \\(V_{Th}\\) in series with an equivalent resistance \\(R_{Th}\\)."
+                ],
+                "bullets": [
+                  "\\(V_{Th}\\) is the open-circuit terminal voltage.",
+                  "\\(R_{Th}\\) is the resistance seen from the terminals after independent voltage sources are short-circuited and independent current sources are open-circuited."
+                ]
+              }
+            },
+            {
+              "id": "24-b",
+              "number": "b",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Sinusoidal values",
+              "question": "Define the following terms: (i) RMS value (ii) Average value",
+              "answer": {
+                "parts": [
+                  {
+                    "label": "i",
+                    "paragraphs": [
+                      "RMS value is the square root of the mean of the squares of the instantaneous values over one complete cycle. It is the DC-equivalent value that produces the same heating effect in a resistor."
+                    ],
+                    "equations": [
+                      "\\[X_{rms}=\\sqrt{\\frac1T\\int_0^T x^2(t)\\,dt}\\]"
+                    ]
+                  },
+                  {
+                    "label": "ii",
+                    "paragraphs": [
+                      "Average value is the arithmetic mean of instantaneous values. For a symmetrical sinusoid the full-cycle average is zero, so the conventional AC average value is taken over one half-cycle."
+                    ],
+                    "equations": [
+                      "\\[X_{avg}=\\frac{2X_m}{\\pi}\\quad\\text{for a sine wave over a half-cycle}\\]"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "24-c",
+              "number": "c",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · Transformer principle",
+              "question": "State the working principle of a transformer.",
+              "answer": {
+                "paragraphs": [
+                  "A transformer works on electromagnetic induction, specifically mutual induction. Alternating current in the primary produces alternating core flux; the changing flux links the secondary and induces an emf in it."
+                ]
+              }
+            },
+            {
+              "id": "24-d",
+              "number": "d",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit V · LT switchgear",
+              "question": "Differentiate the MCB and MCCB.",
+              "answer": {
+                "table": {
+                  "headers": [
+                    "MCB",
+                    "MCCB"
+                  ],
+                  "rows": [
+                    [
+                      "Miniature Circuit Breaker",
+                      "Moulded Case Circuit Breaker"
+                    ],
+                    [
+                      "Used mainly for lower-current domestic/light-commercial circuits",
+                      "Used for higher current and higher fault-level applications"
+                    ],
+                    [
+                      "Usually has fixed or limited trip settings",
+                      "Often offers adjustable overload/earth-fault settings"
+                    ],
+                    [
+                      "Lower interrupting/current range",
+                      "Higher interrupting/current range"
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "24-e",
+              "number": "e",
+              "marks": "2M",
+              "r25_scope": "outside-current-r25",
+              "r25_mapping": "Outside current R25",
+              "question": "Define ripple factor.",
+              "answer": {
+                "paragraphs": [
+                  "Ripple factor measures the amount of AC ripple remaining in a rectifier output relative to its DC component."
+                ],
+                "equations": [
+                  "\\[r=\\frac{V_{ac,rms}}{V_{dc}}=\\sqrt{\\left(\\frac{V_{rms}}{V_{dc}}\\right)^2-1}\\]"
+                ],
+                "note": "Historical R22 topic outside the current 25ES1EE101 R25 syllabus. It is retained and solved here because this page covers the complete official paper."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-1",
+          "title": "Unit I · DC circuits",
+          "note": "In the paper, answer either Q1 or Q2.",
+          "questions": [
+            {
+              "id": "24-q1",
+              "number": "1",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Kirchhoff / network reduction",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "State Kirchhoff’s laws with suitable examples."
+                },
+                {
+                  "label": "b",
+                  "content": "Calculate the equivalent resistance Rab in the given circuit."
+                }
+              ],
+              "figures": [
+                {
+                  "src": "assets/pyq/2024-25/q1b.png",
+                  "alt": "2024–25 Unit I Q1(b) bridge network: terminal a feeds a 20 ohm series resistor, then a bridge with 30 and 40 ohm upper arms, 60 and 50 ohm lower arms and a 10 ohm bridge resistor; an 80 ohm resistor connects to terminal b.",
+                  "caption": "2024–25 paper · Q1(b) circuit"
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "Kirchhoff’s laws are used with Ohm’s law to analyse electrical networks."
+                    ],
+                    "bullets": [
+                      "Kirchhoff’s Current Law (KCL): the algebraic sum of currents at a node is zero; equivalently, total current entering a node equals total current leaving it.",
+                      "Kirchhoff’s Voltage Law (KVL): the algebraic sum of all voltage rises and drops around any closed loop is zero."
+                    ],
+                    "equations": [
+                      "\\[\\sum i=0\\]",
+                      "\\[\\sum V=0\\]"
+                    ],
+                    "note": "A simple KCL example is \\(I_1+I_2=I_3+I_4\\). A simple KVL example is \\(V_s=IR_1+IR_2\\) for two series resistors."
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "The 10 Ω bridge means the middle network is not reducible by simple series/parallel combination. Use a 1 V test source across the bridge section after separating the obvious 20 Ω and 80 Ω series resistors."
+                    ],
+                    "equations": [
+                      "\\[R_{ab}=20+\\frac{4190}{99}+80=\\frac{14090}{99}\\,\\Omega\\]"
+                    ],
+                    "steps": [
+                      "Let the left side of the bridge be 1 V and the right side 0 V. Let the top midpoint voltage be \\(x\\) and the bottom midpoint voltage be \\(y\\).",
+                      "KCL gives \\((x-1)/30+x/40+(x-y)/10=0\\) and \\((y-1)/60+y/50+(y-x)/10=0\\).",
+                      "Solving: \\(x=224/419\\) V and \\(y=215/419\\) V.",
+                      "Test current is \\(I=(1-x)/30+(1-y)/60=99/4190\\) A. Hence \\(R_{bridge}=1/I=4190/99=42.323\\,\\Omega\\).",
+                      "The 20 Ω and 80 Ω resistors are in series with this bridge equivalent."
+                    ],
+                    "result": "\\(R_{ab}\\approx142.32\\,\\Omega\\)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "24-q2",
+              "number": "2",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Superposition theorem",
+              "question": "Using Superposition theorem find the current through 7 Ω resistor as shown in figure.",
+              "figures": [
+                {
+                  "src": "assets/pyq/2024-25/q2.png",
+                  "alt": "2024–25 Unit I Q2 circuit: 25 V and 30 V sources on the left and right, each connected through a 12 ohm resistor to a common top node, with a 7 ohm resistor from that node to the common bottom return.",
+                  "caption": "2024–25 paper · Q2 circuit"
+                }
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Take downward current through the 7 Ω resistor as positive."
+                ],
+                "equations": [
+                  "\\[I_7=\\frac{25}{26}+\\frac{15}{13}=\\frac{55}{26}\\,A\\]"
+                ],
+                "steps": [
+                  "25 V source alone: replace the 30 V source by a short. For centre-node voltage \\(V\\), \\((V-25)/12+V/12+V/7=0\\). Thus \\(V=175/26\\) V and \\(I_{7,25V}=25/26=0.9615\\) A downward.",
+                  "30 V source alone: replace the 25 V source by a short. \\(V/12+(V-30)/12+V/7=0\\). Thus \\(V=105/13\\) V and \\(I_{7,30V}=15/13=1.1538\\) A downward.",
+                  "Add the contributions algebraically."
+                ],
+                "result": "\\(I_7\\approx2.115\\,A\\) downward."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-2",
+          "title": "Unit II · AC circuits",
+          "note": "In the paper, answer either Q3 or Q4.",
+          "questions": [
+            {
+              "id": "24-q3",
+              "number": "3",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Three-phase / waveform factors",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Derive the line and phase voltage, current relationships in a three-phase star connected balanced load."
+                },
+                {
+                  "label": "b",
+                  "content": "Derive form factor and Peak factor of a pure sine wave form."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "For a balanced star load the three phase voltages have equal magnitude and are 120° apart. Take \\(V_{RN}=V_{ph}\\angle0^\\circ\\) and \\(V_{YN}=V_{ph}\\angle-120^\\circ\\). The line voltage is the phasor difference of two phase voltages."
+                    ],
+                    "bullets": [
+                      "Because each line conductor carries the current of its own phase, line current equals phase current.",
+                      "Each line voltage leads the corresponding phase voltage by 30°."
+                    ],
+                    "equations": [
+                      "\\[V_{RY}=V_{RN}-V_{YN}\\]",
+                      "\\[V_{RY}=V_{ph}\\left[1-\\left(-\\frac12-j\\frac{\\sqrt3}{2}\\right)\\right]=\\sqrt3V_{ph}\\angle30^\\circ\\]",
+                      "\\[V_L=\\sqrt3V_{ph},\\qquad I_L=I_{ph}\\]"
+                    ],
+                    "result": "Balanced star: \\(V_L=\\sqrt3V_{ph}\\), \\(I_L=I_{ph}\\)."
+                  },
+                  {
+                    "label": "b",
+                    "equations": [
+                      "\\[\\text{Form factor}=\\frac{V_m/\\sqrt2}{2V_m/\\pi}=\\frac{\\pi}{2\\sqrt2}\\approx1.11\\]",
+                      "\\[\\text{Peak factor}=\\frac{V_m}{V_m/\\sqrt2}=\\sqrt2\\approx1.414\\]"
+                    ],
+                    "steps": [
+                      "Average value over a positive half-cycle: \\(V_{avg}=\\frac1\\pi\\int_0^\\pi V_m\\sin\\theta\\,d\\theta=2V_m/\\pi\\).",
+                      "RMS value: \\(V_{rms}=\\sqrt{\\frac1{2\\pi}\\int_0^{2\\pi}V_m^2\\sin^2\\theta\\,d\\theta}=V_m/\\sqrt2\\).",
+                      "Form factor = RMS / average.",
+                      "Peak (crest) factor = maximum / RMS."
+                    ],
+                    "result": "Sine wave: form factor \\(1.11\\), peak factor \\(1.414\\)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "24-q4",
+              "number": "4",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Series RLC",
+              "question": "A series R-L-C circuit having a resistance of 7 Ω, an inductance of 30 mH and a capacitance of 100 µF is connected across a 200 V, 50 Hz supply. Calculate (i) Current (ii) Power factor (iii) Voltage across the Inductance and Capacitance and (iv) Active power (v) Reactive power and (vi) Apparent power.",
+              "answer": {
+                "steps": [
+                  "\\(X_L=2\\pi fL=2\\pi(50)(0.03)=9.425\\,\\Omega\\).",
+                  "\\(X_C=1/(2\\pi fC)=1/[2\\pi(50)(100\\times10^{-6})]=31.831\\,\\Omega\\).",
+                  "Net reactance \\(X=X_L-X_C=-22.406\\,\\Omega\\), so the circuit is capacitive.",
+                  "\\(|Z|=\\sqrt{7^2+(-22.406)^2}=23.474\\,\\Omega\\).",
+                  "\\(I=V/|Z|=200/23.474=8.520\\,A\\).",
+                  "Power factor \\(=R/|Z|=0.298\\), leading.",
+                  "\\(V_L=IX_L=80.30\\,V\\); \\(V_C=IX_C=271.20\\,V\\).",
+                  "\\(P=I^2R=508.1\\,W\\).",
+                  "\\(Q=I^2(X_L-X_C)=-1626.5\\,VAR\\), i.e. 1.626 kVAR capacitive.",
+                  "\\(S=VI=1704.0\\,VA\\)."
+                ],
+                "result": "\\(I=8.52\\,A\\); pf \\(=0.298\\) leading; \\(V_L=80.3\\,V\\); \\(V_C=271.2\\,V\\); \\(P=508\\,W\\); \\(Q=-1.626\\,kVAR\\); \\(S=1.704\\,kVA\\)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-3",
+          "title": "Unit III · Transformers and DC machines",
+          "note": "In the paper, answer either Q5 or Q6.",
+          "questions": [
+            {
+              "id": "24-q5",
+              "number": "5",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · Transformer EMF / DC motor",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Derive the EMF equation of a single-phase transformer."
+                },
+                {
+                  "label": "b",
+                  "content": "A 4-pole DC shunt motor is fed at 440 V and takes an armature current of 50 A. The resistance of armature circuit is 0.28 Ω. The armature winding is wave connected with 888 conductors and useful flux per pole is 0.023 Wb. Calculate the speed of the motor."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "equations": [
+                      "\\[E_1=4.44fN_1\\Phi_m,\\qquad E_2=4.44fN_2\\Phi_m\\]"
+                    ],
+                    "steps": [
+                      "Assume sinusoidal core flux \\(\\Phi=\\Phi_m\\sin\\omega t\\).",
+                      "Instantaneous induced emf in a winding of \\(N\\) turns is \\(e=N\\,d\\Phi/dt=N\\omega\\Phi_m\\cos\\omega t\\).",
+                      "Maximum emf \\(E_m=N\\omega\\Phi_m=2\\pi fN\\Phi_m\\).",
+                      "RMS emf is \\(E=E_m/\\sqrt2=4.44fN\\Phi_m\\)."
+                    ]
+                  },
+                  {
+                    "label": "b",
+                    "equations": [
+                      "\\[N=\\frac{60(2)(426)}{4(0.023)(888)}=625.7\\,rpm\\]"
+                    ],
+                    "steps": [
+                      "Back emf: \\(E_b=V-I_aR_a=440-(50)(0.28)=426\\,V\\).",
+                      "For a wave winding, \\(A=2\\). Use \\(E_b=P\\Phi ZN/(60A)\\).",
+                      "\\(N=60AE_b/(P\\Phi Z)\\)."
+                    ],
+                    "result": "Motor speed \\(\\approx626\\,rpm\\)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "24-q6",
+              "number": "6",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · DC generator / transformer",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Derive the EMF equation of a DC Generator."
+                },
+                {
+                  "label": "b",
+                  "content": "A 1-φ, 50 Hz transformer has 120 turns on the primary winding and 200 turns on the secondary winding. The net cross-sectional area of the core is 100 cm². If the primary winding is connected to 270 V, 50 Hz supply, determine: (i) the EMF induced in the secondary winding (ii) the maximum value of the flux density in the core."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "Let \\(P\\) be the number of poles, \\(\\Phi\\) flux per pole, \\(Z\\) total armature conductors, \\(N\\) speed in rpm and \\(A\\) parallel paths."
+                    ],
+                    "bullets": [
+                      "For lap winding, \\(A=P\\).",
+                      "For wave winding, \\(A=2\\)."
+                    ],
+                    "equations": [
+                      "\\[E_g=\\frac{P\\Phi ZN}{60A}\\]"
+                    ],
+                    "steps": [
+                      "Flux cut by one conductor in one revolution = \\(P\\Phi\\) Wb.",
+                      "Time for one revolution = \\(60/N\\) s.",
+                      "Average emf induced in one conductor = \\(P\\Phi /(60/N)=P\\Phi N/60\\) V.",
+                      "Conductors in series per parallel path = \\(Z/A\\)."
+                    ],
+                    "result": "Generated emf: \\(E_g=P\\Phi ZN/(60A)\\)."
+                  },
+                  {
+                    "label": "b",
+                    "steps": [
+                      "Neglecting winding drops, \\(E_1\\approx V_1=270\\,V\\).",
+                      "Using the turns ratio, \\(E_2/E_1=N_2/N_1\\), so \\(E_2=270(200/120)=450\\,V\\).",
+                      "From \\(E_1=4.44fN_1\\Phi_m\\), \\(\\Phi_m=270/[4.44(50)(120)]=0.010135\\,Wb\\).",
+                      "Core area \\(A=100\\,cm^2=0.01\\,m^2\\). Therefore \\(B_m=\\Phi_m/A=1.0135\\,T\\)."
+                    ],
+                    "result": "\\(E_2=450\\,V\\), \\(B_{max}\\approx1.014\\,T\\)."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-4",
+          "title": "Unit IV · Machines / installations in the R22 paper",
+          "note": "R22 Unit IV combines topics that now fall in current R25 Units IV and V.",
+          "questions": [
+            {
+              "id": "24-q7",
+              "number": "7",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit IV · Induction motor",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "A 3-phase induction motor is wound for 4-pole and is supplied from 50 Hz system. Calculate (i) the synchronous speed, (ii) the speed of the motor when slip is 4%."
+                },
+                {
+                  "label": "b",
+                  "content": "Draw and explain the torque-slip characteristics of a 3 phase Induction motor."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "steps": [
+                      "\\(N_s=120f/P=120(50)/4=1500\\,rpm\\).",
+                      "\\(s=(N_s-N)/N_s=0.04\\), so \\(N=(1-s)N_s=0.96(1500)=1440\\,rpm\\)."
+                    ],
+                    "result": "Synchronous speed \\(1500\\,rpm\\); rotor speed at 4% slip \\(1440\\,rpm\\)."
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "For the induction motor, the torque-slip relation may be written in the form"
+                    ],
+                    "bullets": [
+                      "Low-slip region: \\(sX_2\\ll R_2\\), so \\(T\\propto s\\). Torque rises nearly linearly with slip.",
+                      "Maximum torque occurs at \\(s=R_2/X_2\\).",
+                      "High-slip region: \\(sX_2\\gg R_2\\), so \\(T\\propto 1/s\\). Torque falls as slip increases.",
+                      "At start, \\(s=1\\), giving the starting torque. At synchronous speed, \\(s=0\\) and torque is zero."
+                    ],
+                    "equations": [
+                      "\\[T=K V^2\\frac{sR_2}{R_2^2+(sX_2)^2}\\]"
+                    ],
+                    "result": "The normal stable motoring region lies on the low-slip side of the maximum-torque point."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "24-q8",
+              "number": "8",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Current R25 Unit V · Batteries / pipe earthing",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Classify different types of Batteries."
+                },
+                {
+                  "label": "b",
+                  "content": "Explain about Pipe earthing."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "Batteries are broadly classified as primary and secondary batteries."
+                    ],
+                    "table": {
+                      "headers": [
+                        "Class",
+                        "Rechargeable?",
+                        "Typical examples / use"
+                      ],
+                      "rows": [
+                        [
+                          "Primary",
+                          "No; intended for single use",
+                          "Dry cell / zinc-carbon"
+                        ],
+                        [
+                          "Secondary",
+                          "Yes; reversible chemical action permits charging",
+                          "Lead-acid, nickel-cadmium, lithium-ion"
+                        ]
+                      ]
+                    }
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "Pipe earthing is a commonly used earthing method in which a galvanised-iron pipe electrode is placed vertically in the ground."
+                    ],
+                    "bullets": [
+                      "The prescribed text describes a G.I. pipe of about 38 mm diameter and 2.5 m length.",
+                      "The pipe is buried in an earth pit and the region around it is filled with charcoal and salt to reduce earth resistance.",
+                      "Water is added periodically to maintain moisture and keep earth resistance low.",
+                      "The equipment earth conductor is firmly connected to the pipe electrode."
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-5",
+          "title": "Unit V · Electronics (historical R22)",
+          "note": "Outside current R25 BEE; retained because the request is to solve the complete paper.",
+          "questions": [
+            {
+              "id": "24-q9",
+              "number": "9",
+              "marks": "10M",
+              "r25_scope": "outside-current-r25",
+              "r25_mapping": "Outside current R25",
+              "question": "Describe working principle of PN diode with V-I characteristics.",
+              "answer": {
+                "paragraphs": [
+                  "A PN junction diode is formed by joining p-type and n-type semiconductor regions. The junction forms a depletion region and a built-in potential barrier.",
+                  "In forward bias, the applied voltage reduces the barrier. Current is initially small and then rises rapidly after the knee/cut-in region. In reverse bias, the barrier widens and only a small reverse saturation current flows until breakdown is reached."
+                ],
+                "diagram": "                I\n                ↑\n                │          /  Forward region\n                │        /\n───────────────┼──────/────────→ V\n   Reverse     │   knee\n   leakage ────┤\n                │                    breakdown → large reverse current",
+                "note": "Historical R22 topic outside the current 25ES1EE101 R25 syllabus. It is retained and solved here because this page covers the complete official paper."
+              }
+            },
+            {
+              "id": "24-q10",
+              "number": "10",
+              "marks": "10M",
+              "r25_scope": "outside-current-r25",
+              "r25_mapping": "Outside current R25",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Illustrate the working of half Wave Rectifier with circuit diagram and draw its waveforms."
+                },
+                {
+                  "label": "b",
+                  "content": "Describe how the transistor acts as an amplifier."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "A half-wave rectifier uses one diode in series with the load. It conducts during one half-cycle of the AC input and blocks the opposite half-cycle."
+                    ],
+                    "bullets": [
+                      "Positive half-cycle: diode is forward biased and load voltage follows the positive half-sine.",
+                      "Negative half-cycle: diode is reverse biased and load current is ideally zero.",
+                      "Ripple frequency equals the supply frequency."
+                    ],
+                    "equations": [
+                      "\\[V_{DC}=\\frac{V_m}{\\pi}\\]"
+                    ],
+                    "diagram": "AC secondary ~ ──|>|── RL ── return\n               D\n\nVin :  ~ sinusoidal positive and negative\nVo  :  _/‾\\_____/‾\\_____/‾\\__",
+                    "note": "Historical R22 topic outside the current 25ES1EE101 R25 syllabus. It is retained and solved here because this page covers the complete official paper."
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "A transistor is biased in its active region so a small signal applied at the base controls a much larger collector-current variation. In a common-emitter amplifier, a small change in base current causes \\(\\Delta I_C\\approx\\beta\\Delta I_B\\). The varying collector current produces a larger voltage variation across the collector load resistance."
+                    ],
+                    "bullets": [
+                      "DC bias fixes a suitable operating point (Q-point).",
+                      "The input signal is superimposed on the bias.",
+                      "Collector-current variations create an amplified output voltage; in a common-emitter stage the output is phase-inverted."
+                    ],
+                    "equations": [
+                      "\\[I_C\\approx\\beta I_B\\]"
+                    ],
+                    "note": "Historical R22 topic outside the current 25ES1EE101 R25 syllabus. It is retained and solved here because this page covers the complete official paper."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2025-26",
+      "label": "2025–26",
+      "exam": "January 2026 Regular Examinations",
+      "regulation": "R25",
+      "course_code": "25ES1EE101",
+      "course_title": "Basic Electrical Engineering",
+      "branches": "Common to CSE and IT",
+      "source_paper": "assets/pyq/2025-26/source-paper.pdf",
+      "source_note": "Current R25 BEE paper for CSE and IT. Every question lies within the present syllabus and the worked answers follow the locked R25 / prescribed-textbook / approved-gap source base.",
+      "groups": [
+        {
+          "id": "part-a",
+          "title": "Part A · 2-mark questions",
+          "note": "Answer all five questions.",
+          "questions": [
+            {
+              "id": "25-a",
+              "number": "a",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Superposition theorem",
+              "question": "State Superposition theorem and mention one application of it.",
+              "answer": {
+                "paragraphs": [
+                  "Superposition theorem states that in a linear network containing several independent sources, the current through or voltage across any element equals the algebraic sum of the responses produced by each independent source acting alone."
+                ],
+                "bullets": [
+                  "While considering one source, replace other independent voltage sources by short circuits and independent current sources by open circuits.",
+                  "Application: finding a branch current or voltage in a multi-source linear DC network."
+                ]
+              }
+            },
+            {
+              "id": "25-b",
+              "number": "b",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · AC power",
+              "question": "Differentiate between real power and reactive power in AC circuits.",
+              "answer": {
+                "table": {
+                  "headers": [
+                    "Real power P",
+                    "Reactive power Q"
+                  ],
+                  "rows": [
+                    [
+                      "Represents net energy converted to useful work/heat",
+                      "Represents periodic energy exchange with inductors/capacitors"
+                    ],
+                    [
+                      "\\(P=VI\\cos\\phi\\)",
+                      "\\(Q=VI\\sin\\phi\\)"
+                    ],
+                    [
+                      "Unit: watt (W)",
+                      "Unit: volt-ampere reactive (VAR)"
+                    ],
+                    [
+                      "Positive for ordinary loads",
+                      "Positive for inductive and negative for capacitive sign convention"
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "25-c",
+              "number": "c",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · DC motor / back emf",
+              "question": "What is the significance of back EMF in a DC motor?",
+              "answer": {
+                "paragraphs": [
+                  "Back emf \\(E_b\\) is the emf generated in the rotating armature that opposes the applied supply according to Lenz’s law."
+                ],
+                "bullets": [
+                  "It limits armature current during normal running: \\(I_a=(V-E_b)/R_a\\).",
+                  "It gives the motor a self-regulating action: increased load slows the motor, reducing \\(E_b\\), which increases armature current and torque.",
+                  "At starting, \\(E_b=0\\), so starting current is very high unless limited."
+                ],
+                "equations": [
+                  "\\[V=E_b+I_aR_a\\]"
+                ]
+              }
+            },
+            {
+              "id": "25-d",
+              "number": "d",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit IV · Induction motor",
+              "question": "Define slip and slip speed of a three-phase induction motor.",
+              "answer": {
+                "paragraphs": [
+                  "Slip speed is the difference between synchronous speed and rotor speed. Slip is this difference expressed as a fraction of synchronous speed."
+                ],
+                "equations": [
+                  "\\[\\text{Slip speed}=N_s-N\\]",
+                  "\\[s=\\frac{N_s-N}{N_s},\\qquad \\%s=\\frac{N_s-N}{N_s}\\times100\\]"
+                ]
+              }
+            },
+            {
+              "id": "25-e",
+              "number": "e",
+              "marks": "2M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit V · Lead-acid battery",
+              "question": "List any two advantages of a lead-acid battery.",
+              "answer": {
+                "bullets": [
+                  "It is rechargeable and can be used through many charge-discharge cycles.",
+                  "It can deliver large currents and stores substantial energy, making it useful for automobile starting and backup/inverter duty.",
+                  "It is a mature, widely available and comparatively economical battery technology."
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-1",
+          "title": "Unit I · Introduction to electrical energy and DC circuits",
+          "note": "In the paper, answer either Q1 or Q2.",
+          "questions": [
+            {
+              "id": "25-q1",
+              "number": "1",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Explain the role of electrical energy in modern life and various engineering branches."
+                },
+                {
+                  "label": "b",
+                  "content": "Explain Kirchhoff’s laws with suitable examples."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "Electrical energy is a convenient, controllable, clean-at-point-of-use and easily transmissible form of energy. It can be converted efficiently into light, heat, mechanical motion and electronic processing."
+                    ],
+                    "bullets": [
+                      "Domestic and commercial use: lighting, heating, cooling, refrigeration, appliances, computers and office equipment.",
+                      "Industry: motors and machine drives, process equipment, lighting, ventilation, automation and control.",
+                      "Transportation and communication: electric trains/EVs, communication systems and data infrastructure.",
+                      "Medicine and services: X-ray, ECG and other electrically operated medical equipment.",
+                      "Engineering relevance: electrical machines provide electromechanical conversion; electronics, communication, instrumentation and computing all depend on electrical energy. For CSE/IT, computers, servers, networking and embedded systems ultimately depend on a reliable electrical-energy supply.",
+                      "Power systems convert primary/mechanical energy into electricity, transmit it to load centres, distribute it and finally utilise it."
+                    ]
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "Kirchhoff’s laws are used with Ohm’s law to analyse electrical networks."
+                    ],
+                    "bullets": [
+                      "Kirchhoff’s Current Law (KCL): the algebraic sum of currents at a node is zero; equivalently, total current entering a node equals total current leaving it.",
+                      "Kirchhoff’s Voltage Law (KVL): the algebraic sum of all voltage rises and drops around any closed loop is zero."
+                    ],
+                    "equations": [
+                      "\\[\\sum i=0\\]",
+                      "\\[\\sum V=0\\]"
+                    ],
+                    "note": "A simple KCL example is \\(I_1+I_2=I_3+I_4\\). A simple KVL example is \\(V_s=IR_1+IR_2\\) for two series resistors."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "25-q2",
+              "number": "2",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit I · Thevenin theorem",
+              "question": "State and explain Thevenin’s theorem and apply it to solve for the circuit given below between terminals a and b.",
+              "figures": [
+                {
+                  "src": "assets/pyq/2025-26/q2.png",
+                  "alt": "2025–26 Unit I Q2 circuit for Thevenin theorem: 25 V source through 5 ohm to a common node, 20 ohm to the bottom node, a 3 A upward current source to the same node, and a 4 ohm resistor from the node to terminal a; terminal b is the bottom node.",
+                  "caption": "2025–26 paper · Q2 circuit"
+                }
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Thevenin’s theorem replaces the linear network seen from terminals a-b by a source \\(V_{Th}\\) in series with \\(R_{Th}\\)."
+                ],
+                "steps": [
+                  "Open-circuit the terminals a-b. No current flows through the 4 Ω resistor, so \\(V_a\\) equals the main top-node voltage \\(V\\).",
+                  "KCL at that node: \\((V-25)/5+V/20-3=0\\). Solving gives \\(V=32\\,V\\). Hence \\(V_{Th}=32\\,V\\).",
+                  "To find \\(R_{Th}\\), deactivate the independent sources: short the 25 V source and open the 3 A current source.",
+                  "Seen from a-b, the 4 Ω resistor is in series with \\(5\\parallel20=4\\,\\Omega\\). Thus \\(R_{Th}=4+4=8\\,\\Omega\\)."
+                ],
+                "result": "Thevenin equivalent at a-b: \\(V_{Th}=32\\,V\\) in series with \\(R_{Th}=8\\,\\Omega\\)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-2",
+          "title": "Unit II · Steady-state AC circuits",
+          "note": "In the paper, answer either Q3 or Q4.",
+          "questions": [
+            {
+              "id": "25-q3",
+              "number": "3",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Series RLC",
+              "question": "Analyze a series RLC circuit under sinusoidal excitation and derive expressions for current and impedance.",
+              "answer": {
+                "paragraphs": [
+                  "For a series RLC circuit supplied by sinusoidal RMS voltage \\(V\\), the same current \\(I\\) flows through R, L and C. Take current as the reference phasor."
+                ],
+                "bullets": [
+                  "If \\(X_L>X_C\\), the circuit is inductive and current lags voltage.",
+                  "If \\(X_C>X_L\\), the circuit is capacitive and current leads voltage.",
+                  "If \\(X_L=X_C\\), the circuit is at series resonance: \\(Z=R\\), current is maximum and power factor is unity."
+                ],
+                "equations": [
+                  "\\[X_L=\\omega L,\\qquad X_C=\\frac{1}{\\omega C}\\]",
+                  "\\[Z=R+j(X_L-X_C)\\]",
+                  "\\[|Z|=\\sqrt{R^2+(X_L-X_C)^2}\\]",
+                  "\\[I=\\frac{V}{Z},\\qquad |I|=\\frac{V}{|Z|}\\]",
+                  "\\[\\phi=\\tan^{-1}\\!\\left(\\frac{X_L-X_C}{R}\\right)\\]"
+                ],
+                "result": "Series RLC impedance is \\(Z=R+j(X_L-X_C)\\); current is \\(I=V/Z\\)."
+              }
+            },
+            {
+              "id": "25-q4",
+              "number": "4",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit II · Three-phase balanced circuits",
+              "question": "Explain three-phase balanced circuits and derive voltage and current relations for star and delta connections.",
+              "answer": {
+                "paragraphs": [
+                  "A balanced three-phase system has three sinusoidal phase quantities of equal magnitude and frequency displaced by 120°. A balanced load has identical impedances in all three phases."
+                ],
+                "result": "Balanced star: \\(V_L=\\sqrt3V_{ph}, I_L=I_{ph}\\). Balanced delta: \\(V_L=V_{ph}, I_L=\\sqrt3I_{ph}\\).",
+                "parts": [
+                  {
+                    "label": "Star (Y)",
+                    "paragraphs": [
+                      "Each phase is connected from a line to the neutral point. Take \\(V_{RN}=V_{ph}\\angle0^\\circ\\) and \\(V_{YN}=V_{ph}\\angle-120^\\circ\\)."
+                    ],
+                    "equations": [
+                      "\\[V_{RY}=V_{RN}-V_{YN}\\]",
+                      "\\[V_{RY}=V_{ph}\\left[1-\\left(-\\frac12-j\\frac{\\sqrt3}{2}\\right)\\right]=\\sqrt3V_{ph}\\angle30^\\circ\\]",
+                      "\\[V_L=\\sqrt3V_{ph},\\qquad I_L=I_{ph}\\]"
+                    ],
+                    "bullets": [
+                      "Each line conductor is in series with its phase, so line current equals phase current.",
+                      "The line voltage leads the corresponding phase voltage by 30°."
+                    ]
+                  },
+                  {
+                    "label": "Delta (Δ)",
+                    "paragraphs": [
+                      "Each phase is connected directly between two lines, hence \\(V_L=V_{ph}\\). At a line terminal the line current is the phasor difference of the two phase currents meeting there."
+                    ],
+                    "equations": [
+                      "\\[I_R=I_{RY}-I_{BR}\\]",
+                      "\\[|I_R|=\\sqrt{I_{ph}^2+I_{ph}^2-2I_{ph}^2\\cos120^\\circ}=\\sqrt3I_{ph}\\]",
+                      "\\[V_L=V_{ph},\\qquad I_L=\\sqrt3I_{ph}\\]"
+                    ],
+                    "bullets": [
+                      "For the usual phase sequence, line current is displaced by 30° from the corresponding phase current."
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-3",
+          "title": "Unit III · Transformers and DC machines",
+          "note": "In the paper, answer either Q5 or Q6.",
+          "questions": [
+            {
+              "id": "25-q5",
+              "number": "5",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Explain the working principle of a transformer."
+                },
+                {
+                  "label": "b",
+                  "content": "Derive the EMF equation of a DC generator from fundamentals."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "A transformer is a static device that transfers AC electrical energy from one circuit to another at the same frequency by electromagnetic induction.",
+                      "When AC is applied to the primary winding, a small magnetising current produces alternating core flux. This flux links both windings and induces emfs in the primary and secondary according to Faraday’s law. If a load is connected to the secondary, secondary current flows and the primary draws the additional current needed to balance the secondary ampere-turns."
+                    ],
+                    "bullets": [
+                      "If \\(N_2>N_1\\), it is step-up; if \\(N_2<N_1\\), it is step-down.",
+                      "A transformer does not operate on steady DC because steady DC does not create alternating flux."
+                    ],
+                    "equations": [
+                      "\\[E_1=4.44fN_1\\Phi_m,\\qquad E_2=4.44fN_2\\Phi_m\\]",
+                      "\\[\\frac{E_2}{E_1}=\\frac{N_2}{N_1}=k\\]"
+                    ],
+                    "diagram": "AC supply V1 → [Primary N1] ║ laminated iron core ║ [Secondary N2] → Load"
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "Let \\(P\\) be the number of poles, \\(\\Phi\\) flux per pole, \\(Z\\) total armature conductors, \\(N\\) speed in rpm and \\(A\\) parallel paths."
+                    ],
+                    "bullets": [
+                      "For lap winding, \\(A=P\\).",
+                      "For wave winding, \\(A=2\\)."
+                    ],
+                    "equations": [
+                      "\\[E_g=\\frac{P\\Phi ZN}{60A}\\]"
+                    ],
+                    "steps": [
+                      "Flux cut by one conductor in one revolution = \\(P\\Phi\\) Wb.",
+                      "Time for one revolution = \\(60/N\\) s.",
+                      "Average emf induced in one conductor = \\(P\\Phi /(60/N)=P\\Phi N/60\\) V.",
+                      "Conductors in series per parallel path = \\(Z/A\\)."
+                    ],
+                    "result": "Generated emf: \\(E_g=P\\Phi ZN/(60A)\\)."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "25-q6",
+              "number": "6",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit III · Practical transformer / efficiency / regulation",
+              "question": "Explain the equivalent circuit of a practical transformer and derive expressions for efficiency and regulation.",
+              "answer": {
+                "paragraphs": [
+                  "A practical transformer includes winding resistance, leakage reactance, finite magnetising current and iron loss. Its equivalent circuit therefore contains primary series elements \\(R_1,X_1\\), secondary series elements \\(R_2,X_2\\), and a shunt branch representing core loss resistance \\(R_0\\) and magnetising reactance \\(X_m\\)."
+                ],
+                "bullets": [
+                  "To refer secondary quantities to the primary: \\(R_2' = R_2/k^2\\), \\(X_2' = X_2/k^2\\), where \\(k=N_2/N_1\\).",
+                  "Equivalent series resistance and reactance can then be combined on one side for regulation and efficiency calculations."
+                ],
+                "equations": [
+                  "\\[\\eta=\\frac{\\text{Output}}{\\text{Input}}\\times100=\\frac{P_{out}}{P_{out}+P_i+P_{cu}}\\times100\\]",
+                  "\\[P_{cu}=I^2R_{eq},\\qquad \\text{and at maximum efficiency }P_{cu}=P_i\\]",
+                  "\\[\\%VR=\\frac{E_2-V_2}{E_2}\\times100\\]",
+                  "\\[\\%VR_{lag}\\approx\\frac{I_2(R_{02}\\cos\\phi+X_{02}\\sin\\phi)}{E_2}\\times100\\]",
+                  "\\[\\%VR_{lead}\\approx\\frac{I_2(R_{02}\\cos\\phi-X_{02}\\sin\\phi)}{E_2}\\times100\\]"
+                ],
+                "diagram": "V1 → R1 → jX1 → [ideal transformer] → R2 → jX2 → Load\n             │\n             ├── R0 (core-loss branch)\n             └── jXm (magnetising branch)",
+                "note": "The regulation expressions above follow the prescribed textbook convention used in the current Unit III text."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-4",
+          "title": "Unit IV · Alternating-current machines",
+          "note": "In the paper, answer either Q7 or Q8.",
+          "questions": [
+            {
+              "id": "25-q7",
+              "number": "7",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit IV",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Explain the principle of operation of a three-phase induction motor."
+                },
+                {
+                  "label": "b",
+                  "content": "Explain torque–slip characteristics of an induction motor."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "A balanced three-phase supply to the stator windings produces a rotating magnetic field (RMF). The RMF rotates at synchronous speed.",
+                      "Because the rotor initially has relative motion with respect to the RMF, an emf is induced in the short-circuited rotor conductors. Rotor current flows, and interaction of rotor current with the stator field produces torque in the direction of the RMF.",
+                      "The rotor cannot reach synchronous speed in motoring operation: at synchronous speed the relative speed would be zero, rotor emf and rotor current would vanish, and therefore torque would be zero."
+                    ],
+                    "equations": [
+                      "\\[N_s=\\frac{120f}{P}\\]",
+                      "\\[s=\\frac{N_s-N}{N_s}\\]",
+                      "\\[f_r=sf\\]"
+                    ],
+                    "result": "The induction motor therefore runs slightly below synchronous speed with non-zero slip."
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "For the induction motor, the torque-slip relation may be written in the form"
+                    ],
+                    "bullets": [
+                      "Low-slip region: \\(sX_2\\ll R_2\\), so \\(T\\propto s\\). Torque rises nearly linearly with slip.",
+                      "Maximum torque occurs at \\(s=R_2/X_2\\).",
+                      "High-slip region: \\(sX_2\\gg R_2\\), so \\(T\\propto 1/s\\). Torque falls as slip increases.",
+                      "At start, \\(s=1\\), giving the starting torque. At synchronous speed, \\(s=0\\) and torque is zero."
+                    ],
+                    "equations": [
+                      "\\[T=K V^2\\frac{sR_2}{R_2^2+(sX_2)^2}\\]"
+                    ],
+                    "result": "The normal stable motoring region lies on the low-slip side of the maximum-torque point."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "25-q8",
+              "number": "8",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit IV · Synchronous generator regulation",
+              "question": "Explain voltage regulation of a synchronous generator using synchronous impedance method.",
+              "answer": {
+                "paragraphs": [
+                  "The synchronous-impedance (EMF) method obtains an equivalent synchronous impedance from open-circuit and short-circuit tests at rated speed, then uses it to calculate the generated emf required for a specified load."
+                ],
+                "bullets": [
+                  "For lagging power factor the synchronous-reactance drop generally increases the required generated emf.",
+                  "For leading power factor the phasor relation can reduce the required generated emf and regulation can become small or negative."
+                ],
+                "equations": [
+                  "\\[Z_s=\\frac{V_{OC}}{I_{SC}}\\]",
+                  "\\[X_s=\\sqrt{Z_s^2-R_a^2}\\]",
+                  "\\[\\mathbf E_0=\\mathbf V+\\mathbf I(R_a+jX_s)\\]",
+                  "\\[\\%\\text{Regulation}=\\frac{E_0-V}{V}\\times100\\]"
+                ],
+                "steps": [
+                  "Open-circuit test (OCC): run the alternator at rated speed with armature open and record terminal voltage versus field current.",
+                  "Short-circuit test (SCC): run at rated speed with the armature terminals symmetrically shorted and record armature current versus field current.",
+                  "For the same field current, use per-phase values to calculate \\(Z_s=V_{OC}/I_{SC}\\).",
+                  "With measured armature resistance \\(R_a\\), calculate \\(X_s=\\sqrt{Z_s^2-R_a^2}\\).",
+                  "For the specified load current and power factor, use the generator phasor equation \\(\\mathbf E_0=\\mathbf V+\\mathbf I(R_a+jX_s)\\) to obtain \\(|E_0|\\).",
+                  "Finally calculate voltage regulation."
+                ],
+                "result": "OCC + SCC → \\(Z_s\\) → \\(X_s\\) → generated emf \\(E_0\\) → percentage voltage regulation."
+              }
+            }
+          ]
+        },
+        {
+          "id": "unit-5",
+          "title": "Unit V · Electrical installations and batteries",
+          "note": "In the paper, answer either Q9 or Q10.",
+          "questions": [
+            {
+              "id": "25-q9",
+              "number": "9",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit V · Domestic installation / earthing",
+              "question_parts": [
+                {
+                  "label": "a",
+                  "content": "Explain the basic layout of a domestic electrical installation."
+                },
+                {
+                  "label": "b",
+                  "content": "Explain the need for earthing and types of earthing."
+                }
+              ],
+              "answer": {
+                "parts": [
+                  {
+                    "label": "a",
+                    "paragraphs": [
+                      "In a single-phase domestic installation the load is supplied between phase and neutral at about 230 V. The incoming service passes through metering, main protection and a distribution board before reaching individual sub-circuits."
+                    ],
+                    "bullets": [
+                      "The service fuse protects the incoming service conductor.",
+                      "The energy meter records electrical-energy consumption.",
+                      "The main MCB controls and protects the whole installation.",
+                      "The distribution board divides the supply into sub-circuits, each with its own protective MCB.",
+                      "Metallic enclosures and exposed conductive parts are connected to earth."
+                    ],
+                    "diagram": "Supply → service fuse → energy meter → main MCB → distribution board → sub-circuit MCBs → lights / fans / sockets / loads\nEarth electrode ───────────────────────────────→ metal enclosures / earth conductors"
+                  },
+                  {
+                    "label": "b",
+                    "paragraphs": [
+                      "Earthing connects exposed metallic parts of electrical equipment to the earth through a low-resistance conductor and electrode."
+                    ],
+                    "bullets": [
+                      "It reduces electric-shock risk by providing a preferred low-resistance path for leakage/fault current.",
+                      "It helps protective devices operate quickly during earth faults and reduces fire risk.",
+                      "Pipe earthing: a G.I. pipe electrode is buried vertically in moist soil; the surrounding soil is commonly treated with charcoal and salt and kept moist.",
+                      "Plate earthing: a G.I. plate electrode is buried in the ground, surrounded by alternate layers of charcoal and salt and kept moist."
+                    ],
+                    "result": "The current R25 syllabus specifically requires pipe earthing and plate earthing."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "25-q10",
+              "number": "10",
+              "marks": "10M",
+              "r25_scope": "current-r25",
+              "r25_mapping": "Unit V · Lead-acid battery / UPS",
+              "question": "Explain the construction, working and characteristics of a lead-acid battery and explain UPS operation with block diagram.",
+              "answer": {
+                "result": "Lead-acid battery provides rechargeable DC storage; the UPS uses stored battery energy through the inverter to keep the AC load energised during mains failure.",
+                "parts": [
+                  {
+                    "label": "Lead-acid battery",
+                    "paragraphs": [
+                      "A lead-acid battery is a rechargeable secondary battery. The positive plate is lead dioxide \\(PbO_2\\), the negative plate is sponge lead \\(Pb\\), and the electrolyte is dilute sulphuric acid \\(H_2SO_4\\). Separators prevent direct contact between opposite plates. A cell gives about 2.1 V; six cells form a nominal 12 V battery."
+                    ],
+                    "bullets": [
+                      "Fully charged open-circuit voltage is stated as about 2.2 V per cell.",
+                      "During discharge terminal voltage falls; the text advises not allowing it below about 1.8 V per cell.",
+                      "Capacity is rated in ampere-hours (Ah) and falls as discharge rate rises.",
+                      "Ah efficiency is typically about 90–95%; watt-hour efficiency is lower than Ah efficiency."
+                    ],
+                    "equations": [
+                      "\\[\\text{Discharge: }Pb+PbO_2+2H_2SO_4\\rightarrow2PbSO_4+2H_2O\\]",
+                      "\\[\\text{Charge: }2PbSO_4+2H_2O\\rightarrow Pb+PbO_2+2H_2SO_4\\]"
+                    ]
+                  },
+                  {
+                    "label": "UPS",
+                    "paragraphs": [
+                      "A UPS maintains continuity of supply to critical AC loads when the normal AC source fails."
+                    ],
+                    "bullets": [
+                      "Normal supply present: the rectifier converts AC to DC, feeds the inverter and charges the battery.",
+                      "AC supply failure: the battery supplies DC to the inverter; the inverter converts it to AC and the filter supplies the critical load.",
+                      "The UPS also helps regulate/condition the output voltage supplied to the critical load."
+                    ],
+                    "diagram": "AC input → Rectifier → DC link → Inverter → Filter → Critical load\n                         ↕\n                      Battery bank"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -631,3 +631,214 @@
 	line-height: 1.65;
 }
 
+
+/* ====================================================================== */
+/*                         SEMESTER PYQ NAVIGATION                         */
+/* ====================================================================== */
+
+.pyq-year-nav {
+	margin-top: var(--space-6);
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+	gap: var(--space-4);
+	align-items: stretch;
+}
+
+.pyq-year-slot {
+	min-width: 0;
+}
+
+.pyq-year-slot-next {
+	text-align: right;
+}
+
+.pyq-year-link,
+.pyq-year-current {
+	min-height: 72px;
+	padding: var(--space-4) var(--space-5);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	background: var(--surface);
+	box-shadow: var(--shadow-small);
+}
+
+.pyq-year-link {
+	display: grid;
+	align-content: center;
+	gap: 4px;
+	height: 100%;
+	text-decoration: none;
+	color: var(--text-strong);
+}
+
+.pyq-year-link:hover {
+	border-color: var(--primary-muted);
+	background: var(--primary-soft);
+}
+
+.pyq-year-current {
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	min-width: 150px;
+	background: var(--primary-soft);
+	border-color: var(--line-primary);
+	text-align: center;
+}
+
+.pyq-year-kicker {
+	font-size: 11px;
+	line-height: 1.2;
+	font-weight: var(--font-weight-heavy);
+	letter-spacing: .5px;
+	text-transform: uppercase;
+	color: var(--muted-2);
+}
+
+.pyq-year-link strong,
+.pyq-year-current strong {
+	font-size: 15px;
+	line-height: 1.35;
+}
+
+.pyq-year-empty {
+	display: block;
+	min-height: 72px;
+}
+
+.pyq-paper-note strong {
+	display: inline;
+}
+
+.pyq-question-groups {
+	margin-top: var(--space-8);
+}
+
+.pyq-question-meta-row {
+	display: flex;
+	gap: var(--space-2);
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 2px;
+}
+
+.pyq-marks,
+.pyq-topic-tag,
+.pyq-scope-tag {
+	display: inline-flex;
+	align-items: center;
+	min-height: 24px;
+	padding: 3px 8px;
+	border-radius: var(--radius-pill);
+	font-size: 11px;
+	line-height: 1.3;
+	font-weight: var(--font-weight-heavy);
+}
+
+.pyq-marks {
+	background: var(--primary-soft);
+	color: var(--primary-dark);
+}
+
+.pyq-topic-tag {
+	border: 1px solid var(--line-soft);
+	background: var(--surface-subtle);
+	color: var(--muted);
+}
+
+.pyq-scope-tag {
+	border: 1px solid var(--line-primary);
+	background: var(--surface);
+	color: var(--primary-dark);
+}
+
+.pyq-scope-tag.is-outside {
+	border-color: var(--math-mismatch-border);
+	background: var(--math-mismatch-soft);
+	color: var(--math-mismatch-text);
+}
+
+.pyq-outside-r25 .chapter-question-number {
+	background: var(--math-mismatch-soft);
+	color: var(--math-mismatch-text);
+	box-shadow: inset 0 0 0 1px var(--math-mismatch-border);
+}
+
+.pyq-scope-note {
+	margin: 0 0 var(--space-5);
+	padding: var(--space-4) var(--space-5);
+	border: 1px solid var(--math-mismatch-border);
+	border-left: 4px solid var(--math-mismatch-strong);
+	border-radius: var(--radius-sm);
+	background: var(--math-mismatch-soft);
+	font-size: 14px;
+	line-height: 1.6;
+	color: var(--math-mismatch-text);
+}
+
+.pyq-question-figures {
+	display: grid;
+	gap: var(--space-3);
+	margin-top: var(--space-3);
+}
+
+.pyq-question-figure {
+	display: grid;
+	gap: 5px;
+	width: fit-content;
+	max-width: min(100%, 720px);
+}
+
+.pyq-question-figure img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: 1px solid var(--line-soft);
+	border-radius: var(--radius-sm);
+	background: #fff;
+}
+
+.pyq-question-figure > span {
+	font-size: 12px;
+	line-height: 1.4;
+	font-weight: var(--font-weight-medium);
+	color: var(--muted-2);
+}
+
+.pyq-question .answer-diagram {
+	white-space: pre;
+	line-height: 1.45;
+	font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 720px) {
+	.pyq-year-nav {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.pyq-year-current {
+		grid-column: 1 / -1;
+		grid-row: 1;
+	}
+
+	.pyq-year-slot-prev,
+	.pyq-year-slot-next {
+		grid-row: 2;
+	}
+
+	.pyq-year-empty {
+		min-height: 0;
+	}
+}
+
+@media (max-width: 520px) {
+	.pyq-year-link,
+	.pyq-year-current {
+		padding: var(--space-4);
+	}
+
+	.pyq-year-link strong,
+	.pyq-year-current strong {
+		font-size: 14px;
+	}
+}
