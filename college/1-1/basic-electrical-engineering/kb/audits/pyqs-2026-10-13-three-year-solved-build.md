@@ -22,9 +22,10 @@ The R22 papers are preserved as complete historical papers. Their electronics qu
 - Default with no query string is `2025-26`.
 - Added previous/current/next year navigation at the top, modelled on the existing unit-neighbour navigation pattern.
 - All 45 paper questions are accordion items; multi-part official questions retain their subparts inside the same accordion.
-- Original question figures are retained for the five circuit questions that require them.
+- The five source-paper circuit figures are now represented by explicit PYQ image placeholders, using zero-padded target filenames (`q01.png`, `q02.png`, `q01b.png`) and preserving year/question/source-page provenance. The source-paper PDFs remain available for faithful redraws.
 - Each paper provides a local source-PDF link.
 - Updated the existing BEE index study-tool card to `Semester PYQs · Solved`.
+- Removed the non-functional `Page & figure references` and `Formula & method sheet` cards from the BEE index for now; they can be added back when a concrete study workflow needs them.
 
 ## Answering / source rules
 
@@ -51,7 +52,9 @@ The R22 papers are preserved as complete historical papers. Their electronics qu
 - `pyqs.json` parses successfully.
 - Exactly 15 official question accordions per year, 45 total.
 - Every question has a non-empty answer.
-- All source-paper and circuit-image paths referenced by `pyqs.json` exist.
+- All source-paper paths referenced by `pyqs.json` exist.
+- Exactly five question-image entries are placeholders; each has a zero-padded target filename and source-paper page metadata.
+- Legacy extracted circuit PNGs from the previous build remain physically present in the workspace but are no longer referenced by the PYQ data/renderer.
 - Mathematical delimiter scan: balanced `\\(...\\)` and `\\[...\\]`.
 - JSON control-character scan: no unexpected control characters.
 - `scripts/new/pyqs.js`: `node --check` passes.

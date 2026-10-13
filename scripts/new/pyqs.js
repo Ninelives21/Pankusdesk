@@ -77,7 +77,7 @@ function renderPage(page, subject, subjectUrl, bank, years, year) {
 		${renderJumpNav(year.groups || [], currentPath)}
 
 		<div class="question-topic-list pyq-question-groups">
-			${(year.groups || []).map(group => renderGroup(group, subjectUrl)).join('')}
+			${(year.groups || []).map(group => renderGroup(group, subjectUrl, year)).join('')}
 		</div>
 	`;
 }
@@ -123,7 +123,7 @@ function renderJumpNav(groups, currentPath) {
 	`;
 }
 
-function renderGroup(group, subjectUrl) {
+function renderGroup(group, subjectUrl, year) {
 	return `
 		<section class="section question-group" id="${escapeHtml(group.id)}">
 			<div class="section-heading-row question-group-heading">
@@ -134,13 +134,13 @@ function renderGroup(group, subjectUrl) {
 				<span class="question-count">${(group.questions || []).length} questions</span>
 			</div>
 			<div class="chapter-question-list">
-				${(group.questions || []).map(question => renderQuestion(question, subjectUrl)).join('')}
+				${(group.questions || []).map(question => renderQuestion(question, subjectUrl, year)).join('')}
 			</div>
 		</section>
 	`;
 }
 
-function renderQuestion(question, subjectUrl) {
+function renderQuestion(question, subjectUrl, year) {
 	const answerId = `answer-${question.id}`;
 	const outside = question.r25_scope === 'outside-current-r25';
 	const prompt = renderQuestionPrompt(question);
@@ -155,7 +155,7 @@ function renderQuestion(question, subjectUrl) {
 						${question.r25_mapping ? `<span class="pyq-topic-tag">${escapeHtml(question.r25_mapping)}</span>` : ''}
 						${outside ? '<span class="pyq-scope-tag is-outside">Historical R22 · outside current R25</span>' : '<span class="pyq-scope-tag">Current R25 overlap</span>'}
 					</span>
-					${renderQuestionFigures(question.figures || [], subjectUrl)}
+					${renderQuestionFigures(question.figures || [], subjectUrl, year)}
 				</span>
 				<span class="chapter-question-icon" aria-hidden="true">+</span>
 			</button>
@@ -185,11 +185,43 @@ function renderQuestionPrompt(question) {
 	`;
 }
 
-function renderQuestionFigures(figures, subjectUrl) {
+function getPyqPlaceholderFilename(figure) {
+	const target = typeof figure?.target_src === 'string' && figure.target_src.trim()
+		? figure.target_src.trim()
+		: (typeof figure?.src === 'string' ? figure.src.trim() : '');
+	if (!target) return '';
+	const clean = target.split('?')[0].split('#')[0];
+	if (clean.startsWith('placeholder://')) {
+		const token = clean.slice('placeholder://'.length).replace(/^\/+/, '');
+		return token ? `${token}.png` : '';
+	}
+	const parts = clean.split('/').filter(Boolean);
+	return parts.length ? parts[parts.length - 1] : '';
+}
+
+function renderQuestionFigures(figures, subjectUrl, year) {
 	if (!figures.length) return '';
 	return `
 		<span class="pyq-question-figures">
 			${figures.map(figure => {
+				if (figure?.placeholder) {
+					const yearLabel = year?.label || year?.id || 'PYQ';
+					const questionLabel = figure.question_label || 'Question figure';
+					const description = figure.description ? `<span class="pyq-figure-placeholder-description">${formatText(figure.description)}</span>` : '';
+					const sourcePage = figure.source_page ? `Source paper p. ${figure.source_page}` : 'Source paper page to be confirmed';
+					const filename = getPyqPlaceholderFilename(figure);
+					const filenameLine = filename ? `<span class="pyq-figure-placeholder-filename">Expected filename: <code>${escapeHtml(filename)}</code></span>` : '';
+					return `
+						<span class="pyq-question-figure pyq-figure-placeholder" role="note" aria-label="${escapeHtml(`${yearLabel} ${questionLabel} image placeholder`)}">
+							<span class="pyq-figure-placeholder-kicker">PYQ image placeholder</span>
+							<span class="pyq-figure-placeholder-title">${escapeHtml(yearLabel)} · ${escapeHtml(questionLabel)}</span>
+							${description}
+							<span class="pyq-figure-placeholder-page">${escapeHtml(sourcePage)}</span>
+							${filenameLine}
+						</span>
+					`;
+				}
+				if (!figure?.src) return '';
 				const src = new URL(figure.src, subjectUrl).href;
 				return `<span class="pyq-question-figure"><img src="${escapeHtml(src)}" alt="${escapeHtml(figure.alt || '')}" loading="lazy" />${figure.caption ? `<span>${escapeHtml(figure.caption)}</span>` : ''}</span>`;
 			}).join('')}
