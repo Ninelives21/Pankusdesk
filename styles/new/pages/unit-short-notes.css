@@ -1,0 +1,391 @@
+.short-notes-hero {
+	padding: 1.1rem 0 .35rem;
+}
+.short-notes-hero h1 {
+	margin: .18rem 0 .35rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+	color: var(--text-strong);
+}
+.short-notes-hero > p {
+	margin: .25rem 0;
+	color: var(--text-secondary);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+.short-notes-policy {
+	max-width: 820px;
+	font-size: .92rem !important;
+}
+.short-notes-provenance {
+	display: flex;
+	align-items: flex-start;
+	gap: .75rem;
+	max-width: 900px;
+	margin: 0 0 1.4rem;
+	padding: .85rem 1rem;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: var(--surface);
+}
+.short-notes-provenance p { margin: .05rem 0 0; line-height: 1.55; color: var(--text-secondary); }
+.short-notes-provenance-badge,
+.short-notes-source-badge,
+.short-note-ai-badge {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	padding: .3rem .55rem;
+	border-radius: 999px;
+	font-size: .72rem;
+	font-weight: 800;
+	letter-spacing: .02em;
+	white-space: nowrap;
+}
+.short-notes-provenance.is-teacher .short-notes-provenance-badge,
+.short-notes-source-badge.is-teacher {
+	background: var(--notes-soft);
+	border: 1px solid var(--notes-border);
+	color: var(--notes-text);
+}
+.short-notes-provenance.is-ai .short-notes-provenance-badge,
+.short-notes-source-badge.is-ai,
+.short-note-ai-badge {
+	background: var(--explainer-soft);
+	border: 1px solid var(--explainer-border);
+	color: var(--explainer-text);
+}
+.short-notes-provenance.is-mixed .short-notes-provenance-badge {
+	background: linear-gradient(90deg, var(--notes-soft) 0 50%, var(--explainer-soft) 50% 100%);
+	border: 1px solid var(--line-primary);
+	color: var(--text-strong);
+}
+.short-notes-section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 1rem;
+	max-width: 980px;
+	margin-bottom: 1rem;
+}
+.short-notes-section-header h2 { margin: .45rem 0 .35rem; color: var(--text-strong); }
+.short-notes-section-header p { margin: .25rem 0; line-height: 1.6; color: var(--text-secondary); }
+.short-notes-pdf-link {
+	flex: 0 0 auto;
+	padding: .65rem .8rem;
+	border: 1px solid var(--line-primary);
+	border-radius: 10px;
+	background: var(--surface);
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--primary);
+}
+.short-notes-pdf-link:hover { background: var(--surface-soft); }
+.short-notes-jump-nav {
+	max-width: 980px;
+	margin: 1rem 0 1.2rem;
+	padding: .9rem 1rem;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: var(--surface-subtle);
+}
+.short-notes-jump-nav.is-ai { border-color: var(--explainer-border); background: var(--explainer-soft); }
+.short-notes-jump-label {
+	margin-bottom: .55rem;
+	font-size: .72rem;
+	font-weight: 800;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.short-notes-jump-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .45rem;
+}
+.short-notes-jump-links a {
+	padding: .45rem .6rem;
+	border: 1px solid var(--line);
+	border-radius: 9px;
+	background: var(--surface);
+	text-decoration: none;
+	font-size: .82rem;
+	font-weight: 650;
+	color: var(--text-secondary);
+}
+.short-notes-jump-links a:hover { border-color: var(--line-primary); color: var(--primary); }
+.teacher-note-pages {
+	display: grid;
+	grid-template-columns: minmax(0, 920px);
+	gap: 1.25rem;
+	align-items: start;
+}
+.teacher-note-page {
+	margin: 0;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: var(--surface);
+	box-shadow: var(--shadow-small);
+	overflow: hidden;
+	scroll-margin-top: 90px;
+}
+.teacher-note-image-link { display: block; background: #f7f7f5; }
+.teacher-note-page img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.teacher-note-page figcaption {
+	display: flex;
+	gap: .75rem;
+	align-items: baseline;
+	padding: .72rem .9rem;
+	border-top: 1px solid var(--line-soft);
+	color: var(--text-secondary);
+	font-size: .84rem;
+}
+.teacher-note-page figcaption span { flex: 0 0 auto; font-weight: 800; color: var(--primary-muted); }
+.teacher-note-page figcaption strong { color: var(--text-strong); }
+.short-notes-ai-boundary {
+	max-width: 920px;
+	margin: 2rem 0;
+	padding: 1.1rem 1.2rem;
+	border: 2px solid var(--explainer-border);
+	border-radius: 16px;
+	background: var(--explainer-soft);
+}
+.short-notes-ai-boundary-kicker {
+	font-size: .72rem;
+	font-weight: 850;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: var(--explainer-text);
+}
+.short-notes-ai-boundary h2 { margin: .4rem 0 .45rem; color: var(--text-strong); }
+.short-notes-ai-boundary p { margin: 0; line-height: 1.65; color: var(--text-secondary); }
+.short-notes-ai-list {
+	display: grid;
+	grid-template-columns: minmax(0, 920px);
+	gap: 1rem;
+}
+.short-note-card {
+	border: 1px solid var(--explainer-border);
+	border-radius: 16px;
+	background: var(--surface);
+	overflow: hidden;
+	box-shadow: var(--shadow-small);
+	scroll-margin-top: 90px;
+}
+.short-note-card-header {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: flex-start;
+	padding: 1rem 1.1rem .85rem;
+	border-bottom: 1px solid var(--explainer-border);
+	background: linear-gradient(180deg, var(--explainer-soft), rgba(255,255,255,.6));
+}
+.short-note-card-header h3 { margin: .45rem 0 0; font-size: 1.28rem; color: var(--text-strong); }
+.short-note-source-note {
+	max-width: 290px;
+	font-size: .76rem;
+	line-height: 1.45;
+	text-align: right;
+	color: var(--muted);
+}
+.short-note-card-body { padding: 1rem 1.1rem 1.1rem; }
+.short-note-card-body p { margin: .45rem 0; line-height: 1.68; color: var(--text); }
+.short-note-card-body ul { margin: .7rem 0 .25rem 1.15rem; padding: 0; }
+.short-note-card-body li { margin: .42rem 0; line-height: 1.62; }
+.short-note-formulas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: .7rem;
+	margin: .9rem 0;
+}
+.short-note-formula {
+	min-width: 0;
+	padding: .75rem .85rem;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: var(--surface-subtle);
+}
+.short-note-formula-label {
+	font-size: .72rem;
+	font-weight: 800;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.short-note-formula-math { overflow-x: auto; }
+.short-note-key-point {
+	margin-top: .9rem;
+	padding: .8rem .9rem;
+	border-left: 4px solid var(--primary-2);
+	border-radius: 10px;
+	background: var(--notes-soft);
+}
+.short-note-key-point strong { color: var(--primary-dark); }
+.short-note-key-point p { margin: .28rem 0 0; color: var(--text-secondary); }
+.short-notes-back-top { margin: 2rem 0 1rem; }
+.short-notes-back-top a { font-weight: 750; color: var(--primary); text-decoration: none; }
+.short-notes-error {
+	margin: 2rem 0;
+	padding: 1rem;
+	border: 1px solid var(--holiday-border);
+	border-radius: 12px;
+	background: var(--holiday-soft);
+	color: var(--holiday-text);
+}
+@media (max-width: 720px) {
+	.short-notes-provenance,
+	.short-notes-section-header,
+	.short-note-card-header { flex-direction: column; }
+	.short-notes-pdf-link { width: 100%; text-align: center; }
+	.short-note-source-note { max-width: none; text-align: left; }
+	.teacher-note-page figcaption { align-items: flex-start; flex-direction: column; gap: .2rem; }
+	.short-notes-jump-links { display: grid; grid-template-columns: 1fr; }
+}
+
+.short-note-pyq-focus,
+.short-note-derivation,
+.short-note-caution {
+	margin: .8rem 0;
+	padding: .85rem .95rem;
+	border-radius: 12px;
+}
+.short-note-pyq-focus {
+	border: 1px solid var(--line-primary);
+	background: var(--surface-subtle);
+}
+.short-note-pyq-focus ul,
+.short-note-derivation ol {
+	margin: .55rem 0 0 1.15rem;
+	padding: 0;
+}
+.short-note-pyq-focus li,
+.short-note-derivation li {
+	margin: .35rem 0;
+	line-height: 1.55;
+}
+.short-note-mini-label {
+	font-size: .7rem;
+	font-weight: 850;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: var(--primary-muted);
+}
+.short-note-derivation {
+	border: 1px solid var(--notes-border);
+	background: var(--notes-soft);
+}
+.short-note-caution {
+	border: 1px solid #e3bb68;
+	background: #fff7e6;
+}
+.short-note-caution strong { color: #7b5410; }
+.short-note-caution p { margin: .32rem 0 0; color: var(--text-secondary); }
+
+.short-note-table-wrap {
+	margin: .9rem 0;
+	overflow-x: auto;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+}
+.short-note-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 560px;
+	background: var(--surface);
+}
+.short-note-table th,
+.short-note-table td {
+	padding: .72rem .8rem;
+	border-right: 1px solid var(--line-soft);
+	border-bottom: 1px solid var(--line-soft);
+	vertical-align: top;
+	text-align: left;
+	line-height: 1.5;
+}
+.short-note-table th {
+	background: var(--surface-subtle);
+	color: var(--text-strong);
+	font-size: .82rem;
+}
+.short-note-table td { color: var(--text-secondary); font-size: .88rem; }
+.short-note-table tr:last-child td { border-bottom: 0; }
+.short-note-table th:last-child,
+.short-note-table td:last-child { border-right: 0; }
+
+.short-note-diagram-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: .8rem;
+	margin: 1rem 0;
+}
+.short-note-diagram {
+	margin: 0;
+	border: 1px solid var(--line);
+	border-radius: 13px;
+	background: var(--surface);
+	overflow: hidden;
+}
+.short-note-diagram-media {
+	min-height: 180px;
+	display: grid;
+	place-items: center;
+	background: var(--surface-subtle);
+}
+.short-note-diagram img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	background: #fff;
+}
+.short-note-diagram-placeholder {
+	width: calc(100% - 1.5rem);
+	margin: .75rem;
+	padding: 1.1rem;
+	border: 1px dashed var(--line-primary);
+	border-radius: 11px;
+	background: var(--surface);
+	text-align: center;
+	color: var(--text-secondary);
+}
+.short-note-diagram-placeholder strong,
+.short-note-diagram-placeholder span {
+	display: block;
+}
+.short-note-diagram-placeholder strong {
+	margin: .35rem 0 .55rem;
+	color: var(--text-strong);
+}
+.short-note-diagram-placeholder span {
+	margin-top: .25rem;
+	font-size: .82rem;
+}
+.short-note-diagram-placeholder code {
+	padding: .08rem .28rem;
+	border-radius: 5px;
+	background: var(--surface-soft);
+	color: var(--primary-dark);
+	font-weight: 750;
+}
+.short-note-diagram-kicker {
+	font-size: .68rem;
+	font-weight: 850;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: var(--primary-muted);
+}
+.short-note-diagram figcaption {
+	padding: .62rem .75rem;
+	border-top: 1px solid var(--line-soft);
+	font-size: .78rem;
+	color: var(--text-secondary);
+}
+
+@media (max-width: 720px) {
+	.short-note-diagram-grid { grid-template-columns: 1fr; }
+	.short-note-table { min-width: 520px; }
+}

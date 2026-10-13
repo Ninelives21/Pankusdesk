@@ -82,6 +82,17 @@ function render({ subject, subjectUrl, unitNumber, active = 'text' }) {
 		dummy: !classNotesAvailable,
 	});
 
+	const s = subject.shortNotes;
+	const shortNotesAvailable = Boolean(s?.hrefPattern && unitIsAvailable(s.availableUnits, unitNumber));
+	links.push({
+		key: 'short-notes',
+		label: s?.label || 'Short Notes',
+		href: shortNotesAvailable
+			? new URL(s.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href
+			: '#',
+		dummy: !shortNotesAvailable,
+	});
+
 	const neighbours = getNeighbourUnits(subject, unitNumber);
 	const hasNeighbourLinks = Boolean(neighbours.previous || neighbours.next);
 
