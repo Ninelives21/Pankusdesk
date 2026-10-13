@@ -1,146 +1,92 @@
 # Unit 5 — Electrical Installations and Batteries
 
-> **Source-lock:** Every statement below is derived from the supplied/approved source corpus. R25 defines what is core. Items marked *Supporting* are preserved because they were supplied but are not separate R25 syllabus atoms.
+> **Source-lock:** R25 controls scope. Prescribed-textbook material is drawn from the supplied physical-book captures pp. 200–214 for the in-scope installation/battery material and p. 243 for UPS. ELCB is the one approved gap-filled subsection because the prescribed-textbook SFU page is internally ambiguous.
 
-## Basic layout of domestic electrical installation
+## Published Text-page scope
 
+### Basic layout of domestic electrical installation
 **Status:** Core R25
-
-- The prescribed text traces a domestic supply through service connection/protection, energy meter, main MCB, distribution board and individual subcircuits protected by MCBs.
-- It also states that metallic covers/enclosures in the installation are connected to earth. Use the physical-book page for the exact diagram/layout.
-
-### Physical-book reference
-- pp. 200–201; source image(s): 200_2.png + 201.png
+- Domestic supply path: service supply/protection → energy meter → main MCB → distribution board → individual sub-circuits with separate MCBs.
+- Metallic covers/enclosures are earthed.
+- Figure 4.14 placeholder: `f4-14.png`, textbook p. 201.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P200]` `[TB-P201]`
 
-## Types of wiring
-
+### Types of wiring
 **Status:** Core R25
-
-- The book surveys cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring, including surface and concealed conduit forms.
-- These are retained because “Types of Wiring” is an explicit R25 item; detailed advantages/disadvantages should be answered from the specific physical-book pages.
-
-### Physical-book reference
-- pp. 201–204; source image(s): 201.png–204.png
+- Cleat wiring.
+- Casing-and-capping wiring.
+- TRS/CTS batten wiring.
+- Lead/metal-sheathed wiring.
+- Conduit wiring: surface and concealed.
+- Figure placeholders: `f4-15.png`–`f4-18.png`.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P201]` `[TB-P202]` `[TB-P203]` `[TB-P204]`
 
-## Switch Fuse Unit (SFU)
-
+### Switch Fuse Unit (SFU)
 **Status:** Core R25
+- Secure source statement: SFU is a compact switch-and-fuse combination.
+- Minimal fuse context from pp. 204–205 is retained only to make the SFU term intelligible.
+- **Verified source discrepancy:** p. 206 defines SFU normally, but the following search-coil/trip-coil mechanism and Figure 4.23 describe an earth-leakage-style current-balance action. This is shown as an amber discrepancy rather than silently relabelled.
+- Figure placeholder: `f4-23.png`.
 
-- The secure statement from the textbook is that an SFU combines a switch and fuse arrangement in a compact metal enclosure for switching/protection.
-- The remainder of the paragraph under the SFU heading on p.206 describes a current-balance/search-coil trip mechanism that resembles earth-leakage protection; the KB does not silently relabel that text. ELCB is sourced separately below.
+**Provenance:** `[SYL-R25-U5]` `[TB-P204]` `[TB-P205]` `[TB-P206]`
 
-### Physical-book reference
-- pp. 206; source image(s): 206.png
-
-### Source caution
-- Source anomaly: textbook p.206 heading is SFU but subsequent mechanism is ELCB-like. Do not use that ambiguous passage as authoritative ELCB content.
-
-**Provenance:** `[SYL-R25-U5]` `[TB-P206]`
-
-## MCB and MCCB
-
+### MCB and MCCB
 **Status:** Core R25
-
-- The textbook presents an MCB as an automatically operating protective switch for abnormal overcurrent/short-circuit conditions and notes that it can be reset rather than replaced like a fuse.
-- MCCB is presented for higher current/fault capacity, with overload/short-circuit protection and adjustable trip settings in the source comparison.
-
-### Physical-book reference
-- pp. 206–207; source image(s): 206.png–207.png
+- MCB over-current/short-circuit protection and reset behaviour.
+- Bimetal overload action.
+- MCCB higher-current/fault-capacity role and adjustable trip capability.
+- Table 4.2 retained as an HTML study table.
+- Figure placeholders: `f4-24.png`, `f4-25.png`.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P206]` `[TB-P207]`
 
-## ELCB
-
+### ELCB
 **Status:** Core R25 · gap-filled
-
-- R25 explicitly names ELCB, but the textbook’s p.206 treatment is internally ambiguous, so the KB uses the approved government gap sources instead of guessing from the mislabeled paragraph.
-- HESCOM identifies an Earth Leakage Circuit Breaker as earth-leakage protection that automatically disconnects the supply when leakage occurs, protecting the user from electrical hazard.
-- The DGT curriculum independently includes single-phase ELCB among protection devices and includes connecting/testing an ELCB for leakage; the CEA source is retained as a regulatory cross-check.
-
-### Source caution
-- Do not silently replace “ELCB” with “RCCB” terminology unless a supplied source explicitly makes that equivalence.
+- R25 explicitly requires ELCB.
+- Approved government gap sources supply only the modest required purpose/function: earth-leakage detection and automatic disconnection for electrical-hazard protection.
+- Do not silently substitute RCCB terminology.
 
 **Provenance:** `[SYL-R25-U5]` `[GAP-U5-ELCB-HESCOM]` `[GAP-U5-ELCB-DGT]` `[GAP-U5-ELCB-CEA]`
 
-## Need for earthing; pipe and plate earthing
-
+### Earthing — need, pipe and plate
 **Status:** Core R25
-
-- The textbook presents earthing as connecting exposed metallic parts to earth so leakage/fault current has a low-resistance path, reducing shock/fire hazard.
-- The captured pages describe rod, strip, pipe and plate methods. R25 specifically requires pipe and plate earthing; rod and strip are retained only as supplied supporting content.
-- The pipe/plate descriptions include buried electrodes and moisture/charcoal/salt treatment in the textbook. Exact dimensions should be read from the physical book rather than reconstructed from OCR.
-
-### Physical-book reference
-- pp. 208–210; source image(s): 208.png–210.png
+- Need/purpose of earthing.
+- Pipe earthing and plate earthing are the R25-required methods.
+- Rod and strip earthing from the textbook are not promoted into the student-facing Unit-V page.
+- **Verified source discrepancy:** the p. 209 Plate Earthing sentence prints “G.I pipe” for the 60 cm × 60 cm × 6 mm electrode, while Figure 4.30 labels it “G.I. Plate”. This is shown explicitly in amber.
+- Figure placeholders: `f4-26.png`, `f4-29.png`, `f4-30.png`.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P208]` `[TB-P209]` `[TB-P210]`
 
-## Classification of batteries
-
+### Classification of batteries
 **Status:** Core R25
-
-- The textbook classifies batteries into primary (non-rechargeable) and secondary (rechargeable) categories and gives examples for each.
-- Lead-acid appears as a secondary/rechargeable battery in the captured material.
-
-### Physical-book reference
-- pp. 211; source image(s): 211.png
+- Primary/non-rechargeable and secondary/rechargeable batteries.
+- Examples retained only as printed support.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P211]`
 
-## Lead-acid battery: construction, working and electrical characteristics
-
+### Lead-acid battery
 **Status:** Core R25
-
-- The captured text identifies lead dioxide as the positive active material, sponge lead as the negative active material and diluted sulphuric acid as electrolyte.
-- During discharge the overall reaction printed in the source converts the active materials and sulphuric acid to lead sulphate and water; charging reverses the process.
-- The electrical-characteristics section covers cell voltage, ampere-hour capacity and efficiency, and notes the effect of discharge rate on usable capacity/life.
-
-### Formula / method anchors
-- `Discharge reaction as printed: Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O`
-- `Capacity unit: ampere-hour (Ah)`
-- `Ah efficiency = Ah discharged / Ah charged × 100`
-
-### Physical-book reference
-- pp. 211–214; source image(s): 211.png–214.png
-
-### Source caution
-- When quoting exact cell-voltage limits/percentages, consult the physical page because those are textbook-specific values.
+- Construction: PbO₂ positive plate, sponge-Pb negative plate, diluted H₂SO₄ electrolyte.
+- Discharge/charge working.
+- Electrical characteristics: voltage, Ah capacity, efficiency and effect of discharge rate.
+- Figure placeholders: `f4-31.png`, `f4-32.png`, `f4-33.png`.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P211]` `[TB-P212]` `[TB-P213]` `[TB-P214]`
 
-## Energy-use calculations and electrical safety
-
-**Status:** Supporting
-
-- Although not separately named in the R25 Unit-V line, the supplied chapter includes energy-consumption examples and electrical-safety precautions. They are preserved as supporting textbook material, not promoted to additional syllabus atoms.
-- The energy section uses electrical energy = power × time and identifies one billing unit as one kilowatt-hour.
-
-### Formula / method anchors
-- `Energy = Power × Time`
-- `1 unit = 1 kWh`
-
-### Physical-book reference
-- pp. 214–217; source image(s): 214.png–217.png
-
-**Provenance:** `[TB-P214]` `[TB-P215]` `[TB-P216]` `[TB-P217]`
-
-## UPS block diagram and operation
-
+### UPS block diagram and operation
 **Status:** Core R25
-
-- Textbook p.243 defines the UPS as providing continuity of power for critical loads and gives a block diagram: AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.
-- Under normal conditions the rectifier supplies DC to the inverter and charges the battery. When the AC supply fails, the inverter converts battery DC to AC and supplies the load after filtering.
-- The source also states that the UPS improves supply quality and regulates output-load voltage against input fluctuations.
-
-### Physical-book reference
-- pp. 243; source image(s): 243_2.png / standalone 243.png; figures: 5.44 UPS Block Diagram
+- Source p. 243 gives Figure 5.44 and operating explanation.
+- Block sequence: AC input → rectifier → inverter → filter → critical load, with battery bank on the DC link.
+- Figure placeholder: `f5-44.png`.
+- The standalone gap-package `unit-5/243.png` is source material for this same textbook page; it is not published directly because the current Unit-page workflow is placeholder-first.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P243]`
 
-## Question-bank pointer
+## Intentionally not promoted to the Unit-V Text page
+The supplied chapter also contains elementary energy-consumption calculations and electrical-safety precautions on pp. 214–217. These remain backend/source-map context only because they are not explicit R25 Unit-V syllabus atoms.
 
-Book Chapter-4 review/short-answer/essay material: pp.217–218. UPS also appears as a question on p.244; most other p.244 questions belong to the semiconductor chapter and are outside R25 BEE.
+## Question-bank pointer
+Chapter-4 review material begins on p. 217 and continues on p. 218. UPS appears again as a question on p. 244, but the remaining p. 244 material belongs to another chapter and is outside R25 BEE Unit V.

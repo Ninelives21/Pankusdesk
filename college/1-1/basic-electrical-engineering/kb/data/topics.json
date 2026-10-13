@@ -10403,7 +10403,7 @@
     "title": "Basic layout of domestic electrical installation",
     "status": "core",
     "learn": [
-      "The prescribed text traces a domestic supply through service connection/protection, energy meter, main MCB, distribution board and individual subcircuits protected by MCBs.",
+      "A domestic supply is routed through service protection, energy metering, a main MCB, a distribution board and individual sub-circuits protected by separate MCBs.",
       "Metallic covers and enclosures in the installation are connected to earth."
     ],
     "formulas": [],
@@ -10419,7 +10419,58 @@
         "images": "200_2.png + 201.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "A domestic wiring system connects the incoming supply through metering, switching and protective devices to the individual household load circuits.",
+    "sections": [
+      {
+        "heading": "4.4.1 Basic lay-out of wiring in Domestic Installations",
+        "scope": "core",
+        "paragraphs": [
+          "For domestic installations, either single-phase 230 V supply or three-phase 415 V AC supply may be used. In a single-phase circuit, the load is connected between phase and neutral so that 230 V is applied to the loads.",
+          "The domestic supply is taken from one phase and neutral through a service wire. A fuse is placed in the phase on the pole to protect the service wire against overloading. The supply then reaches the energy meter, which measures the electrical energy consumed by the consumer.",
+          "The energy meter is the property of the supplier and is sealed so that tampering is prevented. From the energy meter, the supply is taken through a main MCB. This main MCB controls the power supplied to the entire domestic installation.",
+          "From the main MCB the supply goes to the distribution board. The distribution board divides the installation into several sections or sub-circuits. Each sub-circuit gets an exclusive phase and neutral and has a separate MCB.",
+          "If a short circuit or overloading occurs in one sub-circuit, its corresponding MCB trips so that the affected sub-circuit is isolated while the other sub-circuits continue to function normally. According to the stated Indian Standards, a sub-circuit has a maximum of 10 load points and a maximum power rating of 800 W; fans, lights and 5 A sockets are treated as load points.",
+          "The metallic covers of the energy meter, MCBs and distribution board are connected to the earth wire to reduce electric-shock risk to consumers."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-14",
+            "figure_number": "Figure 4.14",
+            "figure_name": "Lay-out of wiring in domestic installations",
+            "alt": "Figure 4.14 · Lay-out of wiring in domestic installations · Textbook p. 201",
+            "page": 201,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P200",
+          "TB-P201"
+        ],
+        "book_refs": [
+          {
+            "pages": "200–201",
+            "images": "200_2.png + 201.png",
+            "figures": "4.14"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What is the basic sequence of equipment in the domestic installation layout?",
+        "answer": "Incoming service supply → service protection/fuse → energy meter → main MCB → distribution board → individual sub-circuits with separate MCBs."
+      },
+      {
+        "question": "Why is a separate MCB used for each sub-circuit?",
+        "answer": "So a fault in one sub-circuit can be isolated without disconnecting the remaining sub-circuits."
+      }
+    ]
   },
   {
     "id": "u5-wiring",
@@ -10427,8 +10478,8 @@
     "title": "Types of wiring",
     "status": "core",
     "learn": [
-      "Common wiring systems include cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring, including surface and concealed conduit forms.",
-      "The main wiring types are described below with their construction and typical use."
+      "The main wiring systems are cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring.",
+      "Conduit wiring may be surface-mounted or concealed inside walls."
     ],
     "formulas": [],
     "method": [],
@@ -10445,7 +10496,191 @@
         "images": "201.png–204.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "Five wiring systems are considered: cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring, lead/metal-sheathed wiring and conduit wiring.",
+    "sections": [
+      {
+        "heading": "4.4.2 Types of Wiring Systems",
+        "scope": "core",
+        "paragraphs": [
+          "The wiring systems listed are: (1) cleat wiring, (2) wooden casing and capping wiring, (3) CTS or TRS wiring, (4) lead-sheathed or metal-sheathed wiring, and (5) conduit wiring. Conduit wiring is further divided into surface-conduit and concealed-conduit wiring."
+        ],
+        "source_refs": [
+          "TB-P201",
+          "TB-P202",
+          "TB-P203",
+          "TB-P204"
+        ],
+        "book_refs": [
+          {
+            "pages": "201–204",
+            "images": "201.png–204.png"
+          }
+        ]
+      },
+      {
+        "heading": "Cleat wiring",
+        "scope": "core",
+        "paragraphs": [
+          "PVC wires are used and are held by porcelain cleats. The cleats consist of two parts, a base and a cover. The base contains grooves to house the conductors; the number of grooves depends on the number of conductors.",
+          "The cleats are mounted about 6 mm above the wall and the distance between cleats should not exceed 60 cm. Cleat wiring is cheap and is used for temporary wiring. Because the wires are exposed, they are more prone to mechanical injury."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-15",
+            "figure_number": "Figure 4.15",
+            "figure_name": "Cleat wiring",
+            "alt": "Figure 4.15 · Cleat wiring · Textbook p. 202",
+            "page": 202,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P202"
+        ],
+        "book_refs": [
+          {
+            "pages": "202",
+            "images": "202.png",
+            "figures": "4.15"
+          }
+        ]
+      },
+      {
+        "heading": "Casing and capping wiring",
+        "scope": "core",
+        "paragraphs": [
+          "This wiring uses rectangular casings provided with grooves. The casings are fixed to the walls, the wires are laid in the grooves, and a capping is fixed over the casing.",
+          "This wiring has a good appearance and long life, but gives no safety from fire and requires regular maintenance."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-16",
+            "figure_number": "Figure 4.16",
+            "figure_name": "Capping and casing wiring",
+            "alt": "Figure 4.16 · Capping and casing wiring · Textbook p. 202",
+            "page": 202,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P202",
+          "TB-P203"
+        ],
+        "book_refs": [
+          {
+            "pages": "202–203",
+            "images": "202.png–203.png",
+            "figures": "4.16"
+          }
+        ]
+      },
+      {
+        "heading": "TRS/CTS batten wiring",
+        "scope": "core",
+        "paragraphs": [
+          "Tough Rubber Sheath (TRS) or Cab Tyre Sheathed (CTS) wiring uses TRS or CTS wires. The wires are described as flexible and resistant to moisture absorption, chemicals, water and steam.",
+          "The wires are fixed to wooden battens using tinned-brass link clips. The system is cheap, neat-looking and long-lived, with good resistance to chemical effects, but is not suitable for open areas."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-17",
+            "figure_number": "Figure 4.17",
+            "figure_name": "TRS/CTS wiring",
+            "alt": "Figure 4.17 · TRS/CTS wiring · Textbook p. 203",
+            "page": 203,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P203"
+        ],
+        "book_refs": [
+          {
+            "pages": "203",
+            "images": "203.png",
+            "figures": "4.17"
+          }
+        ]
+      },
+      {
+        "heading": "Lead-sheathed or metal-sheathed wiring",
+        "scope": "core",
+        "paragraphs": [
+          "This wiring uses PVC wires with an outer covering of lead-aluminium alloy: 95% lead and 5% aluminium. The lead sheath protects the conductors against mechanical injury and atmosphere.",
+          "The wires are fixed on a wooden batten using link clips."
+        ],
+        "source_refs": [
+          "TB-P203"
+        ],
+        "book_refs": [
+          {
+            "pages": "203",
+            "images": "203.png"
+          }
+        ]
+      },
+      {
+        "heading": "Conduit wiring",
+        "scope": "core",
+        "paragraphs": [
+          "PVC conduits or pipes are used and the wires are run through the conduits.",
+          "In surface-conduit wiring, the conduits are fixed on the walls using saddles and screws. This system is generally employed in workshops and factories.",
+          "In concealed-conduit wiring, the conduits are buried in the walls and plastered. The wiring must be made water-tight. Concealed conduit is widely used in offices and domestic installations, but replacement of a damaged conduit is difficult."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-18",
+            "figure_number": "Figure 4.18",
+            "figure_name": "Conduit wiring",
+            "alt": "Figure 4.18 · Conduit wiring · Textbook p. 203",
+            "page": 203,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P203",
+          "TB-P204"
+        ],
+        "book_refs": [
+          {
+            "pages": "203–204",
+            "images": "203.png–204.png",
+            "figures": "4.18"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "Which wiring type is presented as suitable for temporary wiring?",
+        "answer": "Cleat wiring."
+      },
+      {
+        "question": "What are the two forms of conduit wiring?",
+        "answer": "Surface conduit wiring and concealed conduit wiring."
+      }
+    ]
   },
   {
     "id": "u5-sfu",
@@ -10454,22 +10689,95 @@
     "status": "core",
     "learn": [
       "An SFU combines a switch and fuse arrangement in a compact metal enclosure for switching and protection.",
-      "The remainder of the paragraph under the SFU heading on p.206 describes a current-balance/search-coil trip mechanism that resembles earth-leakage protection; the KB does not silently relabel that text. ELCB is sourced separately below."
+      "The p. 206 SFU heading is followed by a current-balance/search-coil trip mechanism that does not match the preceding SFU definition; this is preserved as a source discrepancy and ELCB is treated separately."
     ],
     "formulas": [],
     "method": [],
     "source_refs": [
       "SYL-R25-U5",
+      "TB-P204",
+      "TB-P205",
       "TB-P206"
     ],
     "book_refs": [
       {
-        "pages": "206",
-        "images": "206.png"
+        "pages": "204–206",
+        "images": "204.png–206.png"
       }
     ],
     "cautions": [
       "An ELCB disconnects the supply when earth-leakage conditions indicate a shock or insulation-failure hazard."
+    ],
+    "intro": "An SFU combines a switch and a fuse in one compact unit. A fuse is a sacrificial over-current protection element that melts when excessive current flows and must be replaced after it operates.",
+    "sections": [
+      {
+        "heading": "Fuse — context needed for SFU",
+        "scope": "supporting",
+        "paragraphs": [
+          "A fuse is an elementary protective device connected in series with a circuit. Its essential part is a metal strip or wire that melts when over-current flows through it, thereby stopping current flow through the circuit.",
+          "Short circuits, overloading, mismatched loads and device failure can operate a fuse. After operation, the fuse element has to be replaced before the circuit can be restored."
+        ],
+        "source_refs": [
+          "TB-P204",
+          "TB-P205"
+        ],
+        "book_refs": [
+          {
+            "pages": "204–205",
+            "images": "204.png–205.png"
+          }
+        ]
+      },
+      {
+        "heading": "4.4.4 Switch Fuse Unit (SFU)",
+        "scope": "core",
+        "paragraphs": [
+          "A Switch Fuse Unit is a compact combination of a switch and fuse, generally enclosed in a metal cover. It is widely used for low and medium voltages."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-23",
+            "figure_number": "Figure 4.23",
+            "figure_name": "SFU internal wiring diagram and Switch Fuse Unit",
+            "alt": "Figure 4.23 · SFU internal wiring diagram and Switch Fuse Unit · Textbook p. 206",
+            "page": 206,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Textbook discrepancy on p. 206",
+            "paragraphs": [
+              "After defining an SFU as a switch-and-fuse combination, the printed paragraph and Figure 4.23 describe two current-carrying coils, a search coil and a trip coil that responds when the currents before and after the load differ. That mechanism is earth-leakage-style protection and does not match the preceding SFU definition. The figure and source wording are therefore preserved as a source discrepancy rather than silently relabelled."
+            ],
+            "discrepancy": {
+              "label": "Source discrepancy",
+              "message": "The p. 206 SFU heading/definition and the following search-coil trip mechanism do not describe the same protective function. ELCB is treated separately from approved gap sources."
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P206"
+        ],
+        "book_refs": [
+          {
+            "pages": "206",
+            "images": "206.png",
+            "figures": "4.23"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What does SFU stand for and what does it combine?",
+        "answer": "Switch Fuse Unit; it combines switching and fuse protection in one compact unit."
+      }
     ]
   },
   {
@@ -10478,8 +10786,8 @@
     "title": "MCB and MCCB",
     "status": "core",
     "learn": [
-      "An MCB is an automatically operating protective switch for abnormal overcurrent or short-circuit conditions and can be reset rather than replaced like a fuse.",
-      "An MCCB is used for higher current and fault capacity, with overload/short-circuit protection and adjustable trip settings."
+      "An MCB is a resettable protective switch for abnormal overcurrent or short-circuit conditions.",
+      "An MCCB is used for higher current and fault capacity and can provide adjustable trip settings."
     ],
     "formulas": [],
     "method": [],
@@ -10494,7 +10802,123 @@
         "images": "206.png–207.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "MCB and MCCB are resettable circuit-breaker protection devices. The MCB is used for lower-current domestic protection, while the MCCB is used for higher-current and higher-fault-capacity applications.",
+    "sections": [
+      {
+        "heading": "4.4.5 MCB",
+        "scope": "core",
+        "paragraphs": [
+          "MCB stands for Miniature Circuit Breaker. It automatically switches OFF the electrical circuit when an abnormal condition such as overload, short circuit or equipment malfunction occurs.",
+          "Unlike a fuse, an MCB can be reset after operation. It is an electromechanical device that protects electrical wiring and load from over-current and helps avoid fire or electrical hazards.",
+          "For overload protection, the MCB uses a bimetallic element made from two metals with different thermal-expansion coefficients. Under abnormal current, heating bends the bimetal and opens the circuit."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-24",
+            "figure_number": "Figure 4.24",
+            "figure_name": "Miniature Circuit Breaker (MCB)",
+            "alt": "Figure 4.24 · Miniature Circuit Breaker (MCB) · Textbook p. 206",
+            "page": 206,
+            "size": "small",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-25",
+            "figure_number": "Figure 4.25",
+            "figure_name": "Bimetal under normal and abnormal conditions",
+            "alt": "Figure 4.25 · Bimetal under normal and abnormal conditions · Textbook p. 207",
+            "page": 207,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P206",
+          "TB-P207"
+        ],
+        "book_refs": [
+          {
+            "pages": "206–207",
+            "images": "206.png–207.png",
+            "figures": "4.24–4.25"
+          }
+        ]
+      },
+      {
+        "heading": "4.4.6 MCCB",
+        "scope": "core",
+        "paragraphs": [
+          "MCCB stands for Moulded Case Circuit Breaker. It is used where load current exceeds the range of a miniature circuit breaker and provides protection against overload and short-circuit faults.",
+          "MCCBs can be used at higher current rating and fault level, in domestic and industrial applications, generator protection and main electric feeder distribution. They may provide discrimination and adjustable overload or earth-fault protection."
+        ],
+        "tables": [
+          {
+            "caption": "Table 4.2 Difference between MCB and MCCB",
+            "headers": [
+              "S.No",
+              "MCB",
+              "MCCB"
+            ],
+            "rows": [
+              [
+                "1",
+                "It stands for Miniature Circuit Breaker.",
+                "It stands for Moulded Case Circuit Breaker."
+              ],
+              [
+                "2",
+                "Rated current not more than 125 Ampere.",
+                "Rated current up to 1600 A."
+              ],
+              [
+                "3",
+                "Its interrupting current rating is under 10 kA.",
+                "Their interrupting current ranges from around 10 kA–85 kA."
+              ],
+              [
+                "4",
+                "Used for domestic installations.",
+                "Used for industrial installations."
+              ],
+              [
+                "5",
+                "Tripping current cannot be adjusted.",
+                "Tripping current can be adjusted."
+              ]
+            ]
+          }
+        ],
+        "source_refs": [
+          "TB-P207"
+        ],
+        "book_refs": [
+          {
+            "pages": "207",
+            "images": "207.png",
+            "tables": "4.2"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What is the practical reset advantage of an MCB over a fuse?",
+        "answer": "After an MCB trips it can be reset; a blown fuse element has to be replaced."
+      },
+      {
+        "question": "Which device is presented for the higher current and fault range, MCB or MCCB?",
+        "answer": "MCCB."
+      }
+    ]
   },
   {
     "id": "u5-elcb",
@@ -10502,9 +10926,8 @@
     "title": "ELCB",
     "status": "core-gap-filled",
     "learn": [
-      "An ELCB disconnects the supply when earth-leakage conditions indicate a shock or insulation-failure hazard.",
-      "HESCOM identifies an Earth Leakage Circuit Breaker as earth-leakage protection that automatically disconnects the supply when leakage occurs, protecting the user from electrical hazard.",
-      "The DGT curriculum independently includes single-phase ELCB among protection devices and includes connecting/testing an ELCB for leakage; the CEA source is retained as a regulatory cross-check."
+      "An ELCB is an earth-leakage protection device that disconnects the supply when leakage creates an electrical hazard.",
+      "For R25, the required focus is its purpose, the earth-leakage condition it responds to and its role as LT protective switchgear."
     ],
     "formulas": [],
     "method": [],
@@ -10517,6 +10940,28 @@
     "book_refs": [],
     "cautions": [
       "Do not treat ELCB and RCCB as interchangeable terms without establishing that equivalence."
+    ],
+    "intro": "An Earth Leakage Circuit Breaker (ELCB) is protective switchgear intended to disconnect the supply when earth leakage creates an electrical hazard.",
+    "sections": [
+      {
+        "heading": "ELCB — purpose and operation",
+        "scope": "core",
+        "paragraphs": [
+          "An ELCB is an earth-leakage protection device. When leakage to earth occurs, it automatically disconnects the electrical supply so that the user is protected from electrical hazard.",
+          "For R25, the important point is its protective role: it responds to an earth-leakage condition and removes the supply. It is therefore different in purpose from an ordinary over-current device such as an MCB, whose principal job is overload and short-circuit protection."
+        ],
+        "source_refs": [
+          "GAP-U5-ELCB-HESCOM",
+          "GAP-U5-ELCB-DGT",
+          "GAP-U5-ELCB-CEA"
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What fault condition is an ELCB intended to respond to?",
+        "answer": "Earth leakage that creates an electrical-shock or insulation-failure hazard."
+      }
     ]
   },
   {
@@ -10526,8 +10971,7 @@
     "status": "core",
     "learn": [
       "Earthing connects exposed metallic parts to earth so leakage or fault current has a low-resistance path, reducing shock and fire hazard.",
-      "Earthing methods include rod, strip, pipe and plate methods; pipe and plate earthing are the main focus here.",
-      "Pipe and plate earthing use buried electrodes, with the surrounding soil kept suitably conductive using moisture and conventional backfill treatment."
+      "Pipe and plate earthing are the R25-required earthing methods in this unit."
     ],
     "formulas": [],
     "method": [],
@@ -10543,7 +10987,134 @@
         "images": "208.png–210.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "Earthing connects exposed metal parts of electrical equipment to ground so that leakage or fault current can take a low-resistance path instead of passing through a person.",
+    "sections": [
+      {
+        "heading": "4.4.7 Earthing — need and purpose",
+        "scope": "core",
+        "paragraphs": [
+          "Earthing is the process of connecting the metallic bodies of electrical appliances and equipment to ground or earth. It is also called grounding.",
+          "A good earth conductor connects equipment metal bodies to earth through earth electrodes. The purposes listed are: (i) to avoid electric shock, (ii) to avoid fire accidents due to earth-leakage currents, and (iii) to sustain the voltage generated by an alternator by earthing its neutral.",
+          "If a live wire touches the metal body of an appliance, earthing diverts the current through the earth wire instead of through the operator. The low-resistance earth path therefore reduces the chance of electrocution."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-26",
+            "figure_number": "Figure 4.26",
+            "figure_name": "Effect of not earthing and earthing",
+            "alt": "Figure 4.26 · Effect of not earthing and earthing · Textbook p. 208",
+            "page": 208,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P208"
+        ],
+        "book_refs": [
+          {
+            "pages": "208",
+            "images": "208.png",
+            "figures": "4.26"
+          }
+        ]
+      },
+      {
+        "heading": "Pipe earthing",
+        "scope": "core",
+        "paragraphs": [
+          "Pipe earthing is described as the most commonly used earthing system. A G.I. pipe of 38 mm diameter and 2.5 m length is placed vertically in an earth pit.",
+          "Water is poured into the earth pit at regular time intervals to keep the earth resistance low. Figure 4.29 shows the buried pipe electrode and the surrounding charcoal-and-salt arrangement."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-29",
+            "figure_number": "Figure 4.29",
+            "figure_name": "Pipe earthing",
+            "alt": "Figure 4.29 · Pipe earthing · Textbook p. 210",
+            "page": 210,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P209",
+          "TB-P210"
+        ],
+        "book_refs": [
+          {
+            "pages": "209–210",
+            "images": "209.png–210.png",
+            "figures": "4.29"
+          }
+        ]
+      },
+      {
+        "heading": "Plate earthing",
+        "scope": "core",
+        "paragraphs": [
+          "In plate earthing, the illustrated earth electrode is a G.I. plate of dimensions 60 cm × 60 cm × 6 mm.",
+          "The space around the earth plate is filled with charcoal and salt in alternate layers to reduce earth resistance. Water is poured at regular intervals so that moisture is maintained and earth resistance is reduced."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-30",
+            "figure_number": "Figure 4.30",
+            "figure_name": "Plate earthing",
+            "alt": "Figure 4.30 · Plate earthing · Textbook p. 210",
+            "page": 210,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P209",
+          "TB-P210"
+        ],
+        "book_refs": [
+          {
+            "pages": "209–210",
+            "images": "209.png–210.png",
+            "figures": "4.30"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Source discrepancy on p. 209",
+            "paragraphs": [
+              "The printed sentence under “Plate Earthing” says that a “G.I pipe” of dimensions 60 cm × 60 cm × 6 mm is used as the earth electrode, while Figure 4.30 on the next page labels the electrode “G.I. Plate” and the subsection itself is Plate Earthing. The page wording is preserved as a source mismatch rather than silently treated as internally consistent."
+            ],
+            "discrepancy": {
+              "label": "Source discrepancy",
+              "message": "The Plate Earthing paragraph prints “G.I pipe”, while Figure 4.30 labels the 60 cm × 60 cm × 6 mm electrode as a G.I. Plate."
+            }
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "Why is the metal body of an appliance earthed?",
+        "answer": "To provide a low-resistance path for leakage/fault current so it does not pass through a person touching the appliance."
+      },
+      {
+        "question": "Which two earthing methods are explicitly required by R25 Unit V?",
+        "answer": "Pipe earthing and plate earthing."
+      }
+    ]
   },
   {
     "id": "u5-battery-classification",
@@ -10551,8 +11122,8 @@
     "title": "Classification of batteries",
     "status": "core",
     "learn": [
-      "Batteries are classified into primary (non-rechargeable) and secondary (rechargeable) categories, with examples of each.",
-      "A lead-acid battery is a secondary, rechargeable battery."
+      "Batteries are classified into primary (non-rechargeable) and secondary (rechargeable) categories.",
+      "A lead-acid battery is a secondary rechargeable battery."
     ],
     "formulas": [],
     "method": [],
@@ -10566,7 +11137,34 @@
         "images": "211.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "A battery converts chemical energy into electrical energy and consists of electrochemical cells connected in series. Batteries are broadly divided into primary and secondary types.",
+    "sections": [
+      {
+        "heading": "4.5 Classification of Batteries",
+        "scope": "core",
+        "paragraphs": [
+          "Batteries are used in many applications and can also serve as a backup source when the main power supply is interrupted. Applications include domestic and medical instruments, electric vehicles, forklifts, flashlights and military operations.",
+          "Primary batteries cannot be recharged and are single-use batteries. The common example given is the dry cell; the zinc-carbon battery is cited as an example. As the battery is used, its voltage gradually decreases.",
+          "Secondary batteries are rechargeable and are extensively used. The examples listed are lead-acid, nickel-cadmium and lithium-ion batteries."
+        ],
+        "source_refs": [
+          "TB-P211"
+        ],
+        "book_refs": [
+          {
+            "pages": "211",
+            "images": "211.png"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What is the basic difference between primary and secondary batteries?",
+        "answer": "Primary batteries are non-rechargeable/single-use; secondary batteries are rechargeable."
+      }
+    ]
   },
   {
     "id": "u5-lead-acid",
@@ -10575,8 +11173,8 @@
     "status": "core",
     "learn": [
       "Lead dioxide is the positive active material, sponge lead is the negative active material, and diluted sulphuric acid is the electrolyte.",
-      "During discharge, the overall reaction converts the active materials and sulphuric acid to lead sulphate and water; charging reverses the process.",
-      "The electrical-characteristics section covers cell voltage, ampere-hour capacity and efficiency, and notes the effect of discharge rate on usable capacity/life."
+      "During discharge the active materials and sulphuric acid form lead sulphate and water; charging reverses the process.",
+      "The electrical characteristics covered are cell voltage, ampere-hour capacity and efficiency, including the effect of discharge rate on usable capacity."
     ],
     "formulas": [
       "Discharge reaction as printed: Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O",
@@ -10599,35 +11197,165 @@
     ],
     "cautions": [
       "Use the stated cell-voltage limits and percentages consistently in numerical or descriptive answers."
-    ]
-  },
-  {
-    "id": "u5-energy-safety",
-    "unit": 5,
-    "title": "Energy-use calculations and electrical safety",
-    "status": "supporting",
-    "learn": [
-      "Energy-consumption examples and electrical-safety precautions are included as supporting material.",
-      "The energy section uses electrical energy = power × time and identifies one billing unit as one kilowatt-hour."
     ],
-    "formulas": [
-      "Energy = Power × Time",
-      "1 unit = 1 kWh"
-    ],
-    "method": [],
-    "source_refs": [
-      "TB-P214",
-      "TB-P215",
-      "TB-P216",
-      "TB-P217"
-    ],
-    "book_refs": [
+    "intro": "The lead-acid battery is a rechargeable secondary battery. Its construction, discharge/charge reactions and the electrical characteristics voltage, capacity and efficiency are covered here.",
+    "sections": [
       {
-        "pages": "214–217",
-        "images": "214.png–217.png"
+        "heading": "4.5.1 Lead-Acid battery — construction",
+        "scope": "core",
+        "paragraphs": [
+          "The lead-acid battery is described as a commonly used battery. It is heavy, but can store a high amount of energy and is used in automobiles and inverters.",
+          "The positive plate is lead dioxide (PbO₂) and the negative plate is sponge lead (Pb). The plates are separated by an insulating separator and kept in a hard-plastic case.",
+          "The electrolyte is sulphuric acid (H₂SO₄) diluted with water in the stated 1:3 proportion.",
+          "A single cell typically gives about 2.1 V, so a 12 V lead-acid battery has six series-connected cells. The batteries are rated in ampere-hour (Ah)."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-31",
+            "figure_number": "Figure 4.31",
+            "figure_name": "Lead-acid battery",
+            "alt": "Figure 4.31 · Lead-acid battery · Textbook p. 211",
+            "page": 211,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P211",
+          "TB-P212"
+        ],
+        "book_refs": [
+          {
+            "pages": "211–212",
+            "images": "211.png–212.png",
+            "figures": "4.31"
+          }
+        ]
+      },
+      {
+        "heading": "Working during discharge and charging",
+        "scope": "core",
+        "paragraphs": [
+          "During discharge, the positive and negative active materials are converted to lead sulphate and water is formed. The overall discharge reaction is:",
+          "\\[\\mathrm{Pb+PbO_2+2H_2SO_4\rightarrow 2PbSO_4+2H_2O}\\]",
+          "During charging, the reverse chemical process occurs:",
+          "\\[\\mathrm{2PbSO_4+2H_2O\rightarrow Pb+PbO_2+2H_2SO_4}\\]"
+        ],
+        "source_refs": [
+          "TB-P212"
+        ],
+        "book_refs": [
+          {
+            "pages": "212",
+            "images": "212.png"
+          }
+        ]
+      },
+      {
+        "heading": "Electrical characteristics — voltage",
+        "scope": "core",
+        "paragraphs": [
+          "The open-circuit voltage of a fully charged cell is stated as 2.2 V. It depends mainly on how long the cell has been fully charged, the specific gravity of the electrolyte and temperature.",
+          "During discharge the terminal voltage falls. There is a relatively large change in the initial discharge period and a steadier middle period. The voltage should not be allowed to fall below 1.8 V because this may increase internal resistance through formation of insoluble lead sulphate."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-32",
+            "figure_number": "Figure 4.32",
+            "figure_name": "Variation in voltage during charging and discharging",
+            "alt": "Figure 4.32 · Variation in voltage during charging and discharging · Textbook p. 213",
+            "page": 213,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P212",
+          "TB-P213"
+        ],
+        "book_refs": [
+          {
+            "pages": "212–213",
+            "images": "212.png–213.png",
+            "figures": "4.32"
+          }
+        ]
+      },
+      {
+        "heading": "Electrical characteristics — capacity",
+        "scope": "core",
+        "paragraphs": [
+          "Battery capacity is specified in ampere-hours (Ah). A 100 Ah battery can ideally feed 10 A for 10 hours, 20 A for 5 hours or 40 A for 2.5 hours.",
+          "The usable capacity reduces as the discharge rate increases; this trend is shown in Figure 4.33."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-33",
+            "figure_number": "Figure 4.33",
+            "figure_name": "Capacity versus discharge characteristics",
+            "alt": "Figure 4.33 · Capacity versus discharge characteristics · Textbook p. 213",
+            "page": 213,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P213"
+        ],
+        "book_refs": [
+          {
+            "pages": "213",
+            "images": "213.png",
+            "figures": "4.33"
+          }
+        ]
+      },
+      {
+        "heading": "Electrical characteristics — efficiency",
+        "scope": "core",
+        "paragraphs": [
+          "Two battery efficiencies are specified: ampere-hour efficiency and energy or watt-hour efficiency. Energy efficiency is always less than ampere-hour efficiency.",
+          "Ampere-hour efficiency is:",
+          "\\[\\eta_{Ah}=\\dfrac{\text{Ah delivered during discharging}}{\text{Ah absorbed during charging}}\times100\\]",
+          "The stated Ah-efficiency range is about 90–95%. The value remains below 100% because of self-discharge and leakage currents associated with weak insulation."
+        ],
+        "source_refs": [
+          "TB-P214"
+        ],
+        "book_refs": [
+          {
+            "pages": "214",
+            "images": "214.png"
+          }
+        ]
       }
     ],
-    "cautions": []
+    "self_checks": [
+      {
+        "question": "What are the positive plate, negative plate and electrolyte of a lead-acid cell?",
+        "answer": "Positive plate: lead dioxide (PbO₂); negative plate: sponge lead (Pb); electrolyte: diluted sulphuric acid (H₂SO₄)."
+      },
+      {
+        "question": "What happens to the active materials during discharge?",
+        "answer": "Both active plates are converted to lead sulphate, with water formed as a product."
+      },
+      {
+        "question": "What three electrical characteristics are discussed for the lead-acid battery?",
+        "answer": "Voltage, capacity and efficiency."
+      }
+    ]
   },
   {
     "id": "u5-ups",
@@ -10635,9 +11363,9 @@
     "title": "UPS block diagram and operation",
     "status": "core",
     "learn": [
-      "A UPS provides continuity of power for critical loads. Its block diagram is: AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.",
-      "Under normal conditions the rectifier supplies DC to the inverter and charges the battery. When the AC supply fails, the inverter converts battery DC to AC and supplies the load after filtering.",
-      "A UPS improves supply quality and regulates output-load voltage against input fluctuations."
+      "A UPS provides continuity of power for critical loads. Its block sequence is AC input → rectifier → inverter → filter → critical load, with a battery bank on the DC link.",
+      "Under normal conditions the rectifier supplies DC to the inverter and charges the battery; when AC fails, the battery supplies the inverter.",
+      "A UPS also improves supply quality and helps regulate output-load voltage against input fluctuations."
     ],
     "formulas": [],
     "method": [],
@@ -10652,6 +11380,55 @@
         "figures": "5.44 UPS Block Diagram"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "An Uninterruptible Power Supply (UPS) maintains continuity of supply for critical loads when the normal AC source is lost.",
+    "sections": [
+      {
+        "heading": "5.4 Uninterruptible Power Supply (UPS)",
+        "scope": "core",
+        "paragraphs": [
+          "A UPS ensures continuity of power supply under all conditions and is used for critical applications where temporary loss of power can have serious consequences.",
+          "The block diagram is: single-phase or three-phase AC input → rectifier → inverter → filter → critical load, with a battery bank connected on the DC link between the rectifier and inverter.",
+          "Under normal conditions, the rectifier converts AC to DC and supplies the inverter. The DC output of the rectifier is also used to charge the battery.",
+          "When the AC supply goes OFF, the inverter converts DC power supplied by the battery into AC and delivers it to the load after the required filtering.",
+          "A UPS provides quality power to AC loads and regulates the load voltage against input-voltage fluctuations."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f5-44",
+            "figure_number": "Figure 5.44",
+            "figure_name": "UPS block diagram",
+            "alt": "Figure 5.44 · UPS block diagram · Textbook p. 243",
+            "page": 243,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P243"
+        ],
+        "book_refs": [
+          {
+            "pages": "243",
+            "images": "243_2.png / standalone 243.png",
+            "figures": "5.44"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What does the rectifier do in the UPS?",
+        "answer": "It converts the incoming AC to DC; during normal operation that DC supplies the inverter and charges the battery."
+      },
+      {
+        "question": "What supplies the load when the AC input fails?",
+        "answer": "The battery supplies DC to the inverter, which converts it to AC; the output then passes through the filter to the critical load."
+      }
+    ]
   }
 ]
