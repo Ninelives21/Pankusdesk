@@ -114,3 +114,14 @@
 ## Question-bank pointer
 
 Unit-IV questions are mixed into Chapter-4 end matter on pp.217–218; use only induction/synchronous-generator/stepper items as Unit-IV core.
+
+## Page build status — 2026-10-13
+
+- Unit IV Text page is now populated through the shared BEE unit renderer using the seven R25-mapped topics above.
+- Prescribed-textbook Chapter 4 material used: pp. 186–200 from the supplied Unit-IV capture.
+- Figures 4.1–4.13 are represented as explicit placeholders at their conceptual positions. Each placeholder displays figure number, label, textbook page, and expected filename (`f4-1.png` … `f4-13.png`). No figure has been fabricated.
+- Textbook worked exercises 4.1.1–4.1.5 are included with intermediate working.
+- Exercise 4.1.5 is source-inconsistent: its question asks for 1420 rpm while the printed solution uses 1440 rpm. The mismatch is preserved and flagged rather than silently corrected.
+- The synchronous-impedance regulation and synchronous-motor-principle subsections remain explicitly gap-filled from the approved Unit-IV source package, not labelled as textbook content.
+- `243.png` was not used; it belongs to Unit V UPS material.
+- Unit IV remains `draft` until the requested figure-placeholder image pass is completed.

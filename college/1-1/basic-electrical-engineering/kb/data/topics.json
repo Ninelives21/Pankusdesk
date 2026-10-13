@@ -9547,7 +9547,136 @@
         "images": "186.png–188.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "A three-phase induction motor has a stationary stator and a rotating rotor. The textbook presents two rotor constructions: phase-wound (slip-ring) and squirrel-cage.",
+    "sections": [
+      {
+        "heading": "4.1 Three Phase Induction Motors — introduction and construction",
+        "scope": "core",
+        "paragraphs": [
+          "Induction machines use alternating-current supply for their operation. The textbook notes their wide industrial use and describes induction motors as popular because of their simple and rugged construction, high efficiency and practically constant speed.",
+          "The two main parts of an induction motor are the stator and rotor. The stator has slots on its inner periphery and carries a three-phase distributed winding. The rotor core is laminated and has slots for rotor winding or rotor bars.",
+          "Two rotor constructions are generally employed: (1) phase-wound rotor and (2) squirrel-cage rotor."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-1",
+            "figure_number": "Figure 4.1",
+            "figure_name": "Cross-sectional view of stator",
+            "alt": "Figure 4.1 · Cross-sectional view of stator · Textbook p. 186",
+            "page": 186,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P186"
+        ],
+        "book_refs": [
+          {
+            "pages": "186",
+            "images": "186.png",
+            "figures": "4.1"
+          }
+        ]
+      },
+      {
+        "heading": "Phase-wound (slip-ring) rotor",
+        "scope": "core",
+        "paragraphs": [
+          "A phase-wound rotor has slots on its outer periphery. A three-phase distributed winding is placed in the rotor slots and is designed for the same number of poles as the stator winding.",
+          "The rotor winding is connected in star or delta. Three terminals are brought out through three slip rings on the shaft and brushes. External resistance can be inserted in the rotor circuit to reduce starting current and improve starting torque.",
+          "An induction motor using a wound rotor is called a slip-ring induction motor (SRIM). The textbook associates this construction with large machines where high starting torque is required."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-2",
+            "figure_number": "Figure 4.2",
+            "figure_name": "Cross-sectional view of phase-wound rotor",
+            "alt": "Figure 4.2 · Cross-sectional view of phase-wound rotor · Textbook p. 187",
+            "page": 187,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-3",
+            "figure_number": "Figure 4.3",
+            "figure_name": "Slip-ring induction motor",
+            "alt": "Figure 4.3 · Slip-ring induction motor · Textbook p. 187",
+            "page": 187,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P187",
+          "TB-P188"
+        ],
+        "book_refs": [
+          {
+            "pages": "187–188",
+            "images": "187.png–188.png",
+            "figures": "4.2–4.3"
+          }
+        ]
+      },
+      {
+        "heading": "Squirrel-cage rotor",
+        "scope": "core",
+        "paragraphs": [
+          "The squirrel-cage rotor uses solid conducting bars placed in rotor slots and short-circuited by end rings on both sides. The rotor resembles a squirrel cage, hence the name.",
+          "Because the rotor circuit is permanently short-circuited, its resistance cannot be changed externally. The rotor automatically accommodates the stator pole number. The textbook describes this construction as having poor starting performance compared with the slip-ring motor, but excellent running performance.",
+          "An induction motor using this rotor is called a squirrel-cage induction motor (SQIM)."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-4",
+            "figure_number": "Figure 4.4",
+            "figure_name": "Squirrel-cage rotor",
+            "alt": "Figure 4.4 · Squirrel-cage rotor · Textbook p. 188",
+            "page": 188,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P188"
+        ],
+        "book_refs": [
+          {
+            "pages": "188",
+            "images": "188.png",
+            "figures": "4.4"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What are the two rotor types presented for a three-phase induction motor?",
+        "answer": "Phase-wound (slip-ring) rotor and squirrel-cage rotor."
+      },
+      {
+        "question": "Why can external starting resistance be added to a slip-ring motor but not to a squirrel-cage motor?",
+        "answer": "The phase-wound rotor terminals are brought out through slip rings and brushes; the squirrel-cage bars are permanently short-circuited by end rings."
+      }
+    ]
   },
   {
     "id": "u4-induction-principle",
@@ -9581,7 +9710,279 @@
         "images": "188.png–194.png"
       }
     ],
-    "cautions": []
+    "cautions": [
+      "Exercise 4.1.5 states 1420 rpm but the printed solution uses 1440 rpm; keep the mismatch visible."
+    ],
+    "intro": "A balanced three-phase stator supply produces a rotating magnetic field. Relative motion between this field and the rotor induces rotor emf and current; their interaction produces torque.",
+    "sections": [
+      {
+        "heading": "4.1.3 Principle — rotating magnetic field",
+        "scope": "core",
+        "paragraphs": [
+          "A three-phase induction motor is a singly excited motor: electrical supply is given only to the stator winding. It works on induction.",
+          "When a balanced three-phase supply excites the three stator windings, the resulting magnetic field rotates. This is the rotating magnetic field (RMF). The speed of this field is the synchronous speed:",
+          "\\[N_s=\\dfrac{120f}{P}\\]",
+          "where f is the supply frequency and P is the total number of stator poles.",
+          "The textbook illustrates the three phase currents and the corresponding stator fluxes at successive instants. Their resultant flux rotates continuously at synchronous speed."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-5",
+            "figure_number": "Figure 4.5",
+            "figure_name": "Three-phase supply and stator winding",
+            "alt": "Figure 4.5 · Three-phase supply and stator winding · Textbook p. 189",
+            "page": 189,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 4
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-6",
+            "figure_number": "Figure 4.6",
+            "figure_name": "Production of rotating magnetic field",
+            "alt": "Figure 4.6 · Production of rotating magnetic field · Textbook p. 189",
+            "page": 189,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 4
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P188",
+          "TB-P189"
+        ],
+        "book_refs": [
+          {
+            "pages": "188–189",
+            "images": "188.png–189.png",
+            "figures": "4.5–4.6"
+          }
+        ]
+      },
+      {
+        "heading": "Rotor motion, slip and rotor frequency",
+        "scope": "core",
+        "paragraphs": [
+          "The rotating stator field induces rotor emf E2 in a stationary rotor winding. Because the rotor winding is short-circuited, rotor current I2 flows. The interaction of stator and rotor fields produces torque, so the rotor starts to turn in the direction of the rotating field.",
+          "The cause of induced rotor emf is the relative speed between stator field and rotor. If the rotor reached synchronous speed, relative speed would become zero; rotor emf and current would become zero and therefore torque would disappear. Hence an induction motor cannot run at synchronous speed in motoring operation.",
+          "The difference between synchronous speed Ns and actual rotor speed N is called slip speed:",
+          "\\[\\text{Slip speed}=N_s-N\\]",
+          "The slip is",
+          "\\[s=\\dfrac{N_s-N}{N_s},\\qquad \\%s=\\dfrac{N_s-N}{N_s}\\times100\\]",
+          "At standstill N = 0 and s = 1 (100%). If N were equal to Ns, s would be zero.",
+          "The rotor-current frequency changes with slip. The textbook derives:",
+          "\\[f_r=sf\\]",
+          "Thus rotor frequency equals stator frequency at standstill and falls as rotor speed approaches synchronous speed."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-7",
+            "figure_number": "Figure 4.7",
+            "figure_name": "Stator and rotor fluxes",
+            "alt": "Figure 4.7 · Stator and rotor fluxes · Textbook p. 189",
+            "page": 189,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P189",
+          "TB-P190"
+        ],
+        "book_refs": [
+          {
+            "pages": "189–190",
+            "images": "189.png–190.png",
+            "figures": "4.7"
+          }
+        ]
+      },
+      {
+        "heading": "Rotor quantities from standstill to running",
+        "scope": "supporting",
+        "paragraphs": [
+          "The textbook relates rotor emf and leakage reactance to slip. At standstill, slip s = 1. Under running conditions, rotor emf and rotor leakage reactance are reduced in proportion to slip:",
+          "\\[E_{2r}=sE_2,\\qquad X_{2r}=sX_2\\]",
+          "The running rotor impedance magnitude is therefore",
+          "\\[|Z_{2r}|=\\sqrt{R_2^2+(sX_2)^2}\\]",
+          "and the rotor current magnitude is",
+          "\\[I_2=\\dfrac{sE_2}{\\sqrt{R_2^2+(sX_2)^2}}\\]"
+        ],
+        "tables": [
+          {
+            "caption": "Table 4.1 · Rotor quantities during starting and running",
+            "headers": [
+              "Rotor parameter",
+              "At standstill",
+              "Under running"
+            ],
+            "rows": [
+              [
+                "Slip",
+                "1",
+                "s"
+              ],
+              [
+                "Frequency",
+                "f",
+                "sf"
+              ],
+              [
+                "Resistance",
+                "R₂",
+                "R₂"
+              ],
+              [
+                "Leakage reactance",
+                "X₂",
+                "sX₂"
+              ],
+              [
+                "Leakage impedance",
+                "R₂ + jX₂",
+                "R₂ + jsX₂"
+              ],
+              [
+                "EMF",
+                "E₂",
+                "sE₂"
+              ],
+              [
+                "Current",
+                "E₂ / √(R₂² + X₂²)",
+                "sE₂ / √(R₂² + (sX₂)²)"
+              ]
+            ]
+          }
+        ],
+        "source_refs": [
+          "TB-P191"
+        ],
+        "book_refs": [
+          {
+            "pages": "191",
+            "images": "191.png",
+            "tables": "4.1"
+          }
+        ]
+      },
+      {
+        "heading": "Worked examples — slip, rotor frequency and rotor quantities",
+        "scope": "core",
+        "accordion_label": "Worked examples",
+        "accordions": [
+          {
+            "title": "Exercise 4.1.1",
+            "question_paragraphs": [
+              "A 3-phase, 4-pole, 50 Hz induction motor has a full-load speed of 1440 rpm. Calculate (a) synchronous speed, (b) percentage slip and (c) rotor frequency at full load."
+            ],
+            "paragraphs": [
+              "Given P = 4, f = 50 Hz and N = 1440 rpm.",
+              "\\[N_s=\\dfrac{120f}{P}=\\dfrac{120\\times50}{4}=1500\\,\\text{rpm}\\]",
+              "\\[\\%s=\\dfrac{1500-1440}{1500}\\times100=4\\%\\]",
+              "\\[f_r=sf=0.04\\times50=2\\,\\text{Hz}\\]"
+            ],
+            "final_answer": "Ns = 1500 rpm; slip = 4%; rotor frequency = 2 Hz"
+          },
+          {
+            "title": "Exercise 4.1.2",
+            "question_paragraphs": [
+              "A 6-pole, 3-phase induction motor rotates at 970 rpm and maintains a slip of 3%. Find (a) synchronous speed, (b) supply frequency and (c) rotor frequency."
+            ],
+            "paragraphs": [
+              "Given P = 6, N = 970 rpm and s = 0.03.",
+              "\\[0.03=\\dfrac{N_s-970}{N_s}\\Rightarrow N_s=1000\\,\\text{rpm}\\]",
+              "Using \\(N_s=120f/P\\):",
+              "\\[f=\\dfrac{1000\\times6}{120}=50\\,\\text{Hz}\\]",
+              "\\[f_r=sf=0.03\\times50=1.5\\,\\text{Hz}\\]"
+            ],
+            "final_answer": "Ns = 1000 rpm; supply frequency = 50 Hz; rotor frequency = 1.5 Hz"
+          },
+          {
+            "title": "Exercise 4.1.3",
+            "question_paragraphs": [
+              "A centre-zero galvanometer is connected in the rotor circuit of a 3-phase, 6-pole, 50 Hz slip-ring induction motor. During running, the galvanometer makes 90 oscillations per minute. Calculate rotor speed."
+            ],
+            "paragraphs": [
+              "\\[N_s=\\dfrac{120\\times50}{6}=1000\\,\\text{rpm}\\]",
+              "Ninety oscillations per minute correspond to",
+              "\\[f_r=\\dfrac{90}{60}=1.5\\,\\text{Hz}\\]",
+              "Since \\(s=f_r/f\\):",
+              "\\[s=\\dfrac{1.5}{50}=0.03\\]",
+              "Using \\(s=(N_s-N)/N_s\\):",
+              "\\[0.03=\\dfrac{1000-N}{1000}\\Rightarrow N=970\\,\\text{rpm}\\]"
+            ],
+            "final_answer": "970 rpm"
+          },
+          {
+            "title": "Exercise 4.1.4",
+            "question_paragraphs": [
+              "A 3-phase, 4-pole, 50 Hz induction motor has rotor leakage impedance 2 + j10 Ω per phase and rotor emf 150 V per phase at standstill. Calculate (a) slip, (b) rotor frequency, (c) rotor power factor and (d) rotor current at (i) standstill and (ii) rotor speed 1440 rpm."
+            ],
+            "paragraphs": [
+              "\\[N_s=\\dfrac{120\\times50}{4}=1500\\,\\text{rpm}\\]",
+              "At standstill: s = 1 and fr = 50 Hz.",
+              "\\[|Z_2|=\\sqrt{2^2+10^2}=10.19\\,\\Omega\\]",
+              "\\[\\cos\\phi_2=\\dfrac{2}{10.19}=0.196\\]",
+              "\\[I_2=\\dfrac{150}{10.19}=14.72\\,\\text{A}\\]",
+              "At N = 1440 rpm:",
+              "\\[s=\\dfrac{1500-1440}{1500}=0.04,\\qquad f_r=0.04\\times50=2\\,\\text{Hz}\\]",
+              "\\[|Z_{2r}|=\\sqrt{2^2+(0.04\\times10)^2}=2.04\\,\\Omega\\]",
+              "\\[\\cos\\phi_2=\\dfrac{2}{2.04}=0.9803\\]",
+              "\\[sE_2=0.04\\times150=6\\,\\text{V},\\qquad I_2=\\dfrac{6}{2.04}=2.94\\,\\text{A}\\]"
+            ],
+            "final_answer": "Standstill: s = 1, fr = 50 Hz, pf = 0.196, I2 = 14.72 A. At 1440 rpm: s = 0.04, fr = 2 Hz, pf = 0.9803, I2 = 2.94 A."
+          },
+          {
+            "title": "Exercise 4.1.5",
+            "question_paragraphs": [
+              "A 3-phase, 4-pole, 50 Hz induction motor has a star-connected rotor winding with resistance 0.2 Ω/phase and standstill leakage reactance 1 Ω/phase. The standstill rotor induced emf is 208 V between any two slip rings. A star-connected external resistance of 1 Ω/phase is connected in the rotor circuit during starting. Calculate rotor current and rotor power factor at (i) standstill and (ii) rotor speed 1420 rpm."
+            ],
+            "paragraphs": [
+              "\\[N_s=\\dfrac{120\\times50}{4}=1500\\,\\text{rpm}\\]",
+              "Because the rotor is star-connected, the standstill rotor emf per phase is",
+              "\\[E_2=\\dfrac{208}{\\sqrt{3}}=120\\,\\text{V}\\]",
+              "At standstill, total rotor resistance per phase is \\(0.2+1=1.2\\,\\Omega\\):",
+              "\\[|Z_2|=\\sqrt{1.2^2+1^2}=1.562\\,\\Omega\\]",
+              "\\[I_2=\\dfrac{120}{1.562}=76.9\\,\\text{A},\\qquad \\cos\\phi_2=\\dfrac{1.2}{1.562}=0.768\\]",
+              "For the running condition, the printed solution changes the stated rotor speed to 1440 rpm and proceeds with \\(s=0.04\\):",
+              "\\[sE_2=0.04\\times120=4.8\\,\\text{V}\\]",
+              "With the external starting resistance no longer included,",
+              "\\[Z_{2r}=0.2+j(0.04\\times1)=0.2+j0.04\\,\\Omega\\]",
+              "\\[|Z_{2r}|=0.2055\\,\\Omega,\\quad I_2=\\dfrac{4.8}{0.2055}=23.35\\,\\text{A},\\quad \\cos\\phi_2=\\dfrac{0.2}{0.2055}=0.973\\]"
+            ],
+            "final_answer": "Printed solution: standstill I2 = 76.9 A, pf = 0.768; running calculation uses 1440 rpm and gives I2 = 23.35 A, pf = 0.973.",
+            "math_mismatch": {
+              "label": "Textbook discrepancy",
+              "message": "The exercise statement asks for the running condition at 1420 rpm, but the printed solution on the next page uses 1440 rpm and therefore s = 0.04. PankusDesk preserves that mismatch rather than silently changing either the question or printed working."
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P191",
+          "TB-P192",
+          "TB-P193",
+          "TB-P194",
+          "TB-P195"
+        ],
+        "book_refs": [
+          {
+            "pages": "191–195",
+            "images": "191.png–195.png"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "u4-torque-slip",
@@ -9611,7 +10012,78 @@
         "images": "195.png–197.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "Induction-motor torque is produced by the interaction of stator and rotor fluxes. Expressing rotor current and power factor in terms of slip gives the torque-slip characteristic.",
+    "sections": [
+      {
+        "heading": "4.1.4 Torque–Slip Characteristics",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook begins from the statement that torque is proportional to the product of stator flux, rotor flux and rotor power factor. With stator flux proportional to supply voltage and rotor current expressed using slip, the torque relation is written as",
+          "\\[T=K\\,V^2\\,\\dfrac{sR_2}{R_2^2+(sX_2)^2}\\]",
+          "where K collects the constants for the machine, V is supply voltage, R2 is rotor resistance per phase, X2 is standstill rotor leakage reactance per phase and s is slip.",
+          "At low slip (high rotor speed), sX2 is small compared with R2. Neglecting \\((sX_2)^2\\) in the denominator gives",
+          "\\[T\\propto s\\]",
+          "so torque increases approximately linearly with slip in the low-slip region.",
+          "At high slip (low rotor speed), sX2 is large compared with R2. Neglecting R2² gives",
+          "\\[T\\propto\\dfrac{1}{s}\\]",
+          "so torque decreases as slip increases in the high-slip region.",
+          "The torque reaches its maximum at",
+          "\\[s=\\dfrac{R_2}{X_2}\\]",
+          "and the corresponding value is called maximum torque. At starting, s = 1 and the torque is called starting torque."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-8",
+            "figure_number": "Figure 4.8",
+            "figure_name": "Stator and rotor fluxes producing torque",
+            "alt": "Figure 4.8 · Stator and rotor fluxes producing torque · Textbook p. 195",
+            "page": 195,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-9",
+            "figure_number": "Figure 4.9",
+            "figure_name": "Torque-slip characteristics",
+            "alt": "Figure 4.9 · Torque-slip characteristics · Textbook p. 196",
+            "page": 196,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 5
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P195",
+          "TB-P196",
+          "TB-P197"
+        ],
+        "book_refs": [
+          {
+            "pages": "195–197",
+            "images": "195.png–197.png",
+            "figures": "4.8–4.9"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "How does torque vary with slip in the low-slip region?",
+        "answer": "Approximately directly with slip: T ∝ s."
+      },
+      {
+        "question": "What is the slip at maximum torque in the textbook relation?",
+        "answer": "s = R2/X2."
+      }
+    ]
   },
   {
     "id": "u4-synchronous-generator",
@@ -9640,7 +10112,97 @@
         "images": "197.png–199.png"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "A synchronous generator, or alternator, converts mechanical input into AC electrical output by electromagnetic induction.",
+    "sections": [
+      {
+        "heading": "4.2 Synchronous Generators",
+        "scope": "core",
+        "paragraphs": [
+          "Synchronous generators generate alternating current and are therefore also called AC generators or alternators. They convert mechanical power into AC electrical power.",
+          "The textbook points out that the underlying principle is the same electromagnetic-induction principle used for a DC generator. In the synchronous-machine construction presented here, the field winding is rotating and the armature winding is stationary."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-10",
+            "figure_number": "Figure 4.10",
+            "figure_name": "Synchronous-generator block diagram",
+            "alt": "Figure 4.10 · Synchronous-generator block diagram · Textbook p. 197",
+            "page": 197,
+            "size": "medium",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P197"
+        ],
+        "book_refs": [
+          {
+            "pages": "197",
+            "images": "197.png",
+            "figures": "4.10"
+          }
+        ]
+      },
+      {
+        "heading": "4.2.1 Principle",
+        "scope": "core",
+        "paragraphs": [
+          "When a conductor is moved relative to a magnetic field so that it cuts magnetic flux, an emf is induced in the conductor. Its magnitude is proportional to the rate of change of flux linkages, and the direction of induced current is determined using Fleming’s right-hand rule.",
+          "In the synchronous generator shown, the field winding is placed on the rotor and excited by DC to form magnetic poles. A prime mover rotates the rotor at synchronous speed Ns. The stationary armature winding is distributed in slots around the stator.",
+          "As the rotor rotates, the flux produced by the rotor poles sweeps over the stator armature conductors. The poles crossing a conductor alternate North and South, so the generated emf is alternating. With sinusoidally distributed air-gap flux, the generated emf is sinusoidal.",
+          "For P poles, the number of electrical cycles per mechanical revolution is P/2. Hence the generated frequency is",
+          "\\[f=\\dfrac{PN_s}{120}\\]",
+          "The textbook also gives the per-phase generated-emf magnitude as",
+          "\\[E=4.44\\,\\Phi fN\\]",
+          "where N is the number of armature winding turns per phase."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-11",
+            "figure_number": "Figure 4.11",
+            "figure_name": "Cross-sectional view of synchronous machine",
+            "alt": "Figure 4.11 · Cross-sectional view of synchronous machine · Textbook p. 198",
+            "page": 198,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-12",
+            "figure_number": "Figure 4.12",
+            "figure_name": "Sinusoidal generated voltage",
+            "alt": "Figure 4.12 · Sinusoidal generated voltage · Textbook p. 198",
+            "page": 198,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P197",
+          "TB-P198",
+          "TB-P199"
+        ],
+        "book_refs": [
+          {
+            "pages": "197–199",
+            "images": "197.png–199.png",
+            "figures": "4.11–4.12"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "u4-sync-impedance",
@@ -9657,7 +10219,14 @@
       "Xs = √(Zs² − Ra²)",
       "Regulation = (E0 − V)/V × 100 (conceptual EMF-method form; use the stated phasor/sign convention consistently)"
     ],
-    "method": [],
+    "method": [
+      "Run OCC and SCC at rated speed.",
+      "Choose the same field current on both characteristics.",
+      "Compute Zs = Voc/Isc per phase.",
+      "Compute Xs = √(Zs² − Ra²).",
+      "Use Ra + jXs in the generated-emf phasor calculation for the stated load power factor.",
+      "Compute regulation = (E0 − V)/V × 100."
+    ],
     "source_refs": [
       "SYL-R25-U4",
       "GAP-U4-SYNC-REACTANCE-NPTEL",
@@ -9667,7 +10236,34 @@
     ],
     "book_refs": [],
     "cautions": [
-      "BIET OCR notation around the regulation equation is imperfect. For numerical PYQs, consult the original gap PDF/figure before committing to a sign/phasor expression."
+      "The approved gap note warns that OCR around one BIET regulation equation is imperfect. For a numerical problem, use the original gap PDF/figure and keep the phasor/sign convention explicit."
+    ],
+    "intro": "R25 requires alternator voltage regulation by the synchronous-impedance method. This item is absent from the supplied Chapter 4 pages, so it is kept explicitly as approved gap-filled material.",
+    "sections": [
+      {
+        "heading": "Voltage regulation by synchronous-impedance (EMF) method",
+        "scope": "core-gap-filled",
+        "paragraphs": [
+          "Voltage regulation compares the generated/internal emf needed at load with the rated terminal voltage. The approved gap sources determine the machine’s synchronous impedance from open-circuit and short-circuit tests.",
+          "Open-circuit characteristic (OCC): run the alternator at rated speed with the armature open-circuited and record generated terminal voltage as field current is varied.",
+          "Short-circuit characteristic (SCC): run at rated speed with the armature terminals symmetrically short-circuited and record armature current as field current is varied.",
+          "For the same field excitation, obtain synchronous impedance per phase from",
+          "\\[Z_s=\\dfrac{V_{OC}}{I_{SC}}\\]",
+          "where the voltage and current must be used consistently on a per-phase basis for the connection being considered.",
+          "With armature resistance Ra known, synchronous reactance is",
+          "\\[X_s=\\sqrt{Z_s^2-R_a^2}\\]",
+          "The resulting synchronous impedance is then used in the alternator phasor/EMF calculation to obtain the no-load generated emf E0 corresponding to the specified load current and power factor.",
+          "Percentage regulation is then calculated as",
+          "\\[\\%\\text{Regulation}=\\dfrac{E_0-V}{V}\\times100\\]",
+          "using a consistent phasor/sign convention for the stated power factor."
+        ],
+        "source_refs": [
+          "GAP-U4-SYNC-REACTANCE-NPTEL",
+          "GAP-U4-OCSC-NPTEL",
+          "GAP-U4-SYNC-IMPEDANCE-BIET",
+          "GAP-U4-SYNC-IMPEDANCE-IARE"
+        ]
+      }
     ]
   },
   {
@@ -9689,7 +10285,24 @@
     ],
     "book_refs": [],
     "cautions": [
-      "Phasor and power-expression material from NPTEL Lecture 82 is deliberately not promoted into R25 core because the syllabus asks only for the operating principle."
+      "The selected NPTEL lecture also contains phasor and power-expression material. It is intentionally not promoted into the core page because R25 asks only for the operating principle."
+    ],
+    "intro": "R25 asks only for the operating principle of a synchronous motor. The supplied textbook chapter does not cover it, so this subsection is kept as approved NPTEL gap-filled material.",
+    "sections": [
+      {
+        "heading": "Principle of operation of synchronous motor",
+        "scope": "core-gap-filled",
+        "paragraphs": [
+          "A balanced AC supply to the stator produces a rotating magnetic field at synchronous speed.",
+          "The rotor carries a magnetic field established by DC excitation. Electromagnetic torque acts between the rotor field and the rotating stator field.",
+          "When the rotor field locks with the rotating stator field, the rotor follows it at the same speed. Therefore, in steady synchronous operation, rotor speed equals synchronous speed.",
+          "This locking of the rotor magnetic field with the stator rotating field is the essential operating principle behind the name synchronous motor."
+        ],
+        "source_refs": [
+          "GAP-U4-SYNC-MOTOR-NPTEL",
+          "GAP-U4-SYNC-MOTOR-NPTEL-ARCHIVE"
+        ]
+      }
     ]
   },
   {
@@ -9715,7 +10328,74 @@
         "images": "199.png + 200_01.png (Unit-IV scan)"
       }
     ],
-    "cautions": []
+    "cautions": [],
+    "intro": "A stepper motor rotates through discrete equal angular steps rather than continuously, allowing rotor position to be controlled step by step.",
+    "sections": [
+      {
+        "heading": "4.3 Stepper Motor — principle",
+        "scope": "core",
+        "paragraphs": [
+          "A stepper motor, also called a stepping motor, divides a full rotation into a number of equal steps. The rotor position can be controlled and can be held at one of these step positions as required.",
+          "The textbook explains the operation using a variable-reluctance stepper motor. It also names permanent-magnet and hybrid synchronous stepper motors as other types.",
+          "In the illustrated motor, six stator electromagnets form three phase groups A, B and C. A and AA form one group, B and BB the second, and C and CC the third. An electronic controller energises the phase groups in sequence.",
+          "When A and AA are energised, the rotor teeth align with that magnetic axis to make reluctance minimum. When A-AA are de-energised and B-BB are energised, the magnetic axis shifts and the rotor moves to the new minimum-reluctance position.",
+          "In the textbook example this produces a clockwise movement of 30°. This angle is called the step angle. Sequential excitation B-BB → C-CC → A-AA and so on continues the rotation in equal steps."
+        ],
+        "figures": [
+          {
+            "placeholder": true,
+            "src": "placeholder://f4-13",
+            "figure_number": "Figure 4.13",
+            "figure_name": "Cross-sectional view of stepper motor",
+            "alt": "Figure 4.13 · Cross-sectional view of stepper motor · Textbook p. 199",
+            "page": 199,
+            "size": "large",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P199",
+          "TB-P200"
+        ],
+        "book_refs": [
+          {
+            "pages": "199–200",
+            "images": "199.png + 200_01.png",
+            "figures": "4.13"
+          }
+        ]
+      },
+      {
+        "heading": "Applications",
+        "scope": "core",
+        "paragraphs": [
+          "The textbook lists commercial applications including flatbed scanners, computer printers, 3D printers, plotters, slot machines, image scanners, CD drives, intelligent lighting systems, camera lenses and CNC machines.",
+          "It also lists stepper motors in lasers and optics as linear actuators and mirror mounts, and in fluid-control systems."
+        ],
+        "source_refs": [
+          "TB-P200"
+        ],
+        "book_refs": [
+          {
+            "pages": "200",
+            "images": "200_01.png"
+          }
+        ]
+      }
+    ],
+    "self_checks": [
+      {
+        "question": "What does step angle mean?",
+        "answer": "The angular movement produced by one commanded excitation step. In the textbook example the step angle is 30°, but that value belongs to the illustrated construction."
+      },
+      {
+        "question": "Why does the rotor move when the next stator phase is energised?",
+        "answer": "It moves to align with the new magnetic axis at the position of minimum reluctance."
+      }
+    ]
   },
   {
     "id": "u5-domestic-layout",
