@@ -191,6 +191,7 @@ function renderAiCard(item) {
 	const formulae = Array.isArray(item.formulae) ? item.formulae : [];
 	const pyqFocus = Array.isArray(item.pyq_focus) ? item.pyq_focus : [];
 	const diagrams = Array.isArray(item.diagrams) ? item.diagrams : [];
+	const studyGroups = Array.isArray(item.study_groups) ? item.study_groups : [];
 	return `<article class="short-note-card" id="${escapeHtml(item.id || '')}">
 		<header class="short-note-card-header">
 			<div><span class="short-note-ai-badge">AI-generated</span><h3>${escapeHtml(item.title || '')}</h3></div>
@@ -199,6 +200,7 @@ function renderAiCard(item) {
 			${pyqFocus.length ? renderPyqFocus(pyqFocus) : ''}
 			${paragraphs.map(text => `<p>${escapeHtml(text)}</p>`).join('')}
 			${bullets.length ? `<ul>${bullets.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>` : ''}
+			${studyGroups.length ? renderStudyGroups(studyGroups) : ''}
 			${derivation.length ? renderDerivation(derivation) : ''}
 			${item.table ? renderTable(item.table) : ''}
 			${formulae.length ? `<div class="short-note-formulas">${formulae.map(renderFormula).join('')}</div>` : ''}
@@ -211,6 +213,24 @@ function renderAiCard(item) {
 
 function renderPyqFocus(items) {
 	return `<div class="short-note-pyq-focus"><div class="short-note-mini-label">PYQ focus</div><ul>${items.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></div>`;
+}
+
+function renderStudyGroups(groups) {
+	return `<div class="short-note-study-groups" aria-label="Detailed revision notes">${groups.map((group, index) => renderStudyGroup(group, index)).join('')}</div>`;
+}
+
+function renderStudyGroup(group, index) {
+	const paragraphs = Array.isArray(group?.paragraphs) ? group.paragraphs : [];
+	const bullets = Array.isArray(group?.bullets) ? group.bullets : [];
+	const steps = Array.isArray(group?.steps) ? group.steps : [];
+	const formulae = Array.isArray(group?.formulae) ? group.formulae : [];
+	return `<section class="short-note-study-group">
+		<h4><span class="short-note-study-number">${index + 1}</span>${escapeHtml(group?.heading || 'Revision point')}</h4>
+		${paragraphs.map(text => `<p>${escapeHtml(text)}</p>`).join('')}
+		${bullets.length ? `<ul>${bullets.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>` : ''}
+		${steps.length ? `<ol class="short-note-study-steps">${steps.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ol>` : ''}
+		${formulae.length ? `<div class="short-note-formulas is-compact">${formulae.map(renderFormula).join('')}</div>` : ''}
+	</section>`;
 }
 
 function renderDerivation(items) {

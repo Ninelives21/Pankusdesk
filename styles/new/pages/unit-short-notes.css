@@ -407,3 +407,60 @@
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+/* AI short notes — teacher-note-inspired numbered study blocks */
+.short-note-study-groups {
+	display: grid;
+	gap: .8rem;
+	margin: 1rem 0;
+}
+.short-note-study-group {
+	padding: .9rem .95rem;
+	border: 1px solid var(--line);
+	border-radius: 13px;
+	background: var(--surface-subtle);
+}
+.short-note-study-group h4 {
+	display: flex;
+	align-items: center;
+	gap: .6rem;
+	margin: 0 0 .55rem;
+	font-size: 1rem;
+	line-height: 1.35;
+	color: var(--text-strong);
+}
+.short-note-study-number {
+	flex: 0 0 auto;
+	display: inline-grid;
+	place-items: center;
+	width: 1.65rem;
+	height: 1.65rem;
+	border: 1px solid var(--line-primary);
+	border-radius: 999px;
+	background: var(--surface);
+	color: var(--primary-dark);
+	font-size: .78rem;
+	font-weight: 850;
+}
+.short-note-study-group p {
+	margin: .38rem 0;
+}
+.short-note-study-group ul,
+.short-note-study-steps {
+	margin: .55rem 0 .2rem 1.15rem;
+	padding: 0;
+}
+.short-note-study-group li {
+	margin: .36rem 0;
+	line-height: 1.58;
+}
+.short-note-study-steps {
+	padding-left: .2rem;
+}
+.short-note-formulas.is-compact {
+	margin: .7rem 0 .15rem;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.short-note-formulas.is-compact .short-note-formula {
+	background: var(--surface);
+}

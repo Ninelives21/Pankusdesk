@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "label": "Short Notes",
   "policy": "Teacher-shared SE1 pages are preserved as supplied. AI-generated completion is restricted to uncovered R25 material, follows the teacher-note compression pattern, and is informed by in-scope semester PYQs. Every generated topic is marked AI-generated.",
   "units": {
@@ -325,18 +325,8 @@
             "A transformer has no mechanical rotation, so the important losses for this unit are winding copper loss and iron/core loss.",
             "Copper loss changes with load current, whereas the iron loss is treated as approximately constant when the applied voltage and frequency are constant."
           ],
-          "bullets": [
-            "Primary copper loss: \\(I_1^2R_1\\). Secondary copper loss: \\(I_2^2R_2\\).",
-            "At \\(x\\) per-unit load, copper loss = \\(x^2\\) × full-load copper loss.",
-            "Iron loss consists of hysteresis loss and eddy-current loss.",
-            "Output power = input power − total losses."
-          ],
-          "derivation": [
-            "Using equivalent resistance referred to the primary, total copper loss may be written as \\(I_1^2R_{01}\\).",
-            "For input power \\(P_{in}=V_1I_1\\cos\\phi\\), output is \\(P_{out}=V_1I_1\\cos\\phi-(I_1^2R_{01}+W_i)\\).",
-            "Therefore \\(\\eta=P_{out}/P_{in}\\times100\\).",
-            "Differentiating the efficiency expression with respect to load current gives the maximum-efficiency condition \\(I_1^2R_{01}=W_i\\): variable copper loss equals constant iron loss."
-          ],
+          "bullets": [],
+          "derivation": [],
           "formulae": [
             {
               "label": "Efficiency",
@@ -352,7 +342,58 @@
             }
           ],
           "key_point": "For efficiency questions, first separate the load-dependent copper loss from the nearly constant iron loss.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Losses in a transformer",
+              "bullets": [
+                "A transformer has no rotating mechanical parts, so the important losses treated here are copper loss in the windings and iron/core loss in the magnetic core.",
+                "Primary copper loss is \\(I_1^2R_1\\) and secondary copper loss is \\(I_2^2R_2\\). Copper loss therefore changes with load current and is a variable loss.",
+                "At \\(x\\) per-unit load, copper loss becomes \\(x^2\\) times the full-load copper loss.",
+                "Iron loss consists of hysteresis loss and eddy-current loss. With applied voltage and frequency held constant, core flux is treated as nearly constant, so iron loss is treated as approximately constant with load."
+              ]
+            },
+            {
+              "heading": "Efficiency",
+              "paragraphs": [
+                "Efficiency tells us what fraction of the input electrical power reaches the load as useful output power."
+              ],
+              "bullets": [
+                "Input power = output power + total losses.",
+                "Total losses for this treatment = copper loss + iron loss.",
+                "As load rises from a light value, useful output rises while the constant iron loss is spread over more output; at high load the current-squared copper loss becomes increasingly important."
+              ],
+              "formulae": [
+                {
+                  "label": "Efficiency",
+                  "latex": "\\eta=\\dfrac{P_{out}}{P_{in}}\\times100"
+                },
+                {
+                  "label": "Copper loss at x p.u. load",
+                  "latex": "W_{cu,x}=x^2W_{cu,FL}"
+                }
+              ]
+            },
+            {
+              "heading": "Condition for maximum efficiency",
+              "steps": [
+                "Treat iron loss as the constant loss and copper loss as the variable loss.",
+                "Write efficiency in terms of load current (or load fraction).",
+                "On maximizing that expression, the variable copper loss becomes equal to the constant iron loss.",
+                "Therefore the maximum-efficiency condition is \\(W_{cu}=W_i\\). If full-load copper loss is known, the load fraction at maximum efficiency follows from \\(x^2W_{cu,FL}=W_i\\)."
+              ],
+              "formulae": [
+                {
+                  "label": "Maximum-efficiency condition",
+                  "latex": "W_{cu}=W_i"
+                },
+                {
+                  "label": "Load fraction at maximum efficiency",
+                  "latex": "x=\\sqrt{\\dfrac{W_i}{W_{cu,FL}}}"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "u3-dc-machine-construction-short",
@@ -363,15 +404,7 @@
           "paragraphs": [
             "A DC generator and a DC motor use the same basic machine construction. The direction of energy conversion changes, but the main parts remain the same."
           ],
-          "bullets": [
-            "Yoke: outer frame; gives mechanical support and provides a return path for magnetic flux.",
-            "Pole cores and pole shoes: carry and spread the main magnetic flux and support the field coils.",
-            "Field windings: DC-excited windings that produce the main magnetic field.",
-            "Armature core: laminated rotating iron core with slots for armature conductors.",
-            "Armature winding: interconnected conductors in which emf is induced and current flows.",
-            "Commutator: segmented rotating switching arrangement connected to the armature winding.",
-            "Brushes: stationary carbon/graphite contacts that connect the rotating commutator to the external circuit."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Parallel paths",
@@ -389,7 +422,47 @@
             }
           ],
           "key_point": "Remember the machine in two groups: field system (yoke, poles, field coils) and armature system (armature, commutator, brushes).",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "One construction, two energy-conversion modes",
+              "paragraphs": [
+                "A DC generator and a DC motor use the same basic machine construction. In generator operation the machine converts mechanical energy to electrical energy; in motor operation it converts electrical energy to mechanical energy."
+              ]
+            },
+            {
+              "heading": "Stator / field-system parts",
+              "bullets": [
+                "Yoke: the outer frame. It gives mechanical support and also provides a return path for magnetic flux.",
+                "Pole cores and pole shoes: carry the main magnetic flux. Pole shoes spread the flux over the air gap and support the field coils; the pole structure is laminated to reduce eddy-current loss.",
+                "Field windings: copper windings placed on the poles and supplied with DC excitation to produce the main magnetic field."
+              ]
+            },
+            {
+              "heading": "Rotor / armature-system parts",
+              "bullets": [
+                "Armature core: a laminated silicon-steel rotating core with slots. It houses the armature conductors and provides a low-reluctance magnetic path.",
+                "Armature winding: the interconnected armature conductors in which generated emf appears and through which armature current flows.",
+                "Commutator: the segmented rotating electrical connection associated with the armature winding.",
+                "Brushes: stationary carbon/graphite contacts resting on the commutator; they provide the electrical connection between the rotating armature and the external circuit."
+              ]
+            },
+            {
+              "heading": "Armature winding and parallel paths",
+              "bullets": [
+                "In a lap winding, the number of armature parallel paths is equal to the number of poles: \\(A=P\\).",
+                "In a wave winding, the number of parallel paths is \\(A=2\\).",
+                "This value of \\(A\\) is important in the DC-generator and back-emf equations."
+              ],
+              "formulae": [
+                {
+                  "label": "Parallel paths",
+                  "latex": "A=P\\text{ (lap)},\\qquad A=2\\text{ (wave)}"
+                }
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u3-dc-generator-short",
@@ -405,13 +478,7 @@
             "A DC generator converts mechanical energy into electrical energy by electromagnetic induction. When armature conductors move through the magnetic field and cut flux, an emf is induced; Fleming’s right-hand rule gives the induced-current direction.",
             "The emf in a rotating coil is alternating internally. The split-ring commutator reverses the coil connection to the external circuit every half-turn so that the current delivered at the terminals is unidirectional."
           ],
-          "derivation": [
-            "Let \\(P\\) = number of poles, \\(\\Phi\\) = flux per pole, \\(Z\\) = total armature conductors, \\(N\\) = speed in rpm, and \\(A\\) = number of parallel paths.",
-            "Flux cut by one conductor in one revolution = \\(P\\Phi\\) Wb.",
-            "Time for one revolution = \\(60/N\\) s.",
-            "Average emf induced in one conductor = \\(P\\Phi/(60/N)=P\\Phi N/60\\) V.",
-            "Conductors in series in each parallel path = \\(Z/A\\). Multiplying gives the generated emf."
-          ],
+          "derivation": [],
           "formulae": [
             {
               "label": "Generated emf",
@@ -441,7 +508,54 @@
             }
           ],
           "key_point": "The derivation is simply Faraday’s law applied to one conductor, then multiplied by the number of series conductors in one parallel path.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Principle and energy conversion",
+              "paragraphs": [
+                "A DC generator converts mechanical energy supplied by a prime mover into electrical energy by electromagnetic induction."
+              ],
+              "bullets": [
+                "When an armature conductor moves through the magnetic field and cuts flux, an emf is induced in it.",
+                "Fleming’s right-hand rule gives the direction of induced current.",
+                "Conductors on opposite sides of a rotating loop cut flux in opposite directions, so the emf generated in the rotating loop reverses every half-turn."
+              ]
+            },
+            {
+              "heading": "Why the external output is DC",
+              "bullets": [
+                "The emf generated in the rotating armature is alternating in nature.",
+                "The split-ring commutator reverses the connection of the rotating coil to the external circuit every half-turn.",
+                "Because of that switching action, current in the external load remains in one direction; the machine therefore supplies DC at its terminals."
+              ]
+            },
+            {
+              "heading": "EMF-equation derivation",
+              "steps": [
+                "Let \\(P\\) = poles, \\(\\Phi\\) = flux per pole, \\(Z\\) = total armature conductors, \\(N\\) = speed in rpm and \\(A\\) = parallel paths.",
+                "In one revolution, one conductor cuts total flux \\(P\\Phi\\) Wb.",
+                "Time for one revolution is \\(60/N\\) seconds.",
+                "Average emf induced in one conductor is \\(P\\Phi/(60/N)=P\\Phi N/60\\) volts.",
+                "Each parallel path contains \\(Z/A\\) conductors in series.",
+                "Hence generated emf per parallel path, and therefore the terminal generated emf of the armature, is \\(E_g=P\\Phi ZN/(60A)\\)."
+              ],
+              "formulae": [
+                {
+                  "label": "Generated emf",
+                  "latex": "E_g=\\dfrac{P\\Phi ZN}{60A}"
+                }
+              ]
+            },
+            {
+              "heading": "What to substitute for A",
+              "bullets": [
+                "Lap winding: \\(A=P\\).",
+                "Wave winding: \\(A=2\\).",
+                "Always identify the winding type before substituting in the emf equation."
+              ]
+            }
+          ],
+          "bullets": []
         },
         {
           "id": "u3-dc-motor-short",
@@ -457,12 +571,7 @@
             "A DC motor converts electrical energy into mechanical energy. A current-carrying conductor placed in a magnetic field experiences a force; forces on opposite armature conductors form a torque and rotate the armature.",
             "As the armature rotates, its conductors also cut flux and generate an emf. By Lenz’s law this generated emf opposes the applied voltage and is therefore called back emf \\(E_b\\)."
           ],
-          "bullets": [
-            "Fleming’s left-hand rule gives the force direction in motor operation.",
-            "At starting, \\(N=0\\), so \\(E_b=0\\); the armature current would therefore be very large if it were not limited by the armature circuit.",
-            "As speed rises, \\(E_b\\) rises and automatically limits armature current.",
-            "If mechanical load increases, speed tends to fall; \\(E_b\\) falls, armature current rises and the developed torque increases. This gives the motor a natural load-response mechanism."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Force on a conductor",
@@ -492,7 +601,61 @@
             }
           ],
           "key_point": "Back emf is essential: it opposes the supply and controls the armature current as motor speed and load change.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Motor principle",
+              "paragraphs": [
+                "A DC motor converts electrical energy into mechanical energy. Its basic operating principle is the force on a current-carrying conductor placed in a magnetic field."
+              ],
+              "bullets": [
+                "The magnitude relation used is \\(F=BIl\\).",
+                "Fleming’s left-hand rule gives the direction of force.",
+                "Forces on conductors on opposite sides of the armature form a turning moment, so the armature rotates."
+              ],
+              "formulae": [
+                {
+                  "label": "Force on conductor",
+                  "latex": "F=BIl"
+                }
+              ]
+            },
+            {
+              "heading": "Origin of back emf",
+              "bullets": [
+                "Once the armature rotates, its conductors also cut magnetic flux.",
+                "The rotating armature therefore behaves partly like a generator and develops an emf in the armature winding.",
+                "By Lenz’s law this generated emf opposes the applied supply voltage; hence it is called back emf \\(E_b\\).",
+                "The back-emf magnitude has the same generated-emf form as a DC generator."
+              ],
+              "formulae": [
+                {
+                  "label": "Back emf",
+                  "latex": "E_b=\\dfrac{P\\Phi ZN}{60A}"
+                },
+                {
+                  "label": "Motor voltage equation",
+                  "latex": "V=E_b+I_aR_a"
+                }
+              ]
+            },
+            {
+              "heading": "Why back emf is important",
+              "bullets": [
+                "At starting, rotor speed is zero, so \\(E_b=0\\). From \\(V=E_b+I_aR_a\\), the armature current is then limited mainly by the armature resistance.",
+                "As speed rises, \\(E_b\\) rises because \\(E_b\\propto N\\). The opposing emf therefore reduces the net voltage driving armature current.",
+                "If mechanical load increases, speed tends to fall; \\(E_b\\) falls and armature current rises. Since motor torque is proportional to \\(\\Phi I_a\\), the developed torque rises to meet the increased load.",
+                "Thus back emf is not a wasted voltage: it is part of the motor’s natural electrical response to speed and load."
+              ],
+              "formulae": [
+                {
+                  "label": "Torque relation",
+                  "latex": "T\\propto\\Phi I_a"
+                }
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u3-load-characteristics-short",
@@ -503,12 +666,7 @@
           "paragraphs": [
             "In a separately excited DC motor, the field winding has an independent supply, so the field current and flux can be held approximately constant while armature load changes."
           ],
-          "bullets": [
-            "Torque–armature current: with constant flux, \\(T\\propto I_a\\); the characteristic is approximately a straight line.",
-            "Speed–armature current: as \\(I_a\\) increases, the \\(I_aR_a\\) drop increases, so speed falls slightly.",
-            "Speed–torque: because torque is proportional to \\(I_a\\), the speed–torque curve has the same gentle falling trend.",
-            "This gives nearly constant-speed operation over the normal load range."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Torque",
@@ -550,7 +708,57 @@
             }
           ],
           "key_point": "With separate excitation and nearly constant flux, torque follows armature current while speed changes only slightly with load.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Why “separately excited” matters",
+              "paragraphs": [
+                "The field winding has an independent supply. Therefore field current and magnetic flux can be kept approximately constant while the armature load is varied."
+              ]
+            },
+            {
+              "heading": "Torque versus armature current",
+              "bullets": [
+                "Developed torque is proportional to the product of flux and armature current: \\(T\\propto\\Phi I_a\\).",
+                "With approximately constant flux, \\(T\\propto I_a\\).",
+                "The torque–armature-current characteristic is therefore approximately a straight line."
+              ],
+              "formulae": [
+                {
+                  "label": "Torque characteristic",
+                  "latex": "T\\propto\\Phi I_a\\;\\Rightarrow\\;T\\propto I_a\\text{ for constant }\\Phi"
+                }
+              ]
+            },
+            {
+              "heading": "Speed versus armature current",
+              "bullets": [
+                "The motor voltage relation gives \\(E_b=V-I_aR_a\\).",
+                "Since \\(E_b\\propto\\Phi N\\), speed varies as \\(N\\propto(V-I_aR_a)/\\Phi\\).",
+                "With \\(V\\) and \\(\\Phi\\) constant, increasing load current increases the \\(I_aR_a\\) drop, so speed falls slightly as load increases.",
+                "The small drop in speed from no-load to full-load is expressed by speed regulation."
+              ],
+              "formulae": [
+                {
+                  "label": "Speed relation",
+                  "latex": "N\\propto\\dfrac{V-I_aR_a}{\\Phi}"
+                },
+                {
+                  "label": "Speed regulation",
+                  "latex": "\\%SR=\\dfrac{N_{NL}-N_{FL}}{N_{NL}}\\times100"
+                }
+              ]
+            },
+            {
+              "heading": "Speed versus torque",
+              "bullets": [
+                "With constant flux, torque is proportional to armature current.",
+                "Therefore the speed–torque characteristic has the same gently falling trend as the speed–armature-current characteristic.",
+                "The separately excited motor is consequently treated as a nearly constant-speed motor over its normal load range."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u3-speed-control-short",
@@ -564,11 +772,7 @@
           "paragraphs": [
             "The motor speed relation shows two basic control routes: change the field flux or change the effective armature voltage."
           ],
-          "bullets": [
-            "Field control: keep armature supply voltage constant and vary the field current with a field rheostat. Reducing field current reduces flux and increases speed; this is used for speeds above rated speed.",
-            "Armature control: keep field current approximately constant and vary the effective armature voltage. Lower armature voltage gives lower speed; this is used for speeds below rated speed.",
-            "Do not allow the field circuit to open while the motor is running; very weak flux can drive the speed dangerously high."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Speed relation",
@@ -594,7 +798,48 @@
             }
           ],
           "key_point": "Field control → above rated speed. Armature-voltage control → below rated speed.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Starting point — the speed equation",
+              "paragraphs": [
+                "The speed relation shows exactly which quantities can be changed to control the speed of a separately excited DC motor."
+              ],
+              "formulae": [
+                {
+                  "label": "Speed relation",
+                  "latex": "N\\propto\\dfrac{V-I_aR_a}{\\Phi}"
+                }
+              ]
+            },
+            {
+              "heading": "Field / flux control",
+              "bullets": [
+                "Keep the armature supply voltage essentially constant and vary the field current using a rheostat in the field circuit.",
+                "Reducing field current reduces flux \\(\\Phi\\). Since speed is inversely proportional to flux, weakening the field raises the speed.",
+                "This method is used for speeds above rated speed.",
+                "An open field circuit can make the flux very small and can therefore cause dangerously high speed; the field circuit must not be allowed to open during operation."
+              ]
+            },
+            {
+              "heading": "Armature control",
+              "bullets": [
+                "Keep field current, and hence flux, approximately constant.",
+                "Vary the effective armature voltage by inserting a control resistance in the armature circuit.",
+                "Reducing the voltage available to the armature reduces back emf and therefore reduces speed.",
+                "This method is used for speeds below rated speed."
+              ]
+            },
+            {
+              "heading": "Quick comparison",
+              "bullets": [
+                "Above rated speed → field control / flux weakening.",
+                "Below rated speed → armature-side control.",
+                "The direction of change follows directly from \\(N\\propto(V-I_aR_a)/\\Phi\\): decrease \\(\\Phi\\) to raise speed; decrease effective armature voltage to lower speed."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u3-swinburne-short",
@@ -608,12 +853,7 @@
           "paragraphs": [
             "Swinburne’s test is treated here as the R25 no-load test sequence used to estimate the efficiency of a DC shunt machine from no-load measurements."
           ],
-          "bullets": [
-            "Run the machine at rated voltage and rated speed under no-load condition.",
-            "Record the no-load line current \\(I_{L0}\\), field current \\(I_f\\), input power/voltage as required, and armature resistance \\(R_a\\).",
-            "Find no-load armature current, then subtract the no-load armature copper loss from the no-load input to obtain the constant-loss quantity used in the efficiency calculation.",
-            "For the required motor or generator load, add the corresponding armature copper loss to the constant loss and calculate efficiency."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "No-load armature current",
@@ -637,7 +877,66 @@
             }
           ],
           "key_point": "The test separates the no-load input into armature copper loss and a constant-loss component, then uses those losses to estimate efficiency at load.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Purpose of the test",
+              "paragraphs": [
+                "Swinburne’s test is a no-load test used to predetermine the efficiency of a DC shunt machine without loading it to full output."
+              ]
+            },
+            {
+              "heading": "No-load readings and armature current",
+              "bullets": [
+                "Run the machine at rated speed on no load.",
+                "Record the supply voltage \\(V\\), no-load line current \\(I_{L0}\\) and field current \\(I_f\\).",
+                "The no-load armature current is the difference between line current and field current."
+              ],
+              "formulae": [
+                {
+                  "label": "No-load armature current",
+                  "latex": "I_{a0}=I_{L0}-I_f"
+                }
+              ]
+            },
+            {
+              "heading": "Separate variable and constant losses",
+              "steps": [
+                "Calculate no-load armature copper loss as \\(I_{a0}^2R_a\\).",
+                "Subtract this armature copper loss from the no-load input.",
+                "The remaining no-load input is treated as the constant loss for the subsequent efficiency calculation sequence."
+              ],
+              "formulae": [
+                {
+                  "label": "No-load armature copper loss",
+                  "latex": "W_{cu,a0}=I_{a0}^2R_a"
+                },
+                {
+                  "label": "Constant loss",
+                  "latex": "W_c=W_{in,0}-I_{a0}^2R_a"
+                }
+              ]
+            },
+            {
+              "heading": "Predetermine efficiency",
+              "bullets": [
+                "For a chosen motor load, calculate armature copper loss at that armature current, add the constant loss, and subtract total losses from input to obtain output.",
+                "For generator operation, total losses are added to output to obtain the required mechanical input.",
+                "The same no-load test data can therefore be used to predetermine efficiency for motor or generator operation at a specified load."
+              ],
+              "formulae": [
+                {
+                  "label": "Motor efficiency",
+                  "latex": "\\eta_m=\\dfrac{P_{in}-W_{loss}}{P_{in}}\\times100"
+                },
+                {
+                  "label": "Generator efficiency",
+                  "latex": "\\eta_g=\\dfrac{P_{out}}{P_{out}+W_{loss}}\\times100"
+                }
+              ]
+            }
+          ],
+          "derivation": []
         }
       ]
     },
@@ -657,11 +956,7 @@
           "paragraphs": [
             "A three-phase induction motor has two main parts: a stationary stator and a rotating rotor. The stator carries a three-phase distributed winding; rotor current is induced rather than supplied directly in normal induction-motor operation."
           ],
-          "bullets": [
-            "Stator: laminated core with slots carrying the three-phase stator winding.",
-            "Phase-wound / slip-ring rotor: three-phase rotor winding connected to slip rings and brushes. External resistance can be inserted to reduce starting current and improve starting torque.",
-            "Squirrel-cage rotor: conducting bars placed in rotor slots and short-circuited by end rings. The construction is simple and rugged, and no external rotor resistance can be inserted."
-          ],
+          "bullets": [],
           "table": {
             "headers": [
               "Feature",
@@ -710,7 +1005,38 @@
             }
           ],
           "key_point": "The R25 “types” are distinguished mainly by rotor construction: slip-ring (wound rotor) and squirrel-cage.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Basic construction",
+              "bullets": [
+                "A three-phase induction motor has two main parts: a stationary stator and a rotating rotor.",
+                "The stator has slots on its inner periphery and carries a three-phase distributed winding.",
+                "The rotor core is laminated and has slots for either a rotor winding or conducting rotor bars.",
+                "The two rotor constructions required here are phase-wound (slip-ring) and squirrel-cage."
+              ]
+            },
+            {
+              "heading": "Phase-wound / slip-ring rotor",
+              "bullets": [
+                "A three-phase distributed rotor winding is placed in slots on the outer periphery of the rotor and is designed for the same number of poles as the stator winding.",
+                "The rotor winding is connected in star or delta.",
+                "Three rotor terminals are brought out through three slip rings on the shaft and brushes.",
+                "External resistance can therefore be inserted in the rotor circuit to reduce starting current and improve starting torque.",
+                "This construction is associated with larger machines where high starting torque is required."
+              ]
+            },
+            {
+              "heading": "Squirrel-cage rotor",
+              "bullets": [
+                "Solid conducting bars are placed in rotor slots and short-circuited by end rings at both ends.",
+                "The resulting arrangement resembles a squirrel cage, giving the rotor its name.",
+                "The rotor circuit is permanently short-circuited, so external rotor resistance cannot be inserted.",
+                "The construction is simple and rugged and has excellent running performance, although its starting performance is poorer than the slip-ring arrangement described above."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u4-induction-principle-short",
@@ -726,12 +1052,7 @@
           "paragraphs": [
             "A balanced three-phase supply to the stator produces a rotating magnetic field (RMF). The RMF rotates at synchronous speed. Because the rotor has relative motion with respect to this field, emf and current are induced in the rotor and their interaction with the stator field produces torque."
           ],
-          "bullets": [
-            "The rotor turns in the same direction as the rotating magnetic field.",
-            "The rotor cannot reach synchronous speed in motoring operation: at \\(N=N_s\\), relative speed becomes zero, rotor emf/current become zero, and torque disappears.",
-            "Slip speed is the speed difference \\(N_s-N\\). Slip is this difference expressed as a fraction of synchronous speed.",
-            "At standstill \\(s=1\\); at synchronous speed \\(s=0\\). Rotor-current frequency is \\(f_r=sf\\)."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Synchronous speed",
@@ -765,7 +1086,95 @@
             }
           ],
           "key_point": "Induction requires relative motion. Non-zero slip is therefore necessary for an induction motor to develop torque.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Rotating magnetic field and synchronous speed",
+              "bullets": [
+                "A three-phase induction motor is singly excited: electrical supply is applied only to the stator winding.",
+                "A balanced three-phase stator supply produces a rotating magnetic field (RMF).",
+                "The RMF rotates at synchronous speed, determined by supply frequency and the number of stator poles."
+              ],
+              "formulae": [
+                {
+                  "label": "Synchronous speed",
+                  "latex": "N_s=\\dfrac{120f}{P}"
+                }
+              ]
+            },
+            {
+              "heading": "How rotor torque is produced",
+              "steps": [
+                "The rotating stator field sweeps past the rotor conductors.",
+                "Relative motion between the RMF and rotor induces rotor emf.",
+                "Because the rotor circuit is closed/short-circuited, rotor current flows.",
+                "Interaction between the stator field and rotor-current field produces electromagnetic torque.",
+                "The rotor therefore accelerates in the direction of the rotating stator field."
+              ]
+            },
+            {
+              "heading": "Why the rotor cannot reach synchronous speed",
+              "bullets": [
+                "Rotor emf exists only because there is relative motion between the RMF and the rotor.",
+                "If rotor speed became equal to \\(N_s\\), relative speed would be zero.",
+                "Then rotor emf and rotor current would fall to zero, so electromagnetic torque would also disappear.",
+                "A motoring induction motor therefore runs slightly below synchronous speed."
+              ]
+            },
+            {
+              "heading": "Slip, slip speed and rotor frequency",
+              "bullets": [
+                "Slip speed is the difference between synchronous speed and actual rotor speed.",
+                "Slip \\(s\\) is that speed difference expressed as a fraction of synchronous speed.",
+                "At standstill, \\(N=0\\) and \\(s=1\\).",
+                "Rotor-current frequency is proportional to slip: it equals supply frequency at standstill and falls as rotor speed approaches synchronous speed."
+              ],
+              "formulae": [
+                {
+                  "label": "Slip speed",
+                  "latex": "N_s-N"
+                },
+                {
+                  "label": "Slip",
+                  "latex": "s=\\dfrac{N_s-N}{N_s}"
+                },
+                {
+                  "label": "Percentage slip",
+                  "latex": "\\%s=\\dfrac{N_s-N}{N_s}\\times100"
+                },
+                {
+                  "label": "Rotor frequency",
+                  "latex": "f_r=sf"
+                }
+              ]
+            },
+            {
+              "heading": "Rotor quantities while running",
+              "bullets": [
+                "If \\(E_2\\) and \\(X_2\\) denote standstill rotor emf and leakage reactance, their running values are reduced in proportion to slip.",
+                "Rotor resistance \\(R_2\\) is unchanged in the relation, while the reactance term becomes \\(sX_2\\)."
+              ],
+              "formulae": [
+                {
+                  "label": "Running rotor emf",
+                  "latex": "E_{2r}=sE_2"
+                },
+                {
+                  "label": "Running rotor reactance",
+                  "latex": "X_{2r}=sX_2"
+                },
+                {
+                  "label": "Running rotor impedance",
+                  "latex": "|Z_{2r}|=\\sqrt{R_2^2+(sX_2)^2}"
+                },
+                {
+                  "label": "Rotor current",
+                  "latex": "I_2=\\dfrac{sE_2}{\\sqrt{R_2^2+(sX_2)^2}}"
+                }
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u4-torque-slip-short",
@@ -779,12 +1188,7 @@
           "paragraphs": [
             "The torque changes with slip because rotor emf, rotor frequency and rotor reactance all depend on slip. The characteristic has three important regions/points."
           ],
-          "bullets": [
-            "Low-slip region: \\(sX_2\\ll R_2\\), so \\(T\\propto s\\). Torque rises approximately linearly with slip.",
-            "Maximum torque occurs when \\(s=R_2/X_2\\).",
-            "High-slip region: \\(sX_2\\gg R_2\\), so \\(T\\propto1/s\\). Torque falls as slip increases further.",
-            "At starting, \\(s=1\\). At synchronous speed, \\(s=0\\) and torque is zero."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Torque relation",
@@ -814,7 +1218,76 @@
             }
           ],
           "key_point": "For the exam sketch, mark \\(s=0\\), maximum torque, and the starting point \\(s=1\\), and label the low-slip and high-slip trends.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Torque expression",
+              "paragraphs": [
+                "Expressing rotor current and rotor power factor in terms of slip gives the torque–slip relation below. It is the starting point for reading the whole torque–slip characteristic."
+              ],
+              "formulae": [
+                {
+                  "label": "Torque–slip relation",
+                  "latex": "T=K V^2\\dfrac{sR_2}{R_2^2+(sX_2)^2}"
+                }
+              ]
+            },
+            {
+              "heading": "Low-slip region — near synchronous speed",
+              "steps": [
+                "At low slip, \\(sX_2\\ll R_2\\).",
+                "Therefore \\((sX_2)^2\\) is small compared with \\(R_2^2\\) and may be neglected in the denominator.",
+                "The remaining relation gives \\(T\\propto s\\).",
+                "Hence torque rises approximately linearly as slip increases from zero."
+              ],
+              "formulae": [
+                {
+                  "label": "Low-slip result",
+                  "latex": "T\\propto s"
+                }
+              ]
+            },
+            {
+              "heading": "High-slip region — low rotor speed",
+              "steps": [
+                "At high slip, \\(sX_2\\gg R_2\\).",
+                "Then \\(R_2^2\\) is small compared with \\((sX_2)^2\\).",
+                "The torque relation reduces to \\(T\\propto1/s\\).",
+                "Hence in this region torque falls as slip becomes larger."
+              ],
+              "formulae": [
+                {
+                  "label": "High-slip result",
+                  "latex": "T\\propto\\dfrac{1}{s}"
+                }
+              ]
+            },
+            {
+              "heading": "Maximum and starting torque",
+              "bullets": [
+                "The torque reaches its maximum when slip satisfies \\(s=R_2/X_2\\).",
+                "At starting, rotor speed is zero and \\(s=1\\); the torque corresponding to this point is the starting torque.",
+                "At synchronous speed, \\(s=0\\), rotor emf/current vanish and the motor develops no induction torque."
+              ],
+              "formulae": [
+                {
+                  "label": "Slip at maximum torque",
+                  "latex": "s_{max}=\\dfrac{R_2}{X_2}"
+                }
+              ]
+            },
+            {
+              "heading": "How to read the curve in an answer",
+              "bullets": [
+                "Start from \\(s=0\\): torque is zero.",
+                "In the low-slip region, torque rises nearly in direct proportion to slip.",
+                "The curve reaches the maximum-torque point at \\(s=R_2/X_2\\).",
+                "Beyond that point, in the high-slip region, torque decreases approximately as \\(1/s\\).",
+                "Mark the starting point at \\(s=1\\)."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u4-sync-generator-short",
@@ -826,10 +1299,7 @@
             "A synchronous generator (alternator) converts mechanical power into AC electrical power by electromagnetic induction. In the construction used here, the DC-excited field is on the rotor and the armature winding is on the stator.",
             "A prime mover rotates the rotor field. North and South poles sweep past the stationary armature conductors, so the flux linking them alternates and a sinusoidal emf is induced."
           ],
-          "bullets": [
-            "Direction of induced current is obtained using Fleming’s right-hand rule.",
-            "With \\(P\\) poles, one mechanical revolution corresponds to \\(P/2\\) electrical cycles."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Generated frequency",
@@ -851,7 +1321,60 @@
             }
           ],
           "key_point": "Mechanical rotation of a DC-excited rotor field produces alternating emf in the stationary armature winding.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "What a synchronous generator does",
+              "paragraphs": [
+                "A synchronous generator, also called an alternator, converts mechanical input power into AC electrical power by electromagnetic induction."
+              ]
+            },
+            {
+              "heading": "Construction used for the principle",
+              "bullets": [
+                "The field winding is on the rotor and is excited by DC so that the rotor carries magnetic poles.",
+                "The armature winding is stationary and distributed in slots around the stator.",
+                "A prime mover rotates the field rotor at synchronous speed."
+              ]
+            },
+            {
+              "heading": "Working sequence",
+              "steps": [
+                "DC excitation establishes the rotor magnetic field.",
+                "The prime mover rotates the rotor.",
+                "North and South rotor poles sweep past the stationary stator conductors.",
+                "The changing flux linkages induce emf in the stator armature winding by electromagnetic induction.",
+                "Successive North and South poles pass a conductor, so the induced emf alternates; with sinusoidally distributed air-gap flux, the generated emf is sinusoidal."
+              ]
+            },
+            {
+              "heading": "Generated frequency",
+              "bullets": [
+                "For \\(P\\) poles, one mechanical revolution corresponds to \\(P/2\\) electrical cycles.",
+                "Therefore generated frequency depends directly on rotor speed and pole count."
+              ],
+              "formulae": [
+                {
+                  "label": "Frequency",
+                  "latex": "f=\\dfrac{PN_s}{120}"
+                }
+              ]
+            },
+            {
+              "heading": "Generated emf",
+              "bullets": [
+                "The emf expression uses flux per pole, generated frequency and turns of the armature winding.",
+                "Fleming’s right-hand rule gives the induced-current direction."
+              ],
+              "formulae": [
+                {
+                  "label": "Per-phase generated emf",
+                  "latex": "E=4.44\\,\\Phi fN"
+                }
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u4-sync-impedance-short",
@@ -870,14 +1393,7 @@
           "paragraphs": [
             "Voltage regulation compares the internal/no-load generated emf required for a stated load with the terminal voltage. The synchronous-impedance (EMF) method obtains the machine impedance from open-circuit and short-circuit characteristics."
           ],
-          "derivation": [
-            "Run the alternator at rated speed on open circuit. Vary field current and plot terminal/open-circuit voltage against field current to obtain the OCC.",
-            "Run the alternator at rated speed with the armature terminals symmetrically short-circuited. Vary field current and plot short-circuit current against field current to obtain the SCC.",
-            "For the same field current, read \\(V_{OC}\\) and \\(I_{SC}\\). Use consistent per-phase values and calculate \\(Z_s=V_{OC}/I_{SC}\\).",
-            "With measured armature resistance \\(R_a\\), calculate \\(X_s=\\sqrt{Z_s^2-R_a^2}\\).",
-            "For the specified load current and power factor, use the generator phasor relation \\(\\mathbf E_0=\\mathbf V+\\mathbf I(R_a+jX_s)\\) to find the magnitude \\(E_0\\).",
-            "Finally calculate percentage voltage regulation from \\((E_0-V)/V\\times100\\)."
-          ],
+          "derivation": [],
           "formulae": [
             {
               "label": "Synchronous impedance",
@@ -898,7 +1414,83 @@
           ],
           "caution": "OCC and SCC values must correspond to the same field current, and the voltage/current quantities must be used consistently on a per-phase basis. Keep the stated power-factor phasor convention explicit.",
           "key_point": "The method is a sequence: OCC + SCC → \\(Z_s\\) → \\(X_s\\) → internal emf \\(E_0\\) → voltage regulation.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "What voltage regulation means here",
+              "paragraphs": [
+                "The synchronous-impedance (EMF) method estimates the internal generated emf required to maintain a specified terminal voltage at a stated load current and power factor, and then compares that emf with terminal voltage."
+              ],
+              "formulae": [
+                {
+                  "label": "Voltage regulation",
+                  "latex": "\\%VR=\\dfrac{E_0-V}{V}\\times100"
+                }
+              ]
+            },
+            {
+              "heading": "Open-circuit characteristic (OCC)",
+              "bullets": [
+                "Run the alternator at rated speed.",
+                "Keep the armature open-circuited (no load).",
+                "Vary field current and record generated/terminal voltage.",
+                "The resulting voltage-versus-field-current curve is the OCC."
+              ]
+            },
+            {
+              "heading": "Short-circuit characteristic (SCC)",
+              "bullets": [
+                "Run the alternator at rated speed with the armature terminals symmetrically short-circuited.",
+                "Vary field current and record armature short-circuit current.",
+                "The resulting current-versus-field-current curve is the SCC."
+              ]
+            },
+            {
+              "heading": "Find synchronous impedance and reactance",
+              "steps": [
+                "Choose the same field current on the OCC and SCC.",
+                "Use consistent per-phase voltage and current values.",
+                "Calculate synchronous impedance from open-circuit voltage divided by short-circuit current.",
+                "With armature resistance \\(R_a\\) known, calculate synchronous reactance from \\(Z_s^2=R_a^2+X_s^2\\)."
+              ],
+              "formulae": [
+                {
+                  "label": "Synchronous impedance",
+                  "latex": "Z_s=\\dfrac{V_{OC}}{I_{SC}}"
+                },
+                {
+                  "label": "Synchronous reactance",
+                  "latex": "X_s=\\sqrt{Z_s^2-R_a^2}"
+                }
+              ]
+            },
+            {
+              "heading": "Find generated emf for the specified load",
+              "bullets": [
+                "Represent the synchronous impedance by \\(R_a+jX_s\\).",
+                "Use the stated load current and power factor in the generator phasor relation.",
+                "With a consistent sign/phasor convention, obtain the magnitude of internal generated emf \\(E_0\\)."
+              ],
+              "formulae": [
+                {
+                  "label": "Generator phasor relation",
+                  "latex": "\\mathbf E_0=\\mathbf V+\\mathbf I(R_a+jX_s)"
+                }
+              ]
+            },
+            {
+              "heading": "Complete method — exam sequence",
+              "steps": [
+                "OCC at rated speed.",
+                "SCC at rated speed.",
+                "Same field current → calculate \\(Z_s\\).",
+                "Use \\(R_a\\) → calculate \\(X_s\\).",
+                "Use load current and power factor → calculate \\(E_0\\).",
+                "Substitute \\(E_0\\) and \\(V\\) in the regulation expression."
+              ]
+            }
+          ],
+          "bullets": []
         },
         {
           "id": "u4-sync-motor-short",
@@ -920,7 +1512,48 @@
             }
           ],
           "key_point": "The defining idea is magnetic locking: rotor field and stator rotating field move together at synchronous speed.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Stator magnetic field",
+              "bullets": [
+                "A balanced AC supply is applied to the stator winding.",
+                "The stator currents produce a rotating magnetic field.",
+                "This stator field rotates at synchronous speed."
+              ],
+              "formulae": [
+                {
+                  "label": "Synchronous speed",
+                  "latex": "N_s=\\dfrac{120f}{P}"
+                }
+              ]
+            },
+            {
+              "heading": "Rotor magnetic field",
+              "bullets": [
+                "The rotor carries a magnetic field established by DC excitation.",
+                "Electromagnetic torque acts between the rotor magnetic field and the rotating stator field."
+              ]
+            },
+            {
+              "heading": "Magnetic locking and synchronous operation",
+              "steps": [
+                "The stator field rotates at \\(N_s\\).",
+                "The rotor field experiences electromagnetic torque that tends to align it with the rotating stator field.",
+                "When the rotor field locks with the stator rotating field, the rotor follows that field.",
+                "In steady synchronous operation, rotor speed therefore equals synchronous speed."
+              ]
+            },
+            {
+              "heading": "Essential distinction",
+              "bullets": [
+                "The defining feature is magnetic locking: \\(N=N_s\\) in steady synchronous operation.",
+                "This section is intentionally limited to the operating principle required by R25; phasor and power-expression treatment is not part of this short-note core."
+              ]
+            }
+          ],
+          "bullets": [],
+          "derivation": []
         },
         {
           "id": "u4-stepper-short",
@@ -931,12 +1564,7 @@
           "paragraphs": [
             "A stepper motor moves through discrete equal angular steps. The rotor can be moved to, and held at, one of these step positions by controlling the sequence in which stator phase groups are energised."
           ],
-          "bullets": [
-            "In the variable-reluctance example, energising a stator phase makes the rotor teeth align with that magnetic axis to obtain minimum reluctance.",
-            "When the next stator phase is energised, the magnetic axis shifts and the rotor advances by one step angle.",
-            "The textbook example shows a 30° step, but that value is illustrative rather than universal.",
-            "Applications include scanners, printers, 3D printers, plotters, camera lenses, CNC machines, optical/laser actuators and fluid-control systems."
-          ],
+          "bullets": [],
           "diagrams": [
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-13.png",
@@ -948,7 +1576,52 @@
             }
           ],
           "key_point": "Sequential excitation converts electrical command pulses into controlled angular position steps.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Basic idea",
+              "paragraphs": [
+                "A stepper motor converts an electrical pulse sequence into discrete angular movement. Instead of rotating continuously, the rotor moves through equal angular steps and can be held at a step position."
+              ]
+            },
+            {
+              "heading": "Types named in the unit source",
+              "bullets": [
+                "Variable-reluctance stepper motor.",
+                "Permanent-magnet stepper motor.",
+                "Hybrid synchronous stepper motor."
+              ]
+            },
+            {
+              "heading": "Variable-reluctance example — phase groups",
+              "bullets": [
+                "The illustrated stator has six electromagnets forming three phase groups: A–AA, B–BB and C–CC.",
+                "An electronic controller energises these groups in sequence.",
+                "The rotor always tends to align its teeth with the energised stator magnetic axis because that is the minimum-reluctance position."
+              ]
+            },
+            {
+              "heading": "Step-by-step working",
+              "steps": [
+                "Energise A–AA: rotor teeth align with the A–AA magnetic axis.",
+                "De-energise A–AA and energise B–BB: the magnetic axis shifts and the rotor moves to the next minimum-reluctance position.",
+                "In the illustrated example this movement is 30° clockwise; that angle is the step angle for the example.",
+                "Continue the excitation sequence B–BB → C–CC → A–AA to obtain successive equal steps."
+              ]
+            },
+            {
+              "heading": "Applications",
+              "bullets": [
+                "Flatbed/image scanners and computer printers.",
+                "3D printers and plotters.",
+                "CD drives, intelligent lighting systems and camera lenses.",
+                "CNC machines.",
+                "Laser/optics positioning such as linear actuators and mirror mounts.",
+                "Fluid-control systems."
+              ]
+            }
+          ],
+          "derivation": []
         }
       ]
     },
@@ -968,14 +1641,7 @@
           "paragraphs": [
             "In a single-phase domestic installation, the household loads are supplied between phase and neutral at about 230 V. The incoming supply passes through metering, main protection and a distribution board before reaching the final sub-circuits."
           ],
-          "derivation": [
-            "Service wire brings phase and neutral from the supply.",
-            "A service fuse in the phase protects the incoming service conductor against over-current.",
-            "The energy meter records the electrical energy consumed.",
-            "The main MCB controls/protects the entire installation.",
-            "The distribution board divides the installation into sub-circuits; each sub-circuit has its own MCB so a fault can be isolated without switching off every circuit.",
-            "Metallic enclosures and exposed conductive parts are connected to earth."
-          ],
+          "derivation": [],
           "formulae": [],
           "diagrams": [
             {
@@ -988,7 +1654,43 @@
             }
           ],
           "key_point": "Remember the flow: supply → service protection → energy meter → main MCB → distribution board → protected sub-circuits → loads, with earthing of exposed metalwork.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Supply used in a domestic installation",
+              "bullets": [
+                "Domestic installations may use single-phase 230 V or three-phase 415 V AC supply.",
+                "In a single-phase circuit, the load is connected between phase and neutral and receives about 230 V."
+              ]
+            },
+            {
+              "heading": "Incoming-supply path",
+              "steps": [
+                "Service wire brings phase and neutral from the supply system.",
+                "A service fuse is placed in the phase conductor to protect the service wire against overloading.",
+                "The supply passes through the energy meter, which records electrical-energy consumption.",
+                "From the meter, the supply goes through the main MCB, which controls/protects the whole domestic installation.",
+                "The main MCB feeds the distribution board.",
+                "The distribution board divides the installation into separate sub-circuits, each protected by its own MCB."
+              ]
+            },
+            {
+              "heading": "Why the distribution board is useful",
+              "bullets": [
+                "Each sub-circuit has its own phase and neutral path and its own protective MCB.",
+                "If one sub-circuit is overloaded or short-circuited, its MCB can trip and isolate only that part while unaffected sub-circuits continue to operate.",
+                "The stated domestic sub-circuit limit is a maximum of 10 load points and a maximum rating of 800 W; fans, lights and 5 A sockets are counted as load points."
+              ]
+            },
+            {
+              "heading": "Earthing in the layout",
+              "bullets": [
+                "Metallic covers/enclosures of the energy meter, MCBs and distribution board are connected to the earth conductor.",
+                "This provides the protective earth path used to reduce electric-shock risk if a live conductor contacts a metal enclosure."
+              ]
+            }
+          ],
+          "bullets": []
         },
         {
           "id": "u5-wiring-short",
@@ -996,13 +1698,7 @@
           "source_refs": [
             "u5-wiring"
           ],
-          "bullets": [
-            "Cleat wiring: insulated conductors supported on cleats; simple and mainly suited to temporary work.",
-            "Casing-and-capping wiring: conductors run inside a casing that is closed by a cap; neat appearance but requires maintenance.",
-            "TRS/CTS batten wiring: tough-rubber/cab-tyre-sheathed cable fixed on wooden battens using clips; neat and resistant to moisture/chemical effects.",
-            "Lead/metal-sheathed wiring: insulated conductors protected by a metallic sheath against mechanical and atmospheric damage.",
-            "Conduit wiring: conductors are drawn through PVC conduit. It may be surface conduit or concealed conduit; concealed conduit is widely used in domestic/office installations."
-          ],
+          "bullets": [],
           "diagrams": [
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-15.png",
@@ -1022,7 +1718,54 @@
             }
           ],
           "key_point": "For short answers, identify each wiring system by its physical method of supporting/protecting the conductors.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Cleat wiring",
+              "bullets": [
+                "PVC wires are supported by porcelain cleats consisting of a grooved base and cover.",
+                "Cleats are mounted about 6 mm above the wall and spacing between cleats should not exceed 60 cm.",
+                "It is cheap and suited to temporary wiring.",
+                "Because the conductors are exposed, they are more liable to mechanical injury."
+              ]
+            },
+            {
+              "heading": "Casing-and-capping wiring",
+              "bullets": [
+                "Rectangular casings with grooves are fixed to the wall.",
+                "Wires are laid in the grooves and a capping is fixed over the casing.",
+                "It gives good appearance and long life.",
+                "It provides no safety from fire and requires regular maintenance."
+              ]
+            },
+            {
+              "heading": "TRS / CTS batten wiring",
+              "bullets": [
+                "Uses Tough Rubber Sheath (TRS) or Cab Tyre Sheathed (CTS) wires.",
+                "The wires are flexible and resist moisture absorption, chemicals, water and steam.",
+                "They are fixed to wooden battens using tinned-brass link clips.",
+                "The method is cheap, neat-looking and long-lived, but is not suitable for open areas."
+              ]
+            },
+            {
+              "heading": "Lead- / metal-sheathed wiring",
+              "bullets": [
+                "Uses PVC wires with an outer lead-aluminium alloy sheath (95% lead and 5% aluminium as stated in the source).",
+                "The metal sheath protects the conductors against mechanical injury and atmospheric effects.",
+                "The wires are fixed on wooden battens using link clips."
+              ]
+            },
+            {
+              "heading": "Conduit wiring",
+              "bullets": [
+                "PVC conduits/pipes carry the wires and give them mechanical enclosure.",
+                "Surface conduit: conduits are fixed on the wall with saddles and screws; this arrangement is generally used in workshops and factories.",
+                "Concealed conduit: conduits are buried inside walls and plastered; the wiring must be water-tight.",
+                "Concealed conduit is widely used in offices and domestic installations, but replacement of a damaged conduit is difficult."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u5-sfu-short",
@@ -1033,14 +1776,39 @@
           "paragraphs": [
             "A Switch Fuse Unit is a compact combination of a switch and a fuse, generally enclosed in a metal cover and used at low/medium voltages."
           ],
-          "bullets": [
-            "Switch function: provides switching/isolation of the circuit.",
-            "Fuse function: a series fuse element melts under excessive current and interrupts the circuit.",
-            "After fuse operation, the fuse element must be replaced before the circuit can be restored."
-          ],
+          "bullets": [],
           "caution": "Verified mismatch: SFU is a switch-and-fuse unit. Do not explain SFU using an earth-leakage/current-balance mechanism; earth-leakage protection belongs under ELCB.",
           "key_point": "SFU = switch + fuse: control/isolation plus sacrificial over-current protection.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Fuse — the protection element inside an SFU",
+              "bullets": [
+                "A fuse is connected in series with the circuit.",
+                "Its essential element is a metal strip or wire designed to melt when excessive current flows.",
+                "When it melts, the circuit opens and current flow stops.",
+                "Short circuit, overloading, mismatched load or device failure can operate the fuse.",
+                "After fuse operation, the fuse element must be replaced before the circuit is restored."
+              ]
+            },
+            {
+              "heading": "Switch Fuse Unit",
+              "bullets": [
+                "SFU stands for Switch Fuse Unit.",
+                "It combines a switch and fuse in one compact unit, generally inside a metal enclosure.",
+                "The switch provides manual switching/isolation; the fuse provides sacrificial over-current protection.",
+                "The unit is used at low and medium voltages."
+              ]
+            },
+            {
+              "heading": "Keep the functions separate",
+              "bullets": [
+                "SFU protection is based on the fuse melting under excessive current.",
+                "Earth-leakage detection is a different protection function and is treated separately under ELCB."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u5-switchgear-short",
@@ -1094,9 +1862,48 @@
               "alt": "Figure 4.24 · MCB · Textbook p. 206"
             }
           ],
-          "caution": "Do not silently substitute RCCB terminology for ELCB unless a supplied source explicitly establishes that equivalence.",
+          "caution": "Keep the R25 term ELCB. Do not automatically relabel it as RCCB.",
           "key_point": "Over-current/short circuit → MCB or MCCB. Earth leakage → ELCB.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "MCB — Miniature Circuit Breaker",
+              "bullets": [
+                "An MCB automatically switches OFF the circuit under abnormal conditions such as overload or short circuit.",
+                "Unlike a fuse, it is resettable after operation.",
+                "For overload protection, the described MCB uses a bimetal element. Heating caused by excessive current bends the bimetal and trips the mechanism.",
+                "It is used as resettable over-current protection for lower-current domestic/final circuits."
+              ]
+            },
+            {
+              "heading": "ELCB — Earth Leakage Circuit Breaker",
+              "bullets": [
+                "An ELCB is an earth-leakage protection device.",
+                "When an earth-leakage condition creates an electrical hazard, the ELCB disconnects the supply.",
+                "Its protective purpose is therefore different from the ordinary overload/short-circuit function of an MCB.",
+                "Do not silently replace the term ELCB with RCCB; the R25 wording specifically asks for ELCB."
+              ]
+            },
+            {
+              "heading": "MCCB — Moulded Case Circuit Breaker",
+              "bullets": [
+                "An MCCB is used where load current is above the range of a miniature circuit breaker.",
+                "It provides protection against overload and short-circuit faults at higher current and fault levels.",
+                "Applications include larger domestic/industrial loads, generator protection and main feeder distribution.",
+                "MCCBs may provide discrimination and adjustable overload or earth-fault settings."
+              ]
+            },
+            {
+              "heading": "Fast distinction for revision",
+              "bullets": [
+                "MCB → lower-current resettable overload/short-circuit protection.",
+                "ELCB → earth-leakage hazard protection.",
+                "MCCB → higher-current/higher-fault-level circuit-breaker protection, often with adjustable settings."
+              ]
+            }
+          ],
+          "bullets": [],
+          "derivation": []
         },
         {
           "id": "u5-earthing-short",
@@ -1112,11 +1919,7 @@
           "paragraphs": [
             "Earthing connects the exposed metallic bodies of electrical equipment to earth through a low-resistance conductor and electrode. If a live conductor touches a metal body, the fault current is given a preferred path to ground instead of through a person."
           ],
-          "bullets": [
-            "Need for earthing: reduce electric-shock risk, reduce fire risk due to earth-leakage current, and provide the required neutral/earth reference where applicable.",
-            "Pipe earthing: a G.I. pipe about 38 mm in diameter and 2.5 m long is placed vertically in the earth. Charcoal/salt and moisture are used in the illustrated arrangement to keep earth resistance low.",
-            "Plate earthing: a G.I. plate of 60 cm × 60 cm × 6 mm is buried in the earth, with charcoal and salt around it and regular watering to maintain low resistance."
-          ],
+          "bullets": [],
           "diagrams": [
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-29.png",
@@ -1137,7 +1940,53 @@
           ],
           "caution": "Verified mismatch: the plate-earthing description contains “G.I. pipe” once, but the subsection and Figure 4.30 identify the electrode as a G.I. plate. Use the plate interpretation.",
           "key_point": "The safety purpose is the same in both methods; the difference is the buried earth electrode: pipe versus plate.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Definition and need",
+              "paragraphs": [
+                "Earthing (grounding) connects the metallic bodies of electrical equipment to earth through an earth conductor and earth electrode."
+              ],
+              "bullets": [
+                "It provides a low-resistance path for leakage/fault current if a live conductor touches a metal body.",
+                "It reduces the risk of electric shock to a person touching that metal body.",
+                "It reduces fire hazard caused by earth-leakage current.",
+                "The source also lists earthing of an alternator neutral as a purpose associated with sustaining generated-system voltage."
+              ]
+            },
+            {
+              "heading": "What happens during an insulation fault",
+              "steps": [
+                "A live conductor accidentally touches the metal body of an appliance.",
+                "Because the body is connected to the earth conductor, fault current has a low-resistance path to earth.",
+                "The current is diverted away from the person who might touch the body, reducing the danger of electrocution."
+              ]
+            },
+            {
+              "heading": "Pipe earthing",
+              "bullets": [
+                "A G.I. pipe about 38 mm in diameter and 2.5 m long is placed vertically in an earth pit.",
+                "The illustrated arrangement uses charcoal and salt around the pipe electrode.",
+                "Water is added at regular intervals to maintain moisture and keep earth resistance low.",
+                "Pipe earthing is described as the most commonly used earthing system."
+              ]
+            },
+            {
+              "heading": "Plate earthing",
+              "bullets": [
+                "The earth electrode is a G.I. plate of 60 cm × 60 cm × 6 mm.",
+                "Charcoal and salt are placed around the plate in alternate layers to reduce earth resistance.",
+                "Water is added periodically so that moisture is maintained and earth resistance remains low."
+              ]
+            },
+            {
+              "heading": "Pipe vs plate — one-line distinction",
+              "bullets": [
+                "Both methods serve the same protective purpose; the principal constructional difference is the buried electrode: a vertical G.I. pipe in pipe earthing and a G.I. plate in plate earthing."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u5-battery-classification-short",
@@ -1168,7 +2017,38 @@
             ]
           },
           "key_point": "Lead-acid is a secondary (rechargeable) battery.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Battery idea and use",
+              "paragraphs": [
+                "A battery converts stored chemical energy into electrical energy and consists of electrochemical cells connected to provide the required supply. Batteries can also act as backup sources when the normal power supply is interrupted."
+              ],
+              "bullets": [
+                "Applications listed include domestic and medical instruments, electric vehicles, forklifts, flashlights and military use."
+              ]
+            },
+            {
+              "heading": "Primary batteries",
+              "bullets": [
+                "Primary batteries are not rechargeable.",
+                "They are intended for single-use discharge.",
+                "Dry cell / zinc-carbon battery is the example listed.",
+                "As a primary battery is used, its voltage gradually decreases."
+              ]
+            },
+            {
+              "heading": "Secondary batteries",
+              "bullets": [
+                "Secondary batteries are rechargeable.",
+                "Their chemical action can be reversed by supplying charging energy.",
+                "Examples listed are lead-acid, nickel-cadmium and lithium-ion batteries.",
+                "The lead-acid battery studied in this unit is therefore a secondary battery."
+              ]
+            }
+          ],
+          "bullets": [],
+          "derivation": []
         },
         {
           "id": "u5-lead-acid-working-short",
@@ -1181,16 +2061,9 @@
             "2025–26 Q10 · construction and working of lead-acid battery (part of 10M)"
           ],
           "paragraphs": [
-            "The lead-acid battery is a rechargeable secondary battery used in applications such as automobiles and inverters. The source notes that it can store a high amount of energy and describes it as cheaper and easy to handle, although it is heavy."
+            "The lead-acid battery is a rechargeable secondary battery used in applications such as automobiles and inverters. It can store a high amount of energy and is described as cheaper and easy to handle, although it is heavy."
           ],
-          "bullets": [
-            "Positive plate: lead dioxide \\(PbO_2\\).",
-            "Negative plate: sponge lead \\(Pb\\).",
-            "Electrolyte: sulphuric acid \\(H_2SO_4\\) diluted with water in the stated 1:3 proportion.",
-            "Separators keep the positive and negative plates electrically apart inside a hard-plastic container.",
-            "One cell is about 2.1 V in the construction discussion; a 12 V battery uses six series-connected cells.",
-            "Battery rating is expressed in ampere-hours (Ah)."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Overall discharge reaction",
@@ -1212,7 +2085,58 @@
             }
           ],
           "key_point": "During discharge both plates tend toward lead sulphate and water is formed; charging reverses the chemical process.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Construction",
+              "bullets": [
+                "Positive active material: lead dioxide \\(PbO_2\\).",
+                "Negative active material: sponge lead \\(Pb\\).",
+                "Electrolyte: sulphuric acid \\(H_2SO_4\\) diluted with water in the stated 1:3 proportion.",
+                "Separators keep positive and negative plates electrically apart.",
+                "The plates and electrolyte are housed in a hard-plastic container.",
+                "A cell gives about 2.1 V in the construction discussion; six series-connected cells form a nominal 12 V battery.",
+                "Battery capacity is rated in ampere-hours (Ah)."
+              ]
+            },
+            {
+              "heading": "Discharge — battery supplying the load",
+              "bullets": [
+                "During discharge, chemical energy is converted into electrical energy.",
+                "The positive and negative active materials are converted toward lead sulphate \\(PbSO_4\\).",
+                "Sulphuric acid participates in the reaction and water is formed."
+              ],
+              "formulae": [
+                {
+                  "label": "Overall discharge reaction",
+                  "latex": "\\mathrm{Pb+PbO_2+2H_2SO_4\\rightarrow2PbSO_4+2H_2O}"
+                }
+              ]
+            },
+            {
+              "heading": "Charging — reversing the discharge reaction",
+              "bullets": [
+                "External electrical energy is supplied to the battery.",
+                "The discharge chemical reaction is reversed.",
+                "Lead and lead dioxide are restored and sulphuric acid is regenerated."
+              ],
+              "formulae": [
+                {
+                  "label": "Overall charging reaction",
+                  "latex": "\\mathrm{2PbSO_4+2H_2O\\rightarrow Pb+PbO_2+2H_2SO_4}"
+                }
+              ]
+            },
+            {
+              "heading": "Useful construction facts for a descriptive answer",
+              "bullets": [
+                "The battery is a rechargeable secondary battery.",
+                "It is commonly used in automobiles and inverters.",
+                "It can store a high amount of energy but is physically heavy."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u5-lead-acid-characteristics-short",
@@ -1224,12 +2148,7 @@
             "2023–24 Part A(d) · electrical characteristics of lead-acid battery (2M)",
             "2024–25 Q8(a) · lead-acid battery electrical characteristics (5M)"
           ],
-          "bullets": [
-            "Voltage: the fully charged open-circuit cell voltage is stated as about 2.2 V. Terminal voltage falls during discharge and should not be allowed to fall below the stated 1.8 V limit.",
-            "Capacity: specified in ampere-hours (Ah). For example, 100 Ah ideally corresponds to 10 A for 10 h, 20 A for 5 h or 40 A for 2.5 h; usable capacity falls as discharge rate increases.",
-            "Efficiency: ampere-hour efficiency compares charge delivered during discharge with charge supplied during charging. The source states an Ah-efficiency range of about 90–95%.",
-            "Energy (watt-hour) efficiency is lower than ampere-hour efficiency."
-          ],
+          "bullets": [],
           "formulae": [
             {
               "label": "Ampere-hour efficiency",
@@ -1255,7 +2174,58 @@
             }
           ],
           "key_point": "For R25, remember the three electrical-characteristic headings: voltage, capacity and efficiency.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Voltage characteristic",
+              "bullets": [
+                "The fully charged open-circuit cell voltage is stated as about 2.2 V.",
+                "Open-circuit voltage depends mainly on how long the cell has been fully charged, electrolyte specific gravity and temperature.",
+                "During discharge, terminal voltage falls: the initial change is relatively large and a steadier middle region follows.",
+                "The cell voltage should not be allowed to fall below the stated 1.8 V limit because this may increase internal resistance through formation of insoluble lead sulphate."
+              ]
+            },
+            {
+              "heading": "Capacity characteristic",
+              "bullets": [
+                "Battery capacity is specified in ampere-hours (Ah).",
+                "Ideal capacity relation: current × discharge time.",
+                "For a 100 Ah battery, the source examples are 10 A for 10 h, 20 A for 5 h or 40 A for 2.5 h.",
+                "Usable capacity decreases as discharge rate increases; this trend is shown by the capacity-versus-discharge characteristic."
+              ],
+              "formulae": [
+                {
+                  "label": "Ideal Ah relation",
+                  "latex": "\\text{Capacity (Ah)}=I\\times t"
+                }
+              ]
+            },
+            {
+              "heading": "Efficiency characteristic",
+              "bullets": [
+                "Two efficiencies are used: ampere-hour efficiency and energy (watt-hour) efficiency.",
+                "Ampere-hour efficiency compares charge delivered during discharge with charge absorbed during charging.",
+                "The stated ampere-hour efficiency is about 90–95%.",
+                "Energy efficiency is always less than ampere-hour efficiency.",
+                "Efficiency remains below 100% because of losses such as self-discharge and leakage currents associated with weak insulation."
+              ],
+              "formulae": [
+                {
+                  "label": "Ampere-hour efficiency",
+                  "latex": "\\eta_{Ah}=\\dfrac{\\text{Ah delivered during discharge}}{\\text{Ah absorbed during charge}}\\times100"
+                }
+              ]
+            },
+            {
+              "heading": "Three headings to remember",
+              "bullets": [
+                "Voltage → how terminal/open-circuit voltage changes.",
+                "Capacity → how much charge can be supplied, in Ah, and the effect of discharge rate.",
+                "Efficiency → how much charge/energy is recovered compared with what was put in during charging."
+              ]
+            }
+          ],
+          "derivation": []
         },
         {
           "id": "u5-ups-short",
@@ -1271,13 +2241,7 @@
           "paragraphs": [
             "An Uninterruptible Power Supply maintains continuity of power for critical AC loads when the normal AC supply is interrupted."
           ],
-          "bullets": [
-            "Block sequence: AC input → rectifier → inverter → filter → critical load.",
-            "A battery bank is connected on the DC link between the rectifier and inverter.",
-            "Normal supply available: the rectifier converts AC to DC, supplies the inverter and charges the battery.",
-            "AC supply fails: the battery supplies DC to the inverter; the inverter converts it back to AC and supplies the load through the filter.",
-            "The UPS also helps maintain load-supply quality against input-voltage fluctuations."
-          ],
+          "bullets": [],
           "diagrams": [
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f5-44.png",
@@ -1289,7 +2253,52 @@
             }
           ],
           "key_point": "The inverter feeds the AC load in both conditions; the DC source changes from rectifier to battery when mains power fails.",
-          "generated": true
+          "generated": true,
+          "study_groups": [
+            {
+              "heading": "Purpose of a UPS",
+              "paragraphs": [
+                "An Uninterruptible Power Supply maintains continuity of supply to critical AC loads when the normal AC source is interrupted. It is used where even a temporary loss of power can have serious consequences."
+              ]
+            },
+            {
+              "heading": "Blocks and their roles",
+              "bullets": [
+                "Rectifier: converts the incoming AC supply to DC.",
+                "Battery bank: stores DC energy and is connected on the DC link between rectifier and inverter.",
+                "Inverter: converts DC back to AC for the critical load.",
+                "Filter: conditions/smooths the inverter output before it reaches the load.",
+                "Critical load: the equipment whose supply must be maintained."
+              ]
+            },
+            {
+              "heading": "Normal mains available",
+              "steps": [
+                "AC input is applied to the rectifier.",
+                "The rectifier produces DC.",
+                "That DC supplies the inverter and also charges the battery bank.",
+                "The inverter produces AC, which passes through the filter to the critical load."
+              ]
+            },
+            {
+              "heading": "Mains supply fails",
+              "steps": [
+                "The AC input/rectifier supply is no longer available.",
+                "The battery bank supplies DC to the inverter through the DC link.",
+                "The inverter continues converting DC to AC.",
+                "After filtering, the AC output continues to supply the critical load."
+              ]
+            },
+            {
+              "heading": "What the block diagram is showing",
+              "bullets": [
+                "The load is fed from the inverter in both normal and mains-failure conditions.",
+                "What changes during failure is the DC source feeding the inverter: rectifier under normal supply, battery when mains power is lost.",
+                "The UPS also provides quality power and helps regulate load voltage against input-voltage fluctuations."
+              ]
+            }
+          ],
+          "derivation": []
         }
       ]
     }
