@@ -699,18 +699,35 @@ function splitExampleQuestionAndSolution(item) {
 
 function setupExplanationAccordions() { window.PankuStudyUI?.initAccordions?.(document); }
 
+function getPlaceholderFigureFilename(figure) {
+	const target = typeof figure?.target_src === 'string' && figure.target_src.trim()
+		? figure.target_src.trim()
+		: (typeof figure?.src === 'string' ? figure.src.trim() : '');
+	if (!target) return '';
+	const clean = target.split('?')[0].split('#')[0];
+	if (clean.startsWith('placeholder://')) {
+		const token = clean.slice('placeholder://'.length).replace(/^\/+/, '');
+		return token ? `${token}.png` : '';
+	}
+	const parts = clean.split('/').filter(Boolean);
+	return parts.length ? parts[parts.length - 1] : '';
+}
+
 function renderTextbookFigure(figure) {
 	if (figure?.placeholder) {
 		const number = figure.figure_number || figure.figureNumber || 'Figure';
 		const name = figure.figure_name || figure.figureName || figure.alt || 'Textbook figure';
 		const page = figure.page ? `Textbook p. ${figure.page}` : 'Textbook page to be confirmed';
 		const description = figure.description ? `<div class="textbook-figure-placeholder-description">${formatText(figure.description)}</div>` : '';
+		const filename = getPlaceholderFigureFilename(figure);
+		const renameLine = filename ? `<div class="textbook-figure-placeholder-filename">Rename image to: <code>${escapeHtml(filename)}</code></div>` : '';
 		return `
 			<div class="study-figure textbook-figure textbook-figure-placeholder" role="note" aria-label="${escapeHtml(`${number}: ${name}`)}">
 				<div class="textbook-figure-placeholder-kicker">Image placeholder</div>
 				<div class="textbook-figure-placeholder-title">${escapeHtml(number)} · ${escapeHtml(name)}</div>
 				${description}
 				<div class="textbook-figure-placeholder-page">${escapeHtml(page)}</div>
+				${renameLine}
 			</div>
 		`;
 	}
