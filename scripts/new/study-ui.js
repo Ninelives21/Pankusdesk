@@ -309,6 +309,68 @@ function initAccordions(root = document) {
 	});
 }
 
+function initIndexedNav(root = document, options = {}) {
+	const navSelector = options.navSelector || '.study-index-nav';
+	const linkSelector = options.linkSelector || '.study-index-link';
+	const nav = root.querySelector(navSelector);
+	if (!nav) return null;
+
+	const links = Array.from(nav.querySelectorAll(linkSelector));
+	const items = links
+		.map(link => {
+			const explicit = link.dataset.indexTarget || '';
+			let id = explicit;
+			if (!id) {
+				try { id = decodeURIComponent(new URL(link.href, window.location.href).hash.slice(1)); }
+				catch (_) { id = ''; }
+			}
+			const target = id ? document.getElementById(id) : null;
+			return target ? { link, id, target } : null;
+		})
+		.filter(Boolean);
+
+	if (!items.length) return null;
+
+	const setActive = id => {
+		items.forEach(item => {
+			const active = item.id === id;
+			item.link.classList.toggle('is-active', active);
+			if (active) item.link.setAttribute('aria-current', 'location');
+			else item.link.removeAttribute('aria-current');
+		});
+	};
+
+	items.forEach(item => {
+		item.link.addEventListener('click', event => {
+			event.preventDefault();
+			setActive(item.id);
+			const url = new URL(window.location.href);
+			url.hash = item.id;
+			history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			item.target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+		});
+	});
+
+	const observer = new IntersectionObserver(entries => {
+		const visible = entries
+			.filter(entry => entry.isIntersecting)
+			.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+		if (visible[0]?.target?.id) setActive(visible[0].target.id);
+	}, {
+		rootMargin: options.rootMargin || '-18% 0px -68% 0px',
+		threshold: options.threshold || [0, 0.01, 0.15],
+	});
+
+	items.forEach(item => observer.observe(item.target));
+
+	const initialId = decodeURIComponent(window.location.hash.slice(1));
+	const initial = items.find(item => item.id === initialId);
+	setActive(initial?.id || items[0].id);
+
+	return { setActive, observer, items };
+}
+
 window.PankuStudyUI = {
 	escapeHtml,
 	formatText,
@@ -318,5 +380,6 @@ window.PankuStudyUI = {
 	renderExplainer,
 	renderTip,
 	initAccordions,
+	initIndexedNav,
 };
 })();

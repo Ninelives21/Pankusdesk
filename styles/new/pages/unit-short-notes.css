@@ -226,8 +226,6 @@
 }
 .short-note-key-point strong { color: var(--primary-dark); }
 .short-note-key-point p { margin: .28rem 0 0; color: var(--text-secondary); }
-.short-notes-back-top { margin: 2rem 0 1rem; }
-.short-notes-back-top a { font-weight: 750; color: var(--primary); text-decoration: none; }
 .short-notes-error {
 	margin: 2rem 0;
 	padding: 1rem;
@@ -388,4 +386,24 @@
 @media (max-width: 720px) {
 	.short-note-diagram-grid { grid-template-columns: 1fr; }
 	.short-note-table { min-width: 520px; }
+}
+
+/* ====================================================================== */
+/*                     INDEXED SHORT-NOTES NAVIGATION                     */
+/* ====================================================================== */
+
+.short-notes-index-layout {
+	margin-top: var(--space-8);
+}
+
+.short-notes-index-content {
+	display: grid;
+	gap: var(--space-8);
+	align-items: start;
+}
+
+.short-notes-index-content > .section,
+.short-notes-index-content > .short-notes-ai-boundary {
+	margin-top: 0;
+	margin-bottom: 0;
 }

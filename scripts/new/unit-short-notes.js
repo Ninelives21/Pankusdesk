@@ -21,6 +21,7 @@ async function initUnitShortNotes() {
 		if (!unitNotes) throw new Error(`No short notes are available for Unit ${unitNumber}.`);
 
 		renderPage(page, subject, subjectUrl, unitMeta, unitNotes, bank);
+		window.PankuStudyUI?.initIndexedNav?.(page);
 		wireDiagramFallbacks(page);
 		try {
 			await window.PankuStudyUI?.typesetMath?.(page);
@@ -62,11 +63,51 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitNotes, bank) {
 
 		${resourceNav}
 		${renderProvenanceSummary(unitNotes)}
-		${unitNotes.teacher ? renderTeacherSection(unitNotes.teacher) : ''}
-		${unitNotes.ai_boundary ? renderAiBoundary(unitNotes.ai_boundary) : ''}
-		${renderAiSectionGroup(unitNotes, bank)}
-		<div class="short-notes-back-top"><a href="#top" data-back-top>Back to top ↑</a></div>
+		<div class="study-index-layout section short-notes-index-layout">
+			${renderShortNotesIndex(unitNotes)}
+			<div class="study-index-content short-notes-index-content">
+				${unitNotes.teacher ? renderTeacherSection(unitNotes.teacher) : ''}
+				${unitNotes.ai_boundary ? renderAiBoundary(unitNotes.ai_boundary) : ''}
+				${renderAiSectionGroup(unitNotes, bank)}
+			</div>
+		</div>
 	`;
+}
+
+function renderShortNotesIndex(unitNotes) {
+	const teacherPages = Array.isArray(unitNotes.teacher?.pages) ? unitNotes.teacher.pages : [];
+	const aiSections = Array.isArray(unitNotes.ai_sections) ? unitNotes.ai_sections : [];
+	if (!teacherPages.length && !aiSections.length) return '';
+
+	let offset = 0;
+	const renderLinks = items => items.map(item => {
+		offset += 1;
+		return `<a class="study-index-link" data-index-target="${escapeHtml(item.id)}" href="${escapeHtml(buildShortNotesHashHref(item.id))}">
+			<span class="study-index-number">${String(offset).padStart(2, '0')}</span>
+			<span>${escapeHtml(item.title)}</span>
+		</a>`;
+	}).join('');
+
+	const teacherItems = teacherPages.map(item => ({
+		id: `teacher-page-${Number(item.number)}`,
+		title: item.title || `Teacher note page ${Number(item.number)}`,
+	}));
+	const aiItems = aiSections.map(item => ({ id: item.id, title: item.title || 'AI-generated note' }));
+	const mixed = teacherItems.length && aiItems.length;
+
+	return `<aside class="study-index-toc" aria-label="Short notes topic navigation">
+		<div class="study-index-label">On this page</div>
+		<div class="study-index-nav">
+			${teacherItems.length ? `<div class="study-index-group">${mixed ? '<div class="study-index-group-label">Teacher notes</div>' : ''}<nav>${renderLinks(teacherItems)}</nav></div>` : ''}
+			${aiItems.length ? `<div class="study-index-group">${mixed ? '<div class="study-index-group-label">AI-generated</div>' : ''}<nav>${renderLinks(aiItems)}</nav></div>` : ''}
+		</div>
+	</aside>`;
+}
+
+function buildShortNotesHashHref(id) {
+	const url = new URL(window.location.href);
+	url.hash = id;
+	return `${url.pathname}${url.search}${url.hash}`;
 }
 
 function renderProvenanceSummary(unitNotes) {
@@ -103,19 +144,9 @@ function renderTeacherSection(teacher) {
 				</div>
 				${pdfHref ? `<a class="short-notes-pdf-link" href="${escapeHtml(pdfHref)}" target="_blank" rel="noopener">View original PDF ↗</a>` : ''}
 			</header>
-			${pages.length ? renderTeacherJumpNav(pages) : ''}
 			<div class="teacher-note-pages">${pages.map((item, index) => renderTeacherPage(item, index)).join('')}</div>
 		</section>
 	`;
-}
-
-function renderTeacherJumpNav(pages) {
-	return `<nav class="short-notes-jump-nav" aria-label="Teacher-note pages">
-		<div class="short-notes-jump-label">Jump to</div>
-		<div class="short-notes-jump-links">
-			${pages.map(item => `<a href="#teacher-page-${Number(item.number)}">${Number(item.number)}. ${escapeHtml(item.title || `Page ${item.number}`)}</a>`).join('')}
-		</div>
-	</nav>`;
 }
 
 function renderTeacherPage(item, index) {
@@ -149,16 +180,8 @@ function renderAiSectionGroup(unitNotes) {
 				<p>Revision notes for the uncovered R25 material, with extra emphasis where the supplied semester papers repeatedly test a topic.</p>
 			</div>
 		</header>
-		${renderAiJumpNav(sections)}
 		<div class="short-notes-ai-list">${sections.map(renderAiCard).join('')}</div>
 	</section>`;
-}
-
-function renderAiJumpNav(sections) {
-	return `<nav class="short-notes-jump-nav is-ai" aria-label="AI-generated short-note topics">
-		<div class="short-notes-jump-label">Topics</div>
-		<div class="short-notes-jump-links">${sections.map(item => `<a href="#${escapeHtml(item.id)}">${escapeHtml(item.title)}</a>`).join('')}</div>
-	</nav>`;
 }
 
 function renderAiCard(item) {

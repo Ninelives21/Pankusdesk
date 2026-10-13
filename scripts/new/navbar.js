@@ -221,7 +221,7 @@ function initBackToTop() {
 		<span>Back to top</span>
 	`;
 
-	const sidebarSelector = '.unit-toc, .class-notes-toc';
+	const sidebarSelector = '.unit-toc, .class-notes-toc, .study-index-toc';
 
 	function updateVisibility() {
 		button.classList.toggle('is-visible', window.scrollY > 360);

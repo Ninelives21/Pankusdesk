@@ -23,6 +23,7 @@ async function initPyqs() {
 		if (!year) throw new Error('The selected paper could not be found.');
 
 		renderPage(page, subject, subjectUrl, bank, years, year);
+		window.PankuStudyUI?.initIndexedNav?.(page);
 		await typesetMath(page);
 		initAccordions(page);
 		revealHashTarget(page);
@@ -74,10 +75,11 @@ function renderPage(page, subject, subjectUrl, bank, years, year) {
 			${year.branches ? `<p><strong>Branches:</strong> ${escapeHtml(year.branches)}</p>` : ''}
 		</section>
 
-		${renderJumpNav(year.groups || [], currentPath)}
-
-		<div class="question-topic-list pyq-question-groups">
-			${(year.groups || []).map(group => renderGroup(group, subjectUrl, year)).join('')}
+		<div class="study-index-layout section pyq-index-layout">
+			${renderPyqIndex(year.groups || [], currentPath)}
+			<div class="study-index-content question-topic-list pyq-question-groups">
+				${(year.groups || []).map(group => renderGroup(group, subjectUrl, year)).join('')}
+			</div>
 		</div>
 	`;
 }
@@ -119,18 +121,35 @@ function getCurrentPaperUrl() {
 	return url.href;
 }
 
-function renderJumpNav(groups, currentPath) {
+function renderPyqIndex(groups, currentPath) {
 	if (!groups.length) return '';
-	return `
-		<nav class="question-set-jump" aria-label="Jump to paper section">
-			<div class="question-set-jump-heading">Jump to section</div>
-			<div class="question-set-jump-links">
-				${groups.map(group => `<a href="${escapeHtml(currentPath)}#${escapeHtml(group.id)}"><span>${escapeHtml(group.title)}</span><small>${(group.questions || []).length}</small></a>`).join('')}
-			</div>
+	return `<aside class="study-index-toc" aria-label="Paper section navigation">
+		<div class="study-index-label">On this paper</div>
+		<nav class="study-index-nav">
+			${groups.map((group, index) => `<a class="study-index-link" data-index-target="${escapeHtml(group.id)}" href="${escapeHtml(currentPath)}#${escapeHtml(group.id)}">
+				<span class="study-index-number">${escapeHtml(getPyqIndexLabel(group, index))}</span>
+				<span>${escapeHtml(group.title)}</span>
+			</a>`).join('')}
 		</nav>
-	`;
+	</aside>`;
 }
 
+function getPyqIndexLabel(group, index) {
+	if (group?.id === 'part-a') return 'A';
+	const unitMatch = String(group?.id || '').match(/^unit-(\d+)$/);
+	if (!unitMatch) return String(index + 1).padStart(2, '0');
+	return toRoman(Number(unitMatch[1]));
+}
+
+function toRoman(value) {
+	const numerals = [[10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+	let number = Number(value);
+	let result = '';
+	for (const [amount, numeral] of numerals) {
+		while (number >= amount) { result += numeral; number -= amount; }
+	}
+	return result || String(value || '');
+}
 function renderGroup(group, subjectUrl, year) {
 	return `
 		<section class="section question-group" id="${escapeHtml(group.id)}">
