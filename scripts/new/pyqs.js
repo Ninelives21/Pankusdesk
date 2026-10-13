@@ -64,7 +64,7 @@ function renderPage(page, subject, subjectUrl, bank, years, year) {
 			</div>
 		</section>
 
-		${renderYearNav(years, currentIndex)}
+		${renderYearNav(years, currentIndex, getCurrentPaperUrl())}
 
 		<section class="practice-source-note pyq-paper-note">
 			<div class="practice-source-kicker">Paper provenance</div>
@@ -82,33 +82,41 @@ function renderPage(page, subject, subjectUrl, bank, years, year) {
 	`;
 }
 
-function renderYearNav(years, currentIndex) {
+function renderYearNav(years, currentIndex, paperUrl) {
 	const previous = currentIndex > 0 ? years[currentIndex - 1] : null;
 	const current = years[currentIndex];
 	const next = currentIndex >= 0 && currentIndex < years.length - 1 ? years[currentIndex + 1] : null;
 	return `
 		<nav class="pyq-year-nav" aria-label="Semester paper navigation">
 			<div class="pyq-year-slot pyq-year-slot-prev">
-				${previous ? yearLink(previous, 'Previous paper', '←', '') : '<span class="pyq-year-empty" aria-hidden="true"></span>'}
+				${previous ? yearLink(previous, 'Previous paper', '←', '', paperUrl) : '<span class="pyq-year-empty" aria-hidden="true"></span>'}
 			</div>
 			<div class="pyq-year-current" aria-current="page">
 				<span class="pyq-year-kicker">Current paper</span>
 				<strong>${escapeHtml(current?.label || current?.id || '')}</strong>
 			</div>
 			<div class="pyq-year-slot pyq-year-slot-next">
-				${next ? yearLink(next, 'Next paper', '', '→') : '<span class="pyq-year-empty" aria-hidden="true"></span>'}
+				${next ? yearLink(next, 'Next paper', '', '→', paperUrl) : '<span class="pyq-year-empty" aria-hidden="true"></span>'}
 			</div>
 		</nav>
 	`;
 }
 
-function yearLink(year, kicker, prefix, suffix) {
+function yearLink(year, kicker, prefix, suffix, paperUrl) {
+	const href = `${paperUrl}?year=${encodeURIComponent(year.id)}`;
 	return `
-		<a class="pyq-year-link" href="?year=${encodeURIComponent(year.id)}">
+		<a class="pyq-year-link" href="${escapeHtml(href)}">
 			<span class="pyq-year-kicker">${escapeHtml(kicker)}</span>
 			<strong>${escapeHtml(prefix)}${prefix ? ' ' : ''}${escapeHtml(year.label || year.id)}${suffix ? ` ${escapeHtml(suffix)}` : ''}</strong>
 		</a>
 	`;
+}
+
+function getCurrentPaperUrl() {
+	const url = new URL(window.location.href);
+	url.search = '';
+	url.hash = '';
+	return url.href;
 }
 
 function renderJumpNav(groups, currentPath) {
