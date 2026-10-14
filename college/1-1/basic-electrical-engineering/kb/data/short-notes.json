@@ -323,17 +323,17 @@
           ],
           "paragraphs": [
             "A transformer has no mechanical rotation, so the important losses for this unit are winding copper loss and iron/core loss.",
-            "Copper loss changes with load current, whereas the iron loss is treated as approximately constant when the applied voltage and frequency are constant."
+            "Copper loss changes with load current, whereas iron loss is treated as approximately constant when the applied voltage and frequency are constant."
           ],
           "bullets": [],
           "derivation": [],
           "formulae": [
             {
               "label": "Efficiency",
-              "latex": "\\eta=\\dfrac{\\text{Output}}{\\text{Input}}\\times100"
+              "latex": "\\eta=\\dfrac{P_{out}}{P_{in}}\\times100"
             },
             {
-              "label": "Copper loss at x load",
+              "label": "Copper loss at x p.u. load",
               "latex": "W_{cu,x}=x^2W_{cu,FL}"
             },
             {
@@ -341,32 +341,21 @@
               "latex": "W_{cu}=W_i"
             }
           ],
-          "key_point": "For efficiency questions, first separate the load-dependent copper loss from the nearly constant iron loss.",
+          "key_point": "For efficiency questions, first separate the load-dependent copper loss from the nearly constant iron loss; maximum efficiency occurs when the two are equal.",
           "generated": true,
           "study_groups": [
             {
               "heading": "Losses in a transformer",
               "bullets": [
-                "A transformer has no rotating mechanical parts, so the important losses treated here are copper loss in the windings and iron/core loss in the magnetic core.",
-                "Primary copper loss is \\(I_1^2R_1\\) and secondary copper loss is \\(I_2^2R_2\\). Copper loss therefore changes with load current and is a variable loss.",
-                "At \\(x\\) per-unit load, copper loss becomes \\(x^2\\) times the full-load copper loss.",
-                "Iron loss consists of hysteresis loss and eddy-current loss. With applied voltage and frequency held constant, core flux is treated as nearly constant, so iron loss is treated as approximately constant with load."
-              ]
-            },
-            {
-              "heading": "Efficiency",
-              "paragraphs": [
-                "Efficiency tells us what fraction of the input electrical power reaches the load as useful output power."
-              ],
-              "bullets": [
-                "Input power = output power + total losses.",
-                "Total losses for this treatment = copper loss + iron loss.",
-                "As load rises from a light value, useful output rises while the constant iron loss is spread over more output; at high load the current-squared copper loss becomes increasingly important."
+                "Primary copper loss is \\(I_1^2R_1\\) and secondary copper loss is \\(I_2^2R_2\\). Hence copper loss is current-dependent and varies with load.",
+                "At \\(x\\) per-unit load, current is \\(x\\) times full-load current, so copper loss becomes \\(x^2W_{cu,FL}\\). Thus half-load copper loss is one-quarter of full-load copper loss.",
+                "Iron or magnetic loss consists mainly of hysteresis loss and eddy-current loss in the core.",
+                "At constant applied voltage and frequency, the core flux is approximately constant; hence iron loss \\(W_i\\) is treated as a constant loss with respect to load."
               ],
               "formulae": [
                 {
-                  "label": "Efficiency",
-                  "latex": "\\eta=\\dfrac{P_{out}}{P_{in}}\\times100"
+                  "label": "Total copper loss",
+                  "latex": "W_{cu}=I_1^2R_1+I_2^2R_2"
                 },
                 {
                   "label": "Copper loss at x p.u. load",
@@ -375,12 +364,39 @@
               ]
             },
             {
+              "heading": "Efficiency — exam-ready derivation",
+              "steps": [
+                "For the primary-referred treatment used in the prescribed text, write the transformer input power as \\(P_{in}=V_1I_1\\cos\\phi\\).",
+                "Write total loss as the sum of variable copper loss and constant iron loss: \\(W_L=I_1^2R_{01}+W_i\\).",
+                "Useful output is input minus losses: \\(P_{out}=P_{in}-W_L\\).",
+                "Substitute in \\(\\eta=P_{out}/P_{in}\\) and multiply by 100 for percentage efficiency."
+              ],
+              "formulae": [
+                {
+                  "label": "Input power",
+                  "latex": "P_{in}=V_1I_1\\cos\\phi"
+                },
+                {
+                  "label": "Total loss",
+                  "latex": "W_L=I_1^2R_{01}+W_i"
+                },
+                {
+                  "label": "Output power",
+                  "latex": "P_{out}=P_{in}-W_L"
+                },
+                {
+                  "label": "Efficiency",
+                  "latex": "\\eta=\\dfrac{P_{out}}{P_{in}}\\times100"
+                }
+              ]
+            },
+            {
               "heading": "Condition for maximum efficiency",
               "steps": [
-                "Treat iron loss as the constant loss and copper loss as the variable loss.",
-                "Write efficiency in terms of load current (or load fraction).",
-                "On maximizing that expression, the variable copper loss becomes equal to the constant iron loss.",
-                "Therefore the maximum-efficiency condition is \\(W_{cu}=W_i\\). If full-load copper loss is known, the load fraction at maximum efficiency follows from \\(x^2W_{cu,FL}=W_i\\)."
+                "In the efficiency expression, iron loss is the constant loss while copper loss varies with load current.",
+                "Maximizing efficiency gives the standard condition that variable copper loss equals constant iron loss.",
+                "Therefore \\(I_1^2R_{01}=W_i\\). In load-fraction form, \\(x^2W_{cu,FL}=W_i\\).",
+                "If full-load copper loss is known, the load fraction for maximum efficiency is \\(x=\\sqrt{W_i/W_{cu,FL}}\\)."
               ],
               "formulae": [
                 {
@@ -416,9 +432,10 @@
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-31.png",
               "filename": "f3-31.png",
               "figure": "Figure 3.31",
-              "title": "Basic construction of a DC machine",
+              "title": "Basic Construction of a DC Machine",
               "page": 163,
-              "alt": "Figure 3.31 · Basic construction of a DC machine · Textbook p. 163"
+              "alt": "Figure 3.31 · Basic Construction of a DC Machine · Textbook p. 163",
+              "teaching_note": "Use this figure to identify the main field-system and armature-system parts before studying generator and motor operation."
             }
           ],
           "key_point": "Remember the machine in two groups: field system (yoke, poles, field coils) and armature system (armature, commutator, brushes).",
@@ -476,17 +493,14 @@
           ],
           "paragraphs": [
             "A DC generator converts mechanical energy into electrical energy by electromagnetic induction. When armature conductors move through the magnetic field and cut flux, an emf is induced; Fleming’s right-hand rule gives the induced-current direction.",
-            "The emf in a rotating coil is alternating internally. The split-ring commutator reverses the coil connection to the external circuit every half-turn so that the current delivered at the terminals is unidirectional."
+            "The simple-loop stage first produces an alternating emf. Figure 3.26 shows the rotating loop connected through two continuous slip rings; it does not show the DC-generator commutator.",
+            "To obtain a unidirectional external current, the slip rings are replaced by a two-segment split-ring commutator. Figure 3.29 shows how the commutator changes brush contact every half-turn so that the load current keeps the same external direction."
           ],
           "derivation": [],
           "formulae": [
             {
-              "label": "Generated emf",
-              "latex": "E_g=\\dfrac{\\Phi ZNP}{60A}"
-            },
-            {
-              "label": "Parallel paths",
-              "latex": "A=P\\text{ (lap)},\\qquad A=2\\text{ (wave)}"
+              "label": "Generated armature emf",
+              "latex": "E_g=\\dfrac{P\\Phi ZN}{60A}"
             }
           ],
           "diagrams": [
@@ -494,68 +508,90 @@
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-26.png",
               "filename": "f3-26.png",
               "figure": "Figure 3.26",
-              "title": "Simple loop generator",
+              "title": "Simple Loop Generator",
               "page": 161,
-              "alt": "Figure 3.26 · Simple loop generator · Textbook p. 161"
+              "alt": "Figure 3.26 · Simple Loop Generator showing a rotating loop connected to two continuous slip rings and an external load between points M and L · Textbook p. 161",
+              "teaching_note": "Use this only for the alternating-emf / slip-ring stage. The two rings shown here are continuous slip rings, not the split-ring commutator."
+            },
+            {
+              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-29.png",
+              "filename": "f3-29.png",
+              "figure": "Figure 3.29",
+              "title": "Action of Commutator",
+              "page": 162,
+              "alt": "Figure 3.29 · Action of Commutator showing the split-ring segments changing brush contact over successive half-turns so the load current remains unidirectional · Textbook p. 162",
+              "teaching_note": "Use this for the DC-commutation step: the split-ring commutator reverses the coil connection to the brushes every half-turn, keeping the external load current in one direction."
             },
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-35.png",
               "filename": "f3-35.png",
               "figure": "Figure 3.35",
-              "title": "Conductor passing through a pole pitch",
+              "title": "conductor passing through a Pole pitch",
               "page": 166,
-              "alt": "Figure 3.35 · Conductor passing through a pole pitch · Textbook p. 166"
+              "alt": "Figure 3.35 · conductor passing through a Pole pitch · Textbook p. 166",
+              "teaching_note": "This figure matches the derivation above: one conductor crosses one pole pitch, cuts one pole flux Φ, and takes 60/(NP) seconds to do so."
             }
           ],
-          "key_point": "The derivation is simply Faraday’s law applied to one conductor, then multiplied by the number of series conductors in one parallel path.",
+          "key_point": "Keep the two stages separate: Figure 3.26 explains alternating emf with continuous slip rings; Figure 3.29 explains split-ring commutation that gives unidirectional external current.",
           "generated": true,
           "study_groups": [
             {
-              "heading": "Principle and energy conversion",
+              "heading": "Principle and the alternating-emf stage",
               "paragraphs": [
-                "A DC generator converts mechanical energy supplied by a prime mover into electrical energy by electromagnetic induction."
+                "A prime mover rotates the armature conductors in the magnetic field."
               ],
               "bullets": [
-                "When an armature conductor moves through the magnetic field and cuts flux, an emf is induced in it.",
+                "As an armature conductor cuts magnetic flux, an emf is induced in it.",
                 "Fleming’s right-hand rule gives the direction of induced current.",
-                "Conductors on opposite sides of a rotating loop cut flux in opposite directions, so the emf generated in the rotating loop reverses every half-turn."
+                "In a simple rotating loop, the conductor motion reverses relative to the field every half-turn, so the internally generated emf reverses every half-turn.",
+                "Figure 3.26 belongs to this stage: its two rings are continuous slip rings. The textbook uses M and L as reference points on the external-load side when describing load-current direction."
               ]
             },
             {
-              "heading": "Why the external output is DC",
+              "heading": "How commutation makes the external current unidirectional",
               "bullets": [
-                "The emf generated in the rotating armature is alternating in nature.",
-                "The split-ring commutator reverses the connection of the rotating coil to the external circuit every half-turn.",
-                "Because of that switching action, current in the external load remains in one direction; the machine therefore supplies DC at its terminals."
+                "A DC generator must deliver current to the external circuit in one direction even though the emf generated in the rotating coil is alternating.",
+                "The two continuous slip rings are therefore replaced by a two-segment commutator (split ring).",
+                "As the coil passes through each half-turn, the commutator segments exchange brush contact at the same time that the coil emf reverses.",
+                "The two reversals occur together, so the current through the external load keeps the same direction. Figure 3.29 is the figure to use for this commutation step."
               ]
             },
             {
-              "heading": "EMF-equation derivation",
+              "heading": "EMF equation — derive it using one pole pitch",
               "steps": [
-                "Let \\(P\\) = poles, \\(\\Phi\\) = flux per pole, \\(Z\\) = total armature conductors, \\(N\\) = speed in rpm and \\(A\\) = parallel paths.",
-                "In one revolution, one conductor cuts total flux \\(P\\Phi\\) Wb.",
-                "Time for one revolution is \\(60/N\\) seconds.",
-                "Average emf induced in one conductor is \\(P\\Phi/(60/N)=P\\Phi N/60\\) volts.",
-                "Each parallel path contains \\(Z/A\\) conductors in series.",
-                "Hence generated emf per parallel path, and therefore the terminal generated emf of the armature, is \\(E_g=P\\Phi ZN/(60A)\\)."
+                "Let \\(P\\) = number of poles, \\(\\Phi\\) = flux per pole in webers, \\(Z\\) = total armature conductors, \\(N\\) = speed in rpm, and \\(A\\) = number of parallel paths.",
+                "When one conductor moves through one pole pitch, it links one pole flux, so flux cut = \\(\\Phi\\) Wb.",
+                "At \\(N\\) rpm, one revolution takes \\(60/N\\) s. One revolution contains \\(P\\) pole pitches, so time to move through one pole pitch is \\(60/(NP)\\) s.",
+                "Average emf induced in one conductor is therefore \\(e=\\Phi/[60/(NP)]=\\Phi NP/60\\) V.",
+                "Each parallel path contains \\(Z/A\\) armature conductors in series.",
+                "Hence the generated armature emf is \\(E_g=e(Z/A)=P\\Phi ZN/(60A)\\)."
               ],
               "formulae": [
                 {
-                  "label": "Generated emf",
+                  "label": "Time for one pole pitch",
+                  "latex": "t=\\dfrac{60}{NP}"
+                },
+                {
+                  "label": "Emf per conductor",
+                  "latex": "e=\\dfrac{\\Phi NP}{60}"
+                },
+                {
+                  "label": "Generated armature emf",
                   "latex": "E_g=\\dfrac{P\\Phi ZN}{60A}"
                 }
               ]
             },
             {
-              "heading": "What to substitute for A",
+              "heading": "Choose the correct number of parallel paths",
               "bullets": [
                 "Lap winding: \\(A=P\\).",
                 "Wave winding: \\(A=2\\).",
-                "Always identify the winding type before substituting in the emf equation."
+                "Always identify the armature winding before substituting in the EMF equation."
               ]
             }
           ],
-          "bullets": []
+          "bullets": [],
+          "caution": "On textbook p. 161 the running text names Fleming’s Left Hand Rule while discussing generator-induced current; the generator direction rule used here is Fleming’s Right Hand Rule, consistent with the generator treatment elsewhere in the chapter."
         },
         {
           "id": "u3-dc-motor-short",
@@ -592,15 +628,25 @@
           ],
           "diagrams": [
             {
+              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-42.png",
+              "filename": "f3-42.png",
+              "figure": "Figure 3.42",
+              "title": "Fleming’s Left Hand Rule",
+              "page": 172,
+              "alt": "Figure 3.42 · Fleming’s Left Hand Rule showing magnetic field, conductor current and force directions · Textbook p. 172",
+              "teaching_note": "Use this for the motor principle: magnetic field, current and force are mutually related; the force direction is given by Fleming’s left-hand rule."
+            },
+            {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-44.png",
               "filename": "f3-44.png",
               "figure": "Figure 3.44",
-              "title": "Back EMF in a DC motor",
+              "title": "Back Emf",
               "page": 173,
-              "alt": "Figure 3.44 · Back EMF in a DC motor · Textbook p. 173"
+              "alt": "Figure 3.44 · Back Emf in a rotating DC motor armature · Textbook p. 173",
+              "teaching_note": "In the source notation, ⊗ indicates current away from the reader and ⊙ indicates current towards the reader. The generated back emf opposes the applied armature voltage."
             }
           ],
-          "key_point": "Back emf is essential: it opposes the supply and controls the armature current as motor speed and load change.",
+          "key_point": "Back emf is essential to normal motor operation: it opposes the supply, rises with speed, and automatically changes armature current as speed and load change.",
           "generated": true,
           "study_groups": [
             {
@@ -609,8 +655,9 @@
                 "A DC motor converts electrical energy into mechanical energy. Its basic operating principle is the force on a current-carrying conductor placed in a magnetic field."
               ],
               "bullets": [
-                "The magnitude relation used is \\(F=BIl\\).",
+                "For a conductor at right angles to the field, the force magnitude is written \\(F=BIl\\).",
                 "Fleming’s left-hand rule gives the direction of force.",
+                "In the textbook notation, \\(\\otimes\\) means current flowing away from the reader and \\(\\odot\\) means current flowing towards the reader.",
                 "Forces on conductors on opposite sides of the armature form a turning moment, so the armature rotates."
               ],
               "formulae": [
@@ -624,9 +671,9 @@
               "heading": "Origin of back emf",
               "bullets": [
                 "Once the armature rotates, its conductors also cut magnetic flux.",
-                "The rotating armature therefore behaves partly like a generator and develops an emf in the armature winding.",
+                "The rotating armature therefore has generator action and develops an emf in the armature winding.",
                 "By Lenz’s law this generated emf opposes the applied supply voltage; hence it is called back emf \\(E_b\\).",
-                "The back-emf magnitude has the same generated-emf form as a DC generator."
+                "The back-emf magnitude has the same form as the generated-emf equation of a DC generator."
               ],
               "formulae": [
                 {
@@ -642,10 +689,10 @@
             {
               "heading": "Why back emf is important",
               "bullets": [
-                "At starting, rotor speed is zero, so \\(E_b=0\\). From \\(V=E_b+I_aR_a\\), the armature current is then limited mainly by the armature resistance.",
-                "As speed rises, \\(E_b\\) rises because \\(E_b\\propto N\\). The opposing emf therefore reduces the net voltage driving armature current.",
-                "If mechanical load increases, speed tends to fall; \\(E_b\\) falls and armature current rises. Since motor torque is proportional to \\(\\Phi I_a\\), the developed torque rises to meet the increased load.",
-                "Thus back emf is not a wasted voltage: it is part of the motor’s natural electrical response to speed and load."
+                "At starting, speed is zero, so \\(E_b=0\\). The armature current is then limited mainly by the small armature resistance.",
+                "As speed rises, \\(E_b\\) rises because \\(E_b\\propto N\\). The opposing emf reduces the net voltage driving armature current.",
+                "If mechanical load increases, speed tends to fall; \\(E_b\\) falls and armature current rises.",
+                "Since motor torque is proportional to \\(\\Phi I_a\\), the increased armature current produces more torque to meet the increased load."
               ],
               "formulae": [
                 {
@@ -675,10 +722,6 @@
             {
               "label": "Speed",
               "latex": "N\\propto\\dfrac{V-I_aR_a}{\\Phi}"
-            },
-            {
-              "label": "Speed regulation",
-              "latex": "\\%SR=\\dfrac{N_{NL}-N_{FL}}{N_{NL}}\\times100"
             }
           ],
           "diagrams": [
@@ -686,28 +729,31 @@
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-52.png",
               "filename": "f3-52.png",
               "figure": "Figure 3.52",
-              "title": "Torque vs armature-current characteristic",
+              "title": "Torque vs Armature Current Characteristics",
               "page": 179,
-              "alt": "Figure 3.52 · Torque vs armature-current characteristic · Textbook p. 179"
+              "alt": "Figure 3.52 · Torque vs Armature Current Characteristics · Textbook p. 179",
+              "teaching_note": "With separately excited field current held constant, flux is approximately constant and torque rises approximately linearly with armature current."
             },
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-53.png",
               "filename": "f3-53.png",
               "figure": "Figure 3.53",
-              "title": "Speed vs armature-current characteristic",
+              "title": "Speed vs Armature Current Characteristics",
               "page": 180,
-              "alt": "Figure 3.53 · Speed vs armature-current characteristic · Textbook p. 180"
+              "alt": "Figure 3.53 · Speed vs Armature Current Characteristics · Textbook p. 180",
+              "teaching_note": "As armature current rises, the IaRa drop rises; with flux approximately constant, the speed therefore falls slightly."
             },
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-54.png",
               "filename": "f3-54.png",
               "figure": "Figure 3.54",
-              "title": "Speed vs torque characteristic",
+              "title": "Speed vs Torque Characteristics",
               "page": 180,
-              "alt": "Figure 3.54 · Speed vs torque characteristic · Textbook p. 180"
+              "alt": "Figure 3.54 · Speed vs Torque Characteristics · Textbook p. 180",
+              "teaching_note": "Because torque is approximately proportional to armature current at constant flux, speed versus torque has the same gently falling trend."
             }
           ],
-          "key_point": "With separate excitation and nearly constant flux, torque follows armature current while speed changes only slightly with load.",
+          "key_point": "With separate excitation and nearly constant flux, torque follows armature current while speed decreases only slightly as load increases.",
           "generated": true,
           "study_groups": [
             {
@@ -735,17 +781,12 @@
               "bullets": [
                 "The motor voltage relation gives \\(E_b=V-I_aR_a\\).",
                 "Since \\(E_b\\propto\\Phi N\\), speed varies as \\(N\\propto(V-I_aR_a)/\\Phi\\).",
-                "With \\(V\\) and \\(\\Phi\\) constant, increasing load current increases the \\(I_aR_a\\) drop, so speed falls slightly as load increases.",
-                "The small drop in speed from no-load to full-load is expressed by speed regulation."
+                "With \\(V\\) and \\(\\Phi\\) approximately constant, increasing armature current increases the \\(I_aR_a\\) drop, so speed falls slightly as load increases."
               ],
               "formulae": [
                 {
                   "label": "Speed relation",
                   "latex": "N\\propto\\dfrac{V-I_aR_a}{\\Phi}"
-                },
-                {
-                  "label": "Speed regulation",
-                  "latex": "\\%SR=\\dfrac{N_{NL}-N_{FL}}{N_{NL}}\\times100"
                 }
               ]
             },
@@ -770,7 +811,7 @@
             "2023–24 Part A(c) · list DC-motor speed-control techniques (2M)"
           ],
           "paragraphs": [
-            "The motor speed relation shows two basic control routes: change the field flux or change the effective armature voltage."
+            "The speed relation shows two textbook control routes: vary the field flux, or insert a series control resistance in the armature circuit to change the voltage available to the armature."
           ],
           "bullets": [],
           "formulae": [
@@ -784,26 +825,28 @@
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-56.png",
               "filename": "f3-56.png",
               "figure": "Figure 3.56",
-              "title": "Field-control method",
+              "title": "Field Control Method",
               "page": 182,
-              "alt": "Figure 3.56 · Field-control method · Textbook p. 182"
+              "alt": "Figure 3.56 · Field Control Method · Textbook p. 182",
+              "teaching_note": "The speed-control rheostat is in the separately excited field circuit. Increasing its resistance reduces field current and flux, so speed rises above rated speed."
             },
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-58.png",
               "filename": "f3-58.png",
               "figure": "Figure 3.58",
-              "title": "Armature-control method",
+              "title": "Armature Control Method",
               "page": 183,
-              "alt": "Figure 3.58 · Armature-control method · Textbook p. 183"
+              "alt": "Figure 3.58 · Armature Control Method · Textbook p. 183",
+              "teaching_note": "The control rheostat is in series with the armature. Its voltage drop reduces the effective armature voltage, giving speeds below rated speed while field current is kept constant."
             }
           ],
-          "key_point": "Field control → above rated speed. Armature-voltage control → below rated speed.",
+          "key_point": "Field control (flux weakening) → above rated speed. Armature control with a series rheostat → below rated speed.",
           "generated": true,
           "study_groups": [
             {
               "heading": "Starting point — the speed equation",
               "paragraphs": [
-                "The speed relation shows exactly which quantities can be changed to control the speed of a separately excited DC motor."
+                "For a separately excited motor, the field circuit and armature circuit can be adjusted independently. The speed relation shows how each control method works."
               ],
               "formulae": [
                 {
@@ -813,29 +856,29 @@
               ]
             },
             {
-              "heading": "Field / flux control",
+              "heading": "Field control method",
               "bullets": [
                 "Keep the armature supply voltage essentially constant and vary the field current using a rheostat in the field circuit.",
-                "Reducing field current reduces flux \\(\\Phi\\). Since speed is inversely proportional to flux, weakening the field raises the speed.",
-                "This method is used for speeds above rated speed.",
-                "An open field circuit can make the flux very small and can therefore cause dangerously high speed; the field circuit must not be allowed to open during operation."
+                "Increasing field-circuit resistance reduces field current and hence reduces flux \\(\\Phi\\).",
+                "Since speed is inversely proportional to flux, weakening the field raises the speed; this method is used for speeds above rated speed.",
+                "The field circuit must not be allowed to open while the motor is running, because very small flux can produce dangerously high speed."
               ]
             },
             {
-              "heading": "Armature control",
+              "heading": "Armature control method",
               "bullets": [
                 "Keep field current, and hence flux, approximately constant.",
-                "Vary the effective armature voltage by inserting a control resistance in the armature circuit.",
-                "Reducing the voltage available to the armature reduces back emf and therefore reduces speed.",
-                "This method is used for speeds below rated speed."
+                "Insert a speed-control rheostat \\(R_c\\) in series with the armature circuit, as in Figure 3.58.",
+                "Part of the supply voltage is dropped across \\(R_c\\), so the voltage available across the armature decreases.",
+                "With flux constant, reducing effective armature voltage reduces speed; this method is used for speeds below rated speed."
               ]
             },
             {
               "heading": "Quick comparison",
               "bullets": [
                 "Above rated speed → field control / flux weakening.",
-                "Below rated speed → armature-side control.",
-                "The direction of change follows directly from \\(N\\propto(V-I_aR_a)/\\Phi\\): decrease \\(\\Phi\\) to raise speed; decrease effective armature voltage to lower speed."
+                "Below rated speed → armature control using a series rheostat.",
+                "The direction of change follows from \\(N\\propto(V-I_aR_a)/\\Phi\\): decrease \\(\\Phi\\) to raise speed; increase the series armature drop to lower speed."
               ]
             }
           ],
@@ -851,7 +894,8 @@
             "GAP-U3-SWINBURNE-IARE-BEE-LAB"
           ],
           "paragraphs": [
-            "Swinburne’s test is treated here as the R25 no-load test sequence used to estimate the efficiency of a DC shunt machine from no-load measurements."
+            "Swinburne’s test is an R25-required no-load test used to predetermine the efficiency of a DC shunt machine as a motor or generator from no-load measurements.",
+            "This topic is not present in the prescribed Chapter 3 scan, so the short-note treatment uses the approved NPTEL gap source with the institutional lab-manual cross-check already mapped in PankusDesk."
           ],
           "bullets": [],
           "formulae": [
@@ -865,32 +909,32 @@
             },
             {
               "label": "Constant loss",
-              "latex": "W_{constant}=W_{in,0}-I_{a0}^2R_a"
+              "latex": "W_c=VI_{L0}-I_{a0}^2R_a"
             },
             {
               "label": "Motor efficiency",
-              "latex": "\\eta_m=\\dfrac{\\text{input}-\\text{total losses}}{\\text{input}}\\times100"
+              "latex": "\\eta_m=\\dfrac{P_{in}-W_{loss}}{P_{in}}\\times100"
             },
             {
               "label": "Generator efficiency",
-              "latex": "\\eta_g=\\dfrac{\\text{output}}{\\text{output}+\\text{total losses}}\\times100"
+              "latex": "\\eta_g=\\dfrac{P_{out}}{P_{out}+W_{loss}}\\times100"
             }
           ],
-          "key_point": "The test separates the no-load input into armature copper loss and a constant-loss component, then uses those losses to estimate efficiency at load.",
+          "key_point": "Swinburne’s test uses no-load measurements to separate armature copper loss from a constant-loss component, then predetermines motor or generator efficiency at a chosen load.",
           "generated": true,
           "study_groups": [
             {
-              "heading": "Purpose of the test",
+              "heading": "Purpose and test idea",
               "paragraphs": [
-                "Swinburne’s test is a no-load test used to predetermine the efficiency of a DC shunt machine without loading it to full output."
+                "Instead of loading the machine to its full output, run the DC shunt machine as a motor at rated voltage and rated speed on no load, measure the no-load input, and separate the losses. Those losses are then used to predetermine efficiency at chosen motor or generator loads."
               ]
             },
             {
-              "heading": "No-load readings and armature current",
+              "heading": "Test setup and readings",
               "bullets": [
-                "Run the machine at rated speed on no load.",
-                "Record the supply voltage \\(V\\), no-load line current \\(I_{L0}\\) and field current \\(I_f\\).",
-                "The no-load armature current is the difference between line current and field current."
+                "Use the DC shunt machine in motor operation with its shunt field connected across the supply through a field rheostat.",
+                "Measure supply voltage \\(V\\), no-load line current \\(I_{L0}\\) and field current \\(I_f\\) after bringing the machine to rated speed.",
+                "The no-load armature current is the line current minus the field current."
               ],
               "formulae": [
                 {
@@ -902,11 +946,15 @@
             {
               "heading": "Separate variable and constant losses",
               "steps": [
-                "Calculate no-load armature copper loss as \\(I_{a0}^2R_a\\).",
-                "Subtract this armature copper loss from the no-load input.",
-                "The remaining no-load input is treated as the constant loss for the subsequent efficiency calculation sequence."
+                "Calculate the no-load armature copper loss as \\(I_{a0}^2R_a\\).",
+                "Calculate the no-load input power as \\(W_{in,0}=VI_{L0}\\).",
+                "Subtract the no-load armature copper loss from the no-load input. The remainder is treated as the constant-loss component for the efficiency-prediction sequence."
               ],
               "formulae": [
+                {
+                  "label": "No-load input",
+                  "latex": "W_{in,0}=VI_{L0}"
+                },
                 {
                   "label": "No-load armature copper loss",
                   "latex": "W_{cu,a0}=I_{a0}^2R_a"
@@ -918,11 +966,11 @@
               ]
             },
             {
-              "heading": "Predetermine efficiency",
+              "heading": "Predetermine efficiency at a chosen load",
               "bullets": [
-                "For a chosen motor load, calculate armature copper loss at that armature current, add the constant loss, and subtract total losses from input to obtain output.",
-                "For generator operation, total losses are added to output to obtain the required mechanical input.",
-                "The same no-load test data can therefore be used to predetermine efficiency for motor or generator operation at a specified load."
+                "For motor operation, calculate the armature copper loss at the chosen armature current, add the constant loss, and subtract total losses from electrical input to obtain output.",
+                "For generator operation, calculate total losses at the chosen generator armature current and add them to electrical output to obtain the required mechanical input.",
+                "The test is therefore an indirect predetermination method: the machine is not actually supplying the chosen full-load output during the no-load test."
               ],
               "formulae": [
                 {
@@ -934,9 +982,34 @@
                   "latex": "\\eta_g=\\dfrac{P_{out}}{P_{out}+W_{loss}}\\times100"
                 }
               ]
+            },
+            {
+              "heading": "Exam-ready sequence",
+              "steps": [
+                "Run the DC shunt machine at rated voltage and rated speed on no load.",
+                "Record \\(V\\), \\(I_{L0}\\) and \\(I_f\\).",
+                "Find \\(I_{a0}=I_{L0}-I_f\\).",
+                "Find no-load armature copper loss \\(I_{a0}^2R_a\\).",
+                "Find constant loss from no-load input minus no-load armature copper loss.",
+                "At the required motor or generator load, add the corresponding armature copper loss to the constant loss and compute efficiency."
+              ]
             }
           ],
-          "derivation": []
+          "derivation": [],
+          "diagrams": [
+            {
+              "src": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u3/short-notes/swinburne-test-circuit.png",
+              "filename": "swinburne-test-circuit.png",
+              "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u3/short-notes/swinburne-test-circuit.png",
+              "figure": "Recommended educational diagram",
+              "title": "Swinburne’s test on a DC shunt machine — no-load test connection",
+              "alt": "Recommended educational circuit for Swinburne’s no-load test on a DC shunt machine, showing supply voltage measurement, line current measurement, shunt field branch with field rheostat and field-current measurement, and the motor armature.",
+              "source_label": "No matching figure exists in the prescribed Chapter 3 scan. The approved institutional cross-check contains IARE Fig. 4.1, “Swinburne’s test on a D.C. Shunt Machine”.",
+              "teaching_note": "The diagram should make the three measured quantities obvious: supply voltage V, no-load line current IL0 and field current If. Use a verified no-load DC-shunt-machine Swinburne test circuit; do not substitute a loaded efficiency-test circuit.",
+              "search_query": "IARE Swinburne test on DC shunt machine Fig 4.1 circuit diagram",
+              "ai_prompt": "Create an NRS educational circuit diagram for Swinburne’s test on a DC shunt machine, using the standard no-load shunt-motor connection verified from a reliable source: DC supply with switching/protection, line ammeter in the motor supply, voltmeter across the supply, a shunt-field branch across the supply containing the field winding, field rheostat and field ammeter, and the DC motor armature branch. Clearly label V, I_L0, I_f and R_a / armature where appropriate. Show the machine running on no mechanical load. Preserve electrical connectivity exactly; do not invent meter ranges, component values, polarities or starter details unless they are present in the verified source. Follow NRS blue-ink notebook style only after semantic verification of the chosen source circuit."
+            }
+          ]
         }
       ]
     },

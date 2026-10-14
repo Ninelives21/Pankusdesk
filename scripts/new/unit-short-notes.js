@@ -256,16 +256,27 @@ function renderDiagram(item) {
 	const src = item.src ? new URL(item.src, document.baseURI).href : '';
 	const figure = item.figure || 'Figure';
 	const title = item.title || 'Diagram';
+	const placeholderKicker = item.placeholder_label || (item.source_label ? 'Educational diagram placeholder' : 'Image placeholder');
+	const teachingNote = item.teaching_note ? `<div class="short-note-diagram-note">${escapeHtml(item.teaching_note)}</div>` : '';
+	const sourceLabel = item.source_label ? `<div class="short-note-diagram-source">${escapeHtml(item.source_label)}</div>` : '';
+	const targetPath = item.target_path ? `<span>Save as: <code>${escapeHtml(item.target_path)}</code></span>` : '';
+	const searchQuery = item.search_query ? `<div class="short-note-diagram-search"><strong>Google Images search</strong><code>${escapeHtml(item.search_query)}</code></div>` : '';
+	const aiPrompt = item.ai_prompt ? `<details class="short-note-diagram-ai-prompt"><summary>If image search fails: AI-generation prompt</summary><p>${escapeHtml(item.ai_prompt)}</p></details>` : '';
 	return `<figure class="short-note-diagram" data-diagram-fallback>
 		<div class="short-note-diagram-media">
 			${src ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(item.alt || `${figure} · ${title}`)}" loading="lazy" decoding="async">` : ''}
 			<div class="short-note-diagram-placeholder" ${src ? 'hidden' : ''}>
-				<div class="short-note-diagram-kicker">Image placeholder</div>
+				<div class="short-note-diagram-kicker">${escapeHtml(placeholderKicker)}</div>
 				<strong>${escapeHtml(figure)} · ${escapeHtml(title)}</strong>
+				${sourceLabel}
 				${item.page ? `<span>Textbook p. ${Number(item.page)}</span>` : ''}
 				${item.filename ? `<span>Rename image to: <code>${escapeHtml(item.filename)}</code></span>` : ''}
+				${targetPath}
+				${searchQuery}
+				${aiPrompt}
 			</div>
 		</div>
+		${teachingNote}
 		<figcaption>${escapeHtml(figure)} · ${escapeHtml(title)}${item.page ? ` · p. ${Number(item.page)}` : ''}</figcaption>
 	</figure>`;
 }
