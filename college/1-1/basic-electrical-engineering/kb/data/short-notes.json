@@ -419,7 +419,7 @@
           ],
           "paragraphs": [
             "A DC generator and a DC motor use the same basic machine construction. The direction of energy conversion changes, but the main parts remain the same.",
-            "The sketch below separates the stationary field system from the rotating armature system so the construction is easier to read before moving on to generator and motor operation."
+            "Before studying generator and motor action, identify which parts stay stationary and which parts rotate."
           ],
           "bullets": [],
           "formulae": [
@@ -428,22 +428,28 @@
               "latex": "A=P\\text{ for lap winding},\\qquad A=2\\text{ for wave winding}"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-31.png",
-              "filename": "f3-31.png",
-              "figure": "Figure 3.31",
-              "title": "Basic Construction of a DC Machine",
-              "page": 163,
-              "alt": "Figure 3.31 · Basic Construction of a DC Machine · Textbook p. 163",
-              "teaching_note": "The yoke, poles and field windings form the stationary magnetic-field system. Inside it, the armature rotates; the commutator turns with the armature while the brushes remain stationary and provide the connection to the external circuit.",
-              "caption": "DC machine construction — field system and armature system",
-              "redraw_of": "Textbook Figure 3.31, p. 163"
-            }
-          ],
           "key_point": "Remember the machine in two groups: field system (yoke, poles, field coils) and armature system (armature, commutator, brushes).",
           "generated": true,
           "study_groups": [
+            {
+              "heading": "Read the machine construction first",
+              "paragraphs": [
+                "The construction drawing below is the map for the rest of Unit III. The stationary field system produces magnetic flux; the rotating armature carries the conductors in which emf is induced or on which force acts."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-31.png",
+                  "filename": "f3-31.png",
+                  "figure": "Figure 3.31",
+                  "title": "Basic Construction of a DC Machine",
+                  "page": 163,
+                  "alt": "Figure 3.31 · Basic Construction of a DC Machine · Textbook p. 163",
+                  "teaching_note": "Read the drawing from outside to inside. The yoke is the outer magnetic frame; the pole cores and pole shoes carry the field coils and create the stationary magnetic field. The armature is the rotating part inside the field. Its conductors are connected to the commutator, which rotates with the armature, while the carbon brushes remain stationary and carry current between the rotating armature and the external circuit.",
+                  "caption": "Basic construction of a DC machine",
+                  "redraw_of": "Textbook Figure 3.31, p. 163"
+                }
+              ]
+            },
             {
               "heading": "One construction, two energy-conversion modes",
               "paragraphs": [
@@ -496,9 +502,7 @@
           ],
           "paragraphs": [
             "A DC generator converts mechanical energy into electrical energy by electromagnetic induction. When armature conductors move through the magnetic field and cut flux, an emf is induced; Fleming’s right-hand rule gives the induced-current direction.",
-            "The first sketch shows the simple-loop stage. The rotating coil is connected to two continuous slip rings, so the emf available at the brushes reverses every half-turn and is alternating.",
-            "A practical DC generator needs a unidirectional current at the external terminals. Replacing the continuous slip rings with a two-segment split-ring commutator makes the coil connections to the brushes reverse every half-turn at the same instant that the coil emf reverses. The external current therefore keeps the same direction.",
-            "The pole-pitch sketch then gives the geometric step used in the EMF derivation: in moving through one pole pitch, one conductor cuts one pole flux \\(\\Phi\\)."
+            "The sequence is easiest to understand in three stages: first see why a rotating loop naturally produces alternating emf, then see how the commutator makes the external current unidirectional, and finally use pole pitch to derive the generated armature emf."
           ],
           "derivation": [],
           "formulae": [
@@ -507,70 +511,67 @@
               "latex": "E_g=\\dfrac{P\\Phi ZN}{60A}"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-26.png",
-              "filename": "f3-26.png",
-              "figure": "Figure 3.26",
-              "title": "Simple Loop Generator",
-              "page": 161,
-              "alt": "Figure 3.26 · Simple Loop Generator showing a rotating loop connected to two continuous slip rings and an external load between points M and L · Textbook p. 161",
-              "teaching_note": "The two rings are continuous slip rings. As the loop turns through successive half-revolutions, the induced emf reverses, so this stage explains why the rotating coil naturally produces an alternating emf.",
-              "caption": "Simple loop generator — alternating-emf stage with continuous slip rings",
-              "redraw_of": "Textbook Figure 3.26, p. 161"
-            },
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-29.png",
-              "filename": "f3-29.png",
-              "figure": "Figure 3.29",
-              "title": "Action of Commutator",
-              "page": 162,
-              "alt": "Figure 3.29 · Action of Commutator showing the split-ring segments changing brush contact over successive half-turns so the load current remains unidirectional · Textbook p. 162",
-              "teaching_note": "The commutator segments exchange brush contact every half-turn. Because this switching happens when the coil emf reverses, the current through the external load remains in one direction.",
-              "caption": "Split-ring commutator — unidirectional current at the external load",
-              "redraw_of": "Textbook Figure 3.29, p. 162"
-            },
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-35.png",
-              "filename": "f3-35.png",
-              "figure": "Figure 3.35",
-              "title": "conductor passing through a Pole pitch",
-              "page": 166,
-              "alt": "Figure 3.35 · conductor passing through a Pole pitch · Textbook p. 166",
-              "teaching_note": "One pole pitch is the angular distance from one pole to the next. A conductor crossing one pole pitch cuts one pole flux \\(Φ\\); at \\(N\\) rpm with \\(P\\) poles, the time for this motion is \\(60/(NP)\\) s.",
-              "caption": "Pole pitch used in the DC-generator EMF derivation",
-              "redraw_of": "Textbook Figure 3.35, p. 166"
-            }
-          ],
-          "key_point": "Keep the sequence clear: the rotating loop first produces an alternating emf; the split-ring commutator makes the external current unidirectional; the pole-pitch relation then leads to the generated-armature-emf equation.",
+          "key_point": "Follow the pictures in order: rotating loop + slip rings explain the alternating induced output; the split-ring commutator explains unidirectional external current; the pole-pitch picture supplies the distance/flux step used to derive \\(E_g=P\\Phi ZN/(60A)\\).",
           "generated": true,
           "study_groups": [
             {
-              "heading": "Principle and the alternating-emf stage",
+              "heading": "Simple loop: why the induced output alternates",
               "paragraphs": [
-                "A prime mover rotates the armature conductors in the magnetic field."
+                "Start with one rectangular coil ABCD rotating between the N and S poles. As the active conductors cut magnetic flux, an emf is induced in the coil.",
+                "The coil ends are connected to two continuous slip rings. Stationary brushes press on these rings and connect the rotating coil to the external load R. In the drawing, M and N are the two external load-side terminals, so a statement such as “current flows from M to N” simply tells you the direction of current through the load.",
+                "After half a revolution, the direction of induced emf in the coil reverses. Because the slip-ring connections themselves do not swap, the current direction through the external load also reverses. This is therefore an alternating-emf stage, not yet a DC output."
               ],
               "bullets": [
-                "As an armature conductor cuts magnetic flux, an emf is induced in it.",
-                "Fleming’s right-hand rule gives the direction of induced current.",
-                "In a simple rotating loop, the conductor motion reverses relative to the field every half-turn, so the internally generated emf reverses every half-turn.",
-                "With continuous slip rings, that reversal appears at the brushes as an alternating emf. The labels M and L in the source figure are reference points on the external-load side."
+                "N, S: magnetic poles that establish the field.",
+                "ABCD: the rotating armature loop.",
+                "Slip rings: continuous rings connected to the two coil ends; they rotate with the coil.",
+                "Brushes: stationary contacts that collect current from the rotating rings.",
+                "R: external load; M and N identify its two connection terminals."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-26.png",
+                  "filename": "f3-26.png",
+                  "figure": "Figure 3.26",
+                  "title": "Simple Loop Generator",
+                  "page": 161,
+                  "alt": "Figure 3.26 · Simple Loop Generator showing the rotating coil, continuous slip rings, brushes and external load R between terminals M and N · Textbook p. 161",
+                  "teaching_note": "In this simple-loop generator, N and S are the magnetic poles and ABCD is the rotating coil. The coil ends connect to continuous slip rings, which rotate with the coil. The stationary brushes collect the induced current and feed the external load R. The labels M and N mark the two external load-side terminals; current through the load is described by its direction from one terminal to the other. Because continuous slip rings do not reverse the external connections, the polarity at the brushes reverses every half-turn, so the output of this stage is alternating.",
+                  "caption": "Simple loop generator: rotating coil, slip rings, brushes and external load",
+                  "redraw_of": "Textbook Figure 3.26, p. 161"
+                }
               ]
             },
             {
-              "heading": "How commutation makes the external current unidirectional",
+              "heading": "Commutator: how the external current becomes unidirectional",
               "bullets": [
-                "A DC generator must deliver current to the external circuit in one direction even though the emf generated in the rotating coil is alternating.",
-                "The two continuous slip rings are therefore replaced by a two-segment commutator (split ring).",
-                "As the coil passes through each half-turn, the commutator segments exchange brush contact at the same time that the coil emf reverses.",
-                "The two reversals occur together, so the current through the external load keeps the same direction."
+                "The continuous slip rings are replaced by two insulated commutator segments connected to the two ends of the coil.",
+                "The commutator rotates with the armature; the brushes remain stationary.",
+                "After every half-turn, the commutator segments exchange brush contact at the same instant that the coil emf reverses.",
+                "Therefore the brush connected to each external terminal keeps the same polarity, and current through the external load remains unidirectional."
+              ],
+              "paragraphs": [
+                "A DC generator must keep the current through the external load in one direction even though the emf induced in the rotating coil reverses every half-turn."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-29.png",
+                  "filename": "f3-29.png",
+                  "figure": "Figure 3.29",
+                  "title": "Action of Commutator",
+                  "page": 162,
+                  "alt": "Figure 3.29 · Action of Commutator showing the split-ring segments changing brush contact over successive half-turns so the load current remains unidirectional · Textbook p. 162",
+                  "teaching_note": "Now replace the two continuous slip rings with a split-ring commutator. Each half of the commutator is connected to one end of the rotating coil. Every half-turn, the coil emf reverses and the commutator simultaneously swaps which coil end touches each stationary brush. These two reversals cancel at the external terminals, so the load current continues in the same direction.",
+                  "caption": "Action of the split-ring commutator",
+                  "redraw_of": "Textbook Figure 3.29, p. 162"
+                }
               ]
             },
             {
-              "heading": "EMF equation — derive it using one pole pitch",
+              "heading": "EMF equation: derive it from one pole pitch",
               "steps": [
                 "Let \\(P\\) = number of poles, \\(\\Phi\\) = flux per pole in webers, \\(Z\\) = total armature conductors, \\(N\\) = speed in rpm, and \\(A\\) = number of parallel paths.",
-                "When one conductor moves through one pole pitch, it links one pole flux, so flux cut = \\(\\Phi\\) Wb.",
+                "From the pole-pitch drawing, when one conductor moves from one pole centre to the next, it crosses one pole pitch and cuts one pole flux, so flux cut = \\(\\Phi\\) Wb.",
                 "At \\(N\\) rpm, one revolution takes \\(60/N\\) s. One revolution contains \\(P\\) pole pitches, so time to move through one pole pitch is \\(60/(NP)\\) s.",
                 "Average emf induced in one conductor is therefore \\(e=\\Phi/[60/(NP)]=\\Phi NP/60\\) V.",
                 "Each parallel path contains \\(Z/A\\) armature conductors in series.",
@@ -588,6 +589,22 @@
                 {
                   "label": "Generated armature emf",
                   "latex": "E_g=\\dfrac{P\\Phi ZN}{60A}"
+                }
+              ],
+              "paragraphs": [
+                "Once the commutation idea is clear, the generated-emf equation follows from how much flux one conductor cuts while moving through one pole pitch."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-35.png",
+                  "filename": "f3-35.png",
+                  "figure": "Figure 3.35",
+                  "title": "conductor passing through a Pole pitch",
+                  "page": 166,
+                  "alt": "Figure 3.35 · conductor passing through a Pole pitch · Textbook p. 166",
+                  "teaching_note": "This drawing supplies the geometric step used in the EMF equation. One pole pitch is the distance, measured around the armature, from the centre of one pole to the centre of the next pole. When one armature conductor moves through one pole pitch, it cuts the flux of one pole, \\(\\Phi\\). With \\(P\\) poles and speed \\(N\\) rpm, the conductor crosses \\(P\\) pole pitches per revolution, giving the time for one pole pitch as \\(60/(NP)\\) s.",
+                  "caption": "One conductor moving through one pole pitch",
+                  "redraw_of": "Textbook Figure 3.35, p. 166"
                 }
               ]
             },

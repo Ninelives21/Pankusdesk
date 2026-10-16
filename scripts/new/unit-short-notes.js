@@ -224,10 +224,12 @@ function renderStudyGroup(group, index) {
 	const bullets = Array.isArray(group?.bullets) ? group.bullets : [];
 	const steps = Array.isArray(group?.steps) ? group.steps : [];
 	const formulae = Array.isArray(group?.formulae) ? group.formulae : [];
+	const diagrams = Array.isArray(group?.diagrams) ? group.diagrams : [];
 	return `<section class="short-note-study-group">
 		<h4><span class="short-note-study-number">${index + 1}</span>${escapeHtml(group?.heading || 'Revision point')}</h4>
 		${paragraphs.map(text => `<p>${escapeHtml(text)}</p>`).join('')}
 		${bullets.length ? `<ul>${bullets.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>` : ''}
+		${diagrams.length ? `<div class="short-note-diagram-grid is-inline">${diagrams.map(renderDiagram).join('')}</div>` : ''}
 		${steps.length ? `<ol class="short-note-study-steps">${steps.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ol>` : ''}
 		${formulae.length ? `<div class="short-note-formulas is-compact">${formulae.map(renderFormula).join('')}</div>` : ''}
 	</section>`;
