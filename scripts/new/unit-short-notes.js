@@ -277,7 +277,7 @@ function renderDiagram(item) {
 			</div>
 		</div>
 		${teachingNote}
-		<figcaption>${escapeHtml(figure)} · ${escapeHtml(title)}${item.page ? ` · p. ${Number(item.page)}` : ''}</figcaption>
+		<figcaption>${escapeHtml(item.caption || `${figure} · ${title}${item.page ? ` · p. ${Number(item.page)}` : ''}`)}</figcaption>
 	</figure>`;
 }
 

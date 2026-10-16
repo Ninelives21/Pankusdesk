@@ -418,7 +418,8 @@
             "u3-dc-generator"
           ],
           "paragraphs": [
-            "A DC generator and a DC motor use the same basic machine construction. The direction of energy conversion changes, but the main parts remain the same."
+            "A DC generator and a DC motor use the same basic machine construction. The direction of energy conversion changes, but the main parts remain the same.",
+            "The sketch below separates the stationary field system from the rotating armature system so the construction is easier to read before moving on to generator and motor operation."
           ],
           "bullets": [],
           "formulae": [
@@ -435,7 +436,9 @@
               "title": "Basic Construction of a DC Machine",
               "page": 163,
               "alt": "Figure 3.31 · Basic Construction of a DC Machine · Textbook p. 163",
-              "teaching_note": "Use this figure to identify the main field-system and armature-system parts before studying generator and motor operation."
+              "teaching_note": "The yoke, poles and field windings form the stationary magnetic-field system. Inside it, the armature rotates; the commutator turns with the armature while the brushes remain stationary and provide the connection to the external circuit.",
+              "caption": "DC machine construction — field system and armature system",
+              "redraw_of": "Textbook Figure 3.31, p. 163"
             }
           ],
           "key_point": "Remember the machine in two groups: field system (yoke, poles, field coils) and armature system (armature, commutator, brushes).",
@@ -493,8 +496,9 @@
           ],
           "paragraphs": [
             "A DC generator converts mechanical energy into electrical energy by electromagnetic induction. When armature conductors move through the magnetic field and cut flux, an emf is induced; Fleming’s right-hand rule gives the induced-current direction.",
-            "The simple-loop stage first produces an alternating emf. Figure 3.26 shows the rotating loop connected through two continuous slip rings; it does not show the DC-generator commutator.",
-            "To obtain a unidirectional external current, the slip rings are replaced by a two-segment split-ring commutator. Figure 3.29 shows how the commutator changes brush contact every half-turn so that the load current keeps the same external direction."
+            "The first sketch shows the simple-loop stage. The rotating coil is connected to two continuous slip rings, so the emf available at the brushes reverses every half-turn and is alternating.",
+            "A practical DC generator needs a unidirectional current at the external terminals. Replacing the continuous slip rings with a two-segment split-ring commutator makes the coil connections to the brushes reverse every half-turn at the same instant that the coil emf reverses. The external current therefore keeps the same direction.",
+            "The pole-pitch sketch then gives the geometric step used in the EMF derivation: in moving through one pole pitch, one conductor cuts one pole flux \\(\\Phi\\)."
           ],
           "derivation": [],
           "formulae": [
@@ -511,7 +515,9 @@
               "title": "Simple Loop Generator",
               "page": 161,
               "alt": "Figure 3.26 · Simple Loop Generator showing a rotating loop connected to two continuous slip rings and an external load between points M and L · Textbook p. 161",
-              "teaching_note": "Use this only for the alternating-emf / slip-ring stage. The two rings shown here are continuous slip rings, not the split-ring commutator."
+              "teaching_note": "The two rings are continuous slip rings. As the loop turns through successive half-revolutions, the induced emf reverses, so this stage explains why the rotating coil naturally produces an alternating emf.",
+              "caption": "Simple loop generator — alternating-emf stage with continuous slip rings",
+              "redraw_of": "Textbook Figure 3.26, p. 161"
             },
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-29.png",
@@ -520,7 +526,9 @@
               "title": "Action of Commutator",
               "page": 162,
               "alt": "Figure 3.29 · Action of Commutator showing the split-ring segments changing brush contact over successive half-turns so the load current remains unidirectional · Textbook p. 162",
-              "teaching_note": "Use this for the DC-commutation step: the split-ring commutator reverses the coil connection to the brushes every half-turn, keeping the external load current in one direction."
+              "teaching_note": "The commutator segments exchange brush contact every half-turn. Because this switching happens when the coil emf reverses, the current through the external load remains in one direction.",
+              "caption": "Split-ring commutator — unidirectional current at the external load",
+              "redraw_of": "Textbook Figure 3.29, p. 162"
             },
             {
               "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-35.png",
@@ -529,10 +537,12 @@
               "title": "conductor passing through a Pole pitch",
               "page": 166,
               "alt": "Figure 3.35 · conductor passing through a Pole pitch · Textbook p. 166",
-              "teaching_note": "This figure matches the derivation above: one conductor crosses one pole pitch, cuts one pole flux Φ, and takes 60/(NP) seconds to do so."
+              "teaching_note": "One pole pitch is the angular distance from one pole to the next. A conductor crossing one pole pitch cuts one pole flux \\(Φ\\); at \\(N\\) rpm with \\(P\\) poles, the time for this motion is \\(60/(NP)\\) s.",
+              "caption": "Pole pitch used in the DC-generator EMF derivation",
+              "redraw_of": "Textbook Figure 3.35, p. 166"
             }
           ],
-          "key_point": "Keep the two stages separate: Figure 3.26 explains alternating emf with continuous slip rings; Figure 3.29 explains split-ring commutation that gives unidirectional external current.",
+          "key_point": "Keep the sequence clear: the rotating loop first produces an alternating emf; the split-ring commutator makes the external current unidirectional; the pole-pitch relation then leads to the generated-armature-emf equation.",
           "generated": true,
           "study_groups": [
             {
@@ -544,7 +554,7 @@
                 "As an armature conductor cuts magnetic flux, an emf is induced in it.",
                 "Fleming’s right-hand rule gives the direction of induced current.",
                 "In a simple rotating loop, the conductor motion reverses relative to the field every half-turn, so the internally generated emf reverses every half-turn.",
-                "Figure 3.26 belongs to this stage: its two rings are continuous slip rings. The textbook uses M and L as reference points on the external-load side when describing load-current direction."
+                "With continuous slip rings, that reversal appears at the brushes as an alternating emf. The labels M and L in the source figure are reference points on the external-load side."
               ]
             },
             {
@@ -553,7 +563,7 @@
                 "A DC generator must deliver current to the external circuit in one direction even though the emf generated in the rotating coil is alternating.",
                 "The two continuous slip rings are therefore replaced by a two-segment commutator (split ring).",
                 "As the coil passes through each half-turn, the commutator segments exchange brush contact at the same time that the coil emf reverses.",
-                "The two reversals occur together, so the current through the external load keeps the same direction. Figure 3.29 is the figure to use for this commutation step."
+                "The two reversals occur together, so the current through the external load keeps the same direction."
               ]
             },
             {
