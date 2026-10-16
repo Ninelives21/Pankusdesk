@@ -366,7 +366,7 @@
             {
               "heading": "Efficiency — exam-ready derivation",
               "steps": [
-                "For the primary-referred treatment used in the prescribed text, write the transformer input power as \\(P_{in}=V_1I_1\\cos\\phi\\).",
+                "Refer the quantities to the primary side and write the transformer input power as \\(P_{in}=V_1I_1\\cos\\phi\\).",
                 "Write total loss as the sum of variable copper loss and constant iron loss: \\(W_L=I_1^2R_{01}+W_i\\).",
                 "Useful output is input minus losses: \\(P_{out}=P_{in}-W_L\\).",
                 "Substitute in \\(\\eta=P_{out}/P_{in}\\) and multiply by 100 for percentage efficiency."
@@ -653,33 +653,14 @@
               "latex": "T\\propto\\Phi I_a"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-42.png",
-              "filename": "f3-42.png",
-              "figure": "Figure 3.42",
-              "title": "Fleming’s Left Hand Rule",
-              "page": 172,
-              "alt": "Figure 3.42 · Fleming’s Left Hand Rule showing magnetic field, conductor current and force directions · Textbook p. 172",
-              "teaching_note": "Use this for the motor principle: magnetic field, current and force are mutually related; the force direction is given by Fleming’s left-hand rule."
-            },
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-44.png",
-              "filename": "f3-44.png",
-              "figure": "Figure 3.44",
-              "title": "Back Emf",
-              "page": 173,
-              "alt": "Figure 3.44 · Back Emf in a rotating DC motor armature · Textbook p. 173",
-              "teaching_note": "In the source notation, ⊗ indicates current away from the reader and ⊙ indicates current towards the reader. The generated back emf opposes the applied armature voltage."
-            }
-          ],
           "key_point": "Back emf is essential to normal motor operation: it opposes the supply, rises with speed, and automatically changes armature current as speed and load change.",
           "generated": true,
           "study_groups": [
             {
               "heading": "Motor principle",
               "paragraphs": [
-                "A DC motor converts electrical energy into mechanical energy. Its basic operating principle is the force on a current-carrying conductor placed in a magnetic field."
+                "A DC motor converts electrical energy into mechanical energy. Its basic operating principle is the force on a current-carrying conductor placed in a magnetic field.",
+                "The figure below ties the three directions together: magnetic field, conductor current and the resulting force. Once the force on opposite armature conductors forms a couple, the armature develops torque."
               ],
               "bullets": [
                 "For a conductor at right angles to the field, the force magnitude is written \\(F=BIl\\).",
@@ -691,6 +672,19 @@
                 {
                   "label": "Force on conductor",
                   "latex": "F=BIl"
+                }
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-42.png",
+                  "filename": "f3-42.png",
+                  "figure": "Figure 3.42",
+                  "title": "Fleming’s Left Hand Rule",
+                  "page": 172,
+                  "alt": "Figure 3.42 · Fleming’s Left Hand Rule showing magnetic field, conductor current and force directions · Textbook p. 172",
+                  "teaching_note": "Read the three directions together: the forefinger represents the magnetic-field direction, the middle finger the conductor-current direction, and the thumb the resulting force or motion. This is the direction rule used in the motor-principle explanation above.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Fleming’s left-hand rule for motor force direction"
                 }
               ]
             },
@@ -710,6 +704,22 @@
                 {
                   "label": "Motor voltage equation",
                   "latex": "V=E_b+I_aR_a"
+                }
+              ],
+              "paragraphs": [
+                "The back-emf figure shows the second action occurring at the same time as motor action: while current in the armature produces torque, the rotating armature also cuts flux and therefore generates an emf of its own."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-44.png",
+                  "filename": "f3-44.png",
+                  "figure": "Figure 3.44",
+                  "title": "Back Emf",
+                  "page": 173,
+                  "alt": "Figure 3.44 · Back Emf in a rotating DC motor armature · Textbook p. 173",
+                  "teaching_note": "The rotating armature behaves like a generator while it is acting as a motor. In the drawing, \\(\\otimes\\) means current away from the reader and \\(\\odot\\) means current towards the reader. The emf generated by this rotation is directed so that it opposes the applied armature voltage; that opposing emf is \\(E_b\\).",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Back emf produced by the rotating armature"
                 }
               ]
             },
@@ -751,35 +761,6 @@
               "latex": "N\\propto\\dfrac{V-I_aR_a}{\\Phi}"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-52.png",
-              "filename": "f3-52.png",
-              "figure": "Figure 3.52",
-              "title": "Torque vs Armature Current Characteristics",
-              "page": 179,
-              "alt": "Figure 3.52 · Torque vs Armature Current Characteristics · Textbook p. 179",
-              "teaching_note": "With separately excited field current held constant, flux is approximately constant and torque rises approximately linearly with armature current."
-            },
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-53.png",
-              "filename": "f3-53.png",
-              "figure": "Figure 3.53",
-              "title": "Speed vs Armature Current Characteristics",
-              "page": 180,
-              "alt": "Figure 3.53 · Speed vs Armature Current Characteristics · Textbook p. 180",
-              "teaching_note": "As armature current rises, the IaRa drop rises; with flux approximately constant, the speed therefore falls slightly."
-            },
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-54.png",
-              "filename": "f3-54.png",
-              "figure": "Figure 3.54",
-              "title": "Speed vs Torque Characteristics",
-              "page": 180,
-              "alt": "Figure 3.54 · Speed vs Torque Characteristics · Textbook p. 180",
-              "teaching_note": "Because torque is approximately proportional to armature current at constant flux, speed versus torque has the same gently falling trend."
-            }
-          ],
           "key_point": "With separate excitation and nearly constant flux, torque follows armature current while speed decreases only slightly as load increases.",
           "generated": true,
           "study_groups": [
@@ -801,6 +782,22 @@
                   "label": "Torque characteristic",
                   "latex": "T\\propto\\Phi I_a\\;\\Rightarrow\\;T\\propto I_a\\text{ for constant }\\Phi"
                 }
+              ],
+              "paragraphs": [
+                "Read the graph together with the torque equation: the nearly straight rising line is what the constant-flux relation \\(T\\propto I_a\\) looks like."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-52.png",
+                  "filename": "f3-52.png",
+                  "figure": "Figure 3.52",
+                  "title": "Torque vs Armature Current Characteristics",
+                  "page": 179,
+                  "alt": "Figure 3.52 · Torque vs Armature Current Characteristics · Textbook p. 179",
+                  "teaching_note": "Because the field flux is held approximately constant, torque follows armature current almost directly. The graph is therefore the visual form of \\(T\\propto I_a\\): increasing load current produces an almost proportional increase in torque.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Torque versus armature current at nearly constant flux"
+                }
               ]
             },
             {
@@ -815,6 +812,22 @@
                   "label": "Speed relation",
                   "latex": "N\\propto\\dfrac{V-I_aR_a}{\\Phi}"
                 }
+              ],
+              "paragraphs": [
+                "The next graph shows the small speed drop predicted by the voltage equation as armature current increases."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-53.png",
+                  "filename": "f3-53.png",
+                  "figure": "Figure 3.53",
+                  "title": "Speed vs Armature Current Characteristics",
+                  "page": 180,
+                  "alt": "Figure 3.53 · Speed vs Armature Current Characteristics · Textbook p. 180",
+                  "teaching_note": "As armature current rises, the internal drop \\(I_aR_a\\) rises. With supply voltage and field flux approximately constant, the back emf and hence the speed fall slightly, giving the gently drooping characteristic shown.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Speed versus armature current for a separately excited motor"
+                }
               ]
             },
             {
@@ -823,6 +836,22 @@
                 "With constant flux, torque is proportional to armature current.",
                 "Therefore the speed–torque characteristic has the same gently falling trend as the speed–armature-current characteristic.",
                 "The separately excited motor is consequently treated as a nearly constant-speed motor over its normal load range."
+              ],
+              "paragraphs": [
+                "Since torque and armature current track one another at constant flux, the speed–torque graph has the same gently falling shape."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-54.png",
+                  "filename": "f3-54.png",
+                  "figure": "Figure 3.54",
+                  "title": "Speed vs Torque Characteristics",
+                  "page": 180,
+                  "alt": "Figure 3.54 · Speed vs Torque Characteristics · Textbook p. 180",
+                  "teaching_note": "At nearly constant flux, torque is approximately proportional to armature current. Replacing the current axis by torque therefore gives the same nearly constant-speed behaviour: speed decreases only slightly as torque increases.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Speed versus torque for a separately excited motor"
+                }
               ]
             }
           ],
@@ -847,26 +876,6 @@
               "latex": "N\\propto\\dfrac{V-I_aR_a}{\\Phi}"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-56.png",
-              "filename": "f3-56.png",
-              "figure": "Figure 3.56",
-              "title": "Field Control Method",
-              "page": 182,
-              "alt": "Figure 3.56 · Field Control Method · Textbook p. 182",
-              "teaching_note": "The speed-control rheostat is in the separately excited field circuit. Increasing its resistance reduces field current and flux, so speed rises above rated speed."
-            },
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-58.png",
-              "filename": "f3-58.png",
-              "figure": "Figure 3.58",
-              "title": "Armature Control Method",
-              "page": 183,
-              "alt": "Figure 3.58 · Armature Control Method · Textbook p. 183",
-              "teaching_note": "The control rheostat is in series with the armature. Its voltage drop reduces the effective armature voltage, giving speeds below rated speed while field current is kept constant."
-            }
-          ],
           "key_point": "Field control (flux weakening) → above rated speed. Armature control with a series rheostat → below rated speed.",
           "generated": true,
           "study_groups": [
@@ -889,6 +898,22 @@
                 "Increasing field-circuit resistance reduces field current and hence reduces flux \\(\\Phi\\).",
                 "Since speed is inversely proportional to flux, weakening the field raises the speed; this method is used for speeds above rated speed.",
                 "The field circuit must not be allowed to open while the motor is running, because very small flux can produce dangerously high speed."
+              ],
+              "paragraphs": [
+                "The circuit below shows exactly where the control element is placed: in the field branch. That placement is what makes this a flux-control method."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-56.png",
+                  "filename": "f3-56.png",
+                  "figure": "Figure 3.56",
+                  "title": "Field Control Method",
+                  "page": 182,
+                  "alt": "Figure 3.56 · Field Control Method · Textbook p. 182",
+                  "teaching_note": "The field rheostat is in the separately excited field circuit, not in the armature circuit. Increasing its resistance reduces field current and weakens the flux. From \\(N\\propto 1/\\Phi\\), weakening the field raises the motor speed.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Field-control method for speeds above rated speed"
+                }
               ]
             },
             {
@@ -898,6 +923,22 @@
                 "Insert a speed-control rheostat \\(R_c\\) in series with the armature circuit, as in Figure 3.58.",
                 "Part of the supply voltage is dropped across \\(R_c\\), so the voltage available across the armature decreases.",
                 "With flux constant, reducing effective armature voltage reduces speed; this method is used for speeds below rated speed."
+              ],
+              "paragraphs": [
+                "In the armature-control circuit, the series rheostat is moved to the armature path. The field branch is left essentially unchanged, so the reduction in speed comes from reducing the voltage available to the armature."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-58.png",
+                  "filename": "f3-58.png",
+                  "figure": "Figure 3.58",
+                  "title": "Armature Control Method",
+                  "page": 183,
+                  "alt": "Figure 3.58 · Armature Control Method · Textbook p. 183",
+                  "teaching_note": "Here the control rheostat is in series with the armature while the field current is kept approximately constant. The rheostat takes part of the supply voltage, so the effective armature voltage falls and the motor runs below rated speed.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Armature-control method for speeds below rated speed"
+                }
               ]
             },
             {
@@ -921,8 +962,8 @@
             "GAP-U3-SWINBURNE-IARE-BEE-LAB"
           ],
           "paragraphs": [
-            "Swinburne’s test is an R25-required no-load test used to predetermine the efficiency of a DC shunt machine as a motor or generator from no-load measurements.",
-            "This topic is not present in the prescribed Chapter 3 scan, so the short-note treatment uses the approved NPTEL gap source with the institutional lab-manual cross-check already mapped in PankusDesk."
+            "Swinburne’s test is a no-load test used to predetermine the efficiency of a DC shunt machine as a motor or generator from a small set of no-load measurements.",
+            "The idea is to measure the no-load input, separate the armature copper loss from the remaining approximately constant loss, and then use those losses to estimate efficiency at a chosen load."
           ],
           "bullets": [],
           "formulae": [
@@ -967,6 +1008,24 @@
                 {
                   "label": "No-load armature current",
                   "latex": "I_{a0}=I_{L0}-I_f"
+                }
+              ],
+              "paragraphs": [
+                "The connection diagram belongs here because the first calculation comes directly from the way the no-load line current divides between the shunt field and the armature."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u3/short-notes/swinburne-test-circuit.png",
+                  "filename": "swinburne-test-circuit.png",
+                  "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u3/short-notes/swinburne-test-circuit.png",
+                  "figure": "Swinburne’s Test Circuit",
+                  "title": "No-load connection of a DC shunt machine",
+                  "alt": "Recommended educational circuit for Swinburne’s no-load test on a DC shunt machine, showing supply voltage measurement, line current measurement, shunt field branch with field rheostat and field-current measurement, and the motor armature.",
+                  "teaching_note": "Use the circuit to read the current split before doing the calculation. The line ammeter measures \\(I_{L0}\\). At the supply node, this current divides into field current \\(I_f\\) and armature current \\(I_{a0}\\), so \\(I_{a0}=I_{L0}-I_f\\). The voltmeter gives the supply voltage \\(V\\), which is used with \\(I_{L0}\\) to obtain the no-load input power.",
+                  "search_query": "Swinburne test DC shunt machine no load circuit IARE Fig 4.1",
+                  "ai_prompt": "Create a clean NRS educational circuit diagram of the no-load connection used for Swinburne’s test on a DC shunt machine. Show a DC supply with a line ammeter measuring I_L0, a voltmeter across the supply, and two parallel machine branches: an armature branch and a shunt-field branch containing the field winding, field rheostat and a field ammeter measuring I_f. Label the armature current I_a0 and make the current relation I_L0 = I_a0 + I_f visually unambiguous. Indicate that the machine is running as a motor on no mechanical load. Do not invent numerical values, meter ranges, source polarity, starter details or protection devices unless they are present in the verified reference. Apply NRS blue-ink notebook styling only after the circuit connectivity has been checked against the chosen reference.",
+                  "placeholder_label": "Recommended circuit diagram",
+                  "caption": "Swinburne’s test: no-load DC shunt-machine connection"
                 }
               ]
             },
@@ -1022,21 +1081,7 @@
               ]
             }
           ],
-          "derivation": [],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u3/short-notes/swinburne-test-circuit.png",
-              "filename": "swinburne-test-circuit.png",
-              "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u3/short-notes/swinburne-test-circuit.png",
-              "figure": "Recommended educational diagram",
-              "title": "Swinburne’s test on a DC shunt machine — no-load test connection",
-              "alt": "Recommended educational circuit for Swinburne’s no-load test on a DC shunt machine, showing supply voltage measurement, line current measurement, shunt field branch with field rheostat and field-current measurement, and the motor armature.",
-              "source_label": "No matching figure exists in the prescribed Chapter 3 scan. The approved institutional cross-check contains IARE Fig. 4.1, “Swinburne’s test on a D.C. Shunt Machine”.",
-              "teaching_note": "The diagram should make the three measured quantities obvious: supply voltage V, no-load line current IL0 and field current If. Use a verified no-load DC-shunt-machine Swinburne test circuit; do not substitute a loaded efficiency-test circuit.",
-              "search_query": "IARE Swinburne test on DC shunt machine Fig 4.1 circuit diagram",
-              "ai_prompt": "Create an NRS educational circuit diagram for Swinburne’s test on a DC shunt machine, using the standard no-load shunt-motor connection verified from a reliable source: DC supply with switching/protection, line ammeter in the motor supply, voltmeter across the supply, a shunt-field branch across the supply containing the field winding, field rheostat and field ammeter, and the DC motor armature branch. Clearly label V, I_L0, I_f and R_a / armature where appropriate. Show the machine running on no mechanical load. Preserve electrical connectivity exactly; do not invent meter ranges, component values, polarities or starter details unless they are present in the verified source. Follow NRS blue-ink notebook style only after semantic verification of the chosen source circuit."
-            }
-          ]
+          "derivation": []
         }
       ]
     },
