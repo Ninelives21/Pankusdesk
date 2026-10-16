@@ -1131,25 +1131,8 @@
               ]
             ]
           },
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-2.png",
-              "filename": "f4-2.png",
-              "figure": "Figure 4.2",
-              "title": "Phase-wound rotor",
-              "page": 187,
-              "alt": "Figure 4.2 · Phase-wound rotor · Textbook p. 187"
-            },
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-4.png",
-              "filename": "f4-4.png",
-              "figure": "Figure 4.4",
-              "title": "Squirrel-cage rotor",
-              "page": 188,
-              "alt": "Figure 4.4 · Squirrel-cage rotor · Textbook p. 188"
-            }
-          ],
-          "key_point": "The R25 “types” are distinguished mainly by rotor construction: slip-ring (wound rotor) and squirrel-cage.",
+          "diagrams": [],
+          "key_point": "The two rotor constructions are phase-wound (slip-ring) and squirrel-cage. The practical difference is whether the rotor winding is brought out through slip rings so that external rotor resistance can be connected.",
           "generated": true,
           "study_groups": [
             {
@@ -1169,6 +1152,19 @@
                 "Three rotor terminals are brought out through three slip rings on the shaft and brushes.",
                 "External resistance can therefore be inserted in the rotor circuit to reduce starting current and improve starting torque.",
                 "This construction is associated with larger machines where high starting torque is required."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-2.png",
+                  "filename": "f4-2.png",
+                  "figure": "Figure 4.2",
+                  "title": "Phase-wound rotor",
+                  "page": 187,
+                  "alt": "Figure 4.2 · Phase-wound rotor · Textbook p. 187",
+                  "teaching_note": "Read this rotor together with the construction points above. The rotor carries a three-phase winding, and its three terminals are brought to slip rings on the shaft. Stationary brushes make contact with the rings, allowing external resistance to be connected in the rotor circuit during starting.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Phase-wound rotor: rotor winding brought out through slip rings"
+                }
               ]
             },
             {
@@ -1178,6 +1174,19 @@
                 "The resulting arrangement resembles a squirrel cage, giving the rotor its name.",
                 "The rotor circuit is permanently short-circuited, so external rotor resistance cannot be inserted.",
                 "The construction is simple and rugged and has excellent running performance, although its starting performance is poorer than the slip-ring arrangement described above."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-4.png",
+                  "filename": "f4-4.png",
+                  "figure": "Figure 4.4",
+                  "title": "Squirrel-cage rotor",
+                  "page": 188,
+                  "alt": "Figure 4.4 · Squirrel-cage rotor · Textbook p. 188",
+                  "teaching_note": "Here the rotor conductors are bars permanently short-circuited by end rings. There are no slip-ring terminals for inserting external rotor resistance. This is the constructional reason the squirrel-cage rotor is simpler and more rugged.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Squirrel-cage rotor: bars permanently short-circuited by end rings"
+                }
               ]
             }
           ],
@@ -1220,16 +1229,7 @@
               "latex": "f_r=sf"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-6.png",
-              "filename": "f4-6.png",
-              "figure": "Figure 4.6",
-              "title": "Production of rotating magnetic field",
-              "page": 189,
-              "alt": "Figure 4.6 · Production of rotating magnetic field · Textbook p. 189"
-            }
-          ],
+          "diagrams": [],
           "key_point": "Induction requires relative motion. Non-zero slip is therefore necessary for an induction motor to develop torque.",
           "generated": true,
           "study_groups": [
@@ -1245,6 +1245,19 @@
                   "label": "Synchronous speed",
                   "latex": "N_s=\\dfrac{120f}{P}"
                 }
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-6.png",
+                  "filename": "f4-6.png",
+                  "figure": "Figure 4.6",
+                  "title": "Production of rotating magnetic field",
+                  "page": 189,
+                  "alt": "Figure 4.6 · Production of rotating magnetic field · Textbook p. 189",
+                  "teaching_note": "Use the drawing to connect the three-phase stator currents with the resultant magnetic field. Although the individual phase currents vary with time, their combined effect is a magnetic field whose axis moves continuously around the air gap. That field rotates at synchronous speed \\(N_s\\).",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Three-phase stator currents producing a rotating magnetic field"
+                }
               ]
             },
             {
@@ -1255,6 +1268,19 @@
                 "Because the rotor circuit is closed/short-circuited, rotor current flows.",
                 "Interaction between the stator field and rotor-current field produces electromagnetic torque.",
                 "The rotor therefore accelerates in the direction of the rotating stator field."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-7.png",
+                  "filename": "f4-7.png",
+                  "figure": "Figure 4.7",
+                  "title": "Stator and rotor fluxes",
+                  "page": 189,
+                  "alt": "Figure 4.7 · Stator and rotor fluxes · Textbook p. 189",
+                  "teaching_note": "The rotating stator field cuts the rotor conductors because the rotor is initially moving more slowly than the field. The induced rotor current produces a rotor magnetic effect, and the interaction of stator and rotor fields produces torque in the direction of the rotating field.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Stator and rotor magnetic fields involved in induction-motor torque"
+                }
               ]
             },
             {
@@ -1352,17 +1378,8 @@
               "latex": "s_m=\\dfrac{R_2}{X_2}"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-9.png",
-              "filename": "f4-9.png",
-              "figure": "Figure 4.9",
-              "title": "Torque-slip characteristics",
-              "page": 196,
-              "alt": "Figure 4.9 · Torque-slip characteristics · Textbook p. 196"
-            }
-          ],
-          "key_point": "For the exam sketch, mark \\(s=0\\), maximum torque, and the starting point \\(s=1\\), and label the low-slip and high-slip trends.",
+          "diagrams": [],
+          "key_point": "On the torque–slip characteristic, torque is zero at \\(s=0\\), rises approximately in proportion to slip in the low-slip region, reaches maximum torque at \\(s=R_2/X_2\\), and then falls toward the starting point at \\(s=1\\).",
           "generated": true,
           "study_groups": [
             {
@@ -1374,6 +1391,19 @@
                 {
                   "label": "Torque–slip relation",
                   "latex": "T=K V^2\\dfrac{sR_2}{R_2^2+(sX_2)^2}"
+                }
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-8.png",
+                  "filename": "f4-8.png",
+                  "figure": "Figure 4.8",
+                  "title": "Stator and rotor fluxes producing torque",
+                  "page": 195,
+                  "alt": "Figure 4.8 · Stator and rotor fluxes producing torque · Textbook p. 195",
+                  "teaching_note": "This picture is the physical starting point for the torque expression: electromagnetic torque comes from the interaction of the stator field with the rotor field produced by induced rotor current. Slip changes the rotor emf, current and power factor, which is why torque changes with slip.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Field interaction that produces induction-motor torque"
                 }
               ]
             },
@@ -1422,13 +1452,26 @@
               ]
             },
             {
-              "heading": "How to read the curve in an answer",
+              "heading": "Reading the torque–slip curve",
               "bullets": [
                 "Start from \\(s=0\\): torque is zero.",
                 "In the low-slip region, torque rises nearly in direct proportion to slip.",
                 "The curve reaches the maximum-torque point at \\(s=R_2/X_2\\).",
                 "Beyond that point, in the high-slip region, torque decreases approximately as \\(1/s\\).",
                 "Mark the starting point at \\(s=1\\)."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-9.png",
+                  "filename": "f4-9.png",
+                  "figure": "Figure 4.9",
+                  "title": "Torque-slip characteristics",
+                  "page": 196,
+                  "alt": "Figure 4.9 · Torque-slip characteristics · Textbook p. 196",
+                  "teaching_note": "Trace the curve from left to right. At synchronous speed \\(s=0\\), induction torque is zero. In the low-slip region the curve rises nearly linearly, reaches maximum torque at \\(s=R_2/X_2\\), and then falls in the high-slip region. The point at \\(s=1\\) is the starting torque.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Torque–slip characteristic with zero, maximum and starting-torque points"
+                }
               ]
             }
           ],
@@ -1455,16 +1498,7 @@
               "latex": "E=4.44\\,\\Phi fN"
             }
           ],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-11.png",
-              "filename": "f4-11.png",
-              "figure": "Figure 4.11",
-              "title": "Cross-sectional view of synchronous machine",
-              "page": 198,
-              "alt": "Figure 4.11 · Cross-sectional view of synchronous machine · Textbook p. 198"
-            }
-          ],
+          "diagrams": [],
           "key_point": "Mechanical rotation of a DC-excited rotor field produces alternating emf in the stationary armature winding.",
           "generated": true,
           "study_groups": [
@@ -1472,6 +1506,19 @@
               "heading": "What a synchronous generator does",
               "paragraphs": [
                 "A synchronous generator, also called an alternator, converts mechanical input power into AC electrical power by electromagnetic induction."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-10.png",
+                  "filename": "f4-10.png",
+                  "figure": "Figure 4.10",
+                  "title": "Synchronous-generator block diagram",
+                  "page": 197,
+                  "alt": "Figure 4.10 · Synchronous-generator block diagram · Textbook p. 197",
+                  "teaching_note": "Use this as the overview of the energy conversion taking place: the machine receives mechanical input from a prime mover and delivers AC electrical output. The remaining blocks below explain how the rotating magnetic field produces that electrical output.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Synchronous generator as a mechanical-to-AC energy converter"
+                }
               ]
             },
             {
@@ -1480,6 +1527,19 @@
                 "The field winding is on the rotor and is excited by DC so that the rotor carries magnetic poles.",
                 "The armature winding is stationary and distributed in slots around the stator.",
                 "A prime mover rotates the field rotor at synchronous speed."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-11.png",
+                  "filename": "f4-11.png",
+                  "figure": "Figure 4.11",
+                  "title": "Cross-sectional view of synchronous machine",
+                  "page": 198,
+                  "alt": "Figure 4.11 · Cross-sectional view of synchronous machine · Textbook p. 198",
+                  "teaching_note": "The important constructional idea in this cross-section is which part moves. The DC-excited field system is on the rotor, while the armature conductors are on the stationary stator. Rotation therefore carries successive North and South rotor poles past the stator conductors.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Rotating field rotor and stationary armature of a synchronous generator"
+                }
               ]
             },
             {
@@ -1490,6 +1550,19 @@
                 "North and South rotor poles sweep past the stationary stator conductors.",
                 "The changing flux linkages induce emf in the stator armature winding by electromagnetic induction.",
                 "Successive North and South poles pass a conductor, so the induced emf alternates; with sinusoidally distributed air-gap flux, the generated emf is sinusoidal."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-12.png",
+                  "filename": "f4-12.png",
+                  "figure": "Figure 4.12",
+                  "title": "Sinusoidal generated voltage",
+                  "page": 198,
+                  "alt": "Figure 4.12 · Sinusoidal generated voltage · Textbook p. 198",
+                  "teaching_note": "As successive North and South poles pass a stator conductor, the direction of flux linking the conductor reverses, so the induced emf alternates. With a sinusoidally distributed air-gap flux, the generated voltage follows the sinusoidal waveform shown.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Alternating sinusoidal voltage generated as rotor poles pass the stator winding"
+                }
               ]
             },
             {
@@ -1607,6 +1680,21 @@
                   "label": "Synchronous reactance",
                   "latex": "X_s=\\sqrt{Z_s^2-R_a^2}"
                 }
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/occ-scc-synchronous-impedance.png",
+                  "filename": "occ-scc-synchronous-impedance.png",
+                  "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/occ-scc-synchronous-impedance.png",
+                  "figure": "OCC–SCC Characteristics",
+                  "title": "Open- and short-circuit characteristics used to obtain synchronous impedance",
+                  "alt": "Recommended study diagram showing the open-circuit characteristic and short-circuit characteristic of a synchronous generator against field current, with the same field-current setting used to obtain open-circuit voltage and short-circuit current.",
+                  "teaching_note": "The two tests must be read together. Choose one field-current value, read the corresponding open-circuit voltage \\(V_{OC}\\) from the OCC and short-circuit current \\(I_{SC}\\) from the SCC, and use those matched readings to calculate \\(Z_s=V_{OC}/I_{SC}\\).",
+                  "search_query": "NPTEL Lecture 90 OC SC Test Synchronous Generator OCC SCC characteristics",
+                  "ai_prompt": "Create an NRS educational diagram for the synchronous-impedance (EMF) method using the verified OCC/SCC reference. Show field current on the horizontal axis and clearly distinguish the open-circuit voltage characteristic (OCC) from the short-circuit current characteristic (SCC). Mark one common field-current setting and show that the corresponding V_OC and I_SC readings are taken at that same excitation before forming Z_s = V_OC/I_SC. Do not invent numerical scales, machine ratings, connection details or test values. Preserve the qualitative curve shapes and labels from the chosen verified reference, and apply NRS blue-ink notebook styling only after semantic verification.",
+                  "placeholder_label": "Recommended study diagram",
+                  "caption": "OCC and SCC readings used to obtain synchronous impedance"
+                }
               ]
             },
             {
@@ -1624,7 +1712,7 @@
               ]
             },
             {
-              "heading": "Complete method — exam sequence",
+              "heading": "Complete calculation sequence",
               "steps": [
                 "OCC at rated speed.",
                 "SCC at rated speed.",
@@ -1687,13 +1775,29 @@
                 "The rotor field experiences electromagnetic torque that tends to align it with the rotating stator field.",
                 "When the rotor field locks with the stator rotating field, the rotor follows that field.",
                 "In steady synchronous operation, rotor speed therefore equals synchronous speed."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/synchronous-motor-locking.png",
+                  "filename": "synchronous-motor-locking.png",
+                  "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/synchronous-motor-locking.png",
+                  "figure": "Synchronous Motor Principle",
+                  "title": "Magnetic locking of the DC-excited rotor field with the rotating stator field",
+                  "alt": "Recommended educational diagram showing a rotating stator magnetic field and a DC-excited rotor magnetic field locked together and rotating at synchronous speed.",
+                  "teaching_note": "Read the picture as two magnetic fields moving together. The stator field rotates at \\(N_s\\); once the DC-excited rotor field is locked with it, the rotor follows at the same speed. In steady synchronous operation there is therefore no relative speed between the two magnetic fields.",
+                  "search_query": "NPTEL Lecture 82 synchronous motor operation rotating magnetic field rotor locking",
+                  "ai_prompt": "Create an NRS educational schematic of the basic synchronous-motor operating principle using the verified NPTEL reference. Show a rotating stator magnetic field and a DC-excited rotor with clearly identified North and South poles. Show that, after magnetic locking, the rotor field and stator rotating field move together at the same synchronous speed N_s. Do not add numerical values, detailed phasors, starting arrangements, damper windings, torque-angle values or circuit details unless they are present in the verified reference. Keep the diagram limited to the R25 operating principle and use NRS blue-ink notebook styling after semantic verification.",
+                  "placeholder_label": "Recommended study diagram",
+                  "caption": "Magnetic locking in a synchronous motor"
+                }
               ]
             },
             {
-              "heading": "Essential distinction",
+              "heading": "How it differs from induction operation",
               "bullets": [
-                "The defining feature is magnetic locking: \\(N=N_s\\) in steady synchronous operation.",
-                "This section is intentionally limited to the operating principle required by R25; phasor and power-expression treatment is not part of this short-note core."
+                "In steady synchronous operation, the rotor runs exactly at synchronous speed: \\(N=N_s\\).",
+                "The rotor field and the stator rotating field therefore have no relative speed once they are locked together.",
+                "This is different from an induction motor, which requires non-zero slip to induce rotor current and develop torque."
               ]
             }
           ],
@@ -1710,16 +1814,7 @@
             "A stepper motor moves through discrete equal angular steps. The rotor can be moved to, and held at, one of these step positions by controlling the sequence in which stator phase groups are energised."
           ],
           "bullets": [],
-          "diagrams": [
-            {
-              "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-13.png",
-              "filename": "f4-13.png",
-              "figure": "Figure 4.13",
-              "title": "Cross-sectional view of stepper motor",
-              "page": 199,
-              "alt": "Figure 4.13 · Cross-sectional view of stepper motor · Textbook p. 199"
-            }
-          ],
+          "diagrams": [],
           "key_point": "Sequential excitation converts electrical command pulses into controlled angular position steps.",
           "generated": true,
           "study_groups": [
@@ -1730,7 +1825,7 @@
               ]
             },
             {
-              "heading": "Types named in the unit source",
+              "heading": "Main types",
               "bullets": [
                 "Variable-reluctance stepper motor.",
                 "Permanent-magnet stepper motor.",
@@ -1738,20 +1833,33 @@
               ]
             },
             {
-              "heading": "Variable-reluctance example — phase groups",
+              "heading": "Variable-reluctance example — reading the phase groups",
               "bullets": [
                 "The illustrated stator has six electromagnets forming three phase groups: A–AA, B–BB and C–CC.",
                 "An electronic controller energises these groups in sequence.",
                 "The rotor always tends to align its teeth with the energised stator magnetic axis because that is the minimum-reluctance position."
+              ],
+              "diagrams": [
+                {
+                  "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-13.png",
+                  "filename": "f4-13.png",
+                  "figure": "Figure 4.13",
+                  "title": "Cross-sectional view of stepper motor",
+                  "page": 199,
+                  "alt": "Figure 4.13 · Cross-sectional view of stepper motor · Textbook p. 199",
+                  "teaching_note": "Use the cross-section to follow the phase-group notation used in the working sequence. A–AA, B–BB and C–CC are the three stator phase groups. When one group is energised, the rotor teeth move toward alignment with that magnetic axis, the minimum-reluctance position.",
+                  "placeholder_label": "Recommended textbook figure",
+                  "caption": "Variable-reluctance stepper motor and its three stator phase groups"
+                }
               ]
             },
             {
               "heading": "Step-by-step working",
               "steps": [
-                "Energise A–AA: rotor teeth align with the A–AA magnetic axis.",
-                "De-energise A–AA and energise B–BB: the magnetic axis shifts and the rotor moves to the next minimum-reluctance position.",
-                "In the illustrated example this movement is 30° clockwise; that angle is the step angle for the example.",
-                "Continue the excitation sequence B–BB → C–CC → A–AA to obtain successive equal steps."
+                "Energise A–AA: the rotor teeth align with the A–AA magnetic axis, which is a minimum-reluctance position.",
+                "De-energise A–AA and energise B–BB: the active magnetic axis shifts, so the rotor moves to the next minimum-reluctance position.",
+                "In the illustrated example the rotor moves 30° clockwise. That 30° movement is one step, so the step angle in this example is 30°.",
+                "Continue the sequence B–BB → C–CC → A–AA to move the rotor through successive equal steps."
               ]
             },
             {
