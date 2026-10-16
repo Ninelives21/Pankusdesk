@@ -1001,17 +1001,22 @@
               "heading": "Test setup and readings",
               "bullets": [
                 "Use the DC shunt machine in motor operation with its shunt field connected across the supply through a field rheostat.",
-                "Measure supply voltage \\(V\\), no-load line current \\(I_{L0}\\) and field current \\(I_f\\) after bringing the machine to rated speed.",
-                "The no-load armature current is the line current minus the field current."
+                "In the drawing, \\(I_0\\) is the no-load line current measured by ammeter \\(A_1\\), \\(I_{sh}\\) is the shunt-field current measured by ammeter \\(A_2\\), and \\(I_a\\) is the armature current.",
+                "For the calculations below, the same quantities are written as \\(I_{L0}\\), \\(I_f\\), and \\(I_{a0}\\), respectively. During the no-load test, the armature current labelled \\(I_a\\) in the drawing is therefore \\(I_{a0}\\).",
+                "The voltmeter measures the supply voltage \\(V\\) after the machine has been brought to rated speed."
               ],
               "formulae": [
+                {
+                  "label": "Current split shown in the circuit",
+                  "latex": "I_0=I_a+I_{sh}"
+                },
                 {
                   "label": "No-load armature current",
                   "latex": "I_{a0}=I_{L0}-I_f"
                 }
               ],
               "paragraphs": [
-                "The connection diagram belongs here because the first calculation comes directly from the way the no-load line current divides between the shunt field and the armature."
+                "Read the circuit from the line side first. Ammeter \\(A_1\\) measures the total no-load current before it divides at the starter. One part flows through the armature branch and the other through the shunt-field branch, so the current split is \\(I_0=I_a+I_{sh}\\). Using the notation adopted in the calculations below, this is \\(I_{L0}=I_{a0}+I_f\\), hence \\(I_{a0}=I_{L0}-I_f\\)."
               ],
               "diagrams": [
                 {
@@ -1019,13 +1024,10 @@
                   "filename": "swinburne-test-circuit.png",
                   "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u3/short-notes/swinburne-test-circuit.png",
                   "figure": "Swinburne’s Test Circuit",
-                  "title": "No-load connection of a DC shunt machine",
-                  "alt": "Recommended educational circuit for Swinburne’s no-load test on a DC shunt machine, showing supply voltage measurement, line current measurement, shunt field branch with field rheostat and field-current measurement, and the motor armature.",
-                  "teaching_note": "Use the circuit to read the current split before doing the calculation. The line ammeter measures \\(I_{L0}\\). At the supply node, this current divides into field current \\(I_f\\) and armature current \\(I_{a0}\\), so \\(I_{a0}=I_{L0}-I_f\\). The voltmeter gives the supply voltage \\(V\\), which is used with \\(I_{L0}\\) to obtain the no-load input power.",
-                  "search_query": "Swinburne test DC shunt machine no load circuit IARE Fig 4.1",
-                  "ai_prompt": "Create a clean NRS educational circuit diagram of the no-load connection used for Swinburne’s test on a DC shunt machine. Show a DC supply with a line ammeter measuring I_L0, a voltmeter across the supply, and two parallel machine branches: an armature branch and a shunt-field branch containing the field winding, field rheostat and a field ammeter measuring I_f. Label the armature current I_a0 and make the current relation I_L0 = I_a0 + I_f visually unambiguous. Indicate that the machine is running as a motor on no mechanical load. Do not invent numerical values, meter ranges, source polarity, starter details or protection devices unless they are present in the verified reference. Apply NRS blue-ink notebook styling only after the circuit connectivity has been checked against the chosen reference.",
-                  "placeholder_label": "Recommended circuit diagram",
-                  "caption": "Swinburne’s test: no-load DC shunt-machine connection"
+                  "title": "Swinburne’s Test Circuit for a DC Shunt Motor",
+                  "alt": "Swinburne’s test circuit for a DC shunt motor showing the DC supply and main switch, voltmeter across the supply, line ammeter A1 measuring no-load current I0 before the split, starter terminals L, F and A, armature branch carrying Ia, and shunt-field branch with ammeter A2, shunt field and field rheostat R carrying Ish.",
+                  "teaching_note": "Ammeter \\(A_1\\) measures the total no-load line current \\(I_0\\) before it divides. The armature branch carries \\(I_a\\), while ammeter \\(A_2\\) measures the shunt-field current \\(I_{sh}\\). Thus \\(I_0=I_a+I_{sh}\\). In the calculation notation used below, \\(I_0\\equiv I_{L0}\\), \\(I_{sh}\\equiv I_f\\), and the no-load armature current \\(I_a\\equiv I_{a0}\\), giving \\(I_{a0}=I_{L0}-I_f\\). The voltmeter measures the supply voltage \\(V\\).",
+                  "caption": "Swinburne’s Test Circuit for a DC Shunt Motor"
                 }
               ]
             },
