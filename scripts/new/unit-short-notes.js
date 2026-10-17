@@ -288,9 +288,25 @@ function wireDiagramFallbacks(page) {
 		const img = figure.querySelector('img');
 		const placeholder = figure.querySelector('.short-note-diagram-placeholder');
 		if (!img || !placeholder) return;
-		const fail = () => { img.hidden = true; placeholder.hidden = false; figure.classList.add('is-placeholder'); };
-		img.addEventListener('error', fail, { once: true });
-		if (img.complete && !img.naturalWidth) fail();
+
+		const showImage = () => {
+			img.hidden = false;
+			placeholder.hidden = true;
+			figure.classList.remove('is-placeholder');
+		};
+		const showPlaceholder = () => {
+			img.hidden = true;
+			placeholder.hidden = false;
+			figure.classList.add('is-placeholder');
+		};
+
+		img.addEventListener('load', showImage, { once: true });
+		img.addEventListener('error', showPlaceholder, { once: true });
+
+		// A lazy image can report complete=true with naturalWidth=0 before it has
+		// actually been requested. Only treat a positive natural size as success;
+		// let the browser's real error event decide when a placeholder is needed.
+		if (img.complete && img.naturalWidth > 0) showImage();
 	});
 }
 
