@@ -50,6 +50,7 @@ async function initSubjectUnitPage() {
 		}
 
 		renderReadyUnit(context, unitTopics, sourceCollections);
+		setupAvailableBeeFigures();
 		setupTopicNavigation(unitTopics);
 		try {
 			await typesetMath(page);
@@ -713,6 +714,38 @@ function getPlaceholderFigureFilename(figure) {
 	return parts.length ? parts[parts.length - 1] : '';
 }
 
+// BEE figures are shared by Text and Short Notes. A placeholder is a fallback,
+// not a permanent prohibition on using a PNG added later to the asset folder.
+function setupAvailableBeeFigures() {
+	const candidates = document.querySelectorAll('[data-bee-image-candidate]');
+	const load = node => {
+		if (node.dataset.beeImageChecked) return;
+		node.dataset.beeImageChecked = 'true';
+		const template = node.querySelector('template[data-bee-image-template]');
+		if (!template) return;
+		const testImage = new Image();
+		testImage.onload = () => {
+			const renderedFigure = template.content.firstElementChild?.cloneNode(true);
+			if (renderedFigure) node.replaceWith(renderedFigure);
+		};
+		// Missing binaries retain their original textbook placeholder unchanged.
+		testImage.onerror = () => {};
+		testImage.src = node.dataset.beeImageCandidate;
+	};
+	if (!('IntersectionObserver' in window)) {
+		candidates.forEach(load);
+		return;
+	}
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if (!entry.isIntersecting) return;
+			observer.unobserve(entry.target);
+			load(entry.target);
+		});
+	}, { rootMargin: '400px 0px' });
+	candidates.forEach(node => observer.observe(node));
+}
+
 function renderTextbookFigure(figure) {
 	if (figure?.placeholder) {
 		const number = figure.figure_number || figure.figureNumber || 'Figure';
@@ -721,13 +754,27 @@ function renderTextbookFigure(figure) {
 		const description = figure.description ? `<div class="textbook-figure-placeholder-description">${formatText(figure.description)}</div>` : '';
 		const filename = getPlaceholderFigureFilename(figure);
 		const renameLine = filename ? `<div class="textbook-figure-placeholder-filename">Rename image to: <code>${escapeHtml(filename)}</code></div>` : '';
+		// Only the BEE textbook figure slots use this convention. The Unit V
+		// textbook keeps f4-* numbering; resolve by page unit, not figure prefix.
+		const unitPage = document.querySelector('.subject-unit-page');
+		const unit = Number(unitPage?.dataset.unit);
+		const isBee = unitPage?.dataset.subjectJson?.includes('basic-electrical-engineering');
+		const canProbe = isBee && Number.isInteger(unit) && unit >= 1 && unit <= 5
+			&& /^f[0-9]+-[0-9]+[a-z]?\.png$/i.test(filename);
+		const candidate = canProbe
+			? new URL(`assets/book/u${unit}/theory/${filename}`, new URL('./', document.URL)).href
+			: '';
+		const figureTemplate = candidate
+			? `<template data-bee-image-template>${renderTextbookFigure({ ...figure, src: candidate, placeholder: false, alt: figure.alt || `${number}: ${name}` })}</template>`
+			: '';
 		return `
-			<div class="study-figure textbook-figure textbook-figure-placeholder" role="note" aria-label="${escapeHtml(`${number}: ${name}`)}">
+			<div class="study-figure textbook-figure textbook-figure-placeholder" ${candidate ? `data-bee-image-candidate="${escapeHtml(candidate)}"` : ''} role="note" aria-label="${escapeHtml(`${number}: ${name}`)}">
 				<div class="textbook-figure-placeholder-kicker">Image placeholder</div>
 				<div class="textbook-figure-placeholder-title">${escapeHtml(number)} · ${escapeHtml(name)}</div>
 				${description}
 				<div class="textbook-figure-placeholder-page">${escapeHtml(page)}</div>
 				${renameLine}
+				${figureTemplate}
 			</div>
 		`;
 	}
