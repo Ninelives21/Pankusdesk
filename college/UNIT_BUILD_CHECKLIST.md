@@ -11,7 +11,7 @@ Use this checklist for every college unit. A unit is not `ready` until the appli
 - [ ] Read `college/NOTEBOOK_REDRAW_STYLE.md` before any redraw work.
 - [ ] Inspect the latest workspace, not an old delta/chat reconstruction.
 - [ ] Inspect target `subject.json`, current schemas and shared renderers.
-- [ ] Confirm whether the unit is currently `scaffold` or `ready`.
+- [ ] Confirm the unit's current publication state: `scaffold` (structure exists; substantive development is not yet underway), `draft` (development is underway; content is incomplete or not fully verified), or `ready` (all applicable completion requirements and verification gates have passed).
 
 ## B. Source intake and lock
 

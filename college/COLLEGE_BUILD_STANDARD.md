@@ -26,7 +26,7 @@ This document defines the default build contract for every future college unit, 
 13. **Figures are part of the teaching flow.** Every production figure is placed at the text it explains. No “all figures at the end” dump and no unanchored fallback in a ready unit.
 14. **Technical redraw accuracy outranks appearance.** All NRS work follows `NOTEBOOK_REDRAW_STYLE.md`, including the mandatory semantic-verification gate.
 15. **Mathematics is rendered, not improvised.** Use MathJax/LaTeX in student-facing data. Fractions use `\dfrac`, not `\frac`.
-16. **No fake completeness.** Incomplete units remain `scaffold`. A unit becomes `ready` only after academic, visual, practice, class-log/link and verifier checks pass.
+16. **No fake completeness.** Units whose structure exists but substantive development has not yet begun remain `scaffold`. Units under development remain `draft` while content is incomplete or not fully verified. A unit becomes `ready` only after all applicable academic, source, diagram, visual, practice, class-log/link and validator checks pass.
 17. **Done means reproducibly verified.** Human QA + subject verifier + generic college verifier are required.
 18. **Every fully solved problem ends with an explicit final answer.** After the complete working, show the final answer/result as a visually distinct bold line whenever the problem has a determinate result. Keep any printed-textbook answer check or provenance note separate from that final-answer line. This applies globally to textbook questions, worked examples, class examples, PYQs and other solved practice.
 19. **Textbook problem sets stay in textbook position.** When an in-scope prescribed-textbook problem/exercise set appears immediately after a theory section, the cumulative unit page must reference/link that exact set at the same logical point in the teaching flow, in addition to the persistent Textbook Questions navigation link.
@@ -90,8 +90,9 @@ Allowed topic statuses:
 
 Allowed unit publication states:
 
-- `ready`
-- `scaffold`
+- `scaffold` — unit structure exists; substantive content development is not yet underway.
+- `draft` — content development is underway; content is incomplete or has not passed all applicable verification gates.
+- `ready` — all applicable academic, source, diagram, visual, practice, class-log/link and validator checks have passed.
 
 A scaffold may expose the syllabus boundary and a reserved destination, but must not imitate finished notes.
 
