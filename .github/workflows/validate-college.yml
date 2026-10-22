@@ -1,0 +1,26 @@
+name: Validate college
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-college:
+    name: Validate college
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Verify college architecture
+        run: python3 scripts/tools/verify_college.py
+      - name: Verify basic electrical engineering knowledge base
+        run: python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py
+      - name: Verify matrices and calculus knowledge base
+        run: python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py
