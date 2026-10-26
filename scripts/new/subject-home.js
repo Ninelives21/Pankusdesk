@@ -21,12 +21,16 @@ async function initSubjectHome() {
 		renderSubjectIdentity(subject);
 		renderKbStatus(subject, kbStatus);
 		renderUnits(subject, syllabus, kbStatus, subjectUrl);
-		renderPracticeLinks(subject, subjectUrl);
+		renderStudyResources(subject, subjectUrl);
 	} catch (error) {
 		console.error('Subject page load failed:', error);
 		const grid = document.querySelector('[data-unit-grid]');
 		if (grid) {
 			grid.innerHTML = '<div class="unit-error">Subject metadata could not be loaded. Open this page through Live Server or GitHub Pages so the JSON files can be fetched.</div>';
+		}
+		const resources = document.querySelector('[data-study-resources]');
+		if (resources) {
+			resources.innerHTML = '<p class="unit-error">Study resources could not be loaded. Please reload the page.</p>';
 		}
 	}
 }
@@ -86,12 +90,24 @@ function renderUnits(subject, syllabus, kbStatus, subjectUrl) {
 	}).join('');
 }
 
-function renderPracticeLinks(subject, subjectUrl) {
-	const pyqLink = document.querySelector('[data-pyq-link]');
-	const pyq = subject.practice?.pyqs;
-	if (pyqLink && pyq?.href) {
-		pyqLink.href = new URL(pyq.href, subjectUrl).href;
-	}
+function renderStudyResources(subject, subjectUrl) {
+	const grid = document.querySelector('[data-study-resources]');
+	if (!grid) return;
+
+	grid.innerHTML = (subject.studyResources ?? []).map(entry => {
+		const resource = { ...subject.practice?.[entry.practiceKey], ...entry };
+		const href = resource.href ? new URL(resource.href, subjectUrl).href : null;
+		const tag = href ? 'a' : 'article';
+		return `
+			<${tag} class="study-tool-card${href ? ' study-tool-link' : ''}"${href ? ` href="${escapeHtml(href)}"` : ''}>
+				<div class="tool-label">${escapeHtml(resource.label)}</div>
+				<h3>${escapeHtml(resource.title)}</h3>
+				<p>${escapeHtml(resource.description)}</p>
+				${resource.state ? `<span class="tool-state">${escapeHtml(resource.state)}</span>` : ''}
+				${href && resource.action ? `<span class="tool-action">${escapeHtml(resource.action)} →</span>` : ''}
+			</${tag}>
+		`;
+	}).join('');
 }
 
 function buildAtomPreview(atoms) {

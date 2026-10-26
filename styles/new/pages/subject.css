@@ -22,6 +22,10 @@
 	padding: var(--space-4) 0;
 }
 
+.subject-resource-hero {
+	grid-template-columns: minmax(0, 1fr);
+}
+
 .subject-hero h1 {
 	margin: 0;
 	max-width: 760px;
@@ -225,7 +229,7 @@
 
 .study-tool-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: var(--space-8);
 }
 
@@ -234,6 +238,9 @@
 }
 
 .study-tool-card {
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
 	padding: var(--space-10);
 	background: var(--surface);
 	border: 1px solid var(--line);
@@ -241,7 +248,8 @@
 	box-shadow: var(--shadow-small);
 }
 
-.study-tool-card h2 {
+.study-tool-card h2,
+.study-tool-card h3 {
 	margin: var(--space-4) 0 var(--space-5);
 	font-size: var(--font-size-card-title);
 	color: var(--text-strong);
@@ -259,6 +267,7 @@
 }
 
 .tool-state {
+	align-self: flex-start;
 	margin-top: var(--space-7);
 	display: inline-flex;
 	padding: 5px 8px;
@@ -375,7 +384,7 @@
 /* ---------------------------------------------------------------------- */
 
 .study-tool-link {
-	display: block;
+	display: flex;
 	text-decoration: none;
 	transition: transform var(--transition-standard), box-shadow var(--transition-standard), border-color var(--transition-standard);
 }
@@ -386,7 +395,13 @@
 	box-shadow: var(--shadow-hover);
 }
 
+.study-tool-link:focus-visible {
+	outline: 3px solid var(--primary);
+	outline-offset: 4px;
+}
+
 .tool-action {
+	align-self: flex-start;
 	margin-top: var(--space-7);
 	display: inline-flex;
 	font-size: var(--font-size-body-sm);
