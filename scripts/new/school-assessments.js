@@ -91,7 +91,7 @@ function renderPage(data) {
 			<a href="index.html">Panku's Desk</a><span>›</span>
 			<a href="college/1-1/index.html">Semester 1.1</a><span>›</span>
 			<a href="college/1-1/basic-electrical-engineering/index.html">BEE</a><span>›</span>
-			<span>School &amp; Exam Guidance</span>
+			<span>School Question Sets</span>
 		</div>
 
 		<section class="school-hero" id="se1-2026">
