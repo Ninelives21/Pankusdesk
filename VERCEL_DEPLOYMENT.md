@@ -1,82 +1,98 @@
 # College-only Vercel deployment
 
 This configuration is for `pankusdesk-previews`. GitHub Pages continues to publish
-repository files using the unchanged `.github/workflows/static.yml`. No original
-page, data, image, academic resource, or renderer is modified or moved.
+repository files through the unchanged `.github/workflows/static.yml`. The original
+homepage, college content, legacy bookmark redirects and five retained legacy PDFs
+are not edited, deleted or relocated by this build.
 
-## Build
+## Build and output boundary
 
-Run `python3 scripts/tools/build_vercel.py` from the repository root. Python's
-standard library is the only dependency. `vercel.json` selects `_vercel_site` as
-the sole deployment output, disables framework detection/install, and retains
-explicit `.html` URLs. The build replaces only that generated directory.
+Run `python3 scripts/tools/build_vercel.py` from the repository root. The build uses
+only Python's standard library; no dependency installation is required.
+`vercel.json` selects `_vercel_site` as the sole deployment output and keeps explicit
+`.html` URLs (`cleanUrls: false`). Repeated builds replace only that generated folder.
 
-The build includes every college HTML/JSON file, shared modern JS/CSS, and the
-transitive local resources referenced by those files. It resolves site-root,
-file-relative and subject-relative paths, copies linked PDFs and images without
-alteration, and keeps the original directory layout. JSON metadata is preserved,
-even when it describes offline source archives. An archive name in provenance
-metadata does not make the archive a browsing dependency. Referenced Markdown
-resources are retained; unreferenced notes, Python tools, backups, archives,
-legacy pages and development files are excluded. The build rejects a college
-dependency in the five excluded legacy trees and enforces a 350 MiB ceiling.
-The generated homepage alone omits the legacy-site section/link.
+The output contains `index.html`, `navbar_new.html`, every college HTML/JSON file,
+all modern shared JS/CSS, and their transitive local browsing dependencies. Existing
+site-root, file-relative and subject-relative paths are retained. Linked college
+PDFs, images, fonts and Markdown notes are copied without alteration. All output
+files, including the homepage, are byte-identical to source. The external link to
+https://ninelives21.github.io/Pankusdesk-legacy/ remains on the Vercel homepage.
+MathJax uses its existing free jsDelivr URL unchanged.
 
-MathJax continues to use the existing free jsDelivr URL, unchanged. No new hosting,
-service, package, paid API or runtime function is introduced.
+The build does not crawl that external site or copy the legacy redirect pages and
+legacy PDFs retained for GitHub Pages bookmarks. No development tools, unreferenced
+notes/audits, backups, source archives, editor settings or Git metadata are deployed.
+JSON provenance records remain intact even when they name offline archives. A
+source filename in provenance is not itself a download dependency.
 
-## Exact inventory at starting commit
+An existing local dependency outside `college/`, `scripts/new/`, `styles/new/` or the
+two root entry files fails the build for review, rather than silently pulling legacy
+content into Vercel. The generated output has a 350 MiB size ceiling. This is a
+regression budget, not a guarantee about accumulated Hobby deployment storage.
+No drawings or assets are recompressed, regenerated or redrawn.
 
-Starting commit: `5cb7456a07382f00d18f93f7c850eedd254b438f`.
-Sizes are sums of regular file lengths in bytes, without filesystem allocation,
-compression, Git history or build cache. These are reproducible local inventories,
-not measurements of Vercel's accumulated historical deployment storage.
+## Exact current size comparison
+
+Baseline main: `5629b45e1e8c7d3b370275494a974efc9cb0ee93`, after PR #15 merged.
+Sizes are sums of regular file byte lengths, without filesystem block allocation,
+Git history, compression, build cache or historical Vercel deployments.
 
 | Scope | Files | Bytes |
 | --- | ---: | ---: |
-| Full tracked repository | 3,533 | 644,412,076 |
-| Previous root content after the existing five `.vercelignore` tree exclusions | 1,105 | 282,281,076 |
-| Generated college-only output | 927 | 270,693,436 |
+| Latest main before this build configuration | 2,167 | 310,702,492 |
+| Latest main after the five existing `.vercelignore` tree exclusions | 1,098 | 282,149,366 |
+| Generated college-only output | 927 | 270,693,749 |
 
-The output reduces the previous Vercel-eligible source inventory by 11,587,640
-bytes (4.105%); compared with the full repository, it saves 373,718,640 bytes
-(57.994%). The existing `.vercelignore` already removed most legacy bytes. College
-images/PDFs account for most remaining storage; none were recompressed or redrawn.
-The build prints current source/output counts on every run. Source counts use
-committed HEAD and will include these new build/configuration documents after
-commit; the output counts are unaffected.
+The output saves 40,008,743 bytes against the full current main source inventory,
+or 11,455,617 bytes against the already-excluded Vercel-eligible source inventory.
+These are local inventories, not a measurement of actual historical Vercel usage.
 
-## Vercel dashboard configuration
+Each build prints the source input, input after the five legacy tree exclusions,
+and generated output file counts and bytes. Its source counts include this PR's
+new configuration/documents after they are committed, so those counts differ from
+the before-configuration baseline above. A real checkout inventories tracked files;
+a source archive falls back to a filesystem inventory excluding generated/scratch
+folders. Archive validation never accidentally inventories a parent Git checkout.
 
-In **pankusdesk-previews → Settings → Build and Deployment**:
+## Vercel dashboard settings
 
-- Root Directory: repository root (leave blank / `.`).
+In **pankusdesk-previews → Settings → Build and Deployment**, verify:
+
+- Root Directory: repository root (blank / `.`).
 - Framework Preset: **Other**.
 - Build Command: `python3 scripts/tools/build_vercel.py`.
 - Output Directory: `_vercel_site`.
-- Install Command: empty/disabled; no dependency installation is needed.
-- Remove conflicting dashboard overrides. The committed `vercel.json` provides
-  these settings for this project. Keep the existing Git connection and branch
-  selection; do not change GitHub Pages or its workflow.
+- Install Command: empty/disabled; no package installation is needed.
 
-After review/merge, create a new deployment from this configuration and inspect
-its build output before promoting it. No dashboard changes, production deployment,
-merge, or historical deployment deletion were performed as part of this PR.
+The committed `vercel.json` declares the build/output configuration. Remove any
+conflicting framework or command overrides if the project still uses them. Keep
+the current Git connection and branch selection. GitHub Pages needs no settings or
+workflow change. This PR does not alter dashboard settings or merge/deploy main.
+Existing Git integration may create a preview deployment of the PR automatically.
 
-**Accumulated storage needs separate cleanup.** A smaller output does not release
-storage held by previous deployments and cannot guarantee staying below 10 GB
-with unlimited retained deployments. In the project's deployment retention/cleanup
-settings, choose the shortest suitable retention offered on Hobby. Review and
-manually delete obsolete preview deployments if automatic retention is unavailable
-or insufficient; retain production and any needed rollback. Avoid unnecessary
-redeployments. Confirm the resulting storage usage in Vercel before resuming
-frequent previews. No paid plan is required by this build. Actual storage/quota
-availability and existing dashboard overrides could not be inspected without a
-Vercel connection.
+After reviewing and merging this PR, deploy the updated main (or inspect the
+Git-triggered production deployment). Verify the logs show this build command and
+output directory. Redeploying an old deployment/source configuration will not apply
+these changes.
+
+## Existing storage must be cleaned up separately
+
+A new, smaller deployment does not release storage belonging to previous ones.
+Unlimited retained deployments can still exceed the Hobby allowance. Review
+obsolete previews in Vercel and delete those no longer needed, keeping production
+and required rollback deployments. Configure suitable retention if available on
+Hobby; otherwise perform reviewed manual cleanup. If storage blocks new builds,
+cleanup may be needed before deploying this configuration. Confirm usage in the
+Vercel dashboard afterward. No paid plan, API or extra hosting is required.
+
+No historical deployment was deleted and no claim is made that the account's
+accumulated storage is now below 10 GB. Account usage, retention availability and
+existing project overrides cannot be inspected through the available GitHub tools.
 
 ## Validation
 
-All three existing validators passed:
+Run the three existing validators from source root:
 
 ```sh
 python3 scripts/tools/verify_college.py
@@ -84,22 +100,23 @@ python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py
 python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py
 ```
 
-Python syntax compilation and `git diff --check` passed. Every college HTML/JSON
-file is present in output. Every output file except the intentionally transformed
-homepage is byte-identical to its source.
+All three passed on the updated source. Python syntax compilation, Vercel JSON
+parsing, all college HTML/JSON presence, output/source byte identity, legacy-tree
+exclusion and original GitHub Pages workflow/homepage integrity were checked.
+Repeated builds must produce the same file paths and bytes, remove stale generated
+files, and leave source files unchanged.
 
-Chromium checks used 1440×1000 desktop and 390×844 mobile viewports against the
-built output. Checked Home, Semester 1.1, Calendar, Progress, BEE index, BEE Unit I,
-BEE Unit I Short Notes, BEE End-Sem Notes, MAC Unit I and Chemistry Unit II;
-loaded all images (including lazy images), expanded details, tested mobile menu,
-requested same-origin rendered links and checked MathJax rendering. BEE End-Sem
-Notes has 67 rendered math containers at both sizes, no broken images/resources,
-and no horizontal page overflow. Desktop/mobile screenshots were inspected.
-The six linked PDFs are retained unchanged. The static HTML audit checked 673
-local references across the entire output.
+Chromium compared the latest source with `_vercel_site` at local static document
+roots: all 46 current entry/college HTML pages at 390px mobile width and eight
+representative routes at 1440px desktop width (108 page checks / 54 before-after
+scenarios). Titles, headings, links, images, MathJax counts, mobile menus, overflow
+and failure signatures matched in every scenario. BEE End-Sem Notes retained all
+67 MathJax containers, with no failed local resources or missing rendered links.
+The six college PDFs returned valid HTTP 200 PDF responses from both snapshots.
+A static audit checked 673 local HTML references and found only the three known
+Progress references listed below. Desktop/mobile screenshots were inspected.
 
-Pre-existing issues preserved for separate review: Progress references a missing
-`styles/new/pages/progress.css`, and links to missing Programming/Problem Solving
-and Engineering Drawing course pages. The BEE Unit I, MAC Unit I and Chemistry
-Unit II pages have horizontal overflow at 390px. No source content or layout was
-changed to address these unrelated issues.
+Existing source issues are preserved and reported separately: Progress's missing
+stylesheet and two course links, missing draft BEE short-note figures with fallback
+handling, and mobile horizontal overflow in several long unit pages. A green build
+or validator does not assert those unrelated source issues are fixed.

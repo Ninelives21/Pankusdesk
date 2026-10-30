@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build only the college static site; never modify the GitHub Pages source."""
+"""Copy the college browsing dependency closure into Vercel's static output."""
 import html
 import json
 from pathlib import Path
@@ -14,6 +14,8 @@ TEXT = {'.html', '.json', '.js', '.css', '.md'}
 RUNTIME = {'.html', '.json', '.js', '.css', '.png', '.webp', '.jpg', '.jpeg',
            '.svg', '.gif', '.ico', '.pdf', '.woff', '.woff2', '.ttf', '.md', '.csv', '.txt'}
 LEGACY = {'study', 'ncert', 'image', 'files', 'questionbank'}
+ENTRIES = {'index.html', 'navbar_new.html'}
+CURRENT_TREES = ('college/', 'scripts/new/', 'styles/new/')
 
 
 def references(path):
@@ -33,27 +35,53 @@ def references(path):
 
 
 def dependencies(path):
-    # HTML uses <base href="/">; JSON renderers resolve paths against subject.json
-    # or the site base. CSS and module imports resolve relative to their own file.
+    # HTML uses the site base; JSON renderers use the site or subject base.
+    # CSS and module imports can resolve relative to their own file.
     bases = [ROOT, path.parent]
     if 'kb' in path.parts:
         bases.append(Path(*path.parts[:path.parts.index('kb')]))
     for value in references(path):
         value = html.unescape(value.strip(' \t\n\"\''))
-        if not value or value.startswith(('#', '//')):
+        if not value or len(value) >= 500 or value.startswith(('#', '//')):
             continue
-        url = urlsplit(value)
+        try:
+            url = urlsplit(value)
+        except ValueError:
+            continue  # Arbitrary prose/metadata strings are not necessarily URLs.
         if url.scheme or url.netloc:
             continue
         for base in bases:
             candidate = (base / unquote(url.path).lstrip('/')).resolve()
-            if candidate.suffix.lower() in RUNTIME and len(value) < 500 and candidate.is_relative_to(ROOT) and candidate.is_file():
+            if (candidate.suffix.lower() in RUNTIME
+                    and candidate.is_relative_to(ROOT) and candidate.is_file()):
                 yield candidate
 
 
+def source_files():
+    """Inventory this checkout, without accidentally reading a parent Git repo."""
+    try:
+        repo = subprocess.run(
+            ['git', 'rev-parse', '--show-toplevel'], cwd=ROOT,
+            capture_output=True, text=True, check=True)
+        if Path(repo.stdout.strip()).resolve() == ROOT:
+            names = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode().split('\0')
+            return [ROOT / name for name in names if name and (ROOT / name).is_file()]
+    except (OSError, subprocess.CalledProcessError):
+        pass
+    # Source archives used for local verification need no Git installation/metadata.
+    excluded = {'.git', '.vercel', '_vercel_site', 'work', 'node_modules'}
+    return [p for p in ROOT.rglob('*') if p.is_file()
+            and p.relative_to(ROOT).parts[0] not in excluded
+            and '__pycache__' not in p.parts and p.name != '.DS_Store']
+
+
+def inventory(files):
+    return {'files': len(files), 'bytes': sum(p.stat().st_size for p in files)}
+
+
 def build():
-    selected = {ROOT / 'index.html', ROOT / 'navbar_new.html'}
-    # Keep every college shell and data contract, including future semesters.
+    selected = {ROOT / name for name in ENTRIES}
+    # Keep every college shell and JSON contract, including future semesters.
     selected.update(p for p in (ROOT / 'college').rglob('*') if p.suffix in {'.html', '.json'})
     for folder in ('scripts/new', 'styles/new'):
         selected.update(p for p in (ROOT / folder).rglob('*') if p.suffix in {'.js', '.css'})
@@ -63,10 +91,9 @@ def build():
         if path.suffix not in TEXT:
             continue
         for dep in dependencies(path):
-            if dep.name == 'index_old.html':
-                continue
-            if dep.relative_to(ROOT).parts[0] in LEGACY:
-                raise RuntimeError(f'College dependency crosses into legacy site: {dep}')
+            relative = dep.relative_to(ROOT).as_posix()
+            if relative not in ENTRIES and not relative.startswith(CURRENT_TREES):
+                raise RuntimeError(f'College dependency outside current runtime roots: {relative}')
             if dep not in selected:
                 selected.add(dep)
                 pending.append(dep)
@@ -78,27 +105,16 @@ def build():
         target = OUT / source.relative_to(ROOT)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
-    # The old site is intentionally unavailable only on Vercel. Keep Pages intact.
-    home = OUT / 'index.html'
-    markup = home.read_text()
-    markup, count = re.subn(r'\s*<section class="old-site">.*?</section>', '', markup, flags=re.S)
-    if count != 1:
-        raise RuntimeError('Expected exactly one legacy homepage section')
-    home.write_text(markup)
+    # Preserve every file byte-for-byte, including the external legacy landing link.
     files = [p for p in OUT.rglob('*') if p.is_file()]
-    size = sum(p.stat().st_size for p in files)
-    if size > 350 * 1024 * 1024:
+    if inventory(files)['bytes'] > 350 * 1024 * 1024:
         raise RuntimeError('College output exceeds the 350 MiB deployment budget')
-    entries = subprocess.check_output(
-        ['git', 'ls-tree', '-r', '-l', '-z', 'HEAD'], cwd=ROOT).decode().split('\0')
-    tracked = [(entry.split('\t', 1)[1], int(entry.split('\t', 1)[0].split()[3]))
-               for entry in entries if entry and entry.split()[1] == 'blob']
-    # Starting configuration: root static output with the five .vercelignore trees.
-    previous = [(name, size) for name, size in tracked if name.split('/')[0] not in LEGACY]
+    sources = source_files()
+    eligible = [p for p in sources if p.relative_to(ROOT).parts[0] not in LEGACY]
     report = {
-        'tracked_repository': {'files': len(tracked), 'bytes': sum(size for _, size in tracked)},
-        'previous_vercel_static_output': {'files': len(previous), 'bytes': sum(size for _, size in previous)},
-        'optimized_output': {'files': len(files), 'bytes': size},
+        'source_input': inventory(sources),
+        'source_after_existing_vercel_tree_exclusions': inventory(eligible),
+        'optimized_output': inventory(files),
     }
     print(json.dumps(report, indent=2))
     return report
