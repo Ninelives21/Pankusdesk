@@ -55,12 +55,13 @@ The current repository and explicit instructions for the task take precedence ov
 - For layout, interaction, rendering, or image-placement changes, perform browser/screenshot checks where available and report if they were **not** performed. Check site behavior with the GitHub Pages `/Pankusdesk/` base path where affected. Do not report a page as visually verified solely because HTTP requests returned 200.
 - Before changing publication status to `ready`, apply the full source, figure, visual, link, and academic gates in `college/UNIT_BUILD_CHECKLIST.md`. Never promote a unit solely because the automated scripts pass.
 
-### Lightweight PR and Vercel preview QA
+### Manual review checklist for every PR and Vercel preview
 
-- Every PR must include a short QA checklist, normally 2–4 cases: basic sanity (homepage/affected page loads and a relevant navigation link works), plus 1–2 checks specific to the change. Keep the scope proportional; documentation-only PRs can use document/diff checks and mark browser QA not applicable with a reason.
-- For site changes, run the relevant cases against the Vercel preview. Record the preview URL and tested commit SHA, brief steps, expected result, actual result, and PASS / FAIL / NOT TESTED for each case. Distinguish local/automated checks from preview browser checks. If preview access is unavailable, mark preview QA pending and explain why; never report it as passed.
-- Include desktop and mobile checks when layout or navigation is affected; check MathJax, images, PDFs, anchors or other resources only where relevant. Run the three existing validators for relevant college changes as required above.
-- After each PR update/new preview, refresh the relevant checks against the latest deployed commit. Keep existing failures separate from regressions and carry pending checks into the handoff. Do not merge automatically.
+- Give the user a short **Before you merge — try these checks** checklist in both the PR description and final chat handoff. Normally include 2–4 checks: basic page/navigation sanity plus 1–2 checks specific to the change. This is a user-performed acceptance checklist, not a table of automated PASS/FAIL results.
+- Each unchecked item must give a clickable preview page/resource link (or exact navigation steps), the action to perform, and the visible expected result in plain language. Provide the Vercel preview URL and commit it represents. Leave user checkboxes unchecked; agent testing does not complete the user's review.
+- For layout/navigation changes, include desktop and phone checks. Include MathJax, images, PDFs or question anchors only where relevant. Refresh links and checks after PR changes/new previews. If preview access is unavailable, explicitly mark the preview pending and supply useful steps without inventing URLs or claiming validation.
+- Documentation-only PRs should give 1–2 concrete document review steps with GitHub links and explain that no website behavior changes; do not require unrelated browser checks.
+- Report agent-run validators and browser checks briefly in a separate validation note. Run the three existing validators for relevant college changes as required above. Keep known issues/pending checks separate, and do not merge automatically.
 
 ## 6. Task completion report and handoff
 
