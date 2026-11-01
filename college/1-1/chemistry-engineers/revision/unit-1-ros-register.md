@@ -1,6 +1,6 @@
 # Unit I — ROS visual register
 
-Source A: `11.09.2025.pdf`  
+Source A: `11.09.2025.pdf`
 Source B: `Part II-water - its treatment 01.10.2025.pdf`
 
 Page numbers are 1-based PDF viewer pages. Each source composite stays together.
