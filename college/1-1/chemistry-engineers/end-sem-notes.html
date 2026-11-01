@@ -17,7 +17,10 @@
 		<link rel="stylesheet" href="styles/new/pages/subject.css" />
 		<link rel="stylesheet" href="styles/new/pages/end-sem-notes.css" />
 		<script src="scripts/new/navbar.js" defer></script>
+		<link rel="stylesheet" href="styles/new/study-ui.css" />
+		<script src="scripts/new/study-ui.js" defer></script>
 		<script src="scripts/new/end-sem-navigation.js" defer></script>
+		<script src="scripts/new/end-sem-revision.js" defer></script>
 	</head>
 	<body id="top">
 		<div id="navbar-new"></div>
@@ -32,24 +35,19 @@
 				<div class="subject-hero-copy">
 					<div class="eyebrow">Chemistry for Engineers · R25</div>
 					<h1>End-Sem Revision Notes</h1>
-					<p class="subject-intro">Revision notes for preparation before semester-end exams.</p>
+					<p class="subject-intro">Unit I · Hardness and EDTA revision. Partial collection; further units and lab revision are pending.</p>
 					<a class="end-sem-subject-link" href="college/1-1/chemistry-engineers/index.html">← Back to main Chemistry page</a>
 				</div>
 			</section>
 			<div class="end-sem-layout">
 				<nav class="end-sem-nav" aria-label="End-sem navigation">
 					<a class="end-sem-back-top" href="#top">↑ Back to top</a>
+					<div class="end-sem-topic-links" data-revision-nav></div>
 				</nav>
-				<div class="end-sem-content">
-					<section class="section" aria-labelledby="notes-status-title">
-						<div class="study-tool-card muted-tool-card">
-							<div class="tool-label">Revision collection</div>
-							<h2 id="notes-status-title">Notes not added yet</h2>
-							<p>No end-sem revision files are available for this subject yet.</p>
-							<a class="tool-action" href="college/1-1/chemistry-engineers/index.html#study-resources">Back to study &amp; exam resources →</a>
-						</div>
-					</section>
-				</div>
+				<div class="end-sem-content" data-revision="college/1-1/chemistry-engineers/revision/unit-1.json" aria-label="Unit I revision notes">
+                        <p>Loading Unit I revision notes…</p>
+                        <noscript>JavaScript is needed to load these notes. The main Chemistry Text pages remain available from the subject page.</noscript>
+                    </div>
 			</div>
 		</main>
 	</body>

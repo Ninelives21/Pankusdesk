@@ -46,9 +46,25 @@
 .end-sem-content { min-width: 0; }
 .end-sem-content > .section { margin-top: 0; }
 
+.end-sem-topic-links { display: grid; gap: 8px; margin-top: 16px; }
+.end-sem-topic-links a { color: #245884; line-height: 1.5; }
+.revision-status, .revision-note { padding: 14px; border-left: 4px solid #245884; background: #edf4fb; }
+.revision-section { padding: 24px; margin-bottom: 20px; border: 1px solid #e1e8f0; border-radius: 12px; background: #fff; scroll-margin-top: 24px; line-height: 1.7; }
+.revision-section h2 { color: #245884; line-height: 1.3; }
+.revision-equation, .revision-table { max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: 16px 0; }
+.revision-table table { border-collapse: collapse; width: 100%; }
+.revision-table caption { text-align: left; font-weight: 700; }
+.revision-table th, .revision-table td { border: 1px solid #d5e1ec; padding: 10px; text-align: left; }
+.revision-table th { background: #edf4fb; }
+.revision-questions { padding-left: 28px; }
+.revision-questions li { padding-left: 6px; scroll-margin-top: 24px; }
+.revision-questions li p { margin: 8px 0; }
+.revision-section .study-example-solution p { overflow-x: auto; overflow-y: hidden; }
+
 @media (max-width: 700px) {
 	.end-sem-layout { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 	.end-sem-nav { position: static; }
+	.revision-section { padding: 16px; }
 }
 
 @media print {

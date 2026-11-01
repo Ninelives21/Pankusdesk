@@ -1,0 +1,517 @@
+{
+  "title": "Unit I — Hardness and EDTA",
+  "status": "partial",
+  "intro": "Hardness, units, three worked problems and EDTA estimation. Includes the complete supplied Unit I question bank; remaining revision topics are pending.",
+  "sections": [
+    {
+      "id": "hardness",
+      "title": "Hardness: temporary and permanent",
+      "paragraphs": [
+        "Hardness is the property of water that prevents ready lathering with soap. Dissolved calcium and magnesium salts react with soap to produce insoluble scum. Soft water readily gives lather; hard water does not.",
+        "Soaps are sodium or potassium salts of higher fatty acids such as stearic, palmitic or oleic acid. Calcium and magnesium ions precipitate the corresponding insoluble soaps.",
+        "Temporary hardness, also called carbonate or alkaline hardness, is mainly due to calcium and magnesium bicarbonates. Boiling decomposes these bicarbonates and precipitates calcium carbonate or magnesium hydroxide.",
+        "Permanent hardness, also called non-carbonate or non-alkaline hardness, is caused by chlorides, sulphates and nitrates of calcium and magnesium. Boiling does not remove it; softening processes are required."
+      ],
+      "tables": [],
+      "formulas": [
+        "\\(2\\mathrm{C_{17}H_{35}COONa}+\\mathrm{CaCl_2}\\rightarrow\\mathrm{(C_{17}H_{35}COO)_2Ca}+2\\mathrm{NaCl}\\)",
+        "\\(2\\mathrm{C_{17}H_{35}COONa}+\\mathrm{MgSO_4}\\rightarrow\\mathrm{(C_{17}H_{35}COO)_2Mg}+\\mathrm{Na_2SO_4}\\)",
+        "\\(\\mathrm{Ca(HCO_3)_2}\\xrightarrow{\\text{heat}}\\mathrm{CaCO_3}+\\mathrm{H_2O}+\\mathrm{CO_2}\\)",
+        "\\(\\mathrm{Mg(HCO_3)_2}\\xrightarrow{\\text{heat}}\\mathrm{Mg(OH)_2}+2\\mathrm{CO_2}\\)"
+      ],
+      "source_refs": [
+        {
+          "source": "CFE-REV-U1-A",
+          "pages": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "units",
+      "title": "Calcium-carbonate equivalents and units",
+      "paragraphs": [
+        "Express the hardness-producing salts on one common basis: their equivalent concentration as calcium carbonate. For the divalent calcium and magnesium salts used in these problems, multiply each salt concentration by 100 and divide by its molecular mass.",
+        "Add the bicarbonate contributions for temporary hardness. Add the chloride, sulphate and nitrate contributions for permanent hardness. Total hardness is the sum of temporary and permanent hardness. Sodium/potassium salts and suspended matter do not contribute to the calcium/magnesium hardness calculation.",
+        "For dilute water samples, 1 mg/L is approximately 1 ppm. One degree French represents 10 ppm as calcium carbonate; one degree Clarke represents approximately 14.3 ppm. The supplied notes use the rounded conversion 1 ppm = 0.07 °Clarke."
+      ],
+      "tables": [
+        {
+          "caption": "Molecular masses used in the supplied hardness problems",
+          "headers": [
+            "Salt",
+            "Molecular mass"
+          ],
+          "rows": [
+            [
+              "Ca(HCO₃)₂",
+              "162"
+            ],
+            [
+              "Mg(HCO₃)₂",
+              "146"
+            ],
+            [
+              "CaSO₄",
+              "136"
+            ],
+            [
+              "MgSO₄",
+              "120"
+            ],
+            [
+              "CaCl₂",
+              "111"
+            ],
+            [
+              "MgCl₂",
+              "95"
+            ],
+            [
+              "Ca(NO₃)₂",
+              "164"
+            ],
+            [
+              "Mg(NO₃)₂",
+              "148"
+            ]
+          ]
+        }
+      ],
+      "formulas": [
+        "\\[\\text{CaCO}_3\\text{ equivalent (mg/L)}=\\dfrac{\\text{salt concentration (mg/L)}\\times100}{\\text{molecular mass of salt}}\\]",
+        "\\[H_{\\mathrm{total}}=H_{\\mathrm{temporary}}+H_{\\mathrm{permanent}}\\]",
+        "\\[H\\;(^{\\circ}\\mathrm{French})=\\dfrac{H\\;(\\mathrm{ppm})}{10},\\qquad H\\;(^{\\circ}\\mathrm{Clarke})\\approx0.07H\\;(\\mathrm{ppm})\\]"
+      ],
+      "source_refs": [
+        {
+          "source": "CFE-REV-U1-A",
+          "pages": [
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hardness-problems",
+      "title": "Hardness calculations: supplied problems",
+      "paragraphs": [],
+      "tables": [],
+      "formulas": [],
+      "examples": [
+        {
+          "id": "u1-hardness-problem-1",
+          "title": "Problem 1",
+          "question_paragraphs": [
+            "A water sample contains Ca(HCO₃)₂ = 4.86 g/L, Mg(HCO₃)₂ = 5.84 g/L, CaSO₄ = 6.80 g/L and MgSO₄ = 8.40 g/L. Calculate temporary and permanent hardness in degrees French and Clarke."
+          ],
+          "paragraphs": [
+            "PankusDesk-completed working, using the supplied problem and CaCO₃-equivalent table.",
+            "Convert g/L to mg/L: 4.86 → 4860; 5.84 → 5840; 6.80 → 6800; 8.40 → 8400.",
+            "\\(\\mathrm{Ca(HCO_3)_2}:4860\\times\\dfrac{100}{162}=3000\\) mg/L as CaCO₃.",
+            "\\(\\mathrm{Mg(HCO_3)_2}:5840\\times\\dfrac{100}{146}=4000\\) mg/L as CaCO₃.",
+            "\\(\\mathrm{CaSO_4}:6800\\times\\dfrac{100}{136}=5000\\) mg/L as CaCO₃.",
+            "\\(\\mathrm{MgSO_4}:8400\\times\\dfrac{100}{120}=7000\\) mg/L as CaCO₃.",
+            "Temporary hardness = 3000 + 4000 = 7000 ppm. French = 7000/10 = 700 °Fr; Clarke ≈ 7000 × 0.07 = 490 °Cl.",
+            "Permanent hardness = 5000 + 7000 = 12000 ppm. French = 12000/10 = 1200 °Fr; Clarke ≈ 12000 × 0.07 = 840 °Cl."
+          ],
+          "final_answer": "Temporary: 700 °Fr, approximately 490 °Cl. Permanent: 1200 °Fr, approximately 840 °Cl."
+        },
+        {
+          "id": "u1-hardness-problem-2",
+          "title": "Problem 2",
+          "question_paragraphs": [
+            "Calculate temporary and permanent hardness for Ca(HCO₃)₂ = 162 mg/L, Mg(HCO₃)₂ = 73 mg/L, CaSO₄ = 136 mg/L, MgCl₂ = 95 mg/L, CaCl₂ = 111 mg/L, NaCl = 100 mg/L and suspended matter = 50 mg/L."
+          ],
+          "paragraphs": [
+            "PankusDesk-completed working, using the supplied problem and CaCO₃-equivalent table.",
+            "\\(\\mathrm{Ca(HCO_3)_2}:162\\times\\dfrac{100}{162}=100\\) mg/L as CaCO₃.",
+            "\\(\\mathrm{Mg(HCO_3)_2}:73\\times\\dfrac{100}{146}=50\\) mg/L as CaCO₃.",
+            "\\(\\mathrm{CaSO_4}:136\\times\\dfrac{100}{136}=100\\) mg/L as CaCO₃.",
+            "\\(\\mathrm{MgCl_2}:95\\times\\dfrac{100}{95}=100\\) mg/L as CaCO₃.",
+            "\\(\\mathrm{CaCl_2}:111\\times\\dfrac{100}{111}=100\\) mg/L as CaCO₃.",
+            "NaCl and suspended matter are excluded from the hardness sum.",
+            "Temporary hardness = 100 + 50 = 150 ppm. Permanent hardness = 100 + 100 + 100 = 300 ppm. Total = 150 + 300 = 450 ppm."
+          ],
+          "final_answer": "Temporary hardness = 150 ppm; permanent hardness = 300 ppm; total hardness = 450 ppm."
+        },
+        {
+          "id": "u1-hardness-problem-3",
+          "title": "Problem 3",
+          "question_paragraphs": [
+            "Determine total hardness in degrees French and Clarke for MgCl₂ = 19 ppm, MgSO₄ = 12 ppm, Ca(NO₃)₂ = 16.4 ppm, NaOH = 40 ppm, KOH = 56 ppm, suspended matter = 100 ppm, Ca(HCO₃)₂ = 162 ppm and Mg(NO₃)₂ = 14.8 ppm."
+          ],
+          "paragraphs": [
+            "PankusDesk-completed working, using the supplied problem and CaCO₃-equivalent table.",
+            "\\(\\mathrm{MgCl_2}:19\\times\\dfrac{100}{95}=20\\) ppm as CaCO₃.",
+            "\\(\\mathrm{MgSO_4}:12\\times\\dfrac{100}{120}=10\\) ppm as CaCO₃.",
+            "\\(\\mathrm{Ca(NO_3)_2}:16.4\\times\\dfrac{100}{164}=10\\) ppm as CaCO₃.",
+            "\\(\\mathrm{Ca(HCO_3)_2}:162\\times\\dfrac{100}{162}=100\\) ppm as CaCO₃.",
+            "\\(\\mathrm{Mg(NO_3)_2}:14.8\\times\\dfrac{100}{148}=10\\) ppm as CaCO₃.",
+            "NaOH, KOH and suspended matter are excluded from the hardness sum.",
+            "Total hardness = 20 + 10 + 10 + 100 + 10 = 150 ppm. French = 150/10 = 15 °Fr. Clarke ≈ 150 × 0.07 = 10.5 °Cl."
+          ],
+          "final_answer": "Total hardness = 150 ppm = 15 °Fr ≈ 10.5 °Cl."
+        },
+        {
+          "id": "u1-hardness-problem-4",
+          "title": "Problem 4 — source discrepancy; answer pending",
+          "question_paragraphs": [
+            "Calculate temporary and permanent hardness in ppm, degrees French and Clarke for CaCO₃ = 100 mg/L, Mg(HCO₃)₂ = 14.6 mg/L, HCl = 36 mg/L, MgSO₄ = 12 mg/L, NaCl = 84 mg/L and CaCl₂ = 11.1 mg/L."
+          ],
+          "paragraphs": [
+            "No unique worked answer is published while the supplied question and calculation table conflict."
+          ],
+          "discrepancy": {
+            "label": "Source discrepancy",
+            "message": "The question prints Mg(HCO₃)₂ = 14.6 mg/L, but the table uses 146 mg/L and gives 100 mg/L as its CaCO₃ equivalent. At 14.6 mg/L the equivalent would be 10 mg/L. The question also includes CaCO₃ and HCl, while the printed table does not account for HCl. The intended treatment needs confirmation; neither printed value has been silently changed."
+          }
+        }
+      ],
+      "source_refs": [
+        {
+          "source": "CFE-REV-U1-P",
+          "pages": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "edta",
+      "title": "Estimation of hardness by the EDTA method",
+      "paragraphs": [
+        "EDTA estimation is a complexometric titration. Calcium and magnesium ions form complexes with disodium ethylenediaminetetraacetate. An ammonia–ammonium chloride buffer maintains the required pH, approximately 10.",
+        "Take a known volume of the water sample, add the buffer and Eriochrome Black-T (EBT) indicator. The metal–indicator complex is wine red. Titrate with standard EDTA solution.",
+        "The metal–EDTA complex is more stable than the metal–indicator complex. EDTA binds the metal ions, releasing the blue indicator. The endpoint is the change from wine red to blue.",
+        "For permanent hardness, boil the sample for about 30 minutes to remove temporary hardness, then titrate with EDTA. Temporary hardness is the difference between total and permanent hardness. The method is rapid, convenient and accurate."
+      ],
+      "tables": [],
+      "formulas": [
+        "\\[\\text{Metal–EBT (wine red)}+\\text{EDTA}\\rightarrow\\text{Metal–EDTA (colourless)}+\\text{EBT (blue)}\\]",
+        "\\[H_{\\mathrm{total}}\\;(\\mathrm{mg/L\\ as\\ CaCO_3})=\\dfrac{V_{\\mathrm{EDTA}}\\,N_{\\mathrm{EDTA}}\\times50\\times1000}{V_{\\mathrm{sample}}}\\]"
+      ],
+      "notes": [
+        "Volumes in this expression are in mL. The supplied expression uses EDTA normality, not molarity; those quantities must not be interchanged without the corresponding equivalence convention."
+      ],
+      "figures": [
+        {
+          "src": "college/1-1/chemistry-engineers/assets/end-sem/unit-1/cfe-u1-a-p007-v01.webp",
+          "alt": "Original structural formula of disodium EDTA from the supplied notes, retaining the two sodium carboxylate and two carboxylic-acid arms around the ethylenediamine backbone.",
+          "caption": "Disodium EDTA",
+          "width": 352,
+          "height": 115
+        }
+      ],
+      "source_refs": [
+        {
+          "source": "CFE-REV-U1-A",
+          "pages": [
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit1-questions",
+      "title": "Unit I question bank",
+      "paragraphs": [
+        "Supplied revision questions. Answers to the full question bank are not yet published in this collection."
+      ],
+      "tables": [],
+      "formulas": [],
+      "question_groups": [
+        {
+          "title": "Short-answer questions",
+          "items": [
+            {
+              "id": "u1-short-1",
+              "number": 1,
+              "paragraphs": [
+                "Name the salts that cause temporary hardness. How are they removed? [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-2",
+              "number": 2,
+              "paragraphs": [
+                "Mention the different units of hardness? Give the relation between the units. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-3",
+              "number": 3,
+              "paragraphs": [
+                "List out the disadvantages of usage of hard water in industries. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-4",
+              "number": 4,
+              "paragraphs": [
+                "Hardness is expressed in terms of CaCO3 equivalents? Give reason. [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-short-5",
+              "number": 5,
+              "paragraphs": [
+                "Mention the dissolved salts that cause temporary and permanent hardness in water. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-6",
+              "number": 6,
+              "paragraphs": [
+                "Give the principle involved in the estimation of hardness by EDTA method. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-7",
+              "number": 7,
+              "paragraphs": [
+                "Why is ammonical (NH4Cl+NH4OH) buffer added during the determination of hardness in water samples? [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-short-8",
+              "number": 8,
+              "paragraphs": [
+                "A water sample containing Ca(HCO₃)₂ and MgSO₄ has temporary hardness of 200 ppm and permanent hardness of 300 ppm. Calculate the total hardness of water in ppm, °French, and °Clarke."
+              ]
+            },
+            {
+              "id": "u1-short-9",
+              "number": 9,
+              "paragraphs": [
+                "A water sample contains 20 mg/L of Ca²⁺ and 24 mg/L of Mg²⁺ ions. Calculate hardness of water in ppm as CaCO₃ equivalent. (Atomic mass: Ca = 40, Mg = 24, Molar mass of CaCO₃ = 100)."
+              ]
+            },
+            {
+              "id": "u1-short-10",
+              "number": 10,
+              "paragraphs": [
+                "What is internal water treatment in boilers and why is it necessary? [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-11",
+              "number": 11,
+              "paragraphs": [
+                "Specify the requirements for potable water? [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-12",
+              "number": 12,
+              "paragraphs": [
+                "What is disinfection? What are the different methods of disinfection? [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-13",
+              "number": 13,
+              "paragraphs": [
+                "Why is chloramine preferred to bleaching powder during disinfection? [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-short-14",
+              "number": 14,
+              "paragraphs": [
+                "How does break point chlorination improve water quality in municipal water supplies? [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-short-15",
+              "number": 15,
+              "paragraphs": [
+                "What happens if natural water is fed into boilers? [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-short-16",
+              "number": 16,
+              "paragraphs": [
+                "Differentiate between scales and sludges. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-17",
+              "number": 17,
+              "paragraphs": [
+                "Name the hardest scale formed? How is it removed? [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-18",
+              "number": 18,
+              "paragraphs": [
+                "State two reasons for the formation of scales in boilers. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-19",
+              "number": 19,
+              "paragraphs": [
+                "Mention the type of scales formed in low pressure boilers with necessary equations. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-20",
+              "number": 20,
+              "paragraphs": [
+                "In demineralization process, water is usually passed through cation exchanger and then through anion exchanger. Give reason. [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-short-21",
+              "number": 21,
+              "paragraphs": [
+                "Illustrate the reactions involved in calgon conditioning of hard water. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-short-22",
+              "number": 22,
+              "paragraphs": [
+                "Why is calgon conditioning much preferred over phosphate conditioning? [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-short-23",
+              "number": 23,
+              "paragraphs": [
+                "State and explain the principle involved in reverse osmosis process? [BL-1]"
+              ]
+            },
+            {
+              "id": "u1-short-24",
+              "number": 24,
+              "paragraphs": [
+                "List any two advantages of nanofiltration. [BL-2]"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Essay questions",
+          "items": [
+            {
+              "id": "u1-essay-1",
+              "number": 1,
+              "paragraphs": [
+                "Explain in detail how hardness of a water sample is estimated by EDTA method. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-essay-2",
+              "number": 2,
+              "paragraphs": [
+                "Calculate the permanent hardness and temporary hardness of a water sample containing the following salts, Mg(HCO3)2 = 146 mg/L, Ca(HCO3)2 = 40.5mg/L, CaSO4 = 34mg/L, MgSO4 = 60mg/L. [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-essay-3",
+              "number": 3,
+              "paragraphs": [
+                "Calculate temporary and total hardness present in 10,000 liters of a water sample containing the following impurities, Mg(HCO3)2 = 73 mg/L, Ca(HCO3)2 = 162 mg/L, CaSO4 = 136mg/L, MgCl2 = 95mg/L. [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-essay-4",
+              "number": 4,
+              "paragraphs": [
+                "Explain the stages involved in the process of break-point chlorination with necessary illustration. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-essay-5",
+              "number": 5,
+              "paragraphs": [
+                "Define scales and sludges? How are they formed? Give their disadvantages and removal methods. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-essay-6",
+              "number": 6,
+              "paragraphs": [
+                "Discuss the reasons and control methods for the boiler trouble caused by scale formation. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-essay-7",
+              "number": 7,
+              "paragraphs": [
+                "a) Differentiate between scales and sludges? [BL-2]",
+                "b) A sample of hard water contains the following dissolved salts per litre. Ca (HCO3)2 = 16.2 mgs, Mg (HCO3)2 = 14.6 mg/L, CaCl2 = 111mgs, CaSO4 = 1.36mgs, turbidity = 10mgs. Calculate the temporary, permanent and total hardness of water in ppm. [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-essay-8",
+              "number": 8,
+              "paragraphs": [
+                "Discuss various steps involved in the treatment of potable water. [BL-2]"
+              ]
+            },
+            {
+              "id": "u1-essay-9",
+              "number": 9,
+              "paragraphs": [
+                "Explain the purification of water by Ion exchange process. Give the reactions involved. [BL-3]"
+              ]
+            },
+            {
+              "id": "u1-essay-10",
+              "number": 10,
+              "paragraphs": [
+                "How is natural water disinfected by - [BL-1]",
+                "a) chlorine",
+                "b) bleaching powder",
+                "c) chloramine"
+              ]
+            },
+            {
+              "id": "u1-essay-11",
+              "number": 11,
+              "paragraphs": [
+                "Compare MF, UF, and NF membranes based on pore size, advantages, limitations, and applications."
+              ]
+            },
+            {
+              "id": "u1-essay-12",
+              "number": 12,
+              "paragraphs": [
+                "What is desalination? Explain the process of desalination of water by reverse osmosis. [BL-2]"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_refs": [
+        {
+          "source": "CFE-REV-U1-Q",
+          "pages": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next-sections",
+      "title": "Remaining revision notes",
+      "paragraphs": [
+        "Unit I potable-water treatment, boiler troubles, ion exchange, reverse osmosis and membranes are awaiting integration here. Units II–V, the 37-question FAQ and lab revision are also pending. This is a partial revision release."
+      ],
+      "tables": [],
+      "formulas": []
+    }
+  ]
+}
