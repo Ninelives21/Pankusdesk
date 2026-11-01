@@ -4,9 +4,22 @@
 .source-page p { margin: 9px 0 15px; }
 .source-page sup, .source-page sub { line-height: 0; }
 .source-page-anchor, .source-page { scroll-margin-top: 24px; }
-.source-notes-links { display: grid; gap: 8px; margin-top: 16px; }
-.source-notes-links a { line-height: 1.4; color: #245884; text-decoration: none; }
-.source-notes-links a:hover, .source-notes-links a:focus-visible { text-decoration: underline; }
+.source-nav-heading { margin: 18px 0 12px; font-size: 1rem; color: #203d57; }
+.source-notes-links { display: grid; gap: 12px; }
+.source-nav-group { border: 1px solid #c5d5e4; border-radius: 9px; background: #fff; }
+.source-nav-group > summary { padding: 11px 12px; cursor: pointer; background: #eaf2fa; border-radius: 9px; color: #183e61; }
+.source-nav-group > summary::marker { color: #245884; }
+.source-nav-group[open] > summary { border-bottom: 1px solid #c5d5e4; border-radius: 9px 9px 0 0; }
+.source-nav-title { font-size: 14px; font-weight: 750; }
+.source-nav-subtitle { display: block; margin: 3px 0 0 17px; font-size: 12px; line-height: 1.4; color: #536c83; }
+.source-nav-topics { padding: 6px 8px; }
+.source-nav-topics ul { list-style: none; padding: 0; margin: 0; }
+.source-nav-topics li + li { border-top: 1px solid #e4ebf2; }
+.source-notes-links a { display: block; padding: 9px 8px; border-radius: 5px; line-height: 1.45; color: #245884; text-decoration: none; font-size: 13px; }
+.source-nav-overview { font-weight: 700; border-bottom: 1px solid #cfdae5; margin-bottom: 3px; }
+.source-notes-links a:hover, .source-notes-links a[aria-current="location"] { background: #eaf2fa; color: #153d62; }
+.source-notes-links a[aria-current="location"] { box-shadow: inset 3px 0 #245884; font-weight: 700; }
+.source-nav-group > summary:focus-visible, .source-notes-links a:focus-visible { outline: 3px solid #87b4eb; outline-offset: 2px; }
 .source-notes-editorial { padding: 16px; margin-bottom: 18px; background: #edf4fb; border-left: 4px solid #245884; line-height: 1.6; }
 .source-equation, .source-table-scroll { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 .source-equation { padding: 8px 0; }
@@ -19,9 +32,8 @@
 .source-visual img { height: auto; max-width: 100%; }
 .source-page .study-figure { max-width: 100%; }
 .source-page .study-figure img { cursor: zoom-in; }
-.source-notes-links a:first-child { font-weight: 700; }
 .end-sem-nav:has(.source-notes-links) { max-height: calc(100vh - 36px); overflow-y: auto; }
 @media (max-width: 700px) {
   .source-page { padding: 10px 14px; }
-  .end-sem-nav:has(.source-notes-links) { max-height: 280px; }
+  .end-sem-nav:has(.source-notes-links) { max-height: 360px; }
 }
