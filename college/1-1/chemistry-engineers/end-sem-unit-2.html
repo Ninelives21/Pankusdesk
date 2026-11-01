@@ -1,0 +1,1564 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<base id="site-base" href="/" />
+		<script>
+			const base = document.getElementById('site-base');
+			if (window.location.hostname.endsWith('github.io')) base.href = '/Pankusdesk/';
+		</script>
+		<title>Unit 2 End-Sem Notes · CFE · Panku's Desk</title>
+		<link rel="stylesheet" href="styles/new/variables.css" />
+		<link rel="stylesheet" href="styles/new/base.css" />
+		<link rel="stylesheet" href="styles/new/layout.css" />
+		<link rel="stylesheet" href="styles/new/navbar.css" />
+		<link rel="stylesheet" href="styles/new/components.css" />
+		<link rel="stylesheet" href="styles/new/pages/subject.css" />
+		<link rel="stylesheet" href="styles/new/pages/end-sem-notes.css" />
+		<script src="scripts/new/navbar.js" defer></script>
+		<link rel="stylesheet" href="styles/new/study-ui.css" />
+<link rel="stylesheet" href="styles/new/pages/practice.css" />
+<link rel="stylesheet" href="styles/new/pages/source-notes.css" />
+<script src="scripts/new/study-ui.js" defer></script>
+<script src="scripts/new/end-sem-navigation.js" defer></script>
+<script src="scripts/new/source-notes.js" defer></script>
+	</head>
+	<body id="top"><div id="navbar-new"></div><main class="page-shell">
+ <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Panku's Desk</a><span>›</span><a href="college/1-1/index.html">Semester 1.1</a><span>›</span><a href="college/1-1/chemistry-engineers/index.html#end-sem-units">CFE End-Sem Notes</a><span>›</span><span aria-current="page">Unit 2</span></nav>
+ <section class="subject-hero subject-resource-hero"><div class="subject-hero-copy"><div class="eyebrow">Chemistry for Engineers · R25 · Draft</div><h1>Unit 2 · Electrochemistry and Corrosion</h1><p class="subject-intro">Semester-end notes, electrode comparisons and question-bank answers.</p><a class="end-sem-subject-link" href="college/1-1/chemistry-engineers/index.html#end-sem-units">← All end-sem units</a></div></section>
+ <div class="end-sem-layout"><nav class="end-sem-nav" aria-label="Unit 2 end-sem navigation"><a class="end-sem-back-top" href="#top">↑ Back to top</a><h2 class="source-nav-heading">Unit 2 revision</h2><div class="source-notes-links"><details class="source-nav-group" name="revision-sections"><summary><span class="source-nav-title">Electrochemistry Basics</span><span class="source-nav-subtitle">Cells, potentials and Nernst equation</span></summary><div class="source-nav-topics"><ul><li><a href="#u2-cells">Introduction and cells</a></li><li><a href="#u2-daniell-cell">Daniell cell</a></li><li><a href="#u2-cell-comparisons">Cell comparisons</a></li><li><a href="#u2-potential">Half-cells and electrode potential</a></li><li><a href="#u2-nernst">Standard potential and Nernst equation</a></li></ul></div></details><details class="source-nav-group" name="revision-sections"><summary><span class="source-nav-title">Reference and Ion-Selective Electrodes</span><span class="source-nav-subtitle">Construction, working and applications</span></summary><div class="source-nav-topics"><ul><li><a href="#u2-reference">Reference electrodes and SHE construction</a></li><li><a href="#u2-she">SHE working and representation</a></li><li><a href="#u2-calomel">Calomel electrode</a></li><li><a href="#u2-ise">Ion-selective electrodes</a></li><li><a href="#u2-glass">Combined glass electrode</a></li></ul></div></details><details class="source-nav-group" name="revision-sections"><summary><span class="source-nav-title">Corrosion and Its Control</span><span class="source-nav-subtitle">Mechanisms, factors and protection</span></summary><div class="source-nav-topics"><ul><li><a href="#u2-corrosion-intro">Definition and environments</a></li><li><a href="#u2-corrosion-effects">Effects of corrosion</a></li><li><a href="#u2-dry-corrosion">Dry and oxidation corrosion</a></li><li><a href="#u2-oxide-films">Oxide films and Pilling–Bedworth rule</a></li><li><a href="#u2-other-gases">Other gases and liquid metals</a></li><li><a href="#u2-wet-corrosion">Wet corrosion and rusting</a></li><li><a href="#u2-differential-aeration">Differential aeration and pitting</a></li><li><a href="#u2-waterline-galvanic">Waterline and galvanic corrosion</a></li><li><a href="#u2-dac-dmc">DAC / DMC comparison</a></li><li><a href="#u2-corrosion-factors">Nature of metal</a></li><li><a href="#u2-environment">Environment and control overview</a></li><li><a href="#u2-sacrificial-anode">Sacrificial-anode protection</a></li><li><a href="#u2-impressed-current">Applications and impressed current</a></li></ul></div></details><details class="source-nav-group" name="revision-sections"><summary><span class="source-nav-title">Comparison and Revision Sheets</span><span class="source-nav-subtitle">Supplied electrode handout</span></summary><div class="source-nav-topics"><ul><li><a href="#u2-electrode-comparison">SHE / Calomel / Glass comparison</a></li><li><a href="#u2-electrode-choice">Choosing an electrode and supplied answers</a></li><li><a href="#u2-electrode-summary">Summary tables and illustrated sheet</a></li></ul></div></details><details class="source-nav-group" name="revision-sections"><summary><span class="source-nav-title">Q &amp; A</span><span class="source-nav-subtitle">34 short questions · 9 essays · extra prompt</span></summary><div class="source-nav-topics"><ul><li><a href="#u2-qa-short">Short answer questions</a></li><li><a href="#u2-qa-essay">Essay questions</a></li><li><a href="#u2-qa-extra">Unnumbered dry-corrosion prompt</a></li></ul></div></details></div></nav><div class="end-sem-content"><aside class="source-notes-editorial"><strong>Draft notes.</strong> Supplied wording and source errors are retained; PankusDesk answers are labelled separately. ROS figures are pending. See the <a href="college/1-1/chemistry-engineers/revision/unit-2-source-review.md">source review</a> and <a href="college/1-1/chemistry-engineers/revision/unit-2-ros-register.md">figure register</a>.</aside><header class="source-document" id="source-e"><h3>Electrochemistry · 12 October 2025</h3></header><section class="source-page" id="u2-cells" data-source="e" data-source-page="1"><span id="source-e-p001"></span><h3>Introduction and electrochemical cells</h3><h3><strong>UNIT- 2 ELECTROCHEMISTRY </strong></h3>
+<p><strong>Electrochemistry </strong>is the branch of science which deals with processes involving interconversions of electrical energy &amp; chemical energy. It is the study of generation of electricity from the energy released during spontaneous chemical reactions as well as the application of electrical energy to non-spontaneous chemical transformations. These conversions happen through redox reaction (oxidation-reduction reactions) in devices called electrochemical cells.</p>
+<h3><strong>Electrochemical Cell &amp; Galvanic Cell </strong></h3>
+<h3><strong>Electrochemical cell:</strong></h3>
+<p class="source-list-item">• An electrochemical cell is a device that converts <strong>chemical energy into electrical energy</strong> or vice versa through redox reactions.</p>
+<p class="source-list-item">• It consists of <strong>two electrodes</strong> (anode and cathode) immersed in <strong>electrolytes</strong>, connected by an external circuit and a salt bridge.</p>
+<h3><strong>Galvanic cell (Voltaic cell):</strong></h3>
+<p class="source-list-item">• A galvanic cell is a type of electrochemical cell that produces <strong>spontaneous electrical </strong> <strong>energy</strong> from a <strong>spontaneous redox reaction</strong>.</p>
+<p class="source-list-item">• <strong>Components of a Galvanic Cell:</strong></p>
+<p class="source-list-item">1. <strong>Anode</strong> – Site of oxidation (electrons released).</p>
+<p class="source-list-item">2. <strong>Cathode</strong> – Site of reduction (electrons gained).</p>
+<p class="source-list-item">3. <strong>Electrolyte solutions</strong> – Conduct ions.</p>
+<p class="source-list-item">4. <strong>Salt bridge</strong> – Maintains charge balance by allowing ion flow.</p>
+<h3><strong>Example – Daniell Cell:</strong></h3>
+<p class="source-equation">• <strong>Anode (Zn electrode):</strong> Zn → Zn²⁺ + 2e⁻</p>
+<p class="source-equation">• <strong>Cathode (Cu electrode):</strong> Cu²⁺ + 2e⁻ → Cu</p>
+<p class="source-equation">• <strong>Cell reaction:</strong> Zn + Cu²⁺ → Zn²⁺ + Cu</p>
+<p class="source-equation">• Electrons flow from <strong>Zn (anode) → Cu (cathode)</strong> through an external wire.</p>
+</section>
+<section class="source-page" id="u2-daniell-cell" data-source="e" data-source-page="2"><span id="source-e-p002"></span><h3>Daniell cell</h3><aside class="source-notes-editorial" id="cfe-u2-e-p002-v01"><strong>Figure pending · Daniell cell</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<h3><strong>Working Mechanism : </strong></h3>
+<p class="source-list-item">• Daniel cell consists of a zinc electrode dipped in 1 M ZnSO<sub>4</sub> solution and a copper electrode dipped in 1M CuSO<sub>4</sub> solution. Each electrode is known as a half cell. The two solutions are interconnected by a salt bridge and the two electrodes are connected by a wire through the voltmeter. An inverted U tube containing concentrated solutions of inert electrolytes such as KCl, KNO<sub>3</sub> etc., connects the two solutions. This U tube is called as salt bridge, as it acts like a bridge connecting the two half cells.</p>
+<p class="source-equation">Anode:     Zn → Zn<sup>2+</sup>+ 2e− ...  (i) (oxidation half-reaction)</p>
+<p class="source-equation">Cathode:  Cu<sup>2+</sup> + 2e− →  Cu … (ii) (reduction half-reaction)</p>
+<p>The first reaction is the oxidation half-reaction and the second reaction is reduction half- reaction. The overall reaction is the result of combining the two half-reactions. As a result, if a redox reaction is allowed to proceed so that the oxidation half-reaction occurs in one beaker and the reduction half-reaction in another, the electrons released by the former will be taken by the latter, and a current will flow. This means that the cell is composed of two half-reactions or two half-cells.</p>
+<p>The redox reaction can be represented as:</p>
+<p class="source-equation">Zn + CuSO<sub>4</sub> → ZnSO<sub>4</sub> + Cu</p>
+<p class="source-equation">Zn + Cu<sup>2+</sup> →   Zn<sup>2+</sup> + Cu</p>
+<p>Thus, indirect redox reaction leads to the production of electrical energy.</p>
+<h3><strong>Zn | ZnSO</strong><strong><sub>4 </sub></strong><strong>(aq) || CuSO</strong><strong><sub>4 </sub></strong><strong>(aq) | Cu  </strong> <strong>(or)</strong></h3>
+<h3><strong>Zn | Zn</strong><strong><sup>2+</sup></strong><strong> (1M) || Cu</strong><strong><sup>2+</sup></strong><strong> (1M) | Cu</strong></h3>
+<p><strong>Electrolytic cell – </strong>It is a device in which a non -spontaneous redox reaction is used to convert electrical energy into chemical energy.</p>
+</section>
+<section class="source-page" id="u2-cell-comparisons" data-source="e" data-source-page="3"><span id="source-e-p003"></span><h3>Cell comparisons</h3><p>The differences between electrochemical/galvanic &amp; electrolytic cell are given below:</p>
+<div class="source-table-scroll"><table><thead><tr><th scope="col">Electrochemical Cell</th><th scope="col">Electrolytic Cell</th></tr></thead><tbody><tr><td>1. It is device which converts chemical energy into electrical energy.</td><td>1. It is device which converts electrical energy into chemical energy.</td></tr><tr><td>2. In this case, the redox reaction is spontaneous.</td><td>2. The redox reaction is non-spontaneous and electrical energy is supplied to make the reaction occur.</td></tr><tr><td>3. The two half cells are set up in different container and are connected through salt bridge.</td><td>3. Both the electrodes are placed in the solution or molten electrolyte in the same container.</td></tr><tr><td>4. In electrochemical cell, anode in negative and cathode is positive electrode.</td><td>4. In electrolytic cell, anode is positive and cathode is negative electrode.</td></tr><tr><td>5. The electrons flow from anode to cathode in external circuit.</td><td>5. The electrons are supplied by the external battery but enter through cathode and come out through anode.</td></tr></tbody></table></div>
+<p>OR</p>
+<div class="source-table-scroll"><table><thead><tr><th scope="col">Galvanic Cell</th><th scope="col">Electrolytic cell</th></tr></thead><tbody><tr><td>1. It is a device in which a spontaneous chemical reaction generates an electric current.</td><td>1. It is a device in which an electric current from an external source drives a non spontaneous reaction.</td></tr><tr><td>2. It converts chemical energy into electrical energy. It is commonly known as Battery.</td><td>2. It converts electrical energy into chemical energy.</td></tr><tr><td>3. e.g., Daniel cell, Dry cell.</td><td>3. e.g., Electrolysis of molten NaCl.</td></tr><tr><td>4. A salt bridge is used in this.</td><td>4. Na salt bridge is used.</td></tr></tbody></table></div>
+<p>OR</p>
+<div class="source-table-scroll source-table-wide"><table><tbody><tr><th scope="col"><strong>Feature</strong></th><th scope="col"><strong>Electrochemical Cell</strong></th><th scope="col"><strong>Galvanic Cell</strong></th></tr><tr><td>Definition</td><td>Any device that converts chemical ↔ electrical energy</td><td>A type of electrochemical cell that converts chemical → electrical energy</td></tr><tr><td>Types</td><td>Can be galvanic or electrolytic</td><td>Only one type – spontaneous redox</td></tr><tr><td>Reaction</td><td>May be spontaneous or non- spontaneous</td><td>Always spontaneous</td></tr><tr><td>Energy Conversion</td><td>Both ways possible</td><td>Only chemical → electrical</td></tr><tr><td>Example</td><td>Electrolytic cell (electroplating), Galvanic cell</td><td>Daniell cell, batteries</td></tr></tbody></table></div>
+</section>
+<section class="source-page" id="u2-potential" data-source="e" data-source-page="4"><span id="source-e-p004"></span><h3>Half-cells, notation and electrode potential</h3><h3><strong>HALF CELL: </strong></h3>
+<p>Half-cell is a part of a cell. It consists of a single electrode, generally a metal, immersed in a container filled with a suitable electrolyte. In a half-cell either oxidation or reduction can occur. If oxidation occurs at the electrode that is called oxidation half-cell. If reduction occurs at the electrode that is called reduction half-cell.</p>
+<h3><strong>Representation of electrochemical cell </strong></h3>
+<p>The following universally accepted conventions are followed in representing an electrochemical cell:</p>
+<h3><strong>Anode / Electrolyte I (conc) // Electrolyte II (conc) / Cathode </strong></h3>
+<p>The anode (negative electrode) is written on the left-hand side and cathode (positive electrode) on the right-hand side.</p>
+<p>A vertical line or semicolon (;) indicates a contact between two phases. The anode of the cell is represented by writing metal first and then the metal ion present in the electrolytic solution. Both are separated by a vertical line or a semicolon. The molar concentration of the solution is written in brackets after the formula of the ion. The cathode of the cell is represented by writing the cation of the electrolyte first and then metal. Both are separated by a vertical line or semicolon. The salt bridge which separates the two half-cells is indicated by two parallel vertical lines.</p>
+<p><strong>Single Electrode potential - </strong>It is the potential developed when an electrode is in contact with a solution of its own ions, representing the tendency of that species to gain or lose electrons. It is denoted as ‘<strong>E</strong>’.</p>
+<p>(Or)</p>
+<p>It can be defined as an element&#x27;s tendency to lose or gain electrons when in contact with its own ions, causing it to become positively or negatively charged. Depending on whether oxidation or reduction has occurred, the electrode potential will be referred to as oxidation or reduction potential.</p>
+</section>
+<section class="source-page" id="u2-nernst" data-source="e" data-source-page="5"><span id="source-e-p005"></span><h3>Standard potential and Nernst equation</h3>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">Nernst notation and explanation</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="Nernst notation and explanation">
+			<div class="study-mismatch-note-label">Nernst notation and explanation</div>
+			<div class="study-mismatch-note-text">The source uses both reaction quotient Q and equilibrium constant K in a non-standard-potential equation. It also says (RT/nF) ln(Q) decreases while E decreases; with E° fixed, subtracting a decreasing term would instead increase E. The transcript is retained; these source statements require review. R25 requires the equation and significance, with no derivation.</div>
+		</aside>
+				</div>
+			</details>
+		</div><p><strong>Standard electrode potential</strong> - It is the electrode potential measured under standard conditions (25°C, 1 bar gas pressure, and 1M ion concentration) relative to the standard hydrogen electrode (SHE), which has a defined potential of 0 volts. It is denoted as <strong>E°</strong>.</p>
+<p>The Nernst equation is a mathematical formula in electrochemistry that calculates the cell potential of an electrochemical cell under non-standard conditions (varying temperature and ion concentrations) by relating it to the standard cell potential, the temperature, the number of electrons transferred in the reaction (n), and the reaction quotient (Q). It essentially shows how the actual voltage of a cell changes as the reaction proceeds and concentrations of reactants and products vary.</p>
+<p>The Nernst equation is expressed as:</p>
+<p class="source-equation">E = E⁰ - (RT/nF) ln(Q)  <strong>or</strong> E = E⁰ - (2.303RT/nF) log K(equilibrium constant for the half cell</p>
+<p>reaction)  <strong>or</strong></p>
+<p class="source-equation">E = E⁰ - (0.0591/n) log [products]/[reactants]</p>
+<p>Where:</p>
+<p class="source-list-item">• <strong>E</strong>: is the cell potential under non-standard conditions</p>
+<p class="source-list-item">• <strong>E</strong>⁰: is the standard cell potential</p>
+<p class="source-list-item">• <strong>R</strong>: is the ideal gas constant (8.314 Jmol<sup>-1</sup> K<sup>-1</sup>)</p>
+<p class="source-list-item">• <strong>T</strong>: is the temperature in Kelvin</p>
+<p class="source-list-item">• <strong>n</strong>: is the number of moles of electrons transferred in the redox reaction</p>
+<p class="source-list-item">• <strong>F</strong>: is the Faraday constant (96500C/mol)</p>
+<p class="source-list-item">• <strong>ln(Q)</strong>: is the natural logarithm of the reaction quotient In simple terms</p>
+<p class="source-list-item">• <strong>E</strong>⁰: is the cell&#x27;s voltage when everything is at its &quot;standard&quot; (ideal) concentration and temperature.</p>
+<p class="source-list-item">• The term (RT/nF) ln(Q) accounts for the deviations from standard conditions, particularly how reactant and product concentrations change as a reaction proceeds.</p>
+<p class="source-list-item">• As a reaction moves towards equilibrium, the term (RT/nF) ln(Q) decreases, which causes the cell&#x27;s potential (E) to decrease.</p>
+<h3><strong>Significance: </strong></h3>
+<p>The Nernst equation is used to:</p>
+<p class="source-list-item">• Determine the cell potential of an electrochemical cell at any temperature and ion concentration.</p>
+<p class="source-list-item">• Predict the cell voltage in real-world, non-standard situations.</p>
+<p class="source-list-item">• Examine concentration cells, which are important in corrosion studies.</p>
+</section>
+<section class="source-page" id="u2-reference" data-source="e" data-source-page="6"><span id="source-e-p006"></span><h3>Reference electrodes</h3><h3><strong>Reference Electrode </strong></h3>
+<p>The electrode whose potential is arbitrarily fixed or is exactly known at a given constant temperature is known as a reference electrode. Using reference electrodes unknown potential of any other single electrode can be found out e.g. two commonly used reference electrodes are standard hydrogen electrode (SHE) and Calomel electrode.</p>
+<p>A cell is constructed using the given electrode and reference electrode. Using a potentiometer and standard cell (like Weston cell) the e.m.f. of the cell can be measured. By knowing the e.m.f. of the cell and potential of the reference electrode, the potential of the electrode in question can be easily determined.</p>
+<h3><strong>TYPES OF REFERENCE ELECTRODES: </strong></h3>
+<p>Primary reference electrode – (eg) Standard Hydrogen Electrode (SHE) Secondary reference electrode – (eg) Calomel electrode, Quinhydrone electrode</p>
+<h3><strong>Construction &amp; working of Primary reference electrode (Standard Hydrogen Electrode – </strong></h3>
+<h3><strong>SHE): </strong></h3>
+<p>SHE is defined as the electrode in which pure and dry hydrogen gas is bubbled at 1 atmospheric pressure and 298 K on a platinized platinum foil through a solution containing H<sup>+</sup> ions at unit activity.</p>
+<h3><strong>Construction: </strong></h3>
+<p>It consists of a rectangular platinum foil connected to a Pt wire and sealed in a glass tube. A glass envelope surrounds the tube carrying the Pt foil. The jacket is closed at the top and open at the bottom. A side arm is attached to the outer jacket through which hydrogen gas is passed into the cell. This electrode when dipped in a 1M HCl solution and pure and dry hydrogen gas is bubbled through HCI solution from the inlet at a constant pressure of 1 atm.  Hydrogen gas</p>
+</section>
+<section class="source-page" id="u2-she" data-source="e" data-source-page="7"><span id="source-e-p007"></span><h3>SHE working and representation</h3>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">SHE potential convention</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="SHE potential convention">
+			<div class="study-mismatch-note-label">SHE potential convention</div>
+			<div class="study-mismatch-note-text">The source calls the potential developed during oxidation positive and then “comparatively very small”. The reference potential assigned to SHE is exactly zero by convention under its specified reference conditions; this is not a measurement of a small residual voltage. Source wording is retained.</div>
+		</aside>
+				</div>
+			</details>
+		</div><p>is adsorbed on the platinum plate and acts as a hydrogen electrode.  The electrode is reversible with respect to hydrogen ions.</p>
+<h3><strong>Working Principle: </strong></h3>
+<p>While working, hydrogen gas from platinum plate changes into hydrogen ions and electrons are set free. These electrons accumulate on the platinum plate.</p>
+<p><strong>If the electrode is serving as an anode,</strong> then the half-cell reaction is</p>
+<p class="source-equation">H<sub>2(g)</sub> →   2H<sup>+</sup><sub>(aq)</sub> + 2e<sup>–</sup> (oxidation)</p>
+<p>Thus, a part of H<sub>2</sub> gas changes into ions and goes into the solution.</p>
+<p>The electrons set free, remain on the platinum plate and transferred to the other electrode through Pt. wire.  As the process is oxidation, a positive potential is developed.  It is comparatively very small; it is arbitrarily taken as a zero.</p>
+<p><strong>If the electrode is serving as a cathode,</strong> then the half-cell reaction is</p>
+<p class="source-equation">2H<sup>+</sup><sub>(aq)</sub> + 2e<sup>–</sup>  →  H<sub>2(g)</sub> (reduction)</p>
+<p>Thus, some of the ions from the solution change into H<sub>2</sub> gas.</p>
+<h3><strong>Representation of electrode:</strong></h3>
+<p>When acting as an anode,     Pt| H<sub>2(g)</sub> (1 atm.)| H<sup>+</sup><sub>(aq)</sub> (1M) When acting as cathode,   H<sup>+</sup><sub>(aq)</sub> (1M) |  H<sub>2(g)</sub> (1 atm.) | Pt The electrode potential of SHE is <strong>zero</strong>.</p>
+<aside class="source-notes-editorial" id="cfe-u2-e-p007-v01"><strong>Figure pending · Standard Hydrogen Electrode</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+</section>
+<section class="source-page" id="u2-e-p008" data-source="e" data-source-page="8"><span id="source-e-p008"></span>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">SHE source claims conflict</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="SHE source claims conflict">
+			<div class="study-mismatch-note-label">SHE source claims conflict</div>
+			<div class="study-mismatch-note-text">This page claims SHE is not affected by liquid-junction potential, while its own limitations describe impurity poisoning. The comparison sheet additionally says it is not affected by impurities. Do not treat either immunity claim as established; the supplied statements are retained separately.</div>
+		</aside>
+				</div>
+			</details>
+		</div><h3><strong>Advantages:  </strong></h3>
+<p class="source-list-item">• Universal reference electrode: It is used as the primary standard for measuring the electrode potential of all other electrodes.</p>
+<p class="source-list-item">• Accurate and reproducible: Provides a reliable reference point with a fixed potential of</p>
+<p class="source-list-item">0.00 V.</p>
+<p class="source-list-item">• It can act as both anode and cathode: Depending on the half-cell connected, it can undergo oxidation or reduction.</p>
+<p class="source-list-item">• Simple theoretical basis: Based directly on the hydrogen ion equilibrium, making it fundamental and well understood.</p>
+<p class="source-list-item">• No liquid junction potential: Since it’s used as the reference electrode, liquid junction errors are minimized.</p>
+<h3><strong>Limitations:</strong></h3>
+<p class="source-list-item">• It is difficult to maintain exactly 1 atmospheric pressure on hydrogen gas for a longer time.</p>
+<p class="source-list-item">• Difficult to obtain 100 % pure and dry hydrogen gas, oxidizing species and even traces of impurities in gas can poison the platinum electrode (inactive and irreversible).</p>
+<p class="source-list-item">• It is difficult to maintain the concentration of HCI solution as 1M because due to the bubbling of hydrogen gas through HCI solution, water is evaporated and hence the concentration of HCI solution may change.</p>
+<p class="source-list-item">• Since it is made up of glass, it is not so handy.</p>
+<p class="source-list-item">• Platinum used is rather expensive and it is difficult to prepare ideal platinized platinum.</p>
+<p class="source-list-item">• Hydrogen is flammable and poses safety hazards during handling.</p>
+<p class="source-list-item">• Not portable -<strong> </strong>Cannot be easily moved or used outside the laboratory.</p>
+<p class="source-list-item">• SHE requires large volume of electrolyte solution.</p>
+<p class="source-list-item">• The potential of the electrode varies when there is change is atmospheric pressure.</p>
+<h3><strong>Applications:  </strong></h3>
+<p class="source-list-item">• Measurement of electrode potentials</p>
+<p class="source-list-item">• Determination of cell EMF</p>
+<p class="source-list-item">• Establishing electrochemical series</p>
+<p class="source-list-item">• pH determination</p>
+<p class="source-list-item">• Calibration of other reference electrodes</p>
+</section>
+<section class="source-page" id="u2-calomel" data-source="e" data-source-page="9"><span id="source-e-p009"></span><h3>Calomel electrode</h3><h3><strong>Construction &amp; working of Calomel Electrode (Secondary reference electrode): </strong></h3>
+<p>To overcome the difficulties of setting up of hydrogen electrode the secondary electrode was developed. The electrode potential of calomel electrode is determined by connecting it to SHE whose potential is arbitrarily taken as zero at all temperature. Since calomel electrode is used to<strong> </strong> measure the electrode potential of all other electrodes instead of SHE it is called as secondary<strong> </strong> reference electrode.<strong> </strong></p>
+<p>The calomel electrode consists of a broad glass tube having sidearm as shown in the figure. The sidearm is used for dipping it any solution used for coupling the calomel electrode. At the bottom of the glass tube, there is pure mercury and a platinum wire is sealed into it at the bottom for electrical connections. The wire runs through a separator glass tube to the top of the tube for electrical contact. Above pure mercury, there is a paste of mercurous chloride (calomel) (Hg<sub>2</sub>Cl<sub>2</sub>) in mercury. The rest of the glass vessel and sidearm A is filled with a saturated KCl solution or</p>
+<p class="source-list-item">0.1N or 1N.  Sidearm is plugged with glass wool. The glass tube is closed from the top.</p>
+<aside class="source-notes-editorial" id="cfe-u2-e-p009-v01"><strong>Figure pending · Calomel electrode</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<h3><strong>Working Principle:</strong></h3>
+</section>
+<section class="source-page" id="u2-e-p010" data-source="e" data-source-page="10"><span id="source-e-p010"></span>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">Calomel reaction and Nernst discrepancy</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="Calomel reaction and Nernst discrepancy">
+			<div class="study-mismatch-note-label">Calomel reaction and Nernst discrepancy</div>
+			<div class="study-mismatch-note-text">The printed reduction reaction gives 2 Hg⁺ as product. This fails charge balance: the left side has charge −2 and the right side 0. The comparison sheet prints Hg₂Cl₂(s) + 2e⁻ ⇌ 2Hg(l) + 2Cl⁻. The raster Nernst expression on this page has RT/F multiplying ln[Cl⁻]²; the comparison sheet has the 1/2 coefficient appropriate to the two-electron reaction. Both printed versions are preserved.</div>
+		</aside>
+				</div>
+			</details>
+		</div><p>Since the calomel electrode is reversible, two types of reactions are possible depending upon the nature of another electrode with which it is coupled.</p>
+<p>If the electrode acts as anode, it undergoes oxidation liberating electrons and send Hg<sub>2</sub><sup>2+</sup> ions into the solution. The Hg<sub>2</sub><sup>2+</sup> ions would combine with Cl<sup>–</sup> ions (furnished by KCl) forming sparingly soluble Hg<sub>2</sub>Cl<sub>2</sub>. The result is a fall in the concentration of Cl<sup>-</sup> ions in the solution. Thus oxidation takes place when it is coupled with other electrode having lower oxidation potential.</p>
+<p class="source-equation">2Hg<sub>(l)</sub> + 2Cl<sup>–</sup><sub>(sat)</sub> → Hg<sub>2</sub>Cl<sub>2(s)</sub>+  2e<sup>– </sup></p>
+<p>If the electrode acts as cathode, the electrode reaction involves reduction; the Hg<sub>2</sub><sup>2+</sup>+ ions furnished by sparingly soluble mercurous chloride would be discharged at the electrode. Hence more and more calomel would pass into solution. The result is an increase in the concentration of Cl<sup>-</sup> ions. Thus reduction takes place when it is coupled with other electrode having greater oxidation potential.</p>
+<p class="source-equation">Hg<sub>2</sub>Cl<sub>2(s)</sub>   +  2e<sup>–</sup>   →  2 Hg<sup>+</sup> + 2Cl<sup>–</sup></p>
+<h3><strong>The standard calomel electrode is represented as: </strong></h3>
+<p class="source-equation"><strong>Hg, Hg</strong><strong><sub>2</sub></strong><strong>Cl</strong><strong><sub>2</sub></strong><strong> (s) ; saturated KCl (solution) E</strong><strong><sup>O</sup></strong><strong> = + 0.2422 V </strong></p>
+<h3><strong>Characteristics of calomel electrode: </strong></h3>
+<p class="source-list-item">• The electrode potential of calomel electrode depends on the activity of chloride ions and it increases as the activity of chloride ion decreases. According to Nernst equation:</p>
+<div class="source-equation">\[E=E^\circ_{\mathrm{calomel}}-\dfrac{RT}{F}\ln[\mathrm{Cl}^-]^2\]</div>
+<p class="source-list-item">• The single electrode potential of calomel electrode at various concentration of KCl on hydrogen scale at 298 K is:</p>
+<div class="source-table-scroll source-table-wide"><table><tbody><tr><th scope="col">Concentration of KCl</th><th scope="col">Reduction Potential (E V)</th></tr><tr><td>0.1 N</td><td>+ 0.3338 V</td></tr><tr><td>1 N</td><td>+ 0.2810 V</td></tr><tr><td>Saturated</td><td>+ 0.2422 V</td></tr></tbody></table></div>
+<p>For example:</p>
+<p class="source-equation">EMF<sub>cell</sub> = E<sup>O</sup><sub>R</sub> – E<sup>O</sup> <sub>L</sub>= E<sup>O</sup><sub>calomel</sub> – E<sup>O</sup><sub>SHE</sub></p>
+</section>
+<section class="source-page" id="u2-e-p011" data-source="e" data-source-page="11"><span id="source-e-p011"></span>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">Calomel potential values conflict</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="Calomel potential values conflict">
+			<div class="study-mismatch-note-label">Calomel potential values conflict</div>
+			<div class="study-mismatch-note-text">Page 10 gives +0.2422 V for saturated KCl, but the worked substitution continued here uses +0.2442 V. These are different printed values; neither has silently replaced the other. The accompanying electrolyte concentration and temperature must be specified when selecting a value.</div>
+		</aside>
+				</div>
+			</details>
+		</div><p class="source-equation">0.2442 V = E<sup>O</sup> <sub>calomel</sub> – 0 V</p>
+<p class="source-equation">E<sup>O</sup><sub>calomel</sub> = + 0.2442 V</p>
+<p> The potential of calomel electrode is temperature dependent.</p>
+<p> The positive value indicates that, when combined with SHE, reduction takes place at this electrode.</p>
+<h3><strong>Advantages </strong></h3>
+<p class="source-list-item">• <strong>Easy to prepare and maintain: </strong>No need for gas bubbling or complex setup like the hydrogen electrode.</p>
+<p class="source-list-item">• <strong>Stable and reproducible potential: </strong>Provides consistent potential over time.</p>
+<p class="source-list-item">• <strong>Non-polarizable electrode: </strong>Potential remains nearly constant even when small currents pass through.</p>
+<p class="source-list-item">• <strong>Portable and convenient: </strong>Can be easily transported and used in various experiments.</p>
+<p class="source-list-item">• <strong>Inert materials: </strong>Mercury and calomel do not react with most solutions used in electrochemical cells.</p>
+<h3><strong>Limitations</strong></h3>
+<p class="source-list-item">• <strong>Contains mercury (toxic):</strong></p>
+<p>Environmental and health hazard during handling or disposal.</p>
+<p class="source-list-item">• <strong>Temperature-dependent potential:</strong></p>
+<p>The electrode potential changes slightly with temperature.</p>
+<p class="source-list-item">• <strong>Limited use with certain ions:</strong></p>
+<p>Not suitable for solutions that form insoluble chlorides (e.g., Ag⁺, Pb²⁺).</p>
+<p class="source-list-item">• <strong>Cannot be used at high temperatures:</strong></p>
+<p>Mercury vaporizes, and the electrode becomes unstable.</p>
+<p class="source-list-item">• <strong>Slow response in some systems:</strong></p>
+<p>Compared to modern reference electrodes (like Ag/AgCl).</p>
+<h3><strong>Applications </strong></h3>
+<p class="source-list-item">➢  <strong>Reference electrode:</strong></p>
+<p>Commonly used as a <strong>reference</strong> in measuring the electrode potential of other half-cells.</p>
+<p class="source-list-item">➢  <strong>pH measurement:</strong></p>
+<p>Used as a reference electrode in pH meters and potentiometric titrations.</p>
+<p class="source-list-item">➢  <strong>Determination of EMF:</strong></p>
+<p>Helps measure the EMF of electrochemical cells accurately.</p>
+<p class="source-list-item">➢  <strong>Calibration of other electrodes:</strong></p>
+<p>Used to standardize other reference electrodes such as Ag/AgCl electrodes.</p>
+<p class="source-list-item">➢  <strong>Electroanalytical methods:</strong></p>
+<p>Used in polarography, voltammetry, and potentiometry.</p>
+</section>
+<section class="source-page" id="u2-ise" data-source="e" data-source-page="12"><span id="source-e-p012"></span><h3>Ion-selective electrodes</h3><h3><strong>Ion-Selective Electrode (Combined glass electrode) </strong></h3>
+<p>This type of electrode will respond only to a specific or particular ion ignoring the other ions in a mixture totally. They develop a potential with respect to that ion only and all other ions present in a mixture will have practically no contribution (i.e.). The potential developed by an ion selective electrode depends only on the concentration of specific or particular ions. Types of ion selective electrodes:</p>
+<p class="source-list-item">1. Glass membrane (i.e H<sup>+</sup> electrode)</p>
+<p class="source-list-item">2. Solid-state electrode(eg. F<sup>-</sup> electrode uses a europium doped LaF<sub>3</sub> crystal)</p>
+<p class="source-list-item">3. Liquid-based electrode(eg Ca<sup>+2</sup> electrode uses a liquid chelator)</p>
+<p class="source-list-item">4. Compound electrode(eg CO<sub>2</sub> gas sensing electrode)</p>
+<h3><strong>Construction of ISE </strong></h3>
+<p class="source-list-item">1. Ion-selective membrane –The key part that allows only specific ions to pass through and develop a potential.</p>
+<p>Examples:</p>
+<p class="source-equation">a. Glass membrane → for H⁺ ions (pH electrode)</p>
+<p class="source-equation">b. Crystalline membrane → for fluoride, chloride, or silver ions</p>
+<p class="source-equation">c. Polymer membrane → for Ca²⁺ or NO₃⁻ ions</p>
+<p class="source-list-item">2. Internal reference electrode – Usually a silver–silver chloride (Ag/AgCl) or calomel electrode placed inside the electrode.</p>
+<p class="source-list-item">3. Internal filling solution –Contains a known concentration of the target ion to maintain constant potential inside.</p>
+<p class="source-list-item">4. Outer solution (sample) –The unknown solution whose ion concentration is to be measured.</p>
+</section>
+<section class="source-page" id="u2-e-p013" data-source="e" data-source-page="13"><span id="source-e-p013"></span><p class="source-list-item">5. External reference electrode –Usually a calomel or Ag/AgCl electrode that completes the circuit.</p>
+<aside class="source-notes-editorial" id="cfe-u2-e-p013-v01"><strong>Figure pending · Ion-selective electrode</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<h3><strong>Working Principle </strong></h3>
+<p class="source-list-item">• The working of an ISE is based on the potential difference that develops across the ion- selective membrane due to the difference in ion activity on both sides.</p>
+<p class="source-list-item">• The membrane allows only the specific ion to pass through.</p>
+<p class="source-list-item">• Due to unequal ion concentration across the membrane, a membrane potential (E) is generated.</p>
+<p class="source-list-item">• The overall potential difference (measured between the internal and external reference electrodes) depends on the concentration of the ion in the test solution. According to the Nernst equation:</p>
+<div class="source-equation">\[E=E^0+\dfrac{RT}{zF}\ln a_{\mathrm{ion}}\]</div>
+<p>where:</p>
+<p class="source-equation">• 𝐸= measured electrode potential</p>
+<p class="source-equation">• 𝐸<sup>0</sup> =standard potential</p>
+<p class="source-equation">• 𝑅= gas constant</p>
+<p class="source-equation">• 𝑇= temperature (K)</p>
+</section>
+<section class="source-page" id="u2-e-p014" data-source="e" data-source-page="14"><span id="source-e-p014"></span><p class="source-equation">• 𝐹= Faraday constant</p>
+<p class="source-equation">• 𝑧= charge on the ion</p>
+<p class="source-equation">• 𝑎<sub>𝑖𝑜𝑛</sub> =activity (or concentration) of the ion</p>
+<p>Thus, the potential is directly related to the ion concentration being measured.</p>
+<h3><strong>Advantages  </strong></h3>
+<p class="source-list-item">• High selectivity: Responds specifically to one type of ion.</p>
+<p class="source-list-item">• Rapid response: Provides quick readings (within seconds).</p>
+<p class="source-list-item">• Can measure ions in complex mixtures: Works even in colored or turbid solutions where spectroscopic methods fail.</p>
+<p class="source-list-item">• Portable and easy to use: Simple operation and easy to handle in the field.</p>
+<p class="source-list-item">• Non-destructive: Does not consume or alter the sample.</p>
+<p class="source-list-item">• Wide application range: Useful in biological, environmental, and industrial analyses.</p>
+<h3><strong>Limitations  </strong></h3>
+<p class="source-list-item">• Limited to ionic species: Cannot measure non-ionic or neutral molecules.</p>
+<p class="source-list-item">• Interference: Other ions with similar charge or size may affect accuracy.</p>
+<p class="source-list-item">• Requires calibration: Must be calibrated frequently using standard solutions.</p>
+<p class="source-list-item">• Membrane aging: Membranes may degrade or lose selectivity over time.</p>
+<p class="source-list-item">• Temperature sensitivity: Electrode potential depends on temperature; needs compensation.</p>
+<h3><strong>Applications  </strong></h3>
+<p class="source-list-item">➢ <strong> </strong>pH measurement: The glass electrode (H⁺ selective) is the most common ISE.</p>
+<p class="source-list-item">➢ Water quality analysis: Determination of fluoride, nitrate, chloride, calcium, and ammonium ions.</p>
+<p class="source-list-item">➢ Clinical and biomedical analysis: Measurement of ions like Na⁺, K⁺, Ca²⁺, Cl⁻ in blood and urine.</p>
+<p>Environmental monitoring:</p>
+<p>Testing pollutants, heavy metals, and nutrients in water and soil.</p>
+<p class="source-list-item">➢ Industrial applications: Monitoring ion concentration in chemical, pharmaceutical, and food industries.</p>
+<p class="source-list-item">➢ Agriculture: Soil and fertilizer analysis (nitrate, potassium, calcium).</p>
+</section>
+<section class="source-page" id="u2-glass" data-source="e" data-source-page="15"><span id="source-e-p015"></span><h3>Combined glass electrode</h3><h3><strong>Combined Glass electrode as an example of ISE: </strong></h3>
+<h3><strong>Construction: </strong></h3>
+<p class="source-list-item">➢ Glass electrode is made of a special glass of relatively low melting point &amp; high electrical conductivity.</p>
+<p class="source-list-item">➢  It is a corning glass containing Na<sub>2</sub>O(22%), CaO (6%) &amp; SiO<sub>2</sub>(72%)</p>
+<p class="source-list-item">➢  The assembly of the glass electrode consists of a thin glass bulb filled with 0.1N HCl &amp; silver wire coated with AgCl is immersed in it.</p>
+<p class="source-list-item">➢  Ag/AgCl acts as an internal reference electrode.</p>
+<aside class="source-notes-editorial" id="cfe-u2-e-p015-v01"><strong>Figure pending · Combined glass electrode</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<h3><strong>Working Principle: </strong></h3>
+<p class="source-list-item">➢ When the glass electrode is immersed in another solution, whose pH value is to be determined, there develops a potential between the two surfaces of the membrane.</p>
+</section>
+<section class="source-page" id="u2-e-p016" data-source="e" data-source-page="16"><span id="source-e-p016"></span>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">Glass-electrode expressions conflict</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="Glass-electrode expressions conflict">
+			<div class="study-mismatch-note-label">Glass-electrode expressions conflict</div>
+			<div class="study-mismatch-note-text">This page sets E° to zero and obtains E = +0.0592 pH. The comparison handout instead prints E = constant − 0.0592 pH at 25°C. Measurement polarity and the reference-system offset matter; a combined glass electrode does not inherit SHE’s zero-potential convention. These source expressions remain distinct pending textbook verification.</div>
+		</aside>
+				</div>
+			</details>
+		</div><p class="source-list-item">➢  The potential difference developed is proportional to the</p>
+<aside class="source-notes-editorial" id="cfe-u2-e-p016-v01"><strong>Figure pending · Ion exchange across the glass bulb</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<p>difference in the pH value.</p>
+<p class="source-list-item">➢  The glass membrane of the glass electrode undergoes an ion exchange reaction (only specific ion passes through), the Na<sup>+</sup> ions on the glass are exchanged for H+ ions.</p>
+<p class="source-list-item">➢ Due to unequal ion concentration across the membrane, a membrane potential (E) is generated.</p>
+<p class="source-list-item">➢ The overall potential difference (measured between the internal and external reference electrodes) depends on the concentration of the ion in the test solution. According to the Nernst equation:</p>
+<p class="source-equation">E = E<sup>O</sup> – 2.303RT/nF log[H<sup>+</sup>]</p>
+<p class="source-equation">When n=1 and standard electrode potential E<sup>O</sup>= 0</p>
+<p class="source-equation">E =  -0.0592 log[H<sup>+</sup>]  or  E = 0.0592 pH</p>
+<h3><strong>Advantages: </strong></h3>
+<p class="source-list-item">• Single unit with both measuring and reference electrodes</p>
+<p class="source-list-item">• Ease of use - no need for separate reference electrode</p>
+<p class="source-list-item">• Compact and portable</p>
+<p class="source-list-item">• Suitable for routine measurements</p>
+<p class="source-list-item">• Compact, convenient, and minimizes errors as both sensing and reference systems are in one unit.</p>
+<h3><strong>Limitations: </strong></h3>
+<p class="source-list-item">• Used for measurements up to pH of 12.</p>
+<p class="source-list-item">• Above pH 12 cations of the solution affect the glass interface &amp; make the electrode useless.</p>
+<h3><strong>Applications: </strong></h3>
+<p class="source-list-item">• pH measurement in laboratories</p>
+<p class="source-list-item">• Industrial process control</p>
+<p class="source-list-item">• Environmental monitoring</p>
+<p class="source-list-item">• Biological systems (blood, urine analysis)</p>
+<p class="source-list-item">• Food and beverage industry</p>
+</section>
+<header class="source-document" id="source-c"><h3>Corrosion and Its Control</h3></header><section class="source-page" id="u2-corrosion-intro" data-source="c" data-source-page="1"><span id="source-c-p001"></span><h3>Definition and corrosive environments</h3><h3><strong>UNIT 2 - CORROSION &amp; ITS CONTROL</strong><strong> </strong></h3>
+<p><strong>Definition: </strong>Corrosion may be defined as the destruction of a metal or an alloy because of chemical or electrochemical reaction with its surrounding environment or medium.</p>
+<h3><strong>Why study about corrosion? </strong></h3>
+<p class="source-list-item">• Materials are precious resources.</p>
+<p class="source-list-item">• Engineering design is incomplete without knowledge of corrosion.</p>
+<p class="source-list-item">• Applying knowledge of corrosion protection can minimize disasters.</p>
+<p class="source-list-item">• Corrosion – contaminate products such as pharmaceutical, food and dairy products or luxury items like soap.</p>
+<p class="source-list-item">• Corrosion products – threat to the environment</p>
+<p class="source-list-item">• Artificial implants for the human body!!!</p>
+<h3><strong>Typical corrosive environments: </strong></h3>
+<p>(1) Air and humidity.</p>
+<p>(2) Fresh, distilled, salt and marine water.</p>
+<p>(3) Natural, urban, marine, and industrial atmospheres.</p>
+<p>(4) Steam and gases, like chlorine.</p>
+<p>(5) Ammonia.</p>
+<p>(6) Hydrogen sulfide.</p>
+<p>(7) Sulfur dioxide and oxides of nitrogen.</p>
+<p>(8) Fuel gases.</p>
+<p>(9) Acids.</p>
+<p>(10) Alkalis (11) Soils</p>
+</section>
+<section class="source-page" id="u2-corrosion-effects" data-source="c" data-source-page="2"><span id="source-c-p002"></span><h3>Effects of corrosion</h3><aside class="source-notes-editorial" id="cfe-u2-c-p002-v01"><strong>Figure pending · Effects of corrosion — source collage</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<h3><strong>Therefore, important consequences of corrosion: </strong></h3>
+<p class="source-list-item">❖ Plant shutdowns</p>
+<p class="source-list-item">❖ Loss of products, leaking containers, storage tanks, water and oil transportation lines and fuel tanks</p>
+<p class="source-list-item">❖ Loss of efficiency</p>
+<p class="source-list-item">❖ Contamination: Corrosion products may contaminate chemicals, pharmaceuticals, dyes, packaged goods, etc.</p>
+<p class="source-list-item">❖ Nuclear hazards</p>
+</section>
+<section class="source-page" id="u2-dry-corrosion" data-source="c" data-source-page="3"><span id="source-c-p003"></span><h3>Dry and oxidation corrosion</h3>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">Printed oxidation mechanism</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="Printed oxidation mechanism">
+			<div class="study-mismatch-note-label">Printed oxidation mechanism</div>
+			<div class="study-mismatch-note-text">The raster mechanism ends with the general product “MO” while using variable valency n. That shorthand is not a balanced general oxide formula for arbitrary n. The expression has been transcribed as printed, not presented as a verified general stoichiometric equation.</div>
+		</aside>
+				</div>
+			</details>
+		</div><h3>Dry corrosion: Takes place under dry conditions.</h3><ul><li>Involves direct chemical attack on to the metal</li><li>It is of three types: a) Corrosion due to oxygen</li><li>b) Corrosion due to other gases</li><li>c) Liquid metal corrosion</li></ul><h3>Oxidation Corrosion</h3><p>Oxygen present in the atmosphere attacks the metal surface – formation of oxide layers</p><h3>Mechanism:</h3><div class="source-equation">\[2\mathrm M\longrightarrow 2\mathrm M^{n+}+2n\mathrm e^-\]</div><div class="source-equation">\[\dfrac n2\mathrm O_2+2n\mathrm e^-\longrightarrow n\mathrm O^{2-}\]</div><div class="source-equation">\[2\mathrm M+\dfrac n2\mathrm O_2\longrightarrow 2\mathrm M^{n+}+n\mathrm O^{2-}\;\text{(or) MO}\]</div><p>Nature of the Oxide: When oxidation starts, a thin layer of oxide film will be formed on the surface and the nature of the film decides the further action! I.e. Porous film or non-porous film</p><aside class="source-notes-editorial" id="cfe-u2-c-p003-v01"><strong>Figure pending · Oxidation corrosion through the oxide film</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+</section>
+<section class="source-page" id="u2-oxide-films" data-source="c" data-source-page="4"><span id="source-c-p004"></span><h3>Oxide films and Pilling–Bedworth rule</h3>
+		<details class="study-tip">
+			<summary>
+				<span class="study-tip-summary-copy">
+					<span class="study-tip-label">PankusDesk tip</span>
+					<span class="study-tip-summary-title">Pilling–Bedworth example — textbook check pending</span>
+				</span>
+				<span class="study-tip-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-tip-content">
+				<p>The handout says that a larger specific volume ratio always gives less oxidation corrosion, and selects W (3.6) over Cr (2.0) and Ni (1.6). It does not discuss cracking or spalling of high-volume oxide films. A unique independently verified exam answer to Short Q17 is pending; the source’s W answer is retained and explicitly attributed.</p>
+
+
+			</div>
+		</details><h3>The Nature of the Oxide formed plays an important part in oxidation corrosion process.</h3><p>Metal + Oxygen → Metal oxide (corrosion product)</p><p>When oxidation starts, a thin layer of oxide is formed on the metal surface and the nature of this film decides the further action. If the film is</p><ul><li>(i) Stable layer: The oxide films on Al, Sn, Pb, Cu, W etc., are stable, tightly adhering and impervious in nature.</li><li>(ii) Unstable oxide layer: Ag, Au, Pt.</li><li>(iii) Volatile oxide layer: This causes continuous corrosion. MoO₃ is volatile in nature.</li><li>(iv) Porous layer: Alkali and alkaline earth metals</li></ul><h3>Metal oxide film formed is:</h3><ul><li>Stable = corrosion is prevented</li><li>Unstable = no further reaction</li><li>Volatile = corrosion will be rapid</li><li>Porous = corrosion will be continuous</li></ul>
+<h3>Types of Layers</h3><div class="source-table-scroll"><table><thead><tr><th scope="col">Layer</th><th scope="col">Metals</th></tr></thead><tbody><tr><td>Stable Layer</td><td>Al, Pb, Cu, Sn</td></tr><tr><td>Unstable Layer</td><td>Ag, Au, Pt</td></tr><tr><td>Volatile Layer</td><td>Mo</td></tr><tr><td>Porous Layer</td><td>Alkali metals &amp; alkaline earth metals</td></tr></tbody></table></div><h3>Pilling - Bed Worth Rule</h3><p>A protective and Non-Porous metal oxide layer has volume equal to or greater than the volume of metal from which it is formed.</p><p>A Non-Protective and Porous metal oxide layer has volume lesser than the volume of metal from which it is formed.</p><div class="source-equation">\[\text{Specific Volume Ratio}=\dfrac{\text{Volume of oxide formed}}{\text{Volume of metal}}\]</div>
+<p class="source-list-item">• Smaller the Specific Volume Ratio, greater is the oxidation corrosion.</p>
+<p class="source-list-item">• For e.g. the SVR of W, Cr, and Ni are 3.6, 2.0, 1.6, respectively. The rate of corrosion of W is least, even at higher temperatures.</p>
+</section>
+<section class="source-page" id="u2-c-p005" data-source="c" data-source-page="5"><span id="source-c-p005"></span><p class="source-list-item">• If Volume of the oxide is greater than or equal to volume of parent metal- nonporous oxide layer (e.g. Al or Cu).</p>
+</section>
+<section class="source-page" id="u2-other-gases" data-source="c" data-source-page="6"><span id="source-c-p006"></span><h3>Other gases and liquid-metal corrosion</h3><p class="source-list-item">• If Volume of the oxide is less than the volume of the parent metal- porous oxide layer (e.g. Li, Na, K &amp; Mg).</p>
+<h3>2. Corrosion by other gases</h3><ul><li>Corrosion by gases like SO₂, Cl₂, H₂S, F₂, CO₂ etc</li><li>The extent of corrosion depends on the chemical affinity between metal and gas involved and the porosity of the film formed</li><li>If the film formed is non porous/protective then corrosion is limited to only external surface</li><li>Eg: AgCl film formed by attack of Cl₂ on Ag metal</li><li>If the film formed is porous or volatile then corrosion is deep</li><li>Eg: SnCl₄ formed by attack of Cl₂ on Sn metal</li></ul>
+<h3>3) Liquid metal corrosion:</h3><ul><li>This is due to chemical action of flowing liquid metal at high temperatures on solid metal or alloy.</li><li>Such corrosion occur in devices used for nuclear power.</li><li>The corrosion reaction involves either:</li><li>(i) dissolution of a solid metal by a liquid metal or</li><li>(ii) internal penetration of the liquid metal into the solid metal.</li><li>Both these modes of corrosion cause weakening of the solid metal.</li></ul>
+</section>
+<section class="source-page" id="u2-c-p007" data-source="c" data-source-page="7"><span id="source-c-p007"></span></section>
+<section class="source-page" id="u2-wet-corrosion" data-source="c" data-source-page="8"><span id="source-c-p008"></span><h3>Wet corrosion and rusting</h3>
+		<div class="study-accordion" aria-label="Source check">
+			<div class="study-accordion-label">Source check</div>
+
+			<details class="study-accordion-item has-math-mismatch">
+				<summary>
+					<span class="study-accordion-summary-title">General anodic equation</span>
+					<span class="study-accordion-toggle" aria-hidden="true">+</span>
+				</summary>
+				<div class="study-accordion-content">
+
+
+
+		<aside class="study-mismatch-note" role="note" aria-label="General anodic equation">
+			<div class="study-mismatch-note-label">General anodic equation</div>
+			<div class="study-mismatch-note-text">The supplied general expression is M → M⁺ + ne⁻. Its charges balance only for n = 1. The later iron example, Fe → Fe²⁺ + 2e⁻, is balanced. The general source expression is retained without silently changing its superscript.</div>
+		</aside>
+				</div>
+			</details>
+		</div><h3><strong>WET OR ELECTROCHEMICAL THEORY OF CORROSION</strong><strong> </strong></h3>
+<p>Wet corrosion or electrochemical theory of corrosion or immersed corrosion takes place by the transfer of electrons from anodic parts of the metal to cathodic parts through a conducting solution. It takes place mostly under wet or moist conditions through the formation of galvanic cells and is more common than dry corrosion.</p>
+<h3><strong>Conditions for wet corrosion to occur: </strong></h3>
+<p class="source-list-item">a) When two dissimilar metals or alloys in contact with each other and in contact with aqueous solution or moisture.</p>
+<p class="source-list-item">b) When metal is exposed to varying concentration of oxygen or any electrolyte.</p>
+<h3><strong>Mechanism of wet corrosion: </strong></h3>
+<p>Under the above conditions, one part of the metal becomes anode and another part becomes cathode.</p>
+<p><strong>At anode: </strong>Oxidation or dissolution of metal occurs.</p>
+<p class="source-equation"><strong>M→M</strong><strong><sup>+ </sup></strong><strong>+ ne</strong><strong><sup>-</sup></strong><strong><sup> </sup></strong></p>
+<p><strong>At cathode: </strong>Reduction reaction occurs, which depends on nature of the corrosive environment.</p>
+<p class="source-list-item">(i) Acidic environment: If the corrosive environment is acidic, hydrogen evolution occurs at the cathodic part.</p>
+<p class="source-equation"><strong>2H</strong><strong><sup>+ </sup></strong><strong>+ 2e</strong><strong><sup>- </sup></strong><strong>→H2↑ </strong></p>
+<p class="source-list-item">(ii) Neutral environment: If the corrosive environment is neutral or slightly alkaline, hydroxide ions are formed at the cathodic part.</p>
+<p class="source-equation"><strong>½ O2 + 2e</strong><strong><sup>- </sup></strong><strong>+ H2O → 2OH</strong><strong><sup>-</sup></strong><strong><sup> </sup></strong></p>
+<h3><strong>Wet corrosion taking rusting of iron as example: </strong></h3>
+<p>This involves a) evolution of hydrogen and</p>
+<p class="source-list-item">b) absorption of oxygen</p>
+<h3><strong>Acidic environment: </strong></h3>
+<p><strong>At anode: </strong>iron undergoes dissolution to give Fe<sup>2+ </sup>ions with the liberation of electrons.</p>
+<p class="source-equation"><strong>Fe → Fe</strong><strong><sup>2+ </sup></strong><strong>+ 2e</strong><strong><sup>- </sup></strong><strong>(Oxidation) </strong></p>
+<p><strong>At cathode: </strong>the liberated electrons flow from the anodic part to the cathodic part where H<sup>+ </sup>ions get reduced to H2.</p>
+<p class="source-equation"><strong>2H</strong><strong><sup>+ </sup></strong><strong>+ 2e</strong><strong><sup>- </sup></strong><strong>→H2↑ (Reduction) </strong></p>
+<div class="source-equation">\(\text{Overall reaction: }\mathrm{Fe}+2\mathrm H^+\longrightarrow\mathrm{Fe}^{2+}+\mathrm H_2\)</div>
+</section>
+<section class="source-page" id="u2-c-p009" data-source="c" data-source-page="9"><span id="source-c-p009"></span><p>This is also shown in the electrochemical series i.e all the metals above hydrogen in the electrochemical series tend to get dissolved in acidic solutions with simultaneous evolution of hydrogen gas.</p>
+<h3><strong>Neutral environment: </strong></h3>
+<p>When iron metal is in contact with neutral medium in the presence of oxygen, <strong>At anode: </strong>iron undergoes dissolution to give Fe<sup>2+ </sup>ions with the liberation of electrons.</p>
+<p class="source-equation"><strong>Fe → Fe</strong><strong><sup>2+ </sup></strong><strong>+ 2e</strong><strong><sup>- </sup></strong><strong>(Oxidation) </strong></p>
+<p><strong>At cathode: </strong>the liberated electrons flow from the anodic part to the cathodic part, where the electrons are taken up by dissolved oxygen to form OH<sup>- </sup>ions.</p>
+<p class="source-equation"><strong>½ O2 + 2e</strong><strong><sup>- </sup></strong><strong>+ H2O → 2OH</strong><strong><sup>- </sup></strong><strong>(Reduction) </strong></p>
+<p class="source-equation">Thus, the net reaction is:   <strong>Fe</strong><strong><sup>2+ </sup></strong><strong>+ 2OH</strong><strong><sup>- </sup></strong><strong>→ Fe (OH)2↓ </strong></p>
+<p>If enough oxygen is available, Fe (OH)2 is easily oxidized to Fe (OH)3 or Fe2O3.H2O (rust).</p>
+<p class="source-equation"><strong>                           4Fe (OH)2 + O2 + 2H2O → 4Fe (OH)3 or 2Fe2O3. 3H2O </strong></p>
+</section>
+<section class="source-page" id="u2-differential-aeration" data-source="c" data-source-page="10"><span id="source-c-p010"></span><h3>Differential aeration and pitting</h3><h3><strong>Types of Corrosion </strong></h3>
+<h3><strong>Differential aeration corrosion(Pitting and Water-line corrosion) </strong></h3>
+<p>Differential aeration corrosion: The difference in concentration of air over the surface of a metal develops galvanic cells, which initiate corrosion.</p><p>Example: Consider a piece of iron partially dipped in aerated solution. The concentration of oxygen is high at the surface than inside the solution. The area of iron which is less aerated acts as anode and undergoes corrosion. The area of iron which is more aerated acts as cathode and remains unaffected. Since the cathodic reaction involves the consumption of oxygen, the cathodic area tends to concentrate near the water-line as shown in the Figure.</p><div class="source-equation">\[\text{Anodic reaction: }\mathrm{Fe}\longrightarrow\mathrm{Fe}^{2+}+2\mathrm e^-\]</div><div class="source-equation">\[\text{Cathodic reaction: }\mathrm O_2+2\mathrm H_2\mathrm O+4\mathrm e^-\longrightarrow4\mathrm{OH}^-\]</div><aside class="source-notes-editorial" id="cfe-u2-c-p010-v01"><strong>Figure pending · Differential-aeration cell</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<p>(a) Pitting corrosion: Pitting corrosion results when small dust particles get deposited on a iron/steel surface. Portion of the iron surface covered by dust will be less aerated compared to the exposed surface. The covered portion acts as anode and undergoes corrosion. The exposed surface (free from dust) acts as cathode and remains unaffected. Pitting corrosion is observed on machinery parts, bottom of oil tanks, etc.,.</p><aside class="source-notes-editorial" id="cfe-u2-c-p010-v02"><strong>Figure pending · Pitting beneath a dust particle</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<p>Pitting corrosion takes place due to the cracking of the protective film formed when the metal is exposed to the environment. Cracking of protecting film may be due to</p>
+<p class="source-list-item">• Surface roughness / non uniform stress</p>
+<p class="source-list-item">• Scratches or cut edges</p>
+<p class="source-list-item">• Local strain of metal</p>
+<p class="source-list-item">• Sliding under load</p>
+<p class="source-list-item">• Chemical attack</p>
+<p class="source-list-item">• Presence of extraneous impurities</p>
+<h3><strong>Prevention of pitting corrosion: </strong></h3>
+<p class="source-list-item">• Use of pure metals, devoid of impurities</p>
+<p class="source-list-item">• Proper polishing of metal surfaces</p>
+<p class="source-list-item">• Proper designing of metal structures</p>
+<h3><strong>Examples: </strong></h3>
+<p class="source-list-item">• Stainless steel spoon lying on the beach</p>
+<p class="source-list-item">• Stainless steel, titanium &amp; aluminium alloys exposed to chloride containing solutions</p>
+<p class="source-list-item">• Metal areas covered by drop of H2O, sand, dust, scale etc.</p>
+</section>
+<section class="source-page" id="u2-waterline-galvanic" data-source="c" data-source-page="11"><span id="source-c-p011"></span><h3>Waterline and galvanic corrosion</h3><h3><strong>Waterline corrosion: </strong></h3>
+<aside class="source-notes-editorial" id="cfe-u2-c-p011-v01"><strong>Figure pending · Waterline corrosion</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<p>This corrosion is also known as differential oxygen concentration corrosion which is observed in iron/steel water tanks and ships floating in sea water etc. When water is stored in a steel tank, it is observed that the maximum amount of corrosion takes place along the line just beneath the level of the water meniscus. The area above the waterline (highly oxygenated) acts as cathodic and is not affected by corrosion. If water is relatively free from acidity, little corrosion occurs. This type of corrosion can be prevented by painting the sides of the ships by antifouling paints.</p>
+<h3><strong>Differential metal corrosion </strong></h3>
+<p>When 2 dissimilar metals are in contact with each other a potential difference is set up resulting in a galvanic current. The metal placed higher in the galvanic series acts as anode and the other metal placed lower in the galvanic series acts as cathode. The anodic metal undergoes corrosion and cathodic metal remains unaffected.</p>
+<p>Example : When iron and zinc are in contact with each other, zinc which is placed higher in galvanic series acts as anode and corrodes and iron remains unaffected.</p>
+<aside class="source-notes-editorial" id="cfe-u2-c-p011-v02"><strong>Figure pending · Iron–zinc galvanic couple</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<p>Galvanic couples: Zn and Cu, Zn and Ag, Iron and Cu, Iron in Cu and Iron in Pb.Galvanic corrosion is more when the potential difference between the two metals is large and the area of cathode is large. Galvanic corrosion can be minimized by placing an insulating material between the two metals and avoiding a galvanic couple.</p>
+</section>
+<section class="source-page" id="u2-dac-dmc" data-source="c" data-source-page="12"><span id="source-c-p012"></span><h3>DAC and DMC comparison</h3><h3>DAC vs DMC</h3><div class="source-table-scroll"><table><thead><tr><th scope="col">Differential aeration corrosion</th><th scope="col">Differential metal corrosion</th></tr></thead><tbody><tr><td>It occurs due to the electrochemical attack on the metal surface, partly immersed in an electrolyte &amp; partly exposed to air</td><td>It takes place when different metals are in contact &amp; jointly exposed to corrosive atmosphere</td></tr><tr><td>Poorly oxygenated area behaves as anode</td><td>Metal with more negative electrode potential will form anode &amp; undergoes corrosion.</td></tr><tr><td>Well oxygenated area behaves as cathode</td><td>Metal with less negative electrode potential will form cathode</td></tr><tr><td>It can be minimized by: Avoiding accumulation of dirt, sand, scale etc. Avoiding wire fence kind of structures</td><td>It can be minimized by: Avoiding galvanic couple. Providing insulating material between two metals.</td></tr></tbody></table></div>
+</section>
+<section class="source-page" id="u2-corrosion-factors" data-source="c" data-source-page="13"><span id="source-c-p013"></span><h3>Summary and factors affecting corrosion</h3><h3>In Summary: Types of corrosion</h3><div class="source-table-scroll"><table><thead><tr><th scope="col">Type</th><th scope="col">Examples</th></tr></thead><tbody><tr><td>PITTING</td><td>Stainless steel, titanium &amp; Al alloys exposed to chloride</td></tr><tr><td>Waterline</td><td>Ships</td></tr><tr><td>DIFFERENTIAL AERATION CORROSION</td><td>1. Partial covering of metals with blocks of wood; 2. Wire fence kind of structures</td></tr><tr><td>GALVANIC or DMC</td><td>Steel pipe connected to copper plumbing; A steel propeller shaft in bronze bearing; Lead-antimony solder around copper wire; Steel screws in a brass marine hardware</td></tr></tbody></table></div>
+<h3><strong>FACTORS AFFECTING CORROSION</strong><strong> </strong></h3>
+<h3><strong>Nature of metal: </strong></h3>
+<p class="source-list-item">• <em><strong>Position of the metal in galvanic series</strong></em><strong>: </strong>When two meals or alloys are in electrical contact, in presence of an electrolyte, the more active metal higher up in the galvanic series suffers corrosion. The rate and severity of corrosion depend upon the difference in their positions, and greater is the difference, the faster is the corrosion of the anodic metal/alloy.</p>
+<p class="source-list-item">• <em><strong>Purity of metal: </strong></em>Presence of impurities in a metal result in heterogeneity and forms minute local electrochemical cells and results in corrosion. For eg. Zinc metal containing impurities such as Pb or Fe undergoes corrosion.</p>
+<p class="source-list-item">• <em><strong>Relative areas of anode &amp; cathode</strong></em><em>: </em>When dissimilar metals are in contact, the corrosion of the anodic part is directly proportional to the ratio of areas of the cathodic part and the anodic part. Corrosion is more rapid &amp; severe, if the anodic area is small. The current density at the small anodic area is much greater, and the demand for electrons by the large cathodic areas can be met by smaller anodic areas only by undergoing rapid corrosion. Eg. Small steel pipe connected in a large copper tank.</p>
+<p class="source-list-item">• <em>Passivity: </em>Metals which are susceptible to corrosion are made passive by alloying with one or more metals which resist corrosion. Passivity is the phenomenon in which a metal or alloy exhibits a much higher corrosion resistance than expected from its position in the galvanic series. Passivation of metal takes place only in certain environments, which tend to maintain protective film on the surface.</p>
+<p>Passivity results in the formation of highly protective, very thin (0.0004mm thick) and quite invisible film on the surface of metal or an alloy, which makes it more noble. This film is insoluble, non-porous and self-healing in nature (repairs itself on re- exposure to oxidizing conditions).</p>
+<h3><strong>Examples: </strong></h3>
+<p class="source-list-item">1. Aluminum &amp; iron are not attacked by conc HNO3, they become chemically inert or passive due to the formation of a layer of iron oxide (Fe3O4) &amp; Al2O3 on their surface.</p>
+<p class="source-list-item">2. But iron gets rapidly corroded by diluted HNO3.</p>
+<p class="source-list-item">3. Iron is rendered passive by alloying it with any transition metals such as chromium, nickel, and molybdenum. Presence of Cr maintains protective oxide film hence exhibits high corrosion resistance in HNO3 solution.</p>
+<p><strong>Passive metals and alloys: </strong>Titanium, aluminum, chromium, thallium, and a wide variety of stainless-steel containing chromium. These exhibit outstanding corrosion resistance in oxidizing environments, but in reducing environments, they become chemically active.</p>
+</section>
+<section class="source-page" id="u2-environment" data-source="c" data-source-page="14"><span id="source-c-p014"></span><h3>Environmental factors and control overview</h3><h3><strong>Nature of environment: </strong></h3>
+<p class="source-list-item">• <em><strong>Humidity: </strong></em>Corrosion of metal is faster in humid environments as gases like CO2, O2 etc. present in the atmosphere combine with water vapour and furnish local electrochemical cells.</p>
+<p class="source-list-item">• <em><strong>Temperature: </strong></em>Increase in temperature results in enhancing the rate of reaction as well as diffusion rate thereby increasing corrosion.</p>
+<p class="source-list-item">• <em><strong>Influence of pH: </strong></em>Acidic media are more corrosive than alkaline and neutral media. Corrosion of metals readily attacked by acid can be reduced by increasing the pH of the attacking environment. Eg. Zinc rapidly corrodes even in weakly acidic</p>
+<p class="source-equation">solutions(pH&lt;5) but suffers minimum corrosion at pH=11.</p>
+<h3><strong>Control of Corrosion: </strong></h3>
+<p class="source-list-item">• <em><strong>Proper designing </strong></em></p>
+<p class="source-list-item">• <em><strong>Use of high purity metals </strong></em></p>
+<p class="source-list-item">• <em><strong>Use of alloys </strong></em></p>
+<p class="source-list-item">• <em><strong>Modifying the environment </strong></em></p>
+<p class="source-list-item">• <em><strong>Use of inhibitors </strong></em></p>
+<p class="source-list-item">• <em><strong>Cathodic protection </strong></em></p>
+<p class="source-list-item">• <em><strong>Application of protective coatings </strong></em></p>
+<h3><strong>Proper Designing: </strong></h3>
+<p class="source-list-item">• <em><strong>Select right type of metal </strong></em></p>
+<p class="source-list-item">• <em><strong>Avoid contact between dissimilar metals </strong></em></p>
+<p class="source-list-item">• <em><strong>Avoid joints &amp; sharp bends, welded joints </strong></em></p>
+<p class="source-list-item">• <em><strong>Replace metal washers with rubber or plastic </strong></em></p>
+<p class="source-list-item">• <em><strong>Avoid moisture/air </strong></em></p>
+</section>
+<section class="source-page" id="u2-c-p015" data-source="c" data-source-page="15"><span id="source-c-p015"></span><p class="source-list-item">• <em><strong>Insulate more active metal </strong></em></p>
+<p class="source-list-item">• <em><strong>Most general rule is Avoid Heterogeneity!!! </strong></em></p>
+</section>
+<section class="source-page" id="u2-sacrificial-anode" data-source="c" data-source-page="16"><span id="source-c-p016"></span><h3>Cathodic protection and sacrificial anodes</h3><h3><strong>CATHODIC PROTECTION</strong><strong> </strong></h3>
+<h3>Corrosion control methods</h3><h3>Cathodic protection</h3><p>The method of protecting the base metal by making it to behave like a cathode is called as cathodic protection. There are two types of cathodic protection</p><ul><li>(a) Sacrificial anode method</li><li>(b) Impressed current method.</li></ul>
+<h3>a. Sacrificial anode method</h3><ul><li>In this protection method, the metallic structure to be protected (base metal) is connected by a wire to a more anodic metal so that all the corrosion is concentrated at this more anodic metal.</li><li>The more anodic metal itself gets corroded slowly, while the parent structure (cathodic) is protected. The more active metal so employed is called sacrificial anode. The corroded sacrificial anode is replaced by a fresh one, when consumed completely.</li><li>Metals commonly employed as sacrificial anode are Mg, Zn, Al and their alloys which possess low reduction potential and occupies higher end in electrochemical series.</li></ul><p>Eg. A ship-hull which is made up of steel is connected to sacrificial anode (Zn-blocks) which undergoes corrosion leaving the base metal protected.</p><p>The underground water pipelines and water tanks are also protected by sacrificial anode method. By referring to the electrochemical series, the metal with low reduction potential is connected to the base metal which acts as anode.</p><aside class="source-notes-editorial" id="cfe-u2-c-p016-v02"><strong>Figure pending · Sacrificial-anode protection — source composite</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+
+		<details class="study-tip">
+			<summary>
+				<span class="study-tip-summary-copy">
+					<span class="study-tip-label">PankusDesk tip</span>
+					<span class="study-tip-summary-title">Sacrificial-anode limitations — source check pending</span>
+				</span>
+				<span class="study-tip-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-tip-content">
+				<p>The handout lists “High starting current is required” and “Uncoated parts cannot be protected” under sacrificial-anode limitations. These claims need textbook checking; they should not be generalized as verified limitations. The source list remains intact.</p>
+
+
+			</div>
+		</details><h3>Applications:</h3><p>Suitable for applications / structures that are buried / placed in the soil with low resistivity</p><ul><li>1) Protection of buried pipelines</li><li>2) underground cables</li><li>3) water tanks</li><li>4) marine corrosion of cables, ship-hulls and piers</li><li>5) Insertion of magnesium sheets into the domestic water boilers to prevent the formation of rust.</li><li>6) Calcium metal is employed to minimize engine corrosion.</li></ul><h3>Advantages:</h3><ul><li>1) Low installation and operating cost.</li><li>2) Capacity to protect complex structures.</li><li>3) Applied to wide range of severe corrodents.</li></ul><h3>Limitations:</h3><ul><li>1) High starting current is required.</li><li>2) Uncoated parts cannot be protected.</li><li>3) Frequent monitoring and replacement of sacrificial anode block should be done</li><li>4) Limited driving potential, hence, not applicable for large objects.</li></ul>
+</section>
+<section class="source-page" id="u2-impressed-current" data-source="c" data-source-page="17"><span id="source-c-p017"></span><h3>Protection applications and impressed current</h3><h3>b. Impressed current method</h3><p>For larger structures, galvanic anodes cannot economically deliver enough current to provide complete protection.</p><ul><li>In this method, an impressed current is applied in opposite direction to nullify the corrosion current, and convert the corroding metal from anode to cathode</li><li>The impressed current is slightly higher than the corrosion current. Thus the anodic corroding metal becomes cathodic and protected from corrosion.</li><li>The impressed current is taken from a battery or rectified on A.C. line.</li><li>The anode is usually insoluble anode like graphite, high silica iron, scrap iron, stainless steel, or platinum.</li><li>A sufficient DC current is applied to an inert anode, buried in the soil (or immersed in the corroding medium) and connected to the metallic structure to be protected.</li><li>The anode is, usually, a back fill, composed of coke breeze or gypsum, so as to increase the electrical contact with the surrounding soil.</li></ul><p>The impressed current protection method is used for water tanks, water &amp; oil pipelines, transmission line towers etc.</p>
+</section>
+<section class="source-page" id="u2-c-p018" data-source="c" data-source-page="18"><span id="source-c-p018"></span><h3>Limitations:</h3><ul><li>Initial costs can be more expensive.</li><li>Requires an external DC power source along with an AC supply.</li><li>System requires routine maintenance and monitoring.</li><li>Anode wires can be susceptible to damage.</li></ul>
+<ul><li>This kind of protection technique is particularly useful for large structures for long term operations</li></ul><h3>Advantages:</h3><ul><li>Unlimited driving potential.</li><li>Capable of protecting large steel structures when designed properly.</li><li>Requires less anodes then a galvanic system.</li><li>Output can be controlled using a permanent reference electrode, desirable when the electrolyte resistivity is known to change.</li></ul><aside class="source-notes-editorial" id="cfe-u2-c-p018-v01"><strong>Figure pending · Impressed-current pipeline protection</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+</section>
+<header class="source-document" id="source-r"><h3>Reference Electrodes · Comparison and Revision</h3></header><section class="source-page" id="u2-electrode-comparison" data-source="r" data-source-page="1"><span id="source-r-p001"></span><h3>Electrode comparison</h3><div class="source-table-scroll source-table-wide"><table><tbody><tr><th scope="col"><strong>Electrode</strong></th><th scope="col"><strong>SHE</strong></th><th scope="col"><strong>Calomel electrode</strong></th><th scope="col"><strong>Glass electrode</strong></th></tr><tr><td><strong>Construction </strong></td><td>• Platinum wire coated with platinum black (to increase surface area) • Glass tube containing the electrode system • Hydrogen gas inlet at 1 atm pressure • Acid solution with 1M H<sup>+</sup> concentration • Salt bridge connection to complete the circuit</td><td>• Glass vessel with a side tube • Mercury at the bottom • Paste of mercury(I) chloride (calomel, Hg<sub>2</sub>Cl<sub>2</sub>) mixed with mercury • KCl solution of specific concentration • Porous junction for salt bridge connection</td><td>• pH-sensitive glass membrane (composed of SiO<sub>2</sub> with Na<sub>2</sub>O and CaO) • Internal reference electrode (usually Ag/AgCl) • Internal buffer solution (typically pH 7.0) • External reference electrode (also usually Ag/AgCl with KCl electrolyte) • Combined in a single unit for convenience</td></tr><tr><td><strong>Working </strong> <strong>principle </strong></td><td>• Hydrogen gas is bubbled over the platinum electrode • Equilibrium established between H<sup>+</sup> ions and H<sub>2</sub> gas • Half-reaction: 2H<sup>+</sup> + 2e<sup>-</sup> ⇌ H<sub>2</sub></td><td>• Redox reaction: Hg<sub>2</sub>Cl<sub>2</sub>(s) + 2e<sup>-</sup> ⇌ 2Hg(l) + 2Cl<sup>-</sup>(aq) • Potential depends on Cl<sup>-</sup> concentration: E = E° - (0.0592/2) log[Cl<sup>-</sup>]<sup>2</sup></td><td>• Glass membrane develops a potential difference due to H<sup>+</sup> ion exchange • Formation of a hydrated gel layer on the glass surface</td></tr></tbody></table></div>
+<aside class="source-notes-editorial" id="cfe-u2-r-p001-v01"><strong>Figure pending · Calomel construction in the comparison sheet</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<aside class="source-notes-editorial" id="cfe-u2-r-p001-v02"><strong>Figure pending · SHE construction in the comparison sheet</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+<aside class="source-notes-editorial" id="cfe-u2-r-p001-v03"><strong>Figure pending · Combined glass construction in the comparison sheet</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+</section>
+<section class="source-page" id="u2-r-p002" data-source="r" data-source-page="2"><span id="source-r-p002"></span><div class="source-table-scroll source-table-wide"><table><thead><tr><th scope="col">Electrode</th><th scope="col">SHE</th><th scope="col">Calomel electrode</th><th scope="col">Glass electrode</th></tr></thead><tbody><tr><td></td><td>• Platinum acts as a catalyst for the reaction</td><td>• Mercury/mercury(I) chloride system maintains a stable potential <strong>Different Types:</strong> • Saturated calomel electrode (SCE): +0.2422V (most common) • 0.1N KCl: +0.3338V • 1N KCl: +0.2810V</td><td>• Nernst equation for pH: E = constant - 0.0592 pH at 25°C • Measures the voltage difference between internal and external reference electrodes <strong>Mechanism of Ion Selectivity:</strong> • Glass membrane is selective for H+ ions due to specific glass structure • Silicate network with negatively charged oxygen sites • H+ ions exchange with Na+ ions in the glass • Selectivity depends on glass composition</td></tr><tr><td><strong>Advantages </strong></td><td>• Highly reproducible under standard conditions • Not affected by impurities in the solution • Platinum electrode is not consumed during the reaction</td><td>• Stable and reproducible potential • Easy to set up and use • Portable for field measurements • Less sensitive to impurities than SHE</td><td>• Single unit with both measuring and reference electrodes • Ease of use - no need for separate reference electrode • Compact and portable • Suitable for routine measurements • Compact, convenient, and minimizes errors as both sensing and reference systems are in one unit.</td></tr><tr><td><strong>Limitations </strong></td><td>• Difficult to set up and maintain • Requires pure hydrogen gas at constant pressure • Not portable for routine measurements</td><td>• Temperature sensitive (potential changes with temperature) • Contains toxic mercury (environmental and safety concerns)</td><td>• Used for measurements up to pH of 12. • Above pH 12 cations of the solution affect the glass</td></tr></tbody></table></div>
+</section>
+<section class="source-page" id="u2-electrode-choice" data-source="r" data-source-page="3"><span id="source-r-p003"></span><h3>Choosing a reference electrode</h3><div class="source-table-scroll source-table-wide"><table><thead><tr><th scope="col">Electrode</th><th scope="col">SHE</th><th scope="col">Calomel electrode</th><th scope="col">Glass electrode</th></tr></thead><tbody><tr><td></td><td>• Sensitive to temperature changes</td><td>• KCl concentration can change due to evaporation • Not suitable for high- precision work</td><td>interface &amp; make the electrode useless.</td></tr><tr><td><strong>Applications </strong></td><td>Fundamental science, the primary standard for all potential tables.</td><td>Classic lab studies, corrosion testing, pH measurement &amp; potentiometric titrations</td><td>pH measurement in laboratories Industrial process control Environmental monitoring Biological systems (blood, urine analysis) Food and beverage industry</td></tr><tr><td>Without a proper understanding of reference electrodes, all electrochemical data becomes unreliable, and the bridge between laboratory science and real-world technology collapses. We study reference electrodes because they are the <strong>indispensable, silent partners</strong> in any electrochemical measurement. They provide the stable foundation that allows us to: • <strong>Diagnose</strong> medical conditions with a blood test. • <strong>Prevent</strong> environmental disasters by monitoring pipeline corrosion. • <strong>Develop</strong> new batteries and materials in the lab. • <strong>Monitor</strong> our health with wearable technology. 1. Why do we need a stable reference electrode in electrochemical cells? • It provides a constant, known potential to measure the unknown potential of the working electrode. • Ensures accuracy and reproducibility in experiments like potentiometry and voltammetry.</td><td></td><td></td><td></td></tr></tbody></table></div>
+</section>
+<section class="source-page" id="u2-r-p004" data-source="r" data-source-page="4"><span id="source-r-p004"></span><p class="source-list-item">2. What characteristics make an ideal reference electrode?</p>
+<p class="source-list-item">• Stable and well-defined potential</p>
+<p class="source-list-item">• Non-polarizable (potential does not change with current)</p>
+<p class="source-list-item">• Chemically inert and compatible with the solution</p>
+<p class="source-list-item">• Easy to handle and maintain</p>
+<p class="source-list-item">3. In a given electrochemical experiment, how would you decide which reference electrode to use?</p>
+<p class="source-equation">• For highly accurate standard measurements → SHE</p>
+<p class="source-equation">• For routine lab experiments → Calomel electrode</p>
+<p class="source-equation">• For pH measurements → Glass electrode</p>
+<p class="source-list-item">4. Discuss the Calomel electrode. How is it different from SHE? What are its practical applications?</p>
+<p class="source-list-item">• Construction: Mercury in contact with Hg₂Cl₂ (calomel) and KCl solution.</p>
+<p class="source-equation">Working: 𝐻𝑔2𝐶𝑙2 + 2𝑒<sup>−</sup>↔2𝐻𝑔+ 2𝐶𝑙<sup>−</sup></p>
+<p class="source-list-item">•</p>
+<p class="source-list-item">• Differences from SHE: Secondary reference, easier to use, portable</p>
+<p class="source-list-item">• Applications: Measuring electrode potentials in laboratory experiments, voltammetry</p>
+<p class="source-list-item">5. What is a glass electrode? In which scenarios is it preferred?</p>
+<p class="source-list-item">• <strong>Construction:</strong> Thin glass membrane sensitive to H⁺ ions, connected to internal reference electrode.</p>
+<p class="source-list-item">• <strong>Applications:</strong> Measuring pH of solutions accurately in chemistry and biology labs</p>
+<p class="source-list-item">6. Compare SHE, Calomel, and Glass electrodes in terms of stability, convenience, and safety.</p>
+<div class="source-table-scroll source-table-wide"><table><tbody><tr><th scope="col"><strong>Electrode </strong></th><th scope="col"><strong>Stability </strong></th><th scope="col"><strong>Convenience </strong></th><th scope="col"><strong>Safety </strong></th></tr><tr><td>SHE</td><td>Very high</td><td>Low</td><td>Low (H₂ gas)</td></tr></tbody></table></div>
+</section>
+<section class="source-page" id="u2-electrode-summary" data-source="r" data-source-page="5"><span id="source-r-p005"></span><h3>Reference electrodes summary</h3><div class="source-table-scroll source-table-wide"><table><tbody><tr><th scope="col"><strong>Electrode </strong></th><th scope="col"><strong>Stability </strong></th><th scope="col"><strong>Convenience </strong></th><th scope="col"><strong>Safety </strong></th></tr><tr><td>Calomel</td><td>High</td><td>High</td><td>Medium (Hg handling)</td></tr><tr><td>Glass</td><td>High</td><td>High</td><td>High (safe)</td></tr></tbody></table></div>
+<p class="source-list-item"><strong>7.</strong><strong> </strong><strong>Reference Electrodes – Summary Sheet in terms of construction, working principle, advantages, limitations &amp; </strong></p>
+<h3><strong>applications:(4 or 6 marks) </strong></h3>
+<div class="source-table-scroll source-table-wide"><table><tbody><tr><th scope="col"><strong>Electrode </strong></th><th scope="col"><strong>Construction </strong></th><th scope="col"><strong>Working Reaction </strong></th><th scope="col"><strong>Advantages </strong></th><th scope="col"><strong>Limitations </strong></th><th scope="col"><strong>Applications </strong></th></tr><tr><td><strong>Standard </strong> <strong>Hydrogen </strong> <strong>Electrode </strong> <strong>(SHE)</strong></td><td>Platinum electrode in 1M H⁺ solution with H₂ gas at 1 atm bubbling over it</td><td>2𝐻<sup>+</sup><sup> </sup>+ 2𝑒<sup>−</sup>↔𝐻<sub>2</sub></td><td>Primary standard; very stable potential; defines 0 V</td><td>Difficult to handle; requires H₂ gas; not portable</td><td>Standard potential measurements; reference in electrochemistry</td></tr><tr><td><strong>Calomel </strong> <strong>Electrode</strong></td><td>Mercury in contact with Hg₂Cl₂ (calomel) and saturated KCl solution</td><td>𝐻𝑔2𝐶𝑙2 + 2𝑒<sup>−</sup> ↔2𝐻𝑔 + 2𝐶𝑙<sup>−</sup></td><td>Portable; easy to use; stable</td><td>Contains mercury (toxic); potential varies slightly with temperature</td><td>Routine electrochemical experiments; potentiometry; voltammetry</td></tr><tr><td><strong>Glass </strong> <strong>Electrode</strong></td><td>Thin glass membrane sensitive to H⁺ ions; internal reference electrode inside</td><td>𝐻<sup>+</sup>(𝑠𝑜𝑙𝑢𝑡𝑖𝑜𝑛) ↔ 𝐻<sup>+</sup>(𝑚𝑒𝑚𝑏𝑟𝑎𝑛𝑒)– responds to pH</td><td>Accurate pH measurement; safe; widely used</td><td>Fragile; limited temperature range; response affected by interfering ions</td><td>pH measurement in labs, biology, medicine, and industry</td></tr></tbody></table></div>
+</section>
+<section class="source-page" id="u2-r-p006" data-source="r" data-source-page="6"><span id="source-r-p006"></span><aside class="source-notes-editorial" id="cfe-u2-r-p006-v01"><strong>Figure pending · Reference electrodes — illustrated summary sheet</strong><p>Original-source ROS asset to be added here; no replacement diagram has been created.</p></aside>
+</section>
+<section class="source-page" id="u2-r-p007" data-source="r" data-source-page="7"><span id="source-r-p007"></span></section>
+<header class="source-document" id="u2-qa"><h3>Q &amp; A</h3></header><aside class="source-notes-editorial"><p>Original questions are retained below. Answers are PankusDesk-authored from the supplied notes and comparison handout; they are not printed textbook solutions. Figures and the specifically identified textbook checks remain pending.</p></aside><section class="source-page qa-section" id="u2-qa-short"><h3>Short answer questions</h3>
+		<div class="study-accordion study-accordion--examples" aria-label="Short answer questions">
+			<div class="study-accordion-label">Short answer questions</div>
+
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-1">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 1 · Electrolytic and galvanic cells</span>
+
+					</span>
+					<span class="study-example-question"><span>Differentiate between an electrolytic cell and a galvanic cell. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="source-table-scroll"><table><thead><tr><th scope="col">Feature</th><th scope="col">Galvanic cell</th><th scope="col">Electrolytic cell</th></tr></thead><tbody><tr><td>Driving process</td><td>Spontaneous redox reaction</td><td>External electrical supply drives a non-spontaneous reaction</td></tr><tr><td>Energy conversion</td><td>Chemical → electrical</td><td>Electrical → chemical</td></tr><tr><td>Anode / cathode signs</td><td>Anode negative; cathode positive</td><td>Anode positive; cathode negative</td></tr><tr><td>Example</td><td>Daniell cell</td><td>Electrolysis of molten NaCl</td></tr></tbody></table></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-2">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 2 · Electrode potential and standard potential</span>
+
+					</span>
+					<span class="study-example-question"><span>What is electrode potential? Define standard electrode potential. [BL-1]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Electrode potential is the potential developed when an electrode is in contact with a solution of its ions; it expresses its tendency to undergo oxidation or reduction. Standard electrode potential, E°, is measured relative to SHE under specified standard conditions. The notes state 25°C, 1 bar gas pressure and 1 M ion concentration. SHE is assigned 0 V.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-3">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 3 · Nernst equation and significance</span>
+
+					</span>
+					<span class="study-example-question"><span>Write down Nernst equation and outline its significance? [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>For a specified cell reaction, \(E=E^\circ-\dfrac{RT}{nF}\ln Q\). At 298 K, \(E=E^\circ-\dfrac{0.0591}{n}\log_{10}Q\) in volts. Here Q is the reaction quotient, n the number of electrons transferred, R the gas constant, T absolute temperature and F the Faraday constant.</p><p>It relates potential to non-standard concentrations/activities and temperature. It is used to determine actual cell voltage and to study concentration cells and corrosion. R25 requires no derivation.</p><aside class="source-notes-editorial"><p>The source also substitutes an equilibrium constant K for Q. The answer uses the reaction quotient for the stated non-equilibrium cell-potential relationship; see the source discrepancy note.</p></aside>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-4">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 4 · Standard measurement conditions</span>
+
+					</span>
+					<span class="study-example-question"><span>Mention the conditions under which standard electrode potential is measured. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Use the stated standard conditions: temperature 298 K (25°C), gaseous species at 1 bar, and dissolved ions at unit activity (represented approximately by 1 M in the notes). Measure against the Standard Hydrogen Electrode, assigned zero potential. The SHE construction description elsewhere uses 1 atm; retain that source convention when quoting it rather than silently equating bar and atm.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-5">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 5 · Why a stable reference is needed</span>
+
+					</span>
+					<span class="study-example-question"><span>Why do we need a stable reference electrode in electrochemical cells? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>An isolated half-cell potential cannot be measured directly without a second electrode. A reference electrode supplies a known, stable potential. Measuring the cell EMF relative to it allows the unknown electrode potential to be calculated, with reproducible results.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-6">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 6 · Ideal reference-electrode characteristics</span>
+
+					</span>
+					<span class="study-example-question"><span>What characteristics make an ideal reference electrode? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>An ideal reference electrode has a stable, well-defined and reproducible potential; is non-polarizable under small measurement currents; is chemically compatible with the test solution; and is easy to prepare, maintain and handle. Its electrolyte composition and temperature should remain controlled.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-7">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 7 · SHE working principle</span>
+
+					</span>
+					<span class="study-example-question"><span>State the working principle of the Standard Hydrogen Electrode (SHE). [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Platinum black catalyses the reversible equilibrium \(2\mathrm H^++2\mathrm e^-\rightleftharpoons\mathrm H_2\). Hydrogen is passed over the platinum surface in contact with hydrogen ions at the specified standard conditions. SHE can act as an anode (hydrogen oxidation) or a cathode (hydrogen-ion reduction); its standard reference potential is defined as zero.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-8">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 8 · Why SHE is primary</span>
+
+					</span>
+					<span class="study-example-question"><span>Why is SHE called a primary reference electrode? [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>SHE is the primary reference because the standard hydrogen electrode is assigned E° = 0 V by convention. Other standard electrode potentials are determined relative to that reference, establishing the hydrogen scale. Secondary references such as calomel are calibrated against it.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-9">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 9 · Calomel advantage and limitation</span>
+
+					</span>
+					<span class="study-example-question"><span>Mention one advantage and one limitation of the Calomel electrode. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Advantage: it provides a stable, reproducible potential and is easier to set up and maintain than a hydrogen-gas electrode. Limitation: it contains toxic mercury; its potential also depends on temperature and KCl concentration.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-10">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 10 · Function of an ion-selective electrode</span>
+
+					</span>
+					<span class="study-example-question"><span>What is the function of an ion-selective electrode? [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>An ISE develops a membrane potential that responds preferentially to the activity of a selected ion in a sample. Measured against a reference electrode and calibrated with standards, that potential is used to estimate the target-ion activity/concentration. The glass electrode is selective for H⁺ and is used for pH measurement.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-11">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 11 · Calomel electrode reaction</span>
+
+					</span>
+					<span class="study-example-question"><span>Write the electrode reaction of the Calomel electrode. [BL-1]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>The reduction half-reaction is \(\mathrm{Hg}_2\mathrm{Cl}_2(s)+2\mathrm e^-\rightleftharpoons2\mathrm{Hg}(l)+2\mathrm{Cl}^-(aq)\). The reverse reaction applies when the electrode acts as an anode.</p><aside class="source-notes-editorial"><p>The electrochemistry PDF prints Hg⁺ as a product, which fails charge balance. This answer follows the neutral-Hg product printed in the comparison handout; the original error remains in the transcript.</p></aside>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-12">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 12 · Glass electrode and preferred uses</span>
+
+					</span>
+					<span class="study-example-question"><span>What is a glass electrode? In which scenarios is it preferred? [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>A glass electrode is an H⁺-selective electrode with a thin pH-sensitive glass membrane and an internal reference system. A combined assembly includes both measuring and reference systems. It is preferred for routine pH measurement in laboratories, industrial processes, environmental samples, biological fluids and food analysis, including coloured or turbid samples.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-13">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 13 · Choosing an electrode</span>
+
+					</span>
+					<span class="study-example-question"><span>In a given electrochemical experiment, how would you decide which reference electrode to use? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Choose according to the measurement, required accuracy, sample compatibility and convenience. SHE provides the primary reference for standard-potential work but requires carefully controlled hydrogen and a clean platinum surface. Calomel is a convenient secondary reference for routine compatible electrochemical measurements. For pH, use a glass sensing electrode with a suitable reference, commonly combined in one probe.</p><aside class="source-notes-editorial"><p>The handout groups glass with the reference-electrode choices. The glass membrane is the pH-sensitive measuring element; the combined assembly also contains a reference system.</p></aside>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-14">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 14 · Effects of corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>Enumerate the effects of corrosion. [BL-1]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Corrosion causes plant shutdowns; leakage and loss of products from tanks, pipelines and containers; reduced efficiency; contamination of chemicals, medicines, dyes and foods; environmental damage; and hazards in installations such as nuclear plants. It also weakens engineering components.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-15">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 15 · Dry and wet corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>Differentiate between dry corrosion and wet corrosion. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="source-table-scroll"><table><thead><tr><th scope="col">Feature</th><th scope="col">Dry corrosion</th><th scope="col">Wet corrosion</th></tr></thead><tbody><tr><td>Mechanism</td><td>Direct chemical attack, e.g. by gases</td><td>Coupled anodic oxidation and cathodic reduction</td></tr><tr><td>Environment</td><td>Dry conditions; may involve hot gases or liquid metals</td><td>Moisture or a conducting aqueous electrolyte</td></tr><tr><td>Controlling features</td><td>Nature and protectiveness of the surface film</td><td>Anodic/cathodic areas, electrolyte and cathodic reaction</td></tr><tr><td>Example</td><td>Oxidation of a metal in oxygen</td><td>Rusting of iron in moist air</td></tr></tbody></table></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-16">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 16 · Pilling–Bedworth rule</span>
+
+					</span>
+					<span class="study-example-question"><span>What is Pilling-Bedworth rule? Give its significance. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>The specific volume ratio is \(\dfrac{\text{volume of oxide formed}}{\text{volume of metal consumed}}\). The supplied rule states that a ratio below unity gives a porous, non-protective oxide, whereas an oxide occupying at least the consumed metal volume can cover the surface.</p><p>Its significance is to relate oxide-film coverage to further oxidation. An adherent, non-porous film can impede attack. The handout treats increasing ratio as uniformly protective; that unqualified conclusion needs textbook verification and should not be used as a universal rule.</p><aside class="source-notes-editorial"><p>Textbook check pending for the high-volume-ratio qualification and the W/Cr/Ni example.</p></aside>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-17">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 17 · Ni, Cr and W — supplied answer and qualification</span>
+
+					</span>
+					<span class="study-example-question"><span>The specific volume ratios of Ni, Cr and W are 1.6, 2.0 and 3.6 respectively. Name the metal which undergoes least oxidation corrosion. Give the reason.</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>The supplied handout chooses W, using the ratios W = 3.6, Cr = 2.0 and Ni = 1.6 and its stated rule “Smaller the Specific Volume Ratio, greater is the oxidation corrosion.” Under that stated source rule, the largest ratio (W) is therefore selected.</p><p>This is the handout’s answer, not an independently verified conclusion. Volume ratio alone does not establish the film’s adherence or mechanical integrity; the missing high-ratio qualification must be checked before treating the ranking as a verified general result.</p><aside class="source-notes-editorial"><p>Textbook verification pending. The source answer W is preserved and attributed; no alternative exam-key answer is invented.</p></aside><div class="study-final-answer"><strong>Final answer: According to the supplied handout: W. Independent textbook confirmation pending.</strong></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-18">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 18 · Corrosion beneath a tank waterline</span>
+
+					</span>
+					<span class="study-example-question"><span>Corrosion of water filled steel tanks occurs below the water level. Give reasons. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Oxygen concentration is lower just below the waterline than at the well-aerated surface. A differential-aeration cell forms: the less-aerated region is anodic and dissolves, while the more-aerated region is cathodic. Attack is therefore concentrated just beneath the water meniscus.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-19">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 19 · Differential aeration and differential metal corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>Compare differential aeration corrosion and differential metal corrosion. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="source-table-scroll"><table><thead><tr><th scope="col">Feature</th><th scope="col">Differential aeration</th><th scope="col">Differential metal</th></tr></thead><tbody><tr><td>Cause</td><td>Unequal oxygen access over a metal surface</td><td>Electrical contact between dissimilar metals in a corrosive medium</td></tr><tr><td>Anode</td><td>Less oxygenated region</td><td>More active metal of the couple</td></tr><tr><td>Cathode</td><td>More oxygenated region</td><td>Less active metal of the couple</td></tr><tr><td>Example</td><td>Waterline or under-deposit corrosion</td><td>Iron in contact with copper</td></tr></tbody></table></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-20">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 20 · Corrosion beneath a water drop</span>
+
+					</span>
+					<span class="study-example-question"><span>The metal under the water drop undergoes accelerated corrosion. Why? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>The edge of a water drop receives oxygen more readily than its centre. The oxygen-poor central region becomes anodic and dissolves; the oxygen-rich edge supports the cathodic oxygen-reduction reaction. This localized differential-aeration cell accelerates attack beneath the drop.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-21">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 21 · Why matching metals for nuts and bolts</span>
+
+					</span>
+					<span class="study-example-question"><span>Nuts and bolts should be made of the same metal. Why? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Dissimilar metals in electrical contact and exposed to moisture can form a galvanic couple. The more active member becomes the anode and corrodes. Using the same metal avoids the dissimilar-metal potential difference and reduces this cause of corrosion.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-22">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 22 · Why small anodic areas corrode intensely</span>
+
+					</span>
+					<span class="study-example-question"><span>Small anodic areas result in intense corrosion. Give the reason. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>A large cathode can demand a substantial total anodic current. If dissolution is concentrated on a small anode, the anodic current density (current per unit area) becomes high. Metal loss per unit anodic area therefore increases; a small steel pipe connected to a large copper tank is the supplied example.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-23">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 23 · Passivity and corrosion resistance</span>
+
+					</span>
+					<span class="study-example-question"><span>Passivity results in more corrosion resistance. Why? [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Passivity is unusually high corrosion resistance caused by a thin, adherent protective surface film. The film separates the metal from the environment and slows further reaction. The notes describe passive films as insoluble, non-porous and capable of reforming under suitable oxidizing conditions.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-24">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 24 · Steel pipe connected to copper</span>
+
+					</span>
+					<span class="study-example-question"><span>Why does corrosion occur in steel pipe connected to copper plumbing? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Steel and copper in contact through plumbing water form a galvanic couple. Iron is the more active metal and becomes the anode, while copper acts as cathode. Iron dissolves as Fe²⁺. Attack is especially severe if a small steel area is connected to a much larger copper area.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-25">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 25 · Iron versus aluminium corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>Iron corrodes faster than Al, even though iron is placed below Al in the galvanic series. Why? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Position in a galvanic series alone does not determine the observed rate. Aluminium develops an adherent protective oxide film and becomes passive. Ordinary rust on iron does not provide comparable durable protection, so iron can corrode faster even though aluminium is more active.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-26">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 26 · Effect of temperature</span>
+
+					</span>
+					<span class="study-example-question"><span>Why does the rate of metallic corrosion increase with the increase in temperature. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>The supplied notes explain that increasing temperature increases reaction rates and diffusion rates, generally accelerating corrosion under the stated conditions. The actual rate still depends on the metal, electrolyte and protective film.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-27">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 27 · Impurities and corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>Impure metal corrodes faster than pure metal under identical conditions. Give the reason. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Impurities create heterogeneity and local electrochemical cells. Anodic portions of the metal dissolve while cathodic impurity regions support reduction. The resulting local galvanic action can make an impure metal corrode faster than a pure specimen under otherwise identical conditions.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-28">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 28 · Iron beneath salt-solution drops</span>
+
+					</span>
+					<span class="study-example-question"><span>Iron corrodes under drops of salt solution. Give the reason. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>A salt-solution drop supplies a conducting electrolyte and unequal oxygen access. The less-aerated region under the drop is anodic; the better-aerated region is cathodic. Iron dissolves at the anode and oxygen reduction occurs at the cathode, producing localized corrosion.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-29">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 29 · Impure versus pure zinc</span>
+
+					</span>
+					<span class="study-example-question"><span>A piece of impure zinc and pure zinc are placed in a salt solution. Which will metal corrode faster? Give the reason. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Impure zinc corrodes faster under the stated identical conditions. Impurities such as Fe or Pb form local cathodic sites with zinc as the anodic metal; zinc dissolution is accelerated by these small electrochemical cells. Pure zinc has fewer such heterogeneities.</p><div class="study-final-answer"><strong>Final answer: Impure zinc corrodes faster under the stated conditions.</strong></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-30">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 30 · Cathodic protection and an example</span>
+
+					</span>
+					<span class="study-example-question"><span>What is cathodic protection? Give an example of a sacrificial anode. [BL-1]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Cathodic protection makes the structure to be protected the cathode of an electrochemical system, suppressing its anodic dissolution. It may use a more active sacrificial metal or an external DC source. Zinc, magnesium or aluminium can serve as sacrificial anodes; zinc blocks attached to a steel ship hull are a supplied example.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-31">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 31 · Sacrificial anode versus impressed current</span>
+
+					</span>
+					<span class="study-example-question"><span>Compare sacrificial anode method with impressed current cathodic protection. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="source-table-scroll"><table><thead><tr><th scope="col">Feature</th><th scope="col">Sacrificial anode</th><th scope="col">Impressed current</th></tr></thead><tbody><tr><td>Current source</td><td>Galvanic action of a more active metal</td><td>External DC power supply / rectifier</td></tr><tr><td>Anode</td><td>Mg, Zn, Al or suitable alloy; consumed and replaced</td><td>Auxiliary anode, e.g. graphite or suitable high-silicon iron</td></tr><tr><td>Protected structure</td><td>Cathode</td><td>Connected as cathode to the supply negative terminal</td></tr><tr><td>Control / scale</td><td>Limited driving potential; monitor anode consumption</td><td>Adjustable output; suited to larger structures</td></tr><tr><td>Maintenance</td><td>Replace consumed anodes</td><td>Maintain power supply, wiring and protection potential</td></tr></tbody></table></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-32">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 32 · Cathodic protection and galvanization</span>
+
+					</span>
+					<span class="study-example-question"><span>How is cathodic protection of iron different from its galvanization. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Cathodic protection describes the electrochemical method of making iron the cathode, either by an attached sacrificial anode or by impressed current. Galvanization is the application of a zinc coating to iron: the intact coating acts as a barrier, and zinc can additionally provide sacrificial protection where iron is exposed. Thus galvanization is a coating process with a sacrificial action, while cathodic protection is the broader electrochemical protection principle.</p><aside class="source-notes-editorial"><p>The supplied bank asks about galvanization, but the notes do not develop it as a separate coating lesson. This is a PankusDesk explanation connecting the bank wording to the supplied zinc–iron sacrificial mechanism.</p></aside>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-33">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 33 · Cracked zinc coating</span>
+
+					</span>
+					<span class="study-example-question"><span>Zinc-coated iron article is protected from rusting, even when the coating is cracked. Explain. [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>When a crack exposes iron to moisture, zinc and iron remain electrically connected. Zinc is more active and dissolves as the sacrificial anode; iron is the cathode and is protected while sufficient connected zinc remains. This extends protection beyond the coating’s physical barrier.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-short-34">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Short answer 34 · Why zinc is sacrificial</span>
+
+					</span>
+					<span class="study-example-question"><span>Why is coating of zinc on iron called sacrificial anode? [BL-3]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Zinc is more active than iron in the supplied galvanic example. In contact with iron and an electrolyte, zinc oxidizes preferentially and supplies electrons, making iron cathodic. Zinc is consumed to protect the iron, hence the term sacrificial anode.</p>
+
+
+
+			</div>
+		</details>
+		</div></section><section class="source-page qa-section" id="u2-qa-essay"><h3>Essay questions</h3>
+		<div class="study-accordion study-accordion--examples" aria-label="Essay questions">
+			<div class="study-accordion-label">Essay questions</div>
+
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-1">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 1 · Construction and working of a galvanic cell</span>
+
+					</span>
+					<span class="study-example-question"><span>Explain the construction and working of an electrochemical (galvanic) cell with a neat, labelled diagram.</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>A galvanic cell converts the chemical energy of a spontaneous redox reaction into electrical energy. In the Daniell cell, a zinc electrode is immersed in ZnSO₄ solution and a copper electrode in CuSO₄ solution. A salt bridge containing an inert electrolyte joins the half-cells, and an external wire with a voltmeter/load joins the metal electrodes.</p><p>The cell notation is \(\mathrm{Zn}|\mathrm{Zn}^{2+}(1\,\mathrm M)||\mathrm{Cu}^{2+}(1\,\mathrm M)|\mathrm{Cu}\). Zinc is the negative anode and copper the positive cathode.</p><p>At the anode: \(\mathrm{Zn}\rightarrow\mathrm{Zn}^{2+}+2\mathrm e^-\). At the cathode: \(\mathrm{Cu}^{2+}+2\mathrm e^-\rightarrow\mathrm{Cu}\). Adding the half-reactions gives \(\mathrm{Zn}+\mathrm{Cu}^{2+}\rightarrow\mathrm{Zn}^{2+}+\mathrm{Cu}\).</p><p>Electrons pass through the external wire from zinc to copper. The salt bridge carries ionic current and maintains charge balance: anions move towards the zinc half-cell as Zn²⁺ forms, and cations towards the copper half-cell as Cu²⁺ is consumed. Oxidation and reduction remain spatially separated but electrically coupled.</p><p>The original labelled Daniell-cell diagram belongs beside the construction and working description. Its ROS asset is pending in the notes above.</p><div class="study-final-answer"><strong>Final answer: Chemical → electrical energy; zinc oxidizes, copper ions reduce, and electrons flow externally from Zn to Cu.</strong></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-2">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 2 · SHE and calomel comparison</span>
+
+					</span>
+					<span class="study-example-question"><span>Compare and contrast the construction and working of the Standard Hydrogen Electrode (SHE) and Calomel electrode. Mention their uses and limitations.</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="source-table-scroll"><table><thead><tr><th scope="col">Aspect</th><th scope="col">SHE</th><th scope="col">Calomel electrode</th></tr></thead><tbody><tr><td>Construction</td><td>Platinized platinum in a hydrogen-ion solution; pure H₂ bubbled at the stated reference pressure</td><td>Mercury in contact with Hg₂Cl₂ paste and KCl solution of specified concentration; porous junction connects to the test solution</td></tr><tr><td>Reduction reaction</td><td>2H⁺ + 2e⁻ ⇌ H₂</td><td>Hg₂Cl₂ + 2e⁻ ⇌ 2Hg + 2Cl⁻</td></tr><tr><td>Potential</td><td>Assigned E° = 0 V under reference conditions</td><td>Known secondary-reference potential; depends on KCl concentration and temperature</td></tr><tr><td>Working</td><td>Reversible hydrogen-ion/hydrogen equilibrium on catalytic Pt</td><td>Reversible Hg/Hg₂Cl₂/Cl⁻ equilibrium</td></tr><tr><td>Advantages</td><td>Primary standard; reproducible with carefully controlled conditions</td><td>Convenient, portable, stable and comparatively easy to maintain</td></tr><tr><td>Limitations</td><td>Needs pure hydrogen, clean platinum and controlled conditions; costly and inconvenient for routine use</td><td>Contains mercury; temperature/KCl concentration matter; incompatible with some samples</td></tr><tr><td>Uses</td><td>Establishing standard potentials, calibrating secondary electrodes</td><td>Routine potential measurements, potentiometry and reference in pH measurements</td></tr></tbody></table></div><p>For each electrode, identify the metal/contact, electrolyte, gas inlet where applicable, and junction to the other half-cell in its original labelled diagram. Both diagrams are registered as pending ROS figures.</p><aside class="source-notes-editorial"><p>The transcript contains a charged-Hg product error and saturated-calomel values of both +0.2422 V and +0.2442 V. This comparison follows the balanced reaction printed in the comparison sheet and does not choose between inconsistent source values.</p></aside>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-3">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 3 · Combined glass electrode</span>
+
+					</span>
+					<span class="study-example-question"><span>Explain the construction, working, and applications of a Combined Glass Electrode as an ion-selective electrode./ Describe how a Combined Glass Electrode functions as an Ion-Selective Electrode (ISE).</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>A combined glass electrode is an H⁺-selective pH sensor that contains the glass measuring system and a reference system in one convenient assembly.</p><p>Construction: the thin glass bulb is made from pH-sensitive glass. The supplied notes specify 72% SiO₂, 22% Na₂O and 6% CaO. An internal Ag/AgCl electrode contacts a fixed internal solution (0.1 N HCl in the notes). A second reference compartment contains KCl and contacts the sample through a porous junction. The original diagram labels both reference systems and the thin membrane.</p><p>Working: hydration of the glass surface produces an ion-exchange layer. H⁺ interaction at the inner and outer surfaces gives a membrane potential related to the difference in hydrogen-ion activity. The internal solution is held fixed, so changes in sample pH change the measured voltage relative to the reference.</p><p>Calibrate with buffer solutions, immerse the membrane and reference junction in the sample, and measure with a high-impedance pH meter. Calibration establishes the practical voltage offset and response. Do not arbitrarily set the combined probe’s offset to zero.</p><p>Advantages: compact single assembly, convenient routine use and H⁺ selectivity; it can be used with coloured/turbid samples. Limitations: fragile membrane, calibration and temperature dependence, ageing and interfering-ion response; the source specifically warns about alkaline error above pH 12.</p><p>Applications include laboratory pH, industrial process control, environmental monitoring, biological fluids and food/beverage analysis. The original combined-probe diagram and glass-membrane illustration are pending ROS integration.</p><aside class="source-notes-editorial"><p>The two handouts print different signs/offset conventions for the glass response. The answer explains calibration and the reference system without treating the conflicting zero-offset expression as verified.</p></aside>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-4">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 4 · Finding an unknown electrode potential</span>
+
+					</span>
+					<span class="study-example-question"><span>Analyse how different reference electrodes help in determining the electrode potential of unknown electrodes.</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>A single half-cell potential is measured relative to a second, known electrode. Connect the unknown half-cell and reference half-cell through a suitable ionic junction and connect the electrical leads to measure the cell EMF with negligible current.</p><p>Keep the cell orientation and reduction-potential convention explicit: \(E_{\mathrm{cell}}=E_{\mathrm{right}}-E_{\mathrm{left}}\). If the reference is on the left, \(E_{\mathrm{unknown}}=E_{\mathrm{cell}}+E_{\mathrm{reference}}\); if it is on the right, \(E_{\mathrm{unknown}}=E_{\mathrm{reference}}-E_{\mathrm{cell}}\).</p><p>With SHE, use the specified reference conditions and E° = 0 V for standard-potential determination. Its reproducibility defines the potential scale, but gas purity, platinum cleanliness and control of pressure/activity make routine use demanding.</p><p>With calomel, use its known potential for the actual KCl concentration and temperature. It is convenient for routine measurements, but use the correct concentration-dependent reference value and compatible sample chemistry.</p><p>An unknown metal electrode is a working electrode; the glass membrane is instead an ion-selective measuring element for pH. In a combined probe it is measured against its incorporated reference. A stable reference allows changes in the measured voltage to be attributed to the working/sensing electrode rather than reference drift.</p><div class="study-final-answer"><strong>Final answer: Calculate the unknown potential from the measured cell EMF, the known reference potential and the explicitly recorded cell orientation.</strong></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-5">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 5 · Wet corrosion and rusting</span>
+
+					</span>
+					<span class="study-example-question"><span>Explain the mechanism involved in the rusting of iron by the wet theory of corrosion./ Discuss in detail the mechanism of electrochemical corrosion theory with the evolution of hydrogen and absorption of oxygen. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Wet corrosion is electrochemical attack in a conducting aqueous or moist environment. Different metals, impurities or unequal oxygen access create anodic and cathodic regions. Metal dissolution occurs at the anode; reduction occurs at the cathode.</p><p>For iron the anodic reaction is \(\mathrm{Fe}\rightarrow\mathrm{Fe}^{2+}+2\mathrm e^-\). Electrons pass through the metal to cathodic regions; ionic conduction through the electrolyte completes the cell.</p><p>In an acidic environment, the cathodic reaction is hydrogen evolution: \(2\mathrm H^++2\mathrm e^-\rightarrow\mathrm H_2\uparrow\). Adding the half-reactions gives \(\mathrm{Fe}+2\mathrm H^+\rightarrow\mathrm{Fe}^{2+}+\mathrm H_2\uparrow\).</p><p>In neutral/slightly alkaline aerated water, oxygen reduction occurs: \(\dfrac12\mathrm O_2+\mathrm H_2\mathrm O+2\mathrm e^-\rightarrow2\mathrm{OH}^-\). Ferrous ions then precipitate: \(\mathrm{Fe}^{2+}+2\mathrm{OH}^-\rightarrow\mathrm{Fe(OH)}_2\).</p><p>Further oxidation gives \(4\mathrm{Fe(OH)}_2+\mathrm O_2+2\mathrm H_2\mathrm O\rightarrow4\mathrm{Fe(OH)}_3\). Rust is hydrated ferric oxide/oxyhydroxide material; the supplied notes also write hydrated Fe₂O₃. It does not form a durable protective barrier.</p><p>Hydrogen evolution and oxygen absorption are alternative cathodic mechanisms depending on environment. The anodic region loses iron in both cases; the cathodic region supports reduction.</p>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-6">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 6 · Dry/wet comparison and galvanic corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>a) Differentiate between dry corrosion and wet corrosion. [BL-2]</span><span>b) Explain differential metal (Galvani</span><span>c) corrosion with an example. [BL-2]</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="answer-part-list"><section class="answer-part"><div class="answer-part-heading">(a) Dry corrosion versus wet corrosion</div><div class="source-table-scroll"><table><thead><tr><th scope="col">Feature</th><th scope="col">Dry corrosion</th><th scope="col">Wet corrosion</th></tr></thead><tbody><tr><td>Mechanism</td><td>Direct chemical attack, e.g. by gases</td><td>Coupled anodic oxidation and cathodic reduction</td></tr><tr><td>Environment</td><td>Dry conditions; may involve hot gases or liquid metals</td><td>Moisture or a conducting aqueous electrolyte</td></tr><tr><td>Controlling features</td><td>Nature and protectiveness of the surface film</td><td>Anodic/cathodic areas, electrolyte and cathodic reaction</td></tr><tr><td>Example</td><td>Oxidation of a metal in oxygen</td><td>Rusting of iron in moist air</td></tr></tbody></table></div></section><section class="answer-part"><div class="answer-part-heading">(b) Differential metal (galvanic) corrosion</div><p>When dissimilar metals are electrically connected in a conducting corrosive environment, they form a galvanic cell. The more active metal becomes the anode and dissolves; the less active metal supports cathodic reduction.</p><p>For iron in contact with zinc, zinc becomes the anode and corrodes preferentially, protecting iron. For steel in contact with copper, iron is anodic and can suffer accelerated attack. Greater potential separation and a large cathode/small anode make the anodic attack more severe.</p><p>Reduce galvanic attack by avoiding unnecessary dissimilar-metal contact or electrically insulating the metals. A sacrificial anode deliberately uses the same mechanism to protect the desired structure.</p></section></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-7">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 7 · Factors affecting corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>Explain how the following factors affect the rate of corrosion. [BL-2]</span><span>a) passivity</span><span>b) position of the metal</span><span>c) relative areas of anode and cathode</span><span>d) pH</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="answer-part-list"><section class="answer-part"><div class="answer-part-heading">(a) Passivity</div><p>A thin adherent, non-porous surface film can make an active metal highly corrosion-resistant. The notes use aluminium and chromium-containing alloys as examples. The film must remain stable in the environment; passivity can be lost when the film is damaged or conditions change.</p></section><section class="answer-part"><div class="answer-part-heading">(b) Position of the metal</div><p>For dissimilar metals in electrical contact in an electrolyte, the more active metal is anodic. A greater separation in the relevant galvanic series generally increases the driving force for attack of that member. Actual behaviour also depends on film formation and environment.</p></section><section class="answer-part"><div class="answer-part-heading">(c) Relative anode and cathode areas</div><p>A small anode connected to a large cathode has a high anodic current density and rapid local metal loss. The supplied example is a small steel pipe connected to a large copper tank. Avoid this area combination when designing galvanic couples.</p></section><section class="answer-part"><div class="answer-part-heading">(d) pH</div><p>The supplied notes state that acidic media are generally more corrosive to metals readily attacked by acid. Increasing pH can reduce their attack, but behaviour depends on the metal. The given example is zinc: rapid corrosion below pH 5 and minimum corrosion around pH 11 in the stated source.</p></section></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-8">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 8 · Differential aeration: waterline and pitting</span>
+
+					</span>
+					<span class="study-example-question"><span>What is differential aeration corrosion? Explain the following with an example. [BL-2]</span><span>a) water line corrosion</span><span>b) pitting corrosion.</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Differential-aeration corrosion arises from unequal oxygen concentration at different parts of the same metal surface. Less-aerated regions become anodic and dissolve; more-aerated regions become cathodic and support oxygen reduction.</p><div class="answer-part-list"><section class="answer-part"><div class="answer-part-heading">(a) Waterline corrosion</div><p>In a partially filled steel tank, oxygen reaches the surface/meniscus region more easily than the submerged region just beneath it. The less-aerated submerged area becomes anodic. Attack is concentrated just below the waterline; the more-aerated region supports cathodic reduction. The supplied examples include storage tanks and ships.</p></section><section class="answer-part"><div class="answer-part-heading">(b) Pitting corrosion</div><p>Under a dust particle, deposit or damaged protective film, oxygen access is restricted. The covered small region becomes an anode while the larger exposed surface is cathodic. Metal dissolves locally and a pit develops.</p><p>The notes give machinery parts, oil-tank bottoms and chloride-exposed stainless steel, titanium or aluminium alloys as examples. Remove deposits, keep surfaces clean/smooth, and design structures to reduce crevices and deposit accumulation. Original waterline and pitting figures remain pending ROS.</p></section></div>
+
+
+
+			</div>
+		</details>
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-essay-9">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Essay 9 · Cathodic protection methods</span>
+
+					</span>
+					<span class="study-example-question"><span>Explain cathodic protection method for controlling corrosion./ Define cathodic protection. Explain sacrificial anodic protection and impressed current cathodic protection.</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<p>Cathodic protection suppresses corrosion of the structure by making it the cathode of an electrochemical system. The two supplied methods are sacrificial-anode protection and impressed-current protection.</p><div class="answer-part-list"><section class="answer-part"><div class="answer-part-heading">1 Sacrificial-anode method</div><p>Connect the steel structure to a more active metal such as Mg, Zn or Al in the same electrolyte. The added metal oxidizes and supplies electrons; the steel becomes cathodic and is protected. Replace the anode when consumed.</p><p>Examples: zinc blocks on steel ship hulls and anodes for buried pipelines, cables, tanks and marine structures. Advantages include simple operation without an external DC source and relatively low installation/operating cost. Limitations include finite driving potential, anode consumption and replacement/monitoring.</p><p>The original source composite showing protected metal, underground structure and ship hull belongs here; it is pending ROS production.</p></section><section class="answer-part"><div class="answer-part-heading">2 Impressed-current method</div><p>Use an external DC supply or rectifier. Connect its negative terminal to the structure and positive terminal to the auxiliary anode in the electrolyte. The applied current makes the structure cathodic, opposing its anodic dissolution.</p><p>The notes list graphite, high-silicon iron and other suitable auxiliary anodes. Backfill may improve electrical contact with soil. Applications include larger water/oil pipelines, tanks and other extensive steel structures.</p><p>The output can be controlled and larger structures protected, but an external power supply, wiring, monitoring and maintenance are necessary. Initial cost and vulnerability of anode leads are limitations. The original pipeline/rectifier diagram remains pending ROS.</p></section></div><aside class="source-notes-editorial"><p>The handout additionally lists unverified sacrificial-anode limitations, including inability to protect uncoated parts. Those exact claims remain in the source transcript with a pending-check note; they are not repeated here as established limitations.</p></aside>
+
+
+
+			</div>
+		</details>
+		</div></section><section class="source-page qa-section" id="u2-qa-extra"><h3>Unnumbered source prompt</h3><aside class="source-notes-editorial"><p>This prompt appears between numbered Essays 7 and 8, labelled only “a)” in the PDF. Its numbering has not been invented or merged into Essay 7.</p></aside>
+		<div class="study-accordion study-accordion--examples" aria-label="Unnumbered source prompt">
+			<div class="study-accordion-label">Unnumbered source prompt</div>
+
+		<details class="study-accordion-item study-accordion-item--example" id="u2-qa-extra-0">
+			<summary>
+				<span class="study-example-summary-copy">
+					<span class="study-example-title-row">
+						<span class="study-example-title">Unnumbered source prompt · dry corrosion</span>
+
+					</span>
+					<span class="study-example-question"><span>a) Discuss about chemical (Dry) Corrosion involving: Oxidation corrosion, Corrosion by other gases, Liquid metal corrosion</span></span>
+				</span>
+				<span class="study-accordion-toggle" aria-hidden="true">+</span>
+			</summary>
+			<div class="study-accordion-content study-example-solution">
+				<div class="study-solution-label">PankusDesk answer</div>
+
+				<div class="answer-part-list"><section class="answer-part"><div class="answer-part-heading">1 Oxidation corrosion</div><p>Oxygen directly attacks the metal to form an oxide. The resulting film controls further attack: a stable adherent non-porous film can protect, whereas a porous or volatile film permits continued attack. The notes list stable, unstable, volatile and porous oxide layers, and introduce the Pilling–Bedworth volume ratio.</p><p>Retain the source’s oxide examples and W/Cr/Ni illustration as attributed source material. The general formula and high-volume-ratio conclusion have qualifications recorded in the notes.</p></section><section class="answer-part"><div class="answer-part-heading">2 Corrosion by other gases</div><p>Gases such as SO₂, Cl₂, H₂S, F₂ and CO₂ may attack metals directly. The chemical affinity of the gas for the metal and the film’s nature determine the extent of attack. A protective non-porous product can limit reaction; a porous or volatile product permits deeper attack. The supplied examples are AgCl formed by chlorine on silver and SnCl₄ formed by chlorine on tin.</p></section><section class="answer-part"><div class="answer-part-heading">3 Liquid-metal corrosion</div><p>At high temperatures, flowing liquid metal can attack a solid metal/alloy. The supplied notes identify dissolution of the solid in the liquid metal and penetration of liquid metal into the solid as mechanisms. Both weaken the solid; nuclear-power equipment is the supplied application context.</p></section></div>
+
+
+
+			</div>
+		</details>
+		</div></section></div></div></main></body></html>

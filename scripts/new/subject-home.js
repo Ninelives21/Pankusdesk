@@ -95,10 +95,25 @@ function renderStudyResources(subject, subjectUrl) {
 	if (!grid) return;
 
 	grid.innerHTML = (subject.studyResources ?? []).map(entry => {
+		if (Array.isArray(entry.unitResources)) {
+			return `<section class="study-resource-group" id="${escapeHtml(entry.id || 'unit-revision')}" aria-label="${escapeHtml(entry.title)}">
+				<h3 class="section-title">${escapeHtml(entry.title)}</h3>
+				<p class="section-note">${escapeHtml(entry.description || '')}</p>
+				<div class="study-unit-resource-grid">${entry.unitResources.map(unit => {
+					const metadata = subject.units.find(item => Number(item.number) === Number(unit.number));
+					return renderResourceCard({ ...unit, label: `Unit ${unit.number}`, title: metadata?.title || unit.title }, subjectUrl);
+				}).join('')}</div>
+			</section>`;
+		}
 		const resource = { ...subject.practice?.[entry.practiceKey], ...entry };
-		const href = resource.href ? new URL(resource.href, subjectUrl).href : null;
-		const tag = href ? 'a' : 'article';
-		return `
+		return renderResourceCard(resource, subjectUrl);
+	}).join('');
+}
+
+function renderResourceCard(resource, subjectUrl) {
+	const href = resource.href ? new URL(resource.href, subjectUrl).href : null;
+	const tag = href ? 'a' : 'article';
+	return `
 			<${tag} class="study-tool-card${href ? ' study-tool-link' : ''}"${href ? ` href="${escapeHtml(href)}"` : ''}>
 				<div class="tool-label">${escapeHtml(resource.label)}</div>
 				<h3>${escapeHtml(resource.title)}</h3>
@@ -107,7 +122,6 @@ function renderStudyResources(subject, subjectUrl) {
 				${href && resource.action ? `<span class="tool-action">${escapeHtml(resource.action)} →</span>` : ''}
 			</${tag}>
 		`;
-	}).join('');
 }
 
 function buildAtomPreview(atoms) {

@@ -2,6 +2,11 @@
 /*                         SUBJECT LANDING PAGE                           */
 /* ====================================================================== */
 
+.study-resource-group { grid-column: 1 / -1; min-width: 0; }
+.study-unit-resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8); margin-top: var(--space-8); }
+@media (max-width: 1000px) { .study-unit-resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .study-unit-resource-grid { grid-template-columns: minmax(0, 1fr); } }
+
 .subject-page {
 	padding-top: var(--space-20);
 }
