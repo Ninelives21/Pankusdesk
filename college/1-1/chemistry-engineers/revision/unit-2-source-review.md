@@ -79,6 +79,27 @@ Some original images are low-resolution/faint, the illustrated summary has sourc
 - `revision/unit-2-source-review.md`, `revision/unit-2-ros-register.md`
 - `revision/unit-2-corrections.json`, `revision/unit-2-ros-manifest.json`, `revision/unit-2-ros-contact.jpg`
 
+## Question, paragraph and rendering audit
+
+Essay 6 was incorrectly split into `b) ... (Galvani` and `c) corrosion ...`: the scratch importer treated the final `c)` in `Galvanic)` as a part marker. The previous flattened check removed whitespace and block boundaries, so the concatenated characters still matched. That check was insufficient.
+
+The corrected page now uses source-reviewed question-part arrays for all 44 questions. Essay 6 has exactly `(a)` and `(b)`; Essays 7 and 8 retain four and two labelled parts. A permanent verifier checks each part independently, the corresponding answer labels and figure placement. It also checks all 36 Unit 1 question structures without changing that unit.
+
+The full source-layout pass additionally repaired wrapped SHE/glass/calomel/pH sentences and headings, merged labels with their explanations, separated merged list entries and removed an orphan bullet. Electrode-handout narrative and source Q1 are outside their table. The detailed electrode comparison and stability comparison are joined across source PDF page breaks, including incomplete cell sentences. Repeated continuation headers are removed; every source cell's non-whitespace content is retained. Stable source anchors remain available. The Pilling–Bedworth carryover bullet is placed before the next topic.
+
+The shared multipart grid now constrains a wide table to its own horizontal-scroll container. The following answer part's prose wraps at phone width. Long inline chemical equations retain their sentence context and punctuation in the existing bounded equation component. Browser checks inspect visible text and panel bounds inside each card, not only document-level overflow. Deliberately hidden assistive MathML is excluded from visual geometry checks.
+
+Permanent checks:
+
+```sh
+python3 scripts/tools/verify_cfe_revision_structure.py
+python3 scripts/tools/check_cfe_revision_browser.py --base-url http://127.0.0.1:8000
+```
+
+The browser command requires Playwright and Chromium, with the repository served at the given URL. It checks all 44 questions at 1440px and 390px, screenshots the questions/notes, tests table/equation scrolling, image decoding and full-size opening, and catches clipped visible text or panels. The structural verifier was also run against the original PR24 HTML and correctly rejected it.
+
+[Detailed layout change record](unit-2-layout-review.json) · [Reviewed block/table contract](unit-2-structure-contract.json)
+
 ## Validation
 
 PASS:
@@ -92,3 +113,11 @@ PASS:
 - Lossless RGB equality against every retained original/crop; stable-ID reconciliation; source/output SHA-256 hashes; ZIP integrity.
 
 Unit 1, canonical topic data and previously approved image binaries are unchanged. Original source defects remain explicitly documented, not repaired or hidden in raster pixels.
+
+Additional PASS checks for this structural audit:
+- Exact part boundaries and content for all 44 Unit 2 and 36 Unit 1 questions; all corresponding answer parts and figure placements.
+- Complete source paragraphs/headings, table row/column shapes and a glass-limitation sentence retained in one table cell.
+- The original PR24 snapshot fails the new regression verifier; the corrected snapshot passes.
+- Desktop/phone browser checks include visible text-range and panel geometry inside every answer, along with reachable horizontally scrollable tables/equations. Focused screenshots reviewed, including the reported Essay 6.
+- Shared-CSS smoke checks: Chemistry Unit 1 and MAC multipart panels fit at phone width; BEE Unit 1 questions load (no multipart sample present).
+- Image binaries, Unit 1 HTML and scientific corrections are unchanged in this audit. Formatting-only changes are recorded separately from chemical corrections.

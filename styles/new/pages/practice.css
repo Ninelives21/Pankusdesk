@@ -390,11 +390,14 @@
 
 .answer-part-list {
 	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	min-width: 0;
 	gap: var(--space-4);
 	margin: 0 0 var(--space-5);
 }
 
 .answer-part {
+	min-width: 0;
 	padding: var(--space-5);
 	border: 1px solid var(--line-soft);
 	border-radius: var(--radius-sm);
