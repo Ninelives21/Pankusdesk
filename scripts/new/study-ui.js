@@ -35,6 +35,7 @@ function ensureMathJax() {
 	if (mathJaxPromise) return mathJaxPromise;
 	mathJaxPromise = new Promise((resolve, reject) => {
 		window.MathJax = {
+			startup: { typeset: false },
 			tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true },
 			options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
 		};
