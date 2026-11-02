@@ -1,0 +1,300 @@
+{
+  "trigger": "Essay 6 false c) detected inside Galvanic)",
+  "root_cause": "The scratch generator split at any a)-d) substring and earlier tests flattened away whitespace and block boundaries.",
+  "review_scope": "All 44 Unit 2 question prompts/answer parts, 41 notes/handout PDF pages plus the 2-page question bank, 13 source tables, note paragraph/heading/list boundaries and 39 image placements. Unit 1 question structures also checked.",
+  "fixes": [
+    {
+      "reason": "Essay 6 has exactly two source subparts; c) inside Galvanic) is not a label.",
+      "before_html": "<span>b) Explain differential metal (Galvani</span><span>c) corrosion with an example. [BL-2]</span>",
+      "after_html": "<span>b) Explain differential metal (Galvanic) corrosion with an example. [BL-2]</span>"
+    },
+    {
+      "reason": "Restore the complete SHE reproducibility bullet.",
+      "before_html": "<p class=\"source-list-item\">• Accurate and reproducible: Provides a reliable reference point with a fixed potential of</p>",
+      "after_html": "<p class=\"source-list-item\">• Accurate and reproducible: Provides a reliable reference point with a fixed potential of 0.00 V.</p>"
+    },
+    {
+      "reason": "Restore the complete SHE reproducibility bullet. (remove continuation)",
+      "before_html": "<p class=\"source-list-item\">0.00 V.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Restore the complete glass-response sentence.",
+      "before_html": "<p class=\"source-list-item\">➢  The potential difference developed is proportional to the</p>",
+      "after_html": "<p class=\"source-list-item\">➢  The potential difference developed is proportional to the difference in the pH value.</p>"
+    },
+    {
+      "reason": "Restore the complete glass-response sentence. (remove continuation)",
+      "before_html": "<p>difference in the pH value.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Restore the complete pH-effect sentence; its continuation is prose, not an equation.",
+      "before_html": "<p class=\"source-list-item\">• <em><strong>Influence of pH: </strong></em>Acidic media are more corrosive than alkaline and neutral media. Corrosion of metals readily attacked by acid can be reduced by increasing the pH of the attacking environment. Eg. Zinc rapidly corrodes even in weakly acidic</p>",
+      "after_html": "<p class=\"source-list-item\">• <em><strong>Influence of pH: </strong></em>Acidic media are more corrosive than alkaline and neutral media. Corrosion of metals readily attacked by acid can be reduced by increasing the pH of the attacking environment. Eg. Zinc rapidly corrodes even in weakly acidic solutions(pH&lt;5) but suffers minimum corrosion at pH=11.</p>"
+    },
+    {
+      "reason": "Restore the complete pH-effect sentence; its continuation is prose, not an equation. (remove continuation)",
+      "before_html": "<p class=\"source-equation\">solutions(pH&lt;5) but suffers minimum corrosion at pH=11.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Restore the complete calomel KCl-concentration sentence.",
+      "before_html": "<p>The calomel electrode consists of a broad glass tube having sidearm as shown in the figure. The sidearm is used for dipping it any solution used for coupling the calomel electrode. At the bottom of the glass tube, there is pure mercury and a platinum wire is sealed into it at the bottom for electrical connections. The wire runs through a separator glass tube to the top of the tube for electrical contact. Above pure mercury, there is a paste of mercurous chloride (calomel) (Hg<sub>2</sub>Cl<sub>2</sub>) in mercury. The rest of the glass vessel and sidearm A is filled with a saturated KCl solution or</p>",
+      "after_html": "<p>The calomel electrode consists of a broad glass tube having sidearm as shown in the figure. The sidearm is used for dipping it any solution used for coupling the calomel electrode. At the bottom of the glass tube, there is pure mercury and a platinum wire is sealed into it at the bottom for electrical connections. The wire runs through a separator glass tube to the top of the tube for electrical contact. Above pure mercury, there is a paste of mercurous chloride (calomel) (Hg<sub>2</sub>Cl<sub>2</sub>) in mercury. The rest of the glass vessel and sidearm A is filled with a saturated KCl solution or 0.1N or 1N.  Sidearm is plugged with glass wool. The glass tube is closed from the top.</p>"
+    },
+    {
+      "reason": "Restore the complete calomel KCl-concentration sentence. (remove continuation)",
+      "before_html": "<p class=\"source-list-item\">0.1N or 1N.  Sidearm is plugged with glass wool. The glass tube is closed from the top.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Restore the complete SHE construction heading.",
+      "before_html": "<h3><strong>Construction &amp; working of Primary reference electrode (Standard Hydrogen Electrode – </strong></h3>",
+      "after_html": "<h3><strong>Construction &amp; working of Primary reference electrode (Standard Hydrogen Electrode – </strong> <strong>SHE): </strong></h3>"
+    },
+    {
+      "reason": "Restore the complete SHE construction heading. (remove continuation)",
+      "before_html": "<h3><strong>SHE): </strong></h3>",
+      "after_html": ""
+    },
+    {
+      "reason": "Join the SHE construction sentence across its source PDF page break.",
+      "before_html": "<p>It consists of a rectangular platinum foil connected to a Pt wire and sealed in a glass tube. A glass envelope surrounds the tube carrying the Pt foil. The jacket is closed at the top and open at the bottom. A side arm is attached to the outer jacket through which hydrogen gas is passed into the cell. This electrode when dipped in a 1M HCl solution and pure and dry hydrogen gas is bubbled through HCI solution from the inlet at a constant pressure of 1 atm.  Hydrogen gas</p>",
+      "after_html": "<p>It consists of a rectangular platinum foil connected to a Pt wire and sealed in a glass tube. A glass envelope surrounds the tube carrying the Pt foil. The jacket is closed at the top and open at the bottom. A side arm is attached to the outer jacket through which hydrogen gas is passed into the cell. This electrode when dipped in a 1M HCl solution and pure and dry hydrogen gas is bubbled through HCI solution from the inlet at a constant pressure of 1 atm.  Hydrogen gas is adsorbed on the platinum plate and acts as a hydrogen electrode.  The electrode is reversible with respect to hydrogen ions.</p>"
+    },
+    {
+      "reason": "Join the SHE construction sentence across its source PDF page break. (remove continuation)",
+      "before_html": "<p>is adsorbed on the platinum plate and acts as a hydrogen electrode.  The electrode is reversible with respect to hydrogen ions.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the entire supplied summary-sheet title together.",
+      "before_html": "<p class=\"source-list-item\"><strong>7.</strong><strong> </strong><strong>Reference Electrodes – Summary Sheet in terms of construction, working principle, advantages, limitations &amp; </strong></p>",
+      "after_html": "<h3><strong>7.</strong><strong> </strong><strong>Reference Electrodes – Summary Sheet in terms of construction, working principle, advantages, limitations &amp; </strong> <strong>applications:(4 or 6 marks) </strong></h3>"
+    },
+    {
+      "reason": "Remove the isolated applications heading continuation.",
+      "before_html": "<h3><strong>applications:(4 or 6 marks) </strong></h3>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">• <strong>Contains mercury (toxic):</strong></p>",
+      "after_html": "<p class=\"source-list-item\">• <strong>Contains mercury (toxic):</strong> Environmental and health hazard during handling or disposal.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Environmental and health hazard during handling or disposal.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">• <strong>Temperature-dependent potential:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">• <strong>Temperature-dependent potential:</strong> The electrode potential changes slightly with temperature.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>The electrode potential changes slightly with temperature.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">• <strong>Limited use with certain ions:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">• <strong>Limited use with certain ions:</strong> Not suitable for solutions that form insoluble chlorides (e.g., Ag⁺, Pb²⁺).</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Not suitable for solutions that form insoluble chlorides (e.g., Ag⁺, Pb²⁺).</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">• <strong>Cannot be used at high temperatures:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">• <strong>Cannot be used at high temperatures:</strong> Mercury vaporizes, and the electrode becomes unstable.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Mercury vaporizes, and the electrode becomes unstable.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">• <strong>Slow response in some systems:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">• <strong>Slow response in some systems:</strong> Compared to modern reference electrodes (like Ag/AgCl).</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Compared to modern reference electrodes (like Ag/AgCl).</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">➢  <strong>Reference electrode:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">➢  <strong>Reference electrode:</strong> Commonly used as a <strong>reference</strong> in measuring the electrode potential of other half-cells.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Commonly used as a <strong>reference</strong> in measuring the electrode potential of other half-cells.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">➢  <strong>pH measurement:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">➢  <strong>pH measurement:</strong> Used as a reference electrode in pH meters and potentiometric titrations.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Used as a reference electrode in pH meters and potentiometric titrations.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">➢  <strong>Determination of EMF:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">➢  <strong>Determination of EMF:</strong> Helps measure the EMF of electrochemical cells accurately.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Helps measure the EMF of electrochemical cells accurately.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">➢  <strong>Calibration of other electrodes:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">➢  <strong>Calibration of other electrodes:</strong> Used to standardize other reference electrodes such as Ag/AgCl electrodes.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Used to standardize other reference electrodes such as Ag/AgCl electrodes.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item.",
+      "before_html": "<p class=\"source-list-item\">➢  <strong>Electroanalytical methods:</strong></p>",
+      "after_html": "<p class=\"source-list-item\">➢  <strong>Electroanalytical methods:</strong> Used in polarography, voltammetry, and potentiometry.</p>"
+    },
+    {
+      "reason": "Keep the calomel label and its explanation in one list item. (remove continuation)",
+      "before_html": "<p>Used in polarography, voltammetry, and potentiometry.</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Separate the primary and secondary reference-electrode entries.",
+      "before_html": "<p>Primary reference electrode – (eg) Standard Hydrogen Electrode (SHE) Secondary reference electrode – (eg) Calomel electrode, Quinhydrone electrode</p>",
+      "after_html": "<p>Primary reference electrode – (eg) Standard Hydrogen Electrode (SHE)</p><p>Secondary reference electrode – (eg) Calomel electrode, Quinhydrone electrode</p>"
+    },
+    {
+      "reason": "Separate the anode/cathode representations and zero-potential statement.",
+      "before_html": "<p>When acting as an anode,     Pt| H<sub>2(g)</sub> (1 atm.)| H<sup>+</sup><sub>(aq)</sub> (1M) When acting as cathode,   H<sup>+</sup><sub>(aq)</sub> (1M) |  H<sub>2(g)</sub> (1 atm.) | Pt The electrode potential of SHE is <strong>zero</strong>.</p>",
+      "after_html": "<p>When acting as an anode,     Pt| H<sub>2(g)</sub> (1 atm.)| H<sup>+</sup><sub>(aq)</sub> (1M)</p><p>When acting as cathode,   H<sup>+</sup><sub>(aq)</sub> (1M) |  H<sub>2(g)</sub> (1 atm.) | Pt</p><p>The electrode potential of SHE is <strong>zero</strong>.</p>"
+    },
+    {
+      "reason": "Keep the Nernst symbol definition separate from the following section heading.",
+      "before_html": "<p class=\"source-list-item\">• <strong>ln(Q)</strong>: is the natural logarithm of the reaction quotient In simple terms</p>",
+      "after_html": "<p class=\"source-list-item\">• <strong>ln(Q)</strong>: is the natural logarithm of the reaction quotient</p><h3>In simple terms</h3>"
+    },
+    {
+      "reason": "Separate source environments 10 and 11.",
+      "before_html": "<p>(10) Alkalis (11) Soils</p>",
+      "after_html": "<p class=\"source-list-item\">(10) Alkalis</p><p class=\"source-list-item\">(11) Soils</p>"
+    },
+    {
+      "reason": "Keep the working-reaction bullet with its reaction.",
+      "before_html": "<p class=\"source-equation\">Working: 𝐻𝑔2𝐶𝑙2 + 2𝑒<sup>−</sup>↔2𝐻𝑔+ 2𝐶𝑙<sup>−</sup></p>",
+      "after_html": "<p class=\"source-equation\">• Working: 𝐻𝑔2𝐶𝑙2 + 2𝑒<sup>−</sup>↔2𝐻𝑔+ 2𝐶𝑙<sup>−</sup></p>"
+    },
+    {
+      "reason": "Remove the extracted empty bullet.",
+      "before_html": "<p class=\"source-list-item\">•</p>",
+      "after_html": ""
+    },
+    {
+      "reason": "Join a compound word split by source PDF line wrapping.",
+      "before_text": "half- reaction",
+      "after_text": "half-reaction"
+    },
+    {
+      "reason": "Join a compound word split by source PDF line wrapping.",
+      "before_text": "non- spontaneous",
+      "after_text": "non-spontaneous"
+    },
+    {
+      "reason": "Join a compound word split by source PDF line wrapping.",
+      "before_text": "ion- selective",
+      "after_text": "ion-selective"
+    },
+    {
+      "reason": "Join a compound word split by source PDF line wrapping.",
+      "before_text": "re- exposure",
+      "after_text": "re-exposure"
+    },
+    {
+      "reason": "Join a compound word split by source PDF line wrapping.",
+      "before_text": "high- precision",
+      "after_text": "high-precision"
+    },
+    {
+      "reason": "Keep only the actual table rows in the electrode table; restore all following prose and source Q1 outside the table.",
+      "before_html": "<div class=\"source-table-scroll source-table-wide\"><table><thead><tr><th scope=\"col\">Electrode</th><th scope=\"col\">SHE</th><th scope=\"col\">Calomel electrode</th><th scope=\"col\">Glass electrode</th></tr></thead><tbody><tr><td></td><td>• Sensitive to temperature changes</td><td>• KCl concentration can change due to evaporation • Not suitable for high-precision work</td><td>interface &amp; make the electrode useless.</td></tr><tr><td><strong>Applications </strong></td><td>Fundamental science, the primary standard for all potential tables.</td><td>Classic lab studies, corrosion testing, pH measurement &amp; potentiometric titrations</td><td>pH measurement in laboratories Industrial process control Environmental monitoring Biological systems (blood, urine analysis) Food and beverage industry</td></tr><tr><td>Without a proper understanding of reference electrodes, all electrochemical data becomes unreliable, and the bridge between laboratory science and real-world technology collapses. We study reference electrodes because they are the <strong>indispensable, silent partners</strong> in any electrochemical measurement. They provide the stable foundation that allows us to: • <strong>Diagnose</strong> medical conditions with a blood test. • <strong>Prevent</strong> environmental disasters by monitoring pipeline corrosion. • <strong>Develop</strong> new batteries and materials in the lab. • <strong>Monitor</strong> our health with wearable technology. 1. Why do we need a stable reference electrode in electrochemical cells? • It provides a constant, known potential to measure the unknown potential of the working electrode. • Ensures accuracy and reproducibility in experiments like potentiometry and voltammetry.</td><td></td><td></td><td></td></tr></tbody></table></div>",
+      "after_html": "<div class=\"source-table-scroll source-table-wide\"><table><thead><tr><th scope=\"col\">Electrode</th><th scope=\"col\">SHE</th><th scope=\"col\">Calomel electrode</th><th scope=\"col\">Glass electrode</th></tr></thead><tbody><tr><td></td><td>• Sensitive to temperature changes</td><td>• KCl concentration can change due to evaporation • Not suitable for high- precision work</td><td>interface &amp; make the electrode useless.</td></tr><tr><td><strong>Applications </strong></td><td>Fundamental science, the primary standard for all potential tables.</td><td>Classic lab studies, corrosion testing, pH measurement &amp; potentiometric titrations</td><td>pH measurement in laboratories Industrial process control Environmental monitoring Biological systems (blood, urine analysis) Food and beverage industry</td></tr></tbody></table></div><p>Without a proper understanding of reference electrodes, all electrochemical data becomes unreliable, and the bridge between laboratory science and real-world technology collapses.</p><p>We study reference electrodes because they are the indispensable, silent partners in any electrochemical measurement. They provide the stable foundation that allows us to:</p><ul><li>Diagnose medical conditions with a blood test.</li><li>Prevent environmental disasters by monitoring pipeline corrosion.</li><li>Develop new batteries and materials in the lab.</li><li>Monitor our health with wearable technology.</li></ul><p>1. Why do we need a stable reference electrode in electrochemical cells?</p><ul><li>It provides a constant, known potential to measure the unknown potential of the working electrode.</li><li>Ensures accuracy and reproducibility in experiments like potentiometry and voltammetry.</li></ul>"
+    },
+    {
+      "reason": "Join the detailed electrode table across source pages 1–3, including split working/limitation cells.",
+      "before_html": "<div class=\"source-table-scroll source-table-wide\"><table><tbody><tr><th scope=\"col\"><strong>Electrode</strong></th><th scope=\"col\"><strong>SHE</strong></th><th scope=\"col\"><strong>Calomel electrode</strong></th><th scope=\"col\"><strong>Glass electrode</strong></th></tr><tr><td><strong>Construction </strong></td><td>• Platinum wire coated with platinum black (to increase surface area) • Glass tube containing the electrode system • Hydrogen gas inlet at 1 atm pressure • Acid solution with 1M H<sup>+</sup> concentration • Salt bridge connection to complete the circuit</td><td>• Glass vessel with a side tube • Mercury at the bottom • Paste of mercury(I) chloride (calomel, Hg<sub>2</sub>Cl<sub>2</sub>) mixed with mercury • KCl solution of specific concentration • Porous junction for salt bridge connection</td><td>• pH-sensitive glass membrane (composed of SiO<sub>2</sub> with Na<sub>2</sub>O and CaO) • Internal reference electrode (usually Ag/AgCl) • Internal buffer solution (typically pH 7.0) • External reference electrode (also usually Ag/AgCl with KCl electrolyte) • Combined in a single unit for convenience</td></tr><tr><td><strong>Working </strong> <strong>principle </strong></td><td>• Hydrogen gas is bubbled over the platinum electrode • Equilibrium established between H<sup>+</sup> ions and H<sub>2</sub> gas • Half-reaction: 2H<sup>+</sup> + 2e<sup>-</sup> ⇌ H<sub>2</sub></td><td>• Redox reaction: Hg<sub>2</sub>Cl<sub>2</sub>(s) + 2e<sup>-</sup> ⇌ 2Hg(l) + 2Cl<sup>-</sup>(aq) • Potential depends on Cl<sup>-</sup> concentration: E = E° - (0.0592/2) log[Cl<sup>-</sup>]<sup>2</sup></td><td>• Glass membrane develops a potential difference due to H<sup>+</sup> ion exchange • Formation of a hydrated gel layer on the glass surface</td></tr></tbody></table></div>",
+      "after_html": "<div class=\"source-table-scroll source-table-wide\"><table><thead><tr><th scope=\"col\"><strong>Electrode</strong></th><th scope=\"col\"><strong>SHE</strong></th><th scope=\"col\"><strong>Calomel electrode</strong></th><th scope=\"col\"><strong>Glass electrode</strong></th></tr></thead><tbody><tr><td><strong>Construction </strong></td><td>• Platinum wire coated with platinum black (to increase surface area) • Glass tube containing the electrode system • Hydrogen gas inlet at 1 atm pressure • Acid solution with 1M H<sup>+</sup> concentration • Salt bridge connection to complete the circuit</td><td>• Glass vessel with a side tube • Mercury at the bottom • Paste of mercury(I) chloride (calomel, Hg<sub>2</sub>Cl<sub>2</sub>) mixed with mercury • KCl solution of specific concentration • Porous junction for salt bridge connection</td><td>• pH-sensitive glass membrane (composed of SiO<sub>2</sub> with Na<sub>2</sub>O and CaO) • Internal reference electrode (usually Ag/AgCl) • Internal buffer solution (typically pH 7.0) • External reference electrode (also usually Ag/AgCl with KCl electrolyte) • Combined in a single unit for convenience</td></tr><tr><td><span id=\"u2-r-p002\"></span><span id=\"source-r-p002\"></span><strong>Working </strong> <strong>principle </strong> </td><td>• Hydrogen gas is bubbled over the platinum electrode • Equilibrium established between H<sup>+</sup> ions and H<sub>2</sub> gas • Half-reaction: 2H<sup>+</sup> + 2e<sup>-</sup> ⇌ H<sub>2</sub> • Platinum acts as a catalyst for the reaction</td><td>• Redox reaction: Hg<sub>2</sub>Cl<sub>2</sub>(s) + 2e<sup>-</sup> ⇌ 2Hg(l) + 2Cl<sup>-</sup>(aq) • Potential depends on Cl<sup>-</sup> concentration: E = E° - (0.0592/2) log[Cl<sup>-</sup>]<sup>2</sup> • Mercury/mercury(I) chloride system maintains a stable potential <strong>Different Types:</strong> • Saturated calomel electrode (SCE): +0.2422V (most common) • 0.1N KCl: +0.3338V • 1N KCl: +0.2810V</td><td>• Glass membrane develops a potential difference due to H<sup>+</sup> ion exchange • Formation of a hydrated gel layer on the glass surface • Nernst equation for pH: E = constant - 0.0592 pH at 25°C • Measures the voltage difference between internal and external reference electrodes <strong>Mechanism of Ion Selectivity:</strong> • Glass membrane is selective for H+ ions due to specific glass structure • Silicate network with negatively charged oxygen sites • H+ ions exchange with Na+ ions in the glass • Selectivity depends on glass composition</td></tr><tr><td><strong>Advantages </strong></td><td>• Highly reproducible under standard conditions • Reproducible with clean platinum and pure reagents; impurities can poison platinum • Platinum electrode is not consumed during the reaction</td><td>• Stable and reproducible potential • Easy to set up and use • Portable for field measurements • Less sensitive to impurities than SHE</td><td>• Single unit with both measuring and reference electrodes • Ease of use - no need for separate reference electrode • Compact and portable • Suitable for routine measurements • Compact, convenient, and minimizes errors as both sensing and reference systems are in one unit.</td></tr><tr><td><strong>Limitations </strong> </td><td>• Difficult to set up and maintain • Requires pure hydrogen gas at constant pressure • Not portable for routine measurements • Sensitive to temperature changes</td><td>• Temperature sensitive (potential changes with temperature) • Contains toxic mercury (environmental and safety concerns) • KCl concentration can change due to evaporation • Not suitable for high- precision work</td><td>• Used for measurements up to pH of 12. • Above pH 12 cations of the solution affect the glass interface &amp; make the electrode useless.</td></tr><tr><td><span id=\"source-r-p003\"></span><strong>Applications </strong></td><td>Fundamental science, the primary standard for all potential tables.</td><td>Classic lab studies, corrosion testing, pH measurement &amp; potentiometric titrations</td><td>pH measurement in laboratories Industrial process control Environmental monitoring Biological systems (blood, urine analysis) Food and beverage industry</td></tr></tbody></table></div>"
+    },
+    {
+      "reason": "Keep source page-2 anchors inside the merged working row, not in an empty continuation panel.",
+      "before_html": "<section class=\"source-page\" id=\"u2-r-p002\" data-source=\"r\" data-source-page=\"2\"><span id=\"source-r-p002\"></span><div class=\"source-table-scroll source-table-wide\"><table><thead><tr><th scope=\"col\">Electrode</th><th scope=\"col\">SHE</th><th scope=\"col\">Calomel electrode</th><th scope=\"col\">Glass electrode</th></tr></thead><tbody><tr><td></td><td>• Platinum acts as a catalyst for the reaction</td><td>• Mercury/mercury(I) chloride system maintains a stable potential <strong>Different Types:</strong> • Saturated calomel electrode (SCE): +0.2422V (most common) • 0.1N KCl: +0.3338V • 1N KCl: +0.2810V</td><td>• Nernst equation for pH: E = constant - 0.0592 pH at 25°C • Measures the voltage difference between internal and external reference electrodes <strong>Mechanism of Ion Selectivity:</strong> • Glass membrane is selective for H+ ions due to specific glass structure • Silicate network with negatively charged oxygen sites • H+ ions exchange with Na+ ions in the glass • Selectivity depends on glass composition</td></tr><tr><td><strong>Advantages </strong></td><td>• Highly reproducible under standard conditions • Reproducible with clean platinum and pure reagents; impurities can poison platinum • Platinum electrode is not consumed during the reaction</td><td>• Stable and reproducible potential • Easy to set up and use • Portable for field measurements • Less sensitive to impurities than SHE</td><td>• Single unit with both measuring and reference electrodes • Ease of use - no need for separate reference electrode • Compact and portable • Suitable for routine measurements • Compact, convenient, and minimizes errors as both sensing and reference systems are in one unit.</td></tr><tr><td><strong>Limitations </strong></td><td>• Difficult to set up and maintain • Requires pure hydrogen gas at constant pressure • Not portable for routine measurements</td><td>• Temperature sensitive (potential changes with temperature) • Contains toxic mercury (environmental and safety concerns)</td><td>• Used for measurements up to pH of 12. • Above pH 12 cations of the solution affect the glass</td></tr></tbody></table></div>\n</section>",
+      "after_html": ""
+    },
+    {
+      "reason": "The applications/limitation continuation is now in the complete electrode table.",
+      "before_html": "<div class=\"source-table-scroll source-table-wide\"><table><thead><tr><th scope=\"col\">Electrode</th><th scope=\"col\">SHE</th><th scope=\"col\">Calomel electrode</th><th scope=\"col\">Glass electrode</th></tr></thead><tbody><tr><td></td><td>• Sensitive to temperature changes</td><td>• KCl concentration can change due to evaporation • Not suitable for high- precision work</td><td>interface &amp; make the electrode useless.</td></tr><tr><td><strong>Applications </strong></td><td>Fundamental science, the primary standard for all potential tables.</td><td>Classic lab studies, corrosion testing, pH measurement &amp; potentiometric titrations</td><td>pH measurement in laboratories Industrial process control Environmental monitoring Biological systems (blood, urine analysis) Food and beverage industry</td></tr></tbody></table></div>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep the complete SHE/Calomel/Glass stability table with source question 6, across pages 4–5.",
+      "before_html": "<div class=\"source-table-scroll source-table-wide\"><table><tbody><tr><th scope=\"col\"><strong>Electrode </strong></th><th scope=\"col\"><strong>Stability </strong></th><th scope=\"col\"><strong>Convenience </strong></th><th scope=\"col\"><strong>Safety </strong></th></tr><tr><td>SHE</td><td>Very high</td><td>Low</td><td>Low (H₂ gas)</td></tr></tbody></table></div>",
+      "after_html": "<div class=\"source-table-scroll source-table-wide\"><table><thead><tr><th scope=\"col\"><strong>Electrode </strong></th><th scope=\"col\"><strong>Stability </strong></th><th scope=\"col\"><strong>Convenience </strong></th><th scope=\"col\"><strong>Safety </strong></th></tr></thead><tbody><tr><td>SHE</td><td>Very high</td><td>Low</td><td>Low (H₂ gas)</td></tr><tr><td>Calomel</td><td>High</td><td>High</td><td>Medium (Hg handling)</td></tr><tr><td>Glass</td><td>High</td><td>High</td><td>High (safe)</td></tr></tbody></table></div>"
+    },
+    {
+      "reason": "Remove the duplicate stability continuation/header from the next summary section.",
+      "before_html": "<div class=\"source-table-scroll source-table-wide\"><table><tbody><tr><th scope=\"col\"><strong>Electrode </strong></th><th scope=\"col\"><strong>Stability </strong></th><th scope=\"col\"><strong>Convenience </strong></th><th scope=\"col\"><strong>Safety </strong></th></tr><tr><td>Calomel</td><td>High</td><td>High</td><td>Medium (Hg handling)</td></tr><tr><td>Glass</td><td>High</td><td>High</td><td>High (safe)</td></tr></tbody></table></div>",
+      "after_html": ""
+    },
+    {
+      "reason": "Keep both oxide-volume cases together before the next corrosion topic.",
+      "before_html": "<section class=\"source-page\" id=\"u2-c-p005\" data-source=\"c\" data-source-page=\"5\"><span id=\"source-c-p005\"></span><p class=\"source-list-item\">• If Volume of the oxide is greater than or equal to volume of parent metal- nonporous oxide layer (e.g. Al or Cu).</p>\n</section>",
+      "after_html": "<section class=\"source-page\" id=\"u2-c-p005\" data-source=\"c\" data-source-page=\"5\"><span id=\"source-c-p005\"></span><p class=\"source-list-item\">• If Volume of the oxide is greater than or equal to volume of parent metal- nonporous oxide layer (e.g. Al or Cu).</p>\n<p class=\"source-list-item\">• If Volume of the oxide is less than the volume of the parent metal- porous oxide layer (e.g. Li, Na, K &amp; Mg).</p></section>"
+    },
+    {
+      "reason": "Remove the carryover oxide bullet from the other-gases section.",
+      "before_html": "<section class=\"source-page\" id=\"u2-other-gases\" data-source=\"c\" data-source-page=\"6\"><span id=\"source-c-p006\"></span><h3>Other gases and liquid-metal corrosion</h3><p class=\"source-list-item\">• If Volume of the oxide is less than the volume of the parent metal- porous oxide layer (e.g. Li, Na, K &amp; Mg).</p>\n<h3>2. Corrosion by other gases</h3><ul><li>Corrosion by gases like SO₂, Cl₂, H₂S, F₂, CO₂ etc</li><li>The extent of corrosion depends on the chemical affinity between metal and gas involved and the porosity of the film formed</li><li>If the film formed is non porous/protective then corrosion is limited to only external surface</li><li>Eg: AgCl film formed by attack of Cl₂ on Ag metal</li><li>If the film formed is porous or volatile then corrosion is deep</li><li>Eg: SnCl₄ formed by attack of Cl₂ on Sn metal</li></ul>\n<h3>3) Liquid metal corrosion:</h3><ul><li>This is due to chemical action of flowing liquid metal at high temperatures on solid metal or alloy.</li><li>Such corrosion occur in devices used for nuclear power.</li><li>The corrosion reaction involves either:</li><li>(i) dissolution of a solid metal by a liquid metal or</li><li>(ii) internal penetration of the liquid metal into the solid metal.</li><li>Both these modes of corrosion cause weakening of the solid metal.</li></ul>\n</section>",
+      "after_html": "<section class=\"source-page\" id=\"u2-other-gases\" data-source=\"c\" data-source-page=\"6\"><span id=\"source-c-p006\"></span><h3>Other gases and liquid-metal corrosion</h3>\n<h3>2. Corrosion by other gases</h3><ul><li>Corrosion by gases like SO₂, Cl₂, H₂S, F₂, CO₂ etc</li><li>The extent of corrosion depends on the chemical affinity between metal and gas involved and the porosity of the film formed</li><li>If the film formed is non porous/protective then corrosion is limited to only external surface</li><li>Eg: AgCl film formed by attack of Cl₂ on Ag metal</li><li>If the film formed is porous or volatile then corrosion is deep</li><li>Eg: SnCl₄ formed by attack of Cl₂ on Sn metal</li></ul>\n<h3>3) Liquid metal corrosion:</h3><ul><li>This is due to chemical action of flowing liquid metal at high temperatures on solid metal or alloy.</li><li>Such corrosion occur in devices used for nuclear power.</li><li>The corrosion reaction involves either:</li><li>(i) dissolution of a solid metal by a liquid metal or</li><li>(ii) internal penetration of the liquid metal into the solid metal.</li><li>Both these modes of corrosion cause weakening of the solid metal.</li></ul>\n</section>"
+    }
+  ],
+  "verification": "The permanent structure verifier first failed on the original PR24 HTML and must pass on the corrected HTML.",
+  "negative_regression_check": "PASS: verifier rejects the original PR24 HTML, including the false c) split in Galvanic) and the source block/table errors.",
+  "positive_regression_check": "PASS: corrected HTML compared to manually reviewed source-part arrays and logical block/table fixtures.",
+  "rendering_fixes": [
+    {
+      "reason": "A wide table was expanding a CSS grid track and clipping the following answer part.",
+      "fix": "Shared multipart grid now uses a minmax(0,1fr) track and zero minimum width on the grid/panels."
+    },
+    {
+      "reason": "Long inline chemical equations could be clipped inside narrow answer cards.",
+      "fix": "Preserve each inline equation in its sentence with the existing source-equation horizontal-scroll component; no sentence or part is split.",
+      "inline_equations_wrapped": 17,
+      "punctuation": "Trailing sentence punctuation stays inside the equation container, so it cannot appear as an orphan dot on the next line."
+    }
+  ],
+  "table_review": "All 13 original rendered source tables checked; cross-page detailed and stability comparisons rejoined into 10 complete rendered tables. All source cell text retained; repeated continuation headers removed. Stable page anchors preserved.",
+  "validation": {
+    "structural": "PASS: all 80 Unit 1/2 question-part contracts and Unit 2 source block/table, answer-part and figure placement checks.",
+    "browser": "PASS: 1440px/390px all 44 Unit 2 questions, 39 decoded image placements, visible text and panel geometry, table/equation horizontal scrolling, full-size image opening, MathJax and no page-wide overflow. Individual question and source-note screenshots captured; focused screenshots reviewed.",
+    "baseline": "College, BEE and MAC verifiers PASS; Vercel build PASS; modified JSON and Python parse; git diff --check PASS.",
+    "shared_css_smoke": "Chemistry Unit 1 and MAC multipart panels fit at 390px; BEE question page loads, without a multipart sample.",
+    "preservation": "No Unit 1 HTML, image pixels, question wording/givens or scientific results changed in this structural pass."
+  }
+}
