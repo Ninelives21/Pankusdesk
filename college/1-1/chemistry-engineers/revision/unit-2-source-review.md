@@ -1,97 +1,94 @@
-# Unit 2 end-sem notes — source review
+# Unit 2 — completed ROS integration and discrepancy decisions
 
-Status: **draft**. This is a separate semester-end source layer; textbook-led topics, syllabus metadata, dated class notes and their publication states are unchanged. No new textbook-page verification is claimed.
+The user explicitly authorized ROS production for the Unit 2 notes and answers and resolution of the flagged statements. This lifts the figure-production freeze for this task only. Unit 1 and existing approved images remain unchanged. Canonical textbook topic data and unit publication states remain unchanged.
 
-## Source discrepancies and qualifications
+## Images and answer completeness
 
-### Nernst notation and explanation
-Source `e`, PDF viewer page 5.
-The source uses both reaction quotient Q and equilibrium constant K in a non-standard-potential equation. It also says (RT/nF) ln(Q) decreases while E decreases; with E° fixed, subtracting a decreasing term would instead increase E. The transcript is retained; these source statements require review. R25 requires the equation and significance, with no derivation.
+- All 18 original-source assets are integrated in the notes.
+- Relevant answers contain their figures inside the dropdown; multipart answers put the figure in the corresponding part.
+- Every one of the 44 question-bank entries has a recorded required/useful/not-needed figure assessment. Essay 1 explicitly requires a diagram. Essay 4 reuses the existing approved Zn/SHE measurement diagram unchanged.
+- Original prompts, given values and numbering are retained. All answers remain labelled PankusDesk-authored.
 
-### SHE potential convention
-Source `e`, PDF viewer page 7.
-The source calls the potential developed during oxidation positive and then “comparatively very small”. The reference potential assigned to SHE is exactly zero by convention under its specified reference conditions; this is not a measurement of a small residual voltage. Source wording is retained.
+## Resolved review items
 
-### SHE source claims conflict
-Source `e`, PDF viewer page 8.
-This page claims SHE is not affected by liquid-junction potential, while its own limitations describe impurity poisoning. The comparison sheet additionally says it is not affected by impurities. Do not treat either immunity claim as established; the supplied statements are retained separately.
+### Nernst notation and explanation — correction
+Use Q, the reaction quotient: E = E° − (RT/nF) ln Q. At equilibrium Q = K and the complete-cell EMF is zero. For a forward spontaneous cell approaching equilibrium at fixed temperature, ln Q increases and the cell EMF falls towards zero. No derivation is required.
+Evidence: `kb/data/topics.json#u2-emf-electrochemical-cell`, [https://goldbook.iupac.org/terms/view/09068](https://goldbook.iupac.org/terms/view/09068)
 
-### Calomel reaction and Nernst discrepancy
-Source `e`, PDF viewer page 10.
-The printed reduction reaction gives 2 Hg⁺ as product. This fails charge balance: the left side has charge −2 and the right side 0. The comparison sheet prints Hg₂Cl₂(s) + 2e⁻ ⇌ 2Hg(l) + 2Cl⁻. The raster Nernst expression on this page has RT/F multiplying ln[Cl⁻]²; the comparison sheet has the 1/2 coefficient appropriate to the two-electron reaction. Both printed versions are preserved.
+### SHE potential convention — convention
+SHE has zero standard potential by definition; it is not a small measured positive potential. The sign of a different half-cell is assigned relative to SHE and the reduction-potential convention.
+Evidence: `kb/data/topics.json#u2-reference-electrodes-she`, `kb/data/topics.json#u2-electrode-potential`
 
-### Calomel potential values conflict
-Source `e`, PDF viewer page 11.
-Page 10 gives +0.2422 V for saturated KCl, but the worked substitution continued here uses +0.2442 V. These are different printed values; neither has silently replaced the other. The accompanying electrolyte concentration and temperature must be specified when selecting a value.
+### SHE source claims conflict — convention
+Impurity poisoning and liquid-junction potentials are different effects, not mutually contradictory claims. Platinum can be poisoned by impurities; a suitable salt bridge reduces junction-potential errors. Being a primary reference does not remove either issue. The earlier combined “conflict” flag was too broad.
+Evidence: `kb/data/topics.json#u2-reference-electrodes-she`
 
-### Glass-electrode expressions conflict
-Source `e`, PDF viewer page 16.
-This page sets E° to zero and obtains E = +0.0592 pH. The comparison handout instead prints E = constant − 0.0592 pH at 25°C. Measurement polarity and the reference-system offset matter; a combined glass electrode does not inherit SHE’s zero-potential convention. These source expressions remain distinct pending textbook verification.
+### Calomel reaction and Nernst discrepancy — correction
+Hg₂Cl₂(s) + 2e⁻ ⇌ 2Hg(l) + 2Cl⁻. Both sides have charge −2. Hence E = E° − (RT/2F) ln(aCl⁻²) = E° − (RT/F) ln aCl⁻. The original Hg⁺ product and the missing factor 1/2 in front of ln(aCl⁻²) were errors.
+Evidence: `comparison table-reference electrodes.pdf p.1`, `charge balance and Nernst substitution`
 
-### Printed oxidation mechanism
-Source `c`, PDF viewer page 3.
-The raster mechanism ends with the general product “MO” while using variable valency n. That shorthand is not a balanced general oxide formula for arbitrary n. The expression has been transcribed as printed, not presented as a verified general stoichiometric equation.
+### Calomel potential values conflict — correction
+Use +0.2422 V versus SHE for saturated KCl at 25°C, consistent with the supplied table and existing Jain & Jain record pp.292–293. The isolated +0.2442 V substitution is not used for that stated condition. For 0.1 N KCl the handout says +0.3338 V and the existing book record +0.3335 V; do not mix values from different tables. These concentration-specific potentials are not all the thermodynamic E° of the same reaction.
+Evidence: `kb/data/topics.json#u2-calomel-electrode`
 
-### Pilling–Bedworth example — textbook check pending
-Source `c`, PDF viewer page 4.
-The handout says that a larger specific volume ratio always gives less oxidation corrosion, and selects W (3.6) over Cr (2.0) and Ni (1.6). It does not discuss cracking or spalling of high-volume oxide films. A unique independently verified exam answer to Short Q17 is pending; the source’s W answer is retained and explicitly attributed.
+### Glass-electrode expressions conflict — convention
+Under the existing book convention EG = EG° + 0.0592 pH at 25°C. For glass on the left and saturated calomel on the right, Ecell = Eright − Eleft = 0.2422 − EG° − 0.0592 pH. The positive and negative slopes refer to different measured potentials; reversing the leads also reverses the sign. EG° is a calibration offset, not SHE’s assigned zero.
+Evidence: `kb/data/topics.json#u2-ion-selective-glass-electrode`
 
-### General anodic equation
-Source `c`, PDF viewer page 8.
-The supplied general expression is M → M⁺ + ne⁻. Its charges balance only for n = 1. The later iron example, Fe → Fe²⁺ + 2e⁻, is balanced. The general source expression is retained without silently changing its superscript.
+### Printed oxidation mechanism — correction
+For valency n, write 2M + (n/2)O₂ → M₂Oₙ, then reduce subscripts to the empirical oxide formula where appropriate. The source figure’s “MO” is only schematic shorthand; it is balanced as MO only for a divalent metal. Original figure pixels remain unchanged.
+Evidence: `kb/data/topics.json#u2-chemical-corrosion`, `atom and charge balance`
 
-### Sacrificial-anode limitations — source check pending
-Source `c`, PDF viewer page 17.
-The handout lists “High starting current is required” and “Uncoated parts cannot be protected” under sacrificial-anode limitations. These claims need textbook checking; they should not be generalized as verified limitations. The source list remains intact.
+### Pilling–Bedworth example — textbook check pending — qualification
+For the supplied exercise use the handout’s intended answer W: 3.6 > 2.0 > 1.6 under its simplified larger-ratio rule. This is a conditional course-model answer, not a universal oxidation-rate ranking. In real oxide systems, high volume expansion can cause stress and buckling; ratio alone does not determine corrosion resistance. No different exam-key answer is inferred.
+Evidence: `Corrosion.pdf p.4`, `kb/data/topics.json#u2-chemical-corrosion`, [https://pmc.ncbi.nlm.nih.gov/articles/PMC9842761/](https://pmc.ncbi.nlm.nih.gov/articles/PMC9842761/)
 
-## Question bank numbering
+### General anodic equation — correction
+M → Mⁿ⁺ + ne⁻. The product-ion charge must equal the number of electrons released. For iron, Fe → Fe²⁺ + 2e⁻. The original general M⁺ + ne⁻ was valid only for n = 1.
+Evidence: `kb/data/topics.json#u2-chemical-corrosion`, `charge balance`
 
-The PDF has 34 short questions and 9 numbered essays. Between Essay 7 and Essay 8 it prints a separate `a)` prompt about dry corrosion without an essay number. It is retained as an **unnumbered source prompt**, with its position recorded, rather than relabelled Essay 10 or silently merged with Essay 7.
+### Sacrificial-anode limitations — source check pending — correction
+A sacrificial system supplies galvanic current without an external DC source. Limited driving voltage can make it unsuitable where current demand or electrolyte resistance is high; consumption requires replacement and monitoring. Bare metal can be protected, but a larger exposed area generally needs more current/anode capacity. Thus “uncoated parts cannot be protected” and “high starting current is required” are not general limitations.
+Evidence: `Corrosion.pdf pp.16–18`, `the supplied bare-metal protection composite and galvanic-current mechanism`
 
-## Integration and verification
+## Additional ISE consistency correction
 
-Native PDF wording/subscripts/superscripts are reflowed. Raster-only text panels were transcribed after viewing the source; equations are MathJax and comparison panels are semantic tables. Source errors are preserved with shared amber discrepancy notes. Ordinary editorial and pending-figure notes use the existing blue source-note style. All answer content is labelled PankusDesk-authored, separate from the source transcript.
+The existing textbook-led ISE record explicitly includes interfering ions, selectivity coefficients and indirect CO₂ sensing. Absolute “ignores other ions” and “cannot measure neutral molecules” claims were corrected accordingly; original wording remains in the ledger.
 
-ROS assets remain pending under the repository figure-production freeze. The text draft is reviewable without adding raw scans or broken image links. See [the proposed figure register](unit-2-ros-register.md) and [the provenance audit](unit-2-source-audit.json).
+## Evidence limits and source fidelity
 
-The Chemistry index has five revision cards. Unit 1 retains its existing URL and anchors; Units 3–5 have pending cards without fake working links. No PR, remote push, merge or publication is part of this local draft.
+The local textbook-led records in `kb/data/topics.json` were available and checked against the study notes; this is not a claim of a new raw-book screenshot inspection. The calomel reaction is independently balanced and supported by the supplied comparison sheet. The existing textbook-led calomel record itself has a different formula typo; it was not used as the authority for reaction stoichiometry and was not silently modified.
 
+The Pilling–Bedworth course exercise is resolved as **W under the supplied simplified course model**. It is not asserted to establish a universal real-world ranking; the physical caveat is supported by [Yankova et al., Nature Communications 14, 250 (2023)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9842761/), introduction. The discussion is a verification note, not a replacement for prescribed theory. The Nernst definition is also supported by [IUPAC](https://goldbook.iupac.org/terms/view/09068).
 
-## R25 scope mapping
+Some original images are low-resolution/faint, the illustrated summary has source clipping, and the SHE pictures contain a source label error. ROS intentionally retains these original limitations; captions teach the correct interpretation. See [the register](unit-2-ros-register.md).
 
-The provenance audit maps 13 detailed requirements from the uploaded R25 p.12 to supplied PDF pages. All named headings have supplied material; this does not declare academic verification or figure completion. Nernst derivation is excluded as required by R25. Both methods of cathodic protection are included.
+## Review checks
 
-## Local validation
+- [ ] Open the Unit 2 notes and Essay 1: expect the same original Daniell diagram, with electron path and terminal labels visible; click for full size.
+- [ ] Open Essays 8 and 9 on a phone: expect each answer subpart to contain its matching figure, with no page-wide horizontal scrolling.
+- [ ] Open Short Q17, calomel and glass-electrode notes: expect a complete conditional W answer, balanced calomel equations and explicit glass-potential polarity/offset, with no unresolved-check placeholders.
+- [ ] Inspect a SHE picture: expect its original pixels and a visible caption correcting the original Hg/Mercury label.
 
-- PASS: `python3 scripts/tools/verify_college.py`
-- PASS: `python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py`
-- PASS: `python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py`
-- PASS: `python3 scripts/tools/build_vercel.py`
-- PASS: `node --check scripts/new/subject-home.js`, modified JSON parsing, `git diff --check`.
-- Chromium at 1440px and 390px: five end-sem cards; original textbook unit grid retained; all 44 source prompts and answer dropdowns; five navigation groups; keyboard controls; separate answer subparts; equations; no page-wide overflow. Screenshots inspected. BEE's existing resource cards still render.
-- All eight native source tables checked for non-whitespace character preservation; column headers checked visually. Raster-panel transcription remains subject to final independent fidelity review.
-- PASS: GitHub Pages `/Pankusdesk/` base-path browser simulation at 390px for cards, Unit 2 links, hash navigation, equations and horizontal table scrolling.
-- Unit 1 source page is exactly unchanged after removing its one new “All end-sem units” navigation link. No image assets changed.
+## Changed files
 
-## Files changed
+- `end-sem-unit-2.html` — figures in notes/answers and documented corrections
+- `subject.json` — revision-card progress wording
+- `assets/end-sem/unit-2/*.webp` — 18 original-source ROS assets
+- `revision/unit-2-source-audit.json` — per-question figure decisions
+- `revision/unit-2-source-review.md`, `revision/unit-2-ros-register.md`
+- `revision/unit-2-corrections.json`, `revision/unit-2-ros-manifest.json`, `revision/unit-2-ros-contact.jpg`
 
-- `college/1-1/chemistry-engineers/index.html`
-- `college/1-1/chemistry-engineers/subject.json`
-- `college/1-1/chemistry-engineers/end-sem-notes.html` — all-units return link only
-- `college/1-1/chemistry-engineers/end-sem-unit-2.html`
-- `college/1-1/chemistry-engineers/revision/unit-2-source-audit.json`
-- `college/1-1/chemistry-engineers/revision/unit-2-source-review.md`
-- `college/1-1/chemistry-engineers/revision/unit-2-ros-register.md`
-- `scripts/new/subject-home.js` — generic optional unit-resource groups
-- `styles/new/pages/subject.css` — responsive unit-resource grid
-- `styles/new/pages/source-notes.css` — optional wide source-table cells
+## Validation
 
-## Local review steps
+PASS:
+- `python3 scripts/tools/verify_college.py`
+- `python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py`
+- `python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py`
+- `python3 scripts/tools/build_vercel.py`; JSON parsing; `git diff --check`.
+- Chromium 1440px/390px: all 39 image placements decode, all 44 original prompts and answers, figure mapping, correct multipart placement, full-size image opening, error captions, MathJax without errors and no page overflow. Screenshots inspected.
+- GitHub Pages `/Pankusdesk/` base-path browser simulation: answer-part figures decode and equations render at phone width.
+- Charge/atom balance, calomel logarithm coefficient and glass sign/offset algebra independently checked.
+- Lossless RGB equality against every retained original/crop; stable-ID reconciliation; source/output SHA-256 hashes; ZIP integrity.
 
-Serve the repository root with `python3 -m http.server 8006 --bind 127.0.0.1`, then open `http://127.0.0.1:8006/college/1-1/chemistry-engineers/index.html#end-sem-units`.
-
-- [ ] On desktop and phone, inspect the five End-Sem Notes cards. Expect Units 1–2 to open separate revision pages and Units 3–5 to be marked not integrated, without dead links.
-- [ ] Open Unit 2; expand the five sidebar groups. Expect clear boundaries and only one group expanded at a time. Open Essay 7 and expect four separate answer parts, with the full question visible before opening.
-- [ ] Inspect Short Q17 and the calomel/glass source notes. Expect explicit source qualifications rather than silent corrections. On a phone, swipe the comparison table to reach the Glass electrode column.
-
-No hosted preview has been created. Figure placeholders are intentional; see the ROS register for the 18 proposed assets.
+Unit 1, canonical topic data and previously approved image binaries are unchanged. Original source defects remain explicitly documented, not repaired or hidden in raster pixels.
