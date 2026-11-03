@@ -4444,134 +4444,1460 @@
     "unit": 5,
     "title": "Evaluation of Double Integrals in Cartesian coordinates",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "learn": [
+      "Integrate from the innermost variable outward; keep other variables fixed."
+    ],
+    "sections": [
+      {
+        "heading": "7.1 Double integrals",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0315",
+          "TB-P0316",
+          "TB-P0317"
+        ],
+        "book_refs": [
+          {
+            "pages": "315, 316, 317",
+            "note": "7.1 Double integrals"
+          }
+        ],
+        "paragraphs": [
+          "The definite integral is the limit of a sum of values multiplied by lengths. A double integral is its counterpart in two dimensions. Let f(x,y) be defined at every point of a finite region R in the xy-plane. Divide R into elementary areas δA₁,…,δAₙ and choose a point (xᵣ,yᵣ) in each element.",
+          "The limit of \\(\\sum_{r=1}^nf(x_r,y_r)\\delta A_r\\), if it exists as the number of subdivisions increases indefinitely and every element area tends to zero, is the double integral: \\[\\iint_R f(x,y)\\,dA=\\lim\\sum_{r=1}^nf(x_r,y_r)\\delta A_r.\\]",
+          "Double integrals are evaluated by successive single integrations. If y₁,y₂ are functions of x and x₁,x₂ are constants, first integrate with respect to y, keeping x fixed; then integrate the resulting expression with respect to x: \\[I_1=\\int_{x_1}^{x_2}\\left[\\int_{y_1(x)}^{y_2(x)}f(x,y)\\,dy\\right]dx.\\]",
+          "Geometrically the inner integral follows a vertical strip from the lower curve to the upper curve. The outer integral slides that strip across the entire region.",
+          "If x₁,x₂ are functions of y and y₁,y₂ are constants, first integrate with respect to x, keeping y fixed: \\[I_2=\\int_{y_1}^{y_2}\\left[\\int_{x_1(y)}^{x_2(y)}f(x,y)\\,dx\\right]dy.\\] The horizontal strip slides from its lowest to its highest position.",
+          "When both pairs of limits are constants, the region is a rectangle. For a continuous integrand on that rectangle either order gives the same value."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-1",
+            "title": "Example 7.1",
+            "question_paragraphs": [
+              "Evaluate \\(\\int_0^5\\int_0^{x^2}x(x^2+y^2)\\,dy\\,dx\\)."
+            ],
+            "paragraphs": [
+              "Integrate with respect to y while holding x fixed: \\[I=\\int_0^5\\left[x^3y+\\dfrac{xy^3}{3}\\right]_0^{x^2}dx=\\int_0^5\\left(x^5+\\dfrac{x^7}{3}\\right)dx.\\]",
+              "\\[I=\\left[\\dfrac{x^6}{6}+\\dfrac{x^8}{24}\\right]_0^5=\\dfrac{453125}{24}.\\]"
+            ],
+            "final_answer": "\\(I=453125/24\\approx18880.2083\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The question prints dx dy although the inner upper limit is x²; the solution integrates y first. One solution line also prints xy³ in the integrand where the question has xy². The displayed working follows the question’s x(x²+y²), with explicit dy dx."
+            }
+          },
+          {
+            "id": "tb-example-7-2",
+            "title": "Example 7.2",
+            "question_paragraphs": [
+              "Evaluate \\(\\iint_Axy\\,dx\\,dy\\), where A is bounded by the x-axis, x=2a and x²=4ay (a>0)."
+            ],
+            "paragraphs": [
+              "The intersection is (2a,a). For vertical strips, \\(0\\le x\\le2a\\), \\(0\\le y\\le x^2/(4a)\\). Thus \\[I=\\int_0^{2a}\\int_0^{x^2/(4a)}xy\\,dy\\,dx=\\dfrac1{32a^2}\\int_0^{2a}x^5dx=\\dfrac{a^4}{3}.\\]",
+              "For horizontal strips, \\(0\\le y\\le a\\), \\(2\\sqrt{ay}\\le x\\le2a\\). Consequently \\[I=\\int_0^a y\\left[\\dfrac{x^2}{2}\\right]_{2\\sqrt{ay}}^{2a}dy=2a\\int_0^a(ay-y^2)dy=\\dfrac{a^4}{3}.\\]"
+            ],
+            "final_answer": "\\(I=a^4/3\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-4",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-4-ros.webp",
+                "alt": "Two integration orders for the region below x squared equals 4ay",
+                "caption": "Figure 7.4 · Two integration orders for the region below x squared equals 4ay",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 1004,
+                "height": 311,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-3",
+            "title": "Example 7.3",
+            "question_paragraphs": [
+              "Evaluate \\(\\iint_Rx^2\\,dx\\,dy\\) in the first-quadrant region bounded by x=y, y=0, x=8 and xy=16."
+            ],
+            "paragraphs": [
+              "The line y=x meets the hyperbola at (4,4); x=8 meets it at (8,2). Split at x=4.",
+              "\\[I=\\int_0^4\\int_0^x x^2\\,dy\\,dx+\\int_4^8\\int_0^{16/x}x^2\\,dy\\,dx=\\int_0^4x^3dx+\\int_4^8 16x\\,dx.\\]",
+              "\\[I=\\left[\\dfrac{x^4}{4}\\right]_0^4+\\left[8x^2\\right]_4^8=64+384=448.\\]"
+            ],
+            "final_answer": "\\(I=448\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-5",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-5-ros.webp",
+                "alt": "Region bounded by y equals x, the x axis, x equals 8 and xy equals 16",
+                "caption": "Figure 7.5 · Region bounded by y equals x, the x axis, x equals 8 and xy equals 16",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 556,
+                "height": 465,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "figures": [
+          {
+            "id": "book-fig-7-1-2",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-1-2-ros.webp",
+            "alt": "Vertical and horizontal strips between variable boundaries",
+            "caption": "Figure 7.1-2 · Vertical and horizontal strips between variable boundaries",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 1447,
+            "height": 421,
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          },
+          {
+            "id": "book-fig-7-3",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-3-ros.webp",
+            "alt": "A rectangular region with vertical and horizontal strips",
+            "caption": "Figure 7.3 · A rectangular region with vertical and horizontal strips",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 507,
+            "height": 396,
+            "after": {
+              "type": "paragraph",
+              "index": 5
+            }
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P0315",
+      "TB-P0316",
+      "TB-P0317"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "315, 316, 317",
+        "note": "7.1 Double integrals"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-double-integrals-polar",
     "unit": 5,
     "title": "Evaluation of Double Integrals in polar coordinates",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "learn": [
+      "Distinguish an integral already written in dr dθ from a Cartesian area integral requiring the factor r."
+    ],
+    "sections": [
+      {
+        "heading": "7.3 Double integrals in polar coordinates",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0319",
+          "TB-P0320",
+          "TB-P0321"
+        ],
+        "book_refs": [
+          {
+            "pages": "319, 320, 321",
+            "note": "7.3 Double integrals in polar coordinates"
+          }
+        ],
+        "paragraphs": [
+          "To evaluate \\(\\int_{\\theta_1}^{\\theta_2}\\int_{r_1(\\theta)}^{r_2(\\theta)}f(r,\\theta)\\,dr\\,d\\theta\\), first integrate with respect to r while θ is fixed; then integrate with respect to θ. The limits θ₁,θ₂ are constants.",
+          "Geometrically, a radial segment runs from the inner curve r₁ to the outer curve r₂, then turns from the first limiting ray to the second. The order can also be changed if the same region is described with new limits.",
+          "For a Cartesian area integral transformed to polar coordinates, the area element is \\(dA=r\\,dr\\,d\\theta\\). Distinguish that conversion from a repeated integral already given in dr dθ."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-9",
+            "title": "Example 7.9",
+            "question_paragraphs": [
+              "Evaluate \\(\\iint_R r\\sin\\theta\\,dr\\,d\\theta\\) over the cardioid r=a(1−cosθ) above the initial line, a>0."
+            ],
+            "paragraphs": [
+              "The limits are \\(0\\le\\theta\\le\\pi\\), \\(0\\le r\\le a(1-\\cos\\theta)\\). No extra r is inserted: the question already specifies its integrand with dr dθ.",
+              "\\[I=\\int_0^\\pi\\sin\\theta\\left[\\dfrac{r^2}{2}\\right]_0^{a(1-\\cos\\theta)}d\\theta=\\dfrac{a^2}{2}\\int_0^\\pi(1-\\cos\\theta)^2\\sin\\theta\\,d\\theta.\\]",
+              "Put u=1−cosθ; the limits are 0 and 2. Thus \\(I=(a^2/2)[u^3/3]_0^2=4a^2/3\\)."
+            ],
+            "final_answer": "\\(I=4a^2/3\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-11",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-11-ros.webp",
+                "alt": "Upper half of the cardioid r equals a times one minus cosine theta",
+                "caption": "Figure 7.11 · Upper half of the cardioid r equals a times one minus cosine theta",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 515,
+                "height": 414,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-10",
+            "title": "Example 7.10",
+            "question_paragraphs": [
+              "Evaluate \\(I=\\int_0^{2a}\\int_0^{\\sqrt{2ax-x^2}}x^2\\,dy\\,dx\\) by polar coordinates, a>0."
+            ],
+            "paragraphs": [
+              "The region is the upper semicircle x²+y²=2ax, so \\(0\\le\\theta\\le\\pi/2\\), \\(0\\le r\\le2a\\cos\\theta\\). Substitute x=r cosθ and dy dx=r dr dθ.",
+              "\\[I=\\int_0^{\\pi/2}\\int_0^{2a\\cos\\theta}r^3\\cos^2\\theta\\,dr\\,d\\theta=4a^4\\int_0^{\\pi/2}\\cos^6\\theta\\,d\\theta.\\]",
+              "\\[I=4a^4\\cdot\\dfrac{5\\cdot3\\cdot1}{6\\cdot4\\cdot2}\\cdot\\dfrac\\pi2=\\dfrac{5\\pi a^4}{8}.\\]"
+            ],
+            "final_answer": "\\(I=5\\pi a^4/8\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "Fig. 7.12 labels the circle’s centre (a,a), although x²+y²=2ax has centre (a,0). An intermediate polar integral also omits its Jacobian r before restoring it in the next line. The working includes r throughout."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-12",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-12-ros.webp",
+                "alt": "Cartesian and polar views of the circle x squared plus y squared equals 2ax; original centre-label slip retained",
+                "caption": "Figure 7.12 · Cartesian and polar views of the circle x squared plus y squared equals 2ax; original centre-label slip retained",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 1190,
+                "height": 400,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-11",
+            "title": "Example 7.11",
+            "question_paragraphs": [
+              "Evaluate \\(\\int_0^b\\int_0^a\\dfrac{dx\\,dy}{\\sqrt{(a^2-x^2)(b^2-y^2)}}\\), a,b>0."
+            ],
+            "paragraphs": [
+              "The integrand separates. Interpret the boundary singularities as improper limits.",
+              "\\[I=\\left[\\sin^{-1}(x/a)\\right]_0^a\\left[\\sin^{-1}(y/b)\\right]_0^b=\\dfrac\\pi2\\cdot\\dfrac\\pi2.\\]"
+            ],
+            "final_answer": "\\(I=\\pi^2/4\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "One intermediate line changes √(b²−y²) to √(b²−a²). The question and arcsine antiderivative require √(b²−y²)."
+            }
+          },
+          {
+            "id": "tb-example-7-12",
+            "title": "Example 7.12",
+            "question_paragraphs": [
+              "Evaluate \\(\\int_0^{\\pi/2}\\int_{a(1-\\cos\\theta)}^a r^2\\,dr\\,d\\theta\\), a>0, and describe the region."
+            ],
+            "paragraphs": [
+              "The region lies in the first quadrant, inside r=a and outside r=a(1−cosθ).",
+              "\\[I=\\dfrac{a^3}{3}\\int_0^{\\pi/2}\\{1-(1-\\cos\\theta)^3\\}d\\theta=\\dfrac{a^3}{3}\\int_0^{\\pi/2}(3\\cos\\theta-3\\cos^2\\theta+\\cos^3\\theta)d\\theta.\\]",
+              "The three integrals are 1, π/4 and 2/3. Therefore \\(I=(a^3/3)(3-3\\pi/4+2/3)\\)."
+            ],
+            "final_answer": "\\(I=a^3(44-9\\pi)/36\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-13",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-13-ros.webp",
+                "alt": "First-quadrant region inside a circle and outside a cardioid",
+                "caption": "Figure 7.13 · First-quadrant region inside a circle and outside a cardioid",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 548,
+                "height": 561,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-15-polar",
+            "title": "Example 7.15 · polar integral",
+            "question_paragraphs": [
+              "Evaluate \\(\\iint_Rr^3\\,dr\\,d\\theta\\) between r=2a cosθ and r=2b cosθ, 0<b<a."
+            ],
+            "paragraphs": [
+              "Take \\(-\\pi/2\\le\\theta\\le\\pi/2\\), \\(2b\\cos\\theta\\le r\\le2a\\cos\\theta\\).",
+              "\\[I=\\dfrac14\\int_{-\\pi/2}^{\\pi/2}\\{(2a\\cos\\theta)^4-(2b\\cos\\theta)^4\\}d\\theta=8(a^4-b^4)\\int_0^{\\pi/2}\\cos^4\\theta\\,d\\theta.\\]",
+              "\\[I=8(a^4-b^4)\\dfrac{3\\cdot1}{4\\cdot2}\\dfrac\\pi2=\\dfrac{3\\pi}{2}(a^4-b^4).\\]"
+            ],
+            "final_answer": "\\(I=3\\pi(a^4-b^4)/2\\).",
+            "source_note": "Printed p. 321 labels this Example 7.15; p. 323 uses 7.15 again for the parabolas. Stable anchors distinguish the two.",
+            "figures": [
+              {
+                "id": "book-fig-7-14",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-14-ros.webp",
+                "alt": "Region between two circles through the origin",
+                "caption": "Figure 7.14 · Region between two circles through the origin",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 516,
+                "height": 380,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "figures": [
+          {
+            "id": "book-fig-7-10",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-10-ros.webp",
+            "alt": "A radial strip between polar curves and limiting rays",
+            "caption": "Figure 7.10 · A radial strip between polar curves and limiting rays",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 373,
+            "height": 426,
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ],
+        "practice": [
+          {
+            "book_page": 321,
+            "type": "Problems 7.1",
+            "items": "Q1–18, including both parts of Q15",
+            "group_anchor": "problems-7-1"
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P0319",
+      "TB-P0320",
+      "TB-P0321"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "319, 320, 321",
+        "note": "7.3 Double integrals in polar coordinates"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-change-order-cartesian",
     "unit": 5,
     "title": "Change of order of integration (only Cartesian form)",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "learn": [
+      "Redescribe the same region; split where its boundary changes."
+    ],
+    "sections": [
+      {
+        "heading": "7.2 Change of order of integration",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0317",
+          "TB-P0318",
+          "TB-P0319"
+        ],
+        "book_refs": [
+          {
+            "pages": "317, 318, 319",
+            "note": "7.2 Change of order of integration"
+          }
+        ],
+        "paragraphs": [
+          "Changing the order in a double integral with variable limits changes the limits of integration. Sometimes the region must be split into parts, and the result becomes a sum of repeated integrals.",
+          "A rough sketch of the region helps fix the new limits. Describe the same region using horizontal strips instead of vertical strips, or vice versa. Reversing the order can turn an otherwise difficult inner integration into a simple one."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-4",
+            "title": "Example 7.4",
+            "question_paragraphs": [
+              "Evaluate \\(I=\\int_0^1\\int_{e^x}^e\\dfrac{dy\\,dx}{\\log y}\\) by changing the order of integration."
+            ],
+            "paragraphs": [
+              "The region is \\(0\\le x\\le1\\), \\(e^x\\le y\\le e\\). Equivalently \\(1\\le y\\le e\\), \\(0\\le x\\le\\log y\\).",
+              "\\[I=\\int_1^e\\int_0^{\\log y}\\dfrac{dx\\,dy}{\\log y}=\\int_1^e\\dfrac{\\log y}{\\log y}\\,dy=\\int_1^e dy=e-1.\\]",
+              "The endpoint y=1 is interpreted as an improper limit; the cancellation leaves a finite integral."
+            ],
+            "final_answer": "\\(I=e-1\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-6",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-6-ros.webp",
+                "alt": "Reversing the region between y equals e to the x and y equals e",
+                "caption": "Figure 7.6 · Reversing the region between y equals e to the x and y equals e",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 385,
+                "height": 549,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-5",
+            "title": "Example 7.5",
+            "question_paragraphs": [
+              "Change the order in \\(I=\\int_0^{4a}\\int_{x^2/(4a)}^{2\\sqrt{ax}}dy\\,dx\\), and evaluate (a>0)."
+            ],
+            "paragraphs": [
+              "The boundaries are x²=4ay and y²=4ax. They intersect at (0,0) and (4a,4a). A horizontal strip has \\(y^2/(4a)\\le x\\le2\\sqrt{ay}\\), with \\(0\\le y\\le4a\\).",
+              "\\[I=\\int_0^{4a}\\int_{y^2/(4a)}^{2\\sqrt{ay}}dx\\,dy=\\int_0^{4a}\\left(2\\sqrt{ay}-\\dfrac{y^2}{4a}\\right)dy.\\]",
+              "\\[I=\\left[\\dfrac{4\\sqrt a}{3}y^{3/2}-\\dfrac{y^3}{12a}\\right]_0^{4a}=\\dfrac{32a^2}{3}-\\dfrac{16a^2}{3}.\\]"
+            ],
+            "final_answer": "\\(I=16a^2/3\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "Fig. 7.7 labels one curve y²=4ay; the question, intersections and working require y²=4ax. The original ROS drawing is retained, with this correction stated explicitly."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-7",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-7-ros.webp",
+                "alt": "Vertical and horizontal strips between two parabolas; original curve-label slip retained",
+                "caption": "Figure 7.7 · Vertical and horizontal strips between two parabolas; original curve-label slip retained",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 482,
+                "height": 514,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-6",
+            "title": "Example 7.6",
+            "question_paragraphs": [
+              "Change the order and evaluate \\(I=\\int_0^a\\int_{\\sqrt{ax}}^a\\dfrac{y^2}{\\sqrt{y^4-a^2x^2}}\\,dy\\,dx\\), a>0."
+            ],
+            "paragraphs": [
+              "The region has \\(0\\le y\\le a\\), \\(0\\le x\\le y^2/a\\) after reversal. The singular boundary is treated by an improper limit.",
+              "\\[I=\\dfrac1a\\int_0^a y^2\\int_0^{y^2/a}\\dfrac{dx}{\\sqrt{(y^2/a)^2-x^2}}\\,dy.\\]",
+              "\\[I=\\dfrac1a\\int_0^a y^2\\left[\\sin^{-1}\\!\\left(\\dfrac{ax}{y^2}\\right)\\right]_0^{y^2/a}dy=\\dfrac\\pi{2a}\\left[\\dfrac{y^3}{3}\\right]_0^a.\\]"
+            ],
+            "final_answer": "\\(I=\\pi a^2/6\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The printed question writes dx dy despite an inner lower limit √(ax). The accompanying description and derivation integrate y first. The explicit dy dx here follows that region."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-8",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-8-ros.webp",
+                "alt": "Region between y squared equals ax and the line y equals a",
+                "caption": "Figure 7.8 · Region between y squared equals ax and the line y equals a",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 530,
+                "height": 589,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-7",
+            "title": "Example 7.7",
+            "question_paragraphs": [
+              "Evaluate \\(\\int_0^1\\int_{x^2}^{2-x}xy\\,dy\\,dx\\)."
+            ],
+            "paragraphs": [
+              "\\[I=\\int_0^1\\left[\\dfrac{xy^2}{2}\\right]_{x^2}^{2-x}dx=\\dfrac12\\int_0^1x\\{(2-x)^2-x^4\\}\\,dx.\\]",
+              "\\[I=\\dfrac12\\left[2x^2-\\dfrac43x^3+\\dfrac{x^4}{4}-\\dfrac{x^6}{6}\\right]_0^1=\\dfrac38.\\]"
+            ],
+            "final_answer": "\\(I=3/8\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The question prints dx dy while the limits depend on x and the solution integrates y first. The bounds and working are retained with explicit dy dx."
+            }
+          },
+          {
+            "id": "tb-example-7-8",
+            "title": "Example 7.8",
+            "question_paragraphs": [
+              "Evaluate \\(\\iint_R(x^2+y^2)\\,dx\\,dy\\) over x≥0, y≥0, x+y≤1."
+            ],
+            "paragraphs": [
+              "The horizontal limits are \\(0\\le y\\le1\\), \\(0\\le x\\le1-y\\).",
+              "\\[I=\\int_0^1\\int_0^{1-y}(x^2+y^2)\\,dx\\,dy=\\int_0^1\\left(\\dfrac{(1-y)^3}{3}+(1-y)y^2\\right)dy.\\]",
+              "\\[I=\\left[-\\dfrac{(1-y)^4}{12}+\\dfrac{y^3}{3}-\\dfrac{y^4}{4}\\right]_0^1=\\dfrac16.\\]"
+            ],
+            "final_answer": "\\(I=1/6\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-9",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-9-ros.webp",
+                "alt": "Triangle bounded by the coordinate axes and x plus y equals 1",
+                "caption": "Figure 7.9 · Triangle bounded by the coordinate axes and x plus y equals 1",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 435,
+                "height": 415,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "Further supplied change-of-order examples",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0361",
+          "TB-P0362"
+        ],
+        "book_refs": [
+          {
+            "pages": "361, 362",
+            "note": "Further supplied change-of-order examples"
+          }
+        ],
+        "paragraphs": [],
+        "accordions": [
+          {
+            "id": "tb-example-7-59",
+            "title": "Example 7.59",
+            "question_paragraphs": [
+              "The printed nested lower limit is x although the inner variable is also x: \\(\\int_0^{\\pi/2}\\int_x^y\\cos2y\\sqrt{1-a^2\\sin^2x}\\,dx\\,dy\\).",
+              "The diagram and worked reversal describe the triangle \\(0\\le x\\le y\\le\\pi/2\\). Evaluate that intended integral with inner lower limit 0, for 0<|a|≤1."
+            ],
+            "paragraphs": [
+              "Reverse the triangle: \\[I=\\int_0^{\\pi/2}\\sqrt{1-a^2\\sin^2x}\\int_x^{\\pi/2}\\cos2y\\,dy\\,dx=-\\dfrac12\\int_0^{\\pi/2}\\sqrt{1-a^2\\sin^2x}\\sin2x\\,dx.\\]",
+              "Put t=sin²x, so dt=sin2x dx. Then \\[I=-\\dfrac12\\int_0^1\\sqrt{1-a^2t}\\,dt=\\dfrac1{3a^2}\\left[(1-a^2t)^{3/2}\\right]_0^1.\\]",
+              "At a=0, use the integral directly to get −1/2, also the continuous limit of this expression."
+            ],
+            "final_answer": "For the triangle intended by the printed working: \\(I=((1-a^2)^{3/2}-1)/(3a^2)\\); at a=0, \\(I=-1/2\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The inner lower limit x in an integral with inner differential dx is self-referential. The worked solution and Fig. 7.54 use 0≤x≤y≤π/2, so the solution explicitly replaces that lower limit by 0. Fig. 7.54 also labels the right vertex (−π/2,π/2), whereas it lies at (π/2,π/2)."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-54",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-54-ros.webp",
+                "alt": "Triangular region for reversal of integration order; original vertex-sign slip retained",
+                "caption": "Figure 7.54 · Triangular region for reversal of integration order; original vertex-sign slip retained",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 493,
+                "height": 245,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-60",
+            "title": "Example 7.60",
+            "question_paragraphs": [
+              "Evaluate \\(I=\\int_0^1\\int_{1-\\sqrt{1-y}}^{1+\\sqrt{1-y}}\\dfrac{dx\\,dy}{(x^2-2x+y-3)^2}\\)."
+            ],
+            "paragraphs": [
+              "The bounds describe the region below y=2x−x² and above y=0, with 0≤x≤2. Reverse the order:",
+              "\\[I=\\int_0^2\\int_0^{2x-x^2}\\dfrac{dy\\,dx}{(x^2-2x+y-3)^2}=\\int_0^2\\left\\{\\dfrac13+\\dfrac1{x^2-2x-3}\\right\\}dx.\\]",
+              "Factor x²−2x−3=(x−3)(x+1). Then \\[I=\\int_0^2\\left\\{\\dfrac13+\\dfrac1{4(x-3)}-\\dfrac1{4(x+1)}\\right\\}dx=\\left[\\dfrac x3+\\dfrac14\\log(3-x)-\\dfrac14\\log(x+1)\\right]_0^2.\\]"
+            ],
+            "final_answer": "\\(I=2/3-(\\log3)/2\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "One boundary line on p. 361 writes 1+√(1+y), whereas the question and parabolic boundary use 1+√(1−y). The question’s minus sign is retained."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-55",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-55-ros.webp",
+                "alt": "Parabolic region under y equals 2x minus x squared",
+                "caption": "Figure 7.55 · Parabolic region under y equals 2x minus x squared",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 478,
+                "height": 305,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-61",
+            "title": "Example 7.61",
+            "question_paragraphs": [
+              "Change the order in \\(I=\\int_0^5\\int_{2-x}^{2+x}f(x,y)\\,dy\\,dx\\)."
+            ],
+            "paragraphs": [
+              "The triangle has vertices (0,2), (5,−3), (5,7). Its horizontal lower x boundary changes at y=2.",
+              "For \\(-3\\le y\\le2\\), x starts at 2−y; for \\(2\\le y\\le7\\), x starts at y−2. Both end at x=5.",
+              "\\[I=\\int_{-3}^2\\int_{2-y}^5f(x,y)\\,dx\\,dy+\\int_2^7\\int_{y-2}^5f(x,y)\\,dx\\,dy.\\]"
+            ],
+            "final_answer": "\\(I=\\int_{-3}^2\\int_{2-y}^5f\\,dx\\,dy+\\int_2^7\\int_{y-2}^5f\\,dx\\,dy\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "Fig. 7.56 marks an exiting boundary “y=5”, although its vertical edge is x=5. The split integrals use x=5 correctly."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-56",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-56-ros.webp",
+                "alt": "Triangular region split into two horizontal strips at y equals 2",
+                "caption": "Figure 7.56 · Triangular region split into two horizontal strips at y equals 2",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 534,
+                "height": 598,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "practice": [
+          {
+            "book_page": 362,
+            "type": "Problems 7.9",
+            "items": "In-syllabus Q5 and Q9–18",
+            "group_anchor": "problems-7-9"
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P0317",
+      "TB-P0318",
+      "TB-P0319",
+      "TB-P0361",
+      "TB-P0362"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "317, 318, 319",
+        "note": "7.2 Change of order of integration"
+      },
+      {
+        "pages": "361, 362",
+        "note": "Further supplied change-of-order examples"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-double-change-cartesian-polar",
     "unit": 5,
     "title": "Change of variables for double integrals (Cartesian to polar)",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "learn": [
+      "\\(x=r\\cos\\theta,\\ y=r\\sin\\theta,\\ dA=r\\,dr\\,d\\theta\\)."
+    ],
+    "sections": [
+      {
+        "heading": "7.7 Change of variables — double integrals",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0330"
+        ],
+        "book_refs": [
+          {
+            "pages": "330",
+            "note": "7.7 Change of variables — double integrals"
+          }
+        ],
+        "paragraphs": [
+          "An appropriate choice of coordinates can simplify a double integral. If \\(x=\\phi(u,v)\\), \\(y=\\psi(u,v)\\) map a region R′ onto R, with continuous first derivatives and nonzero Jacobian in the interior, then \\[\\iint_Rf(x,y)\\,dx\\,dy=\\iint_{R\\prime}f(\\phi(u,v),\\psi(u,v))\\left|\\dfrac{\\partial(x,y)}{\\partial(u,v)}\\right|du\\,dv.\\]",
+          "For polar coordinates \\(x=r\\cos\\theta\\), \\(y=r\\sin\\theta\\), \\[\\dfrac{\\partial(x,y)}{\\partial(r,\\theta)}=\\begin{vmatrix}\\cos\\theta&-r\\sin\\theta\\\\\\sin\\theta&r\\cos\\theta\\end{vmatrix}=r.\\] Therefore \\[\\iint_Rf(x,y)\\,dx\\,dy=\\iint_{R\\prime}f(r\\cos\\theta,r\\sin\\theta)r\\,dr\\,d\\theta.\\]",
+          "Transform the boundary equations as well as the integrand. Retain the Jacobian factor and choose radial/angular ranges that cover the region once."
+        ],
+        "figures": [
+          {
+            "id": "book-fig-7-29",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-29-ros.webp",
+            "alt": "Angular sector in a circle",
+            "caption": "Figure 7.29 · Angular sector in a circle",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 405,
+            "height": 273,
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ]
+      },
+      {
+        "heading": "7.7 Worked applications in polar coordinates",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0331",
+          "TB-P0332",
+          "TB-P0333"
+        ],
+        "book_refs": [
+          {
+            "pages": "331, 332, 333",
+            "note": "7.7 Worked applications in polar coordinates"
+          }
+        ],
+        "paragraphs": [],
+        "accordions": [
+          {
+            "id": "tb-example-7-26",
+            "title": "Example 7.26",
+            "question_paragraphs": [
+              "Find the finite volume inside x²+y²≤4 between the two sheets of the cone x²+y²=z²tan²α. The printed condition is 0<α<π."
+            ],
+            "paragraphs": [
+              "For the acute semi-angle \\(0<\\alpha<\\pi/2\\), the heights are \\(z=\\pm r\\cot\\alpha\\), and \\(0\\le r\\le2\\).",
+              "\\[V=\\int_0^{2\\pi}\\int_0^2\\int_{-r\\cot\\alpha}^{r\\cot\\alpha}r\\,dz\\,dr\\,d\\theta=4\\pi\\cot\\alpha\\int_0^2r^2dr=\\dfrac{32\\pi}{3}\\cot\\alpha.\\]",
+              "For a nonacute parameter in the stated range the nonnegative height is \\(r|\\cot\\alpha|\\). At α=π/2 the equation involving tanα is undefined."
+            ],
+            "final_answer": "\\(V=32\\pi|\\cot\\alpha|/3\\) for a nondegenerate stated cone; on \\(0<\\alpha<\\pi/2\\), \\(V=32\\pi\\cot\\alpha/3\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The printed range 0<α<π includes α=π/2, where tanα is undefined, and obtuse α, where the printed volume (32π/3)cotα would be negative. The displayed signed expression is valid as a volume only for an acute semi-angle; the absolute value handles the other nondegenerate parameters. Fig. 7.28 also omits the square on tanα. The drawing also repeats z on a lower coordinate axis; the cone/cylinder equations determine the region used here."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-28",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-28-ros.webp",
+                "alt": "Cylinder and double cone; original angle-label slip retained",
+                "caption": "Figure 7.28 · Cylinder and double cone; original angle-label slip retained",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 624,
+                "height": 513,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-27",
+            "title": "Example 7.27",
+            "question_paragraphs": [
+              "The printed question calls x²+y²+z²=16 a paraboloid and asks for the volume under it above the rectangle x=±a, y=±b, where a,b<4.",
+              "The printed working instead uses the paraboloid \\(z=16-x^2-y^2\\). The following solution explicitly follows that paraboloid, with a,b>0 and a²+b²≤16."
+            ],
+            "paragraphs": [
+              "For the paraboloid, symmetry gives \\[V=4\\int_0^a\\int_0^b(16-x^2-y^2)\\,dy\\,dx.\\]",
+              "\\[V=4\\int_0^a\\left(16b-bx^2-\\dfrac{b^3}{3}\\right)dx=4\\left(16ab-\\dfrac{a^3b}{3}-\\dfrac{ab^3}{3}\\right).\\]",
+              "For the sphere as actually printed, the upper surface is \\(z=\\sqrt{16-x^2-y^2}\\), so the volume is \\(4\\int_0^a\\int_0^b\\sqrt{16-x^2-y^2}\\,dy\\,dx\\) when the rectangle lies inside the disk. It does not equal the paraboloid result."
+            ],
+            "final_answer": "For the paraboloid followed by the printed working: \\(V=4ab(48-a^2-b^2)/3\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "x²+y²+z²=16 is a sphere, not a paraboloid, and does not imply z=16−x²−y². The closed-form answer belongs to x²+y²+z=16. In addition, a,b<4 separately do not ensure a nonnegative height over the full rectangle; a²+b²≤16 is needed. Both interpretations are distinguished here."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-30",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-30-ros.webp",
+                "alt": "Paraboloid over a rectangular base",
+                "caption": "Figure 7.30 · Paraboloid over a rectangular base",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 523,
+                "height": 582,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-28",
+            "title": "Example 7.28",
+            "question_paragraphs": [
+              "Evaluate \\(I=\\int_0^\\infty\\int_0^\\infty e^{-(x^2+y^2)}\\,dx\\,dy\\) by polar coordinates.",
+              "Hence find \\(J=\\int_0^\\infty e^{-x^2}\\,dx\\)."
+            ],
+            "paragraphs": [],
+            "final_answer": "\\(I=\\pi/4\\), \\(J=\\sqrt\\pi/2\\).",
+            "solution_parts": [
+              {
+                "label": "Double integral",
+                "paragraphs": [
+                  "The first quadrant maps to \\(0\\le r<\\infty\\), \\(0\\le\\theta\\le\\pi/2\\). Thus \\[I=\\int_0^{\\pi/2}\\int_0^\\infty e^{-r^2}r\\,dr\\,d\\theta=\\int_0^{\\pi/2}\\left[-\\dfrac12e^{-r^2}\\right]_0^\\infty d\\theta=\\dfrac\\pi4.\\]"
+                ]
+              },
+              {
+                "label": "Single integral",
+                "paragraphs": [
+                  "The Cartesian integrand separates, so \\(I=J^2\\). Since J>0, \\(J=\\sqrt I=\\sqrt\\pi/2\\)."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-29",
+            "title": "Example 7.29",
+            "question_paragraphs": [
+              "Find the volume above z=0, inside x²+y²≤1 and below x+y+z=3."
+            ],
+            "paragraphs": [
+              "The height is 3−x−y. In polar coordinates \\(0\\le r\\le1\\), \\(0\\le\\theta\\le2\\pi\\).",
+              "\\[V=\\int_0^{2\\pi}\\int_0^1(3-r\\cos\\theta-r\\sin\\theta)r\\,dr\\,d\\theta=\\int_0^{2\\pi}\\left(\\dfrac32-\\dfrac{\\cos\\theta+\\sin\\theta}{3}\\right)d\\theta.\\]",
+              "The sine and cosine integrals vanish over a full revolution, leaving V=3π."
+            ],
+            "final_answer": "\\(V=3\\pi\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-31",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-31-ros.webp",
+                "alt": "Unit circular cylinder below an inclined plane",
+                "caption": "Figure 7.31 · Unit circular cylinder below an inclined plane",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 451,
+                "height": 638,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ],
+            "math_mismatch": {
+              "label": "Verified printed plane-section discrepancy",
+              "message": "The section by z=0 must be x+y=3. The source prose leaves z in that section equation and Fig. 7.31 has the incomplete label x+y+3. The original sphere/cylinder/plane region and final volume 3π are retained."
+            }
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P0330",
+      "TB-P0331",
+      "TB-P0332",
+      "TB-P0333"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "330",
+        "note": "7.7 Change of variables — double integrals"
+      },
+      {
+        "pages": "331, 332, 333",
+        "note": "7.7 Worked applications in polar coordinates"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-triple-integrals",
     "unit": 5,
     "title": "Evaluation of Triple Integrals",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "learn": [
+      "The inner limit may depend on both remaining variables."
+    ],
+    "sections": [
+      {
+        "heading": "7.5 Triple integrals",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0324",
+          "TB-P0325",
+          "TB-P0326",
+          "TB-P0327"
+        ],
+        "book_refs": [
+          {
+            "pages": "324, 325, 326, 327",
+            "note": "7.5 Triple integrals"
+          }
+        ],
+        "paragraphs": [
+          "Let f(x,y,z) be defined at every point of a finite three-dimensional region V. Divide V into elementary volumes δVᵣ and choose (xᵣ,yᵣ,zᵣ) in each. The limit, if it exists as the subdivisions become indefinitely fine, defines \\[\\iiint_V f\\,dV=\\lim\\sum_{r=1}^nf(x_r,y_r,z_r)\\delta V_r.\\]",
+          "To evaluate, express the integral as successive integrations. If the x limits are constants, y limits depend on x, and z limits depend on x,y, write \\[I=\\int_{x_1}^{x_2}\\int_{y_1(x)}^{y_2(x)}\\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)\\,dz\\,dy\\,dx.\\]",
+          "First integrate z with x,y fixed. Next integrate y with x fixed. Finally integrate x. Other orders are possible when the limits are changed to describe the same solid."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-18",
+            "title": "Example 7.18",
+            "question_paragraphs": [
+              "Evaluate \\(\\int_0^{\\log2}\\int_0^x\\int_0^{x+\\log y}e^{x+y+z}\\,dz\\,dy\\,dx\\)."
+            ],
+            "paragraphs": [
+              "Treat y=0 as an improper endpoint because log y is undefined there. Integrating z first gives \\[e^{x+y}(e^{x+\\log y}-1)=e^{2x}ye^y-e^xe^y.\\]",
+              "Use \\(\\int ye^y dy=(y-1)e^y\\): \\[I=\\int_0^{\\log2}\\{e^{2x}[(x-1)e^x+1]-e^x(e^x-1)\\}\\,dx=\\int_0^{\\log2}\\{(x-1)e^{3x}+e^x\\}\\,dx.\\]",
+              "\\[I=\\left[e^{3x}\\left(\\dfrac{x-1}{3}-\\dfrac19\\right)+e^x\\right]_0^{\\log2}=\\dfrac83\\log2-\\dfrac{19}{9}.\\]",
+              "This is an oriented iterated integral: its z upper limit is negative for some (x,y), so the final value can be negative."
+            ],
+            "final_answer": "\\(I=\\dfrac83\\log2-\\dfrac{19}{9}\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The last printed fraction is 19/2. Evaluating the preceding displayed antiderivative gives 19/9: at log 2 its value is (8/3)log 2−14/9, and at 0 it is 5/9."
+            }
+          },
+          {
+            "id": "tb-example-7-19",
+            "title": "Example 7.19",
+            "question_paragraphs": [
+              "Evaluate \\(\\iiint_V\\dfrac{dx\\,dy\\,dz}{\\sqrt{a^2-x^2-y^2-z^2}}\\) throughout the sphere x²+y²+z²≤a², a>0."
+            ],
+            "paragraphs": [
+              "By symmetry use eight times the positive octant. Write B=a²−x²−y². Then \\[I=8\\int_0^a\\int_0^{\\sqrt{a^2-x^2}}\\int_0^{\\sqrt B}\\dfrac{dz\\,dy\\,dx}{\\sqrt{B-z^2}}.\\]",
+              "The inner integral is \\([\\sin^{-1}(z/\\sqrt B)]_0^{\\sqrt B}=\\pi/2\\). Hence \\[I=4\\pi\\int_0^a\\sqrt{a^2-x^2}\\,dx=4\\pi\\cdot\\dfrac{\\pi a^2}{4}=\\pi^2a^2.\\]"
+            ],
+            "final_answer": "\\(I=\\pi^2a^2\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-21",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-21-ros.webp",
+                "alt": "Sphere and positive-octant integration limits",
+                "caption": "Figure 7.21 · Sphere and positive-octant integration limits",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 527,
+                "height": 359,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-20",
+            "title": "Example 7.20",
+            "question_paragraphs": [
+              "Evaluate \\(\\int_{-1}^1\\int_0^z\\int_{x-z}^{x+z}(x+y+z)\\,dy\\,dx\\,dz\\)."
+            ],
+            "paragraphs": [
+              "Integrating y first gives \\[\\left[(x+z)y+\\dfrac{y^2}{2}\\right]_{x-z}^{x+z}=2z(x+z)+2xz=4xz+2z^2.\\]",
+              "\\[I=\\int_{-1}^1\\left[2zx^2+2z^2x\\right]_0^z dz=4\\int_{-1}^1z^3dz=0.\\]"
+            ],
+            "final_answer": "\\(I=0\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The printed differentials dx dy dz conflict with the innermost bounds x−z and x+z and with the solution’s y-first integration. Here dy dx dz states the order used by the printed working."
+            }
+          },
+          {
+            "id": "tb-example-7-21",
+            "title": "Example 7.21",
+            "question_paragraphs": [
+              "Evaluate \\(\\int_0^1\\int_0^{\\sqrt{1-x^2}}\\int_0^{\\sqrt{1-x^2-y^2}}xyz\\,dz\\,dy\\,dx\\)."
+            ],
+            "paragraphs": [
+              "\\[I=\\dfrac12\\int_0^1x\\int_0^{\\sqrt{1-x^2}}y(1-x^2-y^2)dy\\,dx.\\]",
+              "\\[\\int_0^{\\sqrt{1-x^2}}y(1-x^2-y^2)dy=\\left[\\dfrac{(1-x^2)y^2}{2}-\\dfrac{y^4}{4}\\right]_0^{\\sqrt{1-x^2}}=\\dfrac{(1-x^2)^2}{4}.\\]",
+              "\\[I=\\dfrac18\\int_0^1(x-2x^3+x^5)dx=\\dfrac18\\left(\\dfrac12-\\dfrac12+\\dfrac16\\right)=\\dfrac1{48}.\\]"
+            ],
+            "final_answer": "\\(I=1/48\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The header prints dx dy dz although its nested limits and worked solution use dz dy dx. An intermediate line also writes a fourth power of (1−x²) before reverting to the correct square. The calculation here keeps the square throughout."
+            }
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "discrepancy": {
+          "label": "Verified printed discrepancy",
+          "message": "The first unbracketed general formula on p. 325 prints dx dy dz beneath z-dependent innermost bounds. The boxed formula and prose correctly specify dz dy dx; that order is used here."
+        },
+        "practice": [
+          {
+            "book_page": 326,
+            "type": "Problems 7.3",
+            "items": "Q1–11",
+            "group_anchor": "problems-7-3"
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P0324",
+      "TB-P0325",
+      "TB-P0326",
+      "TB-P0327"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "324, 325, 326, 327",
+        "note": "7.5 Triple integrals"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-triple-change-spherical",
     "unit": 5,
     "title": "Change of variables for triple integrals (Cartesian to Spherical coordinates)",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "learn": [
+      "\\(dV=r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi\\), with θ measured from the positive z-axis."
+    ],
+    "sections": [
+      {
+        "heading": "7.7 Change of variables — triple integrals",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0330"
+        ],
+        "book_refs": [
+          {
+            "pages": "330",
+            "note": "7.7 Change of variables — triple integrals"
+          }
+        ],
+        "paragraphs": [
+          "For a transformation \\(x=x(u,v,w)\\), \\(y=y(u,v,w)\\), \\(z=z(u,v,w)\\), the triple-integral rule is \\[\\iiint_E f(x,y,z)\\,dx\\,dy\\,dz=\\iiint_{E\\prime}f(x(u,v,w),y(u,v,w),z(u,v,w))|J|\\,du\\,dv\\,dw,\\] where \\(J=\\partial(x,y,z)/\\partial(u,v,w)\\).",
+          "In spherical polar coordinates, r is distance from the origin, θ is the angle from the positive z-axis, and φ is azimuth in the xy-plane: \\[x=r\\sin\\theta\\cos\\phi,\\quad y=r\\sin\\theta\\sin\\phi,\\quad z=r\\cos\\theta.\\]",
+          "The Jacobian is \\(r^2\\sin\\theta\\). On the usual ranges r≥0, 0≤θ≤π, 0≤φ<2π, \\[dV=r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi.\\]"
+        ],
+        "discrepancy": {
+          "label": "Verified printed discrepancy",
+          "message": "The last substitution line on p. 330 splits the y-coordinate into separate arguments “…r sinθ, sinφ,…”. The coordinate relation just above it is y=r sinθ sinφ, so the transformed integrand must have three arguments, as written here."
+        }
+      },
+      {
+        "heading": "7.7 Spherical-coordinate examples",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0333",
+          "TB-P0335"
+        ],
+        "book_refs": [
+          {
+            "pages": "333, 335",
+            "note": "7.7 Spherical-coordinate examples"
+          }
+        ],
+        "paragraphs": [],
+        "accordions": [
+          {
+            "id": "tb-example-7-30",
+            "title": "Example 7.30",
+            "question_paragraphs": [
+              "Find by triple integration the volume of x²+y²+z²≤a², a>0."
+            ],
+            "paragraphs": [
+              "Put \\(x=r\\sin\\theta\\cos\\phi\\), \\(y=r\\sin\\theta\\sin\\phi\\), \\(z=r\\cos\\theta\\). The volume element is \\(r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi\\).",
+              "Use eight times the first octant, with \\(0\\le r\\le a\\), \\(0\\le\\theta,\\phi\\le\\pi/2\\): \\[V=8\\int_0^{\\pi/2}\\int_0^{\\pi/2}\\int_0^a r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi.\\]",
+              "\\[V=8\\cdot\\dfrac{a^3}{3}\\cdot[-\\cos\\theta]_0^{\\pi/2}\\cdot\\dfrac\\pi2=\\dfrac{4\\pi a^3}{3}.\\]"
+            ],
+            "final_answer": "\\(V=4\\pi a^3/3\\)."
+          },
+          {
+            "id": "tb-example-7-35",
+            "title": "Example 7.35",
+            "question_paragraphs": [
+              "Find the volume bounded above by x²+y²+z²=a² and below by the upper cone x²+y²=z², a>0."
+            ],
+            "paragraphs": [
+              "The upper cone has polar angle θ=π/4. Inside the sphere and above this cone, \\(0\\le r\\le a\\), \\(0\\le\\theta\\le\\pi/4\\), \\(0\\le\\phi\\le2\\pi\\).",
+              "\\[V=\\int_0^{2\\pi}\\int_0^{\\pi/4}\\int_0^a r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi=\\dfrac{2\\pi a^3}{3}[-\\cos\\theta]_0^{\\pi/4}.\\]"
+            ],
+            "final_answer": "\\(V=\\dfrac{2\\pi a^3}{3}\\left(1-\\dfrac1{\\sqrt2}\\right)\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The prose gives θ=±π/4 and Fig. 7.36 labels the cone z=r. In spherical coordinates θ is a nonnegative polar angle; its upper sheet is θ=π/4, or z=r/√2. The printed integration limits correctly use 0≤θ≤π/4; those are retained."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-36",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-36-ros.webp",
+                "alt": "Spherical region above the upper cone; original z equals r label retained",
+                "caption": "Figure 7.36 · Spherical region above the upper cone; original z equals r label retained",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 568,
+                "height": 384,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "practice": [
+          {
+            "book_page": 335,
+            "type": "Problems 7.4",
+            "items": "All in-syllabus Q1–26 and Q28; mass Q27 is outside R25",
+            "group_anchor": "problems-7-4"
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P0330",
+      "TB-P0333",
+      "TB-P0335"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "330",
+        "note": "7.7 Change of variables — triple integrals"
+      },
+      {
+        "pages": "333, 335",
+        "note": "7.7 Spherical-coordinate examples"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-triple-change-cylindrical",
     "unit": 5,
     "title": "Change of variables for triple integrals (Cartesian to Cylindrical polar coordinates)",
     "status": "core",
-    "learn": [],
-    "sections": [],
+    "learn": [
+      "\\(dV=\\rho\\,d\\rho\\,d\\phi\\,dz\\)."
+    ],
+    "sections": [
+      {
+        "heading": "7.7 Cylindrical coordinates",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0330",
+          "TB-P0333"
+        ],
+        "book_refs": [
+          {
+            "pages": "330, 333",
+            "note": "7.7 Cylindrical coordinates"
+          }
+        ],
+        "paragraphs": [
+          "For cylindrical coordinates \\((\\rho,\\phi,z)\\), \\[x=\\rho\\cos\\phi,\\qquad y=\\rho\\sin\\phi,\\qquad z=z.\\] The Jacobian is \\[\\dfrac{\\partial(x,y,z)}{\\partial(\\rho,\\phi,z)}=\\rho,\\] so \\(dV=\\rho\\,d\\rho\\,d\\phi\\,dz\\), with the integration order arranged to match the chosen limits.",
+          "The radial distance is measured in the xy-plane; z remains the vertical coordinate. A circular cylinder centred on the z-axis becomes a constant radial boundary. A sphere becomes \\(\\rho^2+z^2=a^2\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-31",
+            "title": "Example 7.31",
+            "question_paragraphs": [
+              "Find the portion of x²+y²+z²≤a² inside x²+y²≤ay, a>0."
+            ],
+            "paragraphs": [
+              "Use x=ρ cosφ, y=ρ sinφ. The cylinder is \\(\\rho=a\\sin\\phi\\), so \\(0\\le\\phi\\le\\pi\\), \\(0\\le\\rho\\le a\\sin\\phi\\). Double the part z≥0.",
+              "\\[V=2\\int_0^\\pi\\int_0^{a\\sin\\phi}\\int_0^{\\sqrt{a^2-\\rho^2}}\\rho\\,dz\\,d\\rho\\,d\\phi=2\\int_0^\\pi\\int_0^{a\\sin\\phi}\\rho\\sqrt{a^2-\\rho^2}\\,d\\rho\\,d\\phi.\\]",
+              "\\[V=\\dfrac{2a^3}{3}\\int_0^\\pi(1-|\\cos\\phi|^3)\\,d\\phi.\\] Since \\(\\int_0^\\pi|\\cos\\phi|^3d\\phi=2\\int_0^{\\pi/2}\\cos^3\\phi d\\phi=4/3\\), the result follows."
+            ],
+            "final_answer": "\\(V=2a^3(3\\pi-4)/9\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The intermediate expression on p. 333 writes cos³φ without absolute values over 0≤φ≤π. The radical (a²cos²φ)³ᐟ² equals a³|cosφ|³. Including the absolute value yields the printed final result."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-32",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-32-ros.webp",
+                "alt": "Sphere intersected by an offset circular cylinder",
+                "caption": "Figure 7.32 · Sphere intersected by an offset circular cylinder",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 543,
+                "height": 553,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P0330",
+      "TB-P0333"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "330, 333",
+        "note": "7.7 Cylindrical coordinates"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-areas-double-integrals",
     "unit": 5,
     "title": "Areas by double integrals",
     "status": "core",
-    "learn": [],
+    "learn": [
+      "\\(A=\\iint_R1\\,dA\\); count each part of the region once."
+    ],
     "sections": [
+      {
+        "heading": "7.4 Area enclosed by plane curves",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0322",
+          "TB-P0323",
+          "TB-P0324"
+        ],
+        "book_refs": [
+          {
+            "pages": "322, 323, 324",
+            "note": "7.4 Area enclosed by plane curves"
+          }
+        ],
+        "paragraphs": [
+          "For an area bounded by y=f₁(x), y=f₂(x), x=x₁ and x=x₂, divide the region into vertical strips of width δx. Each small rectangle has area δx δy. Summing rectangles along the strip and then summing strips gives \\[A=\\int_{x_1}^{x_2}\\int_{f_1(x)}^{f_2(x)}1\\,dy\\,dx.\\]",
+          "For horizontal strips between x=f₁(y) and x=f₂(y), \\[A=\\int_{y_1}^{y_2}\\int_{f_1(y)}^{f_2(y)}1\\,dx\\,dy.\\] Changing the order does not change the area.",
+          "In polar coordinates, neighbouring circular arcs and radii form a small curvilinear rectangle. Its radial side is δr and its arc side is r δθ, so its area is approximately r δr δθ. Passing to the limit gives \\[A=\\iint_R r\\,dr\\,d\\theta.\\]",
+          "Choose the radial and angular limits to cover the region exactly once. For \\(r_1(\\theta)\\le r\\le r_2(\\theta)\\), \\[A=\\dfrac12\\int_{\\theta_1}^{\\theta_2}\\{r_2(\\theta)^2-r_1(\\theta)^2\\}\\,d\\theta.\\]"
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-14",
+            "title": "Example 7.14",
+            "question_paragraphs": [
+              "Find by double integration the area of one quadrant of \\(x^2/a^2+y^2/b^2=1\\), a,b>0."
+            ],
+            "paragraphs": [
+              "With vertical strips, \\(0\\le x\\le a\\), \\(0\\le y\\le b\\sqrt{1-x^2/a^2}\\). Hence \\[A=\\int_0^a\\int_0^{b\\sqrt{1-x^2/a^2}}dy\\,dx=\\dfrac ba\\int_0^a\\sqrt{a^2-x^2}\\,dx.\\]",
+              "\\[A=\\dfrac ba\\left[\\dfrac{x\\sqrt{a^2-x^2}}2+\\dfrac{a^2}{2}\\sin^{-1}(x/a)\\right]_0^a=\\dfrac{\\pi ab}{4}.\\]",
+              "Alternatively use horizontal strips: \\[A=\\int_0^b\\int_0^{a\\sqrt{1-y^2/b^2}}dx\\,dy=\\dfrac ab\\int_0^b\\sqrt{b^2-y^2}\\,dy=\\dfrac{\\pi ab}{4}.\\]"
+            ],
+            "final_answer": "\\(A=\\pi ab/4\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The first prose line prints y=b√(1−x²/b²). Solving the stated ellipse gives y=b√(1−x²/a²), as used by the subsequent integral."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-17",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-17-ros.webp",
+                "alt": "Quadrant of an ellipse with vertical and horizontal strips",
+                "caption": "Figure 7.17 · Quadrant of an ellipse with vertical and horizontal strips",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 587,
+                "height": 356,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-15",
+            "title": "Example 7.15",
+            "question_paragraphs": [
+              "Show that the area between y²=4ax and x²=4ay is \\(16a^2/3\\), a>0."
+            ],
+            "paragraphs": [
+              "Intersections are (0,0) and (4a,4a). Between these, \\(x^2/(4a)\\le y\\le2\\sqrt{ax}\\).",
+              "\\[A=\\int_0^{4a}\\int_{x^2/(4a)}^{2\\sqrt{ax}}dy\\,dx=\\left[\\dfrac{4\\sqrt a}{3}x^{3/2}-\\dfrac{x^3}{12a}\\right]_0^{4a}=\\dfrac{16a^2}{3}.\\]"
+            ],
+            "final_answer": "\\(A=16a^2/3\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-18",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-18-ros.webp",
+                "alt": "Enclosed lens between y squared equals 4ax and x squared equals 4ay",
+                "caption": "Figure 7.18 · Enclosed lens between y squared equals 4ax and x squared equals 4ay",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 538,
+                "height": 334,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ],
+            "math_mismatch": {
+              "label": "Verified printed figure discrepancy",
+              "message": "Fig. 7.18 labels the curves x²=4ax and y²=4x. The question and calculation require x²=4ay and y²=4ax. The unchanged ROS crop retains those printed labels; the integral follows the stated question."
+            }
+          },
+          {
+            "id": "tb-example-7-16",
+            "title": "Example 7.16",
+            "question_paragraphs": [
+              "Find the area between r=a(secθ+cosθ) and its asymptote, a>0."
+            ],
+            "paragraphs": [
+              "The asymptote is r=a secθ, or x=a. Symmetry about the initial line allows twice the upper half: \\(0\\le\\theta<\\pi/2\\), \\(a\\sec\\theta\\le r\\le a(\\sec\\theta+\\cos\\theta)\\).",
+              "\\[A=2\\int_0^{\\pi/2}\\int_{a\\sec\\theta}^{a(\\sec\\theta+\\cos\\theta)}r\\,dr\\,d\\theta=a^2\\int_0^{\\pi/2}(2+\\cos^2\\theta)d\\theta.\\]",
+              "\\[A=a^2\\left[2\\theta+\\dfrac\\theta2+\\dfrac{\\sin2\\theta}{4}\\right]_0^{\\pi/2}=\\dfrac{5\\pi a^2}{4}.\\]"
+            ],
+            "final_answer": "\\(A=5\\pi a^2/4\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-19",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-19-ros.webp",
+                "alt": "Area between r equals a times secant theta plus cosine theta and its vertical asymptote",
+                "caption": "Figure 7.19 · Area between r equals a times secant theta plus cosine theta and its vertical asymptote",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 458,
+                "height": 497,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-17",
+            "title": "Example 7.17",
+            "question_paragraphs": [
+              "Find the area inside r=a(1+cosθ) and outside r=a, a>0."
+            ],
+            "paragraphs": [
+              "The curves intersect at θ=±π/2. Double the upper half, with \\(0\\le\\theta\\le\\pi/2\\), \\(a\\le r\\le a(1+\\cos\\theta)\\).",
+              "\\[A=2\\int_0^{\\pi/2}\\int_a^{a(1+\\cos\\theta)}r\\,dr\\,d\\theta=a^2\\int_0^{\\pi/2}(2\\cos\\theta+\\cos^2\\theta)d\\theta.\\]",
+              "\\[A=a^2(2+\\pi/4)=\\dfrac{a^2}{4}(\\pi+8).\\]"
+            ],
+            "final_answer": "\\(A=a^2(\\pi+8)/4\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-20",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-20-ros.webp",
+                "alt": "Area inside a cardioid and outside its centred circle",
+                "caption": "Figure 7.20 · Area inside a cardioid and outside its centred circle",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 450,
+                "height": 342,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "figures": [
+          {
+            "id": "book-fig-7-15",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-15-ros.webp",
+            "alt": "Area elements in vertical and horizontal Cartesian strips",
+            "caption": "Figure 7.15 · Area elements in vertical and horizontal Cartesian strips",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 473,
+            "height": 757,
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          },
+          {
+            "id": "book-fig-7-16",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-16-ros.webp",
+            "alt": "A polar area element with radial width delta r and arc length r delta theta",
+            "caption": "Figure 7.16 · A polar area element with radial width delta r and arc length r delta theta",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 505,
+            "height": 478,
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ],
+        "practice": [
+          {
+            "book_page": 324,
+            "type": "Problems 7.2",
+            "items": "Q1–8",
+            "group_anchor": "problems-7-2"
+          }
+        ]
+      },
       {
         "heading": "Appendix reference — area",
         "scope": "core",
@@ -4585,8 +5911,7 @@
           }
         ],
         "paragraphs": [
-          "The area of a plane region D is \\(A=\\iint_D1\\,dA\\). For a region between the polar rays α,β and the curve r=f(θ), the reference formula is \\[A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta.\\]",
-          "This is a formula reference only. The multiple-integral chapter, region setup and worked examples have not been supplied."
+          "The area of a plane region D is \\(A=\\iint_D1\\,dA\\). For a region between the polar rays α,β and the curve r=f(θ), the reference formula is \\[A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta.\\]"
         ]
       }
     ],
@@ -4594,9 +5919,16 @@
     "method": [],
     "source_refs": [
       "SYL-R25-U5",
+      "TB-P0322",
+      "TB-P0323",
+      "TB-P0324",
       "TB-P1359"
     ],
     "book_refs": [
+      {
+        "pages": "322, 323, 324",
+        "note": "7.4 Area enclosed by plane curves"
+      },
       {
         "pages": "1359",
         "note": "Appendix reference — area"
@@ -4606,15 +5938,254 @@
     "practice": null,
     "self_checks": [],
     "class_history": null,
-    "source_coverage": "partial"
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-volumes-triple-integrals",
     "unit": 5,
     "title": "Volumes by triple integrals",
     "status": "core",
-    "learn": [],
+    "learn": [
+      "\\(V=\\iiint_E1\\,dV\\); equivalently integrate nonnegative height over the base."
+    ],
     "sections": [
+      {
+        "heading": "7.6 Volumes of solids",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0327",
+          "TB-P0328",
+          "TB-P0329",
+          "TB-P0330"
+        ],
+        "book_refs": [
+          {
+            "pages": "327, 328, 329, 330",
+            "note": "7.6 Volumes of solids"
+          }
+        ],
+        "paragraphs": [
+          "For a nonnegative surface height z=f(x,y) over a plane area S, erect prisms on small rectangles δx δy. Each prism has approximate volume z δx δy. Taking the limit gives \\[V=\\iint_S f(x,y)\\,dx\\,dy.\\]",
+          "In polar coordinates the corresponding expression is \\(V=\\iint_S z\\,r\\,dr\\,d\\theta\\).",
+          "Alternatively divide a solid into rectangular parallelepipeds with volumes δx δy δz. Their limiting sum is \\[V=\\iiint_E1\\,dx\\,dy\\,dz,\\] with limits covering the solid once."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-22",
+            "title": "Example 7.22",
+            "question_paragraphs": [
+              "Find the volume bounded by x²+y²=4, y+z=4 and z=0."
+            ],
+            "paragraphs": [
+              "The height is z=4−y above the disk x²+y²≤4. Double the right half of that disk:",
+              "\\[V=2\\int_{-2}^2\\int_0^{\\sqrt{4-y^2}}(4-y)\\,dx\\,dy=8\\int_{-2}^2\\sqrt{4-y^2}\\,dy-2\\int_{-2}^2y\\sqrt{4-y^2}\\,dy.\\]",
+              "The second integral is zero because its integrand is odd. The first integrates a semicircle of radius 2, of area 2π. Thus V=8·2π."
+            ],
+            "final_answer": "\\(V=16\\pi\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-23",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-23-ros.webp",
+                "alt": "Cylinder cut by the plane y plus z equals 4",
+                "caption": "Figure 7.23 · Cylinder cut by the plane y plus z equals 4",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 579,
+                "height": 459,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-23",
+            "title": "Example 7.23",
+            "question_paragraphs": [
+              "Find the volume bounded by x=0, y=0, z=0 and x+y+z=a, a>0."
+            ],
+            "paragraphs": [
+              "In the first octant, \\(0\\le x\\le a\\), \\(0\\le y\\le a-x\\), \\(0\\le z\\le a-x-y\\).",
+              "\\[V=\\int_0^a\\int_0^{a-x}\\int_0^{a-x-y}dz\\,dy\\,dx=\\int_0^a\\int_0^{a-x}(a-x-y)dy\\,dx.\\]",
+              "\\[V=\\dfrac12\\int_0^a(a-x)^2dx=\\left[-\\dfrac{(a-x)^3}{6}\\right]_0^a=\\dfrac{a^3}{6}.\\]"
+            ],
+            "final_answer": "\\(V=a^3/6\\).",
+            "math_mismatch": {
+              "label": "Verified printed antiderivative discrepancy",
+              "message": "The final displayed antiderivative on p. 328 omits the minus sign in ∫(a−x)²dx=−(a−x)³/3. Restoring it gives the positive volume a³/6 printed as the final answer."
+            }
+          },
+          {
+            "id": "tb-example-7-24",
+            "title": "Example 7.24",
+            "question_paragraphs": [
+              "Find the volume of \\(x^2/a^2+y^2/b^2+z^2/c^2\\le1\\), a,b,c>0."
+            ],
+            "paragraphs": [
+              "Take eight times the first octant. For fixed x,y the top is \\(z=c\\sqrt{1-x^2/a^2-y^2/b^2}\\). Set \\(p=b\\sqrt{1-x^2/a^2}\\).",
+              "\\[V=8c\\int_0^a\\int_0^p\\sqrt{1-x^2/a^2-y^2/b^2}\\,dy\\,dx=\\dfrac{8c}{b}\\int_0^a\\int_0^p\\sqrt{p^2-y^2}\\,dy\\,dx.\\]",
+              "The inner integral equals \\(\\pi p^2/4\\), so \\[V=2\\pi bc\\int_0^a(1-x^2/a^2)dx=2\\pi bc\\left[x-\\dfrac{x^3}{3a^2}\\right]_0^a=\\dfrac{4\\pi abc}{3}.\\]"
+            ],
+            "final_answer": "\\(V=4\\pi abc/3\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-25",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-25-ros.webp",
+                "alt": "Positive octant of an ellipsoid and its nested integration limits",
+                "caption": "Figure 7.25 · Positive octant of an ellipsoid and its nested integration limits",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 492,
+                "height": 459,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-25",
+            "title": "Example 7.25",
+            "question_paragraphs": [
+              "Prove the volume common to x²+y²≤2ax and z²≤2ax is \\(128a^3/15\\), a>0."
+            ],
+            "paragraphs": [
+              "For \\(0\\le x\\le2a\\), \\(|y|\\le\\sqrt{2ax-x^2}\\), \\(|z|\\le\\sqrt{2ax}\\). Thus \\[V=4\\sqrt{2a}\\int_0^{2a}\\sqrt{x}\\sqrt{2ax-x^2}\\,dx.\\]",
+              "Put \\(x=2a\\sin^2\\theta\\), \\(dx=4a\\sin\\theta\\cos\\theta\\,d\\theta\\). This gives \\[V=64a^3\\int_0^{\\pi/2}\\sin^3\\theta\\cos^2\\theta\\,d\\theta.\\]",
+              "With u=cosθ, \\(\\int_0^{\\pi/2}\\sin^3\\theta\\cos^2\\theta\\,d\\theta=\\int_0^1(u^2-u^4)du=2/15\\)."
+            ],
+            "final_answer": "\\(V=128a^3/15\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "Fig. 7.27’s upper-surface label is corrupted, and one intermediate integral places √(2ax) as a y lower limit. The stated cylinders require |z|≤√(2ax) and |y|≤√(2ax−x²). The calculation follows these boundaries."
+            },
+            "figures": [
+              {
+                "id": "book-fig-7-27",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-27-ros.webp",
+                "alt": "Intersection of circular and parabolic cylinders; original upper-surface label retained",
+                "caption": "Figure 7.27 · Intersection of circular and parabolic cylinders; original upper-surface label retained",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 525,
+                "height": 300,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "figures": [
+          {
+            "id": "book-fig-7-22",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-22-ros.webp",
+            "alt": "Prisms below a surface over its plane projection",
+            "caption": "Figure 7.22 · Prisms below a surface over its plane projection",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 613,
+            "height": 503,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "id": "book-fig-7-24",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-24-ros.webp",
+            "alt": "A rectangular volume element inside a coordinate tetrahedron",
+            "caption": "Figure 7.24 · A rectangular volume element inside a coordinate tetrahedron",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 384,
+            "height": 491,
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          }
+        ]
+      },
+      {
+        "heading": "7.6 (3) Volumes of solids of revolution",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0329",
+          "TB-P0333",
+          "TB-P0334"
+        ],
+        "book_refs": [
+          {
+            "pages": "329, 333, 334",
+            "note": "7.6 (3) Volumes of solids of revolution"
+          }
+        ],
+        "paragraphs": [
+          "An area element δx δy at distance y from the x-axis sweeps out a ring. To first order its volume is \\(\\pi[(y+\\delta y)^2-y^2]\\delta x=2\\pi y\\,\\delta x\\delta y\\). Hence \\[V_x=\\iint_A2\\pi y\\,dx\\,dy.\\]",
+          "In polar coordinates this becomes \\(V_x=\\iint_A2\\pi r^2\\sin\\theta\\,dr\\,d\\theta\\). Similarly \\(V_y=\\iint_A2\\pi x\\,dx\\,dy\\). Choose an area on one side of the axis whose rotation covers the solid once."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-32",
+            "title": "Example 7.32",
+            "question_paragraphs": [
+              "Find by double integration the volume generated by revolving \\(x^2/a^2+y^2/b^2=1\\) about the x-axis, a,b>0."
+            ],
+            "paragraphs": [
+              "Revolve only the upper half of the ellipse to avoid counting the same solid twice. A small area element generates a ring of volume \\(2\\pi y\\,dx\\,dy\\).",
+              "\\[V=\\int_{-a}^a\\int_0^{(b/a)\\sqrt{a^2-x^2}}2\\pi y\\,dy\\,dx=\\dfrac{\\pi b^2}{a^2}\\int_{-a}^a(a^2-x^2)dx.\\]",
+              "\\[V=\\dfrac{2\\pi b^2}{a^2}\\left[a^2x-\\dfrac{x^3}{3}\\right]_0^a=\\dfrac{4\\pi ab^2}{3}.\\]"
+            ],
+            "final_answer": "\\(V=4\\pi ab^2/3\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-33",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-33-ros.webp",
+                "alt": "Upper half of an ellipse revolved about the x axis",
+                "caption": "Figure 7.33 · Upper half of an ellipse revolved about the x axis",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 552,
+                "height": 435,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "figures": [
+          {
+            "id": "book-fig-7-26",
+            "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-26-ros.webp",
+            "alt": "An area element revolving about the horizontal axis",
+            "caption": "Figure 7.26 · An area element revolving about the horizontal axis",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 414,
+            "height": 332,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "practice": [
+          {
+            "book_page": 363,
+            "type": "Problems 7.10",
+            "items": "All in-syllabus objective questions; original numbering retained",
+            "group_anchor": "problems-7-10"
+          }
+        ]
+      },
       {
         "heading": "Appendix reference — volume",
         "scope": "core",
@@ -4628,8 +6199,7 @@
           }
         ],
         "paragraphs": [
-          "For a solid E, \\(V=\\iiint_E1\\,dV\\). For a nonnegative height z over a plane region D, \\(V=\\iint_D z\\,dA\\).",
-          "The reference gives these volume formulas; it does not supply the Unit V development of limits, order changes or coordinate substitutions."
+          "For a solid E, \\(V=\\iiint_E1\\,dV\\). For a nonnegative height z over a plane region D, \\(V=\\iint_D z\\,dA\\)."
         ]
       }
     ],
@@ -4637,9 +6207,23 @@
     "method": [],
     "source_refs": [
       "SYL-R25-U5",
+      "TB-P0327",
+      "TB-P0328",
+      "TB-P0329",
+      "TB-P0330",
+      "TB-P0333",
+      "TB-P0334",
       "TB-P1359"
     ],
     "book_refs": [
+      {
+        "pages": "327, 328, 329, 330",
+        "note": "7.6 Volumes of solids"
+      },
+      {
+        "pages": "329, 333, 334",
+        "note": "7.6 (3) Volumes of solids of revolution"
+      },
       {
         "pages": "1359",
         "note": "Appendix reference — volume"
@@ -4649,6 +6233,99 @@
     "practice": null,
     "self_checks": [],
     "class_history": null,
-    "source_coverage": "partial"
+    "source_coverage": "complete-theory"
+  },
+  {
+    "id": "u5-supporting-general-transformations",
+    "unit": 5,
+    "title": "Supporting: general Jacobian substitutions",
+    "status": "supporting",
+    "intro": "General Jacobian substitutions provide additional practice beyond the named Cartesian-to-polar method.",
+    "sections": [
+      {
+        "heading": "Supporting worked examples — general double-integral transformations",
+        "scope": "supporting",
+        "source_refs": [
+          "TB-P0334",
+          "TB-P0335"
+        ],
+        "book_refs": [
+          {
+            "pages": "334, 335",
+            "note": "Supporting worked examples — general double-integral transformations"
+          }
+        ],
+        "paragraphs": [
+          "These two supplied examples practise the general Jacobian rule. Their nonpolar substitutions support the method; the named R25 double-integral change of variables is Cartesian to polar."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-7-33",
+            "title": "Example 7.33",
+            "question_paragraphs": [
+              "Evaluate \\(\\iint_R(x+y)^2\\,dx\\,dy\\) over the parallelogram with vertices (1,0), (3,1), (2,2), (0,1), using u=x+y and v=x−2y."
+            ],
+            "paragraphs": [
+              "The four vertices map to (1,1), (4,1), (4,−2), (1,−2). Thus \\(1\\le u\\le4\\), \\(-2\\le v\\le1\\).",
+              "Solve for the old coordinates: \\(x=(2u+v)/3\\), \\(y=(u-v)/3\\). Hence \\(J=(2/3)(-1/3)-(1/3)(1/3)=-1/3\\).",
+              "\\[I=\\int_1^4\\int_{-2}^1\\dfrac{u^2}{3}\\,dv\\,du=\\int_1^4u^2du=\\left[\\dfrac{u^3}{3}\\right]_1^4=21.\\]"
+            ],
+            "final_answer": "\\(I=21\\).",
+            "figures": [
+              {
+                "id": "book-fig-7-34",
+                "src": "college/1-1/matrices-calculus/assets/book/u5/theory/f7-34-ros.webp",
+                "alt": "Parallelogram and its corresponding rectangle under a linear transformation",
+                "caption": "Figure 7.34 · Parallelogram and its corresponding rectangle under a linear transformation",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 933,
+                "height": 458,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ]
+          },
+          {
+            "id": "tb-example-7-34",
+            "title": "Example 7.34",
+            "question_paragraphs": [
+              "Evaluate \\(\\iint_Dxy\\sqrt{1-x-y}\\,dx\\,dy\\), where x≥0, y≥0, x+y≤1, using x+y=u and y=uv."
+            ],
+            "paragraphs": [
+              "Then x=u(1−v), y=uv, and \\(J=\\begin{vmatrix}1-v&-u\\\\v&u\\end{vmatrix}=u\\). The triangle maps to \\(0\\le u\\le1\\), \\(0\\le v\\le1\\); the single point u=0 has zero area.",
+              "\\[I=\\int_0^1u^3\\sqrt{1-u}\\,du\\int_0^1v(1-v)\\,dv=\\dfrac16\\int_0^1u^3\\sqrt{1-u}\\,du.\\]",
+              "Put w=1−u. Expand \\((1-w)^3\\sqrt w=w^{1/2}-3w^{3/2}+3w^{5/2}-w^{7/2}\\). Its integral from 0 to 1 is \\(2/3-6/5+6/7-2/9=32/315\\)."
+            ],
+            "final_answer": "\\(I=16/945\\).",
+            "math_mismatch": {
+              "label": "Verified printed discrepancy",
+              "message": "The last printed line on p. 335 gives 2/945. Its preceding product is (1/3)·(6·4)/(9·7·5·3)=16/945; direct polynomial integration independently confirms 16/945. The preceding boundary notes also set u=0 along x=0 or y=0; away from the origin these edges instead have v=1 or v=0, with u varying from 0 to 1."
+            }
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "scope_label": "Supporting method",
+        "scope_note": "General nonpolar substitutions: supporting practice beyond the named R25 Cartesian-to-polar transformation."
+      }
+    ],
+    "source_refs": [
+      "TB-P0334",
+      "TB-P0335"
+    ],
+    "book_refs": [
+      {
+        "pages": "334–335",
+        "note": "Examples 7.33–7.34; supporting nonpolar substitutions"
+      }
+    ],
+    "learn": [
+      "Transform the region and include the absolute Jacobian."
+    ],
+    "formulas": [],
+    "method": [],
+    "cautions": []
   }
 ]
