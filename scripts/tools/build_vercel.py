@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / '_vercel_site'
 TEXT = {'.html', '.json', '.js', '.css', '.md'}
 RUNTIME = {'.html', '.json', '.js', '.css', '.png', '.webp', '.jpg', '.jpeg',
-           '.svg', '.gif', '.ico', '.pdf', '.woff', '.woff2', '.ttf', '.md', '.csv', '.txt'}
+           '.svg', '.gif', '.ico', '.pdf', '.zip', '.woff', '.woff2', '.ttf', '.md', '.csv', '.txt'}
 LEGACY = {'study', 'ncert', 'image', 'files', 'questionbank'}
 ENTRIES = {'index.html', 'navbar_new.html'}
 CURRENT_TREES = ('college/', 'scripts/new/', 'styles/new/')
