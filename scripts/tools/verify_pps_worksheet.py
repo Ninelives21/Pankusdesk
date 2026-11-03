@@ -1,10 +1,14 @@
-import json,subprocess,tempfile
+import json,subprocess,tempfile,hashlib
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 TEMP=tempfile.TemporaryDirectory()
 WORK=Path(TEMP.name)
 from pathlib import Path
 bank=json.loads((ROOT/'college/1-1/programming-problem-solving/worksheets/worksheet-1.json').read_text())
+assert [q['number'] for q in bank['problems']] == [str(n)+part for n in range(1,11) for part in 'abc']
+assert len({q['id'] for q in bank['problems']}) == 30
+source=ROOT/'college/1-1/programming-problem-solving/worksheets/worksheet-1.pdf'
+assert hashlib.sha256(source.read_bytes()).hexdigest() == bank['source_sha256']
 for q in bank['problems']:
  exe=str(WORK/q['number']);Path(exe+'.c').write_text(q['code']);subprocess.run(['cc','-std=c11','-Wall','-Wextra','-Werror',exe+'.c','-lm','-o',exe],check=True)
  p=subprocess.run([exe],input=q['test_input'],capture_output=True,text=True,timeout=3)
