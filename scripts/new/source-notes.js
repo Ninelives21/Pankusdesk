@@ -93,6 +93,7 @@ fetch(new URL(source, document.baseURI))
 		content.innerHTML = data.sections.map(section => `<section class="source-notes-section" id="${esc(section.id)}">
 			<h2>${esc(section.title)}</h2>
 			${(section.paragraphs || []).map(text => `<p>${ui.formatText(text)}</p>`).join('')}
+			${(section.links || []).map(link => `<p><a href="${esc(link.href)}">${esc(link.label)}</a></p>`).join('')}
 			${(section.figures || []).map(figure => ui.renderFigure(figure)).join('')}
 			${ui.renderAccordionGroup({label: 'Worked projection problems', isExampleGroup: true, items: section.examples || []})}
 		</section>`).join('');
@@ -109,7 +110,7 @@ fetch(new URL(source, document.baseURI))
 			figure.append(link);
 			img.addEventListener('error', () => {
 				const error = document.createElement('p');
-				error.textContent = 'This image could not be loaded. Please use the original PDF linked above.';
+				error.textContent = 'This image could not be loaded. Please use a source download link on this page.';
 				figure.append(error);
 			}, {once: true});
 		});
@@ -118,5 +119,5 @@ fetch(new URL(source, document.baseURI))
 		revealHash();
 		ui.typesetMath(content).catch(() => {});
 	})
-	.catch(error => { content.textContent = `${error.message} You can still open the original PDF above.`; });
+	.catch(error => { content.textContent = `${error.message} You can still use the source download link above.`; });
 }());
