@@ -1,0 +1,418 @@
+{
+  "title": "Worksheet & Solutions 1",
+  "source": "worksheet-1.pdf",
+  "source_sha256": "f21477bea6b3d06a8009ef3cf4e23bad6cf9f9fc5f3d6f3e911b6459d1b27963",
+  "problems": [
+    {
+      "id": "pps-w1-1a",
+      "number": "1a",
+      "title": "Menu-driven calculator",
+      "question": "Write a C program for menu driven addition, subtraction, multiplication and division of two given numbers.",
+      "explanation": [
+        "Use switch for the selected arithmetic operation. Division by zero is rejected. Operands are bounded to keep results finite."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    double a, b, result;\n    int choice;\n    puts(\"1 Add | 2 Subtract | 3 Multiply | 4 Divide\");\n    choice = (int)integer(\"Choice: \", 1, 4);\n    printf(\"Two numbers (absolute value <= 1000000): \");\n    if (scanf(\"%lf%lf\", &a, &b) != 2 || !isfinite(a) || !isfinite(b) || fabs(a)>1e6 || fabs(b)>1e6) return 1;\n    switch (choice) {\n    case 1: result=a+b; break;\n    case 2: result=a-b; break;\n    case 3: result=a*b; break;\n    default: if(b==0) { puts(\"Cannot divide by zero.\"); return 1; } result=a/b;\n    }\n    if(!isfinite(result)) { puts(\"Result outside floating-point range.\"); return 1; }\n    printf(\"Result: %.6g\\n\",result);\n    return 0;\n}\n",
+      "test_input": "4\n9 2\n",
+      "expected": "Result: 4.5"
+    },
+    {
+      "id": "pps-w1-1b",
+      "number": "1b",
+      "title": "Armstrong number",
+      "question": "Write a C program and draw flowchart to find whether a given number is Armstrong or not.",
+      "explanation": [
+        "An Armstrong number equals the sum of each decimal digit raised to the number of digits. Integer multiplication avoids floating-point power rounding; zero is included."
+      ],
+      "flow": [
+        "Start \u2192 read nonnegative n \u2192 count digits \u2192 reset t=n and sum=0 \u2192 repeatedly add (last digit)^digits and remove last digit \u2192 compare sum with n \u2192 print \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    unsigned long long n=(unsigned long long)integer(\"Number (0..1000000000): \",0,1000000000), t=n, sum=0;\n    int digits=0;\n    do { ++digits; t/=10; } while(t);\n    t=n;\n    do { unsigned long long p=1, digit=t%10; for(int i=0;i<digits;++i) p*=digit; sum+=p; t/=10; } while(t);\n    puts(sum==n ? \"Armstrong\" : \"Not Armstrong\");\n    return 0;\n}\n",
+      "test_input": "153\n",
+      "expected": "Armstrong"
+    },
+    {
+      "id": "pps-w1-1c",
+      "number": "1c",
+      "title": "Greatest of three",
+      "question": "Write a C program to find the greatest among three given numbers.",
+      "explanation": [
+        "Start with a and update the current greatest value. Equal inputs are handled."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a=integer(\"a: \",-1000000,1000000),b=integer(\"b: \",-1000000,1000000),c=integer(\"c: \",-1000000,1000000);\n    long long greatest=a;\n    if(b>greatest) greatest=b;\n    if(c>greatest) greatest=c;\n    printf(\"Greatest: %lld\\n\",greatest);\n    return 0;\n}\n",
+      "test_input": "3 9 9\n",
+      "expected": "Greatest: 9"
+    },
+    {
+      "id": "pps-w1-2a",
+      "number": "2a",
+      "title": "Matrix addition",
+      "question": "Write a C program to find the addition of two matrices.",
+      "explanation": [
+        "Both matrices must have the same dimensions. Add matching entries; dimensions are bounded to 10\u00d710."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[10][10],b[10][10];\n    int r=(int)integer(\"Rows (1..10): \",1,10),c=(int)integer(\"Columns (1..10): \",1,10);\n    puts(\"First matrix, then second matrix:\");\n    for(int i=0;i<r;i++) for(int j=0;j<c;j++) a[i][j]=integer(\"\",-1000000,1000000);\n    for(int i=0;i<r;i++) for(int j=0;j<c;j++) b[i][j]=integer(\"\",-1000000,1000000);\n    puts(\"Sum:\");\n    for(int i=0;i<r;i++) { for(int j=0;j<c;j++) printf(\"%lld \",a[i][j]+b[i][j]); puts(\"\"); }\n    return 0;\n}\n",
+      "test_input": "1 2 3 4 5 6\n",
+      "expected": "8 10"
+    },
+    {
+      "id": "pps-w1-2b",
+      "number": "2b",
+      "title": "Palindrome number",
+      "question": "Write a C program and draw flowchart to test whether a given number is a palindrome.",
+      "explanation": [
+        "Use a copy to preserve the original number. This numeric interpretation ignores leading zeros and rejects negative input."
+      ],
+      "flow": [
+        "Start \u2192 read n \u2192 t=n, reverse=0 \u2192 append t%10 to reverse \u2192 t=t/10 \u2192 repeat while t>0 \u2192 compare reverse and n \u2192 print \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long n=integer(\"Number (0..1000000000): \",0,1000000000),t=n,reverse=0;\n    do { reverse=reverse*10+t%10; t/=10; } while(t);\n    puts(n==reverse ? \"Palindrome\" : \"Not palindrome\");\n    return 0;\n}\n",
+      "test_input": "1221\n",
+      "expected": "Palindrome"
+    },
+    {
+      "id": "pps-w1-2c",
+      "number": "2c",
+      "title": "Quadratic roots",
+      "question": "Write a C program to find the roots of a quadratic equation using an else-if ladder.",
+      "explanation": [
+        "The discriminant separates two real, repeated and complex roots. Handle a=0 as a linear/degenerate equation. The q formula reduces cancellation for distinct real roots. Near-zero discriminants remain subject to floating-point rounding.",
+        "For this bounded classroom implementation, nonzero coefficients must have magnitude from 10\u207b\u2076 through 10\u2076; this avoids unrepresentable roots from tiny coefficients."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nint main(void) {\n    double a,b,c;\n    printf(\"a b c (absolute value <= 1000000): \");\n    if(scanf(\"%lf%lf%lf\",&a,&b,&c)!=3 || !isfinite(a)||!isfinite(b)||!isfinite(c)||fabs(a)>1e6||fabs(b)>1e6||fabs(c)>1e6) return 1;\n    if ((a!=0 && fabs(a)<1e-6)||(b!=0 && fabs(b)<1e-6)||(c!=0 && fabs(c)<1e-6)) { puts(\"Nonzero coefficients must have magnitude at least 0.000001.\"); return 1; }\n    if(a==0) {\n        if(b!=0) printf(\"Linear root: %.10g\\n\",-c/b);\n        else if(c==0) puts(\"Infinitely many solutions.\");\n        else puts(\"No solution.\");\n    } else {\n        double d=b*b-4*a*c;\n        if(d>0) { double q=-0.5*(b+copysign(sqrt(d),b)); printf(\"Roots: %.10g %.10g\\n\",q/a,c/q); }\n        else if(d==0) printf(\"Repeated root: %.10g\\n\",-b/(2*a));\n        else printf(\"Complex roots: %.10g + %.10gi and %.10g - %.10gi\\n\",-b/(2*a),sqrt(-d)/(2*fabs(a)),-b/(2*a),sqrt(-d)/(2*fabs(a)));\n    }\n    return 0;\n}\n",
+      "test_input": "1 -3 2\n",
+      "expected": "Roots: 2 1"
+    },
+    {
+      "id": "pps-w1-3a",
+      "number": "3a",
+      "title": "Fibonacci up to a limit",
+      "question": "Write a C program and draw flowchart to print Fibonacci series up to a given number.",
+      "explanation": [
+        "Interpret \u201cup to a given number\u201d as a maximum term value, not a count of terms. Include both occurrences of 1. The 10\u2079 bound keeps addition safely inside long long."
+      ],
+      "flow": [
+        "Start \u2192 read limit \u2192 a=0,b=1 \u2192 while a\u2264limit print a and update (a,b)=(b,a+b) using a temporary \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long limit=integer(\"Largest permitted value (0..1000000000): \",0,1000000000),a=0,b=1;\n    while(a<=limit) { printf(\"%lld \",a); long long next=a+b; a=b; b=next; }\n    puts(\"\");\n    return 0;\n}\n",
+      "test_input": "10\n",
+      "expected": "0 1 1 2 3 5 8"
+    },
+    {
+      "id": "pps-w1-3b",
+      "number": "3b",
+      "title": "String length without library",
+      "question": "Write a C program to find string length without a library function.",
+      "explanation": [
+        "Count characters until newline or the null terminator; do not count the newline. Length here counts bytes, not Unicode characters."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nint main(void) {\n    char a[102];\n    printf(\"String (at most 100 characters): \");\n    if(!fgets(a,sizeof a,stdin)) return 1;\n    size_t n=0; while(a[n] && a[n]!='\\n') n++;\n    if(n>100 || (a[n]!='\\n' && !feof(stdin))) { puts(\"Input too long.\"); return 1; }\n    a[n]='\\0';\n    printf(\"Length: %zu\\n\",n);\n    return 0;\n}\n",
+      "test_input": "hello world\n",
+      "expected": "Length: 11"
+    },
+    {
+      "id": "pps-w1-3c",
+      "number": "3c",
+      "title": "Matrix multiplication",
+      "question": "Write a C program to multiply two matrices.",
+      "explanation": [
+        "Require A columns=B rows. Compute each output entry as a row\u2013column dot product. Bounded entries/dimensions prevent long long overflow."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[10][10],b[10][10],sum;\n    int r=(int)integer(\"A rows: \",1,10),k=(int)integer(\"A columns: \",1,10);\n    int br=(int)integer(\"B rows: \",1,10),c=(int)integer(\"B columns: \",1,10);\n    if(k!=br) { puts(\"Incompatible dimensions.\"); return 1; }\n    puts(\"A entries, then B entries:\");\n    for(int i=0;i<r;i++) for(int j=0;j<k;j++) a[i][j]=integer(\"\",-1000000,1000000);\n    for(int i=0;i<k;i++) for(int j=0;j<c;j++) b[i][j]=integer(\"\",-1000000,1000000);\n    puts(\"Product:\");\n    for(int i=0;i<r;i++) { for(int j=0;j<c;j++) { sum=0; for(int h=0;h<k;h++) sum+=a[i][h]*b[h][j]; printf(\"%lld \",sum); } puts(\"\"); }\n    return 0;\n}\n",
+      "test_input": "1 2 2 1 2 3 4 5\n",
+      "expected": "23"
+    },
+    {
+      "id": "pps-w1-4a",
+      "number": "4a",
+      "title": "Array maximum",
+      "question": "Write a C program to find the maximum number in a given array.",
+      "explanation": [
+        "Initialise with the first element so all-negative arrays work."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[100];\n    int n=(int)integer(\"Number of elements (1..100): \",1,100);\n    for(int i=0;i<n;i++) a[i]=integer(\"\",-1000000,1000000);\n    long long maximum=a[0]; for(int i=1;i<n;i++) if(a[i]>maximum) maximum=a[i];\n    printf(\"Maximum: %lld\\n\",maximum);\n    return 0;\n}\n",
+      "test_input": "3 -8 -2 -5\n",
+      "expected": "Maximum: -2"
+    },
+    {
+      "id": "pps-w1-4b",
+      "number": "4b",
+      "title": "Concatenate without library",
+      "question": "Write a C program to concatenate two strings without library functions.",
+      "explanation": [
+        "Copy the second string after the first and append a null terminator. The destination has room for both 100-character lines. No strlen/strcat/strcpy is used."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nint main(void) {\n    char a[202],b[102]; size_t i=0,j=0;\n    puts(\"Enter two lines (at most 100 characters each):\");\n    if(!fgets(a,102,stdin)) return 1;\n    while(a[i] && a[i]!='\\n') i++;\n    if(i>100 || a[i]!='\\n') return 1;\n    a[i]=0;\n    if(!fgets(b,sizeof b,stdin)) return 1;\n    while(b[j] && b[j]!='\\n') j++;\n    if(j>100 || b[j]!='\\n') return 1;\n    b[j]=0;\n    for(j=0;b[j];j++) a[i+j]=b[j];\n    a[i+j]=0; printf(\"Combined: %s\\n\",a);\n    return 0;\n}\n",
+      "test_input": "hello\n world\n",
+      "expected": "Combined: hello world"
+    },
+    {
+      "id": "pps-w1-4c",
+      "number": "4c",
+      "title": "Linear search",
+      "question": "Write a C program and draw flowchart to implement linear search.",
+      "explanation": [
+        "Scan left to right and return the first matching position, numbered from 1."
+      ],
+      "flow": [
+        "Start \u2192 read array and target \u2192 i=0 \u2192 compare a[i] \u2192 if equal print i+1 and stop \u2192 increment i \u2192 repeat until i=n \u2192 print not found \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[100];\n    int n=(int)integer(\"Number of elements (1..100): \",1,100);\n    for(int i=0;i<n;i++) a[i]=integer(\"\",-1000000,1000000);\n    long long target=integer(\"Target: \",-1000000,1000000); int found=-1;\n    for(int i=0;i<n;i++) if(a[i]==target) { found=i; break; }\n    if(found<0) puts(\"Not found\"); else printf(\"Found at position %d\\n\",found+1);\n    return 0;\n}\n",
+      "test_input": "3 4 7 7 7\n",
+      "expected": "Found at position 2"
+    },
+    {
+      "id": "pps-w1-5a",
+      "number": "5a",
+      "title": "Perfect number",
+      "question": "Write a C program and draw flowchart to test whether a number is perfect.",
+      "explanation": [
+        "A positive perfect number equals the sum of its proper positive divisors. For 1 the sum is zero."
+      ],
+      "flow": [
+        "Start \u2192 read positive n \u2192 sum=0,d=1 \u2192 while d\u2264n/2 add d if it divides n \u2192 increment d \u2192 compare sum=n \u2192 print \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long n=integer(\"Positive number (1..1000000): \",1,1000000),sum=0;\n    for(long long d=1;d<=n/2;d++) if(n%d==0) sum+=d;\n    puts(sum==n ? \"Perfect\" : \"Not perfect\");\n    return 0;\n}\n",
+      "test_input": "28\n",
+      "expected": "Perfect"
+    },
+    {
+      "id": "pps-w1-5b",
+      "number": "5b",
+      "title": "Binary search",
+      "question": "Write a C program to implement binary search.",
+      "explanation": [
+        "Requires ascending sorted input; reject unsorted arrays. Each comparison halves the search interval. With duplicates, any matching position may be returned."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[100];\n    int n=(int)integer(\"Number of elements (1..100): \",1,100);\n    for(int i=0;i<n;i++) a[i]=integer(\"\",-1000000,1000000);\n    for(int i=1;i<n;i++) if(a[i]<a[i-1]) { puts(\"Array must be sorted ascending.\"); return 1; }\n    long long target=integer(\"Target: \",-1000000,1000000); int left=0,right=n-1,found=-1;\n    while(left<=right) { int mid=left+(right-left)/2; if(a[mid]==target) { found=mid; break; } if(a[mid]<target) left=mid+1; else right=mid-1; }\n    if(found<0) puts(\"Not found\"); else printf(\"Found at position %d\\n\",found+1);\n    return 0;\n}\n",
+      "test_input": "4 1 3 5 7 5\n",
+      "expected": "Found at position 3"
+    },
+    {
+      "id": "pps-w1-5c",
+      "number": "5c",
+      "title": "Average marks using arrays",
+      "question": "Write a C program to find average marks for n subjects for one student using arrays.",
+      "explanation": [
+        "Assume all subjects are marked out of 100. Use double division and reject zero subjects."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    double marks[100],sum=0;\n    int n=(int)integer(\"Subjects (1..100): \",1,100);\n    for(int i=0;i<n;i++) { printf(\"Mark %d (0..100): \",i+1); if(scanf(\"%lf\",&marks[i])!=1||!isfinite(marks[i])||marks[i]<0||marks[i]>100) return 1; sum+=marks[i]; }\n    printf(\"Average: %.2f\\n\",sum/n);\n    return 0;\n}\n",
+      "test_input": "3 70 80 90\n",
+      "expected": "Average: 80.00"
+    },
+    {
+      "id": "pps-w1-6a",
+      "number": "6a",
+      "title": "Prime number",
+      "question": "Write a C program and draw flowchart to test whether a number is prime.",
+      "explanation": [
+        "A prime is an integer greater than 1 with no divisor from 2 through \u221an. The test d\u2264n/d avoids computing d*d."
+      ],
+      "flow": [
+        "Start \u2192 read n \u2192 if n<2 print not prime \u2192 otherwise try divisors d=2 while d\u2264n/d \u2192 if divisible print not prime \u2192 if none print prime \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long n=integer(\"Number (0..1000000000): \",0,1000000000); int prime=n>=2;\n    for(long long d=2;prime && d<=n/d;d++) if(n%d==0) prime=0;\n    puts(prime ? \"Prime\" : \"Not prime\");\n    return 0;\n}\n",
+      "test_input": "97\n",
+      "expected": "Prime"
+    },
+    {
+      "id": "pps-w1-6b",
+      "number": "6b",
+      "title": "Compare strings with library",
+      "question": "Write a C program to compare two strings using a library function.",
+      "explanation": [
+        "strcmp returns a negative value, zero or a positive value. Do not assume it returns exactly \u22121 or 1. Comparison is case-sensitive byte order."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nint main(void) {\n    char a[102],b[102];\n    puts(\"Enter two lines, each at most 100 characters:\");\n    if(!fgets(a,sizeof a,stdin)||!strchr(a,'\\n')||!fgets(b,sizeof b,stdin)||!strchr(b,'\\n')) { puts(\"Missing newline or input too long.\"); return 1; }\n    a[strcspn(a,\"\\n\")]=0; b[strcspn(b,\"\\n\")]=0;\n    int c=strcmp(a,b); puts(c==0 ? \"Equal\" : c<0 ? \"First precedes second\" : \"First follows second\");\n    return 0;\n}\n",
+      "test_input": "apple\nbanana\n",
+      "expected": "First precedes second"
+    },
+    {
+      "id": "pps-w1-6c",
+      "number": "6c",
+      "title": "Selection sort",
+      "question": "Write a C program to sort array elements using selection sort.",
+      "explanation": [
+        "Select the smallest remaining element and swap it into the next position. Sorting is ascending; at most 100 bounded integer elements."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[100];\n    int n=(int)integer(\"Number of elements (1..100): \",1,100);\n    for(int i=0;i<n;i++) a[i]=integer(\"\",-1000000,1000000);\n    for(int i=0;i<n-1;i++) { int m=i; for(int j=i+1;j<n;j++) if(a[j]<a[m]) m=j; long long t=a[i]; a[i]=a[m]; a[m]=t; }\n    puts(\"Sorted:\"); for(int i=0;i<n;i++) printf(\"%lld \",a[i]); puts(\"\");\n    return 0;\n}\n",
+      "test_input": "5 3 -1 3 0 9\n",
+      "expected": "-1 0 3 3 9"
+    },
+    {
+      "id": "pps-w1-7a",
+      "number": "7a",
+      "title": "Sum of 1D array",
+      "question": "Write a C program and draw flowchart to sum a 1D array.",
+      "explanation": [
+        "Use long long for the accumulated sum. With these bounds its magnitude is at most 100 million."
+      ],
+      "flow": [
+        "Start \u2192 read n and array \u2192 sum=0,i=0 \u2192 while i<n add a[i] and increment i \u2192 print sum \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[100];\n    int n=(int)integer(\"Number of elements (1..100): \",1,100);\n    for(int i=0;i<n;i++) a[i]=integer(\"\",-1000000,1000000);\n    long long sum=0; for(int i=0;i<n;i++) sum+=a[i]; printf(\"Sum: %lld\\n\",sum);\n    return 0;\n}\n",
+      "test_input": "3 -2 5 9\n",
+      "expected": "Sum: 12"
+    },
+    {
+      "id": "pps-w1-7b",
+      "number": "7b",
+      "title": "Greatest using nested if\u2013else",
+      "question": "Write a C program to find greatest among three numbers using nested if\u2013else.",
+      "explanation": [
+        "Nested comparisons explicitly choose between a/b first and then compare the larger one with c. Ties are valid."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a=integer(\"a: \",-1000000,1000000),b=integer(\"b: \",-1000000,1000000),c=integer(\"c: \",-1000000,1000000),m;\n    if(a>=b) { if(a>=c) m=a; else m=c; }\n    else { if(b>=c) m=b; else m=c; }\n    printf(\"Greatest: %lld\\n\",m);\n    return 0;\n}\n",
+      "test_input": "9 9 2\n",
+      "expected": "Greatest: 9"
+    },
+    {
+      "id": "pps-w1-7c",
+      "number": "7c",
+      "title": "Insertion sort",
+      "question": "Write a C program to sort array elements using insertion sort.",
+      "explanation": [
+        "Insert each element into the already sorted prefix by shifting larger elements right. Sorting is ascending; at most 100 bounded integer elements."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[100];\n    int n=(int)integer(\"Number of elements (1..100): \",1,100);\n    for(int i=0;i<n;i++) a[i]=integer(\"\",-1000000,1000000);\n    for(int i=1;i<n;i++) { long long key=a[i]; int j=i-1; while(j>=0 && a[j]>key) { a[j+1]=a[j]; --j; } a[j+1]=key; }\n    puts(\"Sorted:\"); for(int i=0;i<n;i++) printf(\"%lld \",a[i]); puts(\"\");\n    return 0;\n}\n",
+      "test_input": "5 3 -1 3 0 9\n",
+      "expected": "-1 0 3 3 9"
+    },
+    {
+      "id": "pps-w1-8a",
+      "number": "8a",
+      "title": "Factorial",
+      "question": "Write a C program and draw flowchart to find factorial of a number.",
+      "explanation": [
+        "0!=1. Restrict n to 20, whose factorial fits in unsigned long long on standard-conforming implementations."
+      ],
+      "flow": [
+        "Start \u2192 read 0\u2264n\u226420 \u2192 f=1 \u2192 for i=2..n set f=f*i \u2192 print f \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    int n=(int)integer(\"Number (0..20): \",0,20); unsigned long long f=1;\n    for(int i=2;i<=n;i++) f*=(unsigned)i;\n    printf(\"Factorial: %llu\\n\",f);\n    return 0;\n}\n",
+      "test_input": "5\n",
+      "expected": "Factorial: 120"
+    },
+    {
+      "id": "pps-w1-8b",
+      "number": "8b",
+      "title": "Bubble sort",
+      "question": "Write a C program to sort array elements using bubble sort.",
+      "explanation": [
+        "Swap adjacent out-of-order elements; stop early if a pass makes no swaps. Sorting is ascending; at most 100 bounded integer elements."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[100];\n    int n=(int)integer(\"Number of elements (1..100): \",1,100);\n    for(int i=0;i<n;i++) a[i]=integer(\"\",-1000000,1000000);\n    for(int end=n-1;end>0;end--) { int swapped=0; for(int j=0;j<end;j++) if(a[j]>a[j+1]) { long long t=a[j]; a[j]=a[j+1]; a[j+1]=t; swapped=1; } if(!swapped) break; }\n    puts(\"Sorted:\"); for(int i=0;i<n;i++) printf(\"%lld \",a[i]); puts(\"\");\n    return 0;\n}\n",
+      "test_input": "5 3 -1 3 0 9\n",
+      "expected": "-1 0 3 3 9"
+    },
+    {
+      "id": "pps-w1-8c",
+      "number": "8c",
+      "title": "Row sums",
+      "question": "Write a C program to find the sum of each row of a 2D array.",
+      "explanation": [
+        "Reset the sum at the beginning of each row. Rectangular matrices are allowed."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[10][10]; int rows=(int)integer(\"Rows: \",1,10),cols=(int)integer(\"Columns: \",1,10);\n    for(int i=0;i<rows;i++) for(int j=0;j<cols;j++) a[i][j]=integer(\"\",-1000000,1000000);\n    for(int i=0;i<rows;i++) { long long sum=0; for(int j=0;j<cols;j++) sum+=a[i][j]; printf(\"Row %d sum: %lld\\n\",i+1,sum); }\n    return 0;\n}\n",
+      "test_input": "2 2 1 2 3 4\n",
+      "expected": "Row 2 sum: 7"
+    },
+    {
+      "id": "pps-w1-9a",
+      "number": "9a",
+      "title": "Diagonal elements",
+      "question": "Write a C program and draw flowchart to print diagonal elements of a 2D array.",
+      "explanation": [
+        "The source does not specify which diagonal: this solution prints both diagonals of a square matrix, labelled separately. The centre appears in both lists for odd order."
+      ],
+      "flow": [
+        "Start \u2192 read square matrix \u2192 for i=0..n\u22121 print a[i][i] \u2192 for i=0..n\u22121 print a[i][n\u22121\u2212i] \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[10][10]; int rows=(int)integer(\"Rows: \",1,10),cols=(int)integer(\"Columns: \",1,10);\n    for(int i=0;i<rows;i++) for(int j=0;j<cols;j++) a[i][j]=integer(\"\",-1000000,1000000);\n    if(rows!=cols) { puts(\"A square matrix is required.\"); return 1; }\n    puts(\"Main diagonal:\"); for(int i=0;i<rows;i++) printf(\"%lld \",a[i][i]);\n    puts(\"\\nSecondary diagonal:\"); for(int i=0;i<rows;i++) printf(\"%lld \",a[i][rows-1-i]); puts(\"\");\n    return 0;\n}\n",
+      "test_input": "2 2 1 2 3 4\n",
+      "expected": "Main diagonal:\n1 4"
+    },
+    {
+      "id": "pps-w1-9b",
+      "number": "9b",
+      "title": "Star pyramid",
+      "question": "Write a C program to print a pyramid of * up to the given number.",
+      "explanation": [
+        "Interpret the number as a row count; row i has n\u2212i spaces and 2i\u22121 stars."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    int n=(int)integer(\"Rows (1..50): \",1,50);\n    for(int i=1;i<=n;i++) { for(int j=0;j<n-i;j++) putchar(' '); for(int j=0;j<2*i-1;j++) putchar('*'); putchar('\\n'); }\n    return 0;\n}\n",
+      "test_input": "3\n",
+      "expected": "  *\n ***\n*****"
+    },
+    {
+      "id": "pps-w1-9c",
+      "number": "9c",
+      "title": "String copy without library",
+      "question": "Write a C program to copy a string without library functions.",
+      "explanation": [
+        "Copy characters through and including the null terminator. The destination holds all permitted input plus its terminator."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nint main(void) {\n    char a[102];\n    printf(\"String (at most 100 characters): \");\n    if(!fgets(a,sizeof a,stdin)) return 1;\n    size_t n=0; while(a[n] && a[n]!='\\n') n++;\n    if(n>100 || (a[n]!='\\n' && !feof(stdin))) { puts(\"Input too long.\"); return 1; }\n    a[n]='\\0';\n    char copy[101]; size_t i=0;\n    do { copy[i]=a[i]; } while(a[i++]);\n    printf(\"Copy: %s\\n\",copy);\n    return 0;\n}\n",
+      "test_input": "hello world\n",
+      "expected": "Copy: hello world"
+    },
+    {
+      "id": "pps-w1-10a",
+      "number": "10a",
+      "title": "Upper triangular values",
+      "question": "Write a C program to print upper triangular values of a 2D matrix.",
+      "explanation": [
+        "For a square matrix, include the main diagonal and entries with column\u2265row. Blanks below the diagonal show the original positions."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long a[10][10]; int rows=(int)integer(\"Rows: \",1,10),cols=(int)integer(\"Columns: \",1,10);\n    for(int i=0;i<rows;i++) for(int j=0;j<cols;j++) a[i][j]=integer(\"\",-1000000,1000000);\n    if(rows!=cols) { puts(\"A square matrix is required.\"); return 1; }\n    for(int i=0;i<rows;i++) { for(int j=0;j<cols;j++) { if(j>=i) printf(\"%lld \",a[i][j]); else printf(\"  \"); } puts(\"\"); }\n    return 0;\n}\n",
+      "test_input": "2 2 1 2 3 4\n",
+      "expected": "1 2"
+    },
+    {
+      "id": "pps-w1-10b",
+      "number": "10b",
+      "title": "Four string library functions",
+      "question": "Write a C program using at least four string library functions.",
+      "explanation": [
+        "Demonstrate strlen, strcpy, strcat and strcmp. Each input is at most 100 bytes, and the 202-byte destination is large enough for both plus a terminator."
+      ],
+      "flow": [],
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nint main(void) {\n    char a[102],b[102];\n    puts(\"Enter two lines, each at most 100 characters:\");\n    if(!fgets(a,sizeof a,stdin)||!strchr(a,'\\n')||!fgets(b,sizeof b,stdin)||!strchr(b,'\\n')) { puts(\"Missing newline or input too long.\"); return 1; }\n    a[strcspn(a,\"\\n\")]=0; b[strcspn(b,\"\\n\")]=0;\n    char copy[202];\n    printf(\"Lengths: %zu %zu\\n\",strlen(a),strlen(b));\n    strcpy(copy,a);\n    printf(\"Copied: %s\\n\",copy);\n    strcat(copy,b);\n    printf(\"Joined: %s\\n\",copy);\n    int c=strcmp(a,b); printf(\"Comparison sign: %d\\n\",(c>0)-(c<0));\n    return 0;\n}\n",
+      "test_input": "cat\ndog\n",
+      "expected": "Joined: catdog"
+    },
+    {
+      "id": "pps-w1-10c",
+      "number": "10c",
+      "title": "Reverse a number",
+      "question": "Write a C program and draw flowchart to print the reverse of a number.",
+      "explanation": [
+        "This is numeric reversal of a nonnegative integer, so leading zeros of the reversed representation are discarded: 1200 becomes 21."
+      ],
+      "flow": [
+        "Start \u2192 read n \u2192 reverse=0 \u2192 append n%10 \u2192 n=n/10 \u2192 repeat until n=0 \u2192 print reverse \u2192 stop."
+      ],
+      "code": "#include <stdio.h>\n#include <math.h>\n#include <string.h>\n#include <limits.h>\n#include <stdlib.h>\n\n/* Read an integer only after checking its range, before conversion. */\nlong long integer(const char *prompt, long long low, long long high) {\n    double value;\n    printf(\"%s\", prompt);\n    if (scanf(\"%lf\", &value) != 1 || !isfinite(value) ||\n        value < (double)low || value > (double)high || floor(value) != value) {\n        puts(\"Invalid input or value outside allowed range.\");\n        exit(EXIT_FAILURE);\n    }\n    return (long long)value;\n}\nint main(void) {\n    long long n=integer(\"Number (0..1000000000): \",0,1000000000),reverse=0;\n    do { reverse=reverse*10+n%10; n/=10; } while(n);\n    printf(\"Reverse: %lld\\n\",reverse);\n    return 0;\n}\n",
+      "test_input": "1200\n",
+      "expected": "Reverse: 21"
+    }
+  ]
+}
