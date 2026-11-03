@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', async () => {
    const pre=document.createElement('pre'),code=document.createElement('code');code.className='language-c';code.textContent=problem.code;pre.append(code);answer.append(pre);
    const sample=document.createElement('h3');sample.textContent='Example input';answer.append(sample);
    const input=document.createElement('pre');input.textContent=problem.test_input;answer.append(input);
-   const result=document.createElement('p');result.textContent='Expected result (prompts omitted): '+problem.expected;answer.append(result);
+   const outputLabel=document.createElement('h3');outputLabel.textContent='Expected result (prompts omitted)';answer.append(outputLabel);
+   const result=document.createElement('pre');result.textContent=problem.expected;answer.append(result);
   }
   ui.initAccordions(content);
   const panel=page.querySelector('.programming-nav');
