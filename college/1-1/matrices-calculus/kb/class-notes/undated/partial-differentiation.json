@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "id": "partial-differentiation",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-PARTIAL-DIFFERENTIATION",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 4,
+    "title": "Partial Differentiation and Its Applications"
+  },
+  "title": "Functions, continuity, partials and chain rule",
+  "summary": "The first page contains a cropped date ending /10/26; the day is not legible, so no calendar date has been assigned.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    65,
+    66,
+    67
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u4-multivariable-limit-continuity",
+      "label": "Definitions of Limit and continuity",
+      "href": "college/1-1/matrices-calculus/unit-4.html#u4-multivariable-limit-continuity"
+    },
+    {
+      "topic_id": "u4-partial-differentiation",
+      "label": "Partial Differentiation",
+      "href": "college/1-1/matrices-calculus/unit-4.html#u4-partial-differentiation"
+    },
+    {
+      "topic_id": "u4-total-derivative",
+      "label": "Total derivative",
+      "href": "college/1-1/matrices-calculus/unit-4.html#u4-total-derivative"
+    }
+  ],
+  "pages": [
+    {
+      "page": 65,
+      "heading": "Functions, continuity, partials and chain rule",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A function z=f(x,y) assigns a value to each allowed pair (x,y). Its limit at (a,b) must be independent of the path of approach. Continuity means that this limit equals f(a,b)."
+        },
+        {
+          "type": "paragraph",
+          "text": "The partial derivative \\(u_x\\) differentiates in x with the other independent variables fixed; \\(u_y\\) differentiates in y. The second derivatives are \\(u_{xx},u_{xy},u_{yx},u_{yy}\\). For three variables there are nine ordered second derivatives."
+        },
+        {
+          "type": "equation",
+          "text": "\\[u_x=\\lim_{h\\to0}\\dfrac{f(x+h,y)-f(x,y)}h,\\qquad u_y=\\lim_{k\\to0}\\dfrac{f(x,y+k)-f(x,y)}k.\\]"
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-mixed-partials",
+              "title": "Equality of mixed partials",
+              "question_paragraphs": [
+                "When can the order of mixed partial differentiation be interchanged?"
+              ],
+              "paragraphs": [
+                "A standard sufficient condition is that both mixed second partial derivatives exist and are continuous in a neighbourhood of the point. Then \\(u_{xy}=u_{yx}\\).",
+                "Continuity of u alone does not even guarantee first derivatives. For instance u=|x| is continuous but not differentiable in x at zero."
+              ],
+              "final_answer": "Use continuity of the mixed second derivatives as the sufficient condition.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ],
+              "math_mismatch": {
+                "label": "Notebook hypothesis discrepancy",
+                "message": "The notebook states this for “any continuous function”. Continuity of the function alone is insufficient; the usual sufficient hypothesis concerns its mixed second partial derivatives."
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "If \\(u=f(x,y)\\), \\(x=x(t),y=y(t)\\), then \\(du/dt=u_xx\\prime(t)+u_yy\\prime(t)\\). If x and y depend on parameters s,t, then \\(u_s=u_xx_s+u_yy_s\\), \\(u_t=u_xx_t+u_yy_t\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "The total differential is \\(du=u_xdx+u_ydy\\), or with three variables add \\(u_zdz\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "For the notebook’s composite function \\(u=u(r,s,t)\\), where r,s,t depend on x,y,z, \\(u_x=u_rr_x+u_ss_x+u_tt_x\\), \\(u_y=u_rr_y+u_ss_y+u_tt_y\\), \\(u_z=u_rr_z+u_ss_z+u_tt_z\\). Here a subscript denotes a partial derivative; products such as \\(u_rr_x\\) mean \\((\\partial u/\\partial r)(\\partial r/\\partial x)\\)."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{du}{dt}=u_x\\dfrac{dx}{dt}+u_y\\dfrac{dy}{dt}+u_z\\dfrac{dz}{dt},\\qquad du=u_xdx+u_ydy+u_zdz.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "A homogeneous function satisfies \\(f(kx,ky)=k^nf(x,y)\\). For example \\(x^2y+xy^2\\) has degree three."
+        }
+      ]
+    }
+  ]
+}

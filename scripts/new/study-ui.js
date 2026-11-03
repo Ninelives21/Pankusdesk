@@ -134,7 +134,13 @@ function renderExampleSolutionContent(item, solutionParagraphs) {
 		.filter(explainer => explainer?.after?.type === hook && Number(explainer.after.index) === index)
 		.map(explainer => renderExplainer(explainer))
 		.join('');
-	let html = figures
+	let html = (item.solution_parts || []).map(part => `
+		<section class="study-solution-part">
+			<h4>${escapeHtml(part.label || '')}</h4>
+			${renderExampleSolutionContent(part, part.paragraphs || [])}
+			${part.final_answer ? `<p><strong>${formatText(part.final_answer)}</strong></p>` : ''}
+		</section>`).join('');
+	html += figures
 		.filter(figure => !anchored.has(figure.src))
 		.map(fig => renderFigure(fig))
 		.join('');

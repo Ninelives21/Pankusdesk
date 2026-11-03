@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "curve-strophoid",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-CURVE-STROPHOID",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Tracing the strophoid",
+  "summary": "Tracing the strophoid. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    57,
+    58,
+    59
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-curve-tracing-cartesian",
+      "label": "Curve tracing in cartesian coordinates",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-curve-tracing-cartesian"
+    }
+  ],
+  "pages": [
+    {
+      "page": 57,
+      "heading": "Tracing the strophoid",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-curve-strophoid",
+              "title": "Strophoid",
+              "question_paragraphs": [
+                "Trace \\(y^2(a+x)=x^2(3a-x)\\), \\(a>0\\)."
+              ],
+              "paragraphs": [
+                "The curve is symmetric about the x-axis. At the origin its lowest-degree equation is \\(ay^2=3ax^2\\), so the tangents are \\(y=\\pm\\sqrt3x\\): the origin is a node.",
+                "Putting y=0 gives x=0 or x=3a. The factor (a+x) in the denominator of \\(y^2=x^2(3a-x)/(a+x)\\) gives the vertical asymptote x=−a. Real points require \\(-a<x\\le3a\\).",
+                "Implicit differentiation gives \\(2y(a+x)y\\prime+y^2=6ax-3x^2\\). Substitute the value of y² and simplify:",
+                "\\[y\\prime=\\dfrac{x(3a^2-x^2)}{y(a+x)^2}.\\]",
+                "On the upper loop branch, y′>0 for \\(0<x<\\sqrt3a\\), and y′<0 for \\(\\sqrt3a<x<3a\\); reflect in the x-axis for the lower loop. At (3a,0) the tangent is vertical. For −a<x<0 the upper branch decreases toward the node and the lower branch is its reflection."
+              ],
+              "final_answer": "A loop lies between x=0 and x=3a, with two unbounded branches approaching x=−a.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "figures": [
+                {
+                  "id": "class-strophoid",
+                  "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-strophoid-ros.webp",
+                  "alt": "Notebook tracing of y squared times (a+x) equals x squared times (3a−x)",
+                  "caption": "Notebook tracing of y squared times (a+x) equals x squared times (3a−x) — ROS: unchanged source crop.",
+                  "kind": "class-note",
+                  "size": "medium",
+                  "width": 1256,
+                  "height": 488
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

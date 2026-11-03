@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "id": "lagrange-mvt",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-LAGRANGE-MVT",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Lagrange’s mean-value theorem",
+  "summary": "Lagrange’s mean-value theorem. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-lagrange-mvt",
+      "label": "Lagrange’s Mean Value Theorem (without proof)",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-lagrange-mvt"
+    },
+    {
+      "topic_id": "u3-lagrange-geometric-applications",
+      "label": "Geometrical interpretation and applications of Lagrange’s Mean Value Theorem",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-lagrange-geometric-applications"
+    }
+  ],
+  "pages": [
+    {
+      "page": 33,
+      "heading": "Lagrange’s mean-value theorem",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If f is continuous on \\([a,b]\\) and differentiable on \\((a,b)\\), there exists \\(c\\in(a,b)\\) such that \\(f\\prime(c)=[f(b)-f(a)]/(b-a)\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "An interior tangent is parallel to the chord through the two endpoints."
+        },
+        {
+          "id": "class-lagrange",
+          "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-lagrange-ros.webp",
+          "alt": "Lagrange’s theorem: an interior tangent parallel to the endpoint chord",
+          "caption": "Lagrange’s theorem: an interior tangent parallel to the endpoint chord — ROS: unchanged source crop.",
+          "kind": "class-note",
+          "size": "medium",
+          "width": 447,
+          "height": 349,
+          "type": "figure"
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-lmvt-arctan",
+              "title": "Bounds for inverse tangent",
+              "question_paragraphs": [
+                "For \\(0<a<b\\), prove \\(\\dfrac{b-a}{1+b^2}<\\tan^{-1}b-\\tan^{-1}a<\\dfrac{b-a}{1+a^2}\\). Deduce bounds for \\(\\tan^{-1}(4/3)\\) and \\(\\tan^{-1}2\\)."
+              ],
+              "paragraphs": [
+                "Apply LMVT to \\(f(x)=\\tan^{-1}x\\): the difference is \\((b-a)/(1+c^2)\\), with \\(a<c<b\\). Since the derivative decreases for positive x, it lies strictly between the endpoint derivatives.",
+                "With a=1,b=4/3 the bounds are \\(\\pi/4+3/25<\\tan^{-1}(4/3)<\\pi/4+1/6\\).",
+                "With a=1,b=2 they become \\(\\pi/4+1/5<\\tan^{-1}2<\\pi/4+1/2\\)."
+              ],
+              "final_answer": "The two inverse tangents lie between the displayed bounds.",
+              "textbook_match": {
+                "status": "near",
+                "href": "college/1-1/matrices-calculus/unit-3.html#tb-example-4-16",
+                "target": "textbook example",
+                "note": "The notebook includes the extra b=2 deduction; the textbook example includes only b=4/3."
+              }
+            },
+            {
+              "id": "class-lmvt-exp",
+              "title": "Exponential inequality",
+              "question_paragraphs": [
+                "For \\(x>0\\), prove \\(1+x<e^x<1+xe^x\\)."
+              ],
+              "paragraphs": [
+                "Apply LMVT to \\(e^t\\) on [0,x]: \\(e^x-1=xe^c\\), with \\(0<c<x\\).",
+                "Since \\(1<e^c<e^x\\), multiplication by x and addition of 1 give the two strict inequalities."
+              ],
+              "final_answer": "\\(1+x<e^x<1+xe^x\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-lmvt-log",
+              "title": "Logarithmic inequality",
+              "question_paragraphs": [
+                "For \\(0<a<b\\), prove \\(1-a/b<\\log(b/a)<b/a-1\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-3-questions.html#question-u3-p4-4-9",
+                "target": "Problems 4.4 · Q9",
+                "note": "Exact match to the inequality in Problems 4.4 Q9; the textbook additionally asks for a numerical deduction. The first part of its canonical solution answers this class prompt."
+              },
+              "solution_mode": "textbook-link",
+              "math_mismatch": {
+                "label": "Notebook reciprocal-order discrepancy",
+                "message": "One intermediate handwritten line uses 1/a<1/c<1/b after a<c<b. For positive numbers reciprocals reverse order: 1/b<1/c<1/a. The notebook’s final logarithmic bounds agree with the corrected order used in the canonical solution."
+              }
+            },
+            {
+              "id": "class-lmvt-acos",
+              "title": "Exercise: bound an inverse cosine",
+              "question_paragraphs": [
+                "Using LMVT, prove \\(\\pi/3-1/(5\\sqrt3)>\\cos^{-1}(3/5)>\\pi/3-1/8\\)."
+              ],
+              "paragraphs": [
+                "Apply LMVT to \\(f(x)=\\cos^{-1}x\\) from a=1/2 to b=3/5: \\(\\cos^{-1}(3/5)-\\pi/3=-1/[10\\sqrt{1-c^2}]\\), for \\(1/2<c<3/5\\).",
+                "The reciprocal square root increases from \\(2/\\sqrt3\\) to \\(5/4\\). Multiplication by −1/10 reverses order.",
+                "\\[-1/8<\\cos^{-1}(3/5)-\\pi/3<-1/(5\\sqrt3).\\]"
+              ],
+              "final_answer": "\\(\\pi/3-1/8<\\cos^{-1}(3/5)<\\pi/3-1/(5\\sqrt3)\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ],
+              "math_mismatch": {
+                "label": "Notebook inequality sign",
+                "message": "The handwritten upper comparison uses an equality sign. LMVT gives a strict inequality because the intermediate c is strictly between 1/2 and 3/5; the two endpoint bounds are not attained."
+              }
+            },
+            {
+              "id": "class-lmvt-sin",
+              "title": "Exercise: sine is Lipschitz",
+              "question_paragraphs": [
+                "Prove \\(|\\sin v-\\sin u|\\le|v-u|\\)."
+              ],
+              "paragraphs": [
+                "If u=v the inequality is equality. Otherwise LMVT on the interval between u and v gives \\(\\sin v-\\sin u=(v-u)\\cos c\\).",
+                "Take absolute values and use \\(|\\cos c|\\le1\\)."
+              ],
+              "final_answer": "\\(|\\sin v-\\sin u|\\le|v-u|\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "class-lmvt-failure",
+              "title": "Exercises: differentiability and missing domain value",
+              "question_paragraphs": [
+                "Can LMVT be applied to (i) \\(f(x)=|x|\\) on \\([-1,1]\\), (ii) \\(f(x)=x\\sin(1/x)\\), \\(x\\ne0\\), on \\([-1,1]\\)?"
+              ],
+              "paragraphs": [
+                "(i) f is continuous but not differentiable at zero. Its endpoint chord has slope zero, while its derivative is −1 or 1 wherever defined.",
+                "(ii) As written f has no value at zero, so the theorem cannot apply on the closed interval. Even if f(0)=0 is added to make it continuous, the derivative at zero would require \\(\\lim_{h\\to0}\\sin(1/h)\\), which does not exist."
+              ],
+              "final_answer": "Neither function satisfies all LMVT hypotheses.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

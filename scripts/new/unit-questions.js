@@ -68,8 +68,8 @@ function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
 
 		<section class="practice-source-note" aria-label="Question-bank source note">
 			<div class="practice-source-kicker">Source & solution note</div>
-			<strong>${escapeHtml(source.title || 'Prescribed textbook')}</strong>
-			<p>${escapeHtml(source.note || 'Questions are selected from the prescribed textbook. PankusDesk supplies the worked solutions.')}</p>
+			<strong>${escapeHtml(unitBank.source?.title || source.title || 'Prescribed textbook')}</strong>
+			<p>${escapeHtml(unitBank.source?.note || source.note || 'Questions are selected from the prescribed textbook. PankusDesk supplies the worked solutions.')}</p>
 		</section>
 
 		${renderQuestionSetJump(unitBank.groups || [], currentPagePath)}

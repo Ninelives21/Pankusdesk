@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "id": "multivariable-limits",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-MULTIVARIABLE-LIMITS",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 4,
+    "title": "Partial Differentiation and Its Applications"
+  },
+  "title": "Path tests for two-variable limits",
+  "summary": "Path tests for two-variable limits. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    68,
+    69,
+    70
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u4-multivariable-limit-continuity",
+      "label": "Definitions of Limit and continuity",
+      "href": "college/1-1/matrices-calculus/unit-4.html#u4-multivariable-limit-continuity"
+    }
+  ],
+  "pages": [
+    {
+      "page": 68,
+      "heading": "Path tests for two-variable limits",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A limit must agree along every admissible approach. Different path limits disprove existence. Agreement on a few paths does not prove existence."
+        },
+        {
+          "id": "class-paths",
+          "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-paths-ros.webp",
+          "alt": "Notebook sketch of different paths approaching a point",
+          "caption": "Notebook sketch of different paths approaching a point — ROS: unchanged source crop.",
+          "kind": "class-note",
+          "size": "medium",
+          "width": 892,
+          "height": 425,
+          "type": "figure"
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-limit-square-difference",
+              "title": "Different axis limits",
+              "question_paragraphs": [
+                "Discuss \\((y^2-x^2)/(x^2+y^2)\\) as \\((x,y)\\to(0,0)\\)."
+              ],
+              "paragraphs": [
+                "Along x=0 the ratio is 1. Along y=0 it is −1. Both paths approach the origin inside the punctured domain.",
+                "These two path limits disagree, so no common two-variable limit exists."
+              ],
+              "final_answer": "The limit does not exist.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-limit-ratio-squares",
+              "title": "Slope-dependent rational function",
+              "question_paragraphs": [
+                "Show that \\(xy/(y^2-x^2)\\) has no limit as \\((x,y)\\to(0,0)\\)."
+              ],
+              "paragraphs": [
+                "Along y=mx with m≠±1, \\(xy/(y^2-x^2)=mx^2/[(m^2-1)x^2]=m/(m^2-1)\\).",
+                "Taking m=0 gives zero; taking m=2 gives 2/3. These two admissible paths have different limits."
+              ],
+              "final_answer": "The limit does not exist.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-limit-two-versions",
+              "title": "Question and working use different denominators",
+              "question_paragraphs": [
+                "The notebook question is \\(f(x,y)=xy^2/(x^2+y^2)\\) at (0,0). Its working instead uses \\(g(x,y)=xy^2/(x^2+y^4)\\). Discuss both."
+              ],
+              "paragraphs": [
+                "For the question as written, \\(|xy^2/(x^2+y^2)|\\le|x|\\). As (x,y)→(0,0), the right side tends to zero, so the limit is zero by squeezing.",
+                "For the denominator used in the class working, axes give zero and the line y=mx also gives zero, but these paths do not establish existence.",
+                "Along the curved path x=my², \\(g=my^4/[(m^2+1)y^4]=m/(m^2+1)\\). For m=1 this is 1/2, disagreeing with the axis limit zero."
+              ],
+              "final_answer": "The written question has limit 0. The function used in the working has no limit.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ],
+              "math_mismatch": {
+                "label": "Notebook question/working mismatch",
+                "message": "The header writes x²+y², whereas the solution repeatedly uses x²+y⁴ and the curved path x=my². These are different functions with different answers. Both have been kept explicitly; the squeeze argument for the written question is PankusDesk verification."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/topics.schema.json",
   "$comment": "Design Lock v2: cumulative topics, class-note panels, explanation accordions and explicit Grid/anchor figure placement.",
-  "title": "PankusDesk Cumulative Topics — Design Lock v2",
+  "title": "PankusDesk Cumulative Topics \u2014 Design Lock v2",
   "type": "array",
   "items": {
     "$ref": "#/$defs/topic"
@@ -430,6 +430,31 @@
               "minLength": 1
             }
           }
+        },
+        "solution_parts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "paragraphs"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "paragraphs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": true
+          }
         }
       },
       "anyOf": [
@@ -441,6 +466,11 @@
         {
           "required": [
             "bullets"
+          ]
+        },
+        {
+          "required": [
+            "solution_parts"
           ]
         }
       ]

@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "id": "cauchy-mvt",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-CAUCHY-MVT",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Cauchy’s mean-value theorem",
+  "summary": "Cauchy’s mean-value theorem. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    38,
+    39,
+    40
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-cauchy-mvt",
+      "label": "Cauchy’s Mean Value Theorem (without proof)",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-cauchy-mvt"
+    }
+  ],
+  "pages": [
+    {
+      "page": 38,
+      "heading": "Cauchy’s mean-value theorem",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If f,g are continuous on \\([a,b]\\), differentiable on \\((a,b)\\), and \\(g\\prime\\ne0\\) there, then \\([f(b)-f(a)]/[g(b)-g(a)]=f\\prime(c)/g\\prime(c)\\) for some \\(a<c<b\\)."
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-cmvt-root",
+              "title": "Square root and reciprocal square root",
+              "question_paragraphs": [
+                "Verify CMVT for \\(f(x)=\\sqrt{x},g(x)=1/\\sqrt{x}\\), on \\([a,b]\\), \\(0<a<b\\)."
+              ],
+              "paragraphs": [
+                "The functions are continuous and differentiable on the positive interval, and \\(g\\prime(x)=-1/(2x^{3/2})\\ne0\\).",
+                "\\[\\dfrac{f(b)-f(a)}{g(b)-g(a)}=\\dfrac{\\sqrt b-\\sqrt a}{1/\\sqrt b-1/\\sqrt a}=-\\sqrt{ab}.\\]",
+                "\\(f\\prime(c)/g\\prime(c)=-c\\), so \\(c=\\sqrt{ab}\\in(a,b)\\)."
+              ],
+              "final_answer": "\\(c=\\sqrt{ab}\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "math_mismatch": {
+                "label": "Notebook theorem hypothesis",
+                "message": "The theorem list writes g′(x)=0, but the quotient formulation requires g′(x)≠0 on the open interval. The same page’s verification below correctly checks that g′ is nonzero. The statement here uses the required nonzero condition."
+              }
+            },
+            {
+              "id": "class-cmvt-log",
+              "title": "Logarithm and reciprocal",
+              "question_paragraphs": [
+                "Verify CMVT for \\(f(x)=\\log x,g(x)=1/x\\), on \\([1,e]\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-3-questions.html#question-u3-p4-4-10-ii",
+                "target": "Problems 4.4 · Q10(ii)",
+                "note": "This class question matches the indicated textbook question (or the indicated requested part). Its solution is kept once on the textbook-question page."
+              },
+              "solution_mode": "textbook-link",
+              "math_mismatch": {
+                "label": "Notebook endpoint substitutions",
+                "message": "The prompt asks for f(x)=ln x and f′(x)=1/x. Its working substitutes endpoint differences of f′ and f″ instead, so it is checking a different pair of functions. For the stated pair the canonical textbook solution uses (ln e−ln 1)/(1/e−1)=−e/(e−1), giving c=e/(e−1)."
+              }
+            },
+            {
+              "id": "class-cmvt-log-square",
+              "title": "Exercise: logarithm and square",
+              "question_paragraphs": [
+                "For \\(0<a<b\\), show that \\(\\dfrac{\\log b-\\log a}{b-a}=\\dfrac{a+b}{2c^2}\\) for some \\(a<c<b\\)."
+              ],
+              "paragraphs": [
+                "Apply CMVT to \\(f(x)=\\log x,g(x)=x^2\\). Its hypotheses hold because x>0 and \\(g\\prime(x)=2x\\ne0\\).",
+                "\\[\\dfrac{\\log b-\\log a}{b^2-a^2}=\\dfrac{1/c}{2c}=\\dfrac1{2c^2}.\\]",
+                "Multiply by \\(a+b\\), using \\(b^2-a^2=(b-a)(a+b)\\)."
+              ],
+              "final_answer": "\\((\\log b-\\log a)/(b-a)=(a+b)/(2c^2)\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "class-cmvt-reciprocals",
+              "title": "Exercise: reciprocal powers",
+              "question_paragraphs": [
+                "Verify CMVT for \\(f(x)=1/x^2,g(x)=1/x\\), on \\([a,b]\\), \\(0<a<b\\)."
+              ],
+              "paragraphs": [
+                "Both functions satisfy the hypotheses on the positive interval. The endpoint ratio is \\((1/b^2-1/a^2)/(1/b-1/a)=(a+b)/(ab)\\).",
+                "The derivative ratio is \\((-2/c^3)/(-1/c^2)=2/c\\), so \\(c=2ab/(a+b)\\).",
+                "\\(c-a=a(b-a)/(a+b)>0\\) and \\(b-c=b(b-a)/(a+b)>0\\)."
+              ],
+              "final_answer": "\\(c=2ab/(a+b)\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

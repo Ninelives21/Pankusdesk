@@ -217,7 +217,7 @@ function renderDraftNotice(context) {
 	return `
 		<section class="unit-draft-notice section" role="note" aria-label="Draft unit status">
 			<strong>Unit under construction</strong>
-			<p>The text is available for review now. Figure placeholders are intentional while the image pass is completed.</p>
+			<p>${escapeHtml(context.unitMeta.draftNotice || 'The text is available for review now. Figure placeholders are intentional while the image pass is completed.')}</p>
 		</section>
 	`;
 }

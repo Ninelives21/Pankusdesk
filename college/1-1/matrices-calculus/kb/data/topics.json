@@ -2213,17 +2213,160 @@
     "title": "Limits",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "4.5 Indeterminate forms — supplied applications",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0168",
+          "TB-P0169",
+          "TB-P0170",
+          "TB-P0171"
+        ],
+        "book_refs": [
+          {
+            "pages": "168, 169, 170, 171",
+            "note": "4.5 Indeterminate forms — supplied applications"
+          }
+        ],
+        "paragraphs": [
+          "When numerator and denominator both tend to zero, a quotient has the indeterminate form0/0. This does not mean that the limit fails to exist. Cancellation, known series or a justified derivative-ratio method can reveal a finite limit.",
+          "L’Hôpital’s rule: suppose f,g are differentiable on a punctured one-sided interval approaching a, g′ is nonzero there, and f,g both tend to zero or both have unbounded magnitude. If \\(f\\prime(x)/g\\prime(x)\\) has a finite or infinite limit L, then \\(f(x)/g(x)\\to L\\). Apply each side separately for a two-sided limit.",
+          "For the derivative-ratio method, differentiate the numerator and denominator separately, not the quotient as a whole. Repeat only while the appropriate indeterminate form and the rule’s conditions remain valid.",
+          "A product of the form zero times infinity can be rewritten as a quotient. A difference of two unbounded terms can often be combined over a common denominator. For a positive power expression \\(f(x)^{g(x)}\\), take logarithms, evaluate \\(g(x)\\log f(x)\\), then exponentiate."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-4-28",
+            "title": "Example 4.28",
+            "question_paragraphs": [
+              "Evaluate:",
+              "(i) \\(\\lim_{x\\to0}[xe^x-\\log(1+x)]/x^2\\).",
+              "(ii) \\(\\lim_{x\\to1}(x^x-x)/(x-1-\\log x)\\)."
+            ],
+            "paragraphs": [],
+            "final_answer": "(i) \\(3/2\\); (ii) 2.",
+            "solution_parts": [
+              {
+                "label": "(i)",
+                "paragraphs": [
+                  "The form is0/0. Differentiate numerator and denominator separately: \\([xe^x+e^x-1/(1+x)]/(2x)\\), still0/0.",
+                  "Differentiate again: \\([xe^x+2e^x+1/(1+x)^2]/2\\). Its limit is \\((0+2+1)/2=3/2\\)."
+                ]
+              },
+              {
+                "label": "(ii)",
+                "paragraphs": [
+                  "Use \\(d(x^x)/dx=x^x(1+\\log x)\\). One differentiation gives \\([x^x(1+\\log x)-1]/(1-1/x)\\), still0/0.",
+                  "A second differentiation gives \\(\\{x^x(1+\\log x)^2+x^x/x\\}/(1/x^2)\\), whose limit at1 is2."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tb-example-4-29",
+            "title": "Example 4.29",
+            "question_paragraphs": [
+              "Find a,b,c such that \\(\\lim_{x\\to0}[x(a+b\\cos x)-c\\sin x]/x^5=1\\)."
+            ],
+            "paragraphs": [
+              "For a finite limit, the coefficient of x in the numerator must vanish: \\(a+b-c=0\\). The cubic coefficient must also vanish: \\(-b/2+c/6=0\\), hence c=3b.",
+              "From \\(\\cos x=1-x^2/2+x^4/24+\\cdots\\) and \\(\\sin x=x-x^3/6+x^5/120+\\cdots\\), the fifth-degree coefficient is \\(b/24-c/120\\).",
+              "Substitute c=3b to get \\(b/60\\). Equate this to1: b=60, c=180, and a=c−b=120."
+            ],
+            "final_answer": "\\(a=120,b=60,c=180\\)."
+          },
+          {
+            "id": "tb-example-4-30",
+            "title": "Example 4.30",
+            "question_paragraphs": [
+              "Evaluate \\(\\lim_{x\\to0^+}\\log x/\\cot x\\)."
+            ],
+            "paragraphs": [
+              "This is an infinity-over-infinity form. Differentiating gives \\((1/x)/(-\\csc^2x)=-\\sin^2x/x\\).",
+              "The latter is0/0; differentiating gives \\(-2\\sin x\\cos x\\), whose limit is0."
+            ],
+            "final_answer": "The limit is0."
+          },
+          {
+            "id": "tb-example-4-31",
+            "title": "Example 4.31",
+            "question_paragraphs": [
+              "Evaluate \\(\\lim_{x\\to0}[e^x\\sin x-x-x^2]/[x^2+x\\log(1-x)]\\)."
+            ],
+            "paragraphs": [
+              "\\[e^x\\sin x=(1+x+x^2/2+x^3/6+\\cdots)(x-x^3/6+\\cdots)=x+x^2+x^3/3+O(x^4).\\]",
+              "\\[x^2+x\\log(1-x)=x^2+x(-x-x^2/2-x^3/3+\\cdots)=-x^3/2+O(x^4).\\]",
+              "Divide numerator and denominator by \\(x^3\\); the leading-coefficient ratio is \\((1/3)/(-1/2)\\)."
+            ],
+            "final_answer": "The limit is \\(-2/3\\).",
+            "math_mismatch": {
+              "label": "Printed limit-sign discrepancy",
+              "message": "The final printed line on p. 170 drops the minus sign in the leading denominator term and reports +2/3. The denominator is −x³/2+O(x⁴), whereas the numerator is x³/3+O(x⁴). Their ratio is −2/3."
+            }
+          },
+          {
+            "id": "tb-example-4-32",
+            "title": "Example 4.32",
+            "question_paragraphs": [
+              "Evaluate \\(\\lim_{x\\to0}[(1+x)^{1/x}-e]/x\\)."
+            ],
+            "paragraphs": [
+              "Put \\(y=(1+x)^{1/x}\\). Then \\(\\log y=\\log(1+x)/x=1-x/2+x^2/3+\\cdots\\).",
+              "\\[y=e\\exp(-x/2+x^2/3+\\cdots)=e(1-x/2+11x^2/24+\\cdots).\\]",
+              "Subtract e and divide by x: \\(e(-1/2+11x/24+\\cdots)\\)."
+            ],
+            "final_answer": "The limit is \\(-e/2\\)."
+          },
+          {
+            "id": "tb-example-4-33",
+            "title": "Example 4.33",
+            "question_paragraphs": [
+              "Evaluate \\(\\lim_{x\\to0^+}\\tan x\\log x\\)."
+            ],
+            "paragraphs": [
+              "Write the product as \\(\\log x/\\cot x\\), an infinity-over-infinity form.",
+              "Its derivative ratio is \\(-\\sin^2x/x\\). Differentiating the resulting0/0 form gives \\(-2\\sin x\\cos x\\to0\\)."
+            ],
+            "final_answer": "The limit is0."
+          },
+          {
+            "id": "tb-example-4-34",
+            "title": "Example 4.34",
+            "question_paragraphs": [
+              "Evaluate \\(\\lim_{x\\to0}(1/\\sin x-1/x)\\)."
+            ],
+            "paragraphs": [
+              "Combine the terms: \\((x-\\sin x)/(x\\sin x)\\), which is0/0.",
+              "The first derivative ratio is \\((1-\\cos x)/(\\sin x+x\\cos x)\\), again0/0.",
+              "The second derivative ratio is \\(\\sin x/(2\\cos x-x\\sin x)\\), whose limit is0/2."
+            ],
+            "final_answer": "The limit is0."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P0168",
+      "TB-P0169",
+      "TB-P0170",
+      "TB-P0171"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "168, 169, 170, 171",
+        "note": "4.5 Indeterminate forms — supplied applications"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "partial"
   },
   {
     "id": "u3-continuous-functions",
@@ -2238,7 +2381,9 @@
       "SYL-R25-U3"
     ],
     "book_refs": [],
-    "cautions": [],
+    "cautions": [
+      "The supplied textbook packet begins with mean-value theorems. Introductory single-variable limits and continuity pages are still needed."
+    ],
     "practice": null,
     "self_checks": [],
     "class_history": null
@@ -2249,17 +2394,77 @@
     "title": "Rolle’s theorem (without proof)",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "4.3 (1) Rolle’s theorem",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0157",
+          "TB-P0158"
+        ],
+        "book_refs": [
+          {
+            "pages": "157, 158",
+            "note": "4.3 (1) Rolle’s theorem"
+          }
+        ],
+        "paragraphs": [
+          "If \\(f(x)\\) is continuous on the closed interval \\([a,b]\\), differentiable at every point of \\((a,b)\\), and \\(f(a)=f(b)\\), there is at least one \\(c\\in(a,b)\\) such that \\(f\\prime(c)=0\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-4-14",
+            "title": "Example 4.14",
+            "question_paragraphs": [
+              "Verify Rolle’s theorem for:",
+              "(i) \\(f(x)=\\sin x/e^x\\) on \\([0,\\pi]\\).",
+              "(ii) \\(f(x)=(x-a)^m(x-b)^n\\), where \\(m,n\\) are positive integers, on \\([a,b]\\)."
+            ],
+            "paragraphs": [],
+            "final_answer": "(i) \\(c=\\pi/4\\); (ii) \\(c=(mb+na)/(m+n)\\).",
+            "solution_parts": [
+              {
+                "label": "(i)",
+                "paragraphs": [
+                  "\\(f(x)=e^{-x}\\sin x\\) is continuous on \\([0,\\pi]\\) and differentiable in \\((0,\\pi)\\).",
+                  "\\(f(0)=0=f(\\pi)\\), so all three hypotheses hold.",
+                  "\\[f\\prime(x)=e^{-x}(\\cos x-\\sin x).\\]",
+                  "\\(f\\prime(c)=0\\) gives \\(\\tan c=1\\). The solution in \\((0,\\pi)\\) is \\(c=\\pi/4\\)."
+                ]
+              },
+              {
+                "label": "(ii)",
+                "paragraphs": [
+                  "The function is a polynomial, so it is continuous and differentiable; \\(f(a)=0=f(b)\\).",
+                  "\\[f\\prime(x)=(x-a)^{m-1}(x-b)^{n-1}\\{m(x-b)+n(x-a)\\}.\\]",
+                  "For an interior point the first two factors are nonzero. Hence \\((m+n)c=mb+na\\), giving \\(c=(mb+na)/(m+n)\\).",
+                  "Because \\(c-a=m(b-a)/(m+n)>0\\) and \\(b-c=n(b-a)/(m+n)>0\\), this value is in \\((a,b)\\)."
+                ]
+              }
+            ]
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P0157",
+      "TB-P0158"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "157",
+        "note": "4.3 (1) Rolle’s theorem"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u3-rolles-geometric-applications",
@@ -2267,17 +2472,58 @@
     "title": "Geometrical interpretation and applications of Rolle’s theorem",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Geometrical interpretation of Rolle’s theorem",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0157"
+        ],
+        "book_refs": [
+          {
+            "pages": "157",
+            "note": "Geometrical interpretation of Rolle’s theorem"
+          }
+        ],
+        "paragraphs": [
+          "Let \\(A=(a,f(a))\\) and \\(B=(b,f(b))\\) be endpoints of the graph \\(y=f(x)\\). Continuity means the curve has no break between these endpoints, differentiability supplies a tangent at each interior point, and equal endpoint ordinates make the chord \\(AB\\) horizontal.",
+          "At least one interior tangent is parallel to the x-axis. Its slope is \\(f\\prime(c)=0\\). All three hypotheses must be checked before applying the theorem."
+        ],
+        "figures": [
+          {
+            "id": "book-fig-4-1",
+            "src": "college/1-1/matrices-calculus/assets/book/u3/theory/book-fig-4-1-ros.webp",
+            "alt": "Figure 4.1: Rolle’s theorem, horizontal chord and parallel tangents",
+            "caption": "Figure 4.1: Rolle’s theorem, horizontal chord and parallel tangents — ROS: unchanged source crop.",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 488,
+            "height": 317,
+            "after": {
+              "type": "paragraph",
+              "index": 1
+            }
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P0157"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "157",
+        "note": "Geometrical interpretation of Rolle’s theorem"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u3-lagrange-mvt",
@@ -2285,17 +2531,62 @@
     "title": "Lagrange’s Mean Value Theorem (without proof)",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "4.3 (2) Lagrange’s mean-value theorem",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0158",
+          "TB-P0159"
+        ],
+        "book_refs": [
+          {
+            "pages": "158, 159",
+            "note": "4.3 (2) Lagrange’s mean-value theorem"
+          }
+        ],
+        "paragraphs": [
+          "If \\(f(x)\\) is continuous on \\([a,b]\\) and differentiable on \\((a,b)\\), then for at least one \\(c\\in(a,b)\\),",
+          "\\[f(b)-f(a)=(b-a)f\\prime(c),\\qquad f\\prime(c)=\\dfrac{f(b)-f(a)}{b-a}.\\]",
+          "Writing \\(b=a+h\\), the same result is \\(f(a+h)=f(a)+hf\\prime(a+\\theta h)\\), where \\(0<\\theta<1\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-4-15",
+            "title": "Example 4.15",
+            "question_paragraphs": [
+              "For \\(f(x)=x(x-1)(x-2)\\), \\(a=0\\), \\(b=1/2\\), determine the value of \\(c\\) in the mean-value theorem."
+            ],
+            "paragraphs": [
+              "The polynomial is continuous and differentiable. \\(f(0)=0\\), \\(f(1/2)=3/8\\), and \\(f\\prime(x)=3x^2-6x+2\\).",
+              "\\[\\dfrac38=\\dfrac12(3c^2-6c+2)\\quad\\Longrightarrow\\quad12c^2-24c+5=0.\\]",
+              "\\[c=1\\pm\\dfrac{\\sqrt{21}}6.\\]",
+              "Only the minus sign gives a point in \\((0,1/2)\\)."
+            ],
+            "final_answer": "\\(c=1-\\sqrt{21}/6\\approx0.2362\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P0158",
+      "TB-P0159"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "158, 159",
+        "note": "4.3 (2) Lagrange’s mean-value theorem"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u3-lagrange-geometric-applications",
@@ -2303,17 +2594,103 @@
     "title": "Geometrical interpretation and applications of Lagrange’s Mean Value Theorem",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Geometrical interpretation and applications",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0158",
+          "TB-P0159",
+          "TB-P0160"
+        ],
+        "book_refs": [
+          {
+            "pages": "158, 159, 160",
+            "note": "Geometrical interpretation and applications"
+          }
+        ],
+        "paragraphs": [
+          "The slope of the chord joining \\(A=(a,f(a))\\) and \\(B=(b,f(b))\\) is \\((f(b)-f(a))/(b-a)\\). The mean-value theorem gives an interior point where the tangent has this same slope; the tangent is parallel to the chord.",
+          "If \\(f\\prime(x)=0\\) throughout an interval, applying the theorem to any two points shows their function values are equal, so the function is constant there."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-4-16",
+            "title": "Example 4.16",
+            "question_paragraphs": [
+              "For \\(0<a<b<1\\), prove \\(\\dfrac{b-a}{1+b^2}<\\tan^{-1}b-\\tan^{-1}a<\\dfrac{b-a}{1+a^2}\\). Hence show \\(\\dfrac\\pi4+\\dfrac3{25}<\\tan^{-1}\\dfrac43<\\dfrac\\pi4+\\dfrac16\\)."
+            ],
+            "paragraphs": [
+              "Apply the theorem to \\(f(x)=\\tan^{-1}x\\): \\(\\tan^{-1}b-\\tan^{-1}a=(b-a)/(1+c^2)\\) for some \\(a<c<b\\).",
+              "For positive \\(a,b\\), \\(1/(1+b^2)<1/(1+c^2)<1/(1+a^2)\\). Multiplication by \\(b-a>0\\) gives the stated bounds.",
+              "Put \\(a=1,b=4/3\\); then \\((b-a)/(1+b^2)=3/25\\) and \\((b-a)/(1+a^2)=1/6\\)."
+            ],
+            "final_answer": "\\(\\pi/4+3/25<\\tan^{-1}(4/3)<\\pi/4+1/6\\).",
+            "math_mismatch": {
+              "label": "Printed condition discrepancy",
+              "message": "The printed example states 0<a<b<1 but then substitutes a=1, b=4/3. The proof only needs 0<a<b; with that condition both the inequality and the numerical deduction are valid."
+            }
+          },
+          {
+            "id": "tb-example-4-17",
+            "title": "Example 4.17",
+            "question_paragraphs": [
+              "Use the mean-value theorem to prove \\(\\log(1+x)=x/(1+\\theta x)\\), \\(0<\\theta<1\\), and deduce \\(x/(1+x)<\\log(1+x)<x\\) for \\(x>0\\)."
+            ],
+            "paragraphs": [
+              "Apply the increment form to \\(f(t)=\\log t\\) with \\(a=1,h=x\\).",
+              "\\[\\log(1+x)-\\log1=x f\\prime(1+\\theta x)=\\dfrac{x}{1+\\theta x}.\\]",
+              "For \\(x>0\\), \\(1<1+\\theta x<1+x\\), so \\(1/(1+x)<1/(1+\\theta x)<1\\). Multiply by \\(x\\)."
+            ],
+            "final_answer": "\\(\\dfrac{x}{1+x}<\\log(1+x)<x\\), \\(x>0\\)."
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "figures": [
+          {
+            "id": "book-fig-4-2",
+            "src": "college/1-1/matrices-calculus/assets/book/u3/theory/book-fig-4-2-ros.webp",
+            "alt": "Figure 4.2: tangents parallel to the chord in Lagrange’s mean-value theorem",
+            "caption": "Figure 4.2: tangents parallel to the chord in Lagrange’s mean-value theorem — ROS: unchanged source crop.",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 677,
+            "height": 370,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "practice": [
+          {
+            "book_page": 162,
+            "type": "Problems 4.4",
+            "items": "Selected class-overlap questions; full set pending",
+            "group_anchor": "problems-4-4"
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P0158",
+      "TB-P0159",
+      "TB-P0160"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "158, 159, 160",
+        "note": "Geometrical interpretation and applications"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u3-cauchy-mvt",
@@ -2321,17 +2698,63 @@
     "title": "Cauchy’s Mean Value Theorem (without proof)",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "4.3 (3) Cauchy’s mean-value theorem",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0160"
+        ],
+        "book_refs": [
+          {
+            "pages": "160",
+            "note": "4.3 (3) Cauchy’s mean-value theorem"
+          }
+        ],
+        "paragraphs": [
+          "If \\(f,g\\) are continuous on \\([a,b]\\), differentiable on \\((a,b)\\), and \\(g\\prime(x)\\ne0\\) throughout \\((a,b)\\), there is a point \\(c\\in(a,b)\\) with",
+          "\\[\\dfrac{f(b)-f(a)}{g(b)-g(a)}=\\dfrac{f\\prime(c)}{g\\prime(c)}.\\]",
+          "Cauchy’s theorem generalises Lagrange’s theorem: choosing \\(g(x)=x\\) recovers the latter."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-4-18",
+            "title": "Example 4.18",
+            "question_paragraphs": [
+              "Verify Cauchy’s mean-value theorem for \\(f(x)=e^x\\), \\(g(x)=e^{-x}\\), on \\([a,b]\\)."
+            ],
+            "paragraphs": [
+              "Both functions are continuous and differentiable, and \\(g\\prime(x)=-e^{-x}\\ne0\\).",
+              "\\[\\dfrac{e^b-e^a}{e^{-b}-e^{-a}}=-e^{a+b},\\qquad\\dfrac{f\\prime(c)}{g\\prime(c)}=-e^{2c}.\\]",
+              "Equating these gives \\(2c=a+b\\). Since \\(a<b\\), the midpoint belongs to \\((a,b)\\)."
+            ],
+            "final_answer": "\\(c=(a+b)/2\\)."
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "discrepancy": {
+          "label": "Printed theorem denominator",
+          "message": "The theorem statement on p. 160 repeats f′(c) in the denominator of the derivative ratio. The nonzero-derivative hypothesis and its worked example require g′(c). The statement here makes that correction explicit."
+        }
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P0160"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "160",
+        "note": "4.3 (3) Cauchy’s mean-value theorem"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u3-taylor-series",
@@ -2339,17 +2762,227 @@
     "title": "Taylor’s Series (without proof)",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Taylor’s theorem and Maclaurin’s theorem",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0160",
+          "TB-P0161",
+          "TB-P0162"
+        ],
+        "book_refs": [
+          {
+            "pages": "160, 161, 162",
+            "note": "Taylor’s theorem and Maclaurin’s theorem"
+          }
+        ],
+        "paragraphs": [
+          "If \\(f,f\\prime,\\ldots,f^{(n-1)}\\) are continuous between \\(a\\) and \\(a+h\\), and \\(f^{(n)}\\) exists in the intervening open interval, Taylor’s theorem with Lagrange’s remainder gives",
+          "\\[f(a+h)=f(a)+hf\\prime(a)+\\dfrac{h^2}{2!}f^{\\prime\\prime}(a)+\\cdots+\\dfrac{h^{n-1}}{(n-1)!}f^{(n-1)}(a)+\\dfrac{h^n}{n!}f^{(n)}(a+\\theta h),\\quad0<\\theta<1.\\]",
+          "Taking \\(a=0,h=x\\) gives Maclaurin’s theorem. When derivatives of all required orders exist and the remainder tends to zero, the limiting formula becomes Taylor’s or Maclaurin’s infinite series."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-4-19",
+            "title": "Example 4.19",
+            "question_paragraphs": [
+              "Find Maclaurin’s theorem with Lagrange’s remainder for \\(f(x)=\\cos x\\)."
+            ],
+            "paragraphs": [
+              "\\[f^{(n)}(x)=\\cos(x+n\\pi/2).\\]",
+              "At zero, odd derivatives vanish and \\(f^{(2k)}(0)=(-1)^k\\).",
+              "Substitute these values into the theorem with a remainder of order \\(2n+2\\):",
+              "\\[\\cos x=1-\\dfrac{x^2}{2!}+\\cdots+(-1)^n\\dfrac{x^{2n}}{(2n)!}+\\dfrac{x^{2n+2}}{(2n+2)!}\\cos\\left(\\theta x+(n+1)\\pi\\right).\\]"
+            ],
+            "final_answer": "The displayed finite polynomial plus its Lagrange remainder gives \\(\\cos x\\), \\(0<\\theta<1\\).",
+            "math_mismatch": {
+              "label": "Printed remainder discrepancy",
+              "message": "The printed odd-order remainder uses cos(θx). An odd derivative of cos x is a signed sine, so with polynomial degree 2n the order-(2n+1) remainder is (−1)ⁿ⁺¹ x²ⁿ⁺¹ sin(θx)/(2n+1)!. The even-order remainder displayed here is an equivalent valid Taylor form."
+            }
+          },
+          {
+            "id": "tb-example-4-20",
+            "title": "Example 4.20",
+            "question_paragraphs": [
+              "Using Maclaurin’s theorem, show for \\(0<\\theta<1\\) that \\(\\log(1+x)=x-x^2/2+x^3/[3(1+\\theta x)^3]\\). Deduce the upper bound for \\(x>0\\)."
+            ],
+            "paragraphs": [
+              "Let \\(f(x)=\\log(1+x)\\). Then \\(f(0)=0\\), \\(f\\prime(0)=1\\), \\(f^{\\prime\\prime}(0)=-1\\), and \\(f^{\\prime\\prime\\prime}(x)=2/(1+x)^3\\).",
+              "\\[f(x)=0+x-\\dfrac{x^2}{2}+\\dfrac{x^3}{3!}\\dfrac2{(1+\\theta x)^3}.\\]",
+              "For \\(x>0\\), \\((1+\\theta x)^3>1\\), so the remainder is less than \\(x^3/3\\)."
+            ],
+            "final_answer": "\\(\\log(1+x)<x-x^2/2+x^3/3\\), \\(x>0\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "4.4 Expansion of functions",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0163",
+          "TB-P0164",
+          "TB-P0165",
+          "TB-P0166"
+        ],
+        "book_refs": [
+          {
+            "pages": "163, 164, 165, 166",
+            "note": "4.4 Expansion of functions"
+          }
+        ],
+        "paragraphs": [
+          "For expansion about zero, \\(f(x)=f(0)+xf\\prime(0)+x^2f^{\\prime\\prime}(0)/2!+\\cdots\\). For an expansion about \\(x=a\\), use powers of \\(x-a\\). When only a few terms are required, substitution and combination of known series can avoid lengthy successive differentiation."
+        ],
+        "bullets": [
+          "\\(\\sin x=x-x^3/3!+x^5/5!-\\cdots\\); \\(\\sinh x=x+x^3/3!+x^5/5!+\\cdots\\).",
+          "\\(\\cos x=1-x^2/2!+x^4/4!-\\cdots\\); \\(\\cosh x=1+x^2/2!+x^4/4!+\\cdots\\).",
+          "\\(e^x=1+x+x^2/2!+x^3/3!+\\cdots\\).",
+          "\\(\\log(1+x)=x-x^2/2+x^3/3-\\cdots\\), for \\(|x|<1\\).",
+          "\\((1+x)^n=1+nx+n(n-1)x^2/2!+\\cdots\\), for \\(|x|<1\\) unless the series terminates.",
+          "\\(\\tan^{-1}x=x-x^3/3+x^5/5-\\cdots\\), for \\(|x|<1\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-4-21",
+            "title": "Example 4.21",
+            "question_paragraphs": [
+              "Using Maclaurin’s series, expand \\(\\tan x\\) up to the term containing \\(x^5\\)."
+            ],
+            "paragraphs": [
+              "Let \\(y=\\tan x\\); then \\(y(0)=0\\) and \\(y\\prime=1+y^2\\).",
+              "\\(y^{\\prime\\prime}=2yy\\prime\\), \\(y^{\\prime\\prime\\prime}=2(y\\prime)^2+2yy^{\\prime\\prime}\\). At zero these give \\(y\\prime(0)=1\\), \\(y^{\\prime\\prime}(0)=0\\), \\(y^{\\prime\\prime\\prime}(0)=2\\).",
+              "Differentiating again gives \\(y^{(4)}=6y\\prime y^{\\prime\\prime}+2yy^{\\prime\\prime\\prime}\\) and \\(y^{(5)}=6(y^{\\prime\\prime})^2+8y\\prime y^{\\prime\\prime\\prime}+2yy^{(4)}\\), so \\(y^{(4)}(0)=0\\), \\(y^{(5)}(0)=16\\).",
+              "\\[\\tan x=x+\\dfrac{2x^3}{3!}+\\dfrac{16x^5}{5!}+\\cdots.\\]"
+            ],
+            "final_answer": "\\(\\tan x=x+x^3/3+2x^5/15+\\cdots\\)."
+          },
+          {
+            "id": "tb-example-4-22",
+            "title": "Example 4.22",
+            "question_paragraphs": [
+              "Expand \\(e^{\\sin x}\\) up to the term containing \\(x^4\\)."
+            ],
+            "paragraphs": [
+              "Use \\(\\sin x=x-x^3/6+O(x^5)\\) and \\(e^t=1+t+t^2/2+t^3/6+t^4/24+O(t^5)\\).",
+              "\\[e^{\\sin x}=1+(x-x^3/6)+(x^2-x^4/3)/2+x^3/6+x^4/24+O(x^5).\\]",
+              "The cubic terms cancel. The fourth-degree terms are \\( -x^4/6+x^4/24=-x^4/8 \\)."
+            ],
+            "final_answer": "\\(e^{\\sin x}=1+x+x^2/2-x^4/8+O(x^5)\\)."
+          },
+          {
+            "id": "tb-example-4-23",
+            "title": "Example 4.23",
+            "question_paragraphs": [
+              "Expand \\(\\log(1+\\sin^2x)\\) as far as the term in \\(x^6\\)."
+            ],
+            "paragraphs": [
+              "\\[\\sin^2x=(x-x^3/6+x^5/120)^2+O(x^8)=x^2-x^4/3+2x^6/45+O(x^8).\\]",
+              "Put \\(t=\\sin^2x\\) in \\(\\log(1+t)=t-t^2/2+t^3/3+\\cdots\\).",
+              "\\[\\log(1+\\sin^2x)=x^2-x^4/3+2x^6/45-\\dfrac{1}{2}(x^4-2x^6/3)+x^6/3+O(x^8).\\]"
+            ],
+            "final_answer": "\\(\\log(1+\\sin^2x)=x^2-5x^4/6+32x^6/45+O(x^8)\\)."
+          },
+          {
+            "id": "tb-example-4-24",
+            "title": "Example 4.24",
+            "question_paragraphs": [
+              "Expand \\(e^{a\\sin^{-1}x}\\) by Maclaurin’s theorem and find its general coefficient. Hence obtain the corresponding series for \\(e^\\theta\\)."
+            ],
+            "paragraphs": [
+              "Let \\(y=e^{a\\sin^{-1}x}\\). Then \\(y\\prime=ay/\\sqrt{1-x^2}\\), so \\(\\sqrt{1-x^2}\\,y\\prime=ay\\).",
+              "Differentiating and eliminating \\(y\\prime\\) gives \\((1-x^2)y^{\\prime\\prime}-xy\\prime-a^2y=0\\).",
+              "Differentiate this equation \\(n\\) times and put \\(x=0\\): \\(y^{(n+2)}(0)=(a^2+n^2)y^{(n)}(0)\\). Also \\(y(0)=1,y\\prime(0)=a\\).",
+              "For \\(m\\ge1\\), \\(y^{(2m)}(0)=a^2(a^2+2^2)\\cdots(a^2+(2m-2)^2)\\), and \\(y^{(2m+1)}(0)=a(a^2+1^2)\\cdots(a^2+(2m-1)^2)\\). Empty products have value 1.",
+              "\\[e^{a\\sin^{-1}x}=1+ax+\\dfrac{a^2x^2}{2!}+\\dfrac{a(a^2+1)x^3}{3!}+\\dfrac{a^2(a^2+4)x^4}{4!}+\\cdots.\\]",
+              "Set \\(a=1,x=\\sin\\theta\\) on the principal inverse-sine interval."
+            ],
+            "final_answer": "\\(e^\\theta=1+\\sin\\theta+\\sin^2\\theta/2!+2\\sin^3\\theta/3!+5\\sin^4\\theta/4!+\\cdots\\)."
+          },
+          {
+            "id": "tb-example-4-25",
+            "title": "Example 4.25",
+            "question_paragraphs": [
+              "Expand \\(\\log x\\) in powers of \\(x-1\\), and hence evaluate \\(\\log(1.1)\\) correct to four decimal places."
+            ],
+            "paragraphs": [
+              "At \\(a=1\\), \\(f(1)=0\\), \\(f\\prime(1)=1\\), \\(f^{\\prime\\prime}(1)=-1\\), \\(f^{\\prime\\prime\\prime}(1)=2\\), \\(f^{(4)}(1)=-6\\).",
+              "\\[\\log x=(x-1)-\\dfrac{(x-1)^2}{2}+\\dfrac{(x-1)^3}{3}-\\dfrac{(x-1)^4}{4}+\\cdots.\\]",
+              "Put \\(x=1.1\\): \\(0.1-0.005+0.000333333-0.000025=0.095308333\\). The next alternating term is \\(0.1^5/5=0.000002\\), so rounding to four decimal places is secure."
+            ],
+            "final_answer": "\\(\\log(1.1)=0.0953\\) to four decimal places.",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The numerical-substitution line starts with 1.1 instead of x−1=0.1, although the next line uses 0.1 and obtains the correct 0.0953. The fourth-derivative value −6 is also labelled at 0 instead of at the expansion point 1. The calculation here evaluates all derivatives at 1 and substitutes h=0.1."
+            }
+          },
+          {
+            "id": "tb-example-4-26",
+            "title": "Example 4.26",
+            "question_paragraphs": [
+              "Use Taylor’s series to expand \\(\\tan^{-1}(x+h)\\), with \\(z=\\cot^{-1}x\\), through the term in \\(h^3\\)."
+            ],
+            "paragraphs": [
+              "For \\(f(x)=\\tan^{-1}x\\), \\(x=\\cot z\\) and \\(dz/dx=-\\sin^2z\\).",
+              "\\[f\\prime(x)=\\sin^2z,\\qquad f^{\\prime\\prime}(x)=-\\sin2z\\,\\sin^2z,\\qquad f^{\\prime\\prime\\prime}(x)=2\\sin3z\\,\\sin^3z.\\]",
+              "Substitute into \\(f(x+h)=f(x)+hf\\prime(x)+h^2f^{\\prime\\prime}(x)/2!+h^3f^{\\prime\\prime\\prime}(x)/3!+\\cdots\\)."
+            ],
+            "final_answer": "\\(\\tan^{-1}(x+h)=\\tan^{-1}x+h\\sin^2z-\\dfrac{h^2}{2}\\sin2z\\sin^2z+\\dfrac{h^3}{3}\\sin3z\\sin^3z+\\cdots\\)."
+          },
+          {
+            "id": "tb-example-4-27",
+            "title": "Example 4.27",
+            "question_paragraphs": [
+              "Prove that \\(e^x=1+\\tan x+\\tan^2x/2!-\\tan^3x/3!-7\\tan^4x/4!+\\cdots\\)."
+            ],
+            "paragraphs": [
+              "Put \\(t=\\tan x\\), so \\(y=e^x=e^{\\tan^{-1}t}\\).",
+              "Then \\((1+t^2)y\\prime=y\\). Differentiating \\(n\\) times gives \\((1+t^2)y^{(n+1)}+2nty^{(n)}+n(n-1)y^{(n-1)}=y^{(n)}\\).",
+              "At \\(t=0\\), \\(y(0)=1\\), \\(y\\prime(0)=1\\), \\(y^{\\prime\\prime}(0)=1\\), \\(y^{\\prime\\prime\\prime}(0)=-1\\), \\(y^{(4)}(0)=-7\\).",
+              "Insert these derivatives in Maclaurin’s series and restore \\(t=\\tan x\\)."
+            ],
+            "final_answer": "\\(e^x=1+\\tan x+\\tan^2x/2!-\\tan^3x/3!-7\\tan^4x/4!+\\cdots\\)."
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "practice": [
+          {
+            "book_page": 167,
+            "type": "Problems 4.5",
+            "items": "Selected class-overlap questions; full set pending",
+            "group_anchor": "problems-4-5"
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P0160",
+      "TB-P0161",
+      "TB-P0163",
+      "TB-P0164",
+      "TB-P0165",
+      "TB-P0166",
+      "TB-P0162"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "160, 161",
+        "note": "Taylor’s theorem and Maclaurin’s theorem"
+      },
+      {
+        "pages": "163, 164, 165, 166",
+        "note": "4.4 Expansion of functions"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u3-curve-tracing-cartesian",
@@ -2357,17 +2990,47 @@
     "title": "Curve tracing in cartesian coordinates",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Curve-tracing reference checklist",
+        "scope": "core",
+        "source_refs": [
+          "TB-P1357"
+        ],
+        "book_refs": [
+          {
+            "pages": "1357",
+            "note": "Curve-tracing reference checklist"
+          }
+        ],
+        "paragraphs": [
+          "For an implicit Cartesian equation, inspect symmetry, the origin, tangents and asymptotes before drawing the curve."
+        ],
+        "bullets": [
+          "Only even powers of y imply symmetry about the x-axis; only even powers of x imply symmetry about the y-axis.",
+          "If interchanging x and y leaves the equation unchanged, the curve is symmetric about y=x.",
+          "If there is no constant term, test the origin. The lowest-degree homogeneous terms give candidate tangents at the origin.",
+          "For an oblique asymptote write y=mx+c and compare the highest remaining powers, retaining all required coefficient equations."
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P1357"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "1357",
+        "note": "Curve-tracing reference checklist"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "partial"
   },
   {
     "id": "u3-curve-tracing-polar",
@@ -2375,17 +3038,41 @@
     "title": "Curve tracing in polar coordinates",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Polar asymptote reference",
+        "scope": "core",
+        "source_refs": [
+          "TB-P1357"
+        ],
+        "book_refs": [
+          {
+            "pages": "1357",
+            "note": "Polar asymptote reference"
+          }
+        ],
+        "paragraphs": [
+          "For a polar curve expressed as \\(1/r=f(\\theta)\\), the reference formula for an asymptote is \\(r\\sin(\\theta-\\alpha)=1/f\\prime(\\alpha)\\), where \\(f(\\alpha)=0\\) and \\(f\\prime(\\alpha)\\ne0\\). This gives an asymptote candidate; it is not a complete polar-curve tracing procedure."
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U3"
+      "SYL-R25-U3",
+      "TB-P1357"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "1357",
+        "note": "Polar asymptote reference"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "partial"
   },
   {
     "id": "u4-multivariable-limit-continuity",
@@ -2393,17 +3080,66 @@
     "title": "Definitions of Limit and continuity",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "5.1 Functions of two or more variables",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0217",
+          "TB-P0218"
+        ],
+        "book_refs": [
+          {
+            "pages": "217, 218",
+            "note": "5.1 Functions of two or more variables"
+          }
+        ],
+        "paragraphs": [
+          "An area \\(A=xy\\) depends on two lengths; a volume \\(V=xyz\\) depends on three. If each pair \\((x,y)\\) determines a definite value of \\(z\\), write \\(z=f(x,y)\\); \\(x,y\\) are independent variables and \\(z\\) is the dependent variable.",
+          "Points \\((x,y)\\) form a region in the xy-plane. A region containing its boundary is closed. A circular neighbourhood of \\((a,b)\\) has the form \\((x-a)^2+(y-b)^2<\\delta^2\\).",
+          "The function tends to a limit \\(l\\) as \\((x,y)\\to(a,b)\\) if \\(f(x,y)\\to l\\) independently of the path of approach.",
+          "Precisely: for every \\(\\varepsilon>0\\), there is a \\(\\delta>0\\) such that \\(|f(x,y)-l|<\\varepsilon\\) whenever \\(0<(x-a)^2+(y-b)^2<\\delta^2\\) within the domain.",
+          "Continuity at \\((a,b)\\) requires that the limit exists and equals \\(f(a,b)\\). Continuity in a region means continuity at every point of that region."
+        ],
+        "bullets": [
+          "If \\(f\\to l\\), \\(g\\to m\\), then \\(f+g\\to l+m\\), \\(fg\\to lm\\), and \\(f/g\\to l/m\\) when \\(m\\ne0\\).",
+          "The corresponding sum, product and quotient continuity rules hold wherever their values are defined."
+        ],
+        "accordions": [
+          {
+            "id": "tb-limit-path-observation",
+            "title": "Illustration — path-dependent limit",
+            "question_paragraphs": [
+              "Discuss the limit of \\(f(x,y)=(x-y)/(x+y)\\) as \\((x,y)\\to(0,0)\\)."
+            ],
+            "paragraphs": [
+              "Along \\(y=mx\\), \\(m\\ne-1\\), the ratio is \\((1-m)/(1+m)\\), independent of the distance from the origin but dependent on the slope.",
+              "In particular, along \\(y=0\\) it is 1; along \\(x=0\\) it is −1. These disagree."
+            ],
+            "final_answer": "The two-variable limit does not exist."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0217",
+      "TB-P0218"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "217, 218",
+        "note": "5.1 Functions of two or more variables"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u4-partial-differentiation",
@@ -2411,17 +3147,231 @@
     "title": "Partial Differentiation",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "5.2 Partial derivatives",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0218",
+          "TB-P0219",
+          "TB-P0220",
+          "TB-P0221",
+          "TB-P0222"
+        ],
+        "book_refs": [
+          {
+            "pages": "218, 219, 220, 221, 222",
+            "note": "5.2 Partial derivatives"
+          }
+        ],
+        "paragraphs": [
+          "For \\(z=f(x,y)\\), varying \\(x\\) while keeping \\(y\\) fixed defines the partial derivative with respect to \\(x\\). Likewise varying \\(y\\) with \\(x\\) fixed defines the partial derivative with respect to \\(y\\).",
+          "\\[f_x=\\dfrac{\\partial z}{\\partial x}=\\lim_{h\\to0}\\dfrac{f(x+h,y)-f(x,y)}h,\\qquad f_y=\\dfrac{\\partial z}{\\partial y}=\\lim_{k\\to0}\\dfrac{f(x,y+k)-f(x,y)}k.\\]",
+          "Differentiating again gives \\(f_{xx},f_{xy},f_{yx},f_{yy}\\). In the usual case of continuous mixed second partial derivatives, \\(f_{xy}=f_{yx}\\). A function of three variables has three first partial derivatives and nine ordered second partial derivatives.",
+          "Another notation is \\(p=z_x,q=z_y,r=z_{xx},s=z_{xy},t=z_{yy}\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-1",
+            "title": "Example 5.1",
+            "question_paragraphs": [
+              "Find the first and second partial derivatives of \\(z=x^3+y^3-3axy\\)."
+            ],
+            "paragraphs": [
+              "Keeping \\(y\\) constant gives \\(z_x=3x^2-3ay\\); keeping \\(x\\) constant gives \\(z_y=3y^2-3ax\\).",
+              "Differentiate again: \\(z_{xx}=6x\\), \\(z_{xy}=-3a\\), \\(z_{yx}=-3a\\), \\(z_{yy}=6y\\)."
+            ],
+            "final_answer": "\\(z_x=3x^2-3ay,\\ z_y=3y^2-3ax;\\ z_{xx}=6x,\\ z_{xy}=z_{yx}=-3a,\\ z_{yy}=6y\\)."
+          },
+          {
+            "id": "tb-example-5-2",
+            "title": "Example 5.2",
+            "question_paragraphs": [
+              "If \\(u=x^2\\tan^{-1}(y/x)-y^2\\tan^{-1}(x/y)\\), show \\(u_{xy}=(x^2-y^2)/(x^2+y^2)\\) and \\(u_{xy}=u_{yx}\\)."
+            ],
+            "paragraphs": [
+              "For nonzero x,y in a neighbourhood where both ratios are defined, differentiate with respect to y:",
+              "\\[u_y=\\dfrac{x^3}{x^2+y^2}-2y\\tan^{-1}(x/y)+\\dfrac{xy^2}{x^2+y^2}=x-2y\\tan^{-1}(x/y).\\]",
+              "Therefore \\(u_{xy}=1-2y^2/(x^2+y^2)=(x^2-y^2)/(x^2+y^2)\\).",
+              "In the other order, \\[u_x=2x\\tan^{-1}(y/x)-\\dfrac{x^2y}{x^2+y^2}-\\dfrac{y^3}{x^2+y^2}=2x\\tan^{-1}(y/x)-y.\\]",
+              "Differentiating this with respect to y gives \\(u_{yx}=2x^2/(x^2+y^2)-1=(x^2-y^2)/(x^2+y^2)\\)."
+            ],
+            "final_answer": "\\(u_{xy}=u_{yx}=(x^2-y^2)/(x^2+y^2)\\), on the stated domain."
+          },
+          {
+            "id": "tb-example-5-3",
+            "title": "Example 5.3",
+            "question_paragraphs": [
+              "If \\(z=f(x+ct)+\\phi(x-ct)\\), prove \\(z_{tt}=c^2z_{xx}\\)."
+            ],
+            "paragraphs": [
+              "\\(z_x=f\\prime(x+ct)+\\phi\\prime(x-ct)\\), hence \\(z_{xx}=f^{\\prime\\prime}(x+ct)+\\phi^{\\prime\\prime}(x-ct)\\).",
+              "\\(z_t=cf\\prime(x+ct)-c\\phi\\prime(x-ct)\\), hence \\(z_{tt}=c^2f^{\\prime\\prime}(x+ct)+c^2\\phi^{\\prime\\prime}(x-ct)\\)."
+            ],
+            "final_answer": "\\(z_{tt}=c^2z_{xx}\\)."
+          },
+          {
+            "id": "tb-example-5-4",
+            "title": "Example 5.4",
+            "question_paragraphs": [
+              "If \\(\\theta=t^n e^{-r^2/(4t)}\\), find \\(n\\) so that \\(r^{-2}\\partial_r(r^2\\theta_r)=\\theta_t\\)."
+            ],
+            "paragraphs": [
+              "\\[\\theta_r=-\\dfrac r2t^{n-1}e^{-r^2/(4t)},\\quad r^2\\theta_r=-\\dfrac{r^3}{2}t^{n-1}e^{-r^2/(4t)}.\\]",
+              "\\[r^{-2}\\partial_r(r^2\\theta_r)=t^{n-1}e^{-r^2/(4t)}\\left(-\\dfrac32+\\dfrac{r^2}{4t}\\right).\\]",
+              "\\[\\theta_t=t^{n-1}e^{-r^2/(4t)}\\left(n+\\dfrac{r^2}{4t}\\right).\\]",
+              "Equality requires \\(n=-3/2\\)."
+            ],
+            "final_answer": "\\(n=-3/2\\)."
+          },
+          {
+            "id": "tb-example-5-5",
+            "title": "Example 5.5",
+            "question_paragraphs": [
+              "For \\(v=(x^2+y^2+z^2)^{-1/2}\\), prove \\(v_{xx}+v_{yy}+v_{zz}=0\\)."
+            ],
+            "paragraphs": [
+              "Put \\(s=x^2+y^2+z^2\\). Then \\(v_x=-xs^{-3/2}\\) and \\(v_{xx}=-s^{-3/2}+3x^2s^{-5/2}=(2x^2-y^2-z^2)s^{-5/2}\\).",
+              "By the same calculation, \\(v_{yy}=(-x^2+2y^2-z^2)s^{-5/2}\\), and \\(v_{zz}=(-x^2-y^2+2z^2)s^{-5/2}\\).",
+              "On addition all numerator terms cancel. A function satisfying Laplace’s equation is called harmonic."
+            ],
+            "final_answer": "\\(v_{xx}+v_{yy}+v_{zz}=0\\), away from the origin."
+          },
+          {
+            "id": "tb-example-5-6",
+            "title": "Example 5.6",
+            "question_paragraphs": [
+              "If \\(u=\\log(x^3+y^3+z^3-3xyz)\\), prove \\((\\partial_x+\\partial_y+\\partial_z)^2u=-9/(x+y+z)^2\\)."
+            ],
+            "paragraphs": [
+              "Write \\(P=x^3+y^3+z^3-3xyz=(x+y+z)(x^2+y^2+z^2-xy-yz-zx)\\).",
+              "\\(u_x=3(x^2-yz)/P\\), \\(u_y=3(y^2-xz)/P\\), \\(u_z=3(z^2-xy)/P\\).",
+              "Adding gives \\((\\partial_x+\\partial_y+\\partial_z)u=3/(x+y+z)\\).",
+              "Apply the same operator once more; each of its three terms contributes \\(-3/(x+y+z)^2\\)."
+            ],
+            "final_answer": "\\((\\partial_x+\\partial_y+\\partial_z)^2u=-9/(x+y+z)^2\\), on the real logarithm’s domain."
+          },
+          {
+            "id": "tb-example-5-7",
+            "title": "Example 5.7",
+            "question_paragraphs": [
+              "If \\(x^2/(a^2+u)+y^2/(b^2+u)+z^2/(c^2+u)=1\\), prove \\(u_x^2+u_y^2+u_z^2=2(xu_x+yu_y+zu_z)\\)."
+            ],
+            "paragraphs": [
+              "Let \\(v=x^2/(a^2+u)^2+y^2/(b^2+u)^2+z^2/(c^2+u)^2\\). Differentiating the constraint with respect to \\(x\\) gives \\(2x/(a^2+u)=vu_x\\).",
+              "Similarly \\(u_y=2y/((b^2+u)v)\\), \\(u_z=2z/((c^2+u)v)\\), assuming the denominators and \\(v\\) are nonzero.",
+              "\\[u_x^2+u_y^2+u_z^2=\\dfrac4{v^2}\\left(\\dfrac{x^2}{(a^2+u)^2}+\\dfrac{y^2}{(b^2+u)^2}+\\dfrac{z^2}{(c^2+u)^2}\\right)=\\dfrac4v.\\]",
+              "\\[2(xu_x+yu_y+zu_z)=\\dfrac4v\\left(\\dfrac{x^2}{a^2+u}+\\dfrac{y^2}{b^2+u}+\\dfrac{z^2}{c^2+u}\\right)=\\dfrac4v.\\]"
+            ],
+            "final_answer": "Both sides equal \\(4/v\\).",
+            "math_mismatch": {
+              "label": "Printed intermediate-term discrepancy",
+              "message": "Some intermediate lines on pp. 221–222 repeat y² where the third numerator must be z², and a z-differentiation line uses b²+u instead of c²+u. The original constraint requires z²/(c²+u)² in v and 2z/(c²+u) in that derivative; the working here makes those corrections explicit."
+            }
+          },
+          {
+            "id": "tb-example-5-8",
+            "title": "Example 5.8",
+            "question_paragraphs": [
+              "For \\(u=x^y\\), show \\(\\partial_x^2\\partial_yu=\\partial_x\\partial_y\\partial_xu\\)."
+            ],
+            "paragraphs": [
+              "For \\(x>0\\), \\(u_y=x^y\\log x\\). Thus \\(\\partial_x\\partial_yu=x^{y-1}(y\\log x+1)\\).",
+              "Also \\(u_x=yx^{y-1}\\), and differentiating with respect to \\(y\\) gives \\(x^{y-1}(1+y\\log x)\\), the same expression.",
+              "Differentiating either mixed derivative once more with respect to \\(x\\) gives \\(x^{y-2}\\{y(y-1)\\log x+2y-1\\}\\)."
+            ],
+            "final_answer": "Both third partial derivatives equal \\(x^{y-2}[y(y-1)\\log x+2y-1]\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "5.3 Which variable is to be kept constant",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0223",
+          "TB-P0224",
+          "TB-P0225"
+        ],
+        "book_refs": [
+          {
+            "pages": "223, 224, 225",
+            "note": "5.3 Which variable is to be kept constant"
+          }
+        ],
+        "paragraphs": [
+          "For \\(x=r\\cos\\theta,y=r\\sin\\theta\\), the relation \\(r=x\\sec\\theta\\) gives \\((\\partial r/\\partial x)_\\theta=\\sec\\theta\\). The relation \\(r^2=x^2+y^2\\) instead gives \\((\\partial r/\\partial x)_y=x/r\\). These are different partial derivatives because the held variable is different.",
+          "When no subscript specifies the held variable, the other independent coordinate is held constant: \\(\\partial r/\\partial x\\) means \\((\\partial r/\\partial x)_y\\), while \\(\\partial x/\\partial r\\) means \\((\\partial x/\\partial r)_\\theta\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-9",
+            "title": "Example 5.9",
+            "question_paragraphs": [
+              "If \\(u=f(r)\\), \\(x=r\\cos\\theta,y=r\\sin\\theta\\), prove \\(u_{xx}+u_{yy}=f^{\\prime\\prime}(r)+f\\prime(r)/r\\)."
+            ],
+            "paragraphs": [
+              "\\[u_x=f\\prime(r)r_x,\\quad u_{xx}=f^{\\prime\\prime}(r)r_x^2+f\\prime(r)r_{xx};\\] the corresponding formulas hold for \\(y\\).",
+              "From \\(r=\\sqrt{x^2+y^2}\\), \\(r_x=x/r,\\ r_y=y/r,\\ r_{xx}=y^2/r^3,\\ r_{yy}=x^2/r^3\\).",
+              "\\[u_{xx}+u_{yy}=f^{\\prime\\prime}(r)\\dfrac{x^2+y^2}{r^2}+f\\prime(r)\\dfrac{x^2+y^2}{r^3}.\\]"
+            ],
+            "final_answer": "\\(u_{xx}+u_{yy}=f^{\\prime\\prime}(r)+f\\prime(r)/r\\), for \\(r>0\\).",
+            "math_mismatch": {
+              "label": "Printed derivative discrepancy",
+              "message": "One line on p. 224 prints ∂r/∂y=y/x. Differentiating r²=x²+y² while holding x constant gives ∂r/∂y=y/r. The subsequent displayed result uses the latter value."
+            }
+          },
+          {
+            "id": "tb-example-5-10",
+            "title": "Example 5.10",
+            "question_paragraphs": [
+              "If \\(x^xy^yz^z=C\\), show that at \\(x=y=z\\), \\(z_{xy}=-(x\\log_e x)^{-1}\\), as printed."
+            ],
+            "paragraphs": [
+              "For positive \\(x,y,z\\), take logarithms: \\(x\\log x+y\\log y+z\\log z=\\log C\\).",
+              "\\[(1+\\log z)z_x=-(1+\\log x),\\qquad z_y=-\\dfrac{1+\\log y}{1+\\log z}.\\]",
+              "At \\(x=y=z\\) these give \\(z_x=z_y=-1\\), provided \\(1+\\log x\\ne0\\).",
+              "Differentiate the equation for \\(z_y\\) with respect to \\(x\\): \\(z_{xy}=(1+\\log y)z_x/[z(1+\\log z)^2]\\).",
+              "At equal coordinates this is \\(-1/[x(1+\\log x)]\\), and \\(1+\\log x=\\log(ex)\\)."
+            ],
+            "final_answer": "\\(z_{xy}=-1/[x\\log(ex)]\\), wherever the indicated implicit derivatives exist.",
+            "math_mismatch": {
+              "label": "Printed logarithm discrepancy",
+              "message": "The question and last printed line give −1/(x logₑ x). The preceding differentiation instead yields −1/[x(1+logₑ x)]. The step replacing logₑ e+logₑ x by logₑ x loses the 1. The verified result below is −1/[x logₑ(ex)], not the printed target."
+            }
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0218",
+      "TB-P0219",
+      "TB-P0220",
+      "TB-P0221",
+      "TB-P0222",
+      "TB-P0223",
+      "TB-P0224",
+      "TB-P0225"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "218, 219, 220, 221, 222",
+        "note": "5.2 Partial derivatives"
+      },
+      {
+        "pages": "223, 224, 225",
+        "note": "5.3 Which variable is to be kept constant"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u4-eulers-theorem",
@@ -2429,17 +3379,148 @@
     "title": "Euler’s Theorem",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "5.4 Homogeneous functions and Euler’s theorem",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0226",
+          "TB-P0227",
+          "TB-P0228",
+          "TB-P0229"
+        ],
+        "book_refs": [
+          {
+            "pages": "226, 227, 228, 229",
+            "note": "5.4 Homogeneous functions and Euler’s theorem"
+          }
+        ],
+        "paragraphs": [
+          "A function \\(f(x,y)\\) is homogeneous of degree \\(n\\) if \\(f(tx,ty)=t^nf(x,y)\\). It can often be written as \\(x^n\\phi(y/x)\\). For example, \\(x^3\\cos(y/x)\\) is homogeneous of degree 3.",
+          "Euler’s theorem: for a differentiable homogeneous function \\(u=f(x,y)\\) of degree \\(n\\),",
+          "\\[x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}=nu.\\]",
+          "For three or more variables, add the corresponding term for each variable, e.g. \\(xu_x+yu_y+zu_z=nu\\). If the necessary second partials are continuous, \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=n(n-1)u\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-11",
+            "title": "Example 5.11",
+            "question_paragraphs": [
+              "Show \\(xu_x+yu_y=2u\\log u\\), where \\(\\log u=(x^3+y^3)/(3x+4y)\\)."
+            ],
+            "paragraphs": [
+              "Put \\(z=\\log u\\). Its numerator has degree 3 and denominator degree 1, so \\(z\\) is homogeneous of degree 2.",
+              "By Euler’s theorem \\(xz_x+yz_y=2z\\). Since \\(z_x=u_x/u\\) and \\(z_y=u_y/u\\), multiplication by \\(u\\) gives the result."
+            ],
+            "final_answer": "\\(xu_x+yu_y=2u\\log u\\)."
+          },
+          {
+            "id": "tb-example-5-12",
+            "title": "Example 5.12",
+            "question_paragraphs": [
+              "If \\(u=\\sin^{-1}[(x+2y+3z)/(x^8+y^8+z^8)]\\), find \\(xu_x+yu_y+zu_z\\)."
+            ],
+            "paragraphs": [
+              "Put \\(\\omega=\\sin u\\). The quotient defining \\(\\omega\\) is homogeneous of degree \\(1-8=-7\\).",
+              "\\[x\\omega_x+y\\omega_y+z\\omega_z=-7\\omega.\\]",
+              "Using \\(\\omega_x=\\cos u\\,u_x\\) and the corresponding y,z derivatives gives \\(\\cos u(xu_x+yu_y+zu_z)=-7\\sin u\\)."
+            ],
+            "final_answer": "\\(xu_x+yu_y+zu_z=-7\\tan u\\), where these derivatives exist."
+          },
+          {
+            "id": "tb-example-5-13",
+            "title": "Example 5.13",
+            "question_paragraphs": [
+              "If \\(u(x,y)\\) is homogeneous of degree \\(n\\), with continuous first and second derivatives, prove \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=n(n-1)u\\)."
+            ],
+            "paragraphs": [
+              "Euler’s theorem gives \\(xu_x+yu_y=nu\\). Differentiate with respect to \\(x\\): \\(xu_{xx}+yu_{xy}=(n-1)u_x\\).",
+              "Differentiate with respect to \\(y\\): \\(xu_{xy}+yu_{yy}=(n-1)u_y\\).",
+              "Multiply these equations by \\(x,y\\), respectively, and add. The right side is \\((n-1)(xu_x+yu_y)=n(n-1)u\\)."
+            ],
+            "final_answer": "\\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=n(n-1)u\\).",
+            "math_mismatch": {
+              "label": "Printed intermediate-derivative discrepancies",
+              "message": "The intermediate multiplied equations on p. 227 interchange some xx/xy/yy subscripts and put uₓ where uᵧ is required in the y-differentiated equation. Differentiating xuₓ+yuᵧ=nu gives the two equations shown here; their sum establishes the stated final theorem."
+            }
+          },
+          {
+            "id": "tb-example-5-14",
+            "title": "Example 5.14",
+            "question_paragraphs": [
+              "Given \\(\\theta=t^ne^{-r^2/(4t)}\\), find \\(n\\) for which \\(r^{-2}\\partial_r(r^2\\theta_r)=\\theta_t\\)."
+            ],
+            "paragraphs": [
+              "\\(\\theta_r=-(r/2)t^{n-1}e^{-r^2/(4t)}\\), so \\(r^2\\theta_r=-(r^3/2)t^{n-1}e^{-r^2/(4t)}\\).",
+              "\\[r^{-2}\\partial_r(r^2\\theta_r)=t^{n-1}e^{-r^2/(4t)}(-3/2+r^2/(4t)).\\]",
+              "Also \\(\\theta_t=t^{n-1}e^{-r^2/(4t)}(n+r^2/(4t))\\). Compare the bracketed expressions."
+            ],
+            "final_answer": "\\(n=-3/2\\).",
+            "math_mismatch": {
+              "label": "Printed derivative-variable discrepancy",
+              "message": "The question on p. 227 prints ∂/∂x outside the radial bracket, although its variables and the entire solution use r and t. The radial heat equation (the same as Example 5.4) requires ∂/∂r there. This working explicitly follows that radial version."
+            }
+          },
+          {
+            "id": "tb-example-5-15",
+            "title": "Example 5.15",
+            "question_paragraphs": [
+              "If \\(u=\\sin^{-1}[(x+y)/(\\sqrt{x}+\\sqrt{y})]\\), prove \\(xu_x+yu_y=\\dfrac{1}{2}\\tan u\\) and \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=-\\sin u\\cos2u/(4\\cos^3u)\\)."
+            ],
+            "paragraphs": [
+              "Put \\(z=\\sin u=(x+y)/(\\sqrt{x}+\\sqrt{y})\\). This is homogeneous of degree \\(1/2\\), so \\(xz_x+yz_y=z/2\\).",
+              "Because \\(z_x=\\cos u\\,u_x\\), \\(z_y=\\cos u\\,u_y\\), this gives \\(xu_x+yu_y=\\tan u/2\\).",
+              "Apply \\(E=x\\partial_x+y\\partial_y\\) to that relation: \\(E^2u=(\\sec^2u/2)Eu=\\sec^2u\\tan u/4\\).",
+              "Expand \\(E^2u=x^2u_{xx}+2xyu_{xy}+y^2u_{yy}+Eu\\). Hence the second-order expression is \\(\\tan u(\\sec^2u-2)/4\\).",
+              "\\[\\dfrac{\\tan u}{4}(\\sec^2u-2)=-\\dfrac{\\sin u\\cos2u}{4\\cos^3u}.\\]"
+            ],
+            "final_answer": "\\(xu_x+yu_y=\\tan u/2\\), and the second-order expression equals \\(-\\sin u\\cos2u/(4\\cos^3u)\\)."
+          },
+          {
+            "id": "tb-example-5-16",
+            "title": "Example 5.16",
+            "question_paragraphs": [
+              "If \\(u=\\tan^{-1}[(x^3+y^3)/(x-y)]\\), prove \\(xu_x+yu_y=\\sin2u\\) and \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=\\sin4u-\\sin2u\\)."
+            ],
+            "paragraphs": [
+              "Put \\(z=\\tan u\\). It is homogeneous of degree 2, so \\(xz_x+yz_y=2z\\). As \\(z_x=\\sec^2u\\,u_x\\) and similarly for y, \\(Eu=2\\tan u/\\sec^2u=\\sin2u\\).",
+              "Apply \\(E=x\\partial_x+y\\partial_y\\): \\(E^2u=2\\cos2u\\,Eu=2\\cos2u\\sin2u=\\sin4u\\).",
+              "But \\(E^2u=x^2u_{xx}+2xyu_{xy}+y^2u_{yy}+Eu\\). Subtract \\(Eu=\\sin2u\\)."
+            ],
+            "final_answer": "\\(Eu=\\sin2u\\); \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=\\sin4u-\\sin2u\\)."
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "practice": [
+          {
+            "book_page": 230,
+            "type": "Problems 5.4",
+            "items": "Selected class-overlap questions; full set pending",
+            "group_anchor": "problems-5-4"
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0226",
+      "TB-P0227",
+      "TB-P0228",
+      "TB-P0229"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "226, 227, 228, 229",
+        "note": "5.4 Homogeneous functions and Euler’s theorem"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u4-total-derivative",
@@ -2447,17 +3528,284 @@
     "title": "Total derivative",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "5.5 Total derivative and the chain rule",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0231",
+          "TB-P0232",
+          "TB-P0233",
+          "TB-P0234"
+        ],
+        "book_refs": [
+          {
+            "pages": "231, 232, 233, 234",
+            "note": "5.5 Total derivative and the chain rule"
+          }
+        ],
+        "paragraphs": [
+          "Let \\(u=f(x,y)\\), with \\(x=\\phi(t)\\) and \\(y=\\psi(t)\\). Substitution makes u a function of the single variable t. Its derivative with respect to t is the total derivative:",
+          "\\[\\dfrac{du}{dt}=\\dfrac{\\partial u}{\\partial x}\\dfrac{dx}{dt}+\\dfrac{\\partial u}{\\partial y}\\dfrac{dy}{dt}.\\]",
+          "For \\(u=f(x,y,z)\\), add \\(u_z\\,dz/dt\\). If \\(x\\) itself is the parameter, \\(du/dx=u_x+u_y\\,dy/dx\\).",
+          "For an implicit equation \\(f(x,y)=c\\), differentiation gives \\(f_x+f_y\\,dy/dx=0\\), hence \\(dy/dx=-f_x/f_y\\) when \\(f_y\\ne0\\)."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-17",
+            "title": "Example 5.17",
+            "question_paragraphs": [
+              "Given \\(u=\\sin(x/y)\\), \\(x=e^t\\), \\(y=t^2\\), find \\(du/dt\\) as a function of \\(t\\) and verify by direct substitution."
+            ],
+            "paragraphs": [
+              "\\(u_x=\\cos(x/y)/y\\), \\(u_y=-x\\cos(x/y)/y^2\\), \\(x\\prime=e^t\\), \\(y\\prime=2t\\).",
+              "\\[\\dfrac{du}{dt}=\\dfrac{e^t}{t^2}\\cos(e^t/t^2)-\\dfrac{2te^t}{t^4}\\cos(e^t/t^2)=\\dfrac{(t-2)e^t}{t^3}\\cos(e^t/t^2).\\]",
+              "Directly \\(u=\\sin(e^t/t^2)\\); differentiating the inner quotient gives \\(e^t(t-2)/t^3\\), confirming the result."
+            ],
+            "final_answer": "\\(du/dt=(t-2)e^t\\cos(e^t/t^2)/t^3\\), \\(t\\ne0\\)."
+          },
+          {
+            "id": "tb-example-5-18",
+            "title": "Example 5.18",
+            "question_paragraphs": [
+              "If \\(x\\) increases at 2 cm/s when \\(x=3\\) cm and \\(y=1\\) cm, how must \\(y\\) change so that \\(2xy-3x^2y\\) is neither increasing nor decreasing?"
+            ],
+            "paragraphs": [
+              "Let \\(u=2xy-3x^2y\\). Then \\(du/dt=(2y-6xy)x\\prime+(2x-3x^2)y\\prime\\).",
+              "At the given instant, \\(0=(2-18)2+(6-27)y\\prime=-32-21y\\prime\\)."
+            ],
+            "final_answer": "\\(dy/dt=-32/21\\) cm/s: y must decrease at \\(32/21\\) cm/s."
+          },
+          {
+            "id": "tb-example-5-19",
+            "title": "Example 5.19",
+            "question_paragraphs": [
+              "If \\(u=x\\log(xy)\\) and \\(x^3+y^3+3xy=1\\), find \\(du/dx\\)."
+            ],
+            "paragraphs": [
+              "Implicit differentiation of \\(F=x^3+y^3+3xy-1=0\\) gives \\(dy/dx=-F_x/F_y=-(x^2+y)/(y^2+x)\\).",
+              "\\(u_x=1+\\log(xy)\\) with y held fixed, and \\(u_y=x/y\\).",
+              "Use the total derivative \\(du/dx=u_x+u_y\\,dy/dx\\)."
+            ],
+            "final_answer": "\\(du/dx=1+\\log(xy)-x(x^2+y)/[y(y^2+x)]\\), on the indicated domain."
+          },
+          {
+            "id": "tb-example-5-20",
+            "title": "Example 5.20",
+            "question_paragraphs": [
+              "If \\(u=\\sin^{-1}(x-y)\\), \\(x=3t\\), \\(y=4t^3\\), show \\(du/dt=3/\\sqrt{1-t^2}\\)."
+            ],
+            "paragraphs": [
+              "\\(u_x=1/\\sqrt{1-(x-y)^2}\\), \\(u_y=-1/\\sqrt{1-(x-y)^2}\\). The chain rule gives \\(du/dt=3(1-4t^2)/\\sqrt{1-(3t-4t^3)^2}\\).",
+              "\\[1-(3t-4t^3)^2=(1-t^2)(1-4t^2)^2.\\]",
+              "Thus the square root is \\(\\sqrt{1-t^2}|1-4t^2|\\). On \\(|t|<1/2\\), the factor \\(1-4t^2\\) is positive and cancels."
+            ],
+            "final_answer": "\\(du/dt=3/\\sqrt{1-t^2}\\) on \\(|t|<1/2\\); on \\(1/2<|t|<1\\), its sign is negative.",
+            "math_mismatch": {
+              "label": "Missing branch condition",
+              "message": "The printed simplification cancels 1−4t² without an absolute value. For the principal arcsine, the displayed positive derivative holds on |t|<1/2. The square-root identity gives a negative derivative on 1/2<|t|<1; the joining points require separate consideration."
+            }
+          },
+          {
+            "id": "tb-example-5-21",
+            "title": "Example 5.21",
+            "question_paragraphs": [
+              "If \\(f(x,y)=0\\), \\(\\phi(y,z)=0\\), show \\(f_y\\phi_z\\,dz/dx=f_x\\phi_y\\)."
+            ],
+            "paragraphs": [
+              "From the first relation, \\(dy/dx=-f_x/f_y\\). From the second, \\(dz/dy=-\\phi_y/\\phi_z\\).",
+              "The chain rule gives \\(dz/dx=(dy/dx)(dz/dy)=f_x\\phi_y/(f_y\\phi_z)\\). Multiply by \\(f_y\\phi_z\\)."
+            ],
+            "final_answer": "\\(f_y\\phi_z\\,dz/dx=f_x\\phi_y\\), wherever the implicit derivatives exist."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      },
+      {
+        "heading": "Total differential",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0249"
+        ],
+        "book_refs": [
+          {
+            "pages": "249",
+            "note": "Total differential"
+          }
+        ],
+        "paragraphs": [
+          "For a differentiable function \\(u=f(x,y)\\), its total differential is \\(du=u_x\\,dx+u_y\\,dy\\). For three variables, \\(du=u_x\\,dx+u_y\\,dy+u_z\\,dz\\).",
+          "When the coordinates depend on a parameter, substitute \\(dx=x\\prime(t)dt\\), \\(dy=y\\prime(t)dt\\), and similarly for z. Dividing by dt yields the chain rule."
+        ]
+      },
+      {
+        "heading": "5.6 Change of variables in derivatives",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0234",
+          "TB-P0235",
+          "TB-P0236",
+          "TB-P0237",
+          "TB-P0238",
+          "TB-P0239"
+        ],
+        "book_refs": [
+          {
+            "pages": "234, 235, 236, 237, 238, 239",
+            "note": "5.6 Change of variables in derivatives"
+          }
+        ],
+        "paragraphs": [
+          "If \\(u=f(x,y)\\), \\(x=\\phi(s,t),y=\\psi(s,t)\\), each of x and y can change when s changes while t is fixed. The chain rule becomes",
+          "\\[u_s=u_xx_s+u_yy_s,\\qquad u_t=u_xx_t+u_yy_t.\\]",
+          "If the inverse transformation is available, use \\(u_x=u_ss_x+u_tt_x\\), \\(u_y=u_ss_y+u_tt_y\\). Higher derivatives follow by repeating the rule and differentiating coefficient functions as well."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-22",
+            "title": "Example 5.22",
+            "question_paragraphs": [
+              "If \\(u=F(x-y,y-z,z-x)\\), prove \\(u_x+u_y+u_z=0\\)."
+            ],
+            "paragraphs": [
+              "Put \\(r=x-y,s=y-z,t=z-x\\). Then \\(u=F(r,s,t)\\).",
+              "The chain rule gives \\(u_x=F_r-F_t\\), \\(u_y=-F_r+F_s\\), \\(u_z=-F_s+F_t\\). Add these three expressions."
+            ],
+            "final_answer": "\\(u_x+u_y+u_z=0\\)."
+          },
+          {
+            "id": "tb-example-5-23",
+            "title": "Example 5.23",
+            "question_paragraphs": [
+              "For \\(z=f(x,y)\\), \\(x=e^u\\cos v,y=e^u\\sin v\\), prove \\(xz_v+yz_u=e^{2u}z_y\\) and \\(z_x^2+z_y^2=e^{-2u}(z_u^2+z_v^2)\\)."
+            ],
+            "paragraphs": [
+              "\\[z_u=e^u\\cos v\\,z_x+e^u\\sin v\\,z_y,\\qquad z_v=-e^u\\sin v\\,z_x+e^u\\cos v\\,z_y.\\]",
+              "Multiply the second equation by \\(x=e^u\\cos v\\), the first by \\(y=e^u\\sin v\\), and add. The \\(z_x\\) terms cancel and the coefficient of \\(z_y\\) is \\(e^{2u}(\\cos^2v+\\sin^2v)\\).",
+              "Square the two equations and add. The mixed terms cancel, giving \\(z_u^2+z_v^2=e^{2u}(z_x^2+z_y^2)\\)."
+            ],
+            "final_answer": "\\(xz_v+yz_u=e^{2u}z_y\\); \\(z_x^2+z_y^2=e^{-2u}(z_u^2+z_v^2)\\).",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The second identity’s right-hand bracket prints (∂u/∂v)² rather than (∂z/∂v)², and an intermediate chain-rule term labels ∂z/∂y as ∂x/∂y. The dependent variable throughout is z; squaring the two correct z-derivative equations gives the stated gradient-norm identity."
+            }
+          },
+          {
+            "id": "tb-example-5-24",
+            "title": "Example 5.24",
+            "question_paragraphs": [
+              "If \\(f(x,y)=c\\), obtain \\(d^2y/dx^2\\)."
+            ],
+            "paragraphs": [
+              "Differentiation gives \\(f_x+f_yy\\prime=0\\), hence \\(y\\prime=-f_x/f_y\\).",
+              "Differentiate again along the implicit curve: \\(f_{xx}+2f_{xy}y\\prime+f_{yy}(y\\prime)^2+f_yy^{\\prime\\prime}=0\\).",
+              "Substitute \\(y\\prime=-f_x/f_y\\) and put the terms over a common denominator."
+            ],
+            "final_answer": "\\(y^{\\prime\\prime}=-[f_{xx}f_y^2-2f_{xy}f_xf_y+f_{yy}f_x^2]/f_y^3\\), where \\(f_y\\ne0\\).",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The final formula on p. 236 omits the overall minus sign present in the preceding quotient differentiation. Differentiating fₓ+fᵧ y′=0 again gives y″=−(fₓₓ fᵧ²−2fₓᵧ fₓ fᵧ+fᵧᵧ fₓ²)/fᵧ³, as shown here."
+            }
+          },
+          {
+            "id": "tb-example-5-25",
+            "title": "Example 5.25",
+            "question_paragraphs": [
+              "Transform \\(u_{xx}+u_{yy}=0\\) into polar coordinates."
+            ],
+            "paragraphs": [
+              "Use \\(x=r\\cos\\theta,y=r\\sin\\theta\\), so \\(r_x=\\cos\\theta,r_y=\\sin\\theta,\\theta_x=-\\sin\\theta/r,\\theta_y=\\cos\\theta/r\\).",
+              "\\[\\partial_x=\\cos\\theta\\,\\partial_r-\\dfrac{\\sin\\theta}{r}\\partial_\\theta,\\quad\\partial_y=\\sin\\theta\\,\\partial_r+\\dfrac{\\cos\\theta}{r}\\partial_\\theta.\\]",
+              "On differentiating again, the coefficients must also be differentiated. The sums of the coefficients of \\(u_{rr},u_{r\\theta},u_{\\theta\\theta},u_r,u_\\theta\\) are respectively \\(1,0,1/r^2,1/r,0\\).",
+              "Hence \\(u_{xx}+u_{yy}=u_{rr}+u_r/r+u_{\\theta\\theta}/r^2\\)."
+            ],
+            "final_answer": "\\(u_{rr}+u_r/r+u_{\\theta\\theta}/r^2=0\\), \\(r>0\\)."
+          },
+          {
+            "id": "tb-example-5-26",
+            "title": "Example 5.26",
+            "question_paragraphs": [
+              "For \\(v=f(x,y)\\), \\(x=r\\cos\\theta,y=r\\sin\\theta\\), show \\(v_{rr}+v_r/r+v_{\\theta\\theta}/r^2=v_{xx}+v_{yy}\\)."
+            ],
+            "paragraphs": [
+              "\\[v_r=(xv_x+yv_y)/r,\\qquad v_\\theta=-yv_x+xv_y.\\]",
+              "Holding \\(\\theta\\) fixed, \\(v_{rr}=(x^2v_{xx}+2xyv_{xy}+y^2v_{yy})/r^2\\).",
+              "Holding r fixed and using \\(x_\\theta=-y,y_\\theta=x\\), \\(v_{\\theta\\theta}=y^2v_{xx}-2xyv_{xy}+x^2v_{yy}-xv_x-yv_y\\).",
+              "Add \\(r^2v_{rr}+v_{\\theta\\theta}+rv_r\\); the first-derivative and mixed terms cancel, leaving \\(r^2(v_{xx}+v_{yy})\\). Divide by \\(r^2\\)."
+            ],
+            "final_answer": "\\(v_{rr}+v_r/r+v_{\\theta\\theta}/r^2=v_{xx}+v_{yy}\\), \\(r>0\\).",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The printed question on p. 237 (and repeated line on p. 238) loses the factor 1/r² on the angular second derivative and prints a difference of Cartesian second derivatives. The preceding Example 5.25 and the worked derivation require vᵣᵣ+vᵣ/r+vθθ/r²=vₓₓ+vᵧᵧ. The working here follows that verified identity; some intermediate printed lines also omit mixed derivatives."
+            }
+          },
+          {
+            "id": "tb-example-5-27",
+            "title": "Example 5.27",
+            "question_paragraphs": [
+              "If \\(z=f(x,y)\\), \\(x=e^u\\cos v,y=e^u\\sin v\\), show \\(xz_v+yz_u=e^{2u}z_y\\)."
+            ],
+            "paragraphs": [
+              "The chain rule gives \\(z_u=xz_x+yz_y\\) and \\(z_v=-yz_x+xz_y\\).",
+              "Multiply the first equation by y and the second by x. Addition gives \\(yz_u+xz_v=(x^2+y^2)z_y\\).",
+              "Because \\(x^2+y^2=e^{2u}\\), this is the required identity."
+            ],
+            "final_answer": "\\(xz_v+yz_u=e^{2u}z_y\\).",
+            "math_mismatch": {
+              "label": "Printed intermediate-subscript discrepancies",
+              "message": "The question header on p. 238 prints y=eᵘ sin u, but the following coordinate line and working use y=eᵘ sin v. The identity here follows that latter transformation. Several intermediate derivative labels also interchange u and v. The correct coordinate derivatives are x_u=x, y_u=y, x_v=−y, y_v=x. The final identity printed in the question agrees with the working shown here."
+            }
+          },
+          {
+            "id": "tb-example-5-28",
+            "title": "Example 5.28",
+            "question_paragraphs": [
+              "If \\(u=f(r,s,t)\\), \\(r=x/y,s=y/z,t=z/x\\), show \\(xu_x+yu_y+zu_z=0\\)."
+            ],
+            "paragraphs": [
+              "\\[u_x=f_r/y-zf_t/x^2,\\quad u_y=-xf_r/y^2+f_s/z,\\quad u_z=-yf_s/z^2+f_t/x.\\]",
+              "Multiply by x,y,z respectively. The coefficients of \\(f_r\\), \\(f_s\\), and \\(f_t\\) each cancel in the sum."
+            ],
+            "final_answer": "\\(xu_x+yu_y+zu_z=0\\), where \\(xyz\\ne0\\)."
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0231",
+      "TB-P0232",
+      "TB-P0233",
+      "TB-P0249",
+      "TB-P0234",
+      "TB-P0235",
+      "TB-P0236",
+      "TB-P0237",
+      "TB-P0238",
+      "TB-P0239"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "231, 232, 233",
+        "note": "5.5 Total derivative and the chain rule"
+      },
+      {
+        "pages": "249",
+        "note": "Total differential"
+      },
+      {
+        "pages": "234, 235, 236, 237, 238, 239",
+        "note": "5.6 Change of variables in derivatives"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u4-jacobian",
@@ -2465,17 +3813,142 @@
     "title": "Jacobian",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "5.7 Jacobians and their properties",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0239",
+          "TB-P0240",
+          "TB-P0241",
+          "TB-P0242",
+          "TB-P0243"
+        ],
+        "book_refs": [
+          {
+            "pages": "239, 240, 241, 242, 243",
+            "note": "5.7 Jacobians and their properties"
+          }
+        ],
+        "paragraphs": [
+          "If \\(u,v\\) are functions of independent variables \\(x,y\\), their Jacobian is",
+          "\\[\\dfrac{\\partial(u,v)}{\\partial(x,y)}=\\begin{vmatrix}u_x&u_y\\\\v_x&v_y\\end{vmatrix}=u_xv_y-u_yv_x.\\]",
+          "For three functions of three variables use the corresponding 3×3 determinant, keeping the variable order exactly as written.",
+          "For a locally differentiable inverse transformation, the forward and inverse Jacobians multiply to 1. For a composite transformation,",
+          "\\[\\dfrac{\\partial(u,v)}{\\partial(x,y)}=\\dfrac{\\partial(u,v)}{\\partial(r,s)}\\dfrac{\\partial(r,s)}{\\partial(x,y)}.\\]",
+          "Interchanging two numerator functions or two denominator variables reverses the determinant’s sign. A zero Jacobian prevents use of the reciprocal formula at that point."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-29",
+            "title": "Example 5.29",
+            "question_paragraphs": [
+              "Find the coordinate Jacobians:",
+              "(i) \\(x=r\\cos\\theta,y=r\\sin\\theta\\).",
+              "(ii) \\(x=\\rho\\cos\\phi,y=\\rho\\sin\\phi,z=z\\).",
+              "(iii) \\(x=r\\sin\\theta\\cos\\phi,y=r\\sin\\theta\\sin\\phi,z=r\\cos\\theta\\)."
+            ],
+            "paragraphs": [],
+            "final_answer": "(i) \\(r\\); (ii) \\(\\rho\\); (iii) \\(r^2\\sin\\theta\\).",
+            "solution_parts": [
+              {
+                "label": "(i) Polar",
+                "paragraphs": [
+                  "\\[\\dfrac{\\partial(x,y)}{\\partial(r,\\theta)}=\\begin{vmatrix}\\cos\\theta&-r\\sin\\theta\\\\\\sin\\theta&r\\cos\\theta\\end{vmatrix}=r(\\cos^2\\theta+\\sin^2\\theta)=r.\\]"
+                ]
+              },
+              {
+                "label": "(ii) Cylindrical",
+                "paragraphs": [
+                  "\\[\\dfrac{\\partial(x,y,z)}{\\partial(\\rho,\\phi,z)}=\\begin{vmatrix}\\cos\\phi&-\\rho\\sin\\phi&0\\\\\\sin\\phi&\\rho\\cos\\phi&0\\\\0&0&1\\end{vmatrix}=\\rho.\\]"
+                ]
+              },
+              {
+                "label": "(iii) Spherical",
+                "paragraphs": [
+                  "\\[\\dfrac{\\partial(x,y,z)}{\\partial(r,\\theta,\\phi)}=\\begin{vmatrix}\\sin\\theta\\cos\\phi&r\\cos\\theta\\cos\\phi&-r\\sin\\theta\\sin\\phi\\\\\\sin\\theta\\sin\\phi&r\\cos\\theta\\sin\\phi&r\\sin\\theta\\cos\\phi\\\\\\cos\\theta&-r\\sin\\theta&0\\end{vmatrix}.\\]",
+                  "Expand along the third row: the contributions are \\(r^2\\sin\\theta\\cos^2\\theta\\) and \\(r^2\\sin^3\\theta\\); their sum is \\(r^2\\sin\\theta\\)."
+                ]
+              }
+            ],
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The derivative list for part (i) prints yθ=−r cos θ, but differentiating y=r sin θ gives +r cos θ, as its following determinant uses. In the spherical determinant a yφ entry is printed with a minus sign; differentiating y=r sin θ sin φ gives +r sin θ cos φ. The matrices here use the derivatives of the stated coordinate maps."
+            }
+          },
+          {
+            "id": "tb-example-5-30",
+            "title": "Example 5.30",
+            "question_paragraphs": [
+              "If \\(y_1=x_2x_3/x_1,y_2=x_3x_1/x_2,y_3=x_1x_2/x_3\\), prove \\(\\partial(y_1,y_2,y_3)/\\partial(x_1,x_2,x_3)=4\\)."
+            ],
+            "paragraphs": [
+              "For nonzero coordinates, \\(\\partial y_i/\\partial x_j=(y_i/x_j)M_{ij}\\), with",
+              "\\[M=\\begin{bmatrix}-1&1&1\\\\1&-1&1\\\\1&1&-1\\end{bmatrix}.\\]",
+              "Factor \\(y_i\\) from row i and \\(1/x_j\\) from column j. Since \\(y_1y_2y_3=x_1x_2x_3\\), the net factor is 1.",
+              "\\[\\det M=(-1)(1-1)-( -1-1)+(1+1)=4.\\]"
+            ],
+            "final_answer": "The Jacobian is 4."
+          },
+          {
+            "id": "tb-example-5-31",
+            "title": "Example 5.31",
+            "question_paragraphs": [
+              "If \\(x=r\\sin\\theta\\cos\\phi,y=r\\sin\\theta\\sin\\phi,z=r\\cos\\theta\\), prove \\(\\partial(x,y,z)/\\partial(r,\\theta,\\phi)=r^2\\sin\\theta\\)."
+            ],
+            "paragraphs": [
+              "Form the derivative matrix:",
+              "\\[\\begin{bmatrix}\\sin\\theta\\cos\\phi&r\\cos\\theta\\cos\\phi&-r\\sin\\theta\\sin\\phi\\\\\\sin\\theta\\sin\\phi&r\\cos\\theta\\sin\\phi&r\\sin\\theta\\cos\\phi\\\\\\cos\\theta&-r\\sin\\theta&0\\end{bmatrix}.\\]",
+              "Expand using the last row. The result is \\(r^2\\sin\\theta\\cos^2\\theta+r^2\\sin^3\\theta=r^2\\sin\\theta\\)."
+            ],
+            "final_answer": "\\(\\partial(x,y,z)/\\partial(r,\\theta,\\phi)=r^2\\sin\\theta\\).",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The question prints x=r sin θ cos θ, while the intended spherical transformation (Example 5.29 and the subsequent first row) is x=r sin θ cos φ. The following derivative matrix also loses sin φ in yᵣ and gives the wrong sign for yφ. The solution here explicitly uses x=r sin θ cos φ, y=r sin θ sin φ, z=r cos θ, for which the Jacobian is r² sin θ."
+            }
+          },
+          {
+            "id": "tb-example-5-32",
+            "title": "Example 5.32",
+            "question_paragraphs": [
+              "For \\(x=r\\cos\\theta,y=r\\sin\\theta\\), show \\([\\partial(x,y)/\\partial(r,\\theta)][\\partial(r,\\theta)/\\partial(x,y)]=1\\)."
+            ],
+            "paragraphs": [
+              "The forward Jacobian is \\(r\\). For the inverse relations, \\(r_x=\\cos\\theta,r_y=\\sin\\theta,\\theta_x=-\\sin\\theta/r,\\theta_y=\\cos\\theta/r\\).",
+              "\\[\\dfrac{\\partial(r,\\theta)}{\\partial(x,y)}=\\begin{vmatrix}\\cos\\theta&\\sin\\theta\\\\-\\sin\\theta/r&\\cos\\theta/r\\end{vmatrix}=\\dfrac1r.\\]",
+              "The product is \\(r(1/r)=1\\)."
+            ],
+            "final_answer": "The Jacobian product is 1, for \\(r>0\\) on a smooth local angular branch.",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "An early line on p. 242 labels xᵣ=cos θ as xθ. The forward determinant on p. 243 then contains inverse-coordinate entries in its second row. The correct forward rows are (cos θ,−r sin θ) and (sin θ,r cos θ), giving r; the inverse determinant gives 1/r."
+            }
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0239",
+      "TB-P0240",
+      "TB-P0241",
+      "TB-P0242",
+      "TB-P0243"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "239, 240, 241, 242, 243",
+        "note": "5.7 Jacobians and their properties"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u4-functional-dependence",
@@ -2483,17 +3956,79 @@
     "title": "Functional dependence & independence",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Functional dependence and independence",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0243",
+          "TB-P0244",
+          "TB-P0245"
+        ],
+        "book_refs": [
+          {
+            "pages": "243, 244, 245",
+            "note": "Functional dependence and independence"
+          }
+        ],
+        "paragraphs": [
+          "Functions are functionally dependent when a nontrivial relation between them holds throughout the domain under consideration. If \\(F(u,v)=0\\), differentiating with respect to x and y produces two linear relations between the derivative rows; consequently the Jacobian vanishes wherever the relation is regular.",
+          "A nonzero Jacobian proves local functional independence. When a Jacobian vanishes, look for and verify an actual relation; determinant zero at a single point is not by itself a global dependence test."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-33",
+            "title": "Example 5.33",
+            "question_paragraphs": [
+              "For \\(u=xy+yz+zx,v=x^2+y^2+z^2,w=x+y+z\\), determine whether there is a functional relationship, and find it."
+            ],
+            "paragraphs": [
+              "\\[\\dfrac{\\partial(u,v,w)}{\\partial(x,y,z)}=\\begin{vmatrix}y+z&z+x&x+y\\\\2x&2y&2z\\\\1&1&1\\end{vmatrix}.\\]",
+              "Replacing the first row by \\(R_1+R_2/2\\) makes it \\((x+y+z)(1,1,1)\\), proportional to the last row. Thus the determinant is zero.",
+              "Expand \\(w^2=(x+y+z)^2=x^2+y^2+z^2+2(xy+yz+zx)=v+2u\\)."
+            ],
+            "final_answer": "The functions are dependent: \\(w^2-v-2u=0\\)."
+          },
+          {
+            "id": "tb-example-5-34",
+            "title": "Example 5.34",
+            "question_paragraphs": [
+              "If \\(u=x\\sqrt{1-y^2}+y\\sqrt{1-x^2}\\) and \\(v=\\sin^{-1}x+\\sin^{-1}y\\), show that u and v are functionally related, and find the relation."
+            ],
+            "paragraphs": [
+              "Let \\(A=\\sqrt{1-x^2}\\), \\(B=\\sqrt{1-y^2}\\). For \\(|x|,|y|<1\\), \\(u_x=B-xy/A,\\ u_y=A-xy/B,\\ v_x=1/A,\\ v_y=1/B\\).",
+              "\\[\\dfrac{\\partial(u,v)}{\\partial(x,y)}=(B-xy/A)/B-(A-xy/B)/A=0.\\]",
+              "Using the sine addition formula gives \\(\\sin v=x\\sqrt{1-y^2}+y\\sqrt{1-x^2}=u\\)."
+            ],
+            "final_answer": "\\(u=\\sin v\\).",
+            "math_mismatch": {
+              "label": "Inverse-sine branch qualification",
+              "message": "The intermediate assertion v=sin⁻¹(u) need not hold on the full stated square because v=sin⁻¹x+sin⁻¹y may leave the principal arcsine interval. The final relation u=sin v is valid and follows directly from the sine addition formula, which is the route used here."
+            }
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0243",
+      "TB-P0244",
+      "TB-P0245"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "243, 244, 245",
+        "note": "Functional dependence and independence"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u4-maxima-minima-two-variables",
@@ -2501,17 +4036,140 @@
     "title": "Maxima and minima of functions of two variables",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "5.11 Maxima and minima of two-variable functions",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0253",
+          "TB-P0254",
+          "TB-P0255",
+          "TB-P0256",
+          "TB-P0257"
+        ],
+        "book_refs": [
+          {
+            "pages": "253, 254, 255, 256, 257",
+            "note": "5.11 Maxima and minima of two-variable functions"
+          }
+        ],
+        "paragraphs": [
+          "A function has a local maximum at \\((a,b)\\) if nearby values are no greater than \\(f(a,b)\\); it has a local minimum if nearby values are no smaller. With strict inequalities away from the point the extremum is strict. The greatest or least value over an entire specified domain is a global extremum.",
+          "For a differentiable function at an interior extremum, the necessary stationary conditions are \\(f_x(a,b)=f_y(a,b)=0\\). A stationary point need not be an extremum.",
+          "Put \\(r=f_{xx}(a,b),s=f_{xy}(a,b),t=f_{yy}(a,b)\\) and \\(D=rt-s^2\\). The quadratic part of the change is \\((rh^2+2shk+tk^2)/2\\)."
+        ],
+        "bullets": [
+          "If \\(D>0,r>0\\): a local minimum.",
+          "If \\(D>0,r<0\\): a local maximum.",
+          "If \\(D<0\\): a saddle point; there are nearby values both above and below \\(f(a,b)\\).",
+          "If \\(D=0\\): the test is inconclusive. Examine higher-order terms or suitable paths.",
+          "First solve both stationary equations without losing zero-factor cases, then classify every resulting point or stationary set."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-46",
+            "title": "Example 5.46",
+            "question_paragraphs": [
+              "Examine \\(f(x,y)=x^4+y^4-2x^2+4xy-2y^2\\) for extreme values."
+            ],
+            "paragraphs": [
+              "\\(f_x=4x^3-4x+4y\\), \\(f_y=4y^3+4x-4y\\). The stationary equations sum to \\(x^3+y^3=0\\), so for real x,y, \\(y=-x\\).",
+              "Substitute into \\(x^3-x+y=0\\): \\(x(x^2-2)=0\\). The stationary points are \\((0,0),(\\sqrt2,-\\sqrt2),(-\\sqrt2,\\sqrt2)\\).",
+              "\\(r=12x^2-4,s=4,t=12y^2-4\\). At the two nonzero points, \\(r=t=20\\), \\(D=rt-s^2=384>0\\), and \\(r>0\\), so both are minima. Their function value is −8.",
+              "At zero, \\(D=0\\). Along \\(y=0\\), \\(f=x^4-2x^2<0\\) near zero, but along \\(y=x\\), \\(f=2x^4>0\\). Thus the origin is a saddle."
+            ],
+            "final_answer": "Minima −8 at \\((\\sqrt2,-\\sqrt2)\\) and \\((-\\sqrt2,\\sqrt2)\\); a saddle at \\((0,0)\\)."
+          },
+          {
+            "id": "tb-example-5-47",
+            "title": "Example 5.47",
+            "question_paragraphs": [
+              "Discuss the maxima and minima of \\(f(x,y)=x^3y^2(1-x-y)\\)."
+            ],
+            "paragraphs": [
+              "\\[f_x=x^2y^2(3-4x-3y),\\qquad f_y=x^3y(2-2x-3y).\\]",
+              "If \\(xy\\ne0\\), solve \\(4x+3y=3,\\ 2x+3y=2\\) to obtain \\((x,y)=(1/2,1/3)\\). Also every point on either coordinate axis is stationary; these cases must not be discarded when dividing by x or y.",
+              "\\[f_{xx}=6xy^2-12x^2y^2-6xy^3,\\quad f_{xy}=6x^2y-8x^3y-9x^2y^2,\\quad f_{yy}=2x^3-2x^4-6x^3y.\\]",
+              "At \\((1/2,1/3)\\), \\(r=-1/9,s=-1/12,t=-1/8\\), so \\(D=1/144>0\\) and \\(r<0\\). This is a strict local maximum, of value \\(1/432\\).",
+              "On \\(y=0\\), the sign of nearby f is the sign of \\(x^3(1-x-y)\\), since \\(y^2\\ge0\\). Thus \\((x,0)\\) is a non-strict local minimum of value zero for \\(0<x<1\\), and a non-strict local maximum of value zero for \\(x<0\\) or \\(x>1\\).",
+              "At \\((1,0)\\), the path x=1 gives \\(f=-y^3\\), so it is not an extremum. At every point on x=0, nearby values of both signs occur: for \\(y\\ne1\\) vary the sign of x while keeping the coefficient \\(1-x-y\\) fixed in sign; at \\((0,1)\\) compare y=1 with y=1−2x. At the origin use y=x."
+            ],
+            "final_answer": "A strict local maximum \\(1/432\\) occurs at \\((1/2,1/3)\\); the y=0 stationary line also has the non-strict extrema described above. Points on x=0 and \\((1,0)\\) are not extrema.",
+            "math_mismatch": {
+              "label": "Printed stationary-set omission",
+              "message": "The printed solution lists only (1/2,1/3) and (0,0). Both derivatives actually vanish on the entire two coordinate axes. It also prints D=1/14 at the nonzero point; direct substitution gives D=1/144. The isolated maximum value 1/432 is correct; the additional stationary-line classification is PankusDesk verification."
+            }
+          },
+          {
+            "id": "tb-example-5-48",
+            "title": "Example 5.48",
+            "question_paragraphs": [
+              "Locate and classify the stationary points of \\(f(x,y)=2(x-y)^2-x^4-y^4\\)."
+            ],
+            "paragraphs": [
+              "\\(f_x=4(x-y)-4x^3\\), \\(f_y=-4(x-y)-4y^3\\). Adding the stationary equations gives \\(x^3+y^3=0\\), hence y=−x.",
+              "Substitution yields \\(4x(2-x^2)=0\\), so the points are \\((0,0),(\\sqrt2,-\\sqrt2),(-\\sqrt2,\\sqrt2)\\).",
+              "\\(r=4-12x^2,s=-4,t=4-12y^2\\). At the nonzero points \\(r=t=-20,D=384>0\\); both are maxima with value 8.",
+              "At zero, \\(D=0\\). Along y=−x, \\(f=8x^2-2x^4>0\\) sufficiently near zero; along y=x, \\(f=-2x^4<0\\)."
+            ],
+            "final_answer": "Maxima 8 at \\((\\sqrt2,-\\sqrt2)\\), \\((-\\sqrt2,\\sqrt2)\\); the origin is a saddle."
+          },
+          {
+            "id": "tb-example-5-49",
+            "title": "Example 5.49",
+            "question_paragraphs": [
+              "Prove that a rectangular solid of maximum volume inscribed in a sphere is a cube, and find its maximum volume."
+            ],
+            "paragraphs": [
+              "Let d be the sphere’s diameter and x,y,z the positive full edge lengths. A body diagonal spans the diameter, so \\(x^2+y^2+z^2=d^2\\), and \\(V=xyz\\).",
+              "Eliminate z: \\(V^2=x^2y^2(d^2-x^2-y^2)\\).",
+              "\\[\\partial_x(V^2)=2xy^2(d^2-2x^2-y^2),\\quad\\partial_y(V^2)=2x^2y(d^2-x^2-2y^2).\\]",
+              "At an interior stationary point, subtraction gives \\(x^2=y^2\\). Then \\(x^2=y^2=d^2/3\\), and the constraint gives \\(z^2=d^2/3\\).",
+              "All edges are positive, so \\(x=y=z=d/\\sqrt3\\). The volume vanishes on the boundary of the feasible positive region; the positive interior stationary value is the maximum."
+            ],
+            "final_answer": "The solid is a cube of edge \\(d/\\sqrt3\\), with \\(V_{\\max}=d^3/(3\\sqrt3)\\)."
+          }
+        ],
+        "accordion_label": "Worked examples",
+        "figures": [
+          {
+            "id": "book-fig-5-5",
+            "src": "college/1-1/matrices-calculus/assets/book/u4/theory/book-fig-5-5-ros.webp",
+            "alt": "Figure 5.5: surfaces illustrating a maximum, minimum and saddle point",
+            "caption": "Figure 5.5: surfaces illustrating a maximum, minimum and saddle point — ROS: unchanged source crop.",
+            "kind": "textbook",
+            "size": "medium",
+            "width": 1453,
+            "height": 381,
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0253",
+      "TB-P0254",
+      "TB-P0255",
+      "TB-P0256",
+      "TB-P0257"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "253, 254, 255, 256, 257",
+        "note": "5.11 Maxima and minima of two-variable functions"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u4-lagrange-multipliers-three-variables",
@@ -2519,17 +4177,267 @@
     "title": "Maxima and minima of functions of three variables using method of Lagrange multipliers",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "5.12 Lagrange’s method of undetermined multipliers",
+        "scope": "core",
+        "source_refs": [
+          "TB-P0257",
+          "TB-P0258",
+          "TB-P0259",
+          "TB-P0260",
+          "TB-P0261",
+          "TB-P0262",
+          "TB-P0263",
+          "TB-P0264",
+          "TB-P0265"
+        ],
+        "book_refs": [
+          {
+            "pages": "257, 258, 259, 260, 261, 262, 263, 264, 265",
+            "note": "5.12 Lagrange’s method of undetermined multipliers"
+          }
+        ],
+        "paragraphs": [
+          "When variables are linked by constraints, eliminating a variable may be inconvenient. For a function \\(u=f(x,y,z)\\) subject to \\(\\phi(x,y,z)=0\\), introduce",
+          "\\[F=f+\\lambda\\phi.\\]",
+          "Solve \\(F_x=F_y=F_z=0\\) together with the constraint. For two independent regular constraints use two multipliers and include both constraints.",
+          "These equations identify candidate stationary values; they do not by themselves distinguish maxima from minima. Check feasibility, singular cases, boundaries where relevant, and the nature of each candidate."
+        ],
+        "accordions": [
+          {
+            "id": "tb-example-5-50",
+            "title": "Example 5.50",
+            "question_paragraphs": [
+              "A rectangular box open at the top has volume 32 cubic feet. Find dimensions requiring the least material."
+            ],
+            "paragraphs": [
+              "Let x,y be base edges and z the height. \\(xyz=32\\) and area \\(S=xy+2yz+2zx=xy+64/x+64/y\\).",
+              "\\(S_x=y-64/x^2=0\\) and \\(S_y=x-64/y^2=0\\) give \\(x^2y=xy^2=64\\), hence x=y=4 and z=2.",
+              "At x=y=4, \\(S_{xx}=2,S_{xy}=1,S_{yy}=2\\), so \\(D=3>0\\) and \\(S_{xx}>0\\). The area grows toward the positive-domain boundary, so this is the required minimum.",
+              "Equivalently, set \\(F=xy+2yz+2zx+\\lambda(xyz-32)\\). Its three derivative equations imply x=y=2z, and the constraint again gives 4,4,2."
+            ],
+            "final_answer": "Base 4 ft × 4 ft, height 2 ft; minimum area 48 ft²."
+          },
+          {
+            "id": "tb-example-5-51",
+            "title": "Example 5.51",
+            "question_paragraphs": [
+              "(i) Given \\(x+y+z=a\\), find the maximum of \\(x^my^nz^p\\).",
+              "(ii) Find the minimum of \\(x^2+y^2+z^2\\) subject to \\(ax+by+cz=p\\)."
+            ],
+            "paragraphs": [],
+            "final_answer": "(i) \\(a^{m+n+p}m^mn^np^p/(m+n+p)^{m+n+p}\\) on the positive domain; (ii) \\(p^2/(a^2+b^2+c^2)\\).",
+            "solution_parts": [
+              {
+                "label": "(i)",
+                "paragraphs": [
+                  "Use the positive-domain interpretation \\(a,m,n,p>0\\), \\(x,y,z\\ge0\\). For an interior point, set \\(F=x^my^nz^p+\\lambda(x+y+z-a)\\).",
+                  "The derivative equations give \\(mx^{m-1}y^nz^p=nx^my^{n-1}z^p=px^my^nz^{p-1}=-\\lambda\\). Hence \\(m/x=n/y=p/z=(m+n+p)/a\\).",
+                  "Thus \\(x=am/(m+n+p)\\), \\(y=an/(m+n+p)\\), \\(z=ap/(m+n+p)\\). The logarithm \\(m\\log x+n\\log y+p\\log z\\) is strictly concave, so this interior stationary point is a maximum; the product is zero on the boundary."
+                ]
+              },
+              {
+                "label": "(ii)",
+                "paragraphs": [
+                  "Set \\(F=x^2+y^2+z^2+\\lambda(ax+by+cz-p)\\). Then \\(2x+\\lambda a=2y+\\lambda b=2z+\\lambda c=0\\).",
+                  "With \\(A=a^2+b^2+c^2>0\\), substituting into the constraint gives \\(\\lambda=-2p/A\\). Therefore \\((x,y,z)=p(a,b,c)/A\\).",
+                  "The value is \\(p^2/A\\). For any feasible vector write \\((x,y,z)=p(a,b,c)/A+w\\), where \\((a,b,c)\\cdot w=0\\). Its squared length is \\(p^2/A+\\lVert w\\rVert^2\\), proving the minimum."
+                ]
+              }
+            ],
+            "explainers": [
+              {
+                "title": "Domain for part (i)",
+                "paragraphs": [
+                  "The positive-domain interpretation a,m,n,p>0 and x,y,z≥0 is necessary for the stated weighted-product maximum. These restrictions are made explicit in the working; without them the unqualified maximum claim need not hold."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tb-example-5-52",
+            "title": "Example 5.52",
+            "question_paragraphs": [
+              "Find the maximum and minimum distances of \\((3,4,12)\\) from the sphere \\(x^2+y^2+z^2=4\\)."
+            ],
+            "paragraphs": [
+              "Optimise \\(f=(x-3)^2+(y-4)^2+(z-12)^2\\) subject to the radius-two sphere. For \\(F=f+\\lambda(x^2+y^2+z^2-4)\\), differentiation gives \\((1+\\lambda)(x,y,z)=(3,4,12)\\).",
+              "The constraint gives \\(4=169/(1+\\lambda)^2\\), hence \\(1+\\lambda=\\pm13/2\\). The candidate points are \\(\\pm(6,8,24)/13\\).",
+              "The external point has distance 13 from the origin. The nearest candidate is in its direction at radius 2, giving 13−2=11. The opposite candidate gives 13+2=15. Continuity on the compact sphere ensures that these candidates supply the extrema."
+            ],
+            "final_answer": "Minimum distance 11; maximum distance 15 for the stated sphere.",
+            "math_mismatch": {
+              "label": "Printed question/solution mismatch",
+              "message": "The question and initial constraint on pp. 259–260 give x²+y²+z²=4 (radius 2). The printed working later substitutes 1 instead of 4 and concludes 12 and 14, which are the distances for a radius-one sphere. For the question as printed, the correct distances are 11 and 15."
+            }
+          },
+          {
+            "id": "tb-example-5-53",
+            "title": "Example 5.53",
+            "question_paragraphs": [
+              "Show that the rectangular solid of maximum volume inscribed in a sphere is a cube."
+            ],
+            "paragraphs": [
+              "Let 2x,2y,2z be its full positive edge lengths and R the sphere’s radius. \\(V=8xyz\\), with \\(x^2+y^2+z^2=R^2\\).",
+              "\\[F=8xyz+\\lambda(x^2+y^2+z^2-R^2).\\]",
+              "The stationary equations are \\(8yz+2\\lambda x=0\\), \\(8xz+2\\lambda y=0\\), \\(8xy+2\\lambda z=0\\). Multiply by x,y,z respectively: the first terms are all 8xyz, so \\(x^2=y^2=z^2\\).",
+              "With positive edges \\(x=y=z=R/\\sqrt3\\). Boundary volumes vanish, and the interior value is positive."
+            ],
+            "final_answer": "A cube with edge \\(2R/\\sqrt3\\); maximum volume \\(8R^3/(3\\sqrt3)\\)."
+          },
+          {
+            "id": "tb-example-5-54",
+            "title": "Example 5.54",
+            "question_paragraphs": [
+              "A tent on a square base of side x has vertical sides of height y and a regular-pyramid top of height h. For fixed capacity, find x and y in terms of h that minimise the canvas area."
+            ],
+            "paragraphs": [
+              "With no canvas floor, \\(V=x^2y+x^2h/3\\), and \\(S=4xy+x\\sqrt{x^2+4h^2}\\). The slant height of each triangular roof panel is \\(\\sqrt{h^2+x^2/4}\\).",
+              "Set \\(F=S+\\lambda(V-V_0)\\). The y-equation gives \\(4x+\\lambda x^2=0\\), hence \\(\\lambda=-4/x\\).",
+              "The h-equation is \\(4xh/\\sqrt{x^2+4h^2}+\\lambda x^2/3=0\\). Substitution gives \\(\\sqrt{x^2+4h^2}=3h\\), hence \\(x=\\sqrt5h\\).",
+              "The x-equation is \\(4y+\\sqrt{x^2+4h^2}+x^2/\\sqrt{x^2+4h^2}+2\\lambda x(y+h/3)=0\\).",
+              "Put \\(x^2=5h^2\\), \\(\\lambda x=-4\\), and the square root3h: \\(4y+3h+5h/3-8y-8h/3=0\\), so \\(y=h/2\\)."
+            ],
+            "final_answer": "\\(x=\\sqrt5h,\\ y=h/2\\).",
+            "figures": [
+              {
+                "id": "book-fig-5-6",
+                "src": "college/1-1/matrices-calculus/assets/book/u4/theory/book-fig-5-6-ros.webp",
+                "alt": "Figure 5.6: square-base tent with vertical walls and a pyramidal roof",
+                "caption": "Figure 5.6: square-base tent with vertical walls and a pyramidal roof — ROS: unchanged source crop.",
+                "kind": "textbook",
+                "size": "medium",
+                "width": 490,
+                "height": 584,
+                "after": {
+                  "type": "paragraph",
+                  "index": 0
+                }
+              }
+            ],
+            "explainers": [
+              {
+                "title": "PankusDesk minimum check",
+                "paragraphs": [
+                  "Eliminate y using the fixed capacity V: \\(S=4V/x-4xh/3+x\\sqrt{x^2+4h^2}\\). For each positive x, the h-dependent expression is convex and is minimised at \\(h=x/\\sqrt5\\). Therefore \\(S\\ge4V/x+\\sqrt5x^2/3\\).",
+                  "This last expression tends to infinity at both positive-domain ends. Its unique critical point is \\(x^3=6V/\\sqrt5\\), where \\(y=V/x^2-h/3=h/2>0\\). Thus the stationary dimensions are feasible and attain the global lower bound."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tb-example-5-55",
+            "title": "Example 5.55",
+            "question_paragraphs": [
+              "For \\(u=a^3x^2+b^3y^2+c^3z^2\\) with \\(x^{-1}+y^{-1}+z^{-1}=1\\), show the stationary values occur at \\(x=\\lambda/a,y=\\lambda/b,z=\\lambda/c\\)."
+            ],
+            "paragraphs": [
+              "Set \\(F=u+\\mu(x^{-1}+y^{-1}+z^{-1}-1)\\). Then \\(2a^3x-\\mu/x^2=0\\) and the corresponding y,z equations hold.",
+              "Consequently \\(2a^3x^3=2b^3y^3=2c^3z^3=\\mu\\). Taking real cube roots gives \\(ax=by=cz=\\lambda\\).",
+              "Substitute \\(x=\\lambda/a\\), \\(y=\\lambda/b\\), \\(z=\\lambda/c\\) into the constraint: \\((a+b+c)/\\lambda=1\\), hence \\(\\lambda=a+b+c\\)."
+            ],
+            "final_answer": "\\(x=(a+b+c)/a,y=(a+b+c)/b,z=(a+b+c)/c\\), when these expressions satisfy the stated nonzero-variable constraint."
+          },
+          {
+            "id": "tb-example-5-56",
+            "title": "Example 5.56",
+            "question_paragraphs": [
+              "Find the greatest volume of a rectangular parallelepiped inscribed in \\(x^2/a^2+y^2/b^2+z^2/c^2=1\\)."
+            ],
+            "paragraphs": [
+              "Let 2x,2y,2z be the positive full edges, parallel to the ellipsoid’s axes; \\(V=8xyz\\). Form \\(F=8xyz+\\lambda(x^2/a^2+y^2/b^2+z^2/c^2-1)\\).",
+              "The derivative equations, multiplied by x,y,z respectively, imply \\(x^2/a^2=y^2/b^2=z^2/c^2\\).",
+              "The constraint makes each ratio1/3. Hence \\(x=a/\\sqrt3,y=b/\\sqrt3,z=c/\\sqrt3\\).",
+              "The volume is zero on the boundary of the positive feasible octant and positive inside, so this interior stationary volume is the greatest."
+            ],
+            "final_answer": "\\(V_{\\max}=8abc/(3\\sqrt3)\\); full edges \\(2a/\\sqrt3,2b/\\sqrt3,2c/\\sqrt3\\)."
+          },
+          {
+            "id": "tb-example-5-57",
+            "title": "Example 5.57",
+            "question_paragraphs": [
+              "Find the stationary values of \\(u=x^2/a^4+y^2/b^4+z^2/c^4\\), subject to \\(lx+my+nz=0\\) and \\(x^2/a^2+y^2/b^2+z^2/c^2=1\\). Interpret the result geometrically."
+            ],
+            "paragraphs": [
+              "Let \\(F=u+\\lambda_1(lx+my+nz)+\\lambda_2(x^2/a^2+y^2/b^2+z^2/c^2-1)\\).",
+              "The x-equation is \\(2x/a^4+\\lambda_1l+2\\lambda_2x/a^2=0\\); there are corresponding y,z equations.",
+              "Multiply by x,y,z and add. The constraints give \\(2u+2\\lambda_2=0\\), so \\(\\lambda_2=-u\\). Thus",
+              "\\[x=-\\dfrac{\\lambda_1la^4}{2(1-a^2u)},\\quad y=-\\dfrac{\\lambda_1mb^4}{2(1-b^2u)},\\quad z=-\\dfrac{\\lambda_1nc^4}{2(1-c^2u)}.\\]",
+              "Substitution into the plane relation gives \\(l^2a^4/(1-a^2u)+m^2b^4/(1-b^2u)+n^2c^4/(1-c^2u)=0\\) in the non-singular case. If a denominator vanishes, check the original multiplier equations before dividing.",
+              "PankusDesk completion for singular cases: retain the polynomial form \\[l^2a^4(1-b^2u)(1-c^2u)+m^2b^4(1-a^2u)(1-c^2u)+n^2c^4(1-a^2u)(1-b^2u)=0.\\] It is the determinant condition for the original multiplier equations together with lx+my+nz=0, and retains the possible roots lost by division. With positive a,b,c and a nonzero plane normal, its two roots (counting multiplicity) are the stationary values on the central ellipse. Recover a nonzero stationary direction from the original linear system and scale it to satisfy the ellipsoid constraint.",
+              "The tangent plane to the ellipsoid at \\((x,y,z)\\) is \\(xX/a^2+yY/b^2+zZ/c^2=1\\). Its distance p from the origin satisfies \\(p^{-2}=x^2/a^4+y^2/b^4+z^2/c^4=u\\)."
+            ],
+            "final_answer": "The stationary values are the roots of the displayed polynomial condition (or its rational form when no denominator vanishes); \\(u=1/p^2\\), where p is the tangent-plane distance.",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The printed rearrangement for z on p. 263 loses the minus sign: its multiplier equation gives z=−λ₁nc⁴/[2(1−c²u)], consistent with the x and y rearrangements. The common-sign expressions shown here yield the indicated stationary-value condition."
+            }
+          },
+          {
+            "id": "tb-example-5-58",
+            "title": "Example 5.58",
+            "question_paragraphs": [
+              "Show that the greatest volume of a rectangular parallelepiped inscribed in \\(x^2/a^2+y^2/b^2+z^2/c^2=1\\) is \\(8abc/(3\\sqrt3)\\)."
+            ],
+            "paragraphs": [
+              "The full edges are2x,2y,2z and \\(V=8xyz\\). The constraint is \\(g=x^2/a^2+y^2/b^2+z^2/c^2-1=0\\).",
+              "From \\(\\nabla V+\\lambda\\nabla g=0\\), multiply each component by its corresponding coordinate. This gives \\(V+2\\lambda x^2/a^2=V+2\\lambda y^2/b^2=V+2\\lambda z^2/c^2=0\\).",
+              "Adding yields \\(3V+2\\lambda=0\\). Each component then gives \\(x^2/a^2=y^2/b^2=z^2/c^2=1/3\\).",
+              "For positive edges substitute \\(x=a/\\sqrt3,y=b/\\sqrt3,z=c/\\sqrt3\\) into8xyz. The boundary volume is zero."
+            ],
+            "final_answer": "\\(V_{\\max}=8abc/(3\\sqrt3)\\).",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The first Lagrange-function display on p. 264 uses x²/y² where the stated ellipsoid requires x²/a². A later line prints 3V+2λ−1=0, but multiplication and addition of the derivative equations gives 3V+2λ=0; its following λ=−3V/2 is consistent with that corrected equation."
+            }
+          },
+          {
+            "id": "tb-example-5-59",
+            "title": "Example 5.59",
+            "question_paragraphs": [
+              "Find the shortest and longest distances from \\((1,2,-1)\\) to the sphere \\(x^2+y^2+z^2=24\\)."
+            ],
+            "paragraphs": [
+              "Optimise \\(d^2=(x-1)^2+(y-2)^2+(z+1)^2\\), with the sphere constraint. The multiplier equations give \\((1+\\lambda)(x,y,z)=(1,2,-1)\\).",
+              "Thus \\(y=2x,z=-x\\). The sphere equation becomes \\(6x^2=24\\), giving \\(x=\\pm2\\); the candidate points are \\((2,4,-2)\\) and \\((-2,-4,2)\\).",
+              "At these points \\(d^2=6\\) and54 respectively. A distance function is continuous on the compact sphere, so its extrema occur among these candidates."
+            ],
+            "final_answer": "Shortest distance \\(\\sqrt6\\); longest distance \\(3\\sqrt6\\).",
+            "math_mismatch": {
+              "label": "Printed mathematical discrepancy",
+              "message": "The printed candidate list uses z=±2 with the same sign notation as x=±2, but its derivative equations require z=−x. The stationary points are (2,4,−2) and (−2,−4,2). They give the book’s final distances √6 and 3√6."
+            }
+          }
+        ],
+        "accordion_label": "Worked examples"
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U4"
+      "SYL-R25-U4",
+      "TB-P0257",
+      "TB-P0258",
+      "TB-P0259",
+      "TB-P0260",
+      "TB-P0261",
+      "TB-P0262",
+      "TB-P0263",
+      "TB-P0264",
+      "TB-P0265"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "257, 258, 259, 260, 261, 262, 263, 264, 265",
+        "note": "5.12 Lagrange’s method of undetermined multipliers"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "complete-theory"
   },
   {
     "id": "u5-double-integrals-cartesian",
@@ -2663,17 +4571,42 @@
     "title": "Areas by double integrals",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Appendix reference — area",
+        "scope": "core",
+        "source_refs": [
+          "TB-P1359"
+        ],
+        "book_refs": [
+          {
+            "pages": "1359",
+            "note": "Appendix reference — area"
+          }
+        ],
+        "paragraphs": [
+          "The area of a plane region D is \\(A=\\iint_D1\\,dA\\). For a region between the polar rays α,β and the curve r=f(θ), the reference formula is \\[A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta.\\]",
+          "This is a formula reference only. The multiple-integral chapter, region setup and worked examples have not been supplied."
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P1359"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "1359",
+        "note": "Appendix reference — area"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "partial"
   },
   {
     "id": "u5-volumes-triple-integrals",
@@ -2681,16 +4614,41 @@
     "title": "Volumes by triple integrals",
     "status": "core",
     "learn": [],
-    "sections": [],
+    "sections": [
+      {
+        "heading": "Appendix reference — volume",
+        "scope": "core",
+        "source_refs": [
+          "TB-P1359"
+        ],
+        "book_refs": [
+          {
+            "pages": "1359",
+            "note": "Appendix reference — volume"
+          }
+        ],
+        "paragraphs": [
+          "For a solid E, \\(V=\\iiint_E1\\,dV\\). For a nonnegative height z over a plane region D, \\(V=\\iint_D z\\,dA\\).",
+          "The reference gives these volume formulas; it does not supply the Unit V development of limits, order changes or coordinate substitutions."
+        ]
+      }
+    ],
     "formulas": [],
     "method": [],
     "source_refs": [
-      "SYL-R25-U5"
+      "SYL-R25-U5",
+      "TB-P1359"
     ],
-    "book_refs": [],
+    "book_refs": [
+      {
+        "pages": "1359",
+        "note": "Appendix reference — volume"
+      }
+    ],
     "cautions": [],
     "practice": null,
     "self_checks": [],
-    "class_history": null
+    "class_history": null,
+    "source_coverage": "partial"
   }
 ]

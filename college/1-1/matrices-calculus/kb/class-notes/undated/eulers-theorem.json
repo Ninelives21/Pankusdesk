@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "id": "eulers-theorem",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-EULERS-THEOREM",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 4,
+    "title": "Partial Differentiation and Its Applications"
+  },
+  "title": "Euler’s theorem and applications",
+  "summary": "Euler’s theorem and applications. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    68,
+    70,
+    71,
+    72,
+    73
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u4-eulers-theorem",
+      "label": "Euler’s Theorem",
+      "href": "college/1-1/matrices-calculus/unit-4.html#u4-eulers-theorem"
+    }
+  ],
+  "pages": [
+    {
+      "page": 68,
+      "heading": "Euler’s theorem and applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If u is differentiable and homogeneous of degree n, \\(xu_x+yu_y=nu\\). With continuous second partials, \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=n(n-1)u\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "If \\(u=\\log f\\) and f is homogeneous of degree n, then \\(xu_x+yu_y=n\\); in particular it is 1 when n=1."
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-euler-root",
+              "title": "Euler: square root",
+              "question_paragraphs": [
+                "Verify Euler’s theorem for \\(u=\\sqrt{x^2+y^2}\\)."
+              ],
+              "paragraphs": [
+                "For positive k, \\(u(kx,ky)=ku(x,y)\\); the degree is one. Away from the origin, \\(u_x=x/u,u_y=y/u\\).",
+                "\\[xu_x+yu_y=\\dfrac{x^2+y^2}{u}=u.\\]"
+              ],
+              "final_answer": "\\(xu_x+yu_y=u\\), away from (0,0).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-euler-rational",
+              "title": "Euler: rational function",
+              "question_paragraphs": [
+                "Verify Euler’s theorem for \\(u=xy/(x+y)\\)."
+              ],
+              "paragraphs": [
+                "The quotient is homogeneous of degree one where x+y≠0. Quotient differentiation gives \\(u_x=y^2/(x+y)^2\\), \\(u_y=x^2/(x+y)^2\\).",
+                "\\[xu_x+yu_y=\\dfrac{xy(x+y)}{(x+y)^2}=\\dfrac{xy}{x+y}=u.\\]"
+              ],
+              "final_answer": "\\(xu_x+yu_y=u\\), for x+y≠0.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-euler-log",
+              "title": "Logarithm of a homogeneous function",
+              "question_paragraphs": [
+                "If \\(u=\\log[(x^2+y^2)/(x+y)]\\), show \\(xu_x+yu_y=1\\)."
+              ],
+              "paragraphs": [
+                "Put v=(x²+y²)/(x+y), homogeneous of degree one on the logarithm’s real domain. Euler gives \\(xv_x+yv_y=v\\).",
+                "Because \\(u_x=v_x/v,u_y=v_y/v\\), their weighted sum is v/v=1."
+              ],
+              "final_answer": "\\(xu_x+yu_y=1\\).",
+              "textbook_match": {
+                "status": "near",
+                "href": "college/1-1/matrices-calculus/unit-4.html#tb-example-5-11",
+                "target": "textbook example",
+                "note": "Example 5.11 takes log u to be a degree-two quotient. Here u itself is the logarithm of a degree-one quotient."
+              }
+            },
+            {
+              "id": "class-euler-atan",
+              "title": "Exercise: inverse tangent of a quotient",
+              "question_paragraphs": [
+                "If \\(u=\\tan^{-1}[(x^3+y^3)/(x+y)]\\), show \\(xu_x+yu_y=\\sin2u\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-4-questions.html#question-u4-p5-4-10",
+                "target": "Problems 5.4 · Q10",
+                "note": "Exact match to the first identity of Problems 5.4 Q10; the book also requests the second-order identity. This differs from worked Example 5.16, whose denominator is x−y."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ],
+              "solution_mode": "textbook-link"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

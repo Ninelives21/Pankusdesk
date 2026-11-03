@@ -635,3 +635,9 @@ The root homepage must not maintain a second manual list of recent study cards.
 - Calendar summaries should remain short, human-readable descriptions because the homepage reuses them verbatim.
 
 This keeps the homepage synchronized automatically with the canonical dated class-log history.
+
+### Undated source packets
+
+When the supplied notebook has no reliable lesson date, preserve it in `kb/class-notes/undated/<lesson-id>.json` under `undated-class-notes.schema.json`. Use `date_status: "undated"`, a stable `id`, source captures and mapped topics; omit `date`. Configure `classNotes.undatedCollection` separately from dated `class_sources`. The shared class page appends these lessons with **Undated** navigation labels and `#<lesson-id>` anchors; never create calendar entries or guess dates. Existing dated chronology and anchors stay intact.
+
+Shared worked-example accordions may use `solution_parts` for separately labelled, fully worked subparts. Keep the entire multipart question visible when closed, require each part to contain working, and end solved items with a bold final answer. Source figure crops requested as ROS retain original pixels; crop coordinates, source/output hashes and visual comparisons belong in an audit. No redraw or enhancement is implied.

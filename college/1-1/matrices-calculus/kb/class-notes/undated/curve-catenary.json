@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "curve-catenary",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-CURVE-CATENARY",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Tracing the catenary",
+  "summary": "Tracing the catenary. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    64
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-curve-tracing-cartesian",
+      "label": "Curve tracing in cartesian coordinates",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-curve-tracing-cartesian"
+    }
+  ],
+  "pages": [
+    {
+      "page": 64,
+      "heading": "Tracing the catenary",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-curve-catenary",
+              "title": "Catenary",
+              "question_paragraphs": [
+                "Trace \\(y=a\\cosh(x/a)\\), \\(a>0\\)."
+              ],
+              "paragraphs": [
+                "Cosh is even, so the curve is symmetric about the y-axis. Since cosh≥1, y≥a; the y-intercept is (0,a) and there is no x-intercept or passage through the origin.",
+                "\\(y\\prime=\\sinh(x/a)\\): the curve decreases for x<0, has a horizontal tangent at zero and increases for x>0.",
+                "\\(y^{\\prime\\prime}=\\cosh(x/a)/a>0\\), so it is concave upwards throughout. There are no straight-line asymptotes. The supplied notes contain no catenary drawing."
+              ],
+              "final_answer": "A y-axis-symmetric curve with minimum a at (0,a), concave upwards.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

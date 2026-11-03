@@ -324,3 +324,16 @@
 	font-size: .88rem;
 	color: var(--text-secondary);
 }
+
+/* Shared labelled subpart solutions retain a clear reading boundary. */
+.study-solution-part{margin:14px 0;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.study-solution-part:nth-of-type(even){background:var(--notes-soft)}
+.study-solution-part h4{margin:0 0 10px}
+.study-accordion { min-width: 0; grid-template-columns: minmax(0, 1fr); }
+.study-accordion-item mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.study-example-summary-copy,
+.study-example-question { grid-template-columns: minmax(0, 1fr); }
+.subject-unit-page mjx-container,
+.unit-class-notes-page mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.subject-unit-page mjx-container:not([display="true"]),
+.unit-class-notes-page mjx-container:not([display="true"]) { display: inline-block; }

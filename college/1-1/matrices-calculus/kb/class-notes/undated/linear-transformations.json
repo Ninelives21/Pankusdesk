@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "linear-transformations",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-LINEAR-TRANSFORMATIONS",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 2,
+    "title": "Eigenvalues, Eigenvectors and Quadratic Forms"
+  },
+  "title": "Linear transformations and quadratic forms",
+  "summary": "Linear transformations and quadratic forms. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    26,
+    27
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u2-canonical-orthogonal",
+      "label": "Reduction of Quadratic form to canonical forms by Orthogonal Transformation",
+      "href": "college/1-1/matrices-calculus/unit-2.html#u2-canonical-orthogonal"
+    }
+  ],
+  "pages": [
+    {
+      "page": 26,
+      "heading": "Linear transformations and quadratic forms",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A linear transformation has the matrix form \\(Y=AX\\). It is non-singular when A is non-singular. An orthogonal transformation satisfies \\(A^{-1}=A^T\\), or \\(A^TA=I\\). The columns have unit length and are mutually orthogonal."
+        },
+        {
+          "type": "paragraph",
+          "text": "A quadratic form is homogeneous of degree two. In two variables it is \\(ax^2+2hxy+by^2\\); in three variables it is \\(ax^2+by^2+cz^2+2hxy+2gyz+2fzx\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "\\[Q=X^TAX,\\quad A=\\begin{bmatrix}a&h&f\\\\h&b&g\\\\f&g&c\\end{bmatrix}.\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The rank and determinant of the quadratic form refer to its associated symmetric matrix. A change \\(X=PY\\) gives \\(Q=Y^TP^TAPY\\). In canonical form the mixed-product terms are absent."
+        },
+        {
+          "type": "pankusdesk-tip",
+          "title": "Incomplete last line",
+          "paragraphs": [
+            "The bottom line of the second supplied page ends during its rank description. The complete rank treatment remains in the existing Unit II Text; no missing handwritten sentence has been reconstructed."
+          ]
+        }
+      ]
+    }
+  ]
+}
