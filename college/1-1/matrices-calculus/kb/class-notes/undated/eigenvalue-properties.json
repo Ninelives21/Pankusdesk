@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "id": "eigenvalue-properties",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-EIGENVALUE-PROPERTIES",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 2,
+    "title": "Eigenvalues, Eigenvectors and Quadratic Forms"
+  },
+  "title": "Eigenvalue properties — class proofs",
+  "summary": "Eigenvalue properties — class proofs. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    41,
+    42
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u2-eigenvectors-properties",
+      "label": "Eigenvectors and their properties",
+      "href": "college/1-1/matrices-calculus/unit-2.html#u2-eigenvectors-properties"
+    }
+  ],
+  "pages": [
+    {
+      "page": 41,
+      "heading": "Eigenvalue properties — class proofs",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If \\(AX=\\lambda X\\), \\(X\\ne0\\), then \\(A^mX=\\lambda^mX\\), so \\(\\lambda^m\\) is an eigenvalue of \\(A^m\\). More generally \\(p(A)X=p(\\lambda)X\\) for a polynomial p."
+        },
+        {
+          "type": "paragraph",
+          "text": "\\(\\det(A^T-\\lambda I)=\\det((A-\\lambda I)^T)=\\det(A-\\lambda I)\\); hence A and its transpose have the same characteristic roots."
+        },
+        {
+          "type": "paragraph",
+          "text": "For invertible A, \\(AX=\\lambda X\\) implies \\(A^{-1}X=X/\\lambda\\), so the eigenvalue becomes \\(1/\\lambda\\). Since \\(\\operatorname{adj}A=(\\det A)A^{-1}\\), the corresponding eigenvalue is \\(\\det A/\\lambda\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "A single nonzero vector cannot be an eigenvector for two distinct eigenvalues: if \\(AX=\\lambda X=\\mu X\\), then \\((\\lambda-\\mu)X=0\\), forcing \\(\\lambda=\\mu\\)."
+        }
+      ]
+    }
+  ]
+}

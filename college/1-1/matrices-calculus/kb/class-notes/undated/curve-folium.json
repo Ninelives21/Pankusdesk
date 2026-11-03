@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "curve-folium",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-CURVE-FOLIUM",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Tracing the folium",
+  "summary": "Tracing the folium. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    61,
+    62,
+    63
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-curve-tracing-cartesian",
+      "label": "Curve tracing in cartesian coordinates",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-curve-tracing-cartesian"
+    }
+  ],
+  "pages": [
+    {
+      "page": 61,
+      "heading": "Tracing the folium",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-curve-folium",
+              "title": "Folium of Descartes",
+              "question_paragraphs": [
+                "Trace \\(x^3+y^3=3axy\\), \\(a>0\\)."
+              ],
+              "paragraphs": [
+                "Interchanging x,y leaves the equation unchanged: symmetry is about y=x. The lowest-degree equation at the origin is xy=0, giving the two axes as nodal tangents. The only intercept on either coordinate axis is the origin.",
+                "On y=x, \\(2x^3=3ax^2\\), giving the origin and (3a/2,3a/2).",
+                "\\[y\\prime=\\dfrac{ay-x^2}{y^2-ax}.\\]",
+                "At (3a/2,3a/2), y′=−1, so the tangent is x+y=3a.",
+                "Substitute y=mx+c in the equation. The coefficient of x³ gives 1+m³=0, hence m=−1. The coefficient of x² then gives 3c+3a=0, so c=−a. The oblique asymptote is x+y+a=0.",
+                "PankusDesk completion for branch locations: the parametrisation \\(x=3at/(1+t^3),y=3at^2/(1+t^3)\\) shows a first-quadrant loop for t>0 and the two unbounded branches for t<0, separated by t=−1."
+              ],
+              "final_answer": "A first-quadrant loop, node at the origin, symmetry about y=x, and asymptote x+y+a=0.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "figures": [
+                {
+                  "id": "class-folium",
+                  "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-folium-ros.webp",
+                  "alt": "Notebook tracing of the folium of Descartes with its oblique asymptote",
+                  "caption": "Notebook tracing of the folium of Descartes with its oblique asymptote — ROS: unchanged source crop.",
+                  "kind": "class-note",
+                  "size": "medium",
+                  "width": 1030,
+                  "height": 674
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1915,3 +1915,7 @@ sub {
 .beyond-r25-section table {
 	background: #fff;
 }
+
+/* Let wide equations scroll within the topic instead of expanding its grid track. */
+.topic-note { min-width: 0; }
+.note-section { min-width: 0; }

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "curve-astroid",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-CURVE-ASTROID",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Tracing the astroid",
+  "summary": "Tracing the astroid. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    60
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-curve-tracing-cartesian",
+      "label": "Curve tracing in cartesian coordinates",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-curve-tracing-cartesian"
+    }
+  ],
+  "pages": [
+    {
+      "page": 60,
+      "heading": "Tracing the astroid",
+      "blocks": [
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-curve-astroid",
+              "title": "Astroid with unequal intercepts",
+              "question_paragraphs": [
+                "Trace \\((x/a)^{2/3}+(y/b)^{2/3}=1\\), \\(a,b>0\\)."
+              ],
+              "paragraphs": [
+                "The even cube-root squares make the equation symmetric about both coordinate axes. The origin does not satisfy the equation. The notebook supplies these initial observations.",
+                "PankusDesk completion: use \\(x=a\\cos^3t,y=b\\sin^3t\\). This satisfies the equation since cos²t+sin²t=1, and covers the bounded curve.",
+                "The intercepts are (±a,0),(0,±b), with cusp tangents y=0 at the first pair and x=0 at the second. There are no asymptotes. No astroid sketch is supplied in the notebook; no substitute drawing has been generated."
+              ],
+              "final_answer": "A closed four-cusped curve contained in \\(|x|\\le a,|y|\\le b\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

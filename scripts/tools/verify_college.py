@@ -36,6 +36,7 @@ DESIGN_LOCK_FILES = [
     REPO / "college" / "schemas" / "topics.schema.json",
     REPO / "college" / "schemas" / "textbook-questions.schema.json",
     REPO / "college" / "schemas" / "class-log.schema.json",
+    REPO / "college" / "schemas" / "undated-class-notes.schema.json",
     REPO / "scripts" / "new" / "study-ui.js",
     REPO / "styles" / "new" / "study-ui.css",
     REPO / "scripts" / "new" / "unit-resource-nav.js",
@@ -262,8 +263,17 @@ def check_accordion(item, context: str):
         errors.append(f"{context}: accordion missing title")
     paragraphs = item.get("paragraphs") or []
     bullets = item.get("bullets") or []
-    if not paragraphs and not bullets:
-        errors.append(f"{context}: accordion has no paragraphs or bullets")
+    parts = item.get("solution_parts") or []
+    if not paragraphs and not bullets and not parts:
+        errors.append(f"{context}: accordion has no paragraphs, bullets or solution parts")
+    if not isinstance(parts, list):
+        errors.append(f"{context}: solution_parts must be a list")
+    else:
+        for index, part in enumerate(parts):
+            if not isinstance(part, dict) or not part.get("label") or not part.get("paragraphs"):
+                errors.append(f"{context}: solution part {index} requires a label and working")
+                continue
+            check_accordion(dict(part, title=part["label"]), f"{context} solution part {index}")
     for key, values in (("paragraphs", paragraphs), ("bullets", bullets)):
         if not isinstance(values, list) or any(not isinstance(v, str) for v in values):
             errors.append(f"{context}: accordion {key} must be an array of strings")
@@ -455,6 +465,60 @@ def check_class_logs(subject_dir: Path, topic_ids: set[str], source_ids: set[str
             errors.append(f"raw notebook binaries must stay outside website assets: {rel(raw_dir)} ({len(binaries)} file(s))")
 
 
+def check_undated_class_notes(subject_dir, subject, topic_ids, source_ids):
+    cfg = subject.get("classNotes") or {}
+    collection = cfg.get("undatedCollection")
+    if not collection:
+        return
+    manifest = load_json(subject_dir / cfg.get("sourceManifest", "kb/data/source-manifest.json")) or {}
+    records = manifest.get(collection)
+    if not isinstance(records, list):
+        errors.append(f"{rel(subject_dir)}: missing configured undated collection {collection}")
+        return
+    seen = set()
+    def walk(value, context):
+        if isinstance(value, dict):
+            if value.get("src") and value.get("alt"):
+                check_figure(value, context, None, None)
+            if value.get("question_paragraphs"):
+                match = value.get("textbook_match") or {}
+                if match.get("status") not in ("exact", "near", "none"):
+                    errors.append(f"{context}: class question has no textbook-match audit")
+                if match.get("status") in ("exact", "near") and not match.get("href"):
+                    errors.append(f"{context}: textbook match has no target")
+                if match.get("status") == "exact" and (value.get("solution_mode") != "textbook-link" or value.get("paragraphs")):
+                    errors.append(f"{context}: exact textbook match must link to its canonical solution")
+            for key, child in value.items():
+                walk(child, context + "." + key)
+        elif isinstance(value, list):
+            for i, child in enumerate(value):
+                walk(child, f"{context}[{i}]")
+        elif isinstance(value, str) and "\\frac" in value:
+            errors.append(f"{context}: use \\dfrac instead of \\frac")
+    for source in records:
+        path = subject_dir / source.get("entry", "")
+        entry = load_json(path)
+        if not isinstance(entry, dict):
+            continue
+        context = rel(path)
+        ident = entry.get("id")
+        if not ident or ident in seen:
+            errors.append(f"{context}: missing/duplicate undated lesson id")
+        seen.add(ident)
+        if "date" in entry or entry.get("date_status") != "undated":
+            errors.append(f"{context}: undated packet must omit date and declare date_status")
+        if entry.get("source_id") not in source_ids or entry.get("source_id") != source.get("id"):
+            errors.append(f"{context}: unresolved/mismatched source id")
+        if entry.get("unit", {}).get("number") != source.get("unit"):
+            errors.append(f"{context}: source unit mismatch")
+        if not entry.get("pages") or not entry.get("source_captures"):
+            errors.append(f"{context}: undated packet lacks content/captures")
+        for mapped in entry.get("mapped_topics", []):
+            if mapped.get("topic_id") not in topic_ids:
+                errors.append(f"{context}: unknown mapped topic")
+        walk(entry, context)
+
+
 def check_class_history(subject_dir: Path, topic: dict, context: str):
     for i, item in enumerate(topic.get("class_history", []) or []):
         if not isinstance(item, dict):
@@ -624,6 +688,7 @@ def verify_subject(subject_dir: Path):
             errors.append(f"{label}: Unit {n} marked as having class notes but shell is missing: {rel(shell)}")
 
     check_class_logs(subject_dir, topic_ids, source_ids)
+    check_undated_class_notes(subject_dir, subject, topic_ids, source_ids)
 
 
 def verify_calendar_indexes():

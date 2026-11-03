@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "id": "curve-tracing-method",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-CURVE-TRACING-METHOD",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Curve tracing — concepts and method",
+  "summary": "Curve tracing — concepts and method. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-curve-tracing-cartesian",
+      "label": "Curve tracing in cartesian coordinates",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-curve-tracing-cartesian"
+    }
+  ],
+  "pages": [
+    {
+      "page": 49,
+      "heading": "Curve tracing — concepts and method",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A double point is a point through which two branches pass. Distinct real tangents give a node; coincident real tangents give a cusp."
+        },
+        {
+          "id": "class-node-cusp",
+          "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-node-cusp-ros.webp",
+          "alt": "Notebook sketches of a node and a cusp",
+          "caption": "Notebook sketches of a node and a cusp — ROS: unchanged source crop.",
+          "kind": "class-note",
+          "size": "medium",
+          "width": 1011,
+          "height": 238,
+          "type": "figure"
+        },
+        {
+          "id": "class-inflection",
+          "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-inflection-ros.webp",
+          "alt": "Notebook sketch labelled point of inflection",
+          "caption": "Notebook sketch labelled point of inflection — ROS: unchanged source crop.",
+          "kind": "class-note",
+          "size": "medium",
+          "width": 512,
+          "height": 289,
+          "type": "figure"
+        },
+        {
+          "type": "heading",
+          "text": "Order of investigation"
+        },
+        {
+          "type": "bullet",
+          "text": "Check symmetry: invariance under y→−y gives x-axis symmetry; under x→−x gives y-axis symmetry; under (x,y)→(−x,−y) gives origin symmetry; interchanging x,y tests y=x."
+        },
+        {
+          "type": "bullet",
+          "text": "Find intercepts, test whether the origin lies on the curve, and use the lowest-degree terms for tangents at the origin."
+        },
+        {
+          "type": "bullet",
+          "text": "For an asymptote x=a or y=b inspect the highest-power coefficients after treating the equation as a polynomial in the other variable. For an oblique line y=mx+c, substitute and equate the highest surviving coefficients."
+        },
+        {
+          "type": "bullet",
+          "text": "Determine the region in which coordinates are real. Use dy/dx=0 for horizontal tangents, and check where dx/dy=0 for vertical tangents."
+        },
+        {
+          "type": "bullet",
+          "text": "Use derivative signs, loops, concavity and asymptotic behaviour to join branches consistently."
+        },
+        {
+          "id": "class-concave-up",
+          "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-concave-up-ros.webp",
+          "alt": "Notebook sketch of a curve concave upwards",
+          "caption": "Notebook sketch of a curve concave upwards — ROS: unchanged source crop.",
+          "kind": "class-note",
+          "size": "medium",
+          "width": 367,
+          "height": 206,
+          "type": "figure"
+        },
+        {
+          "id": "class-concave-down",
+          "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-concave-down-ros.webp",
+          "alt": "Notebook sketch of a curve concave downwards",
+          "caption": "Notebook sketch of a curve concave downwards — ROS: unchanged source crop.",
+          "kind": "class-note",
+          "size": "medium",
+          "width": 244,
+          "height": 183,
+          "type": "figure"
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-concavity-sign",
+              "title": "Concavity and inflection",
+              "question_paragraphs": [
+                "How do derivatives determine increasing/decreasing behaviour and concavity?"
+              ],
+              "paragraphs": [
+                "Where \\(y\\prime>0\\), the curve increases; where \\(y\\prime<0\\), it decreases. A zero first derivative is a stationary point, not automatically an extremum.",
+                "Where \\(y^{\\prime\\prime}>0\\), it is concave upwards; where \\(y^{\\prime\\prime}<0\\), concave downwards. Inflection requires a change of concavity. A zero second derivative alone does not establish inflection."
+              ],
+              "final_answer": "Use derivative signs on intervals; \\(y^{\\prime\\prime}=0\\) alone is inconclusive.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ],
+              "math_mismatch": {
+                "label": "Notebook concavity discrepancy",
+                "message": "The concave-down line writes y″=0. The required sign condition is y″<0; the unchanged source sketch illustrates concave downwards. The earlier “change of direction” wording for inflection is incomplete: the relevant change is concavity."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

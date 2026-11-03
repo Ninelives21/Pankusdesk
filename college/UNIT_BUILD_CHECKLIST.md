@@ -239,3 +239,11 @@ Set `publicationStatus: "ready"` only when:
 - [ ] Make every SIMPLER explainer hand-holding: re-establish the needed symbol/diagram clue before using it (source shape, arrowhead, polarity, node identity, series/parallel evidence, reference direction), rather than assuming the student remembers an earlier lesson.
 - [ ] In SIMPLER worked examples, explain **how we know** each important classification/sign from the visible figure before writing the corresponding equation; avoid unexplained “obvious/clearly/by inspection” jumps.
 - [ ] Treat the shared accordion, LaTeX, drawing and tip look-and-feel as cross-subject/cross-semester design-locked components.
+
+## Undated source packets and multipart solutions
+
+- [ ] If a date is missing or cropped, omit it; use the separate undated schema/collection and stable lesson ID.
+- [ ] Preserve capture order/provenance, label the nav Undated, and verify lesson deep links; do not insert undated packets into the calendar.
+- [ ] Validate undated sources, mapped topics, all class-question textbook matches and nested figure assets.
+- [ ] For `solution_parts`, show the whole question before opening and verify each labelled part has complete working.
+- [ ] For user-requested ROS, inspect each crop against its source, keep original pixels and record hashes/crop coordinates.

@@ -16,7 +16,9 @@
     "copyright_policy": "Raw commercial textbook screenshots are not copied into the public workspace. KB records page/image provenance only.",
     "textbook_fidelity_policy": "For prescribed-book theory, retain the supplied textbook wording and sequence as closely as practical, filtered only to the R25 syllabus. Worked textbook examples are kept as collapsible dropdowns. PankusDesk additions, if any, must be visibly separated from textbook-derived text.",
     "chapter_end_question_policy": "R25-relevant textbook problem sets, including section-end sets such as Problems 28.4, are published set-by-set on the Textbook Questions page and linked at the same logical point in the theory flow where the prescribed book places them. Full PankusDesk solutions are supplied; printed appendix answers remain separate checks.",
-    "class_note_policy": "Dated notebook records live on the dedicated Priyanka's Class Notes page for the unit. They are not mixed into the cumulative textbook Text page. Overlap with the prescribed book is retained only on the class-notes page as class history; verified notebook slips are called out transparently rather than silently propagated."
+    "class_note_policy": "Dated notebook records live on the dedicated Priyanka's Class Notes page for the unit. They are not mixed into the cumulative textbook Text page. Overlap with the prescribed book is retained only on the class-notes page as class history; verified notebook slips are called out transparently rather than silently propagated.",
+    "additional_packet_edition_note": "The newly supplied Chapter 4/5 and appendix photos include examination references later than the existing 2010 edition citation. Their exact edition is unconfirmed; a title/copyright photo is needed. Historical source records are preserved.",
+    "undated_class_policy": "Undated source packets remain separately labelled in kb/class-notes/undated, with capture order and stable lesson IDs. They are not assigned dates or inserted into the calendar."
   },
   "archives": [
     {
@@ -71,6 +73,51 @@
       "description": "Physical textbook scans: pp.58–80 (Unit II source packet)",
       "sha256": "d50ccd2da9f1eb93d26d192a944b9e6c513fa1325b9a8e3c2947ded18d6452a7",
       "member_count": 47,
+      "status": "PASS"
+    },
+    {
+      "id": "CLASS-MAC-UNDATED",
+      "file": "ww_MAC_class_notes.zip",
+      "type": "user_supplied_notebook_images",
+      "description": "48 supplied notebook photos: Unit II supplements, Unit III and introductory Unit IV",
+      "sha256": "0a701f6235206cad8b9c3872c77fc804f790883635edd7619dc0d2adf35105f8",
+      "member_count": 48,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-MAC-CH5-A",
+      "file": "01_MAC_01.zip",
+      "type": "user_supplied_textbook_images",
+      "description": "Chapter 5 printed pp. 217–245",
+      "sha256": "b5cf55f5b7d1b594d82346f524bf668c0cdfb173a1c69435e11c9a4bf4a24699",
+      "member_count": 29,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-MAC-CH5-B",
+      "file": "01_MAC_02.zip",
+      "type": "user_supplied_textbook_images",
+      "description": "Chapter 5 printed pp. 246–271",
+      "sha256": "d5ed4a986eb13bec71bb02a96b88e607679f54bba31e8bd79401cbab008ba5cb",
+      "member_count": 26,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-MAC-CH4-APPENDIX",
+      "file": "2_3-MAC.zip",
+      "type": "user_supplied_textbook_images",
+      "description": "Printed pp. 157–171 and formula appendix pp. 1357–1360",
+      "sha256": "45a5cbf874176c78bdaa17b5b39c29fbd5bb667b57f47626beaa8952a05f5de8",
+      "member_count": 19,
+      "status": "PASS"
+    },
+    {
+      "id": "BOOK-MAC-TOC-INDEX-SUPPLEMENT",
+      "file": "mac_book_toc_index.zip",
+      "type": "user_supplied_textbook_contents_and_index",
+      "description": "Seven supplied contents/index photos used to identify chapter ranges and missing sections; exact edition remains unconfirmed.",
+      "sha256": "27f2591de8cd1356a5a283e83e9ac86339385d0ce0b55f397f9766a8dcca264d",
+      "member_count": 7,
       "status": "PASS"
     }
   ],
@@ -357,6 +404,473 @@
       "notebook_pages": 6,
       "policy": "Preserved on the dedicated Unit II Class Notes page; every class problem is rendered as a clickable dropdown with a complete stepwise solution. Exact-match checking was performed against the existing Unit II Grewal worked examples and in-scope question bank; partial overlap is not labelled as an exact match. Verified notebook slips are stated explicitly.",
       "nav_label": "Diagonalization & powers"
+    }
+  ],
+  "undated_class_sources": [
+    {
+      "id": "CLASS-UNDATED-LINEAR-TRANSFORMATIONS",
+      "unit": 2,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/linear-transformations.json",
+      "title": "Linear transformations and quadratic forms",
+      "nav_label": "Linear transformations and quadratic forms",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 26.jpg",
+          "sha256": "875c3e3cc4404a9e56ad05941e2841f7d1495bb4b9944b578e7aff6f78a72fb0",
+          "capture_number": 26
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 27.jpg",
+          "sha256": "6c397cde531e10cd0e370c5beaf675da1893790bcc877e814d1d835e09614208",
+          "capture_number": 27
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-EIGENVALUE-PROPERTIES",
+      "unit": 2,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/eigenvalue-properties.json",
+      "title": "Eigenvalue properties — class proofs",
+      "nav_label": "Eigenvalue properties — class proofs",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 41.jpg",
+          "sha256": "6b728fc9b95fe37b3eb0da2b6f4dc17193e38000527d88fedb1782e46dc585dd",
+          "capture_number": 41
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 42.jpg",
+          "sha256": "e3b079a9b22a36488c4185f3939d4a163b561106e836edc6aa27b32dfad4789d",
+          "capture_number": 42
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-ROLLES-THEOREM",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/rolles-theorem.json",
+      "title": "Rolle’s theorem and its applications",
+      "nav_label": "Rolle’s theorem and its applications",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 28.jpg",
+          "sha256": "6aa37bcad27aac6f3cc2f83f734e8be4d01ece089012dd21da37ac7b8f76311e",
+          "capture_number": 28
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 29.jpg",
+          "sha256": "9562d920269e4bb44eb106cd896ee47ff536af083804bc9675ef56e341cc567b",
+          "capture_number": 29
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 30.jpg",
+          "sha256": "842df64a1a7d3d0cb02c97f658da069ed2fa3689bba31fc02e0abf95dfe9080f",
+          "capture_number": 30
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 31.jpg",
+          "sha256": "4012e02d21e9a60cad68210c283163916896ed8ae8114001e2f4e5bacc794d32",
+          "capture_number": 31
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 32.jpg",
+          "sha256": "7f194785833c9f9f61b7c798f6e6300c75960b7230e78c9d75ec7f629fb1a9d6",
+          "capture_number": 32
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-LAGRANGE-MVT",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/lagrange-mvt.json",
+      "title": "Lagrange’s mean-value theorem",
+      "nav_label": "Lagrange’s mean-value theorem",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 33.jpg",
+          "sha256": "d69beced90a9e9de1db18593953c61b1ab3855b059f62f401d741dbb262c6a4d",
+          "capture_number": 33
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 34.jpg",
+          "sha256": "f9ab89954432a15886e8767246d57ec7d7a94383b39bd25401cf81808788bc16",
+          "capture_number": 34
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 35.jpg",
+          "sha256": "7e742ac64af535165e99afff5db8a1249b2123ac95692b3610f86814967eb5c4",
+          "capture_number": 35
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 36.jpg",
+          "sha256": "ef04c067f2beb9413885374e34e6141eadf1c3df10176e7bc5aace4052df681e",
+          "capture_number": 36
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 37.jpg",
+          "sha256": "088e1743f8e75164e36d6f4831dc6a31316734d02223956b5980620b440cf93e",
+          "capture_number": 37
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-CAUCHY-MVT",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/cauchy-mvt.json",
+      "title": "Cauchy’s mean-value theorem",
+      "nav_label": "Cauchy’s mean-value theorem",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 38.jpg",
+          "sha256": "97b1d37c1fe7372804144ab4cb1ca27036d6a76229ea182168f8fd4511ef7a6e",
+          "capture_number": 38
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 39.jpg",
+          "sha256": "87e8608e187bb6138d8219ec73e2e48fbd21b86fafe2d0f4ec5eae224f5895d3",
+          "capture_number": 39
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 40.jpg",
+          "sha256": "d6cce84f16a3b7aeb97dffa1a3b6a72ce66b1f4cadc41760e10eccdd5393b312",
+          "capture_number": 40
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-TAYLOR-SERIES",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/taylor-series.json",
+      "title": "Taylor and Maclaurin series",
+      "nav_label": "Taylor and Maclaurin series",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 43.jpg",
+          "sha256": "6aba37f4bb0219f198b816ae52fc01a857cb8c1ff93f4e7bb9fcf42e3f75578c",
+          "capture_number": 43
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 44.jpg",
+          "sha256": "38c273154d9c97f018501e5077397b4d6999a3aabed6a6ac4a7d3eb7b0430d49",
+          "capture_number": 44
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 45.jpg",
+          "sha256": "e5d250afa026ece9d09c24844271100c5350be2efe401e53bde43dda834cc1b1",
+          "capture_number": 45
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 46.jpg",
+          "sha256": "63c18b024e53098e3c9c032de0672f2bf461414d1484db7eb21cf1e2fc1d22e5",
+          "capture_number": 46
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 47.jpg",
+          "sha256": "42adb1a2995b126ba8cfdd484c59243e1735457064900bb42e3089e637596e2a",
+          "capture_number": 47
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 48.jpg",
+          "sha256": "cd6b3c3e1fa453ca09438e99b82389fc097c1f2cc370f647339b746923530093",
+          "capture_number": 48
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-CURVE-TRACING-METHOD",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/curve-tracing-method.json",
+      "title": "Curve tracing — concepts and method",
+      "nav_label": "Curve tracing — concepts and method",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 49.jpg",
+          "sha256": "a71f6f1304e0807dde83e65ecb460ff39d63ecd15f6d8004326c2c98027cff29",
+          "capture_number": 49
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 50.jpg",
+          "sha256": "b2205c0f88e97d9a01a22bb1e0180eab4f77090f517914215299f4f05d061dda",
+          "capture_number": 50
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 51.jpg",
+          "sha256": "3543d7bb2ecd5a2fbee2601062478b52f639a820216294852f931d0b98b6084e",
+          "capture_number": 51
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 52.jpg",
+          "sha256": "9b54395be5c0fe3f153795bca0daeced390b6e063e1b45f51d2c7a062dee23b3",
+          "capture_number": 52
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 53.jpg",
+          "sha256": "6b63f1def2ce64c1a11af8761d7bd9836c0b0012e7268028c22c3fa66c07db71",
+          "capture_number": 53
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 54.jpg",
+          "sha256": "d08f18ac7c9dc8b8c298db93e0bd7919dc68ed0b9fa407548b46174c875afd02",
+          "capture_number": 54
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-CURVE-PARABOLA",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/curve-parabola.json",
+      "title": "Tracing the parabola",
+      "nav_label": "Tracing the parabola",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 55.jpg",
+          "sha256": "6bee8fd67140e841e21431ae8618d06f18b2fb66e0817bb0dbcac3e8c31ea8d0",
+          "capture_number": 55
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 56.jpg",
+          "sha256": "fe39b706a33d20d1e668fc73983094b2577439f098d91c98e0c9aa2b82d5ffbb",
+          "capture_number": 56
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-CURVE-STROPHOID",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/curve-strophoid.json",
+      "title": "Tracing the strophoid",
+      "nav_label": "Tracing the strophoid",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 57.jpg",
+          "sha256": "c47a7f7bc3e1d9ee2a5a416a6e13516c282e431d467467b77fb0244b922514ce",
+          "capture_number": 57
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 58.jpg",
+          "sha256": "98c2ff0d58f02fc4cffd6a3db8965e4be1640cee9a4b84ee2ba7862675188de6",
+          "capture_number": 58
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 59.jpg",
+          "sha256": "906c3afc345dd27c7df47814001213fab8bfd41fa2360d2b9deb69424b39bed7",
+          "capture_number": 59
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-CURVE-ASTROID",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/curve-astroid.json",
+      "title": "Tracing the astroid",
+      "nav_label": "Tracing the astroid",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 60.jpg",
+          "sha256": "b1f0edb24cf7bfc33a2d7a0f54fedce86a711d209a8977554f192fc688754d92",
+          "capture_number": 60
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-CURVE-FOLIUM",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/curve-folium.json",
+      "title": "Tracing the folium",
+      "nav_label": "Tracing the folium",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 61.jpg",
+          "sha256": "9c3b72d0dfc2792738ca3253f094c6c9866e54d1137f03b221f4e20c20aaab8a",
+          "capture_number": 61
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 62.jpg",
+          "sha256": "8e016193ee350362746693d95819c5437f5747b5f6d7dc7806f320604493a06b",
+          "capture_number": 62
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 63.jpg",
+          "sha256": "d6f21a464f908c4267d5d85c34abea983f1f357ddd93c5396d17661a190f67fb",
+          "capture_number": 63
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-CURVE-CATENARY",
+      "unit": 3,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/curve-catenary.json",
+      "title": "Tracing the catenary",
+      "nav_label": "Tracing the catenary",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 64.jpg",
+          "sha256": "0fd002b2009c7a921806b3a9c5278a30649a93a9f981116c8c82a6a0883db912",
+          "capture_number": 64
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-PARTIAL-DIFFERENTIATION",
+      "unit": 4,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/partial-differentiation.json",
+      "title": "Functions, continuity, partials and chain rule",
+      "nav_label": "Functions, continuity, partials and chain rule",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 65.jpg",
+          "sha256": "29b2749a4252939d0c27c324a8985145f3f4c20dd081180fd8dfdff47c6daca8",
+          "capture_number": 65
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 66.jpg",
+          "sha256": "6437d1a8263ee1e0956c011bc6d511670dd04e85e9a1b9e8e2599eb70432298b",
+          "capture_number": 66
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 67.jpg",
+          "sha256": "8c4f7249aaf2bcebc39a5b9d977c326a49b0c92ac8f95e29027d4033cfde9380",
+          "capture_number": 67
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-MULTIVARIABLE-LIMITS",
+      "unit": 4,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/multivariable-limits.json",
+      "title": "Path tests for two-variable limits",
+      "nav_label": "Path tests for two-variable limits",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 68.jpg",
+          "sha256": "11582e39a8562d4a4507b1dbc2faba402797b7335117a9d0c38716c5e49b66e7",
+          "capture_number": 68
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 69.jpg",
+          "sha256": "72a9f658e0d8aa99138e799a158b031c240e7db1cad2bcf891caf103f7718012",
+          "capture_number": 69
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 70.jpg",
+          "sha256": "96f8eb31602913e81c6dcc4b1640863bb34234a2778a1a901246fef80c0cc49e",
+          "capture_number": 70
+        }
+      ]
+    },
+    {
+      "id": "CLASS-UNDATED-EULERS-THEOREM",
+      "unit": 4,
+      "date_status": "undated",
+      "entry": "kb/class-notes/undated/eulers-theorem.json",
+      "title": "Euler’s theorem and applications",
+      "nav_label": "Euler’s theorem and applications",
+      "archive": "CLASS-MAC-UNDATED",
+      "captures": [
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 68.jpg",
+          "sha256": "11582e39a8562d4a4507b1dbc2faba402797b7335117a9d0c38716c5e49b66e7",
+          "capture_number": 68
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 70.jpg",
+          "sha256": "96f8eb31602913e81c6dcc4b1640863bb34234a2778a1a901246fef80c0cc49e",
+          "capture_number": 70
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 71.jpg",
+          "sha256": "19c6d285d93be5549d0b90b0cdae6d7f389ed479f3bf441c2ebab37d95aded65",
+          "capture_number": 71
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 72.jpg",
+          "sha256": "64b314ac3e6a710db7b01edf5b4064339a9de2d0ff68a07c43e51d8823eed679",
+          "capture_number": 72
+        },
+        {
+          "archive": "CLASS-MAC-UNDATED",
+          "image_file": "Mac-class-unit2 - 73.jpg",
+          "sha256": "95a4d590b829660addbb6a83dddaa0283eb7aa161d9537986ddf9f9eb41be6b0",
+          "capture_number": 73
+        }
+      ]
     }
   ]
 }

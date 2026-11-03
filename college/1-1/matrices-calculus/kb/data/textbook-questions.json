@@ -5404,6 +5404,240 @@
           ]
         }
       ]
+    },
+    "3": {
+      "title": "Single Variable Calculus and Curve Tracing",
+      "page_title": "Textbook Questions — Selected Class Matches",
+      "page_description": "Selected textbook questions matching the supplied notebook, with one canonical solution per question. This is a partial question-bank release; complete section-end sets are still pending.",
+      "summary": {
+        "selected_question_count": 6,
+        "stats": [
+          {
+            "value": 6,
+            "label": "selected questions / parts"
+          }
+        ]
+      },
+      "source": {
+        "title": "User-supplied Higher Engineering Mathematics pages · B. S. Grewal",
+        "note": "Questions are transcribed from the photographed book; its edition has not been independently confirmed. The solutions are PankusDesk working. No printed appendix answers were supplied for these selected items.",
+        "review_pages": [
+          162,
+          167
+        ]
+      },
+      "groups": [
+        {
+          "id": "problems-4-4",
+          "title": "Problems 4.4 · Selected class overlaps",
+          "note": "Selected questions/parts from the supplied textbook pages; the rest of this problem set is not yet transcribed. Solutions are PankusDesk working, not printed textbook answers.",
+          "questions": [
+            {
+              "id": "u3-p4-4-1-iv",
+              "number": 1,
+              "book_page": 162,
+              "topic_id": "u3-rolles-theorem",
+              "r25_scope": "core",
+              "question": "Selected subpart:",
+              "question_source_refs": [
+                "TB-P0162"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "For positive x the logarithm has a positive argument, so f is continuous and differentiable on the required intervals. At both endpoints the argument equals 1, so \\(f(a)=f(b)=0\\).",
+                  "\\[f\\prime(x)=\\dfrac{2x}{x^2+ab}-\\dfrac1x=\\dfrac{x^2-ab}{x(x^2+ab)}.\\]",
+                  "\\(f\\prime(c)=0\\) gives \\(c^2=ab\\). Positivity gives \\(c=\\sqrt{ab}\\), and \\(a<\\sqrt{ab}<b\\)."
+                ],
+                "result": "\\(c=\\sqrt{ab}\\).",
+                "note": "PankusDesk solution; no printed appendix answer was supplied for this item."
+              },
+              "question_parts": [
+                {
+                  "id": "u3-p4-4-1-iv-part",
+                  "label": "(iv)",
+                  "content": "For \\(0<a<b\\), verify Rolle’s theorem for \\(f(x)=\\log[(x^2+ab)/(x(a+b))]\\) on \\([a,b]\\)."
+                }
+              ]
+            },
+            {
+              "id": "u3-p4-4-1-ii",
+              "number": 1,
+              "book_page": 162,
+              "topic_id": "u3-rolles-theorem",
+              "r25_scope": "core",
+              "question": "Selected subpart:",
+              "question_source_refs": [
+                "TB-P0162"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "The function is continuous and differentiable everywhere; both endpoint values are zero.",
+                  "\\[f\\prime(x)=e^x(\\sin x-\\cos x)+e^x(\\cos x+\\sin x)=2e^x\\sin x.\\]",
+                  "The only zero in \\((\\pi/4,5\\pi/4)\\) is \\(c=\\pi\\)."
+                ],
+                "result": "\\(c=\\pi\\).",
+                "note": "PankusDesk solution; no printed appendix answer was supplied for this item."
+              },
+              "question_parts": [
+                {
+                  "id": "u3-p4-4-1-ii-part",
+                  "label": "(ii)",
+                  "content": "Verify Rolle’s theorem for \\(f(x)=e^x(\\sin x-\\cos x)\\) on \\([\\pi/4,5\\pi/4]\\)."
+                }
+              ]
+            },
+            {
+              "id": "u3-p4-4-9",
+              "number": 9,
+              "book_page": 162,
+              "topic_id": "u3-lagrange-geometric-applications",
+              "r25_scope": "core",
+              "question": "For \\(0<a<b\\), prove \\((b-a)/b<\\log(b/a)<(b-a)/a\\). Hence show \\(1/4<\\log(4/3)<1/3\\).",
+              "question_source_refs": [
+                "TB-P0162"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "Apply LMVT to \\(\\log x\\) on \\([a,b]\\): \\(\\log(b/a)=(b-a)/c\\), with \\(a<c<b\\).",
+                  "Taking reciprocals reverses order: \\(1/b<1/c<1/a\\). Multiply by \\(b-a>0\\).",
+                  "Set a=3,b=4 to obtain \\(1/4<\\log(4/3)<1/3\\)."
+                ],
+                "result": "\\((b-a)/b<\\log(b/a)<(b-a)/a\\); \\(1/4<\\log(4/3)<1/3\\).",
+                "note": "PankusDesk solution; no printed appendix answer was supplied for this item."
+              }
+            },
+            {
+              "id": "u3-p4-4-10-ii",
+              "number": 10,
+              "book_page": 162,
+              "topic_id": "u3-cauchy-mvt",
+              "r25_scope": "core",
+              "question": "Selected subpart:",
+              "question_source_refs": [
+                "TB-P0162"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "Both functions meet the continuity and differentiability hypotheses, with \\(g\\prime(x)=-1/x^2\\ne0\\).",
+                  "The endpoint ratio is \\(1/(1/e-1)=-e/(e-1)\\). The derivative ratio is \\((1/c)/(-1/c^2)=-c\\).",
+                  "Thus \\(c=e/(e-1)\\). Since \\(e>2\\), this lies between 1 and e."
+                ],
+                "result": "\\(c=e/(e-1)\\).",
+                "note": "PankusDesk solution; no printed appendix answer was supplied for this item."
+              },
+              "question_parts": [
+                {
+                  "id": "u3-p4-4-10-ii-part",
+                  "label": "(ii)",
+                  "content": "Verify CMVT for \\(f(x)=\\log x,g(x)=1/x\\), on \\([1,e]\\)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problems-4-5",
+          "title": "Problems 4.5 · Selected class overlaps",
+          "note": "Selected questions/parts from the supplied textbook pages; the rest of this problem set is not yet transcribed. Solutions are PankusDesk working, not printed textbook answers.",
+          "questions": [
+            {
+              "id": "u3-p4-5-17",
+              "number": 17,
+              "book_page": 167,
+              "topic_id": "u3-taylor-series",
+              "r25_scope": "core",
+              "question": "Prove \\(\\log(1+e^x)=\\log2+x/2+x^2/8-x^4/192+\\cdots\\).",
+              "question_source_refs": [
+                "TB-P0167"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "Write \\(1+e^x=2e^{x/2}\\cosh(x/2)\\). Hence \\(\\log(1+e^x)=\\log2+x/2+\\log\\cosh(x/2)\\).",
+                  "\\(\\cosh(x/2)=1+x^2/8+x^4/384+O(x^6)\\). With \\(v=x^2/8+x^4/384\\), use \\(\\log(1+v)=v-v^2/2+\\cdots\\).",
+                  "The fourth-degree coefficient is \\(1/384-1/128=-1/192\\)."
+                ],
+                "result": "\\(\\log(1+e^x)=\\log2+x/2+x^2/8-x^4/192+O(x^6)\\).",
+                "note": "PankusDesk solution; no printed appendix answer was supplied for this item."
+              }
+            },
+            {
+              "id": "u3-p4-5-19",
+              "number": 19,
+              "book_page": 167,
+              "topic_id": "u3-taylor-series",
+              "r25_scope": "core",
+              "question": "Prove \\(e^x/(1+e^x)=1/2+x/4-x^3/48+\\cdots\\).",
+              "question_source_refs": [
+                "TB-P0167"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "The derivative of \\(\\log(1+e^x)\\) is \\(e^x/(1+e^x)\\). Differentiate its power series within its interval of convergence.",
+                  "\\[\\dfrac{d}{dx}\\left(\\log2+\\dfrac x2+\\dfrac{x^2}{8}-\\dfrac{x^4}{192}+\\cdots\\right)=\\dfrac12+\\dfrac x4-\\dfrac{x^3}{48}+\\cdots.\\]"
+                ],
+                "result": "\\(e^x/(1+e^x)=1/2+x/4-x^3/48+O(x^5)\\).",
+                "note": "PankusDesk solution; no printed appendix answer was supplied for this item."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "title": "Partial Differentiation and Its Applications",
+      "page_title": "Textbook Questions — Selected Class Matches",
+      "page_description": "Selected textbook questions matching the supplied notebook, with one canonical solution per question. This is a partial question-bank release; complete section-end sets are still pending.",
+      "summary": {
+        "selected_question_count": 1,
+        "stats": [
+          {
+            "value": 1,
+            "label": "selected questions / parts"
+          }
+        ]
+      },
+      "source": {
+        "title": "User-supplied Higher Engineering Mathematics pages · B. S. Grewal",
+        "note": "Questions are transcribed from the photographed book; its edition has not been independently confirmed. The solutions are PankusDesk working. No printed appendix answers were supplied for these selected items.",
+        "review_pages": [
+          230
+        ]
+      },
+      "groups": [
+        {
+          "id": "problems-5-4",
+          "title": "Problems 5.4 · Selected class overlaps",
+          "note": "Selected questions/parts from the supplied textbook pages; the rest of this problem set is not yet transcribed. Solutions are PankusDesk working, not printed textbook answers.",
+          "questions": [
+            {
+              "id": "u4-p5-4-10",
+              "number": 10,
+              "book_page": 230,
+              "topic_id": "u4-eulers-theorem",
+              "r25_scope": "core",
+              "question": "If \\(u=\\tan^{-1}[(x^3+y^3)/(x+y)]\\), show \\(xu_x+yu_y=\\sin2u\\). Also prove \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=2\\cos3u\\sin u\\).",
+              "question_source_refs": [
+                "TB-P0230"
+              ],
+              "answer_source_refs": [],
+              "answer": {
+                "paragraphs": [
+                  "Let v=tan u. The quotient is homogeneous of degree two, so \\(xv_x+yv_y=2v\\). Since \\(v_x=\\sec^2u\\,u_x\\) and likewise for y, \\(Eu=2\\tan u/\\sec^2u=\\sin2u\\).",
+                  "For the second textbook request, apply E again: \\(E^2u=2\\cos2u\\sin2u=\\sin4u\\). Thus \\(x^2u_{xx}+2xyu_{xy}+y^2u_{yy}=\\sin4u-\\sin2u=2\\cos3u\\sin u\\)."
+                ],
+                "result": "\\(Eu=\\sin2u\\); the second-order expression is \\(2\\cos3u\\sin u\\).",
+                "note": "PankusDesk solution; no printed appendix answer was supplied for this item."
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

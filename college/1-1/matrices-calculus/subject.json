@@ -25,19 +25,22 @@
       "number": 3,
       "title": "Single Variable Calculus and Curve Tracing",
       "notes": "kb/notes/unit-3.md",
-      "publicationStatus": "scaffold"
+      "publicationStatus": "draft",
+      "draftNotice": "Draft: mean-value theorems, Taylor series and supplied limit applications are available. Introductory limits/continuity and full Cartesian/polar curve-tracing textbook pages are still needed. Class sketches are available separately. Complete textbook exercise sets are pending."
     },
     {
       "number": 4,
       "title": "Partial Differentiation and Its Applications",
       "notes": "kb/notes/unit-4.md",
-      "publicationStatus": "scaffold"
+      "publicationStatus": "draft",
+      "draftNotice": "Draft: R25-relevant theory and worked examples from the supplied Chapter 5 are available. Selected class-matching exercise solutions are included; complete textbook exercise sets and final publication review are pending."
     },
     {
       "number": 5,
       "title": "Multiple Integrals",
       "notes": "kb/notes/unit-5.md",
-      "publicationStatus": "scaffold"
+      "publicationStatus": "draft",
+      "draftNotice": "Draft reference only: area and volume formulas from the supplied appendix are available. The multiple-integral textbook chapter and class notes are still needed; this is not a complete Unit V lesson."
     }
   ],
   "pyqStatus": "not-added-yet",
@@ -70,6 +73,13 @@
         "idField": "id",
         "kind": "Class notes",
         "format": "class-log"
+      },
+      {
+        "path": "kb/data/source-manifest.json",
+        "collection": "undated_class_sources",
+        "idField": "id",
+        "kind": "Undated class notes",
+        "format": "class-log"
       }
     ]
   },
@@ -86,21 +96,26 @@
       "hrefPattern": "unit-{unit}-questions.html",
       "availableUnits": [
         1,
-        2
+        2,
+        3,
+        4
       ],
       "data": "kb/data/textbook-questions.json"
     }
   },
   "classNotes": {
     "label": "Priyanka's Class Notes",
-    "description": "Chronological dated class notes for each unit, lightly cleaned for grammar while preserving notebook meaning and class-work order.",
+    "description": "Dated lessons and separately labelled undated notebook material, organised by unit and topic.",
     "hrefPattern": "unit-{unit}-class-notes.html",
     "availableUnits": [
       1,
-      2
+      2,
+      3,
+      4
     ],
     "sourceManifest": "kb/data/source-manifest.json",
-    "collection": "class_sources"
+    "collection": "class_sources",
+    "undatedCollection": "undated_class_sources"
   },
   "studyResources": [
     {

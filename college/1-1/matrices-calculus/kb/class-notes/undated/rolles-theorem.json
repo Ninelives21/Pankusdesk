@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "id": "rolles-theorem",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-ROLLES-THEOREM",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Rolle’s theorem and its applications",
+  "summary": "Rolle’s theorem and its applications. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-rolles-theorem",
+      "label": "Rolle’s theorem (without proof)",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-rolles-theorem"
+    },
+    {
+      "topic_id": "u3-rolles-geometric-applications",
+      "label": "Geometrical interpretation and applications of Rolle’s theorem",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-rolles-geometric-applications"
+    }
+  ],
+  "pages": [
+    {
+      "page": 28,
+      "heading": "Rolle’s theorem and its applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If f is continuous on \\([a,b]\\), differentiable on \\((a,b)\\), and \\(f(a)=f(b)\\), then \\(f\\prime(c)=0\\) for at least one \\(c\\in(a,b)\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Geometrically the endpoints have the same height, and an interior tangent is parallel to the x-axis."
+        },
+        {
+          "id": "class-rolle",
+          "src": "college/1-1/matrices-calculus/assets/class/undated/figures/class-rolle-ros.webp",
+          "alt": "Rolle’s theorem: equal-height endpoints and an interior horizontal tangent",
+          "caption": "Rolle’s theorem: equal-height endpoints and an interior horizontal tangent — ROS: unchanged source crop.",
+          "kind": "class-note",
+          "size": "medium",
+          "width": 469,
+          "height": 331,
+          "type": "figure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Polynomials, sine, cosine and exponentials are continuous on the real line. Tangent is discontinuous at its poles; \\(\\log x\\) requires \\(x>0\\). Check the domain before the theorem."
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-rolle-polynomial",
+              "title": "Polynomial on [−2,3]",
+              "question_paragraphs": [
+                "Verify Rolle’s theorem for \\(f(x)=(x+2)^2(x-3)^4\\) on \\([-2,3]\\)."
+              ],
+              "paragraphs": [
+                "Being a polynomial, f is continuous on the closed interval and differentiable in its interior. Also \\(f(-2)=0=f(3)\\).",
+                "\\[f\\prime(x)=2(x+2)(x-3)^4+4(x+2)^2(x-3)^3=(x+2)(x-3)^3(6x+2).\\]",
+                "The endpoint roots do not belong to the open interval. The interior root is \\(6c+2=0\\), giving \\(c=-1/3\\in(-2,3)\\)."
+              ],
+              "final_answer": "\\(c=-1/3\\).",
+              "textbook_match": {
+                "status": "near",
+                "href": "college/1-1/matrices-calculus/unit-3.html#tb-example-4-14",
+                "target": "textbook example",
+                "note": "Example 4.14(ii) is the general form. Problems 4.4 Q1(i) uses (x+2)³(x−3)⁴, whereas the notebook exponent of (x+2) is 2."
+              }
+            },
+            {
+              "id": "class-rolle-log",
+              "title": "Logarithmic example",
+              "question_paragraphs": [
+                "For \\(0<a<b\\), verify Rolle’s theorem for \\(f(x)=\\log[(x^2+ab)/(x(a+b))]\\) on \\([a,b]\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-3-questions.html#question-u3-p4-4-1-iv",
+                "target": "Problems 4.4 · Q1(iv)",
+                "note": "This class question matches the indicated textbook question (or the indicated requested part). Its solution is kept once on the textbook-question page."
+              },
+              "solution_mode": "textbook-link"
+            },
+            {
+              "id": "class-rolle-exp",
+              "title": "Exponential–trigonometric example",
+              "question_paragraphs": [
+                "Verify Rolle’s theorem for \\(f(x)=e^x(\\sin x-\\cos x)\\) on \\([\\pi/4,5\\pi/4]\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-3-questions.html#question-u3-p4-4-1-ii",
+                "target": "Problems 4.4 · Q1(ii)",
+                "note": "This class question matches the indicated textbook question (or the indicated requested part). Its solution is kept once on the textbook-question page."
+              },
+              "solution_mode": "textbook-link"
+            },
+            {
+              "id": "class-rolle-fail",
+              "title": "When Rolle’s theorem cannot be applied",
+              "question_paragraphs": [
+                "Explain why Rolle’s theorem does not apply to (i) \\(\\tan x\\) on \\([0,\\pi]\\), (ii) \\(1/x^2\\) on \\([-1,1]\\), and (iii) \\(x^3\\) on \\([1,3]\\)."
+              ],
+              "paragraphs": [
+                "(i) Although the endpoints agree, \\(\\tan x\\) is undefined at \\(\\pi/2\\), so continuity fails.",
+                "(ii) The function is undefined at zero, so continuity on the closed interval fails.",
+                "(iii) The polynomial is continuous and differentiable, but \\(f(1)=1\\ne27=f(3)\\)."
+              ],
+              "final_answer": "Each example violates a required hypothesis.",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-rolle-sin",
+              "title": "Exercise: sine divided by exponential",
+              "question_paragraphs": [
+                "Verify Rolle’s theorem for \\(\\sin x/e^x\\) on \\([0,\\pi]\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-3.html#tb-example-4-14",
+                "target": "Example 4.14(i)",
+                "note": "The complete given data match this supplied textbook worked example."
+              },
+              "solution_mode": "textbook-link"
+            },
+            {
+              "id": "class-rolle-general",
+              "title": "Exercise: general polynomial product",
+              "question_paragraphs": [
+                "For positive integers m,n, verify Rolle’s theorem for \\((x-a)^m(x-b)^n\\) on \\([a,b]\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-3.html#tb-example-4-14",
+                "target": "Example 4.14(ii)",
+                "note": "The complete given data match this supplied textbook worked example."
+              },
+              "solution_mode": "textbook-link"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

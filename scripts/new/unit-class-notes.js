@@ -21,6 +21,10 @@ async function initUnitClassNotes() {
 		const sources = (manifest?.[collectionName] || [])
 			.filter(item => Number(item.unit) === unitNumber && item.entry)
 			.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+		// Undated packets are separate source records: never manufacture calendar dates.
+		const undatedSources = (cfg.undatedCollection ? manifest?.[cfg.undatedCollection] || [] : [])
+			.filter(item => Number(item.unit) === unitNumber && item.entry);
+		sources.push(...undatedSources);
 		if (!sources.length) throw new Error(`No class-note entries are available for Unit ${unitNumber}.`);
 
 		const entries = await Promise.all(sources.map(async source => ({
@@ -71,25 +75,25 @@ function renderPage(page, subject, subjectUrl, unitMeta, entries) {
 			<div class="eyebrow">${escapeHtml(subject.name)} · Unit ${escapeHtml(unitLabel)}</div>
 			<h1>Priyanka's Class Notes</h1>
 			<p>${escapeHtml(unitMeta.title)}</p>
-			<p class="class-notes-policy">Notebook meaning is preserved and awkward English is lightly cleaned for study. When a later class only continues an earlier page, the new material is assimilated into that earlier lesson so the same topic is not repeated.</p>
+			<p class="class-notes-policy">Notebook meaning is preserved and awkward English is lightly cleaned for study. When a later class only continues an earlier page, the new material is assimilated into that earlier lesson so the same topic is not repeated. Undated material is labelled separately and is not assigned a calendar date.</p>
 		</section>
 
 		${resourceNav}
 
 		<div class="class-notes-layout section">
-			<aside class="class-notes-toc" aria-label="Class-note dates">
-				<div class="toc-label">By date</div>
+			<aside class="class-notes-toc" aria-label="Class-note lessons and dates">
+				<div class="toc-label">${entries.some(({entry}) => !entry.date) ? 'Lessons and dates' : 'By date'}</div>
 				<nav id="class-notes-date-nav">
 					${entries.map(({ source, entry }) => `
-						<a class="class-notes-date-link" href="#${escapeHtml(entry.date)}">
-							<strong>${escapeHtml(shortDate(entry.date))}</strong>
+						<a class="class-notes-date-link" href="#${escapeHtml(entry.date || entry.id)}">
+							<strong>${escapeHtml(entry.date ? shortDate(entry.date) : 'Undated')}</strong>
 							<span>${escapeHtml(source.nav_label || entry.nav_summary || entry.title || '')}</span>
 						</a>
 					`).join('')}
 				</nav>
 			</aside>
 
-			<section class="class-notes-content" aria-label="Dated class notes">
+			<section class="class-notes-content" aria-label="Class notes">
 				${entries.map(({ entry }) => renderEntry(entry)).join('')}
 			</section>
 		</div>
@@ -98,7 +102,7 @@ function renderPage(page, subject, subjectUrl, unitMeta, entries) {
 
 function renderEntry(entry) {
 	return `
-		<article class="class-notes-entry" id="${escapeHtml(entry.date)}">
+		<article class="class-notes-entry" id="${escapeHtml(entry.date || entry.id)}">
 			<header class="class-notes-entry-header">
 				<div class="class-notes-date">${escapeHtml(entry.date_label || formatIsoDate(entry.date))}</div>
 				<h2>${escapeHtml(entry.title || 'Class notes')}</h2>
@@ -242,6 +246,7 @@ function revealHashTarget(page) {
 	if (!id) return;
 	const target = page.querySelector(`#${cssEscape(id)}`);
 	if (!target) return;
+	if (target.matches('details.study-accordion-item')) target.open = true;
 	requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
 }
 

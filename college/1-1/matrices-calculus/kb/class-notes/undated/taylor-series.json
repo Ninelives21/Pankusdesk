@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "id": "taylor-series",
+  "date_status": "undated",
+  "date_label": "Undated notebook packet",
+  "source_id": "CLASS-UNDATED-TAYLOR-SERIES",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 3,
+    "title": "Single Variable Calculus and Curve Tracing"
+  },
+  "title": "Taylor and Maclaurin series",
+  "summary": "Taylor and Maclaurin series. Source page order is preserved within this lesson.",
+  "transcription_policy": "Transcribed from the supplied notebook packet, with mathematical typography normalized. No reliable lesson date is supplied; capture order is not a calendar date. Verified content discrepancies are flagged in amber. Complete textbook matches link to one canonical solution. PankusDesk completions are labelled separately.",
+  "source_captures": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u3-taylor-series",
+      "label": "Taylor’s Series (without proof)",
+      "href": "college/1-1/matrices-calculus/unit-3.html#u3-taylor-series"
+    }
+  ],
+  "pages": [
+    {
+      "page": 43,
+      "heading": "Taylor and Maclaurin series",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Taylor’s series about a is \\(f(x)=f(a)+(x-a)f\\prime(a)+(x-a)^2f^{\\prime\\prime}(a)/2!+\\cdots\\), when the remainder tends to zero. At a=0 it is Maclaurin’s series."
+        },
+        {
+          "type": "paragraph",
+          "text": "The finite theorem retains the Lagrange remainder \\((x-a)^nf^{(n)}(a+\\theta(x-a))/n!\\), \\(0<\\theta<1\\)."
+        },
+        {
+          "type": "accordions",
+          "label": "Class examples and questions",
+          "items": [
+            {
+              "id": "class-series-standard",
+              "title": "Standard Maclaurin expansions",
+              "question_paragraphs": [
+                "Expand \\(e^x,\\sin x,\\cos x,\\sinh x\\) in powers of x."
+              ],
+              "paragraphs": [
+                "For \\(e^x\\), all derivatives at zero equal 1, giving \\(e^x=1+x+x^2/2!+x^3/3!+\\cdots\\).",
+                "The sine derivatives cycle as sin, cos, −sin, −cos; the nonzero values at zero are \\(f^{(2k+1)}(0)=(-1)^k\\). Thus \\(\\sin x=x-x^3/3!+x^5/5!-\\cdots\\).",
+                "PankusDesk completion for the remaining two prompts: cosine has \\(f^{(2k)}(0)=(-1)^k\\), and sinh has every odd derivative equal to 1 at zero. Therefore \\(\\cos x=1-x^2/2!+x^4/4!-\\cdots\\), \\(\\sinh x=x+x^3/3!+x^5/5!+\\cdots\\)."
+              ],
+              "final_answer": "The four displayed series converge for every real x.",
+              "textbook_match": {
+                "status": "near",
+                "href": "college/1-1/matrices-calculus/unit-3.html#u3-taylor-series",
+                "target": "textbook example",
+                "note": "The standard series are listed in Text; the photographed notebook works out eˣ and sin x, and leaves cos x and sinh x as prompts."
+              }
+            },
+            {
+              "id": "class-taylor-sin",
+              "title": "Taylor expansion about π/4",
+              "question_paragraphs": [
+                "Expand \\(\\sin x\\) in powers of \\(x-\\pi/4\\) through the cubic term."
+              ],
+              "paragraphs": [
+                "At a=π/4 the first four derivative values are \\(1/\\sqrt2,1/\\sqrt2,-1/\\sqrt2,-1/\\sqrt2\\).",
+                "With \\(h=x-\\pi/4\\), Taylor gives \\(\\sin x=f(a)+hf\\prime(a)+h^2f^{\\prime\\prime}(a)/2!+h^3f^{\\prime\\prime\\prime}(a)/3!+\\cdots\\)."
+              ],
+              "final_answer": "\\(\\sin x=\\dfrac1{\\sqrt2}(1+h-h^2/2!-h^3/3!)+O(h^4)\\), \\(h=x-\\pi/4\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-series-expxsin",
+              "title": "Exponential of x sin x",
+              "question_paragraphs": [
+                "Expand \\(e^{x\\sin x}\\) in powers of x."
+              ],
+              "paragraphs": [
+                "Put \\(t=x\\sin x=x^2-x^4/6+O(x^6)\\).",
+                "\\(e^t=1+t+t^2/2+\\cdots\\); through degree three this is \\(1+x^2+O(x^4)\\), as in the notebook.",
+                "PankusDesk extension: the next coefficient is \\(-1/6+1/2=1/3\\), giving \\(1+x^2+x^4/3+O(x^6)\\)."
+              ],
+              "final_answer": "\\(e^{x\\sin x}=1+x^2+x^4/3+O(x^6)\\).",
+              "textbook_match": {
+                "status": "near",
+                "href": "college/1-1/matrices-calculus/unit-3.html#tb-example-4-22",
+                "target": "textbook example",
+                "note": "The worked textbook example expands e^(sin x); the notebook exponent is x sin x. Problems 4.5 Q13 contains the latter series with one further term."
+              }
+            },
+            {
+              "id": "class-taylor-exp-minus-one",
+              "title": "Exponential about −1",
+              "question_paragraphs": [
+                "Expand \\(e^x\\) about x=−1."
+              ],
+              "paragraphs": [
+                "Every derivative of \\(e^x\\) at −1 is \\(e^{-1}\\). Put \\(h=x+1\\) into Taylor’s formula.",
+                "\\[e^x=e^{-1}\\left(1+h+\\dfrac{h^2}{2!}+\\dfrac{h^3}{3!}+\\cdots\\right).\\]"
+              ],
+              "final_answer": "\\(e^x=e^{-1}\\sum_{n=0}^\\infty(x+1)^n/n!\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              }
+            },
+            {
+              "id": "class-series-logexp",
+              "title": "Logarithm of 1+eˣ",
+              "question_paragraphs": [
+                "Prove \\(\\log(1+e^x)=\\log2+x/2+x^2/8-x^4/192+\\cdots\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "exact",
+                "href": "college/1-1/matrices-calculus/unit-3-questions.html#question-u3-p4-5-17",
+                "target": "Problems 4.5 · Q17",
+                "note": "This class question matches the indicated textbook question (or the indicated requested part). Its solution is kept once on the textbook-question page."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ],
+              "solution_mode": "textbook-link"
+            },
+            {
+              "id": "class-series-logistic",
+              "title": "Differentiate the preceding series",
+              "question_paragraphs": [
+                "The notebook prompt states \\(e^x/(1+e^x)=1/2+x/4+x^3/48+\\cdots\\); its final working has a negative cubic term. Deduce the expansion from \\(\\log(1+e^x)\\)."
+              ],
+              "paragraphs": [],
+              "textbook_match": {
+                "status": "near",
+                "href": "college/1-1/matrices-calculus/unit-3-questions.html#question-u3-p4-5-19",
+                "target": "Problems 4.5 · Q19",
+                "note": "The notebook prompt’s cubic sign differs; the final handwritten working agrees exactly with Problems 4.5 Q19."
+              },
+              "solution_mode": "textbook-link",
+              "math_mismatch": {
+                "label": "Notebook cubic-sign mismatch",
+                "message": "The initial prompt has +x³/48. Differentiating the preceding series gives −x³/48, as the final handwritten working and Problems 4.5 Q19 both show. The linked canonical solution follows that verified negative sign."
+              }
+            },
+            {
+              "id": "class-series-log-one",
+              "title": "Logarithmic series",
+              "question_paragraphs": [
+                "Expand \\(\\log(1+x)\\) in powers of x."
+              ],
+              "paragraphs": [
+                "At zero, f(0)=0 and for n≥1, \\(f^{(n)}(0)=(-1)^{n-1}(n-1)!\\).",
+                "Substitute in Maclaurin: \\(\\log(1+x)=\\sum_{n=1}^\\infty(-1)^{n-1}x^n/n\\), for \\(|x|<1\\)."
+              ],
+              "final_answer": "\\(\\log(1+x)=x-x^2/2+x^3/3-x^4/4+\\cdots\\), \\(|x|<1\\).",
+              "textbook_match": {
+                "status": "near",
+                "href": "college/1-1/matrices-calculus/unit-3.html#tb-example-4-20",
+                "target": "textbook example",
+                "note": "Example 4.20 gives the finite logarithmic expansion with a remainder. Problems 4.5 Q1 asks for this infinite expansion and a further deduction."
+              }
+            },
+            {
+              "id": "class-series-asin-root",
+              "title": "Exercise: inverse sine divided by square root",
+              "question_paragraphs": [
+                "Show \\(\\sin^{-1}x/\\sqrt{1-x^2}=x+4x^3/3!+\\cdots\\)."
+              ],
+              "paragraphs": [
+                "Use \\(\\sin^{-1}x=x+x^3/6+O(x^5)\\) and \\((1-x^2)^{-1/2}=1+x^2/2+O(x^4)\\).",
+                "Multiply: the cubic coefficient is \\(1/6+1/2=2/3=4/3!\\)."
+              ],
+              "final_answer": "\\(\\sin^{-1}x/\\sqrt{1-x^2}=x+2x^3/3+O(x^5)\\).",
+              "textbook_match": {
+                "status": "none",
+                "note": "No exact match identified in the supplied textbook worked examples and exercise pages. The photographed textbook coverage is incomplete."
+              },
+              "explainers": [
+                {
+                  "title": "PankusDesk verification",
+                  "summary": "Working added for this notebook prompt",
+                  "paragraphs": [
+                    "The photograph supplies this question without a complete solution. The working in this dropdown is PankusDesk’s completion, independently checked; it is not presented as handwritten class working."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

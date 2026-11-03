@@ -414,3 +414,7 @@ styles/new/study-ui.css
 ```
 
 All college subjects and semesters consume this layer for accordions, example question/solution structure, MathJax/LaTeX handling, study-tip dropdowns and baseline figures. Subject renderers are data/layout adapters only; they must not fork these common behaviours. Blue PankusDesk tips are rendered as collapsed `<details>` dropdowns by default, with their label/title visible in the closed summary and the explanatory body opened on demand.
+
+## Undated notebook supplement
+
+MAC Units II–IV demonstrate an additive undated packet: `kb/class-notes/undated/`, `undated_class_sources`, and `classNotes.undatedCollection`. Stable lesson anchors supplement the existing date anchors. These lessons are labelled Undated and are absent from the calendar. Use `college/schemas/undated-class-notes.schema.json`; do not manufacture a date to satisfy the dated class-log schema. The shared example renderer supports labelled `solution_parts`.

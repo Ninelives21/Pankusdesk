@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pankusdesk.local/schemas/subject.schema.json",
   "$comment": "Design Lock v2 subject metadata and generic source/practice renderer configuration.",
-  "title": "PankusDesk College Subject — Design Lock v2",
+  "title": "PankusDesk College Subject \u2014 Design Lock v2",
   "type": "object",
   "additionalProperties": true,
   "required": [
@@ -84,6 +84,10 @@
               "draft",
               "scaffold"
             ]
+          },
+          "draftNotice": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }
@@ -189,15 +193,38 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["label", "title"],
+        "required": [
+          "label",
+          "title"
+        ],
         "properties": {
-          "practiceKey": { "type": "string", "minLength": 1 },
-          "label": { "type": "string", "minLength": 1 },
-          "title": { "type": "string", "minLength": 1 },
-          "description": { "type": "string" },
-          "href": { "type": "string", "minLength": 1 },
-          "action": { "type": "string", "minLength": 1 },
-          "state": { "type": "string", "minLength": 1 }
+          "practiceKey": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     },
@@ -227,6 +254,10 @@
         },
         "collection": {
           "type": "string"
+        },
+        "undatedCollection": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }
