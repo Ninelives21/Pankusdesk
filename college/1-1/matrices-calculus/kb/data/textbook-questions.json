@@ -5638,6 +5638,2698 @@
           ]
         }
       ]
+    },
+    "5": {
+      "title": "Multiple Integrals",
+      "page_title": "Textbook Questions — Multiple Integrals",
+      "page_description": "All R25-relevant questions in the supplied Chapter 7, with worked solutions, original numbering and explicit notes for malformed questions. Supporting substitution questions are labelled separately.",
+      "summary": {
+        "selected_question_count": 104,
+        "stats": [
+          {
+            "value": 104,
+            "label": "questions"
+          },
+          {
+            "value": 6,
+            "label": "exercise sets"
+          }
+        ]
+      },
+      "source": {
+        "title": "Higher Engineering Mathematics · B. S. Grewal · supplied Chapter 7",
+        "note": "Questions retain the photographed mathematical data; PankusDesk supplies the working. Verified printed discrepancies and conditional interpretations are highlighted in amber. The edition is unconfirmed. These solutions have not yet been compared with the printed answer appendix.",
+        "review_pages": [
+          321,
+          322,
+          324,
+          326,
+          327,
+          335,
+          336,
+          337,
+          363,
+          364
+        ]
+      },
+      "groups": [
+        {
+          "id": "problems-7-1",
+          "title": "Problems 7.1 · Double integrals and changing order",
+          "note": "PankusDesk worked solutions to the supplied textbook questions. Printed answers, where visible, are separate checks.",
+          "questions": [
+            {
+              "id": "u5-p7-1-1",
+              "number": 1,
+              "book_page": 321,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_1^2\\int_y^{y^2}dx\\,dy\\).",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The inner integral is y²−y.",
+                  "\\[I=\\int_1^2(y^2-y)dy=\\left[\\dfrac{y^3}{3}-\\dfrac{y^2}{2}\\right]_1^2=\\dfrac56.\\]"
+                ],
+                "result": "\\(I=5/6\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-2",
+              "number": 2,
+              "book_page": 321,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_a^b\\int_\\alpha^\\beta r^2\\sin\\theta\\,d\\theta\\,dr\\).",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The limits are constants, so the integral separates.",
+                  "\\[I=\\left[\\dfrac{r^3}{3}\\right]_a^b[-\\cos\\theta]_\\alpha^\\beta=\\dfrac{b^3-a^3}{3}(\\cos\\alpha-\\cos\\beta).\\]"
+                ],
+                "result": "\\(I=(b^3-a^3)(\\cos\\alpha-\\cos\\beta)/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending.",
+                "book_check": "The inline printed answer has b³−a²; the lower radial contribution must be a³."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed answer uses (b³−a²)/3. Since the radial integrand is r², its antiderivative is r³/3, giving b³−a³."
+              }
+            },
+            {
+              "id": "u5-p7-1-3",
+              "number": 3,
+              "book_page": 321,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\pi\\int_0^\\infty e^{-br^2}r\\,dr\\,d\\theta\\), b>0.",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Put u=br², du=2br dr. The radial integral is \\((1/(2b))\\int_0^\\infty e^{-u}du=1/(2b)\\).",
+                  "The angular interval has length π, so I=π/(2b)."
+                ],
+                "result": "\\(I=\\pi/(2b)\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending.",
+                "book_check": "The inline printed answer π/(2b) agrees."
+              }
+            },
+            {
+              "id": "u5-p7-1-4",
+              "number": 4,
+              "book_page": 321,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Evaluate the printed integral \\(\\int_0^{\\pi/2}\\int_{a(1+\\cos\\theta)}^a r\\,dr\\,d\\theta\\), a>0.",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The lower radial limit is larger than the upper one except at θ=π/2; preserve this orientation.",
+                  "\\[I=\\dfrac{a^2}{2}\\int_0^{\\pi/2}\\{1-(1+\\cos\\theta)^2\\}d\\theta=-\\dfrac{a^2}{2}\\int_0^{\\pi/2}(2\\cos\\theta+\\cos^2\\theta)d\\theta.\\]",
+                  "\\[I=-\\dfrac{a^2}{2}(2+\\pi/4)=-\\dfrac{a^2(8+\\pi)}8.\\]"
+                ],
+                "result": "\\(I=-a^2(8+\\pi)/8\\) as printed.",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending.",
+                "book_check": "The inline printed answer is +a²(8+π)/8, which corresponds to reversing the radial limits."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed integral runs from a(1+cosθ) down to a, so it is negative. Its positive printed answer is the area with those limits reversed; it is not the value of the oriented integral as written."
+              }
+            },
+            {
+              "id": "u5-p7-1-5",
+              "number": 5,
+              "book_page": 321,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_Rxy\\,dx\\,dy\\) over the first quadrant of x²+y²≤a², a>0.",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Put x=r cosθ, y=r sinθ, dA=r dr dθ, with r from 0 to a and θ from 0 to π/2.",
+                  "\\[I=\\int_0^{\\pi/2}\\int_0^a r^3\\cos\\theta\\sin\\theta\\,dr\\,d\\theta=\\dfrac{a^4}{4}\\left[\\dfrac{\\sin^2\\theta}{2}\\right]_0^{\\pi/2}.\\]"
+                ],
+                "result": "\\(I=a^4/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-6",
+              "number": 6,
+              "book_page": 321,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_R(x+y)^2\\,dx\\,dy\\) over x²/a²+y²/b²≤1, a,b>0.",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Expand x²+2xy+y². The xy term integrates to zero by symmetry.",
+                  "For the x² moment, \\[\\iint_Rx^2dA=4b\\int_0^a x^2\\sqrt{1-x^2/a^2}\\,dx=4a^3b\\int_0^{\\pi/2}\\sin^2t\\cos^2t\\,dt=\\dfrac{\\pi a^3b}{4}.\\]",
+                  "Similarly \\(\\iint_Ry^2dA=\\pi ab^3/4\\). Add the two."
+                ],
+                "result": "\\(I=\\pi ab(a^2+b^2)/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-7",
+              "number": 7,
+              "book_page": 321,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_Rxy(x+y)\\,dx\\,dy\\) between y=x² and y=x.",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The intersections are (0,0),(1,1). Thus \\[I=\\int_0^1\\int_{x^2}^x(x^2y+xy^2)\\,dy\\,dx.\\]",
+                  "\\[I=\\int_0^1\\left(\\dfrac{x^4-x^6}{2}+\\dfrac{x^4-x^7}{3}\\right)dx=\\dfrac56\\cdot\\dfrac15-\\dfrac12\\cdot\\dfrac17-\\dfrac13\\cdot\\dfrac18.\\]"
+                ],
+                "result": "\\(I=3/56\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-8",
+              "number": 8,
+              "book_page": 321,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^3\\int_1^{\\sqrt{4-x}}(x+y)\\,dy\\,dx\\) by changing order.",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region is \\(1\\le y\\le2\\), \\(0\\le x\\le4-y^2\\).",
+                  "\\[I=\\int_1^2\\int_0^{4-y^2}(x+y)\\,dx\\,dy=\\int_1^2\\left\\{\\dfrac{(4-y^2)^2}{2}+y(4-y^2)\\right\\}dy.\\]",
+                  "An antiderivative is \\(8y-4y^3/3+y^5/10+2y^2-y^4/4\\); evaluate at 2 and 1."
+                ],
+                "result": "\\(I=241/60\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed question writes dx dy but gives a y inner boundary √(4−x). The reversal here follows the displayed bounds with y integrated first, consistent with the chapter’s examples."
+              }
+            },
+            {
+              "id": "u5-p7-1-9",
+              "number": 9,
+              "book_page": 321,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^{2a}\\int_0^{\\sqrt{2ax-x^2}}\\dfrac{\\phi\\prime(y)(x^2+y^2)x}{\\sqrt{4a^2x^2-(x^2+y^2)^2}}\\,dy\\,dx\\), a>0, for a continuously differentiable φ.",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse the upper disk x²+y²≤2ax: \\(0\\le y\\le a\\), \\(a-\\sqrt{a^2-y^2}\\le x\\le a+\\sqrt{a^2-y^2}\\).",
+                  "For fixed y put \\(t=x^2+y^2-2a^2\\), \\(x\\,dx=dt/2\\), and \\(C=2a\\sqrt{a^2-y^2}\\). The limits become −C,C and the radical becomes \\(\\sqrt{C^2-t^2}\\).",
+                  "\\[\\int_{-C}^C\\dfrac{t+2a^2}{2\\sqrt{C^2-t^2}}dt=0+a^2[\\sin^{-1}(t/C)]_{-C}^C=\\pi a^2.\\]",
+                  "Hence \\(I=\\pi a^2\\int_0^a\\phi\\prime(y)dy\\). Boundary radicals are interpreted as integrable improper endpoints."
+                ],
+                "result": "\\(I=\\pi a^2[\\phi(a)-\\phi(0)]\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed differentials dx dy conflict with the displayed inner bound √(2ax−x²). The solution explicitly uses dy dx before reversal."
+              }
+            },
+            {
+              "id": "u5-p7-1-10",
+              "number": 10,
+              "book_page": 321,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^1\\int_x^{\\sqrt{2-x^2}}\\dfrac{x}{\\sqrt{x^2+y^2}}\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0321"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reversing the region requires two strips: \\[I=\\int_0^1\\int_0^y\\dfrac{x}{\\sqrt{x^2+y^2}}dx\\,dy+\\int_1^{\\sqrt2}\\int_0^{\\sqrt{2-y^2}}\\dfrac{x}{\\sqrt{x^2+y^2}}dx\\,dy.\\]",
+                  "The antiderivative in x is √(x²+y²). The two contributions are \\(\\int_0^1(\\sqrt2-1)y\\,dy=(\\sqrt2-1)/2\\) and \\(\\int_1^{\\sqrt2}(\\sqrt2-y)dy=3/2-\\sqrt2\\). Add them."
+                ],
+                "result": "\\(I=1-1/\\sqrt2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-11",
+              "number": 11,
+              "book_page": 322,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^{a/\\sqrt2}\\int_y^{\\sqrt{a^2-y^2}}\\log(x^2+y^2)\\,dx\\,dy\\), a>0.",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "By reversal, split at x=a/√2: the inner y limits are 0 to x for 0≤x≤a/√2, and 0 to √(a²−x²) for a/√2≤x≤a.",
+                  "For a direct evaluation of this same circular sector, use polar coordinates \\(0\\le r\\le a\\), \\(0\\le\\theta\\le\\pi/4\\): \\[I=\\int_0^{\\pi/4}\\int_0^a r\\log(r^2)dr\\,d\\theta.\\]",
+                  "\\[\\int r\\log(r^2)dr=\\dfrac{r^2}{2}(\\log r^2-1),\\] and its limit at r=0 is zero. Thus multiply its value at a by π/4."
+                ],
+                "result": "\\(I=\\pi a^2(\\log a^2-1)/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-12",
+              "number": 12,
+              "book_page": 322,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Show \\(\\iint_Rr^2\\sin\\theta\\,dr\\,d\\theta=2a^3/3\\), where R is the semicircle r=2a cosθ above the initial line, a>0.",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The limits are \\(0\\le\\theta\\le\\pi/2\\), \\(0\\le r\\le2a\\cos\\theta\\).",
+                  "\\[I=\\dfrac{8a^3}{3}\\int_0^{\\pi/2}\\cos^3\\theta\\sin\\theta d\\theta=\\dfrac{8a^3}{3}\\left[-\\dfrac{\\cos^4\\theta}{4}\\right]_0^{\\pi/2}.\\]"
+                ],
+                "result": "\\(I=2a^3/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-13",
+              "number": 13,
+              "book_page": 322,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\infty\\int_x^\\infty\\dfrac{e^{-y}}{y}\\,dy\\,dx\\) by changing order.",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region is 0≤x≤y<∞. The nonnegative integrand permits order reversal.",
+                  "\\[I=\\int_0^\\infty\\int_0^y\\dfrac{e^{-y}}y dx\\,dy=\\int_0^\\infty e^{-y}dy=1.\\]"
+                ],
+                "result": "\\(I=1\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-14",
+              "number": 14,
+              "book_page": 322,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\infty\\int_0^x xe^{-x^2/y}\\,dy\\,dx\\) by changing order.",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region is 0≤y≤x<∞. Reverse it to y from 0 to ∞ and x from y to ∞.",
+                  "\\[I=\\int_0^\\infty\\int_y^\\infty xe^{-x^2/y}dx\\,dy=\\int_0^\\infty\\left[-\\dfrac y2e^{-x^2/y}\\right]_{x=y}^{\\infty}dy=\\dfrac12\\int_0^\\infty ye^{-y}dy.\\]",
+                  "Integration by parts gives \\(\\int_0^\\infty ye^{-y}dy=[-(y+1)e^{-y}]_0^\\infty=1\\)."
+                ],
+                "result": "\\(I=1/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-15",
+              "number": 15,
+              "book_page": 322,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Sketch the regions and change the order of the following integrals.",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [],
+                "result": "The reversed integrals are given separately below.",
+                "note": "PankusDesk solution with explicit sketch-construction guides. No original exercise sketch was supplied for ROS extraction.",
+                "parts": [
+                  {
+                    "id": "u5-p7-1-15-i-solution",
+                    "label": "(i)",
+                    "paragraphs": [
+                      "Sketch construction: draw the upper semicircle (x−a)²+y²=a² through (0,0),(a,a),(2a,0), and the upper branch y²=2ax from (0,0) to (2a,2a). Add x=2a and shade above the semicircle and below the parabola. A horizontal line below y=a crosses two pieces; above y=a it crosses one.",
+                      "The region lies above the upper semicircle (x−a)²+y²=a² and below y²=2ax, with 0≤x≤2a. For y<a a horizontal strip has two pieces; for y≥a it has one.",
+                      "\\[\\begin{aligned}I={}&\\int_0^a\\int_{y^2/(2a)}^{a-\\sqrt{a^2-y^2}}f\\,dx\\,dy+\\int_0^a\\int_{a+\\sqrt{a^2-y^2}}^{2a}f\\,dx\\,dy\\\\&+\\int_a^{2a}\\int_{y^2/(2a)}^{2a}f\\,dx\\,dy.\\end{aligned}\\]"
+                    ],
+                    "result": "Three horizontal-strip integrals, split at y=a."
+                  },
+                  {
+                    "id": "u5-p7-1-15-ii-solution",
+                    "label": "(ii)",
+                    "paragraphs": [
+                      "Sketch construction in the polar parameter plane: take θ horizontally and r vertically. Draw r=ae^(θ/2) up to θ=π/2 and shade 0≤r≤ae^(θ/2). The angular coordinate has no finite lower bound; do not replace this parameter domain with a single first-quadrant sector.",
+                      "The condition θ≥2 log(r/a) gives r≤ae^(θ/2). The angular range extends to −∞ as r→0.",
+                      "\\[I=\\int_{-\\infty}^{\\pi/2}\\int_0^{ae^{\\theta/2}}f(r,\\theta)r\\,dr\\,d\\theta,\\] provided the improper integral converges absolutely (or under an appropriate nonnegative-integrand condition)."
+                    ],
+                    "result": "\\(\\int_{-\\infty}^{\\pi/2}\\int_0^{ae^{\\theta/2}}fr\\,dr\\,d\\theta\\)."
+                  }
+                ]
+              },
+              "question_parts": [
+                {
+                  "id": "u5-p7-1-15-i",
+                  "label": "(i)",
+                  "content": "\\(\\int_0^{2a}\\int_{\\sqrt{2ax-x^2}}^{\\sqrt{2ax}}f(x,y)\\,dy\\,dx\\), a>0."
+                },
+                {
+                  "id": "u5-p7-1-15-ii",
+                  "label": "(ii) · supporting polar order change",
+                  "content": "\\(\\int_0^{ae^{\\pi/4}}\\int_{2\\log(r/a)}^{\\pi/2} f(r,\\theta)r\\,d\\theta\\,dr\\), a>0."
+                }
+              ],
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "Part (i) prints dx dy against x-dependent inner limits; dy dx is the bounds-consistent interpretation. Part (ii)’s logarithmic lower angle is negative for r<a; restricting θ to 0≤θ≤π/2 would change the given integral. The reversal retains its full printed domain."
+              }
+            },
+            {
+              "id": "u5-p7-1-16",
+              "number": 16,
+              "book_page": 322,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\infty\\int_0^\\infty e^{-(x^2+y^2)}\\,dx\\,dy\\).",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Use first-quadrant polar limits r∈[0,∞), θ∈[0,π/2].",
+                  "\\[I=\\int_0^{\\pi/2}\\int_0^\\infty re^{-r^2}dr\\,d\\theta=\\int_0^{\\pi/2}\\dfrac12d\\theta=\\dfrac\\pi4.\\]"
+                ],
+                "result": "\\(I=\\pi/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-17",
+              "number": 17,
+              "book_page": 322,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_R\\dfrac{r}{\\sqrt{a^2+r^2}}\\,dr\\,d\\theta\\) over one loop of r²=a²cos2θ, a>0.",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Choose the right loop: −π/4≤θ≤π/4 and 0≤r≤a√(cos2θ).",
+                  "\\[I=\\int_{-\\pi/4}^{\\pi/4}\\left[\\sqrt{a^2+r^2}\\right]_0^{a\\sqrt{\\cos2\\theta}}d\\theta=a\\int_{-\\pi/4}^{\\pi/4}(\\sqrt{1+\\cos2\\theta}-1)d\\theta.\\]",
+                  "Here cosθ>0, so √(1+cos2θ)=√2 cosθ. Thus \\(I=a[\\sqrt2\\sin\\theta-\\theta]_{-\\pi/4}^{\\pi/4}\\)."
+                ],
+                "result": "\\(I=a(4-\\pi)/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-1-18",
+              "number": 18,
+              "book_page": 322,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_Rr^3\\,dr\\,d\\theta\\) between r=2cosθ and r=4cosθ.",
+              "question_source_refs": [
+                "TB-P0322"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Take −π/2≤θ≤π/2. Then \\[I=\\dfrac14\\int_{-\\pi/2}^{\\pi/2}\\{(4\\cos\\theta)^4-(2\\cos\\theta)^4\\}d\\theta=60\\int_{-\\pi/2}^{\\pi/2}\\cos^4\\theta d\\theta.\\]",
+                  "The cosine integral is 3π/8. Therefore I=60·3π/8."
+                ],
+                "result": "\\(I=45\\pi/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-7-2",
+          "title": "Problems 7.2 · Areas by double integration",
+          "note": "PankusDesk worked solutions to the supplied textbook questions. Printed answers, where visible, are separate checks.",
+          "questions": [
+            {
+              "id": "u5-p7-2-1",
+              "number": 1,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find by double integration the area between y=4x−x² and y=x.",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The intersections satisfy x(3−x)=0, so x=0,3. The parabola is above the line between them.",
+                  "\\[A=\\int_0^3\\int_x^{4x-x^2}dy\\,dx=\\int_0^3(3x-x^2)dx=\\left[\\dfrac{3x^2}{2}-\\dfrac{x^3}{3}\\right]_0^3.\\]"
+                ],
+                "result": "\\(A=9/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-2-2",
+              "number": 2,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find the area between y=x² and x+y−2=0.",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Solve x²=2−x, obtaining x=−2,1. The line lies above the parabola.",
+                  "\\[A=\\int_{-2}^1\\int_{x^2}^{2-x}dy\\,dx=\\left[2x-\\dfrac{x^2}{2}-\\dfrac{x^3}{3}\\right]_{-2}^1.\\]"
+                ],
+                "result": "\\(A=9/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-2-3",
+              "number": 3,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find the whole enclosed area of a²x²=y³(2a−y), a>0.",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The bounded oval has 0≤y≤2a and \\(-y^{3/2}\\sqrt{2a-y}/a\\le x\\le y^{3/2}\\sqrt{2a-y}/a\\).",
+                  "\\[A=\\dfrac2a\\int_0^{2a}y^{3/2}\\sqrt{2a-y}\\,dy.\\] Put y=2a sin²t. Then \\(A=32a^2\\int_0^{\\pi/2}\\sin^4t\\cos^2t\\,dt\\).",
+                  "Using cos²t=1−sin²t, the integral is \\(3\\pi/16-5\\pi/32=\\pi/32\\)."
+                ],
+                "result": "\\(A=\\pi a^2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-2-4",
+              "number": 4,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find the area enclosed by y=3x/(x²+2) and 4y=x².",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The intersections satisfy \\(x[x^3+2x-12]=0\\). The cubic is increasing and has root x=2, so the relevant x limits are 0,2.",
+                  "\\[A=\\int_0^2\\int_{x^2/4}^{3x/(x^2+2)}dy\\,dx=\\left[\\dfrac32\\log(x^2+2)-\\dfrac{x^3}{12}\\right]_0^2.\\]"
+                ],
+                "result": "\\(A=(3/2)\\log3-2/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-2-5",
+              "number": 5,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find the area of r²=a²cos2θ, a>0.",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The right loop has −π/4≤θ≤π/4, with radial upper limit a√(cos2θ). There are two congruent loops.",
+                  "\\[A=2\\int_{-\\pi/4}^{\\pi/4}\\int_0^{a\\sqrt{\\cos2\\theta}}r\\,dr\\,d\\theta=a^2\\int_{-\\pi/4}^{\\pi/4}\\cos2\\theta d\\theta=a^2.\\]"
+                ],
+                "result": "The whole lemniscate has area \\(a^2\\); one loop has area \\(a^2/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-2-6",
+              "number": 6,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find the area inside r=a sinθ and outside r=a(1−cosθ), a>0.",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Intersection requires sinθ=1−cosθ, giving θ=0,π/2. The desired radial interval is \\(a(1-\\cos\\theta)\\le r\\le a\\sin\\theta\\) for 0≤θ≤π/2.",
+                  "\\[A=\\dfrac{a^2}{2}\\int_0^{\\pi/2}\\{\\sin^2\\theta-(1-\\cos\\theta)^2\\}d\\theta=\\dfrac{a^2}{2}\\int_0^{\\pi/2}(2\\cos\\theta-1-\\cos2\\theta)d\\theta.\\]"
+                ],
+                "result": "\\(A=a^2(4-\\pi)/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-2-7",
+              "number": 7,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find the area inside r=1+cosθ and outside r(1+cosθ)=1.",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The second curve is r=1/(1+cosθ). Intersections satisfy (1+cosθ)²=1, giving θ=±π/2. Double the upper half.",
+                  "\\[A=\\int_0^{\\pi/2}\\left\\{(1+\\cos\\theta)^2-\\dfrac1{(1+\\cos\\theta)^2}\\right\\}d\\theta.\\]",
+                  "The first integral is \\(3\\pi/4+2\\). For the second, put t=tan(θ/2), giving \\(\\int_0^1(1+t^2)/2\\,dt=2/3\\). Subtract."
+                ],
+                "result": "\\(A=3\\pi/4+4/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-2-8",
+              "number": 8,
+              "book_page": 324,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find by double integration the area common to r=a cosθ and r=a sinθ, a>0.",
+              "question_source_refs": [
+                "TB-P0324"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The common region lies in the first quadrant. Its radial upper boundary is a sinθ for 0≤θ≤π/4 and a cosθ for π/4≤θ≤π/2.",
+                  "\\[A=\\dfrac{a^2}{2}\\int_0^{\\pi/4}\\sin^2\\theta d\\theta+\\dfrac{a^2}{2}\\int_{\\pi/4}^{\\pi/2}\\cos^2\\theta d\\theta=a^2\\int_0^{\\pi/4}\\sin^2\\theta d\\theta.\\]",
+                  "\\[A=a^2[\\theta/2-\\sin2\\theta/4]_0^{\\pi/4}.\\]"
+                ],
+                "result": "\\(A=a^2(\\pi-2)/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-7-3",
+          "title": "Problems 7.3 · Triple integrals",
+          "note": "PankusDesk worked solutions to the supplied textbook questions. Printed answers, where visible, are separate checks.",
+          "questions": [
+            {
+              "id": "u5-p7-3-1",
+              "number": 1,
+              "book_page": 326,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^3\\int_0^2\\int_0^1(x+y+z)\\,dz\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0326"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Integration in z gives x+y+1/2. Integrating y gives 2x+3.",
+                  "\\[I=\\int_0^3(2x+3)dx=[x^2+3x]_0^3.\\]"
+                ],
+                "result": "\\(I=18\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-3-2",
+              "number": 2,
+              "book_page": 326,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_{-c}^c\\int_{-b}^b\\int_{-a}^a(x^2+y^2+z^2)\\,dx\\,dy\\,dz\\), a,b,c>0.",
+              "question_source_refs": [
+                "TB-P0326"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The x² term contributes \\((2a^3/3)(2b)(2c)=8a^3bc/3\\).",
+                  "The y² and z² terms similarly contribute \\(8ab^3c/3\\) and \\(8abc^3/3\\). Add and factor."
+                ],
+                "result": "\\(I=8abc(a^2+b^2+c^2)/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-3-3",
+              "number": 3,
+              "book_page": 326,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^a\\int_0^x\\int_0^{x+y}e^{x+y+z}\\,dz\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0326"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "First integrate z: \\[\\int_0^{x+y}e^{x+y+z}dz=e^{2x+2y}-e^{x+y}.\\]",
+                  "Then integrate y from 0 to x: \\[\\dfrac12e^{2x}(e^{2x}-1)-e^x(e^x-1)=\\dfrac12e^{4x}-\\dfrac32e^{2x}+e^x.\\]",
+                  "Finally \\[I=\\left[\\dfrac{e^{4x}}8-\\dfrac{3e^{2x}}4+e^x\\right]_0^a=\\dfrac{e^{4a}}8-\\dfrac{3e^{2a}}4+e^a-\\dfrac38.\\]"
+                ],
+                "result": "\\(I=(e^{4a}-6e^{2a}+8e^a-3)/8\\).",
+                "note": "PankusDesk solution. Problems 7.3 repeats this same integral as Q3 and Q5; both printed question numbers are retained."
+              }
+            },
+            {
+              "id": "u5-p7-3-4",
+              "number": 4,
+              "book_page": 326,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_1^e\\int_1^{\\log y}\\int_1^{e^x}\\log z\\,dz\\,dx\\,dy\\).",
+              "question_source_refs": [
+                "TB-P0326"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Preserve the oriented x limits: log y≤1 on 1≤y≤e. Integrating z gives \\([z\\log z-z]_1^{e^x}=e^x(x-1)+1\\).",
+                  "\\[\\int_1^{\\log y}\\{e^x(x-1)+1\\}dx=[e^x(x-2)+x]_1^{\\log y}=y\\log y-2y+\\log y+e-1.\\]",
+                  "An antiderivative in y is \\(y^2\\log y/2-y^2/4-y^2+y\\log y-y+(e-1)y\\). Evaluate at e and 1."
+                ],
+                "result": "\\(I=e^2/4-2e+13/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-3-5",
+              "number": 5,
+              "book_page": 326,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^a\\int_0^x\\int_0^{x+y}e^{x+y+z}\\,dz\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0326"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "First integrate z: \\[\\int_0^{x+y}e^{x+y+z}dz=e^{2x+2y}-e^{x+y}.\\]",
+                  "Then integrate y from 0 to x: \\[\\dfrac12e^{2x}(e^{2x}-1)-e^x(e^x-1)=\\dfrac12e^{4x}-\\dfrac32e^{2x}+e^x.\\]",
+                  "Finally \\[I=\\left[\\dfrac{e^{4x}}8-\\dfrac{3e^{2x}}4+e^x\\right]_0^a=\\dfrac{e^{4a}}8-\\dfrac{3e^{2a}}4+e^a-\\dfrac38.\\]"
+                ],
+                "result": "\\(I=(e^{4a}-6e^{2a}+8e^a-3)/8\\).",
+                "note": "PankusDesk solution. Problems 7.3 repeats this same integral as Q3 and Q5; both printed question numbers are retained."
+              }
+            },
+            {
+              "id": "u5-p7-3-6",
+              "number": 6,
+              "book_page": 326,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^1\\int_{y^2}^1\\int_0^{1-x}x\\,dz\\,dx\\,dy\\).",
+              "question_source_refs": [
+                "TB-P0326"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Integrating z gives x(1−x). For the remaining region, 0≤x≤1 and 0≤y≤√x.",
+                  "\\[I=\\int_0^1\\int_0^{\\sqrt x}x(1-x)dy\\,dx=\\int_0^1(x^{3/2}-x^{5/2})dx=\\dfrac25-\\dfrac27.\\]"
+                ],
+                "result": "\\(I=4/35\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-3-7",
+              "number": 7,
+              "book_page": 326,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^1\\int_0^{\\sqrt{1-x^2}}\\int_0^{\\sqrt{1-x^2-y^2}}\\dfrac{dz\\,dy\\,dx}{\\sqrt{1-x^2-y^2-z^2}}\\).",
+              "question_source_refs": [
+                "TB-P0326"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For fixed x,y the z integral equals π/2, by the substitution z=√(1−x²−y²) sin t.",
+                  "The remaining xy region is a quadrant of the unit disk, of area π/4. Thus I=(π/2)(π/4)."
+                ],
+                "result": "\\(I=\\pi^2/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-3-8",
+              "number": 8,
+              "book_page": 327,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iiint_E(x+y+z)\\,dV\\) over the tetrahedron x,y,z≥0, x+y+z≤1.",
+              "question_source_refs": [
+                "TB-P0327"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[I=\\int_0^1\\int_0^{1-x}\\int_0^{1-x-y}(x+y+z)dz\\,dy\\,dx.\\]",
+                  "By symmetry this is three times the x integral. For a fixed x the yz triangle has area (1−x)²/2.",
+                  "\\[I=\\dfrac32\\int_0^1x(1-x)^2dx=\\dfrac32\\left(\\dfrac12-\\dfrac23+\\dfrac14\\right).\\]"
+                ],
+                "result": "\\(I=1/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-3-9",
+              "number": 9,
+              "book_page": 327,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "The printed integral is \\(\\int_0^\\pi\\int_0^2\\int_0^{\\sqrt{4-z^2}}z\\sin y\\,dx\\,dy\\,dz\\). Evaluate it.",
+              "question_source_refs": [
+                "TB-P0327"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "With the printed differentials the outer z interval includes 2<z≤π, where √(4−z²) is not real. Thus it does not define the intended real iterated integral.",
+                  "If the intended order is dx dz dy, with y from 0 to π and z from 0 to 2, then \\[I=\\int_0^\\pi\\sin y\\,dy\\int_0^2z\\sqrt{4-z^2}\\,dz=2\\left[-\\dfrac{(4-z^2)^{3/2}}3\\right]_0^2=\\dfrac{16}{3}.\\]"
+                ],
+                "result": "As printed: no real-valued integral over the full bounds. Under the explicitly stated dx dz dy correction: \\(16/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed z outer limit π conflicts with √(4−z²). Swapping the y/z differential order makes the bounds real, but that is a conditional correction, not an unqualified reading of the printed question."
+              }
+            },
+            {
+              "id": "u5-p7-3-10",
+              "number": 10,
+              "book_page": 327,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\pi\\int_0^{\\sin\\theta}\\int_0^{\\pi\\sin\\theta}\\pi\\cos^2\\theta\\,dz\\,dr\\,d\\theta\\).",
+              "question_source_refs": [
+                "TB-P0327"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The z integration multiplies by π sinθ, and the r integration by sinθ.",
+                  "\\[I=\\pi^2\\int_0^\\pi\\sin^2\\theta\\cos^2\\theta d\\theta=\\dfrac{\\pi^2}{8}\\int_0^\\pi(1-\\cos4\\theta)d\\theta.\\]"
+                ],
+                "result": "\\(I=\\pi^3/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-3-11",
+              "number": 11,
+              "book_page": 327,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\pi\\int_0^{\\pi/2}\\int_0^1(z\\sin x+z\\cos y)\\,dz\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0327"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Integrate z first: (sin x+cos y)/2.",
+                  "\\[I=\\dfrac12\\left\\{\\left(\\int_0^\\pi\\sin xdx\\right)\\dfrac\\pi2+\\pi\\int_0^{\\pi/2}\\cos ydy\\right\\}=\\dfrac12(\\pi+\\pi).\\]"
+                ],
+                "result": "\\(I=\\pi\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-7-4",
+          "title": "Problems 7.4 · Coordinate changes and volumes",
+          "note": "PankusDesk worked solutions to the supplied textbook questions. Printed answers, where visible, are separate checks.",
+          "questions": [
+            {
+              "id": "u5-p7-4-1",
+              "number": 1,
+              "book_page": 335,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "core",
+              "question": "The printed integral is \\(\\int_0^1\\int_0^{\\sqrt{1-y^2}}(x^2+y^2)\\,dy\\,dx\\). Evaluate it by polar coordinates.",
+              "question_source_refs": [
+                "TB-P0335"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The inner upper limit contains its own integration variable y. The bounds-consistent quarter-disk interpretation is \\(\\int_0^1\\int_0^{\\sqrt{1-y^2}}(x^2+y^2)dx\\,dy\\).",
+                  "Put x=r cosθ, y=r sinθ. Then \\[I=\\int_0^{\\pi/2}\\int_0^1r^3dr\\,d\\theta=\\dfrac14\\cdot\\dfrac\\pi2.\\]"
+                ],
+                "result": "Under the stated quarter-disk interpretation: \\(I=\\pi/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The displayed dy dx conflicts with the inner limit √(1−y²). The solution uses the quarter unit disk with dx dy (equivalently replace that y by x while retaining dy dx). The correction is explicit."
+              }
+            },
+            {
+              "id": "u5-p7-4-2",
+              "number": 2,
+              "book_page": 335,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^2\\int_0^{\\sqrt{2x-x^2}}\\dfrac{x}{x^2+y^2}\\,dy\\,dx\\) by polar coordinates.",
+              "question_source_refs": [
+                "TB-P0335"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region is the upper semicircle x²+y²≤2x. Its polar limits are 0≤θ≤π/2, 0≤r≤2cosθ.",
+                  "The integrand times Jacobian is \\((r\\cos\\theta/r^2)r=\\cos\\theta\\). Thus \\[I=\\int_0^{\\pi/2}\\int_0^{2\\cos\\theta}\\cos\\theta dr\\,d\\theta=2\\int_0^{\\pi/2}\\cos^2\\theta d\\theta.\\]"
+                ],
+                "result": "\\(I=\\pi/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed dx dy conflicts with the x-dependent inner limit. The region-consistent order dy dx is stated explicitly here."
+              }
+            },
+            {
+              "id": "u5-p7-4-3",
+              "number": 3,
+              "book_page": 336,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^{4a}\\int_{y^2/(4a)}^y\\dfrac{x^2-y^2}{x^2+y^2}\\,dx\\,dy\\), a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region between x=y and y²=4ax has \\(\\pi/4\\le\\theta\\le\\pi/2\\), \\(0\\le r\\le4a\\cos\\theta/\\sin^2\\theta\\). The ratio is cos2θ.",
+                  "\\[I=8a^2\\int_{\\pi/4}^{\\pi/2}\\dfrac{\\cos^2\\theta\\cos2\\theta}{\\sin^4\\theta}\\,d\\theta.\\]",
+                  "Put t=cotθ. Since \\(\\cos2\\theta=(t^2-1)/(t^2+1)\\), \\[I=8a^2\\int_0^1\\dfrac{t^2(t^2-1)}{t^2+1}dt=8a^2\\int_0^1\\left(t^2-2+\\dfrac2{1+t^2}\\right)dt.\\]"
+                ],
+                "result": "\\(I=4\\pi a^2-40a^2/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-4",
+              "number": 4,
+              "book_page": 336,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Transform to Cartesian form and evaluate \\(\\int_0^\\pi\\int_0^a r^3\\sin\\theta\\cos\\theta\\,dr\\,d\\theta\\), a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Because dA=r dr dθ and xy=r² sinθ cosθ, the Cartesian integrand is xy on the upper half-disk.",
+                  "\\[I=\\int_{-a}^a\\int_0^{\\sqrt{a^2-x^2}}xy\\,dy\\,dx=\\dfrac12\\int_{-a}^a x(a^2-x^2)dx.\\] The last integrand is odd."
+                ],
+                "result": "Cartesian form: \\(\\int_{-a}^a\\int_0^{\\sqrt{a^2-x^2}}xy\\,dy\\,dx\\); value \\(0\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-5",
+              "number": 5,
+              "book_page": 336,
+              "topic_id": "u5-supporting-general-transformations",
+              "r25_scope": "supporting",
+              "question": "Supporting practice: Using x+y=u, y=uv, show \\(\\int_0^1\\int_0^{1-x}e^{y/(x+y)}\\,dy\\,dx=(e-1)/2\\).",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The triangle maps to 0≤u,v≤1, with x=u(1−v), y=uv and Jacobian u.",
+                  "\\[I=\\int_0^1\\int_0^1ue^v\\,dv\\,du=\\left[\\dfrac{u^2}{2}\\right]_0^1[e^v]_0^1.\\] The origin is a measure-zero endpoint where the original quotient is interpreted by the improper integral."
+                ],
+                "result": "\\(I=(e-1)/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-6",
+              "number": 6,
+              "book_page": 336,
+              "topic_id": "u5-supporting-general-transformations",
+              "r25_scope": "supporting",
+              "question": "Supporting practice: Using x=sinφ cosθ, y=sinφ sinθ, transform \\(\\int_0^{\\pi/2}\\int_0^{\\pi/2}\\sqrt{\\sin\\phi/\\sin\\theta}\\,d\\phi\\,d\\theta\\) and show its value is π.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Let r=sinφ. The first-quadrant unit disk is the transformed region, and \\(|\\partial(x,y)/\\partial(\\phi,\\theta)|=\\sin\\phi\\cos\\phi\\). Since sinθ=y/r, the transformed integrand is \\(1/[\\sqrt y\\sqrt{1-x^2-y^2}]\\).",
+                  "\\[I=\\int_0^1\\int_0^{\\sqrt{1-y^2}}\\dfrac{dx\\,dy}{\\sqrt y\\sqrt{1-y^2-x^2}}=\\dfrac\\pi2\\int_0^1\\dfrac{dy}{\\sqrt y}=\\pi.\\] The boundary singularities are integrable."
+                ],
+                "result": "\\(I=\\pi\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-7",
+              "number": 7,
+              "book_page": 336,
+              "topic_id": "u5-triple-change-spherical",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iiint_{x^2+y^2+z^2\\le a^2}\\dfrac{dV}{x^2+y^2+z^2}\\) by spherical coordinates, a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The factor r² in the volume element cancels the denominator. Over the full ball, \\[I=\\int_0^{2\\pi}\\int_0^\\pi\\int_0^a\\sin\\theta\\,dr\\,d\\theta\\,d\\phi=a\\cdot2\\cdot2\\pi.\\]",
+                  "The origin is interpreted as an improper endpoint; the resulting radial integral is finite."
+                ],
+                "result": "\\(I=4\\pi a\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-8",
+              "number": 8,
+              "book_page": 336,
+              "topic_id": "u5-triple-change-spherical",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iiint_E(1+x+y+z)^{-3}dV\\) over x,y,z≥0, x+y+z≤1, by spherical coordinates.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Write \\(A=\\sin\\theta(\\cos\\phi+\\sin\\phi)+\\cos\\theta\\). In the first octant, 0≤θ,φ≤π/2 and 0≤r≤1/A.",
+                  "With t=rA, the radial integral becomes \\(A^{-3}\\int_0^1t^2/(1+t)^3dt\\). An antiderivative is \\(\\log(1+t)+2/(1+t)-1/[2(1+t)^2]\\), giving \\(\\log2-5/8\\).",
+                  "To evaluate the angular factor, put s=tanθ and B=cosφ+sinφ. Then \\[\\int_0^{\\pi/2}\\dfrac{\\sin\\theta}{A^3}d\\theta=\\int_0^\\infty\\dfrac{s}{(1+Bs)^3}ds=\\dfrac1{2B^2}.\\]",
+                  "Finally put v=tanφ: \\(\\int_0^{\\pi/2}d\\phi/(\\cos\\phi+\\sin\\phi)^2=\\int_0^\\infty dv/(1+v)^2=1\\). The full angular factor is 1/2."
+                ],
+                "result": "\\(I=(\\log2)/2-5/16\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-9",
+              "number": 9,
+              "book_page": 336,
+              "topic_id": "u5-triple-change-spherical",
+              "r25_scope": "core",
+              "question": "The printed question asks to show \\(\\iiint\\dfrac{dV}{\\sqrt{a^2-x^2-y^2-z^2}}=\\pi^2a^3/8\\), over all real values of the integrand, a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The real domain is the whole ball r≤a. Thus \\[I=4\\pi\\int_0^a\\dfrac{r^2}{\\sqrt{a^2-r^2}}dr.\\]",
+                  "Put r=a sin t. The radial integral is \\(a^2\\int_0^{\\pi/2}\\sin^2t\\,dt=\\pi a^2/4\\). Multiply by 4π."
+                ],
+                "result": "For the stated whole ball, \\(I=\\pi^2a^2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The photographed right side is π²a³/8. The stated integrand scales as length⁻¹ and volume as length³, so the result must scale as a². Direct integration gives π²a² for the whole real domain; for only the positive octant it would be π²a²/8."
+              }
+            },
+            {
+              "id": "u5-p7-4-10",
+              "number": 10,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume bounded by z=0, x²+y²=1 and x+y+z=3.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The solid has \\(0\\le z\\le3-x-y\\) above the unit disk.",
+                  "\\[V=\\iint_{x^2+y^2\\le1}(3-x-y)dA=3\\pi-0-0,\\] since the x and y moments vanish by symmetry."
+                ],
+                "result": "\\(V=3\\pi\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-11",
+              "number": 11,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume bounded by z=0, 2z=x²+y² and x²+y²=4.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Use cylindrical coordinates with 0≤r≤2, 0≤θ≤2π, 0≤z≤r²/2.",
+                  "\\[V=\\int_0^{2\\pi}\\int_0^2\\int_0^{r^2/2}r\\,dz\\,dr\\,d\\theta=\\pi\\int_0^2r^3dr=4\\pi.\\]"
+                ],
+                "result": "\\(V=4\\pi\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-12",
+              "number": 12,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume common to x²+y²≤a² and x²+z²≤a², a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For −a≤x≤a, both y and z vary from −√(a²−x²) to +√(a²−x²). The cross-section is a square of area 4(a²−x²).",
+                  "\\[V=4\\int_{-a}^a(a^2-x^2)dx=8\\left[a^2x-\\dfrac{x^3}{3}\\right]_0^a.\\]"
+                ],
+                "result": "\\(V=16a^3/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-13",
+              "number": 13,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume enclosed by x²+y²≤2ax and z²≤2ax, a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The cross-section at x has y-width \\(2\\sqrt{2ax-x^2}\\) and z-width \\(2\\sqrt{2ax}\\), for 0≤x≤2a.",
+                  "\\[V=4\\sqrt{2a}\\int_0^{2a}\\sqrt{x}\\sqrt{2ax-x^2}dx=64a^3\\int_0^{\\pi/2}\\sin^3t\\cos^2t\\,dt,\\] using x=2a sin²t.",
+                  "Put u=cos t to evaluate the last integral as \\(\\int_0^1(u^2-u^4)du=2/15\\)."
+                ],
+                "result": "\\(V=128a^3/15\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-14",
+              "number": 14,
+              "book_page": 336,
+              "topic_id": "u5-triple-change-cylindrical",
+              "r25_scope": "core",
+              "question": "Find the volume inside x²+y²−2ax=0, between x²+y²=2az and z=0, a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The disk is 0≤r≤2a cosθ, −π/2≤θ≤π/2; the height is z=r²/(2a).",
+                  "\\[V=\\int_{-\\pi/2}^{\\pi/2}\\int_0^{2a\\cos\\theta}\\dfrac{r^3}{2a}dr\\,d\\theta=2a^3\\int_{-\\pi/2}^{\\pi/2}\\cos^4\\theta d\\theta.\\]",
+                  "The cosine integral is 3π/8."
+                ],
+                "result": "\\(V=3\\pi a^3/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-15",
+              "number": 15,
+              "book_page": 336,
+              "topic_id": "u5-triple-change-cylindrical",
+              "r25_scope": "core",
+              "question": "Find the bounded volume between x²+y²=4 and x²+y²−z²=1.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The bounded region is inside the cylinder and between the two hyperboloid sheets: 1≤r≤2 and \\(-\\sqrt{r^2-1}\\le z\\le\\sqrt{r^2-1}\\).",
+                  "\\[V=\\int_0^{2\\pi}\\int_1^2\\int_{-\\sqrt{r^2-1}}^{\\sqrt{r^2-1}}r\\,dz\\,dr\\,d\\theta=4\\pi\\int_1^2r\\sqrt{r^2-1}dr.\\]",
+                  "\\[V=\\dfrac{4\\pi}{3}[(r^2-1)^{3/2}]_1^2.\\]"
+                ],
+                "result": "\\(V=4\\pi\\sqrt3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-16",
+              "number": 16,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume bounded by z=x²+y², z=0, x=±a and y=±a, a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[V=\\int_{-a}^a\\int_{-a}^a(x^2+y^2)dy\\,dx.\\]",
+                  "The x² part contributes \\((2a^3/3)(2a)=4a^4/3\\); the y² part is equal."
+                ],
+                "result": "\\(V=8a^4/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-17",
+              "number": 17,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Prove by double integration that revolving r=a(1+cosθ) about its axis gives volume \\(8\\pi a^3/3\\), a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Revolve the upper half (0≤θ≤π) once. A polar area element generates volume \\(2\\pi r^2\\sin\\theta\\,dr\\,d\\theta\\).",
+                  "\\[V=\\dfrac{2\\pi a^3}{3}\\int_0^\\pi(1+\\cos\\theta)^3\\sin\\theta d\\theta.\\]",
+                  "Put u=1+cosθ. The integral becomes \\(\\int_0^2u^3du=4\\)."
+                ],
+                "result": "\\(V=8\\pi a^3/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-18",
+              "number": 18,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume bounded by the coordinate planes and x/a+y/b+z/c=1, a,b,c>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[V=\\int_0^a\\int_0^{b(1-x/a)}\\int_0^{c(1-x/a-y/b)}dz\\,dy\\,dx.\\]",
+                  "Writing h=1−x/a, the y integral of c(h−y/b) from 0 to bh is bc h²/2.",
+                  "\\[V=\\dfrac{bc}{2}\\int_0^a(1-x/a)^2dx=\\dfrac{abc}{6}.\\]"
+                ],
+                "result": "\\(V=abc/6\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-19",
+              "number": 19,
+              "book_page": 336,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume generated by revolving y²(2a−x)=x³ about its asymptote through four right angles, a>0.",
+              "question_source_refs": [
+                "TB-P0336"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The asymptote is x=2a; the real curve has 0≤x<2a and \\(y=\\pm x^{3/2}/\\sqrt{2a-x}\\). A cylindrical shell at x has radius 2a−x and height \\(2x^{3/2}/\\sqrt{2a-x}\\).",
+                  "\\[V=4\\pi\\int_0^{2a}x^{3/2}\\sqrt{2a-x}\\,dx.\\] Put x=2a sin²t; this becomes \\(64\\pi a^3\\int_0^{\\pi/2}\\sin^4t\\cos^2t\\,dt\\).",
+                  "The trigonometric integral is \\(3\\pi/16-5\\pi/32=\\pi/32\\)."
+                ],
+                "result": "\\(V=2\\pi^2a^3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-20",
+              "number": 20,
+              "book_page": 337,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "A triangular prism has vertical boundary planes ay=bx, y=0 and x=a. Show its volume between z=0 and z=c+xy is \\((ab/8)(4c+ab)\\), for a,b,c>0.",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The base has 0≤x≤a, 0≤y≤bx/a.",
+                  "\\[V=\\int_0^a\\int_0^{bx/a}(c+xy)dy\\,dx=\\int_0^a\\left(\\dfrac{bcx}{a}+\\dfrac{b^2x^3}{2a^2}\\right)dx.\\]",
+                  "\\[V=\\dfrac{abc}{2}+\\dfrac{a^2b^2}{8}=\\dfrac{ab}{8}(4c+ab).\\]"
+                ],
+                "result": "\\(V=ab(4c+ab)/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-21",
+              "number": 21,
+              "book_page": 337,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume of the column over the area common to the printed parabolas y²=x and x=y², cut off by z=12+y−x².",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The two printed equations are identical, so they do not enclose a finite plane area. As stated, the finite base and volume are undetermined.",
+                  "If the second equation was intended to be y=x², the base would be 0≤x≤1, x²≤y≤√x. Under that conditional correction, \\[V=\\int_0^1\\int_{x^2}^{\\sqrt x}(12+y-x^2)dy\\,dx.\\]",
+                  "The y integration gives \\((12-x^2)(\\sqrt x-x^2)+(x-x^4)/2\\). Integrating from 0 to 1 gives \\(8-4-2/7+1/5+1/4-1/10=569/140\\)."
+                ],
+                "result": "As printed: no unique finite volume. If the second curve is y=x²: \\(V=569/140\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "Both photographed curves say y²=x (the second is written x=y²). No enclosed area results. The value 569/140 is explicitly conditional on replacing one by y=x²; the text does not silently make that change."
+              }
+            },
+            {
+              "id": "u5-p7-4-22",
+              "number": 22,
+              "book_page": 337,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find the volume bounded by x²+y²=4, y+z=4 and z=0.",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The base disk has area 4π. The height is 4−y.",
+                  "\\[V=\\iint_{x^2+y^2\\le4}(4-y)dA=4\\cdot4\\pi-0=16\\pi,\\] since the y moment of the centred disk is zero."
+                ],
+                "result": "\\(V=16\\pi\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending.",
+                "book_check": "The inline printed answer 16π agrees."
+              }
+            },
+            {
+              "id": "u5-p7-4-23",
+              "number": 23,
+              "book_page": 337,
+              "topic_id": "u5-triple-change-cylindrical",
+              "r25_scope": "core",
+              "question": "Find the volume cut from x²+y²+z²≤a² by x²+y²≤ax, a>0.",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Take x=ρ cosφ, y=ρ sinφ. The disk has −π/2≤φ≤π/2, 0≤ρ≤a cosφ. The z interval is ±√(a²−ρ²).",
+                  "\\[V=2\\int_{-\\pi/2}^{\\pi/2}\\int_0^{a\\cos\\phi}\\rho\\sqrt{a^2-\\rho^2}d\\rho\\,d\\phi=\\dfrac{2a^3}{3}\\int_{-\\pi/2}^{\\pi/2}(1-|\\sin\\phi|^3)d\\phi.\\]",
+                  "The last integral equals π−4/3, since \\(\\int_0^{\\pi/2}\\sin^3\\phi d\\phi=2/3\\)."
+                ],
+                "result": "\\(V=2a^3(3\\pi-4)/9\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-24",
+              "number": 24,
+              "book_page": 337,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Using double integration, show that revolving r=a(1+cosθ) about the initial line gives volume \\(8\\pi a^3/3\\), a>0.",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Revolve the upper half (0≤θ≤π) once. A polar area element generates volume \\(2\\pi r^2\\sin\\theta\\,dr\\,d\\theta\\).",
+                  "\\[V=\\dfrac{2\\pi a^3}{3}\\int_0^\\pi(1+\\cos\\theta)^3\\sin\\theta d\\theta.\\]",
+                  "Put u=1+cosθ. The integral becomes \\(\\int_0^2u^3du=4\\)."
+                ],
+                "result": "\\(V=8\\pi a^3/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-25",
+              "number": 25,
+              "book_page": 337,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "The first-quadrant area bounded by y²=4x, x=1 and y=0 is revolved about y=2. Find its volume by double integration.",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Use horizontal strips: 0≤y≤2, y²/4≤x≤1. Their distance from the axis is 2−y.",
+                  "\\[V=\\int_0^2\\int_{y^2/4}^1 2\\pi(2-y)dx\\,dy=2\\pi\\int_0^2(2-y)(1-y^2/4)dy.\\]",
+                  "\\[V=2\\pi[2y-y^2/2-y^3/6+y^4/16]_0^2=\\dfrac{10\\pi}{3}.\\]"
+                ],
+                "result": "\\(V=10\\pi/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-4-26",
+              "number": 26,
+              "book_page": 337,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "The printed question asks to show the area between y²=4ax and x²=4ay is \\(16a^3/3\\), a>0.",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The intersections are (0,0),(4a,4a). Integrate the vertical height:",
+                  "\\[A=\\int_0^{4a}\\int_{x^2/(4a)}^{2\\sqrt{ax}}dy\\,dx=\\left[\\dfrac{4\\sqrt a}{3}x^{3/2}-\\dfrac{x^3}{12a}\\right]_0^{4a}=\\dfrac{16a^2}{3}.\\]"
+                ],
+                "result": "\\(A=16a^2/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed right side has a³. The area scales as a² and direct integration gives 16a²/3, agreeing with Example 7.15."
+              }
+            },
+            {
+              "id": "u5-p7-4-28",
+              "number": 28,
+              "book_page": 337,
+              "topic_id": "u5-volumes-triple-integrals",
+              "r25_scope": "core",
+              "question": "Find by double integration the volume generated by revolving r=a(1−cosθ) about its axis, a>0.",
+              "question_source_refs": [
+                "TB-P0337"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Take the upper half 0≤θ≤π to cover the volume once.",
+                  "\\[V=\\int_0^\\pi\\int_0^{a(1-\\cos\\theta)}2\\pi r^2\\sin\\theta dr\\,d\\theta=\\dfrac{2\\pi a^3}{3}\\int_0^\\pi(1-\\cos\\theta)^3\\sin\\theta d\\theta.\\]",
+                  "With u=1−cosθ the remaining integral is \\([u^4/4]_0^2=4\\)."
+                ],
+                "result": "\\(V=8\\pi a^3/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-7-9",
+          "title": "Problems 7.9 · Further in-syllabus double integrals",
+          "note": "PankusDesk worked solutions to the supplied textbook questions. Printed answers, where visible, are separate checks.",
+          "questions": [
+            {
+              "id": "u5-p7-9-5",
+              "number": 5,
+              "book_page": 363,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "core",
+              "question": "Prove \\(\\int_0^1\\int_0^{\\sqrt{1-x^2}}\\dfrac{y\\,dy\\,dx}{(1+y^2)\\sqrt{1-x^2-y^2}}=\\dfrac\\pi4\\log2\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse the quarter unit disk. Holding y fixed, \\[\\int_0^{\\sqrt{1-y^2}}\\dfrac{dx}{\\sqrt{1-y^2-x^2}}=\\dfrac\\pi2.\\]",
+                  "\\[I=\\dfrac\\pi2\\int_0^1\\dfrac{y}{1+y^2}dy=\\dfrac\\pi4[\\log(1+y^2)]_0^1.\\]"
+                ],
+                "result": "\\(I=(\\pi/4)\\log2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-9",
+              "number": 9,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Prove \\(\\int_0^1\\int_0^{\\sqrt{1-y^2}}\\dfrac{\\cos^{-1}x}{\\sqrt{(1-x^2-y^2)(1-x^2)}}\\,dx\\,dy=\\pi^3/16\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse the quarter unit disk: x runs 0 to 1, y runs 0 to √(1−x²).",
+                  "The inner y integral of \\((1-x^2-y^2)^{-1/2}\\) equals π/2. Thus \\[I=\\dfrac\\pi2\\int_0^1\\dfrac{\\cos^{-1}x}{\\sqrt{1-x^2}}dx.\\]",
+                  "Put t=cos⁻¹x. This is \\((\\pi/2)\\int_0^{\\pi/2}t\\,dt=(\\pi/2)(\\pi^2/8)\\)."
+                ],
+                "result": "\\(I=\\pi^3/16\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-10",
+              "number": 10,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Prove \\(\\int_0^\\infty\\int_0^x xe^{-x^2/y}\\,dy\\,dx=1/2\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse to y from 0 to ∞ and x from y to ∞.",
+                  "\\[I=\\int_0^\\infty\\left[-\\dfrac y2e^{-x^2/y}\\right]_{x=y}^{\\infty}dy=\\dfrac12\\int_0^\\infty ye^{-y}dy=\\dfrac12[-(y+1)e^{-y}]_0^\\infty.\\]"
+                ],
+                "result": "\\(I=1/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-11",
+              "number": 11,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Prove \\(\\int_0^a\\int_0^x x\\sqrt{(a^2-y^2)(x^2-y^2)}\\,dy\\,dx=8a^5/45\\), a>0.",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse the triangle to 0≤y≤a, y≤x≤a.",
+                  "\\[I=\\int_0^a\\sqrt{a^2-y^2}\\left[\\dfrac{(x^2-y^2)^{3/2}}3\\right]_{x=y}^a dy=\\dfrac13\\int_0^a(a^2-y^2)^2dy.\\]",
+                  "\\[I=\\dfrac13\\left[a^4y-\\dfrac{2a^2y^3}{3}+\\dfrac{y^5}{5}\\right]_0^a=\\dfrac{a^5}{3}(1-2/3+1/5).\\]"
+                ],
+                "result": "\\(I=8a^5/45\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-12",
+              "number": 12,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Prove \\(\\int_0^a\\int_0^y\\dfrac{dx\\,dy}{\\sqrt{(a^2+x^2)(a-y)(y-x)}}=\\pi\\log(1+\\sqrt2)\\), a>0.",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse the triangle to 0≤x≤a, x≤y≤a.",
+                  "For fixed x put \\(y=x+(a-x)\\sin^2t\\). Then \\(dy=2(a-x)\\sin t\\cos tdt\\) and \\(\\sqrt{(a-y)(y-x)}=(a-x)\\sin t\\cos t\\). Its y integral is \\(2\\int_0^{\\pi/2}dt=\\pi\\).",
+                  "\\[I=\\pi\\int_0^a\\dfrac{dx}{\\sqrt{a^2+x^2}}=\\pi[\\log(x+\\sqrt{a^2+x^2})]_0^a.\\]"
+                ],
+                "result": "\\(I=\\pi\\log(1+\\sqrt2)\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-13",
+              "number": 13,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Express \\(\\int_0^1\\int_{-\\sqrt y}^{\\sqrt y}dx\\,dy+\\int_{-1}^2\\int_{-1}^1dx\\,dy\\) as a single-term integral and evaluate.",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For the first term reverse to −1≤x≤1 and x²≤y≤1, giving \\(\\int_{-1}^1(1-x^2)dx\\). The second term gives \\(\\int_{-1}^1 3dx\\).",
+                  "The original domains overlap, and the plus sign counts that overlap twice. Preserve that multiplicity when combining:",
+                  "\\[I=\\int_{-1}^1(4-x^2)dx=[4x-x^3/3]_{-1}^1=\\dfrac{22}{3}.\\]"
+                ],
+                "result": "Single-term form \\(\\int_{-1}^1(4-x^2)dx\\); value \\(22/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-14",
+              "number": 14,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Combine and evaluate \\(\\int_0^1\\int_0^y(x^2+y^2)dx\\,dy+\\int_1^2\\int_0^{2-y}(x^2+y^2)dx\\,dy\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The two pieces form the triangle 0≤x≤1, x≤y≤2−x.",
+                  "\\[I=\\int_0^1\\int_x^{2-x}(x^2+y^2)dy\\,dx=\\int_0^1\\left\\{x^2(2-2x)+\\dfrac{(2-x)^3-x^3}{3}\\right\\}dx.\\]",
+                  "Expand to \\(8/3-4x+4x^2-8x^3/3\\). Its integral is \\(8/3-2+4/3-2/3\\)."
+                ],
+                "result": "\\(I=4/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-15",
+              "number": 15,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Combine \\(\\int_{-3}^2\\int_{2-y}^5f(x,y)dx\\,dy+\\int_2^7\\int_{y-2}^5f(x,y)dx\\,dy\\) into a single repeated integral.",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The two regions are the lower and upper portions of the triangle with vertices (0,2),(5,−3),(5,7).",
+                  "With a vertical strip, 0≤x≤5 and 2−x≤y≤2+x. This strip crosses both pieces exactly once."
+                ],
+                "result": "\\(\\int_0^5\\int_{2-x}^{2+x}f(x,y)\\,dy\\,dx\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-16",
+              "number": 16,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Combine \\(\\int_1^2\\int_{\\sqrt x}^x f(x,y)dy\\,dx+\\int_2^4\\int_{\\sqrt x}^2 f(x,y)dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The combined region is above y=√x, below y=x for x≤2, and below y=2 for x≥2.",
+                  "Horizontal strips give 1≤y≤2 and y≤x≤y². The split at x=2 disappears."
+                ],
+                "result": "\\(\\int_1^2\\int_y^{y^2}f(x,y)\\,dx\\,dy\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-17",
+              "number": 17,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Combine \\(\\int_0^1\\int_0^y f(x,y)dx\\,dy+\\int_1^\\infty\\int_0^{1/y}f(x,y)dx\\,dy\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The first region has 0≤x≤y≤1. The second has y≥1 and 0≤x≤1/y.",
+                  "For a fixed x with 0<x≤1, these intervals join into x≤y≤1/x. Retain the improper limit as x→0, assuming absolute convergence (or a nonnegative integrand)."
+                ],
+                "result": "\\(\\int_0^1\\int_x^{1/x}f(x,y)\\,dy\\,dx\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-9-18",
+              "number": 18,
+              "book_page": 363,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Prove \\(\\int_0^1\\int_{4y}^4e^{x^2}dx\\,dy=(e^{16}-1)/8\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse to 0≤x≤4 and 0≤y≤x/4.",
+                  "\\[I=\\int_0^4\\int_0^{x/4}e^{x^2}dy\\,dx=\\dfrac14\\int_0^4 xe^{x^2}dx=\\dfrac18[e^{x^2}]_0^4.\\]"
+                ],
+                "result": "\\(I=(e^{16}-1)/8\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            }
+          ]
+        },
+        {
+          "id": "problems-7-10",
+          "title": "Problems 7.10 · In-syllabus objective questions",
+          "note": "PankusDesk worked solutions to the supplied textbook questions. Printed answers, where visible, are separate checks.",
+          "questions": [
+            {
+              "id": "u5-p7-10-1",
+              "number": 1,
+              "book_page": 363,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_1^a\\int_1^b\\dfrac{dx\\,dy}{xy}\\), a,b>0.",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The integrand separates into 1/x and 1/y. Hence \\[I=[\\log x]_1^b[\\log y]_1^a=(\\log a)(\\log b).\\]"
+                ],
+                "result": "\\(I=\\log a\\log b\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-2",
+              "number": 2,
+              "book_page": 363,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^1\\int_0^{1-x}dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The inner length is 1−x. Thus \\(I=\\int_0^1(1-x)dx=[x-x^2/2]_0^1\\)."
+                ],
+                "result": "\\(I=1/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed dx dy has x in the inner upper bound 1−x. The bounds-consistent dy dx form is used explicitly here."
+              }
+            },
+            {
+              "id": "u5-p7-10-3",
+              "number": 3,
+              "book_page": 363,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "supporting",
+              "question": "Supporting practice: Evaluate \\(\\int_0^\\infty e^{-x^2}dx\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [
+                "TB-P0332"
+              ],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Let J be the integral. Then \\(J^2=\\int_0^\\infty\\int_0^\\infty e^{-(x^2+y^2)}dx\\,dy\\). Use first-quadrant polar coordinates:",
+                  "\\[J^2=\\int_0^{\\pi/2}\\int_0^\\infty re^{-r^2}dr\\,d\\theta=\\dfrac\\pi4.\\] Since J>0, take the positive square root."
+                ],
+                "result": "\\(J=\\sqrt\\pi/2\\).",
+                "note": "PankusDesk solution; the method is the supplied Example 7.28."
+              }
+            },
+            {
+              "id": "u5-p7-10-7",
+              "number": 7,
+              "book_page": 363,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^2\\int_1^3\\int_1^2xy^2z\\,dz\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The factors separate: \\[I=\\left[\\dfrac{x^2}{2}\\right]_0^2\\left[\\dfrac{y^3}{3}\\right]_1^3\\left[\\dfrac{z^2}{2}\\right]_1^2=2\\cdot\\dfrac{26}{3}\\cdot\\dfrac32.\\]"
+                ],
+                "result": "\\(I=26\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-8",
+              "number": 8,
+              "book_page": 363,
+              "topic_id": "u5-supporting-general-transformations",
+              "r25_scope": "supporting",
+              "question": "Supporting practice: If u=x+y and v=x−2y, what factor replaces dx dy in terms of du dv?",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Invert: x=(2u+v)/3, y=(u−v)/3. The determinant is \\((2/3)(-1/3)-(1/3)(1/3)=-1/3\\).",
+                  "Area uses the absolute Jacobian."
+                ],
+                "result": "\\(dx\\,dy=\\dfrac13\\,du\\,dv\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-11",
+              "number": 11,
+              "book_page": 363,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_1^2\\int_1^3xy^2\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[I=\\left[\\dfrac{x^2}{2}\\right]_1^2\\left[\\dfrac{y^3}{3}\\right]_1^3=\\dfrac32\\cdot\\dfrac{26}{3}.\\]"
+                ],
+                "result": "\\(I=13\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed differentials are “dx dx”, repeating x and omitting y. With x as the outer variable and y as the inner variable, dy dx gives 13."
+              }
+            },
+            {
+              "id": "u5-p7-10-12",
+              "number": 12,
+              "book_page": 363,
+              "topic_id": "u5-triple-change-spherical",
+              "r25_scope": "core",
+              "question": "Express the volume in x,y,z≥0 and x²+y²+z²≤1 as a triple integral.",
+              "question_source_refs": [
+                "TB-P0363"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The first octant has 0≤r≤1, 0≤θ,φ≤π/2. The spherical volume element is r²sinθ.",
+                  "\\[V=\\int_0^{\\pi/2}\\int_0^{\\pi/2}\\int_0^1r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi=\\dfrac13\\cdot1\\cdot\\dfrac\\pi2.\\]"
+                ],
+                "result": "\\(V=\\int_0^{\\pi/2}\\int_0^{\\pi/2}\\int_0^1r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi=\\pi/6\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-13",
+              "number": 13,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Find \\(\\int_0^1\\int_0^{x^2}xe^y\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Integrating y gives x(e^(x²)−1).",
+                  "\\[I=\\int_0^1x(e^{x^2}-1)dx=\\left[\\dfrac{e^{x^2}}2-\\dfrac{x^2}{2}\\right]_0^1=\\dfrac e2-1.\\]"
+                ],
+                "result": "Option (d): \\(e/2-1\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "question_parts": [
+                {
+                  "id": "u5-p7-10-13-a",
+                  "label": "(a)",
+                  "content": "e/2"
+                },
+                {
+                  "id": "u5-p7-10-13-b",
+                  "label": "(b)",
+                  "content": "e−1"
+                },
+                {
+                  "id": "u5-p7-10-13-c",
+                  "label": "(c)",
+                  "content": "1−e"
+                },
+                {
+                  "id": "u5-p7-10-13-d",
+                  "label": "(d)",
+                  "content": "e/2−1"
+                }
+              ]
+            },
+            {
+              "id": "u5-p7-10-14",
+              "number": 14,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_Rx^2y^3\\,dx\\,dy\\) on 0≤x≤1, 0≤y≤3.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[I=\\int_0^1x^2dx\\int_0^3y^3dy=\\dfrac13\\cdot\\dfrac{81}{4}.\\]"
+                ],
+                "result": "\\(I=27/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-15",
+              "number": 15,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\pi\\int_0^{a\\sin\\theta}r\\,dr\\,d\\theta\\), a>0.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[I=\\dfrac{a^2}{2}\\int_0^\\pi\\sin^2\\theta d\\theta=\\dfrac{a^2}{2}\\cdot\\dfrac\\pi2.\\]"
+                ],
+                "result": "\\(I=\\pi a^2/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-16",
+              "number": 16,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate the integral with printed limits \\(\\int_{x=0}^3\\int_{y=0}^{1/x}ye^{xy}\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For x>0 put t=xy. Then y=t/x and dy=dt/x, so the inner integral is \\(x^{-2}\\int_0^1te^tdt=x^{-2}[(t-1)e^t]_0^1=1/x^2\\).",
+                  "The remaining improper integral \\(\\int_0^3x^{-2}dx=\\lim_{\\varepsilon\\downarrow0}(1/\\varepsilon-1/3)\\) diverges."
+                ],
+                "result": "The integral diverges to \\(+\\infty\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed differential order dx dy conflicts with its explicitly labelled outer x and inner y limits. The calculation follows those labelled limits with dy dx; the singular x=0 endpoint is not assigned a finite value."
+              }
+            },
+            {
+              "id": "u5-p7-10-17",
+              "number": 17,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-polar",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^{\\pi/2}\\int_0^\\infty\\dfrac{r}{r^2+a^2}\\,dr\\,d\\theta\\), a>0.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For a radial cutoff R, \\[I_R=\\dfrac\\pi2\\left[\\dfrac12\\log(r^2+a^2)\\right]_0^R=\\dfrac\\pi4\\log\\!\\left(1+\\dfrac{R^2}{a^2}\\right).\\]",
+                  "This grows without bound as R→∞."
+                ],
+                "result": "The printed integral diverges to \\(+\\infty\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-18",
+              "number": 18,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^1\\int_0^{x^2}(x^2+y^2)\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[I=\\int_0^1\\left[x^2y+\\dfrac{y^3}{3}\\right]_0^{x^2}dx=\\int_0^1\\left(x^4+\\dfrac{x^6}{3}\\right)dx=\\dfrac15+\\dfrac1{21}.\\]"
+                ],
+                "result": "\\(I=26/105\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed dx dy conflicts with the x-dependent inner upper limit x². The solution uses the bounds-consistent dy dx order."
+              }
+            },
+            {
+              "id": "u5-p7-10-19",
+              "number": 19,
+              "book_page": 364,
+              "topic_id": "u5-triple-change-spherical",
+              "r25_scope": "core",
+              "question": "What replaces dx dy dz in spherical polar coordinates (r,θ,φ)?",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Use x=r sinθ cosφ, y=r sinθ sinφ, z=r cosθ. The absolute determinant of this transformation is r²sinθ on 0≤θ≤π."
+                ],
+                "result": "\\(dx\\,dy\\,dz=r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-20",
+              "number": 20,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^2\\int_0^{x^2}e^{y/x}\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For x>0, \\(\\int_0^{x^2}e^{y/x}dy=x(e^x-1)\\). The endpoint x=0 is taken by a limit.",
+                  "\\[I=\\int_0^2x(e^x-1)dx=\\left[(x-1)e^x-\\dfrac{x^2}{2}\\right]_0^2.\\]"
+                ],
+                "result": "\\(I=e^2-1\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-21",
+              "number": 21,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_R(x+y)^2dA\\) over x²/a²+y²/b²≤1, a,b>0.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The 2xy contribution vanishes by symmetry. Substitute x=aρ cosθ, y=bρ sinθ for the remaining moments, with 0≤ρ≤1, 0≤θ≤2π and Jacobian abρ.",
+                  "\\[I=ab\\int_0^1\\rho^3d\\rho\\int_0^{2\\pi}(a^2\\cos^2\\theta+b^2\\sin^2\\theta)d\\theta=\\dfrac{ab}{4}(a^2\\pi+b^2\\pi).\\]"
+                ],
+                "result": "\\(I=\\pi ab(a^2+b^2)/4\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-22",
+              "number": 22,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^1\\int_0^{\\sqrt{1+x^2}}\\dfrac{dy\\,dx}{1+x^2+y^2}\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "For fixed x let A=√(1+x²). The inner integral is \\(A^{-1}[\\tan^{-1}(y/A)]_0^A=\\pi/(4A)\\).",
+                  "\\[I=\\dfrac\\pi4\\int_0^1\\dfrac{dx}{\\sqrt{1+x^2}}=\\dfrac\\pi4[\\log(x+\\sqrt{1+x^2})]_0^1.\\]"
+                ],
+                "result": "\\(I=(\\pi/4)\\log(1+\\sqrt2)\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed dx dy conflicts with the x-dependent inner limit √(1+x²). The explicit dy dx order follows those bounds."
+              }
+            },
+            {
+              "id": "u5-p7-10-23",
+              "number": 23,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint xy(x+y)dx\\,dy\\) between the first curve (unclear in the photograph, appearing as “y+x²”) and y=x.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The first curve’s relation sign cannot be confirmed from this photograph. Problems 7.1 Q7 gives the corresponding complete question with y=x² and y=x; that is the conditional interpretation below.",
+                  "If that equality was intended here, \\[I=\\int_0^1\\int_{x^2}^x(x^2y+xy^2)dy\\,dx=\\int_0^1\\left(\\dfrac{5x^4}{6}-\\dfrac{x^6}{2}-\\dfrac{x^7}{3}\\right)dx=\\dfrac3{56}.\\]"
+                ],
+                "result": "A clearer photograph is needed to confirm the first boundary. Conditional on y=x²: \\(I=3/56\\).",
+                "note": "Transcription uncertainty: please confirm the first boundary in Problems 7.10 Q23 on p. 364. This is not labelled as a verified textbook error."
+              }
+            },
+            {
+              "id": "u5-p7-10-24",
+              "number": 24,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^1\\int_x^{\\sqrt x}xy\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[I=\\dfrac12\\int_0^1x(x-x^2)dx=\\dfrac12\\left(\\dfrac13-\\dfrac14\\right)=\\dfrac1{24}.\\]"
+                ],
+                "result": "Option (c): \\(1/24\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed differential order dx dy conflicts with inner limits x and √x. The working uses dy dx to describe those bounds."
+              },
+              "question_parts": [
+                {
+                  "id": "u5-p7-10-24-a",
+                  "label": "(a)",
+                  "content": "zero"
+                },
+                {
+                  "id": "u5-p7-10-24-b",
+                  "label": "(b)",
+                  "content": "−1/24"
+                },
+                {
+                  "id": "u5-p7-10-24-c",
+                  "label": "(c)",
+                  "content": "1/24"
+                },
+                {
+                  "id": "u5-p7-10-24-d",
+                  "label": "(d)",
+                  "content": "24"
+                }
+              ]
+            },
+            {
+              "id": "u5-p7-10-25",
+              "number": 25,
+              "book_page": 364,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find \\(\\iint_Rdx\\,dy\\) for the region bounded by x=0, y=0, x²+y²=1 and 5y=3.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "All four boundaries occur for the first-quadrant disk portion 0≤y≤3/5, 0≤x≤√(1−y²).",
+                  "\\[A=\\int_0^{3/5}\\sqrt{1-y^2}dy=\\left[\\dfrac{y\\sqrt{1-y^2}}2+\\dfrac12\\sin^{-1}y\\right]_0^{3/5}.\\]"
+                ],
+                "result": "\\(A=6/25+\\dfrac12\\sin^{-1}(3/5)\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-26",
+              "number": 26,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_R y\\,dx\\,dy\\) between y²=4x and x²=4y.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The intersections are (0,0),(4,4). Use 0≤x≤4 and x²/4≤y≤2√x.",
+                  "\\[I=\\dfrac12\\int_0^4\\left(4x-\\dfrac{x^4}{16}\\right)dx=\\left[x^2-\\dfrac{x^5}{160}\\right]_0^4.\\]"
+                ],
+                "result": "\\(I=48/5\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-27",
+              "number": 27,
+              "book_page": 364,
+              "topic_id": "u5-double-integrals-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\iint_R(x^2+y^2)dA\\) where x,y≥0 and x+y≤1.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[I=\\int_0^1\\int_0^{1-x}(x^2+y^2)dy\\,dx=\\int_0^1\\left\\{x^2(1-x)+\\dfrac{(1-x)^3}{3}\\right\\}dx.\\]",
+                  "The first part is 1/3−1/4=1/12; the second is 1/12."
+                ],
+                "result": "\\(I=1/6\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-28",
+              "number": 28,
+              "book_page": 364,
+              "topic_id": "u5-areas-double-integrals",
+              "r25_scope": "core",
+              "question": "Find the area between y²=4x and x²=4y.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "\\[A=\\int_0^4\\int_{x^2/4}^{2\\sqrt x}dy\\,dx=\\left[\\dfrac43x^{3/2}-\\dfrac{x^3}{12}\\right]_0^4=\\dfrac{32}{3}-\\dfrac{16}{3}.\\]"
+                ],
+                "result": "\\(A=16/3\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-29",
+              "number": 29,
+              "book_page": 364,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Change the order in \\(\\int_{-a}^a\\int_0^{\\sqrt{a^2-y^2}}f(x,y)dx\\,dy\\), a>0.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region is the right half-disk x²+y²≤a² with x≥0. A vertical strip has −√(a²−x²)≤y≤√(a²−x²), while 0≤x≤a."
+                ],
+                "result": "\\(\\int_0^a\\int_{-\\sqrt{a^2-x^2}}^{\\sqrt{a^2-x^2}}f(x,y)\\,dy\\,dx\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-32",
+              "number": 32,
+              "book_page": 364,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^\\infty\\int_0^x xe^{-x^2/y}\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "Reverse to y∈[0,∞), x∈[y,∞). Integrating x gives \\((y/2)e^{-y}\\).",
+                  "\\[I=\\dfrac12\\int_0^\\infty ye^{-y}dy=\\dfrac12[-(y+1)e^{-y}]_0^\\infty.\\]"
+                ],
+                "result": "\\(I=1/2\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              }
+            },
+            {
+              "id": "u5-p7-10-33",
+              "number": 33,
+              "book_page": 364,
+              "topic_id": "u5-double-change-cartesian-polar",
+              "r25_scope": "core",
+              "question": "Change \\(\\int_0^{2a}\\int_0^{\\sqrt{2ax-x^2}}dy\\,dx\\) to polar coordinates, a>0.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region is the upper half of (x−a)²+y²≤a². Its boundary becomes r=2a cosθ, with 0≤θ≤π/2. Multiply dr dθ by the Jacobian r."
+                ],
+                "result": "\\(\\int_0^{\\pi/2}\\int_0^{2a\\cos\\theta}r\\,dr\\,d\\theta\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed dx dy conflicts with the x-dependent inner bound. The dy dx order used here states the intended upper half-disk explicitly."
+              }
+            },
+            {
+              "id": "u5-p7-10-41",
+              "number": 41,
+              "book_page": 364,
+              "topic_id": "u5-triple-integrals",
+              "r25_scope": "core",
+              "question": "Evaluate \\(\\int_0^a\\int_0^b\\int_0^c x^2y^2z^2\\,dz\\,dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The product separates on the rectangular box:",
+                  "\\[I=\\left[\\dfrac{x^3}{3}\\right]_0^a\\left[\\dfrac{y^3}{3}\\right]_0^b\\left[\\dfrac{z^3}{3}\\right]_0^c=\\dfrac{a^3b^3c^3}{27}.\\]"
+                ],
+                "result": "Option (c): \\(a^3b^3c^3/27\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "question_parts": [
+                {
+                  "id": "u5-p7-10-41-a",
+                  "label": "(a)",
+                  "content": "abc/3"
+                },
+                {
+                  "id": "u5-p7-10-41-b",
+                  "label": "(b)",
+                  "content": "a²b²c²/27"
+                },
+                {
+                  "id": "u5-p7-10-41-c",
+                  "label": "(c)",
+                  "content": "a³b³c³/27"
+                },
+                {
+                  "id": "u5-p7-10-41-d",
+                  "label": "(d)",
+                  "content": "a²b²c²/9"
+                }
+              ]
+            },
+            {
+              "id": "u5-p7-10-42",
+              "number": 42,
+              "book_page": 364,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Change the order in \\(\\int_0^1\\int_0^{\\sqrt{1-x^2}}(x+y)dy\\,dx\\).",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The region is the first-quadrant unit disk. With horizontal strips, 0≤y≤1 and 0≤x≤√(1−y²). This is printed option (b)."
+                ],
+                "result": "Option (b): \\(\\int_0^1\\int_0^{\\sqrt{1-y^2}}(x+y)\\,dx\\,dy\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "question_parts": [
+                {
+                  "id": "u5-p7-10-42-a",
+                  "label": "(a)",
+                  "content": "\\(\\int_0^2\\int_0^{\\sqrt{1-y^2}}(x+y)dx\\,dy\\)"
+                },
+                {
+                  "id": "u5-p7-10-42-b",
+                  "label": "(b)",
+                  "content": "\\(\\int_0^1\\int_0^{\\sqrt{1-y^2}}(x+y)dx\\,dy\\)"
+                },
+                {
+                  "id": "u5-p7-10-42-c",
+                  "label": "(c)",
+                  "content": "\\(\\int_0^1\\int_0^{\\sqrt{1+y^2}}(x+y)dx\\,dy\\)"
+                },
+                {
+                  "id": "u5-p7-10-42-d",
+                  "label": "(d)",
+                  "content": "\\(\\int_0^{-1}\\int_0^{\\sqrt{1-y^2}}(x+y)dx\\,dy\\)"
+                }
+              ]
+            },
+            {
+              "id": "u5-p7-10-43",
+              "number": 43,
+              "book_page": 364,
+              "topic_id": "u5-change-order-cartesian",
+              "r25_scope": "core",
+              "question": "Change the order in \\(\\int_0^a\\int_x^a f(x,y)\\,dy\\,dx\\), a>0.",
+              "question_source_refs": [
+                "TB-P0364"
+              ],
+              "answer_source_refs": [],
+              "answer_basis": [
+                "independent-verification"
+              ],
+              "answer": {
+                "paragraphs": [
+                  "The triangle is 0≤x≤y≤a. For horizontal strips, y runs 0 to a and x runs 0 to y."
+                ],
+                "result": "\\(\\int_0^a\\int_0^y f(x,y)\\,dx\\,dy\\).",
+                "note": "PankusDesk independently worked solution; printed answer-appendix comparison is pending."
+              },
+              "math_mismatch": {
+                "label": "Verified printed discrepancy",
+                "message": "The printed dx dy conflicts with the inner lower limit x. The starting dy dx form makes the triangular region used for reversal explicit."
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

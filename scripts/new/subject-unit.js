@@ -197,7 +197,7 @@ function renderUnitHero(context, unitTopics) {
 				<p class="unit-subtitle">${escapeHtml(unitMeta.title)}</p>
 				<p class="unit-description">${isReady
 					? (isDraft
-						? 'The theory is visible for review and figures are still placeholders.'
+						? 'Textbook notes are available for review. See the unit status below for any remaining gaps.'
 						: 'Consolidated theory for the unit, kept separate from Priyanka’s dated class notes and the question bank.')
 					: 'This destination is in place now; the full consolidated study notes will be populated here next.'}</p>
 			</div>
