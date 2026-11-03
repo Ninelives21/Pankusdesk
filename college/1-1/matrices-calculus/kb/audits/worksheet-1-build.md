@@ -2,11 +2,11 @@
 
 ## Scope and source
 
-User-confirmed label: **WS 1**. The supplied `MAC WORK SHEET.pdf` is retained byte-for-byte at `worksheets/ws-1.pdf`, SHA-256 `ad5bfc80fcb54ac48318d7c9b8c680e5b7bb65462f232e24d002d9938172d044`.
+The initial organisational identifier was **WS 1**; the visible card/page is now **Worksheet & Solutions 1**. The supplied `MAC WORK SHEET.pdf` is retained byte-for-byte at `worksheets/ws-1.pdf`, SHA-256 `ad5bfc80fcb54ac48318d7c9b8c680e5b7bb65462f232e24d002d9938172d044`.
 
 All 15 PDF pages were visually inspected to recover mathematics absent from text extraction. The bank contains 272 section-numbered entries: Unit I 44, Unit II 24, Unit III 52, Unit IV 67, Unit V 85. Repeated source questions remain separate entries. Per-group PDF page references are stored in the bank. The original source title does not identify a worksheet number; WS 1 is the user's organisational label.
 
-The subject resource card links to a shared worksheet adapter. Future worksheets are registered in `worksheets/index.json`; each supplies its own bank and globally unique anchors. Question and solution dropdowns, mathematics and interaction use `PankuStudyUI`. The shared MathJax loader disables automatic startup typesetting because its callers explicitly typeset their render roots; this avoids double-processing the generated assistive MathML. Only the number text in Unit III–IV cards is amber; no question prose or answer card receives an amber background.
+The subject resource card opens this worksheet directly. Unit/section links occupy the left Contents navigation; the former WS 1 selector and horizontal link block are removed. Future worksheets get separate MAC index cards and entries in `worksheets/index.json`, each with its own bank and globally unique anchors. Question and solution dropdowns, mathematics and interaction use `PankuStudyUI`. The shared MathJax loader disables automatic startup typesetting because its callers explicitly typeset their render roots; this avoids double-processing the generated assistive MathML. Only the number text in Unit III–IV cards is amber; no question prose or answer card receives an amber background.
 
 The worked answers are PankusDesk-authored, not attributed as verbatim textbook or class-note solutions. The supplied class/textbook sources informed the earlier Unit III–IV review, but each worksheet assertion is independently assessed. Canonical topic JSON, unit publication states, class records and existing figures are unchanged. Curve answers give analytical traces; no new/replacement technical drawings are generated under the figure freeze.
 
@@ -17,6 +17,10 @@ The worked answers are PankusDesk-authored, not attributed as verbatim textbook 
 - Unit III: Rolle Q3 fails endpoint equality; LMVT Q3 fails differentiability at zero; Rolle Q10 lacks an operator. LMVT Q9 has a reversed logarithm; Q12 repeats its lower-bound denominator in the upper bound. Domain omissions and the CMVT Q6 endpoint are explained. Curve Q7 repeats Q6 and stays unchanged.
 - Unit IV: Short Q2's function is undefined at the requested point; Short Q8 lacks its origin value/axis cases. Product optimisation answers state sign assumptions, and Lagrange Q6's requested minimum is distinguished from its interior maximum. Euler Q1's additional mixed-derivative identity is false and a counterexample plus correct derivative are shown. The implicit derivative logarithm notation is clarified.
 - Unit V: Several differentials conflict with variable-dependent bounds; labelled intended orders and regions are given rather than silently replacing the source. Short Q5 has crossed inner bounds and is reversed as a difference of regions. The polar Q3 printed target has incorrect scaling. Ambiguous crescent/common-area descriptions have their region assumptions stated. Triple Q1 has an incompatible order and a divergent natural intended integral; Q7 lacks a lower z-bound; Q14 diverges at the origin. Triple Q13's reversed limits retain their negative sign.
+
+## Complete solution review
+
+The later full independent audit is documented in `worksheet-1-full-solution-review.md` and the 272-entry `worksheet-1-solution-audit.json`. It supersedes the original selective mathematical checks below and records corrected numerical/transcription errors and unresolved source qualifications.
 
 ## Validation
 
