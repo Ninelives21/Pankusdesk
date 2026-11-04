@@ -80,8 +80,8 @@
 **Status:** Core R25
 - Source p. 243 gives Figure 5.44 and operating explanation.
 - Block sequence: AC input → rectifier → inverter → filter → critical load, with battery bank on the DC link.
-- Figure placeholder: `f5-44.png`.
-- The standalone gap-package `unit-5/243.png` is source material for this same textbook page; it is not published directly because the current Unit-page workflow is placeholder-first.
+- Figure asset: `assets/book/u5/theory/f5-44.png` (ROS source crop).
+- The full source page is not published; the figure-only ROS crop is used in the teaching flow.
 
 **Provenance:** `[SYL-R25-U5]` `[TB-P243]`
 
@@ -90,3 +90,7 @@ The supplied chapter also contains elementary energy-consumption calculations an
 
 ## Question-bank pointer
 Chapter-4 review material begins on p. 217 and continues on p. 218. UPS appears again as a question on p. 244, but the remaining p. 244 material belongs to another chapter and is outside R25 BEE Unit V.
+
+## Completion review · 4 November 2026
+
+All fifteen previously missing canonical figures are integrated as original-pixel ROS crops. The Unit V question page contains the original Chapter 4 installation/battery questions and Chapter 5 UPS question; Chapter 4 energy-consumption questions remain clearly labelled supporting material.

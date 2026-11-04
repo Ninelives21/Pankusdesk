@@ -207,7 +207,16 @@
             "number": 14,
             "title": "Series R–C Circuit",
             "src": "college/1-1/basic-electrical-engineering/assets/teacher/short-notes/unit-2/page-14.webp",
-            "alt": "Teacher-shared BEE Unit 2 SE1 notes, page 14: Series R–C Circuit"
+            "alt": "Teacher-shared BEE Unit 2 SE1 notes, page 14: Series R–C Circuit",
+            "corrections": [
+              {
+                "title": "Correction · series RC voltage phasor",
+                "math_mismatch": {
+                  "label": "Verified source diagram discrepancy",
+                  "message": "The page’s formula \\(Z=R-jX_C\\) and statement that current leads are correct, but the drawn supply-voltage arrow is above the current/resistor-voltage axis. With current as reference, \\(V_C\\) points down and \\(\\mathbf V=V_R-jV_C\\) must lie below the horizontal axis. Keep the source drawing as supplied, but use that corrected vector construction."
+                }
+              }
+            ]
           },
           {
             "number": 15,
@@ -237,7 +246,16 @@
             "number": 19,
             "title": "Delta Connection — Line/Phase Voltage Derivation",
             "src": "college/1-1/basic-electrical-engineering/assets/teacher/short-notes/unit-2/page-19.webp",
-            "alt": "Teacher-shared BEE Unit 2 SE1 notes, page 19: Delta Connection — Line/Phase Voltage Derivation"
+            "alt": "Teacher-shared BEE Unit 2 SE1 notes, page 19: Delta Connection — Line/Phase Voltage Derivation",
+            "corrections": [
+              {
+                "title": "Correction · delta voltage and current relations",
+                "math_mismatch": {
+                  "label": "Verified source discrepancy",
+                  "message": "This supplied page incorrectly treats delta line voltage as a difference of two phase voltages and concludes \\(V_L=\\sqrt3 V_{ph}\\). In delta, each phase is directly across a line pair, so \\(V_L=V_{ph}\\). The difference/√3 relation applies to line currents: \\(I_L=\\sqrt3 I_{ph}\\), with the usual 30° displacement. The original source page is retained unchanged; use the corrected relations for study."
+                }
+              }
+            ]
           }
         ]
       },
@@ -1696,21 +1714,31 @@
                   "latex": "X_s=\\sqrt{Z_s^2-R_a^2}"
                 }
               ],
-              "diagrams": [
-                {
-                  "src": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/occ-scc-synchronous-impedance.png",
-                  "filename": "occ-scc-synchronous-impedance.png",
-                  "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/occ-scc-synchronous-impedance.png",
-                  "figure": "OCC–SCC Characteristics",
-                  "title": "Open- and short-circuit characteristics used to obtain synchronous impedance",
-                  "alt": "Recommended study diagram showing the open-circuit characteristic and short-circuit characteristic of a synchronous generator against field current, with the same field-current setting used to obtain open-circuit voltage and short-circuit current.",
-                  "teaching_note": "The two tests must be read together. Choose one field-current value, read the corresponding open-circuit voltage \\(V_{OC}\\) from the OCC and short-circuit current \\(I_{SC}\\) from the SCC, and use those matched readings to calculate \\(Z_s=V_{OC}/I_{SC}\\).",
-                  "search_query": "NPTEL Lecture 90 OC SC Test Synchronous Generator OCC SCC characteristics",
-                  "ai_prompt": "Create an NRS educational diagram for the synchronous-impedance (EMF) method using the verified OCC/SCC reference. Show field current on the horizontal axis and clearly distinguish the open-circuit voltage characteristic (OCC) from the short-circuit current characteristic (SCC). Mark one common field-current setting and show that the corresponding V_OC and I_SC readings are taken at that same excitation before forming Z_s = V_OC/I_SC. Do not invent numerical scales, machine ratings, connection details or test values. Preserve the qualitative curve shapes and labels from the chosen verified reference, and apply NRS blue-ink notebook styling only after semantic verification.",
-                  "placeholder_label": "Recommended study diagram",
-                  "caption": "OCC and SCC readings used to obtain synchronous impedance"
-                }
-              ]
+              "diagrams": [],
+              "table": {
+                "headers": [
+                  "At the same field current",
+                  "Open-circuit test",
+                  "Short-circuit test"
+                ],
+                "rows": [
+                  [
+                    "Speed",
+                    "Rated speed",
+                    "Rated speed"
+                  ],
+                  [
+                    "Measured quantity",
+                    "Per-phase open-circuit voltage V_OC",
+                    "Per-phase short-circuit current I_SC"
+                  ],
+                  [
+                    "Use together",
+                    "Z_s = V_OC / I_SC",
+                    "X_s = √(Z_s² − R_a²)"
+                  ]
+                ]
+              }
             },
             {
               "heading": "Find generated emf for the specified load",
@@ -1791,21 +1819,26 @@
                 "When the rotor field locks with the stator rotating field, the rotor follows that field.",
                 "In steady synchronous operation, rotor speed therefore equals synchronous speed."
               ],
-              "diagrams": [
-                {
-                  "src": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/synchronous-motor-locking.png",
-                  "filename": "synchronous-motor-locking.png",
-                  "target_path": "college/1-1/basic-electrical-engineering/assets/pankusdesk/u4/short-notes/synchronous-motor-locking.png",
-                  "figure": "Synchronous Motor Principle",
-                  "title": "Magnetic locking of the DC-excited rotor field with the rotating stator field",
-                  "alt": "Recommended educational diagram showing a rotating stator magnetic field and a DC-excited rotor magnetic field locked together and rotating at synchronous speed.",
-                  "teaching_note": "Read the picture as two magnetic fields moving together. The stator field rotates at \\(N_s\\); once the DC-excited rotor field is locked with it, the rotor follows at the same speed. In steady synchronous operation there is therefore no relative speed between the two magnetic fields.",
-                  "search_query": "NPTEL Lecture 82 synchronous motor operation rotating magnetic field rotor locking",
-                  "ai_prompt": "Create an NRS educational schematic of the basic synchronous-motor operating principle using the verified NPTEL reference. Show a rotating stator magnetic field and a DC-excited rotor with clearly identified North and South poles. Show that, after magnetic locking, the rotor field and stator rotating field move together at the same synchronous speed N_s. Do not add numerical values, detailed phasors, starting arrangements, damper windings, torque-angle values or circuit details unless they are present in the verified reference. Keep the diagram limited to the R25 operating principle and use NRS blue-ink notebook styling after semantic verification.",
-                  "placeholder_label": "Recommended study diagram",
-                  "caption": "Magnetic locking in a synchronous motor"
-                }
-              ]
+              "diagrams": [],
+              "table": {
+                "headers": [
+                  "Magnetic field",
+                  "Produced by",
+                  "Speed in steady synchronous operation"
+                ],
+                "rows": [
+                  [
+                    "Stator field",
+                    "Balanced three-phase stator currents",
+                    "N_s = 120f/P"
+                  ],
+                  [
+                    "Rotor field",
+                    "DC rotor excitation",
+                    "N = N_s; constant relative angular position to stator field"
+                  ]
+                ]
+              }
             },
             {
               "heading": "How it differs from induction operation",

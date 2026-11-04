@@ -127,7 +127,7 @@ function renderQuestion(question) {
 				<span class="chapter-question-number">Q${escapeHtml(question.number)}</span>
 				<span class="chapter-question-copy">
 					<span class="chapter-question-text">${renderQuestionPrompt(question, mismatch)}</span>
-					<span class="chapter-question-meta">Book p. ${escapeHtml(question.book_page)}${question.r25_scope === 'outside-current-r25' ? ' · outside current R25 Unit I scope' : ''}</span>
+					<span class="chapter-question-meta">Book p. ${escapeHtml(question.book_page)}${question.r25_scope === 'outside-current-r25' ? ' · supporting material outside current R25 unit scope' : ''}</span>
 				</span>
 				<span class="chapter-question-icon" aria-hidden="true">+</span>
 			</button>

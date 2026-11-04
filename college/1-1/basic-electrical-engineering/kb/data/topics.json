@@ -5763,6 +5763,230 @@
     ]
   },
   {
+    "id": "u1-rl-rc-transients",
+    "unit": 1,
+    "title": "Supporting textbook extension · RL and RC transients",
+    "status": "supporting",
+    "intro": "RL and RC transients describe how currents and voltages change after switching. Energy storage produces an exponential transition toward the new steady state.",
+    "learn": [
+      "Switching produces a transition between circuit states.",
+      "Inductor current and capacitor voltage are continuous in these finite-source circuits.",
+      "RL time constant is L/R; RC time constant is RC."
+    ],
+    "source_refs": [
+      "TB-P062",
+      "TB-P063",
+      "TB-P064",
+      "TB-P065",
+      "TB-P066",
+      "TB-P067",
+      "TB-P068",
+      "TB-P069"
+    ],
+    "book_refs": [
+      {
+        "pages": "62–69",
+        "images": "62.png–69.png"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "1.10.1 Transient and steady-state responses",
+        "scope": "supporting",
+        "paragraphs": [
+          "Steady state means that a circuit’s currents and voltages have settled into their final pattern: constant values for DC, or a periodic waveform with constant amplitude and frequency for a sinusoidal supply.",
+          "After a change such as opening or closing a switch, stored magnetic or electric energy prevents the relevant state variable from changing instantaneously. The interval during which currents and voltages adjust to the new steady state is the transient period.",
+          "The complete solution of the circuit differential equation contains a forced/particular response and a natural/complementary response. In a stable first-order RL or RC circuit with positive resistance, the natural response decays exponentially."
+        ],
+        "source_refs": [
+          "TB-P062"
+        ]
+      },
+      {
+        "heading": "1.10.2 DC response of a series RL circuit",
+        "scope": "supporting",
+        "paragraphs": [
+          "Let a series R–L circuit with zero initial current be connected to a constant voltage V at t = 0. Applying KVL gives",
+          "\\[L\\dfrac{di}{dt}+Ri=V.\\]",
+          "The constant particular solution is \\(i_p=V/R\\), and the complementary solution is \\(i_c=Ce^{-Rt/L}\\). Thus \\(i=V/R+Ce^{-Rt/L}\\). Since \\(i(0)=0\\), \\(C=-V/R\\). Therefore",
+          "\\[i(t)=\\dfrac VR(1-e^{-t/\\tau}),\\qquad\\tau=\\dfrac LR.\\]",
+          "At one time constant, \\(i(\\tau)=(1-e^{-1})V/R\\approx0.632V/R\\). The current approaches \\(V/R\\) asymptotically; after about five time constants it is within 1% of its final value.",
+          "The voltages are \\(v_R=V(1-e^{-t/\\tau})\\) and \\(v_L=Ve^{-t/\\tau}\\); their sum is V. Resistor power is \\(p_R=i^2R=V^2(1-e^{-t/\\tau})^2/R\\). The inductor absorbs power while its magnetic energy increases: \\(p_L=v_Li=(V^2/R)(e^{-t/\\tau}-e^{-2t/\\tau})\\), tending to zero at steady state."
+        ],
+        "source_refs": [
+          "TB-P062",
+          "TB-P063",
+          "TB-P064",
+          "TB-P065",
+          "TB-P066"
+        ],
+        "figures": [
+          {
+            "figure_number": "Figure 1.64",
+            "figure_name": "Series RL circuit",
+            "alt": "Series RL circuit",
+            "page": 62,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-64.png",
+            "placeholder": false,
+            "width": 363,
+            "height": 276,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "figure_number": "Figure 1.65",
+            "figure_name": "Current growth in a series RL circuit",
+            "alt": "Current growth in a series RL circuit",
+            "page": 64,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-65.png",
+            "placeholder": false,
+            "width": 482,
+            "height": 336,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          },
+          {
+            "figure_number": "Figure 1.66",
+            "figure_name": "RL time constant and 63.2% current level",
+            "alt": "RL time constant and 63.2% current level",
+            "page": 65,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-66.png",
+            "placeholder": false,
+            "width": 549,
+            "height": 297,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 4
+            }
+          },
+          {
+            "figure_number": "Figure 1.67",
+            "figure_name": "Resistor and inductor voltages in a series RL circuit",
+            "alt": "Resistor and inductor voltages in a series RL circuit",
+            "page": 65,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-67.png",
+            "placeholder": false,
+            "width": 556,
+            "height": 312,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 5
+            }
+          },
+          {
+            "figure_number": "Figure 1.68",
+            "figure_name": "Resistor and inductor power in a series RL circuit",
+            "alt": "Resistor and inductor power in a series RL circuit",
+            "page": 66,
+            "size": "large",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-68.png",
+            "placeholder": false,
+            "width": 670,
+            "height": 381,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 5
+            }
+          }
+        ]
+      },
+      {
+        "heading": "1.10.3 DC response of a series RC circuit",
+        "scope": "supporting",
+        "paragraphs": [
+          "Consider an initially uncharged capacitor C in series with resistance R, connected to a constant voltage V at t = 0. The capacitor voltage cannot jump, so initially the resistor takes the supply voltage and current is V/R.",
+          "KVL gives \\(V=Ri+v_C\\), with \\(i=C\\,dv_C/dt\\). Differentiation gives \\(di/dt+i/(RC)=0\\). Its solution is \\(i=Ke^{-t/(RC)}\\); using \\(i(0)=V/R\\) gives",
+          "\\[i(t)=\\dfrac VR e^{-t/\\tau},\\qquad\\tau=RC.\\]",
+          "Hence \\(v_R=Ri=Ve^{-t/\\tau}\\), and by KVL \\(v_C=V-v_R=V(1-e^{-t/\\tau})\\). At one time constant, current is 36.8% of its initial value and capacitor voltage is 63.2% of its final value.",
+          "As \\(t\\to\\infty\\), the capacitor is charged to V and current tends to zero. The resistor power is \\(p_R=i^2R=(V^2/R)e^{-2t/\\tau}\\)."
+        ],
+        "source_refs": [
+          "TB-P066",
+          "TB-P067",
+          "TB-P068",
+          "TB-P069"
+        ],
+        "figures": [
+          {
+            "figure_number": "Figure 1.69",
+            "figure_name": "Series RC circuit",
+            "alt": "Series RC circuit",
+            "page": 67,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-69.png",
+            "placeholder": false,
+            "width": 361,
+            "height": 243,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          },
+          {
+            "figure_number": "Figure 1.70",
+            "figure_name": "Current decay in a series RC circuit",
+            "alt": "Current decay in a series RC circuit",
+            "page": 68,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-70.png",
+            "placeholder": false,
+            "width": 498,
+            "height": 297,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 2
+            }
+          },
+          {
+            "figure_number": "Figure 1.71",
+            "figure_name": "Resistor and capacitor voltages in a series RC circuit",
+            "alt": "Resistor and capacitor voltages in a series RC circuit",
+            "page": 69,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-71.png",
+            "placeholder": false,
+            "width": 405,
+            "height": 318,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 3
+            }
+          }
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 71,
+        "type": "Supporting short answers",
+        "items": "Transient state and RC time constant",
+        "anchor": "u1-sa-15"
+      },
+      {
+        "book_page": 72,
+        "type": "Supporting essay",
+        "items": "DC response of an RL circuit",
+        "anchor": "u1-es-10"
+      }
+    ]
+  },
+  {
     "id": "u2-sinusoid",
     "unit": 2,
     "title": "Sinusoidal waveforms and basic quantities",
@@ -7697,8 +7921,8 @@
             "placeholder": false
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-2",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-2.png",
             "figure_number": "Figure 3.2",
             "figure_name": "Transformer principle",
             "alt": "Figure 3.2 · Transformer principle · Textbook p. 131",
@@ -7707,11 +7931,14 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 437,
+            "height": 273,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-3",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-3.png",
             "figure_number": "Figure 3.3",
             "figure_name": "Transformer with an iron core",
             "alt": "Figure 3.3 · Transformer with an iron core · Textbook p. 131",
@@ -7720,7 +7947,10 @@
             "after": {
               "type": "paragraph",
               "index": 4
-            }
+            },
+            "width": 660,
+            "height": 335,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -7745,8 +7975,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-4",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-4.png",
             "figure_number": "Figure 3.4",
             "figure_name": "Basic construction of a transformer",
             "alt": "Figure 3.4 · Basic construction of a transformer · Textbook p. 132",
@@ -7755,7 +7985,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 835,
+            "height": 560,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -7778,6 +8011,14 @@
       {
         "question": "What decides whether a transformer is step-up or step-down?",
         "answer": "The turns ratio. N2 > N1 gives step-up, N2 < N1 gives step-down, and N2 = N1 gives a unit transformer."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 185,
+        "type": "Chapter-end review",
+        "items": "Explain the working principle of a transformer.",
+        "anchor": "u3-es-01"
       }
     ]
   },
@@ -7830,8 +8071,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-5",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-5.png",
             "figure_number": "Figure 3.5",
             "figure_name": "Transformer used for EMF-equation derivation",
             "alt": "Figure 3.5 · Transformer used for EMF-equation derivation · Textbook p. 133",
@@ -7840,7 +8081,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 670,
+            "height": 340,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -7876,15 +8120,19 @@
             "final_answer": "N1 = 120 turns; Φm = 8.6 mWb",
             "figures": [
               {
-                "placeholder": true,
-                "src": "placeholder://f3-6",
+                "placeholder": false,
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u3/examples/f3-6.png",
                 "figure_number": "Figure 3.6",
                 "figure_name": "Transformer diagram for Exercise 3.1.1",
                 "alt": "Figure 3.6 · Transformer diagram for Exercise 3.1.1 · Textbook p. 135",
                 "page": 135,
-                "size": "medium"
+                "size": "medium",
+                "width": 383,
+                "height": 300,
+                "style": "ROS"
               }
-            ]
+            ],
+            "id": "u3-exercise-3-1-1"
           },
           {
             "title": "Exercise 3.1.2",
@@ -7898,7 +8146,8 @@
               "\\[I_2=\\dfrac{200\\times1000}{415}=481.9\\,\\text{A}\\]",
               "\\[\\Phi_m=\\dfrac{11000}{4.44\\times50\\times2120}=0.0233\\,\\text{Wb}\\]"
             ],
-            "final_answer": "N2 = 80 turns; I1 = 18.18 A; I2 = 481.9 A; Φm = 0.0233 Wb"
+            "final_answer": "N2 = 80 turns; I1 = 18.18 A; I2 = 481.9 A; Φm = 0.0233 Wb",
+            "id": "u3-exercise-3-1-2"
           },
           {
             "title": "Exercise 3.1.3",
@@ -7911,7 +8160,8 @@
               "Since Bm = Φm/A,",
               "\\[A=\\dfrac{0.04504}{2}=0.02252\\,\\text{m}^2\\]"
             ],
-            "final_answer": "N1 = 22 turns; N2 = 300 turns; A = 0.02252 m²"
+            "final_answer": "N1 = 22 turns; N2 = 300 turns; A = 0.02252 m²",
+            "id": "u3-exercise-3-1-3"
           },
           {
             "title": "Exercise 3.1.4",
@@ -7925,7 +8175,8 @@
               "\\[I_2=\\dfrac{20\\times1000}{30}=666.67\\,\\text{A}\\]",
               "\\[\\Phi_m=\\dfrac{300}{4.44\\times50\\times600}=0.00225\\,\\text{Wb}\\]"
             ],
-            "final_answer": "V2 = 30 V; I1 = 66.67 A; I2 = 666.67 A; Φm = 0.00225 Wb"
+            "final_answer": "V2 = 30 V; I1 = 66.67 A; I2 = 666.67 A; Φm = 0.00225 Wb",
+            "id": "u3-exercise-3-1-4"
           }
         ],
         "source_refs": [
@@ -7950,6 +8201,14 @@
       {
         "question": "What does k represent?",
         "answer": "The transformation ratio k = N2/N1 = E2/E1 ≈ V2/V1 in the neglected-drop treatment."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 185,
+        "type": "Chapter-end review",
+        "items": "In a 110/440 V, 50 Hz single-phase transformer, the maximum flux density is 1.2 Wb/m² and the EMF per turn is 1.8 V. Determine (a) primary and secondary turns, (b) operating flux and (c) core cross-sectional area.",
+        "anchor": "u3-es-04"
       }
     ]
   },
@@ -7992,8 +8251,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-7",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-7.png",
             "figure_number": "Figure 3.7",
             "figure_name": "Transformer on no-load",
             "alt": "Figure 3.7 · Transformer on no-load · Textbook p. 138",
@@ -8002,11 +8261,14 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 379,
+            "height": 233,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-8",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-8.png",
             "figure_number": "Figure 3.8",
             "figure_name": "No-load phasor diagram",
             "alt": "Figure 3.8 · No-load phasor diagram · Textbook p. 138",
@@ -8015,11 +8277,14 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 238,
+            "height": 310,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-9",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-9.png",
             "figure_number": "Figure 3.9",
             "figure_name": "Transformer no-load equivalent circuit",
             "alt": "Figure 3.9 · Transformer no-load equivalent circuit · Textbook p. 138",
@@ -8028,11 +8293,14 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 670,
+            "height": 310,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-10",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-10.png",
             "figure_number": "Figure 3.10",
             "figure_name": "No-load current components",
             "alt": "Figure 3.10 · No-load current components · Textbook p. 139",
@@ -8041,7 +8309,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 315,
+            "height": 285,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -8054,6 +8325,18 @@
             "pages": "137–139",
             "images": "137.png–139.png",
             "figures": "3.7–3.10"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Read Figure 3.10 with the correct component equations",
+            "paragraphs": [
+              "Figure 3.10 prints \\(I_w=I_0\\sin\\phi_0\\) and \\(I_m=I_0\\cos\\phi_0\\), but its horizontal \\(I_w\\) component is in phase with V1. Its labels are interchanged: the adjacent worked calculation and the projection geometry give \\(I_w=I_0\\cos\\phi_0\\) and \\(I_m=I_0\\sin\\phi_0\\). The original crop is preserved."
+            ],
+            "discrepancy": {
+              "label": "Textbook figure discrepancy",
+              "message": "Figure 3.10 prints \\(I_w=I_0\\sin\\phi_0\\) and \\(I_m=I_0\\cos\\phi_0\\), but its horizontal \\(I_w\\) component is in phase with V1. Its labels are interchanged: the adjacent worked calculation and the projection geometry give \\(I_w=I_0\\cos\\phi_0\\) and \\(I_m=I_0\\sin\\phi_0\\). The original crop is preserved."
+            }
           }
         ]
       },
@@ -8078,15 +8361,23 @@
             "final_answer": "cos φ0 = 0.25 lagging; Im = 1.936 A; Iw = 0.5 A; Xm = 113.63 Ω; R0 = 440 Ω",
             "figures": [
               {
-                "placeholder": true,
-                "src": "placeholder://f3-10",
+                "placeholder": false,
+                "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-10.png",
                 "figure_number": "Figure 3.10",
                 "figure_name": "No-load current components used in Exercise 3.1.5",
                 "alt": "Figure 3.10 · No-load current components used in Exercise 3.1.5 · Textbook p. 139",
                 "page": 139,
-                "size": "medium"
+                "size": "medium",
+                "width": 315,
+                "height": 285,
+                "style": "ROS"
               }
-            ]
+            ],
+            "math_mismatch": {
+              "label": "Textbook figure discrepancy",
+              "message": "Figure 3.10 prints \\(I_w=I_0\\sin\\phi_0\\) and \\(I_m=I_0\\cos\\phi_0\\), but its horizontal \\(I_w\\) component is in phase with V1. Its labels are interchanged: the adjacent worked calculation and the projection geometry give \\(I_w=I_0\\cos\\phi_0\\) and \\(I_m=I_0\\sin\\phi_0\\). The original crop is preserved."
+            },
+            "id": "u3-exercise-3-1-5"
           }
         ],
         "source_refs": [
@@ -8099,6 +8390,14 @@
             "images": "138.png–139.png"
           }
         ]
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 184,
+        "type": "Chapter-end review",
+        "items": "Write down the qualities of an ideal transformer.",
+        "anchor": "u3-sa-03"
       }
     ]
   },
@@ -8153,8 +8452,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-11",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-11.png",
             "figure_number": "Figure 3.11",
             "figure_name": "Practical transformer",
             "alt": "Figure 3.11 · Practical transformer · Textbook p. 140",
@@ -8163,11 +8462,14 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 755,
+            "height": 325,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-12",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-12.png",
             "figure_number": "Figure 3.12",
             "figure_name": "Complete equivalent circuit of a transformer",
             "alt": "Figure 3.12 · Complete equivalent circuit of a transformer · Textbook p. 140",
@@ -8176,7 +8478,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 680,
+            "height": 370,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -8202,8 +8507,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-13",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-13.png",
             "figure_number": "Figure 3.13",
             "figure_name": "Complete transformer equivalent circuit",
             "alt": "Figure 3.13 · Complete transformer equivalent circuit · Textbook p. 141",
@@ -8212,11 +8517,14 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 715,
+            "height": 360,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-14",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-14.png",
             "figure_number": "Figure 3.14",
             "figure_name": "Equivalent circuit referred to secondary side",
             "alt": "Figure 3.14 · Equivalent circuit referred to secondary side · Textbook p. 142",
@@ -8225,11 +8533,14 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 745,
+            "height": 330,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-15",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-15.png",
             "figure_number": "Figure 3.15",
             "figure_name": "Simplified equivalent circuit",
             "alt": "Figure 3.15 · Simplified equivalent circuit · Textbook p. 142",
@@ -8238,11 +8549,14 @@
             "after": {
               "type": "paragraph",
               "index": 4
-            }
+            },
+            "width": 643,
+            "height": 367,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-16",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-16.png",
             "figure_number": "Figure 3.16",
             "figure_name": "Further simplified equivalent circuit",
             "alt": "Figure 3.16 · Further simplified equivalent circuit · Textbook p. 143",
@@ -8251,7 +8565,10 @@
             "after": {
               "type": "paragraph",
               "index": 4
-            }
+            },
+            "width": 514,
+            "height": 358,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -8288,7 +8605,8 @@
               "\\[X_{02}=0.05+5.2(0.1)^2=0.102\\,\\Omega\\]",
               "\\[Z_{02}=0.0082+j0.102\\,\\Omega\\]"
             ],
-            "final_answer": "Z01 = 0.82 + j10.2 Ω; Z02 = 0.0082 + j0.102 Ω"
+            "final_answer": "Z01 = 0.82 + j10.2 Ω; Z02 = 0.0082 + j0.102 Ω",
+            "id": "u3-exercise-3-1-6"
           }
         ],
         "source_refs": [
@@ -8311,6 +8629,14 @@
       {
         "question": "How is secondary impedance referred to the primary?",
         "answer": "By dividing the secondary resistance/reactance by k², where k = N2/N1 = V2/V1."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 184,
+        "type": "Chapter-end review",
+        "items": "Show the equivalent circuit of a transformer.",
+        "anchor": "u3-sa-05"
       }
     ]
   },
@@ -8361,8 +8687,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-17",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-17.png",
             "figure_number": "Figure 3.17",
             "figure_name": "Simplified equivalent circuit for voltage regulation",
             "alt": "Figure 3.17 · Simplified equivalent circuit for voltage regulation · Textbook p. 144",
@@ -8371,11 +8697,14 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 560,
+            "height": 375,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-18",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-18.png",
             "figure_number": "Figure 3.18",
             "figure_name": "Transformer phasor diagram for voltage regulation",
             "alt": "Figure 3.18 · Transformer phasor diagram for voltage regulation · Textbook p. 145",
@@ -8384,7 +8713,10 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 360,
+            "height": 200,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -8420,7 +8752,8 @@
               "\\[\\%VR=\\dfrac{75(0.0396\\times0.6-0.0909\\times0.8)}{230}\\times100=-1.596\\%\\]",
               "The negative sign indicates that the secondary voltage rises with load for this leading-power-factor case."
             ],
-            "final_answer": "(a) 1.87%; (b) −1.596%"
+            "final_answer": "(a) 1.87%; (b) −1.596%",
+            "id": "u3-exercise-3-1-7"
           },
           {
             "title": "Exercise 3.1.8",
@@ -8434,7 +8767,8 @@
               "For a resistive load, cos φ = 1 and sin φ = 0:",
               "\\[\\%VR=\\dfrac{18.75(1.6)}{400}\\times100=7.5\\%\\]"
             ],
-            "final_answer": "7.5%"
+            "final_answer": "7.5%",
+            "id": "u3-exercise-3-1-8"
           }
         ],
         "source_refs": [
@@ -8449,6 +8783,14 @@
             "images": "146.png–149.png"
           }
         ]
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 185,
+        "type": "Chapter-end review",
+        "items": "A 25 kVA, 220/440 V, 50 Hz transformer has leakage impedance (0.2 + j0.55) Ω on the primary side and (0.8 + j2.4) Ω on the secondary side. Find percentage voltage regulation at ¾ full-load current supplying a resistive secondary load.",
+        "anchor": "u3-es-05"
       }
     ]
   },
@@ -8500,8 +8842,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-19",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-19.png",
             "figure_number": "Figure 3.19",
             "figure_name": "Transformer and loss paths",
             "alt": "Figure 3.19 · Transformer and loss paths · Textbook p. 150",
@@ -8510,11 +8852,14 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 360,
+            "height": 165,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-20",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-20.png",
             "figure_number": "Figure 3.20",
             "figure_name": "Transformer input and output power",
             "alt": "Figure 3.20 · Transformer input and output power · Textbook p. 150",
@@ -8523,7 +8868,10 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 386,
+            "height": 280,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -8562,7 +8910,8 @@
               "\\[P_o=4000\\,\\text{W},\\quad W_{cu}=(\\tfrac12)^2(200)=50\\,\\text{W}\\]",
               "\\[\\eta=\\dfrac{4000}{4000+50+100}\\times100=96.38\\%\\]"
             ],
-            "final_answer": "96.38%, 96.57%, 96.38%"
+            "final_answer": "96.38%, 96.57%, 96.38%",
+            "id": "u3-exercise-3-1-9"
           },
           {
             "title": "Exercise 3.1.10",
@@ -8577,7 +8926,8 @@
               "\\[W_L=225+180.17=405.17\\,\\text{W}\\]",
               "\\[\\eta=\\dfrac{13256}{13661.17}\\times100=97.03\\%\\]"
             ],
-            "final_answer": "97.03%"
+            "final_answer": "97.03%",
+            "id": "u3-exercise-3-1-10"
           },
           {
             "title": "Exercise 3.1.11",
@@ -8585,18 +8935,17 @@
               "A 15 kVA, 230/460 V transformer has primary and secondary leakage impedances 0.065 + j0.4 Ω and 0.25 + j1.0 Ω. It takes 225 W on no-load. Find the secondary current at maximum efficiency and the corresponding kVA rating."
             ],
             "paragraphs": [
-              "\\[k=\\dfrac{460}{230}=2\\]",
-              "At no load, the text treats the 225 W input as iron loss.",
-              "\\[R_{02}=0.25+0.065(2)^2=0.51\\,\\Omega\\]",
-              "At maximum efficiency, iron loss = copper loss:",
-              "\\[225=I_2^2R_{02}\\Rightarrow I_2\\approx21.0\\,\\text{A}\\]",
-              "\\[\\text{kVA}=\\dfrac{460I_2}{1000}\\approx9.66\\,\\text{kVA}\\]"
+              "\\[k=460/230=2,\\qquad R_{02}=0.25+0.065(2)^2=0.51\\,\\Omega\\]",
+              "Treat the no-load input as core loss, neglecting the small no-load copper loss.",
+              "\\[P_i=I_2^2R_{02}\\Rightarrow I_2=\\sqrt{225/0.51}=21.004\\,\\mathrm A\\]",
+              "\\[S=460(21.004)/1000=9.662\\,\\mathrm{kVA}\\]"
             ],
-            "final_answer": "Approximately I2 = 21 A and 9.7 kVA",
+            "final_answer": "\\(I_2=21.004\\,\\mathrm A;\\ S=9.662\\,\\mathrm{kVA}\\)",
             "math_mismatch": {
               "label": "Textbook arithmetic note",
-              "message": "The printed working uses R02 = 0.5 Ω and obtains I2 = 21.21 A and 9.756 kVA. Using the printed component values exactly gives R02 = 0.51 Ω. The textbook result is preserved in the source; this page flags the arithmetic sensitivity rather than silently replacing it."
-            }
+              "message": "The question prints primary resistance 0.065 Ω, but the worked substitution on p.154 changes it to 0.0625 Ω and obtains R02 = 0.5 Ω, I2 = 21.21 A and 9.756 kVA. The unchanged question data give R02 = 0.51 Ω, I2 = 21.004 A and 9.662 kVA."
+            },
+            "id": "u3-exercise-3-1-11"
           },
           {
             "title": "Exercise 3.1.12",
@@ -8611,7 +8960,8 @@
               "\\[W_L=25+25=50\\,\\text{W}\\]",
               "\\[\\eta_{max}=\\dfrac{530.25}{580.25}\\times100=91.38\\%\\]"
             ],
-            "final_answer": "91.38%"
+            "final_answer": "91.38%",
+            "id": "u3-exercise-3-1-12"
           },
           {
             "title": "Exercise 3.1.13",
@@ -8624,7 +8974,8 @@
               "\\[250=25^2R_{02}\\Rightarrow R_{02}=0.4\\,\\Omega\\]",
               "\\[R_{01}=\\dfrac{R_{02}}{k^2}=\\dfrac{0.4}{0.25}=1.6\\,\\Omega\\]"
             ],
-            "final_answer": "R01 = 1.6 Ω; R02 = 0.4 Ω"
+            "final_answer": "R01 = 1.6 Ω; R02 = 0.4 Ω",
+            "id": "u3-exercise-3-1-13"
           },
           {
             "title": "Exercise 3.1.14",
@@ -8640,7 +8991,8 @@
               "\\[W_{cu}(half)=0.25\\times204=51\\,\\text{W}\\]",
               "\\[\\eta=\\dfrac{8000}{8000+204+51}\\times100=96.91\\%\\]"
             ],
-            "final_answer": "96.91%"
+            "final_answer": "96.91%",
+            "id": "u3-exercise-3-1-14"
           },
           {
             "title": "Exercise 3.1.15",
@@ -8655,7 +9007,8 @@
               "\\[(\\tfrac34)^2W_{cu,FL}=382.5\\Rightarrow W_{cu,FL}=680\\,\\text{W}\\]",
               "\\[\\eta_{FL}=\\dfrac{50000}{50000+680+382.5}\\times100\\approx97.9\\%\\]"
             ],
-            "final_answer": "Iron loss ≈ 382.5 W; full-load copper loss ≈ 680 W; full-load efficiency ≈ 97.9%"
+            "final_answer": "Iron loss ≈ 382.5 W; full-load copper loss ≈ 680 W; full-load efficiency ≈ 97.9%",
+            "id": "u3-exercise-3-1-15"
           }
         ],
         "source_refs": [
@@ -8684,6 +9037,14 @@
       {
         "question": "What is the condition for maximum efficiency?",
         "answer": "Variable copper loss equals constant iron/core loss."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 185,
+        "type": "Chapter-end review",
+        "items": "A 20 kVA, 400/200 V, 50 Hz transformer has primary resistance 48 mΩ and secondary resistance 18 mΩ. Iron losses are 200 W. Find efficiency at half full load and 0.8 power factor lagging.",
+        "anchor": "u3-es-06"
       }
     ]
   },
@@ -8741,8 +9102,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-21",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-21.png",
             "figure_number": "Figure 3.21",
             "figure_name": "DC generator",
             "alt": "Figure 3.21 · DC generator · Textbook p. 158",
@@ -8751,11 +9112,14 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 529,
+            "height": 221,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-22",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-22.png",
             "figure_number": "Figure 3.22",
             "figure_name": "DC voltages and currents",
             "alt": "Figure 3.22 · DC voltages and currents · Textbook p. 159",
@@ -8764,11 +9128,14 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 728,
+            "height": 326,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-23",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-23.png",
             "figure_number": "Figure 3.23",
             "figure_name": "Moving conductor in a magnetic field",
             "alt": "Figure 3.23 · Moving conductor in a magnetic field · Textbook p. 159",
@@ -8777,11 +9144,14 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 421,
+            "height": 320,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-24",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-24.png",
             "figure_number": "Figure 3.24",
             "figure_name": "Obtaining current direction using Fleming’s right-hand rule",
             "alt": "Figure 3.24 · Obtaining current direction using Fleming’s right-hand rule · Textbook p. 160",
@@ -8790,11 +9160,14 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 725,
+            "height": 302,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-25",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-25.png",
             "figure_number": "Figure 3.25",
             "figure_name": "Fleming’s right-hand rule",
             "alt": "Figure 3.25 · Fleming’s right-hand rule · Textbook p. 160",
@@ -8803,7 +9176,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 503,
+            "height": 416,
+            "style": "ROS"
           },
           {
             "placeholder": false,
@@ -8819,8 +9195,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-27",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-27.png",
             "figure_number": "Figure 3.27",
             "figure_name": "Production of alternating emf",
             "alt": "Figure 3.27 · Production of alternating emf · Textbook p. 162",
@@ -8829,11 +9205,14 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 690,
+            "height": 320,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-28",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-28.png",
             "figure_number": "Figure 3.28",
             "figure_name": "Commutator",
             "alt": "Figure 3.28 · Commutator · Textbook p. 162",
@@ -8842,7 +9221,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 280,
+            "height": 220,
+            "style": "ROS"
           },
           {
             "placeholder": false,
@@ -8858,8 +9240,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-30",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-30.png",
             "figure_number": "Figure 3.30",
             "figure_name": "Unidirectional or direct current",
             "alt": "Figure 3.30 · Unidirectional or direct current · Textbook p. 163",
@@ -8868,7 +9250,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 417,
+            "height": 254,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -8911,8 +9296,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-32",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-32.png",
             "figure_number": "Figure 3.32",
             "figure_name": "Lap connection",
             "alt": "Figure 3.32 · Lap connection · Textbook p. 164",
@@ -8921,11 +9306,14 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 350,
+            "height": 215,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-33",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-33.png",
             "figure_number": "Figure 3.33",
             "figure_name": "Wave connection",
             "alt": "Figure 3.33 · Wave connection · Textbook p. 165",
@@ -8934,11 +9322,14 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 450,
+            "height": 176,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-34",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-34.png",
             "figure_number": "Figure 3.34",
             "figure_name": "DC generator symbol",
             "alt": "Figure 3.34 · DC generator symbol · Textbook p. 165",
@@ -8947,7 +9338,10 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 555,
+            "height": 395,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -9019,7 +9413,8 @@
             "math_mismatch": {
               "label": "Textbook discrepancy",
               "message": "The textbook prints 178.5 V after displaying the same formula and values. The displayed data and equation evaluate to 357 V, so the printed numerical result is inconsistent."
-            }
+            },
+            "id": "u3-exercise-3-2-1"
           },
           {
             "title": "Exercise 3.2.2",
@@ -9031,10 +9426,8 @@
               "\\[N=\\dfrac{E_g60A}{\\Phi ZP}=\\dfrac{400\\times60\\times6}{10\\times10^{-3}\\times1200\\times6}=2000\\,\\text{rpm}\\]"
             ],
             "final_answer": "2000 rpm",
-            "math_mismatch": {
-              "label": "Textbook discrepancy",
-              "message": "The printed textbook working shows 5000 rpm. Using its own printed formula and values (Eg = 400 V, Φ = 10 mWb, Z = 1200, P = A = 6) gives 2000 rpm."
-            }
+            "book_check": "The newly supplied p.168 prints 2000 rpm, agreeing with this calculation.",
+            "id": "u3-exercise-3-2-2"
           },
           {
             "title": "Exercise 3.2.3",
@@ -9046,7 +9439,8 @@
               "\\[\\dfrac{E_{g2}}{220}=0.5\\times1.6=0.8\\]",
               "\\[E_{g2}=220\\times0.8=176\\,\\text{V}\\]"
             ],
-            "final_answer": "176 V"
+            "final_answer": "176 V",
+            "id": "u3-exercise-3-2-3"
           }
         ],
         "source_refs": [
@@ -9059,6 +9453,14 @@
             "images": "167.png–168.png"
           }
         ]
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 185,
+        "type": "Chapter-end review",
+        "items": "Derive the expression for EMF generated in a DC generator.",
+        "anchor": "u3-es-09"
       }
     ]
   },
@@ -9106,8 +9508,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-41",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-41.png",
             "figure_number": "Figure 3.41",
             "figure_name": "DC generator converted into a motor",
             "alt": "Figure 3.41 · DC generator converted into a motor · Textbook p. 171",
@@ -9116,7 +9518,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 807,
+            "height": 332,
+            "style": "ROS"
           },
           {
             "placeholder": false,
@@ -9132,8 +9537,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-43",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-43.png",
             "figure_number": "Figure 3.43",
             "figure_name": "Fleming’s left-hand rule — conductor force",
             "alt": "Figure 3.43 · Fleming’s left-hand rule — conductor force · Textbook p. 172",
@@ -9142,7 +9547,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 600,
+            "height": 457,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -9182,8 +9590,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-45",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-45.png",
             "figure_number": "Figure 3.45",
             "figure_name": "DC motor symbol",
             "alt": "Figure 3.45 · DC motor symbol · Textbook p. 174",
@@ -9192,7 +9600,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 620,
+            "height": 410,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -9221,7 +9632,8 @@
               "For lap winding, A = P = 4.",
               "\\[E_b=\\dfrac{9\\times10^{-3}\\times960\\times1400\\times4}{60\\times4}=201.6\\,\\text{V}\\]"
             ],
-            "final_answer": "201.6 V"
+            "final_answer": "201.6 V",
+            "id": "u3-exercise-3-3-1"
           },
           {
             "title": "Exercise 3.3.2",
@@ -9233,7 +9645,8 @@
               "For wave winding A = 2:",
               "\\[200=\\dfrac{20\\times10^{-3}\\times Z\\times1500\\times4}{60\\times2}\\Rightarrow Z=200\\]"
             ],
-            "final_answer": "Eb = 200 V; Z = 200 conductors"
+            "final_answer": "Eb = 200 V; Z = 200 conductors",
+            "id": "u3-exercise-3-3-2"
           },
           {
             "title": "Exercise 3.3.3",
@@ -9245,7 +9658,8 @@
               "\\[E_b=\\dfrac{18\\times10^{-3}\\times1020\\times1200\\times6}{60\\times6}=367.2\\,\\text{V}\\]",
               "\\[V=E_b+I_aR_a+\\text{brush drop}=367.2+50(0.62)+2=400.2\\,\\text{V}\\]"
             ],
-            "final_answer": "Approximately 400 V (textbook)"
+            "final_answer": "Approximately 400 V (textbook)",
+            "id": "u3-exercise-3-3-3"
           }
         ],
         "source_refs": [
@@ -9258,6 +9672,14 @@
             "images": "174.png–175.png"
           }
         ]
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 185,
+        "type": "Chapter-end review",
+        "items": "A four-pole lap-connected DC motor with 1000 armature conductors absorbs 25 A from a DC source. Flux per pole is 24 mWb. Find the supply voltage needed for 1500 rpm if armature resistance is 0.8 Ω and brush drop is 2 V.",
+        "anchor": "u3-es-10"
       }
     ]
   },
@@ -9307,8 +9729,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-51",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-51.png",
             "figure_number": "Figure 3.51",
             "figure_name": "Separately excited DC motor",
             "alt": "Figure 3.51 · Separately excited DC motor · Textbook p. 178",
@@ -9317,7 +9739,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 625,
+            "height": 393,
+            "style": "ROS"
           },
           {
             "placeholder": false,
@@ -9382,8 +9807,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f3-55",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-55.png",
             "figure_number": "Figure 3.55",
             "figure_name": "Separately excited DC motor for speed-control discussion",
             "alt": "Figure 3.55 · Separately excited DC motor for speed-control discussion · Textbook p. 181",
@@ -9392,7 +9817,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 624,
+            "height": 414,
+            "style": "ROS"
           },
           {
             "placeholder": false,
@@ -9408,8 +9836,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-57",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-57.png",
             "figure_number": "Figure 3.57",
             "figure_name": "Field current vs speed characteristic",
             "alt": "Figure 3.57 · Field current vs speed characteristic · Textbook p. 182",
@@ -9418,7 +9846,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 515,
+            "height": 371,
+            "style": "ROS"
           },
           {
             "placeholder": false,
@@ -9434,8 +9865,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f3-59",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-59.png",
             "figure_number": "Figure 3.59",
             "figure_name": "Armature voltage vs speed characteristic",
             "alt": "Figure 3.59 · Armature voltage vs speed characteristic · Textbook p. 184",
@@ -9444,7 +9875,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 483,
+            "height": 372,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -9474,6 +9908,14 @@
       {
         "question": "Which method is used for speeds below rated speed?",
         "answer": "Armature control."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 185,
+        "type": "Chapter-end review",
+        "items": "Explain the operating characteristics of a separately excited DC motor.",
+        "anchor": "u3-es-11"
       }
     ]
   },
@@ -9608,8 +10050,8 @@
             }
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f4-3",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-3.png",
             "figure_number": "Figure 4.3",
             "figure_name": "Slip-ring induction motor",
             "alt": "Figure 4.3 · Slip-ring induction motor · Textbook p. 187",
@@ -9618,7 +10060,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 810,
+            "height": 468,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -9677,6 +10122,14 @@
         "question": "Why can external starting resistance be added to a slip-ring motor but not to a squirrel-cage motor?",
         "answer": "The phase-wound rotor terminals are brought out through slip rings and brushes; the squirrel-cage bars are permanently short-circuited by end rings."
       }
+    ],
+    "practice": [
+      {
+        "book_page": 217,
+        "type": "Chapter-end review",
+        "items": "Explain the constructional aspects of squirrel-cage and slip-ring induction motors.",
+        "anchor": "u4-es-01"
+      }
     ]
   },
   {
@@ -9728,8 +10181,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-5",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-5.png",
             "figure_number": "Figure 4.5",
             "figure_name": "Three-phase supply and stator winding",
             "alt": "Figure 4.5 · Three-phase supply and stator winding · Textbook p. 189",
@@ -9738,7 +10191,10 @@
             "after": {
               "type": "paragraph",
               "index": 4
-            }
+            },
+            "width": 846,
+            "height": 291,
+            "style": "ROS"
           },
           {
             "placeholder": false,
@@ -9783,8 +10239,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-7",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-7.png",
             "figure_number": "Figure 4.7",
             "figure_name": "Stator and rotor fluxes",
             "alt": "Figure 4.7 · Stator and rotor fluxes · Textbook p. 189",
@@ -9793,7 +10249,9 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 1536,
+            "height": 1024
           }
         ],
         "source_refs": [
@@ -9893,7 +10351,8 @@
               "\\[\\%s=\\dfrac{1500-1440}{1500}\\times100=4\\%\\]",
               "\\[f_r=sf=0.04\\times50=2\\,\\text{Hz}\\]"
             ],
-            "final_answer": "Ns = 1500 rpm; slip = 4%; rotor frequency = 2 Hz"
+            "final_answer": "Ns = 1500 rpm; slip = 4%; rotor frequency = 2 Hz",
+            "id": "u4-exercise-4-1-1"
           },
           {
             "title": "Exercise 4.1.2",
@@ -9907,7 +10366,8 @@
               "\\[f=\\dfrac{1000\\times6}{120}=50\\,\\text{Hz}\\]",
               "\\[f_r=sf=0.03\\times50=1.5\\,\\text{Hz}\\]"
             ],
-            "final_answer": "Ns = 1000 rpm; supply frequency = 50 Hz; rotor frequency = 1.5 Hz"
+            "final_answer": "Ns = 1000 rpm; supply frequency = 50 Hz; rotor frequency = 1.5 Hz",
+            "id": "u4-exercise-4-1-2"
           },
           {
             "title": "Exercise 4.1.3",
@@ -9923,7 +10383,8 @@
               "Using \\(s=(N_s-N)/N_s\\):",
               "\\[0.03=\\dfrac{1000-N}{1000}\\Rightarrow N=970\\,\\text{rpm}\\]"
             ],
-            "final_answer": "970 rpm"
+            "final_answer": "970 rpm",
+            "id": "u4-exercise-4-1-3"
           },
           {
             "title": "Exercise 4.1.4",
@@ -9942,7 +10403,8 @@
               "\\[\\cos\\phi_2=\\dfrac{2}{2.04}=0.9803\\]",
               "\\[sE_2=0.04\\times150=6\\,\\text{V},\\qquad I_2=\\dfrac{6}{2.04}=2.94\\,\\text{A}\\]"
             ],
-            "final_answer": "Standstill: s = 1, fr = 50 Hz, pf = 0.196, I2 = 14.72 A. At 1440 rpm: s = 0.04, fr = 2 Hz, pf = 0.9803, I2 = 2.94 A."
+            "final_answer": "Standstill: s = 1, fr = 50 Hz, pf = 0.196, I2 = 14.72 A. At 1440 rpm: s = 0.04, fr = 2 Hz, pf = 0.9803, I2 = 2.94 A.",
+            "id": "u4-exercise-4-1-4"
           },
           {
             "title": "Exercise 4.1.5",
@@ -9950,23 +10412,22 @@
               "A 3-phase, 4-pole, 50 Hz induction motor has a star-connected rotor winding with resistance 0.2 Ω/phase and standstill leakage reactance 1 Ω/phase. The standstill rotor induced emf is 208 V between any two slip rings. A star-connected external resistance of 1 Ω/phase is connected in the rotor circuit during starting. Calculate rotor current and rotor power factor at (i) standstill and (ii) rotor speed 1420 rpm."
             ],
             "paragraphs": [
-              "\\[N_s=\\dfrac{120\\times50}{4}=1500\\,\\text{rpm}\\]",
-              "Because the rotor is star-connected, the standstill rotor emf per phase is",
-              "\\[E_2=\\dfrac{208}{\\sqrt{3}}=120\\,\\text{V}\\]",
-              "At standstill, total rotor resistance per phase is \\(0.2+1=1.2\\,\\Omega\\):",
-              "\\[|Z_2|=\\sqrt{1.2^2+1^2}=1.562\\,\\Omega\\]",
-              "\\[I_2=\\dfrac{120}{1.562}=76.9\\,\\text{A},\\qquad \\cos\\phi_2=\\dfrac{1.2}{1.562}=0.768\\]",
-              "For the running condition, the printed solution changes the stated rotor speed to 1440 rpm and proceeds with \\(s=0.04\\):",
-              "\\[sE_2=0.04\\times120=4.8\\,\\text{V}\\]",
-              "With the external starting resistance no longer included,",
-              "\\[Z_{2r}=0.2+j(0.04\\times1)=0.2+j0.04\\,\\Omega\\]",
-              "\\[|Z_{2r}|=0.2055\\,\\Omega,\\quad I_2=\\dfrac{4.8}{0.2055}=23.35\\,\\text{A},\\quad \\cos\\phi_2=\\dfrac{0.2}{0.2055}=0.973\\]"
+              "\\[N_s=120(50)/4=1500\\,\\mathrm{rpm},\\qquad E_2=208/\\sqrt3=120.089\\,\\mathrm V\\]",
+              "At starting, the external resistance is connected, giving total resistance 0.2 + 1 = 1.2 Ω per phase.",
+              "\\[|Z_{2,st}|=\\sqrt{1.2^2+1^2}=1.56205\\,\\Omega\\]",
+              "\\[I_{2,st}=120.089/1.56205=76.88\\,\\mathrm A,\\quad\\cos\\phi_{2,st}=1.2/1.56205=0.7682\\text{ lagging}\\]",
+              "For the stated running speed, take the external starting resistance as shorted out, consistent with the source’s running circuit.",
+              "\\[s=(1500-1420)/1500=0.053333\\]",
+              "\\[E_{2s}=sE_2=6.40474\\,\\mathrm V,\\quad X_{2s}=sX_2=0.053333\\,\\Omega\\]",
+              "\\[|Z_{2s}|=\\sqrt{0.2^2+0.053333^2}=0.20699\\,\\Omega\\]",
+              "\\[I_{2s}=6.40474/0.20699=30.94\\,\\mathrm A,\\quad\\cos\\phi_{2s}=0.2/0.20699=0.9662\\text{ lagging}\\]"
             ],
-            "final_answer": "Printed solution: standstill I2 = 76.9 A, pf = 0.768; running calculation uses 1440 rpm and gives I2 = 23.35 A, pf = 0.973.",
+            "final_answer": "Standstill: 76.88 A, pf 0.7682 lagging. At the question’s 1420 rpm: 30.94 A, pf 0.9662 lagging (starting resistance removed).",
             "math_mismatch": {
               "label": "Textbook discrepancy",
-              "message": "The exercise statement asks for the running condition at 1420 rpm, but the printed solution on the next page uses 1440 rpm and therefore s = 0.04. PankusDesk preserves that mismatch rather than silently changing either the question or printed working."
-            }
+              "message": "The question on p.194 specifies 1420 rpm, but the printed solution on p.195 changes it to 1440 rpm. It also evaluates √(0.2² + 0.04²) as 0.2055 Ω instead of 0.20396 Ω. For 1440 rpm the unchanged data give 23.55 A and pf 0.9806, rather than the printed 23.35 A and 0.973. The solution above answers the stated 1420 rpm case. The external 1 Ω starting resistance is assumed removed during running; if it remains connected, running current would instead be about 5.332 A."
+            },
+            "id": "u4-exercise-4-1-5"
           }
         ],
         "source_refs": [
@@ -9982,6 +10443,14 @@
             "images": "191.png–195.png"
           }
         ]
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "A three-phase, six-pole, 50 Hz induction motor has standstill rotor leakage impedance (2.5 + j12) Ω per phase and standstill rotor EMF 120 V per phase. Calculate (a) slip, (b) rotor frequency, (c) rotor power factor and (d) rotor current, at (i) standstill and (ii) rotor speed 960 rpm.",
+        "anchor": "u4-es-04"
       }
     ]
   },
@@ -10035,8 +10504,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-8",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-8.png",
             "figure_number": "Figure 4.8",
             "figure_name": "Stator and rotor fluxes producing torque",
             "alt": "Figure 4.8 · Stator and rotor fluxes producing torque · Textbook p. 195",
@@ -10045,11 +10514,13 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 1536,
+            "height": 1024
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f4-9",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-9.png",
             "figure_number": "Figure 4.9",
             "figure_name": "Torque-slip characteristics",
             "alt": "Figure 4.9 · Torque-slip characteristics · Textbook p. 196",
@@ -10058,7 +10529,9 @@
             "after": {
               "type": "paragraph",
               "index": 5
-            }
+            },
+            "width": 1448,
+            "height": 1086
           }
         ],
         "source_refs": [
@@ -10083,6 +10556,14 @@
       {
         "question": "What is the slip at maximum torque in the textbook relation?",
         "answer": "s = R2/X2."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 217,
+        "type": "Chapter-end review",
+        "items": "Show and explain the torque–slip characteristics of a three-phase induction motor. Identify its maximum and starting torque.",
+        "anchor": "u4-es-03"
       }
     ]
   },
@@ -10125,8 +10606,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-10",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-10.png",
             "figure_number": "Figure 4.10",
             "figure_name": "Synchronous-generator block diagram",
             "alt": "Figure 4.10 · Synchronous-generator block diagram · Textbook p. 197",
@@ -10135,7 +10616,9 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 1942,
+            "height": 809
           }
         ],
         "source_refs": [
@@ -10164,8 +10647,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-11",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-11.png",
             "figure_number": "Figure 4.11",
             "figure_name": "Cross-sectional view of synchronous machine",
             "alt": "Figure 4.11 · Cross-sectional view of synchronous machine · Textbook p. 198",
@@ -10174,11 +10657,13 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 1536,
+            "height": 1024
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f4-12",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-12.png",
             "figure_number": "Figure 4.12",
             "figure_name": "Sinusoidal generated voltage",
             "alt": "Figure 4.12 · Sinusoidal generated voltage · Textbook p. 198",
@@ -10187,7 +10672,9 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 1536,
+            "height": 1024
           }
         ],
         "source_refs": [
@@ -10202,6 +10689,14 @@
             "figures": "4.11–4.12"
           }
         ]
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "Explain the working of a synchronous generator.",
+        "anchor": "u4-es-05"
       }
     ]
   },
@@ -10344,8 +10839,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-13",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-13.png",
             "figure_number": "Figure 4.13",
             "figure_name": "Cross-sectional view of stepper motor",
             "alt": "Figure 4.13 · Cross-sectional view of stepper motor · Textbook p. 199",
@@ -10354,7 +10849,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 605,
+            "height": 417,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -10396,6 +10894,14 @@
         "question": "Why does the rotor move when the next stator phase is energised?",
         "answer": "It moves to align with the new magnetic axis at the position of minimum reluctance."
       }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "Discuss the working of a stepper motor.",
+        "anchor": "u4-es-06"
+      }
     ]
   },
   {
@@ -10436,8 +10942,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-14",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-14.png",
             "figure_number": "Figure 4.14",
             "figure_name": "Lay-out of wiring in domestic installations",
             "alt": "Figure 4.14 · Lay-out of wiring in domestic installations · Textbook p. 201",
@@ -10446,7 +10952,10 @@
             "after": {
               "type": "paragraph",
               "index": 3
-            }
+            },
+            "width": 815,
+            "height": 482,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -10470,6 +10979,14 @@
       {
         "question": "Why is a separate MCB used for each sub-circuit?",
         "answer": "So a fault in one sub-circuit can be isolated without disconnecting the remaining sub-circuits."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "Show the basic layout of wiring in a domestic installation and locate the energy meter, MCB and distribution board (DB).",
+        "anchor": "u5-es-07"
       }
     ]
   },
@@ -10528,8 +11045,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-15",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-15.png",
             "figure_number": "Figure 4.15",
             "figure_name": "Cleat wiring",
             "alt": "Figure 4.15 · Cleat wiring · Textbook p. 202",
@@ -10538,7 +11055,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 730,
+            "height": 360,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -10561,8 +11081,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-16",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-16.png",
             "figure_number": "Figure 4.16",
             "figure_name": "Capping and casing wiring",
             "alt": "Figure 4.16 · Capping and casing wiring · Textbook p. 202",
@@ -10571,7 +11091,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 649,
+            "height": 298,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -10595,8 +11118,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-17",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-17.png",
             "figure_number": "Figure 4.17",
             "figure_name": "TRS/CTS wiring",
             "alt": "Figure 4.17 · TRS/CTS wiring · Textbook p. 203",
@@ -10605,7 +11128,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 363,
+            "height": 417,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -10646,8 +11172,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-18",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-18.png",
             "figure_number": "Figure 4.18",
             "figure_name": "Conduit wiring",
             "alt": "Figure 4.18 · Conduit wiring · Textbook p. 203",
@@ -10656,7 +11182,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 544,
+            "height": 211,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -10680,6 +11209,14 @@
       {
         "question": "What are the two forms of conduit wiring?",
         "answer": "Surface conduit wiring and concealed conduit wiring."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "Discuss the merits and demerits of cleat and conduit wiring systems.",
+        "anchor": "u5-es-08"
       }
     ]
   },
@@ -10712,6 +11249,42 @@
     "intro": "An SFU combines a switch and a fuse in one compact unit. A fuse is a sacrificial over-current protection element that melts when excessive current flows and must be replaced after it operates.",
     "sections": [
       {
+        "heading": "Supporting context · fuse protection",
+        "scope": "supporting",
+        "paragraphs": [
+          "A fuse is connected in series with the circuit. Excess current heats and melts its metal element, interrupting the circuit. After operation, the element must be replaced with the correct type and rating after the fault is cleared."
+        ],
+        "figures": [
+          {
+            "figure_number": "Figure 4.19",
+            "figure_name": "Different symbols used for a fuse",
+            "alt": "Different symbols used for a fuse",
+            "page": 204,
+            "size": "medium",
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-19.png",
+            "placeholder": false,
+            "width": 646,
+            "height": 114,
+            "style": "ROS",
+            "after": {
+              "type": "paragraph",
+              "index": 0
+            }
+          }
+        ],
+        "source_refs": [
+          "TB-P204",
+          "TB-P205",
+          "TB-P206"
+        ],
+        "book_refs": [
+          {
+            "pages": "204–206",
+            "figures": "4.19"
+          }
+        ]
+      },
+      {
         "heading": "Fuse — context needed for SFU",
         "scope": "supporting",
         "paragraphs": [
@@ -10737,8 +11310,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-23",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-23.png",
             "figure_number": "Figure 4.23",
             "figure_name": "SFU internal wiring diagram and Switch Fuse Unit",
             "alt": "Figure 4.23 · SFU internal wiring diagram and Switch Fuse Unit · Textbook p. 206",
@@ -10747,7 +11320,10 @@
             "after": {
               "type": "paragraph",
               "index": 0
-            }
+            },
+            "width": 837,
+            "height": 449,
+            "style": "ROS"
           }
         ],
         "accordions": [
@@ -10778,6 +11354,14 @@
       {
         "question": "What does SFU stand for and what does it combine?",
         "answer": "Switch Fuse Unit; it combines switching and fuse protection in one compact unit."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 217,
+        "type": "Chapter-end review",
+        "items": "What is the purpose of a fuse? Show its symbol.",
+        "anchor": "u5-sa-11"
       }
     ]
   },
@@ -10816,8 +11400,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-24",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-24.png",
             "figure_number": "Figure 4.24",
             "figure_name": "Miniature Circuit Breaker (MCB)",
             "alt": "Figure 4.24 · Miniature Circuit Breaker (MCB) · Textbook p. 206",
@@ -10826,11 +11410,14 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 243,
+            "height": 406,
+            "style": "ROS"
           },
           {
-            "placeholder": true,
-            "src": "placeholder://f4-25",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-25.png",
             "figure_number": "Figure 4.25",
             "figure_name": "Bimetal under normal and abnormal conditions",
             "alt": "Figure 4.25 · Bimetal under normal and abnormal conditions · Textbook p. 207",
@@ -10839,7 +11426,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 785,
+            "height": 220,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -10919,6 +11509,14 @@
         "question": "Which device is presented for the higher current and fault range, MCB or MCCB?",
         "answer": "MCCB."
       }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "List the differences between MCB and MCCB.",
+        "anchor": "u5-es-09"
+      }
     ]
   },
   {
@@ -10989,7 +11587,7 @@
       }
     ],
     "cautions": [],
-    "intro": "Earthing connects exposed metal parts of electrical equipment to ground so that leakage or fault current can take a low-resistance path instead of passing through a person.",
+    "intro": "Earthing connects exposed metal parts of electrical equipment to a low-resistance protective path, reducing touch voltage and enabling protective disconnection under a fault.",
     "sections": [
       {
         "heading": "4.4.7 Earthing — need and purpose",
@@ -11001,8 +11599,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-26",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-26.png",
             "figure_number": "Figure 4.26",
             "figure_name": "Effect of not earthing and earthing",
             "alt": "Figure 4.26 · Effect of not earthing and earthing · Textbook p. 208",
@@ -11011,7 +11609,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 784,
+            "height": 429,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -11022,6 +11623,18 @@
             "pages": "208",
             "images": "208.png",
             "figures": "4.26"
+          }
+        ],
+        "accordions": [
+          {
+            "title": "Earth current divides between available paths",
+            "paragraphs": [
+              "A protective earth offers a low-resistance fault path and helps the protective device disconnect the supply. Current can still divide through all parallel paths, including a person. Earthing reduces risk; it does not make a live fault safe to touch."
+            ],
+            "discrepancy": {
+              "label": "Textbook explanation discrepancy",
+              "message": "The p.208 statement that current “always selects the low resistive path” and the implication of zero human-body current are incomplete. By the parallel-circuit/current-division laws, current can flow in both paths. The original Figure 4.26 is preserved; use the qualified explanation above."
+            }
           }
         ]
       },
@@ -11034,8 +11647,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-29",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-29.png",
             "figure_number": "Figure 4.29",
             "figure_name": "Pipe earthing",
             "alt": "Figure 4.29 · Pipe earthing · Textbook p. 210",
@@ -11044,7 +11657,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 479,
+            "height": 614,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -11068,8 +11684,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-30",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-30.png",
             "figure_number": "Figure 4.30",
             "figure_name": "Plate earthing",
             "alt": "Figure 4.30 · Plate earthing · Textbook p. 210",
@@ -11078,7 +11694,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 500,
+            "height": 486,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -11109,11 +11728,19 @@
     "self_checks": [
       {
         "question": "Why is the metal body of an appliance earthed?",
-        "answer": "To provide a low-resistance path for leakage/fault current so it does not pass through a person touching the appliance."
+        "answer": "To provide a low-resistance fault-current path, limit touch voltage and help a protective device disconnect the circuit. Current can still divide through parallel paths, including a person."
       },
       {
-        "question": "Which two earthing methods are explicitly required by R25 Unit V?",
+        "question": "Name the two earthing methods discussed in detail.",
         "answer": "Pipe earthing and plate earthing."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "Show and explain the pipe-earthing scheme.",
+        "anchor": "u5-es-10"
       }
     ]
   },
@@ -11165,6 +11792,14 @@
         "question": "What is the basic difference between primary and secondary batteries?",
         "answer": "Primary batteries are non-rechargeable/single-use; secondary batteries are rechargeable."
       }
+    ],
+    "practice": [
+      {
+        "book_page": 217,
+        "type": "Chapter-end review",
+        "items": "Differentiate between primary and secondary batteries.",
+        "anchor": "u5-sa-16"
+      }
     ]
   },
   {
@@ -11212,8 +11847,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-31",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-31.png",
             "figure_number": "Figure 4.31",
             "figure_name": "Lead-acid battery",
             "alt": "Figure 4.31 · Lead-acid battery · Textbook p. 211",
@@ -11222,7 +11857,10 @@
             "after": {
               "type": "paragraph",
               "index": 2
-            }
+            },
+            "width": 653,
+            "height": 427,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -11265,8 +11903,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-32",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-32.png",
             "figure_number": "Figure 4.32",
             "figure_name": "Variation in voltage during charging and discharging",
             "alt": "Figure 4.32 · Variation in voltage during charging and discharging · Textbook p. 213",
@@ -11275,7 +11913,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 763,
+            "height": 462,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -11299,8 +11940,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f4-33",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-33.png",
             "figure_number": "Figure 4.33",
             "figure_name": "Capacity versus discharge characteristics",
             "alt": "Figure 4.33 · Capacity versus discharge characteristics · Textbook p. 213",
@@ -11309,7 +11950,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 627,
+            "height": 467,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -11356,6 +12000,14 @@
         "question": "What three electrical characteristics are discussed for the lead-acid battery?",
         "answer": "Voltage, capacity and efficiency."
       }
+    ],
+    "practice": [
+      {
+        "book_page": 218,
+        "type": "Chapter-end review",
+        "items": "Explain the working of a lead-acid battery.",
+        "anchor": "u5-es-11"
+      }
     ]
   },
   {
@@ -11396,8 +12048,8 @@
         ],
         "figures": [
           {
-            "placeholder": true,
-            "src": "placeholder://f5-44",
+            "placeholder": false,
+            "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f5-44.png",
             "figure_number": "Figure 5.44",
             "figure_name": "UPS block diagram",
             "alt": "Figure 5.44 · UPS block diagram · Textbook p. 243",
@@ -11406,7 +12058,10 @@
             "after": {
               "type": "paragraph",
               "index": 1
-            }
+            },
+            "width": 657,
+            "height": 256,
+            "style": "ROS"
           }
         ],
         "source_refs": [
@@ -11429,6 +12084,14 @@
       {
         "question": "What supplies the load when the AC input fails?",
         "answer": "The battery supplies DC to the inverter, which converts it to AC; the output then passes through the filter to the critical load."
+      }
+    ],
+    "practice": [
+      {
+        "book_page": 244,
+        "type": "Chapter-end review",
+        "items": "Show the block diagram of a typical uninterruptible power supply (UPS) and briefly explain its operation.",
+        "anchor": "u5-ups-09"
       }
     ]
   }

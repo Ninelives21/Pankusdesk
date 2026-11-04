@@ -17,12 +17,12 @@ The student-facing Unit III Text page is data-driven from `kb/data/topics.json`.
 - separately excited DC-motor load characteristics and speed control;
 - Swinburne’s test as a clearly identified gap-filled section.
 
-All textbook figures are currently represented as explicit placeholders carrying figure number, label/description and textbook page number. No textbook figure has been fabricated.
+The previously missing textbook figures are now integrated as ROS source crops, with original pixels preserved. Existing approved drawings are unchanged. Chapter-end questions and study solutions are available at `unit-3-questions.html`.
 
 ### Verified textbook discrepancies preserved
 
 - Exercise 3.2.1 prints 178.5 V, but substituting the printed values into the printed DC-generator EMF equation gives 357 V. The page flags this rather than silently rewriting the source.
-- Exercise 3.2.2 prints 5000 rpm, but the printed values and the printed EMF equation give 2000 rpm. The page flags this rather than silently rewriting the source.
+- Exercise 3.2.2 is verified against the reuploaded p.168: the book prints 2000 rpm and agrees with the calculation. The earlier 5000-rpm attribution was a transcription error and has been removed from the live notes.
 
 ### Physical-book range
 
