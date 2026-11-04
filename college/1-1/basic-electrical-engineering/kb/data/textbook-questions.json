@@ -16,10 +16,11 @@
         "answered_from_current_unit_sources": 23,
         "outside_current_r25_source_set": 3,
         "essay_answers_expanded_for_six_marks": 9,
-        "essay_source_gaps": 1,
-        "answer_provenance": "PankusDesk study solution"
+        "essay_source_gaps": 0,
+        "answer_provenance": "PankusDesk study solution",
+        "answered_from_supplemental_textbook_sources": 3
       },
-      "scope_note": "The official Chapter 1 review contains 26 questions. Short Q15–Q16 and Essay Q10 concern transient material from textbook pp.63–69. Those pages were intentionally excluded from the supplied R25 Unit I capture, so these three questions are retained for completeness but no model-written answer is inserted.",
+      "scope_note": "All 26 Chapter 1 review questions have source-backed study solutions. Short Q15–Q16 and Essay Q10 are retained as supporting transient-circuit material outside current R25 Unit I, using newly supplied textbook pp.62–69.",
       "groups": [
         {
           "id": "short-answer",
@@ -329,9 +330,15 @@
               "question": "Define transient state.",
               "r25_scope": "outside-current-r25",
               "answer": {
-                "status": "source-gap",
-                "note": "This question belongs to the transient section of Chapter 1. The supplied R25 Unit I capture intentionally omits textbook pp.63–69, so an answer is not inserted from model memory."
-              }
+                "paragraphs": [
+                  "Transient state is the transition interval after a circuit change, such as switching, during which its currents and voltages move from their previous conditions toward the new steady state."
+                ],
+                "note": "Supporting textbook material outside current R25 Unit I; now source-backed by the newly supplied pp.62–69."
+              },
+              "answer_source_refs": [
+                "TB-P062"
+              ],
+              "solution_provenance": "PankusDesk study solution"
             },
             {
               "id": "u1-sa-16",
@@ -340,9 +347,16 @@
               "question": "Write the expression for the time constant of an RC network.",
               "r25_scope": "outside-current-r25",
               "answer": {
-                "status": "source-gap",
-                "note": "This question belongs to the RC-transient material on the intentionally omitted textbook pp.63–69. It is retained because it is an official chapter-end question, but no unsupported answer is inserted."
-              }
+                "paragraphs": [
+                  "For a first-order series RC circuit the time constant is \\(\\tau=RC\\) seconds. More generally, \\(R\\) is the resistance seen by the capacitor with independent sources suppressed."
+                ],
+                "result": "\\(\\tau=RC\\ \\mathrm s\\)",
+                "note": "Supporting textbook material outside current R25 Unit I; now source-backed by the newly supplied pp.62–69."
+              },
+              "answer_source_refs": [
+                "TB-P068"
+              ],
+              "solution_provenance": "PankusDesk study solution"
             }
           ]
         },
@@ -875,26 +889,59 @@
               "question": "Discuss the DC response of an RL circuit and write the expression for transient current with respect to time.",
               "r25_scope": "outside-current-r25",
               "answer": {
-                "status": "source-gap",
-                "note": "This official Chapter 1 question requires the RL-transient material from printed textbook pp.63–69. Those pages are not present in the supplied Unit-I source capture and RL/RC transients are outside VNR R25 Unit I. The supplied Unit-I lecture transcripts and supplementary PDF do not supply this missing derivation either, so PankusDesk intentionally leaves the answer unfilled rather than completing it from model memory."
+                "paragraphs": [
+                  "Consider a series resistance \\(R\\) and inductance \\(L\\) connected at \\(t=0\\) to a constant DC voltage \\(V\\), with zero initial inductor current."
+                ],
+                "steps": [
+                  "KVL gives \\(V=Ri+L\\dfrac{di}{dt}\\), or \\(\\dfrac{di}{dt}+\\dfrac RL i=\\dfrac VL\\).",
+                  "The complementary solution is \\(i_c=Ce^{-Rt/L}\\); a constant particular solution is \\(i_p=V/R\\). Hence \\(i(t)=V/R+Ce^{-Rt/L}\\).",
+                  "Inductor current is continuous. Since \\(i(0)=0\\), \\(C=-V/R\\).",
+                  "Therefore \\(i(t)=\\dfrac VR(1-e^{-t/\\tau}),\\quad\\tau=L/R\\). At \\(t=\\tau\\), current is \\((1-e^{-1})V/R\\approx0.632V/R\\).",
+                  "The resistor voltage is \\(v_R=V(1-e^{-t/\\tau})\\) and inductor voltage \\(v_L=Ve^{-t/\\tau}\\). As \\(t\\to\\infty\\), current tends to \\(V/R\\) and the inductor voltage tends to zero.",
+                  "For a nonzero initial current \\(I_0\\), the general response is \\(i(t)=V/R+(I_0-V/R)e^{-t/\\tau}\\)."
+                ],
+                "result": "\\(i(t)=\\dfrac VR(1-e^{-Rt/L}),\\quad \\tau=\\dfrac LR\\) for zero initial current.",
+                "note": "Supporting textbook material outside current R25 Unit I; now source-backed by the newly supplied pp.62–69.",
+                "figures": [
+                  {
+                    "figure_number": "Figure 1.64",
+                    "figure_name": "Series RL circuit",
+                    "alt": "Series RL circuit",
+                    "page": 62,
+                    "size": "medium",
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-64.png",
+                    "placeholder": false,
+                    "width": 363,
+                    "height": 276,
+                    "style": "ROS"
+                  },
+                  {
+                    "figure_number": "Figure 1.65",
+                    "figure_name": "Current growth in a series RL circuit",
+                    "alt": "Current growth in a series RL circuit",
+                    "page": 64,
+                    "size": "medium",
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u1/theory/f1-65.png",
+                    "placeholder": false,
+                    "width": 482,
+                    "height": 336,
+                    "style": "ROS"
+                  }
+                ]
               },
-              "answer_source_refs": []
+              "answer_source_refs": [
+                "TB-P062",
+                "TB-P063",
+                "TB-P064",
+                "TB-P065"
+              ],
+              "solution_provenance": "PankusDesk study solution"
             }
           ]
         }
       ],
       "source": {
-        "chapter": "Chapter 1 — Introduction to Electrical Energy and DC Circuits",
-        "review_pages": [
-          70,
-          71,
-          72
-        ],
-        "capture_files": [
-          "70.png",
-          "71.png",
-          "72.png"
-        ]
+        "note": "All 26 Chapter 1 review questions have source-backed study solutions. Short Q15–Q16 and Essay Q10 are retained as supporting transient-circuit material outside current R25 Unit I, using newly supplied textbook pp.62–69. Solutions are PankusDesk-authored."
       }
     },
     "2": {
@@ -1372,6 +1419,2711 @@
           ]
         }
       ]
+    },
+    "3": {
+      "title": "Transformers and DC Machines",
+      "summary": {
+        "official_question_count": 28,
+        "short_answer_count": 16,
+        "essay_count": 12,
+        "answer_provenance": "PankusDesk study solution"
+      },
+      "scope_note": "Chapter 3 review, pp.184–185. Original question numbering is retained; the DC-generator classification item is retained as supporting textbook material.",
+      "source": {
+        "title": "Basics of Electrical Energy for Engineers",
+        "note": "Chapter 3 review, pp.184–185. Original question numbering is retained; the DC-generator classification item is retained as supporting textbook material. Questions follow the supplied textbook; all solutions are PankusDesk-authored."
+      },
+      "groups": [
+        {
+          "id": "short-answer",
+          "title": "Short Answer (Two marks) Questions",
+          "questions": [
+            {
+              "id": "u3-sa-01",
+              "number": 1,
+              "book_page": 184,
+              "question": "What is a transformer?",
+              "answer": {
+                "paragraphs": [
+                  "A transformer is a static electromagnetic device that transfers AC power from one circuit to another by mutual induction, normally changing voltage and current without changing frequency."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P130",
+                "TB-P131",
+                "TB-P132"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-principle",
+              "answer_basis": [
+                "u3-transformer-principle"
+              ]
+            },
+            {
+              "id": "u3-sa-02",
+              "number": 2,
+              "book_page": 184,
+              "question": "List the uses of transformers.",
+              "answer": {
+                "paragraphs": [
+                  "Transformers step voltage up for economical transmission, step it down for distribution and utilisation, provide electrical isolation, and supply suitable voltages for electrical and electronic equipment."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P130",
+                "TB-P131",
+                "TB-P132"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-principle",
+              "answer_basis": [
+                "u3-transformer-principle"
+              ]
+            },
+            {
+              "id": "u3-sa-03",
+              "number": 3,
+              "book_page": 184,
+              "question": "Write down the qualities of an ideal transformer.",
+              "answer": {
+                "paragraphs": [
+                  "An ideal transformer has zero winding resistance, no leakage flux, no hysteresis or eddy-current loss, and an infinitely permeable core requiring negligible magnetising current. Input power equals output power: efficiency is 100%."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P139",
+                "TB-P140",
+                "TB-P141",
+                "TB-P142",
+                "TB-P143"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-ideal-practical-equivalent",
+              "answer_basis": [
+                "u3-ideal-practical-equivalent"
+              ]
+            },
+            {
+              "id": "u3-sa-04",
+              "number": 4,
+              "book_page": 184,
+              "question": "Differentiate between an ideal transformer and a practical transformer.",
+              "answer": {
+                "paragraphs": [],
+                "table": {
+                  "headers": [
+                    "Ideal transformer",
+                    "Practical transformer"
+                  ],
+                  "rows": [
+                    [
+                      "Zero winding resistance; no copper loss",
+                      "Finite resistance; copper loss"
+                    ],
+                    [
+                      "All flux links both windings",
+                      "Leakage flux causes leakage reactance"
+                    ],
+                    [
+                      "No core loss or magnetising current",
+                      "Core loss and magnetising current exist"
+                    ],
+                    [
+                      "100% efficiency; zero internal voltage drop",
+                      "Efficiency below 100%; load-dependent terminal voltage"
+                    ]
+                  ]
+                }
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P139",
+                "TB-P140",
+                "TB-P141",
+                "TB-P142",
+                "TB-P143"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-ideal-practical-equivalent",
+              "answer_basis": [
+                "u3-ideal-practical-equivalent"
+              ]
+            },
+            {
+              "id": "u3-sa-05",
+              "number": 5,
+              "book_page": 184,
+              "question": "Show the equivalent circuit of a transformer.",
+              "answer": {
+                "paragraphs": [
+                  "The complete circuit has primary winding resistance and leakage reactance, an exciting branch \\(R_0\\parallel jX_0\\), an ideal transformer, and secondary winding resistance and leakage reactance. \\(R_0\\) represents core loss and \\(X_0\\) magnetisation. Impedances referred between sides change by the square of the turns ratio."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-13.png",
+                    "figure_number": "Figure 3.13",
+                    "figure_name": "Complete transformer equivalent circuit",
+                    "alt": "Figure 3.13 · Complete transformer equivalent circuit · Textbook p. 141",
+                    "page": 141,
+                    "size": "medium",
+                    "width": 715,
+                    "height": 360,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-14.png",
+                    "figure_number": "Figure 3.14",
+                    "figure_name": "Equivalent circuit referred to secondary side",
+                    "alt": "Figure 3.14 · Equivalent circuit referred to secondary side · Textbook p. 142",
+                    "page": 142,
+                    "size": "medium",
+                    "width": 745,
+                    "height": 330,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P139",
+                "TB-P140",
+                "TB-P141",
+                "TB-P142",
+                "TB-P143"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-ideal-practical-equivalent",
+              "answer_basis": [
+                "u3-ideal-practical-equivalent"
+              ]
+            },
+            {
+              "id": "u3-sa-06",
+              "number": 6,
+              "book_page": 184,
+              "question": "Define voltage regulation.",
+              "answer": {
+                "paragraphs": [
+                  "In this chapter, transformer voltage regulation is the change in secondary terminal voltage from no-load to the specified load, expressed as a percentage of the no-load secondary EMF E₂, at unchanged primary voltage and frequency."
+                ],
+                "result": "\\(\\%\\mathrm{VR}=\\dfrac{E_2-V_2}{E_2}\\times100\\)",
+                "note": "This follows the supplied chapter’s no-load-voltage denominator. The approximate numerical method substitutes the rated secondary voltage for E₂."
+              },
+              "answer_source_refs": [
+                "TB-P144",
+                "TB-P145"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-regulation",
+              "answer_basis": [
+                "u3-transformer-regulation"
+              ]
+            },
+            {
+              "id": "u3-sa-07",
+              "number": 7,
+              "book_page": 184,
+              "question": "Specify the condition for maximum efficiency in a transformer.",
+              "answer": {
+                "paragraphs": [
+                  "At fixed power factor, efficiency is maximum when variable copper loss equals constant iron/core loss."
+                ],
+                "result": "\\(x^2P_{\\mathrm{cu,FL}}=P_i\\)"
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P149",
+                "TB-P150",
+                "TB-P151",
+                "TB-P152",
+                "TB-P153",
+                "TB-P154",
+                "TB-P155",
+                "TB-P156",
+                "TB-P157"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-efficiency",
+              "answer_basis": [
+                "u3-transformer-efficiency"
+              ]
+            },
+            {
+              "id": "u3-sa-08",
+              "number": 8,
+              "book_page": 184,
+              "question": "The full-load copper losses of a transformer are 200 W. Find the copper losses at half full load.",
+              "answer": {
+                "paragraphs": [],
+                "steps": [
+                  "Copper loss varies as the square of load current: \\(P_{\\rm cu}(x)=x^2P_{\\rm cu,FL}\\).",
+                  "At half load, \\(x=0.5\\), so \\(P_{\\rm cu}=0.5^2(200)=50\\ \\mathrm W\\)."
+                ],
+                "result": "\\(50\\ \\mathrm W\\)"
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P149",
+                "TB-P150",
+                "TB-P151",
+                "TB-P152",
+                "TB-P153",
+                "TB-P154",
+                "TB-P155",
+                "TB-P156",
+                "TB-P157"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-efficiency",
+              "answer_basis": [
+                "u3-transformer-efficiency"
+              ]
+            },
+            {
+              "id": "u3-sa-09",
+              "number": 9,
+              "book_page": 184,
+              "question": "Differentiate between a DC generator and a DC motor.",
+              "answer": {
+                "paragraphs": [],
+                "table": {
+                  "headers": [
+                    "DC generator",
+                    "DC motor"
+                  ],
+                  "rows": [
+                    [
+                      "Mechanical input → electrical output",
+                      "Electrical input → mechanical output"
+                    ],
+                    [
+                      "Induced EMF drives the load current",
+                      "Back EMF opposes the applied voltage"
+                    ],
+                    [
+                      "\\(V=E_g-I_aR_a\\), neglecting brush drop",
+                      "\\(V=E_b+I_aR_a\\), neglecting brush drop"
+                    ],
+                    [
+                      "Fleming’s right-hand rule gives generated-current direction",
+                      "Fleming’s left-hand rule gives force direction"
+                    ]
+                  ]
+                }
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P158",
+                "TB-P159",
+                "TB-P160",
+                "TB-P161",
+                "TB-P162",
+                "TB-P163",
+                "TB-P164",
+                "TB-P165",
+                "TB-P166",
+                "TB-P167",
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-sa-10",
+              "number": 10,
+              "book_page": 184,
+              "question": "State Fleming’s right-hand rule.",
+              "answer": {
+                "paragraphs": [
+                  "Hold the thumb, forefinger and middle finger of the right hand mutually perpendicular. The forefinger points along the magnetic field (N to S), the thumb along conductor motion, and the middle finger gives the induced conventional current direction."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-25.png",
+                    "figure_number": "Figure 3.25",
+                    "figure_name": "Fleming’s right-hand rule",
+                    "alt": "Figure 3.25 · Fleming’s right-hand rule · Textbook p. 160",
+                    "page": 160,
+                    "size": "medium",
+                    "width": 503,
+                    "height": 416,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P158",
+                "TB-P159",
+                "TB-P160",
+                "TB-P161",
+                "TB-P162",
+                "TB-P163",
+                "TB-P164",
+                "TB-P165",
+                "TB-P166",
+                "TB-P167",
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-sa-11",
+              "number": 11,
+              "book_page": 184,
+              "question": "What are the major differences between lap and wave windings?",
+              "answer": {
+                "paragraphs": [],
+                "table": {
+                  "headers": [
+                    "Simplex lap",
+                    "Simplex wave"
+                  ],
+                  "rows": [
+                    [
+                      "Parallel paths \\(A=P\\)",
+                      "Parallel paths \\(A=2\\), independent of pole count"
+                    ],
+                    [
+                      "Suited to lower voltage and higher current",
+                      "Suited to higher voltage and lower current"
+                    ],
+                    [
+                      "Coils connect back to nearby commutator segments",
+                      "Connections progress in waves around the armature"
+                    ]
+                  ]
+                }
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P158",
+                "TB-P159",
+                "TB-P160",
+                "TB-P161",
+                "TB-P162",
+                "TB-P163",
+                "TB-P164",
+                "TB-P165",
+                "TB-P166",
+                "TB-P167",
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-sa-12",
+              "number": 12,
+              "book_page": 184,
+              "question": "Show the circuit symbol of a DC generator.",
+              "answer": {
+                "paragraphs": [
+                  "The source symbol represents the generated EMF between the marked positive and negative terminals. In generator operation, load current leaves the positive terminal."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-34.png",
+                    "figure_number": "Figure 3.34",
+                    "figure_name": "DC generator symbol",
+                    "alt": "Figure 3.34 · DC generator symbol · Textbook p. 165",
+                    "page": 165,
+                    "size": "medium",
+                    "width": 555,
+                    "height": 395,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P158",
+                "TB-P159",
+                "TB-P160",
+                "TB-P161",
+                "TB-P162",
+                "TB-P163",
+                "TB-P164",
+                "TB-P165",
+                "TB-P166",
+                "TB-P167",
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-sa-13",
+              "number": 13,
+              "book_page": 184,
+              "question": "Classify DC generators.",
+              "answer": {
+                "paragraphs": [
+                  "By excitation, DC generators are separately excited or self-excited. Self-excited generators are shunt, series or compound. Compound generators may be long-shunt or short-shunt, and cumulatively or differentially compounded."
+                ]
+              },
+              "answer_source_refs": [
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-sa-14",
+              "number": 14,
+              "book_page": 184,
+              "question": "Why is back EMF called so?",
+              "answer": {
+                "paragraphs": [
+                  "Rotation of the armature in the magnetic field induces an EMF whose polarity opposes the voltage driving motor current, in accordance with Lenz’s law. It is therefore called back or counter EMF."
+                ],
+                "result": "\\(E_b=V-I_aR_a\\) when brush drop is neglected."
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P171",
+                "TB-P172",
+                "TB-P173",
+                "TB-P174",
+                "TB-P175",
+                "TB-P176",
+                "TB-P177"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-motor",
+              "answer_basis": [
+                "u3-dc-motor"
+              ]
+            },
+            {
+              "id": "u3-sa-15",
+              "number": 15,
+              "book_page": 184,
+              "question": "State Fleming’s left-hand rule.",
+              "answer": {
+                "paragraphs": [
+                  "Hold the thumb, forefinger and middle finger of the left hand mutually perpendicular. The forefinger indicates field direction, the middle finger conventional current, and the thumb the force/motion of the conductor."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-42.png",
+                    "figure_number": "Figure 3.42",
+                    "figure_name": "Fleming’s left-hand rule",
+                    "alt": "Figure 3.42 · Fleming’s left-hand rule · Textbook p. 172",
+                    "page": 172,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-43.png",
+                    "figure_number": "Figure 3.43",
+                    "figure_name": "Fleming’s left-hand rule — conductor force",
+                    "alt": "Figure 3.43 · Fleming’s left-hand rule — conductor force · Textbook p. 172",
+                    "page": 172,
+                    "size": "medium",
+                    "width": 600,
+                    "height": 457,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P171",
+                "TB-P172",
+                "TB-P173",
+                "TB-P174",
+                "TB-P175",
+                "TB-P176",
+                "TB-P177"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-motor",
+              "answer_basis": [
+                "u3-dc-motor"
+              ]
+            },
+            {
+              "id": "u3-sa-16",
+              "number": 16,
+              "book_page": 184,
+              "question": "Show the torque versus armature-current characteristic of a DC separately excited motor.",
+              "answer": {
+                "paragraphs": [
+                  "With constant field excitation, \\(T=k\\phi I_a\\). Thus torque is directly proportional to armature current, giving a straight line through the origin."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-52.png",
+                    "figure_number": "Figure 3.52",
+                    "figure_name": "Torque vs armature current characteristic",
+                    "alt": "Figure 3.52 · Torque vs armature current characteristic · Textbook p. 179",
+                    "page": 179,
+                    "size": "medium"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P178",
+                "TB-P179",
+                "TB-P180",
+                "TB-P181",
+                "TB-P182",
+                "TB-P183",
+                "TB-P184"
+              ],
+              "question_source_refs": [
+                "TB-P184"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-separately-excited-motor",
+              "answer_basis": [
+                "u3-separately-excited-motor"
+              ]
+            }
+          ],
+          "nav_label": "Short answers"
+        },
+        {
+          "id": "essay",
+          "title": "Essay (Six marks) Questions",
+          "questions": [
+            {
+              "id": "u3-es-01",
+              "number": 1,
+              "book_page": 185,
+              "question": "Explain the working principle of a transformer.",
+              "answer": {
+                "paragraphs": [
+                  "A transformer is a static device that transfers AC electrical power between circuits by mutual induction, normally changing voltage and current while retaining the supply frequency."
+                ],
+                "steps": [
+                  "Apply an alternating voltage to the primary winding. Its magnetising current establishes alternating flux in the common magnetic core.",
+                  "This flux links both windings. Faraday’s law gives \\(e_1=-N_1\\dfrac{d\\phi}{dt}\\) and \\(e_2=-N_2\\dfrac{d\\phi}{dt}\\).",
+                  "With the secondary open, the primary draws a small no-load current to establish flux and supply core losses. When a load is connected, the secondary EMF drives a load current.",
+                  "The primary then draws an additional load component whose ampere-turns oppose the secondary ampere-turns, leaving the main flux approximately unchanged at fixed voltage and frequency.",
+                  "Ideally, \\(\\dfrac{V_2}{V_1}=\\dfrac{N_2}{N_1}=k\\) and \\(\\dfrac{I_2}{I_1}=\\dfrac{1}{k}\\). Thus a step-up transformer raises voltage and reduces current; a step-down transformer does the reverse. There is no conducting connection between isolated primary and secondary windings."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-2.png",
+                    "figure_number": "Figure 3.2",
+                    "figure_name": "Transformer principle",
+                    "alt": "Figure 3.2 · Transformer principle · Textbook p. 131",
+                    "page": 131,
+                    "size": "medium",
+                    "width": 437,
+                    "height": 273,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-3.png",
+                    "figure_number": "Figure 3.3",
+                    "figure_name": "Transformer with an iron core",
+                    "alt": "Figure 3.3 · Transformer with an iron core · Textbook p. 131",
+                    "page": 131,
+                    "size": "medium",
+                    "width": 660,
+                    "height": 335,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P130",
+                "TB-P131",
+                "TB-P132"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-principle",
+              "answer_basis": [
+                "u3-transformer-principle"
+              ]
+            },
+            {
+              "id": "u3-es-02",
+              "number": 2,
+              "book_page": 185,
+              "question": "What are the main parts of a transformer? Explain briefly its construction.",
+              "answer": {
+                "paragraphs": [
+                  "The main parts are the magnetic core, insulated primary and secondary windings, and the insulation and cooling arrangements."
+                ],
+                "steps": [
+                  "Build the core from thin insulated magnetic-steel laminations. The core provides a low-reluctance path for common flux, while laminations reduce eddy-current loss.",
+                  "Place insulated copper or aluminium primary and secondary windings on the core. The primary receives electrical power and the secondary supplies the load.",
+                  "In core-type construction, the windings surround the core limbs; in shell-type construction, the core surrounds much of the winding. Maintain insulation between turns, windings and core.",
+                  "Use a tank and insulating oil in oil-filled transformers, with cooling surfaces or radiators to remove winding and core heat. Bring out the terminals through insulated bushings."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-4.png",
+                    "figure_number": "Figure 3.4",
+                    "figure_name": "Basic construction of a transformer",
+                    "alt": "Figure 3.4 · Basic construction of a transformer · Textbook p. 132",
+                    "page": 132,
+                    "size": "medium",
+                    "width": 835,
+                    "height": 560,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P130",
+                "TB-P131",
+                "TB-P132"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-principle",
+              "answer_basis": [
+                "u3-transformer-principle"
+              ]
+            },
+            {
+              "id": "u3-es-03",
+              "number": 3,
+              "book_page": 185,
+              "question": "Derive the EMF equation of a transformer.",
+              "answer": {
+                "paragraphs": [
+                  "Assume sinusoidal core flux \\(\\phi=\\phi_m\\sin\\omega t\\) at frequency \\(f\\)."
+                ],
+                "steps": [
+                  "In one half-cycle the flux changes from \\(+\\phi_m\\) to \\(-\\phi_m\\), a magnitude change of \\(2\\phi_m\\) in \\(1/(2f)\\) seconds.",
+                  "Average induced EMF per turn is therefore \\(\\dfrac{2\\phi_m}{1/(2f)}=4f\\phi_m\\).",
+                  "For a sinusoidal waveform, form factor \\(E_{\\rm rms}/E_{\\rm avg}=1.11\\). Hence RMS EMF per turn is \\(1.11(4f\\phi_m)=4.44f\\phi_m\\).",
+                  "Multiply by the number of turns: \\(E_1=4.44fN_1\\phi_m\\) and \\(E_2=4.44fN_2\\phi_m\\). Since \\(\\phi_m=B_mA\\), also \\(E=4.44fNB_mA\\).",
+                  "Dividing the two equations gives \\(E_2/E_1=N_2/N_1\\). Under the ideal-transformer assumption this is also \\(V_2/V_1\\)."
+                ],
+                "result": "\\(E_1=4.44fN_1\\phi_m,\\quad E_2=4.44fN_2\\phi_m\\)",
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-5.png",
+                    "figure_number": "Figure 3.5",
+                    "figure_name": "Transformer used for EMF-equation derivation",
+                    "alt": "Figure 3.5 · Transformer used for EMF-equation derivation · Textbook p. 133",
+                    "page": 133,
+                    "size": "medium",
+                    "width": 670,
+                    "height": 340,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "TB-P133",
+                "TB-P134",
+                "TB-P135",
+                "TB-P136",
+                "TB-P137"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-emf-ratio",
+              "answer_basis": [
+                "u3-transformer-emf-ratio"
+              ]
+            },
+            {
+              "id": "u3-es-04",
+              "number": 4,
+              "book_page": 185,
+              "question": "In a 110/440 V, 50 Hz single-phase transformer, the maximum flux density is 1.2 Wb/m² and the EMF per turn is 1.8 V. Determine (a) primary and secondary turns, (b) operating flux and (c) core cross-sectional area.",
+              "answer": {
+                "paragraphs": [],
+                "result": "\\(N_1=61.11,\\ N_2=244.44,\\ \\phi_m=8.108\\ \\mathrm{mWb},\\ A=0.006757\\ \\mathrm{m^2}\\)",
+                "book_check": "The book gives approximately 61 and 245 turns, 8.12 mWb and 0.00676 m². The ideal turns above retain the given 1.8 V/turn without intermediate rounding; a physical winding requires integer turns.",
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "steps": [
+                      "Use RMS EMF per turn \\(E_t=E/N=1.8\\ \\mathrm{V/turn}\\). Neglect winding drops, so \\(E_1=110\\ \\mathrm V\\) and \\(E_2=440\\ \\mathrm V\\).",
+                      "(a) \\(N_1=110/1.8=61.11\\) turns and \\(N_2=440/1.8=244.44\\) turns (ideal calculated values)."
+                    ]
+                  },
+                  {
+                    "label": "(b)",
+                    "steps": [
+                      "(b) \\(\\phi_m=\\dfrac{E_t}{4.44f}=\\dfrac{1.8}{4.44(50)}=0.008108\\ \\mathrm{Wb}\\)."
+                    ]
+                  },
+                  {
+                    "label": "(c)",
+                    "steps": [
+                      "(c) \\(A=\\phi_m/B_m=0.008108/1.2=0.006757\\ \\mathrm{m^2}\\)."
+                    ]
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "TB-P133",
+                "TB-P134",
+                "TB-P135",
+                "TB-P136",
+                "TB-P137"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-emf-ratio",
+              "answer_basis": [
+                "u3-transformer-emf-ratio"
+              ],
+              "question_lead": "A 110/440 V, 50 Hz single-phase transformer has maximum flux density 1.2 Wb/m² and EMF per turn 1.8 V. Determine:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "id": "u3-es-04-a",
+                  "content": "Primary and secondary turns."
+                },
+                {
+                  "label": "(b)",
+                  "id": "u3-es-04-b",
+                  "content": "Operating flux."
+                },
+                {
+                  "label": "(c)",
+                  "id": "u3-es-04-c",
+                  "content": "Core cross-sectional area."
+                }
+              ]
+            },
+            {
+              "id": "u3-es-05",
+              "number": 5,
+              "book_page": 185,
+              "question": "A 25 kVA, 220/440 V, 50 Hz transformer has leakage impedance (0.2 + j0.55) Ω on the primary side and (0.8 + j2.4) Ω on the secondary side. Find percentage voltage regulation at ¾ full-load current supplying a resistive secondary load.",
+              "answer": {
+                "paragraphs": [],
+                "steps": [
+                  "The secondary-to-primary turns ratio is \\(k=440/220=2\\). Refer the primary impedance to the secondary by multiplying by \\(k^2=4\\).",
+                  "\\(R_{02}=R_2+k^2R_1=0.8+4(0.2)=1.6\\ \\Omega\\) and \\(X_{02}=2.4+4(0.55)=4.6\\ \\Omega\\).",
+                  "Full-load secondary current \\(I_{2,FL}=25000/440=56.818\\ \\mathrm A\\). At ¾ load, \\(I_2=0.75(56.818)=42.614\\ \\mathrm A\\).",
+                  "For a resistive load, \\(\\cos\\phi=1,\\ \\sin\\phi=0\\). Using the chapter’s approximate voltage-drop formula with \\(E_2\\approx440\\ \\mathrm V\\): \\(\\%\\mathrm{VR}\\approx\\dfrac{I_2(R_{02}\\cos\\phi+X_{02}\\sin\\phi)}{E_2}\\,100=\\dfrac{42.614(1.6)}{440}\\,100\\)."
+                ],
+                "result": "\\(\\%\\mathrm{VR}\\approx15.50\\%\\)",
+                "book_check": "Book answer: 15.49%, agreeing within rounding. This uses the prescribed approximate voltage-drop formula."
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P144",
+                "TB-P145",
+                "TB-P146",
+                "TB-P147",
+                "TB-P148"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-regulation",
+              "answer_basis": [
+                "u3-transformer-regulation"
+              ]
+            },
+            {
+              "id": "u3-es-06",
+              "number": 6,
+              "book_page": 185,
+              "question": "A 20 kVA, 400/200 V, 50 Hz transformer has primary resistance 48 mΩ and secondary resistance 18 mΩ. Iron losses are 200 W. Find efficiency at half full load and 0.8 power factor lagging.",
+              "answer": {
+                "paragraphs": [],
+                "steps": [
+                  "\\(I_{1,FL}=20000/400=50\\ \\mathrm A,\\quad I_{2,FL}=20000/200=100\\ \\mathrm A\\).",
+                  "Full-load copper loss \\(P_{cu,FL}=50^2(0.048)+100^2(0.018)=120+180=300\\ \\mathrm W\\).",
+                  "Half-load copper loss \\(P_{cu}=0.5^2(300)=75\\ \\mathrm W\\). Core loss remains \\(P_i=200\\ \\mathrm W\\).",
+                  "Output \\(P_o=0.5(20000)(0.8)=8000\\ \\mathrm W\\). Total loss \\(=75+200=275\\ \\mathrm W\\).",
+                  "\\(\\eta=\\dfrac{8000}{8000+275}\\,100=96.6767\\%\\)."
+                ],
+                "result": "\\(\\eta\\approx96.68\\%\\)",
+                "book_check": "Book answer: 96.67%; the difference is rounding."
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P149",
+                "TB-P150",
+                "TB-P151",
+                "TB-P152",
+                "TB-P153",
+                "TB-P154",
+                "TB-P155",
+                "TB-P156",
+                "TB-P157"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-transformer-efficiency",
+              "answer_basis": [
+                "u3-transformer-efficiency"
+              ]
+            },
+            {
+              "id": "u3-es-07",
+              "number": 7,
+              "book_page": 185,
+              "question": "With a neat sketch, explain the operation of a DC generator (simple loop generator).",
+              "answer": {
+                "paragraphs": [
+                  "A DC generator converts mechanical power into electrical power using electromagnetic induction. A simple loop generator illustrates the operation."
+                ],
+                "steps": [
+                  "Rotate a coil mechanically between north and south magnetic poles. The two active sides cut magnetic flux and induced EMFs appear along them.",
+                  "Use Fleming’s right-hand rule to obtain each conductor’s induced current direction. The coil-side EMFs add around the loop.",
+                  "After each half-turn, the direction in which each side cuts flux reverses, so the EMF within the rotating coil alternates.",
+                  "Connect the coil ends to a split-ring commutator and stationary brushes. Every half-turn the commutator reverses the coil-to-brush connection at the same time as the coil EMF reverses.",
+                  "The external brush polarity therefore remains unchanged: a single coil gives pulsating unidirectional voltage, and many coils/commutator segments make it smoother. Mechanical input supplies the load power and losses."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-26.png",
+                    "figure_number": "Figure 3.26",
+                    "figure_name": "Simple loop generator",
+                    "alt": "Figure 3.26 · Simple loop generator · Textbook p. 161",
+                    "page": 161,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-28.png",
+                    "figure_number": "Figure 3.28",
+                    "figure_name": "Commutator",
+                    "alt": "Figure 3.28 · Commutator · Textbook p. 162",
+                    "page": 162,
+                    "size": "medium",
+                    "width": 280,
+                    "height": 220,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-29.png",
+                    "figure_number": "Figure 3.29",
+                    "figure_name": "Action of commutator",
+                    "alt": "Figure 3.29 · Action of commutator · Textbook p. 162",
+                    "page": 162,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-30.png",
+                    "figure_number": "Figure 3.30",
+                    "figure_name": "Unidirectional or direct current",
+                    "alt": "Figure 3.30 · Unidirectional or direct current · Textbook p. 163",
+                    "page": 163,
+                    "size": "medium",
+                    "width": 417,
+                    "height": 254,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P158",
+                "TB-P159",
+                "TB-P160",
+                "TB-P161",
+                "TB-P162",
+                "TB-P163",
+                "TB-P164",
+                "TB-P165",
+                "TB-P166",
+                "TB-P167",
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-es-08",
+              "number": 8,
+              "book_page": 185,
+              "question": "Briefly explain the constructional aspects of a DC machine.",
+              "answer": {
+                "paragraphs": [
+                  "The same basic DC-machine construction can operate as a motor or a generator."
+                ],
+                "steps": [
+                  "Yoke: provides mechanical support and the return path for magnetic flux. Main poles and pole shoes support the field coils and spread flux over the armature.",
+                  "Field winding: produces the main magnetic field when excited by DC.",
+                  "Armature core: a laminated rotating iron cylinder with slots; laminations reduce eddy-current loss. Armature conductors occupy the slots and form the armature winding.",
+                  "Commutator: insulated copper segments connected to armature coils; it mechanically rectifies the internally alternating generated EMF in generator operation.",
+                  "Brushes: stationary carbon contacts collect or supply current through the rotating commutator. The shaft, bearings and end covers support rotation."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-31.png",
+                    "figure_number": "Figure 3.31",
+                    "figure_name": "Basic construction of a DC machine",
+                    "alt": "Figure 3.31 · Basic construction of a DC machine · Textbook p. 163",
+                    "page": 163,
+                    "size": "medium"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P158",
+                "TB-P159",
+                "TB-P160",
+                "TB-P161",
+                "TB-P162",
+                "TB-P163",
+                "TB-P164",
+                "TB-P165",
+                "TB-P166",
+                "TB-P167",
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-es-09",
+              "number": 9,
+              "book_page": 185,
+              "question": "Derive the expression for EMF generated in a DC generator.",
+              "answer": {
+                "paragraphs": [
+                  "Let \\(P\\) be the pole number, \\(\\phi\\) flux per pole in webers, \\(Z\\) total armature conductors, \\(N\\) speed in rpm and \\(A\\) parallel armature paths."
+                ],
+                "steps": [
+                  "In one revolution a conductor cuts the flux of all poles: total flux cut \\(=P\\phi\\) webers.",
+                  "Time per revolution is \\(60/N\\) seconds. Average induced EMF per conductor is \\(\\dfrac{P\\phi}{60/N}=\\dfrac{P\\phi N}{60}\\).",
+                  "There are \\(Z/A\\) series conductors in each parallel path. The brush-to-brush EMF equals the EMF of one such path.",
+                  "Thus \\(E_g=\\dfrac{P\\phi N}{60}\\dfrac{Z}{A}\\). For simplex lap winding \\(A=P\\); for simplex wave winding \\(A=2\\)."
+                ],
+                "result": "\\(E_g=\\dfrac{P\\phi ZN}{60A}\\ \\mathrm{V}\\)",
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-35.png",
+                    "figure_number": "Figure 3.35",
+                    "figure_name": "Conductor passing through a pole pitch",
+                    "alt": "Figure 3.35 · Conductor passing through a pole pitch · Textbook p. 166",
+                    "page": 166,
+                    "size": "medium"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P158",
+                "TB-P159",
+                "TB-P160",
+                "TB-P161",
+                "TB-P162",
+                "TB-P163",
+                "TB-P164",
+                "TB-P165",
+                "TB-P166",
+                "TB-P167",
+                "TB-P168",
+                "TB-P169",
+                "TB-P170"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-generator",
+              "answer_basis": [
+                "u3-dc-generator"
+              ]
+            },
+            {
+              "id": "u3-es-10",
+              "number": 10,
+              "book_page": 185,
+              "question": "A four-pole lap-connected DC motor with 1000 armature conductors absorbs 25 A from a DC source. Flux per pole is 24 mWb. Find the supply voltage needed for 1500 rpm if armature resistance is 0.8 Ω and brush drop is 2 V.",
+              "answer": {
+                "paragraphs": [],
+                "steps": [
+                  "For simplex lap winding \\(A=P=4\\). Use \\(\\phi=24\\times10^{-3}=0.024\\ \\mathrm{Wb}\\) and take the stated current as armature current \\(I_a=25\\ \\mathrm A\\).",
+                  "\\(E_b=\\dfrac{P\\phi ZN}{60A}=\\dfrac{4(0.024)(1000)(1500)}{60(4)}=600\\ \\mathrm V\\).",
+                  "For motor operation, supply must overcome back EMF, resistance drop and brush drop: \\(V=E_b+I_aR_a+V_{brush}=600+25(0.8)+2\\)."
+                ],
+                "result": "\\(V=622\\ \\mathrm V\\)"
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P171",
+                "TB-P172",
+                "TB-P173",
+                "TB-P174",
+                "TB-P175",
+                "TB-P176",
+                "TB-P177"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-dc-motor",
+              "answer_basis": [
+                "u3-dc-motor"
+              ]
+            },
+            {
+              "id": "u3-es-11",
+              "number": 11,
+              "book_page": 185,
+              "question": "Explain the operating characteristics of a separately excited DC motor.",
+              "answer": {
+                "paragraphs": [
+                  "In a separately excited DC motor, an independent DC supply energises the field. With field excitation fixed, flux \\(\\phi\\) is approximately constant."
+                ],
+                "steps": [
+                  "Torque is \\(T\\propto\\phi I_a\\). At constant flux, \\(T\\propto I_a\\), so the torque–armature-current characteristic is a straight line through the origin.",
+                  "Back EMF satisfies \\(E_b=V-I_aR_a\\) when brush drop is neglected. Since \\(E_b\\propto\\phi N\\), speed is \\(N\\propto\\dfrac{V-I_aR_a}{\\phi}\\).",
+                  "As armature current increases, \\(I_aR_a\\) increases and speed falls slightly at constant terminal voltage and flux. The speed–current curve therefore has a small negative slope.",
+                  "Because torque is proportional to armature current, the speed–torque curve also falls gently as torque rises. This gives approximately constant-speed operation over the normal load range."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-51.png",
+                    "figure_number": "Figure 3.51",
+                    "figure_name": "Separately excited DC motor",
+                    "alt": "Figure 3.51 · Separately excited DC motor · Textbook p. 178",
+                    "page": 178,
+                    "size": "medium",
+                    "width": 625,
+                    "height": 393,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-52.png",
+                    "figure_number": "Figure 3.52",
+                    "figure_name": "Torque vs armature current characteristic",
+                    "alt": "Figure 3.52 · Torque vs armature current characteristic · Textbook p. 179",
+                    "page": 179,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-53.png",
+                    "figure_number": "Figure 3.53",
+                    "figure_name": "Speed vs armature current characteristic",
+                    "alt": "Figure 3.53 · Speed vs armature current characteristic · Textbook p. 180",
+                    "page": 180,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-54.png",
+                    "figure_number": "Figure 3.54",
+                    "figure_name": "Speed vs torque characteristic",
+                    "alt": "Figure 3.54 · Speed vs torque characteristic · Textbook p. 180",
+                    "page": 180,
+                    "size": "medium"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P178",
+                "TB-P179",
+                "TB-P180",
+                "TB-P181",
+                "TB-P182",
+                "TB-P183",
+                "TB-P184"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-separately-excited-motor",
+              "answer_basis": [
+                "u3-separately-excited-motor"
+              ]
+            },
+            {
+              "id": "u3-es-12",
+              "number": 12,
+              "book_page": 185,
+              "question": "What methods control the speed of a separately excited DC motor? Explain briefly.",
+              "answer": {
+                "paragraphs": [
+                  "The governing relation is \\(N\\propto\\dfrac{V_a-I_aR_a}{\\phi}\\). The textbook describes field control and armature-voltage control."
+                ],
+                "steps": [
+                  "Field control: keep armature voltage approximately constant and insert a variable resistance in the separately supplied field circuit.",
+                  "Increasing field resistance reduces field current and flux. Since speed is inversely proportional to flux, speed increases. Field weakening is normally used above base/rated speed; reduced flux also reduces torque per ampere.",
+                  "Armature-voltage control: hold field current and flux constant and vary the voltage supplied to the armature.",
+                  "Reducing armature voltage reduces back EMF and speed. This gives smooth control below base/rated speed; the approximately straight speed–voltage characteristic follows from the governing relation."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-56.png",
+                    "figure_number": "Figure 3.56",
+                    "figure_name": "Field control method",
+                    "alt": "Figure 3.56 · Field control method · Textbook p. 182",
+                    "page": 182,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-57.png",
+                    "figure_number": "Figure 3.57",
+                    "figure_name": "Field current vs speed characteristic",
+                    "alt": "Figure 3.57 · Field current vs speed characteristic · Textbook p. 182",
+                    "page": 182,
+                    "size": "medium",
+                    "width": 515,
+                    "height": 371,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-58.png",
+                    "figure_number": "Figure 3.58",
+                    "figure_name": "Armature control method",
+                    "alt": "Figure 3.58 · Armature control method · Textbook p. 183",
+                    "page": 183,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u3/theory/f3-59.png",
+                    "figure_number": "Figure 3.59",
+                    "figure_name": "Armature voltage vs speed characteristic",
+                    "alt": "Figure 3.59 · Armature voltage vs speed characteristic · Textbook p. 184",
+                    "page": 184,
+                    "size": "medium",
+                    "width": 483,
+                    "height": 372,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U3",
+                "TB-P178",
+                "TB-P179",
+                "TB-P180",
+                "TB-P181",
+                "TB-P182",
+                "TB-P183",
+                "TB-P184"
+              ],
+              "question_source_refs": [
+                "TB-P185"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u3-separately-excited-motor",
+              "answer_basis": [
+                "u3-separately-excited-motor"
+              ]
+            }
+          ],
+          "nav_label": "Essay questions"
+        }
+      ]
+    },
+    "4": {
+      "title": "Alternating Current Machines",
+      "summary": {
+        "official_question_count": 15,
+        "short_answer_count": 9,
+        "essay_count": 6,
+        "answer_provenance": "PankusDesk study solution"
+      },
+      "scope_note": "Chapter 4 review, pp.217–218: machine questions belong here; installation and battery questions retain their original numbers on the Unit V question page.",
+      "source": {
+        "title": "Basics of Electrical Energy for Engineers",
+        "note": "Chapter 4 review, pp.217–218: machine questions belong here; installation and battery questions retain their original numbers on the Unit V question page. Questions follow the supplied textbook; all solutions are PankusDesk-authored."
+      },
+      "groups": [
+        {
+          "id": "short-answer",
+          "title": "Chapter 4 · Short Answer Q1–Q9",
+          "questions": [
+            {
+              "id": "u4-sa-01",
+              "number": 1,
+              "book_page": 217,
+              "question": "Name the different parts of an induction motor.",
+              "answer": {
+                "paragraphs": [
+                  "The main parts are the stator frame, laminated stator core and three-phase winding; the rotor (squirrel-cage or wound/slip-ring type); air gap; shaft, bearings, end covers and cooling fan."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P186",
+                "TB-P187",
+                "TB-P188"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-types-construction",
+              "answer_basis": [
+                "u4-induction-types-construction"
+              ]
+            },
+            {
+              "id": "u4-sa-02",
+              "number": 2,
+              "book_page": 217,
+              "question": "Why is an induction motor called an asynchronous motor?",
+              "answer": {
+                "paragraphs": [
+                  "Its rotor runs at a speed different from the synchronous speed of the rotating stator field. Normal motor operation requires positive slip; without relative motion, no rotor EMF and torque are induced."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P188",
+                "TB-P189",
+                "TB-P190",
+                "TB-P191",
+                "TB-P192",
+                "TB-P193",
+                "TB-P194"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-principle",
+              "answer_basis": [
+                "u4-induction-principle"
+              ]
+            },
+            {
+              "id": "u4-sa-03",
+              "number": 3,
+              "book_page": 217,
+              "question": "Define slip.",
+              "answer": {
+                "paragraphs": [
+                  "Slip is the difference between synchronous speed and rotor speed, divided by synchronous speed."
+                ],
+                "result": "\\(s=\\dfrac{N_s-N}{N_s},\\qquad \\%s=\\dfrac{N_s-N}{N_s}\\,100\\)"
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P188",
+                "TB-P189",
+                "TB-P190",
+                "TB-P191",
+                "TB-P192",
+                "TB-P193",
+                "TB-P194"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-principle",
+              "answer_basis": [
+                "u4-induction-principle"
+              ]
+            },
+            {
+              "id": "u4-sa-04",
+              "number": 4,
+              "book_page": 217,
+              "question": "Define synchronous speed.",
+              "answer": {
+                "paragraphs": [
+                  "Synchronous speed is the rotational speed of the stator magnetic field."
+                ],
+                "result": "\\(N_s=\\dfrac{120f}{P}\\ \\mathrm{rpm}\\), where \\(f\\) is supply frequency in Hz and \\(P\\) is the number of poles."
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P188",
+                "TB-P189",
+                "TB-P190",
+                "TB-P191",
+                "TB-P192",
+                "TB-P193",
+                "TB-P194"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-principle",
+              "answer_basis": [
+                "u4-induction-principle"
+              ]
+            },
+            {
+              "id": "u4-sa-05",
+              "number": 5,
+              "book_page": 217,
+              "question": "What are the values of slip (a) at starting and (b) at synchronous speed?",
+              "answer": {
+                "paragraphs": [],
+                "result": "Starting: 1 (100%); synchronous speed: 0.",
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "steps": [
+                      "At starting \\(N=0\\): \\(s=(N_s-0)/N_s=1\\)."
+                    ]
+                  },
+                  {
+                    "label": "(b)",
+                    "steps": [
+                      "At synchronous speed \\(N=N_s\\): \\(s=0\\)."
+                    ]
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P188",
+                "TB-P189",
+                "TB-P190",
+                "TB-P191",
+                "TB-P192",
+                "TB-P193",
+                "TB-P194"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-principle",
+              "answer_basis": [
+                "u4-induction-principle"
+              ],
+              "question_lead": "What is the value of slip:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "id": "u4-sa-05-a",
+                  "content": "At starting?"
+                },
+                {
+                  "label": "(b)",
+                  "id": "u4-sa-05-b",
+                  "content": "At synchronous speed?"
+                }
+              ]
+            },
+            {
+              "id": "u4-sa-06",
+              "number": 6,
+              "book_page": 217,
+              "question": "Show the torque–slip characteristics of an induction motor.",
+              "answer": {
+                "paragraphs": [
+                  "Torque is zero at zero slip, increases approximately linearly at low slip, reaches breakdown/maximum torque at \\(s_m=R_2/X_2\\), and then decreases toward the starting-torque value at \\(s=1\\)."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-9.png",
+                    "figure_number": "Figure 4.9",
+                    "figure_name": "Torque-slip characteristics",
+                    "alt": "Figure 4.9 · Torque-slip characteristics · Textbook p. 196",
+                    "page": 196,
+                    "size": "large",
+                    "width": 1448,
+                    "height": 1086
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P195",
+                "TB-P196",
+                "TB-P197"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-torque-slip",
+              "answer_basis": [
+                "u4-torque-slip"
+              ]
+            },
+            {
+              "id": "u4-sa-07",
+              "number": 7,
+              "book_page": 217,
+              "question": "A three-phase, four-pole, 50 Hz induction motor runs at 1450 rpm. Calculate (a) synchronous speed, (b) slip and (c) rotor frequency.",
+              "answer": {
+                "paragraphs": [],
+                "result": "\\(N_s=1500\\ \\mathrm{rpm},\\quad s=3.333\\%,\\quad f_r=1.667\\ \\mathrm{Hz}\\)",
+                "parts": [
+                  {
+                    "label": "(a)",
+                    "steps": [
+                      "\\(N_s=120(50)/4=1500\\ \\mathrm{rpm}\\)."
+                    ]
+                  },
+                  {
+                    "label": "(b)",
+                    "steps": [
+                      "\\(s=(1500-1450)/1500=1/30=0.03333\\)."
+                    ]
+                  },
+                  {
+                    "label": "(c)",
+                    "steps": [
+                      "\\(f_r=sf=(1/30)(50)=1.6667\\ \\mathrm{Hz}\\)."
+                    ]
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P188",
+                "TB-P189",
+                "TB-P190",
+                "TB-P191",
+                "TB-P192",
+                "TB-P193",
+                "TB-P194"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-principle",
+              "answer_basis": [
+                "u4-induction-principle"
+              ],
+              "question_lead": "A three-phase, four-pole, 50 Hz induction motor runs at 1450 rpm. Calculate:",
+              "question_parts": [
+                {
+                  "label": "(a)",
+                  "id": "u4-sa-07-a",
+                  "content": "Synchronous speed."
+                },
+                {
+                  "label": "(b)",
+                  "id": "u4-sa-07-b",
+                  "content": "Slip."
+                },
+                {
+                  "label": "(c)",
+                  "id": "u4-sa-07-c",
+                  "content": "Rotor frequency."
+                }
+              ]
+            },
+            {
+              "id": "u4-sa-08",
+              "number": 8,
+              "book_page": 217,
+              "question": "Highlight the differences between a DC generator and a synchronous generator.",
+              "answer": {
+                "paragraphs": [],
+                "table": {
+                  "headers": [
+                    "DC generator",
+                    "Synchronous generator"
+                  ],
+                  "rows": [
+                    [
+                      "Supplies unidirectional voltage at brushes",
+                      "Supplies alternating voltage, usually three-phase"
+                    ],
+                    [
+                      "Commutator mechanically rectifies armature EMF",
+                      "No commutator is needed for the AC stator output"
+                    ],
+                    [
+                      "Armature normally rotates; main field is stationary",
+                      "Armature normally stationary; DC field normally rotates"
+                    ],
+                    [
+                      "Brushes carry load current",
+                      "Main load current is taken directly from stator terminals"
+                    ]
+                  ]
+                }
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P197",
+                "TB-P198",
+                "TB-P199"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-synchronous-generator",
+              "answer_basis": [
+                "u4-synchronous-generator"
+              ]
+            },
+            {
+              "id": "u4-sa-09",
+              "number": 9,
+              "book_page": 217,
+              "question": "List the applications of a stepper motor.",
+              "answer": {
+                "paragraphs": [
+                  "Printers and plotters, robotic positioning, CNC machine tools, instrument positioning and other applications requiring incremental movement and controlled angular position."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P199",
+                "TB-P200"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-stepper",
+              "answer_basis": [
+                "u4-stepper"
+              ]
+            }
+          ],
+          "nav_label": "Short answers · Q1–Q9"
+        },
+        {
+          "id": "essay",
+          "title": "Chapter 4 · Essay Q1–Q6",
+          "questions": [
+            {
+              "id": "u4-es-01",
+              "number": 1,
+              "book_page": 217,
+              "question": "Explain the constructional aspects of squirrel-cage and slip-ring induction motors.",
+              "answer": {
+                "paragraphs": [
+                  "A three-phase induction motor has a stationary stator and a rotating rotor separated by a small air gap."
+                ],
+                "steps": [
+                  "The outer stator frame supports a laminated steel core with slots carrying a distributed three-phase winding. The phase windings are displaced by 120 electrical degrees.",
+                  "A squirrel-cage rotor has conducting bars in slots, short-circuited by end rings. Bars are usually skewed; there are no external rotor terminals, making it robust and simple.",
+                  "A phase-wound/slip-ring rotor carries an insulated three-phase winding, normally star-connected. Its free ends connect to slip rings and brushes.",
+                  "External rotor resistances can be inserted through slip rings for starting or control and then removed/shorted during normal running. Shaft, bearings and cooling arrangements complete the machine."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-1.png",
+                    "figure_number": "Figure 4.1",
+                    "figure_name": "Cross-sectional view of stator",
+                    "alt": "Figure 4.1 · Cross-sectional view of stator · Textbook p. 186",
+                    "page": 186,
+                    "size": "medium"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-3.png",
+                    "figure_number": "Figure 4.3",
+                    "figure_name": "Slip-ring induction motor",
+                    "alt": "Figure 4.3 · Slip-ring induction motor · Textbook p. 187",
+                    "page": 187,
+                    "size": "large",
+                    "width": 810,
+                    "height": 468,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-4.png",
+                    "figure_number": "Figure 4.4",
+                    "figure_name": "Squirrel-cage rotor",
+                    "alt": "Figure 4.4 · Squirrel-cage rotor · Textbook p. 188",
+                    "page": 188,
+                    "size": "medium"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P186",
+                "TB-P187",
+                "TB-P188"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-types-construction",
+              "answer_basis": [
+                "u4-induction-types-construction"
+              ]
+            },
+            {
+              "id": "u4-es-02",
+              "number": 2,
+              "book_page": 217,
+              "question": "Explain the working of a three-phase induction motor.",
+              "answer": {
+                "paragraphs": [
+                  "A three-phase induction motor operates by electromagnetic induction and the interaction of the rotating stator field with rotor currents."
+                ],
+                "steps": [
+                  "Balanced three-phase stator currents in windings displaced by 120 electrical degrees create a resultant magnetic field of nearly constant magnitude rotating at \\(N_s=120f/P\\) rpm.",
+                  "The rotating field sweeps past the initially stationary rotor conductors. The resulting flux cutting induces rotor EMF; the closed rotor circuit allows current to flow.",
+                  "Interaction of rotor current with the magnetic field produces electromagnetic torque. By Lenz’s law, the rotor turns in the field’s direction to reduce relative motion.",
+                  "The rotor must lag the field under motoring load. At \\(N=N_s\\) there is no relative motion, induced rotor EMF or sustained torque.",
+                  "Slip is \\(s=(N_s-N)/N_s\\), rotor frequency \\(f_r=sf\\), rotor EMF \\(E_{2s}=sE_2\\) and rotor reactance \\(X_{2s}=sX_2\\)."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-5.png",
+                    "figure_number": "Figure 4.5",
+                    "figure_name": "Three-phase supply and stator winding",
+                    "alt": "Figure 4.5 · Three-phase supply and stator winding · Textbook p. 189",
+                    "page": 189,
+                    "size": "large",
+                    "width": 846,
+                    "height": 291,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-6.png",
+                    "figure_number": "Figure 4.6",
+                    "figure_name": "Production of rotating magnetic field",
+                    "alt": "Figure 4.6 · Production of rotating magnetic field · Textbook p. 189",
+                    "page": 189,
+                    "size": "large"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-7.png",
+                    "figure_number": "Figure 4.7",
+                    "figure_name": "Stator and rotor fluxes",
+                    "alt": "Figure 4.7 · Stator and rotor fluxes · Textbook p. 189",
+                    "page": 189,
+                    "size": "medium",
+                    "width": 1536,
+                    "height": 1024
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P188",
+                "TB-P189",
+                "TB-P190",
+                "TB-P191",
+                "TB-P192",
+                "TB-P193",
+                "TB-P194"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-principle",
+              "answer_basis": [
+                "u4-induction-principle"
+              ]
+            },
+            {
+              "id": "u4-es-03",
+              "number": 3,
+              "book_page": 217,
+              "question": "Show and explain the torque–slip characteristics of a three-phase induction motor. Identify its maximum and starting torque.",
+              "answer": {
+                "paragraphs": [
+                  "For a given supply and approximately constant air-gap flux, induction-motor torque varies with slip as \\(T\\propto\\dfrac{sR_2}{R_2^2+(sX_2)^2}\\)."
+                ],
+                "steps": [
+                  "At synchronous speed \\(s=0\\), so induced rotor current and torque are zero.",
+                  "At small slip, \\(sX_2\\ll R_2\\) and torque is approximately proportional to slip: \\(T\\propto s\\). This is the normal stable motoring region.",
+                  "Torque reaches its maximum when \\(R_2=s_mX_2\\), or \\(s_m=R_2/X_2\\) under the textbook simplified model.",
+                  "Beyond maximum torque, the reactance term dominates and \\(T\\propto1/s\\). At standstill \\(s=1\\) the curve gives starting torque.",
+                  "Increasing rotor resistance moves the maximum-torque point toward higher slip, without changing its approximate magnitude at the same supply. This explains improved starting torque with external rotor resistance."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-9.png",
+                    "figure_number": "Figure 4.9",
+                    "figure_name": "Torque-slip characteristics",
+                    "alt": "Figure 4.9 · Torque-slip characteristics · Textbook p. 196",
+                    "page": 196,
+                    "size": "large",
+                    "width": 1448,
+                    "height": 1086
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P195",
+                "TB-P196",
+                "TB-P197"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-torque-slip",
+              "answer_basis": [
+                "u4-torque-slip"
+              ]
+            },
+            {
+              "id": "u4-es-04",
+              "number": 4,
+              "book_page": 218,
+              "question": "A three-phase, six-pole, 50 Hz induction motor has standstill rotor leakage impedance (2.5 + j12) Ω per phase and standstill rotor EMF 120 V per phase. Calculate (a) slip, (b) rotor frequency, (c) rotor power factor and (d) rotor current, at (i) standstill and (ii) rotor speed 960 rpm.",
+              "answer": {
+                "paragraphs": [
+                  "The given reactance is its standstill value. At slip \\(s\\), use \\(E_{2s}=sE_2\\) and \\(X_{2s}=sX_2\\); resistance remains unchanged."
+                ],
+                "result": "Standstill: \\(s=1,\\ f_r=50\\ \\mathrm{Hz},\\ \\mathrm{pf}=0.204\\text{ lagging},\\ I_2=9.79\\ \\mathrm A\\). At 960 rpm: \\(s=0.04,\\ f_r=2\\ \\mathrm{Hz},\\ \\mathrm{pf}=0.9821\\text{ lagging},\\ I_2=1.886\\ \\mathrm A\\).",
+                "parts": [
+                  {
+                    "label": "(i)",
+                    "steps": [
+                      "\\(N_s=120(50)/6=1000\\ \\mathrm{rpm}\\).",
+                      "(i) Standstill: \\(s=1,\\quad f_r=50\\ \\mathrm{Hz}\\). \\(|Z_2|=\\sqrt{2.5^2+12^2}=12.2577\\ \\Omega\\).",
+                      "\\(\\cos\\phi_2=2.5/12.2577=0.20395\\) lagging, and \\(I_2=120/12.2577=9.790\\ \\mathrm A\\)."
+                    ]
+                  },
+                  {
+                    "label": "(ii)",
+                    "steps": [
+                      "(ii) At 960 rpm: \\(s=(1000-960)/1000=0.04\\) and \\(f_r=0.04(50)=2\\ \\mathrm{Hz}\\).",
+                      "\\(E_{2s}=0.04(120)=4.8\\ \\mathrm V,\\quad X_{2s}=0.04(12)=0.48\\ \\Omega\\). Thus \\(|Z_{2s}|=\\sqrt{2.5^2+0.48^2}=2.54566\\ \\Omega\\).",
+                      "\\(\\cos\\phi_{2s}=2.5/2.54566=0.98206\\) lagging and \\(I_{2s}=4.8/2.54566=1.8856\\ \\mathrm A\\)."
+                    ]
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P188",
+                "TB-P189",
+                "TB-P190",
+                "TB-P191",
+                "TB-P192",
+                "TB-P193",
+                "TB-P194"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-induction-principle",
+              "answer_basis": [
+                "u4-induction-principle"
+              ],
+              "math_mismatch": {
+                "label": "Textbook answer discrepancy",
+                "message": "For the 960 rpm case the book prints 3.3 A. With its stated 120 V standstill EMF and (2.5 + j12) Ω standstill impedance, the running current is 4.8/√(2.5² + 0.48²) = 1.886 A. The printed 3.3 A is inconsistent with the given data; the solution uses those data unchanged. The printed 0.9823 power factor is approximately consistent."
+              },
+              "question_lead": "A three-phase, six-pole, 50 Hz induction motor has standstill rotor impedance (2.5 + j12) Ω/phase and standstill rotor EMF 120 V/phase. Calculate slip, rotor frequency, rotor power factor and rotor current at:",
+              "question_parts": [
+                {
+                  "label": "(i)",
+                  "id": "u4-es-04-i",
+                  "content": "Standstill."
+                },
+                {
+                  "label": "(ii)",
+                  "id": "u4-es-04-ii",
+                  "content": "Rotor speed 960 rpm."
+                }
+              ]
+            },
+            {
+              "id": "u4-es-05",
+              "number": 5,
+              "book_page": 218,
+              "question": "Explain the working of a synchronous generator.",
+              "answer": {
+                "paragraphs": [
+                  "A synchronous generator (alternator) converts mechanical power into AC electrical power."
+                ],
+                "steps": [
+                  "Provide a DC-excited rotor field and a three-phase armature winding on the stator. The stator phase windings are displaced by 120 electrical degrees.",
+                  "A prime mover rotates the rotor field. Its moving magnetic flux links each stationary stator winding.",
+                  "By Faraday’s law, the changing linkage induces alternating EMFs. The spatial phase displacement makes the three phase EMFs 120 electrical degrees apart.",
+                  "For \\(P\\) poles rotating at \\(N\\) rpm, each revolution produces \\(P/2\\) cycles. Hence \\(f=PN/120\\) and \\(N_s=120f/P\\).",
+                  "When a load is connected, current flows through the stator and electrical power is delivered. The prime mover must supply the corresponding mechanical input plus losses."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-10.png",
+                    "figure_number": "Figure 4.10",
+                    "figure_name": "Synchronous-generator block diagram",
+                    "alt": "Figure 4.10 · Synchronous-generator block diagram · Textbook p. 197",
+                    "page": 197,
+                    "size": "medium",
+                    "width": 1942,
+                    "height": 809
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-11.png",
+                    "figure_number": "Figure 4.11",
+                    "figure_name": "Cross-sectional view of synchronous machine",
+                    "alt": "Figure 4.11 · Cross-sectional view of synchronous machine · Textbook p. 198",
+                    "page": 198,
+                    "size": "large",
+                    "width": 1536,
+                    "height": 1024
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-12.png",
+                    "figure_number": "Figure 4.12",
+                    "figure_name": "Sinusoidal generated voltage",
+                    "alt": "Figure 4.12 · Sinusoidal generated voltage · Textbook p. 198",
+                    "page": 198,
+                    "size": "large",
+                    "width": 1536,
+                    "height": 1024
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P197",
+                "TB-P198",
+                "TB-P199"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-synchronous-generator",
+              "answer_basis": [
+                "u4-synchronous-generator"
+              ]
+            },
+            {
+              "id": "u4-es-06",
+              "number": 6,
+              "book_page": 218,
+              "question": "Discuss the working of a stepper motor.",
+              "answer": {
+                "paragraphs": [
+                  "A stepper motor converts a sequence of electrical pulses into discrete angular movements. Each pulse advances the rotor by a fixed step angle."
+                ],
+                "steps": [
+                  "Energise one stator phase or phase group. The rotor aligns with the resulting magnetic field (or minimum-reluctance position for a reluctance rotor).",
+                  "Switch excitation to the next phase in the prescribed sequence. The stator-field axis changes position and the rotor moves by one step to the next stable alignment.",
+                  "Repeat the phase sequence to obtain continuous stepped rotation. Reverse the excitation sequence to reverse rotation.",
+                  "For \\(n\\) input pulses and step angle \\(\\alpha\\), angular displacement is \\(\\theta=n\\alpha\\). Pulse frequency controls speed and pulse count controls position.",
+                  "Applications include printers, plotters, robotics, CNC/positioning systems and other digital motion-control mechanisms."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u4/theory/f4-13.png",
+                    "figure_number": "Figure 4.13",
+                    "figure_name": "Cross-sectional view of stepper motor",
+                    "alt": "Figure 4.13 · Cross-sectional view of stepper motor · Textbook p. 199",
+                    "page": 199,
+                    "size": "large",
+                    "width": 605,
+                    "height": 417,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U4",
+                "TB-P199",
+                "TB-P200"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u4-stepper",
+              "answer_basis": [
+                "u4-stepper"
+              ]
+            }
+          ],
+          "nav_label": "Essay questions · Q1–Q6"
+        }
+      ],
+      "page_description": "Machine questions from the shared Chapter 4 review, with complete PankusDesk study solutions and the original book numbering."
+    },
+    "5": {
+      "title": "Electrical Installations and Batteries",
+      "summary": {
+        "official_question_count": 15,
+        "short_answer_count": 8,
+        "essay_count": 7,
+        "answer_provenance": "PankusDesk study solution"
+      },
+      "scope_note": "Chapter 4 installation/battery review, pp.217–218, plus the in-scope UPS question on p.244. Original book numbering is retained. Energy-consumption Q17 and Essay Q12 are supporting textbook practice outside the explicit R25 Unit V syllabus; Chapter 5 semiconductor questions are outside this course and are not included.",
+      "source": {
+        "title": "Basics of Electrical Energy for Engineers",
+        "note": "Chapter 4 installation/battery review, pp.217–218, plus the in-scope UPS question on p.244. Original book numbering is retained. Energy-consumption Q17 and Essay Q12 are supporting textbook practice outside the explicit R25 Unit V syllabus; Chapter 5 semiconductor questions are outside this course and are not included. Questions follow the supplied textbook; all solutions are PankusDesk-authored."
+      },
+      "groups": [
+        {
+          "id": "short-answer",
+          "title": "Chapter 4 · Short Answer Q10–Q17",
+          "questions": [
+            {
+              "id": "u5-sa-10",
+              "number": 10,
+              "book_page": 217,
+              "question": "Name the different types of wiring used in domestic installations.",
+              "answer": {
+                "paragraphs": [
+                  "Cleat wiring, casing-and-capping wiring, TRS/CTS batten wiring and conduit wiring. Conduit wiring may be surface-mounted or concealed."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P201",
+                "TB-P202",
+                "TB-P203",
+                "TB-P204"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-wiring",
+              "answer_basis": [
+                "u5-wiring"
+              ]
+            },
+            {
+              "id": "u5-sa-11",
+              "number": 11,
+              "book_page": 217,
+              "question": "What is the purpose of a fuse? Show its symbol.",
+              "answer": {
+                "paragraphs": [
+                  "A fuse is an overcurrent protective element connected in series with the circuit. Excess current heats and melts the fuse element, opening the circuit. It protects against excessive current; it is not a general detector of every earth-leakage fault."
+                ],
+                "figures": [
+                  {
+                    "figure_number": "Figure 4.19",
+                    "figure_name": "Different symbols used for a fuse",
+                    "alt": "Different symbols used for a fuse",
+                    "page": 204,
+                    "size": "medium",
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-19.png",
+                    "placeholder": false,
+                    "width": 646,
+                    "height": 114,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P204",
+                "TB-P205",
+                "TB-P206"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-sfu",
+              "answer_basis": [
+                "u5-sfu"
+              ]
+            },
+            {
+              "id": "u5-sa-12",
+              "number": 12,
+              "book_page": 217,
+              "question": "Differentiate between a fuse and an MCB.",
+              "answer": {
+                "paragraphs": [],
+                "table": {
+                  "headers": [
+                    "Fuse",
+                    "MCB"
+                  ],
+                  "rows": [
+                    [
+                      "Element melts and must be replaced after operation",
+                      "Contacts trip open; can be reset after the fault is cleared"
+                    ],
+                    [
+                      "Provides overcurrent interruption by melting",
+                      "Typical thermal trip for overload and magnetic trip for short circuit"
+                    ],
+                    [
+                      "Simple, low initial cost",
+                      "Higher initial cost, switching/reset convenience"
+                    ]
+                  ]
+                }
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P206",
+                "TB-P207"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-mcb-mccb",
+              "answer_basis": [
+                "u5-mcb-mccb"
+              ]
+            },
+            {
+              "id": "u5-sa-13",
+              "number": 13,
+              "book_page": 217,
+              "question": "Why is earthing of electrical appliances done?",
+              "answer": {
+                "paragraphs": [
+                  "Earthing connects exposed metal bodies to a low-resistance protective path so that an insulation fault does not leave the body dangerously live. It limits touch voltage and allows protective devices to disconnect the faulty circuit."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P208",
+                "TB-P209",
+                "TB-P210"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-earthing",
+              "answer_basis": [
+                "u5-earthing"
+              ]
+            },
+            {
+              "id": "u5-sa-14",
+              "number": 14,
+              "book_page": 217,
+              "question": "Name the different types of earthing.",
+              "answer": {
+                "paragraphs": [
+                  "The chapter lists plate earthing, pipe earthing, rod earthing and strip/wire earthing. Pipe and plate earthing are the two methods developed in the current R25 unit."
+                ]
+              },
+              "answer_source_refs": [
+                "TB-P209",
+                "TB-P210"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-earthing",
+              "answer_basis": [
+                "u5-earthing"
+              ]
+            },
+            {
+              "id": "u5-sa-15",
+              "number": 15,
+              "book_page": 217,
+              "question": "Mention the purpose of providing charcoal and salt in earth pits.",
+              "answer": {
+                "paragraphs": [
+                  "In the traditional textbook earthing arrangement, charcoal and salt around the electrode help retain moisture and improve soil contact/conductivity, reducing electrode-to-earth resistance."
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P208",
+                "TB-P209",
+                "TB-P210"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-earthing",
+              "answer_basis": [
+                "u5-earthing"
+              ]
+            },
+            {
+              "id": "u5-sa-16",
+              "number": 16,
+              "book_page": 217,
+              "question": "Differentiate between primary and secondary batteries.",
+              "answer": {
+                "paragraphs": [],
+                "table": {
+                  "headers": [
+                    "Primary battery",
+                    "Secondary battery"
+                  ],
+                  "rows": [
+                    [
+                      "Designed for one discharge cycle; not normally recharged",
+                      "Reversible electrochemical reaction permits repeated recharging"
+                    ],
+                    [
+                      "Replace after useful charge is exhausted",
+                      "Recharge with an appropriate external source"
+                    ],
+                    [
+                      "Example: primary dry cell",
+                      "Example: lead-acid storage battery"
+                    ]
+                  ]
+                }
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P211"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-battery-classification",
+              "answer_basis": [
+                "u5-battery-classification"
+              ]
+            },
+            {
+              "id": "u5-sa-17",
+              "number": 17,
+              "book_page": 217,
+              "question": "What are the units for electrical energy consumption?",
+              "answer": {
+                "paragraphs": [
+                  "The SI unit of energy is the joule. Commercial electrical energy is usually measured in kilowatt-hours (kWh), called units."
+                ],
+                "result": "\\(1\\ \\mathrm{kWh}=3.6\\times10^6\\ \\mathrm J\\)."
+              },
+              "answer_source_refs": [
+                "TB-P214",
+                "TB-P215"
+              ],
+              "question_source_refs": [
+                "TB-P217"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-domestic-layout",
+              "answer_basis": [
+                "u5-domestic-layout"
+              ],
+              "r25_scope": "outside-current-r25"
+            }
+          ],
+          "nav_label": "Short answers · Q10–Q17"
+        },
+        {
+          "id": "essay",
+          "title": "Chapter 4 · Essay Q7–Q12",
+          "questions": [
+            {
+              "id": "u5-es-07",
+              "number": 7,
+              "book_page": 218,
+              "question": "Show the basic layout of wiring in a domestic installation and locate the energy meter, MCB and distribution board (DB).",
+              "answer": {
+                "paragraphs": [
+                  "A domestic installation distributes the incoming supply to lighting, socket and power circuits, with isolation, overload/short-circuit protection and protective earthing."
+                ],
+                "steps": [
+                  "Trace the incoming service through the supplier’s cut-out/service fuse and energy meter to the consumer main switch and distribution board (DB). The energy meter measures consumption; it is not a protective device.",
+                  "The main switch provides installation isolation. The DB contains the outgoing protective devices, with separate MCB-protected final circuits for lighting and socket/power loads.",
+                  "Connect loads in parallel so each receives the supply voltage and can be controlled independently. Put the ordinary single-pole switches and overcurrent protective devices in the live conductors.",
+                  "Keep the neutral distribution and protective-earth system distinct. Connect exposed metal appliance bodies to the protective-earth conductor and electrode system.",
+                  "Identify the energy meter before the consumer main distribution, the DB near the main switch, and the outgoing MCBs at the DB as labelled in the supplied layout."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-14.png",
+                    "figure_number": "Figure 4.14",
+                    "figure_name": "Lay-out of wiring in domestic installations",
+                    "alt": "Figure 4.14 · Lay-out of wiring in domestic installations · Textbook p. 201",
+                    "page": 201,
+                    "size": "large",
+                    "width": 815,
+                    "height": 482,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P200",
+                "TB-P201"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-domestic-layout",
+              "answer_basis": [
+                "u5-domestic-layout"
+              ]
+            },
+            {
+              "id": "u5-es-08",
+              "number": 8,
+              "book_page": 218,
+              "question": "Discuss the merits and demerits of cleat and conduit wiring systems.",
+              "answer": {
+                "paragraphs": [
+                  "Cleat wiring carries insulated conductors on cleats; conduit wiring carries insulated conductors inside protective tubes."
+                ],
+                "table": {
+                  "headers": [
+                    "System",
+                    "Merits",
+                    "Demerits"
+                  ],
+                  "rows": [
+                    [
+                      "Cleat",
+                      "Low cost; quick installation and removal; easy inspection and alteration",
+                      "Exposed to mechanical/weather damage; unattractive; mainly temporary service"
+                    ],
+                    [
+                      "Conduit",
+                      "Good mechanical protection; durable; neat when concealed; suitable for permanent installation",
+                      "Higher initial cost; skilled labour; alterations and fault location can be difficult, especially when concealed"
+                    ]
+                  ]
+                },
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-15.png",
+                    "figure_number": "Figure 4.15",
+                    "figure_name": "Cleat wiring",
+                    "alt": "Figure 4.15 · Cleat wiring · Textbook p. 202",
+                    "page": 202,
+                    "size": "medium",
+                    "width": 730,
+                    "height": 360,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-18.png",
+                    "figure_number": "Figure 4.18",
+                    "figure_name": "Conduit wiring",
+                    "alt": "Figure 4.18 · Conduit wiring · Textbook p. 203",
+                    "page": 203,
+                    "size": "large",
+                    "width": 544,
+                    "height": 211,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P201",
+                "TB-P202",
+                "TB-P203",
+                "TB-P204"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-wiring",
+              "answer_basis": [
+                "u5-wiring"
+              ]
+            },
+            {
+              "id": "u5-es-09",
+              "number": 9,
+              "book_page": 218,
+              "question": "List the differences between MCB and MCCB.",
+              "answer": {
+                "paragraphs": [
+                  "Both devices interrupt overcurrent, but their application ranges and construction differ."
+                ],
+                "table": {
+                  "headers": [
+                    "Feature",
+                    "MCB",
+                    "MCCB"
+                  ],
+                  "rows": [
+                    [
+                      "Name",
+                      "Miniature Circuit Breaker",
+                      "Moulded Case Circuit Breaker"
+                    ],
+                    [
+                      "Typical use",
+                      "Lower-current domestic/light commercial final circuits",
+                      "Higher-current feeders and industrial/commercial distribution"
+                    ],
+                    [
+                      "Trip setting",
+                      "Usually fixed for the chosen rating and characteristic",
+                      "Often adjustable, depending on model"
+                    ],
+                    [
+                      "Breaking capacity",
+                      "Generally lower",
+                      "Generally higher"
+                    ],
+                    [
+                      "Protection",
+                      "Thermal overload and magnetic short-circuit trip in typical devices",
+                      "Thermal-magnetic or electronic overcurrent trip, depending on design"
+                    ]
+                  ]
+                }
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P206",
+                "TB-P207"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-mcb-mccb",
+              "answer_basis": [
+                "u5-mcb-mccb"
+              ]
+            },
+            {
+              "id": "u5-es-10",
+              "number": 10,
+              "book_page": 218,
+              "question": "Show and explain the pipe-earthing scheme.",
+              "answer": {
+                "paragraphs": [
+                  "Earthing connects exposed conducting metal parts to the general mass of earth through a low-resistance path. It limits touch voltage and enables protective disconnection under a fault."
+                ],
+                "steps": [
+                  "Install the perforated galvanised-iron pipe electrode vertically in the ground as shown in the source figure, at a location where effective contact with moist soil can be maintained.",
+                  "Pack the surrounding region with the specified alternating charcoal and salt layers to lower contact resistance in the traditional textbook arrangement.",
+                  "Clamp the earth lead securely to the electrode and connect it to the installation’s protective-earthing terminal and exposed appliance bodies.",
+                  "Provide the source’s watering/funnel and inspection arrangement to maintain and inspect the electrode connection.",
+                  "During an insulation failure, the earth conductor provides a fault-current path; the protective device must disconnect the faulty circuit. Earthing is used together with protection, not as permission to touch live parts."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-29.png",
+                    "figure_number": "Figure 4.29",
+                    "figure_name": "Pipe earthing",
+                    "alt": "Figure 4.29 · Pipe earthing · Textbook p. 210",
+                    "page": 210,
+                    "size": "large",
+                    "width": 479,
+                    "height": 614,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P208",
+                "TB-P209",
+                "TB-P210"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-earthing",
+              "answer_basis": [
+                "u5-earthing"
+              ]
+            },
+            {
+              "id": "u5-es-11",
+              "number": 11,
+              "book_page": 218,
+              "question": "Explain the working of a lead-acid battery.",
+              "answer": {
+                "paragraphs": [
+                  "A lead-acid cell is a rechargeable (secondary) cell. It has positive lead-dioxide plates, negative spongy-lead plates, dilute sulphuric-acid electrolyte, separators and a suitable container."
+                ],
+                "steps": [
+                  "On discharge, both plate materials convert to lead sulphate while sulphuric acid is consumed and water forms. Electrons flow through the external load from the negative plate to the positive plate.",
+                  "The overall discharge reaction is \\(\\mathrm{Pb+PbO_2+2H_2SO_4\\longrightarrow2PbSO_4+2H_2O}\\). Electrolyte specific gravity and terminal voltage decrease.",
+                  "Apply a suitable external DC charging source of correct polarity. Charging reverses the reaction: \\(\\mathrm{2PbSO_4+2H_2O\\longrightarrow Pb+PbO_2+2H_2SO_4}\\). The plate materials and acid concentration are restored.",
+                  "A lead-acid cell has nominal voltage about 2 V. Multiple cells in series provide the required battery voltage.",
+                  "Capacity is expressed in ampere-hours: \\(C=It\\) for constant discharge current. Available capacity depends on discharge rate and operating conditions. The supplied voltage and capacity curves illustrate this dependence."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-31.png",
+                    "figure_number": "Figure 4.31",
+                    "figure_name": "Lead-acid battery",
+                    "alt": "Figure 4.31 · Lead-acid battery · Textbook p. 211",
+                    "page": 211,
+                    "size": "large",
+                    "width": 653,
+                    "height": 427,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-32.png",
+                    "figure_number": "Figure 4.32",
+                    "figure_name": "Variation in voltage during charging and discharging",
+                    "alt": "Figure 4.32 · Variation in voltage during charging and discharging · Textbook p. 213",
+                    "page": 213,
+                    "size": "large",
+                    "width": 763,
+                    "height": 462,
+                    "style": "ROS"
+                  },
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f4-33.png",
+                    "figure_number": "Figure 4.33",
+                    "figure_name": "Capacity versus discharge characteristics",
+                    "alt": "Figure 4.33 · Capacity versus discharge characteristics · Textbook p. 213",
+                    "page": 213,
+                    "size": "large",
+                    "width": 627,
+                    "height": 467,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P211",
+                "TB-P212",
+                "TB-P213",
+                "TB-P214"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-lead-acid",
+              "answer_basis": [
+                "u5-lead-acid"
+              ]
+            },
+            {
+              "id": "u5-es-12",
+              "number": 12,
+              "book_page": 218,
+              "question": "A 7.5 HP, three-phase, 400 V induction-motor drive operates for 4 hours daily at ¾ full load. Its efficiency is 80% at ¾ full load. Calculate monthly electrical energy consumption in kWh and the cost at ₹6.50 per unit.",
+              "answer": {
+                "paragraphs": [
+                  "Take a 30-day month, as in the printed answer, and \\(1\\ \\mathrm{HP}=746\\ \\mathrm W\\). The HP rating is mechanical full-load output; the energy meter records electrical input."
+                ],
+                "steps": [
+                  "Full-load output \\(P_{FL}=7.5(746)=5595\\ \\mathrm W\\). At ¾ load, \\(P_o=0.75(5595)=4196.25\\ \\mathrm W\\).",
+                  "Electrical input \\(P_i=P_o/\\eta=4196.25/0.80=5245.3125\\ \\mathrm W=5.2453125\\ \\mathrm{kW}\\).",
+                  "Running time \\(t=4(30)=120\\ \\mathrm h\\). Energy \\(E=5.2453125(120)=629.4375\\ \\mathrm{kWh}\\).",
+                  "Charge \\(=629.4375(6.50)=4091.34375\\) rupees. The 400 V rating is not needed because output power and efficiency already determine input power."
+                ],
+                "result": "\\(E\\approx629.44\\ \\mathrm{kWh}\\) and ₹4,091.34 for 30 days."
+              },
+              "answer_source_refs": [
+                "TB-P214",
+                "TB-P215"
+              ],
+              "question_source_refs": [
+                "TB-P218"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-domestic-layout",
+              "answer_basis": [
+                "u5-domestic-layout"
+              ],
+              "r25_scope": "outside-current-r25",
+              "math_mismatch": {
+                "label": "Textbook answer discrepancy",
+                "message": "The book prints “620 units or KWH, Rs 4034/-”. With 7.5 HP, ¾ load, 80% efficiency, 4 hours per day and a 30-day month, the result is 629.4375 kWh and ₹4091.34 using 746 W/HP. The printed energy and price also do not agree with each other at ₹6.50 per unit. Month length is not stated in the question; for d days, energy is 20.98125d kWh and the charge is ₹136.378125d."
+              }
+            }
+          ],
+          "nav_label": "Essay questions · Q7–Q12"
+        },
+        {
+          "id": "ups",
+          "title": "Chapter 5 · Essay Q9 · UPS",
+          "questions": [
+            {
+              "id": "u5-ups-09",
+              "number": 9,
+              "book_page": 244,
+              "question": "Show the block diagram of a typical uninterruptible power supply (UPS) and briefly explain its operation.",
+              "answer": {
+                "paragraphs": [
+                  "A UPS maintains an AC supply to its load when the normal AC source fails, using energy stored in a battery."
+                ],
+                "steps": [
+                  "The AC input feeds a rectifier/charger, which converts AC to DC and charges the battery. The DC bus supplies the inverter.",
+                  "The inverter converts the DC supply into AC suitable for the protected load. The battery is connected to support the DC bus.",
+                  "During a mains failure, battery energy continues to feed the inverter, which supplies the load for the available backup duration.",
+                  "When the mains returns, the normal source resumes operation and the charger replenishes the battery. Backup time depends on usable battery energy, load demand and conversion losses.",
+                  "Read the power paths in the supplied Figure 5.44. Transfer/bypass behaviour depends on the UPS topology; the diagram is not a claim that every UPS type has an identical switching arrangement."
+                ],
+                "figures": [
+                  {
+                    "placeholder": false,
+                    "src": "college/1-1/basic-electrical-engineering/assets/book/u5/theory/f5-44.png",
+                    "figure_number": "Figure 5.44",
+                    "figure_name": "UPS block diagram",
+                    "alt": "Figure 5.44 · UPS block diagram · Textbook p. 243",
+                    "page": 243,
+                    "size": "large",
+                    "width": 657,
+                    "height": 256,
+                    "style": "ROS"
+                  }
+                ]
+              },
+              "answer_source_refs": [
+                "SYL-R25-U5",
+                "TB-P243"
+              ],
+              "question_source_refs": [
+                "TB-P244"
+              ],
+              "solution_provenance": "PankusDesk study solution",
+              "topic_id": "u5-ups",
+              "answer_basis": [
+                "u5-ups"
+              ]
+            }
+          ],
+          "nav_label": "UPS · Chapter 5 Q9"
+        }
+      ],
+      "page_description": "Installation, battery and UPS questions from the prescribed textbook, with worked solutions. Original chapter and question numbers are retained."
     }
   }
 }

@@ -156,6 +156,7 @@ function renderTeacherPage(item, index) {
 		<a class="teacher-note-image-link" href="${escapeHtml(src)}" target="_blank" rel="noopener" aria-label="Open teacher note page ${Number(item.number)} at full size">
 			<img src="${escapeHtml(src)}" alt="${escapeHtml(item.alt || item.title || 'Teacher-shared BEE notes')}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
 		</a>
+		${item.corrections?.length ? window.PankuStudyUI?.renderAccordionGroup?.({ label: 'Verified source corrections', items: item.corrections }) || '' : ''}
 		<figcaption><span>Page ${Number(item.number)}</span><strong>${escapeHtml(item.title || '')}</strong></figcaption>
 	</figure>`;
 }
@@ -231,6 +232,7 @@ function renderStudyGroup(group, index) {
 		${bullets.length ? `<ul>${bullets.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>` : ''}
 		${diagrams.length ? `<div class="short-note-diagram-grid is-inline">${diagrams.map(renderDiagram).join('')}</div>` : ''}
 		${steps.length ? `<ol class="short-note-study-steps">${steps.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ol>` : ''}
+		${group?.table ? renderTable(group.table) : ''}
 		${formulae.length ? `<div class="short-note-formulas is-compact">${formulae.map(renderFormula).join('')}</div>` : ''}
 	</section>`;
 }

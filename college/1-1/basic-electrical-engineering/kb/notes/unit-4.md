@@ -115,7 +115,7 @@
 
 Unit-IV questions are mixed into Chapter-4 end matter on pp.217–218; use only induction/synchronous-generator/stepper items as Unit-IV core.
 
-## Page build status — 2026-10-13
+## Historical page build status — 2026-10-13
 
 - Unit IV Text page is now populated through the shared BEE unit renderer using the seven R25-mapped topics above.
 - Prescribed-textbook Chapter 4 material used: pp. 186–200 from the supplied Unit-IV capture.
@@ -125,3 +125,9 @@ Unit-IV questions are mixed into Chapter-4 end matter on pp.217–218; use only 
 - The synchronous-impedance regulation and synchronous-motor-principle subsections remain explicitly gap-filled from the approved Unit-IV source package, not labelled as textbook content.
 - `243.png` was not used; it belongs to Unit V UPS material.
 - Unit IV remains `draft` until the requested figure-placeholder image pass is completed.
+
+## Completion verification · 3 November 2026
+
+The worked solution for Exercise 4.1.5 now answers the stated 1420 rpm case (30.94 A, pf 0.9662 lagging, starting resistance removed). The different 1440 rpm printed working and its impedance arithmetic error remain explicitly flagged.
+
+The final completion pass on 4 November 2026 integrates the three remaining original textbook figures, connects the six existing approved figures previously still marked as placeholders, enables all fifteen Unit IV chapter-end questions and promotes the unit to ready after the release checks.

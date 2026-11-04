@@ -337,3 +337,9 @@
 .unit-class-notes-page mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 .subject-unit-page mjx-container:not([display="true"]),
 .unit-class-notes-page mjx-container:not([display="true"]) { display: inline-block; }
+
+/* MathJax gives aligned displays an inline min-width. Keep the outer box
+   within the study column so its existing horizontal scroller can work. */
+.study-accordion-item mjx-container[width="full"],
+.subject-unit-page mjx-container[width="full"],
+.unit-class-notes-page mjx-container[width="full"] { min-width: 0 !important; }
