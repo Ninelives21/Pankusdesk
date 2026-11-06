@@ -1,10 +1,10 @@
 # R25 Chemistry — senior-shared notes intake
 
-This change integrates a **selected supplementary revision layer** for Units III and IV. It does not complete the prescribed-textbook Text pages, introduce a Question Bank card, solve the saved questions, or change any unit to `ready`. Site reorganisation and chapter-end textbook exercises remain deferred.
+This change integrates a **selected supplementary revision layer** for Units III, IV and V. It does not complete the prescribed-textbook Text pages, introduce a Question Bank card, solve the saved questions, or change any unit to `ready`. Site reorganisation and chapter-end textbook exercises remain deferred.
 
 ## Sources and file decisions
 
-The source is the user's two ZIP uploads from VJNOTES, not an inferred lecturer record. `senior-notes-intake.json` inventories all 15 PDF/PPTX files with hashes, sizes, actual page/slide counts, classification and reasons. Originals remain in the private intake workspace; no original was deleted and no source scans were uploaded to the public repository.
+The source is the user's five ZIP uploads from VJNOTES, not an inferred lecturer record. `senior-notes-intake.json` inventories all 24 PDF/PPTX files with hashes, sizes, actual page/slide counts, classification and reasons. Originals remain in the private intake workspace; no original was deleted and no source scans were uploaded to the public repository.
 
 | File | Decision |
 | --- | --- |
@@ -24,13 +24,28 @@ The source is the user's two ZIP uploads from VJNOTES, not an inferred lecturer 
 | `unit_4_Notes.pdf` — 16 pages | Supporting corrosion source for R25 Unit II. Existing revision notes remain intact. |
 | `unit _4_TextBook.pdf` — 21 pages | Corrosion excerpt. Its book/edition is unidentified; it is not relabelled as the prescribed Jain textbook. |
 
-`chem_unit_6.zip` exceeded the 32 MiB transfer limit and was not downloaded or inspected. The user subsequently confirmed that it was misnamed and is intended as **Unit V**, and will resend it in smaller parts. No Unit V coverage is inferred from its filename.
+The initially oversized `chem_unit_6.zip` was confirmed by the user to be a misnamed Unit V archive. It has now been replaced by `chem_unit_5_01.zip`, `chem_unit_5_02.zip` and `chem_unit_5_03.zip`. All three download and pass ZIP integrity checks. The nine distinct PDFs are inventoried as follows:
+
+| Unit V file | Decision |
+| --- | --- |
+| `10 Spectroscopy and Smart Materials.pdf` — 30 pages | Primary R25 revision selection; all native text read. Formula/classification images sampled. Viewer p.21 is visually blank, not invented missing content. |
+| `Unit 5.pdf` — 2 pages | Save 15 short and 10 essay prompts. CO instrument source conflict flagged. |
+| `unit_5_Notes.pdf` — 27 pages | Older mixed-topic source. Select self-healing mechanisms pp.8–9; save/filter questions pp.26–27. Lubricants, biochips and synthesis requirements set aside. |
+| `1_Nano material.pdf` — 12 pages | Select introductory nanoscale context pp.5/7 only; other analytical techniques and synthesis not imported as current requirements. |
+| `2_Nano synthesis.pdf` — 64 pages | Outside explicit R25 Unit V scope; preserve privately. |
+| `3_Unit V AFM.pdf` — 16 pages | Supporting overlap; prefer current typed notes. Not a full image transcription. Final video/Screen annotation not imported. |
+| `4_Unit V STM.pdf` — 13 pages | Supporting overlap; prefer current typed notes. Not a full image transcription. Final video/Screen annotation not imported. |
+| `5_Biosensors.pdf` — 49 pages | Image-heavy supporting overlap; current typed packet supplies core glucose treatment. Last three pages visually sampled; no complete transcription claimed. |
+| `7_unit 5  Lubricant.pdf` — 36 pages | Outside explicit current R25 scope; preserve privately, exclude from revision page. |
+
+MuPDF reports unsupported appearance generation for Screen annotations in the AFM/STM decks. Static pages can be read, but this is not a claim that the original video playback was recovered.
 
 ## Coverage and limits
 
 - Unit III: 12 revision sections mapped to the 10 syllabus atoms in the existing syllabus record.
 - Unit IV: 10 revision sections mapped to the 8 syllabus atoms.
-- Every section records source ID and viewer pages in `unit-3-senior-notes.json` / `unit-4-senior-notes.json`. The intake manifest resolves those IDs to actual supplied files and hashes.
+- Unit V: 17 revision sections mapped to the 7 syllabus atoms; the CO instrument conflict remains open.
+- Every section records source ID and viewer pages in `unit-3-senior-notes.json` / `unit-4-senior-notes.json` / `unit-5-senior-notes.json`. The intake manifest resolves those IDs to actual supplied files and hashes.
 - This is an R25 selection/paraphrase, not a verbatim transcript of every source page. Source files, exclusions and still-unreviewed slide/scan content remain traceable.
 - Required drawings remain pending under the figure-production freeze in `AGENTS.md`. Existing approved figures are unchanged. The draft pages have a visible warning and per-topic limits; they do not pretend that prose replaces the required diagrams.
 - Na-ion coverage is a characteristics/comparison treatment. It is not presented as a complete construction-and-reaction account absent from this source.
@@ -55,16 +70,32 @@ Other claims are **pending/withheld**, not advertised as verified corrections: t
 
 ## Question staging
 
-`question-bank-pending.json` saves **128 typed question occurrences**, including source duplicates, plus two unverified OCR page blocks. These are not 128 unique, approved or solved questions.
+`question-bank-pending.json` saves **193 typed question occurrences**, including source duplicates, plus two unverified OCR page blocks. These are not 193 unique, approved or solved questions. Unit V adds 25 current-sheet questions and 40 older-packet questions.
 
-- 94 retained candidates;
+- 130 retained candidates;
 - 3 questions requiring premise review;
-- 20 out-of-scope records, preserved rather than deleted;
-- 4 mixed-part records;
+- 46 out-of-scope records, preserved rather than deleted;
+- 6 mixed-part records;
 - 3 supporting records;
-- 4 embedded source Q&As requiring answer review.
+- 4 embedded source Q&As requiring answer review;
+- 1 question requiring CO instrument source clarification.
 
-Eleven exact-normalised repeated occurrences link to their earlier record. Near-duplicates are not declared identical. Each record has source filename/ID, starting viewer page, original set/number, R25 unit, prompt, selection reason and solution status. Labelled letter subparts are retained structurally where present. No marks, dates, solutions or PYQ identities were invented. These data must be filtered and academically reviewed before any future question-bank UI.
+Eighteen exact-normalised repeated occurrences link to their earlier record. Near-duplicates are not declared identical. Each record has source filename/ID, starting viewer page, original set/number, R25 unit, prompt, selection reason and solution status. Labelled letter subparts are retained structurally where present. No marks, dates, solutions or PYQ identities were invented. These data must be filtered and academically reviewed before any future question-bank UI.
+
+## Additional Unit V discrepancies and open checks
+
+| Source pages (primary 30-page packet) | Treatment |
+| --- | --- |
+| 3/5 | Loss of UV absorbance does not alone establish complete mineralisation or a unique molecular structure. The packet's own limitations conflict with those stronger claims. |
+| 5–7 | Separate thermal imaging from wavelength-resolved molecular absorption spectroscopy. Do not equate every IR image with a molecular spectrum. |
+| 8–10 | Passive/source-free CO detector description conflicts with an explicit IR source in its chamber steps. Record the source-driven absorption example, preserve the original question wording, and leave the intended passive apparatus unresolved. Do not change the official syllabus or guess the lecturer's intended design. |
+| 13 | The prostate-cancer example repeats lung/sputum wording. Exclude the purported prostate-specific method; tumour spectra are illustrative research examples, not universal diagnostic rules. |
+| 16/22 | Constant-height scanning fixes tip height relative to a reference plane, not the local gap over uneven terrain. Current varies with gap. |
+| 17/19/20/22 | STM/AFM resolution ranking, AFM scan-size units and environment claims contradict one another. No guessed universal ranking or limit substituted. |
+| 24 | The opening autonomous-only definition conflicts with the same page's non-autonomic category. Retain the broader intrinsic/extrinsic and autonomic/non-autonomic distinctions. |
+| 30 | Glucose-sensor numerical performance is not identified with a specific device; do not turn it into universal specifications or a claim about every commercial sensor. |
+
+The main remaining source request is **lecturer/prescribed-reference clarification of the intended passive-IR CO setup**. Other uncertain specifics are withheld or qualified; canonical textbook verification and source-based figures remain pending.
 
 ## Validation
 
@@ -78,4 +109,6 @@ These checks do not certify academic completeness. Browser results and preview a
 
 The standalone subject JSON Schema has a **pre-existing** incompatibility with the existing grouped revision card: `studyResources[0].id` and `unitResources` are rejected. Comparing validation errors with `origin/main` gives the identical error and no new errors. The generic college validator understands this existing card pattern and passes. No shared schema was changed for this intake.
 
-Chromium browser checks passed at 1440px and 390px: Unit III/IV revision links, all local anchors, expandable limit panels, source-discrepancy notes, 21/3 MathJax expressions with no MathJax errors, and no page-wide horizontal overflow. The `/Pankusdesk/` base-path route was checked with a simulated `github.io` hostname. Screenshots were inspected. Browser CDN requests were served through Python's configured CA trust because Chromium does not trust the managed proxy certificate; TLS verification was preserved. This is local browser verification, not a claim that the Vercel deployment was visually checked.
+Chromium browser checks passed at 1440px and 390px: Unit III/IV revision links, all local anchors, expandable limit panels, source-discrepancy notes, 21/3 MathJax expressions with no MathJax errors, and no page-wide horizontal overflow. The added Unit V page was separately checked at both widths: 19 local anchors, 3 MathJax expressions, no JavaScript/MathJax errors, working CO-discrepancy deep link/dropdowns and no page-wide overflow. All three revision links and draft states appear on the subject card. The `/Pankusdesk/` base-path route was checked with a simulated `github.io` hostname. Screenshots were inspected. Browser CDN requests were served through Python's configured CA trust because Chromium does not trust the managed proxy certificate; TLS verification was preserved. This is local browser verification, not a claim that the Vercel deployment was visually checked.
+
+The user requested a separate PR because #33 is unmerged. The new `feat/chemistry-r25-units3-5` branch includes the Units III/IV work plus Unit V, based on main; it does not require merging #33 first. PR #33 remains unchanged and unmerged. Review the new combined PR instead of merging both overlapping PRs.
