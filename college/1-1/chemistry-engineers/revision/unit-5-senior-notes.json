@@ -345,11 +345,22 @@
         },
         {
           "type": "paragraph",
+          "text": "Nanomaterials have structured components with at least one dimension on the nanoscale. Their dimensions and surface structure help determine which characterisation method is appropriate."
+        },
+        {
+          "type": "paragraph",
           "text": "Structures at these scales can exhibit properties different from their bulk counterparts. Characterisation measures properties and structure; STM and AFM provide complementary ways to investigate suitable surfaces."
         },
         {
           "type": "pending",
           "text": "This is supporting introductory context from the older nanomaterials presentation. Its synthesis methods and other analytical techniques are not added as new R25 requirements."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-NANO-SCREENSHOT",
+          "location_kind": "image",
+          "image_number": 1
         }
       ]
     },
@@ -458,8 +469,19 @@
           ]
         },
         {
+          "type": "correction",
+          "text": "The additional spectroscopy DOCX writes “Tunneling current ∝ distance”. The earlier note’s approach/retraction description gives the opposite trend: for otherwise comparable conditions, bringing the tip closer increases the tunnelling current. It is not a direct proportionality to gap distance. The incorrect proportionality is not used."
+        },
+        {
           "type": "pending",
           "text": "Claims of operation at exactly 0 K, universal speed superiority, and a fixed instrument-independent scan-size or resolution advantage are withheld. The packet gives conflicting comparisons and does not establish a single universal environment requirement."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-SPECTROSCOPY-DOCX",
+          "location_kind": "docx_paragraphs",
+          "location_note": "See additional-notes-intake.json for section ranges; no invented PDF page numbers."
         }
       ]
     },
@@ -651,8 +673,19 @@
           "text": "These mechanisms illustrate why “intrinsic versus extrinsic” and “autonomic versus externally triggered” are different ways of classifying a healing system."
         },
         {
+          "type": "paragraph",
+          "text": "Examples of reversible interactions and reactions include hydrogen bonding and reversible Diels–Alder chemistry. A suitable thermal or other stimulus can permit the healing response; the trigger depends on the material system."
+        },
+        {
           "type": "pending",
           "text": "This selected explanation comes from the relevant self-healing portion of the older mixed-topic packet. Its unrelated lubricant and biochip chapters are excluded from the current revision selection."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-SPECTROSCOPY-DOCX",
+          "location_kind": "docx_paragraphs",
+          "location_note": "See additional-notes-intake.json for section ranges; no invented PDF page numbers."
         }
       ]
     },
@@ -784,8 +817,31 @@
           "text": "Applications include glucose meters, selected continuous-monitoring systems, food analysis and fermentation monitoring. Wearable and implantable implementations require their own design and calibration."
         },
         {
+          "type": "correction",
+          "text": "The additional DOCX prints “Glucose + O₂ → Gluconic acid + H₂O₂”. This omits water from the overall acid-forming reaction. The main packet’s enzyme reaction produces gluconolactone, which can hydrolyse with water to gluconic acid. Counting atoms gives the two-step and combined forms below; these are PankusDesk equation checks, not a lecturer-approved answer key."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{Gluconolactone}+\\mathrm{H_2O}\\rightarrow\\text{gluconic acid}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{Glucose}+\\mathrm{O_2}+\\mathrm{H_2O}\\rightarrow\\text{gluconic acid}+\\mathrm{H_2O_2}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "In formulas, glucose is C₆H₁₂O₆, gluconolactone is C₆H₁₀O₆ and gluconic acid is C₆H₁₂O₇. The combined equation has C₆H₁₄O₉ on each side, while the unqualified acid equation in the DOCX does not balance."
+        },
+        {
           "type": "pending",
           "text": "The source quotes <5 s response, 1–30 mM range and micromolar detection as illustrative performance claims without specifying a device. They are not universal glucose-sensor specifications. This oxygen/peroxide example does not describe every commercial glucose sensor; no specific device design or clinical performance is inferred. The sensor drawing remains pending integration."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-SPECTROSCOPY-DOCX",
+          "location_kind": "docx_paragraphs",
+          "location_note": "See additional-notes-intake.json for section ranges; no invented PDF page numbers."
         }
       ]
     }

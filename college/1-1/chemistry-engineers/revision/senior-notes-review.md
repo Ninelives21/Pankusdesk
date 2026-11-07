@@ -4,7 +4,7 @@ This change integrates a **selected supplementary revision layer** for Units III
 
 ## Sources and file decisions
 
-The source is the user's five ZIP uploads from VJNOTES, not an inferred lecturer record. `senior-notes-intake.json` inventories all 24 PDF/PPTX files with hashes, sizes, actual page/slide counts, classification and reasons. Originals remain in the private intake workspace; no original was deleted and no source scans were uploaded to the public repository.
+The source is the user's five ZIP uploads from VJNOTES, not an inferred lecturer record. `senior-notes-intake.json` records the original 24 PDF/PPTX files and three additional source variants (a revised bank, DOCX and screenshot). `additional-notes-intake.json` reconciles all 17 files in the latest five ZIPs, including aliases and duplicate evidence. Originals remain in the private intake workspace; no original was deleted and no source scans were uploaded to the public repository.
 
 | File | Decision |
 | --- | --- |
@@ -70,17 +70,17 @@ Other claims are **pending/withheld**, not advertised as verified corrections: t
 
 ## Question staging
 
-`question-bank-pending.json` saves **193 typed question occurrences**, including source duplicates, plus two unverified OCR page blocks. These are not 193 unique, approved or solved questions. Unit V adds 25 current-sheet questions and 40 older-packet questions.
+`question-bank-pending.json` saves **244 typed question occurrences**, including source duplicates, plus two unverified OCR page blocks. These are not 244 unique, approved or solved questions. Unit V adds 25 current-sheet questions and 40 older-packet questions.
 
-- 130 retained candidates;
+- 170 retained candidates;
 - 3 questions requiring premise review;
 - 46 out-of-scope records, preserved rather than deleted;
 - 6 mixed-part records;
 - 3 supporting records;
-- 4 embedded source Q&As requiring answer review;
-- 1 question requiring CO instrument source clarification.
+- 11 source answers requiring review (four embedded Q&As and seven DOCX model answers);
+- 5 question occurrences requiring CO instrument source clarification.
 
-Eighteen exact-normalised repeated occurrences link to their earlier record. Near-duplicates are not declared identical. Each record has source filename/ID, starting viewer page, original set/number, R25 unit, prompt, selection reason and solution status. Labelled letter subparts are retained structurally where present. No marks, dates, solutions or PYQ identities were invented. These data must be filtered and academically reviewed before any future question-bank UI.
+Thirty-nine exact-normalised repeated occurrences link to their earlier record. Near-duplicates are not declared identical. Each record has source filename/ID, starting viewer page, original set/number, R25 unit, prompt, selection reason and solution status. Labelled letter subparts are retained structurally where present. No marks, dates, solutions or PYQ identities were invented. These data must be filtered and academically reviewed before any future question-bank UI.
 
 ## Additional Unit V discrepancies and open checks
 
@@ -97,6 +97,23 @@ Eighteen exact-normalised repeated occurrences link to their earlier record. Nea
 
 The main remaining source request is **lecturer/prescribed-reference clarification of the intended passive-IR CO setup**. Other uncertain specifics are withheld or qualified; canonical textbook verification and source-based figures remain pending.
 
+
+## Latest five-unit packets: duplicate reconciliation and integration
+
+The additional upload contains 17 files. Ten are exact byte matches to earlier supplied originals (including the Units I/II banks and the four-problem hardness sheet); three note PDFs have identical extracted text and **identical rendered pixels on all 60 pages compared** despite different PDF bytes; the Polymers bank has identical normalised wording. These 14 files reuse the existing teaching flow and answers, without creating repeated topics or solutions.
+
+The three remaining files are a revised Unit V sheet (12 short + 10 essays), a new undated spectroscopy DOCX, and a screenshot of a nanomaterials definition/classification. Their origin is user-supplied notes; no author, lecturer approval or lecture date is inferred.
+
+- Keep the fuller earlier Unit V bank (15 short + 10 essays) and retain the revised sheet as 22 source occurrences with explicit variant links; do not discard the earlier three short questions.
+- The DOCX supplies 22 final-bank prompts and seven model-answer occurrences. Its final heading says “WITH ANSWERS” but that final section has no paired answers. The model prose is saved as source-authored, **unverified**, not a VNR answer key.
+- Merge a nanoscale definition into the existing nanomaterials section, and reversible hydrogen-bonding/Diels–Alder examples into the existing intrinsic-healing section. No separate packet dump.
+- The DOCX's `tunnelling current ∝ distance` conflicts with the existing approach/retraction account. Flag it in the existing STM topic.
+- The DOCX's acid-forming glucose reaction omits water. Retain the main source's lactone-forming reaction, then show lactone hydrolysis and the atom-balanced acid net reaction as a PankusDesk equation check. C₆H₁₄O₉ is present on both sides of the combined reaction.
+- Its passive-IR CO description repeats the existing source conflict; repetition is not independent verification. Lecturer/prescribed-reference clarification remains pending.
+- Do not import unsupported direct COD estimation or the screenshot's dimensional-classification convention as extra R25 requirements. The original screenshot is not published; figure assets remain frozen.
+
+The existing Units I/II answered banks are referenced from the staged bank, rather than copied with second answers. Source authorship and PankusDesk answer authorship remain distinct. See `additional-notes-intake.json` for every filename, hash and reuse decision.
+
 ## Validation
 
 The three required repository checks pass:
@@ -109,6 +126,6 @@ These checks do not certify academic completeness. Browser results and preview a
 
 The standalone subject JSON Schema has a **pre-existing** incompatibility with the existing grouped revision card: `studyResources[0].id` and `unitResources` are rejected. Comparing validation errors with `origin/main` gives the identical error and no new errors. The generic college validator understands this existing card pattern and passes. No shared schema was changed for this intake.
 
-Chromium browser checks passed at 1440px and 390px: Unit III/IV revision links, all local anchors, expandable limit panels, source-discrepancy notes, 21/3 MathJax expressions with no MathJax errors, and no page-wide horizontal overflow. The added Unit V page was separately checked at both widths: 19 local anchors, 3 MathJax expressions, no JavaScript/MathJax errors, working CO-discrepancy deep link/dropdowns and no page-wide overflow. All three revision links and draft states appear on the subject card. The `/Pankusdesk/` base-path route was checked with a simulated `github.io` hostname. Screenshots were inspected. Browser CDN requests were served through Python's configured CA trust because Chromium does not trust the managed proxy certificate; TLS verification was preserved. This is local browser verification, not a claim that the Vercel deployment was visually checked.
+Chromium browser checks passed at 1440px and 390px: Unit III/IV revision links, all local anchors, expandable limit panels, source-discrepancy notes, 21/3 MathJax expressions with no MathJax errors, and no page-wide horizontal overflow. The updated Unit V page was separately checked at both widths: 19 local anchors, 5 MathJax expressions, no JavaScript/MathJax errors, working CO-discrepancy deep link/dropdowns and no page-wide overflow. All three revision links and draft states appear on the subject card. The `/Pankusdesk/` base-path route was checked with a simulated `github.io` hostname. Screenshots were inspected. Browser CDN requests were served through Python's configured CA trust because Chromium does not trust the managed proxy certificate; TLS verification was preserved. This is local browser verification, not a claim that the Vercel deployment was visually checked.
 
 The user requested a separate PR because #33 is unmerged. The new `feat/chemistry-r25-units3-5` branch includes the Units III/IV work plus Unit V, based on main; it does not require merging #33 first. PR #33 remains unchanged and unmerged. Review the new combined PR instead of merging both overlapping PRs.
