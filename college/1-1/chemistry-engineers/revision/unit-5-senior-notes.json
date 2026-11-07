@@ -1,0 +1,849 @@
+{
+  "schema_version": 1,
+  "unit": 5,
+  "layer": "supplied_supplementary_revision_notes",
+  "publication_status": "draft",
+  "editorial_policy": "R25-selected paraphrase of supplied notes; no textbook-completion or complete-transcription claim. Verified source contradictions explicit; unsupported specifics withheld. Required figures pending under AGENTS.md.",
+  "sections": [
+    {
+      "id": "u5-spectroscopy",
+      "title": "Spectroscopy and UV–Visible absorption",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        1,
+        2
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Spectroscopy studies the interaction of matter with electromagnetic radiation. Absorption, emission and scattering measurements can provide information about chemical composition, structure and concentration."
+        },
+        {
+          "type": "paragraph",
+          "text": "UV–Visible spectroscopy measures absorption of ultraviolet and visible light. The working ranges used here are approximately 200–400 nm for UV and 400–800 nm for visible light."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dyes often contain conjugated systems and chromophores. Their delocalised electrons can absorb radiation at characteristic wavelengths. Absorption bands help compare dye classes and monitor changes in a sample."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Dye class",
+            "Illustrative visible absorption ranges"
+          ],
+          "rows": [
+            [
+              "Azo dyes",
+              "Often around 400–550 nm"
+            ],
+            [
+              "Anthraquinone dyes",
+              "Often around 400–600 nm, sometimes with several bands"
+            ],
+            [
+              "Triphenylmethane dyes",
+              "Often around 500–650 nm"
+            ]
+          ]
+        },
+        {
+          "type": "pending",
+          "text": "The band ranges are illustrative, not unique identifiers for every member of a dye class. UV absorption is not restricted to colourless compounds, and visible colour alone does not establish composition."
+        }
+      ]
+    },
+    {
+      "id": "u5-beer-lambert",
+      "title": "Beer–Lambert law and dye concentration",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        2,
+        3
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For an appropriate sample and measurement range, absorbance is proportional to concentration and optical path length:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[A=\\varepsilon c l\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here A is absorbance, ε is molar absorptivity at the measurement wavelength, c is concentration and l is path length. Keep wavelength, path length and measurement conditions consistent when comparing samples."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Prepare standard solutions of the known dye at several concentrations.",
+            "Measure their absorbance at the selected absorption maximum, λmax.",
+            "Plot absorbance against concentration to obtain a calibration curve.",
+            "Measure the unknown sample at the same wavelength and use the calibration to estimate concentration, allowing for any dilution."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "This is useful for monitoring dye-containing wastewater and comparing treatment stages. Full spectral scans can reveal changes that a single-wavelength measurement would miss."
+        },
+        {
+          "type": "pending",
+          "text": "Turbidity, other coloured substances, overlapping bands and unsuitable concentration ranges can interfere. A calibration is needed; the packet contains no worked numerical calibration dataset to solve."
+        }
+      ]
+    },
+    {
+      "id": "u5-methylene-blue",
+      "title": "Methylene blue and treatment monitoring",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Methylene blue is a model cationic dye used in studies of wastewater treatment. Its colour and strong optical absorption make changes in concentration convenient to monitor."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Spectral observation",
+            "Interpretation"
+          ],
+          "rows": [
+            [
+              "Strong visible band near 665 nm",
+              "Useful for detecting and quantifying methylene blue under suitable conditions"
+            ],
+            [
+              "UV bands around 246–292 nm",
+              "Aromatic electronic transitions; interpret with the rest of the spectrum"
+            ],
+            [
+              "A shoulder around 605–612 nm",
+              "May reflect aggregation, depending on concentration, pH and solvent"
+            ],
+            [
+              "Decrease of the main visible band with treatment",
+              "Decolourisation or removal of the original absorbing species"
+            ],
+            [
+              "New bands or shifts",
+              "Possible chemical change or formation of other species"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Recording spectra over time helps follow loss of the original dye band and the appearance or disappearance of intermediate bands. The method is rapid and relatively inexpensive; sample filtration or dilution may be needed."
+        },
+        {
+          "type": "correction",
+          "text": "Page 3 treats an overall decrease in UV absorption as evidence of complete mineralisation, and page 5 says UV bands “confirm” the molecular structure. Page 5 also states that overlapping peaks interfere and exact structures cannot be identified by this method alone. Loss of absorbance establishes a spectral change, not by itself complete conversion to CO₂ and water or a unique molecular structure."
+        },
+        {
+          "type": "pending",
+          "text": "Specific toxicity, cancer-risk and bioaccumulation assertions in the source are not adopted without their supporting references. The example absorption-spectrum figure is pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-ir-security",
+      "title": "IR spectroscopy, night vision and security",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "IR absorption spectroscopy measures characteristic molecular absorption associated with vibrational and rotational energy changes. The broad IR region quoted here is about 0.7–1000 μm."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "IR use",
+            "Operating idea",
+            "Security example"
+          ],
+          "rows": [
+            [
+              "Active infrared imaging",
+              "An IR illuminator lights the scene; a sensitive camera records reflected radiation",
+              "IR-LED surveillance cameras in darkness"
+            ],
+            [
+              "Passive thermal imaging",
+              "A detector measures infrared radiation emitted by the scene, without an added illuminator",
+              "Detecting thermal contrast between a person and the surroundings"
+            ],
+            [
+              "Spectroscopic analysis",
+              "Wavelength-dependent absorption or emission supplies chemical information",
+              "Gas monitoring or identification of a material’s spectral signature"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Night-vision imaging is useful where visible illumination is low. Thermal contrast can assist detection of people and equipment; chemical sensing uses wavelength-specific information rather than a conventional brightness image alone."
+        },
+        {
+          "type": "correction",
+          "text": "Page 5 calls IR spectroscopy a technique that “sees heat”, then defines molecular absorption spectroscopy. Thermal imaging and molecular absorption spectroscopy are different measurements; an ordinary thermal image is not automatically a molecular absorption spectrum."
+        },
+        {
+          "type": "pending",
+          "text": "The claims of all-weather visibility, seeing behind obstacles, the percentage of security cameras with IR LEDs, and detailed airport/military deployments are not established by cited evidence in this packet. Detection depends on the optical path, material and conditions."
+        }
+      ]
+    },
+    {
+      "id": "u5-co-detection",
+      "title": "IR CO sensing in Pollution Under Control testing",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Carbon monoxide is produced by incomplete combustion of carbon-containing fuels. Infrared absorption near its characteristic C≡O stretching band, approximately 4.6–4.7 μm, can be used to measure it in a gas sample."
+        },
+        {
+          "type": "paragraph",
+          "text": "In an absorption measurement chamber, an IR source sends radiation through the exhaust sample, and detectors measure transmitted radiation at the selected wavelengths. Absorption measurements and calibration are used to obtain a CO concentration."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Collect and introduce the exhaust sample into the measurement chamber.",
+            "Pass suitable infrared radiation through the sample.",
+            "Measure the transmitted radiation in the CO-sensitive band.",
+            "Use the calibrated response to estimate CO concentration and report the result."
+          ]
+        },
+        {
+          "type": "correction",
+          "text": "Pages 8–10 call this “Passive Infrared Detection” and claim that no IR source is needed, but page 9 explicitly says an infrared light source passes light through the gas. Those are incompatible descriptions of the same setup. The source-driven absorption setup described here must not be taught as a source-free passive detector. The supplied R25 question sheet uses the passive-IR wording too; that wording is retained in the question record with this conflict flagged."
+        },
+        {
+          "type": "pending",
+          "text": "The exact intended passive-IR instrument remains unresolved and needs lecturer or prescribed-reference clarification. Do not substitute a guessed design. The packet’s emission-limit table mixes percentages, ppm and mass-per-distance figures without a specific applicable standard, so it is not reproduced as a legal PUC limit. The instrument drawing is pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-raman",
+      "title": "Raman scattering and Raman shift",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        10,
+        11
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Most light scattered from a sample is elastically scattered: its frequency is unchanged. A small fraction is scattered inelastically, exchanging energy with molecular motions. This is Raman scattering."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Scattering",
+            "Scattered photon relative to incident photon"
+          ],
+          "rows": [
+            [
+              "Rayleigh",
+              "Same energy and frequency"
+            ],
+            [
+              "Stokes",
+              "Lower energy and frequency; longer wavelength"
+            ],
+            [
+              "Anti-Stokes",
+              "Higher energy and frequency; shorter wavelength"
+            ]
+          ]
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\Delta\\widetilde{\\nu}=\\widetilde{\\nu}_0-\\widetilde{\\nu}_s\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The subscripts 0 and s denote incident and scattered light. With wavenumbers in cm⁻¹, the Raman shift is in cm⁻¹. Under this convention, Stokes shifts are positive."
+        },
+        {
+          "type": "paragraph",
+          "text": "Raman bands provide information about molecular vibrations. Uses include chemical characterisation, tracking chemical changes and comparing biological tissues."
+        },
+        {
+          "type": "pending",
+          "text": "The source figure uses ν-like symbols while labelling the quantities as wavenumbers. Tildes are used here to make the units explicit. The scattering illustration remains pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-raman-tumours",
+      "title": "Raman spectroscopy in tumour studies",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        11,
+        12,
+        13
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Healthy and malignant tissues can differ in their protein, lipid and nucleic-acid composition. Raman measurements compare the resulting molecular vibrational signatures."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Acquire spectra from tissue using a suitable illumination and collection arrangement.",
+            "Compare spectral features with appropriate reference measurements.",
+            "Use multivariate analysis, such as principal-component analysis or linear discriminant analysis, where appropriate to distinguish patterns.",
+            "Scan several locations to map spatial changes in tissue composition and investigate tumour boundaries."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The applications discussed include brain-tissue studies, breast-biopsy analysis, skin-lesion studies and lung-tissue or sputum research. They illustrate the use of biochemical spectral differences in biomedical investigation."
+        },
+        {
+          "type": "correction",
+          "text": "The entry labelled “Prostate cancer diagnosis” on page 13 repeats the lung-cancer/sputum description. It does not provide a distinct prostate-specific method, so that purported example is not adopted."
+        },
+        {
+          "type": "pending",
+          "text": "The illustrated spectrum and its histology comparison are a source example, not a universal tumour signature. A single quoted peak or a higher protein/lipid ratio is not presented as a standalone diagnosis. Source figures and the cited study behind that example need verification."
+        }
+      ]
+    },
+    {
+      "id": "u5-nanomaterials",
+      "title": "Nanomaterials and characterisation",
+      "source_id": "CFE-SENIOR-NANO-OVERVIEW",
+      "source_pages": [
+        5,
+        7
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Nanotechnology concerns the understanding and control of matter at length scales of approximately 1–100 nanometres. One nanometre is 10⁻⁹ metre."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nanomaterials have structured components with at least one dimension on the nanoscale. Their dimensions and surface structure help determine which characterisation method is appropriate."
+        },
+        {
+          "type": "paragraph",
+          "text": "Structures at these scales can exhibit properties different from their bulk counterparts. Characterisation measures properties and structure; STM and AFM provide complementary ways to investigate suitable surfaces."
+        },
+        {
+          "type": "pending",
+          "text": "This is supporting introductory context from the older nanomaterials presentation. Its synthesis methods and other analytical techniques are not added as new R25 requirements."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-NANO-SCREENSHOT",
+          "location_kind": "image",
+          "image_number": 1
+        }
+      ]
+    },
+    {
+      "id": "u5-stm",
+      "title": "STM: principle, components and working",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        14,
+        15,
+        16
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Scanning tunnelling microscopy studies a surface using a fine conducting tip brought very close to a suitable conducting sample. With an applied bias, electrons tunnel across the small gap and produce a measurable current."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Component",
+            "Function"
+          ],
+          "rows": [
+            [
+              "Sharp conducting tip",
+              "Typically tungsten or platinum–iridium; provides a local tunnelling junction"
+            ],
+            [
+              "Piezoelectric scanner",
+              "Controls fine movement in x, y and z"
+            ],
+            [
+              "Coarse approach and distance control",
+              "Brings the tip near enough for fine positioning"
+            ],
+            [
+              "Feedback and computer",
+              "Measure current, control position and construct the recorded image"
+            ],
+            [
+              "Vibration isolation",
+              "Limits unwanted movement of the very small tip–sample gap"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "During scanning, the tip moves across the surface and the instrument records its tunnelling-current response. The current is highly sensitive to separation, and the measurement also reflects the surface’s electronic properties."
+        },
+        {
+          "type": "paragraph",
+          "text": "Applications include investigating local surface features, defects and surface reactions, studying suitable semiconductor or microelectronic samples, and controlled manipulation of atoms or molecules in appropriate experiments."
+        },
+        {
+          "type": "pending",
+          "text": "STM images are not literal photographs of an electron cloud around each nucleus. Surface preparation and tip condition affect interpretation. The apparatus drawing is pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-stm-modes",
+      "title": "STM modes and limitations",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        16,
+        17,
+        22,
+        23
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Mode",
+            "What is controlled",
+            "What is recorded",
+            "Use / limitation"
+          ],
+          "rows": [
+            [
+              "Constant current",
+              "Feedback adjusts tip height to maintain a current setpoint",
+              "Tip-height changes over the scan",
+              "Useful for following surface variation; feedback limits scan speed"
+            ],
+            [
+              "Constant height",
+              "The tip’s vertical position is held approximately fixed relative to a reference plane",
+              "Changes in tunnelling current",
+              "Suited to sufficiently flat regions; raised features can risk a tip collision"
+            ]
+          ]
+        },
+        {
+          "type": "correction",
+          "text": "Page 16 says constant-height mode fixes the “probe-sample distance” while obtaining an image from changing current. Fixed tip height is not a fixed local gap on an uneven surface: the gap changes with surface relief. The current–distance explanation on page 22 establishes why that distinction matters."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "A clean, suitable sample and a sharp, stable tip are important.",
+            "Vibration and drift can affect the measurement.",
+            "The instrument is specialised, costly and requires skilled operation.",
+            "The sample must support the tunnelling-current measurement."
+          ]
+        },
+        {
+          "type": "correction",
+          "text": "The additional spectroscopy DOCX writes “Tunneling current ∝ distance”. The earlier note’s approach/retraction description gives the opposite trend: for otherwise comparable conditions, bringing the tip closer increases the tunnelling current. It is not a direct proportionality to gap distance. The incorrect proportionality is not used."
+        },
+        {
+          "type": "pending",
+          "text": "Claims of operation at exactly 0 K, universal speed superiority, and a fixed instrument-independent scan-size or resolution advantage are withheld. The packet gives conflicting comparisons and does not establish a single universal environment requirement."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-SPECTROSCOPY-DOCX",
+          "location_kind": "docx_paragraphs",
+          "location_note": "See additional-notes-intake.json for section ranges; no invented PDF page numbers."
+        }
+      ]
+    },
+    {
+      "id": "u5-afm",
+      "title": "AFM: force sensing and instrument components",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        17,
+        18,
+        19
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Atomic force microscopy senses interactions between a sharp probe and a surface. A tip attached to a flexible cantilever scans the sample, and the response is used to map surface features and study local properties."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Probe and cantilever: interact mechanically with the sample surface.",
+            "Laser and position-sensitive photodetector: monitor cantilever bending or motion through the reflected beam.",
+            "Piezoelectric scanner: moves the sample or probe with fine positional control.",
+            "Feedback electronics and computer: control scanning and record data."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "In the optical-lever arrangement, a laser reflects from the back of the cantilever onto a detector. Cantilever movement changes the detected signal. Calibration relates that signal to motion and force-related quantities."
+        },
+        {
+          "type": "paragraph",
+          "text": "AFM can be used with conducting and insulating samples, including polymers, ceramics, composites and biological materials. Depending on the configuration, measurements may be made in air, liquid or vacuum."
+        },
+        {
+          "type": "paragraph",
+          "text": "Applications include surface topography and roughness, adhesion, friction, mechanical-property measurements and studies of biological structures."
+        },
+        {
+          "type": "pending",
+          "text": "The probe geometry, environment and operating conditions affect the result. Sample or tip damage is possible. The source instrument illustration is pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-afm-modes",
+      "title": "AFM modes and comparison with STM",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        18,
+        19,
+        20,
+        22,
+        23
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "AFM mode",
+            "Operating idea",
+            "Practical consideration"
+          ],
+          "rows": [
+            [
+              "Contact",
+              "The tip remains in contact while the cantilever responds to tip–surface forces",
+              "Contact and lateral forces can damage delicate samples"
+            ],
+            [
+              "Non-contact",
+              "An oscillating tip senses attractive interactions without deliberate continuous contact",
+              "Appropriate control and interpretation of the oscillation response are needed"
+            ],
+            [
+              "Tapping",
+              "An oscillating tip intermittently contacts the surface",
+              "Can reduce lateral forces compared with continuous contact"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Feature",
+            "STM",
+            "AFM"
+          ],
+          "rows": [
+            [
+              "Primary signal",
+              "Tunnelling current",
+              "Tip–sample force response"
+            ],
+            [
+              "Electrical sample requirement",
+              "A suitable conducting path is needed",
+              "Can investigate conducting or insulating samples"
+            ],
+            [
+              "Modes",
+              "Constant current and constant height",
+              "Contact, non-contact and tapping"
+            ],
+            [
+              "Probe",
+              "Sharp conducting tip",
+              "Tip supported on a cantilever"
+            ],
+            [
+              "Important limits",
+              "Tip condition, sample preparation, vibration and electronic contributions",
+              "Tip shape, calibration, interaction forces, scan conditions and possible damage"
+            ]
+          ]
+        },
+        {
+          "type": "correction",
+          "text": "Page 17 says STM has better resolution; page 22 says AFM has better resolution. The source also gives an AFM scan size of 150 × 150 μm on page 17 but 150 × 150 nm on page 19, and conflicts about AFM environments on pages 19–20. These do not establish a universal ranking or scan-size limit. No guessed numerical limit is substituted."
+        },
+        {
+          "type": "pending",
+          "text": "Resolution, scan area and scan speed require a specified instrument, mode, sample and definition of resolution. A comparison diagram is pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-self-healing",
+      "title": "Self-healing materials: principles and applications",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        24,
+        25
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Self-healing materials can recover some performance after damage through a repair mechanism built into the material. Recovery may be autonomic, triggered by damage itself, or non-autonomic, requiring an external trigger."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Activation: damage or an appropriate stimulus starts the healing response.",
+            "Transport: mobile species reach the damaged region where the mechanism requires them.",
+            "Repair: physical or chemical processes restore some of the lost integrity or function."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Potential benefits include longer service life, improved durability and reduced maintenance. The achievable repair depends on the material, damage and available healing mechanism."
+        },
+        {
+          "type": "paragraph",
+          "text": "Applications discussed include scratch-resistant coatings, corrosion-protective coatings, composites for aircraft and other structures, sealants and adhesives, and materials for difficult-to-access pipelines or cables. Some examples are proposals or research directions rather than established universal products."
+        },
+        {
+          "type": "correction",
+          "text": "Page 24 first defines self-healing as occurring without any external intervention, then explicitly includes non-autonomic healing requiring external triggering. The broader classification is retained; absence of intervention is not required for every self-healing system."
+        },
+        {
+          "type": "pending",
+          "text": "Commercial product lifetimes and recovery times quoted in the source are not general guarantees. Source mechanism drawings remain pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-healing-mechanisms",
+      "title": "Intrinsic and extrinsic healing mechanisms",
+      "source_id": "CFE-SENIOR-U5-LEGACY",
+      "source_pages": [
+        8,
+        9
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Intrinsic healing uses interactions or reversible changes within the material itself. Depending on the system, heat or another stimulus may be needed to activate the response."
+        },
+        {
+          "type": "paragraph",
+          "text": "Extrinsic healing uses an agent introduced into the material. In a capsule-based system, a crack breaks capsules, releasing the agent into the damaged zone where a repair reaction can occur."
+        },
+        {
+          "type": "paragraph",
+          "text": "A vascular system carries healing agent through a network of channels or hollow fibres. Repeated repair depends on whether the agent can be replenished; depletion limits a simple one-use capsule system."
+        },
+        {
+          "type": "paragraph",
+          "text": "These mechanisms illustrate why “intrinsic versus extrinsic” and “autonomic versus externally triggered” are different ways of classifying a healing system."
+        },
+        {
+          "type": "paragraph",
+          "text": "Examples of reversible interactions and reactions include hydrogen bonding and reversible Diels–Alder chemistry. A suitable thermal or other stimulus can permit the healing response; the trigger depends on the material system."
+        },
+        {
+          "type": "pending",
+          "text": "This selected explanation comes from the relevant self-healing portion of the older mixed-topic packet. Its unrelated lubricant and biochip chapters are excluded from the current revision selection."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-SPECTROSCOPY-DOCX",
+          "location_kind": "docx_paragraphs",
+          "location_note": "See additional-notes-intake.json for section ranges; no invented PDF page numbers."
+        }
+      ]
+    },
+    {
+      "id": "u5-nitinol",
+      "title": "Smart materials and Nitinol",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        26,
+        27,
+        28
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Smart materials change one or more properties in response to stimuli such as temperature, stress, light, electric fields or magnetic fields. Examples include shape-memory alloys, piezoelectric materials and photochromic materials."
+        },
+        {
+          "type": "paragraph",
+          "text": "A shape-memory alloy can recover a programmed shape on heating after deformation under suitable conditions. Reversible transformations between martensite and austenite underlie this behaviour."
+        },
+        {
+          "type": "paragraph",
+          "text": "Nitinol is a near-equiatomic nickel–titanium alloy. Its name combines nickel, titanium and Naval Ordnance Laboratory. Its important characteristics include shape memory, superelastic behaviour under appropriate conditions, useful corrosion resistance and recoverable deformation."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Medical applications: orthodontic wires, guidewires, stents and selected fixation or surgical devices.",
+            "Engineering: compact actuators, temperature-responsive devices and vibration-control components.",
+            "Consumer products: flexible spectacle frames and responsive mechanisms."
+          ]
+        },
+        {
+          "type": "pending",
+          "text": "The quoted recoverable strain, mechanical properties, transformation temperature and cycling behaviour depend on composition, processing and test conditions. “Biocompatible” is not an unconditional guarantee for every device or patient. Detailed transformation and device drawings remain pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-biosensors",
+      "title": "Biosensors: recognition, components and features",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        28,
+        29
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A biosensor combines a biological recognition element with a transducer and associated signal processing to measure an analyte. Recognition elements can include enzymes, antibodies, nucleic acids or cells."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Part",
+            "Role"
+          ],
+          "rows": [
+            [
+              "Analyte",
+              "The substance to be measured, such as glucose"
+            ],
+            [
+              "Biological recognition element",
+              "Interacts selectively with the analyte"
+            ],
+            [
+              "Transducer",
+              "Converts the resulting change into a measurable signal"
+            ],
+            [
+              "Signal processing and display",
+              "Condition, interpret and report the signal"
+            ]
+          ]
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Useful selectivity for the intended analyte.",
+            "Reliable, repeatable response and a suitable response time.",
+            "A useful calibrated measurement range.",
+            "Stable recognition-element immobilisation and adequate service life.",
+            "Suitable size, ease of use and cost; biocompatibility where contact with biological tissue is intended."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Classification by transduction includes electrochemical, thermal, optical and piezoelectric approaches. Electrochemical examples include amperometric measurements of current, potentiometric measurements of potential and conductometric measurements of conductivity."
+        },
+        {
+          "type": "pending",
+          "text": "Not every biosensor is implantable or reusable. Features must match the intended application. The source block diagram is pending integration."
+        }
+      ]
+    },
+    {
+      "id": "u5-glucose",
+      "title": "Amperometric glucose monitoring",
+      "source_id": "CFE-SENIOR-SPECTROSCOPY",
+      "source_pages": [
+        30
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "An amperometric biosensor measures an electrical current associated with an electrochemical reaction. A glucose-oxidase electrode provides an example of coupling biological recognition to a measurable signal."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Immobilise glucose oxidase (GOx) in the sensing arrangement near the electrode.",
+            "Glucose reacts in the enzyme-catalysed process. In the oxygen-based example, hydrogen peroxide is produced.",
+            "The electrode detects the reaction electrochemically; peroxide oxidation can generate a current.",
+            "Relate the calibrated current to glucose concentration within the sensor’s usable range."
+          ]
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{Glucose}+\\mathrm{O_2}\\xrightarrow{\\rm GOx}\\text{gluconolactone}+\\mathrm{H_2O_2}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Important design features include effective enzyme immobilisation, useful electron-transfer response, sensitivity, selectivity, stability and a suitable response time. High surface area can provide sites for enzyme attachment."
+        },
+        {
+          "type": "paragraph",
+          "text": "Applications include glucose meters, selected continuous-monitoring systems, food analysis and fermentation monitoring. Wearable and implantable implementations require their own design and calibration."
+        },
+        {
+          "type": "correction",
+          "text": "The additional DOCX prints “Glucose + O₂ → Gluconic acid + H₂O₂”. This omits water from the overall acid-forming reaction. The main packet’s enzyme reaction produces gluconolactone, which can hydrolyse with water to gluconic acid. Counting atoms gives the two-step and combined forms below; these are PankusDesk equation checks, not a lecturer-approved answer key."
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{Gluconolactone}+\\mathrm{H_2O}\\rightarrow\\text{gluconic acid}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{Glucose}+\\mathrm{O_2}+\\mathrm{H_2O}\\rightarrow\\text{gluconic acid}+\\mathrm{H_2O_2}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "In formulas, glucose is C₆H₁₂O₆, gluconolactone is C₆H₁₀O₆ and gluconic acid is C₆H₁₂O₇. The combined equation has C₆H₁₄O₉ on each side, while the unqualified acid equation in the DOCX does not balance."
+        },
+        {
+          "type": "pending",
+          "text": "The source quotes <5 s response, 1–30 mM range and micromolar detection as illustrative performance claims without specifying a device. They are not universal glucose-sensor specifications. This oxygen/peroxide example does not describe every commercial glucose sensor; no specific device design or clinical performance is inferred. The sensor drawing remains pending integration."
+        }
+      ],
+      "additional_source_refs": [
+        {
+          "source_id": "CFE-ADDITIONAL-SPECTROSCOPY-DOCX",
+          "location_kind": "docx_paragraphs",
+          "location_note": "See additional-notes-intake.json for section ranges; no invented PDF page numbers."
+        }
+      ]
+    }
+  ]
+}
