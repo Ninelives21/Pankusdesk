@@ -504,3 +504,24 @@
 @media (max-width: 760px) {
 	.school-guidance-grid { grid-template-columns: 1fr; }
 }
+
+/* Shared Questions → Notes index; study-page styles above remain unchanged. */
+.subject-home .subject-home-header { padding: 2rem 0 1rem; }
+.subject-home h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: .6rem 0; }
+.subject-home .subject-section-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.25rem; }
+.subject-home .section { padding-top: 2rem; scroll-margin-top: 100px; }
+.subject-home .section > h2 { font-size: 1.7rem; margin: 0 0 .5rem; }
+.subject-home .study-tool-grid { margin-top: 1.4rem; align-items: stretch; }
+.subject-home .study-tool-card { min-width: 0; overflow-wrap: anywhere; }
+.subject-home .study-tool-card h3 { font-size: 1.3rem; }
+.subject-home .tool-action { display: block; margin-top: 1rem; }
+.subject-home .subject-resource-links { padding-left: 1.2rem; margin: 1rem 0 0; }
+.subject-home .subject-resource-links li { padding: .5rem 0; }
+.subject-home .subject-resource-links small { display: inline-block; color: var(--text-muted, #526273); }
+.subject-home #subject-unit-grid { scroll-margin-top: 110px; }
+.subject-home .study-tool-card:last-child:has(#subject-unit-grid) { grid-column: 1 / -1; }
+.subject-home .subject-empty { color: var(--text-muted, #526273); }
+@media (max-width: 600px) {
+ .subject-home .study-tool-grid { grid-template-columns: minmax(0, 1fr); }
+ .subject-home .study-tool-card { padding: 1.25rem; }
+}
