@@ -1,147 +1,141 @@
 (function () {
-document.addEventListener('DOMContentLoaded', () => {
-	initSubjectHome();
-});
+'use strict';
+
+document.addEventListener('DOMContentLoaded', initSubjectHome);
 
 async function initSubjectHome() {
-	const page = document.querySelector('.subject-page');
+	const page = document.querySelector('.subject-home');
 	if (!page) return;
-
+	// Resource-only subjects use the same card markup without a textbook KB.
+	if (!page.dataset.subjectJson) {
+		page.dataset.homeReady = 'true';
+		revealFragment(page);
+		return;
+	}
 	try {
 		const subjectUrl = new URL(page.dataset.subjectJson, document.baseURI);
-		const syllabusUrl = new URL(page.dataset.syllabusJson, document.baseURI);
-		const kbStatusUrl = new URL(page.dataset.kbStatusJson, document.baseURI);
-
-		const [subject, syllabus, kbStatus] = await Promise.all([
-			fetchJson(subjectUrl.href),
-			fetchJson(syllabusUrl.href),
-			fetchJson(kbStatusUrl.href),
-		]);
-
-		renderSubjectIdentity(subject);
-		renderKbStatus(subject, kbStatus);
-		renderUnits(subject, syllabus, kbStatus, subjectUrl);
+		const response = await fetch(subjectUrl.href, { cache: 'no-store' });
+		if (!response.ok) throw new Error(`Subject metadata returned ${response.status}`);
+		const subject = await response.json();
+		for (const [selector, value] of [['[data-subject-name]', subject.name], ['[data-subject-code]', subject.code], ['[data-subject-credits]', subject.credits == null ? null : `${subject.credits} credits`]]) {
+			const target = page.querySelector(selector);
+			if (target && value != null) target.textContent = value;
+		}
 		renderStudyResources(subject, subjectUrl);
+		renderTextbookUnits(subject, subjectUrl);
+		page.dataset.homeReady = 'true';
+		revealFragment(page);
 	} catch (error) {
 		console.error('Subject page load failed:', error);
-		const grid = document.querySelector('[data-unit-grid]');
-		if (grid) {
-			grid.innerHTML = '<div class="unit-error">Subject metadata could not be loaded. Open this page through Live Server or GitHub Pages so the JSON files can be fetched.</div>';
-		}
-		const resources = document.querySelector('[data-study-resources]');
-		if (resources) {
-			resources.innerHTML = '<p class="unit-error">Study resources could not be loaded. Please reload the page.</p>';
-		}
+		page.querySelectorAll('[data-study-resources], [data-unit-grid]').forEach(target => {
+			target.innerHTML = '<p class="unit-error" role="alert">Study links could not be loaded. Please reload the page.</p>';
+		});
 	}
 }
 
-async function fetchJson(url) {
-	if (!url) throw new Error('Missing JSON source URL.');
-	const response = await fetch(url, { cache: 'no-store' });
-	if (!response.ok) throw new Error(`${url} returned ${response.status}`);
-	return response.json();
+function revealFragment(page) {
+	if (!location.hash) return;
+	let id;
+	try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
+	const target = document.getElementById(id);
+	if (target && page.contains(target)) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
 }
 
-function renderSubjectIdentity(subject) {
-	setText('[data-subject-name]', subject.name);
-	setText('[data-subject-code]', subject.code);
-	setText('[data-subject-credits]', `${subject.credits} credits`);
-}
-
-function renderKbStatus(subject, kbStatus) {
-	setText('[data-unit-count]', subject.units.length);
-	setText('[data-r25-count]', kbStatus.r25_atom_count);
-	setText('[data-gap-count]', kbStatus.gap_filled_topic_ids.length);
-	const sourceGaps = Number(kbStatus.source_gap_count ?? 0);
-	setText('[data-kb-label]', sourceGaps === 0 ? `${subject.regulation} coverage checked` : `${subject.regulation} coverage in progress`);
-}
-
-function renderUnits(subject, syllabus, kbStatus, subjectUrl) {
-	const grid = document.querySelector('[data-unit-grid]');
-	if (!grid) return;
-
-	const syllabusByUnit = new Map(syllabus.units.map(unit => [Number(unit.unit), unit]));
-	const supplementedUnits = new Set(
-		(kbStatus.gap_filled_topic_ids ?? [])
-			.map(topicId => Number(topicId.match(/^u(\d+)-/)?.[1]))
-			.filter(Number.isFinite),
-	);
-
-	grid.innerHTML = subject.units.map(unit => {
-		const syllabusUnit = syllabusByUnit.get(Number(unit.number));
-		const atoms = syllabusUnit?.atoms ?? [];
-		const preview = buildAtomPreview(atoms);
-		const hasSupplement = supplementedUnits.has(Number(unit.number));
-		const href = new URL(`unit-${unit.number}.html`, subjectUrl).href;
-		return `
-			<a class="unit-card" href="${escapeHtml(href)}">
-				<div class="unit-card-top">
-					<div class="unit-number">Unit ${unit.number}</div>
-					${hasSupplement ? '<span class="unit-badge">Supplemented source</span>' : ''}
-				</div>
-				<h2>${escapeHtml(unit.title)}</h2>
-				<p class="unit-topic-preview">${escapeHtml(preview)}</p>
-				<div class="unit-card-footer">
-					<span>${atoms.length} ${escapeHtml(subject.regulation)} syllabus points</span>
-					<strong>Open unit →</strong>
-				</div>
-			</a>
-		`;
+function renderTextbookUnits(subject, subjectUrl) {
+	const list = document.querySelector('[data-unit-grid]');
+	if (!list) return;
+	const questions = subject.practice?.unitQuestions;
+	const questionUnits = new Set((questions?.availableUnits || []).map(Number));
+	list.innerHTML = (subject.units || []).map(unit => {
+		const unitHref = new URL(`unit-${unit.number}.html`, subjectUrl).href;
+		const state = unit.publicationStatus;
+		const stateText = state === 'ready' ? 'Text available' : state === 'draft' ? 'Text in progress' : 'Text not added yet';
+		const questionHref = questionUnits.has(Number(unit.number)) && questions?.hrefPattern
+			? new URL(questions.hrefPattern.replace('{unit}', unit.number), subjectUrl).href : null;
+		return `<div class="textbook-unit-row">
+			<div class="textbook-unit-copy"><span class="unit-number">Unit ${escapeHtml(unit.number)}</span>
+				<h3>${escapeHtml(unit.title)}</h3><span class="textbook-unit-state">${stateText}</span></div>
+			<div class="textbook-unit-actions">
+				<a href="${escapeHtml(unitHref)}" aria-label="${state === 'scaffold' ? 'View outline' : 'Read textbook notes'}: Unit ${escapeHtml(unit.number)} · ${escapeHtml(unit.title)}">${state === 'scaffold' ? 'View outline' : 'Read notes'} →</a>
+				${questionHref ? `<a href="${escapeHtml(questionHref)}" aria-label="Textbook questions: Unit ${escapeHtml(unit.number)} · ${escapeHtml(unit.title)}">Book questions →</a>` : ''}
+			</div>
+		</div>`;
 	}).join('');
+}
+
+// Use the established configuration, including the grouped Chemistry revision
+// entries. No metadata migration is needed, including for unmerged content PRs.
+function resourceKind(entry) {
+	if (entry.practiceKey === 'pyqs') return 'pyqs';
+	if (entry.practiceKey === 'schoolGuidance') return 'question-sets';
+	if (entry.unitResources || /end.sem|revision/i.test(entry.title || '')) return 'revision';
+	if (/worksheet/i.test(entry.href || '')) return 'worksheets';
+	return 'other';
+}
+
+function isAvailable(resource) {
+	return Boolean(resource.href) && resource.status !== 'scaffold'
+		&& !/not\s+(?:yet\s+)?(?:added|available|integrated)|coming soon/i.test(resource.state || '');
+}
+
+function unitLink(unit, subject, href, state) {
+	const metadata = subject.units?.find(item => Number(item.number) === Number(unit.number));
+	const title = metadata?.title || unit.title || '';
+	return `<li class="resource-unit-item">
+		<a href="${escapeHtml(href)}"><span class="resource-unit-number">Unit ${escapeHtml(unit.number)}</span><span>${escapeHtml(title)}</span><span aria-hidden="true">→</span></a>
+		${state ? `<small>${escapeHtml(state)}</small>` : ''}
+	</li>`;
 }
 
 function renderStudyResources(subject, subjectUrl) {
 	const grid = document.querySelector('[data-study-resources]');
 	if (!grid) return;
-
-	grid.innerHTML = (subject.studyResources ?? []).map(entry => {
+	const cards = [];
+	const classNotes = subject.classNotes;
+	if (classNotes?.hrefPattern && classNotes.availableUnits?.length) {
+		const numbers = [...classNotes.availableUnits].map(Number).sort((a, b) => a - b);
+		cards.push({ order: 0, html: `<article class="study-tool-card resource-hub-card" data-resource-kind="class-notes">
+			<div class="tool-label">College learning</div><h3>Class Notes</h3>
+			<p>${escapeHtml(classNotes.label || 'Class notes')} · Organised by unit.</p>
+			<ul class="resource-unit-links">${numbers.map(number => unitLink({ number }, subject,
+				new URL(classNotes.hrefPattern.replace('{unit}', number), subjectUrl).href)).join('')}</ul>
+		</article>` });
+	}
+	const order = { revision: 1, pyqs: 2, worksheets: 3, 'question-sets': 4, other: 5 };
+	for (const entry of subject.studyResources || []) {
+		const kind = resourceKind(entry);
 		if (Array.isArray(entry.unitResources)) {
-			return `<section class="study-resource-group" id="${escapeHtml(entry.id || 'unit-revision')}" aria-label="${escapeHtml(entry.title)}">
-				<h3 class="section-title">${escapeHtml(entry.title)}</h3>
-				<p class="section-note">${escapeHtml(entry.description || '')}</p>
-				<div class="study-unit-resource-grid">${entry.unitResources.map(unit => {
-					const metadata = subject.units.find(item => Number(item.number) === Number(unit.number));
-					return renderResourceCard({ ...unit, label: `Unit ${unit.number}`, title: metadata?.title || unit.title }, subjectUrl);
-				}).join('')}</div>
-			</section>`;
+			const available = entry.unitResources.filter(isAvailable);
+			if (!available.length) continue;
+			const pending = entry.unitResources.filter(unit => !isAvailable(unit));
+			cards.push({ order: order[kind], html: `<article class="study-tool-card resource-hub-card" id="${escapeHtml(entry.id || 'unit-revision')}" data-resource-kind="${kind}">
+				<div class="tool-label">Revision</div><h3>${escapeHtml(entry.title)}</h3><p>${escapeHtml(entry.description || '')}</p>
+				<ul class="resource-unit-links">${available.map(unit => unitLink(unit, subject, new URL(unit.href, subjectUrl).href, unit.state)).join('')}</ul>
+				${pending.length ? `<p class="resource-availability">Not added yet: ${pending.map(unit => `Unit ${escapeHtml(unit.number)}`).join(', ')}.</p>` : ''}
+			</article>` });
+			continue;
 		}
 		const resource = { ...subject.practice?.[entry.practiceKey], ...entry };
-		return renderResourceCard(resource, subjectUrl);
-	}).join('');
+		if (!isAvailable(resource)) continue;
+		cards.push({ order: order[kind], html: renderResourceCard(resource, subjectUrl, kind) });
+	}
+	cards.sort((a, b) => a.order - b.order);
+	grid.classList.toggle('study-tool-grid-single', cards.length === 1);
+	grid.innerHTML = cards.map(card => card.html).join('') || '<p class="resource-availability">College and exam resources have not been added yet.</p>';
 }
 
-function renderResourceCard(resource, subjectUrl) {
-	const href = resource.href ? new URL(resource.href, subjectUrl).href : null;
-	const tag = href ? 'a' : 'article';
-	return `
-			<${tag} class="study-tool-card${href ? ' study-tool-link' : ''}"${href ? ` href="${escapeHtml(href)}"` : ''}>
-				<div class="tool-label">${escapeHtml(resource.label)}</div>
-				<h3>${escapeHtml(resource.title)}</h3>
-				<p>${escapeHtml(resource.description)}</p>
-				${resource.state ? `<span class="tool-state">${escapeHtml(resource.state)}</span>` : ''}
-				${href && resource.action ? `<span class="tool-action">${escapeHtml(resource.action)} →</span>` : ''}
-			</${tag}>
-		`;
-}
-
-function buildAtomPreview(atoms) {
-	if (!atoms.length) return 'Unit syllabus metadata unavailable.';
-	const visible = atoms.slice(0, 5);
-	const remaining = atoms.length - visible.length;
-	return visible.join(' · ') + (remaining > 0 ? ` · +${remaining} more` : '');
-}
-
-function setText(selector, value) {
-	const element = document.querySelector(selector);
-	if (element && value !== undefined && value !== null) element.textContent = value;
+function renderResourceCard(resource, subjectUrl, kind) {
+	const href = new URL(resource.href, subjectUrl).href;
+	return `<article class="study-tool-card resource-hub-card" data-resource-kind="${kind}">
+		<div class="tool-label">${escapeHtml(resource.label || '')}</div><h3>${escapeHtml(resource.title)}</h3>
+		${resource.description ? `<p>${escapeHtml(resource.description)}</p>` : ''}
+		${resource.state ? `<span class="tool-state">${escapeHtml(resource.state)}</span>` : ''}
+		<a class="resource-open-link" href="${escapeHtml(href)}">${escapeHtml(resource.action || 'Open resource')} →</a>
+	</article>`;
 }
 
 function escapeHtml(value) {
-	return String(value ?? '')
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;')
-		.replaceAll("'", '&#039;');
+	return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 }
-})();
+}());
