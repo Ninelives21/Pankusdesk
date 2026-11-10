@@ -52,13 +52,20 @@
 	color: var(--text-strong);
 }
 
-/* Unit-level navigation: three study pages + previous/next unit index links. */
+/* Unit-level resource navigation and previous/next unit links. */
 .unit-navigation-stack {
 	display: grid;
 	gap: .55rem;
 	width: fit-content;
 	max-width: 100%;
 	margin: 1rem 0 1.5rem;
+}
+
+.unit-subject-back {
+	justify-self: start;
+	padding: .45rem 0;
+	font-weight: 700;
+	color: var(--primary);
 }
 
 .unit-resource-nav {

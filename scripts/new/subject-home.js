@@ -1,147 +1,62 @@
 (function () {
-document.addEventListener('DOMContentLoaded', () => {
-	initSubjectHome();
+'use strict';
+const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+async function json(path) {
+ const response = await fetch(new URL(path, document.baseURI));
+ if (!response.ok) throw new Error(`Resource metadata returned ${response.status}`);
+ return response.json();
+}
+function card(resource, root) {
+ const href = resource.href ? new URL(resource.href, root).href : '';
+ return `<article class="study-tool-card"${resource.id ? ` id="${esc(resource.id)}"` : ''}><div class="tool-label">${esc(resource.label || 'Study resource')}</div><h3>${esc(resource.title)}</h3><p>${esc(resource.description)}</p>${resource.state ? `<span class="tool-state">${esc(resource.state)}</span>` : ''}${resource.links || ''}${resource.items ? `<ul class="subject-resource-links">${resource.items.map(item => `<li><a href="${esc(new URL(item.href,root))}">${esc(item.title)}</a></li>`).join('')}</ul>` : ''}${href ? `<a class="tool-action" href="${esc(href)}">${esc(resource.action || 'Open resource')} →</a>` : ''}</article>`;
+}
+function unitLinks(config, subject, root) {
+ return (config.availableUnits || []).map(number => {
+  const unit = subject.units.find(item => Number(item.number) === Number(number));
+  const href = new URL(config.hrefPattern.replace('{unit}', number), root);
+  return `<li><a href="${esc(href)}">Unit ${number} · ${esc(unit?.title || '')}</a></li>`;
+ }).join('');
+}
+document.addEventListener('DOMContentLoaded', async () => {
+ const page = document.querySelector('.subject-home');
+ if (!page) return;
+ const targets = ['questions','notes'];
+ try {
+  const [extra, subject] = await Promise.all([json(page.dataset.indexResourcesJson), page.dataset.subjectJson ? json(page.dataset.subjectJson) : Promise.resolve(null)]);
+  const root = new URL(page.dataset.indexResourcesJson, document.baseURI);
+  const questions = [...extra.questions], notes = [...extra.notes];
+  if (subject) {
+   const identity = document.createElement('p');
+   identity.className = 'subject-identity';
+   identity.textContent = `${subject.code} · ${subject.credits} credits`;
+   page.querySelector('h1').after(identity);
+  }
+  if (subject) {
+   for (const entry of subject.studyResources || []) {
+    const resource = {...subject.practice?.[entry.practiceKey], ...entry};
+    if (entry.unitResources) {
+     notes.push({...resource, links:`<ul class="subject-resource-links">${entry.unitResources.filter(unit => unit.href).map(unit => `<li><a href="${esc(new URL(unit.href, root))}">Unit ${unit.number} · ${esc(subject.units.find(item => item.number === unit.number)?.title || unit.title || '')}</a>${unit.state ? ` <small>${esc(unit.state)}</small>` : ''}</li>`).join('')}</ul>`});
+    } else if (resource.href || resource.state) {
+     const isQuestion = !!entry.practiceKey || /worksheet/i.test(entry.title);
+     (isQuestion ? questions : notes).push(resource);
+    }
+   }
+   const classes = subject.classNotes;
+   if (classes?.availableUnits?.length) notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
+   const bookQuestions = subject.practice?.unitQuestions;
+   if (bookQuestions?.availableUnits?.length) questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
+   notes.push({title:'Textbook Notes',label:'Textbook reference',description:'Existing textbook-led pages, organised by unit. Publication states are shown as recorded; draft and scaffold pages are still in progress.',links:`<ul class="subject-resource-links" id="subject-unit-grid">${subject.units.map(unit => `<li><a href="${esc(new URL(`unit-${unit.number}.html`,root))}">Unit ${unit.number} · ${esc(unit.title)}</a> <small>${esc(unit.publicationStatus)}</small></li>`).join('')}</ul>`});
+  }
+  for (const [key,resources] of [['questions',questions],['notes',notes]]) {
+   page.querySelector(`[data-${key}]`).innerHTML = resources.length ? resources.map(resource => card(resource,root)).join('') : `<p class="subject-empty">No ${key} have been added for this subject yet.</p>`;
+  }
+  page.dataset.homeReady = 'true';
+  const aliases = {'school-guidance-title':'questions','textbook-study':'subject-unit-grid'};
+  const hash = decodeURIComponent(location.hash.slice(1));
+  document.getElementById(aliases[hash] || hash)?.scrollIntoView();
+ } catch (error) {
+  console.error('Subject resources could not be loaded:',error);
+  for (const key of targets) page.querySelector(`[data-${key}]`).innerHTML = '<p class="unit-error">Resources could not be loaded. Please reload this page or try again later.</p>';
+ }
 });
-
-async function initSubjectHome() {
-	const page = document.querySelector('.subject-page');
-	if (!page) return;
-
-	try {
-		const subjectUrl = new URL(page.dataset.subjectJson, document.baseURI);
-		const syllabusUrl = new URL(page.dataset.syllabusJson, document.baseURI);
-		const kbStatusUrl = new URL(page.dataset.kbStatusJson, document.baseURI);
-
-		const [subject, syllabus, kbStatus] = await Promise.all([
-			fetchJson(subjectUrl.href),
-			fetchJson(syllabusUrl.href),
-			fetchJson(kbStatusUrl.href),
-		]);
-
-		renderSubjectIdentity(subject);
-		renderKbStatus(subject, kbStatus);
-		renderUnits(subject, syllabus, kbStatus, subjectUrl);
-		renderStudyResources(subject, subjectUrl);
-	} catch (error) {
-		console.error('Subject page load failed:', error);
-		const grid = document.querySelector('[data-unit-grid]');
-		if (grid) {
-			grid.innerHTML = '<div class="unit-error">Subject metadata could not be loaded. Open this page through Live Server or GitHub Pages so the JSON files can be fetched.</div>';
-		}
-		const resources = document.querySelector('[data-study-resources]');
-		if (resources) {
-			resources.innerHTML = '<p class="unit-error">Study resources could not be loaded. Please reload the page.</p>';
-		}
-	}
-}
-
-async function fetchJson(url) {
-	if (!url) throw new Error('Missing JSON source URL.');
-	const response = await fetch(url, { cache: 'no-store' });
-	if (!response.ok) throw new Error(`${url} returned ${response.status}`);
-	return response.json();
-}
-
-function renderSubjectIdentity(subject) {
-	setText('[data-subject-name]', subject.name);
-	setText('[data-subject-code]', subject.code);
-	setText('[data-subject-credits]', `${subject.credits} credits`);
-}
-
-function renderKbStatus(subject, kbStatus) {
-	setText('[data-unit-count]', subject.units.length);
-	setText('[data-r25-count]', kbStatus.r25_atom_count);
-	setText('[data-gap-count]', kbStatus.gap_filled_topic_ids.length);
-	const sourceGaps = Number(kbStatus.source_gap_count ?? 0);
-	setText('[data-kb-label]', sourceGaps === 0 ? `${subject.regulation} coverage checked` : `${subject.regulation} coverage in progress`);
-}
-
-function renderUnits(subject, syllabus, kbStatus, subjectUrl) {
-	const grid = document.querySelector('[data-unit-grid]');
-	if (!grid) return;
-
-	const syllabusByUnit = new Map(syllabus.units.map(unit => [Number(unit.unit), unit]));
-	const supplementedUnits = new Set(
-		(kbStatus.gap_filled_topic_ids ?? [])
-			.map(topicId => Number(topicId.match(/^u(\d+)-/)?.[1]))
-			.filter(Number.isFinite),
-	);
-
-	grid.innerHTML = subject.units.map(unit => {
-		const syllabusUnit = syllabusByUnit.get(Number(unit.number));
-		const atoms = syllabusUnit?.atoms ?? [];
-		const preview = buildAtomPreview(atoms);
-		const hasSupplement = supplementedUnits.has(Number(unit.number));
-		const href = new URL(`unit-${unit.number}.html`, subjectUrl).href;
-		return `
-			<a class="unit-card" href="${escapeHtml(href)}">
-				<div class="unit-card-top">
-					<div class="unit-number">Unit ${unit.number}</div>
-					${hasSupplement ? '<span class="unit-badge">Supplemented source</span>' : ''}
-				</div>
-				<h2>${escapeHtml(unit.title)}</h2>
-				<p class="unit-topic-preview">${escapeHtml(preview)}</p>
-				<div class="unit-card-footer">
-					<span>${atoms.length} ${escapeHtml(subject.regulation)} syllabus points</span>
-					<strong>Open unit →</strong>
-				</div>
-			</a>
-		`;
-	}).join('');
-}
-
-function renderStudyResources(subject, subjectUrl) {
-	const grid = document.querySelector('[data-study-resources]');
-	if (!grid) return;
-
-	grid.innerHTML = (subject.studyResources ?? []).map(entry => {
-		if (Array.isArray(entry.unitResources)) {
-			return `<section class="study-resource-group" id="${escapeHtml(entry.id || 'unit-revision')}" aria-label="${escapeHtml(entry.title)}">
-				<h3 class="section-title">${escapeHtml(entry.title)}</h3>
-				<p class="section-note">${escapeHtml(entry.description || '')}</p>
-				<div class="study-unit-resource-grid">${entry.unitResources.map(unit => {
-					const metadata = subject.units.find(item => Number(item.number) === Number(unit.number));
-					return renderResourceCard({ ...unit, label: `Unit ${unit.number}`, title: metadata?.title || unit.title }, subjectUrl);
-				}).join('')}</div>
-			</section>`;
-		}
-		const resource = { ...subject.practice?.[entry.practiceKey], ...entry };
-		return renderResourceCard(resource, subjectUrl);
-	}).join('');
-}
-
-function renderResourceCard(resource, subjectUrl) {
-	const href = resource.href ? new URL(resource.href, subjectUrl).href : null;
-	const tag = href ? 'a' : 'article';
-	return `
-			<${tag} class="study-tool-card${href ? ' study-tool-link' : ''}"${href ? ` href="${escapeHtml(href)}"` : ''}>
-				<div class="tool-label">${escapeHtml(resource.label)}</div>
-				<h3>${escapeHtml(resource.title)}</h3>
-				<p>${escapeHtml(resource.description)}</p>
-				${resource.state ? `<span class="tool-state">${escapeHtml(resource.state)}</span>` : ''}
-				${href && resource.action ? `<span class="tool-action">${escapeHtml(resource.action)} →</span>` : ''}
-			</${tag}>
-		`;
-}
-
-function buildAtomPreview(atoms) {
-	if (!atoms.length) return 'Unit syllabus metadata unavailable.';
-	const visible = atoms.slice(0, 5);
-	const remaining = atoms.length - visible.length;
-	return visible.join(' · ') + (remaining > 0 ? ` · +${remaining} more` : '');
-}
-
-function setText(selector, value) {
-	const element = document.querySelector(selector);
-	if (element && value !== undefined && value !== null) element.textContent = value;
-}
-
-function escapeHtml(value) {
-	return String(value ?? '')
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;')
-		.replaceAll("'", '&#039;');
-}
 })();

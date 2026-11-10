@@ -52,10 +52,11 @@ function renderNeighbourLink(unit, direction, subjectUrl) {
 function render({ subject, subjectUrl, unitNumber, active = 'text' }) {
 	if (!subject || !subjectUrl || !unitNumber) return '';
 	const unitLabel = toRoman(Number(unitNumber));
+	const isTextbookPage = active === 'text' || active === 'questions';
 	const links = [
 		{
 			key: 'text',
-			label: 'Text',
+			label: isTextbookPage ? 'Textbook Notes' : 'Text',
 			href: new URL(`unit-${unitNumber}.html`, subjectUrl).href,
 		},
 	];
@@ -71,33 +72,37 @@ function render({ subject, subjectUrl, unitNumber, active = 'text' }) {
 		dummy: !questionsAvailable,
 	});
 
-	const c = subject.classNotes;
-	const classNotesAvailable = Boolean(c?.hrefPattern && unitIsAvailable(c.availableUnits, unitNumber));
-	links.push({
-		key: 'class-notes',
-		label: c?.label || "Priyanka's Class Notes",
-		href: classNotesAvailable
-			? new URL(c.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href
-			: '#',
-		dummy: !classNotesAvailable,
-	});
+	// Class and revision notes are reached from the subject index, not textbook tabs.
+	if (!isTextbookPage) {
+		const c = subject.classNotes;
+		const classNotesAvailable = Boolean(c?.hrefPattern && unitIsAvailable(c.availableUnits, unitNumber));
+		links.push({
+			key: 'class-notes',
+			label: c?.label || "Priyanka's Class Notes",
+			href: classNotesAvailable
+				? new URL(c.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href
+				: '#',
+			dummy: !classNotesAvailable,
+		});
 
-	const s = subject.shortNotes;
-	const shortNotesAvailable = Boolean(s?.hrefPattern && unitIsAvailable(s.availableUnits, unitNumber));
-	links.push({
-		key: 'short-notes',
-		label: s?.label || 'Short Notes',
-		href: shortNotesAvailable
-			? new URL(s.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href
-			: '#',
-		dummy: !shortNotesAvailable,
-	});
+		const s = subject.shortNotes;
+		const shortNotesAvailable = Boolean(s?.hrefPattern && unitIsAvailable(s.availableUnits, unitNumber));
+		links.push({
+			key: 'short-notes',
+			label: s?.label || 'Short Notes',
+			href: shortNotesAvailable
+				? new URL(s.hrefPattern.replace('{unit}', String(unitNumber)), subjectUrl).href
+				: '#',
+			dummy: !shortNotesAvailable,
+		});
+	}
 
 	const neighbours = getNeighbourUnits(subject, unitNumber);
 	const hasNeighbourLinks = Boolean(neighbours.previous || neighbours.next);
 
 	return `
 		<div class="unit-navigation-stack">
+			<a class="unit-subject-back" href="${escapeHtml(new URL('index.html', subjectUrl).href)}">← Back to ${escapeHtml(subject.shortName || subject.name || 'subject')}</a>
 			<nav class="unit-resource-nav" aria-label="Unit ${escapeHtml(unitLabel)} study pages">
 				${links.map(link => `
 					<a class="unit-resource-link${active === link.key ? ' is-active' : ''}${link.dummy ? ' is-dummy' : ''}" href="${escapeHtml(link.href)}"${active === link.key ? ' aria-current="page"' : ''}${link.dummy ? ' aria-disabled="true" title="Page not added yet"' : ''}>
