@@ -799,6 +799,8 @@ function renderAcademicEvent(event) {
 			<div class="academic-event-date">
 				${escapeHtml(dateText)}
 			</div>
+            ${event.description ? `<p>${escapeHtml(event.description)}</p>` : ''}
+            ${event.noticeHref ? `<a href="${escapeHtml(new URL(event.noticeHref, document.baseURI).href)}">View college notice →</a>` : ''}
 		</article>
 	`;
 }
