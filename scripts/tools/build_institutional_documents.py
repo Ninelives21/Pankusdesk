@@ -153,10 +153,10 @@ def build(key,path):
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <base id="site-base" href="/"><script>if(location.hostname.endsWith('github.io')) document.getElementById('site-base').href='/Pankusdesk/';</script>
 <title>{E(title)} · Panku’s Desk</title>{css}<script src="scripts/new/navbar.js" defer></script><script src="scripts/new/study-ui.js" defer></script><script src="scripts/new/institutional-documents.js" defer></script></head>
-<body><div id="navbar-new"></div><main class="page-shell institutional-document">
+<body><div id="navbar-new"></div><main class="page-shell institutional-document" id="document-top">
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Panku’s Desk</a> › <a href="index.html#important-documents">Important Documents</a> › {E(title)}</nav>
 <header><h1>{E(title)}</h1><p>{E(intro)}</p><p class="document-source">Source: {E(filename)} · {len(doc)} PDF pages. HTML edition; original wording and source page references retained. Decorative covers and logos are omitted.</p>{extras}</header>
-<div class="document-layout"><details class="document-contents" open><summary>Contents</summary><nav aria-label="Document contents">{''.join(nav)}</nav></details><article class="document-body">{body}</article></div>
+<div class="document-layout"><aside class="document-sidebar" aria-label="Document navigation"><a class="document-back-top" href="{out}#document-top">↑ Back to top</a><details class="document-contents" open><summary>Contents</summary><nav aria-label="Document contents">{''.join(nav)}</nav></details></aside><article class="document-body">{body}</article></div>
 </main></body></html>\n'''
  htmltext=htmltext.replace('</p>', '</p>\n').replace('</h3>', '</h3>\n').replace('</tr>', '</tr>\n').replace('</section>', '</section>\n')
  (ROOT/out).write_text(htmltext)

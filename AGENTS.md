@@ -42,6 +42,8 @@ The current repository and explicit instructions for the task take precedence ov
 
 ## Document storage preference
 
+For every document or study page with left navigation, place a visible **Back to top** control at the top of that navigation, above its contents links. Keep it available when the contents list is collapsed on phones.
+
 For future institutional document intake, publish readable HTML with contents navigation for long documents. Avoid committing source PDF binaries or embedding PDF viewers unless the user explicitly asks. Retain source filename, checksum and page references in a small manifest; check storage cost before adding binary assets. Do not rewrite Git history to remove older uploads.
 
 ## 5. Development and validation
