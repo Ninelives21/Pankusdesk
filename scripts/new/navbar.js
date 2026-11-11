@@ -54,11 +54,6 @@ function updateSemesterUtilityLinks(semester) {
 			'calendar-nav-link',
 		);
 
-	const progressLink =
-		document.getElementById(
-			'progress-nav-link',
-		);
-
 	if (calendarLink) {
 		calendarLink.href =
 			semester.routes?.calendar ??
@@ -69,23 +64,8 @@ function updateSemesterUtilityLinks(semester) {
 		calendarLink.hidden = false;
 	}
 
-	setOptionalNavLink(
-		progressLink,
-		semester.routes?.progress,
-	);
 }
 
-function setOptionalNavLink(link, route) {
-	if (!link) return;
-
-	if (route) {
-		link.href = route;
-		link.hidden = false;
-		return;
-	}
-
-	link.hidden = true;
-}
 
 function buildSubjectDropdown(semesterSummary, semesterData) {
 	const menu = document.getElementById('subject-dropdown-menu');
@@ -199,7 +179,9 @@ function highlightCurrentNav() {
 	const path = window.location.pathname;
 	let key = 'home';
 
-	if (/\/college\/[^/]+\/progress(?:\.html)?$/.test(path)) {
+	if (path.includes('/college/documents/') || path.endsWith('/exams-notices.html')) {
+		key = 'documents';
+	} else if (/\/college\/[^/]+\/progress(?:\.html)?$/.test(path)) {
 		key = 'progress';
 	} else if (/\/college\/calendar(?:\.html)?$/.test(path)) {
 		key = 'calendar';

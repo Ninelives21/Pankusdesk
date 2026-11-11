@@ -40,6 +40,12 @@ The current repository and explicit instructions for the task take precedence ov
 - Image-location checks prove only that the asset loads. Never claim technical/semantic correctness of arrows, polarity, labels, circuit topology, dot/cross symbols, axes, or spatial relationships without a separate verified comparison with the authoritative source.
 - Do not add raw textbook scans or private notebook photographs to the public repository by default. Ask about publication rights if the source or permitted use is unclear.
 
+## Document storage preference
+
+For every document or study page with left navigation, place a visible **Back to top** control at the top of that navigation, above its contents links. Keep it available when the contents list is collapsed on phones.
+
+For future institutional document intake, publish readable HTML with contents navigation for long documents. Avoid committing source PDF binaries or embedding PDF viewers unless the user explicitly asks. Retain source filename, checksum and page references in a small manifest; check storage cost before adding binary assets. Do not rewrite Git history to remove older uploads.
+
 ## 5. Development and validation
 
 - GitHub Pages currently publishes static repository files via `.github/workflows/static.yml` on pushes to `main`. No Node, Jekyll/Ruby, database, or package installation is required for ordinary work. Do not replace the deployment approach without approval.
