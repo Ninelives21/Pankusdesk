@@ -1,34 +1,33 @@
-# Chemistry college/senior notes consolidation
+# Chemistry notes and answer consolidation
 
-This review covers all five units and the latest supplied archives. It is an inventory and selected-content consolidation, not certification that every slide, scan, figure or historical solution is complete.
+The bank now contains **458 solved entries**: 374 newly authored entries (244 previously typed prompts plus 130 additional embedded question occurrences), and 84 retained entries (80 Unit I/II questions and four hardness problems). Repeated sheets retain their own numbering and source identity; common answers use shared modules to prevent divergent versions. These are supplied question banks, not authenticated PYQs or lecturer-approved answer keys.
 
-## What is published
+## Private reference corpus
 
-- One College & Senior Notes collection links all five existing notes pages, with per-unit source inventories and printing guidance. The separate Unit-wise Question Bank & Solutions page has exactly six contents choices: Units I–V and Consolidated · All units. Its Back to top control stays above Contents. Selecting a unit filters the same single copy of the content; Consolidated reveals all five units.
-- The inventory has 71 distinct byte identities and 110 recorded archive/filename appearances. Exact duplicates share a record; confirmed re-exports have explicit equivalence links rather than another teaching copy. Different formats without proven visual identity remain separate records.
-- Original Unit I–V topic prose, existing answers, figures, source anchors and correction panels are retained. Standalone Unit I/II question banks and the hardness problem sheet now live in question-banks.html; integral source teaching examples remain in Notes. Four labelled, source-linked PankusDesk explanations are additive: membrane selection, anodic area effect, catalyst contact/heat transfer, and FRP fibre/matrix roles.
-- The question collection displays all 244 already-recorded typed prompts in nine source groups. Original numbering, old-syllabus classifications and both Unit V variants remain separate. The 80 existing Unit I/II question-bank entries and four hardness problems are moved intact into question-banks.html. Their original IDs remain there; old notes-page fragment URLs redirect to the matching bank entry.
-- Additional embedded question collections are listed with source pages and pending transcription status. The two OCR pages explicitly marked not-for-display are not published as verified question wording. Unverified source model answers are not promoted to solutions.
-- Textbook notes, unit publication states, existing approved figure assets and textbook/class-note data are unchanged.
+The private `chemistry-reference.json` is kept outside the public Git checkout. It holds source identities, page/record text, low-text-page OCR, existing knowledge JSON, retained solutions, source conflicts, authored answers and a topic/question retrieval index. It is a retrievable reference file, not permanent model training. `reference-corpus-audit.json` contains a checksum and non-private accounting only. Source PDFs/PPTs, textbook photographs and the administrative student report are not committed.
 
-## Unit-by-unit selections and remaining work
+All 71 inventoried identities have been resolved; the student report and unusable one-page export remain excluded from scientific evidence. Duplicate exports remain identifiable. Native/OCR text extraction does **not** certify every raster equation, embedded image, slide layout or diagram. Legacy PPT text is extracted from binary text records; it is not misreported as a rendered slide-by-slide visual transcription. Textbook captures are retained privately as a separate OCR collection; deferred chapter-end exercise publication is unchanged.
 
-1. **Water:** retain the original two source transcripts, numericals and question answers. Add qualitative membrane selection from the 70-page source, without copying numeric ranges affected by source/encoding differences. The WIL student report and unusable one-page file remain excluded. Mixed Unit I/II slides are described by their real page ranges. Legacy PPTs, many slide images and additional embedded question pages still need full visual/source review.
-2. **Electrochemistry and corrosion:** retain all existing corrections and figures. The additional 14-page corrosion handout supports the area-effect explanation, which agrees with the existing answer. Supporting corrosion decks and older coating lessons are not silently promoted to core requirements. Their full visual transcription remains pending.
-3. **Energy and batteries:** retain the two typed primary packets and add the selected cracking explanation. Moving-bed/fluidised-bed wording is explicitly source-specific. Coal analysis, knocking and methanol-cell sources remain supplementary/outside the explicit R25 core. Existing required process/battery figures remain pending. Handwritten/image-heavy notes are not certified as a full transcription.
-4. **Polymers:** retain the R25 packet and add source-linked fibre/matrix roles. Older PET/PMMA/polycarbonate/Bakelite, manufacturing and extended thermal-property sources remain separately inventoried. The 27-page scan and legacy conducting-polymer PPT are not yet fully visually ingested. Required polymer reaction/figure checks remain pending.
-5. **Spectroscopy and materials:** all latest files reconcile to existing sources. Retain all existing qualifications; no duplicate source is independent confirmation. Supporting STM/AFM/biosensor image pages, multimedia and required source figures remain pending. Detailed nano-synthesis and lubricant files are outside the explicit core.
+## Answers and source qualifications
 
-## Answer-impact review
+Supplied notes are the first source. General chemistry is used only for source gaps/contradictions and is explicitly qualified in answer metadata and displayed explanations. Older-syllabus questions are still answered and labelled supplementary; original prompts are not silently filtered away. Long answers include process/construction/working/equations/applications as relevant; short answers use focused selections, and labelled subparts use separate panels.
 
-`consolidation-answer-review.json` records the checked relationships between the selected additions and existing/pending questions. Existing Unit I/II answers are unchanged. The MF pore-size range discrepancy is preserved for follow-up; it is not silently corrected. This limited impact check does not renew verification of all historical answers.
+Checks address PTFE classification, Kevlar acid versus acid-chloride routes, hydrogen production, lithium-ion charge/direction, fluidized-bed terminology, STM gap/current, active CO sensing versus passive thermal detection, glucose atom balance, coal analysis and conditional material-performance claims. No unprovided numerical measurements, exam limits or teacher approval are invented. Two retained Unit I answers were updated with explicit comparison records: hard scale/EDTA (textbook pp.7–8) and the newer MF range (handout PDF pp.61–62). Original questions, IDs and figure binaries are preserved; the original relocation hash remains in the revision record.
 
-## Source/storage boundary
+## Pages and navigation
 
-No PDF, PPT, scan, private student report or new drawing is committed. Originals remain in the private intake workspace. No figure is generated, redrawn, recoloured or replaced under this consolidation. The current figure-production freeze remains in force. Existing pending drawing work is visible on the notes pages and must not be hidden by a ready-status promotion.
+Question banks live in `question-banks.html`, with exactly six left-nav choices (five units plus Consolidated) and Back to top above Contents, including on phones. Notes remain separate. New source qualifications are additive labelled explanations on the relevant Unit IV/V notes. Stale “future bank / answers pending” messages are removed. Existing notes-question fragment redirects continue working.
+
+## Outstanding gate
+
+New drawings are not generated under AGENTS.md’s figure freeze. Questions explicitly requiring diagrams display a separate drawing requirement; existing approved figures remain intact. Source-figure integration approval is outstanding. The PR must not be described as fully diagram-complete or lecturer-approved; textbook publication states remain unchanged.
 
 ## Rebuild and verification
 
-- `python3 scripts/tools/build_chemistry_collections.py` rebuilds the collection/question pages and additive unit panels from the committed inventory and additions JSON.
-- `python3 scripts/tools/verify_chemistry_collections.py` checks source identities, all typed prompts, cited additions and local links/anchors.
-- Run the three baseline college/BEE/MAC validators and the existing Chemistry structure/browser checks. Screenshots, HTML character accounting and link checks do not by themselves establish academic or figure correctness.
+- `python3 scripts/tools/build_chemistry_collections.py`
+- `python3 scripts/tools/verify_chemistry_collections.py`
+- `python3 scripts/tools/verify_chemistry_answers.py`
+- `python3 scripts/tools/verify_cfe_revision_structure.py`
+- Three baseline college/BEE/MAC verifiers and detailed Chemistry browser regression.
+
+The answers verifier checks coverage, real source IDs/page bounds, paragraph selections and subpart labels, independently recomputes repeated hardness cases, and checks selected atom/charge balances. Browser verification covers desktop/tablet/phone, filtered/consolidated views, answer deep links, old redirects, Back to top, figures and the GitHub Pages base path. Passing structural tests is not proof of teacher approval or every source drawing’s correctness.

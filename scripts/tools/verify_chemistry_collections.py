@@ -17,10 +17,21 @@ def main():
   if s.get('equivalent_to'):assert s['equivalent_to'] in ids
   assert '/workspace/' not in json.dumps(s)
  bank=json.loads((R/'question-bank-pending.json').read_text());qdoc=Document((S/'question-banks.html').read_text())
- for q in bank['questions']:
+ all_questions=bank['questions']+bank.get('additional_questions',[])
+ solutions=json.loads((R/'question-bank-solutions.json').read_text())
+ assert len({q['id'] for q in all_questions})==len(all_questions)
+ assert set(solutions['answers'])=={q['id'] for q in all_questions}
+ for q in all_questions:
   assert q['id'] in qdoc.ids,q['id']
   assert normal(q['original_prompt']) in normal(qdoc.ids[q['id']].text()),q['id']
- assert len([n for n in qdoc.nodes if n.has_class('collection-question')])==len(bank['questions'])
+  node=qdoc.ids[q['id']];assert node.tag=='details',q['id']
+  assert any(n.has_class('study-example-solution') for n in node.elements()),q['id']
+  answer=solutions['answers'][q['id']]
+  assert answer.get('modules') or answer.get('existing_answer_id') or answer.get('existing_answer_ids'),q['id']
+  for key in answer.get('modules',[]):
+   module=solutions['modules'][key];assert module['source_refs'] and module['paragraphs'],key
+   assert all(len(p.strip())>20 for p in module['paragraphs']),key
+ assert len([n for n in qdoc.nodes if n.has_class('collection-question')])==len(all_questions)
  relocation=json.loads((R/'question-bank-relocation.json').read_text())
  nav=next(n for n in qdoc.nodes if n.tag=='nav' and n.attrs.get('aria-label')=='Collection contents')
  assert len([n for n in nav.elements() if n.tag=='a'])==6

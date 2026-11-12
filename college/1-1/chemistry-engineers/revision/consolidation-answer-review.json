@@ -1,51 +1,24 @@
 {
-  "scope": "Source-driven answer-impact check for this consolidation. This is not a fresh audit of every historical answer.",
-  "existing_answers_changed": false,
-  "items": [
-    {
-      "unit": 1,
-      "question_id": "qa-essay-11",
-      "page": "question-banks.html",
-      "source": "Water and Its Treatment (class on 07-02-2026) (1).pdf",
-      "source_pages": [
-        61,
-        62
-      ],
-      "finding": "Qualitative MF/UF/NF roles agree. The new deck gives MF 0.1\u20131 micrometres; the existing answer labels 0.1\u201310 micrometres as typical in its supplied notes. These ranges are not silently reconciled or overwritten. Native extraction also has unit-symbol ambiguity on p.61; its numeric table is withheld pending visual comparison.",
-      "decision": "Existing source-specific table retained. Add only qualitative explanation; numerical-range verification remains open.",
-      "reviewed_on_page": "end-sem-notes.html"
-    },
-    {
-      "unit": 2,
-      "question_id": "u2-qa-short-22",
-      "page": "question-banks.html",
-      "source": "Unit-2 Corrosion (1).pdf",
-      "source_pages": [
-        9,
-        10
-      ],
-      "finding": "Existing answer already explains current concentration on a small anode. New handout supports the same qualitative area effect.",
-      "decision": "Existing answer retained; no correction justified by this source.",
-      "reviewed_on_page": "end-sem-unit-2.html"
-    },
-    {
-      "unit": 3,
-      "question_id": "cfe-senior-u3-q-r25-essay-2",
-      "page": "question-banks.html",
-      "finding": "New cracking slides clarify contact, heat transfer and regeneration but repeat fluidised/moving-bed terminology. Required process figure remains pending.",
-      "decision": "Keep question visible and solution pending. Do not invent a verified answer or substitute a different process figure."
-    },
-    {
-      "unit": 4,
-      "question_id": "cfe-senior-u4-q-r25-essay-7",
-      "page": "question-banks.html",
-      "finding": "FRP slides provide explicit fibre/matrix roles and application examples. These are now cited on the notes page.",
-      "decision": "Question retained; no new solution claimed."
-    },
-    {
-      "unit": 5,
-      "finding": "All latest uploaded sources already match the existing inventory. Existing STM-distance, glucose reaction and passive-IR qualifications are retained.",
-      "decision": "No re-upload is treated as independent verification or a reason to remove existing source cautions."
-    }
-  ]
+  "scope": "All 244 original typed prompts, 130 additional embedded source occurrences, retained Unit I/II banks and hardness problems. Question-led source review, not lecturer certification.",
+  "existing_answers_changed": true,
+  "retained_answer_revisions": [
+    "qa-short-17: textbook printed pp.7–8 inspected; stale access limitation removed; CaSO4/EDTA answer with superlative qualification.",
+    "qa-essay-11: newer source pp.61–62 visibly specify MF 0.1–1 μm; previous 0.1–10 range retained in comparison."
+  ],
+  "new_answers": 374,
+  "retained_entries": 84,
+  "source_conflicts": [
+    "PTFE is thermoplastic despite the question premise.",
+    "Green electrolysis requires renewable electricity.",
+    "Fluidized/moving-bed names are not universally interchangeable.",
+    "Li+ charge and discharge electron/ion directions corrected explicitly.",
+    "STM current decays approximately exponentially with gap.",
+    "NDIR CO analyser with an IR source is active; passive thermal detection is a distinct application.",
+    "Net glucose-to-gluconic-acid reaction requires water.",
+    "Coal Kjeldahl liberation needs two H2O; oxygen-by-difference requires a consistent ash/moisture basis.",
+    "Nitinol shape memory and superelasticity are distinct operating cycles."
+  ],
+  "fallback_policy": "User authorised general chemistry as absolute last resort. Per-module flags identify source gaps/contradictions and avoid asserting lecturer approval.",
+  "figure_status": "Existing approved figures retained unchanged. New diagram integration requires the separate outstanding approval; text completion does not imply drawing completion.",
+  "verification": "Source/page bounds, preserved question wording/numbering, explicit multipart panels, numerical recomputation, selected atom/charge balances and browser tests are separate evidence."
 }
