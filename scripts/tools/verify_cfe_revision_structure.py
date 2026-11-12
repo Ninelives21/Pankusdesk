@@ -105,10 +105,18 @@ def question_check(doc, records, unit, errors):
 def check(unit2_path):
     errors = []
     unit2 = Document(unit2_path.read_text())
+    # Preserve the original fixed contracts across the new notes/bank routes.
+    bank = Document((SUBJECT / 'question-banks.html').read_text())
+    unit2_bank = bank.ids['unit-2']
+    relocated = [unit2_bank, *unit2_bank.elements()]
+    unit2.nodes.extend(relocated)
+    unit2.ids.update({n.attrs['id']: n for n in relocated if 'id' in n.attrs})
     audit = json.loads((SUBJECT / 'revision/unit-2-source-audit.json').read_text())
     contract = json.loads((SUBJECT / 'revision/unit-2-structure-contract.json').read_text())
     question_check(unit2, audit['questions'], 2, errors)
-    unit1 = Document((SUBJECT / 'end-sem-notes.html').read_text())
+    unit1 = Document('')
+    unit1.nodes = [bank.ids['unit-1'], *bank.ids['unit-1'].elements()]
+    unit1.ids = {n.attrs['id']: n for n in unit1.nodes if 'id' in n.attrs}
     unit1_audit = json.loads((SUBJECT / 'revision/unit-1-qa-audit.json').read_text())
     question_check(unit1, unit1_audit['questions'], 1, errors)
     all_ids = [n.attrs['id'] for n in unit2.nodes if 'id' in n.attrs]
@@ -165,4 +173,4 @@ if __name__ == '__main__':
     if problems:
         print('CFE REVISION STRUCTURE: FAIL\n' + '\n'.join(problems))
         sys.exit(1)
-    print('CFE REVISION STRUCTURE: PASS — 44 Unit 2 and 36 Unit 1 questions; exact part boundaries, answer parts, source paragraphs/tables, figures and anchors')
+    print('CFE REVISION STRUCTURE: PASS — notes plus relocated bank: 44 Unit 2 and 36 Unit 1 questions; exact part boundaries, answer parts, source paragraphs/tables, figures and anchors')

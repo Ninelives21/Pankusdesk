@@ -32,7 +32,7 @@ def main():
   nav+=f'<a href="{anchor("college-notes.html",f"unit-{u}")}">Unit {u} · {E(title)}</a>'
   count=sum(s['unit']==u for s in inventory['sources']);extra=[a for a in additions if a['unit']==u]
   text=f'<p><a class="primary-button" href="{PREFIX}{notes(u)}">Read Unit {u} notes →</a></p><p>{count} distinct source files inventoried. Existing notes, source transcripts, figures and corrections are retained.</p>'
-  text+='<p><strong>Review status:</strong> '+('Existing notes and worked-answer pages retained; new selections are labelled separately.' if u<3 else 'Selected R25 notes remain draft. Required figures and textbook verification are still pending.')+'</p>'
+  text+='<p><strong>Review status:</strong> '+('Existing notes retained; worked answers are available separately in the question bank.' if u<3 else 'Selected R25 notes remain draft. Required figures and textbook verification are still pending.')+'</p>'
   if extra:text+='<p>Selected additions:</p><ul>'+''.join(f'<li><a href="{anchor(notes(u),a["id"])}">{E(a["title"])}</a></li>' for a in extra)+'</ul>'
   else:text+='<p>Re-uploaded sources reconcile to existing selections. No unsupported extra prose is added just to create another version.</p>'
   text+=f'<p><a href="{anchor("college-notes.html",f"sources-{u}")}">Inspect source inventory and remaining work →</a> · <a href="{PREFIX}question-banks.html">Question collections →</a></p>'
@@ -50,31 +50,36 @@ def main():
    rows.append(f'<tr id="{E(s["id"])}"><td><strong>{E(s["filename"])}</strong><br>{s["pages_or_slides"] or "—"} pages/slides<details><summary>Aliases and source identity</summary>{aliases}<p>SHA-256: <code>{E(s["sha256"])}</code></p></details></td><td>{E(s["status"].replace("_"," "))}<p>{E(s.get("review_state",""))}</p></td><td>{E(s.get("note",""))}{detail}</td></tr>')
   body+=section(f'sources-{u}',f'Unit {u} · source inventory',f'<div class="document-table collection-inventory"><table><caption>Source identities are retained even when their teaching content is duplicated or held for review.</caption><thead><tr><th scope="col">Source</th><th scope="col">Treatment</th><th scope="col">Selection / remaining work</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>')
  (S/'college-notes.html').write_text(shell('college-notes.html','College & Senior Notes','R25 notes for all five units, selected additions, source inventory and printing guidance.',nav,body))
- # Question sheets remain independent collections; do not render unverified source answers.
+ # One rendered copy of every bank, with five unit filters and one consolidated view.
  groups=defaultdict(list)
  for q in bank['questions']:groups[q['source_id']].append(q)
- sources={s['source_id']:s for s in bank['source_question_sets']}
- qnav=f'<a href="{anchor("question-banks.html","existing-answers")}">Existing answers · Units I–II</a>';qbody=section('existing-answers','Existing worked-answer collections',f'<ul><li><a href="{PREFIX}end-sem-notes.html#qa-short-questions">Unit I · 24 short and 12 essay questions</a></li><li><a href="{PREFIX}end-sem-notes.html#water-numericals">Unit I · four hardness problems</a></li><li><a href="{PREFIX}end-sem-unit-2.html#u2-qa-short">Unit II · 34 short, 9 essay and one unnumbered prompt</a></li></ul><p>Existing PankusDesk-authored answers, source corrections and figures remain on their original pages. No lecturer-approved answer key has been supplied.</p>')
+ source_sets={s['source_id']:s for s in bank['source_question_sets']}
+ units={u:[] for u in TITLES}
+ for u in [1,2]:
+  fragment=(R/f'question-sections/unit-{u}.html').read_text()
+  units[u].append('<div class="relocated-question-sections">'+fragment+'</div>')
  for sid,qs in groups.items():
-  source=sources.get(sid,{});name=source.get('file',qs[0]['source_filename']);unit=source.get('unit',qs[0].get('r25_unit'));id='bank-'+sid.lower();qnav+=f'<a href="{anchor("question-banks.html",id)}">Unit {unit} · {E(name)}</a>'
-  content=f'<p>{len(qs)} recorded question occurrences. Original numbering restarts within each source set. Overlapping sheets remain separate; the 25-question and 22-question Unit V variants both remain available.</p><p><strong>Questions only:</strong> worked solutions are not yet checked for these collections. Printed model answers are not being presented as verified solutions.</p>'
+  source=source_sets.get(sid,{});name=source.get('file',qs[0]['source_filename']);unit=int(source.get('unit',qs[0].get('r25_unit')));id='bank-'+sid.lower()
+  content=f'<p>{len(qs)} recorded question occurrences. Numbering restarts within each source set; overlapping sheets remain separate.</p><p><strong>Questions only:</strong> worked solutions are not yet checked for this collection. Printed model answers are not presented as verified solutions.</p>'
   for q in qs:
    number=q.get('source_question_number');label=f'{q.get("source_set","Question").replace("_"," ")} · '+(f'Q{number}' if number is not None else 'Unnumbered prompt')
-   prompt=E(q['original_prompt'])
-   # Keep explicit source subpart labels on separate lines; do not alter wording.
-   prompt=re.sub(r'(?<!\w)(\([a-h]\)|\([iv]{1,3}\))(?=\s)',r'<br><strong>\1</strong>',prompt)
+   prompt=E(q['original_prompt']);prompt=re.sub(r'(?<!\w)(\([a-h]\)|\([iv]{1,3}\))(?=\s)',r'<br><strong>\1</strong>',prompt)
    page=q.get('source_page_start');scope=q.get('selection','pending').replace('_',' ')
    content+=f'<article class="collection-question" id="{E(q["id"])}"><h3>{E(label)}</h3><p class="collection-prompt">{prompt}</p><p class="collection-status">Scope: {E(scope)}. {E(q.get("selection_reason",""))}</p><p class="document-source">{E(name)}'+(f' · PDF page {page}' if page else '')+'</p></article>'
-  qbody+=section(id,f'Unit {unit} · {name}',content)
- # Keep untranscribed embedded sheets visible as source collections, without exposing OCR marked not-for-display.
+  units[unit].append(f'<section class="bank-source-group" id="{E(id)}"><h3>{E(name)}</h3>{content}</section>')
  pending=[(1,'Water and its Treatment_notes.pdf','23–24'),(1,'Water and Its Treatment (class on 07-02-2026) (1).pdf','35–37'),(1,'02 Boiler Troubles & Electro Chemistry.pdf','64–69'),(3,'Unit_3_Notes.pdf','22–23'),(4,'3  Polymer Examples.pdf','33–34')]
- qnav+=f'<a href="{anchor("question-banks.html","source-questions-pending")}">Additional embedded question collections</a>'
- text='<p>These source collections have been identified but are not certified as a complete question transcription. Unverified OCR is not displayed as checked question wording. No collection is silently discarded.</p><ul>'
  for u,name,pages in pending:
   source=next((s for s in inventory['sources'] if s['unit']==u and s['filename']==name),None)
-  text+=f'<li>Unit {u} · {E(name)} · source pages {E(pages)} · transcription/duplicate reconciliation pending'+(f' · <a href="{anchor("college-notes.html",source["id"])}">Source record</a>' if source else '')+'</li>'
- qbody+=section('source-questions-pending','Additional embedded question collections',text+'</ul>')
- (S/'question-banks.html').write_text(shell('question-banks.html','College Question Banks','Each supplied collection retains its source identity, numbering and R25 scope. Existing answers and pending solutions are distinguished.',qnav,qbody))
+  text=f'<h3>Additional source collection · {E(name)}</h3><p>Source pages {E(pages)}. Full transcription and duplicate reconciliation are pending; unverified OCR is not displayed as checked wording.</p>'
+  if source:text+=f'<p><a href="{anchor("college-notes.html",source["id"])}">Source record and status</a></p>'
+  units[u].append('<aside class="source-notes-editorial">'+text+'</aside>')
+ qnav=''.join(f'<a href="{anchor("question-banks.html",f"unit-{u}")}" data-bank-unit="{u}">Unit {u} · {E(title)}</a>' for u,title in TITLES.items())+f'<a href="{anchor("question-banks.html","all-units")}" data-bank-unit="all">Consolidated · All units</a>'
+ qbody='<div id="all-units" class="bank-view-intro"><span id="existing-answers"></span><span id="source-questions-pending"></span><p id="bank-view-status" role="status">Consolidated view · all five units</p><p>College question banks and standalone practice sheets, not authenticated previous-year papers. Existing PankusDesk solutions are labelled; pending solutions and source transcriptions remain distinct. Original numbering and both Unit V source variants are retained.</p></div>'
+ for u,title in TITLES.items():qbody+=f'<section class="document-page bank-unit" id="unit-{u}" data-bank-unit-section="{u}"><h2>Unit {u} · {E(title)}</h2><p><a href="{PREFIX}{notes(u)}">Read Unit {u} notes →</a></p>'+''.join(units[u])+'</section>'
+ question_html=shell('question-banks.html','Unit-wise Question Bank & Solutions','Choose one unit or the consolidated view. Supplied questions, existing worked solutions and source status are kept together.',qnav,qbody)
+ for css in ['pages/end-sem-notes','pages/source-notes','pages/practice']:question_html=question_html.replace('</head>',f'<link rel="stylesheet" href="styles/new/{css}.css">\n</head>')
+ question_html=question_html.replace('<body>','<body data-question-bank="true">').replace('</head>','<script src="scripts/new/question-bank-navigation.js" defer></script>\n</head>')
+ (S/'question-banks.html').write_text(question_html)
  # Integrate labelled explanations immediately after their relevant topic heading.
  for u in TITLES:
   p=S/notes(u);text=p.read_text();text=re.sub(r'<!-- COLLEGE-ADDITION-START -->.*?<!-- COLLEGE-ADDITION-END -->','',text,flags=re.S)

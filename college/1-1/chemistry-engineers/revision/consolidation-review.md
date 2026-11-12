@@ -4,10 +4,10 @@ This review covers all five units and the latest supplied archives. It is an inv
 
 ## What is published
 
-- One College & Senior Notes collection links all five existing notes pages, with per-unit source inventories and printing guidance.
+- One College & Senior Notes collection links all five existing notes pages, with per-unit source inventories and printing guidance. The separate Unit-wise Question Bank & Solutions page has exactly six contents choices: Units I–V and Consolidated · All units. Its Back to top control stays above Contents. Selecting a unit filters the same single copy of the content; Consolidated reveals all five units.
 - The inventory has 71 distinct byte identities and 110 recorded archive/filename appearances. Exact duplicates share a record; confirmed re-exports have explicit equivalence links rather than another teaching copy. Different formats without proven visual identity remain separate records.
-- Original Unit I–V topic prose, existing answers, figures, source anchors and correction panels are retained. Four labelled, source-linked PankusDesk explanations are additive: membrane selection, anodic area effect, catalyst contact/heat transfer, and FRP fibre/matrix roles.
-- The question collection displays all 244 already-recorded typed prompts in nine source groups. Original numbering, old-syllabus classifications and both Unit V variants remain separate. Existing Unit I/II worked banks and hardness numericals remain linked at their original anchors.
+- Original Unit I–V topic prose, existing answers, figures, source anchors and correction panels are retained. Standalone Unit I/II question banks and the hardness problem sheet now live in question-banks.html; integral source teaching examples remain in Notes. Four labelled, source-linked PankusDesk explanations are additive: membrane selection, anodic area effect, catalyst contact/heat transfer, and FRP fibre/matrix roles.
+- The question collection displays all 244 already-recorded typed prompts in nine source groups. Original numbering, old-syllabus classifications and both Unit V variants remain separate. The 80 existing Unit I/II question-bank entries and four hardness problems are moved intact into question-banks.html. Their original IDs remain there; old notes-page fragment URLs redirect to the matching bank entry.
 - Additional embedded question collections are listed with source pages and pending transcription status. The two OCR pages explicitly marked not-for-display are not published as verified question wording. Unverified source model answers are not promoted to solutions.
 - Textbook notes, unit publication states, existing approved figure assets and textbook/class-note data are unchanged.
 

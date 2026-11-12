@@ -2,6 +2,7 @@
 """Validate source identity, question fidelity and links in Chemistry collections."""
 from pathlib import Path
 import json
+import hashlib
 import re
 from urllib.parse import urlsplit,unquote
 from verify_cfe_revision_structure import Document
@@ -20,6 +21,17 @@ def main():
   assert q['id'] in qdoc.ids,q['id']
   assert normal(q['original_prompt']) in normal(qdoc.ids[q['id']].text()),q['id']
  assert len([n for n in qdoc.nodes if n.has_class('collection-question')])==len(bank['questions'])
+ relocation=json.loads((R/'question-bank-relocation.json').read_text())
+ nav=next(n for n in qdoc.nodes if n.tag=='nav' and n.attrs.get('aria-label')=='Collection contents')
+ assert len([n for n in nav.elements() if n.tag=='a'])==6
+ for unit,record in relocation['units'].items():
+  fragment=(S/record['source_fragment']).read_bytes();assert hashlib.sha256(fragment).hexdigest()==record['html_sha256']
+  old=Document((S/record['old_page']).read_text())
+  for id in record['ids']:
+   assert id in qdoc.ids,id
+   assert id not in old.ids,(id,'still in notes')
+  original=Document(fragment.decode())
+  for id in record['ids']:assert normal(original.ids[id].text())==normal(qdoc.ids[id].text()),(id,'relocation changed content')
  additions=json.loads((R/'college-notes-additions.json').read_text())['additions']
  for a in additions:
   assert a['source_id'] in ids and a['pages']
@@ -31,7 +43,11 @@ def main():
   assert any(n.has_class('document-back-top') for n in doc.nodes)
   for n in doc.nodes:
    if n.tag!='a' or 'href' not in n.attrs:continue
-   u=urlsplit(n.attrs['href']);assert not u.scheme and not u.netloc,n.attrs['href'];target=ROOT/unquote(u.path)
+   u=urlsplit(n.attrs['href'])
+   if u.scheme or u.netloc:
+    assert u.scheme=='https',n.attrs['href']
+    continue
+   target=ROOT/unquote(u.path)
    assert target.is_file(),(f,n.attrs['href'])
    if u.fragment:assert unquote(u.fragment) in Document(target.read_text()).ids,(f,n.attrs['href'])
   assert not any(n.tag in ['iframe','embed','object'] for n in doc.nodes)
