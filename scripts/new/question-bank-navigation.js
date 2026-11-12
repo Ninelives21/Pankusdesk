@@ -34,18 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const link = document.createElement('a');link.href = img.src;link.target = '_blank';link.rel = 'noopener';
   link.setAttribute('aria-label', `Open full-size image: ${img.alt}`);img.replaceWith(link);link.append(img);
  });
- let currentUnit = '1';
+ const defaultUnit = document.body.dataset.bankDefault || '1';
+ const allId = document.body.dataset.bankAllId || 'all-units';
+ let currentUnit = defaultUnit;
  function select(id, scroll = false) {
   const target = id ? document.getElementById(id) : null;
-  const allView = ['all-units', 'existing-answers', 'source-questions-pending'].includes(id);
-  const unit = id === 'document-top' ? currentUnit : allView ? 'all' : target?.closest('[data-bank-unit-section]')?.dataset.bankUnitSection || '1';
+  const allView = [allId, 'existing-answers', 'source-questions-pending'].includes(id);
+  const unit = id === 'document-top' ? currentUnit : allView ? 'all' : target?.closest('[data-bank-unit-section]')?.dataset.bankUnitSection || defaultUnit;
   currentUnit = unit;
   units.forEach(section => { section.hidden = unit !== 'all' && section.dataset.bankUnitSection !== unit; });
   links.forEach(link => {
    if (link.dataset.bankUnit === unit) link.setAttribute('aria-current', 'location');
    else link.removeAttribute('aria-current');
   });
-  status.textContent = unit === 'all' ? 'Consolidated view · all five units' : `Viewing Unit ${unit}`;
+  const selected = units.find(section => section.dataset.bankUnitSection === unit);
+  status.textContent = unit === 'all' ? (document.body.dataset.bankAllLabel || 'Consolidated view · all five units') : selected?.dataset.bankTitle ? `Viewing ${selected.dataset.bankTitle}` : `Viewing Unit ${unit}`;
   let parent = target;
   while (parent) {
    if (parent.tagName === 'DETAILS') parent.open = true;

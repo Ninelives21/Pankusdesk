@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   contents.querySelectorAll('[aria-current]').forEach(item => item.removeAttribute('aria-current'));
   link.setAttribute('aria-current', 'location');
   if (narrow.matches) contents.open = false;
-  history.pushState(null, '', url.hash);
+  history.pushState(null, '', `${url.pathname}${url.search}${url.hash}`);
   target.scrollIntoView({ behavior: 'instant', block: 'start' });
  });
  try {
