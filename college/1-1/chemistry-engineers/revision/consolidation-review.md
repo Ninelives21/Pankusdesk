@@ -18,9 +18,11 @@ Checks address PTFE classification, Kevlar acid versus acid-chloride routes, hyd
 
 Question banks live in `question-banks.html`, with exactly six left-nav choices (five units plus Consolidated) and Back to top above Contents, including on phones. Notes remain separate. New source qualifications are additive labelled explanations on the relevant Unit IV/V notes. Stale “future bank / answers pending” messages are removed. Existing notes-question fragment redirects continue working.
 
-## Outstanding gate
+## Approved source diagrams and remaining source gaps
 
-New drawings are not generated under AGENTS.md’s figure freeze. Questions explicitly requiring diagrams display a separate drawing requirement; existing approved figures remain intact. Source-figure integration approval is outstanding. The PR must not be described as fully diagram-complete or lecturer-approved; textbook publication states remain unchanged.
+The user authorised unchanged extraction/publication of supplied handout diagrams. Eleven selected embedded images (386,325 bytes total) accompany the related long answers and notes. Their PDF identities, pages, embedded object numbers, byte/pixel checksums, dimensions and semantic comparisons are recorded in `source-figures.json`. Existing approved assets remain unchanged. No diagram is redrawn, relabelled, recoloured or recompressed. The PEMFC diagram is on PDF p.12, correcting the earlier proposed p.13 reference.
+
+Two explicit drawing requests remain source gaps: Nitinol’s transformation cycle and an IR CO-analyser apparatus. The supplied relevant packets contain prose but no suitable image; the DOCX has no embedded media. These answers retain precise gap notices. A polymer shape-memory illustration is not substituted for an alloy transformation, nor a passive motion sensor for an active absorption analyser. The existing breakpoint graph fulfils the duplicated Unit I illustration request. Other explicit diagram requests now have their original source illustrations. The PR is not declared fully diagram-complete or lecturer-approved; textbook publication states remain unchanged.
 
 ## Rebuild and verification
 

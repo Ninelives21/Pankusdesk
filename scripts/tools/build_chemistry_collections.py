@@ -53,11 +53,23 @@ def existing_solution(id):
    if self.active and not self.done:self.out.append('&#'+name+';')
  parser=AnswerParser();parser.feed(raw);assert parser.done,id;return ''.join(parser.out)
 
+
+def handout_figure(id):
+ figures={f['id']:f for f in read('source-figures.json')['figures']};f=figures[id]
+ return f'<figure class="study-figure" data-source-figure="{E(id)}"><a href="{E(f["asset"])}" target="_blank" rel="noopener"><img src="{E(f["asset"])}" alt="{E(f["alt"])}" width="{f["width"]}" height="{f["height"]}" loading="lazy" decoding="async"></a><figcaption><strong>{E(f["title"])}.</strong> {E(f["caption"])} <span class="document-source">{E(f["source_filename"])} · PDF p.{f["source_pdf_page"]}. Select image to view full size.</span></figcaption></figure>'
+
+def answer_figure_ids(q,a,key):
+ # Short definitions keep their focused answer. Long questions use the relevant module figures.
+ if q.get('source_set') not in ['essay','long','model']:return []
+ return [f['id'] for f in read('source-figures.json')['figures'] if key in f['modules']]
+
 def answer_html(q,solutions):
  a=solutions['answers'][q['id']];parts=[]
  if a.get('source_discrepancy'):parts.append('<aside class="study-mismatch-note" role="note"><div class="study-mismatch-note-label">Source discrepancy</div><p>'+E(a['source_discrepancy'])+'</p></aside>')
  for id in ([a['existing_answer_id']] if a.get('existing_answer_id') else a.get('existing_answer_ids',[])):parts.append(existing_solution(id))
- for part in a.get('subpart_answers',[]):parts.append(f'<section class="study-solution-part"><h4>({E(part["label"])}) {E(part["title"])}</h4><p>{E(part["text"])}</p></section>')
+ for part in a.get('subpart_answers',[]):
+  illustrations=''.join(handout_figure(id) for id in part.get('figure_ids',[]))
+  parts.append(f'<section class="study-solution-part"><h4>({E(part["label"])}) {E(part["title"])}</h4><p>{E(part["text"])}</p>{illustrations}</section>')
  for i,key in enumerate([] if a.get('subpart_answers') else a.get('modules',[])):
   m=solutions['modules'][key];selected=a.get('paragraph_selection',{}).get(key);paras=[m['paragraphs'][n] for n in selected] if selected is not None else m['paragraphs'];paragraphs='<p>'+E(a['direct_answer'])+'</p>' if a.get('direct_answer') else ''.join('<p>'+E(p)+'</p>' for p in paras)
   ref=m.get('notes_ref');source=''
@@ -70,8 +82,13 @@ def answer_html(q,solutions):
   source+='<p class="document-source">Answer basis: '+'; '.join(citations)+'.</p>'
   fallback='<p class="source-notes-editorial">'+E(m['fallback_note'])+'</p>' if m.get('fallback_note') else ''
   partlabel=f'({chr(97+i)}) ' if len(a.get('modules',[]))>1 and re.search(r'(?<!\w)[ab]\)',q['original_prompt']) else ''
-  parts.append(f'<section class="study-solution-part"><h4>{partlabel}{E(m["title"])}</h4>{paragraphs}{fallback}{source}</section>')
- if a.get('diagram_required') and not any('<img ' in p for p in parts):parts.append('<p class="source-notes-editorial"><strong>Diagram requirement:</strong> the question requests a drawing. Text and equations are supplied here; any existing linked drawing is retained. A new checked drawing has not been produced under the current figure-production freeze.</p>')
+  illustrations=''.join(handout_figure(id) for id in answer_figure_ids(q,a,key))
+  parts.append(f'<section class="study-solution-part"><h4>{partlabel}{E(m["title"])}</h4>{paragraphs}{illustrations}{fallback}{source}</section>')
+ if a.get('diagram_required') and not any('<img ' in p for p in parts):
+  gap=next((g for g in read('source-figures.json')['source_gaps'] if q['id'] in g['question_ids']),None)
+  assert gap,('Unaccounted required diagram',q['id'])
+  parts.append('<p class="source-notes-editorial"><strong>Source drawing gap:</strong> '+E(gap['student_note'])+'</p>')
+
  return '<div class="study-solution-label">PankusDesk-authored answer</div>'+''.join(parts)
 
 def main():
@@ -82,7 +99,7 @@ def main():
   nav+=f'<a href="{anchor("college-notes.html",f"unit-{u}")}">Unit {u} · {E(title)}</a>'
   count=sum(s['unit']==u for s in inventory['sources']);extra=[a for a in additions if a['unit']==u]
   text=f'<p><a class="primary-button" href="{PREFIX}{notes(u)}">Read Unit {u} notes →</a></p><p>{count} distinct source files inventoried. Existing notes, source transcripts, figures and corrections are retained.</p>'
-  text+='<p><strong>Review status:</strong> '+('Existing notes retained; worked answers are available separately in the question bank.' if u<3 else 'Selected R25 notes remain draft. Required figures and textbook verification are still pending.')+'</p>'
+  text+='<p><strong>Review status:</strong> '+('Existing notes retained; worked answers are available separately in the question bank.' if u<3 else 'Selected R25 notes remain draft. Approved source diagrams accompany the relevant topics; other figure gaps and textbook verification remain explicit.')+'</p>'
   if extra:text+='<p>Selected additions:</p><ul>'+''.join(f'<li><a href="{anchor(notes(u),a["id"])}">{E(a["title"])}</a></li>' for a in extra)+'</ul>'
   else:text+='<p>Re-uploaded sources reconcile to existing selections. No unsupported extra prose is added just to create another version.</p>'
   text+=f'<p><a href="{anchor("college-notes.html",f"sources-{u}")}">Inspect source inventory and remaining work →</a> · <a href="{PREFIX}question-banks.html">Question collections →</a></p>'
@@ -132,6 +149,13 @@ def main():
  for u in TITLES:
   p=S/notes(u);text=p.read_text();text=re.sub(r'<!-- COLLEGE-ADDITION-START -->.*?<!-- COLLEGE-ADDITION-END -->','',text,flags=re.S)
   text=re.sub(r'<!-- COLLEGE-COLLECTION-START -->.*?<!-- COLLEGE-COLLECTION-END -->','',text,flags=re.S)
+  text=re.sub(r'<!-- HANDOUT-FIGURES-START -->.*?<!-- HANDOUT-FIGURES-END -->','',text,flags=re.S)
+  figures_by_anchor=defaultdict(list)
+  for figure in read('source-figures.json')['figures']:
+   if figure.get('notes_anchor') and byid[figure['source_id']]['unit']==u:figures_by_anchor[figure['notes_anchor']].append(figure['id'])
+  for target,figure_ids in figures_by_anchor.items():
+   block='<!-- HANDOUT-FIGURES-START -->'+''.join(handout_figure(id) for id in figure_ids)+'<!-- HANDOUT-FIGURES-END -->'
+   start=text.index('id="'+target+'"');end=text.index('</section>',start);text=text[:end]+block+text[end:]
   for a in [a for a in additions if a['unit']==u]:
    s=byid[a['source_id']];block='<!-- COLLEGE-ADDITION-START -->'+f'<details class="study-tip" id="{a["id"]}"><summary><span class="study-tip-summary-copy"><span class="study-tip-label">Additional explanation · PankusDesk</span><span class="study-tip-summary-title">{E(a["title"])}</span></span><span class="study-tip-toggle" aria-hidden="true">+</span></summary><div class="study-tip-content">'+''.join(f'<p>{E(p)}</p>' for p in a['paragraphs'])+f'<p class="document-source">Based on {E(s["filename"])} · PDF pages {", ".join(map(str,a["pages"]))}. <a href="{anchor("college-notes.html",s["id"])}">Source and remaining checks</a>. Existing answers and figures are unchanged.</p></div></details>'+'<!-- COLLEGE-ADDITION-END -->'
    start=text.index(f'id="{a["anchor"]}"');match=re.search(r'</h[23]>',text[start:]);assert match,(u,a['anchor']);at=start+match.end();text=text[:at]+block+text[at:]

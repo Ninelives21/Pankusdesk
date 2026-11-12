@@ -18,6 +18,8 @@ def main():
  data['retained_solved_banks']={p.name:p.read_text() for p in sorted((REV/'question-sections').glob('*.html'))}
  data['canonical_existing_notes']={str(p.relative_to(SUB)):load(p) for p in sorted((SUB/'kb/data').glob('*.json'))}
  data['labelled_notes_additions']=load(REV/'college-notes-additions.json')
+ data['approved_source_figures']=load(REV/'source-figures.json')
+ data['selected_college_notes']={p.name:load(p) for p in sorted(REV.glob('unit-*-senior-notes.json'))}
  data['retrieval_index']={key:{'title':module['title'],'source_refs':module['source_refs'],'question_ids':[id for id,a in data['authored_answers']['answers'].items() if key in a.get('modules',[])]} for key,module in data['authored_answers']['modules'].items()}
  assert set(data['authored_answers']['answers'])=={q['id'] for q in data['questions']['questions']+data['questions']['additional_questions']}
  path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
