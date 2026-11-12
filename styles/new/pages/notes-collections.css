@@ -1,0 +1,22 @@
+.notes-collection .document-page > h2 { font-size: 1.35rem; color: var(--text-strong); }
+.notes-collection .document-page h3 { font-size: 1.05rem; }
+.collection-question { padding: 1rem 0; border-top: 1px solid var(--line); scroll-margin-top: 100px; }
+.collection-prompt { white-space: pre-line; }
+.collection-status { color: var(--text-secondary); font-size: .9rem; }
+.collection-inventory th { text-align: left; padding: .65rem; border: 1px solid var(--line); }
+.collection-inventory td { min-width: 120px; }
+.collection-inventory td:first-child { min-width: 180px; }
+.collection-inventory details { margin-top: .6rem; }
+.collection-inventory code { font-size: .75rem; overflow-wrap: anywhere; }
+.collection-inventory ul { padding-left: 1rem; }
+.collection-inventory tr[id] { scroll-margin-top: 100px; }
+@media print {
+ .notes-collection .document-page { break-inside: auto; }
+ .collection-question { break-inside: avoid; }
+}
+.bank-unit[hidden] { display: none; }
+.bank-view-intro { margin: 0 0 1.5rem; scroll-margin-top: 100px; }
+.bank-unit .source-page { padding: 0; }
+.bank-source-group { border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: 1rem; scroll-margin-top: 100px; }
+.bank-unit .source-visual img { max-width: 100%; height: auto; }
+#bank-view-status { font-weight: 750; }
