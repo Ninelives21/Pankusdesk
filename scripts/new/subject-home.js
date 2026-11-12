@@ -8,7 +8,7 @@ async function json(path) {
 }
 function card(resource, root) {
  const href = resource.href ? new URL(resource.href, root).href : '';
- return `<article class="study-tool-card"${resource.id ? ` id="${esc(resource.id)}"` : ''}><div class="tool-label">${esc(resource.label || 'Study resource')}</div><h3>${esc(resource.title)}</h3><p>${esc(resource.description)}</p>${resource.state ? `<span class="tool-state">${esc(resource.state)}</span>` : ''}${resource.links || ''}${resource.items ? `<ul class="subject-resource-links">${resource.items.map(item => `<li><a href="${esc(new URL(item.href,root))}">${esc(item.title)}</a></li>`).join('')}</ul>` : ''}${href ? `<a class="tool-action" href="${esc(href)}">${esc(resource.action || 'Open resource')} →</a>` : ''}</article>`;
+ return `<article class="study-tool-card"${resource.id ? ` id="${esc(resource.id)}"` : ''}><div class="tool-label">${esc(resource.label || 'Study resource')}</div><h3>${href ? `<a class="subject-card-link" href="${esc(href)}">${esc(resource.title)}</a>` : esc(resource.title)}</h3><p>${esc(resource.description)}</p>${resource.state ? `<span class="tool-state">${esc(resource.state)}</span>` : ''}${resource.links || ''}${resource.items ? `<ul class="subject-resource-links">${resource.items.map(item => `<li><a href="${esc(new URL(item.href,root))}">${esc(item.title)}</a></li>`).join('')}</ul>` : ''}${href ? `<span class="tool-action" aria-hidden="true">${esc(resource.action || 'Open resource')} →</span>` : ''}</article>`;
 }
 function unitLinks(config, subject, root) {
  return (config.availableUnits || []).map(number => {

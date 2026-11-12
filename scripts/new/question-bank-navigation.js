@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const link = document.createElement('a');link.href = img.src;link.target = '_blank';link.rel = 'noopener';
   link.setAttribute('aria-label', `Open full-size image: ${img.alt}`);img.replaceWith(link);link.append(img);
  });
- let currentUnit = 'all';
+ let currentUnit = '1';
  function select(id, scroll = false) {
   const target = id ? document.getElementById(id) : null;
-  const unit = id === 'document-top' ? currentUnit : target?.closest('[data-bank-unit-section]')?.dataset.bankUnitSection || 'all';
+  const allView = ['all-units', 'existing-answers', 'source-questions-pending'].includes(id);
+  const unit = id === 'document-top' ? currentUnit : allView ? 'all' : target?.closest('[data-bank-unit-section]')?.dataset.bankUnitSection || '1';
   currentUnit = unit;
   units.forEach(section => { section.hidden = unit !== 'all' && section.dataset.bankUnitSection !== unit; });
   links.forEach(link => {

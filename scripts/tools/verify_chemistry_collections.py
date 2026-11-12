@@ -32,6 +32,16 @@ def main():
    module=solutions['modules'][key];assert module['source_refs'] and module['paragraphs'],key
    assert all(len(p.strip())>20 for p in module['paragraphs']),key
  assert len([n for n in qdoc.nodes if n.has_class('collection-question')])==len(all_questions)
+ # Supplied bank prompts have one public home; unique teaching examples remain in notes.
+ bank_entries=[n for n in qdoc.nodes if n.tag=='details' and n.has_class('study-accordion-item--example')]
+ bank_entry_ids={n.attrs['id'] for n in bank_entries}
+ bank_prompts=[normal(n.text()) for n in qdoc.nodes if n.has_class('study-example-question')]
+ for u in range(1,6):
+  filename='end-sem-notes.html' if u==1 else f'end-sem-unit-{u}.html'
+  note=Document((S/filename).read_text());note_text=normal(note.root.text())
+  assert not bank_entry_ids.intersection(note.ids),(filename,'bank entry duplicated in notes')
+  for prompt in bank_prompts:assert prompt not in note_text,(filename,prompt,'bank prompt duplicated in notes')
+  assert ('hidden' in qdoc.ids[f'unit-{u}'].attrs)==(u!=1),('initial unit visibility',u)
  relocation=json.loads((R/'question-bank-relocation.json').read_text())
  nav=next(n for n in qdoc.nodes if n.tag=='nav' and n.attrs.get('aria-label')=='Collection contents')
  assert len([n for n in nav.elements() if n.tag=='a'])==6

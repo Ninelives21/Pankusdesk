@@ -138,10 +138,16 @@ def main():
    content+=f'<details class="study-accordion-item study-accordion-item--example collection-question{mismatch}" id="{E(q["id"])}"><summary><span class="study-example-summary-copy"><span class="study-example-title">{E(label)}</span><span class="study-example-question">{prompt}</span></span><span class="study-accordion-toggle" aria-hidden="true">+</span></summary><div class="study-accordion-content study-example-solution">{answer_html(q,solutions)}{scope_note}<p class="document-source">Question source: {E(name)}'+(f' · PDF page {page}' if page else '')+'</p></div></details>'
 
   units[unit].append(f'<section class="bank-source-group" id="{E(id)}"><h3>{E(name)}</h3>{content}</section>')
- qnav=''.join(f'<a href="{anchor("question-banks.html",f"unit-{u}")}" data-bank-unit="{u}">Unit {u} · {E(title)}</a>' for u,title in TITLES.items())+f'<a href="{anchor("question-banks.html","all-units")}" data-bank-unit="all">Consolidated · All units</a>'
- qbody='<div id="all-units" class="bank-view-intro"><span id="existing-answers"></span><span id="source-questions-pending"></span><p id="bank-view-status" role="status">Consolidated view · all five units</p><p>College question banks and standalone practice sheets, not authenticated previous-year papers. PankusDesk answers follow the supplied notes and are not lecturer-approved keys. Source discrepancies and any outstanding drawing requirements are explicit. Original numbering and both Unit V source variants are retained.</p></div>'
- for u,title in TITLES.items():qbody+=f'<section class="document-page bank-unit" id="unit-{u}" data-bank-unit-section="{u}"><h2>Unit {u} · {E(title)}</h2><p><a href="{PREFIX}{notes(u)}">Read Unit {u} notes →</a></p>'+''.join(units[u])+'</section>'
- question_html=shell('question-banks.html','Unit-wise Question Bank & Solutions','Choose one unit or the consolidated view. Supplied questions and worked answers, grouped by unit and original source.',qnav,qbody)
+ qnav=''
+ for u,title in TITLES.items():
+  current=' aria-current="location"' if u==1 else ''
+  qnav+=f'<a href="{anchor("question-banks.html",f"unit-{u}")}" data-bank-unit="{u}"{current}>Unit {u} · {E(title)}</a>'
+ qnav+=f'<a href="{anchor("question-banks.html","all-units")}" data-bank-unit="all">Consolidated · All units</a>'
+ qbody='<div id="all-units" class="bank-view-intro"><span id="existing-answers"></span><span id="source-questions-pending"></span><p id="bank-view-status" role="status">Viewing Unit 1</p><p>College question banks and standalone practice sheets, not authenticated previous-year papers. PankusDesk answers follow the supplied notes and are not lecturer-approved keys. Source discrepancies and any outstanding drawing requirements are explicit. Original numbering and both Unit V source variants are retained.</p></div>'
+ for u,title in TITLES.items():
+  hidden=' hidden' if u!=1 else ''
+  qbody+=f'<section class="document-page bank-unit" id="unit-{u}" data-bank-unit-section="{u}"{hidden}><h2>Unit {u} · {E(title)}</h2><p><a href="{PREFIX}{notes(u)}">Read Unit {u} notes →</a></p>'+''.join(units[u])+'</section>'
+ question_html=shell('question-banks.html','Unit-wise Question Bank & Solutions','Unit I opens by default. Choose another unit or the consolidated view; questions and answers retain their original source groups.',qnav,qbody)
  for css in ['pages/end-sem-notes','pages/source-notes','pages/practice']:question_html=question_html.replace('</head>',f'<link rel="stylesheet" href="styles/new/{css}.css">\n</head>')
  question_html=question_html.replace('<body>','<body data-question-bank="true">').replace('</head>','<script src="scripts/new/question-bank-navigation.js" defer></script>\n</head>')
  (S/'question-banks.html').write_text(question_html)

@@ -18,6 +18,12 @@ Checks address PTFE classification, Kevlar acid versus acid-chloride routes, hyd
 
 Question banks live in `question-banks.html`, with exactly six left-nav choices (five units plus Consolidated) and Back to top above Contents, including on phones. Notes remain separate. New source qualifications are additive labelled explanations on the relevant Unit IV/V notes. Stale “future bank / answers pending” messages are removed. Existing notes-question fragment redirects continue working.
 
+## Card and default-view follow-up
+
+All five college/senior notes pages were checked against the rendered question-bank IDs and full prompts. No duplicate bank questions remain in those notes. The unique Unit I source teaching example is not a bank duplicate and is preserved. The collection verifier guards this separation.
+
+The shared subject-index renderer makes cards with a primary destination clickable across their full area, including future metadata-driven cards. Secondary unit links remain independent. Keyboard focus outlines the entire card. Chemistry’s bank defaults to Unit I both in initial HTML and navigation code; Consolidated is explicit, direct question links select their own unit, and Back to top retains the current view.
+
 ## Approved source diagrams and remaining source gaps
 
 The user authorised unchanged extraction/publication of supplied handout diagrams. Eleven selected embedded images (386,325 bytes total) accompany the related long answers and notes. Their PDF identities, pages, embedded object numbers, byte/pixel checksums, dimensions and semantic comparisons are recorded in `source-figures.json`. Existing approved assets remain unchanged. No diagram is redrawn, relabelled, recoloured or recompressed. The PEMFC diagram is on PDF p.12, correcting the earlier proposed p.13 reference.
