@@ -25,15 +25,58 @@ for p in d['papers']:
   if 'parts' in q and all(x['marks'] is not None for x in blocks):assert sum(x['marks'] for x in blocks)==q['marks']
   for sub in blocks:
    assert sub['prompt'] in summary
-   assert sub['answer']['paragraphs'] and sub['answer']['source_refs']
-   for t in sub['answer']['paragraphs']:assert t in panel.text_content()
+   assert sub['answer']['blocks'] and sub['answer']['source_refs']
+   for block in sub['answer']['blocks']:
+    kind=block['type'];assert kind in ['paragraph','list','table','equation','figure']
+    if kind=='paragraph':assert block['text'] in panel.text_content()
+    elif kind=='list':
+     assert block['items']
+     for item in block['items']:assert item in panel.text_content()
+    elif kind=='table':
+     assert block['headers'] and block['rows']
+     for row in block['rows']:
+      assert len(row)==len(block['headers'])
+      for cell in row:assert cell in panel.text_content()
+    elif kind=='equation':
+     assert block['latex'] in panel.text_content()
+     assert r'\frac' not in block['latex']
+    elif kind=='figure':assert panel.xpath('.//figure[@data-source-figure=$id]',id=block['id'])
    for ref in sub['answer']['source_refs']:assert ref['source_id'] in lookup
  for record in p['source_records']:assert len(record['sha256'])==64 and record['page']==1
 for f in json.loads((R/'mid-2-source-figures.json').read_text())['figures']:
  assert hashlib.sha256((ROOT/f['asset']).read_bytes()).hexdigest()==f['sha256']
- assert f['source_discrepancy'] in page.text_content()
+ assert page.xpath('//figure[@data-source-figure=$id]',id=f['id'])
+ if f.get('student_note'):assert f['student_note'] in page.text_content()
  assert f['source_sha256']==lookup[f['source_id']]['sha256']
-# Internal and asset URLs resolve, including cited source IDs.
+# Required drawings stay with the exact essay/subpart they explain.
+required_figures={
+ 'cfe-mid2-2025-12-30-r25-b-1':['mid2-pem-electrolysis'],
+ 'cfe-mid2-2025-12-30-r25-b-2':['mid2-lithium'],
+ 'cfe-mid2-2025-12-30-r25-b-5-a':['handout-stm-apparatus'],
+ 'cfe-mid2-2025-12-30-r25-b-6-b':['handout-biosensor-chain'],
+ 'cfe-mid2-2024-07-04-r22-b-2':['mid2-lithium'],
+ 'cfe-mid2-2024-07-04-r22-b-3-a':['mid2-impressed'],
+ 'cfe-mid2-2024-07-04-r22-b-4':['mid2-hydrogen-corrosion','mid2-oxygen-corrosion'],
+ 'cfe-mid2-2024-07-04-r22-b-5-a':['handout-biosensor-chain'],
+ 'cfe-mid2-2024-01-04-r22-b-1':['mid2-lithium'],
+ 'cfe-mid2-2024-01-04-r22-b-3':['mid2-hydrogen-corrosion','mid2-oxygen-corrosion'],
+ 'cfe-mid2-2024-01-04-r22-b-4-a':['mid2-waterline'],
+ 'cfe-mid2-2024-01-04-r22-b-4-b':['mid2-pitting'],
+ 'cfe-mid2-2024-01-04-r22-b-6':['handout-stm-apparatus','handout-afm-apparatus'],
+ 'cfe-mid2-2023-03-06-r22-b-2':['mid2-methanol'],
+ 'cfe-mid2-2023-03-06-r22-b-3':['mid2-hydrogen-corrosion','mid2-oxygen-corrosion'],
+ 'cfe-mid2-2023-03-06-r22-b-4-b':['mid2-sacrificial'],
+ 'cfe-mid2-2023-03-06-r22-b-6-a':['mid2-thick-film'],
+ 'cfe-mid2-2023-03-06-r22-b-6-b':['handout-boundary-lubrication']}
+for id,figures in required_figures.items():
+ panel=page.get_element_by_id(id)
+ for figure in figures:assert panel.xpath('.//figure[@data-source-figure=$id]',id=figure),(id,figure)
+# Source references remain valid in metadata; none are shown inside answers.
+for panel in page.xpath('//div[contains(@class,"study-example-solution")]'):
+ assert not panel.xpath('.//*[contains(@class,"document-source") or contains(@class,"study-solution-label")]')
+ assert not any(x in panel.text_content() for x in ['Answer basis:','Question source:','SHA-256','Scope:'])
+assert 'Paper provenance and duplicate captures' not in page.text_content()
+# Internal and asset URLs resolve.
 for url in page.xpath('//@href | //@src'):
  if url.startswith(('http:','https:')):continue
  path,_,frag=url.partition('#');target=ROOT/path if path else S/'mid-2.html';assert target.exists(),url
@@ -41,4 +84,4 @@ for url in page.xpath('//@href | //@src'):
 assert page.xpath('//*[contains(@class,"document-back-top")]/following-sibling::details[contains(@class,"document-contents")]')
 assert len(page.xpath('//p[contains(@class,"paper-or")]'))==12
 cards=json.loads((S/'index-resources.json').read_text())['questions'];assert sum(x['href']=='mid-2.html' for x in cards)==1
-print(f'CHEMISTRY MID II: PASS — 4 papers, 44 questions / {parts} answer parts, 12 OR pairs, original marks, source citations/anchors and unchanged diagram hash.')
+print(f'CHEMISTRY MID II: PASS — 4 papers, 44 questions / {parts} answer parts, 12 OR pairs, original marks, source citations/anchors and unchanged image identities; answer-only display.')
