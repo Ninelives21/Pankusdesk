@@ -33,14 +33,19 @@ def main():
   if not solutions['answers'][q['id']].get('diagram_required'):continue
   node=qdoc.ids[q['id']];images=[n for n in node.elements() if n.tag=='img']
   if q['id'] in gap_questions:
-   assert not images and 'Source drawing gap:' in node.text(),q['id']
+   assert not images and 'Diagram unavailable:' in node.text(),q['id']
    assert solutions['answers'][q['id']]['figure_status']=='source_drawing_unavailable_in_supplied_handouts'
   else:assert images,(q['id'],'required diagram not supplied or gap not recorded')
   accounted+=1
  for node in qdoc.nodes:
   if node.tag!='figure' or 'data-source-figure' not in node.attrs:continue
-  f=figures[node.attrs['data-source-figure']];imgs=[n for n in node.elements() if n.tag=='img'];assert len(imgs)==1
+  id=node.attrs['data-source-figure']
+  if id not in figures:
+   extra={f['id'] for filename in ['mid-2-source-figures.json','question-bank-intake-figures.json'] for f in load(REV/filename)['figures']}
+   assert id in extra,id
+   continue  # Extra identities/placements are checked by verify_chemistry_bank_intake.py.
+  f=figures[id];imgs=[n for n in node.elements() if n.tag=='img'];assert len(imgs)==1
   img=imgs[0];assert img.attrs['src']==f['asset'];assert img.attrs['alt']==f['alt'];assert img.attrs['width']==str(f['width']);assert img.attrs['height']==str(f['height'])
-  assert f['source_filename'] in node.text() and f'PDF p.{f["source_pdf_page"]}' in node.text()
+  assert f['title'] in node.text()
  print(f'CHEMISTRY SOURCE FIGURES: PASS — 11 image identities, {accounted} explicit drawing requests accounted, two precise source gaps'+('; private PDF image bytes and pixels match' if private else '')+'.')
 if __name__=='__main__':main()

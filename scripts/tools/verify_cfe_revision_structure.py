@@ -108,7 +108,9 @@ def check(unit2_path):
     # Preserve the original fixed contracts across the new notes/bank routes.
     bank = Document((SUBJECT / 'question-banks.html').read_text())
     unit2_bank = bank.ids['unit-2']
-    relocated = [unit2_bank, *unit2_bank.elements()]
+    audit = json.loads((SUBJECT / 'revision/unit-2-source-audit.json').read_text())
+    original_cards = [bank.ids[q['id']] for q in audit['questions']]
+    relocated = [node for card in original_cards for node in [card, *card.elements()]]
     unit2.nodes.extend(relocated)
     unit2.ids.update({n.attrs['id']: n for n in relocated if 'id' in n.attrs})
     audit = json.loads((SUBJECT / 'revision/unit-2-source-audit.json').read_text())
