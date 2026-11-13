@@ -31,7 +31,11 @@ def main():
   for key in answer.get('modules',[]):
    module=solutions['modules'][key];assert module['source_refs'] and module['paragraphs'],key
    assert all(len(p.strip())>20 for p in module['paragraphs']),key
- assert len([n for n in qdoc.nodes if n.has_class('collection-question')])==len(all_questions)
+ intake=json.loads((R/'question-bank-intake.json').read_text())
+ relocation=json.loads((R/'question-bank-relocation.json').read_text())
+ expected={q['id'] for q in all_questions}|{n.attrs['id'] for x in relocation['units'].values() for n in Document((S/x['source_fragment']).read_text()).nodes if n.tag=='details' and n.has_class('study-accordion-item--example')}|{q['id'] for c in intake['collections'] for q in c['questions']}
+ actual={n.attrs['id'] for n in qdoc.nodes if n.has_class('collection-question')}
+ assert actual==expected,(actual-expected,expected-actual)
  # Supplied bank prompts have one public home; unique teaching examples remain in notes.
  bank_entries=[n for n in qdoc.nodes if n.tag=='details' and n.has_class('study-accordion-item--example')]
  bank_entry_ids={n.attrs['id'] for n in bank_entries}
@@ -44,7 +48,9 @@ def main():
   assert ('hidden' in qdoc.ids[f'unit-{u}'].attrs)==(u!=1),('initial unit visibility',u)
  relocation=json.loads((R/'question-bank-relocation.json').read_text())
  nav=next(n for n in qdoc.nodes if n.tag=='nav' and n.attrs.get('aria-label')=='Collection contents')
- assert len([n for n in nav.elements() if n.tag=='a'])==6
+ assert len([n for n in nav.elements() if n.tag=='a'])==5+len(intake['collections'])
+ assert not any(n.attrs.get('data-bank-unit')=='all' for n in nav.elements())
+ assert qdoc.root.text().find('Consolidated · All units')==-1
  for unit,record in relocation['units'].items():
   fragment=(S/record['source_fragment']).read_bytes();assert hashlib.sha256(fragment).hexdigest()==record['html_sha256']
   old=Document((S/record['old_page']).read_text())
@@ -52,7 +58,13 @@ def main():
    assert id in qdoc.ids,id
    assert id not in old.ids,(id,'still in notes')
   original=Document(fragment.decode())
-  for id in record['ids']:assert normal(original.ids[id].text())==normal(qdoc.ids[id].text()),(id,'relocation changed content')
+  for id in record['ids']:
+   old=original.ids[id];new=qdoc.ids[id]
+   if old.tag!='details':continue
+   prompts=lambda node:[normal(n.text()) for n in node.elements() if n.has_class('study-example-question')]
+   assert prompts(old)==prompts(new),(id,'original prompt changed')
+   for equation in re.findall(r'\\\(.*?\\\)|\\\[.*?\\\]',old.text(),re.S):assert equation in new.text(),(id,'equation lost')
+   assert [n.attrs['src'] for n in old.elements() if n.tag=='img']==[n.attrs['src'] for n in new.elements() if n.tag=='img'],(id,'original drawing changed')
  additions=json.loads((R/'college-notes-additions.json').read_text())['additions']
  for a in additions:
   assert a['source_id'] in ids and a['pages']
@@ -72,5 +84,5 @@ def main():
    assert target.is_file(),(f,n.attrs['href'])
    if u.fragment:assert unquote(u.fragment) in Document(target.read_text()).ids,(f,n.attrs['href'])
   assert not any(n.tag in ['iframe','embed','object'] for n in doc.nodes)
- print(f'CHEMISTRY COLLECTIONS: PASS — {len(sources)} distinct source identities, {len(bank["questions"])} original prompts, {len(additions)} cited explanations, links and Back to top.')
+ print(f'CHEMISTRY COLLECTIONS: PASS — {len(sources)} distinct source identities, {len(actual)} retained/intake prompts, {len(additions)} cited explanations, links and Back to top.')
 if __name__=='__main__':main()
