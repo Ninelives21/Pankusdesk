@@ -39,3 +39,26 @@ Known source issues remain explicit:
 ## Validation
 
 `verify_chemistry_endsem.py` gates all four paper identities, 60 questions/87 answer parts, choices, marks, source/page bounds, numerical results, exact image hashes, required placements, nested answer parts, anchors, navigation and card replacement. The required college/BEE/MAC validators and the existing Chemistry bank/Mid 2/figure/answer/revision verifiers pass. Browser checks open every question at desktop and phone widths and check MathJax, decoded images, responsive scrolling, paper selection, full-card click, Back to top, legacy PYQ redirection and the GitHub Pages `/Pankusdesk/` prefix. Screenshots are retained outside the repository.
+
+## Frequently asked questions
+
+The separate FAQ view contains 14 R25 revision topic groups: four short-answer and ten essay groups. Counts are distinct-paper counts within each answer category, not numbers of repeated subparts or exact-wording matches. The denominator is the four supplied papers, including the separately labelled ME paper. `end-sem-faq.json` retains exact question IDs for auditing and reuses checked answers/figures from the paper data.
+
+| Category | Topic | Papers |
+| --- | --- | ---: |
+| Short | Biosensor definition, features and applications | 3 |
+| Short | Hardness salts | 2 |
+| Short | Battery classification / primary and secondary | 2 |
+| Short | Rusting in saline water | 2 |
+| Essay | Galvanic corrosion | 4 |
+| Essay | Hardness calculations | 3 |
+| Essay | Cathodic protection | 3 |
+| Essay | Shape-memory polymers | 3 |
+| Essay | Self-healing materials | 3 |
+| Essay | Scale and sludge | 2 |
+| Essay | Reverse osmosis | 2 |
+| Essay | Electrochemical rusting | 2 |
+| Essay | Addition and condensation polymerisation | 2 |
+| Essay | Thermoplastics and thermosets | 2 |
+
+Coal analysis, methanol fuel cells, lubricants and top-down/bottom-up synthesis recur in the historical papers but are excluded from this R25-focused FAQ. The original papers retain those questions and answers. Topic-family labels do not imply that every variant asks for every aspect of the combined revision prompt. These frequencies are revision priorities, not predictions.
