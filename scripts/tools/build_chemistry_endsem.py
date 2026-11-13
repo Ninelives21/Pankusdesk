@@ -8,6 +8,8 @@ from study_answer_blocks import render_blocks
 
 def main():
     data = json.loads((R / 'end-sem-papers.json').read_text())
+    faq = json.loads((R / 'end-sem-faq.json').read_text())
+    paper_for = {item['id']: paper['id'] for paper in data['papers'] for q in paper['part_a'] + paper['part_b'] for item in [q] + q.get('parts', [])}
     figures = {}
     for name in ['source-figures.json', 'mid-2-source-figures.json', 'end-sem-source-figures.json']:
         figures.update({f['id']: f for f in json.loads((R / name).read_text())['figures']})
@@ -57,6 +59,19 @@ def main():
             block += question(first, 'B') + '<p class="paper-or"><strong>OR</strong> · answer one of this pair in the examination</p>' + question(second, 'B')
         hidden = '' if default else ' hidden'
         body += f'<section class="document-page bank-unit" id="{paper["id"]}" data-bank-unit-section="{paper["id"]}" data-bank-title="{E(title)}"{hidden}>{block}</section>'
+    faq_body = '<h2>' + E(faq['title']) + '</h2><p>' + E(faq['intro']) + '</p>'
+    for kind, heading in [('short', 'Short-answer questions'), ('essay', 'Essay questions')]:
+        faq_body += '<h3>' + heading + '</h3>'
+        for entry in [e for e in faq['entries'] if e['kind'] == kind]:
+            count = len({paper_for[id] for id in entry['topic_matches']})
+            label = f'Unit {entry["r25_unit"]} · Related questions in {count} of {faq["paper_count"]} papers'
+            content = ''
+            for ref in entry['answer_refs']:
+                rendered = answer(ref)
+                content += (f'<section class="study-solution-part"><h4>{E(ref["heading"])}</h4>{rendered}</section>' if ref['heading'] else rendered)
+            faq_body += f'<details class="study-accordion-item study-accordion-item--example collection-question" id="{E(entry["id"])}"><summary><span class="study-example-summary-copy"><span class="study-example-title">{E(label)}</span><span class="study-example-question">{E(entry["title"])}</span></span><span class="study-accordion-toggle" aria-hidden="true">+</span></summary><div class="study-accordion-content study-example-solution">{content}</div></details>'
+    body += f'<section class="document-page bank-unit" id="{faq["id"]}" data-bank-unit-section="faq" data-bank-title="{E(faq["title"])}" hidden>{faq_body}</section>'
+    nav += f'<a href="{anchor("end-sem.html", faq["id"])}" data-bank-unit="faq">Frequently Asked Questions · R25</a>'
     page = shell('end-sem.html', data['title'], 'Four actual examination papers with short answers, worked essays and relevant diagrams. The R25 paper opens first.', nav, body)
     page = page.replace('<body>', f'<body data-question-bank="true" data-bank-default="{data["default_paper"]}" data-bank-allow-all="false">')
     for css in ['pages/end-sem-notes', 'pages/source-notes', 'pages/practice']:

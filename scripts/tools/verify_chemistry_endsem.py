@@ -19,8 +19,9 @@ assert data['default_paper'] == 'cfe-endsem-2026-r25'
 assert page.xpath('//body/@data-bank-default') == [data['default_paper']]
 assert page.xpath('//body/@data-bank-allow-all') == ['false']
 assert len(page.xpath('//*[@data-bank-unit-section and not(@hidden)]')) == 1
-assert len(page.xpath('//a[@data-bank-unit]')) == 4
-assert len(page.xpath('//details[contains(@class,"collection-question")]')) == 60
+assert len(page.xpath('//a[@data-bank-unit and @data-bank-unit!="faq"]')) == 4
+assert len(page.xpath('//a[@data-bank-unit="faq"]')) == 1
+assert len(page.xpath('//*[@data-bank-unit-section!="faq"]//details[contains(@class,"collection-question")]')) == 60
 assert len(page.xpath('//p[contains(@class,"paper-or")]')) == 20
 assert page.xpath('//*[contains(@class,"document-back-top")]/following-sibling::details[contains(@class,"document-contents")]')
 assert not page.xpath('//iframe|//embed|//object')
@@ -142,3 +143,37 @@ assert not any(c.get('practiceKey') == 'pyqs' for c in subject['studyResources']
 assert subject['practice']['pyqs']['href'] == 'end-sem.html'
 assert 'end-sem.html' in (S / 'pyqs.html').read_text()
 print('CHEMISTRY END SEM: PASS — 4 source-identified papers, 60 questions / 87 answer parts, 20 OR pairs, original marks, 3 independently recomputed numericals, figures, links and answer-only presentation. CO-analyser drawing remains explicitly unavailable.')
+
+faq = json.loads((R / 'end-sem-faq.json').read_text())
+assert faq['paper_count'] == len(data['papers']) == 4
+assert len(faq['entries']) == 14
+records = {}; paper_for = {}; kinds = {}
+for paper in data['papers']:
+    for section in ['part_a', 'part_b']:
+        for q in paper[section]:
+            for item in [q] + q.get('parts', []):
+                records[item['id']] = item
+                paper_for[item['id']] = paper['id']
+                kinds[item['id']] = 'short' if section == 'part_a' else 'essay'
+expected_counts = {'biosensors':3, 'hardness-salts':2, 'batteries':2, 'saline-rusting':2,
+                   'galvanic':4, 'hardness-numericals':3, 'cathodic':3,
+                   'shape-memory-polymers':3, 'self-healing':3, 'scale-sludge':2,
+                   'reverse-osmosis':2, 'electrochemical-rusting':2,
+                   'addition-condensation':2, 'thermoplastics-thermosets':2}
+for entry in faq['entries']:
+    assert entry['r25_unit'] in range(1, 6)
+    assert len(entry['topic_matches']) == len(set(entry['topic_matches']))
+    assert all(id in records and kinds[id] == entry['kind'] for id in entry['topic_matches'])
+    count = len({paper_for[id] for id in entry['topic_matches']})
+    assert count == expected_counts[entry['id'].removeprefix('endsem-faq-')]
+    panel = page.get_element_by_id(entry['id'])
+    assert f'{count} of 4 papers' in panel.find('summary').text_content()
+    assert entry['title'] in panel.find('summary').text_content()
+    for ref in entry['answer_refs']:
+        assert ref['answer_ref'] in {records[id].get('answer_ref') for id in entry['topic_matches']} or ref['answer_ref'] in ['ironcopper', 'cathodic', 'rocompare', 'wet10']
+        for block in blocks(data['answers'][ref['answer_ref']]['blocks']):
+            if block['type'] == 'paragraph': assert block['text'] in panel.text_content()
+            if block['type'] == 'equation': assert block['latex'] in panel.text_content()
+            if block['type'] == 'figure': assert panel.xpath('.//figure[@data-source-figure=$id]', id=block['id'])
+assert page.get_element_by_id(faq['id']).get('hidden') is not None
+print('END SEM FAQ: PASS — 14 R25 topic groups (4 short, 10 essay), distinct-paper counts, reused checked answers/drawings; original 60 questions preserved.')
