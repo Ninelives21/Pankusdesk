@@ -9,7 +9,7 @@ ids=page.xpath('//@id');assert len(ids)==len(set(ids))
 assert len(d['papers'])==4 and d['papers'][0]['regulation']=='R25'
 assert page.xpath('//body/@data-bank-default')==[d['default_paper']]
 assert len(page.xpath('//*[@data-bank-unit-section and not(@hidden)]'))==1
-assert len(page.xpath('//details[contains(@class,"collection-question")]'))==44
+assert len(page.xpath('//*[@data-bank-unit-section!="faq"]//details[contains(@class,"collection-question")]'))==44
 sources=json.loads((R/'source-inventory.json').read_text())['sources'];lookup={x['id']:x for x in sources};lookup.update({x['source_id']:x for x in sources if x.get('source_id')})
 parts=0
 for p in d['papers']:
@@ -76,6 +76,39 @@ for panel in page.xpath('//div[contains(@class,"study-example-solution")]'):
  assert not panel.xpath('.//*[contains(@class,"document-source") or contains(@class,"study-solution-label")]')
  assert not any(x in panel.text_content() for x in ['Answer basis:','Question source:','SHA-256','Scope:'])
 assert 'Paper provenance and duplicate captures' not in page.text_content()
+# FAQ is limited to R25 Mid II units and uses verifiable paper references.
+faq=json.loads((R/'mid-2-faq.json').read_text())
+assert faq['paper_count']==len(d['papers'])==4
+records={};kinds={};paper_ids={}
+for paper in d['papers']:
+ for kind in ['part_a','part_b']:
+  for q in paper[kind]:
+   for item in [q]+q.get('parts',[]):records[item['id']]=item;kinds[item['id']]='short' if kind=='part_a' else 'essay';paper_ids[item['id']]=paper['id']
+assert len(faq['entries'])==5
+assert page.xpath('//body/@data-bank-allow-all')==['false']
+assert not page.xpath('//a[@data-bank-unit="all"]')
+assert 'All four papers' not in page.text_content()
+assert page.xpath('//a[@data-bank-unit="faq"]')
+expected={'mid2-faq-self-healing':3,'mid2-faq-lithium-ion':3,'mid2-faq-stm-afm':4,'mid2-faq-battery-classification':2,'mid2-faq-biosensors':2}
+for entry in faq['entries']:
+ assert entry['r25_unit'] in [3,4,5]
+ assert all(id in records and kinds[id]==entry['kind'] for id in entry['topic_matches'])
+ count=len({paper_ids[id] for id in entry['topic_matches']});assert count==expected[entry['id']]
+ panel=page.get_element_by_id(entry['id']);assert f'{count} of 4 papers' in panel.find('summary').text_content()
+ for ref in entry['answer_refs']:
+  assert ref['id'] in records
+  for block in records[ref['id']]['answer']['blocks']:
+   if block['type']=='paragraph':assert block['text'] in panel.text_content()
+   if block['type']=='figure':assert panel.xpath('.//figure[@data-source-figure=$id]',id=block['id'])
+lithium=next(x for x in faq['entries'] if x['id']=='mid2-faq-lithium-ion')
+assert len({paper_ids[id] for id in lithium['topic_matches']+lithium['related_matches']})==4
+assert all(kinds[id]=='short' for id in lithium['related_matches'])
+stm=next(x for x in faq['entries'] if x['id']=='mid2-faq-stm-afm')
+assert sum(any(word in records[id]['prompt'] for word in ['AFM','Atomic Force Microscope']) for id in stm['topic_matches'])==3
+biosensors=next(x for x in faq['entries'] if x['id']=='mid2-faq-biosensors')
+assert sum('glucose' in records[id]['prompt'].lower() for id in biosensors['topic_matches'])==1
+# Legacy combined-view links now land inside FAQ, not an all-paper view.
+assert page.get_element_by_id('all-papers').getparent().get('id')==faq['id']
 # Internal and asset URLs resolve.
 for url in page.xpath('//@href | //@src'):
  if url.startswith(('http:','https:')):continue
@@ -84,4 +117,4 @@ for url in page.xpath('//@href | //@src'):
 assert page.xpath('//*[contains(@class,"document-back-top")]/following-sibling::details[contains(@class,"document-contents")]')
 assert len(page.xpath('//p[contains(@class,"paper-or")]'))==12
 cards=json.loads((S/'index-resources.json').read_text())['questions'];assert sum(x['href']=='mid-2.html' for x in cards)==1
-print(f'CHEMISTRY MID II: PASS — 4 papers, 44 questions / {parts} answer parts, 12 OR pairs, original marks, source citations/anchors and unchanged image identities; answer-only display.')
+print(f'CHEMISTRY MID II: PASS — 4 papers, 44 questions / {parts} answer parts, 12 OR pairs, original marks, source citations/anchors and unchanged image identities; answer-only display; five checked R25 FAQ groups.')

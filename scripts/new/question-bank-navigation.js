@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
  let currentUnit = defaultUnit;
  function select(id, scroll = false) {
   const target = id ? document.getElementById(id) : null;
-  const allView = [allId, 'existing-answers', 'source-questions-pending'].includes(id);
+  const allView = document.body.dataset.bankAllowAll !== 'false' && [allId, 'existing-answers', 'source-questions-pending'].includes(id);
   const unit = id === 'document-top' ? currentUnit : allView ? 'all' : target?.closest('[data-bank-unit-section]')?.dataset.bankUnitSection || defaultUnit;
   currentUnit = unit;
   units.forEach(section => { section.hidden = unit !== 'all' && section.dataset.bankUnitSection !== unit; });
