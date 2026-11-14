@@ -4,7 +4,7 @@
 
 `mid-2.html` is a static shell for the shared `scripts/new/exam-prep.js` adapter and shared study-UI accordions. `exam-prep/mid-2.json` contains60 revision entries,111 source question occurrences,3 historical paper records and26 standalone authored C11 examples. The index adds one card; Worksheet & Solutions1 and its resources are unchanged. No source scans or internal note KB files are published.
 
-- `questions`: stable topic IDs, full selected question wording, R25 unit, short/long type, answer ID and all source-occurrence IDs. Similar wording shares a topic; original variants remain inspectable. R numbers are revision-entry labels, not fabricated original question numbers.
+- `questions`: stable topic IDs, full selected question wording, R25 unit, short/long type, answer ID and all source-occurrence IDs. These records supply answer mappings and compatibility aliases only. The page displays each original source occurrence with its original number and wording instead of topic-based revision headings.
 - `occurrences`: original source, PDF page, question number/type, wording and answer mapping. Questions from the supplied UnitIII Part2 bank, structures/pointers bank, UnitV bank and two-page important list are accounted for. The supplied derivative Q&A contributes its explicitly numbered storage-class Q8.
 - `answers`: authored explanation, explicit note/general basis, image/page references and program IDs. Answer order is Priyanka, then senior, then general PPS for gaps. Supplementary answer PDFs are not treated as verified solution or PYQ authority.
 - `papers`: printed exam identity, source IDs/page locators, original groups/parts/marks and OR placement. R25 mappings are stored per part separately from paper order.
@@ -35,7 +35,9 @@ Programs are standalone and formatted for reading. Common headers keep each snip
 - `python3 scripts/tools/verify_college.py`.
 - `python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py`.
 - `python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py`.
-- Chromium at1440px and390px: existing worksheet/new card;60revision entries; search/unit/type controls; current R25 paper14subparts; macro deep link opens answer; mobile contents collapses and Back to top stays available. No page errors or document horizontal overflow. Screenshots inspected for desktop layout and mobile macro/source-discrepancy presentation. GitHub Pages base-path routing checked separately.
+- Chromium at1440px and390px:149 question-and-answer dropdowns (111 revision occurrences and38 paper subparts), eight navigation links for three individual papers and five revision sets, original wording/numbering, and no topic filters or tabs. Paper navigation, legacy compound-question deep links, macro answer, mobile contents collapse and Back to top checked. No page errors or document horizontal overflow. Desktop and mobile screenshots inspected. GitHub Pages base-path routing checked separately.
+
+The simplified presentation supersedes the initial topic-based layout. The PR handoff identifies the current preview commit and deployment status.
 
 ## Manual acceptance checks for PR
 
