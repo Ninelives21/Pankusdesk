@@ -1,0 +1,3442 @@
+{
+  "schema_version": 1,
+  "title": "Mid-II Revision & Papers",
+  "scope": "Revision: functions and recursion (Unit III), structures/pointers (Unit IV), and preprocessor/files (Unit V). Historical papers retain their printed scope; this is not a prediction of current exam coverage.",
+  "sources": [
+    {
+      "id": "u3-bank",
+      "filename": "Unit-3_Part-2_Question Bank pps.pdf",
+      "sha256": "5c7938f2144aa66a07452c61639a754e26c5946a9288972399d9bf98490ba22b",
+      "label": "Unit III, Part 2 question bank"
+    },
+    {
+      "id": "u4-bank",
+      "filename": "Unit-4_Question Bankn pps.pdf",
+      "sha256": "a2e2e4d7da9af96d5ddc9cd4684fd4fc541039f0a7b05c2392cd502b42101563",
+      "label": "Structures and pointers question bank",
+      "original_unit_label": "UNIT-5 (printed); R25 mapping: Unit IV"
+    },
+    {
+      "id": "u5-bank",
+      "filename": "Unit-5_Question Bank pps.pdf",
+      "sha256": "627bc2c8d4da9a215296783d21de9302bc73afede2281e6e90afa4f412791047",
+      "label": "Unit V question bank"
+    },
+    {
+      "id": "important",
+      "filename": "unit 3,4 and 5 important questions.pdf",
+      "sha256": "89eba6947bd691bd0c9331d81552f5b31c6b959a4357bf25bfa66fcd3c7b26cd",
+      "label": "Important questions, Units III–V"
+    },
+    {
+      "id": "derived-qa",
+      "filename": "PPS_Unit3_SecondHalf_Unit4_QA.pdf",
+      "sha256": "f8099c249ecc5333b68e59c51203579874d84d493b103ee3ce86059b7b41967c",
+      "label": "Supplied Unit III/IV Q&A compilation"
+    },
+    {
+      "id": "mid2-2023-src1",
+      "filename": "PPS_MID_2.jpg",
+      "sha256": "a43d68b47244454040be52dfe536f0ef9ab31c554043747017adc2b5cd6cb044",
+      "label": "Mid-II 8 March 2023 source"
+    },
+    {
+      "id": "mid2-2023-src2",
+      "filename": "PXL_20241020_101610078.jpg",
+      "sha256": "8be1248592ed487a8d3c5f5ebea69260a04908e71231e75eb6c029ba874afe29",
+      "label": "Mid-II 8 March 2023 source"
+    },
+    {
+      "id": "mid2-2024-src1",
+      "filename": "PPS mid-2.jpg",
+      "sha256": "763d64918582aee67f5561e037991956ad13a0687c3b563a375f5d05e670064b",
+      "label": "Mid-II 5 January 2024 source"
+    },
+    {
+      "id": "mid2-2024-src2",
+      "filename": "Sem-1 mid-2.pdf",
+      "sha256": "ba25e3096bfcea6728ebfb2b64db7b421826228699dab892d677ec092ba8b94d",
+      "label": "Mid-II 5 January 2024 source"
+    },
+    {
+      "id": "mid2-2026-src1",
+      "filename": "PPS mid 2 2025.jpeg",
+      "sha256": "896917a17deb258f9c3a526f8319bfce9f5b4af669d6c0029b1396d8e02a48d8",
+      "label": "Mid-II 2 January 2026 source"
+    }
+  ],
+  "answers": {
+    "parameters": {
+      "title": "Actual and formal parameters",
+      "paragraphs": [
+        "Actual arguments are expressions supplied in a call: sum(a,b). Formal parameters are local objects declared by the definition: int sum(int x,int y). The values of a and b initialize x and y. Names need not match, but argument types/order must match the prototype.",
+        "Changing x alone does not change a. Passing &a instead copies its address into a pointer parameter, through which *p can change a."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        70,
+        71,
+        72
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "modular": {
+      "title": "Functions and modular programming",
+      "paragraphs": [
+        "A function is a named block that performs a defined task. Modularization divides a larger problem into cohesive functions with clear inputs, outputs and responsibilities.",
+        "Advantages include reuse, reduced duplication, readable structure, isolated testing/debugging and easier maintenance. A function call can have overhead; meaningful decomposition matters more than splitting every statement."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        70,
+        71,
+        72
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "syntax": {
+      "title": "Function syntax",
+      "paragraphs": [
+        "Definition: return_type function_name(parameter_list) { declarations_and_statements; return expression; }. A non-void function returns a compatible value; a void function returns no value and may use return; or reach its closing brace.",
+        "Example: int sum(int x,int y) { return x+y; }. Declaration before use: int sum(int,int);. Call: int total=sum(5,3);. Here int is the return type, sum the identifier, x/y formal parameters and the braces contain the body. Use (void) for no parameters in a C 11 prototype."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        70,
+        71,
+        72
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "value": {
+      "title": "Value and address arguments",
+      "paragraphs": [
+        "C passes every argument by value. Integer parameters are copies; changing them leaves the caller’s integers unchanged. The classroom term call by reference means passing addresses into pointer parameters and updating pointed-to objects.",
+        "For the example below, value_swap exchanges local 3 and 7 but caller remains 3,7. address_swap receives copies of &a,&b; dereferencing them changes caller objects to 7,3. Valid live objects are required."
+      ],
+      "programs": [
+        "swap"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        79,
+        80,
+        81,
+        82
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "scope": {
+      "title": "Local/global variables and lifetime",
+      "paragraphs": [
+        "A block-local variable is visible from its declaration to the end of its block, including nested blocks unless shadowed. A file-scope variable is visible from its declaration through the translation unit; external linkage can permit references from other translation units.",
+        "Scope describes where a name is usable; storage duration describes how long an object exists. Automatic local objects normally last for a block execution; static-duration objects last for the entire execution. A local static variable retains its value between calls while its name stays block-local.",
+        "Example: int g=1; void f(void) { int local=2; static int calls; ++calls; }. g is file-scope; local and calls are block-scope; calls has static duration."
+      ],
+      "programs": [],
+      "basis": "senior",
+      "note_refs": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Senior notes"
+    },
+    "storage": {
+      "title": "Storage classes",
+      "paragraphs": [
+        "In the introductory classification: auto is the usual automatic block-local object; register is a request for fast access for an automatic object (no address-of on that register object); static gives static storage duration and, at file scope, internal linkage; extern declares an object/function with linkage, commonly defined elsewhere.",
+        "Do not equate lifetime with scope. A block-local static object has program-long duration, and a file-scope extern declaration need not be the definition. A variable’s address does not reveal whether it is auto/static; no fixed address output is promised."
+      ],
+      "programs": [],
+      "basis": "senior",
+      "note_refs": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Senior notes"
+    },
+    "recursion": {
+      "title": "Recursion and its characteristics",
+      "paragraphs": [
+        "Recursion occurs when a function calls itself directly or indirectly. A valid terminating algorithm needs a base case and progress toward it; each active invocation has its own parameter/local state.",
+        "It naturally expresses recursive definitions and divide-and-conquer problems. Costs include call overhead, stack use and possible repeated work or stack exhaustion. The factorial example reduces n until 0, then combines products while calls return."
+      ],
+      "programs": [
+        "factorial"
+      ],
+      "basis": "priyanka+senior",
+      "note_refs": [
+        83
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes, supplemented by senior notes",
+      "senior_pages": [
+        105
+      ]
+    },
+    "libraries": {
+      "title": "Library and user-defined functions",
+      "paragraphs": [
+        "Library functions are provided by the implementation/library, with declarations in standard headers: printf in stdio.h, strlen in string.h, malloc in stdlib.h, sqrt in math.h. Headers declare interfaces; functions execute when called.",
+        "User-defined functions are written for the application, such as int sum(int a,int b). Both need compatible declarations and valid arguments. Source strrev/strupr/strlwr are extensions, not ISO C 11 string functions."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        53,
+        70
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "ackermann": {
+      "title": "Ackermann function",
+      "paragraphs": [
+        "For nonnegative integers: A(0,n)=n+1; A(m,0)=A(m−1,1) for m>0; A(m,n)=A(m−1,A(m,n−1)) otherwise.",
+        "Pseudocode: if m=0 return n+1; else if n=0 return A(m−1,1); else return A(m−1,A(m,n−1)). This is nested recursion: the inner result becomes the outer call’s second argument. Growth is very rapid; a practical demonstration must tightly bound inputs."
+      ],
+      "programs": [
+        "ackermann"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        110,
+        111,
+        112
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Senior notes"
+    },
+    "recursion-iteration": {
+      "title": "Recursion versus iteration",
+      "paragraphs": [
+        "Control: recursion repeats through function calls; iteration repeats through loop conditions and updates. Termination: recursion reaches a base case; a loop makes its continuation condition false or exits explicitly.",
+        "State: recursive activations preserve separate call state; iterative solutions normally maintain explicit variables (or an explicit stack when needed). Resource use: ordinary recursion consumes call-stack space and call overhead; an equivalent simple loop can use constant extra space.",
+        "Clarity depends on the problem: tree traversal often reads naturally recursively, while summing a flat array is usually simpler iteratively. Neither method is universally faster or safer."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "categories": {
+      "title": "Four function interfaces",
+      "paragraphs": [
+        "The four combinations are: arguments with returned value; arguments without returned value; no arguments without returned value; no arguments with returned value. Every function has a return type—without return value means void, not an omitted type.",
+        "The example defines four separately named functions. The first returns the addition result to main; the second prints it inside the helper; the third reads and prints internally; the fourth reads internally and returns for main to print. C has no function overloading by signature."
+      ],
+      "programs": [
+        "categories"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        72,
+        73,
+        74
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "factorial": {
+      "title": "Recursive factorial",
+      "paragraphs": [
+        "Initialize the mathematical definition with 0!=1. For n>0, n!=n×(n−1)!. Each call reduces n, and the base value returns through the pending multiplications.",
+        "For 5: fact(5)=5×fact(4)=5×4×3×2×1×fact(0)=120. Reject negative input and bound the result type before allowing the computation."
+      ],
+      "programs": [
+        "factorial"
+      ],
+      "basis": "priyanka+senior",
+      "note_refs": [
+        75,
+        76,
+        77,
+        78
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes, supplemented by senior notes",
+      "senior_pages": [
+        108
+      ]
+    },
+    "recursive-set": {
+      "title": "Factorial, GCD, Ackermann and Fibonacci",
+      "paragraphs": [
+        "These are four separate recursive tasks, not one recurrence. Factorial uses 0!=1 and n×fact(n−1); GCD uses gcd(a,b)=gcd(b,a%b), ending at b=0; Fibonacci uses two base cases; Ackermann nests recursive calls.",
+        "The source repeats Factorial in its slash-separated list; it is represented once here. Each program below has its own input contract and example trace; compile/run them separately."
+      ],
+      "programs": [
+        "factorial",
+        "gcd",
+        "ackermann",
+        "fibonacci"
+      ],
+      "basis": "priyanka+senior",
+      "note_refs": [
+        83
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes, supplemented by senior notes; GCD supplied by general PPS knowledge (note gap)",
+      "senior_pages": [
+        108,
+        109,
+        110,
+        111,
+        112
+      ]
+    },
+    "array-pass": {
+      "title": "Pass arrays to functions",
+      "paragraphs": [
+        "Passing a[i] supplies one scalar element value. Passing a in an ordinary function call converts the array expression to a pointer to its first element; an int a[] parameter is adjusted to int*. It does not copy a whole array or carry its length.",
+        "Pass the valid length separately. Use const int a[] for a helper that only reads elements; use int a[] when element changes are intended. sizeof on an adjusted parameter does not recover the original array capacity."
+      ],
+      "programs": [
+        "array-sum"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "matrix": {
+      "title": "2D-array parameters and matrix multiplication",
+      "paragraphs": [
+        "A 2 D array is an array of rows. A parameter int a[][2] adjusts to a pointer to a two-int row, retaining the column extent for indexing. It is not int**. For arbitrary dimensions, use a correctly declared dimension-aware interface.",
+        "For A with r×k and B with k×c, multiplication requires equal inner dimensions and C has r×c entries. Reset each C[i][j] to 0, then sum A[i][t]×B[t][j] for t=0..k−1. The program demonstrates fixed 2×2 values and shows all four dot products."
+      ],
+      "programs": [
+        "matrix"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        47,
+        48,
+        50,
+        84,
+        85
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "bubble": {
+      "title": "Bubble sort using a function",
+      "paragraphs": [
+        "Pass the array pointer and valid size. Scan adjacent pairs across the unsorted prefix, swapping only when the left value is larger. After each pass the largest remaining value reaches its final position.",
+        "Shrink the next pass by one; j<n−i−1 keeps j+1 valid. Mutation through the array pointer persists in the caller. This fixed-pass version is quadratic even for already sorted data; an early-exit flag would be a separately identified optimization."
+      ],
+      "programs": [
+        "bubble"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        64,
+        65,
+        87,
+        88,
+        89
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "structure": {
+      "title": "Structures, tags and member access",
+      "paragraphs": [
+        "A structure groups named members into one aggregate type; members may have the same or different types. Example: struct student { int roll; char name[20]; int marks[3]; }; defines a tagged type, then struct student s; declares an object.",
+        "The tag student identifies the type for further declarations and self-referential pointer members; it does not allocate an object by itself. Use s.roll, s.marks[0], and p->roll for a valid struct student* p=&s. The arrow expression equals (*p).roll."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        89,
+        90,
+        91,
+        92,
+        94,
+        95
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "union": {
+      "title": "Structures versus unions",
+      "paragraphs": [
+        "A structure gives distinct storage to its members, so all member values can coexist. A union overlays member storage: writing one member changes the stored representation shared by the others. Track which member was last written.",
+        "Both can group named members and use dot/arrow access. Structure and union sizes can include alignment padding; sizeof(struct) need not equal the member-size sum, and sizeof(union) need not equal exactly the largest member size.",
+        "Unions support alternative representations in tagged records (for example integer or floating readings) and memory-saving storage when alternatives are not needed simultaneously. Use a separate tag to remember the active alternative."
+      ],
+      "programs": [
+        "union"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        121,
+        122,
+        123
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Senior notes"
+    },
+    "array-structure": {
+      "title": "Arrays and structures",
+      "paragraphs": [
+        "An array stores a sequence of elements of one element type and selects them with indices: marks[i]. A structure stores named members selected with dot/arrow: student.roll. Member types need not all differ.",
+        "An array of structures is a sequence of complete records, such as struct student class[5]. An array within a structure is a member such as int marks[3]; each student has its own marks array. This models multiple students and their multiple subject marks together."
+      ],
+      "programs": [
+        "students"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        89,
+        90,
+        92,
+        93
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "nested": {
+      "title": "Nested structures",
+      "paragraphs": [
+        "A nested structure has a structure-typed member inside another structure. This models grouped information, such as a student containing an address.",
+        "Access follows each member: s.home.city. The example initializes roll/name/address, then prints them; the enclosing student and nested address remain separate types."
+      ],
+      "programs": [
+        "nested"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        119,
+        120
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Senior notes"
+    },
+    "students": {
+      "title": "Array of student records with totals and percentage",
+      "paragraphs": [
+        "An array of structures keeps the same fields for each student. Read each student’s roll,name,address and three marks, reset total for that student, add the marks, then calculate percentage using floating division.",
+        "The supplied bank specifies 5 students and 3 subjects. For this solution each subject is assumed out of 100, so percentage=total/300×100. If the maxima differ, use their actual sum instead. Name/address input is bounded to single tokens in the example."
+      ],
+      "programs": [
+        "students"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        92,
+        93
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "self": {
+      "title": "Self-referential structures",
+      "paragraphs": [
+        "A self-referential structure contains a pointer to its own tagged type, for example struct node { int data; struct node *next; };. It can link another node, itself or NULL; it does not automatically point to itself.",
+        "This supports linked lists, trees and graphs. A direct member of the same incomplete structure type is invalid because its size is not yet complete; a pointer member is permitted. NULL is a macro for a null pointer constant, not a C keyword; test before dereferencing."
+      ],
+      "programs": [
+        "self-reference"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        101
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "pointer": {
+      "title": "Pointers and their uses",
+      "paragraphs": [
+        "A pointer object holds a pointer value designating an object/function, a null pointer, or a permitted one-past array position. Example: int x=7; int *p=&x; then *p accesses x. Initialize before use and respect type, lifetime and array bounds.",
+        "Uses include caller-object updates through address arguments, array/string traversal, dynamically allocated storage and linked data structures. In int *p,q only p is a pointer. Print an object pointer with %p and (void*)p, not %d or %u."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        79,
+        80,
+        81,
+        98,
+        99
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "pointer-array": {
+      "title": "Pointer arithmetic and pointers to arrays",
+      "paragraphs": [
+        "For int a[3], int *p=a points to its first element, while int (*row)[3]=&a points to the entire row array. An array of pointers is different: const char *names[3] stores three pointer objects.",
+        "Pointer plus/minus an integer and ++/-- move by element units, scaled by sizeof the pointed-to type. Same-array subtraction counts elements and yields ptrdiff_t. Stay in the same array or one-past; never dereference one-past. Unrelated-object subtraction, pointer multiplication/division, void* arithmetic and function-pointer arithmetic are not ISO C.",
+        "p+1 computes a new pointer without updating p; p++ updates p. Neither increments *p. Array expression conversion to &a[0] in context does not make a assignable."
+      ],
+      "programs": [
+        "pointer-array"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        98,
+        99,
+        100,
+        101
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "array-pointers": {
+      "title": "Array of pointers",
+      "paragraphs": [
+        "An array of pointers stores pointer elements, for example const char *names[3]={\"Asha\",\"Bina\",\"Chitra\"};. names[i] selects a pointer; names[i][j] selects a character of its pointed-to string.",
+        "This differs from char names[3][20], which stores three fixed-size character rows, and from a pointer to an entire array. String literals are not modifiable; use const char*."
+      ],
+      "programs": [
+        "pointer-string"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "pointer-string": {
+      "title": "Pointers to strings",
+      "paragraphs": [
+        "A char pointer can traverse a terminated character sequence; stop before the null character and never pass the buffer boundary. Literals should be accessed through const char* when not modifying them.",
+        "An array of string pointers holds separate pointers and may refer to strings of different lengths; a pointer to a character array instead retains its row extent. The example shows string traversal followed by all entries of a pointer array."
+      ],
+      "programs": [
+        "pointer-string"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "function-pointer": {
+      "title": "Pointer to a function",
+      "paragraphs": [
+        "Declaration: int (*operation)(int,int);. Parentheses make operation a pointer to a function taking two int parameters and returning int. Without them int *operation(int,int) declares a function returning int*.",
+        "Example: int add(int a,int b) { return a+b; } then int (*operation)(int,int)=add; and int result=operation(2,3); gives 5. Function pointers support callbacks/selected operations; function-pointer arithmetic is invalid."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "dma": {
+      "title": "Dynamic memory allocation",
+      "paragraphs": [
+        "Dynamic allocation obtains storage during execution, useful when size/lifetime is not known as a fixed automatic array. Include stdlib.h and check size calculations and allocation results.",
+        "malloc(n*sizeof *p) allocates uninitialized bytes; calloc(n,sizeof *p) allocates zeroed bytes; realloc(p,new_size) resizes, possibly moving storage; free(p) releases it. Free(NULL) is harmless. Do not assume zero bytes represent a null pointer or every floating representation.",
+        "For nonzero new size use a temporary for realloc, so failure leaves the old allocation available. Initialize added elements and free successful allocations on all paths. Avoid zero-size resizing in beginner code because its semantics are version/implementation-sensitive."
+      ],
+      "programs": [
+        "dma"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "struct-pass": {
+      "title": "Passing structures to functions",
+      "paragraphs": [
+        "Pass a structure value to make a copy; pass a pointer to read/update the original through ->; pass selected members if the helper only needs those values. Returning a structure value is permitted.",
+        "There is no universally best method. Value parameters isolate changes and are natural for small records. A const pointer avoids copying a large read-only record; a writable pointer is appropriate when changing caller fields. All pointer arguments are still passed by value."
+      ],
+      "programs": [
+        "struct-function"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        95,
+        96,
+        97
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "pointer-invalid": {
+      "title": "Four-dimensional indexing and unrelated-pointer subtraction",
+      "paragraphs": [
+        "(i) For a genuine four-dimensional array a, a[i][j][k][l] is equivalent to *(*(*(*(a+i)+j)+k)+l). Each dereference selects the next array level; every index must be valid.",
+        "(ii) The printed program subtracts p=&a and q=&b for two separate scalar objects. They are not elements of the same array, so p−q has undefined behavior. There is no portable numerical output, even if addresses appear adjacent on one run.",
+        "For a valid comparison example use one array: int v[2]; ptrdiff_t distance=&v[1]-&v[0]; gives 1, printed with %td. The source expression is retained for analysis rather than silently changed into a valid program."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "file": {
+      "title": "Files and text/binary streams",
+      "paragraphs": [
+        "A file is a named external data resource accessed through a stream. FILE *fp is a pointer to the C library’s stream-control object, declared in stdio.h; it is not itself a byte-position counter. fopen returns a stream pointer or NULL.",
+        "Text streams represent text and can translate newline representations. Binary streams transfer bytes without that text translation. Text numbers need parsing/formatting; native binary numeric/structure representations are implementation-dependent. Neither kind is inherently encrypted."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "modes": {
+      "title": "Opening files and modes",
+      "paragraphs": [
+        "Syntax: FILE *fp=fopen(\"data.txt\",\"r\"); if(fp==NULL) handle failure; then close with fclose(fp) and check failure. r reads an existing file; w writes and truncates or creates; a appends and creates if needed.",
+        "Adding + permits both reading and writing: r+ does not truncate; w+ truncates/creates; a+ permits reading and appending, with writes forced to the current end regardless of positioning. Add b for binary mode, such as rb or wb. Initial read position in append mode can vary; position explicitly if needed.",
+        "For update streams, respect read/write transition rules: output to input requires fflush or positioning; input to output requires positioning unless input encountered EOF. Do not use fflush(stdin)."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "seek": {
+      "title": "Random-access file positioning",
+      "paragraphs": [
+        "fseek(fp,offset,origin) sets position relative to SEEK_SET (start), SEEK_CUR (current), or SEEK_END (end), returning 0 on success. ftell(fp) returns a position indicator as long or−1 L on failure. rewind(fp) returns to start and clears error/EOF indicators; it has no return value.",
+        "On a binary stream where supported: fseek(fp,15 L,SEEK_SET) requests 15 bytes from start; fseek(fp,-5 L,SEEK_END) requests 5 bytes before end. The latter fails if unsupported or inappropriate for the file—always check the result.",
+        "Text streams restrict portable fseek offsets: zero, or a previous ftell value used with SEEK_SET. Do not promise arbitrary byte-relative seeks on text files. Sequential access processes data in order; random access explicitly repositions to a chosen location."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "formatted-file": {
+      "title": "Formatted and character file I/O",
+      "paragraphs": [
+        "fprintf(fp,\"%d\\n\",value) formats a value into a stream; fscanf(fp,\"%d\",&value) parses it, returning the number of assigned conversions. Check that result before using value. fprintf returns a negative value on output failure.",
+        "fgetc/fputc read/write one character; fgets reads a bounded line including a newline if it fits; fputs writes a terminated string without adding a newline. Keep fgetc result as int until EOF is distinguished. Close the stream and check errors."
+      ],
+      "programs": [
+        "copy-file"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "binary": {
+      "title": "Binary file I/O",
+      "paragraphs": [
+        "fwrite(ptr,size,count,fp) writes count objects of size bytes; fread(ptr,size,count,fp) reads them. Both return completed item counts, not bytes unless size=1. Use rb/wb modes and verify the count.",
+        "The example writes a record, closes, reopens, reads exactly one record and prints its fields. Raw struct files are not portable across arbitrary compilers/architectures due to representation and padding; define explicit serialization for interchange."
+      ],
+      "programs": [
+        "binary"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "errors": {
+      "title": "File error handling",
+      "paragraphs": [
+        "Check fopen against NULL, input functions against their success criteria, output functions for errors and fclose for failure. After a failed read, ferror distinguishes an error from ordinary end-of-file.",
+        "feof reports an end indicator after a read reaches past the end; while(!feof(fp)) is not a correct read loop. clearerr resets both indicators. perror writes a message using errno; use it immediately after the failing operation."
+      ],
+      "programs": [
+        "file-errors"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "command": {
+      "title": "Command-line arguments",
+      "paragraphs": [
+        "A conventional hosted entry is int main(int argc,char *argv[]). argc is a nonnegative argument count; when argc>0 argv[0] represents the program name if available, argv[1] is the first supplied argument, and argv[argc] is NULL.",
+        "Check the count before indexing. Arguments are strings; numeric conversion needs validation (for example strtol with end/range checks). Quote text containing spaces so the shell passes it as one argument. The example prints one argument and its length."
+      ],
+      "programs": [
+        "command-line"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "enum-typedef": {
+      "title": "enum and typedef",
+      "paragraphs": [
+        "enum declares an enumerated type and named integer constants: enum day { MON, TUE, WED };. With no explicit values these are 0,1,2. Explicit initializers can choose different values; subsequent uninitialized enumerators increment from the previous one.",
+        "typedef introduces a type alias: typedef unsigned long count_t; count_t total=0;. It does not allocate storage or create a distinct new type. For a tagged record: typedef struct student { int roll; } Student; permits Student s; as an alias spelling."
+      ],
+      "programs": [],
+      "basis": "senior",
+      "note_refs": [
+        9,
+        10,
+        125,
+        126
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Senior notes"
+    },
+    "preprocessor": {
+      "title": "Preprocessor directives and symbolic constants",
+      "paragraphs": [
+        "Directives begin with # and act during preprocessing. #include <stdio.h> includes a standard header; #define LIMIT 10 defines an object-like symbolic constant; #define SQUARE(x) ((x)*(x)) defines a function-like macro.",
+        "#undef removes a macro; #if/#ifdef/#ifndef/#elif/#else/#endif select conditional compilation; #error produces a diagnostic; #pragma requests implementation-specific behavior. A directive is not an ordinary runtime statement and does not generally end in a semicolon.",
+        "Macros substitute tokens, not typed function calls. Parenthesize arguments/results and avoid repeated evaluation of side-effecting arguments; an inline function is often preferable for such operations."
+      ],
+      "programs": [
+        "macro"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "file-count": {
+      "title": "Write/read and classify file characters",
+      "paragraphs": [
+        "Write a known sequence, close successfully, reopen for reading and inspect each successfully read character. Count all characters; digit and special-symbol counts are subsets, not additional characters.",
+        "The program states exactly which characters are written and defines special as neither alphanumeric nor whitespace. Use unsigned-char values with ctype classification and distinguish EOF using int."
+      ],
+      "programs": [
+        "file-count"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "copy": {
+      "title": "Copy one file and display the copy",
+      "paragraphs": [
+        "Open the input before opening the output; reject open failures. Read until fgetc returns EOF and write each returned character. Check read, write and close results before claiming success.",
+        "The example copies a fixed fixture input.txt to copy.txt in binary mode, then reopens and displays the copy. Different destination name avoids truncating the input; a general filename-taking solution should reject the same underlying file."
+      ],
+      "programs": [
+        "copy-file"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "even-odd": {
+      "title": "Separate even and odd numbers into files",
+      "paragraphs": [
+        "Read each successfully parsed integer; n%2==0 identifies even values and the remaining integers are odd, including negative odd values. Write each to its corresponding output stream and check all results.",
+        "The demonstration first writes 1,2,3,4 to a text file, then produces even.txt containing 2,4 and odd.txt containing 1,3. The fixed fixture makes the otherwise unspecified input data reproducible."
+      ],
+      "programs": [
+        "even-odd-files"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "inventory": {
+      "title": "Inventory file example",
+      "paragraphs": [
+        "The prompt does not specify an inventory schema. This authored interpretation uses item ID, single-token name, quantity and unit price. Write one text record, read it back and calculate stock value=quantity×unit price.",
+        "For a production inventory, validate fields and record format, preserve existing records when updating, and handle invalid/missing files. The example is deliberately a small standalone illustration, not an unspecified full inventory application."
+      ],
+      "programs": [
+        "inventory"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "macro-output": {
+      "title": "Macro expansion trace",
+      "paragraphs": [
+        "The paper defines sqr(x) as (x*x), without parentheses around each parameter. Thus sqr(a+b) expands to (a+b*a+b), not ((a+b)*(a+b)).",
+        "For a=5,b=6, multiplication happens first:5+6×5+6=41. A corrected macro #define sqr(x) ((x)*(x)) would give 121 for the same side-effect-free argument. Keep the printed macro when answering the output question; changing it would change the question."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "General PPS knowledge (note gap)"
+    },
+    "pointer-sort": {
+      "title": "Sort through a pointer to an array",
+      "paragraphs": [
+        "Declare a pointer to the entire array with int (*row)[5] and pass &a. Inside the helper, *row provides the first-element pointer for the adjacent comparisons. This retains the five-element array extent, unlike int* or int**.",
+        "Apply shrinking bubble-sort passes to the selected row. The first pass gives 12,1,4,9,20; the second gives 1,4,9,12,20; further fixed passes leave it unchanged. Use strict greater-than comparisons to preserve equal-element order."
+      ],
+      "programs": [
+        "pointer-sort"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        64,
+        65,
+        87,
+        88,
+        89
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    },
+    "array-within": {
+      "title": "Array within a structure",
+      "paragraphs": [
+        "An array within a structure is a member such as int marks[3]; each structure object owns its own complete marks array. This differs from struct student class[5], an array of whole student records.",
+        "Access a subject with s.marks[j] or p->marks[j] for a valid pointer p. In the example below, the three-subject marks array is a member of each of five student structures."
+      ],
+      "programs": [
+        "students"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        89,
+        90,
+        92,
+        93
+      ],
+      "authority": "PankusDesk-authored answer; corrected C11 treatment",
+      "basis_label": "Priyanka class notes"
+    }
+  },
+  "programs": {
+    "swap": {
+      "title": "Value copies and pointer swap",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic void value_swap(int x, int y) {\n    int t = x;\n    x = y;\n    y = t;\n    printf(\"Local: %d %d\\n\", x, y);\n}\nstatic void address_swap(int *x, int *y) {\n    int t = *x;\n    *x = *y;\n    *y = t;\n}\nint main(void) {\n    int a = 3, b = 7;\n    value_swap(a, b);\n    printf(\"Caller: %d %d\\n\", a, b);\n    address_swap(&a, &b);\n    printf(\"Caller: %d %d\\n\", a, b);\n}\n",
+      "input": "",
+      "expected": "Local: 7 3\nCaller: 3 7\nCaller: 7 3\n",
+      "note": "Local parameters are copies. The pointer helper exchanges the two pointed-to objects; pointer arguments themselves are still passed by value."
+    },
+    "categories": {
+      "title": "Four argument/return combinations",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic int sum_value(int a, int b) {\n    return a + b;\n}\nstatic void sum_print(int a, int b) {\n    printf(\"%d\\n\", a + b);\n}\nstatic void sum_read_print(void) {\n    int a, b;\n    if (scanf(\"%d%d\", &a, &b) != 2 || a < -1000 || a > 1000 || b < -1000 || b > 1000)\n        exit(EXIT_FAILURE);\n    printf(\"%d\\n\", a + b);\n}\nstatic int sum_read_value(void) {\n    int a, b;\n    if (scanf(\"%d%d\", &a, &b) != 2 || a < -1000 || a > 1000 || b < -1000 || b > 1000)\n        exit(EXIT_FAILURE);\n    return a + b;\n}\nint main(void) {\n    printf(\"%d\\n\", sum_value(3, 4));\n    sum_print(3, 4);\n    sum_read_print();\n    printf(\"%d\\n\", sum_read_value());\n}\n",
+      "input": "3 4\n3 4\n",
+      "expected": "7\n7\n7\n7\n",
+      "note": "Distinct function names demonstrate the four interfaces in one program. The first pair use caller-supplied operands; the second pair read internally. Demonstration inputs are limited to ±1000 to keep int addition representable."
+    },
+    "factorial": {
+      "title": "Recursive factorial",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic unsigned long long fact(unsigned n) {\n    return n == 0 ? 1ULL : n * fact(n - 1);\n}\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1 || n < 0 || n > 20)\n        return EXIT_FAILURE;\n    printf(\"%llu\\n\", fact((unsigned)n));\n}\n",
+      "input": "5\n",
+      "expected": "120\n",
+      "note": "Base case0!=1. For5: fact(5)=5×4×3×2×1×1=120. Limit0..20 keeps all products within the minimum required unsigned long long range; recursion depth is bounded."
+    },
+    "fibonacci": {
+      "title": "Recursive first n Fibonacci terms",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic unsigned long fib(unsigned n) {\n    return n < 2 ? n : fib(n - 1) + fib(n - 2);\n}\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1 || n < 0 || n > 20)\n        return EXIT_FAILURE;\n    for (int i = 0; i < n; i++)\n        printf(\"%lu%s\", fib((unsigned)i), i + 1 == n ? \"\\n\" : \" \");\n    if (n == 0)\n        putchar('\\n');\n}\n",
+      "input": "6\n",
+      "expected": "0 1 1 2 3 5\n",
+      "note": "F0=0,F1=1 and Fn=F(n−1)+F(n−2). Six terms end at F5. Naive recursion repeats calls; count0..20 is a teaching/runtime bound, not a universal Fibonacci limit."
+    },
+    "gcd": {
+      "title": "Recursive Euclidean GCD",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic unsigned gcd(unsigned a, unsigned b) {\n    return b == 0 ? a : gcd(b, a % b);\n}\nint main(void) {\n    unsigned a, b;\n    if (scanf(\"%u%u\", &a, &b) != 2 || a > 1000000 || b > 1000000 || (a == 0 && b == 0))\n        return EXIT_FAILURE;\n    printf(\"%u\\n\", gcd(a, b));\n}\n",
+      "input": "48 18\n",
+      "expected": "6\n",
+      "note": "For nonnegative inputs, gcd(48,18)→gcd(18,12)→gcd(12,6)→gcd(6,0)=6. Both-zero input is rejected; input contract is nonnegative integers at most one million."
+    },
+    "ackermann": {
+      "title": "Bounded Ackermann demonstration",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic unsigned ack(unsigned m, unsigned n) {\n    if (m == 0)\n        return n + 1;\n    if (n == 0)\n        return ack(m - 1, 1);\n    return ack(m - 1, ack(m, n - 1));\n}\nint main(void) {\n    unsigned m, n;\n    if (scanf(\"%u%u\", &m, &n) != 2 || m > 3 || n > 6)\n        return EXIT_FAILURE;\n    printf(\"%u\\n\", ack(m, n));\n}\n",
+      "input": "2 2\n",
+      "expected": "7\n",
+      "note": "A(0,n)=n+1; A(m,0)=A(m−1,1); otherwise A(m,n)=A(m−1,A(m,n−1)). A(2,2)=7. Only m≤3,n≤6 accepted because nested recursion grows rapidly; not an unrestricted evaluator."
+    },
+    "array-sum": {
+      "title": "Pass an array and its length",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic long sum(const int a[], size_t n) {\n    long s = 0;\n    for (size_t i = 0; i < n; i++)\n        s += a[i];\n    return s;\n}\nint main(void) {\n    int a[20], n;\n    if (scanf(\"%d\", &n) != 1 || n < 0 || n > 20)\n        return EXIT_FAILURE;\n    for (int i = 0; i < n; i++)\n        if (scanf(\"%d\", &a[i]) != 1 || a[i] < -1000 || a[i] > 1000)\n            return EXIT_FAILURE;\n    printf(\"%ld\\n\", sum(a, (size_t)n));\n}\n",
+      "input": "4\n2 4 6 8\n",
+      "expected": "20\n",
+      "note": "The array argument converts to a pointer; const prevents element changes through this parameter. Pass n separately. Each value is within ±1000 and capacity is20; the long sum is then representable."
+    },
+    "matrix": {
+      "title": "Pass 2D arrays and multiply matrices",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic void multiply(const int a[][2], const int b[][2], int c[][2]) {\n    for (int i = 0; i < 2; i++)\n        for (int j = 0; j < 2; j++) {\n            c[i][j] = 0;\n            for (int k = 0; k < 2; k++)\n                c[i][j] += a[i][k] * b[k][j];\n        }\n}\nint main(void) {\n    const int a[2][2] = {{1, 2}, {3, 4}}, b[2][2] = {{5, 6}, {7, 8}};\n    int c[2][2];\n    multiply(a, b, c);\n    for (int i = 0; i < 2; i++)\n        printf(\"%d %d\\n\", c[i][0], c[i][1]);\n}\n",
+      "input": "",
+      "expected": "19 22\n43 50\n",
+      "note": "A fixed2×2 worked example: c00=1×5+2×7=19,c01=1×6+2×8=22,c10=3×5+4×7=43,c11=3×6+4×8=50. The parameter retains column extent2; arbitrary dimensions are not claimed."
+    },
+    "bubble": {
+      "title": "Bubble sort through an array parameter",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic void sort(int a[], int n) {\n    for (int i = 0; i < n - 1; i++)\n        for (int j = 0; j < n - i - 1; j++)\n            if (a[j] > a[j + 1]) {\n                int t = a[j];\n                a[j] = a[j + 1];\n                a[j + 1] = t;\n            }\n}\nint main(void) {\n    int a[] = {20, 12, 1, 4, 9};\n    int n = 5;\n    sort(a, n);\n    for (int i = 0; i < n; i++)\n        printf(\"%d%s\", a[i], i + 1 == n ? \"\\n\" : \" \");\n}\n",
+      "input": "",
+      "expected": "1 4 9 12 20\n",
+      "note": "Pass1:12,1,4,9,20; pass2:1,4,9,12,20; pass3 and4 unchanged. The fixed-pass version performs n(n−1)/2 comparisons, so best/worst time is quadratic; strict adjacent swapping is stable and uses constant extra space."
+    },
+    "students": {
+      "title": "Five student records with three marks",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstruct student {\n    int roll;\n    char name[20], address[40];\n    int marks[3];\n};\nint main(void) {\n    struct student s[5];\n    for (int i = 0; i < 5; i++) {\n        if (scanf(\"%d%19s%39s\", &s[i].roll, s[i].name, s[i].address) != 3)\n            return EXIT_FAILURE;\n        int total = 0;\n        for (int j = 0; j < 3; j++) {\n            if (scanf(\"%d\", &s[i].marks[j]) != 1 || s[i].marks[j] < 0 ||\n                s[i].marks[j] > 100)\n                return EXIT_FAILURE;\n            total += s[i].marks[j];\n        }\n        printf(\"%d %s %s total=%d percentage=%.2f\\n\", s[i].roll, s[i].name,\n               s[i].address, total, total / 3.0);\n    }\n}\n",
+      "input": "1 A X 60 70 80\n2 B Y 50 50 50\n3 C Z 100 100 100\n4 D W 0 0 0\n5 E V 30 60 90\n",
+      "expected": "1 A X total=210 percentage=70.00\n2 B Y total=150 percentage=50.00\n3 C Z total=300 percentage=100.00\n4 D W total=0 percentage=0.00\n5 E V total=180 percentage=60.00\n",
+      "note": "Source asks for5 students and3 subject marks. Authored assumption: every subject is out of100; percentage=total/300×100=total/3. Names/addresses are single whitespace-delimited tokens here; full lines require bounded line input."
+    },
+    "nested": {
+      "title": "Nested student/address structure",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstruct address {\n    char city[20];\n    int pin;\n};\nstruct student {\n    int roll;\n    char name[20];\n    struct address home;\n};\nint main(void) {\n    struct student s = {1, \"Asha\", {\"Hyderabad\", 500090}};\n    printf(\"%d %s %s %d\\n\", s.roll, s.name, s.home.city, s.home.pin);\n}\n",
+      "input": "",
+      "expected": "1 Asha Hyderabad 500090\n",
+      "note": "home is a structure member; s.home.city selects a nested member. The sample data and address fields are authored to illustrate the source’s unspecified nested-student example."
+    },
+    "union": {
+      "title": "Union active-member example",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nunion value {\n    int count;\n    float price;\n};\nint main(void) {\n    union value v;\n    v.count = 7;\n    printf(\"count=%d\\n\", v.count);\n    v.price = 2.5f;\n    printf(\"price=%.1f\\n\", v.price);\n}\n",
+      "input": "",
+      "expected": "count=7\nprice=2.5\n",
+      "note": "The members share storage. Read count while it holds the stored integer, then read price after writing it; do not expect both values preserved. Structure/union sizes can include padding, so do not equate sizeof with a raw sum or largest-member size."
+    },
+    "self-reference": {
+      "title": "Two self-referential nodes",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstruct node {\n    int data;\n    struct node *next;\n};\nint main(void) {\n    struct node second = {20, NULL}, first = {10, &second};\n    for (const struct node *p = &first; p != NULL; p = p->next)\n        printf(\"%d\\n\", p->data);\n}\n",
+      "input": "",
+      "expected": "10\n20\n",
+      "note": "A same-type pointer links objects; it need not point to the same object. Traversal stops at NULL before dereference. Stack objects remain alive throughout main; allocation and deletion are separate topics."
+    },
+    "dma": {
+      "title": "malloc, calloc, realloc and free",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    int *p = malloc(2 * sizeof *p);\n    if (!p)\n        return EXIT_FAILURE;\n    p[0] = 10;\n    p[1] = 20;\n    int *zero = calloc(2, sizeof *zero);\n    if (!zero) {\n        free(p);\n        return EXIT_FAILURE;\n    }\n    printf(\"calloc: %d %d\\n\", zero[0], zero[1]);\n    free(zero);\n    int *tmp = realloc(p, 3 * sizeof *p);\n    if (!tmp) {\n        free(p);\n        return EXIT_FAILURE;\n    }\n    p = tmp;\n    p[2] = 30;\n    printf(\"%d %d %d\\n\", p[0], p[1], p[2]);\n    free(p);\n}\n",
+      "input": "",
+      "expected": "calloc: 0 0\n10 20 30\n",
+      "note": "malloc gives uninitialized storage; calloc zeroes allocated bytes (giving integer zeros here). realloc can move storage; retain old pointer on failure by using tmp. Initialize the newly added element. Free each successful allocation exactly once; never use freed pointers."
+    },
+    "pointer-array": {
+      "title": "Pointer arithmetic and pointer to an array",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    int a[] = {10, 20, 30};\n    int *p = a;\n    int (*row)[3] = &a;\n    printf(\"%d %d %td\\n\", *p, *(p + 1), (a + 2) - a);\n    p++;\n    printf(\"%d %d\\n\", *p, (*row)[2]);\n}\n",
+      "input": "",
+      "expected": "10 20 2\n20 30\n",
+      "note": "p+1 advances one int; int (*row)[3] points to the entire three-element array. The same-array difference counts elements and has ptrdiff_t type (%td). One-past may be formed but not dereferenced; no multiplication/division of pointers."
+    },
+    "struct-function": {
+      "title": "Structure value, pointer and scalar members",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstruct student {\n    int roll;\n    char name[20];\n    float marks;\n};\nstatic void show(struct student s) {\n    printf(\"%d %s %.1f\\n\", s.roll, s.name, s.marks);\n}\nstatic void show_members(int roll, float marks) {\n    printf(\"%d %.1f\\n\", roll, marks);\n}\nstatic void add_marks(struct student *s) {\n    s->marks += 10;\n}\nint main(void) {\n    struct student s = {1, \"Asha\", 70};\n    show(s);\n    show_members(s.roll, s.marks);\n    add_marks(&s);\n    show(s);\n}\n",
+      "input": "",
+      "expected": "1 Asha 70.0\n1 70.0\n1 Asha 80.0\n",
+      "note": "Value parameter copies a structure; member arguments pass selected scalar values; pointer parameter can mutate the original object. For large read-only structures prefer const struct student* when appropriate; no method is universally best."
+    },
+    "pointer-string": {
+      "title": "String and array of string pointers",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    const char *s = \"C language\";\n    const char *names[] = {\"Asha\", \"Bina\", \"Chitra\"};\n    for (const char *p = s; *p != '\\0'; p++)\n        putchar(*p);\n    putchar('\\n');\n    for (size_t i = 0; i < 3; i++)\n        puts(names[i]);\n}\n",
+      "input": "",
+      "expected": "C language\nAsha\nBina\nChitra\n",
+      "note": "A pointer to a string is distinct from an array of pointers. Literals are not modified; const char* expresses that restriction. Each pointed-to sequence ends in a null character."
+    },
+    "copy-file": {
+      "title": "Copy and display a file",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    FILE *in = fopen(\"input.txt\", \"rb\");\n    if (!in)\n        return EXIT_FAILURE;\n    FILE *out = fopen(\"copy.txt\", \"wb\");\n    if (!out) {\n        fclose(in);\n        return EXIT_FAILURE;\n    }\n    int c;\n    int failed = 0;\n    while ((c = fgetc(in)) != EOF)\n        if (fputc(c, out) == EOF) {\n            failed = 1;\n            break;\n        }\n    if (ferror(in))\n        failed = 1;\n    if (fclose(in) != 0)\n        failed = 1;\n    if (fclose(out) != 0)\n        failed = 1;\n    if (failed)\n        return EXIT_FAILURE;\n    in = fopen(\"copy.txt\", \"rb\");\n    if (!in)\n        return EXIT_FAILURE;\n    while ((c = fgetc(in)) != EOF)\n        putchar(c);\n    failed = ferror(in);\n    if (fclose(in) != 0)\n        failed = 1;\n    return failed ? EXIT_FAILURE : EXIT_SUCCESS;\n}\n",
+      "input": "",
+      "expected": "Hello C\n",
+      "note": "Fixture input.txt contains Hello C followed by newline. rb/wb copy bytes without text translation. fgetc result is int to distinguish EOF; detect input/write/close failures. The copied file is reopened and displayed."
+    },
+    "file-count": {
+      "title": "Write a file, then count character classes",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    FILE *f = fopen(\"data.txt\", \"w\");\n    if (!f)\n        return EXIT_FAILURE;\n    if (fputs(\"A1 !\\n\", f) == EOF) {\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    if (fclose(f) != 0)\n        return EXIT_FAILURE;\n    f = fopen(\"data.txt\", \"r\");\n    if (!f)\n        return EXIT_FAILURE;\n    unsigned long chars = 0, digits = 0, special = 0;\n    int c;\n    while ((c = fgetc(f)) != EOF) {\n        chars++;\n        if (isdigit((unsigned char)c))\n            digits++;\n        else if (!isalnum((unsigned char)c) && !isspace((unsigned char)c))\n            special++;\n    }\n    int failed = ferror(f);\n    if (fclose(f) != 0)\n        failed = 1;\n    if (failed)\n        return EXIT_FAILURE;\n    printf(\"characters=%lu digits=%lu special=%lu\\n\", chars, digits, special);\n}\n",
+      "input": "",
+      "expected": "characters=5 digits=1 special=1\n",
+      "note": "Writes A1 ! followed by newline (five characters). All characters count; digit count is1; special means neither alphanumeric nor whitespace, so only ! counts. Cast to unsigned char for ctype classification."
+    },
+    "file-errors": {
+      "title": "Detect and clear stream error indicators",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    FILE *f = fopen(\"input.txt\", \"r\");\n    if (!f) {\n        perror(\"input.txt\");\n        return EXIT_FAILURE;\n    }\n    int c;\n    while ((c = fgetc(f)) != EOF) {\n    }\n    if (ferror(f)) {\n        perror(\"read\");\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    printf(\"EOF=%d error=%d\\n\", feof(f) != 0, ferror(f) != 0);\n    clearerr(f);\n    printf(\"After clearerr: EOF=%d error=%d\\n\", feof(f) != 0, ferror(f) != 0);\n    if (fclose(f) != 0)\n        return EXIT_FAILURE;\n}\n",
+      "input": "",
+      "expected": "EOF=1 error=0\nAfter clearerr: EOF=0 error=0\n",
+      "note": "Read using the function result rather than while(!feof). feof is set only after a read attempts past the end. ferror distinguishes a read error; clearerr resets both indicators. perror reports the errno-associated message when an operation fails."
+    },
+    "binary": {
+      "title": "Write and read a binary record",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstruct item {\n    int id;\n    double price;\n};\nint main(void) {\n    struct item a = {1, 12.5}, b;\n    FILE *f = fopen(\"item.bin\", \"wb\");\n    if (!f)\n        return EXIT_FAILURE;\n    if (fwrite(&a, sizeof a, 1, f) != 1) {\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    if (fclose(f) != 0)\n        return EXIT_FAILURE;\n    f = fopen(\"item.bin\", \"rb\");\n    if (!f)\n        return EXIT_FAILURE;\n    if (fread(&b, sizeof b, 1, f) != 1) {\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    if (fclose(f) != 0)\n        return EXIT_FAILURE;\n    printf(\"%d %.2f\\n\", b.id, b.price);\n}\n",
+      "input": "",
+      "expected": "1 12.50\n",
+      "note": "fwrite/fread transfer one object-sized record and return item counts. This native-layout file is for the same implementation; raw struct padding, integer/float representation and endianness make it unsuitable as a portable interchange format."
+    },
+    "command-line": {
+      "title": "Print arguments and length of a supplied string",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(int argc, char *argv[]) {\n    if (argc != 2) {\n        fputs(\"Usage: program string\\n\", stderr);\n        return EXIT_FAILURE;\n    }\n    printf(\"argument=%s length=%zu\\n\", argv[1], strlen(argv[1]));\n}\n",
+      "input": "",
+      "expected": "argument=hello length=5\n",
+      "note": "Run as program hello; quote an argument containing spaces. argc counts program-name entry plus supplied arguments when present, argv[argc] is a null pointer. Check argc before accessing argv[1]. strlen returns size_t (%zu)."
+    },
+    "macro": {
+      "title": "Object-like and function-like macros",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#define LIMIT 10\n#define SQUARE(x) ((x) * (x))\nint main(void) {\n    int a = 3, b = 4;\n    printf(\"limit=%d square=%d\\n\", LIMIT, SQUARE(a + b));\n}\n",
+      "input": "",
+      "expected": "limit=10 square=49\n",
+      "note": "The preprocessor expands SQUARE(a+b) to ((a+b)*(a+b))=49. Parentheses protect precedence, but the argument is evaluated twice: do not pass i++ or other side effects. #include includes headers; #if/#ifdef control conditional inclusion."
+    },
+    "even-odd-files": {
+      "title": "Write integers and split into even/odd files",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    FILE *f = fopen(\"numbers.txt\", \"w\");\n    if (!f)\n        return EXIT_FAILURE;\n    if (fputs(\"1 2 3 4\\n\", f) == EOF) {\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    if (fclose(f) != 0)\n        return EXIT_FAILURE;\n    f = fopen(\"numbers.txt\", \"r\");\n    if (!f)\n        return EXIT_FAILURE;\n    FILE *e = fopen(\"even.txt\", \"w\"), *o = fopen(\"odd.txt\", \"w\");\n    if (!e || !o) {\n        if (e)\n            fclose(e);\n        if (o)\n            fclose(o);\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    int n, rc, failed = 0;\n    while ((rc = fscanf(f, \"%d\", &n)) == 1)\n        if (fprintf(n % 2 == 0 ? e : o, \"%d\\n\", n) < 0) {\n            failed = 1;\n            break;\n        }\n    if (rc != EOF || ferror(f))\n        failed = 1;\n    if (fclose(f) != 0)\n        failed = 1;\n    if (fclose(e) != 0)\n        failed = 1;\n    if (fclose(o) != 0)\n        failed = 1;\n    return failed ? EXIT_FAILURE : EXIT_SUCCESS;\n}\n",
+      "input": "",
+      "expected": "",
+      "note": "numbers.txt contains1,2,3,4; even.txt becomes2 and4, odd.txt1 and3, one value per line. Uses a fixed small fixture to illustrate the source’s unspecified integer-data example; detect malformed input and stream failures."
+    },
+    "inventory": {
+      "title": "Inventory record in a text file",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    int id = 1, qty = 3;\n    double price = 12.5;\n    char name[20] = \"Pen\";\n    FILE *f = fopen(\"inventory.txt\", \"w\");\n    if (!f)\n        return EXIT_FAILURE;\n    if (fprintf(f, \"%d %s %d %.2f\\n\", id, name, qty, price) < 0) {\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    if (fclose(f) != 0)\n        return EXIT_FAILURE;\n    f = fopen(\"inventory.txt\", \"r\");\n    if (!f)\n        return EXIT_FAILURE;\n    if (fscanf(f, \"%d%19s%d%lf\", &id, name, &qty, &price) != 4) {\n        fclose(f);\n        return EXIT_FAILURE;\n    }\n    if (fclose(f) != 0)\n        return EXIT_FAILURE;\n    printf(\"%d %s quantity=%d value=%.2f\\n\", id, name, qty, qty * price);\n}\n",
+      "input": "",
+      "expected": "1 Pen quantity=3 value=37.50\n",
+      "note": "Inventory fields are an authored interpretation: ID,name,quantity,unit price. Store a text record, reopen/read it and compute stock value3×12.50=37.50. The source gives no required inventory format."
+    },
+    "pointer-sort": {
+      "title": "Sort through a pointer to an array",
+      "code": "#include <ctype.h>\n#include <errno.h>\n#include <limits.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nstatic void sort(int (*row)[5], int n) {\n    int *a = *row;\n    for (int i = 0; i < n - 1; i++)\n        for (int j = 0; j < n - i - 1; j++)\n            if (a[j] > a[j + 1]) {\n                int t = a[j];\n                a[j] = a[j + 1];\n                a[j + 1] = t;\n            }\n}\nint main(void) {\n    int a[] = {20, 12, 1, 4, 9};\n    int n = 5;\n    sort(&a, n);\n    for (int i = 0; i < n; i++)\n        printf(\"%d%s\", a[i], i + 1 == n ? \"\\n\" : \" \");\n}\n",
+      "input": "",
+      "expected": "1 4 9 12 20\n",
+      "note": "int (*row)[5] receives &a, the address of the entire five-int array; *row converts to the first-element pointer for adjacent swaps. Fixed capacity5 retains the row extent. Pass1:12,1,4,9,20; pass2:1,4,9,12,20; remaining passes unchanged."
+    }
+  },
+  "questions": [
+    {
+      "id": "revision-u3-short-parameters",
+      "title": "Actual and formal parameters",
+      "question": "Differentiate actual and formal parameters with an example.",
+      "unit": 3,
+      "kind": "short",
+      "answer": "parameters",
+      "occurrences": [
+        "u3-bank-u3-short-1",
+        "important-u3-short-4"
+      ]
+    },
+    {
+      "id": "revision-u3-short-modular",
+      "title": "Functions and modular programming",
+      "question": "Define modularization. List its advantages in programming.",
+      "unit": 3,
+      "kind": "short",
+      "answer": "modular",
+      "occurrences": [
+        "u3-bank-u3-short-2",
+        "important-u3-short-1",
+        "important-u3-short-2"
+      ]
+    },
+    {
+      "id": "revision-u3-short-value",
+      "title": "Value and address arguments",
+      "question": "Differentiate call-by-value and call-by reference methods.",
+      "unit": 3,
+      "kind": "short",
+      "answer": "value",
+      "occurrences": [
+        "u3-bank-u3-short-3",
+        "important-u3-short-8"
+      ]
+    },
+    {
+      "id": "revision-u3-short-scope",
+      "title": "Local/global variables and lifetime",
+      "question": "What are differences between local and global variables?",
+      "unit": 3,
+      "kind": "short",
+      "answer": "scope",
+      "occurrences": [
+        "u3-bank-u3-short-4",
+        "important-u3-short-7"
+      ]
+    },
+    {
+      "id": "revision-u3-short-recursion",
+      "title": "Recursion and its characteristics",
+      "question": "What is recursion? List its characteristics.",
+      "unit": 3,
+      "kind": "short",
+      "answer": "recursion",
+      "occurrences": [
+        "u3-bank-u3-short-5",
+        "important-u3-short-3"
+      ]
+    },
+    {
+      "id": "revision-u3-short-libraries",
+      "title": "Library and user-defined functions",
+      "question": "Write differences between library functions and user defined functions?",
+      "unit": 3,
+      "kind": "short",
+      "answer": "libraries",
+      "occurrences": [
+        "u3-bank-u3-short-6",
+        "important-u3-short-6"
+      ]
+    },
+    {
+      "id": "revision-u3-short-ackermann",
+      "title": "Ackermann function",
+      "question": "Define Ackermann function. Write a pseudo code for its representation using recursion.",
+      "unit": 3,
+      "kind": "short",
+      "answer": "ackermann",
+      "occurrences": [
+        "u3-bank-u3-short-7"
+      ]
+    },
+    {
+      "id": "revision-u3-short-recursion-iteration",
+      "title": "Recursion versus iteration",
+      "question": "Differentiate Recursion and Iteration in four aspects.",
+      "unit": 3,
+      "kind": "short",
+      "answer": "recursion-iteration",
+      "occurrences": [
+        "u3-bank-u3-short-8"
+      ]
+    },
+    {
+      "id": "revision-u3-long-categories",
+      "title": "Four function interfaces",
+      "question": "Define a function in programming. List and explain various function calling methods in programming.",
+      "unit": 3,
+      "kind": "long",
+      "answer": "categories",
+      "occurrences": [
+        "u3-bank-u3-long-1",
+        "important-u3-long-3"
+      ]
+    },
+    {
+      "id": "revision-u3-long-value",
+      "title": "Value and address arguments",
+      "question": "Explain call-by-value and call-by-reference with a sample code and give your differentiations.",
+      "unit": 3,
+      "kind": "long",
+      "answer": "value",
+      "occurrences": [
+        "u3-bank-u3-long-2",
+        "important-u3-long-1",
+        "important-u3-long-2"
+      ]
+    },
+    {
+      "id": "revision-u3-long-recursion",
+      "title": "Recursion and its characteristics",
+      "question": "What is recursion? List its advantages. Write a sample program that demonstrates the recursion method.",
+      "unit": 3,
+      "kind": "long",
+      "answer": "recursion",
+      "occurrences": [
+        "u3-bank-u3-long-3"
+      ]
+    },
+    {
+      "id": "revision-u3-long-factorial",
+      "title": "Recursive factorial",
+      "question": "Write a recursive method that finds the factorial of a number.",
+      "unit": 3,
+      "kind": "long",
+      "answer": "factorial",
+      "occurrences": [
+        "u3-bank-u3-long-4"
+      ]
+    },
+    {
+      "id": "revision-u3-long-array-pass",
+      "title": "Pass arrays to functions",
+      "question": "Write a c program to find sum of array elements by passing array to the function?",
+      "unit": 3,
+      "kind": "long",
+      "answer": "array-pass",
+      "occurrences": [
+        "u3-bank-u3-long-5",
+        "important-u3-long-5"
+      ]
+    },
+    {
+      "id": "revision-u3-long-matrix",
+      "title": "2D-array parameters and matrix multiplication",
+      "question": "Write a c program to perform matrix multiplication using functions.",
+      "unit": 3,
+      "kind": "long",
+      "answer": "matrix",
+      "occurrences": [
+        "u3-bank-u3-long-6",
+        "important-u3-long-6"
+      ]
+    },
+    {
+      "id": "revision-u4-short-union",
+      "title": "Structures versus unions",
+      "question": "Differentiate between structure and union? (Most important)",
+      "unit": 4,
+      "kind": "short",
+      "answer": "union",
+      "occurrences": [
+        "u4-bank-u4-short-1",
+        "u4-bank-u4-short-2",
+        "important-u4-short-2",
+        "important-u4-short-9"
+      ]
+    },
+    {
+      "id": "revision-u4-short-self",
+      "title": "Self-referential structures",
+      "question": "What are self-referential structures? List its purposes.",
+      "unit": 4,
+      "kind": "short",
+      "answer": "self",
+      "occurrences": [
+        "u4-bank-u4-short-3",
+        "important-u4-short-13"
+      ]
+    },
+    {
+      "id": "revision-u4-short-pointer",
+      "title": "Pointers and their uses",
+      "question": "Define a pointer. List its advantages in programming.",
+      "unit": 4,
+      "kind": "short",
+      "answer": "pointer",
+      "occurrences": [
+        "u4-bank-u4-short-4",
+        "important-u4-short-10",
+        "important-u4-short-11"
+      ]
+    },
+    {
+      "id": "revision-u4-short-array-pointers",
+      "title": "Array of pointers",
+      "question": "What is array of pointers. Give a sample code for array of pointers.",
+      "unit": 4,
+      "kind": "short",
+      "answer": "array-pointers",
+      "occurrences": [
+        "u4-bank-u4-short-5"
+      ]
+    },
+    {
+      "id": "revision-u4-short-dma",
+      "title": "Dynamic memory allocation",
+      "question": "Give syntax for malloc, calloc, realloc and free functions?",
+      "unit": 4,
+      "kind": "short",
+      "answer": "dma",
+      "occurrences": [
+        "u4-bank-u4-short-6",
+        "u4-bank-u4-short-7",
+        "u4-bank-u4-short-8",
+        "important-u4-short-12"
+      ]
+    },
+    {
+      "id": "revision-u4-long-students",
+      "title": "Array of student records with totals and percentage",
+      "question": "Define structure. Write a program that uses structure to display the student details like rollno, name, address, marks in three subject marks and display the total and percentage for 5 students (using array of structures).",
+      "unit": 4,
+      "kind": "long",
+      "answer": "students",
+      "occurrences": [
+        "u4-bank-u4-long-1"
+      ]
+    },
+    {
+      "id": "revision-u4-long-union",
+      "title": "Structures versus unions",
+      "question": "Define union. Differentiate it with a structure. Write a sample program that uses unión.",
+      "unit": 4,
+      "kind": "long",
+      "answer": "union",
+      "occurrences": [
+        "u4-bank-u4-long-2",
+        "important-u4-long-10"
+      ]
+    },
+    {
+      "id": "revision-u4-long-nested",
+      "title": "Nested structures",
+      "question": "What are nested structures? Write a program using nested structures that displays student details.",
+      "unit": 4,
+      "kind": "long",
+      "answer": "nested",
+      "occurrences": [
+        "u4-bank-u4-long-3",
+        "important-u4-long-3"
+      ]
+    },
+    {
+      "id": "revision-u4-long-self",
+      "title": "Self-referential structures",
+      "question": "Write a program that uses pointers for self-referential structures. What are its purposes.",
+      "unit": 4,
+      "kind": "long",
+      "answer": "self",
+      "occurrences": [
+        "u4-bank-u4-long-4"
+      ]
+    },
+    {
+      "id": "revision-u4-long-dma",
+      "title": "Dynamic memory allocation",
+      "question": "What is Dynamic memory allocation. List and explain supported functions for Dynamic memory allocation with a sample program.",
+      "unit": 4,
+      "kind": "long",
+      "answer": "dma",
+      "occurrences": [
+        "u4-bank-u4-long-5",
+        "important-u4-long-5"
+      ]
+    },
+    {
+      "id": "revision-u4-long-pointer-array",
+      "title": "Pointer arithmetic and pointers to arrays",
+      "question": "List and explain various operations on pointers.",
+      "unit": 4,
+      "kind": "long",
+      "answer": "pointer-array",
+      "occurrences": [
+        "u4-bank-u4-long-6",
+        "important-u4-long-6"
+      ]
+    },
+    {
+      "id": "revision-u4-long-struct-pass",
+      "title": "Passing structures to functions",
+      "question": "How many ways can we pass a structure to the function among which is the best method?",
+      "unit": 4,
+      "kind": "long",
+      "answer": "struct-pass",
+      "occurrences": [
+        "u4-bank-u4-long-7",
+        "important-u4-long-4",
+        "important-u4-long-9"
+      ]
+    },
+    {
+      "id": "revision-u4-long-pointer-invalid",
+      "title": "Four-dimensional indexing and unrelated-pointer subtraction",
+      "question": "Identify the following and justify your answers.",
+      "unit": 4,
+      "kind": "long",
+      "answer": "pointer-invalid",
+      "occurrences": [
+        "u4-bank-u4-long-8"
+      ],
+      "question_parts": [
+        {
+          "label": "(i)",
+          "text": "State the equivalent pointer expression which refers to a[i][j][k][l]."
+        },
+        {
+          "label": "(ii)",
+          "text": "What is the output of the following program?",
+          "code": "#include <stdio.h>\nint main()\n{\n    int a=5,b=10,c;\n    int *p=&a,*q=&b;\n    c=p-q;\n    printf(\"%d\",c);\n    return 0;\n}"
+        }
+      ],
+      "discrepancy": "p and q point to separate scalar objects. Their subtraction is undefined behavior; a numerical output cannot be justified in ISO C."
+    },
+    {
+      "id": "revision-u5-short-file",
+      "title": "Files and text/binary streams",
+      "question": "Differentiate between text file and binary file?",
+      "unit": 5,
+      "kind": "short",
+      "answer": "file",
+      "occurrences": [
+        "u5-bank-u5-short-1",
+        "u5-bank-u5-short-4",
+        "important-u5-short-1",
+        "important-u5-short-2"
+      ]
+    },
+    {
+      "id": "revision-u5-short-seek",
+      "title": "Random-access file positioning",
+      "question": "Explain the following statements:",
+      "unit": 5,
+      "kind": "short",
+      "answer": "seek",
+      "occurrences": [
+        "u5-bank-u5-short-2",
+        "u5-bank-u5-short-5",
+        "important-u5-short-3",
+        "important-u5-short-9",
+        "important-u5-short-11"
+      ],
+      "question_parts": [
+        {
+          "label": "(a)",
+          "text": "fseek(fptr, 15L, SEEK_SET);"
+        },
+        {
+          "label": "(b)",
+          "text": "fseek(fptr, -5L, SEEK_END);"
+        }
+      ],
+      "answer_parts": [
+        {
+          "label": "(a)",
+          "paragraphs": [
+            "On a binary stream where supported, request position15 bytes from the start. Check fseek returns0; otherwise positioning failed."
+          ]
+        },
+        {
+          "label": "(b)",
+          "paragraphs": [
+            "On a binary stream where supported, request position5 bytes before end. This can fail for an unsuitable file or implementation. Arbitrary nonzero SEEK_END offsets are not portable on text streams."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revision-u5-short-modes",
+      "title": "Opening files and modes",
+      "question": "What is “a+” mode in file access. Write its purpose.",
+      "unit": 5,
+      "kind": "short",
+      "answer": "modes",
+      "occurrences": [
+        "u5-bank-u5-short-3",
+        "important-u5-short-4",
+        "important-u5-short-5"
+      ]
+    },
+    {
+      "id": "revision-u5-short-command",
+      "title": "Command-line arguments",
+      "question": "Explain the arguments used in main function?",
+      "unit": 5,
+      "kind": "short",
+      "answer": "command",
+      "occurrences": [
+        "u5-bank-u5-short-6",
+        "u5-bank-u5-short-7",
+        "important-u5-short-10",
+        "important-u5-short-12"
+      ]
+    },
+    {
+      "id": "revision-u5-short-preprocessor",
+      "title": "Preprocessor directives and symbolic constants",
+      "question": "What are symbolic constants? Give example to represent.",
+      "unit": 5,
+      "kind": "short",
+      "answer": "preprocessor",
+      "occurrences": [
+        "u5-bank-u5-short-8",
+        "u5-bank-u5-short-11",
+        "important-u5-short-14",
+        "important-u5-short-15"
+      ]
+    },
+    {
+      "id": "revision-u5-short-enum-typedef",
+      "title": "enum and typedef",
+      "question": "Give syntax for enum and typedef and explain with an example",
+      "unit": 5,
+      "kind": "short",
+      "answer": "enum-typedef",
+      "occurrences": [
+        "u5-bank-u5-short-9",
+        "u5-bank-u5-short-10",
+        "important-u5-short-13"
+      ]
+    },
+    {
+      "id": "revision-u5-long-formatted-file",
+      "title": "Formatted and character file I/O",
+      "question": "What are text files. List its operations for writing and Reading the data from files. Give an example.",
+      "unit": 5,
+      "kind": "long",
+      "answer": "formatted-file",
+      "occurrences": [
+        "u5-bank-u5-long-1",
+        "important-u5-long-2"
+      ]
+    },
+    {
+      "id": "revision-u5-long-file-count",
+      "title": "Write/read and classify file characters",
+      "question": "Write a program that write the data into a file and find the number of characters, digits and special sympbols in the file through Reading and display the result.",
+      "unit": 5,
+      "kind": "long",
+      "answer": "file-count",
+      "occurrences": [
+        "u5-bank-u5-long-2"
+      ]
+    },
+    {
+      "id": "revision-u5-long-errors",
+      "title": "File error handling",
+      "question": "Write a program that explain the file error handling methods.",
+      "unit": 5,
+      "kind": "long",
+      "answer": "errors",
+      "occurrences": [
+        "u5-bank-u5-long-3"
+      ]
+    },
+    {
+      "id": "revision-u5-long-binary",
+      "title": "Binary file I/O",
+      "question": "What are binary files. Write a program that write the data into a binary file and display the contents of the binary file by Reading the contents from it.",
+      "unit": 5,
+      "kind": "long",
+      "answer": "binary",
+      "occurrences": [
+        "u5-bank-u5-long-4",
+        "important-u5-long-6"
+      ]
+    },
+    {
+      "id": "revision-u5-long-command",
+      "title": "Command-line arguments",
+      "question": "What are command line arguments. Write a program that uses a command line arguments and display the results.",
+      "unit": 5,
+      "kind": "long",
+      "answer": "command",
+      "occurrences": [
+        "u5-bank-u5-long-5",
+        "important-u5-long-7"
+      ]
+    },
+    {
+      "id": "revision-u5-long-preprocessor",
+      "title": "Preprocessor directives and symbolic constants",
+      "question": "Explain pre-processor directives with examples.",
+      "unit": 5,
+      "kind": "long",
+      "answer": "preprocessor",
+      "occurrences": [
+        "u5-bank-u5-long-6",
+        "important-u5-long-1"
+      ]
+    },
+    {
+      "id": "revision-u5-long-seek",
+      "title": "Random-access file positioning",
+      "question": "List and explain various random access file functions with examples.",
+      "unit": 5,
+      "kind": "long",
+      "answer": "seek",
+      "occurrences": [
+        "u5-bank-u5-long-7"
+      ]
+    },
+    {
+      "id": "revision-u3-short-syntax",
+      "title": "Function syntax",
+      "question": "write the syntax for function definition?",
+      "unit": 3,
+      "kind": "short",
+      "answer": "syntax",
+      "occurrences": [
+        "important-u3-short-5"
+      ]
+    },
+    {
+      "id": "revision-u3-long-recursive-set",
+      "title": "Factorial, GCD, Ackermann and Fibonacci",
+      "question": "Write a c program to find factorial/ GCD/ Factorial/ Akerman / Fibonacci series using recursion?",
+      "unit": 3,
+      "kind": "long",
+      "answer": "recursive-set",
+      "occurrences": [
+        "important-u3-long-4"
+      ]
+    },
+    {
+      "id": "revision-u3-long-bubble",
+      "title": "Bubble sort using a function",
+      "question": "Write a C program to perform bubble sort using functions.",
+      "unit": 3,
+      "kind": "long",
+      "answer": "bubble",
+      "occurrences": [
+        "important-u3-long-7"
+      ]
+    },
+    {
+      "id": "revision-u4-short-structure",
+      "title": "Structures, tags and member access",
+      "question": "Discuss importance of structure tag?",
+      "unit": 4,
+      "kind": "short",
+      "answer": "structure",
+      "occurrences": [
+        "important-u4-short-1",
+        "important-u4-short-4",
+        "important-u4-short-8"
+      ]
+    },
+    {
+      "id": "revision-u4-short-array-structure",
+      "title": "Arrays and structures",
+      "question": "Differentiate between array and structure? (Most important)",
+      "unit": 4,
+      "kind": "short",
+      "answer": "array-structure",
+      "occurrences": [
+        "important-u4-short-3",
+        "important-u4-short-6"
+      ]
+    },
+    {
+      "id": "revision-u4-short-nested",
+      "title": "Nested structures",
+      "question": "What is nested structure? Give example.",
+      "unit": 4,
+      "kind": "short",
+      "answer": "nested",
+      "occurrences": [
+        "important-u4-short-5"
+      ]
+    },
+    {
+      "id": "revision-u4-short-array-within",
+      "title": "Array within a structure",
+      "question": "What is array within the structure? Give example.",
+      "unit": 4,
+      "kind": "short",
+      "answer": "array-within",
+      "occurrences": [
+        "important-u4-short-7"
+      ]
+    },
+    {
+      "id": "revision-u4-short-pointer-array",
+      "title": "Pointer arithmetic and pointers to arrays",
+      "question": "Explain pointer arithmetic?",
+      "unit": 4,
+      "kind": "short",
+      "answer": "pointer-array",
+      "occurrences": [
+        "important-u4-short-14"
+      ]
+    },
+    {
+      "id": "revision-u4-short-function-pointer",
+      "title": "Pointer to a function",
+      "question": "Give syntax for pointer to a function?",
+      "unit": 4,
+      "kind": "short",
+      "answer": "function-pointer",
+      "occurrences": [
+        "important-u4-short-15"
+      ]
+    },
+    {
+      "id": "revision-u4-long-array-within",
+      "title": "Array within a structure",
+      "question": "Explain array within the structure with example? (Explain with program)",
+      "unit": 4,
+      "kind": "long",
+      "answer": "array-within",
+      "occurrences": [
+        "important-u4-long-1"
+      ]
+    },
+    {
+      "id": "revision-u4-long-array-structure",
+      "title": "Arrays and structures",
+      "question": "Explain array of structure with suitable example? (Explain with program)",
+      "unit": 4,
+      "kind": "long",
+      "answer": "array-structure",
+      "occurrences": [
+        "important-u4-long-2"
+      ]
+    },
+    {
+      "id": "revision-u4-long-pointer-string",
+      "title": "Pointers to strings",
+      "question": "Write a c program related to pointer to strings?",
+      "unit": 4,
+      "kind": "long",
+      "answer": "pointer-string",
+      "occurrences": [
+        "important-u4-long-7"
+      ]
+    },
+    {
+      "id": "revision-u4-long-array-pointers",
+      "title": "Array of pointers",
+      "question": "Write a c program related to pointer to array of strings?",
+      "unit": 4,
+      "kind": "long",
+      "answer": "array-pointers",
+      "occurrences": [
+        "important-u4-long-8"
+      ]
+    },
+    {
+      "id": "revision-u5-short-formatted-file",
+      "title": "Formatted and character file I/O",
+      "question": "Give syntax for fscanf and fprintf?",
+      "unit": 5,
+      "kind": "short",
+      "answer": "formatted-file",
+      "occurrences": [
+        "important-u5-short-6"
+      ]
+    },
+    {
+      "id": "revision-u5-short-errors",
+      "title": "File error handling",
+      "question": "Explain error handling file functions?",
+      "unit": 5,
+      "kind": "short",
+      "answer": "errors",
+      "occurrences": [
+        "important-u5-short-7"
+      ]
+    },
+    {
+      "id": "revision-u5-short-binary",
+      "title": "Binary file I/O",
+      "question": "Give syntax for fread and fwrite?",
+      "unit": 5,
+      "kind": "short",
+      "answer": "binary",
+      "occurrences": [
+        "important-u5-short-8"
+      ]
+    },
+    {
+      "id": "revision-u5-long-copy",
+      "title": "Copy one file and display the copy",
+      "question": "Write a c program to copy one file content to another and display the copied file content?",
+      "unit": 5,
+      "kind": "long",
+      "answer": "copy",
+      "occurrences": [
+        "important-u5-long-3"
+      ]
+    },
+    {
+      "id": "revision-u5-long-even-odd",
+      "title": "Separate even and odd numbers into files",
+      "question": "Write a c program to write integers to a file and read integers from the file and check if the integer is even or odd and separate them?",
+      "unit": 5,
+      "kind": "long",
+      "answer": "even-odd",
+      "occurrences": [
+        "important-u5-long-4"
+      ]
+    },
+    {
+      "id": "revision-u5-long-inventory",
+      "title": "Inventory file example",
+      "question": "Write a c program to inventory file?",
+      "unit": 5,
+      "kind": "long",
+      "answer": "inventory",
+      "occurrences": [
+        "important-u5-long-5"
+      ]
+    },
+    {
+      "id": "revision-u3-long-storage",
+      "title": "Storage classes",
+      "question": "Explain the storage classes in C with examples.",
+      "unit": 3,
+      "kind": "long",
+      "answer": "storage",
+      "occurrences": [
+        "derived-qa-u3-long-8"
+      ]
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "u3-bank-u3-short-1",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "1",
+      "section": "short",
+      "unit": 3,
+      "question": "Differentiate actual and formal parameters with an example.",
+      "answer": "parameters"
+    },
+    {
+      "id": "u3-bank-u3-short-2",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "2",
+      "section": "short",
+      "unit": 3,
+      "question": "Define modularization. List its advantages in programming.",
+      "answer": "modular"
+    },
+    {
+      "id": "u3-bank-u3-short-3",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "3",
+      "section": "short",
+      "unit": 3,
+      "question": "Differentiate call-by-value and call-by reference methods.",
+      "answer": "value"
+    },
+    {
+      "id": "u3-bank-u3-short-4",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "4",
+      "section": "short",
+      "unit": 3,
+      "question": "Differentiate local and global variables with examples.",
+      "answer": "scope"
+    },
+    {
+      "id": "u3-bank-u3-short-5",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "5",
+      "section": "short",
+      "unit": 3,
+      "question": "What is recursion? List its characteristics.",
+      "answer": "recursion"
+    },
+    {
+      "id": "u3-bank-u3-short-6",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "6",
+      "section": "short",
+      "unit": 3,
+      "question": "Differentiate built-in functions and user-defined functions.",
+      "answer": "libraries"
+    },
+    {
+      "id": "u3-bank-u3-short-7",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "7",
+      "section": "short",
+      "unit": 3,
+      "question": "Define Ackermann function. Write a pseudo code for its representation using recursion.",
+      "answer": "ackermann"
+    },
+    {
+      "id": "u3-bank-u3-short-8",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "8",
+      "section": "short",
+      "unit": 3,
+      "question": "Differentiate Recursion and Iteration in four aspects.",
+      "answer": "recursion-iteration"
+    },
+    {
+      "id": "u3-bank-u3-long-1",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "1",
+      "section": "long",
+      "unit": 3,
+      "question": "Define a function in programming. List and explain various function calling methods in programming.",
+      "answer": "categories"
+    },
+    {
+      "id": "u3-bank-u3-long-2",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "2",
+      "section": "long",
+      "unit": 3,
+      "question": "Explain call-by-value and call-by-reference with a sample code and give your differentiations.",
+      "answer": "value"
+    },
+    {
+      "id": "u3-bank-u3-long-3",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "3",
+      "section": "long",
+      "unit": 3,
+      "question": "What is recursion? List its advantages. Write a sample program that demonstrates the recursion method.",
+      "answer": "recursion"
+    },
+    {
+      "id": "u3-bank-u3-long-4",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "4",
+      "section": "long",
+      "unit": 3,
+      "question": "Write a recursive method that finds the factorial of a number.",
+      "answer": "factorial"
+    },
+    {
+      "id": "u3-bank-u3-long-5",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "5",
+      "section": "long",
+      "unit": 3,
+      "question": "Explain how to pass an array to the function with an example.",
+      "answer": "array-pass"
+    },
+    {
+      "id": "u3-bank-u3-long-6",
+      "source": "u3-bank",
+      "page": 1,
+      "number": "6",
+      "section": "long",
+      "unit": 3,
+      "question": "Explain how to pass a 2D array to the function with an example.",
+      "answer": "matrix"
+    },
+    {
+      "id": "u4-bank-u4-short-1",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "1",
+      "section": "short",
+      "unit": 4,
+      "question": "Differentiate structures and unions.",
+      "answer": "union"
+    },
+    {
+      "id": "u4-bank-u4-short-2",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "2",
+      "section": "short",
+      "unit": 4,
+      "question": "When do we use unions? List any two purposes.",
+      "answer": "union"
+    },
+    {
+      "id": "u4-bank-u4-short-3",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "3",
+      "section": "short",
+      "unit": 4,
+      "question": "What are self-referential structures? List its purposes.",
+      "answer": "self"
+    },
+    {
+      "id": "u4-bank-u4-short-4",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "4",
+      "section": "short",
+      "unit": 4,
+      "question": "Define a pointer. List its advantages in programming.",
+      "answer": "pointer"
+    },
+    {
+      "id": "u4-bank-u4-short-5",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "5",
+      "section": "short",
+      "unit": 4,
+      "question": "What is array of pointers. Give a sample code for array of pointers.",
+      "answer": "array-pointers"
+    },
+    {
+      "id": "u4-bank-u4-short-6",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "6",
+      "section": "short",
+      "unit": 4,
+      "question": "Write the purpose of dynamic memory allocation.",
+      "answer": "dma"
+    },
+    {
+      "id": "u4-bank-u4-short-7",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "7",
+      "section": "short",
+      "unit": 4,
+      "question": "Explain malloc()",
+      "answer": "dma"
+    },
+    {
+      "id": "u4-bank-u4-short-8",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "8",
+      "section": "short",
+      "unit": 4,
+      "question": "Explain calloc()",
+      "answer": "dma"
+    },
+    {
+      "id": "u4-bank-u4-long-1",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "1",
+      "section": "long",
+      "unit": 4,
+      "question": "Define structure. Write a program that uses structure to display the student details like rollno, name, address, marks in three subject marks and display the total and percentage for 5 students (using array of structures).",
+      "answer": "students"
+    },
+    {
+      "id": "u4-bank-u4-long-2",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "2",
+      "section": "long",
+      "unit": 4,
+      "question": "Define union. Differentiate it with a structure. Write a sample program that uses unión.",
+      "answer": "union"
+    },
+    {
+      "id": "u4-bank-u4-long-3",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "3",
+      "section": "long",
+      "unit": 4,
+      "question": "What are nested structures? Write a program using nested structures that displays student details.",
+      "answer": "nested"
+    },
+    {
+      "id": "u4-bank-u4-long-4",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "4",
+      "section": "long",
+      "unit": 4,
+      "question": "Write a program that uses pointers for self-referential structures. What are its purposes.",
+      "answer": "self"
+    },
+    {
+      "id": "u4-bank-u4-long-5",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "5",
+      "section": "long",
+      "unit": 4,
+      "question": "What is Dynamic memory allocation. List and explain supported functions for Dynamic memory allocation with a sample program.",
+      "answer": "dma"
+    },
+    {
+      "id": "u4-bank-u4-long-6",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "6",
+      "section": "long",
+      "unit": 4,
+      "question": "List and explain various operations on pointers.",
+      "answer": "pointer-array"
+    },
+    {
+      "id": "u4-bank-u4-long-7",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "7",
+      "section": "long",
+      "unit": 4,
+      "question": "Explain how to pass structures to function with a sample code.",
+      "answer": "struct-pass"
+    },
+    {
+      "id": "u4-bank-u4-long-8",
+      "source": "u4-bank",
+      "page": 1,
+      "number": "8",
+      "section": "long",
+      "unit": 4,
+      "question": "Identify the following:\n(i) State the equivalent pointer expression which refers to a[i][j][k][l].\n(ii) What is the output of the following program? Justify your answer.\n#include <stdio.h>\nint main() { int a=5,b=10,c; int *p=&a,*q=&b; c=p-q; printf(\"%d\",c); return 0; }",
+      "answer": "pointer-invalid"
+    },
+    {
+      "id": "u5-bank-u5-short-1",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "1",
+      "section": "short",
+      "unit": 5,
+      "question": "Differentiate text files and binary files.",
+      "answer": "file"
+    },
+    {
+      "id": "u5-bank-u5-short-2",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "2",
+      "section": "short",
+      "unit": 5,
+      "question": "What is fseek(). Mention its purpose.",
+      "answer": "seek"
+    },
+    {
+      "id": "u5-bank-u5-short-3",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "3",
+      "section": "short",
+      "unit": 5,
+      "question": "What is “a+” mode in file access. Write its purpose.",
+      "answer": "modes"
+    },
+    {
+      "id": "u5-bank-u5-short-4",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "4",
+      "section": "short",
+      "unit": 5,
+      "question": "Define a file pointer. Mention its purpose.",
+      "answer": "file"
+    },
+    {
+      "id": "u5-bank-u5-short-5",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "5",
+      "section": "short",
+      "unit": 5,
+      "question": "Explain the following statement: a) fseek(fptr, 15L, SEEK_SET); b) fseek(fptr,-5L,SEEK_END);",
+      "answer": "seek"
+    },
+    {
+      "id": "u5-bank-u5-short-6",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "6",
+      "section": "short",
+      "unit": 5,
+      "question": "Write a note on command line arguments.",
+      "answer": "command"
+    },
+    {
+      "id": "u5-bank-u5-short-7",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "7",
+      "section": "short",
+      "unit": 5,
+      "question": "What is the purpose of argc and argv.",
+      "answer": "command"
+    },
+    {
+      "id": "u5-bank-u5-short-8",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "8",
+      "section": "short",
+      "unit": 5,
+      "question": "What are symbolic constants? Give example to represent.",
+      "answer": "preprocessor"
+    },
+    {
+      "id": "u5-bank-u5-short-9",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "9",
+      "section": "short",
+      "unit": 5,
+      "question": "Define enum. Give an example for enum.",
+      "answer": "enum-typedef"
+    },
+    {
+      "id": "u5-bank-u5-short-10",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "10",
+      "section": "short",
+      "unit": 5,
+      "question": "Define typedef. Give an example.",
+      "answer": "enum-typedef"
+    },
+    {
+      "id": "u5-bank-u5-short-11",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "11",
+      "section": "short",
+      "unit": 5,
+      "question": "List various pre-processor dierectives.",
+      "answer": "preprocessor"
+    },
+    {
+      "id": "u5-bank-u5-long-1",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "1",
+      "section": "long",
+      "unit": 5,
+      "question": "What are text files. List its operations for writing and Reading the data from files. Give an example.",
+      "answer": "formatted-file"
+    },
+    {
+      "id": "u5-bank-u5-long-2",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "2",
+      "section": "long",
+      "unit": 5,
+      "question": "Write a program that write the data into a file and find the number of characters, digits and special sympbols in the file through Reading and display the result.",
+      "answer": "file-count"
+    },
+    {
+      "id": "u5-bank-u5-long-3",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "3",
+      "section": "long",
+      "unit": 5,
+      "question": "Write a program that explain the file error handling methods.",
+      "answer": "errors"
+    },
+    {
+      "id": "u5-bank-u5-long-4",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "4",
+      "section": "long",
+      "unit": 5,
+      "question": "What are binary files. Write a program that write the data into a binary file and display the contents of the binary file by Reading the contents from it.",
+      "answer": "binary"
+    },
+    {
+      "id": "u5-bank-u5-long-5",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "5",
+      "section": "long",
+      "unit": 5,
+      "question": "What are command line arguments. Write a program that uses a command line arguments and display the results.",
+      "answer": "command"
+    },
+    {
+      "id": "u5-bank-u5-long-6",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "6",
+      "section": "long",
+      "unit": 5,
+      "question": "Explain pre-processor directives with examples.",
+      "answer": "preprocessor"
+    },
+    {
+      "id": "u5-bank-u5-long-7",
+      "source": "u5-bank",
+      "page": 1,
+      "number": "7",
+      "section": "long",
+      "unit": 5,
+      "question": "List and explain various random access file functions with examples.",
+      "answer": "seek"
+    },
+    {
+      "id": "important-u3-short-1",
+      "source": "important",
+      "page": 1,
+      "number": "1",
+      "section": "short",
+      "unit": 3,
+      "question": "Define functions?",
+      "answer": "modular"
+    },
+    {
+      "id": "important-u3-short-2",
+      "source": "important",
+      "page": 1,
+      "number": "2",
+      "section": "short",
+      "unit": 3,
+      "question": "What are the advantages of functions?",
+      "answer": "modular"
+    },
+    {
+      "id": "important-u3-short-3",
+      "source": "important",
+      "page": 1,
+      "number": "3",
+      "section": "short",
+      "unit": 3,
+      "question": "Define recursion?",
+      "answer": "recursion"
+    },
+    {
+      "id": "important-u3-short-4",
+      "source": "important",
+      "page": 1,
+      "number": "4",
+      "section": "short",
+      "unit": 3,
+      "question": "What are the formal arguments and actual arguments?",
+      "answer": "parameters"
+    },
+    {
+      "id": "important-u3-short-5",
+      "source": "important",
+      "page": 1,
+      "number": "5",
+      "section": "short",
+      "unit": 3,
+      "question": "write the syntax for function definition?",
+      "answer": "syntax"
+    },
+    {
+      "id": "important-u3-short-6",
+      "source": "important",
+      "page": 1,
+      "number": "6",
+      "section": "short",
+      "unit": 3,
+      "question": "Write differences between library functions and user defined functions?",
+      "answer": "libraries"
+    },
+    {
+      "id": "important-u3-short-7",
+      "source": "important",
+      "page": 1,
+      "number": "7",
+      "section": "short",
+      "unit": 3,
+      "question": "What are differences between local and global variables?",
+      "answer": "scope"
+    },
+    {
+      "id": "important-u3-short-8",
+      "source": "important",
+      "page": 1,
+      "number": "8",
+      "section": "short",
+      "unit": 3,
+      "question": "What is call by value?",
+      "answer": "value"
+    },
+    {
+      "id": "important-u3-long-1",
+      "source": "important",
+      "page": 1,
+      "number": "1",
+      "section": "long",
+      "unit": 3,
+      "question": "What is call by value and call by reference? Explain with suitable examples?",
+      "answer": "value"
+    },
+    {
+      "id": "important-u3-long-2",
+      "source": "important",
+      "page": 1,
+      "number": "2",
+      "section": "long",
+      "unit": 3,
+      "question": "Differentiate between call by value and call by reference?",
+      "answer": "value"
+    },
+    {
+      "id": "important-u3-long-3",
+      "source": "important",
+      "page": 1,
+      "number": "3",
+      "section": "long",
+      "unit": 3,
+      "question": "Explain categories of functions with examples?",
+      "answer": "categories"
+    },
+    {
+      "id": "important-u3-long-4",
+      "source": "important",
+      "page": 1,
+      "number": "4",
+      "section": "long",
+      "unit": 3,
+      "question": "Write a c program to find factorial/ GCD/ Factorial/ Akerman / Fibonacci series using recursion?",
+      "answer": "recursive-set"
+    },
+    {
+      "id": "important-u3-long-5",
+      "source": "important",
+      "page": 1,
+      "number": "5",
+      "section": "long",
+      "unit": 3,
+      "question": "Write a c program to find sum of array elements by passing array to the function?",
+      "answer": "array-pass"
+    },
+    {
+      "id": "important-u3-long-6",
+      "source": "important",
+      "page": 1,
+      "number": "6",
+      "section": "long",
+      "unit": 3,
+      "question": "Write a c program to perform matrix multiplication using functions.",
+      "answer": "matrix"
+    },
+    {
+      "id": "important-u3-long-7",
+      "source": "important",
+      "page": 1,
+      "number": "7",
+      "section": "long",
+      "unit": 3,
+      "question": "Write a C program to perform bubble sort using functions.",
+      "answer": "bubble"
+    },
+    {
+      "id": "important-u4-short-1",
+      "source": "important",
+      "page": 1,
+      "number": "1",
+      "section": "short",
+      "unit": 4,
+      "question": "Define structure?",
+      "answer": "structure"
+    },
+    {
+      "id": "important-u4-short-2",
+      "source": "important",
+      "page": 1,
+      "number": "2",
+      "section": "short",
+      "unit": 4,
+      "question": "Differentiate between structure and union? (Most important)",
+      "answer": "union"
+    },
+    {
+      "id": "important-u4-short-3",
+      "source": "important",
+      "page": 1,
+      "number": "3",
+      "section": "short",
+      "unit": 4,
+      "question": "Differentiate between array and structure? (Most important)",
+      "answer": "array-structure"
+    },
+    {
+      "id": "important-u4-short-4",
+      "source": "important",
+      "page": 1,
+      "number": "4",
+      "section": "short",
+      "unit": 4,
+      "question": "Discuss importance of structure tag?",
+      "answer": "structure"
+    },
+    {
+      "id": "important-u4-short-5",
+      "source": "important",
+      "page": 1,
+      "number": "5",
+      "section": "short",
+      "unit": 4,
+      "question": "What is nested structure? Give example.",
+      "answer": "nested"
+    },
+    {
+      "id": "important-u4-short-6",
+      "source": "important",
+      "page": 1,
+      "number": "6",
+      "section": "short",
+      "unit": 4,
+      "question": "What is array of structure? Give example.",
+      "answer": "array-structure"
+    },
+    {
+      "id": "important-u4-short-7",
+      "source": "important",
+      "page": 1,
+      "number": "7",
+      "section": "short",
+      "unit": 4,
+      "question": "What is array within the structure? Give example.",
+      "answer": "array-within"
+    },
+    {
+      "id": "important-u4-short-8",
+      "source": "important",
+      "page": 1,
+      "number": "8",
+      "section": "short",
+      "unit": 4,
+      "question": "How to access structure members",
+      "answer": "structure"
+    },
+    {
+      "id": "important-u4-short-9",
+      "source": "important",
+      "page": 1,
+      "number": "9",
+      "section": "short",
+      "unit": 4,
+      "question": "Define union?",
+      "answer": "union"
+    },
+    {
+      "id": "important-u4-short-10",
+      "source": "important",
+      "page": 1,
+      "number": "10",
+      "section": "short",
+      "unit": 4,
+      "question": "Define pointer?",
+      "answer": "pointer"
+    },
+    {
+      "id": "important-u4-short-11",
+      "source": "important",
+      "page": 1,
+      "number": "11",
+      "section": "short",
+      "unit": 4,
+      "question": "Explain the advantages of pointers.",
+      "answer": "pointer"
+    },
+    {
+      "id": "important-u4-short-12",
+      "source": "important",
+      "page": 1,
+      "number": "12",
+      "section": "short",
+      "unit": 4,
+      "question": "Give syntax for malloc, calloc, realloc and free functions?",
+      "answer": "dma"
+    },
+    {
+      "id": "important-u4-short-13",
+      "source": "important",
+      "page": 1,
+      "number": "13",
+      "section": "short",
+      "unit": 4,
+      "question": "Define self referential structure?",
+      "answer": "self"
+    },
+    {
+      "id": "important-u4-short-14",
+      "source": "important",
+      "page": 1,
+      "number": "14",
+      "section": "short",
+      "unit": 4,
+      "question": "Explain pointer arithmetic?",
+      "answer": "pointer-array"
+    },
+    {
+      "id": "important-u4-short-15",
+      "source": "important",
+      "page": 1,
+      "number": "15",
+      "section": "short",
+      "unit": 4,
+      "question": "Give syntax for pointer to a function?",
+      "answer": "function-pointer"
+    },
+    {
+      "id": "important-u4-long-1",
+      "source": "important",
+      "page": 2,
+      "number": "1",
+      "section": "long",
+      "unit": 4,
+      "question": "Explain array within the structure with example? (Explain with program)",
+      "answer": "array-within"
+    },
+    {
+      "id": "important-u4-long-2",
+      "source": "important",
+      "page": 2,
+      "number": "2",
+      "section": "long",
+      "unit": 4,
+      "question": "Explain array of structure with suitable example? (Explain with program)",
+      "answer": "array-structure"
+    },
+    {
+      "id": "important-u4-long-3",
+      "source": "important",
+      "page": 2,
+      "number": "3",
+      "section": "long",
+      "unit": 4,
+      "question": "Explain nested structure with example? (Explain with program)",
+      "answer": "nested"
+    },
+    {
+      "id": "important-u4-long-4",
+      "source": "important",
+      "page": 2,
+      "number": "4",
+      "section": "long",
+      "unit": 4,
+      "question": "How many ways can we pass a structure to the function among which is the best method?",
+      "answer": "struct-pass"
+    },
+    {
+      "id": "important-u4-long-5",
+      "source": "important",
+      "page": 2,
+      "number": "5",
+      "section": "long",
+      "unit": 4,
+      "question": "Explain dynamic memory allocation techniques? (Most important)",
+      "answer": "dma"
+    },
+    {
+      "id": "important-u4-long-6",
+      "source": "important",
+      "page": 2,
+      "number": "6",
+      "section": "long",
+      "unit": 4,
+      "question": "Write a c program related to pointers to arrays?",
+      "answer": "pointer-array"
+    },
+    {
+      "id": "important-u4-long-7",
+      "source": "important",
+      "page": 2,
+      "number": "7",
+      "section": "long",
+      "unit": 4,
+      "question": "Write a c program related to pointer to strings?",
+      "answer": "pointer-string"
+    },
+    {
+      "id": "important-u4-long-8",
+      "source": "important",
+      "page": 2,
+      "number": "8",
+      "section": "long",
+      "unit": 4,
+      "question": "Write a c program related to pointer to array of strings?",
+      "answer": "array-pointers"
+    },
+    {
+      "id": "important-u4-long-9",
+      "source": "important",
+      "page": 2,
+      "number": "9",
+      "section": "long",
+      "unit": 4,
+      "question": "Write a c program related to pointer to structures?",
+      "answer": "struct-pass"
+    },
+    {
+      "id": "important-u4-long-10",
+      "source": "important",
+      "page": 2,
+      "number": "10",
+      "section": "long",
+      "unit": 4,
+      "question": "Differences between structure and union. (Most important)",
+      "answer": "union"
+    },
+    {
+      "id": "important-u5-short-1",
+      "source": "important",
+      "page": 2,
+      "number": "1",
+      "section": "short",
+      "unit": 5,
+      "question": "Define file?",
+      "answer": "file"
+    },
+    {
+      "id": "important-u5-short-2",
+      "source": "important",
+      "page": 2,
+      "number": "2",
+      "section": "short",
+      "unit": 5,
+      "question": "Differentiate between text file and binary file?",
+      "answer": "file"
+    },
+    {
+      "id": "important-u5-short-3",
+      "source": "important",
+      "page": 2,
+      "number": "3",
+      "section": "short",
+      "unit": 5,
+      "question": "Differences between sequential file and random-access file?",
+      "answer": "seek"
+    },
+    {
+      "id": "important-u5-short-4",
+      "source": "important",
+      "page": 2,
+      "number": "4",
+      "section": "short",
+      "unit": 5,
+      "question": "Give syntax for opening a file?",
+      "answer": "modes"
+    },
+    {
+      "id": "important-u5-short-5",
+      "source": "important",
+      "page": 2,
+      "number": "5",
+      "section": "short",
+      "unit": 5,
+      "question": "Discuss modes of a file?",
+      "answer": "modes"
+    },
+    {
+      "id": "important-u5-short-6",
+      "source": "important",
+      "page": 2,
+      "number": "6",
+      "section": "short",
+      "unit": 5,
+      "question": "Give syntax for fscanf and fprintf?",
+      "answer": "formatted-file"
+    },
+    {
+      "id": "important-u5-short-7",
+      "source": "important",
+      "page": 2,
+      "number": "7",
+      "section": "short",
+      "unit": 5,
+      "question": "Explain error handling file functions?",
+      "answer": "errors"
+    },
+    {
+      "id": "important-u5-short-8",
+      "source": "important",
+      "page": 2,
+      "number": "8",
+      "section": "short",
+      "unit": 5,
+      "question": "Give syntax for fread and fwrite?",
+      "answer": "binary"
+    },
+    {
+      "id": "important-u5-short-9",
+      "source": "important",
+      "page": 2,
+      "number": "9",
+      "section": "short",
+      "unit": 5,
+      "question": "Give syntax for fseek(). (most important )",
+      "answer": "seek"
+    },
+    {
+      "id": "important-u5-short-10",
+      "source": "important",
+      "page": 2,
+      "number": "10",
+      "section": "short",
+      "unit": 5,
+      "question": "Explain the arguments used in main function?",
+      "answer": "command"
+    },
+    {
+      "id": "important-u5-short-11",
+      "source": "important",
+      "page": 2,
+      "number": "11",
+      "section": "short",
+      "unit": 5,
+      "question": "Discuss random access file functions?",
+      "answer": "seek"
+    },
+    {
+      "id": "important-u5-short-12",
+      "source": "important",
+      "page": 2,
+      "number": "12",
+      "section": "short",
+      "unit": 5,
+      "question": "What is argc and agrv",
+      "answer": "command"
+    },
+    {
+      "id": "important-u5-short-13",
+      "source": "important",
+      "page": 2,
+      "number": "13",
+      "section": "short",
+      "unit": 5,
+      "question": "Give syntax for enum and typedef and explain with an example",
+      "answer": "enum-typedef"
+    },
+    {
+      "id": "important-u5-short-14",
+      "source": "important",
+      "page": 2,
+      "number": "14",
+      "section": "short",
+      "unit": 5,
+      "question": "What is a preprocessor directive.",
+      "answer": "preprocessor"
+    },
+    {
+      "id": "important-u5-short-15",
+      "source": "important",
+      "page": 2,
+      "number": "15",
+      "section": "short",
+      "unit": 5,
+      "question": "One program on macro.",
+      "answer": "preprocessor"
+    },
+    {
+      "id": "important-u5-long-1",
+      "source": "important",
+      "page": 2,
+      "number": "1",
+      "section": "long",
+      "unit": 5,
+      "question": "Explain preprocessor directives.",
+      "answer": "preprocessor"
+    },
+    {
+      "id": "important-u5-long-2",
+      "source": "important",
+      "page": 2,
+      "number": "2",
+      "section": "long",
+      "unit": 5,
+      "question": "Explain file handling functions. (Most important)",
+      "answer": "formatted-file"
+    },
+    {
+      "id": "important-u5-long-3",
+      "source": "important",
+      "page": 2,
+      "number": "3",
+      "section": "long",
+      "unit": 5,
+      "question": "Write a c program to copy one file content to another and display the copied file content?",
+      "answer": "copy"
+    },
+    {
+      "id": "important-u5-long-4",
+      "source": "important",
+      "page": 2,
+      "number": "4",
+      "section": "long",
+      "unit": 5,
+      "question": "Write a c program to write integers to a file and read integers from the file and check if the integer is even or odd and separate them?",
+      "answer": "even-odd"
+    },
+    {
+      "id": "important-u5-long-5",
+      "source": "important",
+      "page": 2,
+      "number": "5",
+      "section": "long",
+      "unit": 5,
+      "question": "Write a c program to inventory file?",
+      "answer": "inventory"
+    },
+    {
+      "id": "important-u5-long-6",
+      "source": "important",
+      "page": 2,
+      "number": "6",
+      "section": "long",
+      "unit": 5,
+      "question": "Write a c program on binary file?",
+      "answer": "binary"
+    },
+    {
+      "id": "important-u5-long-7",
+      "source": "important",
+      "page": 2,
+      "number": "7",
+      "section": "long",
+      "unit": 5,
+      "question": "Write a c program on command line arguments?",
+      "answer": "command"
+    },
+    {
+      "id": "derived-qa-u3-long-8",
+      "source": "derived-qa",
+      "page": 9,
+      "number": "8",
+      "section": "long",
+      "unit": 3,
+      "question": "Explain the storage classes in C with examples.",
+      "answer": "storage"
+    }
+  ],
+  "papers": [
+    {
+      "id": "mid2-2026",
+      "title": "Mid-II · 2 January 2026",
+      "date": "2 January 2026",
+      "regulation": "R25",
+      "subject_code": "25ES1CS101",
+      "minutes": 120,
+      "max_marks": 30,
+      "status": "Complete question coverage",
+      "sources": [
+        "mid2-2026-src1"
+      ],
+      "instructions": [
+        "Part A: answer all five questions (5 × 2 = 10 marks).",
+        "Part B: answer any ONE question from each unit. Unit III contributes 4 marks; Units IV and V contribute 8 marks each."
+      ],
+      "groups": [
+        {
+          "id": "mid2-2026-part-a",
+          "label": "Part A",
+          "unit": null,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2026-a",
+              "number": "a",
+              "question": "Explain the advantages of functions.",
+              "answer": "modular",
+              "marks": 2,
+              "unit": 3
+            },
+            {
+              "id": "mid2-2026-b",
+              "number": "b",
+              "question": "Differentiate between array and structure.",
+              "answer": "array-structure",
+              "marks": 2,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2026-c",
+              "number": "c",
+              "question": "Define self-referential structure.",
+              "answer": "self",
+              "marks": 2,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2026-d",
+              "number": "d",
+              "question": "What is the output of the following program?\n#include <stdio.h>\n#define sqr(x) (x*x)\nvoid main()\n{\n    int a=5,b=6;\n    printf(\"%d\",sqr(a+b));\n}",
+              "answer": "macro-output",
+              "marks": 2,
+              "unit": 5,
+              "discrepancy": "The printed void main() is not a standard hosted C entry point. The answer traces the printed macro expression (41); use int main(void) to run that expression in portable C11. Parenthesizing the macro arguments would instead change the result to121."
+            },
+            {
+              "id": "mid2-2026-e",
+              "number": "e",
+              "question": "Differentiate between text file and binary file.",
+              "answer": "file",
+              "marks": 2,
+              "unit": 5
+            }
+          ]
+        },
+        {
+          "id": "mid2-2026-question-1",
+          "label": "Question 1",
+          "unit": 3,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2026-1-a",
+              "number": "1(a)",
+              "question": "Explain the different types of functions based on arguments and return type.",
+              "answer": "categories",
+              "marks": 4,
+              "unit": 3
+            }
+          ]
+        },
+        {
+          "id": "mid2-2026-question-2",
+          "label": "Question 2",
+          "unit": 3,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2026-2-a",
+              "number": "2(a)",
+              "question": "Define recursion. Develop a C program to compute the factorial of a given number using recursion.",
+              "answer": "factorial",
+              "marks": 4,
+              "unit": 3
+            }
+          ]
+        },
+        {
+          "id": "mid2-2026-question-3",
+          "label": "Question 3",
+          "unit": 4,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2026-3-a",
+              "number": "3(a)",
+              "question": "Explain dynamic memory allocation techniques in C.",
+              "answer": "dma",
+              "marks": 4,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2026-3-b",
+              "number": "3(b)",
+              "question": "Develop a C program to demonstrate array of structures.",
+              "answer": "array-structure",
+              "marks": 4,
+              "unit": 4
+            }
+          ]
+        },
+        {
+          "id": "mid2-2026-question-4",
+          "label": "Question 4",
+          "unit": 4,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2026-4-a",
+              "number": "4(a)",
+              "question": "Differentiate between structures and unions.",
+              "answer": "union",
+              "marks": 4,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2026-4-b",
+              "number": "4(b)",
+              "question": "Develop a C program to sort array elements using pointers to array.",
+              "answer": "pointer-sort",
+              "marks": 4,
+              "unit": 4
+            }
+          ]
+        },
+        {
+          "id": "mid2-2026-question-5",
+          "label": "Question 5",
+          "unit": 5,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2026-5",
+              "number": "5",
+              "question": "Define a file. Explain different types of file handling functions.",
+              "answer": "formatted-file",
+              "marks": 8,
+              "unit": 5
+            }
+          ]
+        },
+        {
+          "id": "mid2-2026-question-6",
+          "label": "Question 6",
+          "unit": 5,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2026-6-a",
+              "number": "6(a)",
+              "question": "Write a C program to compute length of the String using command line arguments.",
+              "answer": "command",
+              "marks": 4,
+              "unit": 5
+            },
+            {
+              "id": "mid2-2026-6-b",
+              "number": "6(b)",
+              "question": "Explain user defined datatypes in C with suitable examples.",
+              "answer": "enum-typedef",
+              "marks": 4,
+              "unit": 5
+            }
+          ]
+        }
+      ],
+      "source_note": "Filename says2025; printed examination date is02/01/2026. Direct orientation-aware review confirms Part A and all six Part B questions are visible, including6(b); earlier partial classification is superseded.",
+      "source_pages": {
+        "mid2-2026-src1": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "mid2-2024",
+      "title": "Mid-II · 5 January 2024",
+      "date": "5 January 2024",
+      "regulation": "R22",
+      "subject_code": "22ES1CS101",
+      "minutes": 120,
+      "max_marks": 30,
+      "status": "Complete question coverage",
+      "sources": [
+        "mid2-2024-src1",
+        "mid2-2024-src2"
+      ],
+      "instructions": [
+        "Part A: answer all five questions (5 × 2 = 10 marks).",
+        "Part B: answer any ONE question from each unit. Unit III contributes 4 marks; Units IV and V contribute 8 marks each."
+      ],
+      "groups": [
+        {
+          "id": "mid2-2024-part-a",
+          "label": "Part A",
+          "unit": null,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2024-a",
+              "number": "a",
+              "question": "Define Recursion.",
+              "answer": "recursion",
+              "marks": 2,
+              "unit": 3
+            },
+            {
+              "id": "mid2-2024-b",
+              "number": "b",
+              "question": "Outline the concept of Scale Factor in Pointers.",
+              "answer": "pointer-array",
+              "marks": 2,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2024-c",
+              "number": "c",
+              "question": "Define Self-Referential Structure.",
+              "answer": "self",
+              "marks": 2,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2024-d",
+              "number": "d",
+              "question": "Distinguish Between Text file and Binary file.",
+              "answer": "file",
+              "marks": 2,
+              "unit": 5
+            },
+            {
+              "id": "mid2-2024-e",
+              "number": "e",
+              "question": "Define Command Line Arguments.",
+              "answer": "command",
+              "marks": 2,
+              "unit": 5
+            }
+          ]
+        },
+        {
+          "id": "mid2-2024-question-1",
+          "label": "Question 1",
+          "unit": 3,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2024-1",
+              "number": "1",
+              "question": "Explain Call by Value and Call by Reference with suitable example program.",
+              "answer": "value",
+              "marks": 4,
+              "unit": 3
+            }
+          ]
+        },
+        {
+          "id": "mid2-2024-question-2",
+          "label": "Question 2",
+          "unit": 3,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2024-2",
+              "number": "2",
+              "question": "Explain any one Category of User defined function with an example C program.",
+              "answer": "categories",
+              "marks": 4,
+              "unit": 3
+            }
+          ]
+        },
+        {
+          "id": "mid2-2024-question-3",
+          "label": "Question 3",
+          "unit": 4,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2024-3",
+              "number": "3",
+              "question": "Explain Dynamic Memory Allocation functions with an example program.",
+              "answer": "dma",
+              "marks": 8,
+              "unit": 4
+            }
+          ]
+        },
+        {
+          "id": "mid2-2024-question-4",
+          "label": "Question 4",
+          "unit": 4,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2024-4-a",
+              "number": "4(a)",
+              "question": "Compare and Contrast Structures and Unions.",
+              "answer": "union",
+              "marks": 4,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2024-4-b",
+              "number": "4(b)",
+              "question": "Explain Nested Structures with suitable example.",
+              "answer": "nested",
+              "marks": 4,
+              "unit": 4
+            }
+          ]
+        },
+        {
+          "id": "mid2-2024-question-5",
+          "label": "Question 5",
+          "unit": 5,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2024-5",
+              "number": "5",
+              "question": "Develop a C program to Copy one File contents to another File.",
+              "answer": "copy",
+              "marks": 8,
+              "unit": 5
+            }
+          ]
+        },
+        {
+          "id": "mid2-2024-question-6",
+          "label": "Question 6",
+          "unit": 5,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2024-6",
+              "number": "6",
+              "question": "Explain File Input-Output Functions with an example.",
+              "answer": "formatted-file",
+              "marks": 8,
+              "unit": 5
+            }
+          ]
+        }
+      ],
+      "source_note": "The photograph supplies the header/Part A/Unit III; PDF page3 supplies the same paper including Units IV–V. Other subjects on PDF pages1,2,4,5 are excluded.",
+      "source_pages": {
+        "mid2-2024-src1": [
+          1
+        ],
+        "mid2-2024-src2": [
+          3
+        ]
+      }
+    },
+    {
+      "id": "mid2-2023",
+      "title": "Mid-II · 8 March 2023",
+      "date": "8 March 2023",
+      "regulation": "R22",
+      "subject_code": "22ES1CS101",
+      "minutes": 120,
+      "max_marks": 30,
+      "status": "Complete question coverage",
+      "sources": [
+        "mid2-2023-src1",
+        "mid2-2023-src2"
+      ],
+      "instructions": [
+        "Part A: answer all five questions (5 × 2 = 10 marks).",
+        "Part B: answer any ONE question from each unit. Unit III contributes 4 marks; Units IV and V contribute 8 marks each."
+      ],
+      "groups": [
+        {
+          "id": "mid2-2023-part-a",
+          "label": "Part A",
+          "unit": null,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2023-a",
+              "number": "a",
+              "question": "Define Recursion.",
+              "answer": "recursion",
+              "marks": 2,
+              "unit": 3
+            },
+            {
+              "id": "mid2-2023-b",
+              "number": "b",
+              "question": "Explain Scale Factor concept in pointers.",
+              "answer": "pointer-array",
+              "marks": 2,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2023-c",
+              "number": "c",
+              "question": "Define Self-Referential Structure.",
+              "answer": "self",
+              "marks": 2,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2023-d",
+              "number": "d",
+              "question": "Distinguish Between Text file and Binary File.",
+              "answer": "file",
+              "marks": 2,
+              "unit": 5
+            },
+            {
+              "id": "mid2-2023-e",
+              "number": "e",
+              "question": "Define Command Line Argument.",
+              "answer": "command",
+              "marks": 2,
+              "unit": 5
+            }
+          ]
+        },
+        {
+          "id": "mid2-2023-question-1",
+          "label": "Question 1",
+          "unit": 3,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2023-1",
+              "number": "1",
+              "question": "Explain Call by Value with suitable example program.",
+              "answer": "value",
+              "marks": 4,
+              "unit": 3
+            }
+          ]
+        },
+        {
+          "id": "mid2-2023-question-2",
+          "label": "Question 2",
+          "unit": 3,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2023-2-a",
+              "number": "2(a)",
+              "question": "Define Recursion? Develop a C Recursive program to find factorial of a given number.",
+              "answer": "factorial",
+              "marks": 4,
+              "unit": 3
+            }
+          ]
+        },
+        {
+          "id": "mid2-2023-question-3",
+          "label": "Question 3",
+          "unit": 4,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2023-3",
+              "number": "3",
+              "question": "Explain Dynamic Memory Allocation functions with an example program.",
+              "answer": "dma",
+              "marks": 8,
+              "unit": 4
+            }
+          ]
+        },
+        {
+          "id": "mid2-2023-question-4",
+          "label": "Question 4",
+          "unit": 4,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2023-4-a",
+              "number": "4(a)",
+              "question": "Compare and Contrast Structures and Unions.",
+              "answer": "union",
+              "marks": 4,
+              "unit": 4
+            },
+            {
+              "id": "mid2-2023-4-b",
+              "number": "4(b)",
+              "question": "Explain Nested Structures with suitable example.",
+              "answer": "nested",
+              "marks": 4,
+              "unit": 4
+            }
+          ]
+        },
+        {
+          "id": "mid2-2023-question-5",
+          "label": "Question 5",
+          "unit": 5,
+          "or_before": false,
+          "parts": [
+            {
+              "id": "mid2-2023-5",
+              "number": "5",
+              "question": "Develop a C program to Copy one File contents to another File.",
+              "answer": "copy",
+              "marks": 8,
+              "unit": 5
+            }
+          ]
+        },
+        {
+          "id": "mid2-2023-question-6",
+          "label": "Question 6",
+          "unit": 5,
+          "or_before": true,
+          "parts": [
+            {
+              "id": "mid2-2023-6",
+              "number": "6",
+              "question": "Explain File Input-Output Functions with an example.",
+              "answer": "formatted-file",
+              "marks": 8,
+              "unit": 5
+            }
+          ]
+        }
+      ],
+      "source_pages": {
+        "mid2-2023-src1": [
+          1
+        ],
+        "mid2-2023-src2": [
+          1
+        ]
+      }
+    }
+  ],
+  "answer_policy": [
+    "priyanka",
+    "senior",
+    "general"
+  ],
+  "source_notes": [
+    "The structures/pointers bank is printed UNIT-5; it is mapped to R25 Unit IV by content. Original unit label retained in source audit.",
+    "Similar revision wordings share a topic entry; all original source occurrences remain available. Specific source questions retain dimensions/method constraints in their variant text.",
+    "Answer PDFs and their claims of compilation/paper provenance are supplementary inputs, not verification authority. Answers are PankusDesk-authored using the stated source order."
+  ]
+}
