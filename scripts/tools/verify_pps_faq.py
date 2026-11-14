@@ -35,12 +35,31 @@ def verify(source_text=None):
         assert q['source_pages'][0] == q['page']
         assert all(3 <= page <= 20 for page in q['source_pages'])
     assert len(anchors) == len(set(anchors))
+    def check_blocks(blocks):
+        for block in blocks:
+            assert block['type'] in {'paragraph', 'heading', 'code', 'list', 'table', 'part'}
+            if block['type'] == 'table':
+                assert block['headers'] and block['rows']
+                assert all(len(row) == len(block['headers']) for row in block['rows'])
+            elif block['type'] == 'part':
+                assert block['label'] and block['blocks']
+                check_blocks(block['blocks'])
+            elif block['type'] == 'list':
+                assert block['items'] and all(item['text'] for item in block['items'])
+            elif block['type'] == 'code':
+                assert block['code']
+            else:
+                assert block['text']
+
     used_programs = set()
     for answer in bank['answers'].values():
         assert answer['paragraphs'] and answer['authority'].startswith('PankusDesk-authored')
         assert answer['basis'] in {'priyanka', 'priyanka+senior', 'senior', 'general'}
         assert answer['basis_label'] and isinstance(answer['note_refs'], list)
         used_programs.update(answer['programs'])
+        used_programs.update(answer.get('supplementary_programs', []))
+        assert answer['blocks'] and 'research_topic_ids' in answer
+        check_blocks(answer['blocks'])
     assert used_programs == set(bank['programs'])
     card = next(c for c in json.loads((SUBJECT / 'index-resources.json').read_text())['questions']
                 if c.get('id') == 'frequently-asked-questions')
@@ -60,6 +79,7 @@ def verify(source_text=None):
     print('PASS: 31 numbered questions + 8 final topics, source snapshot, anchors, answer/program references and card.')
     # Exercise meaningful boundaries beyond the displayed examples.
     cases = {
+        'source-categories': [('3 4\n1001 2\n', None), ('3\n', None)],
         'function-factorial': [('0\n', '1\n'), ('20\n', '2432902008176640000\n'), ('21\n', None)],
         'factorial': [('0\n', '1\n'), ('21\n', None)],
         'fibonacci': [('0\n', '\n'), ('1\n', '0\n'), ('21\n', None)],

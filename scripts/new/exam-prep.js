@@ -35,6 +35,7 @@
                         // It is used only for supplied code or labelled question subparts below.
                         question_paragraphs: [''],
                         paragraphs: answerParts.length ? [] : answer.paragraphs,
+                        blocks: answer.blocks,
                         solution_parts: answerParts,
                         discrepancy: question.discrepancy ? { label: 'Source discrepancy', message: question.discrepancy } : null,
                         final_answer: question.answer === 'macro-output'
@@ -46,6 +47,9 @@
             }
 
             function program(example) {
+                if (bank.kind === 'faq-snapshot') {
+                    return `<section class="exam-program"><h4>${esc(example.title)}</h4><p>${esc(example.note)}</p><pre><code class="language-c">${esc(example.code)}</code></pre>${example.input ? `<h5>Sample input</h5><pre>${esc(example.input)}</pre>` : ''}<h5>Output</h5><pre>${esc(example.expected)}</pre></section>`;
+                }
                 return `<section class="exam-program"><h4>${esc(example.title)}</h4><p>${esc(example.note)}</p><pre><code class="language-c">${esc(example.code)}</code></pre><h5>Example input</h5><pre>${esc(example.input || '(No standard input; see the stated fixture or command.)')}</pre><h5>Expected result</h5><pre>${esc(example.expected || '(No console output; see the stated output files.)')}</pre></section>`;
             }
 
@@ -77,12 +81,20 @@
                     && !/pseudo\s*code/i.test(question.question);
                 if ((bank.kind === 'faq-snapshot' || asksForProgram) && answer.programs.length) {
                     body.insertAdjacentHTML('beforeend', answer.programs.map(id => program(bank.programs[id])).join(''));
-                    const final = document.createElement('p');
-                    final.className = 'study-final-answer';
-                    const strong = document.createElement('strong');
-                    strong.textContent = 'Final result: the examples produce the outputs/files shown above under their stated input limits.';
-                    final.append(strong);
-                    body.append(final);
+                    if (bank.kind !== 'faq-snapshot') {
+                        const final = document.createElement('p');
+                        final.className = 'study-final-answer';
+                        const strong = document.createElement('strong');
+                        strong.textContent = 'Final result: the examples produce the outputs/files shown above under their stated input limits.';
+                        final.append(strong);
+                        body.append(final);
+                    }
+                }
+                if (answer.supplementary_programs?.length) {
+                    body.insertAdjacentHTML('beforeend', `<details class="exam-provenance"><summary>More worked examples</summary>${answer.supplementary_programs.map(id => program(bank.programs[id])).join('')}</details>`);
+                }
+                if (answer.final_answer) {
+                    body.insertAdjacentHTML('beforeend', `<p class="study-final-answer"><strong>${esc(answer.final_answer)}</strong></p>`);
                 }
                 const notePages = answer.note_refs.length
                     ? `; ${answer.basis.startsWith('priyanka') ? 'Priyanka images' : 'senior PDF pages'} ${answer.note_refs.join(', ')}` : '';
