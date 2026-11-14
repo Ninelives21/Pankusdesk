@@ -1,0 +1,2813 @@
+{
+  "schema_version": 1,
+  "kind": "faq-snapshot",
+  "snapshot": {
+    "captured_on": "2026-11-14",
+    "archive": "pps_claude_unit3,4.zip",
+    "filename": "PPS_Unit3_SecondHalf_Unit4_QA.pdf",
+    "sha256": "f8099c249ecc5333b68e59c51203579874d84d493b103ee3ce86059b7b41967c",
+    "pages": 20,
+    "numbered_questions": 31,
+    "additional_topics": 8,
+    "update_policy": "Fixed snapshot of the supplied file. Later revisions require a new source comparison and explicit update; no automatic feed.",
+    "answer_policy": "Priyanka class notes, then senior notes, then general PPS knowledge for gaps. Authored C11 answers; supplied paper-frequency claims are unverified.",
+    "source_front_matter": {
+      "printed_title": "Unit III (Second Half) & Unit IV – Questions and Answers",
+      "printed_scope": [
+        "Unit III second half: functions, recursion, library functions, storage classes",
+        "Unit IV: structures and pointers"
+      ],
+      "claims_not_adopted": [
+        "Answers only from senior notes; no external gap filling",
+        "Turbo C void main/clrscr/getch programs compiled and run",
+        "Asked-in paper labels and eight-of-nine frequency claim",
+        "Final topic list absent from all teacher notes"
+      ]
+    },
+    "answer_reviewed_on": "2026-11-14",
+    "answer_style": "Direct exam answers: definitions, ordered points, semantic comparison tables, relevant C11 examples. Source-answer comparisons remain audit metadata."
+  },
+  "sources": [],
+  "papers": [],
+  "questions": [],
+  "occurrences": [],
+  "sections": [
+    {
+      "id": "faq-u3-a",
+      "title": "Unit III · Short questions",
+      "questions": [
+        {
+          "unit": 3,
+          "number": "A1",
+          "question": "What is a function? What are its types?",
+          "page": 3,
+          "id": "faq-u3-a1",
+          "answer": "faq-u3-a1",
+          "source_label": "Claude compilation · p. 3 · Unit 3, A1",
+          "supplied_provenance_claim": "Asked in: CPDS-24, CPDS-25 (Part A)   Teacher’s notes: p. 95",
+          "nav_label": "Function types",
+          "source_pages": [
+            3
+          ],
+          "source_review": "The compilation lists gets as a library example. gets was removed from C11 because it cannot bound input; use fgets with the destination capacity instead."
+        },
+        {
+          "unit": 3,
+          "number": "A2",
+          "question": "Compare actual and formal parameters.",
+          "page": 3,
+          "id": "faq-u3-a2",
+          "answer": "faq-u3-a2",
+          "source_label": "Claude compilation · p. 3 · Unit 3, A2",
+          "supplied_provenance_claim": "Asked in: PPS-25 (Part A)   Teacher’s notes: p. 95, 96",
+          "nav_label": "Actual/formal parameters",
+          "source_pages": [
+            3
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "A3",
+          "question": "Write and explain the syntax of a function.",
+          "page": 3,
+          "id": "faq-u3-a3",
+          "answer": "faq-u3-a3",
+          "source_label": "Claude compilation · p. 3 · Unit 3, A3",
+          "supplied_provenance_claim": "Asked in: PPS-26 (Part A)   Teacher’s notes: p. 95, 96",
+          "nav_label": "Function syntax",
+          "source_pages": [
+            3
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "A4",
+          "question": "What is recursion? Give an example.",
+          "page": 3,
+          "id": "faq-u3-a4",
+          "answer": "faq-u3-a4",
+          "source_label": "Claude compilation · p. 3 · Unit 3, A4",
+          "supplied_provenance_claim": "Asked in: PSTC-24, FCS-26 (Part A)   Teacher’s notes: p. 105, 108",
+          "nav_label": "Recursion example",
+          "source_pages": [
+            3
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "A5",
+          "question": "What are the advantages of functions?",
+          "page": 3,
+          "id": "faq-u3-a5",
+          "answer": "faq-u3-a5",
+          "source_label": "Claude compilation · p. 3 · Unit 3, A5",
+          "supplied_provenance_claim": "Asked in: PSTC-26, CPDS-24 (Part A)   Teacher’s notes: p. 105",
+          "nav_label": "Advantages of functions",
+          "source_pages": [
+            3
+          ],
+          "source_review": "The source treats optimisation as a general advantage. Runtime improvement depends on the algorithm and implementation; it is not guaranteed by using a function or recursion."
+        },
+        {
+          "unit": 3,
+          "number": "A6",
+          "question": "List any four built-in library functions and their need.",
+          "page": 3,
+          "id": "faq-u3-a6",
+          "answer": "faq-u3-a6",
+          "source_label": "Claude compilation · p. 3 · Unit 3, A6",
+          "supplied_provenance_claim": "Asked in: PSTC-25 (Part A)   Teacher’s notes: p. 95, 67",
+          "nav_label": "Library functions",
+          "source_pages": [
+            3
+          ],
+          "source_review": "The source also lists gets, strrev, strlwr and strupr. gets is removed in C11; the other three are not ISO C library functions. Use bounded input and standard or explicitly user-defined alternatives."
+        },
+        {
+          "unit": 3,
+          "number": "A7",
+          "question": "What is the default storage class? Why does printing the address of a register variable give an error?",
+          "page": 4,
+          "id": "faq-u3-a7",
+          "answer": "faq-u3-a7",
+          "source_label": "Claude compilation · p. 4 · Unit 3, A7",
+          "supplied_provenance_claim": "Teacher’s notes: p. 56, 59–60",
+          "nav_label": "auto and register",
+          "source_pages": [
+            4
+          ],
+          "source_review": "The compilation says a register variable always resides in a CPU register with no memory address. Actual placement is not guaranteed; the C language restriction on address-of is the reason &a is invalid."
+        }
+      ]
+    },
+    {
+      "id": "faq-u3-q",
+      "title": "Unit III · Long questions",
+      "questions": [
+        {
+          "unit": 3,
+          "number": "Q1",
+          "question": "What is a function? Explain its declaration, call and definition with an example.",
+          "page": 4,
+          "id": "faq-u3-q1",
+          "answer": "faq-u3-q1",
+          "source_label": "Claude compilation · p. 4 · Unit 3, Q1",
+          "supplied_provenance_claim": "Asked in: PSTC-25 (5M), CPDS-24 (4M), CPDS-25 (4M), PPS-24 (5M), PPS-25 (part)   Teacher’s notes: p. 95–96",
+          "nav_label": "Declaration, call, definition",
+          "source_pages": [
+            4
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "Q2",
+          "question": "Explain the categories of functions with examples.",
+          "page": 4,
+          "id": "faq-u3-q2",
+          "answer": "faq-u3-q2",
+          "source_label": "Claude compilation · pp. 4–6 · Unit 3, Q2",
+          "supplied_provenance_claim": "Asked in: PPS-26 (5M), PSTC-26 (5M), CPDS-24 (5M), CPDS-25 (6M)   Teacher’s notes: p. 97–102",
+          "nav_label": "Four function categories",
+          "source_pages": [
+            4,
+            5,
+            6
+          ],
+          "source_review": "The source describes functions “without return type”; standard C requires a return type. The examples use void when no value is returned and (void) for no parameters."
+        },
+        {
+          "unit": 3,
+          "number": "Q3",
+          "question": "Explain call by value and call by reference with examples (parameter passing techniques).",
+          "page": 6,
+          "id": "faq-u3-q3",
+          "answer": "faq-u3-q3",
+          "source_label": "Claude compilation · pp. 6–7 · Unit 3, Q3",
+          "supplied_provenance_claim": "Asked in: PPS-25 (5M), FCS-26 (5M), CPDS-24 (5M), PSTC-24 (5M), PSTC-26 (5M, swap), PPS-26 Q5a (exchange using pointers) \nTeacher’s notes: p. 102–104",
+          "nav_label": "Value and pointer arguments",
+          "source_pages": [
+            6,
+            7
+          ],
+          "source_review": "The source prints a pointer with %d and a fixed address such as 100. Use printf(\"%p\", (void *)p) to display an object pointer; its actual address is implementation-dependent."
+        },
+        {
+          "unit": 3,
+          "number": "Q4",
+          "question": "What is recursion? Write a C program to find the factorial of a number using recursion.",
+          "page": 7,
+          "id": "faq-u3-q4",
+          "answer": "faq-u3-q4",
+          "source_label": "Claude compilation · pp. 7–8 · Unit 3, Q4",
+          "supplied_provenance_claim": "Asked in: CPDS-24 (6M), CPDS-25 (6M), FCS-26 (5M), PSTC-24 (5M)   Teacher’s notes: p. 105, 107–108",
+          "nav_label": "Recursive factorial",
+          "source_pages": [
+            7,
+            8
+          ],
+          "source_review": "The source stops only at num == 1, which does not terminate for input 0. The C11 example includes the 0! = 1 base case and accepts only 0–20 to avoid unsigned long long overflow."
+        },
+        {
+          "unit": 3,
+          "number": "Q5",
+          "question": "Write a C program to generate the Fibonacci series using recursion.",
+          "page": 8,
+          "id": "faq-u3-q5",
+          "answer": "faq-u3-q5",
+          "source_label": "Claude compilation · p. 8 · Unit 3, Q5",
+          "supplied_provenance_claim": "Asked in: PSTC-24 (5M), PSTC-25 (10M, with explanation of recursion – see Q4)   Teacher’s notes: p. 108–109",
+          "nav_label": "Recursive Fibonacci",
+          "source_pages": [
+            8
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "Q6",
+          "question": "Write a program using recursion to print the sum of all numbers up to a given value.",
+          "page": 8,
+          "id": "faq-u3-q6",
+          "answer": "faq-u3-q6",
+          "source_label": "Claude compilation · pp. 8–9 · Unit 3, Q6",
+          "supplied_provenance_claim": "Asked in: Notes example   Teacher’s notes: p. 106–107",
+          "nav_label": "Recursive natural-number sum",
+          "source_pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "Q7",
+          "question": "Explain the Ackermann function and write a C program for it.",
+          "page": 9,
+          "id": "faq-u3-q7",
+          "answer": "faq-u3-q7",
+          "source_label": "Claude compilation · p. 9 · Unit 3, Q7",
+          "supplied_provenance_claim": "Asked in: Notes example   Teacher’s notes: p. 110–112",
+          "nav_label": "Ackermann function",
+          "source_pages": [
+            9
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "Q8",
+          "question": "Explain the storage classes in C with examples.",
+          "page": 9,
+          "id": "faq-u3-q8",
+          "answer": "faq-u3-q8",
+          "source_label": "Claude compilation · pp. 9–10 · Unit 3, Q8",
+          "supplied_provenance_claim": "Asked in: PSTC-26 (10M), FCS-26 (5M), CPDS-24 (5M), CPDS-25 (4M), PPS-25 (6M)   Teacher’s notes: p. 56–60",
+          "nav_label": "Storage classes",
+          "source_pages": [
+            9,
+            10
+          ],
+          "source_review": "The source calls uninitialized auto/register values “garbage,” guarantees register placement, and equates extern with global scope. Reading an indeterminate int is not a valid output example; register placement is not guaranteed; scope, duration and linkage must be distinguished."
+        },
+        {
+          "unit": 3,
+          "number": "Q9",
+          "question": "Explain scope and lifetime of variables with examples.",
+          "page": 11,
+          "id": "faq-u3-q9",
+          "answer": "faq-u3-q9",
+          "source_label": "Claude compilation · p. 11 · Unit 3, Q9",
+          "supplied_provenance_claim": "Asked in: FCS-26 (5M)   Teacher’s notes: p. 56–58",
+          "nav_label": "Scope and lifetime",
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "Q10",
+          "question": "How are arrays passed to functions? Explain with programs.",
+          "page": 11,
+          "id": "faq-u3-q10",
+          "answer": "faq-u3-q10",
+          "source_label": "Claude compilation · pp. 11–13 · Unit 3, Q10",
+          "supplied_provenance_claim": "Asked in: PSTC-25 (5M)   Teacher’s notes: p. 112–116",
+          "nav_label": "Passing arrays",
+          "source_pages": [
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "unit": 3,
+          "number": "Q11",
+          "question": "Explain C library functions with examples.",
+          "page": 13,
+          "id": "faq-u3-q11",
+          "answer": "faq-u3-q11",
+          "source_label": "Claude compilation · p. 13 · Unit 3, Q11",
+          "supplied_provenance_claim": "Asked in: Syllabus; PSTC-25 (Part A)   Teacher’s notes: p. 95, 67–68, 123",
+          "nav_label": "Library function examples",
+          "source_pages": [
+            13
+          ],
+          "source_review": "The source includes removed gets and nonstandard strrev/strlwr/strupr, and prints strlen with %d. The example uses ISO C11 functions and %zu for size_t. strcat does not insert spaces."
+        }
+      ]
+    },
+    {
+      "id": "faq-u4-a",
+      "title": "Unit IV · Short questions",
+      "questions": [
+        {
+          "unit": 4,
+          "number": "A1",
+          "question": "Define structure. How do you declare structure variables?",
+          "page": 14,
+          "id": "faq-u4-a1",
+          "answer": "faq-u4-a1",
+          "source_label": "Claude compilation · p. 14 · Unit 4, A1",
+          "supplied_provenance_claim": "Asked in: PPS-24 (Part A)   Teacher’s notes: p. 117",
+          "nav_label": "Structure declarations",
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "A2",
+          "question": "What is a pointer? Write its declaration.",
+          "page": 14,
+          "id": "faq-u4-a2",
+          "answer": "faq-u4-a2",
+          "source_label": "Claude compilation · p. 14 · Unit 4, A2",
+          "supplied_provenance_claim": "Asked in: CPDS-24, CPDS-25, FCS-26 (Part A)   Teacher’s notes: p. 8, 103",
+          "nav_label": "Pointer declaration",
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "A3",
+          "question": "What is the use of the arrow (->) operator?",
+          "page": 14,
+          "id": "faq-u4-a3",
+          "answer": "faq-u4-a3",
+          "source_label": "Claude compilation · p. 14 · Unit 4, A3",
+          "supplied_provenance_claim": "Teacher’s notes: p. 127",
+          "nav_label": "Arrow operator",
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "A4",
+          "question": "Give the advantage and disadvantage of a union.",
+          "page": 14,
+          "id": "faq-u4-a4",
+          "answer": "faq-u4-a4",
+          "source_label": "Claude compilation · p. 14 · Unit 4, A4",
+          "supplied_provenance_claim": "Teacher’s notes: p. 123",
+          "nav_label": "Union pros and cons",
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "A5",
+          "question": "What is typedef?",
+          "page": 14,
+          "id": "faq-u4-a5",
+          "answer": "faq-u4-a5",
+          "source_label": "Claude compilation · p. 14 · Unit 4, A5",
+          "supplied_provenance_claim": "Teacher’s notes: p. 9, 125",
+          "nav_label": "typedef alias",
+          "source_pages": [
+            14
+          ],
+          "source_review": "The compilation calls typedef a user-defined data type. More precisely, typedef declares a type alias; the struct declaration defines the structure type."
+        }
+      ]
+    },
+    {
+      "id": "faq-u4-q",
+      "title": "Unit IV · Long questions",
+      "questions": [
+        {
+          "unit": 4,
+          "number": "Q1",
+          "question": "Define structure. Write a C program to read and display student details using a structure.",
+          "page": 14,
+          "id": "faq-u4-q1",
+          "answer": "faq-u4-q1",
+          "source_label": "Claude compilation · pp. 14–15 · Unit 4, Q1",
+          "supplied_provenance_claim": "Asked in: PPS-24 (5M), CPDS-24 (5M), CPDS-25 (5M, “student database”)   Teacher’s notes: p. 117–118",
+          "nav_label": "Read/display students",
+          "source_pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "Q2",
+          "question": "Differentiate between structures and unions. Explain how memory is allocated for both.",
+          "page": 15,
+          "id": "faq-u4-q2",
+          "answer": "faq-u4-q2",
+          "source_label": "Claude compilation · pp. 15–16 · Unit 4, Q2",
+          "supplied_provenance_claim": "Asked in: PPS-24, PPS-25, CPDS-24, CPDS-25, PSTC-24, PSTC-25 (twice), PSTC-26, FCS-26 – asked in 8 of 9 papers   Teacher’s notes: p. 8,",
+          "nav_label": "Structure versus union",
+          "source_pages": [
+            15,
+            16
+          ],
+          "source_review": "The source says a union’s size equals exactly the largest member size. It must accommodate its members, but alignment padding can increase the size. Structure sizes also include possible padding; use sizeof rather than a fixed sum."
+        },
+        {
+          "unit": 4,
+          "number": "Q3",
+          "question": "Explain array of structures. Write a C program to read and print n student details (average of m subjects).",
+          "page": 16,
+          "id": "faq-u4-q3",
+          "answer": "faq-u4-q3",
+          "source_label": "Claude compilation · pp. 16–17 · Unit 4, Q3",
+          "supplied_provenance_claim": "Asked in: PSTC-24 (10M), PSTC-25 (6M), FCS-26 (5M, employee details), PPS-25 Q8a (array within structure)   Teacher’s notes: p. 120–",
+          "nav_label": "Student marks and averages",
+          "source_pages": [
+            16,
+            17
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "Q4",
+          "question": "What is a nested structure? Explain with a program.",
+          "page": 17,
+          "id": "faq-u4-q4",
+          "answer": "faq-u4-q4",
+          "source_label": "Claude compilation · p. 17 · Unit 4, Q4",
+          "supplied_provenance_claim": "Asked in: PPS-25 (5M), PSTC-24 (5M)   Teacher’s notes: p. 119–120",
+          "nav_label": "Nested birthday structure",
+          "source_pages": [
+            17
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "Q5",
+          "question": "Explain pointers to structures. Write a program that uses a structure pointer.",
+          "page": 18,
+          "id": "faq-u4-q5",
+          "answer": "faq-u4-q5",
+          "source_label": "Claude compilation · p. 18 · Unit 4, Q5",
+          "supplied_provenance_claim": "Asked in: PPS-25 Q7a (student structure with a pointer variable, 5M)   Teacher’s notes: p. 127–128",
+          "nav_label": "Structure pointer",
+          "source_pages": [
+            18
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "Q6",
+          "question": "Explain how structures are passed to functions (by value and by reference) with examples.",
+          "page": 18,
+          "id": "faq-u4-q6",
+          "answer": "faq-u4-q6",
+          "source_label": "Claude compilation · pp. 18–19 · Unit 4, Q6",
+          "supplied_provenance_claim": "Asked in: PPS-26 Q8 (10M) – your subject’s latest paper   Teacher’s notes: p. 125–128",
+          "nav_label": "Passing structures",
+          "source_pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "unit": 4,
+          "number": "Q7",
+          "question": "Define pointer. How is it declared and initialised? Show the use of the indirection operator.",
+          "page": 19,
+          "id": "faq-u4-q7",
+          "answer": "faq-u4-q7",
+          "source_label": "Claude compilation · pp. 19–20 · Unit 4, Q7",
+          "supplied_provenance_claim": "Asked in: PPS-26 Q7 (5M + 5M)   Teacher’s notes: p. 8, 103–104",
+          "nav_label": "Pointer indirection",
+          "source_pages": [
+            19,
+            20
+          ],
+          "source_review": "The compilation prints a pointer using %d and describes illustrative address 100 as output. That format is incorrect for a pointer; use %p with (void*) and do not assume a fixed address."
+        },
+        {
+          "unit": 4,
+          "number": "Q8",
+          "question": "Explain typedef with examples.",
+          "page": 20,
+          "id": "faq-u4-q8",
+          "answer": "faq-u4-q8",
+          "source_label": "Claude compilation · p. 20 · Unit 4, Q8",
+          "supplied_provenance_claim": "Asked in: Syllabus (Unit V in R25, used with structures here)   Teacher’s notes: p. 9, 125–126",
+          "nav_label": "typedef examples",
+          "source_pages": [
+            20
+          ],
+          "source_review": "The source describes typedef as a user-defined data type. It introduces an alias; the structure definition, rather than typedef alone, defines the structure type."
+        }
+      ]
+    },
+    {
+      "id": "faq-extra-topics",
+      "title": "Additional topics listed in the file",
+      "intro": "Eight additional topics for revision.",
+      "questions": [
+        {
+          "id": "faq-extra-1",
+          "number": "T1",
+          "question": "Dynamic memory allocation – malloc(), calloc(), realloc(), free()",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-1",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "Dynamic allocation",
+          "source_pages": [
+            20
+          ]
+        },
+        {
+          "id": "faq-extra-2",
+          "number": "T2",
+          "question": "Pointers and arrays – read and print an array using pointers; arrays vs pointers",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-2",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "Pointers and arrays",
+          "source_pages": [
+            20
+          ]
+        },
+        {
+          "id": "faq-extra-3",
+          "number": "T3",
+          "question": "Bit fields",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-3",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "Bit-fields",
+          "source_pages": [
+            20
+          ]
+        },
+        {
+          "id": "faq-extra-4",
+          "number": "T4",
+          "question": "Self-referential structures",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-4",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "Self-referential structures",
+          "source_pages": [
+            20
+          ]
+        },
+        {
+          "id": "faq-extra-5",
+          "number": "T5",
+          "question": "Pointer array (array of pointers)",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-5",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "Array of pointers",
+          "source_pages": [
+            20
+          ]
+        },
+        {
+          "id": "faq-extra-6",
+          "number": "T6",
+          "question": "Pointers to strings",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-6",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "Pointers to strings",
+          "source_pages": [
+            20
+          ]
+        },
+        {
+          "id": "faq-extra-7",
+          "number": "T7",
+          "question": "Size of a structure (sizeof)",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-7",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "sizeof a structure",
+          "source_pages": [
+            20
+          ]
+        },
+        {
+          "id": "faq-extra-8",
+          "number": "T8",
+          "question": "Initialising a structure at declaration",
+          "page": 20,
+          "unit": 4,
+          "answer": "faq-extra-8",
+          "source_label": "Claude compilation · p. 20 · final topic list (not a numbered source question)",
+          "nav_label": "Structure initialization",
+          "source_pages": [
+            20
+          ]
+        }
+      ]
+    }
+  ],
+  "answers": {
+    "faq-u3-a1": {
+      "title": "Library and user-defined functions",
+      "paragraphs": [
+        "A function is a named block of statements that performs a specific task. Functions are of two types:"
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        53,
+        70
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "Library functions",
+              "text": "Predefined functions provided by the C library, such as printf(), scanf() and strlen(). Include the appropriate header before using them."
+            },
+            {
+              "label": "User-defined functions",
+              "text": "Functions written by the programmer to perform a required task, such as adding two numbers."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "code": "int add(int a, int b) {\n    return a + b;\n}",
+          "label": "Example of a user-defined function"
+        }
+      ],
+      "research_topic_ids": [
+        "pri-functions-core"
+      ]
+    },
+    "faq-u3-a2": {
+      "title": "Actual and formal parameters",
+      "paragraphs": [
+        "Actual arguments and formal parameters are distinguished as follows:"
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        70,
+        71,
+        72
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Actual arguments",
+            "Formal parameters"
+          ],
+          "rows": [
+            [
+              "Expressions supplied in a function call.",
+              "Variables declared in the function definition."
+            ],
+            [
+              "Their values are passed to the called function.",
+              "They receive copies of the argument values."
+            ],
+            [
+              "In add(x, y), x and y are actual arguments.",
+              "In int add(int a, int b), a and b are formal parameters."
+            ]
+          ]
+        },
+        {
+          "type": "code",
+          "code": "int add(int a, int b) { return a + b; }\n/* A call inside another function: */\nint total = add(5, 3);"
+        }
+      ],
+      "research_topic_ids": [
+        "pri-functions-core"
+      ]
+    },
+    "faq-u3-a3": {
+      "title": "Function syntax",
+      "paragraphs": [
+        "A user-defined function is used through its declaration, call and definition."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        70,
+        71,
+        72
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "part",
+          "label": "1. Function declaration",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The declaration tells the compiler the function name, return type and parameter types."
+            },
+            {
+              "type": "code",
+              "code": "int add(int, int);"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "2. Function call",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The call executes the function. Here 5 and 3 are the actual arguments, and the returned value is assigned to total."
+            },
+            {
+              "type": "code",
+              "code": "int total = add(5, 3);"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "3. Function definition",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The definition contains the statements that perform the task. int is the return type; add is the name; a and b are formal parameters; return sends the result back to the caller."
+            },
+            {
+              "type": "code",
+              "code": "int add(int a, int b) {\n    return a + b;\n}"
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-functions-core"
+      ],
+      "final_answer": "Result: add(5, 3) returns 8."
+    },
+    "faq-u3-a4": {
+      "title": "Recursion and its characteristics",
+      "paragraphs": [
+        "Recursion is the process in which a function calls itself to solve a smaller instance of a problem."
+      ],
+      "programs": [],
+      "basis": "priyanka+senior",
+      "note_refs": [
+        83
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes, supplemented by senior notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "Base case",
+              "text": "Stops further recursive calls."
+            },
+            {
+              "label": "Recursive case",
+              "text": "Calls the function with an argument closer to the base case."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "code": "unsigned fact(unsigned n) {\n    if (n == 0) return 1;\n    return n * fact(n - 1);\n}",
+          "label": "Example: factorial for small nonnegative inputs"
+        },
+        {
+          "type": "paragraph",
+          "text": "For n = 3: fact(3) = 3 × fact(2) = 3 × 2 × fact(1) = 3 × 2 × 1 × fact(0) = 6."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-recursive-fibonacci",
+        "recursion-fundamentals"
+      ],
+      "senior_pages": [
+        105
+      ],
+      "final_answer": "Result: fact(3) = 6."
+    },
+    "faq-u3-a5": {
+      "title": "Functions and modular programming",
+      "paragraphs": [
+        "The advantages of functions are:"
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        4,
+        5,
+        6,
+        70,
+        71,
+        72
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "Reusability",
+              "text": "A function can be called multiple times, avoiding repeated code."
+            },
+            {
+              "label": "Reduced complexity",
+              "text": "A large problem can be divided into smaller, manageable tasks."
+            },
+            {
+              "label": "Readability",
+              "text": "Each function performs a specific task, making the program easier to understand."
+            },
+            {
+              "label": "Easy testing and debugging",
+              "text": "Functions can be tested separately, helping locate errors."
+            },
+            {
+              "label": "Easy maintenance",
+              "text": "A function can be modified without rewriting the entire program."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-program-organization",
+        "pri-functions-core"
+      ],
+      "research_note": "The five-point exam answer expands the ingested functions/task organization material; it is authored synthesis, not a verbatim list in Priyanka images 70–72."
+    },
+    "faq-u3-a6": {
+      "title": "Library and user-defined functions",
+      "paragraphs": [
+        "Four commonly used C library functions are:"
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        6,
+        53,
+        56
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Function",
+            "Header",
+            "Need / purpose"
+          ],
+          "rows": [
+            [
+              "printf()",
+              "<stdio.h>",
+              "Displays formatted output."
+            ],
+            [
+              "scanf()",
+              "<stdio.h>",
+              "Reads formatted input."
+            ],
+            [
+              "strlen()",
+              "<string.h>",
+              "Finds the length of a string, excluding its null terminator."
+            ],
+            [
+              "strcmp()",
+              "<string.h>",
+              "Compares two strings lexicographically."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Library functions provide ready-made operations, reducing the code the programmer must write."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-basic-io",
+        "pri-string-library-portability"
+      ]
+    },
+    "faq-u3-a7": {
+      "title": "Storage classes",
+      "paragraphs": [
+        "For an ordinary local variable declared inside a block, the default storage class is auto."
+      ],
+      "programs": [],
+      "basis": "senior",
+      "note_refs": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "auto int a = 10;\nregister int b = 2;\n/* &b is not permitted in C11. */"
+        },
+        {
+          "type": "paragraph",
+          "text": "register suggests fast access to the compiler. In C11, applying the address-of operator (&) to a register variable is not allowed, so an expression such as &b causes a compilation diagnostic."
+        }
+      ],
+      "research_topic_ids": [
+        "storage-classes-overview",
+        "storage-classes-examples"
+      ]
+    },
+    "faq-u3-q1": {
+      "title": "Functions and modular programming",
+      "paragraphs": [
+        "A function is a named block that performs a particular task. Its declaration, call and definition are:"
+      ],
+      "programs": [
+        "function-factorial"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        70,
+        71,
+        72,
+        75,
+        76,
+        77,
+        78
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "Declaration",
+              "text": "Introduces the return type, name and parameter types before the function is called: static void fact(unsigned);"
+            },
+            {
+              "label": "Call",
+              "text": "Transfers control to the function: fact(n);. n is the actual argument."
+            },
+            {
+              "label": "Definition",
+              "text": "Provides the function body: static void fact(unsigned m) { ... }. m is the formal parameter."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A prototype describes the function’s interface: its return type and parameter types. Structured programming divides a larger task into functions with clear responsibilities."
+        },
+        {
+          "type": "paragraph",
+          "text": "In the factorial example, the accumulator starts at 1 and is multiplied by each integer from 1 through m. For m = 5, the products are 1, 2, 6, 24 and 120."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-functions-core",
+        "pri-factorial-four-categories"
+      ],
+      "final_answer": "Result: the factorial of 5 is 120."
+    },
+    "faq-u3-q2": {
+      "title": "Four function interfaces",
+      "paragraphs": [
+        "Functions are classified into four categories according to whether they take arguments and return a value."
+      ],
+      "programs": [
+        "source-categories"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        72,
+        73,
+        74
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "part",
+          "label": "(i) Arguments, no returned value",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The caller supplies the values, and the function prints the result. Its return type is void."
+            },
+            {
+              "type": "code",
+              "code": "void sum_print(int a, int b);"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(ii) No arguments, no returned value",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The function reads the values and prints their sum. It takes no arguments and returns no value."
+            },
+            {
+              "type": "code",
+              "code": "void sum_read_print(void);"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(iii) Arguments and returned value",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The caller supplies the values, and the function returns their sum for the caller to use."
+            },
+            {
+              "type": "code",
+              "code": "int sum_value(int a, int b);"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(iv) No arguments, returned value",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The function reads the values internally and returns their sum."
+            },
+            {
+              "type": "code",
+              "code": "int sum_read_value(void);"
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-function-four-categories"
+      ],
+      "final_answer": "Result: each category computes 3 + 4 = 7.",
+      "supplementary_programs": [
+        "category-factorial-variant"
+      ]
+    },
+    "faq-u3-q3": {
+      "title": "Value and address arguments",
+      "paragraphs": [
+        "C passes arguments by value. Passing an address allows a function to change the caller’s object; this technique is commonly called “call by reference” in introductory C."
+      ],
+      "programs": [
+        "swap"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        79,
+        80,
+        81,
+        82
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Call by value",
+            "Passing addresses (“call by reference”)"
+          ],
+          "rows": [
+            [
+              "Copies an ordinary value into a parameter.",
+              "Copies an address into a pointer parameter."
+            ],
+            [
+              "Example call: value_swap(a, b);",
+              "Example call: address_swap(&a, &b);"
+            ],
+            [
+              "Changing the parameter does not change the original variable.",
+              "Writing through *x or *y changes the original variable."
+            ]
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(i) Value parameters",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "For a = 2 and b = 3, swapping local copies x and y leaves the caller’s a and b unchanged: 2 and 3."
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(ii) Pointer parameters",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Pass &a and &b. Save *x, assign *x = *y, then assign *y = saved. The original a and b become 3 and 2."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-pointer-arguments",
+        "pri-swap-value-pointer"
+      ],
+      "final_answer": "Result: value swapping leaves the caller as 2, 3; pointer swapping changes it to 3, 2."
+    },
+    "faq-u3-q4": {
+      "title": "Recursive factorial",
+      "paragraphs": [
+        "Recursion is a function calling itself. The factorial of a nonnegative integer is defined by:"
+      ],
+      "programs": [
+        "factorial"
+      ],
+      "basis": "priyanka+senior",
+      "note_refs": [
+        83
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes, supplemented by senior notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "fact(0) = 1 — the base case."
+            },
+            {
+              "text": "fact(n) = n × fact(n − 1), for n > 0 — the recursive case."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Each call decreases n by 1. When the base case returns 1, the waiting calls multiply their results."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Call",
+            "Value returned"
+          ],
+          "rows": [
+            [
+              "fact(0)",
+              "1"
+            ],
+            [
+              "fact(1)",
+              "1 × 1 = 1"
+            ],
+            [
+              "fact(2)",
+              "2 × 1 = 2"
+            ],
+            [
+              "fact(3)",
+              "3 × 2 = 6"
+            ]
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-recursive-fibonacci",
+        "recursive-sum-factorial-fibonacci"
+      ],
+      "final_answer": "Result: for input 5, 5! = 120.",
+      "senior_pages": [
+        107,
+        108
+      ]
+    },
+    "faq-u3-q5": {
+      "title": "Factorial, GCD, Ackermann and Fibonacci",
+      "paragraphs": [
+        "The Fibonacci series begins with 0 and 1. Each subsequent term is the sum of the previous two terms."
+      ],
+      "programs": [
+        "fibonacci"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        83
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "fib(0) = 0 and fib(1) = 1 are the base cases."
+            },
+            {
+              "text": "For n ≥ 2, fib(n) = fib(n − 1) + fib(n − 2)."
+            },
+            {
+              "text": "To print n terms, call fib(i) for i = 0 through n − 1."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Term",
+            "Calculation",
+            "Value"
+          ],
+          "rows": [
+            [
+              "F(0)",
+              "Base case",
+              "0"
+            ],
+            [
+              "F(1)",
+              "Base case",
+              "1"
+            ],
+            [
+              "F(2)",
+              "F(1) + F(0) = 1 + 0",
+              "1"
+            ],
+            [
+              "F(3)",
+              "F(2) + F(1) = 1 + 1",
+              "2"
+            ],
+            [
+              "F(4)",
+              "F(3) + F(2) = 2 + 1",
+              "3"
+            ],
+            [
+              "F(5)",
+              "F(4) + F(3) = 3 + 2",
+              "5"
+            ],
+            [
+              "F(6)",
+              "F(5) + F(4) = 5 + 3",
+              "8"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For example, fib(4) = fib(3) + fib(2) = 2 + 1 = 3. The program uses direct recursion and limits the term count to keep the example quick to run."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-recursive-fibonacci"
+      ],
+      "final_answer": "Result: the first 7 terms are 0, 1, 1, 2, 3, 5, 8."
+    },
+    "faq-u3-q6": {
+      "title": "Factorial, GCD, Ackermann and Fibonacci",
+      "paragraphs": [
+        "To find the sum of the first n natural numbers recursively, add n to the sum of the first n − 1 numbers."
+      ],
+      "programs": [
+        "sum-recursion"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        106,
+        107
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "sum(0) = 0 is the base case."
+            },
+            {
+              "text": "sum(n) = n + sum(n − 1), for n > 0, is the recursive case."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For n = 10: sum(10) = 10 + sum(9) = 10 + 9 + sum(8) = … = 10 + 9 + … + 1 + sum(0). As the calls return, the partial sums are 0, 1, 3, 6, 10, 15, 21, 28, 36, 45 and 55."
+        }
+      ],
+      "research_topic_ids": [
+        "recursive-sum-factorial-fibonacci"
+      ],
+      "final_answer": "Result: 1 + 2 + … + 10 = 55."
+    },
+    "faq-u3-q7": {
+      "title": "Ackermann function",
+      "paragraphs": [
+        "The Ackermann function is a recursive function defined for nonnegative integers m and n. It uses the following three cases:"
+      ],
+      "programs": [
+        "ackermann"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        110,
+        111,
+        112
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Condition",
+            "A(m, n)"
+          ],
+          "rows": [
+            [
+              "m = 0",
+              "n + 1"
+            ],
+            [
+              "m > 0 and n = 0",
+              "A(m − 1, 1)"
+            ],
+            [
+              "m > 0 and n > 0",
+              "A(m − 1, A(m, n − 1))"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Example: A(1,1) = A(0,A(1,0)) = A(0,A(0,1)) = A(0,2) = 3."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "Evaluation"
+          ],
+          "rows": [
+            [
+              "A(1,0)",
+              "A(0,1) = 2"
+            ],
+            [
+              "A(1,1)",
+              "A(0,A(1,0)) = A(0,2) = 3"
+            ],
+            [
+              "A(1,2)",
+              "A(0,A(1,1)) = A(0,3) = 4"
+            ],
+            [
+              "A(1,3)",
+              "A(0,A(1,2)) = A(0,4) = 5"
+            ],
+            [
+              "A(2,0)",
+              "A(1,1) = 3"
+            ],
+            [
+              "A(2,1)",
+              "A(1,A(2,0)) = A(1,3) = 5"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The inner recursive result becomes the second argument of the outer call."
+        }
+      ],
+      "research_topic_ids": [
+        "ackermann-recursion"
+      ],
+      "final_answer": "Result: A(0,1) = 2; A(1,1) = 3; A(2,1) = 5."
+    },
+    "faq-u3-q8": {
+      "title": "Storage classes",
+      "paragraphs": [
+        "Storage classes describe how variables are declared and used, including their scope and storage duration. The four classes commonly studied are auto, register, static and extern."
+      ],
+      "programs": [
+        "storage-demo"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Class",
+            "Scope / use",
+            "Lifetime",
+            "Initial value without an initializer"
+          ],
+          "rows": [
+            [
+              "auto",
+              "Local to its block.",
+              "For the execution of that block.",
+              "Indeterminate; initialize before reading."
+            ],
+            [
+              "register",
+              "Local; suggests fast access. Its address cannot be taken in C11.",
+              "For the execution of that block.",
+              "Indeterminate; initialize before reading."
+            ],
+            [
+              "static (local)",
+              "Name is local, but its value is retained between calls.",
+              "Entire program execution.",
+              "Zero."
+            ],
+            [
+              "extern",
+              "Declares an object commonly defined at file scope or in another file.",
+              "The referenced file-scope object exists throughout execution.",
+              "An extern declaration does not initialize it; an uninitialized file-scope definition is zero-initialized."
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "auto",
+              "text": "auto int a = 2; declares an automatic local variable."
+            },
+            {
+              "label": "register",
+              "text": "register int count = 0; requests fast access without guaranteeing a CPU register."
+            },
+            {
+              "label": "static",
+              "text": "static int calls; retains its value across function calls."
+            },
+            {
+              "label": "extern",
+              "text": "extern int shared; refers to an object defined elsewhere, for example int shared = 20; at file scope."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "storage-classes-overview",
+        "storage-classes-examples"
+      ]
+    },
+    "faq-u3-q9": {
+      "title": "Local/global variables and lifetime",
+      "paragraphs": [
+        "Scope is the region of a program where a variable’s name can be used. Lifetime is the period during which its object exists."
+      ],
+      "programs": [
+        "scope-demo"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        56,
+        57,
+        58
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Variable kind",
+            "Scope",
+            "Lifetime"
+          ],
+          "rows": [
+            [
+              "Ordinary local variable",
+              "Its block, from its declaration.",
+              "That block’s execution."
+            ],
+            [
+              "Local static variable",
+              "Its block, from its declaration.",
+              "Entire program execution."
+            ],
+            [
+              "File-scope variable",
+              "From its declaration to the end of its source file, unless hidden by another declaration.",
+              "Entire program execution."
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "Block scope",
+              "text": "An inner variable can hide an outer variable with the same name. Printing outer a = 2, inner a = 20, then outer a again gives 2, 20, 2."
+            },
+            {
+              "label": "Static lifetime",
+              "text": "A local static counter begins at zero and retains its value. Three calls that print then increment it give 0, 1, 2."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "storage-classes-overview",
+        "storage-classes-examples"
+      ]
+    },
+    "faq-u3-q10": {
+      "title": "Pass arrays to functions",
+      "paragraphs": [
+        "Array data can be passed to a function as individual elements or through an array parameter."
+      ],
+      "programs": [
+        "array-elements",
+        "linear-search"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "part",
+          "label": "(a) Individual elements",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Pass selected values, such as add(a[0], a[1]). The parameters receive copies of those elements; modifying them does not modify the original array."
+            },
+            {
+              "type": "code",
+              "code": "int add(int x, int y) { return x + y; }"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(b) Array parameter",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Pass the array name and its length, such as lin(a, n, target). The array expression supplies a pointer to its first element. The function can access the elements through that pointer; it must receive the length separately."
+            },
+            {
+              "type": "code",
+              "code": "int lin(const int a[], int n, int target);"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The examples below add two individual elements and search an array for a target. In linear search, compare each element with the target; return 1 on a match and 0 if no element matches."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-array-element-function",
+        "pri-array-search-sort-functions"
+      ],
+      "supplementary_programs": [
+        "bubble",
+        "array-sum"
+      ],
+      "research_note": "The main scalar example uses the compilation’s first two elements. Priyanka’s separate source variant selects the third and fifth elements; those indices are not claimed for this example."
+    },
+    "faq-u3-q11": {
+      "title": "Library and user-defined functions",
+      "paragraphs": [
+        "C library functions are predefined operations supplied by the implementation. Include the header that declares a function before calling it."
+      ],
+      "programs": [
+        "library-demo"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        6,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Function",
+            "Header",
+            "Purpose",
+            "Example"
+          ],
+          "rows": [
+            [
+              "printf",
+              "<stdio.h>",
+              "Formatted output.",
+              "printf(\"%d\", n);"
+            ],
+            [
+              "scanf",
+              "<stdio.h>",
+              "Formatted input.",
+              "scanf(\"%d\", &n);"
+            ],
+            [
+              "strlen",
+              "<string.h>",
+              "Counts characters before the null terminator.",
+              "strlen(\"Hello\") gives 5."
+            ],
+            [
+              "strcpy",
+              "<string.h>",
+              "Copies a string into a destination.",
+              "strcpy(destination, source);"
+            ],
+            [
+              "strcat",
+              "<string.h>",
+              "Appends one string to another.",
+              "strcat(destination, source);"
+            ],
+            [
+              "strcmp",
+              "<string.h>",
+              "Compares strings; result is negative, zero or positive.",
+              "strcmp(\"cat\", \"cat\") gives 0."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For strcpy and strcat, the destination must have enough space for the characters and the terminating null character. strcat adds no space automatically."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-basic-io",
+        "pri-string-library-portability",
+        "pri-string-copy-methods",
+        "pri-string-concat-compare-reverse"
+      ],
+      "final_answer": "Result: length 5; concatenation Helloworld; copied string world; the copied strings compare equal."
+    },
+    "faq-u4-a1": {
+      "title": "Structures, tags and member access",
+      "paragraphs": [
+        "A structure is a user-defined aggregate type that groups related members, which may have different data types."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        89,
+        90,
+        91,
+        92
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student {\n    int roll;\n    char name[20];\n    float marks;\n} s1, s2;",
+          "label": "Declare variables with the structure definition"
+        },
+        {
+          "type": "paragraph",
+          "text": "Alternatively, end the type definition with }; and declare the variables separately:"
+        },
+        {
+          "type": "code",
+          "code": "struct student s1, s2;"
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structure-introduction",
+        "pri-structure-objects-members"
+      ]
+    },
+    "faq-u4-a2": {
+      "title": "Pointers and their uses",
+      "paragraphs": [
+        "A pointer is a variable that stores an address. Its declaration specifies the type of object it points to."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        79,
+        80,
+        81
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "data_type *pointer_name;",
+          "label": "General syntax"
+        },
+        {
+          "type": "code",
+          "code": "int a = 10;\nint *p = &a;",
+          "label": "Example"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here p is a pointer to int, &a is the address of a, and *p gives the value 10 stored in a."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-pointer-arguments"
+      ]
+    },
+    "faq-u4-a3": {
+      "title": "Structures, tags and member access",
+      "paragraphs": [
+        "The arrow operator (->) accesses a structure or union member through a pointer."
+      ],
+      "programs": [],
+      "basis": "priyanka",
+      "note_refs": [
+        94,
+        95
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student { int roll; };\nstruct student s = {7};\nstruct student *p = &s;\n/* p->roll has the value 7. */"
+        },
+        {
+          "type": "paragraph",
+          "text": "p->roll is equivalent to (*p).roll. Use the dot operator with an object (s.roll) and the arrow operator with a pointer (p->roll)."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structure-pointer-access"
+      ]
+    },
+    "faq-u4-a4": {
+      "title": "Structures versus unions",
+      "paragraphs": [
+        "A union has the following advantage and disadvantage:"
+      ],
+      "programs": [],
+      "basis": "senior",
+      "note_refs": [
+        121,
+        122,
+        123
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "Advantage — memory saving",
+              "text": "Its members share storage, so it is useful when only one of several alternative values is needed at a time."
+            },
+            {
+              "label": "Disadvantage — values are not retained independently",
+              "text": "Writing one member overwrites the shared storage. A union cannot be used like a structure to preserve all member values simultaneously."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "unions-shared-storage"
+      ]
+    },
+    "faq-u4-a5": {
+      "title": "enum and typedef",
+      "paragraphs": [
+        "typedef gives an existing data type another name, called an alias."
+      ],
+      "programs": [],
+      "basis": "priyanka+senior",
+      "note_refs": [
+        95,
+        96,
+        97
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes, supplemented by senior notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "typedef int numeric;\nnumeric count = 10;    /* same type as int */"
+        },
+        {
+          "type": "paragraph",
+          "text": "It is often used to shorten structure declarations:"
+        },
+        {
+          "type": "code",
+          "code": "typedef struct student {\n    int roll;\n} Student;\nStudent s;"
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structures-function-values",
+        "typedef-enum"
+      ],
+      "senior_pages": [
+        9,
+        125,
+        126
+      ]
+    },
+    "faq-u4-q1": {
+      "title": "Structures, tags and member access",
+      "paragraphs": [
+        "A structure groups related data into a single record. A student record can contain an integer roll number, a character-array name and floating-point marks."
+      ],
+      "programs": [
+        "student-details"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        90,
+        91,
+        92
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student {\n    int roll_no;\n    float marks;\n    char name[20];\n};",
+          "label": "Structure definition"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Declare a structure variable or an array of structure variables."
+            },
+            {
+              "text": "Read each member using the dot operator, such as s[i].roll_no."
+            },
+            {
+              "text": "Use & for numeric scanf destinations; pass the name array directly with a bounded %19s conversion."
+            },
+            {
+              "text": "Display each student’s members using the dot operator."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structure-objects-members"
+      ],
+      "final_answer": "Result: both student records are read and displayed separately."
+    },
+    "faq-u4-q2": {
+      "title": "Structures versus unions",
+      "paragraphs": [
+        "Structures and unions both group named members, but their memory allocation differs."
+      ],
+      "programs": [
+        "union"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        121,
+        122,
+        123
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Structure",
+            "Union"
+          ],
+          "rows": [
+            [
+              "Keyword",
+              "struct",
+              "union"
+            ],
+            [
+              "Storage",
+              "Each member has separate storage.",
+              "Members share overlapping storage."
+            ],
+            [
+              "Values retained",
+              "All members can hold values simultaneously.",
+              "Members do not retain independent values simultaneously."
+            ],
+            [
+              "Size",
+              "Includes member storage and possible padding.",
+              "Enough for the largest member, with possible padding."
+            ],
+            [
+              "Typical use",
+              "Records needing all fields, such as a student’s name and marks.",
+              "Alternative values, such as either an integer or a float."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "In the union program, read and print the roll number before storing marks, then print marks before storing the name. Each new member value uses the same shared storage. Use sizeof to find the actual size on a particular implementation."
+        }
+      ],
+      "research_topic_ids": [
+        "unions-shared-storage"
+      ]
+    },
+    "faq-u4-q3": {
+      "title": "Arrays and structures",
+      "paragraphs": [
+        "An array of structures stores several records of the same structure type. For example, struct student s[100]; can store up to 100 student records."
+      ],
+      "programs": [
+        "student-average"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        92,
+        93
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student {\n    int roll_no;\n    char name[20];\n    float marks[10];\n};"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here s[i] is one student, while s[i].marks[j] is that student’s mark in subject j. Thus the example uses both an array of structures and an array within each structure."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Read the number of students n and the number of subjects m."
+            },
+            {
+              "text": "For each student, read the roll number, name and m marks."
+            },
+            {
+              "text": "Reset sum to zero for each student, then add that student’s marks."
+            },
+            {
+              "text": "Compute average = sum / m using floating-point division and print the average."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-student-structure-averages"
+      ],
+      "final_answer": "Result: Ravi’s average is (10 + 20 + 30) / 3 = 20.00; Sita’s is (40 + 50 + 60) / 3 = 50.00."
+    },
+    "faq-u4-q4": {
+      "title": "Nested structures",
+      "paragraphs": [
+        "A nested structure is a structure that contains another structure as a member."
+      ],
+      "programs": [
+        "nested-birthday"
+      ],
+      "basis": "senior",
+      "note_refs": [
+        119,
+        120
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Senior notes",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Define the inner structure, such as a birthday containing month, day and year."
+            },
+            {
+              "text": "Include an object of that type as a member of the outer student structure."
+            },
+            {
+              "text": "Use consecutive dot operators to access an inner member, for example s.birth.day."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "nested-student-structure"
+      ],
+      "final_answer": "Result: the student’s date of birth is displayed as 14/5/2007."
+    },
+    "faq-u4-q5": {
+      "title": "Passing structures to functions",
+      "paragraphs": [
+        "A pointer to a structure stores the address of a structure object. Access its members using the arrow operator (->)."
+      ],
+      "programs": [
+        "student-pointer"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        94,
+        95,
+        96,
+        97
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student s;\nstruct student *p = &s;\n/* p->rollno and (*p).rollno refer to the same member. */",
+          "label": "Declaration and initialization"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Define the structure and create an object."
+            },
+            {
+              "text": "Store the object’s address in a compatible structure pointer."
+            },
+            {
+              "text": "Use pointer->member to read or modify a member."
+            },
+            {
+              "text": "Pass the address to another function when it needs to access that object."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structure-pointer-access",
+        "pri-structures-function-values"
+      ],
+      "final_answer": "Result: input 7 Anu is displayed through a structure pointer as 7 Anu."
+    },
+    "faq-u4-q6": {
+      "title": "Passing structures to functions",
+      "paragraphs": [
+        "Structures can be passed to functions by value or by passing their address."
+      ],
+      "programs": [
+        "complex-value",
+        "student-pointer"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        95,
+        96,
+        97
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "part",
+          "label": "(i) By value",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The function receives a copy of the structure. Changing that copy does not change the caller’s object. A function may also return a structure."
+            },
+            {
+              "type": "code",
+              "code": "Complex add(Complex a, Complex b);"
+            },
+            {
+              "type": "paragraph",
+              "text": "For complex-number addition, add the real parts and the imaginary parts separately: (1.5 + 2i) + (3 + 4.5i) = 4.5 + 6.5i."
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(ii) By passing an address",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The function receives a pointer to the original structure and accesses members with ->. A writable pointer permits changes to the original; a const pointer can be used for read-only access."
+            },
+            {
+              "type": "code",
+              "code": "void display(const node *s);\n/* Call: display(&student_object); */"
+            },
+            {
+              "type": "paragraph",
+              "text": "This is commonly taught as “call by reference”; the pointer value itself is still passed by value."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structures-function-values"
+      ]
+    },
+    "faq-u4-q7": {
+      "title": "Pointers and their uses",
+      "paragraphs": [
+        "A pointer stores an address. Declare it using the pointed-to data type followed by * and the pointer name."
+      ],
+      "programs": [
+        "pointer-indirection"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        79,
+        80,
+        81
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "int a = 2;\nint *p = &a;",
+          "label": "Declaration and initialization"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "Address-of operator (&)",
+              "text": "&a obtains the address of a."
+            },
+            {
+              "label": "Indirection operator (*)",
+              "text": "*p accesses the object at the address stored in p."
+            },
+            {
+              "label": "Reading through a pointer",
+              "text": "printf(\"%d\", *p); prints 2."
+            },
+            {
+              "label": "Writing through a pointer",
+              "text": "*p = 10; changes a to 10."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-pointer-arguments"
+      ],
+      "supplementary_programs": [
+        "swap"
+      ],
+      "final_answer": "Result: the value changes from 2 to 10 through *p."
+    },
+    "faq-u4-q8": {
+      "title": "enum and typedef",
+      "paragraphs": [
+        "typedef creates an alias for an existing type. It makes declarations shorter without creating a distinct new type."
+      ],
+      "programs": [
+        "typedef-demo"
+      ],
+      "basis": "priyanka+senior",
+      "note_refs": [
+        95,
+        96,
+        97
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes, supplemented by senior notes",
+      "blocks": [
+        {
+          "type": "part",
+          "label": "1. Alias for a basic type",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "typedef int numeric;\nnumeric a, b, c;"
+            },
+            {
+              "type": "paragraph",
+              "text": "a, b and c have type int."
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "2. Alias for a structure type",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "typedef struct student {\n    int roll;\n} Student;\nStudent s;"
+            },
+            {
+              "type": "paragraph",
+              "text": "Student s; means the same type of declaration as struct student s;."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structures-function-values",
+        "typedef-enum"
+      ],
+      "senior_pages": [
+        9,
+        125,
+        126
+      ]
+    },
+    "faq-extra-1": {
+      "title": "Dynamic memory allocation",
+      "paragraphs": [
+        "Dynamic memory allocation obtains storage at run time. The functions are declared in <stdlib.h>."
+      ],
+      "programs": [
+        "dma"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "General PPS knowledge (gap in supplied notes)",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Function",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "malloc(size)",
+              "Allocates size bytes; contents are uninitialized. Returns NULL on failure."
+            ],
+            [
+              "calloc(count, size)",
+              "Allocates space for count elements and initializes the allocated bytes to zero."
+            ],
+            [
+              "realloc(ptr, size)",
+              "Changes the allocation size; the returned address may differ."
+            ],
+            [
+              "free(ptr)",
+              "Releases allocated storage."
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Check an allocation result before dereferencing it."
+            },
+            {
+              "text": "Store realloc’s result in a temporary pointer; on failure the original allocation remains valid."
+            },
+            {
+              "text": "Use the returned new pointer after successful realloc; free each allocation when it is no longer needed."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [],
+      "final_answer": "Result: two zero-initialized integers are shown, followed by the resized array values 10, 20, 30."
+    },
+    "faq-extra-2": {
+      "title": "Pointer arithmetic and pointers to arrays",
+      "paragraphs": [
+        "An array is a collection of elements of the same type. A pointer is a separate object that stores an address."
+      ],
+      "programs": [
+        "array-pointer-io"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        98,
+        99,
+        100,
+        101
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Array",
+            "Pointer"
+          ],
+          "rows": [
+            [
+              "int a[3] allocates three int elements.",
+              "int *p declares a pointer object."
+            ],
+            [
+              "The array object cannot be reassigned to another array.",
+              "p can be assigned another compatible address."
+            ],
+            [
+              "sizeof a gives the whole array size in its defining scope.",
+              "sizeof p gives the pointer object’s size."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "In most expressions, a converts to a pointer to its first element. For a valid index i, *(a + i) and a[i] refer to the same element. Advancing an int pointer by 1 moves to the next int element."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Read each element using scanf(\"%d\", p), where p points to that element."
+            },
+            {
+              "text": "Print each value using printf(\"%d\", *p)."
+            },
+            {
+              "text": "Advance the pointer through the array; do not dereference the one-past-the-end pointer."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": [
+        "pri-pointer-arithmetic-array-sum"
+      ],
+      "supplementary_programs": [
+        "pointer-array"
+      ]
+    },
+    "faq-extra-3": {
+      "paragraphs": [
+        "A bit-field is a structure member declared with a specified number of bits. It is useful for storing small flags and limited-range unsigned values."
+      ],
+      "basis": "general",
+      "basis_label": "General PPS knowledge (gap in supplied notes)",
+      "note_refs": [],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "programs": [
+        "bit-fields"
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct flags {\n    unsigned int ready : 1;\n    unsigned int mode : 2;\n};"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "ready uses one bit and can represent 0 or 1."
+            },
+            {
+              "text": "mode uses two bits and can represent 0 through 3."
+            },
+            {
+              "text": "Access bit-fields with . or ->, like other structure members."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Their packing and allocation order depend on the implementation. A bit-field’s address cannot be taken."
+        }
+      ],
+      "research_topic_ids": [],
+      "final_answer": "Result: ready = 1 and mode = 3."
+    },
+    "faq-extra-4": {
+      "title": "Self-referential structures",
+      "paragraphs": [
+        "A self-referential structure contains a pointer to its own structure type. It can link one object to another object of the same type."
+      ],
+      "programs": [
+        "self-reference"
+      ],
+      "basis": "priyanka",
+      "note_refs": [
+        101
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "Priyanka class notes",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct node {\n    int data;\n    struct node *next;\n};"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "label": "data",
+              "text": "Stores the node’s value."
+            },
+            {
+              "label": "next",
+              "text": "Stores the address of another node or NULL when there is no next node."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Such structures are used to build linked lists, trees and similar linked data structures. A pointer member is allowed; embedding a complete object of the same type directly inside itself is not."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-self-referential-structure"
+      ],
+      "final_answer": "Result: traversing the two linked nodes prints 10, then 20."
+    },
+    "faq-extra-5": {
+      "title": "Array of pointers",
+      "paragraphs": [
+        "An array of pointers is an array whose elements are pointers. Each element can store the address of a compatible object."
+      ],
+      "programs": [
+        "pointer-string"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "General PPS knowledge (gap in supplied notes)",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "int a = 10, b = 20;\nint *p[2] = {&a, &b};\n/* *p[0] is 10; *p[1] is 20. */"
+        },
+        {
+          "type": "paragraph",
+          "text": "For strings, an array of const char* pointers can refer to several string literals. names[i] selects a string; names[i][j] selects one character."
+        }
+      ],
+      "research_topic_ids": []
+    },
+    "faq-extra-6": {
+      "title": "Pointers to strings",
+      "paragraphs": [
+        "A pointer to a string points to a character in a null-terminated character sequence, commonly its first character."
+      ],
+      "programs": [
+        "pointer-string"
+      ],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "General PPS knowledge (gap in supplied notes)",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "char text[] = \"C language\";\nchar *p = text;\n/* puts(p); displays C language. */"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Use *p to read the current character."
+            },
+            {
+              "text": "Advance p to visit the next character and stop at the null character \\0."
+            },
+            {
+              "text": "Use const char *p = \"Hello\"; for a pointer to a string literal; do not modify the literal."
+            }
+          ]
+        }
+      ],
+      "research_topic_ids": []
+    },
+    "faq-extra-7": {
+      "paragraphs": [
+        "sizeof gives the size of a structure in bytes, including any padding inserted for alignment. Its result has type size_t."
+      ],
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes for sizeof; general PPS knowledge for structure padding",
+      "note_refs": [
+        37,
+        38,
+        39
+      ],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "programs": [],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct sample {\n    char c;\n    int n;\n};\n/* Inside a function, with <stdio.h> included: */\nprintf(\"%zu\\n\", sizeof(struct sample));"
+        },
+        {
+          "type": "paragraph",
+          "text": "The size need not equal sizeof(char) + sizeof(int), because padding may occur between members and at the end. Use sizeof on the target implementation rather than assuming a fixed number of bytes."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-sizeof-conversions"
+      ]
+    },
+    "faq-extra-8": {
+      "title": "Structures, tags and member access",
+      "paragraphs": [
+        "A structure can be initialized when its object is declared. Supply member values in braces in declaration order."
+      ],
+      "programs": [],
+      "basis": "general",
+      "note_refs": [],
+      "authority": "PankusDesk-authored exam answer based on the ingested notes",
+      "basis_label": "General PPS knowledge (gap in supplied notes)",
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student {\n    int roll;\n    float marks;\n    char name[20];\n};\nstruct student s = {1, 90.5f, \"Ravi\"};"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here s.roll is 1, s.marks is 90.5 and s.name is \"Ravi\". Designated initializers name the members explicitly:"
+        },
+        {
+          "type": "code",
+          "code": "struct student s = {\n    .roll = 1,\n    .marks = 90.5f,\n    .name = \"Ravi\"\n};"
+        },
+        {
+          "type": "paragraph",
+          "text": "The two declarations above are alternatives. Members omitted from an aggregate initializer are initialized to zero as appropriate for their types."
+        }
+      ],
+      "research_topic_ids": [
+        "pri-structure-objects-members"
+      ],
+      "research_note": "Priyanka covers structure declarations and member input, but not this initialization explanation. General PPS knowledge fills that gap."
+    }
+  },
+  "programs": {
+    "function-factorial": {
+      "title": "Declaration, call and definition: factorial",
+      "code": "#include <stdio.h>\nstatic void fact(unsigned m);\nint main(void) {\n    unsigned n;\n    if (scanf(\"%u\", &n) != 1 || n > 20) return 1;\n    fact(n);\n    return 0;\n}\nstatic void fact(unsigned m) {\n    unsigned long long result = 1;\n    for (unsigned i = 1; i <= m; ++i) result *= i;\n    printf(\"%llu\\n\", result);\n}\n",
+      "input": "5\n",
+      "expected": "120\n",
+      "note": "Input: an integer from 0 to 20. The function prints the factorial; unsigned long long holds results through 20!."
+    },
+    "source-categories": {
+      "title": "Program: four categories using addition",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstatic void sum_print(int a, int b) {\n    printf(\"%d\\n\", a + b);\n}\nstatic void sum_read_print(void) {\n    int a, b;\n    if (scanf(\"%d%d\", &a, &b) != 2 ||\n        a < -1000 || a > 1000 || b < -1000 || b > 1000)\n        exit(EXIT_FAILURE);\n    printf(\"%d\\n\", a + b);\n}\nstatic int sum_value(int a, int b) {\n    return a + b;\n}\nstatic int sum_read_value(void) {\n    int a, b;\n    if (scanf(\"%d%d\", &a, &b) != 2 ||\n        a < -1000 || a > 1000 || b < -1000 || b > 1000)\n        exit(EXIT_FAILURE);\n    return a + b;\n}\nint main(void) {\n    sum_print(3, 4);\n    sum_read_print();\n    printf(\"%d\\n\", sum_value(3, 4));\n    printf(\"%d\\n\", sum_read_value());\n    return 0;\n}\n",
+      "input": "3 4\n3 4\n",
+      "expected": "7\n7\n7\n7\n",
+      "note": "The no-argument functions read their operands internally. Enter two pairs of integers, each within −1000 to 1000; the argument-taking functions use 3 and 4."
+    },
+    "sum-recursion": {
+      "title": "Recursive sum of the first n natural numbers",
+      "code": "#include <stdio.h>\nstatic unsigned sum(unsigned n) { return n == 0 ? 0 : n + sum(n - 1); }\nint main(void) {\n    unsigned n;\n    if (scanf(\"%u\", &n) != 1 || n > 100) return 1;\n    printf(\"%u\\n\", sum(n));\n    return 0;\n}\n",
+      "input": "10\n",
+      "expected": "55\n",
+      "note": "Input: n from 0 to 100. The upper bound keeps this recursive demonstration small."
+    },
+    "storage-demo": {
+      "title": "Block scope, static duration, extern and register",
+      "code": "#include <stdio.h>\nint shared = 20;\nstatic void count(void) {\n    static unsigned calls;\n    printf(\"%u \", calls++);\n}\nint main(void) {\n    auto int a = 2;\n    printf(\"%d \", a);\n    { int a = 20; printf(\"%d \", a); }\n    printf(\"%d\\n\", a);\n    for (int i = 0; i < 3; ++i) count();\n    putchar('\\n');\n    extern int shared;\n    register int fast = 2;\n    printf(\"extern=%d register=%d\\n\", shared, fast);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "2 20 2\n0 1 2 \nextern=20 register=2\n",
+      "note": "The output shows shadowing, a persistent static counter, an extern reference and a register value."
+    },
+    "array-elements": {
+      "title": "Pass individual elements to a function",
+      "code": "#include <stdio.h>\nstatic int add(int a, int b) { return a + b; }\nint main(void) {\n    int a[] = {3, 4};\n    printf(\"%d\\n\", add(a[0], a[1]));\n    return 0;\n}\n",
+      "input": "",
+      "expected": "7\n",
+      "note": "The function receives copies of a[0] and a[1], which contain 3 and 4."
+    },
+    "linear-search": {
+      "title": "Linear search using an array parameter",
+      "code": "#include <stdio.h>\nstatic int lin(const int a[], int n, int target) {\n    for (int i = 0; i < n; ++i) if (a[i] == target) return 1;\n    return 0;\n}\nint main(void) {\n    int a[] = {4, 2, 9, 1, 7};\n    printf(\"%s\\n\", lin(a, 5, 9) ? \"9 is found\" : \"9 is not found\");\n    return 0;\n}\n",
+      "input": "",
+      "expected": "9 is found\n",
+      "note": "Search the five-element array {4, 2, 9, 1, 7} for 9."
+    },
+    "library-demo": {
+      "title": "Standard C library examples",
+      "code": "#include <string.h>\n#include <stdio.h>\nint main(void) {\n    char s1[12] = \"Hello\", s2[] = \"world\";\n    printf(\"length=%zu\\n\", strlen(s1));\n    strcat(s1, s2);\n    puts(s1);\n    strcpy(s1, s2);\n    puts(s1);\n    printf(\"equal=%d\\n\", strcmp(s1, s2) == 0);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "length=5\nHelloworld\nworld\nequal=1\n",
+      "note": "The destination has room for both words and the null terminator. strlen is printed with %zu."
+    },
+    "student-details": {
+      "title": "Read and display two students",
+      "code": "#include <stdio.h>\nstruct student { int roll_no; float marks; char name[20]; };\nint main(void) {\n    struct student s[2];\n    for (int i = 0; i < 2; ++i) {\n        if (scanf(\"%d%f%19s\", &s[i].roll_no, &s[i].marks, s[i].name) != 3)\n            return 1;\n    }\n    for (int i = 0; i < 2; ++i)\n        printf(\"%d %s %.2f\\n\", s[i].roll_no, s[i].name, s[i].marks);\n    return 0;\n}\n",
+      "input": "101 85.5 Ravi\n102 90 Sita\n",
+      "expected": "101 Ravi 85.50\n102 Sita 90.00\n",
+      "note": "Enter roll number, marks and a single-word name for each of two students. Names may contain at most 19 characters."
+    },
+    "student-average": {
+      "title": "n students with an array of m subject marks",
+      "code": "#include <stdio.h>\nstruct student { int roll_no; char name[20]; float marks[10]; };\nint main(void) {\n    struct student s[100];\n    int n, m;\n    if (scanf(\"%d%d\", &n, &m) != 2 || n < 1 || n > 100 || m < 1 || m > 10)\n        return 1;\n    for (int i = 0; i < n; ++i) {\n        if (scanf(\"%d%19s\", &s[i].roll_no, s[i].name) != 2) return 1;\n        double sum = 0;\n        for (int j = 0; j < m; ++j) {\n            if (scanf(\"%f\", &s[i].marks[j]) != 1 ||\n                !(s[i].marks[j] >= 0 && s[i].marks[j] <= 100)) return 1;\n            sum += s[i].marks[j];\n        }\n        printf(\"%d %s average=%.2f\\n\", s[i].roll_no, s[i].name, sum / m);\n    }\n    return 0;\n}\n",
+      "input": "2 3\n1 Ravi 10 20 30\n2 Sita 40 50 60\n",
+      "expected": "1 Ravi average=20.00\n2 Sita average=50.00\n",
+      "note": "Enter n (1–100), m (1–10), then each student’s roll, single-word name and m marks. This example assumes marks from 0 to 100."
+    },
+    "nested-birthday": {
+      "title": "Nested student and birthday structures",
+      "code": "#include <stdio.h>\nstruct birthday { int month, day, year; };\nstruct student { int roll_no; float marks; char name[20]; struct birthday birth; };\nint main(void) {\n    struct student s = {1, 85.5f, \"Ravi\", {5, 14, 2007}};\n    printf(\"%d %s %.2f DOB=%d/%d/%d\\n\", s.roll_no, s.name, s.marks,\n           s.birth.day, s.birth.month, s.birth.year);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "1 Ravi 85.50 DOB=14/5/2007\n",
+      "note": "The initialized student contains a birthday structure. The stored month/day/year is displayed as day/month/year."
+    },
+    "student-pointer": {
+      "title": "Pass a student structure pointer to display",
+      "code": "#include <stdio.h>\ntypedef struct student { int rollno; char name[20]; } node;\nstatic void display(const node *s) { printf(\"%d %s\\n\", s->rollno, s->name); }\nint main(void) {\n    node s;\n    if (scanf(\"%d%19s\", &s.rollno, s.name) != 2) return 1;\n    display(&s);\n    return 0;\n}\n",
+      "input": "7 Anu\n",
+      "expected": "7 Anu\n",
+      "note": "Enter a roll number and a single-word name of at most 19 characters. display reads the structure through its pointer."
+    },
+    "complex-value": {
+      "title": "Pass and return structures by value",
+      "code": "#include <stdio.h>\ntypedef struct complex { float real, imag; } Complex;\nstatic Complex add(Complex a, Complex b) {\n    Complex result = {a.real + b.real, a.imag + b.imag};\n    return result;\n}\nint main(void) {\n    Complex a = {1.5f, 2.0f}, b = {3.0f, 4.5f};\n    Complex c = add(a, b);\n    printf(\"%.2f + i%.2f\\n\", c.real, c.imag);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "4.50 + i6.50\n",
+      "note": "The two initialized complex numbers are 1.5 + 2i and 3 + 4.5i."
+    },
+    "bit-fields": {
+      "title": "Unsigned bit-field members",
+      "code": "#include <stdio.h>\nstruct flags { unsigned int ready : 1; unsigned int mode : 2; };\nint main(void) {\n    struct flags f = {1, 3};\n    printf(\"ready=%u mode=%u\\n\", f.ready + 0u, f.mode + 0u);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "ready=1 mode=3\n",
+      "note": "The one-bit field holds 1 and the two-bit field holds 3."
+    },
+    "typedef-demo": {
+      "title": "typedef aliases for scalar and structure types",
+      "code": "#include <stdio.h>\ntypedef int numeric;\ntypedef struct student { int roll; } Student;\nint main(void) {\n    numeric n = 7;\n    Student s = {n};\n    printf(\"%d\\n\", s.roll);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "7\n",
+      "note": "numeric aliases int; Student aliases struct student."
+    },
+    "swap": {
+      "title": "Value copies and pointer swap",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstatic void value_swap(int x, int y) {\n    int t = x;\n    x = y;\n    y = t;\n    printf(\"Local: %d %d\\n\", x, y);\n}\nstatic void address_swap(int *x, int *y) {\n    int t = *x;\n    *x = *y;\n    *y = t;\n}\nint main(void) {\n    int a = 2, b = 3;\n    value_swap(a, b);\n    printf(\"Caller: %d %d\\n\", a, b);\n    address_swap(&a, &b);\n    printf(\"Caller: %d %d\\n\", a, b);\n}\n",
+      "input": "",
+      "expected": "Local: 3 2\nCaller: 2 3\nCaller: 3 2\n",
+      "note": "The first helper swaps local copies. The second writes through pointers to exchange the caller’s values."
+    },
+    "factorial": {
+      "title": "Recursive factorial",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstatic unsigned long long fact(unsigned n) {\n    return n == 0 ? 1ULL : n * fact(n - 1);\n}\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1 || n < 0 || n > 20)\n        return EXIT_FAILURE;\n    printf(\"%llu\\n\", fact((unsigned)n));\n}\n",
+      "input": "5\n",
+      "expected": "120\n",
+      "note": "Input: an integer from 0 to 20. The base case includes 0! = 1."
+    },
+    "fibonacci": {
+      "title": "Recursive first n Fibonacci terms",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstatic unsigned long fib(unsigned n) {\n    return n < 2 ? n : fib(n - 1) + fib(n - 2);\n}\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1 || n < 0 || n > 20)\n        return EXIT_FAILURE;\n    for (int i = 0; i < n; i++)\n        printf(\"%lu%s\", fib((unsigned)i), i + 1 == n ? \"\\n\" : \" \");\n    if (n == 0)\n        putchar('\\n');\n}\n",
+      "input": "7\n",
+      "expected": "0 1 1 2 3 5 8\n",
+      "note": "Input: the number of terms, from 0 to 20. Each term is computed recursively."
+    },
+    "ackermann": {
+      "title": "Bounded Ackermann demonstration",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstatic unsigned ack(unsigned m, unsigned n) {\n    if (m == 0)\n        return n + 1;\n    if (n == 0)\n        return ack(m - 1, 1);\n    return ack(m - 1, ack(m, n - 1));\n}\nint main(void) {\n    unsigned m, n;\n    if (scanf(\"%u%u\", &m, &n) != 2 || m > 3 || n > 6)\n        return EXIT_FAILURE;\n    printf(\"%u\\n\", ack(m, n));\n}\n",
+      "input": "2 1\n",
+      "expected": "5\n",
+      "note": "Input: m from 0 to 3 and n from 0 to 6. These small limits keep the rapid recursive growth manageable."
+    },
+    "bubble": {
+      "title": "Bubble sort through an array parameter",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstatic void sort(int a[], int n) {\n    for (int i = 0; i < n - 1; i++)\n        for (int j = 0; j < n - i - 1; j++)\n            if (a[j] > a[j + 1]) {\n                int t = a[j];\n                a[j] = a[j + 1];\n                a[j + 1] = t;\n            }\n}\nint main(void) {\n    int a[] = {4, 2, 9, 1, 7};\n    int n = 5;\n    sort(a, n);\n    for (int i = 0; i < n; i++)\n        printf(\"%d%s\", a[i], i + 1 == n ? \"\\n\" : \" \");\n}\n",
+      "input": "",
+      "expected": "1 2 4 7 9\n",
+      "note": "Each pass moves a largest remaining value to the end. The list {4, 2, 9, 1, 7} becomes {1, 2, 4, 7, 9}."
+    },
+    "array-sum": {
+      "title": "Pass an array and its length",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstatic long sum(const int a[], size_t n) {\n    long s = 0;\n    for (size_t i = 0; i < n; i++)\n        s += a[i];\n    return s;\n}\nint main(void) {\n    int a[20], n;\n    if (scanf(\"%d\", &n) != 1 || n < 0 || n > 20)\n        return EXIT_FAILURE;\n    for (int i = 0; i < n; i++)\n        if (scanf(\"%d\", &a[i]) != 1 || a[i] < -1000 || a[i] > 1000)\n            return EXIT_FAILURE;\n    printf(\"%ld\\n\", sum(a, (size_t)n));\n}\n",
+      "input": "4\n2 4 6 8\n",
+      "expected": "20\n",
+      "note": "Enter a length from 0 to 20 and that many integers, each within −1000 to 1000."
+    },
+    "union": {
+      "title": "Read and display union members one at a time",
+      "code": "#include <stdio.h>\nunion student { int roll_no; float marks; char name[20]; };\nint main(void) {\n    union student s;\n    if (scanf(\"%d\", &s.roll_no) != 1) return 1;\n    printf(\"roll=%d\\n\", s.roll_no);\n    if (scanf(\"%f\", &s.marks) != 1) return 1;\n    printf(\"marks=%.2f\\n\", s.marks);\n    if (scanf(\"%19s\", s.name) != 1) return 1;\n    printf(\"name=%s\\n\", s.name);\n    return 0;\n}\n",
+      "input": "101 85.5 Ravi\n",
+      "expected": "roll=101\nmarks=85.50\nname=Ravi\n",
+      "note": "Print each member before writing the next one into the shared storage."
+    },
+    "dma": {
+      "title": "malloc, calloc, realloc and free",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int *p = malloc(2 * sizeof *p);\n    if (!p)\n        return EXIT_FAILURE;\n    p[0] = 10;\n    p[1] = 20;\n    int *zero = calloc(2, sizeof *zero);\n    if (!zero) {\n        free(p);\n        return EXIT_FAILURE;\n    }\n    printf(\"calloc: %d %d\\n\", zero[0], zero[1]);\n    free(zero);\n    int *tmp = realloc(p, 3 * sizeof *p);\n    if (!tmp) {\n        free(p);\n        return EXIT_FAILURE;\n    }\n    p = tmp;\n    p[2] = 30;\n    printf(\"%d %d %d\\n\", p[0], p[1], p[2]);\n    free(p);\n}\n",
+      "input": "",
+      "expected": "calloc: 0 0\n10 20 30\n",
+      "note": "Check each allocation before use, preserve the original pointer if realloc fails, and free allocated storage."
+    },
+    "pointer-array": {
+      "title": "Pointer arithmetic and pointer to an array",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int a[] = {10, 20, 30};\n    int *p = a;\n    int (*row)[3] = &a;\n    printf(\"%d %d %td\\n\", *p, *(p + 1), (a + 2) - a);\n    p++;\n    printf(\"%d %d\\n\", *p, (*row)[2]);\n}\n",
+      "input": "",
+      "expected": "10 20 2\n20 30\n",
+      "note": "p points to one element; row points to the whole three-element array."
+    },
+    "self-reference": {
+      "title": "Two self-referential nodes",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nstruct node {\n    int data;\n    struct node *next;\n};\nint main(void) {\n    struct node second = {20, NULL}, first = {10, &second};\n    for (const struct node *p = &first; p != NULL; p = p->next)\n        printf(\"%d\\n\", p->data);\n}\n",
+      "input": "",
+      "expected": "10\n20\n",
+      "note": "Two nodes are linked through next. NULL marks the end."
+    },
+    "pointer-string": {
+      "title": "String and array of string pointers",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    const char *s = \"C language\";\n    const char *names[] = {\"Asha\", \"Bina\", \"Chitra\"};\n    for (const char *p = s; *p != '\\0'; p++)\n        putchar(*p);\n    putchar('\\n');\n    for (size_t i = 0; i < 3; i++)\n        puts(names[i]);\n}\n",
+      "input": "",
+      "expected": "C language\nAsha\nBina\nChitra\n",
+      "note": "The example displays a character array and an array of pointers to names."
+    },
+    "array-pointer-io": {
+      "title": "Read and print array elements through pointers",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[20], n;\n    if (scanf(\"%d\", &n) != 1 || n < 0 || n > 20) return 1;\n    for (int *p = a; p != a + n; ++p)\n        if (scanf(\"%d\", p) != 1) return 1;\n    for (const int *p = a; p != a + n; ++p)\n        printf(\"%d%s\", *p, p + 1 == a + n ? \"\\n\" : \" \");\n    if (n == 0) putchar('\\n');\n    return 0;\n}\n",
+      "input": "3 10 20 30\n",
+      "expected": "10 20 30\n",
+      "note": "Enter n from 0 to 20, followed by n integers. Input and output access the array through pointers."
+    },
+    "scope-demo": {
+      "title": "Example: block scope and static lifetime",
+      "code": "#include <stdio.h>\nstatic void count(void) {\n    static int calls;\n    printf(\"%d \", calls++);\n}\nint main(void) {\n    int a = 2;\n    printf(\"%d \", a);\n    { int a = 20; printf(\"%d \", a); }\n    printf(\"%d\\n\", a);\n    for (int i = 0; i < 3; ++i) count();\n    putchar('\\n');\n    return 0;\n}\n",
+      "input": "",
+      "expected": "2 20 2\n0 1 2 \n",
+      "note": "The inner a hides the outer a. The static counter retains its value between calls."
+    },
+    "pointer-indirection": {
+      "title": "Example: read and write through a pointer",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 2;\n    int *p = &a;\n    printf(\"%d\\n\", *p);\n    *p = 10;\n    printf(\"%d\\n\", a);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "2\n10\n",
+      "note": "p points to a, so assigning through *p changes a."
+    },
+    "category-factorial-variant": {
+      "title": "Additional example: categories using sums and factorials",
+      "code": "#include <stdio.h>\nstatic void sum_args(int a, int b) { printf(\"sum(args)=%d\\n\", a + b); }\nstatic void sum_no_args(void) {\n    int a = 3, b = 4;\n    printf(\"sum(no args)=%d\\n\", a + b);\n}\nstatic unsigned fact_args(unsigned n) {\n    unsigned result = 1;\n    for (unsigned i = 1; i <= n; ++i) result *= i;\n    return result;\n}\nstatic unsigned fact_no_args(void) { return fact_args(5); }\nint main(void) {\n    sum_args(3, 4);\n    sum_no_args();\n    printf(\"factorial(args)=%u\\n\", fact_args(5));\n    printf(\"factorial(no args)=%u\\n\", fact_no_args());\n    return 0;\n}\n",
+      "input": "",
+      "expected": "sum(args)=7\nsum(no args)=7\nfactorial(args)=120\nfactorial(no args)=120\n",
+      "note": "An alternative using fixed values: 3, 4 and 5. The four functions have different interfaces."
+    }
+  }
+}

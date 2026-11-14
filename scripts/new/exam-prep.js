@@ -35,6 +35,7 @@
                         // It is used only for supplied code or labelled question subparts below.
                         question_paragraphs: [''],
                         paragraphs: answerParts.length ? [] : answer.paragraphs,
+                        blocks: answer.blocks,
                         solution_parts: answerParts,
                         discrepancy: question.discrepancy ? { label: 'Source discrepancy', message: question.discrepancy } : null,
                         final_answer: question.answer === 'macro-output'
@@ -46,6 +47,9 @@
             }
 
             function program(example) {
+                if (bank.kind === 'faq-snapshot') {
+                    return `<section class="exam-program"><h4>${esc(example.title)}</h4><p>${esc(example.note)}</p><pre><code class="language-c">${esc(example.code)}</code></pre>${example.input ? `<h5>Sample input</h5><pre>${esc(example.input)}</pre>` : ''}<h5>Output</h5><pre>${esc(example.expected)}</pre></section>`;
+                }
                 return `<section class="exam-program"><h4>${esc(example.title)}</h4><p>${esc(example.note)}</p><pre><code class="language-c">${esc(example.code)}</code></pre><h5>Example input</h5><pre>${esc(example.input || '(No standard input; see the stated fixture or command.)')}</pre><h5>Expected result</h5><pre>${esc(example.expected || '(No console output; see the stated output files.)')}</pre></section>`;
             }
 
@@ -75,14 +79,22 @@
                 body.querySelector('.study-solution-label').textContent = 'Answer';
                 const asksForProgram = /program|sample code|example|illustrat/i.test(question.question)
                     && !/pseudo\s*code/i.test(question.question);
-                if (asksForProgram && answer.programs.length) {
+                if ((bank.kind === 'faq-snapshot' || asksForProgram) && answer.programs.length) {
                     body.insertAdjacentHTML('beforeend', answer.programs.map(id => program(bank.programs[id])).join(''));
-                    const final = document.createElement('p');
-                    final.className = 'study-final-answer';
-                    const strong = document.createElement('strong');
-                    strong.textContent = 'Final result: the examples produce the outputs/files shown above under their stated input limits.';
-                    final.append(strong);
-                    body.append(final);
+                    if (bank.kind !== 'faq-snapshot') {
+                        const final = document.createElement('p');
+                        final.className = 'study-final-answer';
+                        const strong = document.createElement('strong');
+                        strong.textContent = 'Final result: the examples produce the outputs/files shown above under their stated input limits.';
+                        final.append(strong);
+                        body.append(final);
+                    }
+                }
+                if (answer.supplementary_programs?.length) {
+                    body.insertAdjacentHTML('beforeend', `<details class="exam-provenance"><summary>More worked examples</summary>${answer.supplementary_programs.map(id => program(bank.programs[id])).join('')}</details>`);
+                }
+                if (answer.final_answer) {
+                    body.insertAdjacentHTML('beforeend', `<p class="study-final-answer"><strong>${esc(answer.final_answer)}</strong></p>`);
                 }
                 const notePages = answer.note_refs.length
                     ? `; ${answer.basis.startsWith('priyanka') ? 'Priyanka images' : 'senior PDF pages'} ${answer.note_refs.join(', ')}` : '';
@@ -91,6 +103,13 @@
             }
 
             const sections = [], paperLinks = [], revisionLinks = [];
+            for (const section of bank.sections || []) {
+                revisionLinks.push(`<h3><a href="${esc(path)}#${esc(section.id)}">${esc(section.title)}</a></h3>`);
+                for (const question of section.questions) {
+                    revisionLinks.push(`<a href="${esc(path)}#${esc(question.id)}">${esc(question.number)} · ${esc(question.nav_label || question.question)}</a>`);
+                }
+                sections.push(`<section class="exam-paper" id="${esc(section.id)}"><h2>${esc(section.title)}</h2>${section.intro ? `<p>${esc(section.intro)}</p>` : ''}${section.questions.map(item).join('')}</section>`);
+            }
             for (const paper of bank.papers) {
                 paperLinks.push(`<a href="${esc(path)}#${esc(paper.id)}">${esc(paper.title)} · ${esc(paper.regulation)}</a>`);
                 const sourceLabel = paper.sources.map(id => `${sources.get(id).filename}, p. ${paper.source_pages[id].join(', ')}`).join('; ');
@@ -134,7 +153,9 @@
                 sections.push(`<section class="exam-paper" id="${esc(source.id)}"><h2>${esc(source.label)}</h2>${questions}</section>`);
             }
             content.innerHTML = sections.join('');
-            nav.innerHTML = `<h3>Past papers</h3>${paperLinks.join('')}<h3>Revision sets</h3>${revisionLinks.join('')}`;
+            nav.innerHTML = bank.sections
+                ? revisionLinks.join('')
+                : `<h3>Past papers</h3>${paperLinks.join('')}<h3>Revision sets</h3>${revisionLinks.join('')}`;
             records.forEach(complete);
             ui.initAccordions(content);
 
@@ -155,8 +176,10 @@
                 if (answer) answer.open = true;
                 target.scrollIntoView({ block: 'start' });
                 const paper = target.closest('.exam-paper');
+                const currentId = [...nav.querySelectorAll('a')].some(link => link.hash === `#${id}`)
+                    ? id : paper?.id;
                 nav.querySelectorAll('a').forEach(link => {
-                    if (link.hash === `#${paper?.id}`) link.setAttribute('aria-current', 'location');
+                    if (link.hash === `#${currentId}`) link.setAttribute('aria-current', 'location');
                     else link.removeAttribute('aria-current');
                 });
             }

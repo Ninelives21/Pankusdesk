@@ -343,3 +343,11 @@
 .study-accordion-item mjx-container[width="full"],
 .subject-unit-page mjx-container[width="full"],
 .unit-class-notes-page mjx-container[width="full"] { min-width: 0 !important; }
+
+/* Semantic comparison tables inside question answers. */
+.study-answer-table{max-width:100%;overflow-x:auto;overflow-y:hidden;margin:16px 0}
+.study-answer-table table{width:100%;border-collapse:collapse;text-align:left}
+.study-answer-table th,.study-answer-table td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}
+.study-answer-table th{background:var(--surface-soft);font-weight:700}
+.study-answer-table caption{text-align:left;font-weight:700;margin-bottom:8px}
+.study-answer-list li{margin:8px 0}

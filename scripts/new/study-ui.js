@@ -113,6 +113,23 @@ function renderAccordionGroup(config = {}) {
 		</div>`;
 }
 
+function renderAnswerBlocks(blocks = []) {
+	return blocks.map(block => {
+		if (block.type === 'paragraph') return `<p>${formatText(block.text)}</p>`;
+		if (block.type === 'heading') return `<h4>${escapeHtml(block.text)}</h4>`;
+		if (block.type === 'code') return `${block.label ? `<p><strong>${escapeHtml(block.label)}</strong></p>` : ''}<pre><code>${escapeHtml(block.code)}</code></pre>`;
+		if (block.type === 'list') {
+			const tag = block.ordered === false ? 'ul' : 'ol';
+			return `<${tag} class="study-answer-list">${(block.items || []).map(item => `<li>${item.label ? `<strong>${escapeHtml(item.label)}:</strong> ` : ''}${formatText(item.text)}</li>`).join('')}</${tag}>`;
+		}
+		if (block.type === 'table') {
+			return `<div class="study-answer-table"><table>${block.caption ? `<caption>${escapeHtml(block.caption)}</caption>` : ''}<thead><tr>${block.headers.map(header => `<th scope="col">${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${block.rows.map(row => `<tr>${row.map(cell => `<td>${formatText(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+		}
+		if (block.type === 'part') return `<section class="study-solution-part"><h4>${escapeHtml(block.label)}</h4>${renderAnswerBlocks(block.blocks)}</section>`;
+		return '';
+	}).join('');
+}
+
 function renderExampleSolutionContent(item, solutionParagraphs) {
 	const figures = Array.isArray(item.figures) ? item.figures : [];
 	const notes = Array.isArray(item.notes) ? item.notes : [];
@@ -173,6 +190,7 @@ function renderExampleSolutionContent(item, solutionParagraphs) {
 		.filter(explainer => explainer?.after?.type === 'end')
 		.map(explainer => renderExplainer(explainer))
 		.join('');
+	html += renderAnswerBlocks(item.blocks || []);
 	return html;
 }
 
