@@ -73,6 +73,26 @@ def verify(source_text=None, kb_root=None):
     assert bank['answers']['endsem-2026-9-a']['source_trace']['priyanka_topic_ids']
     assert bank['answers']['endsem-2026-8']['source_trace']['priyanka_topic_ids'] == ['pri-structures-function-values']
     assert bank['answers']['endsem-2026-6']['source_trace']['general_supplement']
+    # These source-specific checks protect reviewed notebook details, not just
+    # equivalent C semantics. The original photographs still require human review.
+    answers = bank['answers']
+    nested, ladder = answers['endsem-2026-a']['blocks']
+    assert nested['blocks'][1]['code'].count('if (condition)') == 3
+    assert nested['blocks'][1]['code'].count('else {') == 3
+    assert ladder['blocks'][0]['text'] == 'Multi-way decision-making statement.'
+    assert ladder['blocks'][1]['code'].count('else if') == 2
+    array_code = '\n'.join(x['code'] for x in blocks_in(answers['endsem-2026-3']['blocks']) if x['type'] == 'code')
+    assert 'int m[5] = {20, 10, 5, 40, 35};' in array_code
+    assert '{10, 20, 1}, {5, 6, 13}, {15, 4, 8}' in array_code
+    assert 'a[i][j]' in array_code
+    categories = answers['endsem-2026-5-b']['blocks'][:4]
+    assert [x['blocks'][0]['code'].split('{')[0].strip() for x in categories] == [
+        'int sum(int x, int y)', 'void sum(int n, int y)', 'void sum(void)', 'int sum(void)']
+    assert bank['snippet_fixtures']['conversion-implicit']['expected'] == '3\n'
+    assert 'float f = 3.5f;' in bank['snippet_fixtures']['conversion-implicit']['displayed_code']
+    assert 'fun(&x)' in bank['programs']['indirection']['code']
+    assert '*y = *y * 10;' in bank['programs']['indirection']['code']
+    assert all('source_fidelity' in a for a in answers.values())
     if source_text:
         original = re.sub(r'\s+', '', Path(source_text).read_text())
         assert all(re.sub(r'\s+', '', q['question']) in original for q in questions)
@@ -100,6 +120,19 @@ def verify(source_text=None, kb_root=None):
     print('PASS: January 2026 PPS/R25 identity, 19 answers, exact numbering, 60-mark choice scheme, OR placement, source traces and card.')
 
     extra = {
+        'branch-if': [('0\n', 'simple if program\n'), ('-2\n', 'simple if program\n')],
+        'branch-if-else': [('-3\n', '-3 is odd\n')],
+        'branch-ladder': [('8 8 2\n', '8 is greatest\n'), ('2 8 8\n', '8 is greatest\n'),
+                          ('8 8 8\n', '8 is greatest\n')],
+        'branch-nested': [('9 2 3\n', '9 is the greatest\n'), ('2 9 3\n', '9 is the greatest\n'),
+                          ('2 3 9\n', '9 is the greatest\n'), ('9 9 9\n', '9 is the greatest\n')],
+        'branch-switch': [('8 2 1\n', 'The addition value is 10\n'),
+                          ('8 2 2\n', 'The subtraction value is 6\n'),
+                          ('8 2 3\n', 'The multiplication value is 16\n'),
+                          ('8 2 4\n', 'The division value is 4\n'), ('8 0 4\n', None)],
+        'loop-for': [('0\n', 'The factorial of 0 is 1\n'), ('21\n', None)],
+        'indirection': [('-3\n', 'Value before calling function: -3\ny value is -30\nValue after calling function: -30\n'),
+                        ('1001\n', None)],
         'swap': [('0 0\n', 'Before: 0 0\nAfter: 0 0\n'),
                  ('-5 8\n', 'Before: -5 8\nAfter: 8 -5\n'), ('3\n', None)],
         'selection-sort': [('1\n7\n', '7\n'), ('5\n4 4 -1 0 -1\n', '-1 -1 0 4 4\n'),

@@ -18,42 +18,41 @@ All original question wording, order, numbers, unit grouping, marks and OR place
 
 The left navigation links to the paper, Part A/units and every question with a short description (26 links). Selecting a question opens its dropdown answer. Back to top sits above navigation and remains available with mobile contents collapsed. No filters or topic-based merged questions are introduced.
 
-## Answer authority and depth
+## Answer authority and fidelity
 
-The strict order is **Priyanka’s ingested notes → senior KB → general PPS knowledge for missing coverage**. Each answer records real topic IDs and image/page references; gaps and authored applications are explicit in data, with provenance in a closed Source disclosure. Student-facing answers teach the subject directly, without source-comparison essays or unnecessary discrepancy badges.
+The order is **Priyanka’s original class notes → senior KB → general PPS knowledge for gaps**. Original notebook images were compared directly with the answers, rather than relying on topic IDs as proof of faithful wording. `note_image_review` records the image checksums; each answer records the checked images, actual corrections and any fallback in `source_fidelity`. Notebook photographs remain private.
 
-Short answers give the required definition/syntax and a compact example where useful. Five-mark answers include explanation, procedure and a relevant example/program. Ten-mark answers supply the requested breadth, algorithms, worked traces, comparisons or full C programs. No invented official submark split is assigned to a multi-topic 10-mark question.
+Definitions, syntax structure, example values and methods are retained. Whitespace and code formatting are normalized; invalid C and incorrect claims are corrected. The nested-if syntax includes inner decisions in both outer branches, and the ladder retains repeated else-if blocks. The source array values, conversion examples, calculator operations, loop examples and four separate sum definitions are preserved. The answers keep short definitions compact and give syntax, explanation and examples for longer questions. No invented submark allocation is supplied.
 
-| Question | Primary evidence | Completion / application |
+| Question | Original images checked | Corrections / fallback |
 | --- | --- | --- |
-| a | Priyanka 21–24, 33–34 | Nested-if and ladder syntax |
-| b | Priyanka 63, 67–68 | Initialized three-word illustration of row-array strings |
-| c | Priyanka 70–72 | General syntax, component explanations and sum example |
-| d | No direct array-of-pointers coverage in either KB | General PPS; distinguished from row arrays and pointer-to-array syntax |
-| e | No file API coverage in either KB | General PPS definitions of ferror, feof, clearerr, perror |
-| 1(a) | Senior prime-test p47; Priyanka flowchart meanings 13–14 | Algorithm, text flowchart logic and prime/composite traces |
-| 1(b) | Priyanka 37–39, 66–67 | Implicit/explicit conversions; accurate floating division and truncation |
-| 2 | Priyanka 19–26, 33–34, 36–37 | Six branching forms with short worked C examples |
-| 3 | Priyanka 42, 47–48, 50 | 1D/2D declaration, full/partial/inferred initialization and row-major access; source 3×3 initializer retained |
-| 4 | Priyanka 27–32, 40–42 | while, do–while, for syntax and examples; correct 20-even-number sum 420 from the corrected ingested record |
-| 5(a) | Priyanka 79–82 | Pointer swap updates original integers |
-| 5(b) | Priyanka 72–74 | Four argument/return categories; no-argument variants read internally |
-| 6 | Priyanka sorting context 64 and explicit prompt 66; senior overview p73 | Neither supplies a complete selection-sort implementation. General PPS fills algorithm, code, trace and complexity; selection is not replaced with bubble sort |
-| 7(a), 7(b) | Priyanka 79–81 | Pointer declaration/initialization and focused indirection example |
-| 8 | Priyanka 95–97 | Apply her value/pointer structure-passing methods to the paper’s time record; the exam-specific conversion is an authored application, not a claim that the notes contain that exact program |
-| 9(a) | Priyanka 4–6, 40 | #include/#define and PI=3.14 are grounded in her notes; header search wording is standard-C clarification |
-| 9(b) | No file API coverage | General PPS filename input and file display |
-| 10 | Senior program-entry form pp3–4 | General PPS supplies file error APIs, positioning rules and argc/argv behaviour |
+| a | 23, 33 | Wording and syntax layout retained. |
+| b | 50, 67, 68 | Corrected the reversed row/column description on image 67. Retained the 10×20 declaration. |
+| c | 70, 71, 72 | Replaced the handwritten return type; with return expression;. Retained sum, x, y, c and the declaration/call/definition structure. |
+| d | No direct source coverage | The supplied notes cover pointer declarations and row arrays of strings, but do not supply the array-of-pointers construct itself. |
+| e | No direct source coverage | File-handling APIs are absent from both supplied note KBs. |
+| 1(a) | 13, 14 | Added the n < 2 case, which the senior flag-only example misses. Priyanka does not supply the prime-testing example. The senior program on p47 tests i = 2 through n−1 using flag; that method is retained without substituting a square-root optimization. |
+| 1(b) | 38, 39, 66, 67 | Removed the incorrect claims that implicit conversion is always promotion/lossless and explicit conversion is always demotion/lossy. Corrected the float-output call from %d with &f to %f with f. Retained the 3.5→3 and int-5→float examples. |
+| 2 | 20, 21, 22, 23, 24, 25, 26, 33, 34, 36 | Corrected the positive-number condition a <= 0 to a > 0. The ladder example from senior p28 uses >= to handle tied greatest values correctly. The calculator keeps all four original operations; bounded operands and a zero-divisor check prevent arithmetic errors. Corrected goto’s classification to unconditional jump; it does not make a conditional decision. Priyanka image 23 supplies ladder syntax but no concrete ladder program; the greatest-of-three example comes from senior p28. |
+| 3 | 42, 47, 48, 50 | Corrected the 1-D for-header separators and used &a[i] for numeric input. Corrected the 2-D display from a[i] to a[i][j], preserving the original 3×3 values and two-loop structure. |
+| 4 | 27, 29, 30, 31, 32 | The do–while example’s heading asks for even terms but its i = 1 visits odd terms. Changed i to 2 and corrected the copied output label; the intended result is 420. Kept the source factorial loop i = 1 through n; used unsigned long long and a supported input bound to avoid overflow. Used entry-controlled execution for for, correcting the misleading flowchart ordering on image 32. |
+| 5(a) | 79, 80, 81, 82 | Completed the source margin’s instruction to put the swap in a function. Corrected pointer initialization and exchanged *x and *y using an int temporary, rather than exchanging pointer values through an int. Clarified the class term call by reference: C passes pointer values, and dereferencing them updates the caller’s objects. |
+| 5(b) | 71, 72, 73, 74 | Corrected “without return type” to “without return value” (void). Corrected void sum; to a function declaration; used (void) for no parameters. The four sum signatures are alternatives, so their C checks compile them separately. |
+| 6 | No direct source coverage | Priyanka supplies the selection-sort prompt and sorting context; senior notes name the method but contain no complete implementation. The selection algorithm, code, trace and stability explanation are general PPS completion. |
+| 7(a) | 79, 80, 94 | Did not present the notebook’s illustrative numeric memory addresses as guaranteed runtime values. |
+| 7(b) | 79, 80, 81 | Corrected y = y * 10 (invalid pointer multiplication) to *y = *y * 10. Corrected printing y with %d to printing the pointed-to int *y. Corrected the pointer prototype. |
+| 8 | 95, 96, 97 | C pointer arguments themselves pass by value; updates through a pointer affect the original structure. Neither set of notes supplies this exact time-conversion program. The two methods and class examples are retained; the time program is the application explicitly required by the paper. |
+| 9(a) | 4, 5, 6, 40 | Corrected the claim that function implementations are stored/executed in the header; the header supplies declarations. Kept preprocessing separate from linking. |
+| 9(b) | No direct source coverage | File handling is not covered by the supplied Priyanka or senior note KB. |
+| 10 | No direct source coverage | Senior notes support the hosted main signature; file APIs, positioning rules and argc/argv behaviour require general PPS supplementation. |
 
-The concrete Q8 record contains hours, minutes and seconds and computes the actual requested total, rather than reusing a student/complex-number program as a substitute. Both value and pointer methods give 3723 seconds for 1:02:03.
+The Source disclosure contains correction and fallback details, closed by default. There are no discrepancy badges or source-review essays in the main answer. The Q8 time conversion is the application requested by the exam; Priyanka’s complex-number and marks examples explain the two structure-passing methods, rather than being attributed as the exact time program.
 
 ## Code, examples and figures
 
-Five complete program examples cover pointer swap, selection sort, pointer indirection, time conversion and filename/file display. Fourteen additional displayed-code fixtures check conversions, branching, matrix access, loops, all four function categories and command-line syntax. All are standard C11. Generic syntax templates intentionally contain placeholders and are not represented as standalone compilable programs.
+Five complete C11 programs cover swap, selection sort, pointer indirection, time conversion and file display. Nineteen displayed-code fixtures check the actual examples, including the four alternative sum signatures compiled separately. Input validation and representable ranges prevent errors without changing the illustrated methods. The senior prime method retains flag and divisors 2 through n−1; the missing n < 2 case is corrected.
 
-Input contracts are explicit: selection sort accepts 1–100 values; the time example accepts nonnegative elapsed hours up to 100000 with minutes/seconds 0–59 so its long result is representable; filenames are limited to 255 characters. String filenames may include spaces. The file-output sample includes an exact fixture. No arbitrary grading threshold or exam marks assumption is invented.
-
-**Figure limitation:** AGENTS.md currently freezes drawing generation. As in the existing PPS worksheet, Q1(a) supplies the algorithm and a labelled **text flowchart layout** identifying terminal/input/process/decision steps and Yes/No routes. No new drawn flowchart or image is claimed complete. Existing drawings and source PDFs are not published, edited or redrawn. No unit publication state changes. The new shell/data are small static text assets; no source binary is added.
+**Figure limitation:** AGENTS.md freezes drawing generation. Q1(a) supplies an algorithm and labelled text flowchart logic with symbols and branches, not a drawn flowchart. No existing figures were changed, and no source scans were published. No publication state changes.
 
 ## Files
 
@@ -68,12 +67,12 @@ Input contracts are explicit: selection sort accepts 1–100 values; the time ex
 ## Validation
 
 - `python3 scripts/tools/verify_pps_end_semester.py --source-text <supplied text> --kb-root <ingested KB>`: PASS. All 19 wordings match the supplied paper; all cited primary topics, images, source prompts and senior pages resolve. Original numbering, 60-mark choice scheme, OR placements, source traces, answer blocks, program/snippet references and index card verified.
-- Five full programs plus 14 displayed-code fixtures compile with `-std=c11 -Wall -Wextra -Werror -pedantic` and produce expected samples. Tests include duplicates/negative values/singleton and invalid array sizes, equal-value swaps, time bounds and invalid minutes/seconds, missing/empty/space-containing filenames, and missing command-line arguments.
+- Five full programs plus 19 displayed-code fixtures compile with `-std=c11 -Wall -Wextra -Werror -pedantic` and produce expected samples. Tests include duplicates/negative values/singleton and invalid array sizes, equal-value swaps, time bounds and invalid minutes/seconds, missing/empty/space-containing filenames, and missing command-line arguments.
 - `python3 scripts/tools/verify_college.py`: PASS.
 - `python3 college/1-1/basic-electrical-engineering/kb/tools/verify_kb.py`: PASS.
 - `python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py`: PASS.
 - Existing Mid-II and FAQ verifiers: PASS; their source data is unchanged.
 - JavaScript/Python syntax, JSON parsing and `git diff --check`: PASS.
-- Local Chromium at 1440 px and 390 px: card, all 19 answers, 26 navigation links, marks, five OR choices, function syntax, selection sort, time record, Q9 subparts, source disclosure, phone collapse/Back to top and `/Pankusdesk/` routing checked. Screenshots reviewed; no page errors or horizontal document overflow. Existing Mid-II/FAQ browser paths also checked for shared-renderer regressions.
+- Local Chromium at 1440 px and 390 px: card, all 19 answers, 26 navigation links, marks, five OR choices, source-specific nested-if/ladder syntax, conversion examples, selection sort, time record, Q9 subparts, source disclosure, phone collapse/Back to top and `/Pankusdesk/` routing checked. Screenshots reviewed; no page errors or horizontal document overflow. Existing Mid-II/FAQ browser paths also checked for shared-renderer regressions.
 
 The PR handoff supplies preview links and unchecked desktop/phone acceptance steps, with the exact deployed commit. No automatic merge.

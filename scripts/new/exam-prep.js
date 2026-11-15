@@ -118,7 +118,11 @@
                 const notePages = answer.note_refs.length
                     ? `; ${answer.basis.startsWith('priyanka') ? 'Priyanka images' : 'senior PDF pages'} ${answer.note_refs.join(', ')}` : '';
                 const seniorPages = answer.senior_pages ? `; senior PDF pages ${answer.senior_pages.join(', ')}` : '';
-                body.insertAdjacentHTML('beforeend', `<details class="exam-provenance"><summary>Source</summary><p>${esc(answer.authority)}. Basis: ${esc(answer.basis_label + notePages + seniorPages)}.</p><p>${esc(question.source_label)}</p></details>`);
+                const fidelity = answer.source_fidelity;
+                const sourceNotes = fidelity
+                    ? [...fidelity.corrections, ...(fidelity.fallback ? [fidelity.fallback] : [])]
+                        .map(text => `<p>${esc(text)}</p>`).join('') : '';
+                body.insertAdjacentHTML('beforeend', `<details class="exam-provenance"><summary>Source</summary><p>${esc(answer.authority)}. Basis: ${esc(answer.basis_label + notePages + seniorPages)}.</p>${sourceNotes}<p>${esc(question.source_label)}</p></details>`);
             }
 
             const sections = [], paperLinks = [], revisionLinks = [];
