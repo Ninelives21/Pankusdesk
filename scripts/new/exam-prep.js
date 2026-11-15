@@ -128,6 +128,9 @@
             const sections = [], paperLinks = [], revisionLinks = [];
             if (bank.paper) {
                 revisionLinks.push(`<h3><a href="${esc(path)}#${esc(bank.paper.id)}">${esc(bank.paper.title)} · ${esc(bank.paper.regulation)}</a></h3>`);
+                if (bank.navigation_mode === 'papers-only') {
+                    paperLinks.push(`<a href="${esc(path)}#${esc(bank.paper.id)}">${esc(bank.paper.title)} · ${esc(bank.paper.regulation)}</a>`);
+                }
                 const details = page.querySelector('[data-exam-paper-details]');
                 if (details) {
                     details.id = bank.paper.id;
@@ -150,7 +153,10 @@
                     const heading = group.unit
                         ? (!group.or_before ? `<h3>Part B · Unit ${group.unit}</h3>` : '')
                         : '<h3>Part A</h3>';
-                    return `${group.or_before ? '<p class="exam-or">OR</p>' : ''}<section class="exam-group" id="${esc(group.id)}">${heading}${group.parts.map(part => item({ ...part, source_label: sourceLabel })).join('')}</section>`;
+                    return `${group.or_before ? '<p class="exam-or">OR</p>' : ''}<section class="exam-group" id="${esc(group.id)}">${heading}${group.parts.map(part => {
+                        const label = part.page ? paper.sources.map(id => `${sources.get(id).filename}, p. ${(part.source_pages?.[id] || [part.page]).join(', ')}`).join('; ') : sourceLabel;
+                        return item({ ...part, source_label: label });
+                    }).join('')}</section>`;
                 }).join('');
                 sections.push(`<section class="exam-paper" id="${esc(paper.id)}"><h2>${esc(paper.title)}</h2><p>${esc(paper.regulation)} · ${esc(paper.subject_code)} · ${paper.minutes} minutes · ${paper.max_marks} marks</p><ul>${paper.instructions.map(instruction => `<li>${esc(instruction)}</li>`).join('')}</ul>${groups}</section>`);
             }
@@ -186,7 +192,7 @@
                 sections.push(`<section class="exam-paper" id="${esc(source.id)}"><h2>${esc(source.label)}</h2>${questions}</section>`);
             }
             content.innerHTML = sections.join('');
-            nav.innerHTML = bank.sections
+            nav.innerHTML = bank.navigation_mode === 'papers-only' ? paperLinks.join('') : bank.sections
                 ? revisionLinks.join('')
                 : `<h3>Past papers</h3>${paperLinks.join('')}<h3>Revision sets</h3>${revisionLinks.join('')}`;
             records.forEach(complete);
@@ -209,8 +215,10 @@
                 if (answer) answer.open = true;
                 target.scrollIntoView({ block: 'start' });
                 const paper = target.closest('.exam-paper');
+                const containingPaperId = bank.paper && (bank.sections || []).some(section => section.id === paper?.id)
+                    ? bank.paper.id : paper?.id;
                 const currentId = [...nav.querySelectorAll('a')].some(link => link.hash === `#${id}`)
-                    ? id : paper?.id;
+                    ? id : containingPaperId;
                 nav.querySelectorAll('a').forEach(link => {
                     if (link.hash === `#${currentId}`) link.setAttribute('aria-current', 'location');
                     else link.removeAttribute('aria-current');

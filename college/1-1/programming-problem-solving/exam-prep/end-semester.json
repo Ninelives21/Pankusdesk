@@ -88,9 +88,665 @@
       "regulation": "R25",
       "subject_code": "25ES1CS101",
       "note": "Page 2 contains only the closing marker. Printed exam identity takes precedence over the filename year."
+    },
+    {
+      "id": "pps-r22-jan-2025",
+      "filename": "2024_PROGRAMMING FOR PROBLEM SOLVING.pdf",
+      "sha256": "f5df77bcd9fbfebf3fc7b89169da5bbd413657481cabd786bb6416b2d8d446c6",
+      "pages": 2,
+      "question_pages": [
+        1,
+        2
+      ],
+      "printed_exam": "January 2025",
+      "regulation": "R22",
+      "subject_code": "22ES1CS101",
+      "note": "Printed exam date, not the filename year, identifies the paper."
+    },
+    {
+      "id": "pps-r22-jan-2025-copy",
+      "filename": "PYQ_PYQ ┬╖ Jan 2025 ┬╖ R22 ┬╖ Programming For Problem Solving (Supplementary).pdf",
+      "sha256": "620d4cbb1635b60fc156181929c2d4d4d3598076f5d71d9baa370f451d2c6298",
+      "pages": 2,
+      "question_pages": [
+        1,
+        2
+      ],
+      "printed_exam": "January 2025",
+      "regulation": "R22",
+      "subject_code": "22ES1CS101",
+      "note": "Same printed Regular/Supplementary January 2025 paper and questions, differently paginated/typeset; not a second paper.",
+      "duplicate_of": "pps-r22-jan-2025"
+    },
+    {
+      "id": "pps-r22-jan-2024",
+      "filename": "2023_PROGRAMMING FOR PROBLEM SOLVING.pdf",
+      "sha256": "7c8fa1cd70e718e549e4cff5d9f0febdf8f478264f0ea0bcac0cd80a6dc45134",
+      "pages": 2,
+      "question_pages": [
+        1,
+        2
+      ],
+      "printed_exam": "January 2024",
+      "regulation": "R22",
+      "subject_code": "22ES1CS101",
+      "note": "Printed exam date, not the filename year, identifies the paper."
     }
   ],
-  "papers": [],
+  "papers": [
+    {
+      "id": "endsem-2025",
+      "title": "End semester · January 2025",
+      "regulation": "R22",
+      "subject_code": "22ES1CS101",
+      "subject": "Programming for Problem Solving",
+      "minutes": 180,
+      "max_marks": 60,
+      "instructions": [
+        "Answer ALL questions in PART-A.",
+        "Answer any ONE question from each unit in PART-B.",
+        "All Questions Carry Equal Marks."
+      ],
+      "sources": [
+        "pps-r22-jan-2025",
+        "pps-r22-jan-2025-copy"
+      ],
+      "source_pages": {
+        "pps-r22-jan-2025": [
+          1,
+          2
+        ],
+        "pps-r22-jan-2025-copy": [
+          1,
+          2
+        ]
+      },
+      "groups": [
+        {
+          "id": "endsem-2025-part-a",
+          "parts": [
+            {
+              "id": "endsem-2025-a",
+              "number": "a",
+              "marks": 2,
+              "question": "Evaluate the expression:\n22 + 3 < 6 && !5 || 22 = =7 && 22 – 2 > 4+5.",
+              "answer": "more-expression",
+              "page": 1
+            },
+            {
+              "id": "endsem-2025-b",
+              "number": "b",
+              "marks": 2,
+              "question": "Differentiate between break and continue.",
+              "answer": "more-break",
+              "page": 1
+            },
+            {
+              "id": "endsem-2025-c",
+              "number": "c",
+              "marks": 2,
+              "question": "Compare and contrast actual and formal parameters.",
+              "answer": "more-parameters",
+              "page": 1
+            },
+            {
+              "id": "endsem-2025-d",
+              "number": "d",
+              "marks": 2,
+              "question": "Write the different functions that support the dynamic memory allocation for variables.",
+              "answer": "more-dma-short",
+              "page": 1
+            },
+            {
+              "id": "endsem-2025-e",
+              "number": "e",
+              "marks": 2,
+              "question": "Give the syntax for fseek(). Explain its arguments.",
+              "answer": "more-fseek",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "id": "endsem-2025-q1",
+          "parts": [
+            {
+              "id": "endsem-2025-1-a",
+              "number": "1(a)",
+              "marks": 5,
+              "question": "Draw a flow chart to find the roots of quadratic equation.",
+              "answer": "more-quadratic",
+              "page": 1
+            },
+            {
+              "id": "endsem-2025-1-b",
+              "number": "1(b)",
+              "marks": 5,
+              "question": "Compare and contrast between if-else-if ladder and switch-case statements.",
+              "answer": "more-ladder-switch",
+              "page": 1
+            }
+          ],
+          "unit": "I"
+        },
+        {
+          "id": "endsem-2025-q2",
+          "parts": [
+            {
+              "id": "endsem-2025-2-a",
+              "number": "2(a)",
+              "marks": 6,
+              "question": "List and explain the various storage classes present in language ‘C’.",
+              "answer": "more-storage",
+              "page": 1
+            },
+            {
+              "id": "endsem-2025-2-b",
+              "number": "2(b)",
+              "marks": 4,
+              "question": "Write an Algorithm to swap two numbers with out using temporary variables.",
+              "answer": "more-swap-no-temp",
+              "page": 1
+            }
+          ],
+          "unit": "I",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2025-q3",
+          "parts": [
+            {
+              "id": "endsem-2025-3-a",
+              "number": "3(a)",
+              "marks": 5,
+              "question": "What is an array? Explain different methods of initialization of single dimensional array.",
+              "answer": "more-array-1d",
+              "page": 1
+            },
+            {
+              "id": "endsem-2025-3-b",
+              "number": "3(b)",
+              "marks": 5,
+              "question": "A number is said to be prime, if it is not exactly divisible by any other numbers other than 1 and the number itself. For example, 7 and 11 are primes. Write C- language program that reads a number from input and determine whether it is a prime or not.",
+              "answer": "more-prime",
+              "page": 1,
+              "source_pages": {
+                "pps-r22-jan-2025": [
+                  1,
+                  2
+                ],
+                "pps-r22-jan-2025-copy": [
+                  1
+                ]
+              }
+            }
+          ],
+          "unit": "II"
+        },
+        {
+          "id": "endsem-2025-q4",
+          "parts": [
+            {
+              "id": "endsem-2025-4-a",
+              "number": "4(a)",
+              "marks": 5,
+              "question": "Write a C program for 3×3 matrix multiplication.",
+              "answer": "more-matrix3",
+              "page": 2,
+              "source_pages": {
+                "pps-r22-jan-2025": [
+                  2
+                ],
+                "pps-r22-jan-2025-copy": [
+                  1
+                ]
+              }
+            },
+            {
+              "id": "endsem-2025-4-b",
+              "number": "4(b)",
+              "marks": 5,
+              "question": "Write a C program to convert a lower-case string into upper case string without using built in functions.",
+              "answer": "more-upper",
+              "page": 2,
+              "source_pages": {
+                "pps-r22-jan-2025": [
+                  2
+                ],
+                "pps-r22-jan-2025-copy": [
+                  1
+                ]
+              }
+            }
+          ],
+          "unit": "II",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2025-q5",
+          "parts": [
+            {
+              "id": "endsem-2025-5-a",
+              "number": "5(a)",
+              "marks": 5,
+              "question": "Write a ‘C’ program to search for an element by using Linear Search.",
+              "answer": "more-linear",
+              "page": 2
+            },
+            {
+              "id": "endsem-2025-5-b",
+              "number": "5(b)",
+              "marks": 5,
+              "question": "What is a function? What are its advantages? Explain various parameter passing techniques.",
+              "answer": "more-functions-parameters",
+              "page": 2
+            }
+          ],
+          "unit": "III"
+        },
+        {
+          "id": "endsem-2025-q6",
+          "parts": [
+            {
+              "id": "endsem-2025-6",
+              "number": "6",
+              "marks": 10,
+              "question": "Demonstrate the insertion sort results for each insertion for the following initial array of elements. 25 6 15 12 8 34 9 18 2. Also write the program to implement insertion sort.",
+              "answer": "more-insertion-2025",
+              "page": 2
+            }
+          ],
+          "unit": "III",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2025-q7",
+          "parts": [
+            {
+              "id": "endsem-2025-7-a",
+              "number": "7(a)",
+              "marks": 5,
+              "question": "Create a structure called student and the members of the structure are Stu_Name,Stu_Rno, M1, M2, M3. Create a pointer variable for the structure, store the values and fetch the values present in the structure student.",
+              "answer": "more-student-pointer",
+              "page": 2
+            },
+            {
+              "id": "endsem-2025-7-b",
+              "number": "7(b)",
+              "marks": 5,
+              "question": "Compare and contrast unions and structures with an example.",
+              "answer": "more-union",
+              "page": 2
+            }
+          ],
+          "unit": "IV"
+        },
+        {
+          "id": "endsem-2025-q8",
+          "parts": [
+            {
+              "id": "endsem-2025-8-a",
+              "number": "8(a)",
+              "marks": 5,
+              "question": "With a sample ‘C’ program illustrate Array within the structures.",
+              "answer": "more-array-within",
+              "page": 2
+            },
+            {
+              "id": "endsem-2025-8-b",
+              "number": "8(b)",
+              "marks": 5,
+              "question": "How we can define structure with in a structure? Explain with a sample program.",
+              "answer": "more-nested",
+              "page": 2
+            }
+          ],
+          "unit": "IV",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2025-q9",
+          "parts": [
+            {
+              "id": "endsem-2025-9-a",
+              "number": "9(a)",
+              "marks": 7,
+              "question": "Write a program that accepts the names of two files and copies the first file into second using fgetc() and fputc() functions.",
+              "answer": "more-copy",
+              "page": 2
+            },
+            {
+              "id": "endsem-2025-9-b",
+              "number": "9(b)",
+              "marks": 3,
+              "question": "Write brief notes on command line arguments.",
+              "answer": "more-command",
+              "page": 2
+            }
+          ],
+          "unit": "V"
+        },
+        {
+          "id": "endsem-2025-q10",
+          "parts": [
+            {
+              "id": "endsem-2025-10-a",
+              "number": "10(a)",
+              "marks": 3,
+              "question": "Explain the Enumerated data types with an example.",
+              "answer": "more-enum",
+              "page": 2
+            },
+            {
+              "id": "endsem-2025-10-b",
+              "number": "10(b)",
+              "marks": 7,
+              "question": "Write a ‘C’ program to count the number of words, white spaces and tab spaces present in a file.",
+              "answer": "more-file-count",
+              "page": 2
+            }
+          ],
+          "unit": "V",
+          "or_before": true
+        }
+      ]
+    },
+    {
+      "id": "endsem-2024",
+      "title": "End semester · January 2024",
+      "regulation": "R22",
+      "subject_code": "22ES1CS101",
+      "subject": "Programming for Problem Solving",
+      "minutes": 180,
+      "max_marks": 60,
+      "instructions": [
+        "Answer ALL questions in PART-A.",
+        "Answer any ONE question from each unit in PART-B.",
+        "All Questions Carry Equal Marks."
+      ],
+      "sources": [
+        "pps-r22-jan-2024"
+      ],
+      "source_pages": {
+        "pps-r22-jan-2024": [
+          1,
+          2
+        ]
+      },
+      "groups": [
+        {
+          "id": "endsem-2024-part-a",
+          "parts": [
+            {
+              "id": "endsem-2024-a",
+              "number": "a",
+              "marks": 2,
+              "question": "What is a compiler?",
+              "answer": "more-compiler",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-b",
+              "number": "b",
+              "marks": 2,
+              "question": "Differentiate break and continue.",
+              "answer": "more-break",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-c",
+              "number": "c",
+              "marks": 2,
+              "question": "Write the output of the following code.\n#define n 5\nVoid main()\n{\n int a[n];\nint i;\na[0]=1;\nfor(i=0;i<n-1;++i)\n{\na[a[i]]=a[i]+1;\n }\n for(i=0;i<=n-1;++i)\n{\n printf(\"%d\",a[i]);\n}\n }",
+              "answer": "more-output-trace",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-d",
+              "number": "d",
+              "marks": 2,
+              "question": "Define Structure. How do you initialize a Structure?",
+              "answer": "more-structure-init",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-e",
+              "number": "e",
+              "marks": 2,
+              "question": "What is a macro? Give one example.",
+              "answer": "more-macro",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "id": "endsem-2024-q1",
+          "parts": [
+            {
+              "id": "endsem-2024-1-a",
+              "number": "1(a)",
+              "marks": 5,
+              "question": "Develop the algorithm for sum and average of 3 numbers.",
+              "answer": "more-average3",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-1-b",
+              "number": "1(b)",
+              "marks": 5,
+              "question": "Explain the structure of C program.",
+              "answer": "more-program-structure",
+              "page": 1
+            }
+          ],
+          "unit": "I"
+        },
+        {
+          "id": "endsem-2024-q2",
+          "parts": [
+            {
+              "id": "endsem-2024-2-a",
+              "number": "2(a)",
+              "marks": 5,
+              "question": "Write a C program to print the digit in words.",
+              "answer": "more-digit",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-2-b",
+              "number": "2(b)",
+              "marks": 5,
+              "question": "List the operators in C. Explain logical and bitwise operators with examples.",
+              "answer": "more-operators",
+              "page": 1
+            }
+          ],
+          "unit": "I",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2024-q3",
+          "parts": [
+            {
+              "id": "endsem-2024-3-a",
+              "number": "3(a)",
+              "marks": 5,
+              "question": "Write a C Program to print and count all numbers between 1 to 100 divisible by 11.",
+              "answer": "more-div11",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-3-b",
+              "number": "3(b)",
+              "marks": 5,
+              "question": "List any five string handling functions with an example.",
+              "answer": "more-strings",
+              "page": 1
+            }
+          ],
+          "unit": "II"
+        },
+        {
+          "id": "endsem-2024-q4",
+          "parts": [
+            {
+              "id": "endsem-2024-4-a",
+              "number": "4(a)",
+              "marks": 5,
+              "question": "Write a C program to display Armstrong numbers in a given range.",
+              "answer": "more-armstrong",
+              "page": 1
+            },
+            {
+              "id": "endsem-2024-4-b",
+              "number": "4(b)",
+              "marks": 5,
+              "question": "Write a short note on operations on arrays and write a program to print the position of smallest of ‘n’ numbers using arrays.",
+              "answer": "more-min-position",
+              "page": 2
+            }
+          ],
+          "unit": "II",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2024-q5",
+          "parts": [
+            {
+              "id": "endsem-2024-5-a",
+              "number": "5(a)",
+              "marks": 5,
+              "question": "Apply bubble sort procedure to sort the following numbers into ascending order : 95,85, 45, 75, 25, 35, 15, 55.",
+              "answer": "more-bubble-trace",
+              "page": 2
+            },
+            {
+              "id": "endsem-2024-5-b",
+              "number": "5(b)",
+              "marks": 5,
+              "question": "Give the structure of the functions and explain about the arguments and their return values.",
+              "answer": "more-function-categories",
+              "page": 2
+            }
+          ],
+          "unit": "III"
+        },
+        {
+          "id": "endsem-2024-q6",
+          "parts": [
+            {
+              "id": "endsem-2024-6-a",
+              "number": "6(a)",
+              "marks": 5,
+              "question": "Compare linear search with binary search.",
+              "answer": "more-search-compare",
+              "page": 2
+            },
+            {
+              "id": "endsem-2024-6-b",
+              "number": "6(b)",
+              "marks": 5,
+              "question": "Illustrate insertion sort for the following data.\n67, 19, 81, 77, 56, 29, 99, 37,41,7",
+              "answer": "more-insertion-2024",
+              "page": 2
+            }
+          ],
+          "unit": "III",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2024-q7",
+          "parts": [
+            {
+              "id": "endsem-2024-7-a",
+              "number": "7(a)",
+              "marks": 5,
+              "question": "Write a C program to read and display student details using structure.",
+              "answer": "more-student",
+              "page": 2
+            },
+            {
+              "id": "endsem-2024-7-b",
+              "number": "7(b)",
+              "marks": 5,
+              "question": "Explain dynamic memory allocation with an example.",
+              "answer": "more-dma",
+              "page": 2
+            }
+          ],
+          "unit": "IV"
+        },
+        {
+          "id": "endsem-2024-q8",
+          "parts": [
+            {
+              "id": "endsem-2024-8-a",
+              "number": "8(a)",
+              "marks": 5,
+              "question": "Differentiate structures and unions.",
+              "answer": "more-union",
+              "page": 2
+            },
+            {
+              "id": "endsem-2024-8-b",
+              "number": "8(b)",
+              "marks": 5,
+              "question": "Write a C program to read and print an array of elements using pointers.",
+              "answer": "more-pointer-array",
+              "page": 2
+            }
+          ],
+          "unit": "IV",
+          "or_before": true
+        },
+        {
+          "id": "endsem-2024-q9",
+          "parts": [
+            {
+              "id": "endsem-2024-9-a",
+              "number": "9(a)",
+              "marks": 5,
+              "question": "Write a C program to find factorial of given number using command line arguments.",
+              "answer": "more-cli-factorial",
+              "page": 2
+            },
+            {
+              "id": "endsem-2024-9-b",
+              "number": "9(b)",
+              "marks": 5,
+              "question": "Write the syntax for opening a file with various modes and closing a file.",
+              "answer": "more-file-modes",
+              "page": 2
+            }
+          ],
+          "unit": "V"
+        },
+        {
+          "id": "endsem-2024-q10",
+          "parts": [
+            {
+              "id": "endsem-2024-10-a",
+              "number": "10(a)",
+              "marks": 5,
+              "question": "Explain enum and typedef data types with examples.",
+              "answer": "more-enum-typedef",
+              "page": 2
+            },
+            {
+              "id": "endsem-2024-10-b",
+              "number": "10(b)",
+              "marks": 5,
+              "question": "Write a C program to copy the contents of file1 to file2.",
+              "answer": "more-copy",
+              "page": 2
+            }
+          ],
+          "unit": "V",
+          "or_before": true
+        }
+      ]
+    }
+  ],
   "questions": [],
   "occurrences": [],
   "sections": [
@@ -1908,6 +2564,2774 @@
         "corrections": [],
         "fallback": "Senior notes support the hosted main signature; file APIs, positioning rules and argc/argv behaviour require general PPS supplementation."
       }
+    },
+    "more-break": {
+      "paragraphs": [
+        "Break and continue alter the normal execution of a loop."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "break",
+            "continue"
+          ],
+          "rows": [
+            [
+              "Used to come out of while, do–while and for loops, and switch-case.",
+              "Skips the remaining statements of the current loop iteration and goes to the next iteration."
+            ],
+            [
+              "Terminates the nearest enclosing loop or switch.",
+              "In a for loop, goes to the update and then the condition; in while/do–while, goes to the condition."
+            ]
+          ]
+        },
+        {
+          "type": "code",
+          "code": "int i;\nfor (i = 1; i <= 10; i++) {\n    printf(\"%d \", i);\n    if (i == 5) break;\n}"
+        },
+        {
+          "type": "code",
+          "code": "int i;\nfor (i = 1; i <= 10; i++) {\n    if (i == 5) continue;\n    printf(\"%d \", i);\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "The first example prints through 5 and stops. The second omits 5 and continues through 10."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        40,
+        41,
+        42
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-break-continue"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          40,
+          41,
+          42
+        ],
+        "corrections": [
+          "Followed the image 40 program: it prints 5 before break, unlike the adjacent flowchart."
+        ]
+      },
+      "snippet_tests": [
+        "more-break",
+        "more-continue"
+      ]
+    },
+    "more-parameters": {
+      "paragraphs": [
+        "Actual parameters are parameters used in the function call. Formal parameters are parameters used in the function definition."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "int sum(int x, int y) { return x + y; }\n/* In main: c = sum(a, b); */"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here a and b are actual parameters; x and y are formal parameters. C passes argument values to the parameters, so changing x or y does not directly change a or b."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        70,
+        71,
+        72,
+        79,
+        80,
+        81
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-functions-core",
+          "pri-pointer-arguments"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          70,
+          71,
+          72,
+          79,
+          80,
+          81
+        ],
+        "corrections": []
+      }
+    },
+    "more-dma-short": {
+      "paragraphs": [
+        "The dynamic memory allocation functions are declared in <stdlib.h>."
+      ],
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "malloc(size): allocates size bytes; the contents are uninitialized."
+            },
+            {
+              "text": "calloc(count, size): allocates space for count objects and initializes all bits to zero."
+            },
+            {
+              "text": "realloc(pointer, size): changes an allocation’s size, possibly moving it."
+            },
+            {
+              "text": "free(pointer): releases allocated storage."
+            }
+          ]
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "general",
+      "basis_label": "General PPS knowledge; general PPS completion where stated",
+      "note_refs": [],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [],
+        "general_supplement": "Neither supplied notebook covers the dynamic allocation APIs; this is general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [],
+        "fallback": "Neither supplied notebook covers the dynamic allocation APIs; this is general PPS completion."
+      }
+    },
+    "more-fseek": {
+      "paragraphs": [
+        "fseek changes the file-position indicator of a stream."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "int fseek(FILE *stream, long offset, int origin);"
+        },
+        {
+          "type": "paragraph",
+          "text": "stream identifies the open file. offset is the displacement. origin is SEEK_SET (beginning), SEEK_CUR (current position) or SEEK_END (end). It returns 0 on success and nonzero on failure."
+        },
+        {
+          "type": "paragraph",
+          "text": "For portable text-stream use, an offset is zero or a position previously returned by ftell with SEEK_SET."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "general",
+      "basis_label": "General PPS knowledge; general PPS completion where stated",
+      "note_refs": [],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [],
+        "general_supplement": "File-positioning APIs are not covered in either supplied note KB."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [],
+        "fallback": "File-positioning APIs are not covered in either supplied note KB."
+      }
+    },
+    "more-macro": {
+      "paragraphs": [
+        "A macro is a name defined using #define and replaced during preprocessing."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "#define PI 3.14"
+        },
+        {
+          "type": "paragraph",
+          "text": "PI is replaced by 3.14 wherever the macro is used. There is no semicolon at the end of this definition."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        4,
+        5,
+        6,
+        40
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-program-organization",
+          "pri-build-stages"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          4,
+          5,
+          6,
+          40
+        ],
+        "corrections": []
+      }
+    },
+    "more-compiler": {
+      "paragraphs": [
+        "A compiler is software that converts a high-level language into machine-level language."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the C build process, compilation translates the source; the linker combines object code with required library routines to produce the executable."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        2,
+        3,
+        40
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-c-introduction-history",
+          "pri-build-stages"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          2,
+          3,
+          40
+        ],
+        "corrections": [
+          "Separated compilation from linking; including a header does not link a function implementation."
+        ]
+      }
+    },
+    "more-ladder-switch": {
+      "paragraphs": [
+        "An else-if ladder and switch-case are multi-way decision-making statements."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Else-if ladder",
+            "Switch-case"
+          ],
+          "rows": [
+            [
+              "Test",
+              "Conditions using relational/logical expressions.",
+              "One integer or enumeration controlling expression."
+            ],
+            [
+              "Selection",
+              "First true condition selects its block.",
+              "A matching integer constant case label selects a starting point."
+            ],
+            [
+              "Ranges",
+              "Can test ranges and multiple variables.",
+              "Case labels are individual constant values; ranges require separate logic."
+            ],
+            [
+              "Execution",
+              "Later branches are skipped once a condition succeeds.",
+              "Without break, execution can continue into later cases."
+            ],
+            [
+              "Fallback",
+              "Final else.",
+              "default label."
+            ]
+          ]
+        },
+        {
+          "type": "part",
+          "label": "Else-if ladder",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "if (condition) {\n    /* statements */\n} else if (condition) {\n    /* statements */\n} else if (condition) {\n    /* statements */\n}\n/* further else-if blocks, if required */\nelse {\n    /* statements */\n}"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "Switch-case",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "switch (expression) {\n    case value1:\n        /* statements of case 1 */\n        break;\n    case value2:\n        /* statements of case 2 */\n        break;\n    /* further cases */\n    default:\n        /* statements of default */\n}"
+            }
+          ]
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-if-parity-ladder",
+          "pri-switch-calculator"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Comparison organized from the two source syntax forms."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "corrections": []
+      }
+    },
+    "more-storage": {
+      "paragraphs": [
+        "Storage classes in C inform the visibility, scope, storage duration and initialization of a variable."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Class",
+            "Scope / storage duration",
+            "Initialization / example"
+          ],
+          "rows": [
+            [
+              "auto",
+              "Block scope; automatic duration until the block ends.",
+              "An uninitialized object has an indeterminate value; auto int a = 2;"
+            ],
+            [
+              "static",
+              "A block-local static keeps block scope but lives for the whole execution. A file-scope static has internal linkage.",
+              "Zero-initialized unless explicitly initialized; static int a;"
+            ],
+            [
+              "extern",
+              "Declares an object defined elsewhere; the object has static storage duration.",
+              "A declaration need not allocate another object; extern int a;"
+            ],
+            [
+              "register",
+              "Block scope and automatic duration; a request for fast access, not a hardware guarantee.",
+              "Indeterminate if uninitialized; register int a = 2;. Its address cannot be taken."
+            ]
+          ]
+        },
+        {
+          "type": "code",
+          "code": "void sum(void) {\n    static int a;\n    printf(\"%d\\n\", a);\n    a++;\n}\n/* Calling sum() three times prints 0, then 1, then 2. */"
+        },
+        {
+          "type": "paragraph",
+          "text": "Unlike an automatic local variable recreated on each call, the static local a retains its value between calls. Initialize ordinary local variables before reading them."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior",
+      "basis_label": "Senior notes",
+      "note_refs": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "storage-classes-overview",
+          "storage-classes-examples"
+        ]
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [
+          "Replaced “garbage output” with indeterminate value; reading it is not a valid predictable example.",
+          "Register placement is not guaranteed. extern alone is not a definition, and scope is separate from storage duration."
+        ]
+      }
+    },
+    "more-swap-no-temp": {
+      "paragraphs": [
+        "Swap two values using addition and subtraction, without a temporary variable."
+      ],
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Start and read a, b."
+            },
+            {
+              "text": "Set a = a + b."
+            },
+            {
+              "text": "Set b = a - b."
+            },
+            {
+              "text": "Set a = a - b."
+            },
+            {
+              "text": "Display a, b and stop."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "a",
+            "b"
+          ],
+          "rows": [
+            [
+              "Input",
+              "3",
+              "5"
+            ],
+            [
+              "a = a + b",
+              "8",
+              "5"
+            ],
+            [
+              "b = a - b",
+              "8",
+              "3"
+            ],
+            [
+              "a = a - b",
+              "5",
+              "3"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The arithmetic requires a + b to be representable in the chosen integer type. For an actual C implementation, check that condition before adding; signed overflow is undefined behavior."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior",
+      "basis_label": "Senior notes",
+      "note_refs": [
+        55
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "swap-without-temporary"
+        ]
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [
+          "Added the representability requirement missing from the handwritten arithmetic swap."
+        ]
+      }
+    },
+    "more-array-1d": {
+      "paragraphs": [
+        "Array is a homogeneous collection of data values, or a collection of data values of a similar type."
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Syntax to declare an array"
+        },
+        {
+          "type": "code",
+          "code": "datatype array_name[size];"
+        },
+        {
+          "type": "heading",
+          "text": "Initialization of array values — alternative forms"
+        },
+        {
+          "type": "code",
+          "code": "int m[5] = {20, 10, 5, 40, 35};"
+        },
+        {
+          "type": "code",
+          "code": "int m[] = {20, 10, 5, 40, 35};"
+        },
+        {
+          "type": "heading",
+          "text": "Reading array values at runtime"
+        },
+        {
+          "type": "code",
+          "code": "int a[100], i;\nfor (i = 0; i < 100; i++) {\n    if (scanf(\"%d\", &a[i]) != 1) return 1;\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "For partial initialization, remaining elements are zero: int a[5] = {1, 2}; gives 1, 2, 0, 0, 0. int a[5] = {0}; initializes every element to zero. Without an initializer, an automatic local array has indeterminate elements until values are stored."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        42
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-array-introduction"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Zero-fill rules complete the question’s request for different initialization methods."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          42
+        ],
+        "corrections": [
+          "Corrected the handwritten loop separators; numeric input uses &a[i]."
+        ]
+      }
+    },
+    "more-prime": {
+      "paragraphs": [
+        "A prime number is greater than 1 and has no positive divisor except 1 and itself."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-prime"
+        },
+        {
+          "type": "paragraph",
+          "text": "Set flag to 0. If a divisor is found, set flag to 1 and stop the loop. For 13, no divisor is found; for 12, divisor 2 makes flag equal to 1."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior",
+      "basis_label": "Senior notes",
+      "note_refs": [
+        41,
+        42,
+        47,
+        48
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "factorial-prime-fibonacci"
+        ]
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [
+          "Added the missing n < 2 case; retained the senior divisor loop."
+        ]
+      }
+    },
+    "more-matrix3": {
+      "paragraphs": [
+        "For matrix multiplication, each result element is the sum of products of a row of A and a column of B."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "c[i][j] = a[i][0]*b[0][j] + a[i][1]*b[1][j] + a[i][2]*b[2][j];"
+        },
+        {
+          "type": "program",
+          "id": "more-matrix3"
+        },
+        {
+          "type": "paragraph",
+          "text": "The outer loops select i and j. The k loop forms their dot product. Multiplying the sample A by the identity matrix reproduces A."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes; senior supplementation",
+      "note_refs": [
+        47,
+        48,
+        50
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-matrix-layout-io"
+        ],
+        "senior_topic_ids": [
+          "matrix-operations-completion"
+        ],
+        "authored_application": "Priyanka supplies 2-D storage/input; senior pp85–86 supply the multiplication method. Dimensions are fixed at 3×3 by the exam."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          47,
+          48,
+          50
+        ],
+        "corrections": [
+          "Corrected the senior result output from &c[i][j] to its value; use a wide accumulator."
+        ]
+      },
+      "senior_pages": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    },
+    "more-upper": {
+      "paragraphs": [
+        "Traverse the string and replace each lower-case letter with its corresponding upper-case letter."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-upper"
+        },
+        {
+          "type": "paragraph",
+          "text": "The inner loop finds a matching letter in lower and uses the same index in upper. No strupr, toupper or other conversion routine is used."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka-general",
+      "basis_label": "Priyanka class notes; general PPS completion where stated",
+      "note_refs": [
+        53,
+        56
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-string-library-portability"
+        ],
+        "senior_topic_ids": [],
+        "general_supplement": "Priyanka names strupr but supplies no manual case-conversion method; neither note KB supplies this exact program. The alphabet mapping is general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          53,
+          56
+        ],
+        "corrections": [],
+        "fallback": "Priyanka names strupr but supplies no manual case-conversion method; neither note KB supplies this exact program. The alphabet mapping is general PPS completion."
+      }
+    },
+    "more-linear": {
+      "paragraphs": [
+        "In linear search, the element to be searched is compared linearly from the start to the end of the given array of elements."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-linear"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each comparison checks a[i] against ele. A match sets flag and saves its position; otherwise the scan continues. Worst-case time is O(n), and sorting is unnecessary."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        59,
+        60,
+        61,
+        62
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-searching-linear-binary"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          59,
+          60,
+          61,
+          62
+        ],
+        "corrections": [
+          "Used one consistent key name, saved the matching position and stopped there; the source prints i+1 only after its loop has finished."
+        ]
+      }
+    },
+    "more-functions-parameters": {
+      "paragraphs": [
+        "Function is a block used to complete a given task."
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Advantages"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Reusability: call the same function whenever its task is needed."
+            },
+            {
+              "text": "Divide a large problem into smaller tasks."
+            },
+            {
+              "text": "Make testing, debugging and maintenance easier."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Parameter passing"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Method",
+            "What is passed",
+            "Effect"
+          ],
+          "rows": [
+            [
+              "Call by value",
+              "A copy of the argument value.",
+              "Changing a formal int does not change the caller’s int."
+            ],
+            [
+              "Call by reference (classroom term)",
+              "The address, received in a pointer parameter.",
+              "Writing through the pointer changes the caller’s object."
+            ]
+          ]
+        },
+        {
+          "type": "code",
+          "code": "void by_value(int x) { x = 10; }\nvoid by_address(int *x) { *x = 10; }\n/* by_value(a) leaves a unchanged; by_address(&a) sets a to 10. */"
+        },
+        {
+          "type": "paragraph",
+          "text": "C passes every argument by value, including pointer values. The classroom reference method works by dereferencing the copied address."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka-general",
+      "basis_label": "Priyanka class notes; general PPS completion where stated",
+      "note_refs": [
+        70,
+        71,
+        72,
+        79,
+        80,
+        81
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-functions-core",
+          "pri-pointer-arguments"
+        ],
+        "senior_topic_ids": [],
+        "general_supplement": "Priyanka supplies the definition and parameter methods, but no advantages list. The senior function sections also do not supply that list; the advantages are general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          70,
+          71,
+          72,
+          79,
+          80,
+          81
+        ],
+        "corrections": [
+          "Clarified that C passes pointer values rather than using a separate pass-by-reference mechanism."
+        ],
+        "fallback": "Priyanka supplies the definition and parameter methods, but no advantages list. The senior function sections also do not supply that list; the advantages are general PPS completion."
+      }
+    },
+    "more-insertion-2025": {
+      "paragraphs": [
+        "Insertion sort builds a sorted prefix by inserting each new element into its correct position."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Insertion",
+            "Array after insertion"
+          ],
+          "rows": [
+            [
+              "Input",
+              "25, 6, 15, 12, 8, 34, 9, 18, 2"
+            ],
+            [
+              "Insert 6",
+              "6, 25, 15, 12, 8, 34, 9, 18, 2"
+            ],
+            [
+              "Insert 15",
+              "6, 15, 25, 12, 8, 34, 9, 18, 2"
+            ],
+            [
+              "Insert 12",
+              "6, 12, 15, 25, 8, 34, 9, 18, 2"
+            ],
+            [
+              "Insert 8",
+              "6, 8, 12, 15, 25, 34, 9, 18, 2"
+            ],
+            [
+              "Insert 34",
+              "6, 8, 12, 15, 25, 34, 9, 18, 2"
+            ],
+            [
+              "Insert 9",
+              "6, 8, 9, 12, 15, 25, 34, 18, 2"
+            ],
+            [
+              "Insert 18",
+              "6, 8, 9, 12, 15, 18, 25, 34, 2"
+            ],
+            [
+              "Insert 2",
+              "2, 6, 8, 9, 12, 15, 18, 25, 34"
+            ]
+          ]
+        },
+        {
+          "type": "program",
+          "id": "more-insertion"
+        },
+        {
+          "type": "paragraph",
+          "text": "The prefix is sorted after each insertion. Strict > shifts keep equal elements in their original order. Best-case time is O(n), worst-case O(n²), with O(1) extra space."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka-general",
+      "basis_label": "Priyanka class notes; senior supplementation; general PPS completion where stated",
+      "note_refs": [
+        64,
+        65
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-bubble-sort"
+        ],
+        "senior_topic_ids": [
+          "elementary-sorting-overview"
+        ],
+        "general_supplement": "Both notes name insertion sort but do not give a complete method. The insertion algorithm, full trace and code are general PPS completion using the exact exam values."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          64,
+          65
+        ],
+        "corrections": [],
+        "fallback": "Both notes name insertion sort but do not give a complete method. The insertion algorithm, full trace and code are general PPS completion using the exact exam values."
+      },
+      "senior_pages": [
+        73
+      ],
+      "final_answer": "2, 6, 8, 9, 12, 15, 18, 25, 34."
+    },
+    "more-insertion-2024": {
+      "paragraphs": [
+        "Insert each next value into the already sorted prefix, shifting larger elements one position to the right."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Insertion",
+            "Array after insertion"
+          ],
+          "rows": [
+            [
+              "Input",
+              "67, 19, 81, 77, 56, 29, 99, 37, 41, 7"
+            ],
+            [
+              "Insert 19",
+              "19, 67, 81, 77, 56, 29, 99, 37, 41, 7"
+            ],
+            [
+              "Insert 81",
+              "19, 67, 81, 77, 56, 29, 99, 37, 41, 7"
+            ],
+            [
+              "Insert 77",
+              "19, 67, 77, 81, 56, 29, 99, 37, 41, 7"
+            ],
+            [
+              "Insert 56",
+              "19, 56, 67, 77, 81, 29, 99, 37, 41, 7"
+            ],
+            [
+              "Insert 29",
+              "19, 29, 56, 67, 77, 81, 99, 37, 41, 7"
+            ],
+            [
+              "Insert 99",
+              "19, 29, 56, 67, 77, 81, 99, 37, 41, 7"
+            ],
+            [
+              "Insert 37",
+              "19, 29, 37, 56, 67, 77, 81, 99, 41, 7"
+            ],
+            [
+              "Insert 41",
+              "19, 29, 37, 41, 56, 67, 77, 81, 99, 7"
+            ],
+            [
+              "Insert 7",
+              "7, 19, 29, 37, 41, 56, 67, 77, 81, 99"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The final ascending sequence is 7, 19, 29, 37, 41, 56, 67, 77, 81, 99."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka-general",
+      "basis_label": "Priyanka class notes; senior supplementation; general PPS completion where stated",
+      "note_refs": [
+        64,
+        65
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-bubble-sort"
+        ],
+        "senior_topic_ids": [
+          "elementary-sorting-overview"
+        ],
+        "general_supplement": "The notebooks name insertion sort but do not give the insertion procedure; this is a general PPS worked trace with the exact question data."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          64,
+          65
+        ],
+        "corrections": [],
+        "fallback": "The notebooks name insertion sort but do not give the insertion procedure; this is a general PPS worked trace with the exact question data."
+      },
+      "senior_pages": [
+        73
+      ],
+      "final_answer": "7, 19, 29, 37, 41, 56, 67, 77, 81, 99."
+    },
+    "more-student-pointer": {
+      "paragraphs": [
+        "With a pointer variable to a structure, use the arrow operator to access the members of the structure object."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-student-pointer"
+        },
+        {
+          "type": "paragraph",
+          "text": "s2 = &s1 makes the pointer refer to the record. s2->M1 means (*s2).M1. Both input and output access the original object through s2."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        94,
+        95
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-structure-pointer-access"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "The source s1/s2 pointer method is applied to the exact Stu_Name, Stu_Rno, M1, M2 and M3 members required by the exam."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          94,
+          95
+        ],
+        "corrections": [
+          "Used name[20], not scalar char; s1 uses dot while s2 uses arrow."
+        ]
+      }
+    },
+    "more-union": {
+      "paragraphs": [
+        "In unions, all the members share the same memory location. Only one member value is normally stored meaningfully at a time."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Structure",
+            "Union"
+          ],
+          "rows": [
+            [
+              "Keyword",
+              "struct",
+              "union"
+            ],
+            [
+              "Storage",
+              "Each member has distinct storage.",
+              "Members overlap in shared storage."
+            ],
+            [
+              "Values",
+              "All members can retain values simultaneously.",
+              "Writing a member can overwrite the representation of other members."
+            ],
+            [
+              "Size",
+              "Enough for all members plus any padding.",
+              "Enough for its largest member plus any alignment padding."
+            ],
+            [
+              "Use",
+              "A record such as a student.",
+              "Alternatives where only one kind of value is needed at a time."
+            ]
+          ]
+        },
+        {
+          "type": "code",
+          "code": "struct student { int rollno; float marks; char name[20]; };\nunion student_value { int rollno; float marks; char name[20]; };"
+        },
+        {
+          "type": "paragraph",
+          "text": "A struct student can keep rollno, marks and name together. In a union student_value, storing name after marks reuses the same storage. Exact byte sizes depend on the implementation; the union need not equal the bare size of its largest member."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior",
+      "basis_label": "Senior notes",
+      "note_refs": [
+        121,
+        122,
+        123
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "unions-shared-storage"
+        ]
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [
+          "Accounted for padding/alignment rather than promising exact size sums or exact largest-member size."
+        ]
+      }
+    },
+    "more-array-within": {
+      "paragraphs": [
+        "An array within a structure is an array declared as one of its members."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student { int rollno; char name[20]; int marks[5]; };"
+        },
+        {
+          "type": "paragraph",
+          "text": "name is a character array and marks stores five subject marks. s1.marks[i] selects one mark in the student object."
+        },
+        {
+          "type": "program",
+          "id": "more-student"
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        89,
+        90,
+        91,
+        92
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-structure-introduction",
+          "pri-structure-objects-members"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          89,
+          90,
+          91,
+          92
+        ],
+        "corrections": [
+          "Corrected scalar char name to a character array and bounded string input."
+        ]
+      }
+    },
+    "more-student": {
+      "paragraphs": [
+        "Structure is a derived datatype which is a collection of different datatypes."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-student"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the dot operator to access values: s1.rollno, s1.name and s1.marks[i]. The program retains the five-mark array and average calculation of the notebook example."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        89,
+        90,
+        91,
+        92
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-structure-introduction",
+          "pri-structure-objects-members"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          89,
+          90,
+          91,
+          92
+        ],
+        "corrections": [
+          "Corrected char name to name[20]; used the required semicolon after the structure definition and a float average."
+        ]
+      }
+    },
+    "more-nested": {
+      "paragraphs": [
+        "The structure inside a structure is a nested structure."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-nested"
+        },
+        {
+          "type": "paragraph",
+          "text": "b1 is a structure member of s1. Access an inner member by chained dots: s1.b1.d, s1.b1.m and s1.b1.y."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior",
+      "basis_label": "Senior notes",
+      "note_refs": [
+        119,
+        120
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "nested-student-structure"
+        ]
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [
+          "Normalized the invalid hyphenated roll-no identifier to rollno; retained the student/birthday member structure."
+        ]
+      }
+    },
+    "more-copy": {
+      "paragraphs": [
+        "Open the source, open a distinct destination, copy each character with fgetc/fputc, and close both streams."
+      ],
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Check both fopen results before using the streams."
+            },
+            {
+              "text": "Keep the fgetc result in int so EOF is distinguishable from character values."
+            },
+            {
+              "text": "Stop when fgetc returns EOF; check for a read error and for write/close failures."
+            }
+          ]
+        },
+        {
+          "type": "program",
+          "id": "more-copy"
+        },
+        {
+          "type": "paragraph",
+          "text": "For the stated sample, target.txt contains exactly the two lines originally in source.txt. The program accepts the two filenames as command-line arguments."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "general",
+      "basis_label": "General PPS knowledge; general PPS completion where stated",
+      "note_refs": [],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [],
+        "general_supplement": "Neither supplied notebook covers file copying; this complete program and its error checks are general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [],
+        "fallback": "Neither supplied notebook covers file copying; this complete program and its error checks are general PPS completion."
+      }
+    },
+    "more-command": {
+      "paragraphs": [
+        "Command-line arguments pass strings to main when a program starts."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "int main(int argc, char *argv[])"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "argc is the number of arguments, including the program name when available."
+            },
+            {
+              "text": "argv[0] represents the program name when argc > 0; argv[1] is the first user argument."
+            },
+            {
+              "text": "argv[argc] is a null pointer. Check argc before using an argument."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For ./copy source.txt target.txt, argc is 3; argv[1] is \"source.txt\" and argv[2] is \"target.txt\"."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior-general",
+      "basis_label": "Senior notes; general PPS completion where stated",
+      "note_refs": [
+        3,
+        4
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "program-structure"
+        ],
+        "general_supplement": "Senior notes supply the hosted main context; neither notebook explains argc/argv. The argument explanation is general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [],
+        "fallback": "Senior notes supply the hosted main context; neither notebook explains argc/argv. The argument explanation is general PPS completion."
+      }
+    },
+    "more-enum": {
+      "paragraphs": [
+        "enum is used in C to create names for integer constants."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "enum weekdays { Mon, Tue, Wed, Thu, Fri, Sat, Sun };\nenum weekdays w1 = Sun, w2 = Mon, w3 = Wed;\nprintf(\"%d %d %d\\n\", w1, w2, w3);"
+        },
+        {
+          "type": "paragraph",
+          "text": "By default, Mon is 0 and each next enumerator increases by 1: Sun is 6 and Wed is 2. Explicit initial values can be assigned when required."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior",
+      "basis_label": "Senior notes",
+      "note_refs": [
+        9,
+        10
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "typedef-enum"
+        ]
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [
+          "Used valid enum object declarations and computed values from the actual enumerator order."
+        ]
+      },
+      "snippet_tests": [
+        "more-enum"
+      ]
+    },
+    "more-file-count": {
+      "paragraphs": [
+        "Read the file one character at a time, counting words at transitions from whitespace to a non-whitespace character."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-file-count"
+        },
+        {
+          "type": "paragraph",
+          "text": "inword avoids counting every letter as a word. It becomes 0 at whitespace, and a new non-whitespace run increments words. The question’s “white spaces” is interpreted as all whitespace; literal spaces and tabs are shown separately so the interpretation is explicit."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "general",
+      "basis_label": "General PPS knowledge; general PPS completion where stated",
+      "note_refs": [],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [],
+        "general_supplement": "File character counting is absent from both supplied notebooks. The definitions and state-based implementation are general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [],
+        "fallback": "File character counting is absent from both supplied notebooks. The definitions and state-based implementation are general PPS completion."
+      }
+    },
+    "more-structure-init": {
+      "paragraphs": [
+        "Structure is a derived datatype which is a collection of different datatypes."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "struct student { int rollno; char name[20]; float marks[5]; };\nstruct student s1 = {10, \"Rama\", {70, 80, 90, 60, 75}};"
+        },
+        {
+          "type": "paragraph",
+          "text": "The initializer supplies values in member order. Access the values with s1.rollno, s1.name and s1.marks[i]."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        89,
+        90,
+        91,
+        92
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-structure-introduction",
+          "pri-structure-objects-members"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Initializer values illustrate the notebook’s student record; these particular initializer values are an authored example."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          89,
+          90,
+          91,
+          92
+        ],
+        "corrections": []
+      }
+    },
+    "more-average3": {
+      "paragraphs": [
+        "Read the numbers, calculate their sum, divide by the count, and display the results."
+      ],
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Start."
+            },
+            {
+              "text": "Read a, b and c."
+            },
+            {
+              "text": "Set sum = a + b + c."
+            },
+            {
+              "text": "Set avg = sum / 3.0."
+            },
+            {
+              "text": "Display sum and avg."
+            },
+            {
+              "text": "Stop."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For 3, 5 and 8: sum = 16 and avg = 16/3 ≈ 5.3333. Use real-number division so the fractional part is retained."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        1,
+        2,
+        3,
+        7,
+        8
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-algorithm-pseudocode",
+          "pri-basic-arithmetic"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Applied Priyanka’s read/sum/average/display algorithm to the exam’s three inputs instead of five marks."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          1,
+          2,
+          3,
+          7,
+          8
+        ],
+        "corrections": [
+          "Used 3.0 for a fractional average rather than integer division."
+        ]
+      }
+    },
+    "more-program-structure": {
+      "paragraphs": [
+        "The classroom structure of a C program contains six sections."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Section",
+            "Purpose / example"
+          ],
+          "rows": [
+            [
+              "Documentation",
+              "Non-executable comments describing the program name, purpose, author and date."
+            ],
+            [
+              "Pre-processor",
+              "Include required headers, e.g. #include <stdio.h>."
+            ],
+            [
+              "Definition",
+              "Constant macros used in the program, e.g. #define PI 3.14."
+            ],
+            [
+              "Global",
+              "Declarations outside functions, with visibility governed by declarations and scope."
+            ],
+            [
+              "Main",
+              "Execution of a hosted C program starts in main."
+            ],
+            [
+              "Sub-program",
+              "User-defined functions outside main, declared before use."
+            ]
+          ]
+        },
+        {
+          "type": "code",
+          "code": "/* Documentation: add two numbers */\n#include <stdio.h>\n#define PI 3.14\nint sum(int, int);\nint main(void) {\n    printf(\"%d\\n\", sum(3, 5));\n    return 0;\n}\nint sum(int x, int y) { return x + y; }"
+        },
+        {
+          "type": "paragraph",
+          "text": "These are organizational sections, not six mandatory syntactic blocks. A simple program need not contain a macro or a global variable."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        4,
+        5,
+        6,
+        70,
+        71,
+        72
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-program-organization",
+          "pri-functions-core"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          4,
+          5,
+          6,
+          70,
+          71,
+          72
+        ],
+        "corrections": [
+          "Headers provide declarations rather than executed function bodies; preprocessing and linking are separate.",
+          "Global visibility begins at the appropriate declaration; it is not automatically universal."
+        ]
+      }
+    },
+    "more-digit": {
+      "paragraphs": [
+        "Use switch-case to select the word corresponding to the input digit."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-digit"
+        },
+        {
+          "type": "paragraph",
+          "text": "The matching case prints the word, then break prevents fall-through. default handles values outside 0–9."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        24,
+        25,
+        26
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-switch-calculator"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "The exam requires a digit-to-word program; this applies Priyanka’s switch/case/break method to that new task."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          24,
+          25,
+          26
+        ],
+        "corrections": []
+      }
+    },
+    "more-operators": {
+      "paragraphs": [
+        "The notes classify operators into arithmetic, relational, logical, assignment, increment/decrement, conditional, bitwise and comma operators."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Category",
+            "Operators"
+          ],
+          "rows": [
+            [
+              "Arithmetic",
+              "+ - * / %"
+            ],
+            [
+              "Relational / equality",
+              "< <= > >= == !="
+            ],
+            [
+              "Logical",
+              "&& || !"
+            ],
+            [
+              "Assignment",
+              "= += -= *= /= %= and other compound assignments"
+            ],
+            [
+              "Increment / decrement",
+              "++ --"
+            ],
+            [
+              "Conditional",
+              "?:"
+            ],
+            [
+              "Bitwise",
+              "& | ^ ~ << >>"
+            ],
+            [
+              "Comma",
+              ","
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Logical operators"
+        },
+        {
+          "type": "paragraph",
+          "text": "&& is logical AND, || is logical OR, and ! is logical NOT. Zero is false; nonzero is true. Their result is 0 or 1. && and || short-circuit."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "a",
+            "b",
+            "a && b",
+            "a || b",
+            "!a"
+          ],
+          "rows": [
+            [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ],
+            [
+              "0",
+              "1",
+              "0",
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "0",
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "1",
+              "1",
+              "1",
+              "1",
+              "0"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Bitwise operators"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bitwise operators work on individual bits. With a = 2 (0010) and b = 3 (0011): a & b = 2, a | b = 3, a ^ b = 1. AND gives 1 only when both bits are 1; OR gives 1 when either is 1; XOR gives 1 when the bits differ."
+        },
+        {
+          "type": "paragraph",
+          "text": "~ complements every bit of its promoted operand. Shifts move bits left or right; for unsigned a = 2, a >> 2 gives 0 and a << 1 gives 4. Unlike &&, bitwise & does not short-circuit."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        11,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-operators-logical-relational",
+          "pri-bitwise-shifts"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          11,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "corrections": [
+          "The four-bit complement sketch is not the full C integer result; integer width and promotion matter."
+        ]
+      }
+    },
+    "more-div11": {
+      "paragraphs": [
+        "Visit every number from 1 through 100 and test whether its remainder on division by 11 is zero."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-div11"
+        },
+        {
+          "type": "paragraph",
+          "text": "The numbers are 11, 22, 33, 44, 55, 66, 77, 88 and 99: there are 9."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        21,
+        22,
+        23,
+        24,
+        31,
+        32
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-for-factorial-table",
+          "pri-if-parity-ladder"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Applied the source for-loop and remainder-test methods to the fixed exam range."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          21,
+          22,
+          23,
+          24,
+          31,
+          32
+        ],
+        "corrections": []
+      }
+    },
+    "more-strings": {
+      "paragraphs": [
+        "The string functions listed in the notes include strlen, strcpy, strcat, strcmp and strrev."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Function",
+            "Purpose and example"
+          ],
+          "rows": [
+            [
+              "strlen(s)",
+              "Finds length excluding the null terminator; strlen(\"RAM\") is 3. Returns size_t."
+            ],
+            [
+              "strcpy(destination, source)",
+              "Copies the string including its terminator; strcpy(copy, s1). Destination needs sufficient capacity."
+            ],
+            [
+              "strcat(destination, source)",
+              "Combines strings by appending source; \"Hello\" and \"World\" produce \"HelloWorld\" unless a space is explicitly supplied."
+            ],
+            [
+              "strcmp(s1, s2)",
+              "Compares strings: positive if the first is greater, negative if less, zero if equal. No particular nonzero magnitude is guaranteed."
+            ],
+            [
+              "strrev(s)",
+              "Legacy extension that reverses a string; it is not part of standard C. A portable reversal function is shown below."
+            ]
+          ]
+        },
+        {
+          "type": "program",
+          "id": "more-strings"
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        53,
+        56,
+        57,
+        58
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-string-library-portability",
+          "pri-string-concat-compare-reverse"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          53,
+          56,
+          57,
+          58
+        ],
+        "corrections": [
+          "Do not invent a space in concatenation. strrev is nonstandard; the equivalent reversal is implemented explicitly."
+        ]
+      }
+    },
+    "more-armstrong": {
+      "paragraphs": [
+        "An Armstrong number equals the sum of its digits raised to the number of digits. For a three-digit number, this is the sum of cubes used in the notes."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-armstrong"
+        },
+        {
+          "type": "paragraph",
+          "text": "For 153: 1³ + 5³ + 3³ = 153. The program repeats the digit-extraction method for each number in the inclusive range. For the sample 100–500, it prints 153, 370, 371 and 407."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        43,
+        44
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-reversal-palindrome-cubic-armstrong"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "The exam asks for a range. Added an outer range loop and generalized the source’s three-digit cube test to the number of digits."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          43,
+          44
+        ],
+        "corrections": [
+          "Initialize the candidate and reset sum for every number. Use positive digit traversal, handle zero, and use integer multiplication rather than floating pow for integer powers."
+        ]
+      }
+    },
+    "more-min-position": {
+      "paragraphs": [
+        "Array operations include traversal, searching, insertion, deletion and sorting."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Traversal visits each element. Searching locates a value. Insertion/deletion in the middle may require shifts; sorting arranges elements in order. For the smallest value, initialize min from the first element, compare the others and remember the position whenever a smaller value appears."
+        },
+        {
+          "type": "program",
+          "id": "more-min-position"
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        45,
+        46
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-array-io-extrema"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Tracked the index as required by the paper, in addition to the minimum value found in the class example."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          45,
+          46
+        ],
+        "corrections": [
+          "Initialized min = a[0]; it is not initialized in the source. Enforced nonempty bounded input."
+        ]
+      }
+    },
+    "more-bubble-trace": {
+      "paragraphs": [
+        "In each iteration of bubble sort, the largest remaining element goes to the last position of the unsorted part."
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Compare adjacent elements from left to right; exchange them if the left one is greater. Repeat with one fewer comparison on each pass."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Pass",
+            "Array"
+          ],
+          "rows": [
+            [
+              "Input",
+              "95, 85, 45, 75, 25, 35, 15, 55"
+            ],
+            [
+              "Pass 1",
+              "85, 45, 75, 25, 35, 15, 55, 95"
+            ],
+            [
+              "Pass 2",
+              "45, 75, 25, 35, 15, 55, 85, 95"
+            ],
+            [
+              "Pass 3",
+              "45, 25, 35, 15, 55, 75, 85, 95"
+            ],
+            [
+              "Pass 4",
+              "25, 35, 15, 45, 55, 75, 85, 95"
+            ],
+            [
+              "Pass 5",
+              "25, 15, 35, 45, 55, 75, 85, 95"
+            ],
+            [
+              "Pass 6",
+              "15, 25, 35, 45, 55, 75, 85, 95"
+            ],
+            [
+              "Pass 7",
+              "15, 25, 35, 45, 55, 75, 85, 95"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Final ascending sequence: 15, 25, 35, 45, 55, 75, 85, 95."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        64,
+        65
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-bubble-sort"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Used Priyanka’s adjacent greater-than swap and shrinking inner bound with the exact eight numbers in this paper."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          64,
+          65
+        ],
+        "corrections": [
+          "Recomputed each pass; the notebook’s sample trace contains a misplaced extra swap."
+        ]
+      },
+      "final_answer": "15, 25, 35, 45, 55, 75, 85, 95."
+    },
+    "more-function-categories": {
+      "paragraphs": [
+        "Function is a block used to complete a given task."
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Syntax of function definition"
+        },
+        {
+          "type": "code",
+          "code": "return_type function_name(parameter_list)\n{\n    /* statements of function */\n    return expression;\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "Function definition is the actual body where the user writes instructions to complete the given task."
+        },
+        {
+          "type": "paragraph",
+          "text": "a and b are actual parameters, used in the function call. x and y are formal parameters, used in the function definition."
+        },
+        {
+          "type": "heading",
+          "text": "Arguments and return values"
+        },
+        {
+          "type": "part",
+          "label": "1. With arguments and return value",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "int sum(int x, int y) {\n    int c;\n    c = x + y;\n    return c;\n}"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "2. With arguments and without return value",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "void sum(int n, int y) {\n    int c;\n    c = n + y;\n    printf(\"Add value is %d\\n\", c);\n}"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "3. Without arguments and without return value",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "void sum(void) {\n    int a, b, c;\n    if (scanf(\"%d%d\", &a, &b) != 2) exit(EXIT_FAILURE);\n    c = a + b;\n    printf(\"Add value is %d\\n\", c);\n}"
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "4. Without arguments and with return value",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "int sum(void) {\n    int a, b, c;\n    if (scanf(\"%d%d\", &a, &b) != 2) exit(EXIT_FAILURE);\n    c = a + b;\n    return c;\n}"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The four definitions are separate alternatives, not overloads in one program. They retain the notes’ addition example and variable c. For the illustration, the operands are 3 and 4; the no-argument functions read their operands internally. These definitions use <stdio.h> and <stdlib.h>; their illustrative sums must fit int."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-functions-core",
+          "pri-function-four-categories"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          70,
+          71,
+          72,
+          73,
+          74
+        ],
+        "corrections": [
+          "return expression replaces the handwritten return type. No-return-value functions use void; no-argument declarations use (void). The four sum definitions are separate alternatives."
+        ]
+      }
+    },
+    "more-search-compare": {
+      "paragraphs": [
+        "Searching algorithms are used to find a given element in a group of elements."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Linear search",
+            "Binary search"
+          ],
+          "rows": [
+            [
+              "Method",
+              "Compare linearly from the start toward the end.",
+              "Compare with the middle of the current search interval and discard one half."
+            ],
+            [
+              "Requirement",
+              "No sorting is needed.",
+              "The array must be ordered consistently with the comparisons."
+            ],
+            [
+              "Worst-case comparisons",
+              "O(n).",
+              "O(log n)."
+            ],
+            [
+              "Best case",
+              "O(1): first element matches.",
+              "O(1): middle element matches."
+            ],
+            [
+              "Example: find 4 in 1, 4, 9, 12, 20",
+              "Compare 1, then 4: found at position 2.",
+              "Compare 9, then 1, then 4: found at position 2."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For binary search, initialize first = 0 and last = n−1. Recompute mid inside each iteration. A match ends the search; otherwise change last to mid−1 or first to mid+1. If first > last, the element is absent."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        59,
+        60,
+        61,
+        62
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-searching-linear-binary"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          59,
+          60,
+          61,
+          62
+        ],
+        "corrections": [
+          "Binary search is not limited to ascending order if its comparisons are adapted. mid must be recomputed after bounds change; report the matching index, not an unrelated loop variable."
+        ]
+      }
+    },
+    "more-dma": {
+      "paragraphs": [
+        "Dynamic memory allocation obtains storage during program execution."
+      ],
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "malloc(size): allocates size bytes; the contents are uninitialized."
+            },
+            {
+              "text": "calloc(count, size): allocates space for count objects and initializes all bits to zero."
+            },
+            {
+              "text": "realloc(pointer, size): changes an allocation’s size, possibly moving it."
+            },
+            {
+              "text": "free(pointer): releases allocated storage."
+            }
+          ]
+        },
+        {
+          "type": "program",
+          "id": "more-dma"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use a temporary pointer for realloc. If a nonzero-size reallocation fails, the old allocation remains valid; assigning directly to the only pointer could lose it. Do not use storage after free, and do not free it twice."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "general",
+      "basis_label": "General PPS knowledge; general PPS completion where stated",
+      "note_refs": [],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [],
+        "general_supplement": "Both supplied note KBs omit dynamic allocation APIs. The explanation and program are general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [],
+        "fallback": "Both supplied note KBs omit dynamic allocation APIs. The explanation and program are general PPS completion."
+      }
+    },
+    "more-pointer-array": {
+      "paragraphs": [
+        "The array name supplies the address of its first element in this expression; a separate pointer can traverse its elements."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-pointer-array"
+        },
+        {
+          "type": "paragraph",
+          "text": "scanf receives ptr, the address of the current element. *ptr gives the element value. ptr++ advances to the next int; it does not increment that int. Resetting ptr = a starts the display at the first element."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        98,
+        99,
+        100,
+        101
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-pointer-arithmetic-array-sum"
+        ],
+        "senior_topic_ids": []
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          98,
+          99,
+          100,
+          101
+        ],
+        "corrections": [
+          "Added the missing element input and reset the pointer before display. ptr++ changes the pointer, not the pointed-to value."
+        ]
+      }
+    },
+    "more-cli-factorial": {
+      "paragraphs": [
+        "Take the number from argv[1], convert it to an integer and compute its factorial."
+      ],
+      "blocks": [
+        {
+          "type": "program",
+          "id": "more-cli-factorial"
+        },
+        {
+          "type": "paragraph",
+          "text": "argc must be 2: program name plus one value. Start fact at 1 and multiply by 1 through n. Invalid text and out-of-range inputs are rejected; strtol allows conversion errors to be checked."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka-general",
+      "basis_label": "Priyanka class notes; general PPS completion where stated",
+      "note_refs": [
+        31,
+        32
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-for-factorial-table"
+        ],
+        "senior_topic_ids": [],
+        "general_supplement": "Priyanka supplies the factorial loop, but neither notebook supplies command-line conversion. argc/argv and strtol validation are general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          31,
+          32
+        ],
+        "corrections": [
+          "Used a representable factorial range and preserved 0! = 1."
+        ],
+        "fallback": "Priyanka supplies the factorial loop, but neither notebook supplies command-line conversion. argc/argv and strtol validation are general PPS completion."
+      }
+    },
+    "more-file-modes": {
+      "paragraphs": [
+        "Use fopen to open a stream and fclose to close it."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "FILE *fp = fopen(\"data.txt\", \"r\");\nif (fp == NULL) { /* handle open failure */ }\n/* Use fp only after a successful open. */\n/* When finished: check fclose(fp) == 0. */"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Mode",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "r",
+              "Read an existing file; fails if absent."
+            ],
+            [
+              "w",
+              "Write; creates a file or truncates an existing file."
+            ],
+            [
+              "a",
+              "Append; creates if absent; writes go to the end."
+            ],
+            [
+              "r+",
+              "Read and write an existing file without truncation."
+            ],
+            [
+              "w+",
+              "Read and write; creates or truncates."
+            ],
+            [
+              "a+",
+              "Read and append; creates if absent."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Add b for binary mode: rb, wb, ab, rb+, wb+ or ab+. The + means update (read and write), not append by itself. fclose returns 0 on success and EOF on failure."
+        },
+        {
+          "type": "paragraph",
+          "text": "On an update stream, separate output followed by input with fflush or a positioning call. Input followed by output needs a positioning call unless the input reached EOF."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "general",
+      "basis_label": "General PPS knowledge; general PPS completion where stated",
+      "note_refs": [],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [],
+        "general_supplement": "File opening modes and closing are absent from both supplied notebooks."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [],
+        "fallback": "File opening modes and closing are absent from both supplied notebooks."
+      }
+    },
+    "more-enum-typedef": {
+      "paragraphs": [
+        "enum creates named integer constants; typedef gives a new name to an existing type."
+      ],
+      "blocks": [
+        {
+          "type": "part",
+          "label": "(i) enum",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "enum weekdays { Mon, Tue, Wed, Thu, Fri, Sat, Sun };\nenum weekdays w1 = Sun, w2 = Mon, w3 = Wed;\nprintf(\"%d %d %d\\n\", w1, w2, w3);"
+            },
+            {
+              "type": "paragraph",
+              "text": "By default, Mon is 0 and each next enumerator increases by 1: Sun is 6 and Wed is 2. Explicit initial values can be assigned when required."
+            }
+          ]
+        },
+        {
+          "type": "part",
+          "label": "(ii) typedef",
+          "blocks": [
+            {
+              "type": "code",
+              "code": "typedef int numeric;\nnumeric a = 3, b = 5;"
+            },
+            {
+              "type": "paragraph",
+              "text": "numeric is another name for int; it does not create a distinct integer type. a and b are int objects."
+            }
+          ]
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "senior",
+      "basis_label": "Senior notes",
+      "note_refs": [
+        9,
+        10
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [],
+        "senior_topic_ids": [
+          "typedef-enum"
+        ]
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [],
+        "corrections": [
+          "typedef creates an alias rather than a new distinct datatype; used valid enum object declarations."
+        ]
+      },
+      "snippet_tests": [
+        "more-enum"
+      ]
+    },
+    "more-output-trace": {
+      "paragraphs": [
+        "As printed, Void main() is not valid standard C. With int main(void) and <stdio.h>, the intended output is 12345."
+      ],
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Iteration",
+            "Assignment",
+            "Initialized values"
+          ],
+          "rows": [
+            [
+              "Before loop",
+              "a[0] = 1",
+              "1, ?, ?, ?, ?"
+            ],
+            [
+              "i = 0",
+              "a[a[0]] = a[0] + 1 → a[1] = 2",
+              "1, 2, ?, ?, ?"
+            ],
+            [
+              "i = 1",
+              "a[a[1]] = a[1] + 1 → a[2] = 3",
+              "1, 2, 3, ?, ?"
+            ],
+            [
+              "i = 2",
+              "a[a[2]] = a[2] + 1 → a[3] = 4",
+              "1, 2, 3, 4, ?"
+            ],
+            [
+              "i = 3",
+              "a[a[3]] = a[3] + 1 → a[4] = 5",
+              "1, 2, 3, 4, 5"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Each element is initialized before it is read in the next iteration. The second loop prints without spaces or a newline."
+        },
+        {
+          "type": "code",
+          "code": "int a[5], i;\na[0] = 1;\nfor (i = 0; i < 4; ++i) a[a[i]] = a[i] + 1;\nfor (i = 0; i < 5; ++i) printf(\"%d\", a[i]);"
+        },
+        {
+          "type": "code",
+          "code": "12345"
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        42
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-array-introduction"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Worked trace of the exam’s exact array operations, not a copied notebook example."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          42
+        ],
+        "corrections": [
+          "The paper prints Void main() and omits the required stdio declaration; the intended output assumes these are corrected."
+        ]
+      },
+      "snippet_tests": [
+        "more-output-trace"
+      ],
+      "final_answer": "Intended output after correcting the entry point: 12345."
+    },
+    "more-expression": {
+      "paragraphs": [
+        "Interpreting the printed “= =” as == and the dash as subtraction, the expression evaluates to 0 (false)."
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "code": "((22 + 3 < 6) && !5) || ((22 == 7) && (22 - 2 > 4 + 5))"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "22 + 3 < 6 → 25 < 6 → 0, so the first && is false."
+            },
+            {
+              "text": "22 == 7 → 0, so the second && is false. Its right operand is skipped by short-circuit evaluation."
+            },
+            {
+              "text": "0 || 0 → 0."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Thus the final result is 0. If the separated = = characters are taken literally, they do not form a valid equality operator in C."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka",
+      "basis_label": "Priyanka class notes",
+      "note_refs": [
+        11,
+        17,
+        18,
+        19
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-operators-logical-relational",
+          "pri-precedence-associativity"
+        ],
+        "senior_topic_ids": [],
+        "authored_application": "Evaluated the exact expression supplied by the paper; no notebook worked example is claimed."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          11,
+          17,
+          18,
+          19
+        ],
+        "corrections": [
+          "Normalized the printed separated equality signs to == for the intended calculation; arithmetic/equality/logical precedence is applied correctly."
+        ]
+      },
+      "final_answer": "Result: 0 (false), with == as the intended equality operator."
+    },
+    "more-quadratic": {
+      "paragraphs": [
+        "For ax² + bx + c = 0, calculate the discriminant D = b² − 4ac and select the appropriate root case."
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Flowchart logic — text layout"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Node / symbol",
+            "Next step"
+          ],
+          "rows": [
+            [
+              "Start — terminal",
+              "Read a, b, c — input/output."
+            ],
+            [
+              "a = 0? — decision",
+              "Yes: test b. If b ≠ 0, output the linear root −c/b; if b = 0, c = 0 gives infinitely many solutions and c ≠ 0 gives no solution. Stop."
+            ],
+            [
+              "D = b² − 4ac — process",
+              "Test D > 0."
+            ],
+            [
+              "D > 0? — decision",
+              "Yes: output two distinct real roots (−b + √D)/(2a), (−b − √D)/(2a), then Stop. No: test D = 0."
+            ],
+            [
+              "D = 0? — decision",
+              "Yes: output repeated root −b/(2a), then Stop. No: output complex roots −b/(2a) ± i√(−D)/(2a), then Stop."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "For a = 1, b = −3, c = 2: D = 9 − 8 = 1; roots are (3 + 1)/2 = 2 and (3 − 1)/2 = 1. A drawn flowchart is pending; no substitute drawing is generated under the figure freeze."
+        }
+      ],
+      "programs": [],
+      "authority": "Source-led exam answer; actual errors corrected and required applications identified",
+      "basis": "priyanka-general",
+      "basis_label": "Priyanka class notes; general PPS completion where stated",
+      "note_refs": [
+        13,
+        14
+      ],
+      "source_trace": {
+        "priority": "Priyanka → senior KB → general PPS knowledge",
+        "priyanka_topic_ids": [
+          "pri-flowchart-algorithm-ide"
+        ],
+        "senior_topic_ids": [],
+        "general_supplement": "Priyanka supplies flowchart symbols, but neither notebook supplies this quadratic-root flowchart. The root cases and worked calculation are general PPS completion."
+      },
+      "source_fidelity": {
+        "mode": "Notebook wording/methods, with exam-specific working where required",
+        "checked_against_original_images": [
+          13,
+          14
+        ],
+        "corrections": [],
+        "fallback": "Priyanka supplies flowchart symbols, but neither notebook supplies this quadratic-root flowchart. The root cases and worked calculation are general PPS completion."
+      }
     }
   },
   "programs": {
@@ -1948,6 +5372,151 @@
       "files": {
         "notes.txt": "Programming for Problem Solving\nC file example.\n"
       }
+    },
+    "more-prime": {
+      "title": "Prime-number test",
+      "note": "Senior flag method: test divisors 2 through n−1. This demonstration accepts n ≤ 10000.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int n, i, flag = 0;\n    if (scanf(\"%d\", &n) != 1 || n > 10000) return 1;\n    if (n < 2) { puts(\"Not prime\"); return 0; }\n    for (i = 2; i < n; i++) {\n        if (n % i == 0) { flag = 1; break; }\n    }\n    puts(flag == 0 ? \"Prime\" : \"Not prime\");\n    return 0;\n}\n",
+      "input": "13\n",
+      "expected": "Prime\n"
+    },
+    "more-matrix3": {
+      "title": "Multiplication of two 3×3 matrices",
+      "note": "Read nine entries of A, then nine of B, row by row. Entries are −100 to 100; long accumulation keeps the sum representable.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[3][3], b[3][3], i, j, k;\n    long c[3][3];\n    for (i = 0; i < 3; i++)\n        for (j = 0; j < 3; j++)\n            if (scanf(\"%d\", &a[i][j]) != 1 || a[i][j] < -100 || a[i][j] > 100) return 1;\n    for (i = 0; i < 3; i++)\n        for (j = 0; j < 3; j++)\n            if (scanf(\"%d\", &b[i][j]) != 1 || b[i][j] < -100 || b[i][j] > 100) return 1;\n    for (i = 0; i < 3; i++) {\n        for (j = 0; j < 3; j++) {\n            c[i][j] = 0;\n            for (k = 0; k < 3; k++) c[i][j] += (long)a[i][k] * b[k][j];\n            printf(\"%ld%c\", c[i][j], j == 2 ? '\\n' : ' ');\n        }\n    }\n    return 0;\n}\n",
+      "input": "1 2 3 4 5 6 7 8 9\n1 0 0 0 1 0 0 0 1\n",
+      "expected": "1 2 3\n4 5 6\n7 8 9\n"
+    },
+    "more-upper": {
+      "title": "Lower-case to upper-case without built-in conversion",
+      "note": "Read a line of up to 98 characters plus newline. The alphabet mapping changes lower-case letters; other characters are retained.",
+      "code": "#include <stdio.h>\nint main(void) {\n    char s[100];\n    const char lower[] = \"abcdefghijklmnopqrstuvwxyz\";\n    const char upper[] = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n    int i, j;\n    if (!fgets(s, sizeof s, stdin)) return 1;\n    for (i = 0; s[i] != '\\0'; i++) {\n        for (j = 0; lower[j] != '\\0'; j++) {\n            if (s[i] == lower[j]) { s[i] = upper[j]; break; }\n        }\n    }\n    fputs(s, stdout);\n    return 0;\n}\n",
+      "input": "Hello world!\n",
+      "expected": "HELLO WORLD!\n"
+    },
+    "more-linear": {
+      "title": "Linear search",
+      "note": "Read n (1–20), the n elements, then ele. Positions are counted from 1; duplicate keys return the first match.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[20], n, i, ele, flag = 0, position = 0;\n    if (scanf(\"%d\", &n) != 1 || n < 1 || n > 20) return 1;\n    for (i = 0; i < n; i++) if (scanf(\"%d\", &a[i]) != 1) return 1;\n    if (scanf(\"%d\", &ele) != 1) return 1;\n    for (i = 0; i < n; i++) {\n        if (a[i] == ele) { flag = 1; position = i + 1; break; }\n    }\n    if (flag == 1) printf(\"The element is found at %d position\\n\", position);\n    else puts(\"The element not found\");\n    return 0;\n}\n",
+      "input": "5\n20 12 1 4 9\n4\n",
+      "expected": "The element is found at 4 position\n"
+    },
+    "more-insertion": {
+      "title": "Insertion sort",
+      "note": "Read n (1–100) and its elements. Move larger prefix elements right, then insert key into the vacated position.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[100], n, i, j, key;\n    if (scanf(\"%d\", &n) != 1 || n < 1 || n > 100) return 1;\n    for (i = 0; i < n; i++) if (scanf(\"%d\", &a[i]) != 1) return 1;\n    for (i = 1; i < n; i++) {\n        key = a[i]; j = i - 1;\n        while (j >= 0 && a[j] > key) { a[j + 1] = a[j]; j--; }\n        a[j + 1] = key;\n    }\n    for (i = 0; i < n; i++) printf(\"%d%c\", a[i], i == n - 1 ? '\\n' : ' ');\n    return 0;\n}\n",
+      "input": "9\n25 6 15 12 8 34 9 18 2\n",
+      "expected": "2 6 8 9 12 15 18 25 34\n"
+    },
+    "more-student-pointer": {
+      "title": "Student record through a structure pointer",
+      "note": "Read a one-word name (at most 19 characters), roll number and the three marks. Member names follow this question exactly.",
+      "code": "#include <stdio.h>\nstruct student {\n    char Stu_Name[20];\n    int Stu_Rno, M1, M2, M3;\n};\nint main(void) {\n    struct student s1, *s2 = &s1;\n    if (scanf(\"%19s%d%d%d%d\", s2->Stu_Name, &s2->Stu_Rno,\n              &s2->M1, &s2->M2, &s2->M3) != 5) return 1;\n    printf(\"%s %d %d %d %d\\n\", s2->Stu_Name, s2->Stu_Rno,\n           s2->M1, s2->M2, s2->M3);\n    return 0;\n}\n",
+      "input": "Rama 10 70 80 90\n",
+      "expected": "Rama 10 70 80 90\n"
+    },
+    "more-student": {
+      "title": "Read and display a student structure",
+      "note": "Priyanka’s s1 record and five-subject average. Read roll number, one-word name, then five marks from 0 to 100.",
+      "code": "#include <stdio.h>\nstruct student { int rollno; char name[20]; int marks[5]; };\nint main(void) {\n    struct student s1;\n    int i, sum = 0;\n    float avg;\n    if (scanf(\"%d%19s\", &s1.rollno, s1.name) != 2) return 1;\n    for (i = 0; i < 5; i++) {\n        if (scanf(\"%d\", &s1.marks[i]) != 1 || s1.marks[i] < 0 || s1.marks[i] > 100) return 1;\n        sum += s1.marks[i];\n    }\n    avg = (float)sum / 5;\n    printf(\"%d %s\\n\", s1.rollno, s1.name);\n    for (i = 0; i < 5; i++) printf(\"%d%c\", s1.marks[i], i == 4 ? '\\n' : ' ');\n    printf(\"Average: %.2f\\n\", avg);\n    return 0;\n}\n",
+      "input": "10 Rama\n70 80 90 60 75\n",
+      "expected": "10 Rama\n70 80 90 60 75\nAverage: 75.00\n"
+    },
+    "more-nested": {
+      "title": "Structure within a structure",
+      "note": "The senior example nests birthday inside student. Read roll, marks, one-word name, then month, day and year (assumed valid date).",
+      "code": "#include <stdio.h>\nstruct student {\n    int rollno;\n    float marks;\n    char name[20];\n    struct birthday { int m, d, y; } b1;\n};\nint main(void) {\n    struct student s1;\n    if (scanf(\"%d%f%19s%d%d%d\", &s1.rollno, &s1.marks, s1.name,\n              &s1.b1.m, &s1.b1.d, &s1.b1.y) != 6) return 1;\n    printf(\"%s %d %.1f\\nDOB: %d/%d/%d\\n\", s1.name, s1.rollno,\n           s1.marks, s1.b1.d, s1.b1.m, s1.b1.y);\n    return 0;\n}\n",
+      "input": "10 75 Rama 8 15 2007\n",
+      "expected": "Rama 10 75.0\nDOB: 15/8/2007\n"
+    },
+    "more-copy": {
+      "title": "Copy file contents using fgetc and fputc",
+      "note": "Run ./copy source.txt target.txt with distinct files (not aliases of the same file). The destination is replaced; binary modes preserve bytes. Input filenames are command-line arguments.",
+      "code": "#include <stdio.h>\n#include <string.h>\nint main(int argc, char *argv[]) {\n    FILE *in, *out;\n    int ch, failed = 0;\n    if (argc != 3 || strcmp(argv[1], argv[2]) == 0) return 1;\n    in = fopen(argv[1], \"rb\");\n    if (in == NULL) { perror(\"Source\"); return 1; }\n    out = fopen(argv[2], \"wb\");\n    if (out == NULL) { perror(\"Destination\"); fclose(in); return 1; }\n    while ((ch = fgetc(in)) != EOF) {\n        if (fputc(ch, out) == EOF) { failed = 1; break; }\n    }\n    if (ferror(in)) failed = 1;\n    if (fclose(in) == EOF) failed = 1;\n    if (fclose(out) == EOF) failed = 1;\n    if (failed) return 1;\n    puts(\"Copied\");\n    return 0;\n}\n",
+      "input": "",
+      "expected": "Copied\n",
+      "args": [
+        "source.txt",
+        "target.txt"
+      ],
+      "files": {
+        "source.txt": "PPS notes\nSecond line.\n"
+      },
+      "output_files": {
+        "target.txt": "PPS notes\nSecond line.\n"
+      }
+    },
+    "more-file-count": {
+      "title": "Count words, whitespace and tabs in a file",
+      "note": "Run ./count source.txt. A word is a maximal non-whitespace sequence. Whitespace includes spaces, tabs and newlines; tabs and literal spaces are also reported separately. Counts are assumed to fit unsigned long.",
+      "code": "#include <stdio.h>\n#include <ctype.h>\nint main(int argc, char *argv[]) {\n    FILE *fp;\n    int ch, inword = 0;\n    unsigned long words = 0, whitespace = 0, tabs = 0, spaces = 0;\n    if (argc != 2 || (fp = fopen(argv[1], \"r\")) == NULL) return 1;\n    while ((ch = fgetc(fp)) != EOF) {\n        if (isspace((unsigned char)ch)) {\n            whitespace++;\n            if (ch == '\\t') tabs++;\n            if (ch == ' ') spaces++;\n            inword = 0;\n        } else if (!inword) { words++; inword = 1; }\n    }\n    if (ferror(fp)) { fclose(fp); return 1; }\n    if (fclose(fp) == EOF) return 1;\n    printf(\"Words: %lu\\nWhitespace: %lu\\nTabs: %lu\\nSpaces: %lu\\n\", words, whitespace, tabs, spaces);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "Words: 4\nWhitespace: 5\nTabs: 1\nSpaces: 2\n",
+      "args": [
+        "source.txt"
+      ],
+      "files": {
+        "source.txt": "one two\tthree\n four\n"
+      }
+    },
+    "more-digit": {
+      "title": "Print a digit in words",
+      "note": "Read a single integer digit from 0 to 9. Other values are rejected.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    switch (n) {\n        case 0: puts(\"Zero\"); break;\n        case 1: puts(\"One\"); break;\n        case 2: puts(\"Two\"); break;\n        case 3: puts(\"Three\"); break;\n        case 4: puts(\"Four\"); break;\n        case 5: puts(\"Five\"); break;\n        case 6: puts(\"Six\"); break;\n        case 7: puts(\"Seven\"); break;\n        case 8: puts(\"Eight\"); break;\n        case 9: puts(\"Nine\"); break;\n        default: puts(\"Not a digit\"); return 1;\n    }\n    return 0;\n}\n",
+      "input": "7\n",
+      "expected": "Seven\n"
+    },
+    "more-div11": {
+      "title": "Print and count multiples of 11 from 1 to 100",
+      "note": "The endpoints 1 and 100 are included. Divisibility is tested using remainder.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int i, count = 0;\n    for (i = 1; i <= 100; i++) {\n        if (i % 11 == 0) { printf(\"%d \", i); count++; }\n    }\n    printf(\"\\nCount: %d\\n\", count);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "11 22 33 44 55 66 77 88 99 \nCount: 9\n"
+    },
+    "more-strings": {
+      "title": "String library examples and portable reversal",
+      "note": "<string.h> supplies the four standard functions. strrev in the notes is a nonstandard extension; reverse implements its intended operation in portable C.",
+      "code": "#include <stdio.h>\n#include <string.h>\nstatic void reverse(char s[]) {\n    size_t i, n = strlen(s);\n    for (i = 0; i < n / 2; i++) {\n        char temp = s[i]; s[i] = s[n - 1 - i]; s[n - 1 - i] = temp;\n    }\n}\nint main(void) {\n    char s1[30] = \"Hello\", s2[] = \"World\", copy[30];\n    printf(\"Length: %zu\\n\", strlen(\"RAM\"));\n    strcpy(copy, s1); puts(copy);\n    strcat(s1, s2); puts(s1);\n    printf(\"Equal: %d\\n\", strcmp(\"RAM\", \"RAM\") == 0);\n    reverse(copy); puts(copy);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "Length: 3\nHello\nHelloWorld\nEqual: 1\nolleH\n"
+    },
+    "more-armstrong": {
+      "title": "Armstrong numbers in a given range",
+      "note": "Read inclusive lower and upper bounds between 0 and 9999. Uses the general Armstrong definition: each digit is raised to the number of digits.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int low, high, value;\n    if (scanf(\"%d%d\", &low, &high) != 2 || low < 0 || high > 9999 || low > high) return 1;\n    for (value = low; value <= high; value++) {\n        int n = value, temp, rem, digits = 0, sum = 0, power, j;\n        temp = n;\n        do { digits++; temp /= 10; } while (temp > 0);\n        temp = n;\n        do {\n            rem = temp % 10; power = 1;\n            for (j = 0; j < digits; j++) power *= rem;\n            sum += power; temp /= 10;\n        } while (temp > 0);\n        if (sum == n) printf(\"%d\\n\", n);\n    }\n    return 0;\n}\n",
+      "input": "100 500\n",
+      "expected": "153\n370\n371\n407\n"
+    },
+    "more-min-position": {
+      "title": "Position of the smallest array value",
+      "note": "Read n (1–20) and its values. The first occurrence of the minimum is reported using a 1-based position.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[20], n, i, min, position = 0;\n    if (scanf(\"%d\", &n) != 1 || n < 1 || n > 20) return 1;\n    for (i = 0; i < n; i++) if (scanf(\"%d\", &a[i]) != 1) return 1;\n    min = a[0];\n    for (i = 1; i < n; i++) {\n        if (a[i] < min) { min = a[i]; position = i; }\n    }\n    printf(\"Smallest: %d\\nPosition: %d\\n\", min, position + 1);\n    return 0;\n}\n",
+      "input": "5\n20 10 5 40 35\n",
+      "expected": "Smallest: 5\nPosition: 3\n"
+    },
+    "more-dma": {
+      "title": "Dynamic allocation example",
+      "note": "Read n from 1 to 100 and values from −100 to 100. Allocate space at runtime, check failure, use it and release it.",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int n, i, *a;\n    long sum = 0;\n    if (scanf(\"%d\", &n) != 1 || n < 1 || n > 100) return 1;\n    a = malloc((size_t)n * sizeof *a);\n    if (a == NULL) return 1;\n    for (i = 0; i < n; i++) {\n        if (scanf(\"%d\", &a[i]) != 1 || a[i] < -100 || a[i] > 100) { free(a); return 1; }\n        sum += a[i];\n    }\n    printf(\"Sum: %ld\\n\", sum);\n    free(a);\n    return 0;\n}\n",
+      "input": "3\n10 20 30\n",
+      "expected": "Sum: 60\n"
+    },
+    "more-pointer-array": {
+      "title": "Read and print array elements through a pointer",
+      "note": "Read n from 1 to 30, then n values. Reset ptr to a before the display traversal.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[30], n, i, *ptr;\n    if (scanf(\"%d\", &n) != 1 || n < 1 || n > 30) return 1;\n    ptr = a;\n    for (i = 0; i < n; i++) {\n        if (scanf(\"%d\", ptr) != 1) return 1;\n        ptr++;\n    }\n    ptr = a;\n    for (i = 0; i < n; i++) {\n        printf(\"%d%c\", *ptr, i == n - 1 ? '\\n' : ' ');\n        ptr++;\n    }\n    return 0;\n}\n",
+      "input": "5\n20 10 5 40 35\n",
+      "expected": "20 10 5 40 35\n"
+    },
+    "more-cli-factorial": {
+      "title": "Factorial from a command-line argument",
+      "note": "Run ./factorial 5. The argument must be an integer from 0 to 20; 0! is 1.",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <errno.h>\nint main(int argc, char *argv[]) {\n    char *end;\n    long n, i;\n    unsigned long long fact = 1;\n    if (argc != 2) return 1;\n    errno = 0;\n    n = strtol(argv[1], &end, 10);\n    if (errno || end == argv[1] || *end != '\\0' || n < 0 || n > 20) return 1;\n    for (i = 1; i <= n; i++) fact *= (unsigned)i;\n    printf(\"%ld! = %llu\\n\", n, fact);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "5! = 120\n",
+      "args": [
+        "5"
+      ]
     }
   },
   "snippet_fixtures": {
@@ -2067,10 +5636,34 @@
       "input": "3 4\n",
       "expected": "The addition value is 7\n",
       "displayed_code": "int sum(void) {\n    int a, b, c;\n    if (scanf(\"%d%d\", &a, &b) != 2) exit(EXIT_FAILURE);\n    c = a + b;\n    return c;\n}"
+    },
+    "more-break": {
+      "displayed_code": "int i;\nfor (i = 1; i <= 10; i++) {\n    printf(\"%d \", i);\n    if (i == 5) break;\n}",
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\nint main(void) {\nint i;\nfor (i = 1; i <= 10; i++) {\n    printf(\"%d \", i);\n    if (i == 5) break;\n}\n\nreturn 0;\n}\n",
+      "input": "",
+      "expected": "1 2 3 4 5 "
+    },
+    "more-continue": {
+      "displayed_code": "int i;\nfor (i = 1; i <= 10; i++) {\n    if (i == 5) continue;\n    printf(\"%d \", i);\n}",
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\nint main(void) {\nint i;\nfor (i = 1; i <= 10; i++) {\n    if (i == 5) continue;\n    printf(\"%d \", i);\n}\n\nreturn 0;\n}\n",
+      "input": "",
+      "expected": "1 2 3 4 6 7 8 9 10 "
+    },
+    "more-enum": {
+      "displayed_code": "enum weekdays { Mon, Tue, Wed, Thu, Fri, Sat, Sun };\nenum weekdays w1 = Sun, w2 = Mon, w3 = Wed;\nprintf(\"%d %d %d\\n\", w1, w2, w3);",
+      "code": "#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\nint main(void) {\nenum weekdays { Mon, Tue, Wed, Thu, Fri, Sat, Sun };\nenum weekdays w1 = Sun, w2 = Mon, w3 = Wed;\nprintf(\"%d %d %d\\n\", w1, w2, w3);\n\nreturn 0;\n}\n",
+      "input": "",
+      "expected": "6 0 2\n"
+    },
+    "more-output-trace": {
+      "code": "#define n 5\n#include <stdio.h>\nint main(void) {\n    int a[n], i;\n    a[0] = 1;\n    for (i = 0; i < n - 1; ++i) a[a[i]] = a[i] + 1;\n    for (i = 0; i <= n - 1; ++i) printf(\"%d\", a[i]);\n    return 0;\n}\n",
+      "input": "",
+      "expected": "12345",
+      "displayed_code": "int a[5], i;\na[0] = 1;\nfor (i = 0; i < 4; ++i) a[a[i]] = a[i] + 1;\nfor (i = 0; i < 5; ++i) printf(\"%d\", a[i]);"
     }
   },
   "answer_policy": "Preserve Priyanka’s wording, syntax layouts, example values and methods wherever covered. Correct actual errors only. Senior KB then general PPS knowledge fill genuine gaps. Exam-specific applications are identified separately.",
-  "scope": "Only the latest PPS R25 paper is answered here. Older PPS and the different Problem Solving Through C paper remain separate intake sources.",
+  "scope": "Three unique PPS end-semester papers: January 2026 R25, January 2025 R22 and January 2024 R22. The two January 2025 copies are one paper. AE Problem Solving Through C papers remain separate intake sources.",
   "figure_policy": "No drawings generated. Q1(a) provides algorithm and text flowchart logic, matching the existing worksheet convention while the figure freeze remains in force.",
   "note_image_review": [
     {
@@ -2245,5 +5838,66 @@
       "image": 97,
       "sha256": "0c43baf8d2720d6011361a7f864c97285125bf45c4aa39f57f8f63f0848447c4"
     }
-  ]
+  ],
+  "navigation_mode": "papers-only",
+  "additional_source_review": {
+    "priyanka_images": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      15,
+      16,
+      19,
+      40,
+      41,
+      43,
+      44,
+      45,
+      46,
+      53,
+      56,
+      57,
+      59,
+      60,
+      61,
+      62,
+      64,
+      65,
+      70,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      98,
+      99,
+      100,
+      101
+    ],
+    "senior_pages": [
+      9,
+      10,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      82,
+      83,
+      84,
+      85,
+      86,
+      119,
+      120,
+      121,
+      122,
+      123
+    ],
+    "method": "Original photographs inspected against wording/methods; exam-specific adaptations and gaps recorded per answer."
+  }
 }
