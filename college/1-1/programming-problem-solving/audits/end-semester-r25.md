@@ -16,7 +16,7 @@ All original question wording, order, numbers, unit grouping, marks and OR place
 | IV | 7(a) 5 + 7(b) 5 | 8: 10 | 10 |
 | V | 9(a) 5 + 9(b) 5 | 10: 10 | 10 |
 
-The left navigation links to the paper, Part A/units and every question with a short description (26 links). Selecting a question opens its dropdown answer. Back to top sits above navigation and remains available with mobile contents collapsed. No filters or topic-based merged questions are introduced.
+The initial R25 implementation linked to the paper, units and questions. The later multi-paper update replaces this with three paper-only links as requested; see `end-semester-papers.md`. Selecting a question opens its dropdown answer. Back to top sits above navigation and remains available with mobile contents collapsed. No filters or topic-based merged questions are introduced.
 
 ## Answer authority and fidelity
 

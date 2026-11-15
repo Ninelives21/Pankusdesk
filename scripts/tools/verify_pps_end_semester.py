@@ -17,7 +17,7 @@ def blocks_in(blocks):
             yield from blocks_in(block['blocks'])
 
 
-def verify(source_text=None, kb_root=None):
+def verify(source_text=None, kb_root=None, source_root=None):
     bank = json.loads((SUBJECT / 'exam-prep/end-semester.json').read_text())
     paper = bank['paper']
     assert (paper['regulation'], paper['subject_code'], paper['minutes'], paper['max_marks']) == (
@@ -26,7 +26,7 @@ def verify(source_text=None, kb_root=None):
     assert bank['sources'][0]['printed_exam'] == 'January 2026'
     questions = [q for section in bank['sections'] for q in section['questions']]
     ids = [q['id'] for q in questions]
-    assert len(ids) == len(set(ids)) == len(bank['answers']) == 19
+    assert len(ids) == len(set(ids)) == 19
     assert sum(q['marks'] for q in bank['sections'][0]['questions']) == 10
     assert [q['number'] for q in questions] == [
         'a', 'b', 'c', 'd', 'e', '1(a)', '1(b)', '2', '3', '4',
@@ -39,11 +39,36 @@ def verify(source_text=None, kb_root=None):
             assert all(lookup[id]['unit'] == choice['unit'] for id in option)
             assert sum(lookup[id]['marks'] for id in option) == 10
         assert lookup[choice['alternatives'][1][0]]['or_before']
+    # Preserve the existing R25 gates, then check the complete added papers.
+    new_questions = [q for p in bank['papers'] for g in p['groups'] for q in g['parts']]
+    assert [len([q for g in p['groups'] for q in g['parts']]) for p in bank['papers']] == [24, 25]
+    assert bank['navigation_mode'] == 'papers-only'
+    assert [p['id'] for p in bank['papers']] == ['endsem-2025', 'endsem-2024']
+    assert len(set(ids + [q['id'] for q in new_questions])) == 68
+    for p in bank['papers']:
+        assert p['regulation'] == 'R22' and p['subject_code'] == '22ES1CS101'
+        assert p['minutes'] == 180 and p['max_marks'] == 60
+        assert sum(q['marks'] for q in p['groups'][0]['parts']) == 10
+        assert len(p['groups']) == 11
+        assert sum(bool(g.get('or_before')) for g in p['groups']) == 5
+        for i in range(1, 11):
+            g = p['groups'][i]
+            assert sum(q['marks'] for q in g['parts']) == 10
+            assert bool(g.get('or_before')) == (i % 2 == 0)
+            assert g['unit'] == ['I', 'II', 'III', 'IV', 'V'][(i - 1) // 2]
+        for g in p['groups']:
+            for q in g['parts']:
+                assert q['page'] in [1, 2]
+                q = dict(q, source_label='Verified paper source')
+                questions.append(q)
+    assert {q['answer'] for q in questions} == set(bank['answers'])
     program_ids = set()
     snippet_ids = set()
     for q in questions:
         answer = bank['answers'][q['answer']]
-        assert q['page'] == 1 and q['nav_label'] and q['source_label']
+        assert q['page'] in [1, 2] and q['source_label']
+        if q['id'] in ids:
+            assert q['page'] == 1 and q['nav_label']
         assert answer['paragraphs'] and answer['blocks'] and answer['authority']
         assert answer['source_trace']['priority'] == 'Priyanka → senior KB → general PPS knowledge'
         if answer['basis'] == 'general' or 'general' in answer['basis']:
@@ -95,9 +120,25 @@ def verify(source_text=None, kb_root=None):
     assert all('source_fidelity' in a for a in answers.values())
     if source_text:
         original = re.sub(r'\s+', '', Path(source_text).read_text())
-        assert all(re.sub(r'\s+', '', q['question']) in original for q in questions)
+        assert all(re.sub(r'\s+', '', q['question']) in original for q in questions if q['id'] in ids)
         assert '#include' in original and '#define' in original
         print('PASS: all 19 question wordings match the supplied paper text.')
+    if source_root:
+        folder = Path(source_root)
+        for p in bank['papers']:
+            # Compare the two different typesettings independently; ignore only
+            # whitespace, page furniture and assessment columns interrupting text.
+            source = next(s for s in bank['sources'] if s['id'] == p['sources'][0])
+            file = next(folder.glob(source['sha256'][:12] + '*.txt'))
+            text = re.sub(r'--- PAGE \d+ ---|Page \d+ of \d+|\b\d+M\b|CO-\d+|BL-\d+', '', file.read_text())
+            text = re.sub(r'\s+', '', text)
+            for g in p['groups']:
+                for q in g['parts']:
+                    assert re.sub(r'\s+', '', q['question']) in text, (p['id'], q['number'])
+            pdf = next(folder.glob(source['sha256'][:12] + '*.pdf'))
+            import hashlib
+            assert hashlib.sha256(pdf.read_bytes()).hexdigest() == source['sha256']
+        print('PASS: all 49 added question wordings and original paper checksums match supplied sources.')
     if kb_root:
         folder = Path(kb_root)
         pri = {t['id']: t for t in json.loads((folder / 'priyanka/topics.json').read_text())['topics']}
@@ -118,8 +159,21 @@ def verify(source_text=None, kb_root=None):
                 assert set(answer['note_refs']) <= senior_pages
         print('PASS: every cited primary topic, image, senior page and source prompt resolves to the ingested KB.')
     print('PASS: January 2026 PPS/R25 identity, 19 answers, exact numbering, 60-mark choice scheme, OR placement, source traces and card.')
+    print('PASS: three unique PPS papers, 68 question occurrences, 15 OR choices and paper-only navigation data.')
 
     extra = {
+        'more-prime': [('1\n', 'Not prime\n'), ('2\n', 'Prime\n'), ('12\n', 'Not prime\n')],
+        'more-linear': [('3\n8 8 1\n8\n', 'The element is found at 1 position\n'),
+                        ('3\n8 8 1\n7\n', 'The element not found\n'), ('0\n', None)],
+        'more-min-position': [('3\n5 -2 -2\n', 'Smallest: -2\nPosition: 2\n'),
+                              ('1\n9\n', 'Smallest: 9\nPosition: 1\n'), ('0\n', None)],
+        'more-insertion': [('5\n4 4 -1 0 -1\n', '-1 -1 0 4 4\n'), ('1\n9\n', '9\n')],
+        'more-armstrong': [('0 9\n', '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n'),
+                           ('9474 9474\n', '9474\n'), ('500 100\n', None)],
+        'more-upper': [('aZ 19!\n', 'AZ 19!\n')],
+        'more-pointer-array': [('1\n-8\n', '-8\n'), ('31\n', None)],
+        'more-dma': [('1\n-8\n', 'Sum: -8\n'), ('0\n', None)],
+        'more-digit': [('0\n', 'Zero\n'), ('10\n', None)],
         'branch-if': [('0\n', 'simple if program\n'), ('-2\n', 'simple if program\n')],
         'branch-if-else': [('-3\n', '-3 is odd\n')],
         'branch-ladder': [('8 8 2\n', '8 is greatest\n'), ('2 8 8\n', '8 is greatest\n'),
@@ -166,6 +220,22 @@ def verify(source_text=None, kb_root=None):
             if key == 'cli':
                 result = subprocess.run([str(exe)], capture_output=True, cwd=folder, timeout=5)
                 assert result.returncode != 0
+            for name, expected in example.get('output_files', {}).items():
+                assert (folder / name).read_text() == expected, (key, name)
+            if key == 'more-cli-factorial':
+                for arg, expected in [('0', '0! = 1\n'), ('21', None), ('oops', None)]:
+                    result = subprocess.run([str(exe), arg], capture_output=True, text=True, timeout=5)
+                    assert (result.returncode != 0 if expected is None else
+                            result.returncode == 0 and result.stdout == expected)
+            if key == 'more-copy':
+                for args in [[], ['missing.txt', 'target2.txt'], ['source.txt', 'source.txt']]:
+                    result = subprocess.run([str(exe)] + args, capture_output=True, cwd=folder, timeout=5)
+                    assert result.returncode != 0
+                assert (folder / 'source.txt').read_text() == example['files']['source.txt']
+            if key == 'more-file-count':
+                (folder / 'blank.txt').write_text('')
+                result = subprocess.run([str(exe), 'blank.txt'], capture_output=True, text=True, cwd=folder, timeout=5)
+                assert result.returncode == 0 and result.stdout == 'Words: 0\nWhitespace: 0\nTabs: 0\nSpaces: 0\n'
     print(f'PASS: {len(bank["programs"])} full C11 programs and {len(bank["snippet_fixtures"])} displayed-code fixtures compile warning-free; sample and boundary outputs match.')
 
 
@@ -173,5 +243,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-text')
     parser.add_argument('--kb-root')
+    parser.add_argument('--source-root')
     args = parser.parse_args()
-    verify(args.source_text, args.kb_root)
+    verify(args.source_text, args.kb_root, args.source_root)
