@@ -41,12 +41,33 @@ def verify(source_text=None, kb_root=None, source_root=None):
         assert lookup[choice['alternatives'][1][0]]['or_before']
     # Preserve the existing R25 gates, then check the complete added papers.
     new_questions = [q for p in bank['papers'] for g in p['groups'] for q in g['parts']]
-    assert [len([q for g in p['groups'] for q in g['parts']]) for p in bank['papers']] == [24, 25]
+    assert [len([q for g in p['groups'] for q in g['parts']]) for p in bank['papers']] == [24, 25, 20, 24, 20, 21, 20]
     assert bank['navigation_mode'] == 'papers-only'
-    assert [p['id'] for p in bank['papers']] == ['endsem-2025', 'endsem-2024']
-    assert len(set(ids + [q['id'] for q in new_questions])) == 68
+    assert [p['id'] for p in bank['papers']] == [
+        'endsem-2025', 'endsem-2024', 'endsem-faq', 'endsem-2025-supplementary',
+        'endsem-ae-2026', 'endsem-ae-2025', 'endsem-ae-2024']
+    assert len(set(ids + [q['id'] for q in new_questions])) == 173
+    assert len(bank['sources']) == bank['archive_intake']['pdf_count'] == 7
+    faq_ids = {q['id'] for p in bank['papers'] if p.get('entry_kind') == 'revision-faq'
+               for g in p['groups'] for q in g['parts']}
+    historical_ids = set(ids + [q['id'] for q in new_questions]) - faq_ids
     for p in bank['papers']:
-        assert p['regulation'] == 'R22' and p['subject_code'] == '22ES1CS101'
+        if p.get('entry_kind') == 'revision-faq':
+            faq = [q for g in p['groups'] for q in g['parts']]
+            assert len(faq) == 20 and not p['sources']
+            assert [q['question_type'] for q in faq].count('short') == 10
+            assert [q['question_type'] for q in faq].count('essay') == 10
+            for q in faq:
+                assert 'marks' not in q and 'page' not in q
+                assert set(q['source_question_refs']) <= historical_ids
+                questions.append(q)
+            continue
+        if p['id'].startswith('endsem-ae-'):
+            assert p['subject'] == 'Problem Solving Through C'
+            assert 'AE' in p['title']
+            assert p['subject_code'] == ('25ES1DS101' if p['regulation'] == 'R25' else '22ES1IT101')
+        else:
+            assert p['regulation'] == 'R22' and p['subject_code'] == '22ES1CS101'
         assert p['minutes'] == 180 and p['max_marks'] == 60
         assert sum(q['marks'] for q in p['groups'][0]['parts']) == 10
         assert len(p['groups']) == 11
@@ -66,7 +87,9 @@ def verify(source_text=None, kb_root=None, source_root=None):
     snippet_ids = set()
     for q in questions:
         answer = bank['answers'][q['answer']]
-        assert q['page'] in [1, 2] and q['source_label']
+        assert q['source_label']
+        if q['id'] not in faq_ids:
+            assert q['page'] in [1, 2]
         if q['id'] in ids:
             assert q['page'] == 1 and q['nav_label']
         assert answer['paragraphs'] and answer['blocks'] and answer['authority']
@@ -126,6 +149,8 @@ def verify(source_text=None, kb_root=None, source_root=None):
     if source_root:
         folder = Path(source_root)
         for p in bank['papers']:
+            if p.get('entry_kind') == 'revision-faq':
+                continue
             # Compare the two different typesettings independently; ignore only
             # whitespace, page furniture and assessment columns interrupting text.
             source = next(s for s in bank['sources'] if s['id'] == p['sources'][0])
@@ -138,7 +163,7 @@ def verify(source_text=None, kb_root=None, source_root=None):
             pdf = next(folder.glob(source['sha256'][:12] + '*.pdf'))
             import hashlib
             assert hashlib.sha256(pdf.read_bytes()).hexdigest() == source['sha256']
-        print('PASS: all 49 added question wordings and original paper checksums match supplied sources.')
+        print('PASS: all 134 non-R25-PPS paper questions and checksums match supplied sources; FAQs are labelled curated revision.')
     if kb_root:
         folder = Path(kb_root)
         pri = {t['id']: t for t in json.loads((folder / 'priyanka/topics.json').read_text())['topics']}
@@ -159,9 +184,23 @@ def verify(source_text=None, kb_root=None, source_root=None):
                 assert set(answer['note_refs']) <= senior_pages
         print('PASS: every cited primary topic, image, senior page and source prompt resolves to the ingested KB.')
     print('PASS: January 2026 PPS/R25 identity, 19 answers, exact numbering, 60-mark choice scheme, OR placement, source traces and card.')
-    print('PASS: three unique PPS papers, 68 question occurrences, 15 OR choices and paper-only navigation data.')
+    print('PASS: eight ordered entries, seven supplied paper files, 153 paper questions + 20 FAQs, 35 OR choices and entry-only navigation data.')
 
     extra = {
+        'extra-name-sort': [('4\nRama Anu Rama Sita\n', 'Anu\nRama\nRama\nSita\n'), ('0\n', None)],
+        'extra-manual-concat': [('Hello \nWorld\n', 'Hello World\n'), ('\nWorld\n', 'World\n')],
+        'extra-fibonacci': [('0\n', ''), ('1\n', '0\n'), ('-1\n', None)],
+        'extra-factorial-recursive': [('0\n', '0! = 1\n'), ('21\n', None)],
+        'extra-factorial-while': [('0\n', '0! = 1\n'), ('-1\n', None)],
+        'extra-array-sum': [('1\n-8\n', 'Sum: -8\n'), ('26\n', None)],
+        'extra-gcd': [('0 8\n', 'GCD: 8\n'), ('0 0\n', None)],
+        'extra-vowel': [('z\n', 'Not a vowel\n'), ('e\n', 'Vowel\n')],
+        'extra-weekday': [('0\n', 'Exit\n'), ('8\n', None)],
+        'extra-prime-generate': [('1\n', '\n'), ('2\n', '2\n')],
+        'extra-calculator': [('8 0 4\n', None)],
+        'extra-sum': [('0\n', 'Sum: 0\n'), ('1000\n', 'Sum: 500500\n')],
+        'extra-students': [('0 3\n', None)],
+        'extra-five-students': [('0\n', None)],
         'more-prime': [('1\n', 'Not prime\n'), ('2\n', 'Prime\n'), ('12\n', 'Not prime\n')],
         'more-linear': [('3\n8 8 1\n8\n', 'The element is found at 1 position\n'),
                         ('3\n8 8 1\n7\n', 'The element not found\n'), ('0\n', None)],
