@@ -17,6 +17,21 @@
             const aliases = new Map();
             const path = location.pathname + location.search;
 
+            function answerBlocks(blocks = []) {
+                return blocks.flatMap(block => {
+                    if (block.type === 'part') return [{ ...block, blocks: answerBlocks(block.blocks) }];
+                    if (block.type !== 'program') return [block];
+                    const example = bank.programs[block.id];
+                    return [
+                        { type: 'heading', text: example.title },
+                        { type: 'paragraph', text: example.note },
+                        { type: 'code', code: example.code },
+                        ...(example.input ? [{ type: 'heading', text: 'Sample input' }, { type: 'code', code: example.input }] : []),
+                        { type: 'heading', text: 'Output' }, { type: 'code', code: example.expected }
+                    ];
+                });
+            }
+
             function item(question) {
                 records.push(question);
                 const answer = bank.answers[question.answer];
@@ -35,7 +50,7 @@
                         // It is used only for supplied code or labelled question subparts below.
                         question_paragraphs: [''],
                         paragraphs: answerParts.length ? [] : answer.paragraphs,
-                        blocks: answer.blocks,
+                        blocks: answerBlocks(answer.blocks),
                         solution_parts: answerParts,
                         discrepancy: question.discrepancy ? { label: 'Source discrepancy', message: question.discrepancy } : null,
                         final_answer: question.answer === 'macro-output'
@@ -103,10 +118,22 @@
                 const notePages = answer.note_refs.length
                     ? `; ${answer.basis.startsWith('priyanka') ? 'Priyanka images' : 'senior PDF pages'} ${answer.note_refs.join(', ')}` : '';
                 const seniorPages = answer.senior_pages ? `; senior PDF pages ${answer.senior_pages.join(', ')}` : '';
-                body.insertAdjacentHTML('beforeend', `<details class="exam-provenance"><summary>Source</summary><p>${esc(answer.authority)}. Basis: ${esc(answer.basis_label + notePages + seniorPages)}.</p><p>${esc(question.source_label)}</p></details>`);
+                const fidelity = answer.source_fidelity;
+                const sourceNotes = fidelity
+                    ? [...fidelity.corrections, ...(fidelity.fallback ? [fidelity.fallback] : [])]
+                        .map(text => `<p>${esc(text)}</p>`).join('') : '';
+                body.insertAdjacentHTML('beforeend', `<details class="exam-provenance"><summary>Source</summary><p>${esc(answer.authority)}. Basis: ${esc(answer.basis_label + notePages + seniorPages)}.</p>${sourceNotes}<p>${esc(question.source_label)}</p></details>`);
             }
 
             const sections = [], paperLinks = [], revisionLinks = [];
+            if (bank.paper) {
+                revisionLinks.push(`<h3><a href="${esc(path)}#${esc(bank.paper.id)}">${esc(bank.paper.title)} · ${esc(bank.paper.regulation)}</a></h3>`);
+                const details = page.querySelector('[data-exam-paper-details]');
+                if (details) {
+                    details.id = bank.paper.id;
+                    details.innerHTML = `<h2>${esc(bank.paper.title)} · ${esc(bank.paper.regulation)}</h2><p>${esc(bank.paper.subject_code)} · ${bank.paper.minutes} minutes · ${bank.paper.max_marks} marks</p><ul>${bank.paper.instructions.map(text => `<li>${esc(text)}</li>`).join('')}</ul>`;
+                }
+            }
             const sourceIntro = page.querySelector('[data-exam-source-intro]');
             if (sourceIntro) sourceIntro.innerHTML = ui.renderAnswerBlocks(bank.source_intro || []);
             for (const section of bank.sections || []) {
@@ -114,7 +141,7 @@
                 for (const question of [...section.questions, ...(section.nav_items || [])]) {
                     revisionLinks.push(`<a href="${esc(path)}#${esc(question.id)}">${esc(question.number)} · ${esc(question.nav_label || question.question)}</a>`);
                 }
-                sections.push(`<section class="exam-paper" id="${esc(section.id)}"><h2>${esc(section.title)}</h2>${section.intro ? `<p>${esc(section.intro)}</p>` : ''}${ui.renderAnswerBlocks(section.blocks || [])}${section.questions.map(item).join('')}${ui.renderAnswerBlocks(section.after_blocks || [])}</section>`);
+                sections.push(`<section class="exam-paper" id="${esc(section.id)}"><h2>${esc(section.title)}</h2>${section.intro ? `<p>${esc(section.intro)}</p>` : ''}${ui.renderAnswerBlocks(section.blocks || [])}${section.questions.map(question => `${question.or_before ? '<p class="exam-or">OR</p>' : ''}${item(question)}`).join('')}${ui.renderAnswerBlocks(section.after_blocks || [])}</section>`);
             }
             for (const paper of bank.papers) {
                 paperLinks.push(`<a href="${esc(path)}#${esc(paper.id)}">${esc(paper.title)} · ${esc(paper.regulation)}</a>`);
@@ -177,7 +204,7 @@
                     }
                 }
                 const target = document.getElementById(id);
-                if (!target || !content.contains(target)) return;
+                if (!target || !page.contains(target)) return;
                 const answer = target.closest('details.study-accordion-item');
                 if (answer) answer.open = true;
                 target.scrollIntoView({ block: 'start' });
