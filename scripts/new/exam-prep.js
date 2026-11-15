@@ -147,7 +147,7 @@
                 sections.push(`<section class="exam-paper" id="${esc(section.id)}"><h2>${esc(section.title)}</h2>${section.intro ? `<p>${esc(section.intro)}</p>` : ''}${ui.renderAnswerBlocks(section.blocks || [])}${section.questions.map(question => `${question.or_before ? '<p class="exam-or">OR</p>' : ''}${item(question)}`).join('')}${ui.renderAnswerBlocks(section.after_blocks || [])}</section>`);
             }
             for (const paper of bank.papers) {
-                paperLinks.push(`<a href="${esc(path)}#${esc(paper.id)}">${esc(paper.title)} · ${esc(paper.regulation)}</a>`);
+                paperLinks.push(`<a href="${esc(path)}#${esc(paper.id)}">${esc(paper.title)}${paper.regulation ? ` · ${esc(paper.regulation)}` : ''}</a>`);
                 const sourceLabel = paper.sources.map(id => `${sources.get(id).filename}, p. ${paper.source_pages[id].join(', ')}`).join('; ');
                 const groups = paper.groups.map(group => {
                     const heading = group.title ? `<h3>${esc(group.title)}</h3>` : group.unit
@@ -158,7 +158,7 @@
                         return item({ ...part, source_label: label });
                     }).join('')}</section>`;
                 }).join('');
-                const metadata = paper.entry_kind === 'revision-faq'
+                const metadata = ['revision-faq', 'question-bank'].includes(paper.entry_kind)
                     ? `<p>${esc(paper.intro)}</p>`
                     : `<p>${esc(paper.regulation)} · ${esc(paper.subject_code)} · ${paper.minutes} minutes · ${paper.max_marks} marks</p><ul>${paper.instructions.map(instruction => `<li>${esc(instruction)}</li>`).join('')}</ul>`;
                 sections.push(`<section class="exam-paper" id="${esc(paper.id)}"><h2>${esc(paper.title)}</h2>${paper.entry_note ? `<p>${esc(paper.entry_note)}</p>` : ''}${metadata}${groups}</section>`);
