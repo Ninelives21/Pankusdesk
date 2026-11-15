@@ -150,15 +150,18 @@
                 paperLinks.push(`<a href="${esc(path)}#${esc(paper.id)}">${esc(paper.title)} · ${esc(paper.regulation)}</a>`);
                 const sourceLabel = paper.sources.map(id => `${sources.get(id).filename}, p. ${paper.source_pages[id].join(', ')}`).join('; ');
                 const groups = paper.groups.map(group => {
-                    const heading = group.unit
+                    const heading = group.title ? `<h3>${esc(group.title)}</h3>` : group.unit
                         ? (!group.or_before ? `<h3>Part B · Unit ${group.unit}</h3>` : '')
                         : '<h3>Part A</h3>';
                     return `${group.or_before ? '<p class="exam-or">OR</p>' : ''}<section class="exam-group" id="${esc(group.id)}">${heading}${group.parts.map(part => {
-                        const label = part.page ? paper.sources.map(id => `${sources.get(id).filename}, p. ${(part.source_pages?.[id] || [part.page]).join(', ')}`).join('; ') : sourceLabel;
+                        const label = part.source_label || (part.page ? paper.sources.map(id => `${sources.get(id).filename}, p. ${(part.source_pages?.[id] || [part.page]).join(', ')}`).join('; ') : sourceLabel);
                         return item({ ...part, source_label: label });
                     }).join('')}</section>`;
                 }).join('');
-                sections.push(`<section class="exam-paper" id="${esc(paper.id)}"><h2>${esc(paper.title)}</h2><p>${esc(paper.regulation)} · ${esc(paper.subject_code)} · ${paper.minutes} minutes · ${paper.max_marks} marks</p><ul>${paper.instructions.map(instruction => `<li>${esc(instruction)}</li>`).join('')}</ul>${groups}</section>`);
+                const metadata = paper.entry_kind === 'revision-faq'
+                    ? `<p>${esc(paper.intro)}</p>`
+                    : `<p>${esc(paper.regulation)} · ${esc(paper.subject_code)} · ${paper.minutes} minutes · ${paper.max_marks} marks</p><ul>${paper.instructions.map(instruction => `<li>${esc(instruction)}</li>`).join('')}</ul>`;
+                sections.push(`<section class="exam-paper" id="${esc(paper.id)}"><h2>${esc(paper.title)}</h2>${paper.entry_note ? `<p>${esc(paper.entry_note)}</p>` : ''}${metadata}${groups}</section>`);
             }
 
             // Restore every original source question, rather than using topic-level merged entries.

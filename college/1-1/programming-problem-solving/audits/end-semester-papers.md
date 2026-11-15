@@ -2,7 +2,7 @@
 
 ## Scope and identity
 
-The page now has three unique PPS papers, ordered by printed date: January 2026 (R25), January 2025 (R22), January 2024 (R22). Each is 180 minutes and 60 attempted marks. The January 2025 source labelled “Supplementary” has the same printed Regular/Supplementary identity and question set as the other copy; it is recorded as a duplicate source, not a second exam. Filename years do not override printed dates. The three AE “Problem Solving Through C” papers remain separate intake material, pending the user’s scope preference.
+The page now has three unique PPS papers, ordered by printed date: January 2026 (R25), January 2025 (R22), January 2024 (R22). Each is 180 minutes and 60 attempted marks. The January 2025 source labelled “Supplementary” has the same printed Regular/Supplementary identity and question set as the other copy; it is recorded as a duplicate source, not a second exam. Filename years do not override printed dates. The subsequent user-authorized additions in `end-semester-complete.md` add the three AE papers, FAQs and a separate supplementary-file entry; the original three PPS entries remain first.
 
 The new R22 papers contain 24 and 25 question/subpart occurrences, respectively. Together with the original 19 R25 occurrences, there are 68 dropdown answers. Both choices for each unit are answered for revision. Every Part A totals 10 marks; each Part B alternative totals 10 marks; one choice per unit gives the remaining 50. The unusual 6+4 and 7+3 splits in January 2025 are retained.
 
