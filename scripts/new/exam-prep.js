@@ -96,6 +96,10 @@
                 if (answer.final_answer) {
                     body.insertAdjacentHTML('beforeend', `<p class="study-final-answer"><strong>${esc(answer.final_answer)}</strong></p>`);
                 }
+                if (bank.kind === 'source-transcription') {
+                    body.insertAdjacentHTML('beforeend', `<details class="exam-provenance"><summary>Source</summary><p>${esc(question.source_label)}</p>${answer.source_metadata.map(text => `<p>${esc(text)}</p>`).join('')}</details>`);
+                    return;
+                }
                 const notePages = answer.note_refs.length
                     ? `; ${answer.basis.startsWith('priyanka') ? 'Priyanka images' : 'senior PDF pages'} ${answer.note_refs.join(', ')}` : '';
                 const seniorPages = answer.senior_pages ? `; senior PDF pages ${answer.senior_pages.join(', ')}` : '';
@@ -103,12 +107,14 @@
             }
 
             const sections = [], paperLinks = [], revisionLinks = [];
+            const sourceIntro = page.querySelector('[data-exam-source-intro]');
+            if (sourceIntro) sourceIntro.innerHTML = ui.renderAnswerBlocks(bank.source_intro || []);
             for (const section of bank.sections || []) {
                 revisionLinks.push(`<h3><a href="${esc(path)}#${esc(section.id)}">${esc(section.title)}</a></h3>`);
-                for (const question of section.questions) {
+                for (const question of [...section.questions, ...(section.nav_items || [])]) {
                     revisionLinks.push(`<a href="${esc(path)}#${esc(question.id)}">${esc(question.number)} · ${esc(question.nav_label || question.question)}</a>`);
                 }
-                sections.push(`<section class="exam-paper" id="${esc(section.id)}"><h2>${esc(section.title)}</h2>${section.intro ? `<p>${esc(section.intro)}</p>` : ''}${section.questions.map(item).join('')}</section>`);
+                sections.push(`<section class="exam-paper" id="${esc(section.id)}"><h2>${esc(section.title)}</h2>${section.intro ? `<p>${esc(section.intro)}</p>` : ''}${ui.renderAnswerBlocks(section.blocks || [])}${section.questions.map(item).join('')}${ui.renderAnswerBlocks(section.after_blocks || [])}</section>`);
             }
             for (const paper of bank.papers) {
                 paperLinks.push(`<a href="${esc(path)}#${esc(paper.id)}">${esc(paper.title)} · ${esc(paper.regulation)}</a>`);

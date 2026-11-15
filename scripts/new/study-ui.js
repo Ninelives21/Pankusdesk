@@ -113,17 +113,28 @@ function renderAccordionGroup(config = {}) {
 		</div>`;
 }
 
+function renderInlineRuns(runs, fallback = '') {
+	if (!Array.isArray(runs)) return formatText(fallback);
+	return runs.map(run => {
+		const text = formatText(run.text);
+		if (run.kind === 'code') return `<code>${text}</code>`;
+		if (run.kind === 'strong') return `<strong>${text}</strong>`;
+		if (run.kind === 'em') return `<em>${text}</em>`;
+		return text;
+	}).join('');
+}
+
 function renderAnswerBlocks(blocks = []) {
 	return blocks.map(block => {
-		if (block.type === 'paragraph') return `<p>${formatText(block.text)}</p>`;
+		if (block.type === 'paragraph') return `<p>${renderInlineRuns(block.runs, block.text)}</p>`;
 		if (block.type === 'heading') return `<h4>${escapeHtml(block.text)}</h4>`;
 		if (block.type === 'code') return `${block.label ? `<p><strong>${escapeHtml(block.label)}</strong></p>` : ''}<pre><code>${escapeHtml(block.code)}</code></pre>`;
 		if (block.type === 'list') {
 			const tag = block.ordered === false ? 'ul' : 'ol';
-			return `<${tag} class="study-answer-list">${(block.items || []).map(item => `<li>${item.label ? `<strong>${escapeHtml(item.label)}:</strong> ` : ''}${formatText(item.text)}</li>`).join('')}</${tag}>`;
+			return `<${tag} class="study-answer-list">${(block.items || []).map(item => `<li>${item.label ? `<strong>${escapeHtml(item.label)}:</strong> ` : ''}${renderInlineRuns(item.runs, item.text)}</li>`).join('')}</${tag}>`;
 		}
 		if (block.type === 'table') {
-			return `<div class="study-answer-table"><table>${block.caption ? `<caption>${escapeHtml(block.caption)}</caption>` : ''}<thead><tr>${block.headers.map(header => `<th scope="col">${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${block.rows.map(row => `<tr>${row.map(cell => `<td>${formatText(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+			return `<div class="study-answer-table"><table>${block.caption ? `<caption>${escapeHtml(block.caption)}</caption>` : ''}<thead><tr>${block.headers.map(header => `<th scope="col">${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${block.rows.map((row, index) => `<tr${block.row_ids?.[index] ? ` id="${escapeHtml(block.row_ids[index])}"` : ''}>${row.map(cell => `<td>${formatText(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
 		}
 		if (block.type === 'part') return `<section class="study-solution-part"><h4>${escapeHtml(block.label)}</h4>${renderAnswerBlocks(block.blocks)}</section>`;
 		return '';
@@ -402,6 +413,7 @@ window.PankuStudyUI = {
 	typesetMath,
 	renderFigure,
 	renderAccordionGroup,
+	renderAnswerBlocks,
 	renderExplainer,
 	renderTip,
 	initAccordions,
