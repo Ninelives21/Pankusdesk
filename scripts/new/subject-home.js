@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   if (subject) {
    for (const entry of subject.studyResources || []) {
+    if (extra.visibleStudyResources && !extra.visibleStudyResources.includes(entry.title)) continue;
     const resource = {...subject.practice?.[entry.practiceKey], ...entry};
     if (entry.unitResources) {
      notes.push({...resource, links:`<ul class="subject-resource-links">${entry.unitResources.filter(unit => unit.href).map(unit => `<li><a href="${esc(new URL(unit.href, root))}">Unit ${unit.number} · ${esc(subject.units.find(item => item.number === unit.number)?.title || unit.title || '')}</a>${unit.state ? ` <small>${esc(unit.state)}</small>` : ''}</li>`).join('')}</ul>`});
@@ -44,8 +45,14 @@ document.addEventListener('DOMContentLoaded', async () => {
    const classes = subject.classNotes;
    if (classes?.availableUnits?.length) notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
    const bookQuestions = subject.practice?.unitQuestions;
-   if (bookQuestions?.availableUnits?.length) questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
-   notes.push({title:'Textbook Notes',label:'Textbook reference',description:'Existing textbook-led pages, organised by unit. Publication states are shown as recorded; draft and scaffold pages are still in progress.',links:`<ul class="subject-resource-links" id="subject-unit-grid">${subject.units.map(unit => `<li><a href="${esc(new URL(`unit-${unit.number}.html`,root))}">Unit ${unit.number} · ${esc(unit.title)}</a> <small>${esc(unit.publicationStatus)}</small></li>`).join('')}</ul>`});
+   if (bookQuestions?.availableUnits?.length) {
+    if (extra.textbookQuestionsPage) {
+     questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',href:extra.textbookQuestionsPage,action:'Open textbook questions'});
+    } else {
+     questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
+    }
+   }
+   notes.push({title:'Textbook Notes',label:'Textbook reference',description:'Existing textbook-led pages, organised by unit. Publication states are shown as recorded; draft and scaffold pages are still in progress.',links:`<ul class="subject-resource-links" id="subject-unit-grid">${subject.units.filter(unit => !extra.textbookNoteUnits || extra.textbookNoteUnits.includes(unit.number)).map(unit => `<li><a href="${esc(new URL(`unit-${unit.number}.html`,root))}">Unit ${unit.number} · ${esc(unit.title)}</a> <small>${esc(unit.publicationStatus)}</small></li>`).join('')}</ul>`});
   }
   for (const [key,resources] of [['questions',questions],['notes',notes]]) {
    page.querySelector(`[data-${key}]`).innerHTML = resources.length ? resources.map(resource => card(resource,root)).join('') : `<p class="subject-empty">No ${key} have been added for this subject yet.</p>`;
