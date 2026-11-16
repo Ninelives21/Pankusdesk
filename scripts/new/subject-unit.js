@@ -6,7 +6,8 @@ async function initSubjectUnitPage() {
 	const page = document.querySelector('.subject-unit-page');
 	if (!page) return;
 
-	const unitNumber = Number(page.dataset.unit);
+	const unitNumber = Number((page.dataset.unitNavigation === 'true' && new URLSearchParams(location.search).get('unit')) || page.dataset.unit);
+	page.dataset.unit = String(unitNumber);
 	const subjectJsonUrl = page.dataset.subjectJson;
 
 	try {
@@ -135,7 +136,8 @@ function renderScaffold(context) {
 		${plannedTopicNav.length ? `
 			<div class="unit-layout section">
 				<aside class="unit-toc" aria-label="Unit ${escapeHtml(unitLabel)} planned topic navigation">
-					<div class="toc-label">On this page</div>
+					${context.page.dataset.unitNavigation === 'true' ? window.PankuUnitResourceNav.renderUnitSelector({subject:context.subject,unitNumber:context.unitMeta.number,availableUnits:context.page.dataset.noteUnits.split(',').map(Number)}) : ''}
+				<div class="toc-label">On this page</div>
 					<nav>${plannedTopicNav.map(topic => `
 						<a class="unit-toc-link is-dummy" href="#" aria-disabled="true" tabindex="-1">
 							<span class="toc-index">${escapeHtml(topic.number)}</span>
@@ -161,6 +163,7 @@ function renderReadyUnit(context, unitTopics, sourceCollections) {
 		${renderSyllabusBoundary(context)}
 		<div class="unit-layout section">
 			<aside class="unit-toc" aria-label="Unit ${escapeHtml(context.unitLabel)} topic navigation">
+				${context.page.dataset.unitNavigation === 'true' ? window.PankuUnitResourceNav.renderUnitSelector({subject:context.subject,unitNumber:context.unitMeta.number,availableUnits:context.page.dataset.noteUnits.split(',').map(Number)}) : ''}
 				<div class="toc-label">On this page</div>
 				<nav id="unit-topic-nav"></nav>
 				${renderPracticeNav(context)}

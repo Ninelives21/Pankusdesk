@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
    }
    const classes = subject.classNotes;
-   if (classes?.availableUnits?.length && !extra.noteUnitCards) notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
-   if (extra.noteUnitCards && classes?.availableUnits?.length) {
-    notes.push(...classes.availableUnits.map(number => ({title:`Unit ${number} · ${classes.label}`,description:subject.units.find(unit => Number(unit.number) === Number(number))?.title || classes.description,label:'Class notes',href:classes.hrefPattern.replace('{unit}',number),action:'Open class notes'})));
+   if (classes?.availableUnits?.length) {
+    if (extra.classNotesPage) notes.push({title:classes.label,description:classes.description,label:'Class notes',href:extra.classNotesPage,action:'Open class notes'});
+    else notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
    }
    const bookQuestions = subject.practice?.unitQuestions;
    if (bookQuestions?.availableUnits?.length) {
@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', async () => {
      questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
     }
    }
-   if (extra.noteUnitCards) {
-    page.classList.add('subject-home--note-cards');
-    notes.push(...subject.units.filter(unit => !extra.textbookNoteUnits || extra.textbookNoteUnits.includes(unit.number)).map(unit => ({title:`Unit ${unit.number} · Textbook Notes`,description:unit.title,label:'Textbook reference',href:`unit-${unit.number}.html`,action:'Open textbook notes'})));
+   if (extra.noteUnitCards) page.classList.add('subject-home--note-cards');
+   if (extra.textbookNotesPage) {
+    notes.push({title:'Textbook Notes',description:'Existing textbook-led notes, organised by unit.',label:'Textbook reference',href:extra.textbookNotesPage,action:'Open textbook notes'});
    } else {
    notes.push({title:'Textbook Notes',label:'Textbook reference',description:'Existing textbook-led pages, organised by unit. Publication states are shown as recorded; draft and scaffold pages are still in progress.',links:`<ul class="subject-resource-links" id="subject-unit-grid">${subject.units.filter(unit => !extra.textbookNoteUnits || extra.textbookNoteUnits.includes(unit.number)).map(unit => `<li><a href="${esc(new URL(`unit-${unit.number}.html`,root))}">Unit ${unit.number} · ${esc(unit.title)}</a> <small>${esc(unit.publicationStatus)}</small></li>`).join('')}</ul>`});
    }

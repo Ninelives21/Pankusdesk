@@ -68,6 +68,8 @@ assert not any(ord(ch) < 32 and ch not in '\n\r\t' for ch in serialized)
 index = json.loads((SUBJECT / 'index-resources.json').read_text())
 assert index['noteUnitCards'] and index['notes'][0]['href'] == 'unit-4-supplied-notes.html'
 assert (SUBJECT / index['notes'][0]['href']).is_file()
+for key in ['classNotesPage', 'textbookNotesPage']:
+    assert (SUBJECT / index[key]).is_file()
 print('MAC SUPPLIED NOTES VERIFY: PASS')
 print(' - JSON schema, source manifest and existing topic links')
 print(' - all 66 PDF pages, 7 sections, 55 questions/examples, 28 amber checks')

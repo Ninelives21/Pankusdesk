@@ -8,7 +8,8 @@ async function initUnitClassNotes() {
 	if (!page) return;
 
 	try {
-		const unitNumber = Number(page.dataset.unit);
+		const unitNumber = Number((page.dataset.unitNavigation === 'true' && new URLSearchParams(location.search).get('unit')) || page.dataset.unit);
+		page.dataset.unit = String(unitNumber);
 		const subjectUrl = new URL(page.dataset.subjectJson, document.baseURI);
 		const subject = await fetchJson(subjectUrl.href);
 		const unitMeta = (subject.units || []).find(unit => Number(unit.number) === unitNumber);
@@ -94,6 +95,7 @@ function renderPage(page, subject, subjectUrl, unitMeta, entries) {
 
 		<div class="class-notes-layout section">
 			<aside class="class-notes-toc" aria-label="Class-note lessons and dates">
+				${page.dataset.unitNavigation === 'true' ? window.PankuUnitResourceNav.renderUnitSelector({subject,unitNumber,availableUnits:subject.classNotes.availableUnits}) : ''}
 				<div class="toc-label">${entries.some(({entry}) => !entry.date) ? 'Lessons and dates' : 'By date'}</div>
 				<nav id="class-notes-date-nav">
 					${entries.map(({ source, entry }) => `

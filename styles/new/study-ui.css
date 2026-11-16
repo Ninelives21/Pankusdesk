@@ -330,13 +330,18 @@
 .study-solution-part:nth-of-type(even){background:var(--notes-soft)}
 .study-solution-part h4{margin:0 0 10px}
 .study-accordion { min-width: 0; grid-template-columns: minmax(0, 1fr); }
-.study-accordion-item mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.study-accordion-item mjx-container[display="true"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 .study-example-summary-copy,
 .study-example-question { grid-template-columns: minmax(0, 1fr); }
-.subject-unit-page mjx-container,
-.unit-class-notes-page mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
-.subject-unit-page mjx-container:not([display="true"]),
-.unit-class-notes-page mjx-container:not([display="true"]) { display: inline-block; }
+.subject-unit-page mjx-container[display="true"],
+.unit-class-notes-page mjx-container[display="true"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+/* Inline mathematics belongs in the text flow, without an individual scroller.
+   Only its containing line scrolls if a formula genuinely exceeds the column. */
+.study-example-question > span,
+.study-mismatch-note-text { min-width: 0; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+
+/* Only inline expressions wider than their reading column get a scroller. */
+mjx-container.study-wide-math { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 
 /* MathJax gives aligned displays an inline min-width. Keep the outer box
    within the study column so its existing horizontal scroller can work. */
@@ -355,3 +360,11 @@
 .study-source-completeness { margin-top: 1rem; padding: .8rem 1rem; border-left: 3px solid var(--line); background: var(--surface-subtle); color: var(--text-secondary); }
 
 .study-source-result { padding: .65rem .85rem; border-left: 3px solid var(--primary); background: var(--primary-soft); }
+
+.study-unit-selector { margin-bottom: 1.25rem; }
+.study-unit-selector summary { font-weight: 750; cursor: pointer; }
+.study-unit-selector nav { display: grid; gap: .6rem; margin-top: .8rem; }
+.study-unit-selector a { display: block; line-height: 1.4; }
+.study-unit-selector a[aria-current="page"] { font-weight: 800; color: var(--primary); }
+
+.subject-notes-collection .back-to-top-control.is-in-sidebar { position: sticky; top: 0; right: auto; bottom: auto; width: 100%; transform: none; opacity: 1; pointer-events: auto; }

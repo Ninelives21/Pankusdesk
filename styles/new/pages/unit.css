@@ -1919,3 +1919,7 @@ sub {
 /* Let wide equations scroll within the topic instead of expanding its grid track. */
 .topic-note { min-width: 0; }
 .note-section { min-width: 0; }
+
+@media (max-width: 720px) {
+ .practice-box .practice-item:is(a) { grid-template-columns: minmax(0, 1fr); }
+}
