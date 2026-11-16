@@ -44,7 +44,16 @@ document.addEventListener('DOMContentLoaded', async () => {
    const classes = subject.classNotes;
    if (classes?.availableUnits?.length) notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
    const bookQuestions = subject.practice?.unitQuestions;
-   if (bookQuestions?.availableUnits?.length) questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
+   if (bookQuestions?.availableUnits?.length) {
+    if (page.dataset.questionUnitCards === 'true') {
+     questions.unshift(...bookQuestions.availableUnits.map(number => {
+      const unit = subject.units.find(item => Number(item.number) === Number(number));
+      return {title:`Unit ${number} · Question Bank`,description:unit?.title || bookQuestions.description,label:'Textbook practice',href:bookQuestions.hrefPattern.replace('{unit}', number),action:'Open textbook questions'};
+     }));
+    } else {
+     questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
+    }
+   }
    notes.push({title:'Textbook Notes',label:'Textbook reference',description:'Existing textbook-led pages, organised by unit. Publication states are shown as recorded; draft and scaffold pages are still in progress.',links:`<ul class="subject-resource-links" id="subject-unit-grid">${subject.units.map(unit => `<li><a href="${esc(new URL(`unit-${unit.number}.html`,root))}">Unit ${unit.number} · ${esc(unit.title)}</a> <small>${esc(unit.publicationStatus)}</small></li>`).join('')}</ul>`});
   }
   for (const [key,resources] of [['questions',questions],['notes',notes]]) {
