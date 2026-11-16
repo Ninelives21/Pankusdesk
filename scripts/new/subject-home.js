@@ -43,7 +43,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
    }
    const classes = subject.classNotes;
-   if (classes?.availableUnits?.length) notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
+   if (classes?.availableUnits?.length && !extra.noteUnitCards) notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
+   if (extra.noteUnitCards && classes?.availableUnits?.length) {
+    notes.push(...classes.availableUnits.map(number => ({title:`Unit ${number} · ${classes.label}`,description:subject.units.find(unit => Number(unit.number) === Number(number))?.title || classes.description,label:'Class notes',href:classes.hrefPattern.replace('{unit}',number),action:'Open class notes'})));
+   }
    const bookQuestions = subject.practice?.unitQuestions;
    if (bookQuestions?.availableUnits?.length) {
     if (extra.textbookQuestionsPage) {
@@ -52,13 +55,18 @@ document.addEventListener('DOMContentLoaded', async () => {
      questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
     }
    }
+   if (extra.noteUnitCards) {
+    page.classList.add('subject-home--note-cards');
+    notes.push(...subject.units.filter(unit => !extra.textbookNoteUnits || extra.textbookNoteUnits.includes(unit.number)).map(unit => ({title:`Unit ${unit.number} · Textbook Notes`,description:unit.title,label:'Textbook reference',href:`unit-${unit.number}.html`,action:'Open textbook notes'})));
+   } else {
    notes.push({title:'Textbook Notes',label:'Textbook reference',description:'Existing textbook-led pages, organised by unit. Publication states are shown as recorded; draft and scaffold pages are still in progress.',links:`<ul class="subject-resource-links" id="subject-unit-grid">${subject.units.filter(unit => !extra.textbookNoteUnits || extra.textbookNoteUnits.includes(unit.number)).map(unit => `<li><a href="${esc(new URL(`unit-${unit.number}.html`,root))}">Unit ${unit.number} · ${esc(unit.title)}</a> <small>${esc(unit.publicationStatus)}</small></li>`).join('')}</ul>`});
+   }
   }
   for (const [key,resources] of [['questions',questions],['notes',notes]]) {
    page.querySelector(`[data-${key}]`).innerHTML = resources.length ? resources.map(resource => card(resource,root)).join('') : `<p class="subject-empty">No ${key} have been added for this subject yet.</p>`;
   }
   page.dataset.homeReady = 'true';
-  const aliases = {'school-guidance-title':'questions','textbook-study':'subject-unit-grid'};
+  const aliases = {'school-guidance-title':'questions','textbook-study':extra.noteUnitCards ? 'notes' : 'subject-unit-grid','subject-unit-grid':extra.noteUnitCards ? 'notes' : 'subject-unit-grid'};
   const hash = decodeURIComponent(location.hash.slice(1));
   document.getElementById(aliases[hash] || hash)?.scrollIntoView();
  } catch (error) {

@@ -1,0 +1,2650 @@
+{
+  "schema_version": 1,
+  "id": "unit-4-supplied-notebook",
+  "date_status": "undated",
+  "date_label": "Supplied notebook packet",
+  "source_id": "MAC-U4-SUPPLIED-MATHS-NOTES",
+  "subject": {
+    "code": "25BS1MT101",
+    "name": "Matrices and Calculus",
+    "shortName": "MAC"
+  },
+  "unit": {
+    "number": 4,
+    "title": "Partial Differentiation and Its Applications"
+  },
+  "title": "Unit IV Notes — Functions of Several Variables",
+  "summary": "Partial differentiation, total derivatives, homogeneous functions, Jacobians, Taylor expansions, maxima and minima, and Lagrange multipliers.",
+  "transcription_policy": "Uncancelled source wording and mathematical working are retained, including incorrect lines and unfinished work. Typeset mathematical notation replaces handwriting; added headings and discrepancy notes are editorial. Clearly cancelled false starts are described in the source audit rather than presented as live working. No missing steps or final answers are completed. Original date labels are retained as written, without assigning this packet a modern calendar date. This supplied packet is separate from the textbook and existing class notes.",
+  "source_captures": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66
+  ],
+  "mapped_topics": [
+    {
+      "topic_id": "u4-partial-differentiation",
+      "label": "Partial Differentiation and Its Applications",
+      "href": "college/1-1/matrices-calculus/unit-4.html"
+    }
+  ],
+  "source": {
+    "filename": "Maths - unit 4.pdf",
+    "sha256": "0ab665ab4ccf0e7fd344956b25a192f6179b5598562edaf48876dd8f098cca95",
+    "bytes": 16665505,
+    "page_count": 66,
+    "publication": "HTML transcription only; original PDF and notebook images are not committed."
+  },
+  "pages": [
+    {
+      "page": 1,
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "id": "partial-differentiation",
+      "heading": "Partial Differentiation",
+      "blocks": [
+        {
+          "type": "subheading",
+          "id": "functions-of-two-variables",
+          "text": "Function of two variables"
+        },
+        {
+          "type": "paragraph",
+          "text": "UNIT IV: FUNCTIONS OF SEVERAL VARIABLES"
+        },
+        {
+          "type": "paragraph",
+          "text": "If for all \\(x,y\\) a unique value \\(f(x,y)\\) is associated then \\(f\\) is said to be a function of two independent variables \\(x\\) & \\(y\\). It is denoted with"
+        },
+        {
+          "type": "equation",
+          "text": "\\[z=f(x,y)\\]"
+        },
+        {
+          "type": "subheading",
+          "id": "partial-derivative-definition",
+          "text": "Partial derivative"
+        },
+        {
+          "type": "paragraph",
+          "text": "A partial derivative of a function of several variables is the ordinary derivative w.r.t one of the variable when all the remaining variables are kept constant."
+        },
+        {
+          "type": "paragraph",
+          "text": "The partial derivation of the function \\(v=f(x,y)\\) is the ordinary derivative w.r.t \\(x\\) when \\(y\\) is kept constant. It is denoted with \\(\\dfrac{\\partial v}{\\partial x}\\) (or) \\(v_x\\) and is defined as"
+        },
+        {
+          "type": "equation",
+          "text": "\\[v_x=\\dfrac{\\partial v}{\\partial x}=\\lim_{\\Delta x\\to0}\\dfrac{v(x+\\Delta x,y)-v(x,y)}{\\Delta x}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Similarly"
+        },
+        {
+          "type": "equation",
+          "text": "\\[v_y=\\dfrac{\\partial v}{\\partial y}=\\lim_{\\Delta y\\to0}\\dfrac{v(x,y+\\Delta y)-v(x,y)}{\\Delta y}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The above partial derivatives are called first order derivatives."
+        },
+        {
+          "type": "subheading",
+          "id": "second-and-mixed-partials",
+          "text": "Second order and mixed partial derivatives"
+        },
+        {
+          "type": "paragraph",
+          "text": "The second order partial derivatives can be written as"
+        },
+        {
+          "type": "equation",
+          "text": "\\[v_{xx}=\\dfrac{\\partial^2v}{\\partial x^2}=\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{\\partial v}{\\partial x}\\right)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[v_{yy}=\\dfrac{\\partial^2v}{\\partial y^2}=\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{\\partial v}{\\partial y}\\right)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[v_{xy}=\\dfrac{\\partial^2v}{\\partial x\\partial y}=\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{\\partial v}{\\partial y}\\right)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[v_{yx}=\\dfrac{\\partial^2v}{\\partial y\\partial x}=\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{\\partial v}{\\partial x}\\right)\\]"
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "pd-polynomial",
+              "title": "First & second order partial derivatives — polynomial",
+              "source_pages": [
+                2
+              ],
+              "question_paragraphs": [
+                "Q. Find the first & second order partial derivatives of the function \\(x^3+y^3-3axy\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Let \\(f(x,y)=x^3+y^3-3axy\\)",
+                "Ist order:",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial}{\\partial x}(x^3+y^3-3axy)=3x^2-3ay\\]",
+                "\\[\\dfrac{\\partial f}{\\partial y}=\\dfrac{\\partial}{\\partial y}(x^3+y^3-3axy)=3y^2-3ax\\]",
+                "IInd order:",
+                "\\[\\dfrac{\\partial^2f}{\\partial x^2}=\\dfrac{\\partial}{\\partial x}(3x^2-3ay)=6x\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial y^2}=\\dfrac{\\partial}{\\partial y}(3y^2-3ax)=6y\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial x\\partial y}=\\dfrac{\\partial}{\\partial x}(3y^2-3ax)=-3a\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial y\\partial x}=\\dfrac{\\partial}{\\partial y}(3x^2-3ay)=-3a\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "pd-logarithm",
+              "title": "First & second order P.D — logarithm",
+              "source_pages": [
+                3
+              ],
+              "question_paragraphs": [
+                "Q. If \\(f(x,y)=\\log(x^2+y^2)\\) then find 1st & 2nd order P.D."
+              ],
+              "paragraphs": [
+                "Sol:- \\(f(x,y)=\\log(x^2+y^2)\\)",
+                "1st order:",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial}{\\partial x}[\\log(x^2+y^2)]=\\dfrac{1}{x^2+y^2}\\dfrac{\\partial}{\\partial x}(x^2+y^2)=\\dfrac{2x}{x^2+y^2}\\]",
+                "\\[\\dfrac{\\partial f}{\\partial y}=\\dfrac{\\partial}{\\partial y}[\\log(x^2+y^2)]=\\dfrac{1}{x^2+y^2}\\dfrac{\\partial}{\\partial y}(x^2+y^2)=\\dfrac{2y}{x^2+y^2}\\]",
+                "2nd order:",
+                "\\[\\dfrac{\\partial^2f}{\\partial x^2}=\\dfrac{\\partial}{\\partial x}\\left[\\dfrac{2x}{x^2+y^2}\\right]=\\dfrac{(x^2+y^2)\\dfrac{\\partial}{\\partial x}(2x)-(2x)\\dfrac{\\partial}{\\partial x}(x^2+y^2)}{(x^2+y^2)^2}\\]",
+                "\\[=\\dfrac{(x^2+y^2)(2)-(2x)(2x)}{(x^2+y^2)^2}=\\dfrac{2(y^2-x^2)}{(x^2+y^2)^2}\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial y^2}=\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{2y}{x^2+y^2}\\right)=\\dfrac{(x^2+y^2)(2)-(2y)(2y)}{(x^2+y^2)^2}=\\dfrac{2(x^2-y^2)}{(x^2+y^2)^2}\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial x\\partial y}=\\dfrac{\\partial}{\\partial x}\\left[\\dfrac{2y}{x^2+y^2}\\right]=\\dfrac{(x^2+y^2)(0)-(2y)(2x)}{(x^2+y^2)^2}=\\dfrac{-4xy}{(x^2+y^2)^2}\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial y\\partial x}=\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{2x}{x^2+y^2}\\right)=\\dfrac{(x^2+y^2)(0)-(2x)(2y)}{(x^2+y^2)^2}=\\dfrac{-4xy}{(x^2+y^2)^2}\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "pd-inverse-tangent",
+              "title": "First & second order P.D — inverse tangent",
+              "source_pages": [
+                4,
+                5
+              ],
+              "question_paragraphs": [
+                "Q. If \\(f(x,y)=\\tan^{-1}\\left(\\dfrac{x}{y}\\right)\\) find 1st & 2nd order P.D."
+              ],
+              "paragraphs": [
+                "Sol:- \\(f(x,y)=\\tan^{-1}\\left(\\dfrac{x}{y}\\right)\\)",
+                "1st order:",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial}{\\partial x}\\left[\\tan^{-1}\\left(\\dfrac{x}{y}\\right)\\right]=\\left[\\dfrac{1}{1+(x/y)^2}\\right]\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{x}{y}\\right)\\]",
+                "\\[=\\dfrac{1}{1+(x/y)^2}\\times\\dfrac{1}{y}=\\left(\\dfrac{y^2}{x^2+y^2}\\right)\\dfrac{1}{y}\\]",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{y}{x^2+y^2}\\]",
+                "\\[\\dfrac{\\partial f}{\\partial y}=\\dfrac{\\partial}{\\partial y}\\left[\\tan^{-1}\\left(\\dfrac{x}{y}\\right)\\right]=\\left[\\dfrac{1}{1+(x/y)^2}\\right]\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{x}{y}\\right)=\\left(\\dfrac{1}{1+(x/y)^2}\\right)\\left(\\dfrac{-1}{y^2}\\right)\\]",
+                "\\[\\dfrac{\\partial f}{\\partial y}=\\left(\\dfrac{y^2}{x^2+y^2}\\right)\\left(\\dfrac{-1}{y^2}\\right)=\\dfrac{-1}{x^2+y^2}\\]",
+                "2nd order:",
+                "\\[\\dfrac{\\partial^2f}{\\partial x^2}=\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{y}{x^2+y^2}\\right)=\\dfrac{-y}{(x^2+y^2)^2}\\dfrac{\\partial}{\\partial x}(x^2+y^2)=\\dfrac{-2xy}{(x^2+y^2)^2}\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial y^2}=\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{-1}{x^2+y^2}\\right)=\\left(\\dfrac{1}{(x^2+y^2)^2}\\right)\\dfrac{\\partial}{\\partial x}(x^2+y^2)=\\dfrac{2y}{(x^2+y^2)^2}\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial x\\partial y}=\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{-1}{x^2+y^2}\\right)=\\dfrac{1}{(x^2+y^2)^2}(2x)=\\dfrac{2x}{(x^2+y^2)^2}\\]",
+                "\\[\\dfrac{\\partial^2f}{\\partial y\\partial x}=\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{y}{x^2+y^2}\\right)=\\dfrac{-y}{(x^2+y^2)^2}(2y)=\\dfrac{-2y^2}{(x^2+y^2)^2}\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source writes \\(f_y=-1/(x^2+y^2)\\), omitting the factor \\(x\\), and uses inconsistent differentiation variables. Direct differentiation gives \\(f_y=-x/(x^2+y^2)\\), \\(f_{yy}=2xy/(x^2+y^2)^2\\), and \\(f_{xy}=f_{yx}=(x^2-y^2)/(x^2+y^2)^2\\). The notebook lines above are retained unchanged."
+              },
+              "source_result_indices": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "pd-log-operator",
+              "title": "Differential-operator identity",
+              "source_pages": [
+                5,
+                6
+              ],
+              "question_paragraphs": [
+                "21/02/23 — Q. If \\(U=\\log(x^3+y^3+z^3-3xyz)\\) then Prove that \\[\\left(\\dfrac{\\partial}{\\partial x}+\\dfrac{\\partial}{\\partial y}+\\dfrac{\\partial}{\\partial z}\\right)^2U=\\dfrac{-9}{(x+y+z)^2}\\]"
+              ],
+              "paragraphs": [
+                "Sol:- L.H.S",
+                "\\[\\Rightarrow\\left(\\dfrac{\\partial}{\\partial x}+\\dfrac{\\partial}{\\partial y}+\\dfrac{\\partial}{\\partial z}\\right)\\left[\\dfrac{\\partial}{\\partial x}+\\dfrac{\\partial}{\\partial y}+\\dfrac{\\partial}{\\partial z}\\right]U\\]",
+                "\\[=\\left(\\dfrac{\\partial}{\\partial x}+\\dfrac{\\partial}{\\partial y}+\\dfrac{\\partial}{\\partial z}\\right)\\left[\\dfrac{\\partial U}{\\partial x}+\\dfrac{\\partial U}{\\partial y}+\\dfrac{\\partial U}{\\partial z}\\right]\\quad\\to(1)\\]",
+                "\\[\\dfrac{\\partial U}{\\partial x}=\\dfrac{\\partial}{\\partial x}[\\log(x^3+y^3+z^3-3xyz)]\\]",
+                "\\[=\\dfrac{1}{x^3+y^3+z^3-3xyz}\\dfrac{\\partial}{\\partial x}(x^3+y^3+z^3-3xyz)\\]",
+                "\\[\\dfrac{\\partial U}{\\partial x}=\\dfrac{3(x^2-yz)}{x^3+y^3+z^3-3xyz},\\quad\\dfrac{\\partial U}{\\partial y}=\\dfrac{3(y^2-xz)}{x^3+y^3+z^3-3xyz},\\quad\\dfrac{\\partial U}{\\partial z}=\\dfrac{3(z^2-xy)}{x^3+y^3+z^3-3xyz}\\]",
+                "\\[\\dfrac{\\partial U}{\\partial x}+\\dfrac{\\partial U}{\\partial y}+\\dfrac{\\partial U}{\\partial z}=\\dfrac{3[x^2+y^2+z^2-xy-yz-zx]}{x^3+y^3+z^3-3xyz}\\]",
+                "\\[=\\dfrac{3(x^2+y^2+z^2-xy-yz-zx)}{(x+y+z)(x^2+y^2+z^2-xy-yz-zx)}=\\dfrac{3}{x+y+z}\\]",
+                "let \\(\\dfrac{\\partial U}{\\partial x}+\\dfrac{\\partial U}{\\partial y}+\\dfrac{\\partial U}{\\partial z}=\\dfrac{3}{x+y+z}=f\\)",
+                "\\[(1)\\Rightarrow\\left(\\dfrac{\\partial}{\\partial x}+\\dfrac{\\partial}{\\partial y}+\\dfrac{\\partial}{\\partial z}\\right)f=\\dfrac{\\partial f}{\\partial x}+\\dfrac{\\partial f}{\\partial y}+\\dfrac{\\partial f}{\\partial z}\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial}{\\partial x}\\left[\\dfrac{3}{x+y+z}\\right]=\\dfrac{-3}{(x+y+z)^2}\\]",
+                "\\[\\dfrac{\\partial f}{\\partial y}=\\dfrac{-3}{(x+y+z)^2},\\qquad\\dfrac{\\partial f}{\\partial z}=\\dfrac{-3}{(x+y+z)^2}\\]",
+                "\\[(2)\\Rightarrow\\dfrac{\\partial f}{\\partial x}+\\dfrac{\\partial f}{\\partial y}+\\dfrac{\\partial f}{\\partial z}=\\dfrac{-3-3-3}{(x+y+z)^2}=\\dfrac{-9}{(x+y+z)^2}\\]",
+                "∴ L.H.S = R.H.S",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "pd-reciprocal-radius",
+              "title": "Laplace equation — reciprocal radius",
+              "source_pages": [
+                6,
+                7
+              ],
+              "question_paragraphs": [
+                "Q. If the function \\(V=(x^2+y^2+z^2)^{-1/2}\\) P.T \\(V_{xx}+V_{yy}+V_{zz}=0\\)."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[\\dfrac{\\partial V}{\\partial x}=\\dfrac{\\partial}{\\partial x}(x^2+y^2+z^2)^{-1/2}=-\\dfrac{1}{2}(x^2+y^2+z^2)^{-1/2-1}(2x)\\]",
+                "\\[\\dfrac{\\partial V}{\\partial x}=-x(x^2+y^2+z^2)^{-3/2}\\]",
+                "\\[\\dfrac{\\partial V}{\\partial y}=-y(x^2+y^2+z^2)^{-3/2},\\quad\\dfrac{\\partial V}{\\partial z}=-z(x^2+y^2+z^2)^{-3/2}\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial x^2}=\\dfrac{\\partial}{\\partial x}[-x(x^2+y^2+z^2)^{-3/2}]\\]",
+                "\\[=-x\\left(-\\dfrac{3}{2}\\right)[x^2+y^2+z^2]^{-3/2-1}(2x)+(x^2+y^2+z^2)^{-3/2}(-1)\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial x^2}=3x^2(x^2+y^2+z^2)^{-5/2}-(x^2+y^2+z^2)^{-3/2}\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial y^2}=3y^2(x^2+y^2+z^2)^{-5/2}-(x^2+y^2+z^2)^{-3/2}\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial z^2}=3z^2(x^2+y^2+z^2)^{-5/2}-(x^2+y^2+z^2)^{-3/2}\\]",
+                "\\[V_{xx}+V_{yy}+V_{zz}\\]",
+                "\\[=3x^2(x^2+y^2+z^2)^{-5/2}-(x^2+y^2+z^2)^{-3/2}+3y^2(x^2+y^2+z^2)^{-5/2}-(x^2+y^2+z^2)^{-3/2}+3z^2(x^2+y^2+z^2)^{-5/2}-(x^2+y^2+z^2)^{-3/2}\\]",
+                "\\[=3[x^2+y^2+z^2]^{-5/2}[x^2+y^2+z^2]-3(x^2+y^2+z^2)^{-3/2}\\]",
+                "\\[=3(x^2+y^2+z^2)^{-3/2}-3(x^2+y^2+z^2)^{-3/2}=0\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "pd-trig-hyperbolic",
+              "title": "Laplace equation — trigonometric/hyperbolic function",
+              "source_pages": [
+                7,
+                8
+              ],
+              "question_paragraphs": [
+                "Q. If \\(V=\\cos3x\\cos4y\\sinh5z\\) then Prove that \\(V_{xx}+V_{yy}+V_{zz}=0\\)."
+              ],
+              "paragraphs": [
+                "Sol:- \\(V=\\cos3x\\cos4y\\sinh5z\\)",
+                "\\[\\dfrac{\\partial V}{\\partial x}=\\dfrac{\\partial}{\\partial x}(\\cos3x\\cos4y\\sinh5z)\\]",
+                "\\[\\dfrac{\\partial V}{\\partial x}=(-3\\sin3x)\\cos4y\\sinh5z\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial x^2}=\\dfrac{\\partial}{\\partial x}(-3\\sin3x\\cos4y\\sinh5z)\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial x^2}=-9\\cos3x\\cos4y\\sinh5z\\]",
+                "\\[\\dfrac{\\partial V}{\\partial y}=\\dfrac{\\partial}{\\partial y}(\\cos3x\\cos4y\\sinh5z)\\]",
+                "\\[\\dfrac{\\partial V}{\\partial y}=-4\\cos3x\\sin4y\\sinh5z\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial y^2}=\\dfrac{\\partial}{\\partial y}(-4\\cos3x\\sin4y\\sinh5z)\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial y^2}=-16\\cos3x\\cos4y\\sinh5z\\]",
+                "\\[\\dfrac{\\partial V}{\\partial z}=\\dfrac{\\partial}{\\partial z}(\\cos3x\\cos4y\\sinh5z)\\]",
+                "\\[\\dfrac{\\partial V}{\\partial z}=5\\cos3x\\cos4y\\cosh5z\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial z^2}=\\dfrac{\\partial}{\\partial z}(5\\cos3x\\cos4y\\cosh5z)\\]",
+                "\\[\\dfrac{\\partial^2V}{\\partial z^2}=25\\cos3x\\cos4y\\sinh5z\\]",
+                "\\[\\Rightarrow\\dfrac{\\partial^2V}{\\partial x^2}+\\dfrac{\\partial^2V}{\\partial y^2}+\\dfrac{\\partial^2V}{\\partial z^2}\\]",
+                "\\[=-9\\cos3x\\cos4y\\sinh5z-16\\cos3x\\cos4y\\sinh5z+25\\cos3x\\cos4y\\sinh5z=0\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "pd-product-sine",
+              "title": "First and second derivatives — product with sine",
+              "source_pages": [
+                8,
+                9
+              ],
+              "question_paragraphs": [
+                "Q. If \\(z=x^2y-x\\sin(xy)\\) then find 1st and 2nd derivatives."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[\\dfrac{\\partial z}{\\partial x}=\\dfrac{\\partial}{\\partial x}(x^2y-x\\sin(xy))=2xy-xy\\cos(xy)-\\sin(xy)\\]",
+                "\\[\\dfrac{\\partial z}{\\partial x}=xy[2-\\cos(xy)]-\\sin(xy)\\]",
+                "\\[\\dfrac{\\partial^2z}{\\partial x^2}=\\dfrac{\\partial}{\\partial x}[2xy-xy\\cos(xy)-\\sin(xy)]\\]",
+                "\\[=2y+xy^2\\sin(xy)-y\\cos(xy)-y\\cos(xy)\\]",
+                "\\[\\dfrac{\\partial^2z}{\\partial x^2}=2y[1-\\cos(xy)]+xy^2\\sin(xy)\\]",
+                "\\[\\dfrac{\\partial z}{\\partial y}=\\dfrac{\\partial}{\\partial y}[x^2y-x\\sin(xy)]=x^2(1-\\cos(xy))\\]",
+                "\\[\\dfrac{\\partial^2z}{\\partial y^2}=x^3\\sin(xy)\\]",
+                "\\[\\dfrac{\\partial z}{\\partial x\\partial y}=\\dfrac{\\partial}{\\partial x}(x^2-x^2\\cos(xy))=2x+x^2y\\sin(xy)-2x\\cos(xy)\\]",
+                "\\[\\dfrac{\\partial z}{\\partial x\\partial y}=2x[1-\\cos(xy)]+x^2y\\sin(xy)\\]",
+                "\\[\\dfrac{\\partial^2z}{\\partial y\\partial x}=\\dfrac{\\partial}{\\partial y}[2xy-xy\\cos(xy)-\\sin(xy)]\\]",
+                "\\[=2x+xy^2\\sin(xy)-x\\cos(xy)-x\\cos(xy)\\]",
+                "\\[=2x+xy^2\\sin(xy)-2x\\cos(xy)\\]",
+                "\\[\\dfrac{\\partial z}{\\partial y\\partial x}=xy^2\\sin(xy)-2x[1-\\cos(xy)]\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source changes \\(x^2y\\sin(xy)\\) to \\(xy^2\\sin(xy)\\) in the \\(y\\)-derivative working and changes the sign of \\(2x[1-\\cos(xy)]\\) in the last line. For this smooth function both mixed derivatives equal \\(2x[1-\\cos(xy)]+x^2y\\sin(xy)\\). Some second-derivative labels also omit the superscript 2. All source lines are retained."
+              },
+              "source_result_indices": [
+                13
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "source_pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "id": "total-derivatives-chain-rule",
+      "heading": "Total Derivatives and the Chain Rule",
+      "blocks": [
+        {
+          "type": "subheading",
+          "id": "total-derivative",
+          "text": "Total Derivative (or) Total differential coefficient"
+        },
+        {
+          "type": "paragraph",
+          "text": "23/01/23"
+        },
+        {
+          "type": "paragraph",
+          "text": "Let \\(z=\\phi(x,y)\\) be a function of 2 variables where \\(x=f(t),\\ y=g(t)\\) then"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{\\partial z}{\\partial t}=\\dfrac{\\partial z}{\\partial x}\\dfrac{dx}{dt}+\\dfrac{\\partial z}{\\partial y}\\dfrac{dy}{dt}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "is called the total derivative of the function \\(z=\\phi(x,y)\\)"
+        },
+        {
+          "type": "paragraph",
+          "text": "we can write \\(dz=\\dfrac{\\partial z}{\\partial x}dx+\\dfrac{\\partial z}{\\partial y}dy\\) this is called total differential coefficient."
+        },
+        {
+          "type": "subheading",
+          "id": "chain-rule",
+          "text": "The chain rule of partial differentiation"
+        },
+        {
+          "type": "paragraph",
+          "text": "If \\(z=\\phi(u,v)\\) where \\(u=f(x,y),\\ v=g(x,y)\\) then"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{i)}\\quad\\dfrac{\\partial z}{\\partial x}=\\dfrac{\\partial z}{\\partial u}\\dfrac{\\partial u}{\\partial x}+\\dfrac{\\partial z}{\\partial v}\\dfrac{\\partial v}{\\partial x}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\text{ii)}\\quad\\dfrac{\\partial z}{\\partial y}=\\dfrac{\\partial z}{\\partial u}\\dfrac{\\partial u}{\\partial y}+\\dfrac{\\partial z}{\\partial v}\\dfrac{\\partial v}{\\partial y}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The partial derivatives are called the chain rule of partial differentiation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Similarly we can extend the above formula w.r.t 3 functions w.r.t 3 variables."
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "total-log-exp",
+              "title": "Total derivative — logarithmic and exponential substitution",
+              "source_pages": [
+                11
+              ],
+              "question_paragraphs": [
+                "Q. If the function \\(u=x^2y^3\\) where \\(x=\\log t\\) & \\(y=e^t\\) then find \\(\\dfrac{du}{dt}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using total derivative formula we can write",
+                "\\[\\dfrac{\\partial u}{\\partial t}=\\dfrac{\\partial u}{\\partial x}\\dfrac{dx}{dt}+\\dfrac{\\partial u}{\\partial y}\\dfrac{dy}{dt}\\]",
+                "\\[\\dfrac{\\partial u}{\\partial x}=\\dfrac{\\partial}{\\partial x}(x^2y^3)=2xy^3,\\quad\\dfrac{\\partial u}{\\partial y}=\\dfrac{\\partial}{\\partial y}(x^2y^3)=3y^2x^2\\]",
+                "\\[\\dfrac{dx}{dt}=\\dfrac{d}{dt}(\\log t)=\\dfrac1t,\\quad\\dfrac{dy}{dt}=\\dfrac{d}{dt}(e^t)=e^t\\]",
+                "\\[\\dfrac{\\partial u}{\\partial t}=\\dfrac{2xy^3}{t}+3y^2x^2e^t\\]",
+                "\\[=\\dfrac{2\\log t\\ e^{3t}}t+3(\\log t)^2e^{2t}e^t\\]",
+                "\\[=e^{3t}\\log t\\left[\\dfrac2t+3\\log t\\right]\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "chain-composite",
+              "title": "Composite function — two partial derivatives",
+              "source_pages": [
+                11,
+                12
+              ],
+              "question_paragraphs": [
+                "Q. If \\(f=u^2v\\) then \\(u=e^{x^2-y^2},\\ v=\\sin(xy^2)\\) find \\(\\dfrac{\\partial f}{\\partial x},\\dfrac{\\partial f}{\\partial y}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using total derivative formula",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial f}{\\partial u}\\dfrac{\\partial u}{\\partial x}+\\dfrac{\\partial f}{\\partial v}\\dfrac{\\partial v}{\\partial x}\\]",
+                "\\[\\dfrac{\\partial u}{\\partial x}=\\dfrac{\\partial}{\\partial x}[e^{x^2-y^2}]=e^{x^2-y^2}(2x),\\quad\\dfrac{\\partial v}{\\partial x}=\\dfrac{\\partial}{\\partial x}[\\sin(xy^2)]=y^2\\cos(xy^2)\\]",
+                "\\[\\dfrac{\\partial f}{\\partial u}=\\dfrac{\\partial}{\\partial u}(u^2v)=2uv,\\quad\\dfrac{\\partial f}{\\partial v}=\\dfrac{\\partial}{\\partial v}(u^2v)=u^2\\]",
+                "\\[\\dfrac{\\partial f}{\\partial x}=(2uv)(e^{x^2-y^2}\\times2x)+u^2(y^2\\cos(xy^2))\\]",
+                "\\[=2e^{x^2-y^2}\\sin(xy^2)\\times2x\\times e^{x^2-y^2}+y^2e^{2(x^2-y^2)}\\cos(xy^2)\\]",
+                "\\[=e^{2(x^2-y^2)}[4x\\sin(xy^2)+y^2\\cos(xy^2)]\\]",
+                "\\[\\text{ii)}\\quad\\dfrac{\\partial f}{\\partial y}=\\dfrac{\\partial f}{\\partial u}\\dfrac{\\partial u}{\\partial y}+\\dfrac{\\partial f}{\\partial v}\\dfrac{\\partial v}{\\partial y}\\]",
+                "\\[=(2uv)[e^{x^2-y^2}(-2y)]+u^2[\\cos(xy^2)]2xy\\]",
+                "\\[=2e^{x^2-y^2}\\sin(xy^2)e^{x^2-y^2}(-2y)+e^{2(x^2-y^2)}\\cos(xy^2)2xy\\]",
+                "\\[=2y e^{2(x^2-y^2)}[x\\cos(xy^2)-2\\sin(xy^2)]\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "chain-linear-identity",
+              "title": "Chain-rule identity — linear substitutions",
+              "source_pages": [
+                12,
+                13
+              ],
+              "question_paragraphs": [
+                "Q. \\(w=f(2x-3y;3y-4z;4z-2x)\\) then P.T \\(6\\dfrac{\\partial w}{\\partial x}+4\\dfrac{\\partial w}{\\partial y}+3\\dfrac{\\partial w}{\\partial z}=0\\)."
+              ],
+              "paragraphs": [
+                "Sol:- let \\(r=2x-3y,\\ s=3y-4z,\\ t=4z-2x\\)",
+                "\\[w=f(r,s,t)\\]",
+                "\\[\\dfrac{\\partial w}{\\partial x}=\\dfrac{\\partial w}{\\partial r}\\dfrac{\\partial r}{\\partial x}+\\dfrac{\\partial w}{\\partial s}\\dfrac{\\partial s}{\\partial x}+\\dfrac{\\partial w}{\\partial t}\\dfrac{\\partial t}{\\partial x}\\]",
+                "\\[=\\dfrac{\\partial w}{\\partial r}(2)+\\dfrac{\\partial w}{\\partial s}(0)+\\dfrac{\\partial w}{\\partial t}(-2)\\]",
+                "\\[\\dfrac{\\partial w}{\\partial x}=2\\dfrac{\\partial w}{\\partial r}-2\\dfrac{\\partial w}{\\partial t}\\quad\\to(1)\\]",
+                "Similarly",
+                "\\[\\dfrac{\\partial w}{\\partial y}=\\dfrac{\\partial w}{\\partial r}\\dfrac{\\partial r}{\\partial y}+\\dfrac{\\partial w}{\\partial s}\\dfrac{\\partial s}{\\partial y}+\\dfrac{\\partial w}{\\partial t}\\dfrac{\\partial t}{\\partial y}\\]",
+                "\\[=\\dfrac{\\partial w}{\\partial r}(-3)+\\dfrac{\\partial w}{\\partial s}(3)+\\dfrac{\\partial w}{\\partial t}(0)\\]",
+                "\\[\\dfrac{\\partial w}{\\partial y}=-3\\dfrac{\\partial w}{\\partial r}+3\\dfrac{\\partial w}{\\partial s}\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial w}{\\partial z}=\\dfrac{\\partial w}{\\partial r}\\dfrac{\\partial r}{\\partial z}+\\dfrac{\\partial w}{\\partial s}\\dfrac{\\partial s}{\\partial z}+\\dfrac{\\partial w}{\\partial t}\\dfrac{\\partial t}{\\partial z}\\]",
+                "\\[=\\dfrac{\\partial w}{\\partial r}(0)+\\dfrac{\\partial w}{\\partial s}(-4)+\\dfrac{\\partial w}{\\partial t}(4)\\]",
+                "\\[\\dfrac{\\partial w}{\\partial z}=-4\\dfrac{\\partial w}{\\partial s}+4\\dfrac{\\partial w}{\\partial t}\\quad\\to(3)\\]",
+                "\\[\\text{R.H.S}\\to6\\dfrac{\\partial w}{\\partial x}+4\\dfrac{\\partial w}{\\partial y}+3\\dfrac{\\partial w}{\\partial z}\\]",
+                "\\[6\\left[2\\dfrac{\\partial w}{\\partial r}-2\\dfrac{\\partial w}{\\partial t}\\right]+4\\left(-3\\dfrac{\\partial w}{\\partial r}+3\\dfrac{\\partial w}{\\partial s}\\right)+3\\left(-4\\dfrac{\\partial w}{\\partial s}+4\\dfrac{\\partial w}{\\partial t}\\right)=0\\]",
+                "∴ L.H.S = R.H.S",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "chain-ratio-identity",
+              "title": "Chain-rule identity — ratio substitutions",
+              "source_pages": [
+                13,
+                14
+              ],
+              "question_paragraphs": [
+                "Q. If \\(U=f(r,s,t),\\ r=\\dfrac{x}{y},\\ s=\\dfrac{y}{z},\\ t=\\dfrac{z}{x}\\) P.T \\(x\\dfrac{\\partial U}{\\partial x}+y\\dfrac{\\partial U}{\\partial y}+z\\dfrac{\\partial U}{\\partial z}=0\\)."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[\\dfrac{\\partial U}{\\partial x}=\\dfrac{\\partial U}{\\partial r}\\dfrac{\\partial r}{\\partial x}+\\dfrac{\\partial U}{\\partial s}\\dfrac{\\partial s}{\\partial x}+\\dfrac{\\partial U}{\\partial t}\\dfrac{\\partial t}{\\partial x}\\]",
+                "\\[=\\dfrac{\\partial U}{\\partial r}\\left[\\dfrac1y\\right]+\\dfrac{\\partial U}{\\partial s}[0]+\\dfrac{\\partial U}{\\partial t}\\left[\\dfrac{-z}{x^2}\\right]\\]",
+                "\\[\\dfrac{\\partial U}{\\partial x}=\\dfrac{\\partial U}{\\partial r}\\left(\\dfrac1y\\right)-\\dfrac{\\partial U}{\\partial t}\\left(\\dfrac{z}{x^2}\\right)\\quad\\to(1)\\]",
+                "\\[\\dfrac{\\partial U}{\\partial y}=\\dfrac{\\partial U}{\\partial r}\\dfrac{\\partial r}{\\partial y}+\\dfrac{\\partial U}{\\partial s}\\dfrac{\\partial s}{\\partial y}+\\dfrac{\\partial U}{\\partial t}\\dfrac{\\partial t}{\\partial z}\\]",
+                "\\[=\\dfrac{\\partial U}{\\partial r}\\left(\\dfrac{-x}{y^2}\\right)+\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac1z\\right)+\\dfrac{\\partial U}{\\partial t}(0)\\]",
+                "\\[\\dfrac{\\partial U}{\\partial y}=-\\dfrac{\\partial U}{\\partial r}\\left(\\dfrac{x}{y^2}\\right)+\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac1z\\right)\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial U}{\\partial z}=\\dfrac{\\partial U}{\\partial r}\\dfrac{\\partial r}{\\partial z}+\\dfrac{\\partial U}{\\partial s}\\dfrac{\\partial s}{\\partial z}+\\dfrac{\\partial U}{\\partial t}\\dfrac{\\partial t}{\\partial z}\\]",
+                "\\[=\\dfrac{\\partial U}{\\partial r}(0)+\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac{-y}{z^2}\\right)+\\dfrac{\\partial U}{\\partial t}\\left(\\dfrac1x\\right)\\]",
+                "\\[\\dfrac{\\partial U}{\\partial z}=-\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac{y}{z^2}\\right)+\\dfrac{\\partial U}{\\partial t}\\left(\\dfrac1x\\right)\\quad\\to(3)\\]",
+                "\\[x\\dfrac{\\partial U}{\\partial x}+y\\dfrac{\\partial U}{\\partial y}+z\\left(\\dfrac{\\partial U}{\\partial z}\\right)\\]",
+                "\\[=x\\left[\\dfrac{\\partial U}{\\partial r}\\left(\\dfrac1y\\right)-\\dfrac{\\partial U}{\\partial t}\\left(\\dfrac{z}{x^2}\\right)\\right]+y\\left[-\\dfrac{\\partial U}{\\partial r}\\left(\\dfrac{x}{y^2}\\right)+\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac1z\\right)\\right]+z\\left[-\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac{y}{z^2}\\right)+\\dfrac{\\partial U}{\\partial t}\\left(\\dfrac1x\\right)\\right]\\]",
+                "\\[=\\dfrac{\\partial U}{\\partial r}\\left(\\dfrac{x}{y}\\right)-\\dfrac{\\partial U}{\\partial t}\\left(\\dfrac{z}{x}\\right)-\\dfrac{\\partial U}{\\partial r}\\left(\\dfrac{x}{y}\\right)+\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac{y}{z}\\right)-\\dfrac{\\partial U}{\\partial s}\\left(\\dfrac{y}{z}\\right)+\\dfrac{\\partial U}{\\partial t}\\left(\\dfrac{z}{x}\\right)=0\\]",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The first chain-rule line for \\(U_y\\) prints \\(t_z\\), although its subsequent substitution uses \\(t_y=0\\). For the stated \\(t=z/x\\), \\(t_z=1/x\\), so that label is inconsistent. The notebook line is retained."
+              },
+              "source_result_indices": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "third-partial-exponential",
+              "title": "Higher-order differentiation",
+              "source_pages": [
+                15
+              ],
+              "question_paragraphs": [
+                "Q. If \\(u=e^{xyz}\\), find \\(\\dfrac{\\partial^3u}{\\partial x\\partial y\\partial z}\\)."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[\\dfrac{\\partial u}{\\partial x}=\\dfrac{\\partial}{\\partial x}(e^{xyz})=yz\\ e^{xyz}\\]",
+                "\\[\\dfrac{\\partial u}{\\partial y}=\\dfrac{\\partial}{\\partial y}(e^{xyz})=xz\\ e^{xyz}\\]",
+                "\\[\\dfrac{\\partial u}{\\partial z}=\\dfrac{\\partial}{\\partial z}(e^{xyz})=xy\\ e^{xyz}\\]",
+                "\\[\\dfrac{\\partial^2u}{\\partial x\\partial y}=\\dfrac{\\partial u}{\\partial x}(xz\\ e^{xyz})=z[e^{xyz}(yz)+e^{xyz}]\\]",
+                "\\[=z[xyz\\ e^{xyz}+e^{xyz}]=e^{xyz}z[xyz+1]\\]",
+                "\\[\\dfrac{\\partial^2u}{\\partial y\\partial z}=\\dfrac{\\partial u}{\\partial y}[xy\\ e^{xyz}]=x[y e^{xyz}(xz)+e^{xyz}]\\]",
+                "\\[=x e^{xyz}[xyz+1]\\]",
+                "\\[\\dfrac{\\partial^2u}{\\partial x\\partial z}=\\dfrac{\\partial u}{\\partial x}(xy\\ e^{xyz})=y[x e^{xyz}(yz)+e^{xyz}]\\]",
+                "\\[=y e^{xyz}[xyz+1]\\]",
+                "\\[\\dfrac{\\partial^3u}{\\partial x\\partial y\\partial z}=\\dfrac{\\partial u}{\\partial x}[x e^{xyz}(xyz+1)]\\]",
+                "\\[=\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The first displayed product-rule line for \\(u_{xy}\\) omits the factor \\(x\\) in its first term; the next line restores it. The derivative-operator labels also include a numerator \\(u\\). These are retained; the requested third derivative is not completed on the source page."
+              },
+              "source_note": "Source working stops after the final equals sign; no result has been supplied."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "source_pages": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "id": "homogeneous-functions-euler",
+      "heading": "Homogeneous Functions and Euler’s Theorem",
+      "blocks": [
+        {
+          "type": "subheading",
+          "id": "homogeneous-definition",
+          "text": "Homogeneous Function"
+        },
+        {
+          "type": "paragraph",
+          "text": "28/01/23"
+        },
+        {
+          "type": "paragraph",
+          "text": "The function \\(f(x,y)\\) is said to be homogeneous if \\(f(kx,ky)=k^nf(x,y)\\) here ‘\\(n\\)’ is called the degree of the homogeneous function \\(f(x,y)\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "If the function \\(f(x,y)\\) is trigonometric, exponential, logarithmic etc and \\(f(x,y)\\) is said to homogeneous function if"
+        },
+        {
+          "type": "equation",
+          "text": "\\[f(x,y)=x^n\\phi\\left(\\dfrac yx\\right)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[f(x,y)=y^n\\phi\\left(\\dfrac xy\\right)\\]"
+        },
+        {
+          "type": "subheading",
+          "id": "euler-formula",
+          "text": "Euler’s Formula"
+        },
+        {
+          "type": "paragraph",
+          "text": "If the function \\(f(x,y)\\) is homogeneous then"
+        },
+        {
+          "type": "equation",
+          "text": "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=nf\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[x^2\\dfrac{\\partial^2f}{\\partial x^2}+2xy\\dfrac{\\partial^2f}{\\partial x\\partial y}+y^2\\dfrac{\\partial^2f}{\\partial y^2}=n(n-1)f\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "If the function is with three variables i.e. \\(f(x,y,z)\\)"
+        },
+        {
+          "type": "equation",
+          "text": "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}+z\\dfrac{\\partial f}{\\partial z}=nf\\]"
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "euler-square-root",
+              "title": "Euler’s formula — square root",
+              "source_pages": [
+                16
+              ],
+              "question_paragraphs": [
+                "Q. If the function \\(f=\\sqrt{x^2-xy}\\) then find \\(x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- let \\(f(kx,ky)=\\sqrt{k^2x^2-k^2xy}=k\\sqrt{x^2-xy}=kf\\)",
+                "It is of the form \\(f(kx,ky)=k^nf\\) where \\(n=1\\)",
+                "The above function is homogeneous, by using Euler’s formula",
+                "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=nf=(1)f=\\sqrt{x^2-xy}\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "euler-log-difference",
+              "title": "Euler’s formula — difference of logarithms",
+              "source_pages": [
+                17
+              ],
+              "question_paragraphs": [
+                "Q. If \\(f=\\log y-\\log x\\) then find \\(x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- \\(f=\\log y-\\log x\\)",
+                "\\[=\\log\\left(\\dfrac yx\\right)\\qquad\\text{Since }\\log a-\\log b=\\log\\left(\\dfrac ab\\right)\\]",
+                "\\[f=x^0\\log\\left(\\dfrac yx\\right)\\]",
+                "It is of the form \\(f(x,y)=x^n\\phi(y/x)\\) where \\(n=0\\)",
+                "The above is homogeneous, by using Euler’s",
+                "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=nf=(0)f=0\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "euler-fractional-powers",
+              "title": "Euler’s formula — fractional powers",
+              "source_pages": [
+                17
+              ],
+              "question_paragraphs": [
+                "Q. If \\(f=x^{1/3}y^{-4/3}\\tan^{-1}(y/x)\\) then find \\(x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}\\)."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[f=x^{1/3}y^{-4/3}\\tan^{-1}\\left(\\dfrac yx\\right)=x^{-1}\\left(\\dfrac yx\\right)^{4/3}\\tan^{-1}\\left(\\dfrac yx\\right)\\]",
+                "It is of the form \\(f=x^n\\phi(y/x)\\) where \\(n=-1\\)",
+                "The above function is homogeneous, using Euler’s formula",
+                "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=nf=(-1)f=-x^{1/3}y^{-4/3}\\tan^{-1}\\left(\\dfrac yx\\right)\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source rewrites the ratio with exponent \\(+4/3\\); the equivalent ratio exponent is \\(-4/3\\). The degree \\(-1\\) and the final \\(-f\\) are consistent with the original function. The incorrect intermediate rewrite is retained."
+              },
+              "source_result_indices": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "euler-log-ratio",
+              "title": "Euler’s formula — logarithm of a homogeneous ratio",
+              "source_pages": [
+                17,
+                18
+              ],
+              "question_paragraphs": [
+                "Q. If \\(u=\\log\\left(\\dfrac{x^2+y^2}{x+y}\\right)\\) P.T \\(x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}=1\\)."
+              ],
+              "paragraphs": [
+                "Sol:- \\(u=\\log\\left(\\dfrac{x^2+y^2}{x+y}\\right)\\)",
+                "let \\(e^u=\\dfrac{x^2+y^2}{x+y}=f\\)",
+                "\\[f(kx,ky)=\\dfrac{k^2(x^2+y^2)}{k(x+y)}=k\\left(\\dfrac{x^2+y^2}{x+y}\\right)=kf\\]",
+                "\\[\\Rightarrow n=1\\]",
+                "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=nf=(1)f\\]",
+                "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=e^u\\quad\\to(1)\\]",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial}{\\partial x}(e^u)=e^u\\dfrac{\\partial u}{\\partial x};\\quad\\dfrac{\\partial f}{\\partial y}=\\dfrac{\\partial}{\\partial y}(e^u)=e^u\\dfrac{\\partial u}{\\partial y}\\]",
+                "\\[(1)\\Rightarrow x\\left[e^u\\dfrac{\\partial u}{\\partial x}\\right]+y\\left[e^u\\dfrac{\\partial u}{\\partial y}\\right]=e^u\\]",
+                "\\[e^u\\left[x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}\\right]=e^u\\]",
+                "\\[x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}=1\\]",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "euler-arcsine",
+              "title": "Euler’s formula — inverse sine",
+              "source_pages": [
+                18,
+                19
+              ],
+              "question_paragraphs": [
+                "Q. If \\(u=\\sin^{-1}\\left[\\dfrac{x^3+y^3}{\\sqrt x+\\sqrt y}\\right]\\) P.T \\(x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}=\\dfrac52\\tan u\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Let \\(\\sin u=\\dfrac{x^3+y^3}{\\sqrt x+\\sqrt y}=f\\)",
+                "\\[f(kx,ky)=\\dfrac{(kx)^3+(ky)^3}{\\sqrt{kx}+\\sqrt{ky}}=\\dfrac{k^3}{\\sqrt k}\\left[\\dfrac{x^3+y^3}{x+y}\\right]=k^{5/2}\\left[\\dfrac{x^3+y^3}{x+y}\\right]\\]",
+                "\\[=k^{5/2}f\\quad\\Rightarrow n=5/2\\]",
+                "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=nf=\\dfrac52\\sin u\\quad\\to(1)\\]",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial}{\\partial x}(\\sin u)=\\cos u\\dfrac{\\partial u}{\\partial x}\\]",
+                "\\[\\dfrac{\\partial f}{\\partial y}=\\dfrac{\\partial}{\\partial y}(\\sin u)=\\cos u\\dfrac{\\partial u}{\\partial y}\\]",
+                "\\[(1)\\Rightarrow x\\left[\\cos u\\dfrac{\\partial u}{\\partial x}\\right]+y\\left[\\cos u\\dfrac{\\partial u}{\\partial y}\\right]=\\dfrac52\\sin u\\]",
+                "\\[\\cos u\\left[x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}\\right]=\\dfrac52\\sin u\\]",
+                "\\[x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}=\\dfrac52\\tan u\\]",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source drops the square-root signs in the denominators of two intermediate scaling expressions. The original denominator \\(\\sqrt x+\\sqrt y\\) must remain there. The degree \\(5/2\\) and final identity follow from the original function where differentiable. Source expressions are retained."
+              },
+              "source_result_indices": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "euler-tangent",
+              "title": "Euler’s formula — tangent relation",
+              "source_pages": [
+                19,
+                20
+              ],
+              "question_paragraphs": [
+                "Q. If \\(\\tan u=\\dfrac{x^3+y^3}{x-y}\\) P.T \\(xu_x+yu_y=\\sin2u\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Let \\(\\tan u=\\dfrac{x^3+y^3}{x-y}=f\\)",
+                "\\[f(kx,ky)=\\dfrac{k^3(x^3+y^3)}{k(x-y)}=k^2\\left[\\dfrac{x^3+y^3}{x-y}\\right]=k^2f\\]",
+                "\\[\\Rightarrow n=2\\]",
+                "\\[x\\dfrac{\\partial f}{\\partial x}+y\\dfrac{\\partial f}{\\partial y}=nf=2f=2\\tan u\\quad\\to(1)\\]",
+                "\\[\\dfrac{\\partial f}{\\partial x}=\\dfrac{\\partial}{\\partial x}(\\tan u)=\\sec^2u\\dfrac{\\partial u}{\\partial x}\\]",
+                "\\[\\dfrac{\\partial f}{\\partial y}=\\dfrac{\\partial}{\\partial y}(\\tan u)=\\sec^2u\\dfrac{\\partial u}{\\partial y}\\]",
+                "\\[(1)\\Rightarrow x\\left[\\sec^2u\\dfrac{\\partial u}{\\partial x}\\right]+y\\left[\\sec^2u\\dfrac{\\partial u}{\\partial y}\\right]=2\\tan u\\]",
+                "\\[\\sec^2u\\left[x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}\\right]=2\\tan u\\]",
+                "\\[x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}=\\dfrac{2\\tan u}{\\sec^2u}=\\dfrac{2\\sin u}{\\cos u}\\times\\cos^2u=2\\sin u\\cos u\\]",
+                "\\[\\Rightarrow x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}=\\sin2u\\]",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                9
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "source_pages": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "id": "jacobians-functional-dependence",
+      "heading": "Jacobians and Functional Dependence",
+      "blocks": [
+        {
+          "type": "subheading",
+          "id": "jacobian-definition",
+          "text": "Jacobian"
+        },
+        {
+          "type": "paragraph",
+          "text": "30/01/23"
+        },
+        {
+          "type": "paragraph",
+          "text": "Let \\(u=u(x,y)\\) and \\(v=v(x,y)\\) then these two simultaneous relations constitute a transformation from \\((u,v)\\) to \\((x,y)\\) i.e. the determinant"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\begin{vmatrix}\\dfrac{\\partial u}{\\partial x}&\\dfrac{\\partial u}{\\partial y}\\\\\\dfrac{\\partial v}{\\partial x}&\\dfrac{\\partial v}{\\partial y}\\end{vmatrix}\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "is called the Jacobian of the two functions \\(u,v\\) w.r.t the two variables \\(x,y\\). It is denoted with \\(J\\left(\\dfrac{u,v}{x,y}\\right)\\) (or) \\(\\dfrac{\\partial(u,v)}{\\partial(x,y)}\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Similarly the Jacobian of the three functions \\(u,v,w\\) w.r.t the three variables \\(x,y,z\\) can be written as \\(J\\left(\\dfrac{u,v,w}{x,y,z}\\right)\\) (or) \\(\\dfrac{\\partial(u,v,w)}{\\partial(x,y,z)}\\)"
+        },
+        {
+          "type": "equation",
+          "text": "\\[(\\text{or})\\quad\\begin{vmatrix}u_x&u_y&u_z\\\\v_x&v_y&v_z\\\\w_x&w_y&w_z\\end{vmatrix}\\]"
+        },
+        {
+          "type": "subheading",
+          "id": "functional-dependence",
+          "text": "Functionally Dependent and Independent"
+        },
+        {
+          "type": "paragraph",
+          "text": "The two functions \\(u=u(x,y)\\) and \\(v=v(x,y)\\) are said to be functionally dependent if"
+        },
+        {
+          "type": "equation",
+          "text": "\\[J\\left(\\dfrac{u,v}{x,y}\\right)=0\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "The two functions \\(u,v\\) are said to functionally independent if"
+        },
+        {
+          "type": "equation",
+          "text": "\\[J\\left(\\dfrac{u,v}{x,y}\\right)\\ne0\\]"
+        },
+        {
+          "type": "subheading",
+          "id": "jacobian-properties",
+          "text": "Properties of Jacobian"
+        },
+        {
+          "type": "paragraph",
+          "text": "1) If \\(u,v\\) are the two functions w.r.t the two variables \\(x,y\\) then"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{\\partial(u,v)}{\\partial(x,y)}\\times\\dfrac{\\partial(x,y)}{\\partial(u,v)}=1\\quad\\Rightarrow JJ'=1\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "2) If \\(u,v\\) are functions of \\(r,s\\) and \\(r,s\\) are functions of \\(x,y\\) then"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{\\partial(u,v)}{\\partial(x,y)}=\\dfrac{\\partial(u,v)}{\\partial(r,s)}\\times\\dfrac{\\partial(r,s)}{\\partial(x,y)}\\]"
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-three-functions",
+              "title": "Problems of Jacobian — three functions",
+              "source_pages": [
+                21
+              ],
+              "question_paragraphs": [
+                "1) If \\(u=x^2-2y\\) and \\(v=x+y+z;\\ w=x-2y+3z\\) then find \\(\\dfrac{\\partial(u,v,w)}{\\partial(x,y,z)}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "\\[\\dfrac{\\partial(u,v,w)}{\\partial(x,y,z)}=\\begin{vmatrix}u_x&u_y&u_z\\\\v_x&v_y&v_z\\\\w_x&w_y&w_z\\end{vmatrix}\\]",
+                "\\[\\Rightarrow\\begin{vmatrix}2x&-2&0\\\\1&1&1\\\\1&-2&3\\end{vmatrix}=2x(3+2)+2(3-1)=2x(5)+2(2)=10x+4\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-inverse-three",
+              "title": "Inverse transformation — three variables",
+              "source_pages": [
+                21,
+                22
+              ],
+              "question_paragraphs": [
+                "2) If \\(u=x+y+z,\\ y+z=uv,\\ z=uvw\\) then find \\(\\dfrac{\\partial(x,y,z)}{\\partial(u,v,w)}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "Sol:- we can write",
+                "\\[\\dfrac{\\partial(x,y,z)}{\\partial(u,v,w)}=\\begin{vmatrix}x_u&x_v&x_w\\\\y_u&y_v&y_w\\\\z_u&z_v&z_w\\end{vmatrix}\\]",
+                "\\[u=x+y+z,\\quad y+z=uv,\\quad z=uvw\\]",
+                "\\[x=u-(y+z),\\quad y=uv-z\\]",
+                "\\[x=u-uv,\\quad y=uv-uvw\\]",
+                "\\[J=\\begin{vmatrix}1-v&-1&0\\\\v-vw&u-uw&-w\\\\wv&uw&uv\\end{vmatrix}=u^2v\\]",
+                "\\[=(1-v)[uv(u-uw)+uw^2]+1[(v-vw)(uv)+vw^2]\\]",
+                "\\[=(1-v)[u^2v-u^2vw+uw^2]+[v^2u^2-v^2u^2w+vuw^2]\\]",
+                "\\[=u^2v-u^2vw+uw^2-u^2v^2\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source determinant prints \\(x_v=-1\\) and \\(y_w=-w\\); differentiating its own \\(x=u-uv\\), \\(y=uv-uvw\\) gives \\(x_v=-u\\), \\(y_w=-uv\\). Its following expansion is inconsistent and unfinished. The correct determinant for the stated transformation is \\(u^2v\\), which the source also writes beside the determinant. The matrix and expansion are preserved."
+              },
+              "source_note": "The written expansion stops at the displayed final line."
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-dependent-polynomials",
+              "title": "Functional relation — symmetric polynomials",
+              "source_pages": [
+                22,
+                23
+              ],
+              "question_paragraphs": [
+                "3) Show that the functions \\(u=xy+yz+zx,\\ v=x^2+y^2+z^2,\\ w=x+y+z\\) are functionally related (or) functionally dependent and also find the relation b/w the three functions \\(u,v,w\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Given \\(u=xy+yz+zx,\\ v=x^2+y^2+z^2,\\ w=x+y+z\\)",
+                "we know that",
+                "\\[J\\left(\\dfrac{u,v,w}{x,y,z}\\right)=\\begin{vmatrix}u_x&u_y&u_z\\\\v_x&v_y&v_z\\\\w_x&w_y&w_z\\end{vmatrix}\\]",
+                "\\[\\Rightarrow\\begin{vmatrix}y+z&x+z&y+z\\\\2x&2y&2z\\\\1&1&1\\end{vmatrix}=(y+z)(2y-2z)-(x+z)(2x-2z)+(y+z)(2x-2y)\\]",
+                "\\[=2y^2-2yz+2yz-2z^2+2x^2+2xz+2zx-2z^2+2xy-2y^2+2zx+2z^2\\]",
+                "\\[=0\\]",
+                "The functions are functionally dependent",
+                "\\[(w=x+y+z)^2\\]",
+                "\\[w^2=(x+y+z)^2\\]",
+                "\\[w^2=x^2+y^2+z^2+2(xy+yz+zx)\\]",
+                "\\[w^2=v+2u\\]",
+                "This is the relation b/w the functions."
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The third entry in the first determinant row is written \\(y+z\\), but \\(u_z=x+y\\). The written determinant expansion also has sign/term inconsistencies. The final relation \\(w^2=v+2u\\) is correct for the stated functions. Source working is retained."
+              },
+              "source_result_indices": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-dependent-arcsines",
+              "title": "Functional relation — inverse sine functions",
+              "source_pages": [
+                23,
+                24
+              ],
+              "question_paragraphs": [
+                "4) If \\(u=\\sin^{-1}x+\\sin^{-1}y;\\ v=x\\sqrt{1-y^2}+y\\sqrt{1-x^2}\\) then P.T the functions are functionally dependent."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "\\[J\\left(\\dfrac{u,v}{x,y}\\right)=\\begin{vmatrix}u_x&u_y\\\\v_x&v_y\\end{vmatrix}=\\begin{vmatrix}\\dfrac1{\\sqrt{1-x^2}}&\\dfrac1{\\sqrt{1-y^2}}\\\\\\sqrt{1-y^2}+\\dfrac{y(-2x)}{2\\sqrt{1-x^2}}&\\dfrac{x(-2y)}{2\\sqrt{1-y^2}}+\\sqrt{1-x^2}\\end{vmatrix}\\]",
+                "\\[=\\begin{vmatrix}\\dfrac1{\\sqrt{1-x^2}}&\\dfrac1{\\sqrt{1-y^2}}\\\\\\sqrt{1-y^2}-\\dfrac{xy}{\\sqrt{1-x^2}}&\\sqrt{1-x^2}-\\dfrac{xy}{\\sqrt{1-y^2}}\\end{vmatrix}\\]",
+                "\\[\\Rightarrow\\left[\\dfrac1{\\sqrt{1-x^2}}\\right]\\left[\\sqrt{1-x^2}-\\dfrac{xy}{\\sqrt{1-y^2}}\\right]-\\left[\\dfrac1{\\sqrt{1-y^2}}\\right]\\left[\\sqrt{1-y^2}-\\dfrac{xy}{\\sqrt{1-x^2}}\\right]\\]",
+                "\\[\\Rightarrow0\\]",
+                "The functions are functionally dependent",
+                "Relation →",
+                "\\[u=\\sin^{-1}(x\\sqrt{1-y^2}+y\\sqrt{1-x^2})\\]",
+                "\\[u=\\sin^{-1}v\\]",
+                "\\[v=\\sin u\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The intermediate \\(u=\\sin^{-1}v\\) requires a principal-branch restriction and is not valid for every allowed pair. For example \\(x=y=\\sqrt3/2\\) gives \\(u=2\\pi/3\\) and \\(\\sin^{-1}v=\\pi/3\\). The final \\(v=\\sin u\\) is the valid relation. Both source lines are retained."
+              },
+              "source_result_indices": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-reciprocal",
+              "title": "Reciprocal property — two variables",
+              "source_pages": [
+                24,
+                25
+              ],
+              "question_paragraphs": [
+                "5) If \\(x=u(1-v),\\ y=uv\\) then P.T \\(JJ'=1\\)."
+              ],
+              "paragraphs": [
+                "Sol:- let \\(J=\\dfrac{\\partial(x,y)}{\\partial(u,v)},\\quad J'=\\dfrac{\\partial(u,v)}{\\partial(x,y)}\\)",
+                "\\[J=\\begin{vmatrix}x_u&x_v\\\\y_u&y_v\\end{vmatrix}\\]",
+                "\\[=\\begin{vmatrix}\\dfrac{\\partial}{\\partial u}(u-uv)&\\dfrac{\\partial}{\\partial v}(u-uv)\\\\\\dfrac{\\partial}{\\partial u}(uv)&\\dfrac{\\partial}{\\partial y}(uv)\\end{vmatrix}=\\begin{vmatrix}1-v&-u\\\\v&u\\end{vmatrix}=u\\]",
+                "\\[x=u(1-v),\\quad y=uv\\]",
+                "\\[x=u-uv,\\quad\\dfrac yu=v\\]",
+                "\\[x=u-y\\]",
+                "\\[u=x+y,\\quad v=\\dfrac y{x+y}\\]",
+                "\\[J'=\\dfrac{\\partial(u,v)}{\\partial(x,y)}=\\begin{vmatrix}u_x&u_y\\\\v_x&v_y\\end{vmatrix}=\\dfrac1{x+y}=\\dfrac1u\\]",
+                "\\[=\\begin{vmatrix}\\dfrac{\\partial}{\\partial x}(x+y)&\\dfrac{\\partial}{\\partial y}(x+y)\\\\\\dfrac{\\partial}{\\partial x}\\left(\\dfrac y{x+y}\\right)&\\dfrac{\\partial}{\\partial y}\\left(\\dfrac y{x+y}\\right)\\end{vmatrix}\\]",
+                "\\[=\\left|\\begin{matrix}1&1\\\\\\dfrac{y(0)-(x+y)(0)}{(x+y)^2}&\\end{matrix}\\right.\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source labels the lower-right derivative in the forward matrix with \\(\\partial/\\partial y\\), rather than \\(\\partial/\\partial v\\). Its last inverse-matrix line is incomplete and its visible quotient numerator is not the derivative of \\(y/(x+y)\\). The stated \\(J=u\\) and \\(J^{\\prime}=1/u\\) are consistent where \\(u\\ne0\\); the missing final multiplication has not been supplied."
+              },
+              "source_note": "The final inverse-matrix line is unfinished in the source."
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-tangent-addition",
+              "title": "Functional relation — inverse tangent addition",
+              "source_pages": [
+                26,
+                27
+              ],
+              "question_paragraphs": [
+                "31/01/23 — 1) If \\(u=\\dfrac{x+y}{1-xy},\\ v=\\tan^{-1}x+\\tan^{-1}y\\) P.T the functions \\(u,v\\) are functionally dependent and also find the relation b/w the two functions \\(u\\) and \\(v\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "\\[J\\left(\\dfrac{u,v}{x,y}\\right)=\\begin{vmatrix}u_x&u_y\\\\v_x&v_y\\end{vmatrix}=\\begin{vmatrix}\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{x+y}{1-xy}\\right)&\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{x+y}{1-xy}\\right)\\\\\\dfrac{\\partial}{\\partial x}(\\tan^{-1}x+\\tan^{-1}y)&\\dfrac{\\partial}{\\partial y}(\\tan^{-1}x+\\tan^{-1}y)\\end{vmatrix}\\]",
+                "\\[\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{x+y}{1-xy}\\right)=\\dfrac{(1-xy)(1)-(x+y)(-y)}{(1-xy)^2}=\\dfrac{1-xy+xy+y^2}{(1-xy)^2}=\\dfrac{1+y^2}{(1-xy)^2}\\]",
+                "\\[\\dfrac{\\partial}{\\partial y}\\left(\\dfrac{x+y}{1-xy}\\right)=\\dfrac{(1-xy)(1)-(x+y)(-x)}{(1-xy)^2}=\\dfrac{1-xy+x^2+xy}{(1-xy)^2}=\\dfrac{1+x^2}{(1-xy)^2}\\]",
+                "\\[\\dfrac{\\partial}{\\partial x}(\\tan^{-1}x+\\tan^{-1}y)=\\dfrac1{1+x^2},\\quad\\dfrac{\\partial}{\\partial y}(\\tan^{-1}x+\\tan^{-1}y)=\\dfrac1{1+y^2}\\]",
+                "\\[J=\\begin{vmatrix}\\dfrac{1+y^2}{(1-xy)^2}&\\dfrac{1+x^2}{(1-xy)^2}\\\\\\dfrac1{1+x^2}&\\dfrac1{1+y^2}\\end{vmatrix}=\\dfrac1{(1-xy)^2}\\begin{vmatrix}1+y^2&1+x^2\\\\\\dfrac1{1+x^2}&\\dfrac1{1+y^2}\\end{vmatrix}\\]",
+                "\\[J=\\dfrac1{(1-xy)^2}\\left[(1+y^2)\\left(\\dfrac1{1+y^2}\\right)-(1+x^2)\\left(\\dfrac1{1+x^2}\\right)\\right]=\\dfrac1{(1-xy)^2}[1-1]=0\\]",
+                "∴ The functions are functionally dependent.",
+                "we know that",
+                "\\[v=\\tan^{-1}x+\\tan^{-1}y=\\tan^{-1}\\left(\\dfrac{x+y}{1-xy}\\right)\\]",
+                "\\[v=\\tan^{-1}u\\]",
+                "\\[u=\\tan v\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The principal-value identity \\(v=\\tan^{-1}u\\) needs a branch restriction. For \\(x=y=2\\), the left sum is greater than \\(\\pi/2\\) while the principal inverse tangent of \\(-4/3\\) is negative. The final relation \\(u=\\tan v\\) holds where defined. Source wording is retained."
+              },
+              "source_result_indices": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-polar",
+              "title": "Chain property — Cartesian and polar variables",
+              "source_pages": [
+                27,
+                28
+              ],
+              "question_paragraphs": [
+                "2) If the function \\(u=x^2-y^2;\\ v=2xy\\) and \\(x=r\\cos\\theta\\) and \\(y=r\\sin\\theta\\) S.T \\(\\dfrac{\\partial(u,v)}{\\partial(r,\\theta)}=4r^3\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that using property 2 of Jacobian",
+                "\\[\\dfrac{\\partial(u,v)}{\\partial(r,\\theta)}=\\dfrac{\\partial(u,v)}{\\partial(x,y)}\\times\\dfrac{\\partial(x,y)}{\\partial(r,\\theta)}\\quad\\to(1)\\]",
+                "\\[\\dfrac{\\partial(u,v)}{\\partial(x,y)}=\\begin{vmatrix}u_x&u_y\\\\v_x&v_y\\end{vmatrix}=\\begin{vmatrix}2x&-2y\\\\2y&2x\\end{vmatrix}\\]",
+                "\\[=4x^2+4y^2=4(x^2+y^2)=4r^2\\]",
+                "Since \\(x^2+y^2=r^2\\)",
+                "\\[(r\\cos\\theta)^2+(r\\sin\\theta)^2=r^2\\]",
+                "\\[\\dfrac{\\partial(x,y)}{\\partial(r,\\theta)}=\\begin{vmatrix}x_r&x_\\theta\\\\y_r&y_\\theta\\end{vmatrix}=\\begin{vmatrix}\\cos\\theta&-r\\sin\\theta\\\\\\sin\\theta&r\\cos\\theta\\end{vmatrix}\\]",
+                "\\[=r\\cos^2\\theta+r\\sin^2\\theta=r(\\cos^2\\theta+\\sin^2\\theta)=r\\]",
+                "From (1)",
+                "\\[\\dfrac{\\partial(u,v)}{\\partial(r,\\theta)}=4r^2\\times r=4r^3\\]",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-ratios-three",
+              "title": "Jacobian of three ratios",
+              "source_pages": [
+                28,
+                29
+              ],
+              "question_paragraphs": [
+                "3) If \\(u=\\dfrac{yz}{x},\\ v=\\dfrac{xz}{y},\\ w=\\dfrac{xy}{z}\\) then P.T \\(\\dfrac{\\partial(u,v,w)}{\\partial(x,y,z)}=4\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "\\[J\\left(\\dfrac{u,v,w}{x,y,z}\\right)=\\begin{vmatrix}u_x&u_y&u_z\\\\v_x&v_y&v_z\\\\w_x&w_y&w_z\\end{vmatrix}=\\begin{vmatrix}-\\dfrac{yz}{x^2}&\\dfrac zx&\\dfrac yx\\\\\\dfrac zy&-\\dfrac{xz}{y^2}&\\dfrac xy\\\\\\dfrac yz&\\dfrac xz&-\\dfrac{xy}{z^2}\\end{vmatrix}\\]",
+                "\\[=-\\dfrac{yz}{x^2}\\left[\\left(\\dfrac{-xz}{y^2}\\right)\\left(\\dfrac{-xy}{z^2}\\right)-\\left(\\dfrac xz\\right)\\left(\\dfrac xy\\right)\\right]-\\dfrac zx\\left[\\left(\\dfrac zy\\right)\\left(\\dfrac{-xy}{z^2}\\right)-\\left(\\dfrac xy\\right)\\left(\\dfrac yz\\right)\\right]+\\dfrac yx\\left[\\left(\\dfrac zy\\right)\\left(\\dfrac xz\\right)-\\left(\\dfrac{-xz}{y^2}\\right)\\left(\\dfrac yz\\right)\\right]\\]",
+                "\\[=\\dfrac{-yz}{x^2}\\left[\\dfrac{x^2}{yz}-\\dfrac{x^2}{yz}\\right]-\\dfrac zx\\left[\\dfrac{-x}{z}-\\dfrac xz\\right]+\\dfrac yx\\left[\\dfrac xy+\\dfrac xy\\right]\\]",
+                "\\[=\\dfrac{-yz}{x^2}[0]-\\dfrac zx\\left[\\dfrac{-2x}{z}\\right]+\\dfrac yx\\left[\\dfrac{2x}{y}\\right]\\]",
+                "\\[\\Rightarrow2+2=4\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-symmetric-three",
+              "title": "Jacobian — elementary symmetric functions",
+              "source_pages": [
+                29
+              ],
+              "question_paragraphs": [
+                "4) If \\(u=xyz,\\ v=xy+yz+zx,\\ w=x+y+z\\) find \\(\\dfrac{\\partial(u,v,w)}{\\partial(x,y,z)}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "\\[\\dfrac{\\partial(u,v,w)}{\\partial(x,y,z)}=\\begin{vmatrix}u_x&u_y&u_z\\\\v_x&v_y&v_z\\\\w_x&w_y&w_z\\end{vmatrix}=\\begin{vmatrix}yz&xz&xy\\\\y+z&x+z&y+x\\\\1&1&1\\end{vmatrix}\\]",
+                "\\[=yz(x+z-y-x)-xz(y+z-y-x)+xy(y+z-x-z)\\]",
+                "\\[=yz^2-y^2z-xz^2+x^2z+xy^2-x^2y\\]",
+                "\\[=(x-y)(y-z)(z-x)\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-quadratic-transform",
+              "title": "Direct and reciprocal Jacobians",
+              "source_pages": [
+                29,
+                30
+              ],
+              "question_paragraphs": [
+                "5) If \\(x=\\dfrac12(u^2-v^2),\\ y=uv,\\ z=w\\) find \\(J\\left(\\dfrac{x,y,z}{u,v,w}\\right)\\) and \\(J\\left(\\dfrac{u,v,w}{x,y,z}\\right)\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "\\[J\\left(\\dfrac{x,y,z}{u,v,w}\\right)=\\begin{vmatrix}x_u&x_v&x_w\\\\y_u&y_v&y_w\\\\z_u&z_v&z_w\\end{vmatrix}=\\begin{vmatrix}u&-v&0\\\\v&u&0\\\\0&0&1\\end{vmatrix}\\]",
+                "\\[=u(u-0)+v(v-0)+0=u^2+v^2\\]",
+                "\\[x=\\dfrac12(u^2-v^2),\\quad y=uv,\\quad z=w\\]",
+                "\\[2x=u^2-v^2,\\quad y^2=u^2v^2\\]",
+                "\\[u^2=2x+v^2,\\quad\\dfrac{y^2}{u^2}=v^2\\]",
+                "\\[u^2=2x+\\dfrac{y^2}{u^2}\\]",
+                "we know that",
+                "\\[JJ'=1\\]",
+                "\\[J'=\\dfrac1J=\\dfrac1{u^2+v^2}\\]",
+                "\\[\\Rightarrow J\\left(\\dfrac{u,v,w}{x,y,z}\\right)=\\dfrac1{u^2+v^2}\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-cylindrical",
+              "title": "Cylindrical coordinate transformation",
+              "source_pages": [
+                30
+              ],
+              "question_paragraphs": [
+                "6) If \\(x=\\rho\\cos\\phi,\\ y=\\rho\\sin\\phi,\\ z=z\\) P.T \\(\\dfrac{\\partial(x,y,z)}{\\partial(\\rho,\\phi,z)}=\\rho\\)."
+              ],
+              "paragraphs": [
+                "Sol:- we know that",
+                "\\[\\dfrac{\\partial(x,y,z)}{\\partial(\\rho,\\phi,z)}=\\begin{vmatrix}x_\\rho&x_\\phi&x_z\\\\y_\\rho&y_\\phi&y_z\\\\z_\\rho&z_\\phi&z_z\\end{vmatrix}=\\begin{vmatrix}\\cos\\phi&-\\rho\\sin\\phi&0\\\\\\sin\\phi&\\rho\\cos\\phi&0\\\\0&0&1\\end{vmatrix}\\]",
+                "\\[=\\cos\\phi(\\rho\\cos\\phi-0)-\\rho(-\\sin^2\\phi-0)+0\\]",
+                "\\[=\\rho\\cos^2\\phi+\\rho\\sin^2\\phi=\\rho(\\cos^2\\phi+\\sin^2\\phi)=1\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The final source equality is \\(\\rho(\\cos^2\\phi+\\sin^2\\phi)=1\\), but the left expression is \\(\\rho\\). The stated problem correctly asks for \\(\\rho\\); the final 1 is preserved as written."
+              },
+              "source_result_indices": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "jacobian-spherical",
+              "title": "Spherical coordinate transformation",
+              "source_pages": [
+                30,
+                31
+              ],
+              "question_paragraphs": [
+                "7) If \\(x=r\\sin\\theta\\cos\\phi,\\ y=r\\sin\\theta\\sin\\phi,\\ z=r\\cos\\theta\\) find \\(\\dfrac{\\partial(r,\\theta,\\phi)}{\\partial(x,y,z)}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Given \\(x=r\\sin\\theta\\cos\\phi,\\ y=r\\sin\\theta\\sin\\phi,\\ z=r\\cos\\theta\\)",
+                "\\[\\dfrac{\\partial(x,y,z)}{\\partial(r,\\theta,\\phi)}=\\begin{vmatrix}x_r&x_\\theta&x_\\phi\\\\y_r&y_\\theta&y_\\phi\\\\z_r&z_\\theta&z_\\phi\\end{vmatrix}=\\begin{vmatrix}\\sin\\theta\\cos\\phi&r\\cos\\phi\\cos\\theta&-r\\sin\\theta\\sin\\phi\\\\\\sin\\theta\\sin\\phi&r\\cos\\theta\\sin\\phi&r\\sin\\theta\\cos\\phi\\\\\\cos\\theta&-r\\sin\\theta&0\\end{vmatrix}\\]",
+                "\\[\\Rightarrow\\sin\\theta\\cos\\phi[r^2\\sin^2\\theta\\cos\\phi]-r\\cos\\phi\\cos\\theta[-r\\sin\\theta\\cos\\phi\\cos\\theta]-r\\sin\\theta\\sin\\phi[-r\\sin^2\\theta\\sin\\phi-r\\cos^2\\theta\\sin\\phi]\\]",
+                "\\[r^2\\sin^3\\theta\\cos^2\\phi+r^2\\cos^2\\phi\\cos^2\\theta\\sin\\theta+r^2\\sin^3\\theta\\sin^2\\phi+r^2\\cos^2\\theta\\sin^2\\phi\\sin\\theta\\]",
+                "\\[=r^2\\sin^3\\theta(\\cos^2\\phi+\\sin^2\\phi)+r^2\\cos^2\\theta\\sin\\theta(\\sin^2\\phi+\\cos^2\\phi)\\]",
+                "\\[=r^2\\sin^3\\theta+r^2\\cos^2\\theta\\sin\\theta=r^2\\sin\\theta(\\sin^2\\theta+\\cos^2\\theta)\\]",
+                "\\[J=r^2\\sin\\theta\\]",
+                "we know that \\(J\\cdot J'=1\\)",
+                "\\[J'=\\dfrac1J=\\dfrac1{r^2\\sin\\theta}\\]",
+                "\\[\\dfrac{\\partial(r,\\theta,\\phi)}{\\partial(x,y,z)}=\\dfrac1{r^2\\sin\\theta}\\]",
+                "Hence Proved."
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                9
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 32,
+      "source_pages": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "id": "taylor-maclaurin",
+      "heading": "Taylor’s and Maclaurin’s Expansions",
+      "blocks": [
+        {
+          "type": "subheading",
+          "id": "taylor-two-variable",
+          "text": "Tayler series of function of two variables"
+        },
+        {
+          "type": "paragraph",
+          "text": "1/02/23"
+        },
+        {
+          "type": "paragraph",
+          "text": "For the function of two variables \\(x,y\\) the tayler series expansion about the point \\(x=a;\\ y=b\\) (or) in powers of \\((x-a),(y-b)\\) can be written as"
+        },
+        {
+          "type": "equation",
+          "text": "\\[f(x,y)=f(a,b)+\\left\\{(x-a)\\dfrac{\\partial f}{\\partial x}_{(a,b)}+(y-b)\\dfrac{\\partial f}{\\partial y}_{(a,b)}\\right\\}\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[+\\dfrac1{2!}\\left\\{(x-a)^2\\dfrac{\\partial^2f}{\\partial x^2}_{(a,b)}+2(x-a)(y-b)\\dfrac{\\partial^2f}{\\partial x\\partial y}_{(a,b)}+(y-b)^2\\dfrac{\\partial^2f}{\\partial y^2}_{(a,b)}\\right\\}+\\cdots\\quad\\to(1)\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Eq (1) is called the tayler series expansion of \\(f(x,y)\\) about the point \\((a,b)\\)."
+        },
+        {
+          "type": "subheading",
+          "id": "maclaurin-origin",
+          "text": "Maclaurin’s series expansion"
+        },
+        {
+          "type": "paragraph",
+          "text": "Put \\(a=0,b=0\\) in eq (1) we get"
+        },
+        {
+          "type": "equation",
+          "text": "\\[f(x,y)=f(0,0)+x\\dfrac{\\partial f}{\\partial x}_{(0,0)}+y\\dfrac{\\partial f}{\\partial y}_{(0,0)}+\\dfrac1{2!}\\left[x^2\\dfrac{\\partial^2f}{\\partial y^2}_{(0,0)}+2xy\\dfrac{\\partial^2f}{\\partial x\\partial y}_{(0,0)}+y^2\\dfrac{\\partial^2f}{\\partial y^2}_{(0,0)}\\right]+\\cdots\\quad\\to(2)\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Eq (2) is called the Maclaurin’s series expansion of \\(f(x,y)\\).",
+          "math_mismatch": {
+            "label": "Notebook mathematical discrepancy",
+            "message": "The Maclaurin formula labels the coefficient of \\(x^2\\) as \\(f_{yy}\\). It must be \\(f_{xx}\\). The source formula is retained unchanged."
+          }
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "taylor-exp-cos",
+              "title": "Taylor expansion — exponential times cosine",
+              "source_pages": [
+                32,
+                33,
+                34
+              ],
+              "question_paragraphs": [
+                "1) Expand the function \\(f(x,y)=e^x\\cos y\\) at the point \\((1,\\pi/4)\\) using Tayler’s series. (or) in powers of \\((x-1)\\) and \\((y-\\pi/4)\\) (or) about the point \\(x=1,\\ y=\\pi/4\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using Tayler’s series expansion we can write the expansion of \\(f(x,y)\\) about the point \\((1,\\pi/4)\\) as",
+                "\\[f(x,y)=f(1,\\pi/4)+\\left[(x-1)\\dfrac{\\partial f}{\\partial x}_{(1,\\pi/4)}+\\left(y-\\dfrac\\pi4\\right)\\dfrac{\\partial f}{\\partial y}_{(1,\\pi/4)}\\right]\\]",
+                "\\[+\\dfrac1{2!}\\left[(x-1)^2\\dfrac{\\partial^2f}{\\partial x^2}_{(1,\\pi/4)}+2(x-1)(y-\\pi/4)\\dfrac{\\partial^2f}{\\partial x\\partial y}_{(1,\\pi/4)}+(y-\\pi/4)^2\\dfrac{\\partial^2f}{\\partial y^2}_{(1,\\pi/4)}\\right]+\\cdots\\]",
+                "Given \\(f(x,y)=e^x\\cos y\\)",
+                "\\[f(1,\\pi/4)=e^1\\cos\\pi/4=\\dfrac e{\\sqrt2}\\]",
+                "\\[f_x=e^x\\cos y,\\quad f_x(1,\\pi/4)=e^1\\cos(\\pi/4)=\\dfrac e{\\sqrt2}\\]",
+                "\\[f_y=-e^x\\sin y,\\quad f_y(1,\\pi/4)=-e^1\\sin(\\pi/4)=\\dfrac{-e}{\\sqrt2}\\]",
+                "\\[f_{xx}=e^x\\cos y,\\quad f_{xx}(1,\\pi/4)=-e^1\\cos(\\pi/4)=\\dfrac e{\\sqrt2}\\]",
+                "\\[f_{yy}=-e^x\\cos y,\\quad f_{yy}(1,\\pi/4)=-e^1\\cos(\\pi/4)=\\dfrac{-e}{\\sqrt2}\\]",
+                "\\[f_{xy}=\\dfrac{\\partial}{\\partial x}(-e^x\\sin y)=-e^x\\sin y,\\quad f_{xy}(1,\\pi/4)=\\dfrac{-e}{\\sqrt2}\\]",
+                "\\[e^x\\cos y=f(x,y)=\\dfrac e{\\sqrt2}+\\left[(x-1)\\dfrac e{\\sqrt2}+(y-\\pi/4)\\left(\\dfrac{-e}{\\sqrt2}\\right)\\right]\\]",
+                "\\[+\\dfrac1{2!}\\left[(x-1)^2\\left(\\dfrac e{\\sqrt2}\\right)+2(x-1)(y-\\pi/4)\\left(\\dfrac{-e}{\\sqrt2}\\right)+(y-\\pi/4)^2\\left(\\dfrac{-e}{\\sqrt2}\\right)\\right]+\\cdots\\]",
+                "\\[\\Rightarrow\\dfrac e{\\sqrt2}\\left\\{1+[(x-1)-(y-\\pi/4)]+\\dfrac1{2!}[(x-1)^2-2(x-1)(y-\\pi/4)-(y-\\pi/4)^2]+\\dfrac1{3!}[\\ ]\\cdots\\right\\}\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source evaluation line for \\(f_{xx}\\) contains \\(-e\\cos(\\pi/4)=e/\\sqrt2\\), whose left sign is inconsistent. The derivative itself and later positive coefficient agree with \\(f_{xx}=e^x\\cos y\\). The source leaves the cubic bracket blank; it has not been completed."
+              }
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "maclaurin-exp-log",
+              "title": "Maclaurin expansion — exponential times logarithm",
+              "source_pages": [
+                34,
+                35
+              ],
+              "question_paragraphs": [
+                "2) Find the Maclaurin’s series expansion of the function \\(f(x,y)=e^x\\log(1+y)\\) (or) about the origin (or) \\((0,0)\\) (or) in powers of \\(x,y\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using Maclaurin’s series expansion we can write the expansion of \\(f(x,y)=e^x\\log(1+y)\\) as",
+                "\\[f(x,y)=f(0,0)+x\\dfrac{\\partial f}{\\partial x}_{(0,0)}+y\\dfrac{\\partial f}{\\partial y}_{(0,0)}+\\dfrac1{2!}\\left[x^2\\dfrac{\\partial^2f}{\\partial y^2}_{(0,0)}+2xy\\dfrac{\\partial^2f}{\\partial x\\partial y}_{(0,0)}+y^2\\dfrac{\\partial^2f}{\\partial y^2}_{(0,0)}\\right]+\\cdots\\]",
+                "Given \\(f(x,y)=e^x\\log(1+y)\\)",
+                "\\[f(0,0)=e^0\\log(1+0)=0\\]",
+                "\\[f_x(0,0)=e^x\\log(1+y)=0,\\quad f_y(0,0)=e^x\\dfrac1{1+y}=1\\]",
+                "\\[f_{xx}(0,0)=e^x\\log(1+y)=0,\\quad f_{yy}(0,0)=e^x\\left[\\dfrac{-1}{(1+y)^2}\\right]=-1\\]",
+                "\\[f_{xy}(0,0)=\\dfrac{\\partial}{\\partial x}\\left(\\dfrac{e^x}{1+y}\\right)=\\dfrac{e^x}{1+y}=1\\]",
+                "\\[f(x,y)=e^x\\log(1+y)=0+[x(0)+y(1)]+\\dfrac1{2!}[x^2(0)+2xy(1)+y^2(-1)]+\\cdots\\]",
+                "\\[=y+\\dfrac1{2!}[2xy-y^2]+\\cdots\\]",
+                "\\[\\therefore e^x\\log(1+y)=y+xy-\\dfrac{y^2}2+\\cdots\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source repeats \\(f_{yy}\\) for the \\(x^2\\) coefficient in the general template, but its numerical substitution uses the correct \\(f_{xx}(0,0)=0\\). The template and substitution are both retained."
+              }
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "taylor-polynomial-one",
+              "title": "Taylor expansion — polynomial at (1,2)",
+              "source_pages": [
+                35,
+                36
+              ],
+              "question_paragraphs": [
+                "3) Find the Tayler’s series expansion of the function \\(f(x,y)=x^2y+3y-2\\) at the point \\((1,2)\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using Tayler’s series expansion we can write \\(f(x,y)\\) as",
+                "\\[f(x,y)=f(1,2)+[(x-1)f_x(1,2)+(y-2)f_y(1,2)]+\\dfrac1{2!}[(x-1)^2f_{xx}(1,2)+2(x-1)(y-2)f_{xy}(1,2)+(y-2)^2f_{yy}(1,2)]+\\cdots\\]",
+                "Given \\(f(x,y)=x^2y+3y-2\\)",
+                "\\[f(1,2)=(1)^2(2)+3(2)-2=2+4=6\\]",
+                "\\[f_x(1,2)=2xy=2(1)(2)=4\\]",
+                "\\[f_y(1,2)=x^2+3=(1)+3=4\\]",
+                "\\[f_{xx}(1,2)=2y=2(2)=4\\]",
+                "\\[f_{yy}(1,2)=0\\]",
+                "\\[f_{xy}(1,2)=\\dfrac{\\partial}{\\partial x}(x^2+3)=2x=2(1)=2\\]",
+                "\\[f(x,y)=x^2y+3y-2=6+[(x-1)(4)+(y-2)(4)]\\]",
+                "\\[+\\dfrac1{2!}[(x-1)^2(4)+2(x-1)(y-2)(2)+(y-2)^2(0)]+\\cdots\\]",
+                "\\[\\Rightarrow6+[4(x-1)+4(y-2)]+\\dfrac1{2!}[4(x-1)^2+4(x-1)(y-2)]+\\cdots\\]"
+              ],
+              "verbatim_source": true
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "taylor-exp-times-y",
+              "title": "Taylor expansion — exponential times y",
+              "source_pages": [
+                36
+              ],
+              "question_paragraphs": [
+                "4) Find Tayler’s series expansion of function \\(f(x,y)=e^xy\\) at the point \\((1,1)\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using Tayler’s series expansion we can write \\(f(x,y)\\) as",
+                "\\[f(x,y)=f(1,1)+[(x-1)f_x(1,1)+(y-1)f_y(1,1)]\\]",
+                "\\[+\\dfrac1{2!}[(x-1)^2f_{xx}(1,1)+2(x-1)(y-1)f_{xy}(1,1)+(y-1)^2f_{yy}(1,1)]+\\cdots\\quad\\to(1)\\]",
+                "Given \\(f(x,y)=e^xy\\)",
+                "\\[f(1,1)=e^1(1)=e\\]",
+                "\\[u_x(1,1)=e^xy=e,\\quad u_y(1,1)=e^x=e\\]",
+                "\\[u_{xx}(1,1)=e^xy=e,\\quad u_{yy}(1,1)=0,\\quad u_{xy}(1,1)=e^x=e\\]",
+                "\\[(1)\\Rightarrow e+(x-1)e+(y-1)e+\\dfrac1{2!}[(x-1)^2e+2(x-1)(y-1)e]+\\cdots\\]"
+              ],
+              "verbatim_source": true
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "taylor-polynomial-two",
+              "title": "Taylor expansion — cubic polynomial",
+              "source_pages": [
+                37
+              ],
+              "question_paragraphs": [
+                "5) Expand the function \\(f(x,y)=x^3+y^3+xy^2\\) as powers of \\((x-1)\\) and \\((y-2)\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using Tayler’s series expansion we can write \\(f(x,y)=x^3+y^3+xy^2\\) as",
+                "\\[f(x,y)=f(1,2)+[(x-1)f_x(1,2)+(y-2)f_y(1,2)]+\\dfrac1{2!}[(x-1)^2f_{xx}(1,2)+2(x-1)(y-2)f_{xy}(1,2)+(y-2)^2f_{yy}(1,2)]+\\cdots\\quad\\to(1)\\]",
+                "Given \\(f(x,y)=x^3+y^3+xy^2\\)",
+                "\\[f(1,2)=1^3+2^3+1(2)^2=1+8+4=13\\]",
+                "\\[f_x(1,2)=3x^2+y^2=3+4=7\\]",
+                "\\[f_y(1,2)=3y^2+2xy=3(2)^2+2(1)(2)=3(4)+4=16\\]",
+                "\\[f_{xx}(1,2)=3(2x)=6x=6\\]",
+                "\\[f_{yy}(1,2)=3(2y)+2x=3(2)+2(1)=12+2=14\\]",
+                "\\[f_{xy}(1,2)=0+2y(1)=2y=2(2)=4\\]",
+                "\\[(1)\\Rightarrow x^3+y^3+xy^2=13+[(x-1)7+(y-2)16]+\\dfrac12[(x-1)^2 6+8(x-1)(y-2)+(y-2)^2 14]+\\cdots\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The \\(f_{yy}\\) substitution writes \\(3(2)+2(1)=12+2\\); evaluating \\(3(2y)+2x\\) at \\((1,2)\\) requires \\(3(4)+2\\). The result 14 is correct, but that intermediate equality is not. The polynomial’s cubic terms remain represented by the source ellipsis."
+              }
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "taylor-exp-sin",
+              "title": "Taylor expansion — exponential times sine",
+              "source_pages": [
+                37,
+                38
+              ],
+              "question_paragraphs": [
+                "6) Expand the function \\(f(x,y)=e^x\\sin y\\) at the point \\((-1,\\pi/4)\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using Tayler’s series we can express the function \\(f(x,y)=e^x\\sin y\\) as",
+                "\\[f(x,y)=f(-1,\\pi/4)+[(x+1)u_x(-1,\\pi/4)+(y-\\pi/4)u_y(-1,\\pi/4)]\\]",
+                "\\[+\\dfrac1{2!}[(x+1)^2u_{xx}(-1,\\pi/4)+2(x+1)(y-\\pi/4)u_{xy}(-1,\\pi/4)+(y-\\pi/4)^2u_{yy}(-1,\\pi/4)]+\\cdots\\quad\\to(1)\\]",
+                "Given \\(f(x,y)=e^x\\sin y\\)",
+                "\\[f(-1,\\pi/4)=e^{-1}\\sin(\\pi/4)=\\dfrac{e^{-1}}{\\sqrt2}=\\dfrac1{\\sqrt2e}\\]",
+                "\\[f_x(-1,\\pi/4)=e^x\\sin y=\\dfrac{e^{-1}}{\\sqrt2}=\\dfrac1{\\sqrt2e}\\]",
+                "\\[f_y(-1,\\pi/4)=e^x\\cos y=\\dfrac{e^{-1}}{\\sqrt2}=\\dfrac1{\\sqrt2e}\\]",
+                "\\[f_{xx}(-1,\\pi/4)=e^x\\sin y=\\dfrac{e^{-1}}{\\sqrt2}=\\dfrac1{\\sqrt2e}\\]",
+                "\\[f_{yy}(-1,\\pi/4)=-e^x\\sin y=\\dfrac{-e^{-1}}{\\sqrt2}=\\dfrac{-1}{\\sqrt2e}\\]",
+                "\\[f_{xy}(-1,\\pi/4)=e^x\\cos y=\\dfrac{e^{-1}}{\\sqrt2}=\\dfrac1{\\sqrt2e}\\]",
+                "\\[(1)\\Rightarrow f(x,y)=e^x\\sin y=\\dfrac1{\\sqrt2e}+\\left[(x+1)\\dfrac1{\\sqrt2e}+(y-\\pi/4)\\dfrac1{\\sqrt2e}\\right]\\]",
+                "\\[+\\dfrac1{2!}\\left[(x+1)^2\\dfrac1{\\sqrt2e}+2(x+1)(y-\\pi/4)\\dfrac1{\\sqrt2e}-(y-\\pi/4)^2\\dfrac1{\\sqrt2e}\\right]+\\cdots\\]"
+              ],
+              "verbatim_source": true
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "taylor-square-root",
+              "title": "Taylor expansion — square-root function",
+              "source_pages": [
+                38,
+                39
+              ],
+              "question_paragraphs": [
+                "7) Expand the function \\(f(x,y)=\\sqrt{1+x+y^2}\\) at the point \\((1,0)\\)."
+              ],
+              "paragraphs": [
+                "Sol:- By using Tayler’s series expansion we can express the function \\(f(x,y)=\\sqrt{1+x+y^2}\\) as",
+                "\\[f(x,y)=f(1,0)+[(x-1)u_x(1,0)+(y-0)u_y(1,0)]+\\dfrac1{2!}[(x-1)^2u_{xx}(1,0)+2(x-1)(y-0)u_{xy}(1,0)+(y-0)^2u_{yy}(1,0)]+\\cdots\\quad\\to(1)\\]",
+                "Given \\(f(x,y)=\\sqrt{1+x+y^2}\\)",
+                "\\[f(1,0)=\\sqrt{1+1+0}=\\sqrt2\\]",
+                "\\[f_x(1,0)=\\dfrac1{2\\sqrt{1+x+y^2}}=\\dfrac1{2\\sqrt2}\\]",
+                "\\[f_y(1,0)=\\dfrac{2y}{2\\sqrt{1+x+y^2}}=0\\]",
+                "\\[f_{xx}(1,0)=\\dfrac{-1}{2(2)}(1+x+y^2)^{-3/2}=\\dfrac{-1}{4}(2)^{-3/2}=\\dfrac{-2^{-3/2}}{2^2}\\]",
+                "\\[=-2^{-3/2-2}=-2^{-7/2}\\]",
+                "\\[f_{yy}(1,0)=\\]"
+              ],
+              "verbatim_source": true,
+              "source_note": "The notebook stops at the blank fᵧᵧ line. The remaining derivatives and final expansion are not supplied."
+            }
+          ]
+        }
+      ],
+      "scope_note": "Supporting material in the supplied packet; two-variable Taylor expansions are not separately named in the R25 Unit IV syllabus."
+    },
+    {
+      "page": 40,
+      "source_pages": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "id": "maxima-minima",
+      "heading": "Maxima and Minima of Two-Variable Functions",
+      "blocks": [
+        {
+          "type": "subheading",
+          "id": "extreme-stationary-values",
+          "text": "Maximum, minimum, extreme and stationary values"
+        },
+        {
+          "type": "paragraph",
+          "text": "03/02/23"
+        },
+        {
+          "type": "paragraph",
+          "text": "Maximum and Minimum of functions of several variables"
+        },
+        {
+          "type": "paragraph",
+          "text": "Let \\(f(x,y)\\) be a function of two variables and it is said to be a maximum value or minimum value at the point \\(x=a,\\ y=b\\) if \\(f(a,b)>f(a+h,b+k)\\) (or) \\(f(a,b)<f(a+h,b+k)\\) where \\(h,k\\) are small values."
+        },
+        {
+          "type": "paragraph",
+          "text": "Extreme value: If \\(f(a,b)\\) is said to be an extreme value of the given function if it has maximum or minimum value."
+        },
+        {
+          "type": "paragraph",
+          "text": "Stationary value: If \\(f(a,b)\\) is said to be a stationary value of the given function if \\(\\dfrac{\\partial f}{\\partial x}_{(a,b)}=0\\) and \\(\\dfrac{\\partial f}{\\partial y}_{(a,b)}=0\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Note: Every extreme value is stationary value but converse need not be true."
+        },
+        {
+          "type": "subheading",
+          "id": "second-derivative-test",
+          "text": "Procedure to find maximum & minimum value"
+        },
+        {
+          "type": "paragraph",
+          "text": "Procedure to find maximum & minimum value of \\(f(x,y)\\)"
+        },
+        {
+          "type": "paragraph",
+          "text": "1. Find \\(\\dfrac{\\partial f}{\\partial x}\\) and \\(\\dfrac{\\partial f}{\\partial y}\\) and equate each to zero and solve these equations for \\(x\\) and \\(y\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "2. Find \\(\\dfrac{\\partial^2f}{\\partial x^2}(=\\ell),\\ \\dfrac{\\partial^2f}{\\partial x\\partial y}(=m)\\) and \\(\\dfrac{\\partial^2f}{\\partial y^2}(=n)\\). For each pair of values \\((x_1,y_1),(x_2,y_2),\\ldots\\)"
+        },
+        {
+          "type": "paragraph",
+          "text": "3. If i) \\(\\ell n-m^2>0,\\ \\ell<0\\) at \\((x_1,y_1)\\) then the function has the maximum value at the point \\((x_1,y_1)\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "ii) If \\(\\ell n-m^2>0\\) and \\(\\ell>0\\) at the point \\((x_2,y_2)\\) then the function has minimum value at the point \\((x_2,y_2)\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "iii) If \\(\\ell n-m^2<0\\) at the point \\((x_3,y_3)\\) then the function has neither maximum nor minimum."
+        },
+        {
+          "type": "paragraph",
+          "text": "iv) If \\(\\ell n-m^2=0\\) then at any point then no conclusion can be drawn about maximum or minimum value of the given function. we require further investigation to find max or min value."
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "extrema-rational",
+              "title": "Maximum or minimum — rational function",
+              "source_pages": [
+                41,
+                42
+              ],
+              "question_paragraphs": [
+                "Q. Find maximum or minimum value of the function \\(f(x,y)=xy+\\dfrac{a^3}{x}+\\dfrac{a^3}{y}\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Given \\(f(x,y)=xy+\\dfrac{a^3}{x}+\\dfrac{a^3}{y}\\)",
+                "\\[f_x=y-\\dfrac{a^3}{x^2},\\qquad f_y=x-\\dfrac{a^3}{y^2}\\]",
+                "\\[f_x=0\\Rightarrow y-\\dfrac{a^3}{x^2}=0\\Rightarrow y=\\dfrac{a^3}{x^2}\\quad\\to(1)\\]",
+                "\\[f_y=0\\Rightarrow x-\\dfrac{a^3}{y^2}=0\\Rightarrow x=\\dfrac{a^3}{y^2}\\quad\\to(2)\\]",
+                "Sub eq (1) in eq (2)",
+                "\\[x=\\dfrac{a^3x^4}{a^6}\\]",
+                "\\[x=\\dfrac{x^4}{a^3}\\]",
+                "\\[xa^3=x^4\\]",
+                "\\[x^4-xa^3=0\\]",
+                "\\[x(x^3-a^3)=0\\]",
+                "\\[\\Rightarrow x=0,\\quad x=a\\]",
+                "Sub \\(x\\) values in (1)",
+                "\\[x=0,\\quad y=\\dfrac{a^3}0,\\quad y=\\infty\\]",
+                "\\[x=a,\\quad y=\\dfrac{a^3}{a^2},\\quad y=a\\]",
+                "Stationary value ⇒ \\(A(a,a)\\)",
+                "\\[f_{xx}=-a^3\\left(\\dfrac{-2}{x^3}\\right)=\\dfrac{2a^3}{x^3}=\\ell\\]",
+                "\\[f_{xy}=1=m,\\qquad f_{yy}=\\dfrac{2a^3}{y^3}=n\\]",
+                "\\[\\ell n-m^2=\\dfrac{2a^3}{x^3}\\left[\\dfrac{2a^3}{y^3}\\right]-1^2=\\dfrac{4a^6}{x^3y^3}-1\\]",
+                "\\[\\ell(a,a)=\\dfrac{2(a)^3}{a^3}=2>0\\]",
+                "\\[\\ell n-m^2\\text{ at }A(a,a)\\Rightarrow\\dfrac{4(a^6)}{a^3a^3}-1=\\dfrac{4a^6}{a^6}-1=4-1=3>0\\]",
+                "∴ The function has minimum value at the point \\(A(a,a)\\) hence the minimum value of the given function is",
+                "\\[f(a,a)=a^2+\\dfrac{a^3}a+\\dfrac{a^3}a=3a^2\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The written \\(y=a^3/0\\) is undefined, not a finite candidate; \\(x=0\\) is excluded from the original domain. The second-derivative test establishes a local minimum at \\((a,a)\\) for \\(a\\ne0\\), not a global minimum on all nonzero real \\(x,y\\). The source does not specify a positive domain; no such condition has been inserted."
+              },
+              "source_result_indices": [
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "extrema-cubic-parameter",
+              "title": "Stationary points and saddle point — parameter a",
+              "source_pages": [
+                43,
+                44
+              ],
+              "question_paragraphs": [
+                "Q. Find maximum or minimum value of the function \\(f(x,y)=x^2y+xy^2-axy\\), \\((a>0)\\)."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[f_x=2xy+y^2-ay\\quad\\to(1),\\qquad f_y=x^2+2xy-ax\\quad\\to(2)\\]",
+                "\\[f_x=0\\Rightarrow2xy+y^2-ay=0\\]",
+                "\\[y(2x-a)+y^2=0,\\quad y^2=-y(2x-a),\\quad y=a-2x\\]",
+                "\\[f_y=0\\Rightarrow x^2+2xy-ax=0\\]",
+                "\\[x^2+x(2y-a)=0,\\quad x^2=-x(2y-a),\\quad x=a-2y\\]",
+                "\\[(1)-(2)\\Rightarrow2xy+y^2-ay-x^2-2xy+ax=0\\]",
+                "\\[y^2-x^2-a(y-x)=0\\]",
+                "\\[(y-x)(y+x)-a(y-x)=0\\]",
+                "\\[(y-x)[y+x-a]=0\\]",
+                "\\[y-x=0\\quad(\\text{or})\\quad y+x-a=0\\]",
+                "\\[x=y\\]",
+                "Sub \\(x=y\\) in (1)",
+                "\\[2x^2+x^2-ax=0,\\quad3x^2=ax,\\quad3x^2-ax=0,\\quad x(3x-a)=0\\]",
+                "\\[x=0\\quad(\\text{or})\\quad x=a/3\\]",
+                "\\[y=0,\\quad y=a/3\\]",
+                "\\(A(0,0)\\) and \\(B(a/3,a/3)\\) are the stationary points of the given function.",
+                "\\[\\ell=f_{xx}=2y,\\quad n=f_{yy}=2x,\\quad m=f_{xy}=2x+2y-a\\]",
+                "\\[\\ell(0,0)=0,\\quad\\ell(a/3,a/3)=2(a/3)=\\dfrac{2a}3>0\\]",
+                "\\[n(0,0)=0,\\quad n(a/3,a/3)=\\dfrac{2a}3>0\\]",
+                "\\[m(0,0)=-a,\\quad m(a/3,a/3)=\\dfrac{4a}3-a=a/3\\]",
+                "\\[\\ell n-m^2(0,0)=-a^2<0\\]",
+                "∴ The function has neither maximum point nor minimum here the point \\((0,0)\\) is called “saddle point” of the given function.",
+                "\\[\\ell n-m^2(a/3,a/3)=\\dfrac{4a^2}9-\\dfrac a3=\\dfrac{4a^2-3a}9>0\\]",
+                "\\[f(a/3,a/3)=\\left(\\dfrac a3\\right)^2\\left(\\dfrac a3\\right)+\\left(\\dfrac a3\\right)\\left(\\dfrac a3\\right)^2-a\\left(\\dfrac a3\\right)\\left(\\dfrac a3\\right)\\]",
+                "\\[=\\dfrac{a^3}{27}+\\dfrac{a^3}{27}-\\dfrac{a^3}9=\\dfrac{-a^3}{27}\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source subtracts \\(a/3\\), rather than \\((a/3)^2\\), in the discriminant. The correct discriminant there is \\(a^2/3>0\\). The case \\(x+y=a\\) also gives stationary points \\((a,0)\\) and \\((0,a)\\), which are omitted after division; both are saddles. The source’s original list, calculation and value are preserved."
+              },
+              "source_result_indices": [
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "extrema-polynomial-63",
+              "title": "Polynomial extrema",
+              "source_pages": [
+                45,
+                46
+              ],
+              "question_paragraphs": [
+                "04/02/23 — 1) Find maximum or minimum values of the function \\(f(x,y)=x^3+y^3-63(x+y)+12xy\\)."
+              ],
+              "paragraphs": [
+                "Sol:- \\(f(x,y)=x^3+y^3-63x-63y+12xy\\)",
+                "\\[f_x=3x^2-63+12y,\\qquad f_y=3y^2-63+12x\\]",
+                "\\[f_x=0,\\quad3x^2-63+12y=0\\quad\\to(1)\\]",
+                "\\[f_y=0,\\quad3y^2-63+12x=0\\quad\\to(2)\\]",
+                "\\[(1)-(2)\\Rightarrow3x^2-63+12y-3y^2+63-12x=0\\]",
+                "\\[3(x^2-y^2)-12(x-y)=0\\]",
+                "\\[(x^2-y^2)-4(x-y)=0\\]",
+                "\\[(x-y)(x+y)-4(x-y)=0\\]",
+                "\\[(x-y)[x+y-4]=0\\]",
+                "\\[x-y=0,\\quad x=y,\\qquad x+y=4\\]",
+                "Sub \\(x=y\\) in eq (1)",
+                "\\[3x^2-63+12x=0,\\quad x^2-21+4x=0,\\quad x^2+4x-21=0\\]",
+                "\\[x=3,-7\\quad\\Rightarrow y=3,-7\\]",
+                "Let \\(A(x,y)=(3,3),\\ B(x,y)=(-7,-7)\\)",
+                "\\[\\ell=f_{xx}=6x,\\quad n=f_{yy}=6y,\\quad m=f_{xy}=12\\]",
+                "At Point \\(A(3,3)\\)",
+                "\\[\\ell(3,3)=6(x)=6(3)=18,\\quad m=12,\\quad n=6y=6(3)=18\\]",
+                "\\[\\ell n-m^2=(18)(18)-12=312>0\\]",
+                "\\[\\ell>0\\]",
+                "∴ The function has Minimum at \\(A(3,3)\\)",
+                "⇒ The minimum function is",
+                "\\[f(3,3)=3^3+3^3-63(3+3)+12(3\\times3)=-216\\]",
+                "At Point \\((-7,-7)\\)",
+                "\\[\\ell(-7,-7)=-42,\\quad m=12,\\quad n(-7,-7)=-42\\]",
+                "\\[\\ell n-m^2=(-42)(-42)-12=1752>0\\]",
+                "\\[\\ell<0\\]",
+                "∴ The function has Maximum at \\(B(-7,-7)\\)",
+                "⇒ The maximum function is",
+                "\\[f(-7,-7)=-343-343-63(-7-7)+12(-7\\times-7)=784\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source subtracts 12 instead of \\(12^2\\). The discriminants are 180 and 1620, not 312 and 1752; the local classifications and values at those two points still agree. The source also leaves the branch \\(x+y=4\\) unsolved: \\((5,-1)\\) and \\((-1,5)\\) are additional stationary saddle points. These source omissions are not silently filled into the transcription."
+              },
+              "source_result_indices": [
+                28
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "extrema-sine-sum",
+              "title": "Trigonometric extrema — sum of sines",
+              "source_pages": [
+                46,
+                47,
+                48
+              ],
+              "question_paragraphs": [
+                "2) Find maximum or minimum value of the function \\(f(x,y)=\\sin x+\\sin y+\\sin(x+y)\\)."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[f_x=\\cos x+\\cos(x+y),\\qquad f_y=\\cos y+\\cos(x+y)\\]",
+                "\\[f_x=0,\\quad\\cos x+\\cos(x+y)=0\\quad\\to(1)\\]",
+                "\\[f_y=0,\\quad\\cos y+\\cos(x+y)=0\\quad\\to(2)\\]",
+                "\\[(1)-(2)\\Rightarrow\\cos x-\\cos y=0\\]",
+                "\\[\\cos x=\\cos y,\\quad x=y\\]",
+                "Sub \\(x=y\\) in eq (1)",
+                "\\[\\cos x+\\cos2x=0,\\quad\\cos x=-\\cos2x\\]",
+                "\\[\\cos x+\\cos2x=0,\\quad2\\cos\\dfrac{3x}2\\cos\\dfrac x2=0\\]",
+                "\\[2\\cos\\dfrac{3x}2=0,\\quad\\cos\\dfrac{3x}2=0,\\quad\\cos\\dfrac{3x}2=\\cos90^\\circ\\]",
+                "\\[\\dfrac{3x}2=90^\\circ,\\quad x=\\pm60^\\circ,\\quad y=\\pm60^\\circ\\]",
+                "\\[\\cos\\dfrac x2=0,\\quad\\cos\\dfrac x2=\\cos90^\\circ,\\quad\\dfrac x2=90^\\circ\\]",
+                "\\[x=\\pm180^\\circ,\\quad y=\\pm180^\\circ\\]",
+                "Let \\(A(x,y)=(60,60)=(\\pi/3,\\pi/3)\\) & \\(B(x,y)=(180,180)=(\\pi,\\pi)\\)",
+                "\\[B(x,y)=(-\\pi/3,-\\pi/3),\\quad D(x,y)=(-\\pi,-\\pi)\\]",
+                "\\[\\ell=f_{xx}=-\\sin x-\\sin(x+y),\\quad m=f_{xy}=-\\sin(x+y),\\quad n=f_{yy}=-\\sin y-\\sin(x+y)\\]",
+                "At Point \\(A(\\pi/3,\\pi/3)\\)",
+                "\\[\\ell(\\pi/3,\\pi/3)=-\\dfrac{\\sqrt3}2-\\sin(120^\\circ)=-\\dfrac{\\sqrt3}2-\\dfrac{\\sqrt3}2=-\\sqrt3\\]",
+                "\\[m(60,60)=-\\sin(60+60)=\\dfrac{-\\sqrt3}2,\\quad n(60,60)=-\\sqrt3\\]",
+                "\\[\\ell n-m^2=(-\\sqrt3)(-\\sqrt3)-\\left(\\dfrac{-\\sqrt3}2\\right)^2=3-\\dfrac34=\\dfrac94>0\\]",
+                "\\[\\ell=-\\sqrt3<0\\]",
+                "∴ The function has maximum value at \\(A(\\pi/3,\\pi/3)\\).",
+                "The maximum value is given by",
+                "\\[f(\\pi/3,\\pi/3)=\\sin\\dfrac\\pi3+\\sin\\dfrac\\pi3+\\sin\\left(\\dfrac\\pi3+\\dfrac\\pi3\\right)=\\dfrac{\\sqrt3}2+\\dfrac{\\sqrt3}2+\\dfrac{\\sqrt3}2=\\dfrac{3\\sqrt3}2\\]",
+                "At Point \\(B(-\\pi/3,-\\pi/3)\\)",
+                "\\[\\ell(-60,-60)=\\dfrac{\\sqrt3}2+\\dfrac{\\sqrt3}2=\\sqrt3\\]",
+                "\\[m(-60,-60)=\\dfrac{\\sqrt3}2,\\quad n(60,60)=\\sqrt3\\]",
+                "\\[\\ell n-m^2=(\\sqrt3)(\\sqrt3)-\\left(\\dfrac{\\sqrt3}2\\right)^2=\\dfrac94>0\\]",
+                "\\[\\ell=\\sqrt3>0\\]",
+                "∴ The function has minimum value at \\(B(-\\pi/3,-\\pi/3)\\).",
+                "The Minimum value is given by",
+                "\\[f(-\\pi/3,-\\pi/3)=-\\dfrac{\\sqrt3}2-\\dfrac{\\sqrt3}2-\\dfrac{\\sqrt3}2=\\dfrac{-3\\sqrt3}2\\]",
+                "\\[\\ell=0,\\quad m=0,\\quad n=0\\]",
+                "\\[\\therefore\\ell n-m^2=0\\]",
+                "Hence no conclusion can be drawn about maximum or minimum value of the given function at the point \\((\\pm\\pi,\\pm\\pi)\\)."
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source inference \\(\\cos x=\\cos y\\Rightarrow x=y\\) omits the alternative and periodic branches. Some point labels are also reused and the minimum-point n label is printed (60,60) although the calculation is for (-60,-60). The extrema values shown are correct and the zero-discriminant conclusion is correctly inconclusive as a second-derivative test; no missing stationary-point analysis is inserted."
+              },
+              "source_result_indices": [
+                33
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "extrema-sine-product",
+              "title": "Trigonometric extrema — product of sines",
+              "source_pages": [
+                49,
+                50
+              ],
+              "question_paragraphs": [
+                "3) Find Maximum or minimum values of the function \\(f(x,y)=\\sin x\\sin y\\sin(x+y)\\) where \\(0<(x,y)<\\pi\\)."
+              ],
+              "paragraphs": [
+                "Sol:-",
+                "\\[f_x=\\sin y[\\sin x\\cos(x+y)+\\cos x\\sin(x+y)]=\\sin y\\sin(2x+y)\\]",
+                "\\[f_y=\\sin x[\\sin y\\cos(x+y)+\\cos y\\sin(x+y)]=\\sin x\\sin(x+2y)\\]",
+                "\\[f_x=0,\\quad\\sin y\\sin(2x+y)=0\\]",
+                "\\[\\sin y=0,\\quad y=\\pm n\\pi\\]",
+                "\\[\\sin(2x+y)=0,\\quad2x+y=\\pm n\\pi,\\quad2x+y=0,\\pi\\]",
+                "\\[f_y=0,\\quad\\sin x\\sin(x+2y)=0\\]",
+                "\\[\\sin x=0,\\quad x=0,\\pi,\\ldots\\]",
+                "\\[\\sin(x+2y)=0,\\quad(x+2y)=0,\\pi,2\\pi\\]",
+                "\\[2x+y=0,\\quad y=-2x,\\quad x+2(-2x)=0,\\quad-3x=0,\\quad x=0\\]",
+                "Let on solving \\(x+2y=\\pi\\) and \\(2x+y=0\\)",
+                "\\[x=\\pi/3\\quad\\text{and}\\quad y=\\pi/3\\]",
+                "\\[f_{xx}=\\sin y[\\cos(2x+y)]\\times2=\\ell\\]",
+                "\\[f_{yy}=2\\sin x\\cos(x+2y)=n\\]",
+                "\\[f_{xy}=\\cos x\\sin(x+2y)+2\\sin x\\cos(x+2y)=m\\]",
+                "At the point \\(A(\\pi/3,\\pi/3)\\)",
+                "\\[\\ell=2\\sin\\left(\\dfrac\\pi3\\right)\\cos\\left(2\\left(\\dfrac\\pi3\\right)+\\left(\\dfrac\\pi3\\right)\\right)=2\\times\\dfrac{\\sqrt3}2\\cos\\pi=\\sqrt3(-1)=-\\sqrt3\\]",
+                "\\[m=\\cos\\left(\\dfrac\\pi3\\right)\\sin\\left(\\dfrac{3\\pi}3\\right)+2\\sin\\left(\\dfrac\\pi3\\right)\\cos\\left(\\dfrac{3\\pi}3\\right)\\]",
+                "\\[=0+2\\times\\dfrac{\\sqrt3}2(-1)=\\dfrac{-\\sqrt3}2\\]",
+                "\\[n=2\\sin(\\pi/3)\\cos(3\\pi/3)=2\\times\\dfrac{\\sqrt3}2(-1)=-\\sqrt3\\]",
+                "\\[\\ell n-m^2=(-\\sqrt3)(-\\sqrt3)-\\left(\\dfrac{\\sqrt3}2\\right)^2=3-\\dfrac34=\\dfrac94>0\\]",
+                "\\[\\ell=-\\sqrt3<0\\]",
+                "The function has maximum value.",
+                "The maximum value is given by",
+                "\\[f(\\pi/3,\\pi/3)=\\sin(\\pi/3)\\sin(\\pi/3)\\sin(\\pi/3+\\pi/3)=\\dfrac{\\sqrt3}2\\cdot\\dfrac{\\sqrt3}2\\cdot\\dfrac{\\sqrt3}2=\\dfrac{3\\sqrt3}8\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The stated equations \\(x+2y=\\pi,2x+y=0\\) do not yield \\((\\pi/3,\\pi/3)\\); both right sides must be \\(\\pi\\) for that point. The mixed-derivative formula has an extra factor 2: direct differentiation gives \\(f_{xy}=\\cos x\\sin(x+2y)+\\sin x\\cos(x+2y)\\). Its subsequent arithmetic also writes \\(2(\\sqrt3/2)(-1)=-\\sqrt3/2\\), which is false. The final maximum value is correct; the minimum at \\((2\\pi/3,2\\pi/3)\\), value \\(-3\\sqrt3/8\\), is not worked in the source. Original lines are retained."
+              },
+              "source_result_indices": [
+                24
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 51,
+      "source_pages": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "id": "lagrange-multipliers",
+      "heading": "Constrained Optimization: Lagrange Multipliers",
+      "blocks": [
+        {
+          "type": "subheading",
+          "id": "lagrange-method",
+          "text": "Lagrange’s Method of undetermined Multipliers"
+        },
+        {
+          "type": "paragraph",
+          "text": "6/02/23"
+        },
+        {
+          "type": "paragraph",
+          "text": "Suppose it is required to find the extreme of (max or min) for the function \\(f(x,y,z)\\) subject to the condition \\(\\phi(x,y,z)=0\\) → (1)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Step 1: Form the Lagrange function"
+        },
+        {
+          "type": "equation",
+          "text": "\\[F(x,y,z)=f(x,y,z)+\\lambda\\phi(x,y,z)\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here \\(\\lambda\\) is called the lagrangian multiplier which is determined by the following conditions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Step 2:"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{\\partial F}{\\partial x}=0\\Rightarrow\\dfrac{\\partial f}{\\partial x}+\\lambda\\dfrac{\\partial\\phi}{\\partial x}=0\\quad\\to(2)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{\\partial F}{\\partial y}=0\\Rightarrow\\dfrac{\\partial f}{\\partial y}+\\lambda\\dfrac{\\partial\\phi}{\\partial y}=0\\quad\\to(3)\\]"
+        },
+        {
+          "type": "equation",
+          "text": "\\[\\dfrac{\\partial F}{\\partial z}=0\\Rightarrow\\dfrac{\\partial f}{\\partial z}+\\lambda\\dfrac{\\partial\\phi}{\\partial z}=0\\quad\\to(4)\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Step 3: Solve the equations from (1) – (4) for \\(x,y,z\\). The values of \\(x,y\\) and \\(z\\) are called the stationary points of the function \\(f(x,y,z)\\). Substitute \\(x,y,z\\) in the given function. It will give the maximum or minimum value of the function \\(f(x,y,z)\\)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Note: To find the extreme of \\(f(x,y,z)\\) w.r.t the conditions \\(\\phi(x,y,z)=0\\) & \\(\\psi(x,y,z)=0\\) then form the lagrangian function"
+        },
+        {
+          "type": "equation",
+          "text": "\\[F=f+\\lambda\\phi+\\mu\\psi\\]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Here \\(\\lambda,\\mu\\) are called the lagrangian multipliers.",
+          "math_mismatch": {
+            "label": "Notebook mathematical discrepancy",
+            "message": "Solving the multiplier equations produces candidates, not a guarantee of a maximum or minimum. Classification and the constraint/domain still need checking. The source claim “It will give” is preserved rather than silently qualified."
+          }
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "lagrange-reciprocal-sum",
+              "title": "Constrained sum — reciprocal condition",
+              "source_pages": [
+                52,
+                53
+              ],
+              "question_paragraphs": [
+                "Q. Find the maximum or minimum value of the function \\(f(x,y,z)=x+y+z\\) subject to the condition \\(\\dfrac1x+\\dfrac1y+\\dfrac1z=1\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Form the lagrangian function \\(F=f+\\lambda\\phi\\)",
+                "where \\(\\phi\\Rightarrow\\dfrac1x+\\dfrac1y+\\dfrac1z-1=0\\) → (1)",
+                "\\[\\therefore F=(x+y+z)+\\lambda\\left(\\dfrac1x+\\dfrac1y+\\dfrac1z-1\\right)\\]",
+                "Differentiate \\(F\\) w.r.t ‘\\(x\\)’ partially we get",
+                "\\[\\dfrac{\\partial F}{\\partial x}=(1)+\\lambda\\left(\\dfrac{-1}{x^2}\\right)=0\\]",
+                "\\[1-\\dfrac\\lambda{x^2}=0,\\quad x^2-\\lambda=0,\\quad x^2=\\lambda,\\quad x=\\pm\\sqrt\\lambda\\quad\\to(2)\\]",
+                "Differentiate \\(F\\) w.r.t",
+                "\\[\\dfrac{\\partial F}{\\partial y}=(1)-\\dfrac\\lambda{y^2}=0\\Rightarrow y^2-\\lambda=0\\Rightarrow y=\\pm\\sqrt\\lambda\\quad\\to(3)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}=(1)-\\dfrac\\lambda{z^2}=0\\Rightarrow z^2-\\lambda=0\\Rightarrow z=\\pm\\sqrt\\lambda\\quad\\to(4)\\]",
+                "Substitute \\(x=y=z=\\pm\\sqrt\\lambda\\) in (1) we get",
+                "\\[\\phi\\Rightarrow\\dfrac3{\\sqrt\\lambda}-1,\\quad\\dfrac3{\\sqrt\\lambda}=1,\\quad3=\\sqrt\\lambda,\\quad\\lambda=9\\]",
+                "\\[\\phi\\Rightarrow\\dfrac{-3}{\\sqrt\\lambda}-1=0,\\quad-3=\\sqrt\\lambda,\\quad\\lambda=9\\]",
+                "\\[\\therefore x=\\pm3,\\quad y=\\pm3,\\quad z=\\pm3\\]",
+                "\\[\\Rightarrow P(3,3,3)\\]",
+                "\\(Q(-3,-3,-3)\\) is not considered as it does not satisfy the given condition (1).",
+                "The point \\(P(3,3,3)\\) is called the stationary point of the given function.",
+                "Hence the maximum or minimum value of the function is given by",
+                "\\[f(3,3,3)=3+3+3=9\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source only considers equal signs. Mixed-sign stationary points such as (1,1,-1) also satisfy the written constraint. Without a positivity condition the feasible sum is unbounded and 9 cannot be claimed as a global extremum; for positive x,y,z, 9 is the minimum. No positivity condition or additional solution has been inserted into the source transcription."
+              },
+              "source_result_indices": [
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "lagrange-nearest-surface",
+              "title": "Nearest points on a surface",
+              "source_pages": [
+                53,
+                54
+              ],
+              "question_paragraphs": [
+                "Q. Find the points on the surface \\(z^2=xy+1\\) which are nearest to the origin."
+              ],
+              "paragraphs": [
+                "Sol:- let \\(\\phi=z^2-xy-1=0\\) → (1)",
+                "Let \\(O(0,0,0)\\) and \\(P(x,y,z)\\) are points on the surface then the distance b/w the points \\(O\\) and \\(P\\) is given by",
+                "\\[OP=\\sqrt{x^2+y^2+z^2}\\]",
+                "\\[OP^2=x^2+y^2+z^2=f\\quad(\\text{let})\\]",
+                "Form the lagrangian function",
+                "\\[F=f+\\lambda\\phi\\]",
+                "\\[F=x^2+y^2+z^2+\\lambda(z^2-xy-1)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial x}=2x+\\lambda(-y)=0,\\quad2x-\\lambda y=0\\quad\\to(2)\\]",
+                "\\[\\lambda=\\dfrac{2x}y\\]",
+                "\\[\\dfrac{\\partial F}{\\partial y}\\Rightarrow2y-\\lambda x=0\\quad\\to(3),\\qquad\\lambda=\\dfrac{2y}x\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}\\Rightarrow2z+\\lambda(2z)=0\\Rightarrow\\lambda=-1\\]",
+                "Sub \\(\\lambda=-1\\) in eq (2) & (3)",
+                "\\[2x+y=0\\quad\\to(\\mathrm i),\\qquad2y+x=0\\quad\\to(\\mathrm{ii})\\]",
+                "\\[y=-2x\\]",
+                "Sub \\(y=-2x\\) in (ii)",
+                "\\[2(-2x)+x=0,\\quad-4x+x=0,\\quad x=0,\\quad y=0\\]",
+                "Sub \\(x=0\\) & \\(y=0\\) in eq (1)",
+                "\\[\\Rightarrow z^2=1,\\quad z=\\pm1\\]",
+                "\\(P(0,0,1)\\) & \\(P'(0,0,-1)\\) are the two stationary points (or) points which are nearer to the origin."
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The step \\(2z(1+\\lambda)=0\\Rightarrow\\lambda=-1\\) omits the case z=0. On the stated surface there are additional stationary candidates at (1,-1,0) and (-1,1,0), at distance √2; the two nearest points listed by the source do have the smaller distance 1. The omitted case is flagged separately, not added to the source working."
+              },
+              "source_result_indices": [
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "lagrange-shortest-distance",
+              "title": "Shortest distance from the origin",
+              "source_pages": [
+                55,
+                56
+              ],
+              "question_paragraphs": [
+                "Q. Find the shortest distance from the origin to the surface \\(xyz^2=2\\)."
+              ],
+              "paragraphs": [
+                "Sol:- let \\(\\phi=xyz^2-2=0\\) → (1)",
+                "Let \\(O(0,0,0)\\) and \\(P(x,y,z)\\) are points on the surface then the distance b/w them is given by",
+                "\\[OP^2=x^2+y^2+z^2=f\\quad(\\text{let})\\]",
+                "Form the lagrangian function",
+                "\\[F=f+\\lambda(\\phi)\\]",
+                "\\[F=x^2+y^2+z^2+\\lambda(xyz^2-2)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial x}\\Rightarrow2x+\\lambda(yz^2)=0,\\quad\\lambda=\\dfrac{-2x}{yz^2}\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial y}\\Rightarrow2y+\\lambda(xz^2)=0,\\quad\\lambda=\\dfrac{-2y}{xz^2}\\quad\\to(3)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}\\Rightarrow2z+\\lambda(2xyz),\\quad\\lambda=\\dfrac{-z}{xyz},\\quad\\lambda=\\dfrac{-1}{xy}\\quad\\to(4)\\]",
+                "\\[(2)=(4),\\quad\\dfrac{-1}{xy}=\\dfrac{-2x}{yz^2},\\quad2x^2=z^2\\]",
+                "\\[(4)=(3),\\quad\\dfrac{-1}{xy}=\\dfrac{-2y}{xz^2},\\quad z^2=2y^2\\]",
+                "\\[\\Rightarrow2x^2=2y^2\\Rightarrow x=y\\]",
+                "\\[x=\\dfrac{z^2}{\\pm\\sqrt2},\\qquad y=\\dfrac{z^2}{\\pm\\sqrt2}\\]",
+                "Sub \\(x,y\\) values in (1)",
+                "\\[\\dfrac{z^2}{(\\pm\\sqrt2)}\\times\\dfrac{z^2}{(\\pm\\sqrt2)}(z^2)=2\\]",
+                "\\[z^4=4,\\quad z=\\pm\\sqrt2\\]",
+                "If \\(z=\\sqrt2\\)",
+                "\\[x=1,\\quad y=1\\]",
+                "\\[P(1,1,\\sqrt2)\\]",
+                "Distance ⇒ \\(OP^2=1+1+(\\sqrt2)^2=4\\)",
+                "\\[OP=2\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source writes x and y with numerator z² after obtaining 2x²=z² and 2y²=z². Those equations instead give x=±z/√2 and y=±z/√2, with compatible signs. Its displayed substitution with z² factors would give z⁶, not the following z⁴. The final distance 2 and example nearest point agree with the correctly solved equations. Original intermediate lines are retained."
+              },
+              "source_result_indices": [
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "lagrange-sum-squares",
+              "title": "Sum of squares — fixed sum",
+              "source_pages": [
+                56,
+                57
+              ],
+              "question_paragraphs": [
+                "Q. Find the maximum or minimum value of the function \\(f=x^2+y^2+z^2\\) with the condition \\(x+y+z=3a\\)."
+              ],
+              "paragraphs": [
+                "Sol:- \\(\\phi\\Rightarrow x+y+z-3a=0\\) → (1)",
+                "\\[F=f+\\lambda\\phi=x^2+y^2+z^2+\\lambda(x+y+z-3a)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial x}\\Rightarrow2x+\\lambda=0,\\quad\\lambda=-2x\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial y}\\Rightarrow2y+\\lambda=0,\\quad\\lambda=-2y\\quad\\to(3)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}\\Rightarrow2z+\\lambda=0,\\quad\\lambda=-2z\\quad\\to(4)\\]",
+                "\\[\\Rightarrow x=y=z\\]",
+                "in Sub in eq (1)",
+                "\\[3x-3a=0,\\quad x=a,\\quad y=a,\\quad z=a\\]",
+                "Maximum or minimum value is",
+                "\\[x^2+y^2+z^2=a^2+a^2+a^2=3a^2\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The source leaves the classification as “Maximum or minimum”. On the written plane this is the global minimum: x²+y²+z²−3a²=(x−a)²+(y−a)²+(z−a)². There is no maximum. Its wording is preserved."
+              },
+              "source_result_indices": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "lagrange-fixed-product-exercise",
+              "title": "Exercise — sum of squares with fixed product",
+              "source_pages": [
+                57
+              ],
+              "question_paragraphs": [
+                "Q. Find the maximum or minimum value of the function \\(f=x^2+y^2+z^2\\) subject to the condition \\(xyz=a^3\\)."
+              ],
+              "paragraphs": [],
+              "verbatim_source": true,
+              "source_note": "Only the question is present in the source. No working or answer is supplied."
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "id": "lagrange-geometric-applications",
+          "text": "Geometric applications and further practice"
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "box-fixed-volume",
+              "title": "Open-top rectangular box — least material",
+              "source_pages": [
+                58,
+                59,
+                60
+              ],
+              "question_paragraphs": [
+                "Q. A rectangular box open at the top is to have a volume of 32 cubic feet. Find the dimensions of the box requiring least material for its construction."
+              ],
+              "paragraphs": [
+                "Sol:- let \\(x,y,z\\) be the dimensions of the box which is open at the top.",
+                "Let S be the surface area of the rectangular box.",
+                "The volume of the rectangular box is",
+                "\\[V(x,y,z)=x\\times y\\times z=32\\]",
+                "\\[xyz=32\\]",
+                "Let \\(\\phi(x,y,z)\\Rightarrow xyz-32=0\\) → (1)",
+                "Let the surface area of the rectangular box with the open top is",
+                "\\[S(x,y,z)=xy+2xz+2yz\\]",
+                "Form the lagrangian function",
+                "\\[F(x,y,z)=S(x,y,z)+\\phi(x,y,z)\\]",
+                "\\[=xy+2yz+2xz+\\lambda(xyz-32)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial x}=y+2z+\\lambda(yz)=0,\\quad\\lambda(yz)=-y-2z\\]",
+                "\\[\\lambda=\\dfrac{-1}z-\\dfrac2y\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial y}=x+2z+\\lambda(xz)=0,\\quad\\lambda(xz)=-x-2z\\]",
+                "\\[\\lambda=\\dfrac{-1}z-\\dfrac2x\\quad\\to(3)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}=2y+2x+\\lambda(xy)=0,\\quad\\lambda(xy)=-2y-2x\\]",
+                "\\[\\lambda=\\dfrac{-2}x+\\dfrac2y\\quad\\to(4)\\]",
+                "Equate eq (2) & (3) we get",
+                "\\[\\dfrac{-1}z-\\dfrac2y=\\dfrac{-1}z-\\dfrac2x,\\quad\\dfrac1y=\\dfrac1x,\\quad x=y\\]",
+                "(3) & (4) we get",
+                "\\[\\dfrac{-1}z-\\dfrac2x=\\dfrac{-2}x-\\dfrac2y\\]",
+                "\\[y=2z\\]",
+                "\\[\\therefore x=y=2z\\]",
+                "Sub \\(x=y=2z\\) in eq (1)",
+                "\\[xyz-32=0,\\quad x(x)\\left(\\dfrac x2\\right)-32=0\\]",
+                "\\[\\dfrac{x^3}2=32,\\quad x^3=64\\]",
+                "\\[x=4,\\quad y=4,\\quad z=2\\]",
+                "∴ \\((4,4,2)\\) are the dimensions requiring the least material for the construction of the rectangular box."
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The first Lagrangian line omits λ, although the expanded line includes it. Equation (4) prints −2/x+2/y, but its preceding equation gives −2/x−2/y and the later comparison uses the minus sign. Source versions are retained; the final dimensions are consistent with the minus-sign version."
+              },
+              "source_result_indices": [
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "ellipsoid-parallelepiped",
+              "title": "Greatest rectangular parallelepiped in an ellipsoid",
+              "source_pages": [
+                60,
+                61,
+                62
+              ],
+              "question_paragraphs": [
+                "Q. Find the volume of the greatest rectangular piped that can be inscribed in the ellipsoid \\(\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}+\\dfrac{z^2}{c^2}=1\\)."
+              ],
+              "paragraphs": [
+                "Sol:- Let \\(2x,2y,2z\\) are the dimensions of the rectangular parallelopiped that can be inscribed in the ellipsoid.",
+                "The volume of rectangular piped is",
+                "\\[V(x,y,z)=2x\\cdot2y\\cdot2z=8xyz\\]",
+                "Let \\(\\phi=\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}+\\dfrac{z^2}{c^2}-1=0\\) → (1)",
+                "Form the lagrangian function",
+                "\\[F=V+\\lambda\\phi\\]",
+                "\\[F=8xyz+\\lambda\\left(\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}+\\dfrac{z^2}{c^2}-1\\right)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial x}=8yz+\\lambda\\left(\\dfrac{2x}{a^2}\\right)=0\\]",
+                "\\[\\lambda\\left(\\dfrac{2x}{a^2}\\right)=-8yz,\\quad\\lambda=\\dfrac{-8yz\\cdot a^2}{2x}\\]",
+                "\\[\\lambda=\\dfrac{-4a^2yz}x\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial y}=8xz+\\lambda\\left(\\dfrac{2y}{b^2}\\right)=0\\]",
+                "\\[\\lambda=\\dfrac{-4b^2xz}y\\quad\\to(3)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}=8xy+\\lambda\\left(\\dfrac{2z}{c^2}\\right)=0\\]",
+                "\\[\\lambda=\\dfrac{-4c^2xy}z\\quad\\to(4)\\]",
+                "Equate (2) & (3) we get",
+                "\\[(2)=(3)\\Rightarrow\\dfrac{-4a^2yz}x=\\dfrac{-4b^2xz}y\\]",
+                "\\[\\dfrac{a^2}{b^2}=\\dfrac{x^2}{y^2}\\Rightarrow\\dfrac{x^2}{a^2}=\\dfrac{y^2}{b^2}\\]",
+                "\\[(3)=(4)\\Rightarrow\\dfrac{-4b^2xz}y=\\dfrac{-4c^2xy}z\\]",
+                "\\[\\Rightarrow\\dfrac{y^2}{b^2}=\\dfrac{z^2}{c^2}\\]",
+                "Sub in eq (1)",
+                "\\[\\dfrac{x^2}{a^2}+\\dfrac{x^2}{a^2}+\\dfrac{x^2}{a^2}-1=0\\]",
+                "\\[\\dfrac{3x^2}{a^2}=1,\\quad3x^2=a^2,\\quad x=\\pm\\dfrac a{\\sqrt3}\\]",
+                "Similarly \\(y=\\pm b/\\sqrt3,\\ z=\\pm c/\\sqrt3\\)",
+                "Volume of the rectangular parallelopiped is given by",
+                "\\[V=8xyz=8\\left(\\dfrac a{\\sqrt3}\\right)\\left(\\dfrac b{\\sqrt3}\\right)\\left(\\dfrac c{\\sqrt3}\\right)\\]",
+                "\\[V=\\dfrac{8abc}{3\\sqrt3}\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "practice-open-box",
+              "title": "Practice — maximum capacity",
+              "source_pages": [
+                62
+              ],
+              "question_paragraphs": [
+                "Q. Find the dimensions of the rectangular box opene at the top of maximum capacity whose surface area is 108 sq. inches."
+              ],
+              "paragraphs": [],
+              "verbatim_source": true,
+              "source_note": "This question is listed here; its working appears after the practice list below."
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "practice-number-24",
+              "title": "Practice — divide the number 24",
+              "source_pages": [
+                62
+              ],
+              "question_paragraphs": [
+                "Q. Divide the number 24 into three parts such that the continued product of the first, square of the second & cube of the third is maximum."
+              ],
+              "paragraphs": [],
+              "verbatim_source": true,
+              "source_note": "The source lists the question without working or an answer."
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "practice-triangle",
+              "title": "Practice — plane triangle",
+              "source_pages": [
+                63
+              ],
+              "question_paragraphs": [
+                "3) In a plane triangle ABC find the maximum value of \\(\\cos A\\cos B\\cos C\\)."
+              ],
+              "paragraphs": [],
+              "verbatim_source": true,
+              "source_note": "The source lists the question without working or an answer."
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "practice-box-given-capacity",
+              "title": "Practice — given capacity",
+              "source_pages": [
+                63
+              ],
+              "question_paragraphs": [
+                "4) A rectangular box open at the top is to have a given capacity. Find the dimensions requiring the least material for the construction."
+              ],
+              "paragraphs": [],
+              "verbatim_source": true,
+              "source_note": "Its source working follows after the maximum-capacity example."
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "box-surface-area-108",
+              "title": "Open-top box — surface area 108",
+              "source_pages": [
+                63,
+                64
+              ],
+              "question_paragraphs": [
+                "1) let \\(x,y,z\\) be the dimensions of the rectangular box."
+              ],
+              "paragraphs": [
+                "The surface area of the box is given by",
+                "\\[S(x,y,z)=xy+2yz+2xz=108\\]",
+                "\\[\\phi=xy+2yz+2xz-108=0\\quad\\to(1)\\]",
+                "The Volume of the box is given by",
+                "\\[V(x,y,z)=xyz\\]",
+                "\\[F=V+\\lambda\\phi\\]",
+                "\\[F=xyz+\\lambda(xy+2yz+2xz-108)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial x}=yz+\\lambda(y+2z)=0\\]",
+                "\\[\\lambda(y+2z)=-yz,\\quad\\lambda=\\dfrac{-yz}{y+2z}\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial y}=xz+\\lambda(x+2z)=0,\\quad\\lambda=\\dfrac{-xz}{x+2z}\\quad\\to(3)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}=xy+\\lambda(2y+2x)=0\\]",
+                "\\[\\lambda=\\dfrac{-xy}{2y+2x}\\quad\\to(4)\\]",
+                "\\[(2)=(3)\\Rightarrow\\dfrac{-yz}{y+2z}=\\dfrac{-xz}{x+2z}\\]",
+                "\\[-xy-2yz=-xy-2zx,\\quad yz=zx,\\quad x=y\\]",
+                "\\[(3)=(4)\\Rightarrow\\dfrac{-xz}{x+2z}=\\dfrac{-xy}{2y+2x}\\]",
+                "\\[-2yz-2xz=-yx-2yz\\]",
+                "\\[2xz=yx,\\quad y=2z\\]",
+                "\\[\\Rightarrow x=y=2z,\\quad z=x/2\\]",
+                "Sub in eq (1)",
+                "\\[x^2+2x\\left(\\dfrac x2\\right)+2x\\left(\\dfrac x2\\right)-108=0\\]",
+                "\\[3x^2=108,\\quad x^2=36,\\quad x=\\pm6\\]",
+                "\\[x=6\\Rightarrow y=6,\\quad z=3\\]"
+              ],
+              "verbatim_source": true,
+              "source_result_indices": [
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordions",
+          "label": "Notebook questions and working",
+          "items": [
+            {
+              "id": "box-general-volume",
+              "title": "Open-top box — given capacity",
+              "source_pages": [
+                65,
+                66
+              ],
+              "question_paragraphs": [
+                "4) let \\(x,y,z\\) be the dimensions of the box."
+              ],
+              "paragraphs": [
+                "The Volume of the box is given by",
+                "\\[V=xyz=k\\]",
+                "\\[\\phi=xyz-k=0\\quad\\to(1)\\]",
+                "The surface area of the box is given by",
+                "\\[S=xy+2yz+2xz\\]",
+                "\\[F=xy+2yz+2xz+\\lambda(xyz-k)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial x}=y+2z+\\lambda(yz)=0\\]",
+                "\\[\\lambda(yz)=-y-2z,\\quad\\lambda=\\dfrac{-1}z-\\dfrac2y\\quad\\to(2)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial y}=x+2z+\\lambda(xz)=0\\]",
+                "\\[\\lambda=\\dfrac{-1}z-\\dfrac2x\\quad\\to(3)\\]",
+                "\\[\\dfrac{\\partial F}{\\partial z}=2y+2x+\\lambda(xy)=0\\]",
+                "\\[\\lambda=\\dfrac{-2}x-\\dfrac2y\\quad\\to(4)\\]",
+                "\\[(2)=(3)\\Rightarrow\\dfrac{-1}z-\\dfrac2y=\\dfrac{-1}z-\\dfrac2x\\]",
+                "\\[\\Rightarrow x=y\\]",
+                "\\[(3)=(4)\\Rightarrow\\dfrac{-1}z-\\dfrac2x=\\dfrac{-2}x-\\dfrac2y\\]",
+                "\\[y=2z\\]",
+                "\\[x=y,\\quad z=x/2\\]",
+                "Sub in eq (1)",
+                "\\[x(x)\\left(\\dfrac x2\\right)=k\\]",
+                "\\[\\dfrac{x^3}2=k\\]",
+                "\\[x^3=2k\\]",
+                "\\[x=(2k)^{1/3}\\]",
+                "\\[y=(2k)^{1/3}\\]",
+                "\\[z=(k)^{1/3}\\]"
+              ],
+              "verbatim_source": true,
+              "math_mismatch": {
+                "label": "Notebook mathematical discrepancy",
+                "message": "The final source line z=k^(1/3) conflicts with its own z=x/2 and x=(2k)^(1/3). Those give z=(k/4)^(1/3). For the source dimensions, xyz=2^(2/3)k rather than k. The written final line is retained unchanged."
+              },
+              "source_result_indices": [
+                23
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_notes": [
+    "The uploaded packet contains handwritten historical date labels; none is used to invent a current semester calendar entry.",
+    "The page numbering below refers to PDF pages 1–66. Logical lessons group working across physical page boundaries.",
+    "No figures were redrawn, generated, replaced or embedded.",
+    "The source third derivative (p. 15), inverse-Jacobian working (pp. 22,25), and square-root Taylor expansion (pp. 38–39) are unfinished. Questions without source solutions remain unsolved."
+  ]
+}

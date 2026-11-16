@@ -184,7 +184,8 @@ function renderExampleSolutionContent(item, solutionParagraphs) {
 		html += notesAt('before-paragraph', index);
 		html += explainersAt('before-paragraph', index);
 		html += figuresAt('before-paragraph', index);
-		html += `<p>${formatText(solutionParagraphs[index])}</p>`;
+		const isSourceResult = item.source_result_indices?.includes(index);
+		html += `<p${isSourceResult ? ' class="study-source-result"' : ''}>${isSourceResult ? '<strong>' : ''}${formatText(solutionParagraphs[index])}${isSourceResult ? '</strong>' : ''}</p>`;
 		html += figuresAt('paragraph', index);
 		html += notesAt('paragraph', index);
 		html += explainersAt('paragraph', index);
@@ -267,6 +268,7 @@ function renderAccordionItem(item, options = {}) {
 				${linkOnly ? '' : renderExampleSolutionContent(item, split.solution)}
 				${!linkOnly && (item.bullets || []).length ? `<ul>${item.bullets.map(b => `<li>${formatText(b)}</li>`).join('')}</ul>` : ''}
 				${mismatch ? renderMismatch(mismatch) : ''}
+				${item.source_note ? `<aside class="study-source-completeness" role="note"><strong>Source completeness:</strong> ${escapeHtml(item.source_note)}</aside>` : ''}
 				${!linkOnly && item.final_answer ? `<div class="study-final-answer"><strong>Final answer:</strong> <strong>${formatText(item.final_answer)}</strong></div>` : ''}
 			</div>
 		</details>`;
@@ -412,6 +414,7 @@ window.PankuStudyUI = {
 	formatText,
 	typesetMath,
 	renderFigure,
+	renderMismatch,
 	renderAccordionGroup,
 	renderAnswerBlocks,
 	renderExplainer,

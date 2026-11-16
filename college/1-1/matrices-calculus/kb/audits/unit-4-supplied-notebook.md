@@ -1,0 +1,77 @@
+# MAC Unit IV supplied-notebook intake and transcription audit
+
+Source: `Maths - unit 4.pdf` (66 PDF pages; 16,665,505 bytes).
+SHA-256: `0ab665ab4ccf0e7fd344956b25a192f6179b5598562edaf48876dd8f098cca95`.
+
+## Authority and source separation
+
+The user explicitly requested a source-faithful transcription and amber mathematical discrepancy notes, with existing notes preserved. The new page uses a separate supplied-notebook entry, not the textbook-led topics or the existing Priyanka class-note data. No author is inferred from the upload. Historical handwritten dates are not used to create modern calendar entries. The official R25 syllabus remains the scope authority; the packet's two-variable Taylor material is retained as supporting supplied material, not silently promoted into a new syllabus atom.
+
+The entry follows `undated-class-notes.schema.json` and reuses the existing shared class-note/accordion/MathJax components. Its optional direct-entry shell is separate from the dated and earlier undated class-note collections. No source PDF binary, page screenshot, redrawn figure or replacement image is included in this PR.
+
+## Transcription policy
+
+All 66 source pages were inspected visually. Uncancelled wording, nonstandard grammar, abbreviations, mathematical mistakes and unfinished working are retained; mathematical handwriting is typeset in LaTeX. Editorial headings/index text are distinct from source prose. Mathematical corrections occur only in separately labelled amber checks. No independent solution is inserted to fill a source gap, and no canonical textbook working replaces the supplied notebook working. This is a transcription task, not a request to independently solve or merge class/textbook questions.
+
+Clearly cancelled false starts are not treated as active working. Examples include the cancelled `v_xx` start on p. 1; cancelled derivative attempts on pp. 3, 6, 11; the cancelled tangent/hyperbolic labels corrected by the source on pp. 8, 18–19; abandoned determinant/algebra attempts on pp. 25–26; the overwritten `sin`/`cos` derivative labels on p. 33; discarded stationary-point algebra on pp. 41, 43–44, 54; and struck-out multiplier/area attempts on pp. 52, 58–59, 63–65. The retained final source readings do not silently repair any surviving mathematical line. Marginal scratch lists that merely repeat upcoming examples are not a second copy of the lesson. PDF page numbers and source-page arrays remain in provenance rather than imposing notebook-photo boundaries on the study UI.
+
+Unfinished source items remain unfinished: the third derivative (p. 15), three-variable inverse-Jacobian expansion (p. 22), two-variable inverse-Jacobian matrix (p. 25), the cubic blank in the first Taylor expansion (p. 34), square-root expansion (pp. 38–39), fixed-product exercise (p. 57), and the number-24/triangle practice prompts (pp. 62–63). Source-completeness annotations are neutral, not amber. No invented final answers are added.
+
+## Source coverage
+
+| PDF pages | Logical section |
+| --- | --- |
+| 1–9 | Partial Differentiation |
+| 10–15 | Total Derivatives and the Chain Rule |
+| 16–20 | Homogeneous Functions and Euler’s Theorem |
+| 20–31 | Jacobians and Functional Dependence |
+| 32–39 | Taylor’s and Maclaurin’s Expansions |
+| 40–50 | Maxima and Minima of Two-Variable Functions |
+| 51–66 | Constrained Optimization: Lagrange Multipliers |
+
+There are 55 source question/example entries and 28 amber discrepancy notes. Every question is visible before its source working is opened. Only final results actually present in the source receive bold result styling; an incomplete prompt is not supplied with a fabricated result.
+
+## Mathematical discrepancy register
+
+The source statement remains in the entry. The following are editorial checks, not replacements.
+
+| Anchor | PDF pages | Verified discrepancy |
+| --- | --- | --- |
+| `pd-inverse-tangent` | 4, 5 | The source writes \(f_y=-1/(x^2+y^2)\), omitting the factor \(x\), and uses inconsistent differentiation variables. Direct differentiation gives \(f_y=-x/(x^2+y^2)\), \(f_{yy}=2xy/(x^2+y^2)^2\), and \(f_{xy}=f_{yx}=(x^2-y^2)/(x^2+y^2)^2\). The notebook lines above are retained unchanged. |
+| `pd-product-sine` | 8, 9 | The source changes \(x^2y\sin(xy)\) to \(xy^2\sin(xy)\) in the \(y\)-derivative working and changes the sign of \(2x[1-\cos(xy)]\) in the last line. For this smooth function both mixed derivatives equal \(2x[1-\cos(xy)]+x^2y\sin(xy)\). Some second-derivative labels also omit the superscript 2. All source lines are retained. |
+| `chain-ratio-identity` | 13, 14 | The first chain-rule line for \(U_y\) prints \(t_z\), although its subsequent substitution uses \(t_y=0\). For the stated \(t=z/x\), \(t_z=1/x\), so that label is inconsistent. The notebook line is retained. |
+| `third-partial-exponential` | 15 | The first displayed product-rule line for \(u_{xy}\) omits the factor \(x\) in its first term; the next line restores it. The derivative-operator labels also include a numerator \(u\). These are retained; the requested third derivative is not completed on the source page. |
+| `euler-fractional-powers` | 17 | The source rewrites the ratio with exponent \(+4/3\); the equivalent ratio exponent is \(-4/3\). The degree \(-1\) and the final \(-f\) are consistent with the original function. The incorrect intermediate rewrite is retained. |
+| `euler-arcsine` | 18, 19 | The source drops the square-root signs in the denominators of two intermediate scaling expressions. The original denominator \(\sqrt x+\sqrt y\) must remain there. The degree \(5/2\) and final identity follow from the original function where differentiable. Source expressions are retained. |
+| `jacobian-inverse-three` | 21, 22 | The source determinant prints \(x_v=-1\) and \(y_w=-w\); differentiating its own \(x=u-uv\), \(y=uv-uvw\) gives \(x_v=-u\), \(y_w=-uv\). Its following expansion is inconsistent and unfinished. The correct determinant for the stated transformation is \(u^2v\), which the source also writes beside the determinant. The matrix and expansion are preserved. |
+| `jacobian-dependent-polynomials` | 22, 23 | The third entry in the first determinant row is written \(y+z\), but \(u_z=x+y\). The written determinant expansion also has sign/term inconsistencies. The final relation \(w^2=v+2u\) is correct for the stated functions. Source working is retained. |
+| `jacobian-dependent-arcsines` | 23, 24 | The intermediate \(u=\sin^{-1}v\) requires a principal-branch restriction and is not valid for every allowed pair. For example \(x=y=\sqrt3/2\) gives \(u=2\pi/3\) and \(\sin^{-1}v=\pi/3\). The final \(v=\sin u\) is the valid relation. Both source lines are retained. |
+| `jacobian-reciprocal` | 24, 25 | The source labels the lower-right derivative in the forward matrix with \(\partial/\partial y\), rather than \(\partial/\partial v\). Its last inverse-matrix line is incomplete and its visible quotient numerator is not the derivative of \(y/(x+y)\). The stated \(J=u\) and \(J^{\prime}=1/u\) are consistent where \(u\ne0\); the missing final multiplication has not been supplied. |
+| `jacobian-tangent-addition` | 26, 27 | The principal-value identity \(v=\tan^{-1}u\) needs a branch restriction. For \(x=y=2\), the left sum is greater than \(\pi/2\) while the principal inverse tangent of \(-4/3\) is negative. The final relation \(u=\tan v\) holds where defined. Source wording is retained. |
+| `jacobian-cylindrical` | 30 | The final source equality is \(\rho(\cos^2\phi+\sin^2\phi)=1\), but the left expression is \(\rho\). The stated problem correctly asks for \(\rho\); the final 1 is preserved as written. |
+| `taylor-maclaurin` | 32, 33, 34, 35, 36, 37, 38, 39 | The Maclaurin formula labels the coefficient of \(x^2\) as \(f_{yy}\). It must be \(f_{xx}\). The source formula is retained unchanged. |
+| `taylor-exp-cos` | 32, 33, 34 | The source evaluation line for \(f_{xx}\) contains \(-e\cos(\pi/4)=e/\sqrt2\), whose left sign is inconsistent. The derivative itself and later positive coefficient agree with \(f_{xx}=e^x\cos y\). The source leaves the cubic bracket blank; it has not been completed. |
+| `maclaurin-exp-log` | 34, 35 | The source repeats \(f_{yy}\) for the \(x^2\) coefficient in the general template, but its numerical substitution uses the correct \(f_{xx}(0,0)=0\). The template and substitution are both retained. |
+| `taylor-polynomial-two` | 37 | The \(f_{yy}\) substitution writes \(3(2)+2(1)=12+2\); evaluating \(3(2y)+2x\) at \((1,2)\) requires \(3(4)+2\). The result 14 is correct, but that intermediate equality is not. The polynomial’s cubic terms remain represented by the source ellipsis. |
+| `extrema-rational` | 41, 42 | The written \(y=a^3/0\) is undefined, not a finite candidate; \(x=0\) is excluded from the original domain. The second-derivative test establishes a local minimum at \((a,a)\) for \(a\ne0\), not a global minimum on all nonzero real \(x,y\). The source does not specify a positive domain; no such condition has been inserted. |
+| `extrema-cubic-parameter` | 43, 44 | The source subtracts \(a/3\), rather than \((a/3)^2\), in the discriminant. The correct discriminant there is \(a^2/3>0\). The case \(x+y=a\) also gives stationary points \((a,0)\) and \((0,a)\), which are omitted after division; both are saddles. The source’s original list, calculation and value are preserved. |
+| `extrema-polynomial-63` | 45, 46 | The source subtracts 12 instead of \(12^2\). The discriminants are 180 and 1620, not 312 and 1752; the local classifications and values at those two points still agree. The source also leaves the branch \(x+y=4\) unsolved: \((5,-1)\) and \((-1,5)\) are additional stationary saddle points. These source omissions are not silently filled into the transcription. |
+| `extrema-sine-sum` | 46, 47, 48 | The source inference \(\cos x=\cos y\Rightarrow x=y\) omits the alternative and periodic branches. Some point labels are also reused and the minimum-point n label is printed (60,60) although the calculation is for (-60,-60). The extrema values shown are correct and the zero-discriminant conclusion is correctly inconclusive as a second-derivative test; no missing stationary-point analysis is inserted. |
+| `extrema-sine-product` | 49, 50 | The stated equations \(x+2y=\pi,2x+y=0\) do not yield \((\pi/3,\pi/3)\); both right sides must be \(\pi\) for that point. The mixed-derivative formula has an extra factor 2: direct differentiation gives \(f_{xy}=\cos x\sin(x+2y)+\sin x\cos(x+2y)\). Its subsequent arithmetic also writes \(2(\sqrt3/2)(-1)=-\sqrt3/2\), which is false. The final maximum value is correct; the minimum at \((2\pi/3,2\pi/3)\), value \(-3\sqrt3/8\), is not worked in the source. Original lines are retained. |
+| `lagrange-multipliers` | 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66 | Solving the multiplier equations produces candidates, not a guarantee of a maximum or minimum. Classification and the constraint/domain still need checking. The source claim “It will give” is preserved rather than silently qualified. |
+| `lagrange-reciprocal-sum` | 52, 53 | The source only considers equal signs. Mixed-sign stationary points such as (1,1,-1) also satisfy the written constraint. Without a positivity condition the feasible sum is unbounded and 9 cannot be claimed as a global extremum; for positive x,y,z, 9 is the minimum. No positivity condition or additional solution has been inserted into the source transcription. |
+| `lagrange-nearest-surface` | 53, 54 | The step \(2z(1+\lambda)=0\Rightarrow\lambda=-1\) omits the case z=0. On the stated surface there are additional stationary candidates at (1,-1,0) and (-1,1,0), at distance √2; the two nearest points listed by the source do have the smaller distance 1. The omitted case is flagged separately, not added to the source working. |
+| `lagrange-shortest-distance` | 55, 56 | The source writes x and y with numerator z² after obtaining 2x²=z² and 2y²=z². Those equations instead give x=±z/√2 and y=±z/√2, with compatible signs. Its displayed substitution with z² factors would give z⁶, not the following z⁴. The final distance 2 and example nearest point agree with the correctly solved equations. Original intermediate lines are retained. |
+| `lagrange-sum-squares` | 56, 57 | The source leaves the classification as “Maximum or minimum”. On the written plane this is the global minimum: x²+y²+z²−3a²=(x−a)²+(y−a)²+(z−a)². There is no maximum. Its wording is preserved. |
+| `box-fixed-volume` | 58, 59, 60 | The first Lagrangian line omits λ, although the expanded line includes it. Equation (4) prints −2/x+2/y, but its preceding equation gives −2/x−2/y and the later comparison uses the minus sign. Source versions are retained; the final dimensions are consistent with the minus-sign version. |
+| `box-general-volume` | 65, 66 | The final source line z=k^(1/3) conflicts with its own z=x/2 and x=(2k)^(1/3). Those give z=(k/4)^(1/3). For the source dimensions, xyz=2^(2/3)k rather than k. The written final line is retained unchanged. |
+
+Independent symbolic/determinant/counterexample checks were run for inverse-tangent derivatives, mixed derivatives, the exponential product rule, Jacobian entries/determinants, inverse-trig principal branches, the cylindrical determinant, Taylor derivative evaluations, stationary candidates and Hessian discriminants, trigonometric extrema, constrained candidates and the final box-volume relation (45 exact equalities/counterexamples). In particular, solving the omitted `x+y=4` branch in the 63-polynomial example gives `(5,-1)` and `(-1,5)`; no inferred result was copied into the source working.
+
+## UI and verification
+
+Notes are compact equal-sized destination cards: the new supplied Unit IV packet first, four existing class-note unit destinations, then the two previously visible ready textbook-note unit destinations. Worksheet and the compact Textbook Questions card retain their order. Existing source/content/figure files and unit publication states are unchanged.
+
+The seven-section left index includes concept subheadings and every source question, uses stable fragment IDs, and opens a linked question's accordion. The existing shared Back to top control is above Contents and stays visible with Contents collapsed on phones. Ordinary text/working has no nested vertical scroll regions; long equations scroll horizontally. A generic grid minimum-width fix prevents long source equations from forcing a class-note block beyond its container.
+
+Run the three repository baseline validators, JavaScript syntax checks, `git diff --check`, source JSON/schema/provenance checks, and local Chromium desktop/phone/GitHub Pages base-path checks. Inspect real screenshots and verify preserved error lines beside amber notes. Browser validation alone does not establish word-for-word/source or mathematical correctness. The PR review checklist asks the user to compare the uploaded original with the transcription before merging.

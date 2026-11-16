@@ -534,3 +534,8 @@
 .subject-home .subject-card-link:focus-visible { outline: none; }
 .subject-home .subject-card-link:focus-visible::after { outline: 3px solid var(--primary); outline-offset: 3px; }
 .subject-home .study-tool-card:has(.subject-card-link) .subject-resource-links a { position: relative; z-index: 1; }
+
+/* Unit note destinations use the same compact grid cards as Question Bank. */
+.subject-home--note-cards [data-notes] { grid-auto-rows: 1fr; }
+.subject-home--note-cards .study-tool-card { min-height: 240px; }
+.subject-home--note-cards .tool-action { margin-top: auto; padding-top: 1rem; }
