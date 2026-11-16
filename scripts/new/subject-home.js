@@ -46,14 +46,8 @@ document.addEventListener('DOMContentLoaded', async () => {
    if (classes?.availableUnits?.length) notes.unshift({title:classes.label,description:classes.description,label:'Class notes',links:`<ul class="subject-resource-links">${unitLinks(classes,subject,root)}</ul>`});
    const bookQuestions = subject.practice?.unitQuestions;
    if (bookQuestions?.availableUnits?.length) {
-    if (page.dataset.questionUnitNavigation === 'true') {
-     const bank = await json(new URL(bookQuestions.data, root));
-     const units = bookQuestions.availableUnits;
-     questions.push({id:'textbook-questions',title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<div class="subject-question-bank"><nav aria-label="Textbook question units"><a class="subject-bank-top" href="${esc(new URL('#textbook-questions', location.href))}">Back to top ↑</a><ul>${units.map(number => `<li><a href="${esc(new URL(`#textbook-questions-unit-${number}`, location.href))}">Unit ${number}</a></li>`).join('')}</ul></nav><div class="subject-bank-units">${units.map(number => {
-      const unit = subject.units.find(item => Number(item.number) === Number(number));
-      const questionsUnit = bank.units[String(number)];
-      return `<section id="textbook-questions-unit-${number}"><h4>Unit ${number} · ${esc(unit?.title || '')}</h4><p>${esc(questionsUnit.page_description)}</p><a href="${esc(new URL(bookQuestions.hrefPattern.replace('{unit}', number), root))}">Open Unit ${number} textbook questions →</a></section>`;
-     }).join('')}</div></div>`});
+    if (extra.textbookQuestionsPage) {
+     questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',href:extra.textbookQuestionsPage,action:'Open textbook questions'});
     } else {
      questions.push({title:'Textbook Questions',description:bookQuestions.description,label:'Textbook practice',links:`<ul class="subject-resource-links">${unitLinks(bookQuestions,subject,root)}</ul>`});
     }

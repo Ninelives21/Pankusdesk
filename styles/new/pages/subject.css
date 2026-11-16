@@ -534,23 +534,3 @@
 .subject-home .subject-card-link:focus-visible { outline: none; }
 .subject-home .subject-card-link:focus-visible::after { outline: 3px solid var(--primary); outline-offset: 3px; }
 .subject-home .study-tool-card:has(.subject-card-link) .subject-resource-links a { position: relative; z-index: 1; }
-
-/* A grouped question bank keeps its units together beside local navigation. */
-.subject-home [data-questions]:has(.subject-question-bank) { grid-template-columns: minmax(0, 1fr); }
-.subject-home #textbook-questions,
-.subject-home .subject-bank-units section { scroll-margin-top: 110px; }
-.subject-home .subject-question-bank { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 2rem; margin-top: 1.5rem; }
-.subject-home .subject-question-bank nav { align-self: start; position: sticky; top: 100px; }
-.subject-home .subject-question-bank nav ul { list-style: none; padding: 0; margin: .75rem 0 0; }
-.subject-home .subject-question-bank nav li { padding: .5rem 0; }
-.subject-home .subject-bank-top { display: block; font-weight: 700; }
-.subject-home .subject-bank-units { min-width: 0; }
-.subject-home .subject-bank-units section { padding: 0 0 1.5rem; margin: 0 0 1.5rem; border-bottom: 1px solid var(--line); }
-.subject-home .subject-bank-units section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
-.subject-home .subject-bank-units h4 { font-size: 1.1rem; margin: 0 0 .6rem; }
-.subject-home .subject-bank-units section > a { display: inline-block; margin-top: .75rem; font-weight: 700; }
-@media (max-width: 600px) {
- .subject-home .subject-question-bank { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
- .subject-home .subject-question-bank nav { position: static; }
- .subject-home .subject-question-bank nav ul { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
-}

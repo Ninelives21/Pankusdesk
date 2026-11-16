@@ -8,7 +8,8 @@ async function initUnitQuestions() {
 	if (!page) return;
 
 	try {
-		const unitNumber = Number(page.dataset.unit);
+		const unitNumber = Number((page.dataset.unitNavigation === 'true' && new URLSearchParams(location.search).get('unit')) || page.dataset.unit);
+		page.dataset.unit = String(unitNumber);
 		const subjectUrl = new URL(page.dataset.subjectJson, document.baseURI);
 		const subject = await fetchJson(subjectUrl.href);
 		const unitMeta = subject.units.find(unit => Number(unit.number) === unitNumber);
@@ -31,6 +32,16 @@ async function initUnitQuestions() {
 }
 
 function renderPage(page, subject, subjectUrl, unitMeta, unitBank, source) {
+	if (page.dataset.unitNavigation === 'true') {
+		const nav = document.querySelector('[data-textbook-unit-nav]');
+		const destination = new URL(location.pathname, location.origin);
+		nav.innerHTML = `<ul>${(subject.practice.unitQuestions.availableUnits || []).map(number => {
+		    const unit = subject.units.find(item => Number(item.number) === Number(number));
+		    const href = new URL(destination); href.searchParams.set('unit', number);
+		    return `<li><a href="${escapeHtml(href.href)}"${Number(number) === Number(unitMeta.number) ? ' aria-current="page"' : ''}>Unit ${number} · ${escapeHtml(unit?.title || '')}</a></li>`;
+		}).join('')}</ul>`;
+		document.querySelector('.textbook-back-top').href = `${location.pathname}${location.search}#textbook-top`;
+	}
 	const unitLabel = toRoman(Number(unitMeta.number));
 	const subjectHome = new URL('./index.html', subjectUrl).href;
 	const unitHome = new URL(`unit-${unitMeta.number}.html`, subjectUrl).href;

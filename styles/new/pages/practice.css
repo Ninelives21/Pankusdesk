@@ -912,3 +912,18 @@
 .pyq-index-layout .pyq-question-groups {
 	margin-top: 0;
 }
+
+/* Subject-wide textbook destination reuses the unit question renderer. */
+.textbook-question-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 2rem; align-items: start; }
+.textbook-question-layout .practice-page { min-width: 0; }
+.textbook-unit-sidebar { position: sticky; top: 100px; margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.textbook-back-top { display: block; margin-bottom: 1rem; font-weight: 700; }
+.textbook-unit-sidebar summary { cursor: pointer; font-weight: 700; }
+.textbook-unit-sidebar ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+.textbook-unit-sidebar li + li { margin-top: .9rem; }
+.textbook-unit-sidebar a[aria-current="page"] { font-weight: 700; color: var(--primary); }
+#textbook-top { scroll-margin-top: 100px; }
+@media (max-width: 900px) {
+ .textbook-question-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+ .textbook-unit-sidebar { position: static; }
+}
