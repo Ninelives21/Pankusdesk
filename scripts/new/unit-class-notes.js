@@ -8,11 +8,24 @@ async function initUnitClassNotes() {
 	if (!page) return;
 
 	try {
-		const unitNumber = Number(page.dataset.unit);
+		const unitNumber = Number((page.dataset.unitNavigation === 'true' && new URLSearchParams(location.search).get('unit')) || page.dataset.unit);
+		page.dataset.unit = String(unitNumber);
 		const subjectUrl = new URL(page.dataset.subjectJson, document.baseURI);
 		const subject = await fetchJson(subjectUrl.href);
 		const unitMeta = (subject.units || []).find(unit => Number(unit.number) === unitNumber);
 		if (!unitMeta) throw new Error(`Unit ${unitNumber} is not defined.`);
+
+		if (page.dataset.entryJson) {
+			const entry = await fetchJson(new URL(page.dataset.entryJson, subjectUrl).href);
+			renderSuppliedNotes(page, subject, subjectUrl, entry);
+			window.PankuStudyUI?.initAccordions?.(page);
+			window.PankuStudyUI?.initIndexedNav?.(page, { navSelector: '[data-supplied-toc]', linkSelector: 'a' });
+			page.dataset.notesReady = 'true';
+			try { await typesetMath(page); }
+			catch (mathError) { console.warn('Math typesetting failed; leaving LaTeX source visible.', mathError); }
+			revealHashTarget(page);
+			return;
+		}
 
 		const cfg = subject.classNotes || {};
 		const manifestPath = cfg.sourceManifest || 'kb/data/source-manifest.json';
@@ -82,6 +95,7 @@ function renderPage(page, subject, subjectUrl, unitMeta, entries) {
 
 		<div class="class-notes-layout section">
 			<aside class="class-notes-toc" aria-label="Class-note lessons and dates">
+				${page.dataset.unitNavigation === 'true' ? window.PankuUnitResourceNav.renderUnitSelector({subject,unitNumber,availableUnits:subject.classNotes.availableUnits}) : ''}
 				<div class="toc-label">${entries.some(({entry}) => !entry.date) ? 'Lessons and dates' : 'By date'}</div>
 				<nav id="class-notes-date-nav">
 					${entries.map(({ source, entry }) => `
@@ -98,6 +112,37 @@ function renderPage(page, subject, subjectUrl, unitMeta, entries) {
 			</section>
 		</div>
 	`;
+}
+
+function renderSuppliedNotes(page, subject, subjectUrl, entry) {
+	const unitLabel = toRoman(entry.unit.number);
+	const currentPath = `${location.pathname}${location.search}`;
+	const link = (id, title, className = '') => `<a class="${className}" href="${escapeHtml(currentPath)}#${escapeHtml(id)}">${escapeHtml(title)}</a>`;
+	const children = section => section.blocks.flatMap(block => {
+		if (block.type === 'subheading') return [{ id: block.id, title: block.text }];
+		if (block.type === 'accordions') return block.items.map(item => ({ id: item.id, title: item.title }));
+		return [];
+	});
+	document.title = `${entry.title} · ${subject.shortName} · Panku's Desk`;
+	page.classList.add('supplied-notes-page');
+	page.id = 'supplied-notes-top';
+	page.innerHTML = `
+		<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Panku’s Desk</a> › <a href="${escapeHtml(new URL('index.html', subjectUrl).href)}">${escapeHtml(subject.shortName)}</a> › Unit ${escapeHtml(unitLabel)} Notes</nav>
+		<header class="class-notes-hero"><div class="eyebrow">Supplied notebook · Unit ${escapeHtml(unitLabel)}</div><h1>${escapeHtml(entry.title)}</h1><p>${escapeHtml(entry.summary)}</p><p class="class-notes-policy">Source wording and working are retained, including errors and unfinished work. Amber notes are separate mathematical checks; they do not replace the transcription. Open a question to read its original working.</p></header>
+		<div class="class-notes-layout section">
+			<aside class="class-notes-toc supplied-notes-toc" aria-label="Notes contents">
+				<details open><summary>Contents</summary><nav data-supplied-toc>${entry.pages.map(section => `${link(section.id, section.heading, 'supplied-section-link')}<div class="supplied-subsection-links">${children(section).map(item => link(item.id, item.title)).join('')}</div>`).join('')}</nav></details>
+			</aside>
+			<div class="class-notes-content"><article class="class-notes-entry"><div class="class-notes-pages">${entry.pages.map(renderNotebookPage).join('')}</div></article></div>
+		</div>
+		<footer class="supplied-notes-source"><h2>Source & transcription record</h2><p>${escapeHtml(entry.source.filename)} · ${entry.source.page_count} PDF pages</p><p>${escapeHtml(entry.transcription_policy)}</p><p>SHA-256: <code>${escapeHtml(entry.source.sha256)}</code></p></footer>`;
+	page.addEventListener('click', event => {
+		if (event.target.closest('.supplied-notes-toc > .back-to-top-control')) page.querySelector('.supplied-notes-toc').scrollTop = 0;
+	});
+	page.querySelectorAll('[data-supplied-toc] a').forEach(anchor => anchor.addEventListener('click', () => {
+		const target = document.getElementById(new URL(anchor.href).hash.slice(1));
+		if (target?.matches('details.study-accordion-item')) target.open = true;
+	}));
 }
 
 function renderEntry(entry) {
@@ -117,8 +162,9 @@ function renderEntry(entry) {
 
 function renderNotebookPage(item) {
 	return `
-		<section class="class-notes-page-block">
+		<section class="class-notes-page-block"${item.id ? ` id="${escapeHtml(item.id)}"` : ''}>
 			${item.heading ? `<h3>${escapeHtml(item.heading)}</h3>` : ''}
+			${item.scope_note ? `<p class="supplied-scope-note">${escapeHtml(item.scope_note)}</p>` : ''}
 			<div class="class-notes-copy">${renderBlocks(item.blocks || [])}</div>
 		</section>
 	`;
@@ -141,7 +187,7 @@ function renderBlocks(blocks) {
 		flush();
 		switch (block.type) {
 			case 'heading': html += `<h4>${formatText(block.text)}</h4>`; break;
-			case 'subheading': html += `<h5>${formatText(block.text)}</h5>`; break;
+			case 'subheading': html += `<h5${block.id ? ` id="${escapeHtml(block.id)}"` : ''}>${formatText(block.text)}</h5>`; break;
 			case 'equation': html += `<div class="class-notes-equation">${formatText(block.text)}</div>`; break;
 			case 'figure': html += renderClassFigure(block); break;
 			case 'table': html += renderClassTable(block); break;
@@ -150,6 +196,7 @@ function renderBlocks(blocks) {
 			case 'line': html += `<p class="class-notes-line">${formatText(block.text)}</p>`; break;
 			default: html += `<p>${formatText(block.text || '')}</p>`;
 		}
+		if (block.math_mismatch) html += window.PankuStudyUI?.renderMismatch?.(block.math_mismatch) || '';
 	}
 	flush();
 	return html;

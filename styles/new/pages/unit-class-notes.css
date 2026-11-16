@@ -70,8 +70,8 @@
 .class-notes-entry-header h2 { margin: .35rem 0 .45rem; }
 .class-notes-entry-header p { margin: 0; color: var(--text-secondary); }
 
-.class-notes-pages { display: grid; }
-.class-notes-page-block { padding: 1.4rem 1.6rem 1.7rem; }
+.class-notes-pages { display: grid; grid-template-columns: minmax(0, 1fr); }
+.class-notes-page-block { min-width: 0; padding: 1.4rem 1.6rem 1.7rem; }
 .class-notes-page-block + .class-notes-page-block { border-top: 1px solid var(--line); }
 .class-notes-page-block > h3 { margin: 0 0 1rem; font-size: 1.2rem; }
 .class-notes-copy h4 { margin: 1.2rem 0 .55rem; font-size: 1.08rem; }
@@ -263,3 +263,20 @@
 	font-weight: 700;
 }
 .class-notes-final-answer strong { color: var(--primary); }
+
+/* Source-faithful supplied packets reuse the class-note and study renderers. */
+.supplied-notes-page { scroll-margin-top: 100px; }
+.supplied-notes-page [id] { scroll-margin-top: 110px; }
+.supplied-notes-toc { top: 90px; max-height: calc(100vh - 110px); }
+.supplied-notes-toc > .back-to-top-control.is-in-sidebar { display: inline-flex; position: sticky; top: -1rem; right: auto; bottom: auto; width: 100%; transform: none; opacity: 1; visibility: visible; pointer-events: auto; margin-bottom: 1rem; z-index: 1; }
+.supplied-notes-toc summary { cursor: pointer; font-weight: 750; }
+.supplied-notes-toc .supplied-section-link { font-weight: 750; margin-top: .65rem; }
+.supplied-notes-toc a { line-height: 1.4; }
+.supplied-subsection-links { display: grid; gap: .55rem; padding-left: .8rem; font-size: .85rem; }
+.supplied-notes-toc a[aria-current] { color: var(--primary); font-weight: 800; }
+.supplied-notes-source { padding: 1.5rem 0; overflow-wrap: anywhere; color: var(--text-secondary); }
+.supplied-notes-page .class-notes-copy .study-accordion-content p { overflow-x: auto; overflow-y: hidden; }
+@media (max-width: 900px) {
+ .supplied-notes-toc { position: static; max-height: none; }
+ .supplied-notes-toc nav { grid-template-columns: minmax(0, 1fr); }
+}

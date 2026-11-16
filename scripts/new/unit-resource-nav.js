@@ -120,5 +120,14 @@ function render({ subject, subjectUrl, unitNumber, active = 'text' }) {
 	`;
 }
 
-window.PankuUnitResourceNav = { render };
+function renderUnitSelector({ subject, unitNumber, availableUnits }) {
+	const destination = new URL(location.pathname, location.origin);
+	return `<details class="study-unit-selector" open><summary>Units</summary><nav aria-label="Note units">${availableUnits.map(number => {
+		const unit = subject.units.find(item => Number(item.number) === Number(number));
+		const href = new URL(destination); href.searchParams.set('unit', number);
+		return `<a href="${escapeHtml(href.href)}"${Number(number) === Number(unitNumber) ? ' aria-current="page"' : ''}>Unit ${number} · ${escapeHtml(unit?.title || '')}</a>`;
+	}).join('')}</nav></details>`;
+}
+
+window.PankuUnitResourceNav = { render, renderUnitSelector };
 })();
