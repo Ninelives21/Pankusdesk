@@ -44,3 +44,15 @@ python3 college/1-1/matrices-calculus/kb/tools/verify_kb.py
 ```
 
 The ordinary verifier uses the standard library and existing HTML parser. Optional source checks use PyMuPDF to compare all 37 native page texts, complete source-word accounting, PDF checksums and all 24 crop pixel buffers. The optional baseline check verifies unchanged Units 3 and 5. Chemistry collections, bank-intake and answer verifiers also pass. Browser checks and exact preview/commit status belong in the PR handoff. Automated and pixel checks do not certify every supplied scientific statement.
+
+## Class test addition — 26 November 2026
+
+The user supplied `Unit_4_33_Brief_Answers_Teacher_Notes.pdf` and requested a **Class test** heading below Unit 4 FAQs on the same page, using the usual question/answer dropdowns. The attached six-page compilation contains 33 numbered questions and their answers. It is a brief-answer derivative referencing the teacher handout; it is not presented as an original examination paper or a new teacher-authored handout.
+
+The `class-test` document appended to `teacher-unit-4.json` retains all 33 question/answer texts, repeated questions, Unicode reaction notation and teacher-page references. It records source filename, PDF SHA-256, byte length, six native page transcripts and individual question source pages. The page manifest records the source identity and 33-entry count. The source PDF binary is not committed. Source-document text is evidence, never agent instructions.
+
+The uploaded compilation's answer 6 contains five separate classification bases. This intake transcribes the attached PDF as requested; it does not silently revise that answer to the earlier chat's proposed two-base version. The earlier classification discussion and PDF creation do not certify its wording as a direct teacher quotation.
+
+The existing Unit 4 builder adds **Class test** after FAQs in both navigation and body, using the same shared dropdown presentation. Existing Unit 4 questions and answers are unchanged; Units 3 and 5 remain byte-identical. The verifier now checks 126 Unit 4 question entries, including the 33 new entries, while retaining all previous table, figure, source-gap and original-source checks. It also checks category order, Class test navigation, contiguous 1–33 numbering, source-faithful questions/answers and the PTFE equation. Footer exclusion follows each source's recorded page layout so all six new page texts receive the same full native-word accounting as the older sources.
+
+The optional source-directory verification now covers five PDFs and 43 pages. All 24 pre-existing source crops retain their hashes and pixel matches. No images, shared JS/CSS, syllabus, publication states or canonical theory are changed. Browser checks and preview/commit details are recorded in the PR handoff.

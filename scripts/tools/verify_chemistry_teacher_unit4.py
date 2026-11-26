@@ -50,9 +50,9 @@ def main():
     assert text.index('#unit-3') < text.index('#unit-4') < text.index('#unit-5')
     assert build(text, data) == text, 'Generated Unit 4 must be reproducible'
     questions = [e for d in data['documents'] for e in d['events'] if e['type'] == 'question']
-    assert len(questions) == 93
-    assert [d['question_count'] for d in data['documents']] == [44, 18, 12, 19]
-    assert [d['page_count'] for d in data['documents']] == [12, 10, 8, 7]
+    assert len(questions) == 126
+    assert [d['question_count'] for d in data['documents']] == [44, 18, 12, 19, 33]
+    assert [d['page_count'] for d in data['documents']] == [12, 10, 8, 7, 6]
     for document in data['documents']:
         assert manifest['question_counts'][f'unit-4-{document["category"]}'] == document['question_count']
         for page in document['page_transcripts']:
@@ -73,6 +73,14 @@ def main():
                     for cell in block['headers'] + sum(block['rows'], []):
                         assert normal(cell) in rendered, (event['id'], cell)
             assert solution.text().strip(), event['id']
+    class_test = doc.ids['u4-class-test']
+    class_questions = [n for n in class_test.elements() if n.has_class('collection-question')]
+    assert [n.attrs['id'] for n in class_questions] == [f'u4-class-test-q{i}' for i in range(1, 34)]
+    unit_sections = [n.attrs['id'] for n in doc.ids['unit-4'].children
+                     if getattr(n, 'tag', None) == 'section']
+    assert unit_sections == ['u4-qbank', 'u4-mid2', 'u4-endsem', 'u4-faqs', 'u4-class-test']
+    assert '#u4-class-test' in text.split('</aside>', 1)[0]
+    assert 'CF₂=CF₂ → [–CF₂–CF₂–]ₙ' in doc.ids['u4-class-test-q30'].text()
     gaps = [q['id'] for q in questions if q.get('source_gap')]
     assert gaps == ['u4-qbank-q9', 'u4-qbank-q16']
     assert all('Source gap:' in doc.ids[q].text() for q in gaps)
@@ -98,12 +106,19 @@ def main():
         for number, end in [(3, '<section class="document-page teacher-notes-unit" id="unit-5">'), (5, '</article>')]:
             start = f'<section class="document-page teacher-notes-unit" id="unit-{number}">'
             old = baseline.split(start, 1)[1].split(end, 1)[0]
+            if number == 3:
+                old = old.split('<section class="document-page teacher-notes-unit" id="unit-4">', 1)[0]
             new = text.split(start, 1)[1]
             if number == 3:
                 new = new.split('<section class="document-page teacher-notes-unit" id="unit-4">', 1)[0]
             else:
                 new = new.split(end, 1)[0]
             assert old == new, f'Unit {number} changed'
+        previous = Document(baseline)
+        for identifier, node in previous.ids.items():
+            if re.fullmatch(r'u4-(?:qbank|mid2|endsem|faqs)-q\d+', identifier):
+                assert node.text() == doc.ids[identifier].text(), identifier
+        print('PASS: existing Unit 4 question/answer text remains unchanged')
         print('PASS: Units 3 and 5 remain byte-for-byte unchanged against', args.baseline_ref)
     if args.source_dir:
         import fitz  # optional original-source audit; ordinary checkout checks are stdlib-only
@@ -115,7 +130,7 @@ def main():
             for index, page in enumerate(original):
                 assert page.get_text() == document['page_transcripts'][index]['text']
                 for block in page.get_text('dict')['blocks']:
-                    if block['type'] != 0 or block['bbox'][1] > 740:
+                    if block['type'] != 0 or block['bbox'][1] > document.get('footer_top', 740):
                         continue
                     spans = [span for line in block['lines'] for span in line['spans']]
                     if spans[0]['size'] >= 15:
@@ -128,10 +143,10 @@ def main():
                 pix = original[figure['page'] - 1].get_pixmap(matrix=fitz.Matrix(2, 2), clip=fitz.Rect(figure['bbox']))
                 saved = fitz.Pixmap(str(ROOT / figure['src']))
                 assert pix.width == saved.width and pix.height == saved.height and pix.samples == saved.samples, figure['src']
-        print('PASS: 4 PDF identities, all 37 page texts, complete native-word accounting and all 24 source-rendered crops')
+        print('PASS: 5 PDF identities, all 43 page texts, complete native-word accounting and all 24 source-rendered crops')
     else:
         print('Original-PDF comparison not run; supply --source-dir to repeat source and pixel checks.')
-    print('CHEMISTRY TEACHER UNIT 4 VERIFY: PASS — 93 questions, 10 tables, 24 supplied figures, 2 explicit source gaps, navigation and source metadata.')
+    print('CHEMISTRY TEACHER UNIT 4 VERIFY: PASS — 126 questions (33 Class test), 10 tables, 24 supplied figures, 2 explicit source gaps, navigation and source metadata.')
 
 
 if __name__ == '__main__':
