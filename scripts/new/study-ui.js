@@ -390,14 +390,7 @@ function initIndexedNav(root = document, options = {}) {
 
 	if (!items.length) return null;
 
-	const setActive = id => {
-		items.forEach(item => {
-			const active = item.id === id;
-			item.link.classList.toggle('is-active', active);
-			if (active) item.link.setAttribute('aria-current', 'location');
-			else item.link.removeAttribute('aria-current');
-		});
-	};
+	const setActive = () => window.PankuSectionNav?.refresh();
 
 	items.forEach(item => {
 		item.link.addEventListener('click', event => {
@@ -411,23 +404,9 @@ function initIndexedNav(root = document, options = {}) {
 		});
 	});
 
-	const observer = new IntersectionObserver(entries => {
-		const visible = entries
-			.filter(entry => entry.isIntersecting)
-			.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-		if (visible[0]?.target?.id) setActive(visible[0].target.id);
-	}, {
-		rootMargin: options.rootMargin || '-18% 0px -68% 0px',
-		threshold: options.threshold || [0, 0.01, 0.15],
-	});
+	setActive();
 
-	items.forEach(item => observer.observe(item.target));
-
-	const initialId = decodeURIComponent(window.location.hash.slice(1));
-	const initial = items.find(item => item.id === initialId);
-	setActive(initial?.id || items[0].id);
-
-	return { setActive, observer, items };
+	return { setActive, observer: null, items };
 }
 
 window.PankuStudyUI = {

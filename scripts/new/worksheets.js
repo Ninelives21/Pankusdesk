@@ -40,18 +40,6 @@ async function init() {
 		</section>`;
 		ui.initAccordions(content);
 		const indexedNav = ui.initIndexedNav(page, { navSelector: '[data-worksheet-nav]' });
-		// Long question sets can span many viewports. Keep their nav item active
-		// while reading inside the section, including direct links to an answer.
-		const sections = Array.from(content.querySelectorAll('.worksheet-group'));
-		let scrollFrame = null;
-		function syncActiveSection() {
-			scrollFrame = null;
-			const current = sections.filter(section => section.getBoundingClientRect().top <= 150).at(-1) || sections[0];
-			if (current) indexedNav?.setActive(current.id);
-		}
-		window.addEventListener('scroll', () => {
-			if (scrollFrame === null) scrollFrame = requestAnimationFrame(syncActiveSection);
-		}, { passive: true });
 		const contentsPanel = page.querySelector('.worksheet-nav');
 		if (window.matchMedia('(max-width: 700px)').matches) contentsPanel.open = false;
 		nav.addEventListener('click', event => {

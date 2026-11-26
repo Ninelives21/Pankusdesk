@@ -1,6 +1,9 @@
 (function () {
 let semesterContextModule;
 
+// Every site page uses this shared entry point; no page-specific script tags.
+import('./section-navigation.js').catch(error => console.warn('Section navigation:', error));
+
 document.addEventListener('DOMContentLoaded', async () => {
 	initBackToTop();
 
