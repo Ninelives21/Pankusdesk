@@ -8,7 +8,7 @@ import re
 ROOT = Path(__file__).resolve().parents[2]
 SUBJECT = ROOT / 'college/1-1/chemistry-engineers'
 PAGE = 'college/1-1/chemistry-engineers/teacher-notes-unit-wise.html'
-LABELS = {'qbank': 'QBank', 'mid2': 'Mid 2', 'endsem': 'End Sem', 'faqs': 'FAQs'}
+LABELS = {'qbank': 'QBank', 'mid2': 'Mid 2', 'endsem': 'End Sem', 'faqs': 'FAQs', 'class-test': 'Class test'}
 
 
 def source_text(text):
@@ -21,7 +21,7 @@ def render_block(block):
     kind = block['type']
     if kind == 'paragraph':
         text = source_text(block['text'])
-        if block['text'].startswith(('Observed in:', 'Approximate source-topic')):
+        if block['text'].startswith(('Observed in:', 'Approximate source-topic', 'Teacher notes · PDF')):
             return f'<p class="collection-status">{text}</p>'
         return f'<p>{text}</p>'
     if kind == 'heading':
@@ -59,7 +59,7 @@ def render_question(question):
 def render(data):
     navigation = f'<details class="source-nav-group" open><summary><a href="{PAGE}#unit-4">Unit 4 · Polymeric Materials</a></summary>'
     navigation += ''.join(f'<a class="document-nav-child" href="{PAGE}#u4-{key}">{label}</a>' for key, label in LABELS.items()) + '</details>'
-    content = ['<section class="document-page teacher-notes-unit" id="unit-4"><h2>Unit 4 · Polymeric Materials</h2><p>Questions and supplied answers from the four Unit 4 study PDFs. Teacher-note references and corrections remain as supplied; supplementary topics and historical R22 material are identified in context.</p>']
+    content = ['<section class="document-page teacher-notes-unit" id="unit-4"><h2>Unit 4 · Polymeric Materials</h2><p>Questions and supplied answers from the Unit 4 study PDFs and supplied class-test compilation. Teacher-note references and corrections remain as supplied; supplementary topics and historical R22 material are identified in context.</p>']
     for document in data['documents']:
         category = document['category']
         content.append(f'<section class="bank-source-group teacher-note-subsection" id="u4-{category}"><h3>{LABELS[category]}</h3>')
@@ -95,4 +95,4 @@ if __name__ == '__main__':
     data = json.loads((SUBJECT / 'revision/teacher-unit-4.json').read_text())
     page = SUBJECT / 'teacher-notes-unit-wise.html'
     page.write_text(build(page.read_text(), data))
-    print('Built Unit 4 teacher Q&A: 44 QBank, 18 Mid 2, 12 End Sem, 19 FAQ entries.')
+    print('Built Unit 4 teacher Q&A: 44 QBank, 18 Mid 2, 12 End Sem, 19 FAQ and 33 Class test entries.')
