@@ -38,7 +38,8 @@ function renderPage(page, subject, subjectUrl, bank, years, year) {
 	const sourcePaper = year.source_paper ? new URL(year.source_paper, subjectUrl).href : null;
 	const questionCount = (year.groups || []).reduce((sum, group) => sum + (group.questions || []).length, 0);
 	const currentIndex = years.findIndex(item => item.id === year.id);
-	const currentPath = `${window.location.pathname}?year=${encodeURIComponent(year.id)}`;
+	// Contents stay in the rendered document, including the default-year URL.
+	const currentPath = window.location.pathname + window.location.search;
 
 	document.title = `${year.label || year.id} Semester PYQs · ${subject.shortName || subject.name} · Panku's Desk`;
 

@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
  }
  if (!document.body.dataset.questionBank) return;
  const units = [...document.querySelectorAll('[data-bank-unit-section]')];
- const links = [...document.querySelectorAll('[data-bank-unit]')];
  const status = document.getElementById('bank-view-status');
  const ui = window.PankuStudyUI;
  ui?.initAccordions?.(document.querySelector('.document-body'));
@@ -43,10 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const unit = id === 'document-top' ? currentUnit : allView ? 'all' : target?.closest('[data-bank-unit-section]')?.dataset.bankUnitSection || defaultUnit;
   currentUnit = unit;
   units.forEach(section => { section.hidden = unit !== 'all' && section.dataset.bankUnitSection !== unit; });
-  links.forEach(link => {
-   if (link.dataset.bankUnit === unit) link.setAttribute('aria-current', 'location');
-   else link.removeAttribute('aria-current');
-  });
+  window.PankuSectionNav?.refresh();
   const selected = units.find(section => section.dataset.bankUnitSection === unit);
   status.textContent = unit === 'all' ? (document.body.dataset.bankAllLabel || 'Consolidated view · all five units') : selected?.dataset.bankTitle ? `Viewing ${selected.dataset.bankTitle}` : `Viewing Unit ${unit}`;
   let parent = target;

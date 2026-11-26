@@ -217,15 +217,7 @@
                 const answer = target.closest('details.study-accordion-item');
                 if (answer) answer.open = true;
                 target.scrollIntoView({ block: 'start' });
-                const paper = target.closest('.exam-paper');
-                const containingPaperId = bank.paper && (bank.sections || []).some(section => section.id === paper?.id)
-                    ? bank.paper.id : paper?.id;
-                const currentId = [...nav.querySelectorAll('a')].some(link => link.hash === `#${id}`)
-                    ? id : containingPaperId;
-                nav.querySelectorAll('a').forEach(link => {
-                    if (link.hash === `#${currentId}`) link.setAttribute('aria-current', 'location');
-                    else link.removeAttribute('aria-current');
-                });
+                window.PankuSectionNav?.refresh();
             }
             if (matchMedia('(max-width:700px)').matches) panel.open = false;
             nav.addEventListener('click', event => {

@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
   if (!target) return;
   event.preventDefault();
-  contents.querySelectorAll('[aria-current]').forEach(item => item.removeAttribute('aria-current'));
-  link.setAttribute('aria-current', 'location');
+  window.PankuSectionNav?.refresh();
   if (narrow.matches) contents.open = false;
   history.pushState(null, '', `${url.pathname}${url.search}${url.hash}`);
   target.scrollIntoView({ behavior: 'instant', block: 'start' });

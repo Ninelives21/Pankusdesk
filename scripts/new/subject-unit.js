@@ -1066,16 +1066,7 @@ function setupTopicNavigation(unitTopics) {
 	const sections = unitTopics.map(topic => document.getElementById(topic.id)).filter(Boolean);
 	if (!links.length || !sections.length) return;
 
-	const setActive = id => {
-		links.forEach(link => {
-			const href = link.getAttribute('href') || '';
-			const hashId = href.includes('#') ? href.slice(href.indexOf('#') + 1) : '';
-			const active = hashId === id;
-			link.classList.toggle('is-active', active);
-			if (active) link.setAttribute('aria-current', 'location');
-			else link.removeAttribute('aria-current');
-		});
-	};
+	const setActive = () => window.PankuSectionNav?.refresh();
 
 	links.forEach(link => {
 		link.addEventListener('click', event => {
@@ -1092,18 +1083,6 @@ function setupTopicNavigation(unitTopics) {
 			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		});
 	});
-
-	const observer = new IntersectionObserver(entries => {
-		const visible = entries
-			.filter(entry => entry.isIntersecting)
-			.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-		if (visible[0]?.target?.id) setActive(visible[0].target.id);
-	}, {
-		rootMargin: '-18% 0px -68% 0px',
-		threshold: [0, 0.01, 0.15],
-	});
-
-	sections.forEach(section => observer.observe(section));
 
 	const initialId = window.location.hash.slice(1);
 	if (initialId && document.getElementById(initialId)) {

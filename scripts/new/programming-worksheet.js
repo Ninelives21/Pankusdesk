@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   ui.initAccordions(content);
   const panel=page.querySelector('.programming-nav');
   if(matchMedia('(max-width:700px)').matches) panel.open=false;
-  function reveal(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch(_){return;} const target=document.getElementById(id);if(target&&content.contains(target)){if(target.matches('details'))target.open=true;target.scrollIntoView({block:'start'});nav.querySelectorAll('a').forEach(a=>{if(a.hash===location.hash)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}}
+  function reveal(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch(_){return;} const target=document.getElementById(id);if(target&&content.contains(target)){if(target.matches('details'))target.open=true;target.scrollIntoView({block:'start'});window.PankuSectionNav?.refresh();}}
   nav.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;if(matchMedia('(max-width:700px)').matches)panel.open=false;});
   window.addEventListener('hashchange',reveal);reveal();page.dataset.worksheetReady='true';
  }catch(error){console.error(error);content.textContent='Worksheet could not be loaded. Reload to try again.';nav.textContent='Contents unavailable.';}
