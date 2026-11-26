@@ -162,6 +162,56 @@ def page_checks(browser, origin, width, screenshots):
         context.close()
 
 
+
+def pyq_checks(browser, origin, screenshots):
+    import json
+    bank = json.loads((ROOT / 'college/1-1/basic-electrical-engineering/kb/data/pyqs.json').read_text())
+    path = '/college/1-1/basic-electrical-engineering/pyqs.html'
+    views = [('', bank['latest_year'])] + [(f'?year={year['id']}', year['id']) for year in bank['years']]
+    views.append(('?year=unrecognised&review=1', bank['latest_year']))
+    for width in (1440, 390):
+        for query, selected in views:
+            context = browser.new_context(viewport={'width': width, 'height': 900}, ignore_https_errors=True)
+            page = context.new_page()
+            errors = []
+            page.on('pageerror', lambda error: errors.append(str(error)))
+            page.goto(origin + path + query, wait_until='networkidle')
+            page.wait_for_selector('.study-index-link', state='attached')
+            page.wait_for_function('Boolean(window.PankuSectionNav)')
+            # In-page targets must preserve the actual query, not manufacture a
+            # selected-year query when the default/fallback paper is rendered.
+            assert page.locator('.study-index-link').evaluate_all(
+                '(links)=>links.every(a=>new URL(a.href).pathname===location.pathname && new URL(a.href).search===location.search)')
+            year = next(item for item in bank['years'] if item['id'] == selected)
+            original_url = page.url
+            for group in year['groups']:
+                scroll_to(page, group['id'])
+                wait_active(page, group['id'])
+                assert page.url == original_url
+            # Exercise the shared indexed-nav click path as well as manual scroll.
+            page.locator('.study-index-link').first.evaluate('(el)=>el.click()')
+            page.wait_for_url('**#part-a')
+            wait_active(page, 'part-a')
+            assert page.evaluate('location.search') == query
+            assert page.locator('.pyq-year-current').inner_text().strip()
+            assert page.locator('.pyq-year-link').evaluate_all(
+                '(links)=>links.every(a=>new URL(a.href).searchParams.has("year"))')
+            # Expand a real worked answer and scroll inside the long section.
+            scroll_to(page, 'unit-1')
+            toggle = page.locator('#unit-1 .chapter-question-toggle').first
+            toggle.click()
+            page.wait_for_function('(el)=>el.getAttribute("aria-expanded")==="true"', arg=toggle.element_handle())
+            page.evaluate("""() => { const box=document.getElementById('unit-1').getBoundingClientRect();
+                scrollTo({top:scrollY+box.top+Math.min(box.height/2,500)-130,behavior:'instant'}); }""")
+            wait_active(page, 'unit-1')
+            if screenshots and not query:
+                screenshots.mkdir(parents=True, exist_ok=True)
+                page.screenshot(path=str(screenshots / f'scroll-nav-bee-pyqs-{width}.png'))
+            assert not errors, errors
+            context.close()
+            print(f'PASS BEE PYQs {width}px {query or "default URL"}: all paper groups, click, expanded answer and year controls', flush=True)
+
+
 def prefix_check(browser):
     context = browser.new_context(viewport={'width': 390, 'height': 900}, ignore_https_errors=True)
     def local(route):
@@ -180,6 +230,16 @@ def prefix_check(browser):
     wait_active(page, 'u4-class-test')
     assert page.locator('base').get_attribute('href') == '/Pankusdesk/'
     print('PASS: GitHub Pages /Pankusdesk/ bootstrap and same-document matching', flush=True)
+    pyq_path = 'college/1-1/basic-electrical-engineering/pyqs.html'
+    page.goto('https://ninelives21.github.io/Pankusdesk/' + pyq_path, wait_until='networkidle')
+    page.wait_for_selector('.study-index-link', state='attached')
+    scroll_to(page, 'unit-3')
+    wait_active(page, 'unit-3')
+    page.locator('.study-index-link').first.evaluate('(el)=>el.click()')
+    page.wait_for_url('**#part-a')
+    wait_active(page, 'part-a')
+    assert page.url == 'https://ninelives21.github.io/Pankusdesk/' + pyq_path + '#part-a'
+    print('PASS: default BEE PYQ URL under /Pankusdesk/ prefix, manual scroll and contents click', flush=True)
     context.close()
 
 
@@ -187,6 +247,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--browser', default='/usr/bin/chromium')
     parser.add_argument('--screenshots', type=Path)
+    parser.add_argument('--pyqs-only', action='store_true', help='Run the PYQ URL regression matrix only')
     args = parser.parse_args()
     pages = []
     for path in ROOT.rglob('*.html'):
@@ -204,10 +265,12 @@ def main():
     try:
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(executable_path=args.browser, headless=True, args=['--no-sandbox'])
-            for width in (1440, 390):
-                core_checks(browser, f'http://127.0.0.1:{server.server_port}', width)
-                page_checks(browser, f'http://127.0.0.1:{server.server_port}', width, args.screenshots)
-            prefix_check(browser)
+            if not args.pyqs_only:
+                for width in (1440, 390):
+                    core_checks(browser, f'http://127.0.0.1:{server.server_port}', width)
+                    page_checks(browser, f'http://127.0.0.1:{server.server_port}', width, args.screenshots)
+                prefix_check(browser)
+            pyq_checks(browser, f'http://127.0.0.1:{server.server_port}', args.screenshots)
             browser.close()
     finally:
         server.shutdown()

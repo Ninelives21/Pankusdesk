@@ -27,3 +27,11 @@ The tracker expands nested unit/topic disclosures inside a contents menu so the 
 `python3 scripts/tools/check_section_navigation_browser.py --screenshots <scratch-directory>` starts an ephemeral loopback server for this checkout and runs installed Playwright/Chromium. It checks the shared bootstrap/style coverage, long/nested/hidden/dynamically loaded sections, expansion-driven layout changes, a short last section, exclusion of other pages/queries, unchanged scroll URL/history, native click/Back/Forward, nested group opening and preservation of a collapsed outer menu. It also verifies real teacher notes, textbook topics, dated and supplied notes, MAC/PPS worksheets, PPS exam questions, source notes, filtered Chemistry banks and institutional documents at desktop and phone widths, plus a simulated GitHub Pages prefix. Existing college/BEE/MAC and relevant Chemistry validators remain applicable.
 
 Browser tests do not certify academic content. No source content, diagrams, publication states, page HTML, deployment settings or links are changed by this feature.
+
+## Default PYQ URL regression
+
+The BEE PYQ page can render the latest paper at `pyqs.html` without a `year` query. The shared PYQ renderer previously manufactured `?year=<selected-year>` for every contents link, even when the current URL had no query or an unrecognised year. The central tracker correctly excluded those links as a different query/view, so the default page never registered its paper-section menu. This case was missing from the initial representative-page tests.
+
+The shared `pyqs.js` renderer now builds same-document contents URLs from the actual pathname and search. Previous/next paper controls still use explicit year queries. The central tracker retains its strict query matching, and no individual HTML page or paper data is changed. This fixes every consumer of that shared PYQ renderer, including default and fallback paper views.
+
+`check_section_navigation_browser.py --pyqs-only` covers desktop and phone widths for the default URL, all three explicit paper years, and an unrecognised year with an additional query parameter. It checks every paper group during manual scrolling, contents-link clicks, expanded-answer tracking and unchanged previous/next year controls. These checks also run as part of the full suite.
